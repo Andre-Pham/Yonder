@@ -32,5 +32,12 @@ class yonderTests: XCTestCase {
         player.damage(for: 150)
         XCTAssertTrue(player.isDead)
     }
+    
+    func testStatusEffects() throws {
+        let player = Player(maxHealth: 200)
+        player.addStatusEffect(BurnStatusEffect(damage: 5))
+        player.triggerStatusEffects()
+        XCTAssertTrue(player.health == 195)
+    }
 
 }

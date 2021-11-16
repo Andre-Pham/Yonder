@@ -18,6 +18,7 @@ class ActorAbstract {
         }
     }
     private(set) var isDead: Bool
+    private(set) var statusEffects = [StatusEffect]()
     
     init(maxHealth: Int) {
         self.maxHealth = maxHealth
@@ -40,6 +41,16 @@ class ActorAbstract {
     
     func setHealth(to amount: Int) {
         self.health = min(amount, maxHealth)
+    }
+    
+    func addStatusEffect(_ statusEffect: StatusEffect) {
+        self.statusEffects.append(statusEffect)
+    }
+    
+    func triggerStatusEffects() {
+        for statusEffect in self.statusEffects {
+            statusEffect.applyEffect(actor: self)
+        }
     }
     
 }
