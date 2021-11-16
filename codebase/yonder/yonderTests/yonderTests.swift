@@ -19,5 +19,10 @@ class yonderTests: XCTestCase {
         actor.heal(for: 500)
         XCTAssertEqual(actor.health, actor.maxHealth)
     }
+    
+    func testAttack() throws {
+        GAME.foe.attackPlayer()
+        XCTAssertEqual(GAME.player.health, GAME.player.maxHealth-GAME.foe.attackDamage)
+    }
 
 }
