@@ -24,5 +24,13 @@ class yonderTests: XCTestCase {
         GAME.foe.attackPlayer()
         XCTAssertEqual(GAME.player.health, GAME.player.maxHealth-GAME.foe.attackDamage)
     }
+    
+    func testDeath() throws {
+        let player = Player(maxHealth: 200)
+        player.damage(for: 150)
+        XCTAssertTrue(!player.isDead)
+        player.damage(for: 150)
+        XCTAssertTrue(player.isDead)
+    }
 
 }

@@ -10,11 +10,19 @@ import Foundation
 class ActorAbstract {
     
     private(set) var maxHealth: Int
-    private(set) var health: Int
+    private(set) var health: Int {
+        didSet {
+            if health <= 0 {
+                self.isDead = true
+            }
+        }
+    }
+    private(set) var isDead: Bool
     
     init(maxHealth: Int) {
         self.maxHealth = maxHealth
         self.health = maxHealth
+        self.isDead = maxHealth > 0 ? false : true
     }
     
     func heal(for amount: Int) {
