@@ -19,12 +19,15 @@ class ActorAbstract {
     }
     private(set) var isDead: Bool
     private(set) var statusEffects = [StatusEffect]()
+    private(set) var timedEvents = [TimedEvent]()
     
     init(maxHealth: Int) {
         self.maxHealth = maxHealth
         self.health = maxHealth
         self.isDead = maxHealth > 0 ? false : true
     }
+    
+    // MARK: - Health Related
     
     func heal(for amount: Int) {
         if self.health + amount > self.maxHealth {
@@ -43,6 +46,8 @@ class ActorAbstract {
         self.health = min(amount, maxHealth)
     }
     
+    // MARK: - Status Effects
+    
     func addStatusEffect(_ statusEffect: StatusEffect) {
         self.statusEffects.append(statusEffect)
     }
@@ -51,6 +56,23 @@ class ActorAbstract {
         for statusEffect in self.statusEffects {
             statusEffect.applyEffect(actor: self)
         }
+    }
+    
+    // MARK: - Timed Events
+    
+    func addTimedEvent(_ timedEvent: TimedEvent) {
+        self.timedEvents.append(timedEvent)
+    }
+    
+    func decrementTimedEvents() {
+        var remainingTimedEvents = [TimedEvent]()
+        for timedEvent in self.timedEvents {
+            timedEvent.decrementTimeRemaining()
+            if timedEvent.timeRemaining > 0 {
+                remainingTimedEvents.append(timedEvent)
+            }
+        }
+        self.timedEvents = remainingTimedEvents
     }
     
 }

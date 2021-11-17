@@ -16,7 +16,7 @@ class BurnStatusEffect: StatusEffect {
     }
     
     func applyEffect(actor: ActorAbstract) {
-        actor.damage(for: damage)
+        actor.damage(for: self.damage)
     }
     
 }

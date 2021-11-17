@@ -39,5 +39,18 @@ class yonderTests: XCTestCase {
         player.triggerStatusEffects()
         XCTAssertTrue(player.health == 195)
     }
+    
+    func testTimedEvents() throws {
+        let player = Player(maxHealth: 200)
+        player.damage(for: 150)
+        let timedEvent = FullHealTimedEvent(timeToTrigger: 2, target: player)
+        player.addTimedEvent(timedEvent)
+        player.decrementTimedEvents()
+        XCTAssertTrue(player.health == 50)
+        XCTAssertTrue(player.timedEvents.count == 1)
+        player.decrementTimedEvents()
+        XCTAssertTrue(player.health == 200)
+        XCTAssertTrue(player.timedEvents.count == 0)
+    }
 
 }
