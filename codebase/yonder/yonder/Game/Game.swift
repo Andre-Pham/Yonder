@@ -12,6 +12,6 @@ var GAME = Game()
 class Game {
     
     public var player = Player(maxHealth: 500)
-    public var foe = FoeAbstract(maxHealth: 200, attackDamage: 100)
+    public var foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 100))
     
 }

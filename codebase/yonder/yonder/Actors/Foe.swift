@@ -9,16 +9,14 @@ import Foundation
 
 class FoeAbstract: ActorAbstract {
     
-    private(set) var attackDamage: Int
-    
-    init(maxHealth: Int, attackDamage: Int) {
-        self.attackDamage = attackDamage
-        
+    init(maxHealth: Int, weapon: WeaponAbstract) {
         super.init(maxHealth: maxHealth)
+        
+        self.addWeapon(weapon)
     }
     
-    func attackPlayer() {
-        GAME.player.damage(for: self.attackDamage)
+    func getWeapon() -> WeaponAbstract {
+        return self.weapons.first!
     }
     
 }

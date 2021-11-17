@@ -21,8 +21,10 @@ class yonderTests: XCTestCase {
     }
     
     func testAttack() throws {
-        GAME.foe.attackPlayer()
-        XCTAssertEqual(GAME.player.health, GAME.player.maxHealth-GAME.foe.attackDamage)
+        let player = Player(maxHealth: 200)
+        let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 5))
+        foe.attack(target: player, weapon: foe.getWeapon())
+        XCTAssertTrue(player.health == 195)
     }
     
     func testDeath() throws {
@@ -51,6 +53,15 @@ class yonderTests: XCTestCase {
         player.decrementTimedEvents()
         XCTAssertTrue(player.health == 200)
         XCTAssertTrue(player.timedEvents.count == 0)
+    }
+    
+    func testBuffs() throws {
+        let player = Player(maxHealth: 200)
+        let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 5))
+        foe.addBuff(DoubleDamageBuff(duration: 5))
+        foe.addBuff(DoubleDamageBuff(duration: 5))
+        foe.attack(target: player, weapon: foe.getWeapon())
+        XCTAssertTrue(player.health == 180)
     }
 
 }

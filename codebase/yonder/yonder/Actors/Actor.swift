@@ -20,6 +20,8 @@ class ActorAbstract {
     private(set) var isDead: Bool
     private(set) var statusEffects = [StatusEffect]()
     private(set) var timedEvents = [TimedEvent]()
+    private(set) var weapons = [WeaponAbstract]()
+    private(set) var buffs = [BuffAbstract]()
     
     init(maxHealth: Int) {
         self.maxHealth = maxHealth
@@ -73,6 +75,31 @@ class ActorAbstract {
             }
         }
         self.timedEvents = remainingTimedEvents
+    }
+    
+    // MARK: - Weapons
+    
+    func addWeapon(_ weapon: WeaponAbstract) {
+        self.weapons.append(weapon)
+    }
+    
+    // MARK: - Buffs
+    
+    func addBuff(_ buff: BuffAbstract) {
+        self.buffs.append(buff)
+    }
+    
+    // MARK: - Combat
+    
+    func attack(target: ActorAbstract, weapon: WeaponAbstract) {
+        var appliedDamage = weapon.damage
+        for buff in self.buffs {
+            if buff.type == .damage {
+                appliedDamage = buff.applyToDamage(damage: appliedDamage)!
+            }
+        }
+        weapon.setAppliedDamage(to: appliedDamage)
+        weapon.use(owner: self, target: target)
     }
     
 }
