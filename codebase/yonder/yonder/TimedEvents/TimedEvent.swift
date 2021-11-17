@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol TimedEvent {
+protocol TimedEventAbstract {
     
     var timeRemaining: Int { get set }
     

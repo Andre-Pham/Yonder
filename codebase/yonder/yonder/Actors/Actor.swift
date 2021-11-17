@@ -18,8 +18,8 @@ class ActorAbstract {
         }
     }
     private(set) var isDead: Bool
-    private(set) var statusEffects = [StatusEffect]()
-    private(set) var timedEvents = [TimedEvent]()
+    private(set) var statusEffects = [StatusEffectAbstract]()
+    private(set) var timedEvents = [TimedEventAbstract]()
     private(set) var weapons = [WeaponAbstract]()
     private(set) var buffs = [BuffAbstract]()
     
@@ -50,7 +50,7 @@ class ActorAbstract {
     
     // MARK: - Status Effects
     
-    func addStatusEffect(_ statusEffect: StatusEffect) {
+    func addStatusEffect(_ statusEffect: StatusEffectAbstract) {
         self.statusEffects.append(statusEffect)
     }
     
@@ -62,12 +62,12 @@ class ActorAbstract {
     
     // MARK: - Timed Events
     
-    func addTimedEvent(_ timedEvent: TimedEvent) {
+    func addTimedEvent(_ timedEvent: TimedEventAbstract) {
         self.timedEvents.append(timedEvent)
     }
     
     func decrementTimedEvents() {
-        var remainingTimedEvents = [TimedEvent]()
+        var remainingTimedEvents = [TimedEventAbstract]()
         for timedEvent in self.timedEvents {
             timedEvent.decrementTimeRemaining()
             if timedEvent.timeRemaining > 0 {

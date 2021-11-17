@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FullHealTimedEvent: TimedEvent {
+class FullHealTimedEvent: TimedEventAbstract {
     
     var timeRemaining: Int {
         didSet {

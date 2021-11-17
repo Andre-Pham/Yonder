@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol StatusEffect {
+protocol StatusEffectAbstract {
     
     func applyEffect(actor: ActorAbstract)
     

@@ -7,9 +7,9 @@
 
 import Foundation
 
-typealias WeaponAbstract = Weapon & Usable
+typealias WeaponAbstract = WeaponAbstractPart & Usable
 
-class Weapon {
+class WeaponAbstractPart {
     
     var damage: Int = 0
     var appliedDamage: Int = 0
