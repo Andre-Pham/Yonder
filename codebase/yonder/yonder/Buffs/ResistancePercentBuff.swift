@@ -17,7 +17,7 @@ class ResistancePercentBuff: BuffAbstract {
         super.init(duration: duration, type: .resistance, priority: 1)
     }
     
-    override func applyResistance(damage: Int) -> Int? {
+    override func applyResistance(to damage: Int) -> Int? {
         return Int(round(Double(damage)*self.resistanceFraction))
     }
     

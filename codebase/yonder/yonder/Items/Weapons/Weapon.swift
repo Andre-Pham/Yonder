@@ -19,13 +19,13 @@ class WeaponAbstractPart {
         owner.orderBuffsInPriority()
         for buff in owner.buffs {
             if buff.type == .damage {
-                appliedDamage = buff.applyDamage(damage: appliedDamage)!
+                appliedDamage = buff.applyDamage(to: appliedDamage)!
             }
         }
         target.orderBuffsInPriority()
         for buff in target.buffs {
             if buff.type == .resistance {
-                appliedDamage = buff.applyResistance(damage: appliedDamage)!
+                appliedDamage = buff.applyResistance(to: appliedDamage)!
             }
         }
         return appliedDamage

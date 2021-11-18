@@ -30,11 +30,11 @@ class BuffAbstract {
         self.timeRemaining -= 1
     }
     
-    func applyDamage(damage: Int) -> Int? {
+    func applyDamage(to damage: Int) -> Int? {
         return nil
     }
     
-    func applyResistance(damage: Int) -> Int? {
+    func applyResistance(to damage: Int) -> Int? {
         return nil
     }
     
