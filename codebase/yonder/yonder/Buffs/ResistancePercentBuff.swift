@@ -7,18 +7,18 @@
 
 import Foundation
 
-class DamageResistanceBuff: BuffAbstract {
+class ResistancePercentBuff: BuffAbstract {
     
-    private let resistance: Double
+    private let resistanceFraction: Double
     
-    init(duration: Int, resistance: Double) {
-        self.resistance = resistance
+    init(duration: Int, resistanceFraction: Double) {
+        self.resistanceFraction = resistanceFraction
         
         super.init(duration: duration, type: .resistance)
     }
     
     override func applyResistance(damage: Int) -> Int? {
-        return Int(round(Double(damage)*resistance))
+        return Int(round(Double(damage)*self.resistanceFraction))
     }
     
 }
