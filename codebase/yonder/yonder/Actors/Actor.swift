@@ -89,6 +89,11 @@ class ActorAbstract {
         self.buffs.append(buff)
     }
     
+    func orderBuffsInPriority() {
+        // Ascending order
+        self.buffs = self.buffs.sorted(by: { $0.priority < $1.priority })
+    }
+    
     // MARK: - Combat
     
     func attack(target: ActorAbstract, weapon: WeaponAbstract) {

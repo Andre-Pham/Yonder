@@ -1,5 +1,5 @@
 //
-//  ResistanceBuff.swift
+//  ResistancePercentBuff.swift
 //  yonder
 //
 //  Created by Andre Pham on 18/11/21.
@@ -14,7 +14,7 @@ class ResistancePercentBuff: BuffAbstract {
     init(duration: Int, resistanceFraction: Double) {
         self.resistanceFraction = resistanceFraction
         
-        super.init(duration: duration, type: .resistance)
+        super.init(duration: duration, type: .resistance, priority: 1)
     }
     
     override func applyResistance(damage: Int) -> Int? {

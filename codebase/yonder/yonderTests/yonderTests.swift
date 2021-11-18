@@ -63,5 +63,15 @@ class yonderTests: XCTestCase {
         foe.attack(target: player, weapon: foe.getWeapon())
         XCTAssertTrue(player.health == 180)
     }
+    
+    func testBuffPriority() throws {
+        let player = Player(maxHealth: 200)
+        let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 25))
+        foe.addBuff(DamagePercentBuff(duration: 5, damageFraction: 2.0))
+        foe.addBuff(DamageBuff(duration: 5, damageDifference: 5))
+        foe.addBuff(DamagePercentBuff(duration: 5, damageFraction: 2.0))
+        foe.attack(target: player, weapon: foe.getWeapon())
+        XCTAssertTrue(player.health == 80)
+    }
 
 }
