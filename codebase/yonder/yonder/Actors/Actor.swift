@@ -92,13 +92,6 @@ class ActorAbstract {
     // MARK: - Combat
     
     func attack(target: ActorAbstract, weapon: WeaponAbstract) {
-        var appliedDamage = weapon.damage
-        for buff in self.buffs {
-            if buff.type == .damage {
-                appliedDamage = buff.applyToDamage(damage: appliedDamage)!
-            }
-        }
-        weapon.setAppliedDamage(to: appliedDamage)
         weapon.use(owner: self, target: target)
     }
     

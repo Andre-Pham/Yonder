@@ -16,7 +16,7 @@ class BaseAttack: WeaponAbstract {
     }
     
     func use(owner: ActorAbstract, target: ActorAbstract) {
-        target.damage(for: self.appliedDamage)
+        target.damage(for: self.getAppliedDamage(owner: owner, target: target))
     }
     
 }

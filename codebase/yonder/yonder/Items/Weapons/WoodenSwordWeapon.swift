@@ -16,7 +16,7 @@ class WoodenSword: WeaponAbstract {
     }
     
     func use(owner: ActorAbstract, target: ActorAbstract) {
-        target.damage(for: self.appliedDamage)
+        target.damage(for: self.getAppliedDamage(owner: owner, target: target))
         self.durability -= 1
     }
     
