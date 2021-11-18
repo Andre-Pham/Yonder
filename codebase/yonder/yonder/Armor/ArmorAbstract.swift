@@ -13,18 +13,10 @@ enum ArmorType {
     case legs
 }
 
-class ArmorAbstract {
+protocol ArmorAbstract {
     
-    public let type: ArmorType
-    private(set) var maxArmor: Int
-    private(set) var armor: Int
-    private(set) var armorBuffs: [ArmorBuffAbstract]
-    
-    init(type: ArmorType, maxArmor: Int, effects: [ArmorBuffAbstract]) {
-        self.type = type
-        self.maxArmor = maxArmor
-        self.armor = maxArmor
-        self.armorBuffs = effects
-    }
+    var type: ArmorType { get }
+    var armorPoints: Int { get }
+    var armorBuffs: [BuffAbstract] { get }
     
 }

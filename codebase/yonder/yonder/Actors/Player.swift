@@ -9,8 +9,6 @@ import Foundation
 
 class Player: ActorAbstract {
     
-    private(set) var armor: Int = 0
-    
     override init(maxHealth: Int) {
         super.init(maxHealth: maxHealth)
     }

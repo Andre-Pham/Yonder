@@ -22,6 +22,10 @@ class ActorAbstract {
     private(set) var timedEvents = [TimedEventAbstract]()
     private(set) var weapons = [WeaponAbstract]()
     private(set) var buffs = [BuffAbstract]()
+    private(set) var armorPoints: Int = 0
+    private(set) var headArmor: ArmorAbstract = NoHeadArmor()
+    private(set) var bodyArmor: ArmorAbstract = NoBodyArmor()
+    private(set) var legsArmor: ArmorAbstract = NoLegsArmor()
     
     init(maxHealth: Int) {
         self.maxHealth = maxHealth
@@ -31,7 +35,7 @@ class ActorAbstract {
     
     // MARK: - Health Related
     
-    func heal(for amount: Int) {
+    func restoreHealth(for amount: Int) {
         if self.health + amount > self.maxHealth {
             self.health = self.maxHealth
         }
@@ -40,12 +44,27 @@ class ActorAbstract {
         }
     }
     
-    func damage(for amount: Int) {
-        self.health -= amount
+    func restoreArmorPoints(for amount: Int) {
+        if self.armorPoints + amount > self.armorPoints {
+            self.armorPoints = self.getMaxArmorPoints()
+        }
+        else {
+            self.armorPoints += amount
+        }
     }
     
-    func setHealth(to amount: Int) {
-        self.health = min(amount, maxHealth)
+    func damage(for amount: Int) {
+        if self.armorPoints > amount {
+            self.armorPoints -= amount
+        }
+        else if self.armorPoints > 0 {
+            let healthDamage = amount - self.armorPoints
+            self.armorPoints = 0
+            self.health -= healthDamage
+        }
+        else {
+            self.health -= amount
+        }
     }
     
     // MARK: - Status Effects
@@ -89,9 +108,36 @@ class ActorAbstract {
         self.buffs.append(buff)
     }
     
-    func orderBuffsInPriority() {
+    func getAllBuffsInPriority() -> [BuffAbstract] {
+        let allBuffs: [BuffAbstract] = self.buffs + self.headArmor.armorBuffs + self.bodyArmor.armorBuffs + self.legsArmor.armorBuffs
         // Ascending order
-        self.buffs = self.buffs.sorted(by: { $0.priority < $1.priority })
+        return allBuffs.sorted(by: { $0.priority < $1.priority })
+    }
+    
+    // MARK: - Armor
+    
+    func getMaxArmorPoints() -> Int {
+        return self.headArmor.armorPoints + self.bodyArmor.armorPoints + self.legsArmor.armorPoints
+    }
+    
+    func equipArmor(_ armor: ArmorAbstract) {
+        switch armor.type {
+        case .head:
+            self.armorPoints = min(self.armorPoints, self.getMaxArmorPoints() - self.headArmor.armorPoints)
+            self.headArmor = armor
+            self.armorPoints += armor.armorPoints
+            return
+        case .body:
+            self.armorPoints = min(self.armorPoints, self.getMaxArmorPoints() - self.bodyArmor.armorPoints)
+            self.bodyArmor = armor
+            self.armorPoints += armor.armorPoints
+            return
+        case .legs:
+            self.armorPoints = min(self.armorPoints, self.getMaxArmorPoints() - self.legsArmor.armorPoints)
+            self.bodyArmor = armor
+            self.armorPoints += armor.armorPoints
+            return
+        }
     }
     
     // MARK: - Combat

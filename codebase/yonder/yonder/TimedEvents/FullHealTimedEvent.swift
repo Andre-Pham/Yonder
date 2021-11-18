@@ -28,7 +28,7 @@ class FullHealTimedEvent: TimedEventAbstract {
     }
     
     func triggerEvent() {
-        self.target.heal(for: target.maxHealth)
+        self.target.restoreHealth(for: target.maxHealth)
     }
     
 }

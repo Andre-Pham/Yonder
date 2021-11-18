@@ -16,14 +16,12 @@ class WeaponAbstractPart {
     
     func getAppliedDamage(owner: ActorAbstract, target: ActorAbstract) -> Int {
         var appliedDamage = self.damage
-        owner.orderBuffsInPriority()
-        for buff in owner.buffs {
+        for buff in owner.getAllBuffsInPriority() {
             if buff.type == .damage {
                 appliedDamage = buff.applyDamage(to: appliedDamage)!
             }
         }
-        target.orderBuffsInPriority()
-        for buff in target.buffs {
+        for buff in target.getAllBuffsInPriority() {
             if buff.type == .resistance {
                 appliedDamage = buff.applyResistance(to: appliedDamage)!
             }
