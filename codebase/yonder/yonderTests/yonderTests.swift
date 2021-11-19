@@ -71,5 +71,15 @@ class yonderTests: XCTestCase {
         foe.attack(target: player, weapon: foe.getWeapon())
         XCTAssertTrue(player.health == 80)
     }
+    
+    func testArmor() throws {
+        let player = Player(maxHealth: 200)
+        player.equipArmor(TestHeadArmor())
+        player.equipArmor(TestBodyArmor())
+        let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 100))
+        foe.attack(target: player, weapon: foe.getWeapon())
+        print(player.health)
+        XCTAssertTrue(player.armorPoints == player.headArmor.armorPoints + player.bodyArmor.armorPoints - 64)
+    }
 
 }

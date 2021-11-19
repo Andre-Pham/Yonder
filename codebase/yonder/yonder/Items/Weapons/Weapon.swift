@@ -22,8 +22,8 @@ class WeaponAbstractPart {
             }
         }
         for buff in target.getAllBuffsInPriority() {
-            if buff.type == .resistance {
-                appliedDamage = buff.applyResistance(to: appliedDamage)!
+            if buff.type == .damage {
+                appliedDamage = buff.applyDamage(to: appliedDamage)!
             }
         }
         return appliedDamage

@@ -9,7 +9,6 @@ import Foundation
 
 enum BuffType {
     case damage
-    case resistance
 }
 
 class BuffAbstract {
@@ -31,10 +30,6 @@ class BuffAbstract {
     }
     
     func applyDamage(to damage: Int) -> Int? {
-        return nil
-    }
-    
-    func applyResistance(to damage: Int) -> Int? {
         return nil
     }
     
