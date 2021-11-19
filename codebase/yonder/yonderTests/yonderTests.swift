@@ -74,8 +74,8 @@ class yonderTests: XCTestCase {
     
     func testArmor() throws {
         let player = Player(maxHealth: 200)
-        player.equipArmor(TestHeadArmor())
-        player.equipArmor(TestBodyArmor())
+        player.equipArmor(TEST_HEAD_ARMOR)
+        player.equipArmor(TEST_BODY_ARMOR)
         let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 100))
         foe.attack(target: player, weapon: foe.getWeapon())
         print(player.health)

@@ -7,26 +7,14 @@
 
 import Foundation
 
-class NoHeadArmor: ArmorAbstract {
+class NoArmor: ArmorAbstract {
     
-    let type: ArmorType = .head
+    let type: ArmorType
     public private(set) var armorPoints: Int = 0
     public private(set) var armorBuffs = [BuffAbstract]()
     
-}
-
-class NoBodyArmor: ArmorAbstract {
-    
-    let type: ArmorType = .body
-    public private(set) var armorPoints: Int = 0
-    public private(set) var armorBuffs = [BuffAbstract]()
-    
-}
-
-class NoLegsArmor: ArmorAbstract {
-    
-    let type: ArmorType = .legs
-    public private(set) var armorPoints: Int = 0
-    public private(set) var armorBuffs = [BuffAbstract]()
+    init(type: ArmorType) {
+        self.type = type
+    }
     
 }

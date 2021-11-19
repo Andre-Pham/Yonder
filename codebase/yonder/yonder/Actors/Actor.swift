@@ -23,9 +23,9 @@ class ActorAbstract {
     private(set) var weapons = [WeaponAbstract]()
     private(set) var buffs = [BuffAbstract]()
     private(set) var armorPoints: Int = 0
-    private(set) var headArmor: ArmorAbstract = NoHeadArmor()
-    private(set) var bodyArmor: ArmorAbstract = NoBodyArmor()
-    private(set) var legsArmor: ArmorAbstract = NoLegsArmor()
+    private(set) var headArmor: ArmorAbstract = NO_HEAD_ARMOR
+    private(set) var bodyArmor: ArmorAbstract = NO_BODY_ARMOR
+    private(set) var legsArmor: ArmorAbstract = NO_LEGS_ARMOR
     
     init(maxHealth: Int) {
         self.maxHealth = maxHealth
