@@ -89,5 +89,19 @@ class yonderTests: XCTestCase {
         player.useWeaponOn(target: player, weapon: player.weapons.first!)
         XCTAssertTrue(player.health == 150)
     }
+    
+    func testDullingWeapon() throws {
+        let player = Player(maxHealth: 200)
+        player.addWeapon(DullingWeapon(damage: 7, damageLostPerUse: 2))
+        let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 100))
+        player.useWeaponOn(target: foe, weapon: player.weapons.first!)
+        player.useWeaponOn(target: foe, weapon: player.weapons.first!)
+        player.useWeaponOn(target: foe, weapon: player.weapons.first!)
+        XCTAssertTrue(player.weapons.first!.damage == 1)
+        XCTAssertTrue(player.weapons.first!.durability == 1)
+        player.useWeaponOn(target: foe, weapon: player.weapons.first!)
+        XCTAssertTrue(player.weapons.first!.durability == 0)
+        XCTAssertTrue(foe.health == 200 - 7 - 5 - 3 - 1)
+    }
 
 }
