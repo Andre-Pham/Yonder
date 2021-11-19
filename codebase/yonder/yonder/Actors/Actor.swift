@@ -22,6 +22,7 @@ class ActorAbstract {
     private(set) var timedEvents = [TimedEventAbstract]()
     private(set) var weapons = [WeaponAbstract]()
     private(set) var buffs = [BuffAbstract]()
+    private(set) var potions = [PotionAbstract]()
     private(set) var armorPoints: Int = 0
     private(set) var headArmor: ArmorAbstract = NO_HEAD_ARMOR
     private(set) var bodyArmor: ArmorAbstract = NO_BODY_ARMOR
@@ -45,12 +46,18 @@ class ActorAbstract {
     }
     
     func restoreArmorPoints(for amount: Int) {
-        if self.armorPoints + amount > self.armorPoints {
+        if self.armorPoints + amount > self.getMaxArmorPoints() {
             self.armorPoints = self.getMaxArmorPoints()
         }
         else {
             self.armorPoints += amount
         }
+    }
+    
+    func restore(for amount: Int) {
+        let amountRemaining = max(0, amount - (self.maxHealth - self.health))
+        self.restoreHealth(for: amount)
+        self.restoreArmorPoints(for: amountRemaining)
     }
     
     func damage(for amount: Int) {
@@ -100,6 +107,12 @@ class ActorAbstract {
     
     func addWeapon(_ weapon: WeaponAbstract) {
         self.weapons.append(weapon)
+    }
+    
+    // MARK: - Potions
+    
+    func addPotion(_ potion: PotionAbstract) {
+        self.potions.append(potion)
     }
     
     // MARK: - Buffs

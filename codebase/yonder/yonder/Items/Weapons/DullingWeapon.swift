@@ -16,14 +16,14 @@ class DullingWeapon: WeaponAbstract {
         
         super.init()
         self.damage = damage
-        self.durability = 1
+        self.remainingUses = 1
     }
     
     func use(owner: ActorAbstract, target: ActorAbstract) {
         target.damage(for: self.getAppliedDamage(owner: owner, target: target))
         self.damage -= self.damageLostPerUse
         if self.damage <= 0 {
-            self.durability = 0
+            self.remainingUses = 0
         }
     }
     

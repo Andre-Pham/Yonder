@@ -12,7 +12,7 @@ class BaseAttack: WeaponAbstract {
     init(damage: Int) {
         super.init()
         self.damage = damage
-        self.durability = 1
+        self.remainingUses = 1
     }
     
     func use(owner: ActorAbstract, target: ActorAbstract) {

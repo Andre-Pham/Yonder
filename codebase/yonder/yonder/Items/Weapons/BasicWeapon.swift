@@ -12,12 +12,12 @@ class BasicWeapon: WeaponAbstract {
     init(damage: Int, durability: Int) {
         super.init()
         self.damage = damage
-        self.durability = durability
+        self.remainingUses = durability
     }
     
     func use(owner: ActorAbstract, target: ActorAbstract) {
         target.damage(for: self.getAppliedDamage(owner: owner, target: target))
-        self.durability -= 1
+        self.remainingUses -= 1
     }
     
 }

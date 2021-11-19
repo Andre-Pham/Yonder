@@ -84,7 +84,7 @@ class yonderTests: XCTestCase {
     
     func testHealingWeapon() throws {
         let player = Player(maxHealth: 200)
-        player.addWeapon(HealingWeapon(healthRestoration: 50, durability: 2))
+        player.addWeapon(HealthRestorationWeapon(healthRestoration: 50, durability: 2))
         player.damage(for: 100)
         player.useWeaponOn(target: player, weapon: player.weapons.first!)
         XCTAssertTrue(player.health == 150)
@@ -98,10 +98,42 @@ class yonderTests: XCTestCase {
         player.useWeaponOn(target: foe, weapon: player.weapons.first!)
         player.useWeaponOn(target: foe, weapon: player.weapons.first!)
         XCTAssertTrue(player.weapons.first!.damage == 1)
-        XCTAssertTrue(player.weapons.first!.durability == 1)
+        XCTAssertTrue(player.weapons.first!.remainingUses == 1)
         player.useWeaponOn(target: foe, weapon: player.weapons.first!)
-        XCTAssertTrue(player.weapons.first!.durability == 0)
+        XCTAssertTrue(player.weapons.first!.remainingUses == 0)
         XCTAssertTrue(foe.health == 200 - 7 - 5 - 3 - 1)
+    }
+    
+    func testRestore() throws {
+        var player = Player(maxHealth: 200)
+        player.equipArmor(TEST_HEAD_ARMOR)
+        player.damage(for: 250)
+        XCTAssertEqual(player.health, 150)
+        XCTAssertEqual(player.armorPoints, 0)
+        player.restore(for: 100)
+        XCTAssertEqual(player.health, 200)
+        XCTAssertEqual(player.armorPoints, 50)
+        player = Player(maxHealth: 200)
+        player.equipArmor(TEST_HEAD_ARMOR)
+        player.damage(for: 300)
+        player.restore(for: 50)
+        XCTAssertEqual(player.health, 150)
+        XCTAssertEqual(player.armorPoints, 0)
+    }
+    
+    func testPotion() throws {
+        var player = Player(maxHealth: 200)
+        player.damage(for: 100)
+        player.addPotion(HealthRestorationPotion(healthRestoration: 50, potionCount: 1))
+        player.potions.first!.use(owner: player, target: player)
+        XCTAssertEqual(player.health, 150)
+        player = Player(maxHealth: 200)
+        player.equipArmor(TEST_HEAD_ARMOR)
+        player.damage(for: 350)
+        player.addPotion(FullRestorationPotion(potionCount: 1))
+        player.potions.first!.use(owner: player, target: player)
+        XCTAssertEqual(player.health, 200)
+        XCTAssertEqual(player.armorPoints, 200)
     }
 
 }
