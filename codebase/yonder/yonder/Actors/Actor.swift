@@ -142,7 +142,7 @@ class ActorAbstract {
     
     // MARK: - Combat
     
-    func attack(target: ActorAbstract, weapon: WeaponAbstract) {
+    func useWeaponOn(target: ActorAbstract, weapon: WeaponAbstract) {
         weapon.use(owner: self, target: target)
     }
     

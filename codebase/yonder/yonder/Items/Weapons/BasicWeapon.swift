@@ -1,5 +1,5 @@
 //
-//  WoodenSwordWeapon.swift
+//  BasicWeapon.swift
 //  yonder
 //
 //  Created by Andre Pham on 18/11/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class WoodenSword: WeaponAbstract {
+class BasicWeapon: WeaponAbstract {
     
     init(damage: Int, durability: Int) {
         super.init()

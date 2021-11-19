@@ -9,6 +9,7 @@ import Foundation
 
 enum BuffType {
     case damage
+    case health
 }
 
 class BuffAbstract {
@@ -30,6 +31,10 @@ class BuffAbstract {
     }
     
     func applyDamage(to damage: Int) -> Int? {
+        return nil
+    }
+    
+    func applyHealth(to health: Int) -> Int? {
         return nil
     }
     

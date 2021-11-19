@@ -21,7 +21,7 @@ class yonderTests: XCTestCase {
     func testAttack() throws {
         let player = Player(maxHealth: 200)
         let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 5))
-        foe.attack(target: player, weapon: foe.getWeapon())
+        foe.useWeaponOn(target: player, weapon: foe.getWeapon())
         XCTAssertTrue(player.health == 195)
     }
     
@@ -58,7 +58,7 @@ class yonderTests: XCTestCase {
         let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 5))
         foe.addBuff(DamagePercentBuff(duration: 5, damageFraction: 2.0))
         foe.addBuff(DamagePercentBuff(duration: 5, damageFraction: 2.0))
-        foe.attack(target: player, weapon: foe.getWeapon())
+        foe.useWeaponOn(target: player, weapon: foe.getWeapon())
         XCTAssertTrue(player.health == 180)
     }
     
@@ -68,7 +68,7 @@ class yonderTests: XCTestCase {
         foe.addBuff(DamagePercentBuff(duration: 5, damageFraction: 2.0))
         foe.addBuff(DamageBuff(duration: 5, damageDifference: 5))
         foe.addBuff(DamagePercentBuff(duration: 5, damageFraction: 2.0))
-        foe.attack(target: player, weapon: foe.getWeapon())
+        foe.useWeaponOn(target: player, weapon: foe.getWeapon())
         XCTAssertTrue(player.health == 80)
     }
     
@@ -77,9 +77,17 @@ class yonderTests: XCTestCase {
         player.equipArmor(TEST_HEAD_ARMOR)
         player.equipArmor(TEST_BODY_ARMOR)
         let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 100))
-        foe.attack(target: player, weapon: foe.getWeapon())
+        foe.useWeaponOn(target: player, weapon: foe.getWeapon())
         print(player.health)
         XCTAssertTrue(player.armorPoints == player.headArmor.armorPoints + player.bodyArmor.armorPoints - 64)
+    }
+    
+    func testHealingWeapon() throws {
+        let player = Player(maxHealth: 200)
+        player.addWeapon(HealingWeapon(healthRestoration: 50, durability: 2))
+        player.damage(for: 100)
+        player.useWeaponOn(target: player, weapon: player.weapons.first!)
+        XCTAssertTrue(player.health == 150)
     }
 
 }
