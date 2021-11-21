@@ -135,5 +135,15 @@ class yonderTests: XCTestCase {
         XCTAssertEqual(player.health, 200)
         XCTAssertEqual(player.armorPoints, 200)
     }
+    
+    func testRemoveWeapon() throws {
+        let player = Player(maxHealth: 200)
+        let weapon = BasicWeapon(damage: 5, durability: 2)
+        player.addWeapon(weapon)
+        player.useWeaponOn(target: player, weapon: weapon)
+        XCTAssertEqual(player.weapons.count, 1)
+        player.useWeaponOn(target: player, weapon: weapon)
+        XCTAssertEqual(player.weapons.count, 0)
+    }
 
 }

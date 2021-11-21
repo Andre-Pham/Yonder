@@ -12,6 +12,7 @@ class ItemAbstract {
     var damage: Int = 0
     var healthRestoration: Int = 0
     var remainingUses: Int = 0
+    public let id = UUID().uuidString
     
     func getAppliedDamage(owner: ActorAbstract, target: ActorAbstract) -> Int {
         var appliedDamage = self.damage

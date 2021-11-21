@@ -109,6 +109,13 @@ class ActorAbstract {
         self.weapons.append(weapon)
     }
     
+    func removeWeapon(_ weapon: WeaponAbstract) {
+        guard let index = (self.weapons.firstIndex { $0.id == weapon.id }) else {
+            return
+        }
+        self.weapons.remove(at: index)
+    }
+    
     // MARK: - Potions
     
     func addPotion(_ potion: PotionAbstract) {
@@ -157,6 +164,9 @@ class ActorAbstract {
     
     func useWeaponOn(target: ActorAbstract, weapon: WeaponAbstract) {
         weapon.use(owner: self, target: target)
+        if weapon.remainingUses == 0 {
+            self.removeWeapon(weapon)
+        }
     }
     
 }
