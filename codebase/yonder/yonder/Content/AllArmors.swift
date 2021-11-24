@@ -7,14 +7,34 @@
 
 import Foundation
 
-// MARK: - No Armor
-
-let NO_HEAD_ARMOR = NoArmor(type: .head)
-let NO_BODY_ARMOR = NoArmor(type: .body)
-let NO_LEGS_ARMOR = NoArmor(type: .legs)
-
-// MARK: - Resistance Armor
-
-let TEST_HEAD_ARMOR = ResistanceArmor(type: .head, armorPoints: 200, damageFraction: 0.8)
-let TEST_BODY_ARMOR = ResistanceArmor(type: .body, armorPoints: 200, damageFraction: 0.8)
-let TEST_LEGS_ARMOR = ResistanceArmor(type: .legs, armorPoints: 200, damageFraction: 0.8)
+enum Armors {
+    
+    // MARK: - No Armor
+    
+    // Empty armor slots
+    static func newNoHeadArmor() -> NoArmor {
+        return NoArmor(type: .head)
+    }
+    static func newNoBodyArmor() -> NoArmor {
+        return NoArmor(type: .body)
+    }
+    static func newNoLegsArmor() -> NoArmor {
+        return NoArmor(type: .legs)
+    }
+    
+    // MARK: - Resistance Armor
+    
+    // Test armor set
+    static func newTestHeadArmor() -> ResistanceArmor {
+        return ResistanceArmor(type: .head, armorPoints: 200, damageFraction: 0.8)
+    }
+    static func newTestBodyArmor() -> ResistanceArmor {
+        return ResistanceArmor(type: .body, armorPoints: 200, damageFraction: 0.8)
+    }
+    static func newTestLegsArmor() -> ResistanceArmor {
+        return ResistanceArmor(type: .legs, armorPoints: 200, damageFraction: 0.8)
+    }
+    
+    // Future sets follow the naming scheme, e.g. "newFireBreathHeadArmor"
+    
+}

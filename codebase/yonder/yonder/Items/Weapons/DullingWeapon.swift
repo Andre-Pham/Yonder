@@ -9,8 +9,7 @@ import Foundation
 
 class DullingWeapon: WeaponAbstract {
     
-    static var sharedID = UUID()
-    
+    public static let sharedID = UUID()
     public let damageLostPerUse: Int
     
     init(damage: Int, damageLostPerUse: Int) {

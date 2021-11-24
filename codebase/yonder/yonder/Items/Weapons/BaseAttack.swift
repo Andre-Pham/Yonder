@@ -9,7 +9,7 @@ import Foundation
 
 class BaseAttack: WeaponAbstract {
     
-    static var sharedID = UUID()
+    public static let sharedID = UUID()
     
     init(damage: Int) {
         super.init()

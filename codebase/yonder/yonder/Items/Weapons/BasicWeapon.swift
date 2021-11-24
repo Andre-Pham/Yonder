@@ -9,7 +9,7 @@ import Foundation
 
 class BasicWeapon: WeaponAbstract {
     
-    static var sharedID = UUID()
+    public static let sharedID = UUID()
     
     init(damage: Int, durability: Int) {
         super.init()

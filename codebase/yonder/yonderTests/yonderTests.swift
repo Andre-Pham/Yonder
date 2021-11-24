@@ -74,8 +74,8 @@ class yonderTests: XCTestCase {
     
     func testArmor() throws {
         let player = Player(maxHealth: 200)
-        player.equipArmor(TEST_HEAD_ARMOR)
-        player.equipArmor(TEST_BODY_ARMOR)
+        player.equipArmor(Armors.newTestHeadArmor())
+        player.equipArmor(Armors.newTestBodyArmor())
         let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 100))
         foe.useWeaponOn(target: player, weapon: foe.getWeapon())
         print(player.health)
@@ -107,7 +107,7 @@ class yonderTests: XCTestCase {
     
     func testRestore() throws {
         var player = Player(maxHealth: 200)
-        player.equipArmor(TEST_HEAD_ARMOR)
+        player.equipArmor(Armors.newTestHeadArmor())
         player.damage(for: 250)
         XCTAssertEqual(player.health, 150)
         XCTAssertEqual(player.armorPoints, 0)
@@ -115,7 +115,7 @@ class yonderTests: XCTestCase {
         XCTAssertEqual(player.health, 200)
         XCTAssertEqual(player.armorPoints, 50)
         player = Player(maxHealth: 200)
-        player.equipArmor(TEST_HEAD_ARMOR)
+        player.equipArmor(Armors.newTestHeadArmor())
         player.damage(for: 300)
         player.restore(for: 50)
         XCTAssertEqual(player.health, 150)
@@ -129,7 +129,7 @@ class yonderTests: XCTestCase {
         player.potions.first!.use(owner: player, target: player)
         XCTAssertEqual(player.health, 150)
         player = Player(maxHealth: 200)
-        player.equipArmor(TEST_HEAD_ARMOR)
+        player.equipArmor(Armors.newTestHeadArmor())
         player.damage(for: 350)
         player.addPotion(FullRestorationPotion(potionCount: 1))
         player.potions.first!.use(owner: player, target: player)

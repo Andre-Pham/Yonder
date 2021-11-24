@@ -7,8 +7,20 @@
 
 import Foundation
 
-// MARK: - Test Weapons
-
-let TEST_BASIC_WEAPON = BasicWeapon(damage: 100, durability: 5)
-let TEST_HEALING_WEAPON = HealthRestorationWeapon(healthRestoration: 50, durability: 5)
-let TEST_DULLING_WEAPON = DullingWeapon(damage: 7, damageLostPerUse: 2)
+enum Weapons {
+    
+    // MARK: - Test Weapons
+    
+    static func newTestBasicWeapon() -> BasicWeapon {
+        return BasicWeapon(damage: 100, durability: 5)
+    }
+    
+    static func newTestHealingWeapon() -> HealthRestorationWeapon {
+        return HealthRestorationWeapon(healthRestoration: 50, durability: 5)
+    }
+    
+    static func newTestDullingWeapon() -> DullingWeapon {
+        return DullingWeapon(damage: 7, damageLostPerUse: 2)
+    }
+    
+}

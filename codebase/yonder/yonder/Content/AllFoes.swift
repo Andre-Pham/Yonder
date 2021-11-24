@@ -7,6 +7,12 @@
 
 import Foundation
 
-// MARK: - Test Foes
-
-let TEST_FOE = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 100))
+enum Foes {
+    
+    // MARK: - Test Foes
+    
+    static func newTestFoe() -> FoeAbstract {
+        return FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 100))
+    }
+    
+}

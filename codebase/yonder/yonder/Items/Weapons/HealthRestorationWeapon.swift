@@ -9,7 +9,7 @@ import Foundation
 
 class HealthRestorationWeapon: WeaponAbstract {
     
-    static var sharedID = UUID()
+    public static let sharedID = UUID()
     
     init(healthRestoration: Int, durability: Int) {
         super.init()
