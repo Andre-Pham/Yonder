@@ -9,6 +9,8 @@ import Foundation
 
 class HealthRestorationWeapon: WeaponAbstract {
     
+    static var sharedID = UUID()
+    
     init(healthRestoration: Int, durability: Int) {
         super.init()
         self.healthRestoration = healthRestoration

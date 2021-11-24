@@ -9,6 +9,8 @@ import Foundation
 
 class BasicWeapon: WeaponAbstract {
     
+    static var sharedID = UUID()
+    
     init(damage: Int, durability: Int) {
         super.init()
         self.damage = damage

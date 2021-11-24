@@ -92,7 +92,8 @@ class yonderTests: XCTestCase {
     
     func testDullingWeapon() throws {
         let player = Player(maxHealth: 200)
-        player.addWeapon(DullingWeapon(damage: 7, damageLostPerUse: 2))
+        let weapon = DullingWeapon(damage: 7, damageLostPerUse: 2)
+        player.addWeapon(weapon)
         let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 100))
         player.useWeaponOn(target: foe, weapon: player.weapons.first!)
         player.useWeaponOn(target: foe, weapon: player.weapons.first!)
@@ -100,7 +101,7 @@ class yonderTests: XCTestCase {
         XCTAssertTrue(player.weapons.first!.damage == 1)
         XCTAssertTrue(player.weapons.first!.remainingUses == 1)
         player.useWeaponOn(target: foe, weapon: player.weapons.first!)
-        XCTAssertTrue(player.weapons.first!.remainingUses == 0)
+        XCTAssertTrue(weapon.remainingUses == 0)
         XCTAssertTrue(foe.health == 200 - 7 - 5 - 3 - 1)
     }
     
@@ -144,6 +145,16 @@ class yonderTests: XCTestCase {
         XCTAssertEqual(player.weapons.count, 1)
         player.useWeaponOn(target: player, weapon: weapon)
         XCTAssertEqual(player.weapons.count, 0)
+    }
+    
+    func testIDs() throws {
+        let weapon1 = BasicWeapon(damage: 5, durability: 2)
+        let weapon2 = BasicWeapon(damage: 5, durability: 2)
+        let weapon3 = BasicWeapon(damage: 4, durability: 2)
+        XCTAssertTrue(weapon1.id != weapon2.id && weapon2.id != weapon3.id && weapon1.id != weapon3.id)
+        let weapon4 = BaseAttack(damage: 5)
+        XCTAssertNotEqual(weapon1.getSharedID(), weapon4.getSharedID())
+        XCTAssertEqual(weapon1.getSharedID(), weapon2.getSharedID())
     }
 
 }

@@ -9,6 +9,8 @@ import Foundation
 
 class BaseAttack: WeaponAbstract {
     
+    static var sharedID = UUID()
+    
     init(damage: Int) {
         super.init()
         self.damage = damage

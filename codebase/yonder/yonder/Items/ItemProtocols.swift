@@ -12,3 +12,16 @@ protocol Usable {
     func use(owner: ActorAbstract, target: ActorAbstract)
     
 }
+
+protocol SharedID {
+    
+    static var sharedID: UUID { get }
+    
+}
+extension SharedID {
+    
+    func getSharedID() -> UUID {
+        return type(of: self).sharedID
+    }
+    
+}
