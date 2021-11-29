@@ -9,7 +9,11 @@ import Foundation
 
 class Player: ActorAbstract {
     
-    override init(maxHealth: Int) {
+    private(set) var location: Location
+    
+    init(maxHealth: Int, location: Location) {
+        self.location = location
+        
         super.init(maxHealth: maxHealth)
     }
     

@@ -12,15 +12,15 @@ class TavernArea {
     private(set) var rootLocations = [Location]()
     private(set) var tipLocations = [Location]()
     
-    func addRootLocation(_ location: Location) {
-        self.rootLocations.append(location)
+    func addRootLocations(_ locations: [Location]) {
+        self.rootLocations.append(contentsOf: locations)
     }
     
-    func addTipLocation(_ location: Location) {
-        self.tipLocations.append(location)
+    func addTipLocations(_ locations: [Location]) {
+        self.tipLocations.append(contentsOf: locations)
     }
     
-    func createDirectedEdge(from location: Location, to nextLocations: [Location]) {
+    func createDirectedEdges(from location: Location, to nextLocations: [Location]) {
         location.addNextLocations(nextLocations)
     }
 

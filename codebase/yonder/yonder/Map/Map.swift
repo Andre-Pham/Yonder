@@ -10,11 +10,18 @@ import Foundation
 class Map {
     
     private(set) var territoriesInOrder: [Territory]
-    private(set) var startingLocation: Location // Attach this to the first territory
+    private(set) var startingLocation: Location
     
     init(territoriesInOrder: [Territory]) {
         self.territoriesInOrder = territoriesInOrder
         self.startingLocation = Location(locationBridgeAccessibility: .noBridge)
+        
+        guard self.territoriesInOrder.count > 0 else {
+            fatalError("No territories were defined for the map")
+        }
+        for area in self.territoriesInOrder[0].segment.allAreas {
+            self.startingLocation.addNextLocations([area.rootLocation])
+        }
     }
     
 }

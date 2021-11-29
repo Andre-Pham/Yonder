@@ -9,12 +9,16 @@ import Foundation
 
 class Territory {
     
-    private(set) var area: Area
+    private(set) var segment: Segment
     private(set) var tavernArea: TavernArea
     
-    init(area: Area, followingTavernArea: TavernArea) {
-        self.area = area
+    init(segment: Segment, followingTavernArea: TavernArea) {
+        self.segment = segment
         self.tavernArea = followingTavernArea
+        
+        for area in segment.allAreas {
+            area.tipLocation.addNextLocations(tavernArea.rootLocations)
+        }
     }
     
 }

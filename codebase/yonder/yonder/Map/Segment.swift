@@ -12,6 +12,11 @@ class Segment {
     private(set) var leftArea: Area
     private(set) var middleArea: Area
     private(set) var rightArea: Area
+    public var allAreas: [Area] {
+        get {
+            return [self.leftArea, self.middleArea, self.rightArea]
+        }
+    }
     
     init(leftArea: Area, middleArea: Area, rightArea: Area) {
         self.leftArea = leftArea

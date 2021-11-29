@@ -19,14 +19,14 @@ class yonderTests: XCTestCase {
     }
     
     func testAttack() throws {
-        let player = Player(maxHealth: 200)
+        let player = Player(maxHealth: 200, location: Location(locationBridgeAccessibility: .noBridge))
         let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 5))
         foe.useWeaponOn(target: player, weapon: foe.getWeapon())
         XCTAssertTrue(player.health == 195)
     }
     
     func testDeath() throws {
-        let player = Player(maxHealth: 200)
+        let player = Player(maxHealth: 200, location: Location(locationBridgeAccessibility: .noBridge))
         player.damage(for: 150)
         XCTAssertTrue(!player.isDead)
         player.damage(for: 150)
@@ -34,14 +34,14 @@ class yonderTests: XCTestCase {
     }
     
     func testStatusEffects() throws {
-        let player = Player(maxHealth: 200)
+        let player = Player(maxHealth: 200, location: Location(locationBridgeAccessibility: .noBridge))
         player.addStatusEffect(BurnStatusEffect(damage: 5))
         player.triggerStatusEffects()
         XCTAssertTrue(player.health == 195)
     }
     
     func testTimedEvents() throws {
-        let player = Player(maxHealth: 200)
+        let player = Player(maxHealth: 200, location: Location(locationBridgeAccessibility: .noBridge))
         player.damage(for: 150)
         let timedEvent = FullHealTimedEvent(timeToTrigger: 2, target: player)
         player.addTimedEvent(timedEvent)
@@ -54,7 +54,7 @@ class yonderTests: XCTestCase {
     }
     
     func testBuffs() throws {
-        let player = Player(maxHealth: 200)
+        let player = Player(maxHealth: 200, location: Location(locationBridgeAccessibility: .noBridge))
         let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 5))
         foe.addBuff(DamagePercentBuff(duration: 5, damageFraction: 2.0))
         foe.addBuff(DamagePercentBuff(duration: 5, damageFraction: 2.0))
@@ -63,7 +63,7 @@ class yonderTests: XCTestCase {
     }
     
     func testBuffPriority() throws {
-        let player = Player(maxHealth: 200)
+        let player = Player(maxHealth: 200, location: Location(locationBridgeAccessibility: .noBridge))
         let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 25))
         foe.addBuff(DamagePercentBuff(duration: 5, damageFraction: 2.0))
         foe.addBuff(DamageBuff(duration: 5, damageDifference: 5))
@@ -73,7 +73,7 @@ class yonderTests: XCTestCase {
     }
     
     func testArmor() throws {
-        let player = Player(maxHealth: 200)
+        let player = Player(maxHealth: 200, location: Location(locationBridgeAccessibility: .noBridge))
         player.equipArmor(Armors.newTestHeadArmor())
         player.equipArmor(Armors.newTestBodyArmor())
         let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 100))
@@ -83,7 +83,7 @@ class yonderTests: XCTestCase {
     }
     
     func testHealingWeapon() throws {
-        let player = Player(maxHealth: 200)
+        let player = Player(maxHealth: 200, location: Location(locationBridgeAccessibility: .noBridge))
         player.addWeapon(HealthRestorationWeapon(healthRestoration: 50, durability: 2))
         player.damage(for: 100)
         player.useWeaponOn(target: player, weapon: player.weapons.first!)
@@ -91,7 +91,7 @@ class yonderTests: XCTestCase {
     }
     
     func testDullingWeapon() throws {
-        let player = Player(maxHealth: 200)
+        let player = Player(maxHealth: 200, location: Location(locationBridgeAccessibility: .noBridge))
         let weapon = DullingWeapon(damage: 7, damageLostPerUse: 2)
         player.addWeapon(weapon)
         let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 100))
@@ -106,7 +106,7 @@ class yonderTests: XCTestCase {
     }
     
     func testRestore() throws {
-        var player = Player(maxHealth: 200)
+        var player = Player(maxHealth: 200, location: Location(locationBridgeAccessibility: .noBridge))
         player.equipArmor(Armors.newTestHeadArmor())
         player.damage(for: 250)
         XCTAssertEqual(player.health, 150)
@@ -114,7 +114,7 @@ class yonderTests: XCTestCase {
         player.restore(for: 100)
         XCTAssertEqual(player.health, 200)
         XCTAssertEqual(player.armorPoints, 50)
-        player = Player(maxHealth: 200)
+        player = Player(maxHealth: 200, location: Location(locationBridgeAccessibility: .noBridge))
         player.equipArmor(Armors.newTestHeadArmor())
         player.damage(for: 300)
         player.restore(for: 50)
@@ -123,12 +123,12 @@ class yonderTests: XCTestCase {
     }
     
     func testPotion() throws {
-        var player = Player(maxHealth: 200)
+        var player = Player(maxHealth: 200, location: Location(locationBridgeAccessibility: .noBridge))
         player.damage(for: 100)
         player.addPotion(HealthRestorationPotion(healthRestoration: 50, potionCount: 1))
         player.potions.first!.use(owner: player, target: player)
         XCTAssertEqual(player.health, 150)
-        player = Player(maxHealth: 200)
+        player = Player(maxHealth: 200, location: Location(locationBridgeAccessibility: .noBridge))
         player.equipArmor(Armors.newTestHeadArmor())
         player.damage(for: 350)
         player.addPotion(FullRestorationPotion(potionCount: 1))
@@ -138,7 +138,7 @@ class yonderTests: XCTestCase {
     }
     
     func testRemoveWeapon() throws {
-        let player = Player(maxHealth: 200)
+        let player = Player(maxHealth: 200, location: Location(locationBridgeAccessibility: .noBridge))
         let weapon = BasicWeapon(damage: 5, durability: 2)
         player.addWeapon(weapon)
         player.useWeaponOn(target: player, weapon: weapon)
