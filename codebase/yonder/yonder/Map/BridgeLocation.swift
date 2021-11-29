@@ -9,9 +9,9 @@ import Foundation
 
 class BridgeLocation {
     
-    private(set) var adjacentLocations = [Location]()
+    private(set) var adjacentLocations = [LocationAbstract]()
     
-    func addAdjacentLocation(_ location: Location) {
+    func addAdjacentLocation(_ location: LocationAbstract) {
         self.adjacentLocations.append(location)
     }
     

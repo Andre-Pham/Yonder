@@ -9,18 +9,18 @@ import Foundation
 
 class TavernArea {
     
-    private(set) var rootLocations = [Location]()
-    private(set) var tipLocations = [Location]()
+    private(set) var rootLocations = [LocationAbstract]()
+    private(set) var tipLocations = [LocationAbstract]()
     
-    func addRootLocations(_ locations: [Location]) {
+    func addRootLocations(_ locations: [LocationAbstract]) {
         self.rootLocations.append(contentsOf: locations)
     }
     
-    func addTipLocations(_ locations: [Location]) {
+    func addTipLocations(_ locations: [LocationAbstract]) {
         self.tipLocations.append(contentsOf: locations)
     }
     
-    func createDirectedEdges(from location: Location, to nextLocations: [Location]) {
+    func createDirectedEdges(from location: LocationAbstract, to nextLocations: [LocationAbstract]) {
         location.addNextLocations(nextLocations)
     }
 

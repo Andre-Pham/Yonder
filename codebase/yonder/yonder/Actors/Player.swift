@@ -9,9 +9,9 @@ import Foundation
 
 class Player: ActorAbstract {
     
-    private(set) var location: Location
+    private(set) var location: LocationAbstract
     
-    init(maxHealth: Int, location: Location) {
+    init(maxHealth: Int, location: LocationAbstract) {
         self.location = location
         
         super.init(maxHealth: maxHealth)

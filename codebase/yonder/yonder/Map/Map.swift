@@ -10,11 +10,11 @@ import Foundation
 class Map {
     
     private(set) var territoriesInOrder: [Territory]
-    private(set) var startingLocation: Location
+    private(set) var startingLocation: LocationAbstract
     
     init(territoriesInOrder: [Territory]) {
         self.territoriesInOrder = territoriesInOrder
-        self.startingLocation = Location(locationBridgeAccessibility: .noBridge)
+        self.startingLocation = TestLocation(locationBridgeAccessibility: .noBridge)
         
         guard self.territoriesInOrder.count > 0 else {
             fatalError("No territories were defined for the map")

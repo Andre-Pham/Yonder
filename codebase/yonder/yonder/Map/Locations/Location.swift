@@ -13,9 +13,22 @@ enum LocationBridgeAccessibility {
     case noBridge
 }
 
-class Location {
+enum LocationType {
+    case none
+    case combat
+}
+
+typealias LocationAbstract = LocationAbstractPart & LocationTyped
+
+protocol LocationTyped {
     
-    private(set) var nextLocations = [Location]()
+    var type: LocationType { get }
+    
+}
+
+class LocationAbstractPart {
+    
+    private(set) var nextLocations = [LocationAbstract]()
     private(set) var bridgeLocations = [BridgeLocation]()
     public let bridgeAccessibility: LocationBridgeAccessibility
     
@@ -23,7 +36,7 @@ class Location {
         self.bridgeAccessibility = locationBridgeAccessibility
     }
     
-    func addNextLocations(_ locations: [Location]) {
+    func addNextLocations(_ locations: [LocationAbstract]) {
         self.nextLocations.append(contentsOf: locations)
     }
     
