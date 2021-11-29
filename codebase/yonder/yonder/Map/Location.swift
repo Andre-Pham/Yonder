@@ -23,8 +23,8 @@ class Location {
         self.bridgeAccessibility = locationBridgeAccessibility
     }
     
-    func addNextLocation(_ location: Location) {
-        self.nextLocations.append(location)
+    func addNextLocations(_ locations: [Location]) {
+        self.nextLocations.append(contentsOf: locations)
     }
     
     func addBridgeLocation(_ bridgeLocation: BridgeLocation) {

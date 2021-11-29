@@ -17,6 +17,23 @@ class Segment {
         self.leftArea = leftArea
         self.middleArea = middleArea
         self.rightArea = rightArea
+        
+        guard (leftArea.rightBridgeLocations.count > 0 &&
+               rightArea.leftBridgeLocations.count > 0 &&
+               middleArea.leftBridgeLocations.count > 0 &&
+               middleArea.rightBridgeLocations.count > 0) else {
+            return
+        }
+        self.addBridgingNode(
+            leftLocation: leftArea.rightBridgeLocations.randomElement()!,
+            rightLocation: middleArea.leftBridgeLocations.randomElement()!,
+            bridgeNode: BridgeLocation()
+        )
+        self.addBridgingNode(
+            leftLocation: middleArea.rightBridgeLocations.randomElement()!,
+            rightLocation: rightArea.leftBridgeLocations.randomElement()!,
+            bridgeNode: BridgeLocation()
+        )
     }
     
     func addBridgingNode(leftLocation: Location, rightLocation: Location, bridgeNode: BridgeLocation) {
