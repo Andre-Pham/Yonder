@@ -11,7 +11,8 @@ var GAME = Game()
 
 class Game {
     
-    public var player = Player(maxHealth: 500)
-    public var foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 100))
+    private(set) var player = Player(maxHealth: 500)
+    private(set) var map = createTestMap() // This should be of type Map
+    // player.location = map.startingLocation (or something like this)
     
 }

@@ -20,8 +20,8 @@ class TavernArea {
         self.tipLocations.append(location)
     }
     
-    func createDirectedEdge(from location: Location, to nextLocation: Location) {
-        location.addNextLocation(nextLocation)
+    func createDirectedEdge(from location: Location, to nextLocations: [Location]) {
+        location.addNextLocations(nextLocations)
     }
 
 }

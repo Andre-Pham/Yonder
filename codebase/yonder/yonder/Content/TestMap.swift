@@ -7,7 +7,7 @@
 
 import Foundation
 
-func createTestMap() {
+func createTestMap() -> Segment {
     let TEST_LOCATION_BLACK1 = Location(locationBridgeAccessibility: .noBridge)
     let TEST_LOCATION_BLACK2 = Location(locationBridgeAccessibility: .noBridge)
     let TEST_LOCATION_BLACK3 = Location(locationBridgeAccessibility: .rightBridge)
@@ -58,4 +58,5 @@ func createTestMap() {
     TEST_AREA_BLUE.addNextLocations(from: TEST_LOCATION_BLUE7, to: [TEST_LOCATION_BLUE8])
 
     let TEST_SEGMENT = Segment(leftArea: TEST_AREA_BLACK, middleArea: TEST_AREA_PURPLE, rightArea: TEST_AREA_BLUE)
+    return TEST_SEGMENT
 }
