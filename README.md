@@ -1,2 +1,3 @@
 # yonder
-A rogue-like game i'm developing.
+A rogue-like game I'm developing.
+
