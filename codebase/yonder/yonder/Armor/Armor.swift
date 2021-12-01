@@ -1,5 +1,5 @@
 //
-//  ArmorAbstract.swift
+//  Armor.swift
 //  yonder
 //
 //  Created by Andre Pham on 18/11/21.
@@ -13,7 +13,9 @@ enum ArmorType {
     case legs
 }
 
-protocol ArmorAbstract {
+typealias ArmorAbstract = ArmorAbstractPart & Purchasable
+
+protocol ArmorAbstractPart {
     
     var type: ArmorType { get }
     var armorPoints: Int { get }

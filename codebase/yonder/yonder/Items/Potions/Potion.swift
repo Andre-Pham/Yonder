@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias PotionAbstract = PotionAbstractPart & Usable
+typealias PotionAbstract = PotionAbstractPart & Usable & Purchasable
 
 class PotionAbstractPart: ItemAbstract {
     

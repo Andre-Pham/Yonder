@@ -8,8 +8,10 @@
 import Foundation
 
 enum BuffType {
+    // For each type, add a skeleton function in BuffAbstract to be overridden in the buff class
     case damage
     case health
+    case price
 }
 
 class BuffAbstract {
@@ -35,6 +37,10 @@ class BuffAbstract {
     }
     
     func applyHealth(to health: Int) -> Int? {
+        return nil
+    }
+    
+    func applyPrice(to gold: Int) -> Int? {
         return nil
     }
     

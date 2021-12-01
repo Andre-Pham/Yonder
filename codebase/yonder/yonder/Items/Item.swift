@@ -16,11 +16,13 @@ class ItemAbstract {
     
     func getAppliedDamage(owner: ActorAbstract, target: ActorAbstract) -> Int {
         var appliedDamage = self.damage
+        // Owner buffs
         for buff in owner.getAllBuffsInPriority() {
             if buff.type == .damage {
                 appliedDamage = buff.applyDamage(to: appliedDamage)!
             }
         }
+        // Target buffs
         for buff in target.getAllBuffsInPriority() {
             if buff.type == .damage {
                 appliedDamage = buff.applyDamage(to: appliedDamage)!
@@ -31,11 +33,13 @@ class ItemAbstract {
     
     func getAppliedHealthRestoration(owner: ActorAbstract, target: ActorAbstract) -> Int {
         var appliedHealthRestoration = self.healthRestoration
+        // Owner buffs
         for buff in owner.getAllBuffsInPriority() {
             if buff.type == .health {
                 appliedHealthRestoration = buff.applyHealth(to: appliedHealthRestoration)!
             }
         }
+        // Target buffs
         for buff in target.getAllBuffsInPriority() {
             if buff.type == .health {
                 appliedHealthRestoration = buff.applyHealth(to: appliedHealthRestoration)!

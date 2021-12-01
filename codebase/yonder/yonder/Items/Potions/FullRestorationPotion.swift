@@ -9,7 +9,12 @@ import Foundation
 
 class FullRestorationPotion: PotionAbstract {
     
-    init(potionCount: Int) {
+    public let basePurchasePrice: Int
+    public let purchaseType: PurchasableType = .potion
+    
+    init(potionCount: Int, basePurchasePrice: Int) {
+        self.basePurchasePrice = basePurchasePrice
+        
         super.init()
         self.remainingUses = potionCount
     }

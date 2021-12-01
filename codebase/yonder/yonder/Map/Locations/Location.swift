@@ -15,7 +15,13 @@ enum LocationBridgeAccessibility {
 
 enum LocationType {
     case none
-    case combat
+    case hostile
+    case challengeHostile
+    case shop
+    case enhancer // For upgrades
+    case medical
+    case quest
+    case friendly
 }
 
 typealias LocationAbstract = LocationAbstractPart & LocationTyped

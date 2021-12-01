@@ -84,7 +84,7 @@ class yonderTests: XCTestCase {
     
     func testHealingWeapon() throws {
         let player = Player(maxHealth: 200, location: NoLocation())
-        player.addWeapon(HealthRestorationWeapon(healthRestoration: 50, durability: 2))
+        player.addWeapon(HealthRestorationWeapon(healthRestoration: 50, durability: 2, basePurchasePrice: 0))
         player.damage(for: 100)
         player.useWeaponOn(target: player, weapon: player.weapons.first!)
         XCTAssertTrue(player.health == 150)
@@ -92,7 +92,7 @@ class yonderTests: XCTestCase {
     
     func testDullingWeapon() throws {
         let player = Player(maxHealth: 200, location: NoLocation())
-        let weapon = DullingWeapon(damage: 7, damageLostPerUse: 2)
+        let weapon = DullingWeapon(damage: 7, damageLostPerUse: 2, basePurchasePrice: 0)
         player.addWeapon(weapon)
         let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 100))
         player.useWeaponOn(target: foe, weapon: player.weapons.first!)
@@ -125,13 +125,13 @@ class yonderTests: XCTestCase {
     func testPotion() throws {
         var player = Player(maxHealth: 200, location: NoLocation())
         player.damage(for: 100)
-        player.addPotion(HealthRestorationPotion(healthRestoration: 50, potionCount: 1))
+        player.addPotion(HealthRestorationPotion(healthRestoration: 50, potionCount: 1, basePurchasePrice: 0))
         player.potions.first!.use(owner: player, target: player)
         XCTAssertEqual(player.health, 150)
         player = Player(maxHealth: 200, location: NoLocation())
         player.equipArmor(Armors.newTestHeadArmor())
         player.damage(for: 350)
-        player.addPotion(FullRestorationPotion(potionCount: 1))
+        player.addPotion(FullRestorationPotion(potionCount: 1, basePurchasePrice: 0))
         player.potions.first!.use(owner: player, target: player)
         XCTAssertEqual(player.health, 200)
         XCTAssertEqual(player.armorPoints, 200)
@@ -139,7 +139,7 @@ class yonderTests: XCTestCase {
     
     func testRemoveWeapon() throws {
         let player = Player(maxHealth: 200, location: NoLocation())
-        let weapon = BasicWeapon(damage: 5, durability: 2)
+        let weapon = BasicWeapon(damage: 5, durability: 2, basePurchasePrice: 0)
         player.addWeapon(weapon)
         player.useWeaponOn(target: player, weapon: weapon)
         XCTAssertEqual(player.weapons.count, 1)
@@ -148,9 +148,9 @@ class yonderTests: XCTestCase {
     }
     
     func testIDs() throws {
-        let weapon1 = BasicWeapon(damage: 5, durability: 2)
-        let weapon2 = BasicWeapon(damage: 5, durability: 2)
-        let weapon3 = BasicWeapon(damage: 4, durability: 2)
+        let weapon1 = BasicWeapon(damage: 5, durability: 2, basePurchasePrice: 0)
+        let weapon2 = BasicWeapon(damage: 5, durability: 2, basePurchasePrice: 0)
+        let weapon3 = BasicWeapon(damage: 4, durability: 2, basePurchasePrice: 0)
         XCTAssertTrue(weapon1.id != weapon2.id && weapon2.id != weapon3.id && weapon1.id != weapon3.id)
         let weapon4 = BaseAttack(damage: 5)
         XCTAssertNotEqual(weapon1.getSharedID(), weapon4.getSharedID())
@@ -159,11 +159,30 @@ class yonderTests: XCTestCase {
     
     func testLocationCasting() throws {
         let location = LocationAbstractPart(locationBridgeAccessibility: .noBridge)
-        let combatLocation = CombatLocation(foe: FoeAbstract(maxHealth: 200, weapon: Weapons.newTestBasicWeapon()), locationBridgeAccessibility: .noBridge)
+        let combatLocation = HostileLocation(foe: FoeAbstract(maxHealth: 200, weapon: Weapons.newTestBasicWeapon()), locationBridgeAccessibility: .noBridge)
         location.addNextLocations([combatLocation])
-        XCTAssertNoThrow((location.nextLocations.first! as! CombatLocation).foe)
-        // Normally you'd only cast after you check that the location is of LocationType .combat
-        // let foe = (location.nextLocations.first! as! CombatLocation).foe
+        XCTAssertNoThrow((location.nextLocations.first! as! HostileLocation).foe)
+        // Normally you'd only cast after you check that the location is of LocationType .hostile
+        // let foe = (location.nextLocations.first! as! HostileLocation).foe
+    }
+    
+    func testPurchasing() throws {
+        let shopKeeper = ShopKeeper(purchasableItems: [
+            PurchasableItem(item: BasicWeapon(damage: 200, durability: 5, basePurchasePrice: 300), stock: 2),
+            PurchasableItem(item: HealthRestorationPotion(healthRestoration: 200, potionCount: 1, basePurchasePrice: 200), stock: 1),
+            PurchasableItem(item: ResistanceArmor(type: .body, armorPoints: 200, damageFraction: 0.8, basePurchasePrice: 100), stock: 1)
+        ])
+        let player = Player(maxHealth: 200, location: NoLocation())
+        player.adjustGold(by: 1000)
+        shopKeeper.purchaseItem(at: 0, amount: 1, purchaser: player)
+        XCTAssertEqual(player.gold, 700)
+        XCTAssertEqual(player.weapons.count, 1)
+        shopKeeper.purchaseItem(at: 1, amount: 1, purchaser: player)
+        XCTAssertEqual(player.gold, 500)
+        XCTAssertEqual(player.potions.count, 1)
+        shopKeeper.purchaseItem(at: 1, amount: 1, purchaser: player)
+        XCTAssertEqual(player.gold, 400)
+        XCTAssertTrue(player.bodyArmor is ResistanceArmor)
     }
 
 }

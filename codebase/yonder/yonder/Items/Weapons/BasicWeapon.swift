@@ -10,8 +10,12 @@ import Foundation
 class BasicWeapon: WeaponAbstract {
     
     public static let sharedID = UUID()
+    public let basePurchasePrice: Int
+    public let purchaseType: PurchasableType = .weapon
     
-    init(damage: Int, durability: Int) {
+    init(damage: Int, durability: Int, basePurchasePrice: Int) {
+        self.basePurchasePrice = basePurchasePrice
+        
         super.init()
         self.damage = damage
         self.remainingUses = durability

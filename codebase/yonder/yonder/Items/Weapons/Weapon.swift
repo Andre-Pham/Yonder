@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias WeaponAbstract = WeaponAbstractPart & Usable & SharedID
+typealias WeaponAbstract = WeaponAbstractPart & Usable & SharedID & Purchasable
 
 class WeaponAbstractPart: ItemAbstract {
     
