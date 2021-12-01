@@ -10,7 +10,6 @@ import Foundation
 class HealthRestorationPotion: PotionAbstract {
     
     public let basePurchasePrice: Int
-    public let purchaseType: PurchasableType = .potion
     
     init(healthRestoration: Int, potionCount: Int, basePurchasePrice: Int) {
         self.basePurchasePrice = basePurchasePrice

@@ -10,15 +10,6 @@ import Foundation
 protocol Purchasable {
     
     var basePurchasePrice: Int { get }
-    var purchaseType: PurchasableType { get }
-    
-}
-
-enum PurchasableType {
-    
-    case armor
-    case potion
-    case weapon
     
 }
 
@@ -47,7 +38,7 @@ struct PurchasableItem {
     mutating func purchase(amount: Int, purchaser: Player) {
         let adjustedPrice = self.getAdjustedPrice(purchaser: purchaser)
         var amountPurchased: Int = amount > stockRemaining ? stockRemaining : amount
-        if self.item.purchaseType == .armor {
+        if self.item is ArmorAbstract {
             amountPurchased = 1
         }
         if amountPurchased*adjustedPrice > purchaser.gold {
@@ -56,20 +47,18 @@ struct PurchasableItem {
         }
         self.stockRemaining -= amountPurchased
         purchaser.adjustGold(by: -amountPurchased*adjustedPrice)
-        switch item.purchaseType {
-        case .armor:
+        if item is ArmorAbstract {
             purchaser.equipArmor(self.item as! ArmorAbstract)
-            break
-        case .potion:
+        }
+        else if item is PotionAbstract {
             for _ in 0..<amountPurchased {
                 purchaser.addPotion(self.item as! PotionAbstract)
             }
-            break
-        case .weapon:
+        }
+        else if item is WeaponAbstract {
             for _ in 0..<amountPurchased {
                 purchaser.addWeapon(self.item as! WeaponAbstract)
             }
-            break
         }
     }
     

@@ -11,7 +11,6 @@ class BaseAttack: WeaponAbstract {
     
     public static let sharedID = UUID()
     public let basePurchasePrice = 0
-    public let purchaseType: PurchasableType = .weapon
     
     init(damage: Int) {
         super.init()

@@ -13,7 +13,6 @@ class NoArmor: ArmorAbstract {
     public private(set) var armorPoints: Int = 0
     public private(set) var armorBuffs = [BuffAbstract]()
     public let basePurchasePrice = 0
-    public let purchaseType: PurchasableType = .armor
     
     init(type: ArmorType) {
         self.type = type

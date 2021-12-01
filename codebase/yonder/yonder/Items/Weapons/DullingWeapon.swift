@@ -12,7 +12,6 @@ class DullingWeapon: WeaponAbstract {
     public static let sharedID = UUID()
     public let damageLostPerUse: Int
     public let basePurchasePrice: Int
-    public let purchaseType: PurchasableType = .weapon
     
     init(damage: Int, damageLostPerUse: Int, basePurchasePrice: Int) {
         self.damageLostPerUse = damageLostPerUse

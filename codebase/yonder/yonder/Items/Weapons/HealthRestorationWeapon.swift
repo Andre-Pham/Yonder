@@ -11,7 +11,7 @@ class HealthRestorationWeapon: WeaponAbstract {
     
     public static let sharedID = UUID()
     public let basePurchasePrice: Int
-    public let purchaseType: PurchasableType = .weapon
+
     
     init(healthRestoration: Int, durability: Int, basePurchasePrice: Int) {
         self.basePurchasePrice = basePurchasePrice
