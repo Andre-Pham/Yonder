@@ -195,7 +195,7 @@ class yonderTests: XCTestCase {
         player.addPotion(potion)
         player.useWeaponOn(target: foe, weapon: weapon)
         XCTAssertEqual(foe.health, 150)
-        potion.use(owner: player, target: foe)
+        player.use(potion, on: foe)
         XCTAssertEqual(foe.health, 50)
     }
 

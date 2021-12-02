@@ -122,6 +122,13 @@ class ActorAbstract {
         self.potions.append(potion)
     }
     
+    func removePotion(_ potion: PotionAbstract) {
+        guard let index = (self.potions.firstIndex { $0.id == potion.id }) else {
+            return
+        }
+        self.potions.remove(at: index)
+    }
+    
     // MARK: - Buffs
     
     func addBuff(_ buff: BuffAbstract) {
@@ -160,12 +167,32 @@ class ActorAbstract {
         }
     }
     
-    // MARK: - Combat
+    // MARK: - Actor Interactions
     
     func useWeaponOn(target: ActorAbstract, weapon: WeaponAbstract) {
         weapon.use(owner: self, target: target)
         if weapon.remainingUses == 0 {
             self.removeWeapon(weapon)
+        }
+    }
+    
+    func usePotionOn(target: ActorAbstract, potion: PotionAbstract) {
+        potion.use(owner: self, target: target)
+        if potion.remainingUses == 0 {
+            self.removePotion(potion)
+        }
+    }
+    
+    func use(_ usable: Usable, on target: ActorAbstract) {
+        if usable is WeaponAbstract {
+            self.useWeaponOn(target: target, weapon: usable as! WeaponAbstract)
+        }
+        else if usable is PotionAbstract {
+            self.usePotionOn(target: target, potion: usable as! PotionAbstract)
+        }
+        else {
+            // This shouldn't be triggering unless in the future items are defined without further abstraction
+            usable.use(owner: self, target: target)
         }
     }
     
