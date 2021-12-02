@@ -23,7 +23,7 @@ class DullingWeapon: WeaponAbstract {
     }
     
     func use(owner: ActorAbstract, target: ActorAbstract) {
-        target.damage(for: self.getAppliedDamage(owner: owner, target: target))
+        target.damage(for: BuffApps.getAppliedDamage(owner: owner, using: self, target: target, damage: self.damage))
         self.damage -= self.damageLostPerUse
         if self.damage <= 0 {
             self.remainingUses = 0

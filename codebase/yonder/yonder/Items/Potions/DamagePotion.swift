@@ -1,23 +1,22 @@
 //
-//  BasicWeapon.swift
+//  DamagePotion.swift
 //  yonder
 //
-//  Created by Andre Pham on 18/11/21.
+//  Created by Andre Pham on 3/12/21.
 //
 
 import Foundation
 
-class BasicWeapon: WeaponAbstract {
+class DamagePotion: PotionAbstract {
     
-    public static let sharedID = UUID()
     public let basePurchasePrice: Int
     
-    init(damage: Int, durability: Int, basePurchasePrice: Int) {
+    init(damage: Int, potionCount: Int, basePurchasePrice: Int) {
         self.basePurchasePrice = basePurchasePrice
         
         super.init()
         self.damage = damage
-        self.remainingUses = durability
+        self.remainingUses = potionCount
     }
     
     func use(owner: ActorAbstract, target: ActorAbstract) {

@@ -1,13 +1,13 @@
 //
-//  DamagePercentBuff.swift
+//  PotionDamagePercentBuff.swift
 //  yonder
 //
-//  Created by Andre Pham on 18/11/21.
+//  Created by Andre Pham on 3/12/21.
 //
 
 import Foundation
 
-class DamagePercentBuff: BuffAbstract {
+class PotionDamagePercentBuff: BuffAbstract {
     
     private let damageFraction: Double
     
@@ -18,7 +18,10 @@ class DamagePercentBuff: BuffAbstract {
     }
     
     override func applyDamage(to damage: Int, source: Any) -> Int? {
-        return Int(round(Double(damage)*self.damageFraction))
+        if source is PotionAbstract {
+            return Int(round(Double(damage)*self.damageFraction))
+        }
+        return damage
     }
     
 }

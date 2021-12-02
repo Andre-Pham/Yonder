@@ -25,18 +25,8 @@ struct PurchasableItem {
         self.stockRemaining = stock
     }
     
-    func getAdjustedPrice(purchaser: Player) -> Int {
-        var adjustedPrice = self.price
-        for buff in purchaser.getAllBuffsInPriority() {
-            if buff.type == .price {
-                adjustedPrice = buff.applyPrice(to: adjustedPrice)!
-            }
-        }
-        return adjustedPrice
-    }
-    
     mutating func purchase(amount: Int, purchaser: Player) {
-        let adjustedPrice = self.getAdjustedPrice(purchaser: purchaser)
+        let adjustedPrice = BuffApps.getAdjustedPrice(purchaser: purchaser, price: self.price)
         var amountPurchased: Int = amount > stockRemaining ? stockRemaining : amount
         if self.item is ArmorAbstract {
             amountPurchased = 1

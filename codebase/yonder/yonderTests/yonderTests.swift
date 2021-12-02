@@ -184,5 +184,19 @@ class yonderTests: XCTestCase {
         XCTAssertEqual(player.gold, 400)
         XCTAssertTrue(player.bodyArmor is ResistanceArmor)
     }
+    
+    func testPotionBuff() throws {
+        let player = Player(maxHealth: 200, location: NoLocation())
+        player.addBuff(PotionDamagePercentBuff(duration: 5, damageFraction: 2.0))
+        let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 10))
+        let weapon = BaseAttack(damage: 50)
+        let potion = DamagePotion(damage: 50, potionCount: 1, basePurchasePrice: 0)
+        player.addWeapon(weapon)
+        player.addPotion(potion)
+        player.useWeaponOn(target: foe, weapon: weapon)
+        XCTAssertEqual(foe.health, 150)
+        potion.use(owner: player, target: foe)
+        XCTAssertEqual(foe.health, 50)
+    }
 
 }
