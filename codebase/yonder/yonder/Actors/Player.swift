@@ -18,8 +18,17 @@ class Player: ActorAbstract {
         super.init(maxHealth: maxHealth)
     }
     
-    func adjustGold(by amount: Int) {
+    func modifyGold(by amount: Int) {
         self.gold += amount
+    }
+    
+    func modifyGoldAdjusted(by amount: Int) {
+        if amount < 0 {
+            self.modifyGold(by: BuffApps.getAdjustedPrice(purchaser: self, price: amount))
+        }
+        else if amount > 0 {
+            self.modifyGold(by: BuffApps.getAdjustedGoldWithBonus(reciever: self, gold: amount))
+        }
     }
     
 }

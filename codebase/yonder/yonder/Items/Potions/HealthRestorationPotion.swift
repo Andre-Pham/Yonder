@@ -18,7 +18,7 @@ class HealthRestorationPotion: PotionAbstract {
     }
     
     func use(owner: ActorAbstract, target: ActorAbstract) {
-        target.restoreHealth(for: BuffApps.getAppliedHealthRestoration(owner: owner, using: self, target: target, healthRestoration: self.healthRestoration))
+        target.restoreHealthAdjusted(sourceOwner: owner, using: self, for: self.healthRestoration)
         self.adjustRemainingUses(by: -1)
     }
     

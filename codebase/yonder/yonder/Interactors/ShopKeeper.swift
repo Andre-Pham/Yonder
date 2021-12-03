@@ -36,7 +36,7 @@ struct PurchasableItem {
             amountPurchased = Int(floor(amountAffordable))
         }
         self.stockRemaining -= amountPurchased
-        purchaser.adjustGold(by: -amountPurchased*adjustedPrice)
+        purchaser.modifyGoldAdjusted(by: -amountPurchased*self.price)
         if item is ArmorAbstract {
             purchaser.equipArmor(self.item as! ArmorAbstract)
         }

@@ -27,6 +27,7 @@ class ActorAbstract {
     private(set) var headArmor: ArmorAbstract = Armors.newNoHeadArmor()
     private(set) var bodyArmor: ArmorAbstract = Armors.newNoBodyArmor()
     private(set) var legsArmor: ArmorAbstract = Armors.newNoLegsArmor()
+    public let id = UUID()
     
     init(maxHealth: Int) {
         self.maxHealth = maxHealth
@@ -45,6 +46,11 @@ class ActorAbstract {
         }
     }
     
+    func restoreHealthAdjusted(sourceOwner: ActorAbstract, using source: Any, for amount: Int) {
+        let adjustedAmount = BuffApps.getAppliedHealthRestoration(owner: sourceOwner, using: source, target: self, healthRestoration: amount)
+        self.restoreHealth(for: adjustedAmount)
+    }
+    
     func restoreArmorPoints(for amount: Int) {
         if self.armorPoints + amount > self.getMaxArmorPoints() {
             self.armorPoints = self.getMaxArmorPoints()
@@ -54,10 +60,24 @@ class ActorAbstract {
         }
     }
     
+    func restoreArmorPointsAdjusted(sourceOwner: ActorAbstract, using source: Any, for amount: Int) {
+        let adjustedAmount = BuffApps.getAppliedArmorRestoration(owner: sourceOwner, using: source, target: self, armorPointsRestoration: amount)
+        self.restoreArmorPoints(for: adjustedAmount)
+    }
+    
     func restore(for amount: Int) {
         let amountRemaining = max(0, amount - (self.maxHealth - self.health))
         self.restoreHealth(for: amount)
         self.restoreArmorPoints(for: amountRemaining)
+    }
+    
+    func restoreAdjusted(sourceOwner: ActorAbstract, using source: Any, for amount: Int) {
+        let healthToAdjusted: Double = Double(BuffApps.getAppliedHealthRestoration(owner: sourceOwner, using: source, target: self, healthRestoration: amount))/Double(amount)
+        let armorToAdjusted: Double = Double(BuffApps.getAppliedArmorRestoration(owner: sourceOwner, using: source, target: self, armorPointsRestoration: amount))/Double(amount)
+        let amountRemaining = max(0, Int(round(Double(amount)*healthToAdjusted)) - (self.maxHealth - self.health))
+        let amountRemainingReadjusted = Int(round(armorToAdjusted*Double(amountRemaining)/healthToAdjusted))
+        self.restoreHealth(for: Int(round(Double(amount)*healthToAdjusted)))
+        self.restoreArmorPoints(for: amountRemainingReadjusted)
     }
     
     func damage(for amount: Int) {
@@ -72,6 +92,11 @@ class ActorAbstract {
         else {
             self.health -= amount
         }
+    }
+    
+    func damageAdjusted(sourceOwner: ActorAbstract, using source: Any, for amount: Int) {
+        let adjustedAmount = BuffApps.getAppliedDamage(owner: sourceOwner, using: source, target: self, damage: amount)
+        self.damage(for: adjustedAmount)
     }
     
     // MARK: - Status Effects

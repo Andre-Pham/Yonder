@@ -19,8 +19,7 @@ class PurchaseWeaponOffer: Offer {
     }
     
     func acceptOffer(player: Player) {
-        let adjustedPrice = BuffApps.getAdjustedPrice(purchaser: player, price: self.price)
-        player.adjustGold(by: -adjustedPrice)
+        player.modifyGoldAdjusted(by: -self.price)
         player.addWeapon(self.weapon)
     }
     

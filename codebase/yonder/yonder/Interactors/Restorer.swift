@@ -31,9 +31,8 @@ class Restorer: InteractorAbstract {
             let amountAffordable: Double = Double(purchaser.gold)/Double(adjustedPrice)
             amountPurchased = Int(floor(amountAffordable))
         }
-        let amountRestored = BuffApps.getAppliedHealthRestoration(owner: Proxies.NO_ACTOR, using: Proxies.NO_ITEM, target: purchaser, healthRestoration: amountPurchased)
-        purchaser.adjustGold(by: -adjustedPrice*amountPurchased)
-        purchaser.restoreHealth(for: amountRestored)
+        purchaser.modifyGold(by: -self.pricePerHealth*amountPurchased)
+        purchaser.restoreHealthAdjusted(sourceOwner: Proxies.NO_ACTOR, using: Proxies.NO_ITEM, for: amountPurchased)
     }
     
     func restoreArmorPoints(to purchaser: Player, amount: Int) {
@@ -43,9 +42,8 @@ class Restorer: InteractorAbstract {
             let amountAffordable: Double = Double(purchaser.gold)/Double(adjustedPrice)
             amountPurchased = Int(floor(amountAffordable))
         }
-        let amountRestored = BuffApps.getAppliedArmorRestoration(owner: Proxies.NO_ACTOR, using: Proxies.NO_ITEM, target: purchaser, armorPointsRestoration: amountPurchased)
-        purchaser.adjustGold(by: -adjustedPrice*amountPurchased)
-        purchaser.restoreArmorPoints(for: amountRestored)
+        purchaser.modifyGoldAdjusted(by: -self.pricePerArmorPoint*amountPurchased)
+        purchaser.restoreArmorPointsAdjusted(sourceOwner: Proxies.NO_ACTOR, using: Proxies.NO_ITEM, for: amountPurchased)
     }
     
 }

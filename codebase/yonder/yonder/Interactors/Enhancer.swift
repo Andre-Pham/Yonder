@@ -29,6 +29,7 @@ class Enhancer: InteractorAbstract {
         if purchaser.gold < adjustedPrice {
             return
         }
+        purchaser.modifyGoldAdjusted(by: -price)
         weapon.adjustDamage(by: damage)
     }
     
@@ -37,6 +38,7 @@ class Enhancer: InteractorAbstract {
         if purchaser.gold < adjustedPrice {
             return
         }
+        purchaser.modifyGoldAdjusted(by: -price)
         weapon.adjustRemainingUses(by: durability)
     }
     
@@ -45,6 +47,7 @@ class Enhancer: InteractorAbstract {
         if purchaser.gold < adjustedPrice {
             return
         }
+        purchaser.modifyGoldAdjusted(by: -price)
         armor.adjustArmorPoints(by: armorPoints)
     }
 }

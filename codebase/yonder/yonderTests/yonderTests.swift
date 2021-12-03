@@ -173,7 +173,7 @@ class yonderTests: XCTestCase {
             PurchasableItem(item: ResistanceArmor(type: .body, armorPoints: 200, damageFraction: 0.8, basePurchasePrice: 100), stock: 1)
         ])
         let player = Player(maxHealth: 200, location: NoLocation())
-        player.adjustGold(by: 1000)
+        player.modifyGold(by: 1000)
         shopKeeper.purchaseItem(at: 0, amount: 1, purchaser: player)
         XCTAssertEqual(player.gold, 700)
         XCTAssertEqual(player.weapons.count, 1)
@@ -197,6 +197,19 @@ class yonderTests: XCTestCase {
         XCTAssertEqual(foe.health, 150)
         player.use(potion, on: foe)
         XCTAssertEqual(foe.health, 50)
+    }
+    
+    func testRestoreAdjusted() throws {
+        let player = Player(maxHealth: 200, location: NoLocation())
+        player.equipArmor(Armors.newTestBodyArmor()) // 200 armorPoints
+        player.damage(for: 300)
+        player.addBuff(HealthRestorationPercentBuff(duration: 1, healthFraction: 2.0))
+        player.addBuff(ArmorPointsRestorationPercentBuff(duration: 1, armorPointsFraction: 0.5))
+        player.restoreAdjusted(sourceOwner: Proxies.NO_ACTOR, using: Proxies.NO_ITEM, for: 100)
+        // The first 50 restoration heals them back to full health (+100 health)
+        // The next 50 are only 50% effective (+25 armor)
+        XCTAssertEqual(player.health, 200)
+        XCTAssertEqual(player.armorPoints, 25)
     }
 
 }

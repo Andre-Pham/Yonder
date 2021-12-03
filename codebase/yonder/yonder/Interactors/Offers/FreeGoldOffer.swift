@@ -17,8 +17,7 @@ class FreeGoldOffer: Offer {
     }
     
     func acceptOffer(player: Player) {
-        let adjustedGold = BuffApps.getAdjustedGoldWithBonus(reciever: player, gold: self.goldAmount)
-        player.adjustGold(by: adjustedGold)
+        player.modifyGoldAdjusted(by: self.goldAmount)
     }
     
 }

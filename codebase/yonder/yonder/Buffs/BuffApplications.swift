@@ -18,9 +18,11 @@ enum BuffApps {
             }
         }
         // Target buffs
-        for buff in target.getAllBuffsInPriority() {
-            if buff.type == .damage {
-                appliedDamage = buff.applyDamage(to: appliedDamage, source: source)!
+        if owner.id != target.id {
+            for buff in target.getAllBuffsInPriority() {
+                if buff.type == .damage {
+                    appliedDamage = buff.applyDamage(to: appliedDamage, source: source)!
+                }
             }
         }
         return appliedDamage
@@ -35,9 +37,11 @@ enum BuffApps {
             }
         }
         // Target buffs
-        for buff in target.getAllBuffsInPriority() {
-            if buff.type == .health {
-                appliedHealthRestoration = buff.applyHealth(to: appliedHealthRestoration, source: source)!
+        if owner.id != target.id {
+            for buff in target.getAllBuffsInPriority() {
+                if buff.type == .health {
+                    appliedHealthRestoration = buff.applyHealth(to: appliedHealthRestoration, source: source)!
+                }
             }
         }
         return appliedHealthRestoration
@@ -52,9 +56,11 @@ enum BuffApps {
             }
         }
         // Target buffs
-        for buff in target.getAllBuffsInPriority() {
-            if buff.type == .armorPoints {
-                appliedArmorPointsRestoration = buff.applyArmorPoints(to: appliedArmorPointsRestoration, source: source)!
+        if owner.id != target.id {
+            for buff in target.getAllBuffsInPriority() {
+                if buff.type == .armorPoints {
+                    appliedArmorPointsRestoration = buff.applyArmorPoints(to: appliedArmorPointsRestoration, source: source)!
+                }
             }
         }
         return appliedArmorPointsRestoration

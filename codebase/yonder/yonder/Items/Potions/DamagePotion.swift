@@ -18,7 +18,7 @@ class DamagePotion: PotionAbstract {
     }
     
     func use(owner: ActorAbstract, target: ActorAbstract) {
-        target.damage(for: BuffApps.getAppliedDamage(owner: owner, using: self, target: target, damage: self.damage))
+        target.damageAdjusted(sourceOwner: owner, using: self, for: self.damage)
         self.adjustRemainingUses(by: -1)
     }
     
