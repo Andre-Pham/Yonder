@@ -7,12 +7,6 @@
 
 import Foundation
 
-enum ArmorType {
-    case head
-    case body
-    case legs
-}
-
 typealias ArmorAbstract = ArmorAbstractPart & Purchasable
 
 class ArmorAbstractPart {
@@ -20,6 +14,12 @@ class ArmorAbstractPart {
     public let type: ArmorType
     private(set) var armorPoints: Int
     private(set) var armorBuffs: [BuffAbstract]
+    
+    enum ArmorType {
+        case head
+        case body
+        case legs
+    }
     
     init(type: ArmorType, armorPoints: Int, armorBuffs: [BuffAbstract]) {
         self.type = type

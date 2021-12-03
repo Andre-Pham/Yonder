@@ -7,18 +7,18 @@
 
 import Foundation
 
-enum UpgradeOptions {
-    case weaponDamage
-    case weaponDurability
-    case armorPoints
-    // TODO: Eventually add upgrades available for weapons to give buffs and status effects
-    // E.g. give a weapon a burn effect
-    // Do the same for armor
-}
-
 class Enhancer: InteractorAbstract {
     
     public let options: [UpgradeOptions]
+    
+    enum UpgradeOptions {
+        case weaponDamage
+        case weaponDurability
+        case armorPoints
+        // TODO: Eventually add upgrades available for weapons to give buffs and status effects
+        // E.g. give a weapon a burn effect
+        // Do the same for armor
+    }
     
     init(options: [UpgradeOptions]) {
         self.options = options

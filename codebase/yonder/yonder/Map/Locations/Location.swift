@@ -20,7 +20,7 @@ enum LocationType {
     case shop
     case enhancer // For upgrades
     case restorer // For health and armor restoration
-    case quest
+    case quest // TODO: Implement quests later
     case friendly
 }
 

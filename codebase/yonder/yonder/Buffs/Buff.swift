@@ -7,14 +7,6 @@
 
 import Foundation
 
-enum BuffType {
-    // For each type, add a skeleton function in BuffAbstract to be overridden in the buff class
-    case damage
-    case health
-    case armorPoints
-    case price
-}
-
 class BuffAbstract {
     
     var timeRemaining: Int
@@ -27,6 +19,14 @@ class BuffAbstract {
         self.timeRemaining = duration
         self.type = type
         self.priority = priority
+    }
+    
+    enum BuffType {
+        // For each type, add a skeleton function in BuffAbstract to be overridden in the buff class
+        case damage
+        case health
+        case armorPoints
+        case price
     }
     
     func decrementTimeRemaining() {
