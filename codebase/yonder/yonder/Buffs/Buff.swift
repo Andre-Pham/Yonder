@@ -11,6 +11,7 @@ enum BuffType {
     // For each type, add a skeleton function in BuffAbstract to be overridden in the buff class
     case damage
     case health
+    case armorPoints
     case price
 }
 
@@ -37,6 +38,10 @@ class BuffAbstract {
     }
     
     func applyHealth(to health: Int, source: Any) -> Int? {
+        return nil
+    }
+    
+    func applyArmorPoints(to armorPoints: Int, source: Any) -> Int? {
         return nil
     }
     

@@ -19,7 +19,7 @@ enum LocationType {
     case challengeHostile
     case shop
     case enhancer // For upgrades
-    case medical
+    case restorer // For health and armor restoration
     case quest
     case friendly
 }

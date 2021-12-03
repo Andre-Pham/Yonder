@@ -43,6 +43,23 @@ enum BuffApps {
         return appliedHealthRestoration
     }
     
+    static func getAppliedArmorRestoration(owner: ActorAbstract, using source: Any, target: ActorAbstract, armorPointsRestoration: Int) -> Int {
+        var appliedArmorPointsRestoration = armorPointsRestoration
+        // Owner buffs
+        for buff in owner.getAllBuffsInPriority() {
+            if buff.type == .armorPoints {
+                appliedArmorPointsRestoration = buff.applyArmorPoints(to: appliedArmorPointsRestoration, source: source)!
+            }
+        }
+        // Target buffs
+        for buff in target.getAllBuffsInPriority() {
+            if buff.type == .armorPoints {
+                appliedArmorPointsRestoration = buff.applyArmorPoints(to: appliedArmorPointsRestoration, source: source)!
+            }
+        }
+        return appliedArmorPointsRestoration
+    }
+    
     static func getAdjustedPrice(purchaser: Player, price: Int) -> Int {
         var adjustedPrice = price
         for buff in purchaser.getAllBuffsInPriority() {
