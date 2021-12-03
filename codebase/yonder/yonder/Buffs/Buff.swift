@@ -27,6 +27,7 @@ class BuffAbstract {
         case health
         case armorPoints
         case price
+        case goldBonus
     }
     
     func decrementTimeRemaining() {
@@ -46,6 +47,10 @@ class BuffAbstract {
     }
     
     func applyPrice(to gold: Int) -> Int? {
+        return nil
+    }
+    
+    func applyGoldBonus(to gold: Int) -> Int? {
         return nil
     }
     

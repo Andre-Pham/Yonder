@@ -70,4 +70,14 @@ enum BuffApps {
         return adjustedPrice
     }
     
+    static func getAdjustedGoldWithBonus(reciever: Player, gold: Int) -> Int {
+        var adjustedGold = gold
+        for buff in reciever.getAllBuffsInPriority() {
+            if buff.type == .goldBonus {
+                adjustedGold = buff.applyGoldBonus(to: adjustedGold)!
+            }
+        }
+        return adjustedGold
+    }
+    
 }

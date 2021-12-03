@@ -32,7 +32,7 @@ Each location presents their type in their icon. This gives purpose and meaning 
 | Challenge Hostile | Like a mini boss; a Hostile enemy, but more challenging, with greater reward for the player |
 | Shop              | The player may purchase items and sell items - there can be many types, such as potion shops, weapon shops, miscellaneous shops |
 | Enhancer          | An upgrade shop, where the player can purchase upgrades for their weapons and armour, as well as repairs |
-| Medical           | The player may purchase healing and repairing of their armour |
+| Restorer          | The player may purchase the restoration of their health and/or armour |
 | Quest             | Provides a quest for the player to complete - by doing a task such as accumulating a certain amount of gold, or going somewhere on the map, or both such as defeating an enemy at a certain location |
 | Friendly          | These are just random friendly people, which may do things such as fully heal the player, give gold, offer a specific weapon for purchase, offer a trade such as double health for half their armour, etc. |
 
