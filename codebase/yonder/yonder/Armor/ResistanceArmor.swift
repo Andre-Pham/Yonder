@@ -9,16 +9,16 @@ import Foundation
 
 class ResistanceArmor: ArmorAbstract {
     
-    let type: ArmorType
-    public private(set) var armorPoints: Int
-    public private(set) var armorBuffs = [BuffAbstract]()
     public let basePurchasePrice: Int
     
     init(type: ArmorType, armorPoints: Int, damageFraction: Double, basePurchasePrice: Int) {
-        self.type = type
-        self.armorPoints = armorPoints
         self.basePurchasePrice = basePurchasePrice
-        self.armorBuffs.append(DamagePercentBuff(duration: INFINITY, damageFraction: damageFraction))
+        
+        super.init(
+            type: type,
+            armorPoints: armorPoints,
+            armorBuffs: [DamagePercentBuff(duration: INFINITY, damageFraction: damageFraction)]
+        )
     }
     
 }

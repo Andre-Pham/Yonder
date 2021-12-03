@@ -15,10 +15,20 @@ enum ArmorType {
 
 typealias ArmorAbstract = ArmorAbstractPart & Purchasable
 
-protocol ArmorAbstractPart {
+class ArmorAbstractPart {
     
-    var type: ArmorType { get }
-    var armorPoints: Int { get }
-    var armorBuffs: [BuffAbstract] { get }
+    public let type: ArmorType
+    private(set) var armorPoints: Int
+    private(set) var armorBuffs: [BuffAbstract]
+    
+    init(type: ArmorType, armorPoints: Int, armorBuffs: [BuffAbstract]) {
+        self.type = type
+        self.armorPoints = armorPoints
+        self.armorBuffs = armorBuffs
+    }
+    
+    func adjustArmorPoints(by armorPoints: Int) {
+        self.armorPoints += armorPoints
+    }
     
 }

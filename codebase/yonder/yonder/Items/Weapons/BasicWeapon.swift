@@ -15,14 +15,12 @@ class BasicWeapon: WeaponAbstract {
     init(damage: Int, durability: Int, basePurchasePrice: Int) {
         self.basePurchasePrice = basePurchasePrice
         
-        super.init()
-        self.damage = damage
-        self.remainingUses = durability
+        super.init(remainingUses: durability, damage: damage)
     }
     
     func use(owner: ActorAbstract, target: ActorAbstract) {
         target.damage(for: BuffApps.getAppliedDamage(owner: owner, using: self, target: target, damage: self.damage))
-        self.remainingUses -= 1
+        self.adjustRemainingUses(by: -1)
     }
     
 }

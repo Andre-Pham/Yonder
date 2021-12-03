@@ -9,9 +9,31 @@ import Foundation
 
 class ItemAbstract {
     
-    var damage: Int = 0
-    var healthRestoration: Int = 0
-    var remainingUses: Int = 0
+    private(set) var damage: Int
+    private(set) var healthRestoration: Int
+    private(set) var remainingUses: Int
     public let id = UUID()
+    
+    init(remainingUses: Int = 0, damage: Int = 0, healthRestoration: Int = 0) {
+        self.remainingUses = remainingUses
+        self.damage = damage
+        self.healthRestoration = healthRestoration
+    }
+    
+    func adjustRemainingUses(by uses: Int) {
+        self.remainingUses += uses
+    }
+    
+    func setRemainingUses(to uses: Int) {
+        self.remainingUses = uses
+    }
+    
+    func adjustDamage(by damage: Int) {
+        self.damage += damage
+    }
+    
+    func adjustHealthRestoration(by healthRestoration: Int) {
+        self.healthRestoration += healthRestoration
+    }
     
 }

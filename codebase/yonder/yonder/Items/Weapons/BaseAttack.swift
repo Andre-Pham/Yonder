@@ -13,9 +13,7 @@ class BaseAttack: WeaponAbstract {
     public let basePurchasePrice = 0
     
     init(damage: Int) {
-        super.init()
-        self.damage = damage
-        self.remainingUses = 1
+        super.init(remainingUses: 1, damage: damage)
     }
     
     func use(owner: ActorAbstract, target: ActorAbstract) {

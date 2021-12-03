@@ -17,16 +17,14 @@ class DullingWeapon: WeaponAbstract {
         self.damageLostPerUse = damageLostPerUse
         self.basePurchasePrice = basePurchasePrice
         
-        super.init()
-        self.damage = damage
-        self.remainingUses = 1
+        super.init(remainingUses: 1, damage: damage)
     }
     
     func use(owner: ActorAbstract, target: ActorAbstract) {
         target.damage(for: BuffApps.getAppliedDamage(owner: owner, using: self, target: target, damage: self.damage))
-        self.damage -= self.damageLostPerUse
+        self.adjustDamage(by: -self.damageLostPerUse)
         if self.damage <= 0 {
-            self.remainingUses = 0
+            self.setRemainingUses(to: 0)
         }
     }
     

@@ -14,13 +14,12 @@ class FullRestorationPotion: PotionAbstract {
     init(potionCount: Int, basePurchasePrice: Int) {
         self.basePurchasePrice = basePurchasePrice
         
-        super.init()
-        self.remainingUses = potionCount
+        super.init(remainingUses: potionCount)
     }
     
     func use(owner: ActorAbstract, target: ActorAbstract) {
         target.restore(for: target.maxHealth + target.getMaxArmorPoints())
-        self.remainingUses -= 1
+        self.adjustRemainingUses(by: -1)
     }
     
 }

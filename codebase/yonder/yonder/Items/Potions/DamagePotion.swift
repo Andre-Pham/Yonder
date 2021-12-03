@@ -14,14 +14,12 @@ class DamagePotion: PotionAbstract {
     init(damage: Int, potionCount: Int, basePurchasePrice: Int) {
         self.basePurchasePrice = basePurchasePrice
         
-        super.init()
-        self.damage = damage
-        self.remainingUses = potionCount
+        super.init(remainingUses: potionCount, damage: damage)
     }
     
     func use(owner: ActorAbstract, target: ActorAbstract) {
         target.damage(for: BuffApps.getAppliedDamage(owner: owner, using: self, target: target, damage: self.damage))
-        self.remainingUses -= 1
+        self.adjustRemainingUses(by: -1)
     }
     
 }
