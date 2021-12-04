@@ -211,5 +211,54 @@ class yonderTests: XCTestCase {
         XCTAssertEqual(player.health, 200)
         XCTAssertEqual(player.armorPoints, 25)
     }
+    
+    func testShopKeeper() throws {
+        let player = Player(maxHealth: 200, location: NoLocation())
+        player.modifyGold(by: 200)
+        let shopKeeper = ShopKeeper(purchasableItems: [
+            PurchasableItem(item: DullingWeapon(damage: 100, damageLostPerUse: 10, basePurchasePrice: 50), stock: 2)
+        ])
+        shopKeeper.purchaseItem(at: 0, amount: 1, purchaser: player)
+        XCTAssertEqual(player.gold, 150)
+        XCTAssertEqual(player.weapons.count, 1)
+        XCTAssertEqual(shopKeeper.purchasableItems.count, 1)
+        shopKeeper.purchaseItem(at: 0, amount: 1, purchaser: player)
+        XCTAssertEqual(player.gold, 100)
+        XCTAssertEqual(player.weapons.count, 2)
+        XCTAssertEqual(shopKeeper.purchasableItems.count, 0)
+    }
+    
+    func testEnhancer() throws {
+        let player = Player(maxHealth: 200, location: NoLocation())
+        player.modifyGold(by: 201)
+        player.addWeapon(DullingWeapon(damage: 100, damageLostPerUse: 5, basePurchasePrice: 20))
+        let enhancer = Enhancer(options: [.weaponDamage])
+        enhancer.upgradeWeaponDamage(weapon: player.weapons.first!, by: 50, purchaser: player, price: 200)
+        XCTAssertEqual(player.gold, 1)
+        XCTAssertEqual(player.weapons.first!.damage, 150)
+    }
+    
+    func testRestorer() throws {
+        let player = Player(maxHealth: 200, location: NoLocation())
+        player.modifyGold(by: 200)
+        player.damage(for: 150)
+        let restorer = Restorer(options: [.health], pricePerHealth: 5)
+        restorer.restoreHealth(to: player, amount: 20)
+        XCTAssertEqual(player.health, 70)
+        XCTAssertEqual(player.gold, 200 - 5*20)
+    }
+    
+    func testFriendly() throws {
+        let player = Player(maxHealth: 200, location: NoLocation())
+        let friendly = Friendly(
+            offers: [FreeGoldOffer(goldAmount: 500), FreeGoldOffer(goldAmount: 100), FreeGoldOffer(goldAmount: 1)],
+            offerLimit: 2)
+        friendly.acceptOffer(friendly.offers[0], for: player)
+        XCTAssertEqual(player.gold, 500)
+        XCTAssertEqual(friendly.offers.count, 2)
+        friendly.acceptOffer(friendly.offers[0], for: player)
+        XCTAssertEqual(player.gold, 600)
+        XCTAssertEqual(friendly.offers.count, 0)
+    }
 
 }

@@ -10,12 +10,11 @@ import Foundation
 class Friendly {
     
     private(set) var offers: [Offer]
-    private(set) var offersAccepted: Int
-    private(set) var offerLimit: Int
+    private(set) var offersAccepted = 0 // How many offers has the user already accepted
+    private(set) var offerLimit: Int // How many offers can be accepted until the user must stop
     
-    init(offers: [Offer], offersAccepted: Int, offerLimit: Int) {
+    init(offers: [Offer], offerLimit: Int) {
         self.offers = offers
-        self.offersAccepted = offersAccepted
         self.offerLimit = offerLimit
     }
     
