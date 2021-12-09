@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showingMenu = true
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        if showingMenu {
+            Button("Start Game") {
+                showingMenu.toggle()
+            }
+            .buttonStyle(.borderedProminent)
+        }
+        else {
+            GameView()
+        }
     }
 }
 
