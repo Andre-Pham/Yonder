@@ -12,24 +12,26 @@ struct OptionsView: View {
     
     var body: some View {
         GeometryReader { geo in
-            VStack(spacing: 0) {
-                LocationView(image: UIImages.majorInnImage)
-                    .cornerRadius(UIConstants.CORNER_RADIUS)
-                    .frame(width: .infinity, height: 180)
+            Color.Yonder.backgroundMaxDepth
+                .ignoresSafeArea()
+            ScrollView {
+                VStack(spacing: 0) {
+                    LocationView(image: UIImages.majorInnImage)
+                        .cornerRadius(UIConstants.CORNER_RADIUS)
+                        .frame(width: .infinity, height: 180)
+                        .padding(UIConstants.CELL_PADDING)
+                        .padding(.top, -UIConstants.CELL_PADDING)
+                    
+                    HStack(spacing: UIConstants.CELL_PADDING) {
+                        PlayerView()
+                            .cornerRadius(UIConstants.CORNER_RADIUS)
+                        EnemyView()
+                            .cornerRadius(UIConstants.CORNER_RADIUS)
+                    }
                     .padding(UIConstants.CELL_PADDING)
                     .padding(.top, -UIConstants.CELL_PADDING)
-                
-                HStack(spacing: UIConstants.CELL_PADDING) {
-                    PlayerView()
-                        .cornerRadius(UIConstants.CORNER_RADIUS)
-                    EnemyView()
-                        .cornerRadius(UIConstants.CORNER_RADIUS)
-                }
-                .padding(UIConstants.CELL_PADDING)
-                .padding(.top, -UIConstants.CELL_PADDING)
-                .frame(width: .infinity, height: geo.size.width/2 - UIConstants.CELL_PADDING*1.5)
-                
-                ScrollView {
+                    .frame(width: .infinity, height: geo.size.width/2 - UIConstants.CELL_PADDING*1.5)
+                    
                     LazyVGrid(columns: optionColumns, spacing: UIConstants.CELL_PADDING) {
                         ForEach(0..<100) { _ in
                             EngageOptionView()
@@ -40,9 +42,13 @@ struct OptionsView: View {
                     .padding(UIConstants.CELL_PADDING)
                     .padding(.top, -UIConstants.CELL_PADDING)
                 }
-                
             }
-            .background(Color.Yonder.backgroundMaxDepth)
+            Color.Yonder.backgroundMaxDepth
+                .frame(
+                    width: geo.size.width,
+                    height: geo.safeAreaInsets.top,
+                    alignment: .top)
+                .ignoresSafeArea()
         }
     }
 }
