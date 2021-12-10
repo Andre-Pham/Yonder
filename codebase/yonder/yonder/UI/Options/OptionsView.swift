@@ -14,19 +14,19 @@ struct OptionsView: View {
         GeometryReader { geo in
             Color.Yonder.backgroundMaxDepth
                 .ignoresSafeArea()
+            
             ScrollView {
-                
                 VStack(spacing: YonderCoreGraphics.padding) {
                     LocationView(image: YonderImages.majorInnImage)
                         .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
                         .frame(width: .infinity, height: 180)
-                        //.padding(YonderCoreGraphics.padding)
                         .padding(.leading, YonderCoreGraphics.padding)
                         .padding(.trailing, YonderCoreGraphics.padding)
                     
                     HStack(spacing: YonderCoreGraphics.padding) {
                         PlayerView()
                             .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
+                        
                         EnemyView()
                             .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
                     }
@@ -45,12 +45,11 @@ struct OptionsView: View {
                                 .frame(width: geo.size.width/3 - YonderCoreGraphics.padding*4/3, height: geo.size.width/3 - YonderCoreGraphics.padding*2)
                         }
                     }
-                    //.padding(.top, -2*YonderCoreGraphics.padding)
                     .padding(.leading, YonderCoreGraphics.padding)
                     .padding(.trailing, YonderCoreGraphics.padding)
-                    
                 }
             }
+            
             Color.Yonder.backgroundMaxDepth
                 .frame(
                     width: geo.size.width,

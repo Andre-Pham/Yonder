@@ -23,13 +23,14 @@ struct LocationView: View {
                     Text("LOCATION NAME")
                         .font(YonderFonts.main(size: 28))
                         .padding(.leading, YonderCoreGraphics.padding)
+                    
                     Spacer()
+                    
                     Text("(Hostile)")
                         .font(YonderFonts.main())
                         .padding(.trailing, YonderCoreGraphics.padding)
                         .padding(.bottom, 3)
                 }
-                
                 .foregroundColor(.Yonder.textMaxContrast)
                 .frame(width: geo.size.width, height: YonderCoreGraphics.padding*3)
                 .padding(.bottom, YonderCoreGraphics.borderWidth)

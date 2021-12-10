@@ -21,7 +21,9 @@ struct PlayerView: View {
             HStack {
                 Text("450")
                     .font(YonderFonts.main(size: 26))
+                
                 Spacer()
+                
                 Text("/500")
                     .font(YonderFonts.main(size: 18))
             }
@@ -31,7 +33,9 @@ struct PlayerView: View {
             HStack {
                 Text("100")
                     .font(YonderFonts.main(size: 26))
+                
                 Spacer()
+                
                 Text("/100")
                     .font(YonderFonts.main(size: 18))
             }
