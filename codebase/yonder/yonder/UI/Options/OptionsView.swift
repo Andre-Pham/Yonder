@@ -9,6 +9,9 @@ import SwiftUI
 
 struct OptionsView: View {
     let optionColumns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
+    @State private var showOptions = true
+    @State private var showEngageCategories = false
+    @State private var showWeaponActions = false
     
     var body: some View {
         GeometryReader { geo in
@@ -38,15 +41,45 @@ struct OptionsView: View {
                         .foregroundColor(Color.Yonder.textMaxContrast)
                         .font(YonderFonts.main(size: 20))
                     
-                    LazyVGrid(columns: optionColumns, spacing: YonderCoreGraphics.padding) {
-                        ForEach(0..<100) { _ in
-                            EngageOptionView()
-                                .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
-                                .frame(width: geo.size.width/3 - YonderCoreGraphics.padding*4/3, height: geo.size.width/3 - YonderCoreGraphics.padding*2)
+                    if showOptions {
+                        LazyVGrid(columns: optionColumns, spacing: YonderCoreGraphics.padding) {
+                            // Normally it's just "if location.isHostile, show the Engage option"
+                            ForEach(0..<5) { _ in
+                                Button {
+                                    showOptions.toggle()
+                                    showEngageCategories.toggle()
+                                } label: {
+                                    EngageOptionView()
+                                        .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
+                                        .frame(width: geo.size.width/3 - YonderCoreGraphics.padding*4/3, height: geo.size.width/3 - YonderCoreGraphics.padding*2)
+                                }
+                            }
                         }
+                        .padding(.leading, YonderCoreGraphics.padding)
+                        .padding(.trailing, YonderCoreGraphics.padding)
                     }
-                    .padding(.leading, YonderCoreGraphics.padding)
-                    .padding(.trailing, YonderCoreGraphics.padding)
+                    
+                    if showEngageCategories {
+                        let engageCategoryViews = [
+                            EngageCategoryView(title: "Weapons"),
+                            EngageCategoryView(title: "Potions")
+                        ]
+                        
+                        VStack {
+                            ForEach(engageCategoryViews) { view in
+                                Button {
+                                    showOptions.toggle()
+                                    showEngageCategories.toggle()
+                                } label: {
+                                    view
+                                        .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
+                                        .frame(width: .infinity, height: 50)
+                                }
+                            }
+                        }
+                        .padding(.leading, YonderCoreGraphics.padding)
+                        .padding(.trailing, YonderCoreGraphics.padding)
+                    }
                 }
             }
             

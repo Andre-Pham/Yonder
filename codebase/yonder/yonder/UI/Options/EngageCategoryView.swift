@@ -1,14 +1,15 @@
 //
-//  OptionViews.swift
+//  EngageCategoryView.swift
 //  yonder
 //
-//  Created by Andre Pham on 10/12/21.
+//  Created by Andre Pham on 11/12/21.
 //
 
 import SwiftUI
 
-struct OptionView: View {
+struct EngageCategoryView: View, Identifiable {
     let title: String
+    let id = UUID()
     
     var body: some View {
         ZStack {
@@ -17,20 +18,13 @@ struct OptionView: View {
                 Text(title)
                     .foregroundColor(.Yonder.textMaxContrast)
                     .font(YonderFonts.main(size: 24))
-                // Icon would go underneith
             }
         }
     }
 }
 
-struct EngageOptionView: View {
-    var body: some View {
-        OptionView(title: "Engage")
-    }
-}
-
-struct OptionViews_Previews: PreviewProvider {
+struct EngageCategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        EngageOptionView()
+        EngageCategoryView(title: "Weapons")
     }
 }
