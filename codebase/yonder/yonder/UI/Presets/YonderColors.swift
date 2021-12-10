@@ -15,9 +15,9 @@ extension Color {
         
         // MARK: - Background
         
-        let backgroundMaxDepth = Color("Assets#161B23")
-        let backgroundMidDepth = Color("Assets#1C222C")
-        let backgroundMinDepth = Color("Assets#272E39")
+        let backgroundMaxDepth = Color("Assets#000000")
+        let backgroundMidDepth = Color("Assets#000000")
+        let backgroundMinDepth = Color("Assets#000000")
         
         // MARK: - Text
         
@@ -28,6 +28,7 @@ extension Color {
         // MARK: - Other
         
         let highlight = Color("Assets#1988E9")
+        let border = Color("Assets#FFFFFF")
     }
     
 }

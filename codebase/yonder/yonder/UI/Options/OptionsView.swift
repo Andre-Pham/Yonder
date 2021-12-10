@@ -15,32 +15,40 @@ struct OptionsView: View {
             Color.Yonder.backgroundMaxDepth
                 .ignoresSafeArea()
             ScrollView {
+                
                 VStack(spacing: YonderCoreGraphics.padding) {
                     LocationView(image: YonderImages.majorInnImage)
-                        .cornerRadius(YonderCoreGraphics.cornerRadius)
+                        .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
                         .frame(width: .infinity, height: 180)
-                        .padding(YonderCoreGraphics.padding)
-                        .background(Color.Yonder.backgroundMidDepth)
+                        //.padding(YonderCoreGraphics.padding)
+                        .padding(.leading, YonderCoreGraphics.padding)
+                        .padding(.trailing, YonderCoreGraphics.padding)
                     
                     HStack(spacing: YonderCoreGraphics.padding) {
                         PlayerView()
-                            .cornerRadius(YonderCoreGraphics.cornerRadius)
+                            .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
                         EnemyView()
-                            .cornerRadius(YonderCoreGraphics.cornerRadius)
+                            .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
                     }
-                    .padding(YonderCoreGraphics.padding)
+                    .padding(.leading, YonderCoreGraphics.padding)
+                    .padding(.trailing, YonderCoreGraphics.padding)
                     .frame(width: .infinity, height: geo.size.width/2 - YonderCoreGraphics.padding*1.5)
-                    .background(Color.Yonder.backgroundMidDepth)
+                    
+                    Text("[Your Options]")
+                        .foregroundColor(Color.Yonder.textMaxContrast)
+                        .font(YonderFonts.main(size: 20))
                     
                     LazyVGrid(columns: optionColumns, spacing: YonderCoreGraphics.padding) {
                         ForEach(0..<100) { _ in
                             EngageOptionView()
+                                .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
                                 .frame(width: geo.size.width/3 - YonderCoreGraphics.padding*4/3, height: geo.size.width/3 - YonderCoreGraphics.padding*2)
-                                .cornerRadius(YonderCoreGraphics.cornerRadius)
                         }
                     }
-                    .padding(YonderCoreGraphics.padding)
-                    .background(Color.Yonder.backgroundMidDepth)
+                    //.padding(.top, -2*YonderCoreGraphics.padding)
+                    .padding(.leading, YonderCoreGraphics.padding)
+                    .padding(.trailing, YonderCoreGraphics.padding)
+                    
                 }
             }
             Color.Yonder.backgroundMaxDepth
