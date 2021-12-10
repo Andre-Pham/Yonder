@@ -10,6 +10,7 @@ import SwiftUI
 
 enum UIConstants {
     
-    static let CELL_PADDING: CGFloat = 8
+    static let CELL_PADDING: CGFloat = 12
+    static let CORNER_RADIUS: CGFloat = 12
     
 }

@@ -8,17 +8,25 @@
 import SwiftUI
 
 struct OptionsView: View {
-    let optionColumns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
+    let optionColumns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
     
     var body: some View {
         GeometryReader { geo in
-            VStack {
+            VStack(spacing: 0) {
+                LocationView(image: UIImages.majorInnImage)
+                    .cornerRadius(UIConstants.CORNER_RADIUS)
+                    .frame(width: .infinity, height: 180)
+                    .padding(UIConstants.CELL_PADDING)
+                    .padding(.top, -UIConstants.CELL_PADDING)
                 
                 HStack(spacing: UIConstants.CELL_PADDING) {
                     PlayerView()
+                        .cornerRadius(UIConstants.CORNER_RADIUS)
                     EnemyView()
+                        .cornerRadius(UIConstants.CORNER_RADIUS)
                 }
                 .padding(UIConstants.CELL_PADDING)
+                .padding(.top, -UIConstants.CELL_PADDING)
                 .frame(width: .infinity, height: geo.size.width/2 - UIConstants.CELL_PADDING*1.5)
                 
                 ScrollView {
@@ -28,9 +36,9 @@ struct OptionsView: View {
                         }
                     }
                 }
-                .padding(.top, 0)
                 
             }
+            .background(Color.Yonder.backgroundMaxDepth)
         }
     }
 }

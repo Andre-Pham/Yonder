@@ -16,6 +16,7 @@ struct PlayerView: View {
                 .padding(.top)
                 .padding(.leading)
                 .padding(.trailing)
+            
             HStack {
                 Text("450")
                 Spacer()
@@ -23,6 +24,7 @@ struct PlayerView: View {
             }
             .padding(.leading)
             .padding(.trailing)
+            
             HStack {
                 Text("100")
                 Spacer()
@@ -30,9 +32,11 @@ struct PlayerView: View {
             }
             .padding(.leading)
             .padding(.trailing)
+            
             Spacer()
         }
-        .background(.red)
+        .foregroundColor(.Yonder.textMidContrast)
+        .background(Color.Yonder.backgroundMinDepth)
     }
 }
 

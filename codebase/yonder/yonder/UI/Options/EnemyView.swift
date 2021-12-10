@@ -11,19 +11,30 @@ struct EnemyView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text("Enemy")
+                .padding(.top)
+                .padding(.leading)
+                .padding(.trailing)
+            
             HStack {
                 Text("450")
                 Spacer()
                 Text("/500")
             }
+            .padding(.leading)
+            .padding(.trailing)
+            
             HStack {
                 Text("100")
                 Spacer()
                 Text("/100")
             }
+            .padding(.leading)
+            .padding(.trailing)
+            
             Spacer()
         }
-        .background(.blue)
+        .foregroundColor(.Yonder.textMidContrast)
+        .background(Color.Yonder.backgroundMinDepth)
     }
 }
 
