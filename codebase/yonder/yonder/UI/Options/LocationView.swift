@@ -21,13 +21,13 @@ struct LocationView: View {
                 
                 HStack(alignment: .bottom) {
                     Text("Testing")
-                        .padding(.leading, UIConstants.CELL_PADDING)
+                        .padding(.leading, YonderCoreGraphics.padding)
                     Spacer()
                     Text("Testing again")
-                        .padding(.trailing, UIConstants.CELL_PADDING)
+                        .padding(.trailing, YonderCoreGraphics.padding)
                 }
                 .foregroundColor(.Yonder.textMaxContrast)
-                .frame(width: geo.size.width, height: UIConstants.CELL_PADDING*3)
+                .frame(width: geo.size.width, height: YonderCoreGraphics.padding*3)
                 .background(Color.Yonder.backgroundMinDepth)
                 .frame(width: geo.size.width, height: 180, alignment: .bottomLeading)
             }
@@ -37,6 +37,6 @@ struct LocationView: View {
 
 struct LocationView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationView(image: UIImages.majorInnImage)
+        LocationView(image: YonderImages.majorInnImage)
     }
 }

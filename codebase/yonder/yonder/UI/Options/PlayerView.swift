@@ -22,7 +22,7 @@ struct PlayerView: View {
                 Spacer()
                 Text("/500")
             }
-            .font(UIFonts.body())
+            .font(YonderFonts.main())
             .padding(.leading)
             .padding(.trailing)
             
@@ -31,7 +31,7 @@ struct PlayerView: View {
                 Spacer()
                 Text("/100")
             }
-            .font(UIFonts.body())
+            .font(YonderFonts.main())
             .padding(.leading)
             .padding(.trailing)
             

@@ -15,31 +15,31 @@ struct OptionsView: View {
             Color.Yonder.backgroundMaxDepth
                 .ignoresSafeArea()
             ScrollView {
-                VStack(spacing: UIConstants.CELL_PADDING) {
-                    LocationView(image: UIImages.majorInnImage)
-                        .cornerRadius(UIConstants.CORNER_RADIUS)
+                VStack(spacing: YonderCoreGraphics.padding) {
+                    LocationView(image: YonderImages.majorInnImage)
+                        .cornerRadius(YonderCoreGraphics.cornerRadius)
                         .frame(width: .infinity, height: 180)
-                        .padding(UIConstants.CELL_PADDING)
+                        .padding(YonderCoreGraphics.padding)
                         .background(Color.Yonder.backgroundMidDepth)
                     
-                    HStack(spacing: UIConstants.CELL_PADDING) {
+                    HStack(spacing: YonderCoreGraphics.padding) {
                         PlayerView()
-                            .cornerRadius(UIConstants.CORNER_RADIUS)
+                            .cornerRadius(YonderCoreGraphics.cornerRadius)
                         EnemyView()
-                            .cornerRadius(UIConstants.CORNER_RADIUS)
+                            .cornerRadius(YonderCoreGraphics.cornerRadius)
                     }
-                    .padding(UIConstants.CELL_PADDING)
-                    .frame(width: .infinity, height: geo.size.width/2 - UIConstants.CELL_PADDING*1.5)
+                    .padding(YonderCoreGraphics.padding)
+                    .frame(width: .infinity, height: geo.size.width/2 - YonderCoreGraphics.padding*1.5)
                     .background(Color.Yonder.backgroundMidDepth)
                     
-                    LazyVGrid(columns: optionColumns, spacing: UIConstants.CELL_PADDING) {
+                    LazyVGrid(columns: optionColumns, spacing: YonderCoreGraphics.padding) {
                         ForEach(0..<100) { _ in
                             EngageOptionView()
-                                .frame(width: geo.size.width/3 - UIConstants.CELL_PADDING*4/3, height: geo.size.width/3 - UIConstants.CELL_PADDING*2)
-                                .cornerRadius(UIConstants.CORNER_RADIUS)
+                                .frame(width: geo.size.width/3 - YonderCoreGraphics.padding*4/3, height: geo.size.width/3 - YonderCoreGraphics.padding*2)
+                                .cornerRadius(YonderCoreGraphics.cornerRadius)
                         }
                     }
-                    .padding(UIConstants.CELL_PADDING)
+                    .padding(YonderCoreGraphics.padding)
                     .background(Color.Yonder.backgroundMidDepth)
                 }
             }
