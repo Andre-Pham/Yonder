@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OptionsView: View {
     let optionColumns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
+    @State private var optionHeader = "[Your Options]"
     @State private var showOptions = true
     @State private var showEngageCategories = false
     @State private var showWeaponActions = false
@@ -22,7 +23,8 @@ struct OptionsView: View {
                 VStack(spacing: YonderCoreGraphics.padding) {
                     LocationView(image: YonderImages.majorInnImage)
                         .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
-                        .frame(width: .infinity, height: 180)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 180)
                         .padding(.leading, YonderCoreGraphics.padding)
                         .padding(.trailing, YonderCoreGraphics.padding)
                     
@@ -35,9 +37,10 @@ struct OptionsView: View {
                     }
                     .padding(.leading, YonderCoreGraphics.padding)
                     .padding(.trailing, YonderCoreGraphics.padding)
-                    .frame(width: .infinity, height: geo.size.width/2 - YonderCoreGraphics.padding*1.5)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: geo.size.width/2 - YonderCoreGraphics.padding*1.5)
                     
-                    Text("[Your Options]")
+                    Text(optionHeader)
                         .foregroundColor(Color.Yonder.textMaxContrast)
                         .font(YonderFonts.main(size: 20))
                     
@@ -48,6 +51,7 @@ struct OptionsView: View {
                                 Button {
                                     showOptions.toggle()
                                     showEngageCategories.toggle()
+                                    optionHeader = "[Engage Options]"
                                 } label: {
                                     EngageOptionView()
                                         .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
@@ -70,10 +74,12 @@ struct OptionsView: View {
                                 Button {
                                     showOptions.toggle()
                                     showEngageCategories.toggle()
+                                    optionHeader = "[Your Options]"
                                 } label: {
                                     view
                                         .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
-                                        .frame(width: .infinity, height: 50)
+                                        .frame(maxWidth: .infinity)
+                                        .frame(height: 50)
                                 }
                             }
                         }
