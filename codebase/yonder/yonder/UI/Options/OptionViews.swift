@@ -11,7 +11,14 @@ struct OptionView: View {
     let title: String
     
     var body: some View {
-        Text(title)
+        ZStack {
+            Color.Yonder.backgroundMidDepth
+            VStack {
+                Text(title)
+                    .foregroundColor(.Yonder.textMaxContrast)
+                // Icon would go underneith
+            }
+        }
     }
 }
 

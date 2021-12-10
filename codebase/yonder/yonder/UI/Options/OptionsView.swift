@@ -30,11 +30,15 @@ struct OptionsView: View {
                 .frame(width: .infinity, height: geo.size.width/2 - UIConstants.CELL_PADDING*1.5)
                 
                 ScrollView {
-                    LazyVGrid(columns: optionColumns) {
+                    LazyVGrid(columns: optionColumns, spacing: UIConstants.CELL_PADDING) {
                         ForEach(0..<100) { _ in
                             EngageOptionView()
+                                .frame(width: geo.size.width/3 - UIConstants.CELL_PADDING*4/3, height: geo.size.width/3 - UIConstants.CELL_PADDING*2)
+                                .cornerRadius(UIConstants.CORNER_RADIUS)
                         }
                     }
+                    .padding(UIConstants.CELL_PADDING)
+                    .padding(.top, -UIConstants.CELL_PADDING)
                 }
                 
             }
