@@ -12,7 +12,7 @@ struct OptionView: View {
     
     var body: some View {
         ZStack {
-            Color.Yonder.backgroundMidDepth
+            Color.Yonder.backgroundMinDepth
             VStack {
                 Text(title)
                     .foregroundColor(.Yonder.textMaxContrast)

@@ -15,12 +15,12 @@ struct OptionsView: View {
             Color.Yonder.backgroundMaxDepth
                 .ignoresSafeArea()
             ScrollView {
-                VStack(spacing: 0) {
+                VStack(spacing: UIConstants.CELL_PADDING) {
                     LocationView(image: UIImages.majorInnImage)
                         .cornerRadius(UIConstants.CORNER_RADIUS)
                         .frame(width: .infinity, height: 180)
                         .padding(UIConstants.CELL_PADDING)
-                        .padding(.top, -UIConstants.CELL_PADDING)
+                        .background(Color.Yonder.backgroundMidDepth)
                     
                     HStack(spacing: UIConstants.CELL_PADDING) {
                         PlayerView()
@@ -29,8 +29,8 @@ struct OptionsView: View {
                             .cornerRadius(UIConstants.CORNER_RADIUS)
                     }
                     .padding(UIConstants.CELL_PADDING)
-                    .padding(.top, -UIConstants.CELL_PADDING)
                     .frame(width: .infinity, height: geo.size.width/2 - UIConstants.CELL_PADDING*1.5)
+                    .background(Color.Yonder.backgroundMidDepth)
                     
                     LazyVGrid(columns: optionColumns, spacing: UIConstants.CELL_PADDING) {
                         ForEach(0..<100) { _ in
@@ -40,7 +40,7 @@ struct OptionsView: View {
                         }
                     }
                     .padding(UIConstants.CELL_PADDING)
-                    .padding(.top, -UIConstants.CELL_PADDING)
+                    .background(Color.Yonder.backgroundMidDepth)
                 }
             }
             Color.Yonder.backgroundMaxDepth
