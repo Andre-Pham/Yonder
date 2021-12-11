@@ -11,7 +11,9 @@ struct GameView: View {
     @State private var selection = 0
     
     init() {
-        UITabBar.appearance().backgroundColor = .blue
+        UITabBar.appearance().backgroundColor = .black
+        UITabBar.appearance().barTintColor = .black
+        UITabBar.appearance().isTranslucent = false
         UITabBar.appearance().unselectedItemTintColor = .gray
     }
     
@@ -48,7 +50,6 @@ struct GameView: View {
                 .tag(3)
         }
         .accentColor(.white)
-        .tint(.red)
     }
 }
 
