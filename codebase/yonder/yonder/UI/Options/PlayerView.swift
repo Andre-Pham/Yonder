@@ -12,52 +12,45 @@ struct PlayerView: View {
     @State private var showingPlayerSheet = false
     
     var body: some View {
-        Button {
-            showingPlayerSheet.toggle()
-        } label: {
-            VStack(alignment: .leading, spacing: 3) {
-                Text("You")
-                    .font(YonderFonts.main())
-                    .padding(.top)
-                    .padding(.leading)
-                    .padding(.trailing)
-                
-                HStack {
-                    Text("\(player.armorPoints)")
-                        .font(YonderFonts.main(size: 26))
-                    
-                    Spacer()
-                    
-                    Text("/\(player.maxArmorPoints)")
-                        .font(YonderFonts.main(size: 18))
-                }
+        VStack(alignment: .leading, spacing: 3) {
+            Text("You")
+                .font(YonderFonts.main())
+                .padding(.top)
                 .padding(.leading)
                 .padding(.trailing)
-                
-                HStack {
-                    Text("\(player.health)")
-                        .font(YonderFonts.main(size: 26))
-                    
-                    Spacer()
-                    
-                    Text("/\(player.maxHealth)")
-                        .font(YonderFonts.main(size: 18))
-                }
-                .padding(.leading)
-                .padding(.trailing)
-                
-                Text("$\(player.gold)")
+            
+            HStack {
+                Text("\(player.armorPoints)")
                     .font(YonderFonts.main(size: 26))
-                    .padding(.leading)
                 
                 Spacer()
+                
+                Text("/\(player.maxArmorPoints)")
+                    .font(YonderFonts.main(size: 18))
             }
-            .foregroundColor(.Yonder.textMaxContrast)
-            .background(Color.Yonder.backgroundMinDepth)
+            .padding(.leading)
+            .padding(.trailing)
+            
+            HStack {
+                Text("\(player.health)")
+                    .font(YonderFonts.main(size: 26))
+                
+                Spacer()
+                
+                Text("/\(player.maxHealth)")
+                    .font(YonderFonts.main(size: 18))
+            }
+            .padding(.leading)
+            .padding(.trailing)
+            
+            Text("$\(player.gold)")
+                .font(YonderFonts.main(size: 26))
+                .padding(.leading)
+            
+            Spacer()
         }
-        .sheet(isPresented: $showingPlayerSheet) {
-            Text("Wow!")
-        }
+        .foregroundColor(.Yonder.textMaxContrast)
+        .background(Color.Yonder.backgroundMinDepth)
     }
 }
 

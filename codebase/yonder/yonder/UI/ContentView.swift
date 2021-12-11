@@ -12,10 +12,43 @@ struct ContentView: View {
     
     var body: some View {
         if showingMenu {
-            Button("Start Game") {
-                showingMenu.toggle()
+            ZStack {
+                Color.Yonder.backgroundMaxDepth
+                    .ignoresSafeArea()
+                VStack(spacing: 12) {
+                    Spacer()
+                    
+                    Text("Yonder")
+                        .font(YonderFonts.main(size: 70))
+                    
+                    VStack(spacing: 30) {
+                        Button {
+                            // Game is already newly created every time app starts up
+                            showingMenu.toggle()
+                        } label: {
+                            Text("New Game")
+                                .frame(width: 200, height: 50)
+                                .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
+                                .font(YonderFonts.main(size: 24))
+                        }
+                        
+                        Button {
+                            // Find the game saved and resume it
+                            showingMenu.toggle()
+                        } label: {
+                            Text("Resume Game")
+                                .frame(width: 200, height: 50)
+                                .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
+                                .font(YonderFonts.main(size: 24))
+                        }
+                    }
+                    .padding(40)
+                    
+                    Spacer()
+                    Spacer()
+                }
+                .foregroundColor(.white)
             }
-            .buttonStyle(.borderedProminent)
         }
         else {
             GameView()

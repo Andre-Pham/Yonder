@@ -18,6 +18,9 @@ struct OptionsView: View {
     @State private var showEngageCategories = false
     @State private var showWeaponActions = false
     
+    @State private var showingPlayerSheet = false
+    @State private var showingNPCSheet = false
+    
     var body: some View {
         GeometryReader { geo in
             Color.Yonder.backgroundMaxDepth
@@ -33,11 +36,52 @@ struct OptionsView: View {
                         .padding(.trailing, YonderCoreGraphics.padding)
                     
                     HStack(spacing: YonderCoreGraphics.padding) {
-                        PlayerView(player: player)
-                            .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
+                        Button {
+                            showingPlayerSheet.toggle()
+                        } label: {
+                            PlayerView(player: player)
+                                .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
+                        }
+                        .sheet(isPresented: $showingPlayerSheet) {
+                            Text("Wow!")
+                        }
                         
-                        EnemyView()
-                            .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
+                        Button {
+                            showingNPCSheet.toggle()
+                        } label: {
+                            EnemyView()
+                                .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
+                        }
+                        .sheet(isPresented: $showingNPCSheet) {
+                            ZStack {
+                                Color.Yonder.backgroundMaxDepth
+                                    .ignoresSafeArea()
+                                    .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth*2)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 15)
+                                            .strokeBorder(Color.Yonder.border, lineWidth: YonderCoreGraphics.borderWidth*2))
+                                
+                                GeometryReader { sheetGeo in
+                                    VStack {
+                                        Spacer()
+                                        
+                                        Color.Yonder.border
+                                            .frame(
+                                                width: sheetGeo.size.width,
+                                                height: sheetGeo.safeAreaInsets.bottom,
+                                                alignment: .bottom)
+                                    }
+                                    .ignoresSafeArea()
+                                }
+                                    
+                                Text(":3")
+                                    .foregroundColor(.white)
+                            }
+                            .onTapGesture {
+                                showingNPCSheet = false
+                            }
+                        }
+                        
                     }
                     .padding(.leading, YonderCoreGraphics.padding)
                     .padding(.trailing, YonderCoreGraphics.padding)

@@ -31,4 +31,8 @@ class Player: ActorAbstract {
         }
     }
     
+    func travel(to location: LocationAbstract) {
+        self.location = location
+    }
+    
 }
