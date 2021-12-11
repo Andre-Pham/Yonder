@@ -9,6 +9,10 @@ import SwiftUI
 
 struct OptionsView: View {
     let optionColumns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
+    
+    @StateObject private var location = LocationUI(GAME.player.location)
+    @StateObject private var player = PlayerUI(GAME.player)
+    
     @State private var optionHeader = "[Your Options]"
     @State private var showOptions = true
     @State private var showEngageCategories = false
@@ -29,7 +33,7 @@ struct OptionsView: View {
                         .padding(.trailing, YonderCoreGraphics.padding)
                     
                     HStack(spacing: YonderCoreGraphics.padding) {
-                        PlayerView()
+                        PlayerView(player: player)
                             .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
                         
                         EnemyView()
@@ -49,6 +53,7 @@ struct OptionsView: View {
                             // Normally it's just "if location.isHostile, show the Engage option"
                             ForEach(0..<5) { _ in
                                 Button {
+                                    player.equipArmor(Armors.newTestBodyArmor())
                                     showOptions.toggle()
                                     showEngageCategories.toggle()
                                     optionHeader = "[Engage Options]"

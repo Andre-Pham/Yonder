@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlayerView: View {
-    var player = Player(maxHealth: 200, location: NoLocation())
+    @ObservedObject var player: PlayerUI
     @State private var showingPlayerSheet = false
     
     var body: some View {
@@ -23,28 +23,32 @@ struct PlayerView: View {
                     .padding(.trailing)
                 
                 HStack {
-                    Text("450")
+                    Text("\(player.armorPoints)")
                         .font(YonderFonts.main(size: 26))
                     
                     Spacer()
                     
-                    Text("/500")
+                    Text("/\(player.maxArmorPoints)")
                         .font(YonderFonts.main(size: 18))
                 }
                 .padding(.leading)
                 .padding(.trailing)
                 
                 HStack {
-                    Text("100")
+                    Text("\(player.health)")
                         .font(YonderFonts.main(size: 26))
                     
                     Spacer()
                     
-                    Text("/100")
+                    Text("/\(player.maxHealth)")
                         .font(YonderFonts.main(size: 18))
                 }
                 .padding(.leading)
                 .padding(.trailing)
+                
+                Text("$\(player.gold)")
+                    .font(YonderFonts.main(size: 26))
+                    .padding(.leading)
                 
                 Spacer()
             }
@@ -59,6 +63,6 @@ struct PlayerView: View {
 
 struct PlayerComponent_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerView()
+        PlayerView(player: PlayerUI(Player(maxHealth: 200, location: NoLocation())))
     }
 }
