@@ -56,24 +56,13 @@ struct OptionsView: View {
                             ZStack {
                                 Color.Yonder.backgroundMaxDepth
                                     .ignoresSafeArea()
-                                    .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth*2)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 15)
-                                            .strokeBorder(Color.Yonder.border, lineWidth: YonderCoreGraphics.borderWidth*2))
                                 
-                                GeometryReader { sheetGeo in
-                                    VStack {
-                                        Spacer()
-                                        
-                                        Color.Yonder.border
-                                            .frame(
-                                                width: sheetGeo.size.width,
-                                                height: sheetGeo.safeAreaInsets.bottom,
-                                                alignment: .bottom)
-                                    }
-                                    .ignoresSafeArea()
-                                }
-                                    
+                                Rectangle()
+                                    .stroke(Color.Yonder.border, lineWidth: YonderCoreGraphics.borderWidth)
+                                    .frame(
+                                        width: geo.size.width-YonderCoreGraphics.padding*4,
+                                        height: geo.size.height)
+                                
                                 Text(":3")
                                     .foregroundColor(.white)
                             }
