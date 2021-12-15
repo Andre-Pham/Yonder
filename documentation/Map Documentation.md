@@ -22,7 +22,7 @@ The Map is a sequence of Territories.
 
 Each location presents their type in their icon. This gives purpose and meaning to the player's choices in where they want to travel.
 
-## Location
+## Locations
 
 #### Types
 
@@ -35,4 +35,50 @@ Each location presents their type in their icon. This gives purpose and meaning 
 | Restorer          | The player may purchase the restoration of their health and/or armour |
 | Quest             | Provides a quest for the player to complete - by doing a task such as accumulating a certain amount of gold, or going somewhere on the map, or both such as defeating an enemy at a certain location |
 | Friendly          | These are just random friendly people, which may do things such as fully heal the player, give gold, offer a specific weapon for purchase, offer a trade such as double health for half their armour, etc. |
+
+## Area Arrangements
+
+#### Arrangement A
+
+<img src="Assets/areaArrangementA.png" alt="areaArrangementA" style="zoom: 25%;" /> 
+
+#### Arrangement B
+
+<img src="Assets/areaArrangementB.png" alt="areaArrangementB" style="zoom: 25%;" /> 
+
+#### Arrangement C
+
+<img src="Assets/areaArrangementC.png" alt="areaArrangementC" style="zoom: 25%;" /> 
+
+#### Arrangement D
+
+<img src="Assets/areaArrangementD.png" alt="areaArrangementD" style="zoom: 25%;" /> 
+
+#### Arrangement E
+
+<img src="Assets/areaArrangementE.png" alt="areaArrangementE" style="zoom: 25%;" /> 
+
+#### Arrangement F
+
+<img src="Assets/areaArrangementF.png" alt="areaArrangementF" style="zoom: 25%;" /> 
+
+#### Arrangement G
+
+<img src="Assets/areaArrangementG.png" alt="areaArrangementG" style="zoom: 25%;" /> 
+
+#### Arrangement H
+
+<img src="Assets/areaArrangementH.png" alt="areaArrangementH" style="zoom: 25%;" /> 
+
+#### Arrangement I
+
+<img src="Assets/areaArrangementI.png" alt="areaArrangementI" style="zoom: 25%;" /> 
+
+#### Arrangement J
+
+<img src="Assets/areaArrangementJ.png" alt="areaArrangementJ" style="zoom: 25%;" /> 
+
+
+
+
 
