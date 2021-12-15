@@ -40,43 +40,43 @@ Each location presents their type in their icon. This gives purpose and meaning 
 
 #### Arrangement A
 
-<img src="Assets/areaArrangementA.png" alt="areaArrangementA" style="zoom: 25%;" /> 
+<img src="Assets/areaArrangementA.png" alt="areaArrangementA" width="40%" /> 
 
 #### Arrangement B
 
-<img src="Assets/areaArrangementB.png" alt="areaArrangementB" style="zoom: 25%;" /> 
+<img src="Assets/areaArrangementB.png" alt="areaArrangementB" width="40%" /> 
 
 #### Arrangement C
 
-<img src="Assets/areaArrangementC.png" alt="areaArrangementC" style="zoom: 25%;" /> 
+<img src="Assets/areaArrangementC.png" alt="areaArrangementC" width="40%" /> 
 
 #### Arrangement D
 
-<img src="Assets/areaArrangementD.png" alt="areaArrangementD" style="zoom: 25%;" /> 
+<img src="Assets/areaArrangementD.png" alt="areaArrangementD" width="40%" /> 
 
 #### Arrangement E
 
-<img src="Assets/areaArrangementE.png" alt="areaArrangementE" style="zoom: 25%;" /> 
+<img src="Assets/areaArrangementE.png" alt="areaArrangementE" width="40%" /> 
 
 #### Arrangement F
 
-<img src="Assets/areaArrangementF.png" alt="areaArrangementF" style="zoom: 25%;" /> 
+<img src="Assets/areaArrangementF.png" alt="areaArrangementF" width="40%" /> 
 
 #### Arrangement G
 
-<img src="Assets/areaArrangementG.png" alt="areaArrangementG" style="zoom: 25%;" /> 
+<img src="Assets/areaArrangementG.png" alt="areaArrangementG" width="40%" /> 
 
 #### Arrangement H
 
-<img src="Assets/areaArrangementH.png" alt="areaArrangementH" style="zoom: 25%;" /> 
+<img src="Assets/areaArrangementH.png" alt="areaArrangementH" width="40%" /> 
 
 #### Arrangement I
 
-<img src="Assets/areaArrangementI.png" alt="areaArrangementI" style="zoom: 25%;" /> 
+<img src="Assets/areaArrangementI.png" alt="areaArrangementI" width="40%" /> 
 
 #### Arrangement J
 
-<img src="Assets/areaArrangementJ.png" alt="areaArrangementJ" style="zoom: 25%;" /> 
+<img src="Assets/areaArrangementJ.png" alt="areaArrangementJ" width="40%" /> 
 
 
 
