@@ -12,8 +12,4 @@ class NoLocation: LocationAbstract {
     
     public let type: LocationType = .none
     
-    init() {
-        super.init(locationBridgeAccessibility: .noBridge)
-    }
-    
 }

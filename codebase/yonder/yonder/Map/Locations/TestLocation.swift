@@ -9,10 +9,6 @@ import Foundation
 
 class TestLocation: LocationAbstract {
     
-    var type: LocationType = .none
-    
-    override init(locationBridgeAccessibility: LocationBridgeAccessibility) {
-        super.init(locationBridgeAccessibility: locationBridgeAccessibility)
-    }
+    public let type: LocationType = .none
     
 }

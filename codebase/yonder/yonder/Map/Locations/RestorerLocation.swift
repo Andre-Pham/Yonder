@@ -12,10 +12,8 @@ class RestorerLocation: LocationAbstract {
     private(set) var restorer: Restorer
     public let type: LocationType = .restorer
     
-    init(restorer: Restorer, locationBridgeAccessibility: LocationBridgeAccessibility) {
+    init(restorer: Restorer) {
         self.restorer = restorer
-        
-        super.init(locationBridgeAccessibility: locationBridgeAccessibility)
     }
     
 }

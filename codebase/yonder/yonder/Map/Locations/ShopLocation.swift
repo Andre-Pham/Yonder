@@ -12,10 +12,8 @@ class ShopLocation: LocationAbstract {
     private(set) var shopKeeper: ShopKeeper
     public let type: LocationType = .shop
     
-    init(shopKeeper: ShopKeeper, locationBridgeAccessibility: LocationBridgeAccessibility) {
+    init(shopKeeper: ShopKeeper) {
         self.shopKeeper = shopKeeper
-        
-        super.init(locationBridgeAccessibility: locationBridgeAccessibility)
     }
     
 }

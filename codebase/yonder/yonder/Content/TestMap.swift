@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+/*
 func createTestMap() -> Map {
     let TEST_LOCATION_BLACK1 = TestLocation(locationBridgeAccessibility: .noBridge)
     let TEST_LOCATION_BLACK2 = TestLocation(locationBridgeAccessibility: .noBridge)
@@ -67,3 +67,4 @@ func createTestMap() -> Map {
     let TEST_TERRITORY = Territory(segment: TEST_SEGMENT, followingTavernArea: TEST_TAVERN_AREA)
     return Map(territoriesInOrder: [TEST_TERRITORY])
 }
+*/

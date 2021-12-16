@@ -14,10 +14,16 @@ class Area {
     public let tipLocation: LocationAbstract
     private(set) var leftBridgeLocations = [LocationAbstract]()
     private(set) var rightBridgeLocations = [LocationAbstract]()
+    public let arrangement: AreaArrangements
     
-    init(rootLocation: LocationAbstract, tipLocation: LocationAbstract) {
-        self.rootLocation = rootLocation
-        self.tipLocation = tipLocation
+    init(arrangement: AreaArrangements, locations: [LocationAbstract]) {
+        if locations.count != arrangement.locationCount {
+            YonderDebugging.printError(message: "Number of locations provided to generate Area doesn't match expected number for the arrangement", functionName: #function, className: "\(type(of: self))")
+        }
+        self.arrangement = arrangement
+        self.rootLocation = locations.first!
+        self.tipLocation = locations.last!
+        self.generateAreaArrangement(locations: locations)
     }
     
     func addNextLocations(from location: LocationAbstract, to nextLocations: [LocationAbstract]) {

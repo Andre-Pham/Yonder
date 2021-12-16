@@ -12,10 +12,8 @@ class HostileLocation: LocationAbstract {
     private(set) var foe: FoeAbstract
     public let type: LocationType = .hostile
     
-    init(foe: FoeAbstract, locationBridgeAccessibility: LocationBridgeAccessibility) {
+    init(foe: FoeAbstract) {
         self.foe = foe
-        
-        super.init(locationBridgeAccessibility: locationBridgeAccessibility)
     }
     
 }

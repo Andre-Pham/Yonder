@@ -12,10 +12,8 @@ class EnhancerLocation: LocationAbstract {
     private(set) var enhancer: Enhancer
     public let type: LocationType = .enhancer
     
-    init(enhancer: Enhancer, locationBridgeAccessibility: LocationBridgeAccessibility) {
+    init(enhancer: Enhancer) {
         self.enhancer = enhancer
-        
-        super.init(locationBridgeAccessibility: locationBridgeAccessibility)
     }
     
 }
