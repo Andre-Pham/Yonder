@@ -7,82 +7,66 @@
 
 import Foundation
 
-// TODO: - This should really be organised into classes
-// TODO: - Create ArrayFixedSize ("LimitedArray<T>") instead of these dumb limits, and use .isFull() sorta deal
-
 enum LocationsGenerator {
     
     static func generateLocations(arrangement: AreaArrangements) -> [LocationAbstract] {
         var locationIndexPool: [Int] = Array(0..<arrangement.locationCount)
         var nonHostileLocationsCount = arrangement.locationCount/2
         
-        var hostileLocationIndices = [Int]()
+        let hostileLocationIndices = LocationIndexContainer(sizeLimit: locationIndexPool.count-nonHostileLocationsCount, type: .hostile)
+        let challengeHostileLocationIndices = LocationIndexContainer(sizeLimit: 3, type: .challengeHostile)
+        let shopLocationIndices = LocationIndexContainer(sizeLimit: 3, type: .shop)
+        let enhancerLocationIndices = LocationIndexContainer(sizeLimit: 2, type: .enhancer)
+        let restorerLocationIndices = LocationIndexContainer(sizeLimit: 2, type: .restorer)
+        let friendlyLocationIndices = LocationIndexContainer(sizeLimit: 2, type: .friendly)
         
-        var challengeHostileLocationIndices = [Int]()
-        let challengeHostileLocationsLimit = 3
+        let allOptions: [LocationIndexContainer] = [
+            hostileLocationIndices,
+            challengeHostileLocationIndices,
+            shopLocationIndices,
+            enhancerLocationIndices,
+            restorerLocationIndices,
+            friendlyLocationIndices
+        ]
         
-        var shopLocationIndices = [Int]()
-        let shopLocationsLimit = 3
-        
-        var enhancerLocationIndices = [Int]()
-        let enhancerLocationsLimit = 2
-        
-        var restorerLocationIndices = [Int]()
-        let restorerLocationsLimit = 2
-        
-        var friendlyLocationIndices = [Int]()
-        let friendlyLocationsLimit = 2
-        
-        var options: [LocationType] = [.challengeHostile, .shop, .enhancer, .restorer, .friendly]
+        var nonHostileOptions: [LocationIndexContainer] = [
+            challengeHostileLocationIndices,
+            shopLocationIndices,
+            enhancerLocationIndices,
+            restorerLocationIndices,
+            friendlyLocationIndices
+        ]
         
         while nonHostileLocationsCount > 0 {
             guard let locationIndex = locationIndexPool.randomElement() else {
-                YonderDebugging.printError(message: "location index pool doesn't have sufficient location indices to match the expected number of non-hostile locations", functionName: #function, className: "\(type(of: self))")
+                YonderDebugging.printError(message: "Location index pool doesn't have sufficient location indices to match the expected number of non-hostile locations", functionName: #function, className: "\(type(of: self))")
                 break
             }
             locationIndexPool.remove(at: locationIndex)
             nonHostileLocationsCount -= 1
-            let locationTypeAddedTo = options.randomElement()
-            switch locationTypeAddedTo {
-            case .challengeHostile:
-                challengeHostileLocationIndices.append(locationIndex)
-                if challengeHostileLocationIndices.count == challengeHostileLocationsLimit {
-                    options = options.filter { $0 != .challengeHostile }
-                }
-            case .shop:
-                shopLocationIndices.append(locationIndex)
-                if shopLocationIndices.count == shopLocationsLimit {
-                    options = options.filter { $0 != .shop }
-                }
-            case .enhancer:
-                enhancerLocationIndices.append(locationIndex)
-                if enhancerLocationIndices.count == enhancerLocationsLimit {
-                    options = options.filter { $0 != .enhancer }
-                }
-            case .restorer:
-                restorerLocationIndices.append(locationIndex)
-                if restorerLocationIndices.count == restorerLocationsLimit {
-                    options = options.filter { $0 != .restorer }
-                }
-            case .friendly:
-                friendlyLocationIndices.append(locationIndex)
-                if friendlyLocationIndices.count == friendlyLocationsLimit {
-                    options = options.filter { $0 != .friendly }
-                }
-            default:
+            
+            guard let locationIndexContainer = nonHostileOptions.randomElement() else {
+                YonderDebugging.printError(message: "All non-hostile location options were filled, which shouldn't be possible", functionName: #function, className: "\(type(of: self))")
                 break
+            }
+            locationIndexContainer.addIndex(locationIndex)
+            if locationIndexContainer.isFull {
+                nonHostileOptions = nonHostileOptions.filter { $0.type != locationIndexContainer.type }
             }
         }
         
-        hostileLocationIndices.append(contentsOf: locationIndexPool)
+        for index in locationIndexPool {
+            hostileLocationIndices.addIndex(index)
+        }
         
         var locations = [LocationAbstract](repeating: NoLocation(), count: arrangement.locationCount)
         
-        for index in hostileLocationIndices {
-            locations[index] = NoLocation() // Grab location from loot pool
-        }
-        for index in challengeHostileLocationIndices {
-            // Repeat for the rest
+        for locationIndexContainer in allOptions {
+            for locationIndex in locationIndexContainer.indices {
+                // Grab locations from loot pools here
+                // Loot pool function should have level, location type, as parameters
+                locations[locationIndex] = NoLocation()
+            }
         }
         
         return locations

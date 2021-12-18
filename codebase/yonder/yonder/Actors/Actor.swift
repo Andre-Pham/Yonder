@@ -10,14 +10,10 @@ import Foundation
 class ActorAbstract {
     
     private(set) var maxHealth: Int
-    private(set) var health: Int {
-        didSet {
-            if health <= 0 {
-                self.isDead = true
-            }
-        }
+    private(set) var health: Int
+    public var isDead: Bool {
+        return self.health <= 0
     }
-    private(set) var isDead: Bool
     private(set) var statusEffects = [StatusEffectAbstract]()
     private(set) var timedEvents = [TimedEventAbstract]()
     private(set) var weapons = [WeaponAbstract]()
@@ -32,7 +28,6 @@ class ActorAbstract {
     init(maxHealth: Int) {
         self.maxHealth = maxHealth
         self.health = maxHealth
-        self.isDead = maxHealth > 0 ? false : true
     }
     
     // MARK: - Health Related
