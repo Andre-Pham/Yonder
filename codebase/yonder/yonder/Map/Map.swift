@@ -14,7 +14,7 @@ class Map {
     
     init(territoriesInOrder: [Territory]) {
         self.territoriesInOrder = territoriesInOrder
-        self.startingLocation = TestLocation(locationBridgeAccessibility: .noBridge)
+        self.startingLocation = NoLocation()
         
         guard self.territoriesInOrder.count > 0 else {
             fatalError("No territories were defined for the map")

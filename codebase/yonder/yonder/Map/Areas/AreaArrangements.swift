@@ -7,28 +7,28 @@
 
 import Foundation
 
-extension Area {
+enum AreaArrangements {
     
-    enum AreaArrangements {
-        
-        case A; case B; case C; case D; case E; case F; case G; case H; case I; case J
-        
-        var locationCount: Int {
-            switch self {
-            case .A: return 19
-            case .B: return 21
-            case .C: return 21
-            case .D: return 18
-            case .E: return 19
-            case .F: return 22
-            case .G: return 21
-            case .H: return 19
-            case .I: return 20
-            case .J: return 20
-            }
+    case A; case B; case C; case D; case E; case F; case G; case H; case I; case J
+    
+    var locationCount: Int {
+        switch self {
+        case .A: return 19
+        case .B: return 21
+        case .C: return 21
+        case .D: return 18
+        case .E: return 19
+        case .F: return 22
+        case .G: return 21
+        case .H: return 19
+        case .I: return 20
+        case .J: return 20
         }
-        
     }
+    
+}
+
+extension Area {
     
     func generateAreaArrangement() {
         switch self.arrangement {
