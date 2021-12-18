@@ -113,6 +113,11 @@ extension Area {
         self.locations[18].setHexagonCoordinate(3, 19)
         self.locations[19].setHexagonCoordinate(2, 20)
         self.locations[20].setHexagonCoordinate(2, 22)
+        
+        self.locations[7].setBridgeAccessibility(.leftBridge)
+        self.locations[8].setBridgeAccessibility(.rightBridge)
+        self.locations[14].setBridgeAccessibility(.leftBridge)
+        self.locations[16].setBridgeAccessibility(.rightBridge)
     }
     
     private func generateAreaArrangementC() {
@@ -137,6 +142,10 @@ extension Area {
         self.locations[18].setHexagonCoordinate(3, 19)
         self.locations[19].setHexagonCoordinate(2, 20)
         self.locations[20].setHexagonCoordinate(2, 22)
+        
+        self.locations[7].setBridgeAccessibility(.leftBridge)
+        self.locations[11].setBridgeAccessibility(.rightBridge)
+        self.locations[13].setBridgeAccessibility(.leftBridge)
     }
     
     private func generateAreaArrangementD() {
@@ -158,6 +167,11 @@ extension Area {
         self.locations[15].setHexagonCoordinate(2, 18)
         self.locations[16].setHexagonCoordinate(2, 20)
         self.locations[17].setHexagonCoordinate(2, 22)
+        
+        self.locations[5].setBridgeAccessibility(.leftBridge)
+        self.locations[6].setBridgeAccessibility(.rightBridge)
+        self.locations[8].setBridgeAccessibility(.leftBridge)
+        self.locations[9].setBridgeAccessibility(.rightBridge)
     }
     
     private func generateAreaArrangementE() {
@@ -180,6 +194,11 @@ extension Area {
         self.locations[16].setHexagonCoordinate(2, 18)
         self.locations[17].setHexagonCoordinate(2, 20)
         self.locations[18].setHexagonCoordinate(2, 22)
+        
+        self.locations[3].setBridgeAccessibility(.leftBridge)
+        self.locations[4].setBridgeAccessibility(.rightBridge)
+        self.locations[10].setBridgeAccessibility(.leftBridge)
+        self.locations[12].setBridgeAccessibility(.rightBridge)
     }
     
     private func generateAreaArrangementF() {
@@ -205,6 +224,10 @@ extension Area {
         self.locations[19].setHexagonCoordinate(4, 18)
         self.locations[20].setHexagonCoordinate(2, 20)
         self.locations[21].setHexagonCoordinate(2, 22)
+        
+        self.locations[9].setBridgeAccessibility(.leftBridge)
+        self.locations[11].setBridgeAccessibility(.rightBridge)
+        self.locations[14].setBridgeAccessibility(.leftBridge)
     }
     
     private func generateAreaArrangementG() {
@@ -229,6 +252,11 @@ extension Area {
         self.locations[18].setHexagonCoordinate(3, 19)
         self.locations[19].setHexagonCoordinate(2, 20)
         self.locations[20].setHexagonCoordinate(2, 22)
+        
+        self.locations[5].setBridgeAccessibility(.rightBridge)
+        self.locations[7].setBridgeAccessibility(.leftBridge)
+        self.locations[12].setBridgeAccessibility(.rightBridge)
+        self.locations[14].setBridgeAccessibility(.leftBridge)
     }
     
     private func generateAreaArrangementH() {
@@ -251,6 +279,11 @@ extension Area {
         self.locations[16].setHexagonCoordinate(4, 18)
         self.locations[17].setHexagonCoordinate(2, 20)
         self.locations[18].setHexagonCoordinate(2, 22)
+        
+        self.locations[4].setBridgeAccessibility(.leftBridge)
+        self.locations[8].setBridgeAccessibility(.rightBridge)
+        self.locations[13].setBridgeAccessibility(.leftBridge)
+        self.locations[14].setBridgeAccessibility(.rightBridge)
     }
     
     private func generateAreaArrangementI() {
@@ -274,6 +307,10 @@ extension Area {
         self.locations[17].setHexagonCoordinate(3, 19)
         self.locations[18].setHexagonCoordinate(2, 20)
         self.locations[19].setHexagonCoordinate(2, 22)
+        
+        self.locations[6].setBridgeAccessibility(.rightBridge)
+        self.locations[7].setBridgeAccessibility(.leftBridge)
+        self.locations[10].setBridgeAccessibility(.rightBridge)
     }
     
     private func generateAreaArrangementJ() {
@@ -297,6 +334,10 @@ extension Area {
         self.locations[17].setHexagonCoordinate(4, 18)
         self.locations[18].setHexagonCoordinate(2, 20)
         self.locations[19].setHexagonCoordinate(2, 22)
+        
+        self.locations[7].setBridgeAccessibility(.rightBridge)
+        self.locations[11].setBridgeAccessibility(.leftBridge)
+        self.locations[13].setBridgeAccessibility(.rightBridge)
     }
     
 }
