@@ -15,15 +15,17 @@ class Area {
     private(set) var leftBridgeLocations = [LocationAbstract]()
     private(set) var rightBridgeLocations = [LocationAbstract]()
     public let arrangement: AreaArrangements
+    public let locations: [LocationAbstract]
     
     init(arrangement: AreaArrangements, locations: [LocationAbstract]) {
         if locations.count != arrangement.locationCount {
             YonderDebugging.printError(message: "Number of locations provided to generate Area doesn't match expected number for the arrangement", functionName: #function, className: "\(type(of: self))")
         }
         self.arrangement = arrangement
+        self.locations = locations
         self.rootLocation = locations.first!
         self.tipLocation = locations.last!
-        self.generateAreaArrangement(locations: locations)
+        self.generateAreaArrangement()
     }
     
     func addNextLocations(from location: LocationAbstract, to nextLocations: [LocationAbstract]) {
@@ -36,6 +38,12 @@ class Area {
                 self.rightBridgeLocations.append(location)
             }
         }
+    }
+    
+    func addNextLocations(from locationIndex: Int, to nextLocationIndices: Int...) {
+        let location = self.locations[locationIndex]
+        let nextLocations = nextLocationIndices.map { self.locations[$0] }
+        self.addNextLocations(from: location, to: nextLocations)
     }
     
 }
