@@ -10,6 +10,8 @@ An Area is a graph of locations in a predefined structure.
 
 A Segment is a collection of two adjacent areas. There is a "left" area, and "right" area which represents their arrangement.
 
+Each Segment is designated a "Stage". The first Segment is "Stage 0". The next Segment is "Stage 1". The Stage determines the quality of loot.
+
 Areas within segments are connected via Bridges, which are special Location nodes that allow a seamless transition between Areas.
 
 A Tavern Area is a collection of Location Nodes that are non-hostile such as shops, blacksmiths, etc. It spans the width of an entire Segment.
