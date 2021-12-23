@@ -17,6 +17,7 @@ class Area {
     public let arrangement: AreaArrangements
     public let locations: [LocationAbstract]
     
+    // locations are recieved from LocationsGenerator
     init(arrangement: AreaArrangements, locations: [LocationAbstract]) {
         if locations.count != arrangement.locationCount {
             YonderDebugging.printError(message: "Number of locations provided to generate Area doesn't match expected number for the arrangement", functionName: #function, className: "\(type(of: self))")

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AreaArrangements {
+enum AreaArrangements: CaseIterable {
     
     case A; case B; case C; case D; case E; case F; case G; case H; case I; case J
     

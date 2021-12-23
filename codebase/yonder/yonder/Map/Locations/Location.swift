@@ -21,6 +21,7 @@ class LocationAbstractPart {
     private(set) var bridgeLocations = [BridgeLocation]()
     private(set) var bridgeAccessibility: LocationBridgeAccessibility
     private(set) var hexagonCoordinate: HexagonCoordinate?
+    public let id = UUID()
     
     init() {
         self.bridgeAccessibility = .noBridge
