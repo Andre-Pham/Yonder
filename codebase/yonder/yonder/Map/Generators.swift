@@ -9,13 +9,10 @@ import Foundation
 
 enum Generators {
     
-    static func generateTerritoriesIntoMap() -> Map {
-        let bossesCount = 4 // Not including final boss
+    static func generateTerritoriesIntoMap(mapPool: MapPool, bossesCount: Int) -> Map {
         let territoriesCount = bossesCount*2 + 2 // Extra 2 for the final boss
         
         let areaArrangementPool = AreaArrangementPool()
-        let mapPool = MapPool(territoryPools: <#T##[TerritoryPool]#>) // Defined as part of content
-        
         var territories = [Territory]()
         for territoryIndex in 0..<territoriesCount {
             territories.append(generateSegmentsIntoTerritory(arrangementPool: areaArrangementPool, mapPool: mapPool, stage: territoryIndex))
@@ -28,7 +25,7 @@ enum Generators {
         let territoryPool = mapPool.grabTerritoryPool(stage: stage)
         let segment = Generators.generateAreasIntoSegment(arrangementPool: arrangementPool, territoryPool: territoryPool!)
         
-        return Territory(segment: segment, followingTavernArea: <#T##TavernArea#>)
+        return Territory(segment: segment, followingTavernArea: (territoryPool?.grabTavernArea())!)
     }
     
     static func generateAreasIntoSegment(arrangementPool: AreaArrangementPool, territoryPool: TerritoryPool) -> Segment {
