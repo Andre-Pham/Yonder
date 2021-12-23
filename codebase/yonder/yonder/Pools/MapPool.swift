@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Pool of TerritoryPools to create a Map
 class MapPool {
     
     private(set) var territoryPoolsInStageOrder: [TerritoryPool]

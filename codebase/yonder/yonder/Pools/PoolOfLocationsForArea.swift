@@ -7,7 +7,6 @@
 
 import Foundation
 
-// Pool of Locations to create an Area
 class AreaPool {
     
     public let areaName: String

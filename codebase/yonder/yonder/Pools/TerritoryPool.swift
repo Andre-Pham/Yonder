@@ -1,5 +1,5 @@
 //
-//  TerritoryPool.swift
+//  AreaLocationsPool.swift
 //  yonder
 //
 //  Created by Andre Pham on 20/12/21.
@@ -7,25 +7,25 @@
 
 import Foundation
 
-class TerritoryPool {
+class AreaLocationsPool {
     
-    private(set) var areaPools: [AreaPool]
+    private(set) var areaPools: [LocationsPool]
     private(set) var tavernAreaPool: TavernAreaPool
     public let id = UUID()
     
-    init(areaPools: [AreaPool], tavernAreaPool: TavernAreaPool) {
+    init(areaPools: [LocationsPool], tavernAreaPool: TavernAreaPool) {
         self.areaPools = areaPools
         self.tavernAreaPool = tavernAreaPool
     }
     
-    private func removeAreaPool(areaPool: AreaPool) {
+    private func removeAreaPool(areaPool: LocationsPool) {
         guard let index = (self.areaPools.firstIndex { $0.id == areaPool.id }) else {
             return
         }
         self.areaPools.remove(at: index)
     }
     
-    func grabAreaPool() -> AreaPool? {
+    func grabAreaPool() -> LocationsPool? {
         if let areaPool = self.areaPools.randomElement() {
             self.removeAreaPool(areaPool: areaPool)
             return areaPool

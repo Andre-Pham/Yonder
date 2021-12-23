@@ -12,8 +12,8 @@ enum Generators {
     static func generateTerritoriesIntoMap(mapPool: MapPool) -> Map {
         let areaArrangementPool = AreaArrangementPool()
         var territories = [Territory]()
-        for territoryIndex in 0..<mapPool.territoryPoolsInStageOrder.count {
-            territories.append(generateSegmentsIntoTerritory(arrangementPool: areaArrangementPool, mapPool: mapPool, stage: territoryIndex))
+        for territoryStage in 0..<mapPool.territoryPoolsInStageOrder.count {
+            territories.append(generateSegmentsIntoTerritory(arrangementPool: areaArrangementPool, mapPool: mapPool, stage: territoryStage))
         }
         
         return Map(territoriesInOrder: territories)
@@ -22,20 +22,19 @@ enum Generators {
     static func generateSegmentsIntoTerritory(arrangementPool: AreaArrangementPool, mapPool: MapPool, stage: Int) -> Territory {
         let territoryPool = mapPool.grabTerritoryPool(stage: stage)
         let segment = Generators.generateAreasIntoSegment(arrangementPool: arrangementPool, territoryPool: territoryPool!)
+        let tavernArea = territoryPool?.grabTavernArea()
         
-        return Territory(segment: segment, followingTavernArea: (territoryPool?.grabTavernArea())!)
+        return Territory(segment: segment, followingTavernArea: tavernArea!)
     }
     
     static func generateAreasIntoSegment(arrangementPool: AreaArrangementPool, territoryPool: TerritoryPool) -> Segment {
-        let areaLocationsPool = territoryPool.grabAreaPool()?.locationsPool
-        
-        let leftArea = Generators.generateLocationsIntoArea(arrangement: arrangementPool.grabAreaArrangement(), areaLocationsPool: areaLocationsPool!)
-        let rightArea = Generators.generateLocationsIntoArea(arrangement: arrangementPool.grabAreaArrangement(), areaLocationsPool: areaLocationsPool!)
+        let leftArea = Generators.generateLocationsIntoArea(arrangement: arrangementPool.grabAreaArrangement(), areaPool: territoryPool.grabAreaPool()!)
+        let rightArea = Generators.generateLocationsIntoArea(arrangement: arrangementPool.grabAreaArrangement(), areaPool: territoryPool.grabAreaPool()!)
         
         return Segment(leftArea: leftArea, rightArea: rightArea)
     }
     
-    static func generateLocationsIntoArea(arrangement: AreaArrangements, areaLocationsPool: AreaLocationsPool) -> Area {
+    static func generateLocationsIntoArea(arrangement: AreaArrangements, areaPool: AreaPool) -> Area {
         var locationIndexPool: [Int] = Array(0..<arrangement.locationCount)
         var nonHostileLocationsCount = arrangement.locationCount/2
         
@@ -89,7 +88,7 @@ enum Generators {
         
         for locationIndexContainer in allOptions {
             for locationIndex in locationIndexContainer.indices {
-                locations[locationIndex] = areaLocationsPool.grabLocation(locationType: locationIndexContainer.type)
+                locations[locationIndex] = areaPool.grabLocation(locationType: locationIndexContainer.type)
             }
         }
         
