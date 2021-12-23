@@ -22,8 +22,9 @@ class MapPool {
         self.territoryPools.remove(at: index)
     }
     
-    func grabTerritory() -> TerritoryPool? {
-        if let territoryPool = self.territoryPools.randomElement() {
+    func grabTerritoryPool(stage: Int) -> TerritoryPool? {
+        let grabbableTerritories = self.territoryPools.filter { $0.stage == stage }
+        if let territoryPool = grabbableTerritories.randomElement() {
             self.removeTerritoryPool(territoryPool: territoryPool)
             return territoryPool
         }

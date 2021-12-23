@@ -7,35 +7,37 @@
 
 import Foundation
 
-enum Generator {
+enum Generators {
     
-    static func generateMap() {
-        
+    static func generateTerritoriesIntoMap() -> Map {
         let bossesCount = 4 // Not including final boss
         let territoriesCount = bossesCount*2 + 2 // Extra 2 for the final boss
         
         let areaArrangementPool = AreaArrangementPool()
         let mapPool = MapPool(territoryPools: <#T##[TerritoryPool]#>) // Defined as part of content
         
-        //let map = Map(territoriesInOrder: <#T##[Territory]#>)
-        let territories = [Territory]()
-        
+        var territories = [Territory]()
         for territoryIndex in 0..<territoriesCount {
-            let territoryPool = mapPool.grabTerritory()
-            let leftAreaPool = territoryPool?.grabAreaPool()
-            let rightAreaPool = territoryPool?.grabAreaPool()
-            let leftLocations = 
-            
-            let leftArea = Area(arrangement: areaArrangementPool.grabAreaArrangement(), locations: <#T##[LocationAbstract]#>)
-            let rightArea = Area(arrangement: areaArrangementPool.grabAreaArrangement(), locations: <#T##[LocationAbstract]#>)
-            let segment = Segment(leftArea: <#T##Area#>, rightArea: <#T##Area#>)
-            let territory = Territory(segment: <#T##Segment#>, followingTavernArea: <#T##TavernArea#>)
+            territories.append(generateSegmentsIntoTerritory(arrangementPool: areaArrangementPool, mapPool: mapPool, stage: territoryIndex))
         }
         
+        return Map(territoriesInOrder: territories)
     }
     
-    static func generateArea() {
+    static func generateSegmentsIntoTerritory(arrangementPool: AreaArrangementPool, mapPool: MapPool, stage: Int) -> Territory {
+        let territoryPool = mapPool.grabTerritoryPool(stage: stage)
+        let segment = Generators.generateAreasIntoSegment(arrangementPool: arrangementPool, territoryPool: territoryPool!)
         
+        return Territory(segment: segment, followingTavernArea: <#T##TavernArea#>)
+    }
+    
+    static func generateAreasIntoSegment(arrangementPool: AreaArrangementPool, territoryPool: TerritoryPool) -> Segment {
+        let areaLocationsPool = territoryPool.grabAreaPool()?.locationsPool
+        
+        let leftArea = Generators.generateLocationsIntoArea(arrangement: arrangementPool.grabAreaArrangement(), areaLocationsPool: areaLocationsPool!)
+        let rightArea = Generators.generateLocationsIntoArea(arrangement: arrangementPool.grabAreaArrangement(), areaLocationsPool: areaLocationsPool!)
+        
+        return Segment(leftArea: leftArea, rightArea: rightArea)
     }
     
     static func generateLocationsIntoArea(arrangement: AreaArrangements, areaLocationsPool: AreaLocationsPool) -> Area {
