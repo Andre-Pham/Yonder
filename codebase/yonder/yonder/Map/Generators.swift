@@ -9,6 +9,8 @@ import Foundation
 
 enum Generators {
     
+    // TODO: - Add boss stuff
+    // TODO: - Add tavern area content
     static func generateTerritoriesIntoMap(mapPool: MapPool) -> Map {
         let areaArrangementPool = AreaArrangementPool()
         var territories = [Territory]()

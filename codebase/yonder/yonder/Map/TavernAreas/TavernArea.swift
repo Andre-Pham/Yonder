@@ -11,6 +11,8 @@ class TavernArea {
     
     private(set) var rootLocations = [LocationAbstract]()
     private(set) var tipLocations = [LocationAbstract]()
+    public let arrangement: TavernAreaArrangements
+    public let locations: [LocationAbstract]
     
     func addRootLocations(_ locations: [LocationAbstract]) {
         self.rootLocations.append(contentsOf: locations)
