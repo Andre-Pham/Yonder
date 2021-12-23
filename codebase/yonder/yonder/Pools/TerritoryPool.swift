@@ -9,13 +9,11 @@ import Foundation
 
 class TerritoryPool {
     
-    public let stage: Int
     private(set) var areaPools: [AreaPool]
     private(set) var tavernAreaPool: TavernAreaPool
     public let id = UUID()
     
-    init(stage: Int, areaPools: [AreaPool], tavernAreaPool: TavernAreaPool) {
-        self.stage = stage
+    init(areaPools: [AreaPool], tavernAreaPool: TavernAreaPool) {
         self.areaPools = areaPools
         self.tavernAreaPool = tavernAreaPool
     }

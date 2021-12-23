@@ -9,26 +9,23 @@ import Foundation
 
 class MapPool {
     
-    private(set) var territoryPools: [TerritoryPool]
+    private(set) var territoryPoolsInStageOrder: [TerritoryPool]
     
-    init(territoryPools: [TerritoryPool]) {
-        self.territoryPools = territoryPools
+    init(territoryPoolsInStageOrder: [TerritoryPool]) {
+        self.territoryPoolsInStageOrder = territoryPoolsInStageOrder
     }
     
-    private func removeTerritoryPool(territoryPool: TerritoryPool) {
-        guard let index = (self.territoryPools.firstIndex { $0.id == territoryPool.id }) else {
-            return
-        }
-        self.territoryPools.remove(at: index)
+    private func removeTerritoryPool(stage: Int) {
+        self.territoryPoolsInStageOrder.remove(at: stage)
     }
     
     func grabTerritoryPool(stage: Int) -> TerritoryPool? {
-        let grabbableTerritories = self.territoryPools.filter { $0.stage == stage }
-        if let territoryPool = grabbableTerritories.randomElement() {
-            self.removeTerritoryPool(territoryPool: territoryPool)
-            return territoryPool
+        if self.territoryPoolsInStageOrder.count-1 >= stage {
+            let territory = self.territoryPoolsInStageOrder[stage]
+            self.removeTerritoryPool(stage: stage)
+            return territory
         }
-        YonderDebugging.printError(message: "Territory pool has no more territories to grab", functionName: #function, className: "\(type(of: self))")
+        YonderDebugging.printError(message: "Territory pool missing territory to grab", functionName: #function, className: "\(type(of: self))")
         return nil
     }
     
