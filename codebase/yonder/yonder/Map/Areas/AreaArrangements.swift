@@ -32,16 +32,16 @@ extension Area {
     
     func generateAreaArrangement() {
         switch self.arrangement {
-        case .A: generateAreaArrangementA()
-        case .B: return
-        case .C: return
-        case .D: return
-        case .E: return
-        case .F: return
-        case .G: return
-        case .H: return
-        case .I: return
-        case .J: return
+        case .A: self.generateAreaArrangementA()
+        case .B: self.generateAreaArrangementB()
+        case .C: self.generateAreaArrangementC()
+        case .D: self.generateAreaArrangementD()
+        case .E: self.generateAreaArrangementE()
+        case .F: self.generateAreaArrangementF()
+        case .G: self.generateAreaArrangementG()
+        case .H: self.generateAreaArrangementH()
+        case .I: self.generateAreaArrangementI()
+        case .J: self.generateAreaArrangementJ()
         }
     }
     
