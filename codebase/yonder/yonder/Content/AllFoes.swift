@@ -15,4 +15,8 @@ enum Foes {
         return FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 100))
     }
     
+    // MARK:  - Stage 0
+    
+    
+    
 }
