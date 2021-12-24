@@ -18,7 +18,7 @@ A Tavern Area is a collection of Location Nodes that are non-hostile such as sho
 
 A Territory is a Segment followed by a Tavern Area.
 
-Bosses are found after every two Territories, and are followed by a mini Tavern Area to help the player recoup after the boss fight to continue on to the next Territory's area.
+Bosses are found after every two Territories, and are followed by a Restorer to help the player recoup after the boss fight to continue on to the next Territory's area.
 
 The Map is a sequence of Territories (and bosses).
 
