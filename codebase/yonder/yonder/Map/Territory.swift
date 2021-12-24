@@ -11,6 +11,8 @@ class Territory {
     
     private(set) var segment: Segment
     private(set) var tavernArea: TavernArea
+    public let rootLocations: [LocationAbstract]
+    public let tipLocations: [LocationAbstract]
     
     init(segment: Segment, followingTavernArea: TavernArea) {
         self.segment = segment
@@ -19,6 +21,9 @@ class Territory {
         for area in segment.allAreas {
             area.tipLocation.addNextLocations(tavernArea.rootLocations)
         }
+        
+        self.rootLocations = self.segment.allAreas.map(\.rootLocation)
+        self.tipLocations = self.tavernArea.tipLocations
     }
     
 }

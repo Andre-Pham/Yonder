@@ -22,4 +22,5 @@ enum LocationType {
     case restorer // For health and armor restoration
     case quest // TODO: Implement quests later
     case friendly
+    case boss
 }
