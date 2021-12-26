@@ -10,26 +10,35 @@ import Foundation
 // Pool of Locations to create an Area
 class AreaPool {
     
+    // So getLocationArray passes references rather than new arrays with the contents copied over
+    private class LocationCollection {
+        var items: [LocationAbstract]
+        
+        init(_ items: [LocationAbstract]) {
+            self.items = items
+        }
+    }
+    
     public let areaName: String
     public let id = UUID()
-    private(set) var hostileLocations: [HostileLocation]
-    private(set) var challengeHostileLocations: [ChallengeHostileLocation]
-    private(set) var shopLocations: [ShopLocation]
-    private(set) var enhancerLocations: [EnhancerLocation]
-    private(set) var restorerLocations: [RestorerLocation]
-    private(set) var friendlyLocations: [FriendlyLocation]
+    private var hostileLocations: LocationCollection
+    private var challengeHostileLocations: LocationCollection
+    private var shopLocations: LocationCollection
+    private var enhancerLocations: LocationCollection
+    private var restorerLocations: LocationCollection
+    private var friendlyLocations: LocationCollection
     
     init(areaName: String, hostileLocations: [HostileLocation], challengeHostileLocations: [ChallengeHostileLocation], shopLocations: [ShopLocation], enhancerLocations: [EnhancerLocation], restorerLocations: [RestorerLocation], friendlyLocations: [FriendlyLocation]) {
         self.areaName = areaName
-        self.hostileLocations = hostileLocations
-        self.challengeHostileLocations = challengeHostileLocations
-        self.shopLocations = shopLocations
-        self.enhancerLocations = enhancerLocations
-        self.restorerLocations = restorerLocations
-        self.friendlyLocations = friendlyLocations
+        self.hostileLocations = LocationCollection(hostileLocations)
+        self.challengeHostileLocations = LocationCollection(challengeHostileLocations)
+        self.shopLocations = LocationCollection(shopLocations)
+        self.enhancerLocations = LocationCollection(enhancerLocations)
+        self.restorerLocations = LocationCollection(restorerLocations)
+        self.friendlyLocations = LocationCollection(friendlyLocations)
     }
     
-    private func getLocationArray(of locationType: LocationType) -> [LocationAbstract]? {
+    private func getLocationArray(of locationType: LocationType) -> LocationCollection? {
         switch locationType {
         case .hostile:
             return self.hostileLocations
@@ -49,17 +58,18 @@ class AreaPool {
     }
     
     private func removeLocation(location: LocationAbstract) {
-        if var locationArray = self.getLocationArray(of: location.type) {
-            guard let index = (locationArray.firstIndex { $0.id ==  location.id }) else {
+        if let locationArray = self.getLocationArray(of: location.type) {
+            guard let index = (locationArray.items.firstIndex { $0.id == location.id }) else {
+                YonderDebugging.printError(message: "Function should find a location with a matching ID to remove", functionName: #function, className: "\(type(of: self))")
                 return
             }
-            locationArray.remove(at: index)
+            locationArray.items.remove(at: index)
         }
     }
     
     func grabLocation(locationType: LocationType) -> LocationAbstract {
         if let locationArray = self.getLocationArray(of: locationType) {
-            if let location = locationArray.randomElement() {
+            if let location = locationArray.items.randomElement() {
                 self.removeLocation(location: location)
                 return location
             }
