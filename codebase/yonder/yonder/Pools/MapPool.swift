@@ -7,23 +7,21 @@
 
 import Foundation
 
-// Pool of TerritoryPools to create a Map
+// Pool of TerritoryPools and BossAreas to create a Map
 class MapPool {
     
     private(set) var territoryPoolsInStageOrder: [TerritoryPool]
+    private(set) var bossAreas: [BossArea]
     
-    init(territoryPoolsInStageOrder: [TerritoryPool]) {
+    init(territoryPoolsInStageOrder: [TerritoryPool], bossAreas: [BossArea]) {
         self.territoryPoolsInStageOrder = territoryPoolsInStageOrder
-    }
-    
-    private func removeTerritoryPool(stage: Int) {
-        self.territoryPoolsInStageOrder.remove(at: stage)
+        self.bossAreas = bossAreas
     }
     
     func grabTerritoryPool(stage: Int) -> TerritoryPool? {
         if self.territoryPoolsInStageOrder.count-1 >= stage {
+            // No need to remove territories; there's only one for each stage
             let territory = self.territoryPoolsInStageOrder[stage]
-            self.removeTerritoryPool(stage: stage)
             return territory
         }
         YonderDebugging.printError(message: "Territory pool missing territory to grab", functionName: #function, className: "\(type(of: self))")

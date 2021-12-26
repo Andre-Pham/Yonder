@@ -9,7 +9,7 @@ import Foundation
 
 class AreaArrangementPool {
     
-    private(set) var areaArrangements: [AreaArrangements]
+    private(set) var areaArrangements = [AreaArrangements]()
     
     init() {
         self.refillPool()

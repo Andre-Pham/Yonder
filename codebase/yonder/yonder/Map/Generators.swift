@@ -9,8 +9,6 @@ import Foundation
 
 enum Generators {
     
-    // TODO: - Add boss stuff
-    // TODO: - Add tavern area content
     static func generateTerritoriesIntoMap(mapPool: MapPool) -> Map {
         let areaArrangementPool = AreaArrangementPool()
         var territories = [Territory]()
@@ -18,7 +16,8 @@ enum Generators {
             territories.append(generateSegmentsIntoTerritory(arrangementPool: areaArrangementPool, mapPool: mapPool, stage: territoryStage))
         }
         
-        return Map(territoriesInOrder: territories)
+        // TODO: - Add boss stuff
+        return Map(territoriesInOrder: territories, bossAreasInOrder: [])
     }
     
     static func generateSegmentsIntoTerritory(arrangementPool: AreaArrangementPool, mapPool: MapPool, stage: Int) -> Territory {
@@ -69,7 +68,7 @@ enum Generators {
                 YonderDebugging.printError(message: "Location index pool doesn't have sufficient location indices to match the expected number of non-hostile locations", functionName: #function, className: "\(type(of: self))")
                 break
             }
-            locationIndexPool.remove(at: locationIndex)
+            locationIndexPool.remove(at: locationIndexPool.firstIndex(of: locationIndex)!)
             nonHostileLocationsCount -= 1
             
             guard let locationIndexContainer = nonHostileOptions.randomElement() else {

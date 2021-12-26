@@ -15,7 +15,7 @@ class Game {
     private(set) var player: Player
     
     init() {
-        self.map = createTestMap()
+        self.map = Maps.newMap()
         self.player = Player(maxHealth: 500, location: self.map.startingLocation)
     }
     

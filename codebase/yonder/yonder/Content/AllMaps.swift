@@ -10,13 +10,13 @@ import Foundation
 enum Maps {
     
     static func newMap() -> Map {
-        let mapPool = MapPool(territoryPoolsInStageOrder: [
-            TerritoryPool(
-                areaPools: AREA_POOLS_STAGE_ORDERED[0],
-                tavernAreas: [
-                    // TavernAreas
-                ])
-        ])
+        let mapPool = MapPool(
+            territoryPoolsInStageOrder: [
+                TerritoryPool(
+                    areaPools: AREA_POOLS_STAGE_ORDERED[0],
+                    tavernAreas: TAVERN_AREAS_STAGE0)
+            ],
+            bossAreas: [])
         
         return Generators.generateTerritoriesIntoMap(mapPool: mapPool)
     }
