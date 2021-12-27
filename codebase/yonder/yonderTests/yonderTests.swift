@@ -158,8 +158,8 @@ class yonderTests: XCTestCase {
     }
     
     func testLocationCasting() throws {
-        let location = LocationAbstractPart(locationBridgeAccessibility: .noBridge)
-        let combatLocation = HostileLocation(foe: FoeAbstract(maxHealth: 200, weapon: Weapons.newTestBasicWeapon()), locationBridgeAccessibility: .noBridge)
+        let location = LocationAbstractPart()
+        let combatLocation = HostileLocation(foe: FoeAbstract(maxHealth: 200, weapon: Weapons.newTestBasicWeapon()))
         location.addNextLocations([combatLocation])
         XCTAssertNoThrow((location.nextLocations.first! as! HostileLocation).foe)
         // Normally you'd only cast after you check that the location is of LocationType .hostile

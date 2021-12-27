@@ -36,7 +36,7 @@ class Area: NamedDescribedVisualised {
         self.description = description
         self.image = image
         
-        self.locations.forEach { $0.setArea(self) }
+        self.locations.forEach { $0.setAreaContent(self) }
         self.generateAreaArrangement()
     }
     

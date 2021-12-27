@@ -24,20 +24,19 @@ class LocationPresenter: ObservableObject {
         
         // MARK: Set properties to match location
         
-        self.name = location.area.name
-        self.description = location.area.description
-        self.image = location.area.image
+        self.name = location.areaContent.name
+        self.description = location.areaContent.description
+        self.image = location.areaContent.image
         self.type = "" // Must be initialised before function is called
         self.type = self.convertTypeToString(location.type)
         
         // MARK: Add Subscribers
         
         self.$location.sink(receiveValue: { newValue in
-            self.location = newValue
             self.type = self.convertTypeToString(newValue.type)
-            self.name = newValue.area.name
-            self.description = newValue.area.description
-            self.image = newValue.area.image
+            self.name = newValue.areaContent.name
+            self.description = newValue.areaContent.description
+            self.image = newValue.areaContent.image
         }).store(in: &self.subscriptions)
     }
     

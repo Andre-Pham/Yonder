@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LocationView: View {
-    let location: LocationPresenter
+    @ObservedObject var location: LocationPresenter
     
     var body: some View {
         GeometryReader { geo in
