@@ -9,6 +9,6 @@ import SwiftUI
 
 enum YonderImages {
     
-    static let majorInnImage = Image("MajorInn")
+    static let placeholderImage = Image("MajorInn")
     
 }

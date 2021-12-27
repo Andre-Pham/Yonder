@@ -19,6 +19,8 @@ class PlayerPresenter: ObservableObject {
     @Published private(set) var maxArmorPoints: Int
     @Published private(set) var gold: Int
     
+    private(set) var locationPresenter: LocationPresenter
+    
     init(_ player: Player) {
         self.player = player
         
@@ -29,6 +31,10 @@ class PlayerPresenter: ObservableObject {
         self.armorPoints = self.player.armorPoints
         self.maxArmorPoints = self.player.getMaxArmorPoints()
         self.gold = self.player.gold
+        
+        // MARK: Set other presenters
+        
+        self.locationPresenter = LocationPresenter(self.player.location)
         
         // MARK: Add Subscribers
         

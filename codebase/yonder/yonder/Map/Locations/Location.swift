@@ -21,6 +21,7 @@ class LocationAbstractPart {
     private(set) var bridgeLocations = [BridgeLocation]()
     private(set) var bridgeAccessibility: LocationBridgeAccessibility
     private(set) var hexagonCoordinate: HexagonCoordinate?
+    private(set) var area: Area = NoArea()
     public let id = UUID()
     
     init() {
@@ -48,6 +49,13 @@ class LocationAbstractPart {
             YonderDebugging.printError(message: "Hexagon coordinate has been set more than once, which shouldn't be occuring - set from (\(String(describing: self.hexagonCoordinate?.x)), \(String(describing: self.hexagonCoordinate?.y))) to (\(x), \(y))", functionName: #function, className: "\(type(of: self))")
         }
         self.hexagonCoordinate = HexagonCoordinate(x, y)
+    }
+    
+    func setArea(_ area: Area) {
+        if self.area is NoArea {
+            YonderDebugging.printError(message: "Area has been set more than once, which shouldn't be occurring", functionName: #function, className: "\(type(of: self))")
+        }
+        self.area = area
     }
     
 }

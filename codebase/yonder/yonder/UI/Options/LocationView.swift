@@ -8,25 +8,25 @@
 import SwiftUI
 
 struct LocationView: View {
-    let image: Image
+    let location: LocationPresenter
     
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                image
+                location.image
                     .resizable()
                     .scaledToFill()
                     .frame(width: geo.size.width, height: 180)
                     .clipped()
                 
                 HStack(alignment: .bottom) {
-                    Text("LOCATION NAME")
+                    Text(location.name)
                         .font(YonderFonts.main(size: 28))
                         .padding(.leading, YonderCoreGraphics.padding)
                     
                     Spacer()
                     
-                    Text("(Hostile)")
+                    Text(location.type)
                         .font(YonderFonts.main())
                         .padding(.trailing, YonderCoreGraphics.padding)
                         .padding(.bottom, 3)
@@ -43,6 +43,6 @@ struct LocationView: View {
 
 struct LocationView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationView(image: YonderImages.majorInnImage)
+        LocationView(location: LocationPresenter(NoLocation()))
     }
 }

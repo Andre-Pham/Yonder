@@ -10,7 +10,6 @@ import SwiftUI
 struct OptionsView: View {
     let optionColumns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
     
-    @StateObject private var location = LocationPresenter(GAME.player.location)
     @StateObject private var player = PlayerPresenter(GAME.player)
     
     @State private var optionHeader = "[Your Options]"
@@ -28,7 +27,7 @@ struct OptionsView: View {
             
             ScrollView {
                 VStack(spacing: YonderCoreGraphics.padding) {
-                    LocationView(image: YonderImages.majorInnImage)
+                    LocationView(location: player.locationPresenter)
                         .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
                         .frame(maxWidth: .infinity)
                         .frame(height: 180)

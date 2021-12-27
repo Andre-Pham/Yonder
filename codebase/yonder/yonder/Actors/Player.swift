@@ -9,7 +9,7 @@ import Foundation
 
 class Player: ActorAbstract {
     
-    private(set) var location: LocationAbstract
+    @DidSetPublished private(set) var location: LocationAbstract
     @DidSetPublished private(set) var gold = 0
     
     init(maxHealth: Int, location: LocationAbstract) {
