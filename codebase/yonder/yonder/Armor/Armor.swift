@@ -12,7 +12,7 @@ typealias ArmorAbstract = ArmorAbstractPart & Purchasable
 class ArmorAbstractPart {
     
     public let type: ArmorType
-    private(set) var armorPoints: Int
+    @DidSetPublished private(set) var armorPoints: Int
     private(set) var armorBuffs: [BuffAbstract]
     
     enum ArmorType {

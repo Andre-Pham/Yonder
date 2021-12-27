@@ -9,8 +9,9 @@ import Foundation
 
 class ActorAbstract {
     
-    private(set) var maxHealth: Int
-    private(set) var health: Int
+    @DidSetPublished private(set) var maxHealth: Int
+    @DidSetPublished private(set) var health: Int
+    @DidSetPublished private(set) var armorPoints: Int = 0
     public var isDead: Bool {
         return self.health <= 0
     }
@@ -19,10 +20,12 @@ class ActorAbstract {
     private(set) var weapons = [WeaponAbstract]()
     private(set) var buffs = [BuffAbstract]()
     private(set) var potions = [PotionAbstract]()
-    private(set) var armorPoints: Int = 0
-    private(set) var headArmor: ArmorAbstract = Armors.newNoHeadArmor()
-    private(set) var bodyArmor: ArmorAbstract = Armors.newNoBodyArmor()
-    private(set) var legsArmor: ArmorAbstract = Armors.newNoLegsArmor()
+    @DidSetPublished private(set) var headArmor: ArmorAbstract = Armors.newNoHeadArmor()
+    @DidSetPublished private(set) var bodyArmor: ArmorAbstract = Armors.newNoBodyArmor()
+    @DidSetPublished private(set) var legsArmor: ArmorAbstract = Armors.newNoLegsArmor()
+    public var allArmorPieces: [ArmorAbstract] {
+        return [self.headArmor, self.bodyArmor, self.legsArmor]
+    }
     public let id = UUID()
     
     init(maxHealth: Int) {
@@ -164,7 +167,7 @@ class ActorAbstract {
     // MARK: - Armor
     
     func getMaxArmorPoints() -> Int {
-        return self.headArmor.armorPoints + self.bodyArmor.armorPoints + self.legsArmor.armorPoints
+        return self.allArmorPieces.reduce(0) { $0 + $1.armorPoints }
     }
     
     func equipArmor(_ armor: ArmorAbstract) {
