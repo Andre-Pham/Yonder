@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlayerView: View {
-    @ObservedObject var player: PlayerUI
+    @ObservedObject var player: PlayerPresenter
     @State private var showingPlayerSheet = false
     
     var body: some View {
@@ -56,6 +56,6 @@ struct PlayerView: View {
 
 struct PlayerComponent_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerView(player: PlayerUI(Player(maxHealth: 200, location: NoLocation())))
+        PlayerView(player: PlayerPresenter(Player(maxHealth: 200, location: NoLocation())))
     }
 }

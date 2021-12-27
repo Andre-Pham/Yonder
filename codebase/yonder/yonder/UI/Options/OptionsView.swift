@@ -10,8 +10,8 @@ import SwiftUI
 struct OptionsView: View {
     let optionColumns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
     
-    @StateObject private var location = LocationUI(GAME.player.location)
-    @StateObject private var player = PlayerUI(GAME.player)
+    @StateObject private var location = LocationPresenter(GAME.player.location)
+    @StateObject private var player = PlayerPresenter(GAME.player)
     
     @State private var optionHeader = "[Your Options]"
     @State private var showOptions = true

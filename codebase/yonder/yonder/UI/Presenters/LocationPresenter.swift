@@ -1,5 +1,5 @@
 //
-//  LocationUI.swift
+//  LocationPresenter.swift
 //  yonder
 //
 //  Created by Andre Pham on 11/12/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LocationUI: ObservableObject {
+class LocationPresenter: ObservableObject {
     
     private(set) var location: LocationAbstract
     

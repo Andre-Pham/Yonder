@@ -1,5 +1,5 @@
 //
-//  PlayerUI.swift
+//  PlayerPresenter.swift
 //  yonder
 //
 //  Created by Andre Pham on 11/12/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PlayerUI: ObservableObject {
+class PlayerPresenter: ObservableObject {
     
     private(set) var player: Player
     
