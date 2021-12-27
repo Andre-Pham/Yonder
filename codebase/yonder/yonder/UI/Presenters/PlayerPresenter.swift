@@ -34,7 +34,7 @@ class PlayerPresenter: ObservableObject {
         
         // MARK: Set other presenters
         
-        self.locationPresenter = LocationPresenter(self.player.location)
+        self.locationPresenter = LocationPresenter(self.player.location, player: self.player)
         
         // MARK: Add Subscribers
         

@@ -19,7 +19,7 @@ class LocationPresenter: ObservableObject {
     @Published private(set) var image: Image
     @Published private(set) var type: String
     
-    init(_ location: LocationAbstract) {
+    init(_ location: LocationAbstract, player: Player) {
         self.location = location
         
         // MARK: Set properties to match location
@@ -32,7 +32,8 @@ class LocationPresenter: ObservableObject {
         
         // MARK: Add Subscribers
         
-        self.$location.sink(receiveValue: { newValue in
+        player.$location.sink(receiveValue: { newValue in
+            self.location = newValue
             self.type = self.convertTypeToString(newValue.type)
             self.name = newValue.areaContent.name
             self.description = newValue.areaContent.description

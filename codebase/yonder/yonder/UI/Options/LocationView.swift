@@ -43,6 +43,6 @@ struct LocationView: View {
 
 struct LocationView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationView(location: LocationPresenter(NoLocation()))
+        LocationView(location: LocationPresenter(NoLocation(), player: Player(maxHealth: 200, location: NoLocation())))
     }
 }

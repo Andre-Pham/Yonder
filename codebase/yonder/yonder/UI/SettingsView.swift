@@ -9,7 +9,24 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        Text("Hello, Settings!")
+        VStack {
+            Text("Hello, Settings!")
+            Button("Damage Player 100") {
+                GAME.player.damage(for: 100)
+            }
+            .padding()
+            .background(Color.red)
+            .foregroundColor(.white)
+            .padding()
+            
+            Button("Travel") {
+                GAME.player.travel(to: GAME.player.location.nextLocations.first!)
+            }
+            .padding()
+            .background(Color.red)
+            .foregroundColor(.white)
+            .padding()
+        }
     }
 }
 
