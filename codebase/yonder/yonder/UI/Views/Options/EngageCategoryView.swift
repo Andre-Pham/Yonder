@@ -13,7 +13,7 @@ struct EngageCategoryView: View, Identifiable {
     
     var body: some View {
         ZStack {
-            Color.Yonder.backgroundMinDepth
+            Color.Yonder.backgroundMaxDepth
             VStack {
                 Text(title)
                     .foregroundColor(.Yonder.textMaxContrast)

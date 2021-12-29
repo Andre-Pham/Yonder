@@ -34,7 +34,7 @@ struct LocationView: View {
                 .foregroundColor(.Yonder.textMaxContrast)
                 .frame(width: geo.size.width, height: YonderCoreGraphics.padding*3)
                 .padding(.bottom, YonderCoreGraphics.borderWidth)
-                .background(Color.Yonder.backgroundMinDepth)
+                .background(Color.Yonder.backgroundMaxDepth)
                 .frame(width: geo.size.width, height: 180, alignment: .bottomLeading)
             }
         }

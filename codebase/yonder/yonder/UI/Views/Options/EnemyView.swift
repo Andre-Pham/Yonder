@@ -43,7 +43,7 @@ struct EnemyView: View {
             Spacer()
         }
         .foregroundColor(.Yonder.textMaxContrast)
-        .background(Color.Yonder.backgroundMinDepth)
+        .background(Color.Yonder.backgroundMaxDepth)
     }
 }
 

@@ -38,7 +38,7 @@ struct OptionsView: View {
                         Button {
                             showingPlayerSheet.toggle()
                         } label: {
-                            PlayerView(player: player)
+                            PlayerCardView(player: player)
                                 .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
                         }
                         .sheet(isPresented: $showingPlayerSheet) {
@@ -76,9 +76,7 @@ struct OptionsView: View {
                     .frame(maxWidth: .infinity)
                     .frame(height: geo.size.width/2 - YonderCoreGraphics.padding*1.5)
                     
-                    Text(optionHeader)
-                        .foregroundColor(Color.Yonder.textMaxContrast)
-                        .font(YonderFonts.main(size: 20))
+                    YonderText(text: optionHeader, size: .title4)
                     
                     if showOptions {
                         LazyVGrid(columns: optionColumns, spacing: YonderCoreGraphics.padding) {

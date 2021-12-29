@@ -11,7 +11,6 @@ import SwiftUI
 enum YonderCoreGraphics {
     
     static let padding: CGFloat = 12
-    static let cornerRadius: CGFloat = 12
     static let borderWidth: CGFloat = 4
     
 }
