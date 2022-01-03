@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct WowView: View {
+    // Parameters
     let down: Int
     let downAcross: Int
     let spacing: CGFloat
@@ -23,7 +24,7 @@ struct WowView: View {
             }
         }*/
         GeometryReader { geo in
-            GridConnection(down: down, downAcross: downAcross, geoWidth: geo.size.width, geoHeight: geo.size.height, spacing: spacing, offset: offset)
+            GridConnection(down: down, downAcross: downAcross, geoWidth: geo.size.width, geoHeight: geo.size.height, spacing: spacing, horizontalOffset: offset)
         }
     }
 }
