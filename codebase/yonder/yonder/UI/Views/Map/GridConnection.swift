@@ -19,13 +19,13 @@ struct GridConnection: View {
     
     var body: some View {
         ZStack {
-            if down > 0 {
+            if down - abs(downAcross) > 0 {
                 Line(start: getStart(), end: getDownEnd())
                     .stroke(.red, lineWidth: 10)
                     .reverseScroll()
             }
             if downAcross != 0 {
-                let offset = CGFloat(down)*(geoHeight*2 + spacing*2)
+                let offset = CGFloat(down - abs(downAcross))*(geoHeight*2 + spacing*2)
                 Line(start: getStart(verticalOffset: offset), end: getDownAcrossEnd(verticalOffset: offset))
                     .stroke(.red, lineWidth: 10)
                     .reverseScroll()
@@ -44,7 +44,7 @@ struct GridConnection: View {
         let endX = geoWidth/2 + offset
         var endY = geoHeight/2
         
-        for _ in 0..<down {
+        for _ in 0..<Int((Double(down - abs(downAcross))/2).rounded(.down)) {
             endY += geoHeight*2 + spacing*2
         }
         
