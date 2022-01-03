@@ -73,7 +73,7 @@ struct MapGrid: View {
                                 ForEach(0..<locationsPointingTo[locationIndex].count) { connectedLocationIndex in
                                     let values = getDownAndAcrossValues(from: tempArea.locations[locationIndex].hexagonCoordinate!, to: locationsPointingTo[locationIndex][connectedLocationIndex].hexagonCoordinate!)
                                     
-                                    WowView(down: values.1, downAcross: values.0, spacing: spacing, offset: (hexagonWidth/4 + spacing/4)*(isEvenRow(index) ? -1 : 1))
+                                    GridConnection(down: values.1, downAcross: values.0, spacing: spacing, horizontalOffset: (hexagonWidth/4 + spacing/4)*(isEvenRow(index) ? -1 : 1))
                                 }
                             }
                         }
