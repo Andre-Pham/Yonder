@@ -53,34 +53,7 @@ struct MapGrid: View {
                         
                         GeometryReader { geo in
                             if (Int.random(in: 0...3) == 0) {
-                                // Straight down
-                                Line(
-                                    start:
-                                        (geo.size.width/2 +
-                                            (isEvenRow(index) ?
-                                                -(hexagonWidth/4 + spacing/4) :
-                                                hexagonWidth/4 + spacing/4), geo.size.height/2),
-                                    end:
-                                        (geo.size.width/2 + /*(geo.size.height/2 + geo.size.height*2 + spacing*2) +*/
-                                            (isEvenRow(index) ?
-                                            -(hexagonWidth/4 + spacing/4) :
-                                            hexagonWidth/4 + spacing/4),
-                                         geo.size.height/2 + geo.size.height*2 + spacing*2)) // centre + 2 geosize.height + 2 spacing
-                                    .stroke(.red, lineWidth: 10)
-                                    .reverseScroll()
-                                
-                                // Down right
-                                Line(
-                                    start: (geo.size.width/2 + (isEvenRow(index) ? -(hexagonWidth/4 + spacing/4) : hexagonWidth/4 + spacing/4), geo.size.height/2),
-                                    end: (
-                                        geo.size.width + spacing/2 +
-                                        (isEvenRow(index) ?
-                                            -(hexagonWidth/4 + spacing/4) :
-                                            hexagonWidth/4 + spacing/4),
-                                        (geo.size.height*1.5 + spacing))
-                                ) // centre + 2 geosize.height + 2 spacing
-                                    .stroke(.red, lineWidth: 10)
-                                    .reverseScroll()
+                                GridConnection(down: 1, downAcross: 2, geoWidth: geo.size.width, geoHeight: geo.size.height, spacing: spacing, offset: (hexagonWidth/4 + spacing/4)*(isEvenRow(index) ? -1 : 1))
                             }
                         }
                     }
