@@ -7,7 +7,7 @@
 
 import Foundation
 
-class HexagonCoordinate {
+class HexagonCoordinate: Identifiable {
     
     public let x: Int
     public let y: Int
