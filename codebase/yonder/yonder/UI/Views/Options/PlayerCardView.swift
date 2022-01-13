@@ -18,11 +18,19 @@ struct PlayerCardView: View {
                 .padding(.leading)
                 .padding(.trailing)
             
-            PlayerCardColumnView(value: "\(player.armorPoints)", maxValue: "/\(player.maxArmorPoints)")
+            PlayerCardColumnView(
+                value: "\(player.armorPoints)",
+                maxValue: "/\(player.maxArmorPoints)",
+                image: YonderImages.shieldIcon)
             
-            PlayerCardColumnView(value: "\(player.health)", maxValue: "/\(player.maxHealth)")
+            PlayerCardColumnView(
+                value: "\(player.health)",
+                maxValue: "/\(player.maxHealth)",
+                image: YonderImages.healthIcon)
             
-            PlayerCardColumnView(value: "$\(player.gold)")
+            PlayerCardColumnView(
+                value: "$\(player.gold)",
+                image: YonderImages.goldIcon)
             
             Spacer()
         }
@@ -34,27 +42,36 @@ struct PlayerCardView: View {
 struct PlayerCardColumnView: View {
     var value: String
     var maxValue: String = ""
+    var image: Image? = nil
     
     var body: some View {
-        if maxValue.count > 0 {
-            HStack {
-                YonderText(text: value, size: .cardBody)
-                
-                Spacer()
-                
-                YonderText(text: maxValue, size: .cardSubscript)
+        HStack {
+            if let image = image {
+                image
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 26.4, height: 24)
             }
-            .padding(.leading)
-            .padding(.trailing)
+            
+            if maxValue.count > 0 {
+                HStack(alignment: .lastTextBaseline) {
+                    YonderText(text: value, size: .cardBody)
+                    
+                    Spacer()
+                    
+                    YonderText(text: maxValue, size: .cardSubscript)
+                }
+            }
+            else {
+                YonderText(text: value, size: .cardBody)
+            }
         }
-        else {
-            YonderText(text: value, size: .cardBody)
-                .padding(.leading)
-        }
+        .padding(.leading)
+        .padding(.trailing)
     }
 }
 
-struct PlayerComponent_Previews: PreviewProvider {
+struct PlayerCardView_Previews: PreviewProvider {
     static var previews: some View {
         PlayerCardView(player: PlayerPresenter(Player(maxHealth: 200, location: NoLocation())))
     }

@@ -11,9 +11,21 @@ import SwiftUI
 // There is a lot of questionable maths in this... but it works, so just treat it like a blackbox with columns, spacing and height as parameters
 struct MapGrid: View {
     // Parameters
-    let columnsCount: Int = 6
-    let spacing: CGFloat = 10.0
-    let hexagonFrameHeight: CGFloat = 150
+    let columnsCount: Int// = 6
+    let spacing: CGFloat// = 10.0
+    let hexagonFrameHeight: CGFloat// = 150
+    
+    // TODO: - Take out locationConnections and put it in MapPresenter, and let it manage the contents, not the swuiftUI view
+    // The swiftUI view sometimes mixes up values in the array... MapPresenter won't do this and should fix it
+    let map: MapPresenter //= MapPresenter(GAME.map, columnsCount: columnsCount)
+    //var locationConnections// = map.getAllLocationConnections()
+    
+    init(columnsCount: Int = 6, spacing: CGFloat = 10, hexagonFrameHeight: CGFloat = 150) {
+        self.columnsCount = columnsCount
+        self.spacing = spacing
+        self.hexagonFrameHeight = hexagonFrameHeight
+        self.map = MapPresenter(GAME.map, columnsCount: columnsCount)
+    }
     
     var maxLocationHeight: Int = 50 // TEMP
     var hexagonFrameWidth: CGFloat {
@@ -44,7 +56,7 @@ struct MapGrid: View {
                             .onTapGesture {
                                 print(index)
                             }
-                            .overlay(Text("\(index)").foregroundColor(.white))
+                            .overlay(Text("\(index), \(locationConnections.last?.locationHexagonIndex ?? 3333)").foregroundColor(.white))
                             .frame(width: hexagonFrameWidth, height: hexagonFrameHeight/2)
                             .offset(x: isEvenRow(index) ? -(hexagonWidth/4 + spacing/4) : hexagonWidth/4 + spacing/4)
                             .frame(width: (hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + spacing, height: hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it

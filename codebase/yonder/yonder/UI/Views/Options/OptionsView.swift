@@ -48,7 +48,7 @@ struct OptionsView: View {
                         Button {
                             showingNPCSheet.toggle()
                         } label: {
-                            EnemyView()
+                            EnemyCardView()
                                 .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
                         }
                         .sheet(isPresented: $showingNPCSheet) {
