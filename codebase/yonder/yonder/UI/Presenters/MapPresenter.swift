@@ -19,7 +19,7 @@ class MapPresenter: ObservableObject {
         self.columnsCount = columnsCount
     }
     
-    func getAllLocationConnections() -> [LocationConnection] {
+    func getAllLocationConnections(hexagonCount: Int) -> [LocationConnection?] {
         var result = [LocationConnection]()
         
         for (territoryIndex, territory) in self.map.territoriesInOrder.enumerated() {
@@ -30,7 +30,12 @@ class MapPresenter: ObservableObject {
             result.append(contentsOf: segmentConnections)
         }
         
-        return result.sorted(by: { $0.locationHexagonIndex > $1.locationHexagonIndex })
+        //let descendingResult = result.sorted(by: { $0.locationHexagonIndex > $1.locationHexagonIndex })
+        var newResult: [LocationConnection?] = Array(repeating: nil, count: hexagonCount)
+        for locationConnection in result {
+            newResult[locationConnection.locationHexagonIndex] = locationConnection
+        }
+        return newResult
     }
     
     private func getLocationConnections(area: Area, areaPosition: Int, correspondingTerritoryPosition: Int) -> [LocationConnection] {
@@ -49,43 +54,39 @@ class MapPresenter: ObservableObject {
     
 }
 
-extension MapPresenter {
+struct LocationConnection {
     
-    struct LocationConnection {
-        
-        private let mapGridColumnsCount: Int
-        private let areaPosition: Int
-        private let territoryPosition: Int
-        let location: LocationAbstract
-        var locationHexagonIndex: Int {
-            return coordinatesToHexagonIndex(location.hexagonCoordinate!)
-        }
-        var locationHexagonCoordinate: HexagonCoordinate {
-            return location.hexagonCoordinate!
-        }
-        private(set) var previousLocations = [LocationAbstract]()
-        var previousLocationsHexagonIndices: [Int] {
-            return previousLocations.map { coordinatesToHexagonIndex($0.hexagonCoordinate!) }
-        }
-        var previousLocationsHexagonCoordinates: [HexagonCoordinate] {
-            return previousLocations.map { $0.hexagonCoordinate! }
-        }
-        
-        init(location: LocationAbstract, mapGridColumnsCount: Int, areaPosition: Int, territoryPosition: Int) {
-            self.location = location
-            self.mapGridColumnsCount = mapGridColumnsCount
-            self.areaPosition = areaPosition
-            self.territoryPosition = territoryPosition
-        }
-        
-        mutating func addPreviousLocation(_ location: LocationAbstract) {
-            self.previousLocations.append(location)
-        }
-        
-        func coordinatesToHexagonIndex(_ coordinates: HexagonCoordinate) -> Int {
-            return Int((Double(coordinates.x)/2).rounded(.down)) + coordinates.y*mapGridColumnsCount + self.areaPosition*3 + (2*mapGridColumnsCount*self.territoryPosition)*13
-        }
-        
+    private let mapGridColumnsCount: Int
+    private let areaPosition: Int
+    private let territoryPosition: Int
+    let location: LocationAbstract
+    var locationHexagonIndex: Int {
+        return coordinatesToHexagonIndex(location.hexagonCoordinate!)
+    }
+    var locationHexagonCoordinate: HexagonCoordinate {
+        return location.hexagonCoordinate!
+    }
+    private(set) var previousLocations = [LocationAbstract]()
+    var previousLocationsHexagonIndices: [Int] {
+        return previousLocations.map { coordinatesToHexagonIndex($0.hexagonCoordinate!) }
+    }
+    var previousLocationsHexagonCoordinates: [HexagonCoordinate] {
+        return previousLocations.map { $0.hexagonCoordinate! }
+    }
+    
+    init(location: LocationAbstract, mapGridColumnsCount: Int, areaPosition: Int, territoryPosition: Int) {
+        self.location = location
+        self.mapGridColumnsCount = mapGridColumnsCount
+        self.areaPosition = areaPosition
+        self.territoryPosition = territoryPosition
+    }
+    
+    mutating func addPreviousLocation(_ location: LocationAbstract) {
+        self.previousLocations.append(location)
+    }
+    
+    func coordinatesToHexagonIndex(_ coordinates: HexagonCoordinate) -> Int {
+        return Int((Double(coordinates.x)/2).rounded(.down)) + coordinates.y*mapGridColumnsCount + self.areaPosition*3 + (2*mapGridColumnsCount*self.territoryPosition)*13
     }
     
 }

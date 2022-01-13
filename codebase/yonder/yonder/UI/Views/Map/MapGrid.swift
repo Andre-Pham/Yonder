@@ -24,7 +24,9 @@ struct MapGrid: View {
         self.columnsCount = columnsCount
         self.spacing = spacing
         self.hexagonFrameHeight = hexagonFrameHeight
-        self.map = MapPresenter(GAME.map, columnsCount: columnsCount)
+        let mapPresenter = MapPresenter(GAME.map, columnsCount: columnsCount)
+        self.map = mapPresenter
+        self.locationConnections = mapPresenter.getAllLocationConnections(hexagonCount: maxLocationHeight*columnsCount)
     }
     
     var maxLocationHeight: Int = 50 // TEMP
@@ -39,38 +41,38 @@ struct MapGrid: View {
         return maxLocationHeight*columnsCount
     }
     
+    let locationConnections: [LocationConnection?]
+    
     //let tempArea = GAME.map.territoriesInOrder.first!.segment.leftArea
     
     var body: some View {
         let gridItems = Array(repeating: GridItem(.fixed(hexagonWidth), spacing: spacing), count: columnsCount)
-        let map = MapPresenter(GAME.map, columnsCount: columnsCount)
+        //let map = MapPresenter(GAME.map, columnsCount: columnsCount)
         //var locationConnections: [LocationConnection] = getLocationConnections()
-        var locationConnections = map.getAllLocationConnections()
+        //var locationConnections = map.getAllLocationConnections()
         
         ScrollView([.vertical, .horizontal]) {
             LazyVGrid(columns: gridItems, spacing: spacing) {
                 ForEach(0..<hexagonCount, id: \.self) { index in
                     ZStack {
                         Hexagon()
-                            .fill(.black)
+                            .fill(.gray)
                             .onTapGesture {
                                 print(index)
                             }
-                            .overlay(Text("\(index), \(locationConnections.last?.locationHexagonIndex ?? 3333)").foregroundColor(.white))
+                            //.overlay(Text("\(index), \(locationConnections.last?.locationHexagonIndex ?? 3333)").foregroundColor(.white))
                             .frame(width: hexagonFrameWidth, height: hexagonFrameHeight/2)
                             .offset(x: isEvenRow(index) ? -(hexagonWidth/4 + spacing/4) : hexagonWidth/4 + spacing/4)
                             .frame(width: (hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + spacing, height: hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
                             .reverseScroll()
                         
-                        if locationConnections.count > 0 && locationConnections.last!.locationHexagonIndex == index {
+                        if let locationConnection = locationConnections[index] {
                             Hexagon()
                                 .fill(.blue)
                                 .frame(width: hexagonFrameWidth/2, height: hexagonFrameHeight/4)
                                 .offset(x: isEvenRow(index) ? -(hexagonWidth/4 + spacing/4) : hexagonWidth/4 + spacing/4)
                                 .frame(width: hexagonWidth/2, height: hexagonFrameHeight*0.25/2)
                                 .reverseScroll()
-                            
-                            let locationConnection = locationConnections.popLast()!
                             
                             ForEach(locationConnection.previousLocationsHexagonCoordinates) { coords in
                                 let values = getCoordinatesDifference(from: locationConnection.locationHexagonCoordinate, to: coords)
