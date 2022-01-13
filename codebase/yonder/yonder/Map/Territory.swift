@@ -22,7 +22,7 @@ class Territory {
             area.tipLocation.addNextLocations(self.tavernArea.rootLocations)
         }
         
-        self.rootLocations = self.segment.allAreas.map(\.rootLocation)
+        self.rootLocations = self.segment.allAreas.map { $0.rootLocation }
         self.tipLocations = self.tavernArea.tipLocations
     }
     

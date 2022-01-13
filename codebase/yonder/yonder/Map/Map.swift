@@ -27,7 +27,17 @@ class Map {
             self.startingLocation.addNextLocations([area.rootLocation])
         }
         
-        let territoriesPerBoss = 2
+        // TEMP, until bosses are added in
+        for territoryIndex in 0..<self.territoriesInOrder.count-1 {
+            let territory = self.territoriesInOrder[territoryIndex]
+            let nextTerritory = self.territoriesInOrder[territoryIndex+1]
+            
+            for tipLocation in territory.tipLocations {
+                tipLocation.addNextLocations(nextTerritory.rootLocations)
+            }
+        }
+        
+        /*let territoriesPerBoss = 2
         var territoryIndex = 0
         var bossIndex = 0
         var bossesToAddRemaining = bossAreasInOrder.count
@@ -54,7 +64,7 @@ class Map {
             }
             
             territoryIndex += 1
-        }
+        }*/
     }
     
 }

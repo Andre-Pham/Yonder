@@ -28,6 +28,8 @@ class LocationConnectionGenerator {
             for (areaIndex, area) in territory.segment.allAreas.enumerated() {
                 segmentConnections.append(contentsOf: self.getAreaLocationConnections(
                     area: area,
+                    previousTavernArea:
+                        territoryIndex > 0 ? self.map.territoriesInOrder[territoryIndex-1].tavernArea : nil,
                     areaPosition: areaIndex,
                     correspondingTerritoryPosition: territoryIndex))
             }
@@ -46,13 +48,22 @@ class LocationConnectionGenerator {
         return result
     }
     
-    private func getAreaLocationConnections(area: Area, areaPosition: Int, correspondingTerritoryPosition: Int) -> [LocationConnection] {
+    private func getAreaLocationConnections(area: Area, previousTavernArea: TavernArea?, areaPosition: Int, correspondingTerritoryPosition: Int) -> [LocationConnection] {
         let result: [LocationConnection] = area.locations.map {
             LocationConnection(
                 location: $0,
                 mapGridColumnsCount: self.columnsCount,
                 areaPosition: areaPosition,
                 territoryPosition: correspondingTerritoryPosition)
+        }
+        if let tavernArea = previousTavernArea {
+            for location in tavernArea.tipLocations {
+                for nextLocation in location.nextLocations {
+                    if nextLocation.id == area.rootLocation.id {
+                        result[0].addPreviousLocation(location, leftArea: areaPosition == 1, previousTavernArea: true)
+                    }
+                }
+            }
         }
         for location in area.locations {
             for nextLocation in location.nextLocations {
@@ -93,7 +104,7 @@ class LocationConnectionGenerator {
             for nextLocation in area.tipLocation.nextLocations {
                 for (index, compareLocation) in tavernArea.locations.enumerated() {
                     if nextLocation.id == compareLocation.id {
-                        result[index].addPreviousLocation(area.tipLocation, rightArea: areaIndex%2 == 1)
+                        result[index].addPreviousLocation(area.tipLocation, rightArea: areaIndex == 1)
                     }
                 }
             }
@@ -124,6 +135,8 @@ class LocationConnection {
     }
     private(set) var previousLocations = [LocationAbstract]()
     private(set) var previousLocationIndicesFromRightArea = [Int]()
+    private(set) var previousLocationIndicesFromLeftArea = [Int]()
+    private(set) var previousLocationIndicesFromPreviousTavernArea = [Int]()
     var previousLocationsHexagonIndices: [Int] {
         return self.previousLocations.map { self.coordinatesToHexagonIndex($0.hexagonCoordinate!) }
     }
@@ -133,6 +146,16 @@ class LocationConnection {
         for locationIndex in self.previousLocationIndicesFromRightArea {
             let coords = result[locationIndex]
             result[locationIndex] = HexagonCoordinate(coords.x + self.COLUMNS_BETWEEN_AREA_TIPS, coords.y)
+        }
+        
+        for locationIndex in self.previousLocationIndicesFromLeftArea {
+            let coords = result[locationIndex]
+            result[locationIndex] = HexagonCoordinate(coords.x - self.COLUMNS_BETWEEN_AREA_TIPS, coords.y)
+        }
+        
+        for locationIndex in self.previousLocationIndicesFromPreviousTavernArea {
+            let coords = result[locationIndex]
+            result[locationIndex] = HexagonCoordinate(coords.x, coords.y - 2*(self.ROWS_IN_AREA + self.ROWS_BETWEEN_AREAS))
         }
         
         return result
@@ -145,11 +168,17 @@ class LocationConnection {
         self.territoryPosition = territoryPosition
     }
     
-    func addPreviousLocation(_ location: LocationAbstract, rightArea: Bool = false) {
+    func addPreviousLocation(_ location: LocationAbstract, rightArea: Bool = false, leftArea: Bool = false, previousTavernArea: Bool = false) {
         self.previousLocations.append(location)
         
         if rightArea {
             self.previousLocationIndicesFromRightArea.append(self.previousLocations.count-1)
+        }
+        if leftArea {
+            self.previousLocationIndicesFromLeftArea.append(self.previousLocations.count-1)
+        }
+        if previousTavernArea {
+            self.previousLocationIndicesFromPreviousTavernArea.append(self.previousLocations.count-1)
         }
     }
     

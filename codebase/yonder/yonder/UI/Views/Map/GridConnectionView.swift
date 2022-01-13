@@ -23,12 +23,19 @@ struct GridConnectionView: View {
         GeometryReader { geo in
             ZStack {
                 if self.downVGridConverted > 0 {
-                    Line(start: self.getStart(geometry: geo), end: self.getDownEnd(geometry: geo), horizontalOffset: self.horizontalOffset)
+                    Line(start: self.getStart(geometry: geo),
+                         end: self.getDownEnd(geometry: geo),
+                         horizontalOffset: self.horizontalOffset)
                         .stroke(.red, lineWidth: 10)
                         .reverseScroll()
                 }
                 if self.downAcross != 0 {
-                    Line(start: self.getStart(geometry: geo), end: self.getDownAcrossEnd(geometry: geo), verticalOffset: self.downVGridConverted*(geo.size.height*2 + self.spacing*2), horizontalOffset: self.horizontalOffset)
+                    Line(start: self.getStart(geometry: geo),
+                         end: self.getDownAcrossEnd(geometry: geo),
+                         verticalOffset:
+                            (self.downVGridConverted*(geo.size.height*2 + self.spacing*2) /
+                            (self.downVGridConverted > 0 ? 2 : 1)),
+                         horizontalOffset: self.horizontalOffset)
                         .stroke(.red, lineWidth: 10)
                         .reverseScroll()
                 }
