@@ -14,7 +14,7 @@ struct MapGridView: View {
     let spacing: CGFloat = 10
     let hexagonFrameHeight: CGFloat = 150
     
-    let maxLocationHeight: Int = 50 // TEMP
+    let maxLocationHeight: Int = 100 // TEMP
     let hexagonCount: Int
     let hexagonFrameWidth: CGFloat
     let hexagonWidth: CGFloat
@@ -64,7 +64,7 @@ struct MapGridView: View {
                             ForEach(locationConnection.previousLocationsHexagonCoordinates) { coords in
                                 let values = self.getCoordinatesDifference(from: locationConnection.locationHexagonCoordinate, to: coords)
                                 
-                                GridConnectionView(down: values.1, downAcross: values.0, spacing: spacing, horizontalOffset: horizontalOffset)
+                                GridConnectionView(down: values.1, downAcross: values.0, spacing: self.spacing, horizontalOffset: horizontalOffset)
                             }
                         }
                     }

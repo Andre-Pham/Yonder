@@ -17,7 +17,7 @@ enum Maps {
                     tavernAreas: TAVERN_AREAS_STAGE0),
                 TerritoryPool(
                     areaPools: AREA_POOLS_STAGE_ORDERED[1],
-                    tavernAreas: TAVERN_AREAS_STAGE0),
+                    tavernAreas: TAVERN_AREAS_STAGE1),
             ],
             bossAreas: [])
         

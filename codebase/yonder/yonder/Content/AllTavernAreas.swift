@@ -14,3 +14,11 @@ let TAVERN_AREAS_STAGE0: [TavernArea] = [
         potionShop: ShopLocation(shopKeeper: ShopKeepers.newTestShopKeeper()),
         enhancer: EnhancerLocation(enhancer: Enhancers.newTestEnhancer()))
 ]
+
+let TAVERN_AREAS_STAGE1: [TavernArea] = [
+    // Testing for now
+    TavernArea(
+        restorer: RestorerLocation(restorer: Restorers.newTestRestorer()),
+        potionShop: ShopLocation(shopKeeper: ShopKeepers.newTestShopKeeper()),
+        enhancer: EnhancerLocation(enhancer: Enhancers.newTestEnhancer()))
+]

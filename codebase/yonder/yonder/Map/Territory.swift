@@ -19,7 +19,7 @@ class Territory {
         self.tavernArea = followingTavernArea
         
         for area in segment.allAreas {
-            area.tipLocation.addNextLocations(tavernArea.rootLocations)
+            area.tipLocation.addNextLocations(self.tavernArea.rootLocations)
         }
         
         self.rootLocations = self.segment.allAreas.map(\.rootLocation)
