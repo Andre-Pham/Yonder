@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 
 struct GridConnectionView: View {
-    // Parameters
     let down: Int
     let downAcross: Int // Use -/+ to determine left/right
     let spacing: CGFloat

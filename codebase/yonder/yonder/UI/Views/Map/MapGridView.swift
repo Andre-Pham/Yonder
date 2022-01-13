@@ -10,7 +10,6 @@ import SwiftUI
 
 // There is a lot of questionable maths in this... but it works, so just treat it like a blackbox with columns, spacing and height as parameters
 struct MapGridView: View {
-    
     let columnsCount: Int = 6
     let spacing: CGFloat = 10
     let hexagonFrameHeight: CGFloat = 150
@@ -19,6 +18,7 @@ struct MapGridView: View {
     let hexagonCount: Int
     let hexagonFrameWidth: CGFloat
     let hexagonWidth: CGFloat
+    let distanceBetweenColumnCentres: CGFloat
     
     @ObservedObject private var mapViewModel: MapViewModel
     let locationConnections: [LocationConnection?]
@@ -27,6 +27,7 @@ struct MapGridView: View {
         self.hexagonCount = self.maxLocationHeight*self.columnsCount
         self.hexagonFrameWidth = MathConstants.hexagonWidthToHeight*(self.hexagonFrameHeight + 2*self.spacing/tan((120.0 - 90.0)*MathConstants.degreesToRadians)) // I don't remember how I got this so just accept it's magic
         self.hexagonWidth = self.hexagonFrameWidth/2 * cos(.pi/6) * 2
+        self.distanceBetweenColumnCentres = self.hexagonWidth/2 + self.spacing/2
         
         self.mapViewModel = MapViewModel(map)
         self.locationConnections = LocationConnectionGenerator(map: map, hexagonCount: self.hexagonCount, columnsCount: self.columnsCount).getAllLocationConnections()
@@ -39,6 +40,8 @@ struct MapGridView: View {
             LazyVGrid(columns: gridItems, spacing: spacing) {
                 ForEach(0..<hexagonCount, id: \.self) { index in
                     ZStack {
+                        let horizontalOffset = self.distanceBetweenColumnCentres/2 * (self.isEvenRow(index) ? -1 : 1)
+                        
                         Hexagon()
                             .fill(.gray)
                             .onTapGesture {
@@ -46,7 +49,7 @@ struct MapGridView: View {
                             }
                             //.overlay(Text("\(index), \(locationConnections.last?.locationHexagonIndex ?? 3333)").foregroundColor(.white))
                             .frame(width: self.hexagonFrameWidth, height: self.hexagonFrameHeight/2)
-                            .offset(x: isEvenRow(index) ? -(self.hexagonWidth/4 + self.spacing/4) : self.hexagonWidth/4 + self.spacing/4)
+                            .offset(x: horizontalOffset)
                             .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
                             .reverseScroll()
                         
@@ -54,14 +57,14 @@ struct MapGridView: View {
                             Hexagon()
                                 .fill(.blue)
                                 .frame(width: self.hexagonFrameWidth/2, height: self.hexagonFrameHeight/4)
-                                .offset(x: self.isEvenRow(index) ? -(self.hexagonWidth/4 + self.spacing/4) : self.hexagonWidth/4 + self.spacing/4)
+                                .offset(x: horizontalOffset)
                                 .frame(width: self.hexagonWidth/2, height: self.hexagonFrameHeight*0.25/2)
                                 .reverseScroll()
                             
                             ForEach(locationConnection.previousLocationsHexagonCoordinates) { coords in
                                 let values = self.getCoordinatesDifference(from: locationConnection.locationHexagonCoordinate, to: coords)
                                 
-                                GridConnectionView(down: values.1, downAcross: values.0, spacing: spacing, horizontalOffset: (self.hexagonWidth/4 + self.spacing/4)*(self.isEvenRow(index) ? -1 : 1))
+                                GridConnectionView(down: values.1, downAcross: values.0, spacing: spacing, horizontalOffset: horizontalOffset)
                             }
                         }
                     }
@@ -80,6 +83,5 @@ struct MapGridView: View {
     func getCoordinatesDifference(from coordinates: HexagonCoordinate, to otherCoordinates: HexagonCoordinate) -> (Int, Int) {
         return (otherCoordinates.x - coordinates.x, abs(otherCoordinates.y - coordinates.y))
     }
-    
 }
 
