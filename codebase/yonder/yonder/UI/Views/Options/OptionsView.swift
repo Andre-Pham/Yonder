@@ -27,7 +27,7 @@ struct OptionsView: View {
             
             ScrollView {
                 VStack(spacing: YonderCoreGraphics.padding) {
-                    LocationView(locationViewModel: playerViewModel.locationPresenter)
+                    LocationView(locationViewModel: self.playerViewModel.locationPresenter)
                         .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
                         .frame(maxWidth: .infinity)
                         .frame(height: 180)
@@ -36,12 +36,12 @@ struct OptionsView: View {
                     
                     HStack(spacing: YonderCoreGraphics.padding) {
                         Button {
-                            showingPlayerSheet.toggle()
+                            self.showingPlayerSheet.toggle()
                         } label: {
-                            PlayerCardView(playerViewModel: playerViewModel)
+                            PlayerCardView(playerViewModel: self.playerViewModel)
                                 .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
                         }
-                        .sheet(isPresented: $showingPlayerSheet) {
+                        .sheet(isPresented: self.$showingPlayerSheet) {
                             Text("Wow!")
                         }
                         
@@ -51,7 +51,7 @@ struct OptionsView: View {
                             EnemyCardView()
                                 .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
                         }
-                        .sheet(isPresented: $showingNPCSheet) {
+                        .sheet(isPresented: self.$showingNPCSheet) {
                             ZStack {
                                 Color.Yonder.backgroundMaxDepth
                                     .ignoresSafeArea()
@@ -66,7 +66,7 @@ struct OptionsView: View {
                                     .foregroundColor(.white)
                             }
                             .onTapGesture {
-                                showingNPCSheet = false
+                                self.showingNPCSheet = false
                             }
                         }
                         
@@ -76,14 +76,14 @@ struct OptionsView: View {
                     .frame(maxWidth: .infinity)
                     .frame(height: geo.size.width/2 - YonderCoreGraphics.padding*1.5)
                     
-                    YonderText(text: optionHeader, size: .title4)
+                    YonderText(text: self.optionHeader, size: .title4)
                     
-                    if showOptions {
-                        LazyVGrid(columns: optionColumns, spacing: YonderCoreGraphics.padding) {
+                    if self.showOptions {
+                        LazyVGrid(columns: self.optionColumns, spacing: YonderCoreGraphics.padding) {
                             // Normally it's just "if location.isHostile, show the Engage option"
                             ForEach(0..<5) { _ in
                                 Button {
-                                    playerViewModel.equipArmor(Armors.newTestBodyArmor())
+                                    self.playerViewModel.equipArmor(Armors.newTestBodyArmor())
                                     showOptions.toggle()
                                     showEngageCategories.toggle()
                                     optionHeader = "[Engage Options]"
@@ -98,7 +98,7 @@ struct OptionsView: View {
                         .padding(.trailing, YonderCoreGraphics.padding)
                     }
                     
-                    if showEngageCategories {
+                    if self.showEngageCategories {
                         let engageCategoryViews = [
                             EngageCategoryView(title: "Weapons"),
                             EngageCategoryView(title: "Potions")
@@ -108,7 +108,7 @@ struct OptionsView: View {
                             ForEach(engageCategoryViews) { view in
                                 Button {
                                     showOptions.toggle()
-                                    showEngageCategories.toggle()
+                                    self.showEngageCategories.toggle()
                                     optionHeader = "[Your Options]"
                                 } label: {
                                     view

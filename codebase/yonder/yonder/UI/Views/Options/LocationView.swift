@@ -13,20 +13,20 @@ struct LocationView: View {
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                locationViewModel.image
+                self.locationViewModel.image
                     .resizable()
                     .scaledToFill()
                     .frame(width: geo.size.width, height: 180)
                     .clipped()
                 
                 HStack(alignment: .bottom) {
-                    Text(locationViewModel.name)
+                    Text(self.locationViewModel.name)
                         .font(YonderFonts.main(size: 28))
                         .padding(.leading, YonderCoreGraphics.padding)
                     
                     Spacer()
                     
-                    Text(locationViewModel.type)
+                    Text(self.locationViewModel.type)
                         .font(YonderFonts.main())
                         .padding(.trailing, YonderCoreGraphics.padding)
                         .padding(.bottom, 3)

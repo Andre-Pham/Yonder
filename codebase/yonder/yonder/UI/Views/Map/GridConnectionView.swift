@@ -17,19 +17,19 @@ struct GridConnectionView: View {
     
     var downVGridConverted: CGFloat {
         // Parameter 'down', but adjusted to account for the fact that 'downAcross' causes a difference in hexagon y coordinates
-        return CGFloat(abs(down) - abs(downAcross))
+        return CGFloat(abs(self.down) - abs(self.downAcross))
     }
     
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                if downVGridConverted > 0 {
-                    Line(start: getStart(geometry: geo), end: getDownEnd(geometry: geo), horizontalOffset: horizontalOffset)
+                if self.downVGridConverted > 0 {
+                    Line(start: self.getStart(geometry: geo), end: self.getDownEnd(geometry: geo), horizontalOffset: self.horizontalOffset)
                         .stroke(.red, lineWidth: 10)
                         .reverseScroll()
                 }
-                if downAcross != 0 {
-                    Line(start: getStart(geometry: geo), end: getDownAcrossEnd(geometry: geo), verticalOffset: downVGridConverted*(geo.size.height*2 + spacing*2), horizontalOffset: horizontalOffset)
+                if self.downAcross != 0 {
+                    Line(start: self.getStart(geometry: geo), end: self.getDownAcrossEnd(geometry: geo), verticalOffset: self.downVGridConverted*(geo.size.height*2 + self.spacing*2), horizontalOffset: self.horizontalOffset)
                         .stroke(.red, lineWidth: 10)
                         .reverseScroll()
                 }
@@ -45,21 +45,21 @@ struct GridConnectionView: View {
     }
     
     func getDownEnd(geometry: GeometryProxy) -> (CGFloat, CGFloat) {
-        var (endX, endY) = getStart(geometry: geometry)
+        var (endX, endY) = self.getStart(geometry: geometry)
         
-        for _ in 0..<Int((downVGridConverted/2).rounded(.down)) {
-            endY += geometry.size.height*2 + spacing*2
+        for _ in 0..<Int((self.downVGridConverted/2).rounded(.down)) {
+            endY += geometry.size.height*2 + self.spacing*2
         }
         
         return (endX, endY)
     }
     
     func getDownAcrossEnd(geometry: GeometryProxy) -> (CGFloat, CGFloat) {
-        var (endX, endY) = getStart(geometry: geometry)
+        var (endX, endY) = self.getStart(geometry: geometry)
         
-        for _ in 0..<abs(downAcross) {
-            endX += (geometry.size.width/2 + spacing/2)*CGFloat(downAcross.signum())
-            endY += geometry.size.height + spacing
+        for _ in 0..<abs(self.downAcross) {
+            endX += (geometry.size.width/2 + self.spacing/2)*CGFloat(self.downAcross.signum())
+            endY += geometry.size.height + self.spacing
         }
         
         return (endX, endY)

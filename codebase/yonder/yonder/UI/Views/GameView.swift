@@ -18,7 +18,7 @@ struct GameView: View {
     }
     
     var body: some View {
-        TabView(selection: $selection) {
+        TabView(selection: self.$selection) {
             OptionsView()
                 .tabItem {
                     Image(systemName: "house.fill")

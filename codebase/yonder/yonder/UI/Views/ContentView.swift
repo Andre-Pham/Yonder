@@ -11,7 +11,7 @@ struct ContentView: View {
     @State private var showingMenu = true
     
     var body: some View {
-        if showingMenu {
+        if self.showingMenu {
             ZStack {
                 Color.Yonder.backgroundMaxDepth
                     .ignoresSafeArea()
@@ -24,14 +24,14 @@ struct ContentView: View {
                     VStack(spacing: 30) {
                         Button {
                             // Game is already newly created every time app starts up
-                            showingMenu.toggle()
+                            self.showingMenu.toggle()
                         } label: {
                             YonderRectButtonLabel(text: "New Game")
                         }
                         
                         Button {
                             // Find the game saved and resume it
-                            showingMenu.toggle()
+                            self.showingMenu.toggle()
                         } label: {
                             YonderRectButtonLabel(text: "Resume Game")
                         }

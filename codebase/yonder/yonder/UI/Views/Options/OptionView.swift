@@ -14,7 +14,7 @@ struct OptionView: View {
         ZStack {
             Color.Yonder.backgroundMaxDepth
             VStack {
-                Text(title)
+                Text(self.title)
                     .foregroundColor(.Yonder.textMaxContrast)
                     .font(YonderFonts.main(size: 24))
                 // Icon would go underneith

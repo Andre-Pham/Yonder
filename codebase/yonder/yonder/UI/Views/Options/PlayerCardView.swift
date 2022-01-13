@@ -19,17 +19,17 @@ struct PlayerCardView: View {
                 .padding(.trailing)
             
             PlayerCardColumnView(
-                value: "\(playerViewModel.armorPoints)",
-                maxValue: "/\(playerViewModel.maxArmorPoints)",
+                value: "\(self.playerViewModel.armorPoints)",
+                maxValue: "/\(self.playerViewModel.maxArmorPoints)",
                 image: YonderImages.shieldIcon)
             
             PlayerCardColumnView(
-                value: "\(playerViewModel.health)",
-                maxValue: "/\(playerViewModel.maxHealth)",
+                value: "\(self.playerViewModel.health)",
+                maxValue: "/\(self.playerViewModel.maxHealth)",
                 image: YonderImages.healthIcon)
             
             PlayerCardColumnView(
-                value: "$\(playerViewModel.gold)",
+                value: "$\(self.playerViewModel.gold)",
                 image: YonderImages.goldIcon)
             
             Spacer()
