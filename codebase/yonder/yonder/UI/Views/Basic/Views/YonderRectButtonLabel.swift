@@ -9,10 +9,10 @@ import Foundation
 import SwiftUI
 
 struct YonderRectButtonLabel: View {
-    var text: String
+    let text: String
     
     var body: some View {
-        YonderText(text: text, size: .buttonBody)
+        YonderText(text: self.text, size: .buttonBody)
             .frame(width: 200, height: 50)
             .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
     }

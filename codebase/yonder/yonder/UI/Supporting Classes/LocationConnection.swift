@@ -7,11 +7,12 @@
 
 import Foundation
 
+/// Used to generate an array of `LocationConnection` where each index corresponds to a hexagon index in the map grid. Hexagons in the map grid that don't contain a location are `nil` in the array.
 class LocationConnectionGenerator {
     
-    let map: Map
-    let hexagonCount: Int
-    let columnsCount: Int
+    private let map: Map
+    private let hexagonCount: Int
+    private let columnsCount: Int
     
     init(map: Map, hexagonCount: Int, columnsCount: Int) {
         self.map = map
@@ -60,6 +61,9 @@ class LocationConnectionGenerator {
     
 }
 
+/// Represents a `Location` on the map grid, and its connections to its predecessors.
+///
+/// Use to retrieve information about a location's hexagon coordinate, as well as the hexagon coordinates of its location predecessors in order to draw lines between them on the map grid.
 class LocationConnection {
     
     private let mapGridColumnsCount: Int

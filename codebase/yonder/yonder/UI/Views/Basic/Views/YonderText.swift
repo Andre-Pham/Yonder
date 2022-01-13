@@ -39,13 +39,13 @@ enum YonderTextSize {
 }
 
 struct YonderText: View {
-    var text: String
-    var size: YonderTextSize
-    var color: Color = Color.Yonder.textMaxContrast
+    let text: String
+    let size: YonderTextSize
+    let color: Color = Color.Yonder.textMaxContrast
     
     var body: some View {
-        Text(text)
-            .font(YonderFonts.main(size: size.value))
-            .foregroundColor(color)
+        Text(self.text)
+            .font(YonderFonts.main(size: self.size.value))
+            .foregroundColor(self.color)
     }
 }

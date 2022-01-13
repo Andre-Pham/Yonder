@@ -47,10 +47,7 @@ struct PlayerCardColumnView: View {
     var body: some View {
         HStack {
             if let image = image {
-                image
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 26.4, height: 24)
+                YonderIcon(image: image)
             }
             
             if maxValue.count > 0 {
