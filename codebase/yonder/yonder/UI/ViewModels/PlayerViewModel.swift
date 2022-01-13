@@ -1,5 +1,5 @@
 //
-//  PlayerPresenter.swift
+//  PlayerViewModel.swift
 //  yonder
 //
 //  Created by Andre Pham on 11/12/21.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class PlayerPresenter: ObservableObject {
+class PlayerViewModel: ObservableObject {
     
     private(set) var player: Player
     private var subscriptions: Set<AnyCancellable> = []
@@ -19,7 +19,7 @@ class PlayerPresenter: ObservableObject {
     @Published private(set) var maxArmorPoints: Int
     @Published private(set) var gold: Int
     
-    private(set) var locationPresenter: LocationPresenter
+    private(set) var locationPresenter: LocationViewModel
     
     init(_ player: Player) {
         self.player = player
@@ -34,7 +34,7 @@ class PlayerPresenter: ObservableObject {
         
         // Set other presenters
         
-        self.locationPresenter = LocationPresenter(self.player.location, player: self.player)
+        self.locationPresenter = LocationViewModel(self.player.location, player: self.player)
         
         // Add Subscribers
         

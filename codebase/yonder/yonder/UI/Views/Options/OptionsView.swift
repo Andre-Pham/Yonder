@@ -10,7 +10,7 @@ import SwiftUI
 struct OptionsView: View {
     let optionColumns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
     
-    @StateObject private var player = PlayerPresenter(GAME.player)
+    @StateObject private var playerViewModel = PlayerViewModel(GAME.player)
     
     @State private var optionHeader = "[Your Options]"
     @State private var showOptions = true
@@ -27,7 +27,7 @@ struct OptionsView: View {
             
             ScrollView {
                 VStack(spacing: YonderCoreGraphics.padding) {
-                    LocationView(location: player.locationPresenter)
+                    LocationView(locationViewModel: playerViewModel.locationPresenter)
                         .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
                         .frame(maxWidth: .infinity)
                         .frame(height: 180)
@@ -38,7 +38,7 @@ struct OptionsView: View {
                         Button {
                             showingPlayerSheet.toggle()
                         } label: {
-                            PlayerCardView(player: player)
+                            PlayerCardView(playerViewModel: playerViewModel)
                                 .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
                         }
                         .sheet(isPresented: $showingPlayerSheet) {
@@ -83,7 +83,7 @@ struct OptionsView: View {
                             // Normally it's just "if location.isHostile, show the Engage option"
                             ForEach(0..<5) { _ in
                                 Button {
-                                    player.equipArmor(Armors.newTestBodyArmor())
+                                    playerViewModel.equipArmor(Armors.newTestBodyArmor())
                                     showOptions.toggle()
                                     showEngageCategories.toggle()
                                     optionHeader = "[Engage Options]"

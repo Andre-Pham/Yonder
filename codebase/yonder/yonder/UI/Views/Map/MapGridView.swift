@@ -20,16 +20,16 @@ struct MapGridView: View {
     let hexagonFrameWidth: CGFloat
     let hexagonWidth: CGFloat
     
-    let mapViewModel: MapPresenter
+    @ObservedObject private var mapViewModel: MapViewModel
     let locationConnections: [LocationConnection?]
     
-    init() {
+    init(map: Map = GAME.map) {
         self.hexagonCount = maxLocationHeight*columnsCount
         self.hexagonFrameWidth = MathConstants.hexagonWidthToHeight*(self.hexagonFrameHeight + 2*self.spacing/tan((120.0 - 90.0)*MathConstants.degreesToRadians)) // I don't remember how I got this so just accept it's magic
         self.hexagonWidth = self.hexagonFrameWidth/2 * cos(.pi/6) * 2
         
-        self.mapViewModel = MapPresenter(GAME.map)
-        self.locationConnections = LocationConnectionGenerator(map: self.mapViewModel.map, hexagonCount: self.hexagonCount, columnsCount: self.columnsCount).getAllLocationConnections()
+        self.mapViewModel = MapViewModel(map)
+        self.locationConnections = LocationConnectionGenerator(map: map, hexagonCount: self.hexagonCount, columnsCount: self.columnsCount).getAllLocationConnections()
     }
     
     var body: some View {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MapPresenter: ObservableObject {
+class MapViewModel: ObservableObject {
     
     private(set) var map: Map
     

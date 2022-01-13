@@ -1,5 +1,5 @@
 //
-//  LocationPresenter.swift
+//  LocationViewModel.swift
 //  yonder
 //
 //  Created by Andre Pham on 11/12/21.
@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import SwiftUI
 
-class LocationPresenter: ObservableObject {
+class LocationViewModel: ObservableObject {
     
     @Published private(set) var location: LocationAbstract
     private var subscriptions: Set<AnyCancellable> = []

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlayerCardView: View {
-    @ObservedObject var player: PlayerPresenter
+    @ObservedObject var playerViewModel: PlayerViewModel
     @State private var showingPlayerSheet = false
     
     var body: some View {
@@ -19,17 +19,17 @@ struct PlayerCardView: View {
                 .padding(.trailing)
             
             PlayerCardColumnView(
-                value: "\(player.armorPoints)",
-                maxValue: "/\(player.maxArmorPoints)",
+                value: "\(playerViewModel.armorPoints)",
+                maxValue: "/\(playerViewModel.maxArmorPoints)",
                 image: YonderImages.shieldIcon)
             
             PlayerCardColumnView(
-                value: "\(player.health)",
-                maxValue: "/\(player.maxHealth)",
+                value: "\(playerViewModel.health)",
+                maxValue: "/\(playerViewModel.maxHealth)",
                 image: YonderImages.healthIcon)
             
             PlayerCardColumnView(
-                value: "$\(player.gold)",
+                value: "$\(playerViewModel.gold)",
                 image: YonderImages.goldIcon)
             
             Spacer()
@@ -73,6 +73,6 @@ struct PlayerCardColumnView: View {
 
 struct PlayerCardView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerCardView(player: PlayerPresenter(Player(maxHealth: 200, location: NoLocation())))
+        PlayerCardView(playerViewModel: PlayerViewModel(Player(maxHealth: 200, location: NoLocation())))
     }
 }
