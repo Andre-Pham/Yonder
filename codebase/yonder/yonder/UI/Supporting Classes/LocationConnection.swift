@@ -108,6 +108,10 @@ class LocationConnectionGenerator {
 /// Use to retrieve information about a location's hexagon coordinate, as well as the hexagon coordinates of its location predecessors in order to draw lines between them on the map grid.
 class LocationConnection {
     
+    let ROWS_IN_AREA = 11
+    let ROWS_BETWEEN_AREAS = 5
+    let COLUMNS_BETWEEN_AREA_TIPS = 6
+    
     private let mapGridColumnsCount: Int
     private let areaPosition: Int
     private let territoryPosition: Int
@@ -128,7 +132,7 @@ class LocationConnection {
         
         for locationIndex in self.previousLocationIndicesFromRightArea {
             let coords = result[locationIndex]
-            result[locationIndex] = HexagonCoordinate(coords.x + 6, coords.y)
+            result[locationIndex] = HexagonCoordinate(coords.x + self.COLUMNS_BETWEEN_AREA_TIPS, coords.y)
         }
         
         return result
@@ -150,7 +154,7 @@ class LocationConnection {
     }
     
     func coordinatesToHexagonIndex(_ coordinates: HexagonCoordinate) -> Int {
-        return Int((Double(coordinates.x)/2).rounded(.down)) + coordinates.y*self.mapGridColumnsCount + self.areaPosition*3 + (2*self.mapGridColumnsCount*self.territoryPosition)*16
+        return Int((Double(coordinates.x)/2).rounded(.down)) + coordinates.y*self.mapGridColumnsCount + self.areaPosition*self.COLUMNS_BETWEEN_AREA_TIPS/2 + (2*self.mapGridColumnsCount*self.territoryPosition)*(self.ROWS_BETWEEN_AREAS + self.ROWS_IN_AREA)
     }
     
 }
