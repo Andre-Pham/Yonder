@@ -1,5 +1,5 @@
 //
-//  GridConnection.swift
+//  GridConnectionView.swift
 //  yonder
 //
 //  Created by Andre Pham on 3/1/2022.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct GridConnection: View {
+struct GridConnectionView: View {
     // Parameters
     let down: Int
     let downAcross: Int // Use -/+ to determine left/right

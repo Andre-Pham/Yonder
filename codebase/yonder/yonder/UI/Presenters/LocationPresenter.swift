@@ -22,7 +22,7 @@ class LocationPresenter: ObservableObject {
     init(_ location: LocationAbstract, player: Player) {
         self.location = location
         
-        // MARK: Set properties to match location
+        // Set properties to match location
         
         self.name = location.areaContent.name
         self.description = location.areaContent.description
@@ -30,7 +30,7 @@ class LocationPresenter: ObservableObject {
         self.type = "" // Must be initialised before function is called
         self.type = self.convertTypeToString(location.type)
         
-        // MARK: Add Subscribers
+        // Add Subscribers
         
         player.$location.sink(receiveValue: { newValue in
             self.location = newValue

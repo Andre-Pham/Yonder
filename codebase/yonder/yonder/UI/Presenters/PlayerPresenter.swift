@@ -24,7 +24,7 @@ class PlayerPresenter: ObservableObject {
     init(_ player: Player) {
         self.player = player
         
-        // MARK: Set properties to match Player
+        // Set properties to match Player
         
         self.health = self.player.health
         self.maxHealth = self.player.maxHealth
@@ -32,11 +32,11 @@ class PlayerPresenter: ObservableObject {
         self.maxArmorPoints = self.player.getMaxArmorPoints()
         self.gold = self.player.gold
         
-        // MARK: Set other presenters
+        // Set other presenters
         
         self.locationPresenter = LocationPresenter(self.player.location, player: self.player)
         
-        // MARK: Add Subscribers
+        // Add Subscribers
         
         self.player.$health.sink(receiveValue: { newValue in
             self.health = newValue
