@@ -12,11 +12,11 @@ struct GridHexagonView: View {
     let hexagonFrameHeight: CGFloat
     let spacing: CGFloat
     let horizontalOffset: CGFloat
-    let scale: CGFloat = 1
-    let strokeStyle: GridHexagonViewStrokeStyle
-    let strokeColor: Color = Color.Yonder.border
-    let fill: Bool
-    let fillColor: Color = Color.Yonder.backgroundMaxDepth
+    var scale: CGFloat = 1
+    var strokeStyle: GridHexagonViewStrokeStyle = .none
+    var strokeColor: Color = Color.Yonder.border
+    var fill: Bool = false
+    var fillColor: Color = Color.Yonder.backgroundMaxDepth
     
     var body: some View {
         Hexagon()

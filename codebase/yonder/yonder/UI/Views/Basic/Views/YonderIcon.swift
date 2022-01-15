@@ -10,7 +10,7 @@ import SwiftUI
 
 struct YonderIcon: View {
     let image: Image
-    let sideLength: CGFloat = 24
+    var sideLength: CGFloat = 24
     
     var body: some View {
         image

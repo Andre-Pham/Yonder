@@ -41,7 +41,7 @@ enum YonderTextSize {
 struct YonderText: View {
     let text: String
     let size: YonderTextSize
-    let color: Color = Color.Yonder.textMaxContrast
+    var color: Color = Color.Yonder.textMaxContrast
     
     var body: some View {
         Text(self.text)

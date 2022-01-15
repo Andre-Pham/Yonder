@@ -50,19 +50,22 @@ struct MapGridView: View {
                                 if let locationConnection = locationConnections[index] {
                                     locationConnection.location.areaContent.image
                                         .resizable()
-                                        .frame(width: self.hexagonFrameWidth, height: self.hexagonFrameHeight/2)
                                         .clipShape(Hexagon())
-                                        .offset(x: horizontalOffset)
-                                        .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
+                                        .gridHexagonFrame(
+                                            hexagonFrameWidth: self.hexagonFrameWidth,
+                                            hexagonFrameHeight: self.hexagonFrameHeight,
+                                            spacing: self.spacing,
+                                            horizontalOffset: horizontalOffset)
                                         .reverseScroll()
                                 }
-                                    
-                                Hexagon()
-                                    .stroke(Color.Yonder.outlineMinContrast, lineWidth: YonderCoreGraphics.borderWidth)
-                                    .frame(width: self.hexagonFrameWidth, height: self.hexagonFrameHeight/2)
-                                    .offset(x: horizontalOffset)
-                                    .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
-                                    .reverseScroll()
+                                
+                                GridHexagonView(
+                                    hexagonFrameWidth: self.hexagonFrameWidth,
+                                    hexagonFrameHeight: self.hexagonFrameHeight,
+                                    spacing: self.spacing,
+                                    horizontalOffset: horizontalOffset,
+                                    strokeStyle: .stroke,
+                                    strokeColor: Color.Yonder.outlineMinContrast)
                                     
                                 if let locationConnection = locationConnections[index] {
                                     ForEach(locationConnection.previousLocationsHexagonCoordinates) { coords in
@@ -80,23 +83,23 @@ struct MapGridView: View {
                             ZStack {
                                 let horizontalOffset = self.distanceBetweenColumnCentres/2 * (self.isEvenRow(index) ? -1 : 1)
                                 
-                                Hexagon()
-                                    .strokeBorder(Color.Yonder.border, lineWidth: YonderCoreGraphics.borderWidth)
-                                    .background(Hexagon().foregroundColor(Color.Yonder.backgroundMaxDepth))
-                                    .frame(width: self.hexagonFrameWidth * 0.65, height: self.hexagonFrameHeight/2 * 0.65)
-                                    .offset(x: horizontalOffset)
-                                    .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216)
-                                    .reverseScroll()
+                                GridHexagonView(
+                                    hexagonFrameWidth: self.hexagonFrameWidth,
+                                    hexagonFrameHeight: self.hexagonFrameHeight,
+                                    spacing: self.spacing,
+                                    horizontalOffset: horizontalOffset,
+                                    scale: 0.65,
+                                    strokeStyle: .strokeBorder,
+                                    fill: true)
                                     .opacity(locationConnections[index] == nil ? 0 : 1)
                                 
                                 if let locationConnection = locationConnections[index] {
-                                    Hexagon()
-                                        //.strokeBorder(Color.Yonder.border, lineWidth: YonderCoreGraphics.borderWidth/2)
-                                        .stroke(Color.Yonder.border, lineWidth: YonderCoreGraphics.borderWidth)
-                                        .frame(width: self.hexagonFrameWidth, height: self.hexagonFrameHeight/2)
-                                        .offset(x: horizontalOffset)
-                                        .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
-                                        .reverseScroll()
+                                    GridHexagonView(
+                                        hexagonFrameWidth: self.hexagonFrameWidth,
+                                        hexagonFrameHeight: self.hexagonFrameHeight,
+                                        spacing: self.spacing,
+                                        horizontalOffset: horizontalOffset,
+                                        strokeStyle: .stroke)
                                     
                                     self.getCorrespondingIcon(locationType: locationConnection.location.type)
                                         .offset(x: horizontalOffset)
