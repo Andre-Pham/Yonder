@@ -25,10 +25,10 @@ struct GridHexagonView: View {
                 fill: self.fill,
                 fillColor: self.fillColor)
             .gridHexagonFrame(
-                gridDimensions: self.gridDimensions,
                 hexagonIndex: self.hexagonIndex,
                 scale: self.scale)
             .reverseScroll()
+            .environmentObject(self.gridDimensions)
     }
 }
 
@@ -73,7 +73,7 @@ extension InsettableShape {
 }
 
 struct GridHexagonFrame: ViewModifier {
-    let gridDimensions: GridDimensions
+    @EnvironmentObject var gridDimensions: GridDimensions
     let hexagonIndex: Int
     let scale: CGFloat
     
@@ -91,7 +91,7 @@ struct GridHexagonFrame: ViewModifier {
     }
 }
 extension View {
-    func gridHexagonFrame(gridDimensions: GridDimensions, hexagonIndex: Int, scale: CGFloat = 1) -> some View {
-        modifier(GridHexagonFrame(gridDimensions: gridDimensions, hexagonIndex: hexagonIndex, scale: scale))
+    func gridHexagonFrame(hexagonIndex: Int, scale: CGFloat = 1) -> some View {
+        modifier(GridHexagonFrame(hexagonIndex: hexagonIndex, scale: scale))
     }
 }

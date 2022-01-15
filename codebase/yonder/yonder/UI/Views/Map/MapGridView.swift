@@ -31,7 +31,7 @@ struct MapGridView: View {
                                     locationConnection.location.areaContent.image
                                         .resizable()
                                         .clipShape(Hexagon())
-                                        .gridHexagonFrame(gridDimensions: self.gridDimensions, hexagonIndex: index)
+                                        .gridHexagonFrame(hexagonIndex: index)
                                         .reverseScroll()
                                 }
                                 
