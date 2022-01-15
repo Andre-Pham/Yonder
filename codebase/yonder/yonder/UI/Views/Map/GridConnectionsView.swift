@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct GridConnectionsView: View {
+    @EnvironmentObject var gridDimensions: GridDimensions
+    let hexagonIndex: Int
     let locationConnection: LocationConnection
-    let spacing: CGFloat
-    let horizontalOffset: CGFloat
+    //let spacing: CGFloat
+    //let horizontalOffset: CGFloat
     
     var body: some View {
         ForEach(self.locationConnection.previousLocationsHexagonCoordinates) { coords in
-            let values = self.getCoordinatesDifference(from: locationConnection.locationHexagonCoordinate, to: coords)
+            let values = self.getCoordinatesDifference(from: self.locationConnection.locationHexagonCoordinate, to: coords)
             
-            GridConnectionView(down: values.1, downAcross: values.0, spacing: self.spacing, horizontalOffset: horizontalOffset)
+            GridConnectionView(down: values.1, downAcross: values.0, spacing: self.gridDimensions.spacing, horizontalOffset: self.gridDimensions.getHorizontalOffset(hexagonIndex: self.hexagonIndex))
         }
     }
     

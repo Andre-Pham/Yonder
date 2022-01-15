@@ -42,9 +42,8 @@ struct MapGridView: View {
                                     
                                 if self.locationConnections.count > index, let locationConnection = self.locationConnections[index] {
                                     GridConnectionsView(
-                                        locationConnection: locationConnection,
-                                        spacing: self.gridDimensions.spacing,
-                                        horizontalOffset: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
+                                        hexagonIndex: index,
+                                        locationConnection: locationConnection)
                                 }
                             }
                         }
