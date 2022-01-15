@@ -7,12 +7,8 @@
 
 import Foundation
 
-class BridgeLocation {
+class BridgeLocation: LocationAbstract {
     
-    private(set) var adjacentLocations = [LocationAbstract]()
-    
-    func addAdjacentLocation(_ location: LocationAbstract) {
-        self.adjacentLocations.append(location)
-    }
+    var type: LocationType = .none
     
 }

@@ -18,7 +18,7 @@ protocol LocationTyped {
 class LocationAbstractPart {
     
     private(set) var nextLocations = [LocationAbstract]()
-    private(set) var bridgeLocations = [BridgeLocation]()
+    private(set) var bridgeLocation: BridgeLocation?
     private(set) var bridgeAccessibility: LocationBridgeAccessibility
     private(set) var hexagonCoordinate: HexagonCoordinate?
     private(set) var areaContent = AreaContentContainer()
@@ -33,8 +33,8 @@ class LocationAbstractPart {
         self.nextLocations.append(contentsOf: locations)
     }
     
-    func addBridgeLocation(_ bridgeLocation: BridgeLocation) {
-        self.bridgeLocations.append(bridgeLocation)
+    func setBridgeLocation(_ bridgeLocation: BridgeLocation) {
+        self.bridgeLocation = bridgeLocation
     }
     
     func setBridgeAccessibility(_ bridgeAccessibility: LocationBridgeAccessibility) {

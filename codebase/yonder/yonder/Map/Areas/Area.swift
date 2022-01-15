@@ -22,6 +22,7 @@ class Area: NamedDescribedVisualised {
     private(set) var rightBridgeLocations = [LocationAbstract]()
     public let arrangement: AreaArrangements
     public let locations: [LocationAbstract]
+    public let id = UUID()
     
     // locations are recieved from LocationsGenerator
     init(arrangement: AreaArrangements, locations: [LocationAbstract], name: String = "placeholderName", description: String = "placeholderDescription", image: Image = YonderImages.placeholderImage) {
@@ -56,6 +57,14 @@ class Area: NamedDescribedVisualised {
         let location = self.locations[locationIndex]
         let nextLocations = nextLocationIndices.map { self.locations[$0] }
         self.addNextLocations(from: location, to: nextLocations)
+    }
+    
+    func filterLeftBridgeLocationsWithY(of y: Int) {
+        self.leftBridgeLocations = self.leftBridgeLocations.filter { $0.hexagonCoordinate!.y != y }
+    }
+    
+    func filterRightBridgeLocationsWithY(of y: Int) {
+        self.leftBridgeLocations = self.rightBridgeLocations.filter { $0.hexagonCoordinate!.y != y }
     }
     
 }

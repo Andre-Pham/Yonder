@@ -67,4 +67,8 @@ class Map {
         }*/
     }
     
+    func getPreviousTavernAreaToTerritory(at territoryIndex: Int) -> TavernArea? {
+        return territoryIndex > 0 ? self.territoriesInOrder[territoryIndex-1].tavernArea : nil
+    }
+    
 }

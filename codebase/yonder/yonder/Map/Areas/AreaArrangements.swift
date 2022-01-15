@@ -165,6 +165,7 @@ extension Area {
         self.locations[20].setHexagonCoordinate(2, 22)
         
         self.locations[7].setBridgeAccessibility(.leftBridge)
+        self.locations[5].setBridgeAccessibility(.rightBridge)
         self.locations[11].setBridgeAccessibility(.rightBridge)
         self.locations[13].setBridgeAccessibility(.leftBridge)
         
@@ -304,6 +305,7 @@ extension Area {
         self.locations[20].setHexagonCoordinate(2, 20)
         self.locations[21].setHexagonCoordinate(2, 22)
         
+        self.locations[8].setBridgeAccessibility(.rightBridge)
         self.locations[9].setBridgeAccessibility(.leftBridge)
         self.locations[11].setBridgeAccessibility(.rightBridge)
         self.locations[14].setBridgeAccessibility(.leftBridge)
@@ -451,6 +453,7 @@ extension Area {
         
         self.locations[6].setBridgeAccessibility(.rightBridge)
         self.locations[7].setBridgeAccessibility(.leftBridge)
+        self.locations[9].setBridgeAccessibility(.leftBridge)
         self.locations[10].setBridgeAccessibility(.rightBridge)
         
         self.addNextLocations(from: 0, to: 1, 2)
@@ -499,6 +502,7 @@ extension Area {
         self.locations[7].setBridgeAccessibility(.rightBridge)
         self.locations[11].setBridgeAccessibility(.leftBridge)
         self.locations[13].setBridgeAccessibility(.rightBridge)
+        self.locations[14].setBridgeAccessibility(.leftBridge)
         
         self.addNextLocations(from: 0, to: 1, 2, 6)
         self.addNextLocations(from: 1, to: 3)
