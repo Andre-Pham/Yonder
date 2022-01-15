@@ -46,11 +46,6 @@ struct MapGridView: View {
                         ForEach(0..<hexagonCount, id: \.self) { index in
                             ZStack {
                                 let horizontalOffset = self.distanceBetweenColumnCentres/2 * (self.isEvenRow(index) ? -1 : 1)
-                                /*Hexagon()
-                                    .frame(width: self.hexagonFrameWidth, height: self.hexagonFrameHeight/2)
-                                    .offset(x: horizontalOffset)
-                                    .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
-                                    .reverseScroll()*/
                                 
                                 if let locationConnection = locationConnections[index] {
                                     locationConnection.location.areaContent.image
@@ -63,13 +58,11 @@ struct MapGridView: View {
                                 }
                                     
                                 Hexagon()
-                                    //.strokeBorder(Color.Yonder.border, lineWidth: YonderCoreGraphics.borderWidth/2)
                                     .stroke(Color.Yonder.outlineMinContrast, lineWidth: YonderCoreGraphics.borderWidth)
                                     .frame(width: self.hexagonFrameWidth, height: self.hexagonFrameHeight/2)
                                     .offset(x: horizontalOffset)
                                     .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
                                     .reverseScroll()
-                                    //.opacity(locationConnections[index] == nil ? 0.1 : 1)
                                     
                                 if let locationConnection = locationConnections[index] {
                                     ForEach(locationConnection.previousLocationsHexagonCoordinates) { coords in
@@ -87,21 +80,6 @@ struct MapGridView: View {
                             ZStack {
                                 let horizontalOffset = self.distanceBetweenColumnCentres/2 * (self.isEvenRow(index) ? -1 : 1)
                                 
-                                
-                                /*Hexagon()
-                                    //.fill(.red, transpar)
-                                    .frame(width: self.hexagonFrameWidth, height: self.hexagonFrameHeight/2)
-                                    .offset(x: horizontalOffset)
-                                    .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
-                                    .reverseScroll()*/
-                                
-                                /*Hexagon()
-                                    .fill(Color.Yonder.backgroundMaxDepth)
-                                    .frame(width: self.hexagonFrameWidth/2, height: self.hexagonFrameHeight/4)
-                                    .offset(x: horizontalOffset)
-                                    .frame(width: self.hexagonWidth/2, height: self.hexagonFrameHeight*0.25/2)
-                                    .reverseScroll()*/
-                                
                                 Hexagon()
                                     .strokeBorder(Color.Yonder.border, lineWidth: YonderCoreGraphics.borderWidth)
                                     .background(Hexagon().foregroundColor(Color.Yonder.backgroundMaxDepth))
@@ -111,12 +89,6 @@ struct MapGridView: View {
                                     .reverseScroll()
                                     .opacity(locationConnections[index] == nil ? 0 : 1)
                                 
-                                /*Hexagon()
-                                    .frame(width: self.hexagonFrameWidth, height: self.hexagonFrameHeight/2)
-                                    .offset(x: horizontalOffset)
-                                    .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
-                                    .reverseScroll()*/
-                                
                                 if let locationConnection = locationConnections[index] {
                                     Hexagon()
                                         //.strokeBorder(Color.Yonder.border, lineWidth: YonderCoreGraphics.borderWidth/2)
@@ -125,17 +97,10 @@ struct MapGridView: View {
                                         .offset(x: horizontalOffset)
                                         .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
                                         .reverseScroll()
-                                    /*Hexagon()
-                                        .fill(Color.Yonder.backgroundMaxDepth)
-                                        .frame(width: self.hexagonFrameWidth, height: self.hexagonFrameHeight/2)
-                                        .offset(x: horizontalOffset)
-                                        .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
-                                        .reverseScroll()*/
                                     
                                     self.getCorrespondingIcon(locationType: locationConnection.location.type)
                                         .offset(x: horizontalOffset)
                                         .reverseScroll()
-                                        
                                 }
                             }
                         }
