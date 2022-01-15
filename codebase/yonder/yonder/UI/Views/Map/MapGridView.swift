@@ -31,19 +31,12 @@ struct MapGridView: View {
                                     locationConnection.location.areaContent.image
                                         .resizable()
                                         .clipShape(Hexagon())
-                                        .gridHexagonFrame(
-                                            hexagonFrameWidth: self.gridDimensions.hexagonFrameWidth,
-                                            hexagonFrameHeight: self.gridDimensions.hexagonFrameHeight,
-                                            spacing: self.gridDimensions.spacing,
-                                            horizontalOffset: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
+                                        .gridHexagonFrame(gridDimensions: self.gridDimensions, hexagonIndex: index)
                                         .reverseScroll()
                                 }
                                 
                                 GridHexagonView(
-                                    hexagonFrameWidth: self.gridDimensions.hexagonFrameWidth,
-                                    hexagonFrameHeight: self.gridDimensions.hexagonFrameHeight,
-                                    spacing: self.gridDimensions.spacing,
-                                    horizontalOffset: self.gridDimensions.getHorizontalOffset(hexagonIndex: index),
+                                    hexagonIndex: index,
                                     strokeStyle: .stroke,
                                     strokeColor: Color.Yonder.outlineMinContrast)
                                     
@@ -62,10 +55,7 @@ struct MapGridView: View {
                             ZStack {
                                 if self.locationConnections.count > index {
                                     GridHexagonView(
-                                        hexagonFrameWidth: self.gridDimensions.hexagonFrameWidth,
-                                        hexagonFrameHeight: self.gridDimensions.hexagonFrameHeight,
-                                        spacing: self.gridDimensions.spacing,
-                                        horizontalOffset: self.gridDimensions.getHorizontalOffset(hexagonIndex: index),
+                                        hexagonIndex: index,
                                         scale: 0.65,
                                         strokeStyle: .strokeBorder,
                                         fill: true)
@@ -73,10 +63,7 @@ struct MapGridView: View {
                                     
                                     if let locationConnection = self.locationConnections[index] {
                                         GridHexagonView(
-                                            hexagonFrameWidth: self.gridDimensions.hexagonFrameWidth,
-                                            hexagonFrameHeight: self.gridDimensions.hexagonFrameHeight,
-                                            spacing: self.gridDimensions.spacing,
-                                            horizontalOffset: self.gridDimensions.getHorizontalOffset(hexagonIndex: index),
+                                            hexagonIndex: index,
                                             strokeStyle: .stroke)
                                         
                                         self.getCorrespondingIcon(locationType: locationConnection.location.type)
@@ -93,6 +80,7 @@ struct MapGridView: View {
             .padding(1) // Stops jittering
             .reverseScroll()
         }
+        .environmentObject(self.gridDimensions)
         .onAppear {
             self.locationConnections = LocationConnectionGenerator(
                 map: GAME.map,

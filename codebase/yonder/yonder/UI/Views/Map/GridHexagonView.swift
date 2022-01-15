@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct GridHexagonView: View {
-    let hexagonFrameWidth: CGFloat
-    let hexagonFrameHeight: CGFloat
-    let spacing: CGFloat
-    let horizontalOffset: CGFloat
+    @EnvironmentObject var gridDimensions: GridDimensions
+    
+    let hexagonIndex: Int
     var scale: CGFloat = 1
     var strokeStyle: GridHexagonViewStrokeStyle = .none
     var strokeColor: Color = Color.Yonder.border
@@ -26,10 +25,8 @@ struct GridHexagonView: View {
                 fill: self.fill,
                 fillColor: self.fillColor)
             .gridHexagonFrame(
-                hexagonFrameWidth: self.hexagonFrameWidth,
-                hexagonFrameHeight: self.hexagonFrameHeight,
-                spacing: self.spacing,
-                horizontalOffset: self.horizontalOffset,
+                gridDimensions: self.gridDimensions,
+                hexagonIndex: self.hexagonIndex,
                 scale: self.scale)
             .reverseScroll()
     }
@@ -76,21 +73,25 @@ extension InsettableShape {
 }
 
 struct GridHexagonFrame: ViewModifier {
-    let hexagonFrameWidth: CGFloat
-    let hexagonFrameHeight: CGFloat
-    let spacing: CGFloat
-    let horizontalOffset: CGFloat
+    let gridDimensions: GridDimensions
+    let hexagonIndex: Int
     let scale: CGFloat
     
     func body(content: Content) -> some View {
         content
-            .frame(width: self.scale*self.hexagonFrameWidth, height: self.scale*self.hexagonFrameHeight/2)
-            .offset(x: horizontalOffset)
-            .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
+            .frame(
+                width: self.scale*self.gridDimensions.hexagonFrameWidth,
+                height: self.scale*self.gridDimensions.hexagonFrameHeight/2)
+            .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: self.hexagonIndex))
+            .frame(
+                width: (self.gridDimensions.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 +
+                        self.gridDimensions.spacing,
+                height: self.gridDimensions.hexagonFrameHeight*0.216)
+                        // 0.216 was found from trial and error so don't think too hard about it
     }
 }
 extension View {
-    func gridHexagonFrame(hexagonFrameWidth: CGFloat, hexagonFrameHeight: CGFloat, spacing: CGFloat, horizontalOffset: CGFloat, scale: CGFloat = 1) -> some View {
-        modifier(GridHexagonFrame(hexagonFrameWidth: hexagonFrameWidth, hexagonFrameHeight: hexagonFrameHeight, spacing: spacing, horizontalOffset: horizontalOffset, scale: scale))
+    func gridHexagonFrame(gridDimensions: GridDimensions, hexagonIndex: Int, scale: CGFloat = 1) -> some View {
+        modifier(GridHexagonFrame(gridDimensions: gridDimensions, hexagonIndex: hexagonIndex, scale: scale))
     }
 }
