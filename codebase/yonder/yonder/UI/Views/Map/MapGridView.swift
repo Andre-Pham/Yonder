@@ -8,33 +8,15 @@
 import Foundation
 import SwiftUI
 
-// There is a lot of questionable maths in this... but it works, so just treat it like a blackbox with columns, spacing and height as parameters
 struct MapGridView: View {
-    let columnsCount: Int = 6
-    let spacing: CGFloat = 0
-    let hexagonFrameHeight: CGFloat = 240
-    
-    let maxLocationHeight: Int = 100 // TEMP
-    let hexagonCount: Int
-    let hexagonFrameWidth: CGFloat
-    let hexagonWidth: CGFloat
-    let distanceBetweenColumnCentres: CGFloat
-    
-    @ObservedObject private var mapViewModel: MapViewModel
-    let locationConnections: [LocationConnection?]
-    
-    init(map: Map = GAME.map) {
-        self.hexagonCount = self.maxLocationHeight*self.columnsCount
-        self.hexagonFrameWidth = MathConstants.hexagonWidthToHeight*(self.hexagonFrameHeight + 2*self.spacing/tan((120.0 - 90.0)*MathConstants.degreesToRadians)) // I don't remember how I got this so just accept it's magic
-        self.hexagonWidth = self.hexagonFrameWidth/2 * cos(.pi/6) * 2
-        self.distanceBetweenColumnCentres = self.hexagonWidth/2 + self.spacing/2
-        
-        self.mapViewModel = MapViewModel(map)
-        self.locationConnections = LocationConnectionGenerator(map: map, hexagonCount: self.hexagonCount, columnsCount: self.columnsCount).getAllLocationConnections()
-    }
+    @StateObject private var gridDimensions = GridDimensions()
+    @StateObject private var mapViewModel = MapViewModel(GAME.map)
+    @State private var locationConnections = [LocationConnection?]()
     
     var body: some View {
-        let gridItems = Array(repeating: GridItem(.fixed(self.hexagonWidth), spacing: self.spacing), count: self.columnsCount)
+        let gridItems = Array(
+            repeating: GridItem(.fixed(self.gridDimensions.hexagonWidth), spacing: self.gridDimensions.spacing),
+            count: self.gridDimensions.columnsCount)
         
         ZStack {
             Color.Yonder.backgroundMaxDepth
@@ -42,86 +24,82 @@ struct MapGridView: View {
             
             ScrollView([.vertical, .horizontal]) {
                 ZStack {
-                    LazyVGrid(columns: gridItems, spacing: spacing) {
-                        ForEach(0..<hexagonCount, id: \.self) { index in
+                    LazyVGrid(columns: gridItems, spacing: self.gridDimensions.spacing) {
+                        ForEach(0..<self.gridDimensions.hexagonCount, id: \.self) { index in
                             ZStack {
-                                let horizontalOffset = self.distanceBetweenColumnCentres/2 * (self.isEvenRow(index) ? -1 : 1)
-                                
-                                if let locationConnection = locationConnections[index] {
+                                if self.locationConnections.count > index, let locationConnection = self.locationConnections[index] {
                                     locationConnection.location.areaContent.image
                                         .resizable()
                                         .clipShape(Hexagon())
                                         .gridHexagonFrame(
-                                            hexagonFrameWidth: self.hexagonFrameWidth,
-                                            hexagonFrameHeight: self.hexagonFrameHeight,
-                                            spacing: self.spacing,
-                                            horizontalOffset: horizontalOffset)
+                                            hexagonFrameWidth: self.gridDimensions.hexagonFrameWidth,
+                                            hexagonFrameHeight: self.gridDimensions.hexagonFrameHeight,
+                                            spacing: self.gridDimensions.spacing,
+                                            horizontalOffset: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
                                         .reverseScroll()
                                 }
                                 
                                 GridHexagonView(
-                                    hexagonFrameWidth: self.hexagonFrameWidth,
-                                    hexagonFrameHeight: self.hexagonFrameHeight,
-                                    spacing: self.spacing,
-                                    horizontalOffset: horizontalOffset,
+                                    hexagonFrameWidth: self.gridDimensions.hexagonFrameWidth,
+                                    hexagonFrameHeight: self.gridDimensions.hexagonFrameHeight,
+                                    spacing: self.gridDimensions.spacing,
+                                    horizontalOffset: self.gridDimensions.getHorizontalOffset(hexagonIndex: index),
                                     strokeStyle: .stroke,
                                     strokeColor: Color.Yonder.outlineMinContrast)
                                     
-                                if let locationConnection = locationConnections[index] {
-                                    ForEach(locationConnection.previousLocationsHexagonCoordinates) { coords in
-                                        let values = self.getCoordinatesDifference(from: locationConnection.locationHexagonCoordinate, to: coords)
-                                        
-                                        GridConnectionView(down: values.1, downAcross: values.0, spacing: self.spacing, horizontalOffset: horizontalOffset)
-                                    }
+                                if self.locationConnections.count > index, let locationConnection = self.locationConnections[index] {
+                                    GridConnectionsView(
+                                        locationConnection: locationConnection,
+                                        spacing: self.gridDimensions.spacing,
+                                        horizontalOffset: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
                                 }
                             }
                         }
                     }
                     
-                    LazyVGrid(columns: gridItems, spacing: spacing) {
-                        ForEach(0..<hexagonCount, id: \.self) { index in
+                    LazyVGrid(columns: gridItems, spacing: self.gridDimensions.spacing) {
+                        ForEach(0..<self.gridDimensions.hexagonCount, id: \.self) { index in
                             ZStack {
-                                let horizontalOffset = self.distanceBetweenColumnCentres/2 * (self.isEvenRow(index) ? -1 : 1)
-                                
-                                GridHexagonView(
-                                    hexagonFrameWidth: self.hexagonFrameWidth,
-                                    hexagonFrameHeight: self.hexagonFrameHeight,
-                                    spacing: self.spacing,
-                                    horizontalOffset: horizontalOffset,
-                                    scale: 0.65,
-                                    strokeStyle: .strokeBorder,
-                                    fill: true)
-                                    .opacity(locationConnections[index] == nil ? 0 : 1)
-                                
-                                if let locationConnection = locationConnections[index] {
+                                if self.locationConnections.count > index {
                                     GridHexagonView(
-                                        hexagonFrameWidth: self.hexagonFrameWidth,
-                                        hexagonFrameHeight: self.hexagonFrameHeight,
-                                        spacing: self.spacing,
-                                        horizontalOffset: horizontalOffset,
-                                        strokeStyle: .stroke)
+                                        hexagonFrameWidth: self.gridDimensions.hexagonFrameWidth,
+                                        hexagonFrameHeight: self.gridDimensions.hexagonFrameHeight,
+                                        spacing: self.gridDimensions.spacing,
+                                        horizontalOffset: self.gridDimensions.getHorizontalOffset(hexagonIndex: index),
+                                        scale: 0.65,
+                                        strokeStyle: .strokeBorder,
+                                        fill: true)
+                                        .opacity(self.locationConnections[index] == nil ? 0 : 1)
                                     
-                                    self.getCorrespondingIcon(locationType: locationConnection.location.type)
-                                        .offset(x: horizontalOffset)
-                                        .reverseScroll()
+                                    if let locationConnection = self.locationConnections[index] {
+                                        GridHexagonView(
+                                            hexagonFrameWidth: self.gridDimensions.hexagonFrameWidth,
+                                            hexagonFrameHeight: self.gridDimensions.hexagonFrameHeight,
+                                            spacing: self.gridDimensions.spacing,
+                                            horizontalOffset: self.gridDimensions.getHorizontalOffset(hexagonIndex: index),
+                                            strokeStyle: .stroke)
+                                        
+                                        self.getCorrespondingIcon(locationType: locationConnection.location.type)
+                                            .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
+                                            .reverseScroll()
+                                    }
                                 }
                             }
                         }
                     }
                 }
-                .frame(width: (self.hexagonWidth + self.spacing)*CGFloat(self.columnsCount) + self.spacing*6)
+                .frame(width: (self.gridDimensions.hexagonWidth + self.gridDimensions.spacing)*CGFloat(self.gridDimensions.columnsCount) + self.gridDimensions.spacing*6)
             }
             .padding(1) // Stops jittering
             .reverseScroll()
         }
-    }
-    
-    func isEvenRow(_ index: Int) -> Bool {
-        return index/columnsCount % 2 == 0
-    }
-    
-    func getCoordinatesDifference(from coordinates: HexagonCoordinate, to otherCoordinates: HexagonCoordinate) -> (Int, Int) {
-        return (otherCoordinates.x - coordinates.x, abs(otherCoordinates.y - coordinates.y))
+        .onAppear {
+            self.locationConnections = LocationConnectionGenerator(
+                map: GAME.map,
+                hexagonCount: self.gridDimensions.hexagonCount,
+                columnsCount: self.gridDimensions.columnsCount)
+                .getAllLocationConnections()
+        }
     }
     
     func getCorrespondingIcon(locationType: LocationType) -> YonderIcon {
