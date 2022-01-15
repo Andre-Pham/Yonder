@@ -44,6 +44,10 @@ Each location presents their type in their icon. This gives purpose and meaning 
 
 ## Area Arrangements
 
+Black fillings in location nodes represent the availability to connect to a bridge location, which are locations that allow travel between Areas.
+
+The locations are numbered to represent their indices.
+
 #### Arrangement A
 
 <img src="Assets/areaArrangementA.png" alt="areaArrangementA" width="40%" /> 
@@ -83,8 +87,5 @@ Each location presents their type in their icon. This gives purpose and meaning 
 #### Arrangement J
 
 <img src="Assets/areaArrangementJ.png" alt="areaArrangementJ" width="40%" /> 
-
-
-
 
 
