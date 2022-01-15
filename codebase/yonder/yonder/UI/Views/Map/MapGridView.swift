@@ -37,34 +37,60 @@ struct MapGridView: View {
         let gridItems = Array(repeating: GridItem(.fixed(self.hexagonWidth), spacing: self.spacing), count: self.columnsCount)
         
         ScrollView([.vertical, .horizontal]) {
-            LazyVGrid(columns: gridItems, spacing: spacing) {
-                ForEach(0..<hexagonCount, id: \.self) { index in
-                    ZStack {
-                        let horizontalOffset = self.distanceBetweenColumnCentres/2 * (self.isEvenRow(index) ? -1 : 1)
-                        
-                        Hexagon()
-                            .fill(.gray)
-                            .onTapGesture {
-                                print(index)
-                            }
-                            //.overlay(Text("\(index), \(locationConnections.last?.locationHexagonIndex ?? 3333)").foregroundColor(.white))
-                            .frame(width: self.hexagonFrameWidth, height: self.hexagonFrameHeight/2)
-                            .offset(x: horizontalOffset)
-                            .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
-                            .reverseScroll()
-                        
-                        if let locationConnection = locationConnections[index] {
+            ZStack {
+                LazyVGrid(columns: gridItems, spacing: spacing) {
+                    ForEach(0..<hexagonCount, id: \.self) { index in
+                        ZStack {
+                            let horizontalOffset = self.distanceBetweenColumnCentres/2 * (self.isEvenRow(index) ? -1 : 1)
+                            
                             Hexagon()
-                                .fill(.blue)
-                                .frame(width: self.hexagonFrameWidth/2, height: self.hexagonFrameHeight/4)
+                                .fill(.gray)
+                                .onTapGesture {
+                                    print(index)
+                                }
+                                //.overlay(Text("\(index), \(locationConnections.last?.locationHexagonIndex ?? 3333)").foregroundColor(.white))
+                                .frame(width: self.hexagonFrameWidth, height: self.hexagonFrameHeight/2)
                                 .offset(x: horizontalOffset)
-                                .frame(width: self.hexagonWidth/2, height: self.hexagonFrameHeight*0.25/2)
+                                .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
                                 .reverseScroll()
                             
-                            ForEach(locationConnection.previousLocationsHexagonCoordinates) { coords in
-                                let values = self.getCoordinatesDifference(from: locationConnection.locationHexagonCoordinate, to: coords)
+                            if let locationConnection = locationConnections[index] {
+                                Hexagon()
+                                    .fill(.black)
+                                    .frame(width: self.hexagonFrameWidth/2, height: self.hexagonFrameHeight/4)
+                                    .offset(x: horizontalOffset)
+                                    .frame(width: self.hexagonWidth/2, height: self.hexagonFrameHeight*0.25/2)
+                                    .reverseScroll()
                                 
-                                GridConnectionView(down: values.1, downAcross: values.0, spacing: self.spacing, horizontalOffset: horizontalOffset)
+                                ForEach(locationConnection.previousLocationsHexagonCoordinates) { coords in
+                                    let values = self.getCoordinatesDifference(from: locationConnection.locationHexagonCoordinate, to: coords)
+                                    
+                                    GridConnectionView(down: values.1, downAcross: values.0, spacing: self.spacing, horizontalOffset: horizontalOffset)
+                                }
+                                
+                                /*self.getCorrespondingIcon(locationType: locationConnection.location.type)
+                                    .offset(x: horizontalOffset)
+                                    .reverseScroll()*/
+                            }
+                        }
+                    }
+                }
+                
+                LazyVGrid(columns: gridItems, spacing: spacing) {
+                    ForEach(0..<hexagonCount, id: \.self) { index in
+                        ZStack {
+                            let horizontalOffset = self.distanceBetweenColumnCentres/2 * (self.isEvenRow(index) ? -1 : 1)
+                            
+                            Hexagon()
+                                .frame(width: self.hexagonFrameWidth, height: self.hexagonFrameHeight/2)
+                                .offset(x: horizontalOffset)
+                                .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
+                                .reverseScroll()
+                            
+                            if let locationConnection = locationConnections[index] {
+                                self.getCorrespondingIcon(locationType: locationConnection.location.type)
+                                    .offset(x: horizontalOffset)
+                                    .reverseScroll()
                             }
                         }
                     }
@@ -82,6 +108,20 @@ struct MapGridView: View {
     
     func getCoordinatesDifference(from coordinates: HexagonCoordinate, to otherCoordinates: HexagonCoordinate) -> (Int, Int) {
         return (otherCoordinates.x - coordinates.x, abs(otherCoordinates.y - coordinates.y))
+    }
+    
+    func getCorrespondingIcon(locationType: LocationType) -> YonderIcon {
+        switch locationType {
+        case .none: return YonderIcon(image: YonderImages.missingIcon)
+        case .hostile: return YonderIcon(image: YonderImages.hostileIcon)
+        case .challengeHostile: return YonderIcon(image: YonderImages.challengeHostileIcon)
+        case .shop: return YonderIcon(image: YonderImages.shopIcon)
+        case .enhancer: return YonderIcon(image: YonderImages.enhancerIcon)
+        case .restorer: return YonderIcon(image: YonderImages.restorerIcon)
+        case .quest: return YonderIcon(image: YonderImages.missingIcon)
+        case .friendly: return YonderIcon(image: YonderImages.friendlyIcon)
+        case .boss: return YonderIcon(image: YonderImages.missingIcon)
+        }
     }
 }
 
