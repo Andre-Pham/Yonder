@@ -27,7 +27,7 @@ struct MapGridView: View {
                     LazyVGrid(columns: gridItems, spacing: self.gridDimensions.spacing) {
                         ForEach(0..<self.gridDimensions.hexagonCount, id: \.self) { index in
                             ZStack {
-                                if self.locationConnections.count > index, let locationConnection = self.locationConnections[index] {
+                                if let locationConnection = self.getLocationConnection(at: index) {
                                     locationConnection.location.areaContent.image
                                         .resizable()
                                         .clipShape(Hexagon())
@@ -40,7 +40,7 @@ struct MapGridView: View {
                                     strokeStyle: .stroke,
                                     strokeColor: Color.Yonder.outlineMinContrast)
                                     
-                                if self.locationConnections.count > index, let locationConnection = self.locationConnections[index] {
+                                if let locationConnection = self.getLocationConnection(at: index) {
                                     GridConnectionsView(
                                         hexagonIndex: index,
                                         locationConnection: locationConnection)
@@ -52,23 +52,21 @@ struct MapGridView: View {
                     LazyVGrid(columns: gridItems, spacing: self.gridDimensions.spacing) {
                         ForEach(0..<self.gridDimensions.hexagonCount, id: \.self) { index in
                             ZStack {
-                                if self.locationConnections.count > index {
+                                GridHexagonView(
+                                    hexagonIndex: index,
+                                    scale: 0.65,
+                                    strokeStyle: .strokeBorder,
+                                    fill: true)
+                                    .opacity(self.locationConnections.count <= index || self.locationConnections[index] == nil ? 0 : 1)
+                                
+                                if let locationConnection = self.getLocationConnection(at: index) {
                                     GridHexagonView(
                                         hexagonIndex: index,
-                                        scale: 0.65,
-                                        strokeStyle: .strokeBorder,
-                                        fill: true)
-                                        .opacity(self.locationConnections[index] == nil ? 0 : 1)
+                                        strokeStyle: .stroke)
                                     
-                                    if let locationConnection = self.locationConnections[index] {
-                                        GridHexagonView(
-                                            hexagonIndex: index,
-                                            strokeStyle: .stroke)
-                                        
-                                        self.getCorrespondingIcon(locationType: locationConnection.location.type)
-                                            .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
-                                            .reverseScroll()
-                                    }
+                                    GridHexagonIconView(locationType: locationConnection.location.type)
+                                        .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
+                                        .reverseScroll()
                                 }
                             }
                         }
@@ -89,18 +87,11 @@ struct MapGridView: View {
         }
     }
     
-    func getCorrespondingIcon(locationType: LocationType) -> YonderIcon {
-        switch locationType {
-        case .none: return YonderIcon(image: YonderImages.missingIcon)
-        case .hostile: return YonderIcon(image: YonderImages.hostileIcon)
-        case .challengeHostile: return YonderIcon(image: YonderImages.challengeHostileIcon)
-        case .shop: return YonderIcon(image: YonderImages.shopIcon)
-        case .enhancer: return YonderIcon(image: YonderImages.enhancerIcon)
-        case .restorer: return YonderIcon(image: YonderImages.restorerIcon)
-        case .quest: return YonderIcon(image: YonderImages.missingIcon)
-        case .friendly: return YonderIcon(image: YonderImages.friendlyIcon)
-        case .boss: return YonderIcon(image: YonderImages.missingIcon)
+    func getLocationConnection(at index: Int) -> LocationConnection? {
+        if self.locationConnections.count > index, let locationConnection = self.locationConnections[index] {
+            return locationConnection
         }
+        return nil
     }
 }
 

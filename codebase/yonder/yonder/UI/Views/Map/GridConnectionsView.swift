@@ -11,8 +11,6 @@ struct GridConnectionsView: View {
     @EnvironmentObject var gridDimensions: GridDimensions
     let hexagonIndex: Int
     let locationConnection: LocationConnection
-    //let spacing: CGFloat
-    //let horizontalOffset: CGFloat
     
     var body: some View {
         ForEach(self.locationConnection.previousLocationsHexagonCoordinates) { coords in
