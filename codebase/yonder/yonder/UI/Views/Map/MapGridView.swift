@@ -11,8 +11,8 @@ import SwiftUI
 // There is a lot of questionable maths in this... but it works, so just treat it like a blackbox with columns, spacing and height as parameters
 struct MapGridView: View {
     let columnsCount: Int = 6
-    let spacing: CGFloat = 10
-    let hexagonFrameHeight: CGFloat = 150
+    let spacing: CGFloat = 0
+    let hexagonFrameHeight: CGFloat = 240
     
     let maxLocationHeight: Int = 100 // TEMP
     let hexagonCount: Int
@@ -36,70 +36,116 @@ struct MapGridView: View {
     var body: some View {
         let gridItems = Array(repeating: GridItem(.fixed(self.hexagonWidth), spacing: self.spacing), count: self.columnsCount)
         
-        ScrollView([.vertical, .horizontal]) {
-            ZStack {
-                LazyVGrid(columns: gridItems, spacing: spacing) {
-                    ForEach(0..<hexagonCount, id: \.self) { index in
-                        ZStack {
-                            let horizontalOffset = self.distanceBetweenColumnCentres/2 * (self.isEvenRow(index) ? -1 : 1)
-                            
-                            Hexagon()
-                                .fill(.gray)
-                                .onTapGesture {
-                                    print(index)
+        ZStack {
+            Color.Yonder.backgroundMaxDepth
+                .ignoresSafeArea()
+            
+            ScrollView([.vertical, .horizontal]) {
+                ZStack {
+                    LazyVGrid(columns: gridItems, spacing: spacing) {
+                        ForEach(0..<hexagonCount, id: \.self) { index in
+                            ZStack {
+                                let horizontalOffset = self.distanceBetweenColumnCentres/2 * (self.isEvenRow(index) ? -1 : 1)
+                                /*Hexagon()
+                                    .frame(width: self.hexagonFrameWidth, height: self.hexagonFrameHeight/2)
+                                    .offset(x: horizontalOffset)
+                                    .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
+                                    .reverseScroll()*/
+                                
+                                if let locationConnection = locationConnections[index] {
+                                    locationConnection.location.areaContent.image
+                                        .resizable()
+                                        .frame(width: self.hexagonFrameWidth, height: self.hexagonFrameHeight/2)
+                                        .clipShape(Hexagon())
+                                        .offset(x: horizontalOffset)
+                                        .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
+                                        .reverseScroll()
                                 }
-                                //.overlay(Text("\(index), \(locationConnections.last?.locationHexagonIndex ?? 3333)").foregroundColor(.white))
-                                .frame(width: self.hexagonFrameWidth, height: self.hexagonFrameHeight/2)
-                                .offset(x: horizontalOffset)
-                                .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
-                                .reverseScroll()
-                            
-                            if let locationConnection = locationConnections[index] {
+                                    
                                 Hexagon()
-                                    .fill(.black)
+                                    //.strokeBorder(Color.Yonder.border, lineWidth: YonderCoreGraphics.borderWidth/2)
+                                    .stroke(Color.Yonder.outlineMinContrast, lineWidth: YonderCoreGraphics.borderWidth)
+                                    .frame(width: self.hexagonFrameWidth, height: self.hexagonFrameHeight/2)
+                                    .offset(x: horizontalOffset)
+                                    .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
+                                    .reverseScroll()
+                                    //.opacity(locationConnections[index] == nil ? 0.1 : 1)
+                                    
+                                if let locationConnection = locationConnections[index] {
+                                    ForEach(locationConnection.previousLocationsHexagonCoordinates) { coords in
+                                        let values = self.getCoordinatesDifference(from: locationConnection.locationHexagonCoordinate, to: coords)
+                                        
+                                        GridConnectionView(down: values.1, downAcross: values.0, spacing: self.spacing, horizontalOffset: horizontalOffset)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    LazyVGrid(columns: gridItems, spacing: spacing) {
+                        ForEach(0..<hexagonCount, id: \.self) { index in
+                            ZStack {
+                                let horizontalOffset = self.distanceBetweenColumnCentres/2 * (self.isEvenRow(index) ? -1 : 1)
+                                
+                                
+                                /*Hexagon()
+                                    //.fill(.red, transpar)
+                                    .frame(width: self.hexagonFrameWidth, height: self.hexagonFrameHeight/2)
+                                    .offset(x: horizontalOffset)
+                                    .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
+                                    .reverseScroll()*/
+                                
+                                /*Hexagon()
+                                    .fill(Color.Yonder.backgroundMaxDepth)
                                     .frame(width: self.hexagonFrameWidth/2, height: self.hexagonFrameHeight/4)
                                     .offset(x: horizontalOffset)
                                     .frame(width: self.hexagonWidth/2, height: self.hexagonFrameHeight*0.25/2)
-                                    .reverseScroll()
-                                
-                                ForEach(locationConnection.previousLocationsHexagonCoordinates) { coords in
-                                    let values = self.getCoordinatesDifference(from: locationConnection.locationHexagonCoordinate, to: coords)
-                                    
-                                    GridConnectionView(down: values.1, downAcross: values.0, spacing: self.spacing, horizontalOffset: horizontalOffset)
-                                }
-                                
-                                /*self.getCorrespondingIcon(locationType: locationConnection.location.type)
-                                    .offset(x: horizontalOffset)
                                     .reverseScroll()*/
-                            }
-                        }
-                    }
-                }
-                
-                LazyVGrid(columns: gridItems, spacing: spacing) {
-                    ForEach(0..<hexagonCount, id: \.self) { index in
-                        ZStack {
-                            let horizontalOffset = self.distanceBetweenColumnCentres/2 * (self.isEvenRow(index) ? -1 : 1)
-                            
-                            Hexagon()
-                                .frame(width: self.hexagonFrameWidth, height: self.hexagonFrameHeight/2)
-                                .offset(x: horizontalOffset)
-                                .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
-                                .reverseScroll()
-                            
-                            if let locationConnection = locationConnections[index] {
-                                self.getCorrespondingIcon(locationType: locationConnection.location.type)
+                                
+                                Hexagon()
+                                    .strokeBorder(Color.Yonder.border, lineWidth: YonderCoreGraphics.borderWidth)
+                                    .background(Hexagon().foregroundColor(Color.Yonder.backgroundMaxDepth))
+                                    .frame(width: self.hexagonFrameWidth * 0.65, height: self.hexagonFrameHeight/2 * 0.65)
                                     .offset(x: horizontalOffset)
+                                    .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216)
                                     .reverseScroll()
+                                    .opacity(locationConnections[index] == nil ? 0 : 1)
+                                
+                                /*Hexagon()
+                                    .frame(width: self.hexagonFrameWidth, height: self.hexagonFrameHeight/2)
+                                    .offset(x: horizontalOffset)
+                                    .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
+                                    .reverseScroll()*/
+                                
+                                if let locationConnection = locationConnections[index] {
+                                    Hexagon()
+                                        //.strokeBorder(Color.Yonder.border, lineWidth: YonderCoreGraphics.borderWidth/2)
+                                        .stroke(Color.Yonder.border, lineWidth: YonderCoreGraphics.borderWidth)
+                                        .frame(width: self.hexagonFrameWidth, height: self.hexagonFrameHeight/2)
+                                        .offset(x: horizontalOffset)
+                                        .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
+                                        .reverseScroll()
+                                    /*Hexagon()
+                                        .fill(Color.Yonder.backgroundMaxDepth)
+                                        .frame(width: self.hexagonFrameWidth, height: self.hexagonFrameHeight/2)
+                                        .offset(x: horizontalOffset)
+                                        .frame(width: (self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight)/2 + self.spacing, height: self.hexagonFrameHeight*0.216) // 0.216 was found from trial and error so don't think too hard about it
+                                        .reverseScroll()*/
+                                    
+                                    self.getCorrespondingIcon(locationType: locationConnection.location.type)
+                                        .offset(x: horizontalOffset)
+                                        .reverseScroll()
+                                        
+                                }
                             }
                         }
                     }
                 }
+                .frame(width: (self.hexagonWidth + self.spacing)*CGFloat(self.columnsCount) + self.spacing*6)
             }
-            .frame(width: (self.hexagonWidth + self.spacing)*CGFloat(self.columnsCount) + self.spacing*6)
+            .padding(1) // Stops jittering
+            .reverseScroll()
         }
-        .padding(1) // Stops jittering
-        .reverseScroll()
     }
     
     func isEvenRow(_ index: Int) -> Bool {

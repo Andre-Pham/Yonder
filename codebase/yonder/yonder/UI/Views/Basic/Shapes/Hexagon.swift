@@ -9,10 +9,12 @@ import Foundation
 import SwiftUI
 
 // https://swiftui-lab.com/impossible-grids/
-struct Hexagon: Shape {
+struct Hexagon: InsettableShape {
+    var insetAmount = 0.0
+    
     func path(in rect: CGRect) -> Path {
         let sidesCount = 6
-        let diagonalRadius = Double(min(rect.width, rect.height))/2.0
+        let diagonalRadius = Double(min(rect.width, rect.height))/2.0 - self.insetAmount
         let rectCentre = CGPoint(x: rect.width/2.0, y: rect.height/2.0)
         var path = Path()
         
@@ -32,5 +34,11 @@ struct Hexagon: Shape {
         path.closeSubpath()
         
         return path
+    }
+    
+    func inset(by amount: CGFloat) -> some InsettableShape {
+        var hexagon = self
+        hexagon.insetAmount += amount
+        return hexagon
     }
 }
