@@ -29,8 +29,8 @@ struct MapGridView: View {
             Color.Yonder.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            VStack {
-                HStack {
+            VStack(spacing: 0) {
+                HStack(spacing: YonderCoreGraphics.padding) {
                     Button {
                         self.scaleIndex -= 1
                     } label: {
@@ -48,9 +48,17 @@ struct MapGridView: View {
                     .opacity(self.scaleIndex == self.scales.count-1 ? 0.2 : 1)
                     
                     Spacer()
+                    
+                    Button {
+                        // Will expand with matchGeometryEffect to show legend
+                    } label: {
+                        YonderSquareButtonLabel(text: "i")
+                    }
                 }
+                .padding(.bottom, YonderCoreGraphics.padding)
+                .padding(.horizontal, YonderCoreGraphics.padding)
                 
-                ScrollView([.vertical, .horizontal]) {
+                ScrollView([.vertical, .horizontal], showsIndicators: false) {
                     ZStack {
                         LazyVGrid(columns: gridItems, spacing: self.gridDimensions.spacing) {
                             ForEach(0..<self.gridDimensions.hexagonCount, id: \.self) { index in
@@ -100,6 +108,8 @@ struct MapGridView: View {
                             }
                         }
                     }
+                    .padding(.vertical, 75)
+                    .padding(.horizontal, 50)
                     .background(
                         GeometryReader { geo in
                             Color.clear.onAppear { self.scrollViewSize = geo.size }
@@ -108,7 +118,7 @@ struct MapGridView: View {
                     .frame(width: self.scrollViewSize.width*self.scale, height: self.scrollViewSize.height*self.scale)
                     .scaleEffect(self.scale)
                 }
-                .padding(1) // Stops jittering
+                .padding(0.001) // Stops jittering
                 .reverseScroll()
             }
         }

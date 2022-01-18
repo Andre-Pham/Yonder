@@ -46,20 +46,20 @@ extension InsettableShape {
                 return AnyView(ZStack {
                     self.fill(fillColor)
                     
-                    self.stroke(strokeColor, lineWidth: YonderCoreGraphics.borderWidth)
+                    self.stroke(strokeColor, lineWidth: YonderCoreGraphics.mapGridLineWidth)
                 })
             }
             else {
-                return AnyView(self.stroke(strokeColor, lineWidth: YonderCoreGraphics.borderWidth))
+                return AnyView(self.stroke(strokeColor, lineWidth: YonderCoreGraphics.mapGridLineWidth))
             }
         case .strokeBorder:
             if fill {
                 return AnyView(self
-                                .strokeBorder(strokeColor, lineWidth: YonderCoreGraphics.borderWidth)
+                                .strokeBorder(strokeColor, lineWidth: YonderCoreGraphics.mapGridLineWidth)
                                 .background(Hexagon().foregroundColor(fillColor)))
             }
             else {
-                return AnyView(self.strokeBorder(strokeColor, lineWidth: YonderCoreGraphics.borderWidth))
+                return AnyView(self.strokeBorder(strokeColor, lineWidth: YonderCoreGraphics.mapGridLineWidth))
             }
         case .none:
             if fill {
