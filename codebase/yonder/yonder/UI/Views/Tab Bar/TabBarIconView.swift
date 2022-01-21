@@ -21,7 +21,7 @@ struct TabBarIconView: View {
             
             VStack {
                 self.icon
-                    .padding(.top, 30)
+                    .padding(.top, 24)
                     .grayscale(self.viewRounter.currentPage == self.correspondingPage ? 0 : 1)
                 
                 YonderText(text: self.text, size: .tabBar)

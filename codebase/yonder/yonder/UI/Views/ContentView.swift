@@ -11,12 +11,15 @@ struct ContentView: View {
     @State private var showingMenu = true
     
     var body: some View {
-        if self.showingMenu {
-            MainMenuView(showingMenu: self.$showingMenu)
+        Group {
+            if self.showingMenu {
+                MainMenuView(showingMenu: self.$showingMenu)
+            }
+            else {
+                MainView()
+            }
         }
-        else {
-            MainView()
-        }
+        .statusBar(hidden: true)
     }
 }
 

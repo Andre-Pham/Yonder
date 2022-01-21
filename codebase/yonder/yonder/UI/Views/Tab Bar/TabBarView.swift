@@ -49,7 +49,7 @@ struct TabBarView: View {
                     icon: YonderIcon(image: YonderImages.settingsIcon),
                     text: "Settings")
             }
-            .frame(height: 50)
+            .frame(height: 55)
             .background(Color.Yonder.backgroundMaxDepth)
             .edgesIgnoringSafeArea(.bottom)
         }
