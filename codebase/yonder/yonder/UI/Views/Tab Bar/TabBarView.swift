@@ -15,7 +15,7 @@ struct TabBarView: View {
         VStack(spacing: 0) {
             ZStack {
                 OptionsView()
-                    .opacity(self.viewRounter.currentPage == .game ? 1 : 0)
+                    .opacity(self.viewRounter.currentPage == .options ? 1 : 0)
                 InventoryView()
                     .opacity(self.viewRounter.currentPage == .inventory ? 1 : 0)
                 MapView()
@@ -27,7 +27,7 @@ struct TabBarView: View {
             HStack(spacing: 0) {
                 TabBarIconView(
                     viewRounter: self.viewRounter,
-                    correspondingPage: .game,
+                    correspondingPage: .options,
                     icon: YonderIcon(image: YonderImages.gameIcon),
                     text: "Game")
                 
@@ -58,12 +58,12 @@ struct TabBarView: View {
 
 class ViewRouter: ObservableObject {
     
-    @Published var currentPage: Page = .game
+    @Published var currentPage: Page = .options
     
 }
 
 enum Page {
-    case game
+    case options
     case inventory
     case map
     case settings
