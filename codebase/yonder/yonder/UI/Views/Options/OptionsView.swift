@@ -22,9 +22,6 @@ struct OptionsView: View {
     
     var body: some View {
         GeometryReader { geo in
-            Color.Yonder.backgroundMaxDepth
-                .ignoresSafeArea()
-            
             ScrollView {
                 VStack(spacing: YonderCoreGraphics.padding) {
                     LocationView(locationViewModel: self.playerViewModel.locationPresenter)
@@ -123,13 +120,6 @@ struct OptionsView: View {
                     }
                 }
             }
-            
-            Color.Yonder.backgroundMaxDepth
-                .frame(
-                    width: geo.size.width,
-                    height: geo.safeAreaInsets.top,
-                    alignment: .top)
-                .ignoresSafeArea()
         }
     }
 }

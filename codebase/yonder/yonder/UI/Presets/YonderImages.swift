@@ -14,6 +14,13 @@ enum YonderImages {
     static let placeholderImage = Image("MajorInn")
     static let missingIcon = Image("MissingIcon")
     
+    // MARK: - Tab Bar Icons
+    
+    static let gameIcon = Image("Sword")
+    static let inventoryIcon = Image("Backpack")
+    static let mapIcon = Image("Compass")
+    static let settingsIcon = Image("Cog")
+    
     // MARK: - Stat Icons
     
     static let healthIcon = Image("Heart")
