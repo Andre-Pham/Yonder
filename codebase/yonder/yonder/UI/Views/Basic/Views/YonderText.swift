@@ -17,6 +17,7 @@ enum YonderTextSize {
     
     case buttonBody
     case tabBar
+    case tabBarIconCapsule
     
     case cardTitle
     case cardBody
@@ -31,6 +32,7 @@ enum YonderTextSize {
             
         case .buttonBody: return 24
         case .tabBar: return 14
+        case .tabBarIconCapsule: return 28
             
         case .cardTitle: return 18
         case .cardBody: return 26
