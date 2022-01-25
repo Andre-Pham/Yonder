@@ -18,8 +18,7 @@ class PlayerViewModel: ObservableObject {
     @Published private(set) var armorPoints: Int
     @Published private(set) var maxArmorPoints: Int
     @Published private(set) var gold: Int
-    
-    private(set) var locationViewModel: PlayerLocationViewModel
+    @Published private(set) var locationViewModel: LocationViewModel
     
     init(_ player: Player) {
         self.player = player
@@ -32,9 +31,9 @@ class PlayerViewModel: ObservableObject {
         self.maxArmorPoints = self.player.getMaxArmorPoints()
         self.gold = self.player.gold
         
-        // Set other presenters
+        // Set other view models
         
-        self.locationViewModel = PlayerLocationViewModel(self.player.location, player: self.player)
+        self.locationViewModel = LocationViewModel(self.player.location)
         
         // Add Subscribers
         
@@ -67,6 +66,10 @@ class PlayerViewModel: ObservableObject {
         
         self.player.$gold.sink(receiveValue: { newValue in
             self.gold = newValue
+        }).store(in: &self.subscriptions)
+        
+        self.player.$location.sink(receiveValue: { newValue in
+            self.locationViewModel = LocationViewModel(newValue)
         }).store(in: &self.subscriptions)
     }
     

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LocationView: View {
-    @ObservedObject var locationViewModel: PlayerLocationViewModel
+    @ObservedObject var locationViewModel: LocationViewModel
     
     var body: some View {
         GeometryReader { geo in
@@ -26,7 +26,7 @@ struct LocationView: View {
                     
                     Spacer()
                     
-                    Text(self.locationViewModel.type)
+                    Text(self.locationViewModel.typeAsString)
                         .font(YonderFonts.main())
                         .padding(.trailing, YonderCoreGraphics.padding)
                         .padding(.bottom, 3)
@@ -43,6 +43,6 @@ struct LocationView: View {
 
 struct LocationView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationView(locationViewModel: PlayerLocationViewModel(NoLocation(), player: Player(maxHealth: 200, location: NoLocation())))
+        LocationView(locationViewModel: LocationViewModel(NoLocation()))
     }
 }

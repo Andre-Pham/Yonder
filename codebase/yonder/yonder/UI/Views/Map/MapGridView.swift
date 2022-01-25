@@ -11,7 +11,7 @@ import SwiftUI
 struct MapGridView: View {
     @StateObject private var gridDimensions = GridDimensions()
     @StateObject private var mapViewModel = MapViewModel(GAME.map)
-    @StateObject private var playerLocationViewModel: PlayerLocationViewModel = PlayerViewModel(GAME.player).locationViewModel
+    @StateObject private var playerLocationViewModel = PlayerLocationViewModel(player: GAME.player)
     @State private var locationConnections = [LocationConnection?]()
     @StateObject var locationViewModels: ObservableArray<LocationViewModel> = ObservableArray(array: [LocationViewModel]()).observeChildrenChanges()
     
@@ -103,7 +103,7 @@ struct MapGridView: View {
                                         .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
                                         .reverseScroll()
                                     
-                                    if locationConnection.locationID == self.playerLocationViewModel.locationID {
+                                    if locationConnection.locationID == self.playerLocationViewModel.id {
                                         YonderIcon(image: YonderImages.healthIcon)
                                             .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
                                             .reverseScroll()

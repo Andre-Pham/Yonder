@@ -16,6 +16,14 @@ class LocationViewModel: ObservableObject {
     
     @Published private(set) var hasBeenVisited: Bool
     @Published private(set) var locationIDArrivedFrom: UUID
+    private(set) var id: UUID
+    private(set) var name: String
+    private(set) var description: String
+    private(set) var image: Image
+    private(set) var type: LocationType
+    var typeAsString: String {
+        return self.convertTypeToString(self.type)
+    }
     
     init(_ location: LocationAbstract) {
         self.location = location
@@ -24,6 +32,11 @@ class LocationViewModel: ObservableObject {
         
         self.hasBeenVisited = self.location.hasBeenVisited
         self.locationIDArrivedFrom = self.location.locationArrivedFrom?.id ?? UUID()
+        self.id = self.location.id
+        self.name = location.areaContent.name
+        self.description = location.areaContent.description
+        self.image = location.areaContent.image
+        self.type = location.type
         
         // Add Subscribers
         
@@ -36,6 +49,29 @@ class LocationViewModel: ObservableObject {
                 self.locationIDArrivedFrom = newID
             }
         }).store(in: &self.subscriptions)
+    }
+    
+    func convertTypeToString(_ type: LocationType) -> String {
+        switch type {
+        case .none:
+            return "None"
+        case .boss:
+            return "Boss"
+        case .challengeHostile:
+            return "Mini Boss"
+        case .enhancer:
+            return "Enhancer"
+        case .friendly:
+            return "Wanderer"
+        case .hostile:
+            return "Hostile"
+        case .quest:
+            return "Quest"
+        case .restorer:
+            return "Restorer"
+        case .shop:
+            return "Shop"
+        }
     }
     
 }
