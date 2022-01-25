@@ -62,7 +62,7 @@ struct MapGridView: View {
                         ForEach(0..<self.gridDimensions.hexagonCount, id: \.self) { index in
                             ZStack {
                                 if let locationConnection = self.getLocationConnection(at: index) {
-                                    locationConnection.location.areaContent.image
+                                    locationConnection.locationImage
                                         .resizable()
                                         .clipShape(Hexagon())
                                         .gridHexagonFrame(hexagonIndex: index)
@@ -78,7 +78,7 @@ struct MapGridView: View {
                                     GridConnectionsView(
                                         hexagonIndex: index,
                                         locationConnection: locationConnection,
-                                        locationArrivedFrom: self.locationViewModels.array[index].locationArrivedFrom)
+                                        locationIDArrivedFrom: self.locationViewModels.array[index].locationIDArrivedFrom)
                                 }
                             }
                         }
@@ -99,11 +99,11 @@ struct MapGridView: View {
                                         hexagonIndex: index,
                                         strokeStyle: .stroke)
                                     
-                                    GridHexagonIconView(locationType: locationConnection.location.type)
+                                    GridHexagonIconView(locationType: locationConnection.locationType)
                                         .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
                                         .reverseScroll()
                                     
-                                    if locationConnection.location.id == self.playerLocationViewModel.locationID {
+                                    if locationConnection.locationID == self.playerLocationViewModel.locationID {
                                         YonderIcon(image: YonderImages.healthIcon)
                                             .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
                                             .reverseScroll()
@@ -139,7 +139,7 @@ struct MapGridView: View {
                     self.locationViewModels.appendToArray(LocationViewModel(NoLocation()))
                 }
                 else {
-                    self.locationViewModels.appendToArray(LocationViewModel(locationConnection!.location))
+                    self.locationViewModels.appendToArray(locationConnection!.getLocationViewModel())
                 }
             }
         }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 /// Used to generate an array of `LocationConnection` where each index corresponds to a hexagon index in the map grid. Hexagons in the map grid that don't contain a location are `nil` in the array.
 class LocationConnectionGenerator {
@@ -169,14 +170,23 @@ class LocationConnection {
     private let mapGridColumnsCount: Int
     private let areaPosition: Int
     private let territoryPosition: Int
-    let location: LocationAbstract
+    private let location: LocationAbstract
+    var locationImage: Image {
+        return self.location.areaContent.image
+    }
+    var locationID: UUID {
+        return self.location.id
+    }
+    var locationType: LocationType {
+        return self.location.type
+    }
     var locationHexagonIndex: Int {
         return self.coordinatesToHexagonIndex(self.location.hexagonCoordinate!)
     }
     var locationHexagonCoordinate: HexagonCoordinate {
         return self.location.hexagonCoordinate!
     }
-    private(set) var previousLocations = [LocationAbstract]()
+    private var previousLocations = [LocationAbstract]()
     private(set) var previousLocationIndicesFromRightArea = [Int]()
     private(set) var previousLocationIndicesFromLeftArea = [Int]()
     private(set) var previousLocationIndicesFromPreviousTavernArea = [Int]()
@@ -203,6 +213,9 @@ class LocationConnection {
         
         return result
     }
+    var previousLocationsIDs: [UUID] {
+        return self.previousLocations.map { $0.id }
+    }
     
     init(location: LocationAbstract, mapGridColumnsCount: Int, areaPosition: Int, territoryPosition: Int) {
         self.location = location
@@ -227,6 +240,10 @@ class LocationConnection {
     
     func coordinatesToHexagonIndex(_ coordinates: HexagonCoordinate) -> Int {
         return Int((Double(coordinates.x)/2).rounded(.down)) + coordinates.y*self.mapGridColumnsCount + self.areaPosition*self.COLUMNS_BETWEEN_AREA_TIPS/2 + (2*self.mapGridColumnsCount*self.territoryPosition)*(self.ROWS_BETWEEN_AREAS + self.ROWS_IN_AREA)
+    }
+    
+    func getLocationViewModel() -> LocationViewModel {
+        return LocationViewModel(self.location)
     }
     
 }

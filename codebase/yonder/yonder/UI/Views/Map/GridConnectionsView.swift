@@ -11,18 +11,19 @@ struct GridConnectionsView: View {
     @EnvironmentObject var gridDimensions: GridDimensions
     let hexagonIndex: Int
     let locationConnection: LocationConnection
-    let locationArrivedFrom: LocationAbstract?
+    let locationIDArrivedFrom: UUID
     
     var body: some View {
         let previousCoordinates = self.locationConnection.previousLocationsHexagonCoordinates
-        ForEach(Array(zip(previousCoordinates.indices, previousCoordinates)), id: \.0) { index, coords in
+        let previousIDs = self.locationConnection.previousLocationsIDs
+        ForEach(Array(zip(previousIDs, previousCoordinates)), id: \.0) { id, coords in
             let values = self.getCoordinatesDifference(from: self.locationConnection.locationHexagonCoordinate, to: coords)
             
             GridConnectionView(down: values.1,
                                downAcross: values.0,
                                spacing: self.gridDimensions.spacing,
                                horizontalOffset: self.gridDimensions.getHorizontalOffset(hexagonIndex: self.hexagonIndex),
-                               color: self.getConnectionColor(from: self.locationConnection.previousLocations[index]))
+                               color: self.getConnectionColor(from: id))
         }
     }
     
@@ -30,11 +31,9 @@ struct GridConnectionsView: View {
         return (otherCoordinates.x - coordinates.x, abs(otherCoordinates.y - coordinates.y))
     }
     
-    func getConnectionColor(from location: LocationAbstract) -> Color {
-        if let locationArrivedFrom = self.locationArrivedFrom {
-            if locationArrivedFrom.id == location.id {
-                return Color.Yonder.border
-            }
+    func getConnectionColor(from locationID: UUID) -> Color {
+        if self.locationIDArrivedFrom == locationID {
+            return Color.Yonder.border
         }
         return .red
     }
