@@ -11,7 +11,9 @@ import SwiftUI
 struct MapGridView: View {
     @StateObject private var gridDimensions = GridDimensions()
     @StateObject private var mapViewModel = MapViewModel(GAME.map)
+    @StateObject private var playerLocationViewModel: PlayerLocationViewModel = PlayerViewModel(GAME.player).locationViewModel
     @State private var locationConnections = [LocationConnection?]()
+    @StateObject var locationViewModels: ObservableArray<LocationViewModel> = ObservableArray(array: [LocationViewModel]()).observeChildrenChanges()
     
     let scales = [0.2, 0.35, 0.7, 1.0, 1.6]
     @State private var scaleIndex: Int = 2
@@ -75,7 +77,8 @@ struct MapGridView: View {
                                 if let locationConnection = self.getLocationConnection(at: index) {
                                     GridConnectionsView(
                                         hexagonIndex: index,
-                                        locationConnection: locationConnection)
+                                        locationConnection: locationConnection,
+                                        locationArrivedFrom: self.locationViewModels.array[index].locationArrivedFrom)
                                 }
                             }
                         }
@@ -99,6 +102,12 @@ struct MapGridView: View {
                                     GridHexagonIconView(locationType: locationConnection.location.type)
                                         .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
                                         .reverseScroll()
+                                    
+                                    if locationConnection.location.id == self.playerLocationViewModel.locationID {
+                                        YonderIcon(image: YonderImages.healthIcon)
+                                            .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
+                                            .reverseScroll()
+                                    }
                                 }
                             }
                         }
@@ -124,6 +133,15 @@ struct MapGridView: View {
                 hexagonCount: self.gridDimensions.hexagonCount,
                 columnsCount: self.gridDimensions.columnsCount)
                 .getAllLocationConnections()
+            
+            for locationConnection in self.locationConnections {
+                if locationConnection == nil {
+                    self.locationViewModels.appendToArray(LocationViewModel(NoLocation()))
+                }
+                else {
+                    self.locationViewModels.appendToArray(LocationViewModel(locationConnection!.location))
+                }
+            }
         }
     }
     

@@ -24,7 +24,7 @@ struct OptionsView: View {
         GeometryReader { geo in
             ScrollView {
                 VStack(spacing: YonderCoreGraphics.padding) {
-                    LocationView(locationViewModel: self.playerViewModel.locationPresenter)
+                    LocationView(locationViewModel: self.playerViewModel.locationViewModel)
                         .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
                         .frame(maxWidth: .infinity)
                         .frame(height: 180)

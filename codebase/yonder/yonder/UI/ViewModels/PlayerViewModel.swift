@@ -19,7 +19,7 @@ class PlayerViewModel: ObservableObject {
     @Published private(set) var maxArmorPoints: Int
     @Published private(set) var gold: Int
     
-    private(set) var locationPresenter: LocationViewModel
+    private(set) var locationViewModel: PlayerLocationViewModel
     
     init(_ player: Player) {
         self.player = player
@@ -34,7 +34,7 @@ class PlayerViewModel: ObservableObject {
         
         // Set other presenters
         
-        self.locationPresenter = LocationViewModel(self.player.location, player: self.player)
+        self.locationViewModel = PlayerLocationViewModel(self.player.location, player: self.player)
         
         // Add Subscribers
         

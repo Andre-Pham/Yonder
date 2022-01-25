@@ -22,11 +22,18 @@ class LocationAbstractPart {
     private(set) var bridgeAccessibility: LocationBridgeAccessibility
     private(set) var hexagonCoordinate: HexagonCoordinate?
     private(set) var areaContent = AreaContentContainer()
+    @DidSetPublished private(set) var hasBeenVisited = false
+    @DidSetPublished private(set) var locationArrivedFrom: LocationAbstract?
     public let id = UUID()
     
     init() {
         self.bridgeAccessibility = .noBridge
         self.hexagonCoordinate = nil
+    }
+    
+    func setToVisited(from location: LocationAbstract) {
+        self.hasBeenVisited = true
+        self.locationArrivedFrom = location
     }
     
     func addNextLocations(_ locations: [LocationAbstract]) {

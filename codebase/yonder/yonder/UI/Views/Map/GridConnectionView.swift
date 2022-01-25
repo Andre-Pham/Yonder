@@ -13,6 +13,7 @@ struct GridConnectionView: View {
     let downAcross: Int // Use -/+ to determine left/right
     let spacing: CGFloat
     let horizontalOffset: CGFloat
+    var color: Color = Color.Yonder.border
     
     var downVGridConverted: CGFloat {
         // Parameter 'down', but adjusted to account for the fact that 'downAcross' causes a difference in hexagon y coordinates
@@ -26,7 +27,7 @@ struct GridConnectionView: View {
                     Line(start: self.getStart(geometry: geo),
                          end: self.getDownEnd(geometry: geo),
                          horizontalOffset: self.horizontalOffset)
-                        .stroke(Color.Yonder.border, lineWidth: YonderCoreGraphics.mapGridLineWidth)
+                        .stroke(self.color, lineWidth: YonderCoreGraphics.mapGridLineWidth)
                         .reverseScroll()
                 }
                 if self.downAcross != 0 {
@@ -36,7 +37,7 @@ struct GridConnectionView: View {
                             (self.downVGridConverted*(geo.size.height*2 + self.spacing*2) /
                             (self.downVGridConverted > 0 ? 2 : 1)),
                          horizontalOffset: self.horizontalOffset)
-                        .stroke(Color.Yonder.border, lineWidth: YonderCoreGraphics.mapGridLineWidth)
+                        .stroke(self.color, lineWidth: YonderCoreGraphics.mapGridLineWidth)
                         .reverseScroll()
                 }
             }

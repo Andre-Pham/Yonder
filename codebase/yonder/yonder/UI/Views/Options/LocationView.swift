@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LocationView: View {
-    @ObservedObject var locationViewModel: LocationViewModel
+    @ObservedObject var locationViewModel: PlayerLocationViewModel
     
     var body: some View {
         GeometryReader { geo in
@@ -43,6 +43,6 @@ struct LocationView: View {
 
 struct LocationView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationView(locationViewModel: LocationViewModel(NoLocation(), player: Player(maxHealth: 200, location: NoLocation())))
+        LocationView(locationViewModel: PlayerLocationViewModel(NoLocation(), player: Player(maxHealth: 200, location: NoLocation())))
     }
 }

@@ -14,6 +14,7 @@ class Player: ActorAbstract {
     
     init(maxHealth: Int, location: LocationAbstract) {
         self.location = location
+        location.setToVisited(from: NoLocation())
         
         super.init(maxHealth: maxHealth)
     }
@@ -32,6 +33,7 @@ class Player: ActorAbstract {
     }
     
     func travel(to location: LocationAbstract) {
+        location.setToVisited(from: self.location)
         self.location = location
     }
     
