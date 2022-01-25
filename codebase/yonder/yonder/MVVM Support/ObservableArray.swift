@@ -8,6 +8,12 @@
 import Foundation
 import Combine
 
+/// An observed array that also observes changes in its elements.
+///
+/// `@StateObject var firstCar = Car("red")`
+/// `@StateObject var secondCar = Car("blue")`
+///  Is equivalent to...
+/// `@StateObject var cars: ObservableArray<Car> = ObservableArray(array: [Car("red"), Car("blue")]).observeChildrenChanges()`
 class ObservableArray<T>: ObservableObject {
 
     @Published var array: [T] = []

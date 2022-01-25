@@ -8,8 +8,9 @@
 import Foundation
 import Combine
 
-// Publishes whenever a value is changed
-// Essentially the @Published property wrapper, except it publishes after the value has been set (through CurrentValueSubject), rather how @Published behaves, which publishes before the value has been set (which emulates PassThroughSubject)
+/// Publishes whenever a value is changed.
+///
+/// Essentially the @Published property wrapper, except it publishes after the value has been set (through CurrentValueSubject), rather how @Published behaves, which publishes before the value has been set (which emulates PassThroughSubject).
 @propertyWrapper
 class DidSetPublished<Value> {
     private var val: Value
