@@ -61,8 +61,8 @@ struct MapGridView: View {
                     LazyVGrid(columns: gridItems, spacing: self.gridDimensions.spacing) {
                         ForEach(0..<self.gridDimensions.hexagonCount, id: \.self) { index in
                             ZStack {
-                                if let locationConnection = self.getLocationConnection(at: index) {
-                                    locationConnection.locationImage
+                                if let locationViewModel = self.getLocationViewModel(at: index) {
+                                    locationViewModel.image
                                         .resizable()
                                         .clipShape(Hexagon())
                                         .gridHexagonFrame(hexagonIndex: index)
@@ -78,7 +78,7 @@ struct MapGridView: View {
                                     GridConnectionsView(
                                         hexagonIndex: index,
                                         locationConnection: locationConnection,
-                                        locationIDArrivedFrom: self.locationViewModels.array[index].locationIDArrivedFrom)
+                                        locationIDArrivedFrom: self.locationViewModels[index].locationIDArrivedFrom)
                                 }
                             }
                         }
@@ -94,16 +94,18 @@ struct MapGridView: View {
                                     fill: true)
                                     .opacity(self.locationConnections.count <= index || self.locationConnections[index] == nil ? 0 : 1)
                                 
-                                if let locationConnection = self.getLocationConnection(at: index) {
+                                if let locationViewModel = self.getLocationViewModel(at: index) {
                                     GridHexagonView(
                                         hexagonIndex: index,
                                         strokeStyle: .stroke)
+                                        .brightness(locationViewModel.hasBeenVisited ? 0 : -0.5)
                                     
-                                    GridHexagonIconView(locationType: locationConnection.locationType)
+                                    GridHexagonIconView(locationType: locationViewModel.type)
                                         .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
                                         .reverseScroll()
+                                        .opacity(locationViewModel.hasBeenVisited ? 1 : 0.7)
                                     
-                                    if locationConnection.locationID == self.playerLocationViewModel.id {
+                                    if locationViewModel.id == self.playerLocationViewModel.id {
                                         YonderIcon(image: YonderImages.healthIcon)
                                             .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
                                             .reverseScroll()
@@ -136,10 +138,10 @@ struct MapGridView: View {
             
             for locationConnection in self.locationConnections {
                 if locationConnection == nil {
-                    self.locationViewModels.appendToArray(LocationViewModel(NoLocation()))
+                    self.locationViewModels.append(LocationViewModel(NoLocation()))
                 }
                 else {
-                    self.locationViewModels.appendToArray(locationConnection!.getLocationViewModel())
+                    self.locationViewModels.append(locationConnection!.getLocationViewModel())
                 }
             }
         }
@@ -150,6 +152,17 @@ struct MapGridView: View {
             return locationConnection
         }
         return nil
+    }
+    
+    func getLocationViewModel(at index: Int) -> LocationViewModel? {
+        if self.locationConnectionExists(at: index) {
+            return self.locationViewModels[index]
+        }
+        return nil
+    }
+    
+    func locationConnectionExists(at index: Int) -> Bool {
+        return self.getLocationConnection(at: index) != nil
     }
 }
 

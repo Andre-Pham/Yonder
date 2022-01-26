@@ -159,6 +159,7 @@ class LocationConnectionGenerator {
 }
 
 /// Represents a `Location` on the map grid, and its connections to its predecessors.
+/// Represents only the grid/rendering aspect of the locations. For information about the actual locations, refer to LocationViewModel.
 ///
 /// Use to retrieve information about a location's hexagon coordinate, as well as the hexagon coordinates of its location predecessors in order to draw lines between them on the map grid.
 class LocationConnection {
@@ -171,15 +172,6 @@ class LocationConnection {
     private let areaPosition: Int
     private let territoryPosition: Int
     private let location: LocationAbstract
-    var locationImage: Image {
-        return self.location.areaContent.image
-    }
-    var locationID: UUID {
-        return self.location.id
-    }
-    var locationType: LocationType {
-        return self.location.type
-    }
     var locationHexagonIndex: Int {
         return self.coordinatesToHexagonIndex(self.location.hexagonCoordinate!)
     }
