@@ -90,34 +90,55 @@ struct MapGridView: View {
                     LazyVGrid(columns: gridItems, spacing: self.gridDimensions.spacing) {
                         ForEach(0..<self.gridDimensions.hexagonCount, id: \.self) { index in
                             ZStack {
-                                // Location outer border
-                                // Must always be drawn (whether visible or not) to set the frame
-                                GridHexagonView(
-                                    hexagonIndex: index,
-                                    strokeStyle: .stroke)
-                                    .brightness(self.locationHasBeenVisited(at: index) ? 0 : -0.5)
-                                    .opacity(self.locationConnections.count <= index || self.locationConnectionExists(at: index) ? 1 : 0)
+                                // Required for the grid
+                                GridHexagonView(hexagonIndex: index)
+                                    .opacity(0)
                                 
                                 if let locationViewModel = self.getLocationViewModel(at: index) {
+                                    if !locationViewModel.hasBeenVisited {
+                                        // Location outer border (dimmed)
+                                        GridHexagonView(
+                                            hexagonIndex: index,
+                                            strokeStyle: .stroke)
+                                            .brightness(YonderCoreGraphics.visitedLocationBrightness)
+                                    }
+                                    
                                     // Location hexagon inner border and fill
                                     GridHexagonView(
                                         hexagonIndex: index,
                                         scale: 0.65,
                                         strokeStyle: .strokeBorder,
                                         fill: true)
-                                        .brightness(locationViewModel.hasBeenVisited ? 0 : -0.5)
+                                        .brightness(locationViewModel.hasBeenVisited ? 0 : YonderCoreGraphics.visitedLocationBrightness)
                                     
                                     // Location icon
                                     GridHexagonIconView(locationType: locationViewModel.type)
                                         .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
                                         .reverseScroll()
-                                        .opacity(locationViewModel.hasBeenVisited ? 1 : 0.7)
+                                        .opacity(locationViewModel.hasBeenVisited ? 1 : YonderCoreGraphics.visitedLocationImageOpacity)
                                     
                                     if locationViewModel.id == self.playerLocationViewModel.id {
                                         YonderIcon(image: YonderImages.healthIcon)
                                             .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
                                             .reverseScroll()
                                     }
+                                }
+                            }
+                        }
+                    }
+                    
+                    LazyVGrid(columns: gridItems, spacing: self.gridDimensions.spacing) {
+                        ForEach(0..<self.gridDimensions.hexagonCount, id: \.self) { index in
+                            ZStack {
+                                // Required for the grid
+                                GridHexagonView(hexagonIndex: index)
+                                    .opacity(0)
+                                
+                                if self.locationHasBeenVisited(at: index) {
+                                    // Location outer border (not dimmed)
+                                    GridHexagonView(
+                                        hexagonIndex: index,
+                                        strokeStyle: .stroke)
                                 }
                             }
                         }

@@ -14,4 +14,7 @@ enum YonderCoreGraphics {
     static let borderWidth: CGFloat = 3
     static let mapGridLineWidth: CGFloat = 4
     
+    static let visitedLocationBrightness = -0.5
+    static let visitedLocationImageOpacity = 0.7
+    
 }

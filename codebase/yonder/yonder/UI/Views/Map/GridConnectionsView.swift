@@ -35,6 +35,6 @@ struct GridConnectionsView: View {
         if self.locationIDArrivedFrom == locationID {
             return Color.Yonder.border
         }
-        return .red
+        return Color(UIColor(Color.Yonder.border).adjust(by: YonderCoreGraphics.visitedLocationBrightness) ?? .red)
     }
 }
