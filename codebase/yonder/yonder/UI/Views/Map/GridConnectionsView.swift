@@ -22,24 +22,12 @@ struct GridConnectionsView: View {
         ForEach(Array(zip(previousIDs, previousCoordinates)), id: \.0) { id, coords in
             let values = self.getCoordinatesDifference(from: self.locationConnection.locationHexagonCoordinate, to: coords)
             
-            if self.fadeIsActive() {
-                GridConnectionView(down: values.1,
-                                   downAcross: values.0,
-                                   spacing: self.gridDimensions.spacing,
-                                   horizontalOffset: self.gridDimensions.getHorizontalOffset(hexagonIndex: self.hexagonIndex),
-                                   color: self.color)
-                    .animation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true), value: self.color)
-                    .onAppear {
-                        self.color = self.getConnectionColor(from: id)
-                    }
-            }
-            else {
-                GridConnectionView(down: values.1,
-                                   downAcross: values.0,
-                                   spacing: self.gridDimensions.spacing,
-                                   horizontalOffset: self.gridDimensions.getHorizontalOffset(hexagonIndex: self.hexagonIndex),
-                                   color: self.getConnectionColor(from: id))
-            }
+            GridConnectionView(down: values.1,
+                               downAcross: values.0,
+                               spacing: self.gridDimensions.spacing,
+                               horizontalOffset: self.gridDimensions.getHorizontalOffset(hexagonIndex: self.hexagonIndex),
+                               color: self.fadeIsActive(on: id) ? self.color : self.getConnectionColor(from: id))
+                .repeatColorAnimation(color: self.$color, transitionColor: self.getConnectionColor(from: id), active: self.fadeIsActive(on: id))
         }
     }
     
@@ -54,12 +42,7 @@ struct GridConnectionsView: View {
         return ColorManipulation.adjustBrightness(of: Color.Yonder.border, amount: YonderCoreGraphics.unvisitedLocationBrightness)
     }
     
-    func fadeIsActive() -> Bool {
-        for id in self.locationConnection.previousLocationsIDs {
-            if id == self.playerLocationID {
-                return true
-            }
-        }
-        return false
+    func fadeIsActive(on id: UUID) -> Bool {
+        return id == self.playerLocationID
     }
 }

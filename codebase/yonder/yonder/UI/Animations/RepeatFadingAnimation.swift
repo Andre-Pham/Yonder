@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct RepeatFadingAnimation: ViewModifier {
-    @State private var opacity: Double
+    @State var opacity: Double
     let duration: Double
     let bounds: (Double, Double)
     let active: Bool
