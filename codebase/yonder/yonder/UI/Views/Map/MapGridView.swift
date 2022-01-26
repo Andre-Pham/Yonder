@@ -41,7 +41,8 @@ struct MapGridView: View {
                                         .resizable()
                                         .clipShape(Hexagon())
                                         .gridHexagonFrame(hexagonIndex: index)
-                                        .opacity(locationViewModel.hasBeenVisited ? 1 : YonderCoreGraphics.visitedLocationImageOpacity)
+                                        .opacity(locationViewModel.hasBeenVisited || self.fadeIsActive(on: locationViewModel) ? 1 : YonderCoreGraphics.unvisitedLocationImageOpacity)
+                                        .repeatFadingAnimation(bounds: (YonderCoreGraphics.unvisitedLocationImageOpacity, 1), active: self.fadeIsActive(on: locationViewModel))
                                         .reverseScroll()
                                 }
                                 
@@ -67,7 +68,7 @@ struct MapGridView: View {
                                         GridHexagonView(
                                             hexagonIndex: index,
                                             strokeStyle: .stroke,
-                                            strokeColor: ColorManipulation.adjustBrightness(of: Color.Yonder.border, amount: YonderCoreGraphics.visitedLocationBrightness))
+                                            strokeColor: ColorManipulation.adjustBrightness(of: Color.Yonder.border, amount: YonderCoreGraphics.unvisitedLocationBrightness))
                                     }
                                 }
                             }
@@ -87,12 +88,20 @@ struct MapGridView: View {
                                         hexagonIndex: index,
                                         strokeStyle: .stroke)
                                 }
+                                else if let locationViewModel = self.getLocationViewModel(at: index), self.fadeIsActive(on: locationViewModel) {
+                                    GridHexagonView(
+                                        hexagonIndex: index,
+                                        strokeStyle: .stroke,
+                                        strokeColor: Color.Yonder.border)
+                                        .repeatFadingAnimation()
+                                }
                                 
                                 if let locationConnection = self.getLocationConnection(at: index) {
                                     // Grid connections (lines that connect hexagons)
                                     GridConnectionsView(
                                         hexagonIndex: index,
                                         locationConnection: locationConnection,
+                                        playerLocationID: self.playerLocationViewModel.id,
                                         locationIDArrivedFrom: self.locationViewModels[index].locationIDArrivedFrom)
                                 }
                             }
@@ -112,14 +121,24 @@ struct MapGridView: View {
                                         hexagonIndex: index,
                                         scale: 0.65,
                                         strokeStyle: .strokeBorder,
-                                        strokeColor: locationViewModel.hasBeenVisited ? Color.Yonder.border : ColorManipulation.adjustBrightness(of: Color.Yonder.border, amount: YonderCoreGraphics.visitedLocationBrightness),
+                                        strokeColor: locationViewModel.hasBeenVisited ? Color.Yonder.border : ColorManipulation.adjustBrightness(of: Color.Yonder.border, amount: YonderCoreGraphics.unvisitedLocationBrightness),
                                         fill: true)
+                                    
+                                    if self.fadeIsActive(on: locationViewModel) {
+                                        GridHexagonView(
+                                            hexagonIndex: index,
+                                            scale: 0.65,
+                                            strokeStyle: .strokeBorder,
+                                            strokeColor: Color.Yonder.border)
+                                            .repeatFadingAnimation()
+                                    }
                                     
                                     // Location icon
                                     GridHexagonIconView(locationType: locationViewModel.type)
                                         .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
+                                        .opacity(locationViewModel.hasBeenVisited || self.fadeIsActive(on: locationViewModel) ? 1 : YonderCoreGraphics.unvisitedLocationImageOpacity)
+                                        .repeatFadingAnimation(bounds: (YonderCoreGraphics.unvisitedLocationImageOpacity, 1), active: self.fadeIsActive(on: locationViewModel))
                                         .reverseScroll()
-                                        .opacity(locationViewModel.hasBeenVisited ? 1 : YonderCoreGraphics.visitedLocationImageOpacity)
                                     
                                     if locationViewModel.id == self.playerLocationViewModel.id {
                                         Triangle()
@@ -191,6 +210,10 @@ struct MapGridView: View {
             return locationViewModel.hasBeenVisited
         }
         return false
+    }
+    
+    func fadeIsActive(on locationViewModel: LocationViewModel) -> Bool {
+        return locationViewModel.canBeTravelledTo(from: self.playerLocationViewModel.locationViewModel)
     }
 }
 

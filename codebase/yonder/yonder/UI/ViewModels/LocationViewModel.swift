@@ -21,6 +21,7 @@ class LocationViewModel: ObservableObject {
     private(set) var description: String
     private(set) var image: Image
     private(set) var type: LocationType
+    private(set) var nextLocationIDs: [UUID]
     var typeAsString: String {
         return self.convertTypeToString(self.type)
     }
@@ -37,6 +38,7 @@ class LocationViewModel: ObservableObject {
         self.description = location.areaContent.description
         self.image = location.areaContent.image
         self.type = location.type
+        self.nextLocationIDs = self.location.nextLocations.map { $0.id }
         
         // Add Subscribers
         
@@ -49,6 +51,15 @@ class LocationViewModel: ObservableObject {
                 self.locationIDArrivedFrom = newID
             }
         }).store(in: &self.subscriptions)
+    }
+    
+    func canBeTravelledTo(from locationViewModel: LocationViewModel) -> Bool {
+        for id in locationViewModel.nextLocationIDs {
+            if id == self.id {
+                return true
+            }
+        }
+        return false
     }
     
     func convertTypeToString(_ type: LocationType) -> String {
