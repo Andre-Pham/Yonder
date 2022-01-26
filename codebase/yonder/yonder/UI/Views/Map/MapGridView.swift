@@ -122,9 +122,14 @@ struct MapGridView: View {
                                         .opacity(locationViewModel.hasBeenVisited ? 1 : YonderCoreGraphics.visitedLocationImageOpacity)
                                     
                                     if locationViewModel.id == self.playerLocationViewModel.id {
-                                        YonderIcon(image: YonderImages.healthIcon)
-                                            .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
+                                        Triangle()
+                                            .strokeBorder(Color.Yonder.border, lineWidth: YonderCoreGraphics.mapGridLineWidth)
+                                            .background(Triangle().foregroundColor(.red))
+                                            .frame(width: 30)
+                                            .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index),
+                                                    y: -abs(self.gridDimensions.getHorizontalOffset(hexagonIndex: index))*0.4)
                                             .reverseScroll()
+                                            .repeatFadingAnimation()
                                     }
                                 }
                             }
