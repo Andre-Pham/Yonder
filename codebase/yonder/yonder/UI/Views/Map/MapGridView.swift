@@ -61,6 +61,7 @@ struct MapGridView: View {
                     LazyVGrid(columns: gridItems, spacing: self.gridDimensions.spacing) {
                         ForEach(0..<self.gridDimensions.hexagonCount, id: \.self) { index in
                             ZStack {
+                                // Area image
                                 if let locationViewModel = self.getLocationViewModel(at: index) {
                                     locationViewModel.image
                                         .resizable()
@@ -69,11 +70,13 @@ struct MapGridView: View {
                                         .reverseScroll()
                                 }
                                 
+                                // Hexagon grid background
                                 GridHexagonView(
                                     hexagonIndex: index,
                                     strokeStyle: .stroke,
                                     strokeColor: Color.Yonder.outlineMinContrast)
                                     
+                                // Grid connections (lines that connect hexagons)
                                 if let locationConnection = self.getLocationConnection(at: index) {
                                     GridConnectionsView(
                                         hexagonIndex: index,
@@ -87,19 +90,24 @@ struct MapGridView: View {
                     LazyVGrid(columns: gridItems, spacing: self.gridDimensions.spacing) {
                         ForEach(0..<self.gridDimensions.hexagonCount, id: \.self) { index in
                             ZStack {
+                                // Location outer border
+                                // Must always be drawn (whether visible or not) to set the frame
                                 GridHexagonView(
                                     hexagonIndex: index,
-                                    scale: 0.65,
-                                    strokeStyle: .strokeBorder,
-                                    fill: true)
-                                    .opacity(self.locationConnections.count <= index || self.locationConnections[index] == nil ? 0 : 1)
+                                    strokeStyle: .stroke)
+                                    .brightness(self.locationHasBeenVisited(at: index) ? 0 : -0.5)
+                                    .opacity(self.locationConnections.count <= index || self.locationConnectionExists(at: index) ? 1 : 0)
                                 
                                 if let locationViewModel = self.getLocationViewModel(at: index) {
+                                    // Location hexagon inner border and fill
                                     GridHexagonView(
                                         hexagonIndex: index,
-                                        strokeStyle: .stroke)
+                                        scale: 0.65,
+                                        strokeStyle: .strokeBorder,
+                                        fill: true)
                                         .brightness(locationViewModel.hasBeenVisited ? 0 : -0.5)
                                     
+                                    // Location icon
                                     GridHexagonIconView(locationType: locationViewModel.type)
                                         .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
                                         .reverseScroll()
@@ -163,6 +171,13 @@ struct MapGridView: View {
     
     func locationConnectionExists(at index: Int) -> Bool {
         return self.getLocationConnection(at: index) != nil
+    }
+    
+    func locationHasBeenVisited(at index: Int) -> Bool {
+        if let locationViewModel = self.getLocationViewModel(at: index) {
+            return locationViewModel.hasBeenVisited
+        }
+        return false
     }
 }
 
