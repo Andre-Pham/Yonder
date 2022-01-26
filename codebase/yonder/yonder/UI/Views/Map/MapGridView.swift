@@ -67,6 +67,7 @@ struct MapGridView: View {
                                         .resizable()
                                         .clipShape(Hexagon())
                                         .gridHexagonFrame(hexagonIndex: index)
+                                        .opacity(locationViewModel.hasBeenVisited ? 1 : YonderCoreGraphics.visitedLocationImageOpacity)
                                         .reverseScroll()
                                 }
                                 
@@ -75,14 +76,6 @@ struct MapGridView: View {
                                     hexagonIndex: index,
                                     strokeStyle: .stroke,
                                     strokeColor: Color.Yonder.outlineMinContrast)
-                                    
-                                // Grid connections (lines that connect hexagons)
-                                if let locationConnection = self.getLocationConnection(at: index) {
-                                    GridConnectionsView(
-                                        hexagonIndex: index,
-                                        locationConnection: locationConnection,
-                                        locationIDArrivedFrom: self.locationViewModels[index].locationIDArrivedFrom)
-                                }
                             }
                         }
                     }
@@ -103,6 +96,45 @@ struct MapGridView: View {
                                             .brightness(YonderCoreGraphics.visitedLocationBrightness)
                                     }
                                     
+                                    
+                                }
+                            }
+                        }
+                    }
+                    
+                    LazyVGrid(columns: gridItems, spacing: self.gridDimensions.spacing) {
+                        ForEach(0..<self.gridDimensions.hexagonCount, id: \.self) { index in
+                            ZStack {
+                                // Required for the grid
+                                GridHexagonView(hexagonIndex: index)
+                                    .opacity(0)
+                                
+                                if self.locationHasBeenVisited(at: index) {
+                                    // Location outer border (not dimmed)
+                                    GridHexagonView(
+                                        hexagonIndex: index,
+                                        strokeStyle: .stroke)
+                                }
+                                
+                                if let locationConnection = self.getLocationConnection(at: index) {
+                                    // Grid connections (lines that connect hexagons)
+                                    GridConnectionsView(
+                                        hexagonIndex: index,
+                                        locationConnection: locationConnection,
+                                        locationIDArrivedFrom: self.locationViewModels[index].locationIDArrivedFrom)
+                                }
+                            }
+                        }
+                    }
+                    
+                    LazyVGrid(columns: gridItems, spacing: self.gridDimensions.spacing) {
+                        ForEach(0..<self.gridDimensions.hexagonCount, id: \.self) { index in
+                            ZStack {
+                                // Required for the grid
+                                GridHexagonView(hexagonIndex: index)
+                                    .opacity(0)
+                                
+                                if let locationViewModel = self.getLocationViewModel(at: index) {
                                     // Location hexagon inner border and fill
                                     GridHexagonView(
                                         hexagonIndex: index,
@@ -122,23 +154,6 @@ struct MapGridView: View {
                                             .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
                                             .reverseScroll()
                                     }
-                                }
-                            }
-                        }
-                    }
-                    
-                    LazyVGrid(columns: gridItems, spacing: self.gridDimensions.spacing) {
-                        ForEach(0..<self.gridDimensions.hexagonCount, id: \.self) { index in
-                            ZStack {
-                                // Required for the grid
-                                GridHexagonView(hexagonIndex: index)
-                                    .opacity(0)
-                                
-                                if self.locationHasBeenVisited(at: index) {
-                                    // Location outer border (not dimmed)
-                                    GridHexagonView(
-                                        hexagonIndex: index,
-                                        strokeStyle: .stroke)
                                 }
                             }
                         }
