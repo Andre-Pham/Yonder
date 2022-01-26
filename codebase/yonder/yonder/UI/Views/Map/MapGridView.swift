@@ -66,8 +66,8 @@ struct MapGridView: View {
                                         // Location outer border (dimmed)
                                         GridHexagonView(
                                             hexagonIndex: index,
-                                            strokeStyle: .stroke)
-                                            .brightness(YonderCoreGraphics.visitedLocationBrightness)
+                                            strokeStyle: .stroke,
+                                            strokeColor: ColorManipulation.adjustBrightness(of: Color.Yonder.border, amount: YonderCoreGraphics.visitedLocationBrightness))
                                     }
                                 }
                             }
@@ -112,8 +112,8 @@ struct MapGridView: View {
                                         hexagonIndex: index,
                                         scale: 0.65,
                                         strokeStyle: .strokeBorder,
+                                        strokeColor: locationViewModel.hasBeenVisited ? Color.Yonder.border : ColorManipulation.adjustBrightness(of: Color.Yonder.border, amount: YonderCoreGraphics.visitedLocationBrightness),
                                         fill: true)
-                                        .brightness(locationViewModel.hasBeenVisited ? 0 : YonderCoreGraphics.visitedLocationBrightness)
                                     
                                     // Location icon
                                     GridHexagonIconView(locationType: locationViewModel.type)
