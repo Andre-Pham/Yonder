@@ -15,7 +15,7 @@ struct MapGridView: View {
     @State private var locationConnections = [LocationConnection?]()
     @StateObject var locationViewModels: ObservableArray<LocationViewModel> = ObservableArray(array: [LocationViewModel]()).observeChildrenChanges()
     
-    let scales = [0.2, 0.35, 0.7, 1.0, 1.6]
+    let scales: [CGFloat] = [0.2, 0.35, 0.7, 1.0, 1.6]
     @State private var scaleIndex: Int = 2
     private var scale: CGFloat {
         return self.scales[self.scaleIndex]
@@ -28,33 +28,7 @@ struct MapGridView: View {
             count: self.gridDimensions.columnsCount)
         
         VStack(spacing: 0) {
-            HStack(spacing: YonderCoreGraphics.padding) {
-                Button {
-                    self.scaleIndex -= 1
-                } label: {
-                    YonderSquareButtonLabel(text: "-")
-                }
-                .disabled(self.scaleIndex == 0)
-                .opacity(self.scaleIndex == 0 ? 0.2 : 1)
-                
-                Button {
-                    self.scaleIndex += 1
-                } label: {
-                    YonderSquareButtonLabel(text: "+")
-                }
-                .disabled(self.scaleIndex == self.scales.count-1)
-                .opacity(self.scaleIndex == self.scales.count-1 ? 0.2 : 1)
-                
-                Spacer()
-                
-                Button {
-                    // Will expand with matchGeometryEffect to show legend
-                } label: {
-                    YonderSquareButtonLabel(text: "i")
-                }
-            }
-            .padding(.bottom, YonderCoreGraphics.padding)
-            .padding(.horizontal, YonderCoreGraphics.padding)
+            MapHeaderView(scaleIndex: self.$scaleIndex, scales: self.scales)
             
             ScrollView([.vertical, .horizontal], showsIndicators: false) {
                 ZStack {
@@ -95,8 +69,6 @@ struct MapGridView: View {
                                             strokeStyle: .stroke)
                                             .brightness(YonderCoreGraphics.visitedLocationBrightness)
                                     }
-                                    
-                                    
                                 }
                             }
                         }
