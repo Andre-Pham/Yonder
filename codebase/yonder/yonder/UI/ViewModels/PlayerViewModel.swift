@@ -77,4 +77,8 @@ class PlayerViewModel: ObservableObject {
         self.player.equipArmor(armor)
     }
     
+    func travel(to locationViewModel: LocationViewModel) {
+        self.player.travel(to: locationViewModel.location)
+    }
+    
 }

@@ -40,4 +40,13 @@ class GridDimensions: ObservableObject {
         return index/self.columnsCount % 2 == 0
     }
     
+    func getGridHexagonFrameWidth() -> CGFloat {
+        return self.hexagonFrameHeight*MathConstants.hexagonWidthToHeight/2 + self.spacing
+    }
+    
+    func getGridHexagonFrameHeight() -> CGFloat {
+        // 0.216 was found from trial and error so don't think too hard about it
+        return self.hexagonFrameHeight*0.216
+    }
+    
 }

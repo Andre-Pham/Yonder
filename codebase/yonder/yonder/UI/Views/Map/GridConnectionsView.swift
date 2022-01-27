@@ -12,7 +12,7 @@ struct GridConnectionsView: View {
     let hexagonIndex: Int
     let locationConnection: LocationConnection
     let playerLocationID: UUID
-    let locationIDArrivedFrom: UUID
+    let locationIDArrivedFrom: UUID // I need to make this an array to support tavern areas
     @State private var color: Color = Color.Yonder.border
     
     var body: some View {

@@ -11,6 +11,7 @@ import SwiftUI
 struct MapGridView: View {
     @StateObject private var gridDimensions = GridDimensions()
     @StateObject private var mapViewModel = MapViewModel(GAME.map)
+    @StateObject private var playerViewModel = PlayerViewModel(GAME.player)
     @StateObject private var playerLocationViewModel = PlayerLocationViewModel(player: GAME.player)
     @State private var locationConnections = [LocationConnection?]()
     @StateObject var locationViewModels: ObservableArray<LocationViewModel> = ObservableArray(array: [LocationViewModel]()).observeChildrenChanges()
@@ -46,11 +47,18 @@ struct MapGridView: View {
                                         .reverseScroll()
                                 }
                                 
-                                // Hexagon grid background
-                                GridHexagonView(
-                                    hexagonIndex: index,
-                                    strokeStyle: .stroke,
-                                    strokeColor: Color.Yonder.outlineMinContrast)
+                                if (index+1)%12 == 0 {
+                                    // Skip the last column
+                                    // Required for the grid
+                                    GridSpacerView()
+                                }
+                                else {
+                                    // Hexagon grid background
+                                    GridHexagonView(
+                                        hexagonIndex: index,
+                                        strokeStyle: .stroke,
+                                        strokeColor: Color.Yonder.outlineMinContrast)
+                                }
                             }
                         }
                     }
@@ -58,10 +66,6 @@ struct MapGridView: View {
                     LazyVGrid(columns: gridItems, spacing: self.gridDimensions.spacing) {
                         ForEach(0..<self.gridDimensions.hexagonCount, id: \.self) { index in
                             ZStack {
-                                // Required for the grid
-                                GridHexagonView(hexagonIndex: index)
-                                    .opacity(0)
-                                
                                 if let locationViewModel = self.getLocationViewModel(at: index) {
                                     if !locationViewModel.hasBeenVisited {
                                         // Location outer border (dimmed)
@@ -71,6 +75,10 @@ struct MapGridView: View {
                                             strokeColor: ColorManipulation.adjustBrightness(of: Color.Yonder.border, amount: YonderCoreGraphics.unvisitedLocationBrightness))
                                     }
                                 }
+                                else {
+                                    // Required for the grid
+                                    GridSpacerView()
+                                }
                             }
                         }
                     }
@@ -78,10 +86,6 @@ struct MapGridView: View {
                     LazyVGrid(columns: gridItems, spacing: self.gridDimensions.spacing) {
                         ForEach(0..<self.gridDimensions.hexagonCount, id: \.self) { index in
                             ZStack {
-                                // Required for the grid
-                                GridHexagonView(hexagonIndex: index)
-                                    .opacity(0)
-                                
                                 if self.locationHasBeenVisited(at: index) {
                                     // Location outer border (not dimmed)
                                     GridHexagonView(
@@ -94,6 +98,10 @@ struct MapGridView: View {
                                         strokeStyle: .stroke,
                                         strokeColor: Color.Yonder.border)
                                         .repeatFadingAnimation()
+                                }
+                                else {
+                                    // Required for the grid
+                                    GridSpacerView()
                                 }
                                 
                                 if let locationConnection = self.getLocationConnection(at: index) {
@@ -111,10 +119,6 @@ struct MapGridView: View {
                     LazyVGrid(columns: gridItems, spacing: self.gridDimensions.spacing) {
                         ForEach(0..<self.gridDimensions.hexagonCount, id: \.self) { index in
                             ZStack {
-                                // Required for the grid
-                                GridHexagonView(hexagonIndex: index)
-                                    .opacity(0)
-                                
                                 if let locationViewModel = self.getLocationViewModel(at: index) {
                                     // Location hexagon inner border and fill
                                     GridHexagonView(
@@ -123,7 +127,13 @@ struct MapGridView: View {
                                         strokeStyle: .strokeBorder,
                                         strokeColor: locationViewModel.hasBeenVisited ? Color.Yonder.border : ColorManipulation.adjustBrightness(of: Color.Yonder.border, amount: YonderCoreGraphics.unvisitedLocationBrightness),
                                         fill: true)
+                                        .onTapGesture {
+                                            if locationViewModel.canBeTravelledTo(from: self.playerLocationViewModel.locationViewModel) {
+                                                self.playerViewModel.travel(to: locationViewModel)
+                                            }
+                                        }
                                     
+                                    // Location hexagon inner border fade animation
                                     if self.fadeIsActive(on: locationViewModel) {
                                         GridHexagonView(
                                             hexagonIndex: index,
@@ -140,6 +150,7 @@ struct MapGridView: View {
                                         .repeatFadingAnimation(bounds: (YonderCoreGraphics.unvisitedLocationImageOpacity, 1), active: self.fadeIsActive(on: locationViewModel))
                                         .reverseScroll()
                                     
+                                    // Triangle indicator
                                     if locationViewModel.id == self.playerLocationViewModel.id {
                                         Triangle()
                                             .strokeBorder(Color.Yonder.border, lineWidth: YonderCoreGraphics.mapGridLineWidth)
@@ -151,12 +162,17 @@ struct MapGridView: View {
                                             .repeatFadingAnimation()
                                     }
                                 }
+                                else {
+                                    // Required for the grid
+                                    GridSpacerView()
+                                }
                             }
                         }
                     }
                 }
                 .padding(.vertical, 75)
-                .padding(.horizontal, 50)
+                .padding(.leading, 50)
+                .padding(.trailing, 50 - (self.gridDimensions.distanceBetweenColumnCentres)) // Accont for removed last column
                 .background(
                     GeometryReader { geo in
                         Color.clear.onAppear { self.scrollViewSize = geo.size }

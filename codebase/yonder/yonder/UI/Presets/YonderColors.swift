@@ -29,7 +29,7 @@ extension Color {
         
         //let highlight = Color("Assets#1988E9")
         let border = Color("Assets#FFFFFF")
-        let outlineMinContrast = Color("Assets#313131")
+        let outlineMinContrast = Color("Assets#1F1E20")
     }
     
 }
