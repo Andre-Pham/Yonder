@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+/// For some reason this only works on the simulator, not real devices.
 struct RepeatColorAnimation: ViewModifier {
     @Binding var color: Color
     let transitionColor: Color

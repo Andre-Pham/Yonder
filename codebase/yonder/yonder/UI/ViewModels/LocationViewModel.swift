@@ -15,7 +15,7 @@ class LocationViewModel: ObservableObject {
     private var subscriptions: Set<AnyCancellable> = []
     
     @Published private(set) var hasBeenVisited: Bool
-    @Published private(set) var locationIDArrivedFrom: UUID
+    @Published private(set) var locationIDsArrivedFrom: [UUID]
     private(set) var id: UUID
     private(set) var name: String
     private(set) var description: String
@@ -32,7 +32,7 @@ class LocationViewModel: ObservableObject {
         // Set properties to match Location
         
         self.hasBeenVisited = self.location.hasBeenVisited
-        self.locationIDArrivedFrom = self.location.locationArrivedFrom?.id ?? UUID()
+        self.locationIDsArrivedFrom = self.location.locationsArrivedFrom.map { $0.id }
         self.id = self.location.id
         self.name = location.areaContent.name
         self.description = location.areaContent.description
@@ -46,9 +46,9 @@ class LocationViewModel: ObservableObject {
             self.hasBeenVisited = newValue
         }).store(in: &self.subscriptions)
         
-        self.location.$locationArrivedFrom.sink(receiveValue: { newValue in
-            if let newID = newValue?.id {
-                self.locationIDArrivedFrom = newID
+        self.location.$locationsArrivedFrom.sink(receiveValue: { newValue in
+            if let newID = newValue.last?.id {
+                self.locationIDsArrivedFrom.append(newID)
             }
         }).store(in: &self.subscriptions)
     }

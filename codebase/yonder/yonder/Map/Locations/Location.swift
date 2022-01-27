@@ -23,7 +23,7 @@ class LocationAbstractPart {
     private(set) var hexagonCoordinate: HexagonCoordinate?
     private(set) var areaContent = AreaContentContainer()
     @DidSetPublished private(set) var hasBeenVisited = false
-    @DidSetPublished private(set) var locationArrivedFrom: LocationAbstract?
+    @DidSetPublished private(set) var locationsArrivedFrom = [LocationAbstract]()
     public let id = UUID()
     
     init() {
@@ -33,7 +33,7 @@ class LocationAbstractPart {
     
     func setToVisited(from location: LocationAbstract) {
         self.hasBeenVisited = true
-        self.locationArrivedFrom = location
+        self.locationsArrivedFrom.append(location)
     }
     
     func addNextLocations(_ locations: [LocationAbstract]) {

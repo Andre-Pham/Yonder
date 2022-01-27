@@ -178,6 +178,9 @@ class LocationConnection {
     var locationHexagonCoordinate: HexagonCoordinate {
         return self.location.hexagonCoordinate!
     }
+    var locationID: UUID {
+        return self.location.id
+    }
     private var previousLocations = [LocationAbstract]()
     private(set) var previousLocationIndicesFromRightArea = [Int]()
     private(set) var previousLocationIndicesFromLeftArea = [Int]()
@@ -217,6 +220,9 @@ class LocationConnection {
     }
     
     func addPreviousLocation(_ location: LocationAbstract, flipConnectionRight: Bool = false, flipConnectionLeft: Bool = false, previousTavernArea: Bool = false) {
+        guard !(self.previousLocations.map { $0.id }).contains(location.id) else {
+            return
+        }
         self.previousLocations.append(location)
         
         if flipConnectionRight {

@@ -32,6 +32,9 @@ struct RepeatFadingAnimation: ViewModifier {
         }
         else {
             content
+                .onAppear {
+                    self.opacity = 1
+                }
         }
     }
 }

@@ -11,9 +11,8 @@ struct GridConnectionsView: View {
     @EnvironmentObject var gridDimensions: GridDimensions
     let hexagonIndex: Int
     let locationConnection: LocationConnection
-    let playerLocationID: UUID
-    let locationIDArrivedFrom: UUID // I need to make this an array to support tavern areas
-    @State private var color: Color = Color.Yonder.border
+    @ObservedObject var playerLocationViewModel: PlayerLocationViewModel
+    @ObservedObject var locationViewModel: LocationViewModel
     
     var body: some View {
         let previousCoordinates = self.locationConnection.previousLocationsHexagonCoordinates
@@ -26,8 +25,16 @@ struct GridConnectionsView: View {
                                downAcross: values.0,
                                spacing: self.gridDimensions.spacing,
                                horizontalOffset: self.gridDimensions.getHorizontalOffset(hexagonIndex: self.hexagonIndex),
-                               color: self.fadeIsActive(on: id) ? self.color : self.getConnectionColor(from: id))
-                .repeatColorAnimation(color: self.$color, transitionColor: self.getConnectionColor(from: id), active: self.fadeIsActive(on: id))
+                               color: self.getConnectionColor(from: id))
+            
+            if self.fadeIsActive(on: id) {
+                GridConnectionView(down: values.1,
+                                   downAcross: values.0,
+                                   spacing: self.gridDimensions.spacing,
+                                   horizontalOffset: self.gridDimensions.getHorizontalOffset(hexagonIndex: self.hexagonIndex),
+                                   color: Color.Yonder.border)
+                    .repeatFadingAnimation()
+            }
         }
     }
     
@@ -35,14 +42,21 @@ struct GridConnectionsView: View {
         return (otherCoordinates.x - coordinates.x, abs(otherCoordinates.y - coordinates.y))
     }
     
-    func getConnectionColor(from locationID: UUID) -> Color {
-        if self.locationIDArrivedFrom == locationID {
+    func getConnectionColor(from id: UUID) -> Color {
+        if self.locationViewModel.locationIDsArrivedFrom.contains(id) && !self.fadeIsActive(on: id) {
             return Color.Yonder.border
         }
         return ColorManipulation.adjustBrightness(of: Color.Yonder.border, amount: YonderCoreGraphics.unvisitedLocationBrightness)
     }
     
     func fadeIsActive(on id: UUID) -> Bool {
-        return id == self.playerLocationID
+        if locationConnection.locationID == self.playerLocationViewModel.id {
+            for nextID in self.playerLocationViewModel.locationViewModel.nextLocationIDs {
+                if nextID == id {
+                    return true
+                }
+            }
+        }
+        return id == self.playerLocationViewModel.id
     }
 }
