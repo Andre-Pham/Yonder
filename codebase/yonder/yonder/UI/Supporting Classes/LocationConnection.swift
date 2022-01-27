@@ -208,9 +208,6 @@ class LocationConnection {
         
         return result
     }
-    var previousLocationsIDs: [UUID] {
-        return self.previousLocations.map { $0.id }
-    }
     
     init(location: LocationAbstract, mapGridColumnsCount: Int, areaPosition: Int, territoryPosition: Int) {
         self.location = location
@@ -242,6 +239,10 @@ class LocationConnection {
     
     func getLocationViewModel() -> LocationViewModel {
         return LocationViewModel(self.location)
+    }
+    
+    func getPreviousLocationsLightweightViewModels() -> [LightweightLocationViewModel] {
+        return self.previousLocations.map { LightweightLocationViewModel($0) }
     }
     
 }

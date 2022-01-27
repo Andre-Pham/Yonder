@@ -33,6 +33,14 @@ class LocationAbstractPart {
     
     func setToVisited(from location: LocationAbstract) {
         self.hasBeenVisited = true
+        self.addLocationArrivedFrom(location)
+        if location is BridgeLocation || self is BridgeLocation {
+            // Becuase you can travel "backwards" on bridge locations
+            location.addLocationArrivedFrom(self as! LocationAbstract)
+        }
+    }
+    
+    func addLocationArrivedFrom(_ location: LocationAbstract) {
         self.locationsArrivedFrom.append(location)
     }
     

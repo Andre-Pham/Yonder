@@ -25,6 +25,9 @@ class LocationViewModel: ObservableObject {
     var typeAsString: String {
         return self.convertTypeToString(self.type)
     }
+    var isBridge: Bool {
+        return self.location is BridgeLocation
+    }
     
     init(_ location: LocationAbstract) {
         self.location = location
@@ -39,6 +42,9 @@ class LocationViewModel: ObservableObject {
         self.image = location.areaContent.image
         self.type = location.type
         self.nextLocationIDs = self.location.nextLocations.map { $0.id }
+        if let bridgeLocation = self.location.bridgeLocation {
+            self.nextLocationIDs.append(bridgeLocation.id)
+        }
         
         // Add Subscribers
         
@@ -83,6 +89,23 @@ class LocationViewModel: ObservableObject {
         case .shop:
             return "Shop"
         }
+    }
+    
+}
+
+/// A lot of LocationViewModels can exist at once so this is a lightweight version that contains less information and no subscribers or publishers.
+struct LightweightLocationViewModel {
+    
+    private let location: LocationAbstract
+    var isBridge: Bool {
+        return self.location is BridgeLocation
+    }
+    var id: UUID {
+        return self.location.id
+    }
+    
+    init(_ location: LocationAbstract) {
+        self.location = location
     }
     
 }

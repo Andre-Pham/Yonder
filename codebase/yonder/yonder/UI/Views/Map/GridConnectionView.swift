@@ -8,12 +8,18 @@
 import Foundation
 import SwiftUI
 
+enum GridConnectionStyle {
+    case downAcross
+    case acrossDown
+}
+
 struct GridConnectionView: View {
     let down: Int
     let downAcross: Int // Use -/+ to determine left/right
     let spacing: CGFloat
     let horizontalOffset: CGFloat
     var color: Color = Color.Yonder.border
+    var style: GridConnectionStyle = .downAcross
     
     var downVGridConverted: CGFloat {
         // Parameter 'down', but adjusted to account for the fact that 'downAcross' causes a difference in hexagon y coordinates
@@ -23,22 +29,41 @@ struct GridConnectionView: View {
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                if self.downVGridConverted > 0 {
-                    Line(start: self.getStart(geometry: geo),
-                         end: self.getDownEnd(geometry: geo),
-                         horizontalOffset: self.horizontalOffset)
-                        .stroke(self.color, lineWidth: YonderCoreGraphics.mapGridLineWidth)
-                        .reverseScroll()
-                }
-                if self.downAcross != 0 {
-                    Line(start: self.getStart(geometry: geo),
-                         end: self.getDownAcrossEnd(geometry: geo),
-                         verticalOffset:
-                            (self.downVGridConverted*(geo.size.height*2 + self.spacing*2) /
-                            (self.downVGridConverted > 0 ? 2 : 1)),
-                         horizontalOffset: self.horizontalOffset)
-                        .stroke(self.color, lineWidth: YonderCoreGraphics.mapGridLineWidth)
-                        .reverseScroll()
+                switch self.style {
+                case .downAcross:
+                    if self.downVGridConverted > 0 {
+                        Line(start: self.getStart(geometry: geo),
+                             end: self.getDownEnd(geometry: geo),
+                             horizontalOffset: self.horizontalOffset)
+                            .stroke(self.color, lineWidth: YonderCoreGraphics.mapGridLineWidth)
+                            .reverseScroll()
+                    }
+                    if self.downAcross != 0 {
+                        Line(start: self.getStart(geometry: geo),
+                             end: self.getDownAcrossEnd(geometry: geo),
+                             verticalOffset:
+                                (self.downVGridConverted*(geo.size.height*2 + self.spacing*2) /
+                                (self.downVGridConverted > 0 ? 2 : 1)),
+                             horizontalOffset: self.horizontalOffset)
+                            .stroke(self.color, lineWidth: YonderCoreGraphics.mapGridLineWidth)
+                            .reverseScroll()
+                    }
+                case .acrossDown:
+                    if self.downVGridConverted > 0 {
+                        Line(start: self.getStart(geometry: geo),
+                             end: self.getDownEnd(geometry: geo),
+                             verticalOffset: self.downAcross != 0 ? CGFloat(abs(self.downAcross))*(geo.size.height + self.spacing) : 0,
+                             horizontalOffset: self.horizontalOffset + (self.downAcross != 0 ? CGFloat(self.downAcross)*(geo.size.width/2 + self.spacing/2) : 0))
+                            .stroke(self.color, lineWidth: YonderCoreGraphics.mapGridLineWidth)
+                            .reverseScroll()
+                    }
+                    if self.downAcross != 0 {
+                        Line(start: self.getStart(geometry: geo),
+                             end: self.getDownAcrossEnd(geometry: geo),
+                             horizontalOffset: self.horizontalOffset)
+                            .stroke(self.color, lineWidth: YonderCoreGraphics.mapGridLineWidth)
+                            .reverseScroll()
+                    }
                 }
             }
         }

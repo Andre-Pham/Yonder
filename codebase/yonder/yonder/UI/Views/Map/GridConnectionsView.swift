@@ -15,24 +15,31 @@ struct GridConnectionsView: View {
     @ObservedObject var locationViewModel: LocationViewModel
     
     var body: some View {
+        let previousViewModels = self.locationConnection.getPreviousLocationsLightweightViewModels()
+        let previousIDs = previousViewModels.map { $0.id }
+        let previousIsBridges = previousViewModels.map { $0.isBridge }
         let previousCoordinates = self.locationConnection.previousLocationsHexagonCoordinates
-        let previousIDs = self.locationConnection.previousLocationsIDs
         
-        ForEach(Array(zip(previousIDs, previousCoordinates)), id: \.0) { id, coords in
+        ForEach(0..<previousCoordinates.count, id: \.self) { index in
+            let id = previousIDs[index]
+            let isBridge = previousIsBridges[index]
+            let coords = previousCoordinates[index]
             let values = self.getCoordinatesDifference(from: self.locationConnection.locationHexagonCoordinate, to: coords)
             
             GridConnectionView(down: values.1,
                                downAcross: values.0,
                                spacing: self.gridDimensions.spacing,
                                horizontalOffset: self.gridDimensions.getHorizontalOffset(hexagonIndex: self.hexagonIndex),
-                               color: self.getConnectionColor(from: id))
+                               color: self.getConnectionColor(from: id),
+                               style: self.getGridConnectionStyle(to: coords, isBridge: isBridge))
             
             if self.fadeIsActive(on: id) {
                 GridConnectionView(down: values.1,
                                    downAcross: values.0,
                                    spacing: self.gridDimensions.spacing,
                                    horizontalOffset: self.gridDimensions.getHorizontalOffset(hexagonIndex: self.hexagonIndex),
-                                   color: Color.Yonder.border)
+                                   color: Color.Yonder.border,
+                                   style: self.getGridConnectionStyle(to: coords, isBridge: isBridge))
                     .repeatFadingAnimation()
             }
         }
@@ -40,6 +47,15 @@ struct GridConnectionsView: View {
     
     func getCoordinatesDifference(from coordinates: HexagonCoordinate, to otherCoordinates: HexagonCoordinate) -> (Int, Int) {
         return (otherCoordinates.x - coordinates.x, abs(otherCoordinates.y - coordinates.y))
+    }
+    
+    func getGridConnectionStyle(to coords: HexagonCoordinate, isBridge: Bool) -> GridConnectionStyle {
+        if isBridge {
+            if self.locationConnection.locationHexagonCoordinate.y > coords.y {
+                return .acrossDown
+            }
+        }
+        return .downAcross
     }
     
     func getConnectionColor(from id: UUID) -> Color {
