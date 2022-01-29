@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct MapView: View {
+    @StateObject private var scaleStateManager = ScaleStateManager(scales: YonderCoreGraphics.mapScales)
+    
     var body: some View {
-        MapGridView()
+        VStack(spacing: 0) {
+            MapHeaderView(scaleStateManager: self.scaleStateManager)
+            
+            MapGridView(scaleStateManager: self.scaleStateManager)
+        }
     }
 }
 
