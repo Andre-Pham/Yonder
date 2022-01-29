@@ -10,18 +10,11 @@ import SwiftUI
 
 struct MapGridView: View {
     @StateObject private var gridDimensions = GridDimensions()
-    @StateObject private var mapViewModel = MapViewModel(GAME.map)
+    @StateObject private var scaleStateManager = ScaleStateManager(scales: YonderCoreGraphics.mapScales)
     @StateObject private var playerViewModel = PlayerViewModel(GAME.player)
     @StateObject private var playerLocationViewModel = PlayerLocationViewModel(player: GAME.player)
     @State private var locationConnections = [LocationConnection?]()
     @StateObject var locationViewModels: ObservableArray<LocationViewModel> = ObservableArray(array: [LocationViewModel]()).observeChildrenChanges()
-    
-    let scales: [CGFloat] = [0.2, 0.35, 0.7, 1.0, 1.6]
-    @State private var scaleIndex: Int = 2
-    private var scale: CGFloat {
-        return self.scales[self.scaleIndex]
-    }
-    @State private var scrollViewSize = CGSize()
     
     @State private var animationSyncID = UUID()
     
@@ -31,7 +24,7 @@ struct MapGridView: View {
             count: self.gridDimensions.columnsCount)
         
         VStack(spacing: 0) {
-            MapHeaderView(scaleIndex: self.$scaleIndex, scales: self.scales)
+            MapHeaderView(scaleStateManager: self.scaleStateManager)
             
             ScrollView([.vertical, .horizontal], showsIndicators: false) {
                 ZStack {
@@ -185,11 +178,13 @@ struct MapGridView: View {
                 .padding(.trailing, 50 - (self.gridDimensions.distanceBetweenColumnCentres)) // Accont for removed last column
                 .background(
                     GeometryReader { geo in
-                        Color.clear.onAppear { self.scrollViewSize = geo.size }
+                        Color.clear.onAppear { self.scaleStateManager.setScrollViewSize(to: geo.size) }
                     }
                 )
-                .frame(width: self.scrollViewSize.width*self.scale, height: self.scrollViewSize.height*self.scale)
-                .scaleEffect(self.scale)
+                .frame(
+                    width: self.scaleStateManager.scrollViewSizeScaledWidth,
+                    height: self.scaleStateManager.scrollViewSizeScaledHeight)
+                .scaleEffect(self.scaleStateManager.scale)
             }
             .padding(0.001) // Stops jittering
             .reverseScroll()

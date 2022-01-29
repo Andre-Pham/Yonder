@@ -8,26 +8,25 @@
 import SwiftUI
 
 struct MapHeaderView: View {
-    @Binding var scaleIndex: Int
-    let scales: [CGFloat]
+    @ObservedObject var scaleStateManager: ScaleStateManager
     
     var body: some View {
         HStack(spacing: YonderCoreGraphics.padding) {
             Button {
-                self.scaleIndex -= 1
+                self.scaleStateManager.adjustScaleIndex(by: -1)
             } label: {
                 YonderSquareButtonLabel(text: "-")
             }
-            .disabled(self.scaleIndex == 0)
-            .opacity(self.scaleIndex == 0 ? 0.2 : 1)
+            .disabled(self.scaleStateManager.scaleIsMin)
+            .opacity(self.scaleStateManager.scaleIsMin ? YonderCoreGraphics.disabledButtonOpacity : 1)
             
             Button {
-                self.scaleIndex += 1
+                self.scaleStateManager.adjustScaleIndex(by: 1)
             } label: {
                 YonderSquareButtonLabel(text: "+")
             }
-            .disabled(self.scaleIndex == self.scales.count-1)
-            .opacity(self.scaleIndex == self.scales.count-1 ? 0.2 : 1)
+            .disabled(self.scaleStateManager.scaleIsMax)
+            .opacity(self.scaleStateManager.scaleIsMax ? YonderCoreGraphics.disabledButtonOpacity : 1)
             
             Spacer()
             
