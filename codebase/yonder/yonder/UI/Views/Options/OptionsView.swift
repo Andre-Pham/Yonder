@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct OptionsView: View {
-    let optionColumns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
+    @ObservedObject private var playerViewModel: PlayerViewModel
+    @ObservedObject private var optionsStateManager: OptionsStateManager
     
-    @StateObject private var playerViewModel = PlayerViewModel(GAME.player)
-    
-    @State private var optionHeader = "[Your Options]"
-    @State private var showOptions = true
-    @State private var showEngageCategories = false
-    @State private var showWeaponActions = false
+    init() {
+        let playerViewModel = PlayerViewModel(GAME.player)
+        
+        self.playerViewModel = playerViewModel
+        self.optionsStateManager = OptionsStateManager(playerViewModel: playerViewModel)
+    }
     
     @State private var showingPlayerSheet = false
     @State private var showingNPCSheet = false
@@ -73,46 +74,40 @@ struct OptionsView: View {
                     .frame(maxWidth: .infinity)
                     .frame(height: geo.size.width/2 - YonderCoreGraphics.padding*1.5)
                     
-                    YonderText(text: self.optionHeader, size: .title4)
+                    YonderText(text: self.optionsStateManager.optionHeader, size: .title4)
                     
-                    if self.showOptions {
-                        LazyVGrid(columns: self.optionColumns, spacing: YonderCoreGraphics.padding) {
-                            // Normally it's just "if location.isHostile, show the Engage option"
-                            ForEach(0..<5) { _ in
+                    if self.optionsStateManager.showOptions {
+                        LazyVGrid(columns: self.optionsStateManager.optionColumns, spacing: YonderCoreGraphics.padding) {
+                            if optionsStateManager.weaponOptionActive {
                                 Button {
+                                    self.optionsStateManager.weaponOptionSelected()
                                     self.playerViewModel.equipArmor(Armors.newTestBodyArmor())
-                                    showOptions.toggle()
-                                    showEngageCategories.toggle()
-                                    optionHeader = "[Engage Options]"
                                 } label: {
-                                    EngageOptionView()
-                                        .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
-                                        .frame(width: geo.size.width/3 - YonderCoreGraphics.padding*4/3, height: geo.size.width/3 - YonderCoreGraphics.padding*2)
+                                    OptionView(title: "Select Weapon", geometry: geo)
                                 }
+                            }
+                            
+                            if self.optionsStateManager.travelOptionActive {
+                                Button {
+                                    self.optionsStateManager.travelOptionSelected()
+                                } label: {
+                                    OptionView(title: "Travel", geometry: geo)
+                                }
+                                /*.sheet(isPresented: self.optionsStateManager.travelActionsActive.status) {
+                                    MapView()
+                                }*/
                             }
                         }
                         .padding(.leading, YonderCoreGraphics.padding)
                         .padding(.trailing, YonderCoreGraphics.padding)
                     }
                     
-                    if self.showEngageCategories {
-                        let engageCategoryViews = [
-                            EngageCategoryView(title: "Weapons"),
-                            EngageCategoryView(title: "Potions")
-                        ]
-                        
+                    if self.optionsStateManager.activeActions.status == true {
                         VStack {
-                            ForEach(engageCategoryViews) { view in
-                                Button {
-                                    showOptions.toggle()
-                                    self.showEngageCategories.toggle()
-                                    optionHeader = "[Your Options]"
-                                } label: {
-                                    view
-                                        .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
-                                        .frame(maxWidth: .infinity)
-                                        .frame(height: 50)
-                                }
+                            Button {
+                                self.optionsStateManager.closeActions()
+                            } label: {
+                                YonderWideButtonLabel(text: "Back")
                             }
                         }
                         .padding(.leading, YonderCoreGraphics.padding)
