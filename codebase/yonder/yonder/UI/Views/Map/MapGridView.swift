@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct MapGridView: View {
+    @EnvironmentObject private var travelStateManager: TravelStateManager
     @StateObject private var gridDimensions = GridDimensions()
     @ObservedObject var scaleStateManager: ScaleStateManager
     @StateObject private var playerViewModel = PlayerViewModel(GAME.player)
@@ -34,8 +35,8 @@ struct MapGridView: View {
                                     .resizable()
                                     .clipShape(Hexagon())
                                     .gridHexagonFrame(hexagonIndex: index)
-                                    .opacity(locationViewModel.hasBeenVisited || self.fadeIsActive(on: locationViewModel) ? 1 : YonderCoreGraphics.unvisitedLocationImageOpacity)
-                                    .repeatFadingAnimation(bounds: (YonderCoreGraphics.unvisitedLocationImageOpacity, 1), active: self.fadeIsActive(on: locationViewModel))
+                                    .opacity(locationViewModel.hasBeenVisited || self.travelStateManager.travellingActive && self.fadeIsActive(on: locationViewModel) ? 1 : YonderCoreGraphics.unvisitedLocationImageOpacity)
+                                    .repeatFadingAnimation(bounds: (YonderCoreGraphics.unvisitedLocationImageOpacity, 1), active: self.travelStateManager.travellingActive && self.fadeIsActive(on: locationViewModel))
                                     .id(self.animationSyncID)
                                     .reverseScroll()
                             }
@@ -85,7 +86,7 @@ struct MapGridView: View {
                                     hexagonIndex: index,
                                     strokeStyle: .stroke)
                             }
-                            else if let locationViewModel = self.getLocationViewModel(at: index), self.fadeIsActive(on: locationViewModel) {
+                            else if let locationViewModel = self.getLocationViewModel(at: index), self.fadeIsActive(on: locationViewModel) && self.travelStateManager.travellingActive {
                                 GridHexagonView(
                                     hexagonIndex: index,
                                     strokeStyle: .stroke,
@@ -123,7 +124,7 @@ struct MapGridView: View {
                                     strokeColor: locationViewModel.hasBeenVisited && !self.fadeIsActive(on: locationViewModel) ? Color.Yonder.border : ColorManipulation.adjustBrightness(of: Color.Yonder.border, amount: YonderCoreGraphics.unvisitedLocationBrightness),
                                     fill: true)
                                     .onTapGesture {
-                                        if locationViewModel.canBeTravelledTo(from: self.playerLocationViewModel.locationViewModel) {
+                                        if self.travelStateManager.travellingActive && locationViewModel.canBeTravelledTo(from: self.playerLocationViewModel.locationViewModel) {
                                             self.playerViewModel.travel(to: locationViewModel)
                                             
                                             // Set all synced animations a new ID to reset their animation cycles
@@ -132,7 +133,7 @@ struct MapGridView: View {
                                     }
                                 
                                 // Location hexagon inner border fade animation
-                                if self.fadeIsActive(on: locationViewModel) {
+                                if self.fadeIsActive(on: locationViewModel) && self.travelStateManager.travellingActive {
                                     GridHexagonView(
                                         hexagonIndex: index,
                                         scale: 0.65,
@@ -145,8 +146,8 @@ struct MapGridView: View {
                                 // Location icon
                                 GridHexagonIconView(locationType: locationViewModel.type)
                                     .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
-                                    .opacity((locationViewModel.hasBeenVisited || self.fadeIsActive(on: locationViewModel)) ? 1 : YonderCoreGraphics.unvisitedLocationImageOpacity)
-                                    .repeatFadingAnimation(bounds: (YonderCoreGraphics.unvisitedLocationImageOpacity, 1), active: self.fadeIsActive(on: locationViewModel))
+                                    .opacity((locationViewModel.hasBeenVisited || self.travelStateManager.travellingActive && self.fadeIsActive(on: locationViewModel)) ? 1 : YonderCoreGraphics.unvisitedLocationImageOpacity)
+                                    .repeatFadingAnimation(bounds: (YonderCoreGraphics.unvisitedLocationImageOpacity, 1), active: self.travelStateManager.travellingActive && self.fadeIsActive(on: locationViewModel))
                                     .id(self.animationSyncID)
                                     .reverseScroll()
                                 

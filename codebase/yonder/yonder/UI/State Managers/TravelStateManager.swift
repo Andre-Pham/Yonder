@@ -10,21 +10,23 @@ import SwiftUI
 
 class TravelStateManager: ObservableObject {
     
-    @Published private(set) var canTravel = false
-    @Published private(set) var finishedTravelling = false
+    @Published private(set) var travellingActive = false
+    @Published private(set) var travellingAllowed = true
     
-    func prepareForTravel() {
-        self.canTravel = true
+    func toggleTravellingActiveStateDisabled() -> Bool {
+        return !self.travellingActive && !self.travellingAllowed
     }
     
-    func travel() {
-        self.canTravel = false
-        self.finishedTravelling = true
+    func toggleTravellingActiveState() {
+        if !self.toggleTravellingActiveStateDisabled() {
+            self.travellingActive.toggle()
+        }
     }
     
-    func closeTravelOption() {
-        self.canTravel = false
-        self.finishedTravelling = false
+    func setTravellingActive(to state: Bool) {
+        if self.travellingActive || self.travellingAllowed {
+            self.travellingActive = state
+        }
     }
     
 }

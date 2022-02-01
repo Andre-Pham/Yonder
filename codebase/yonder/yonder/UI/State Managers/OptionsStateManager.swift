@@ -58,7 +58,8 @@ class OptionsStateManager: ObservableObject {
         self.activeActions = self.weaponActionsActive
     }
     
-    func travelOptionSelected(viewRouter: ViewRouter) {
+    func travelOptionSelected(viewRouter: ViewRouter, travelStateManager: TravelStateManager) {
+        travelStateManager.setTravellingActive(to: true)
         viewRouter.switchPage(to: .map)
     }
     

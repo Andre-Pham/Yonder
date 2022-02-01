@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OptionsView: View {
     @EnvironmentObject private var viewRouter: ViewRouter
+    @EnvironmentObject private var travelStateManager: TravelStateManager
     @ObservedObject private var playerViewModel: PlayerViewModel
     @ObservedObject private var optionsStateManager: OptionsStateManager
     
@@ -90,7 +91,7 @@ struct OptionsView: View {
                             
                             if self.optionsStateManager.travelOptionActive {
                                 Button {
-                                    self.optionsStateManager.travelOptionSelected(viewRouter: self.viewRouter)
+                                    self.optionsStateManager.travelOptionSelected(viewRouter: self.viewRouter, travelStateManager: self.travelStateManager)
                                 } label: {
                                     OptionView(title: "Travel", geometry: geo)
                                 }

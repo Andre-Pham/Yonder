@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MapHeaderView: View {
     @ObservedObject var scaleStateManager: ScaleStateManager
+    @EnvironmentObject private var travelStateManager: TravelStateManager
     
     var body: some View {
         HStack(spacing: YonderCoreGraphics.padding) {
@@ -28,7 +29,13 @@ struct MapHeaderView: View {
             .disabled(self.scaleStateManager.scaleIsMax)
             .opacity(self.scaleStateManager.scaleIsMax ? YonderCoreGraphics.disabledButtonOpacity : 1)
             
-            Spacer()
+            Button {
+                self.travelStateManager.toggleTravellingActiveState()
+            } label: {
+                YonderWideButtonLabel(text: self.travelStateManager.travellingActive ? "Done" : "Travel")
+            }
+            .disabled(self.travelStateManager.toggleTravellingActiveStateDisabled())
+            .opacity(self.travelStateManager.toggleTravellingActiveStateDisabled() ? YonderCoreGraphics.disabledButtonOpacity : 1)
             
             Button {
                 // Will expand with matchGeometryEffect to show legend

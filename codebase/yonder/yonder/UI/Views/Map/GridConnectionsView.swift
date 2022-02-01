@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GridConnectionsView: View {
+    @EnvironmentObject var travelStateManager: TravelStateManager
     @EnvironmentObject var gridDimensions: GridDimensions
     let hexagonIndex: Int
     let locationConnection: LocationConnection
@@ -33,7 +34,7 @@ struct GridConnectionsView: View {
                                color: self.getConnectionColor(from: id),
                                style: self.getGridConnectionStyle(to: coords, isBridge: isBridge))
             
-            if self.fadeIsActive(on: id) {
+            if self.travelStateManager.travellingActive && self.fadeIsActive(on: id) {
                 GridConnectionView(down: values.1,
                                    downAcross: values.0,
                                    spacing: self.gridDimensions.spacing,
