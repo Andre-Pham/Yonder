@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct TabBarView: View {
-    @ObservedObject var viewRounter: ViewRouter
+    @EnvironmentObject var viewRounter: ViewRouter
     
     var body: some View {
         VStack(spacing: 0) {
@@ -58,7 +58,11 @@ struct TabBarView: View {
 
 class ViewRouter: ObservableObject {
     
-    @Published var currentPage: Page = .options
+    @Published private(set) var currentPage: Page = .options
+    
+    func switchPage(to page: Page) {
+        self.currentPage = page
+    }
     
 }
 

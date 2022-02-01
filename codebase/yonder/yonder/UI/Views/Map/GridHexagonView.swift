@@ -28,7 +28,6 @@ struct GridHexagonView: View {
                 hexagonIndex: self.hexagonIndex,
                 scale: self.scale)
             .reverseScroll()
-            .environmentObject(self.gridDimensions)
     }
 }
 

@@ -16,7 +16,8 @@ struct MainView: View {
                 Color.Yonder.backgroundMaxDepth
                     .ignoresSafeArea()
                 
-                TabBarView(viewRounter: self.viewRouter)
+                TabBarView()
+                    .environmentObject(self.viewRouter)
                 
                 VStack {
                     Color.Yonder.backgroundMaxDepth

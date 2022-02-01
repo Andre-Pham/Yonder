@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct OptionsView: View {
+    @EnvironmentObject private var viewRouter: ViewRouter
     @ObservedObject private var playerViewModel: PlayerViewModel
     @ObservedObject private var optionsStateManager: OptionsStateManager
     
@@ -89,13 +90,13 @@ struct OptionsView: View {
                             
                             if self.optionsStateManager.travelOptionActive {
                                 Button {
-                                    self.optionsStateManager.travelOptionSelected()
+                                    self.optionsStateManager.travelOptionSelected(viewRouter: self.viewRouter)
                                 } label: {
                                     OptionView(title: "Travel", geometry: geo)
                                 }
-                                .sheet(isPresented: self.$optionsStateManager.travelActionsActive.isActive) {
+                                /*.sheet(isPresented: self.$optionsStateManager.travelActionsActive.isActive) {
                                     MapView()
-                                }
+                                }*/
                             }
                         }
                         .padding(.leading, YonderCoreGraphics.padding)

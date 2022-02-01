@@ -29,7 +29,7 @@ struct TabBarIconView: View {
                     Spacer()
                 }
                 .onTapGesture {
-                    self.viewRounter.currentPage = self.correspondingPage
+                    self.viewRounter.switchPage(to: self.correspondingPage)
                 }
                 
                 if self.viewRounter.currentPage == self.correspondingPage {
