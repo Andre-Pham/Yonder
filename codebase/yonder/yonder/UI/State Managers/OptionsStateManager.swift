@@ -12,10 +12,11 @@ class OptionsStateManager: ObservableObject {
     
     /// Used as a Bool, but can have its reference saved or passed around.
     class Status {
-        var status: Bool
+        // Public so it can be used to for binding
+        var isActive: Bool
         
-        init(_ status: Bool = false) {
-            self.status = status
+        init(_ status: Bool) {
+            self.isActive = status
         }
     }
     
@@ -33,12 +34,12 @@ class OptionsStateManager: ObservableObject {
     var weaponOptionActive: Bool {
         return self.hostileLocationTypes.contains(self.playerViewModel.locationViewModel.type)
     }
-    @Published private(set) var weaponActionsActive = Status(false)
+    @Published var weaponActionsActive = Status(false)
     @Published private(set) var travelOptionActive = true
-    @Published private(set) var travelActionsActive = Status(false)
+    @Published var travelActionsActive = Status(false)
     
     // Whenever an action is set to showing, its reference is passed here
-    var activeActions = Status()
+    var activeActions = Status(false)
     
     init(playerViewModel: PlayerViewModel) {
         self.playerViewModel = playerViewModel
@@ -47,18 +48,18 @@ class OptionsStateManager: ObservableObject {
     func closeActions() {
         self.optionHeaderText = "Your Options"
         self.showOptions = true
-        self.activeActions.status = false
+        self.activeActions = Status(false)
     }
     
     func weaponOptionSelected() {
         self.optionHeaderText = "Use Weapon"
         self.showOptions = false
-        self.weaponActionsActive.status = true
+        self.weaponActionsActive = Status(true)
         self.activeActions = self.weaponActionsActive
     }
     
     func travelOptionSelected() {
-        self.travelActionsActive.status = true
+        self.travelActionsActive = Status(true)
         self.activeActions = self.travelActionsActive
     }
     

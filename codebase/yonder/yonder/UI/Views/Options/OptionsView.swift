@@ -93,16 +93,16 @@ struct OptionsView: View {
                                 } label: {
                                     OptionView(title: "Travel", geometry: geo)
                                 }
-                                /*.sheet(isPresented: self.optionsStateManager.travelActionsActive.status) {
+                                .sheet(isPresented: self.$optionsStateManager.travelActionsActive.isActive) {
                                     MapView()
-                                }*/
+                                }
                             }
                         }
                         .padding(.leading, YonderCoreGraphics.padding)
                         .padding(.trailing, YonderCoreGraphics.padding)
                     }
                     
-                    if self.optionsStateManager.activeActions.status == true {
+                    if self.optionsStateManager.activeActions.isActive {
                         VStack {
                             Button {
                                 self.optionsStateManager.closeActions()
