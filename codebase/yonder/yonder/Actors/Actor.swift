@@ -17,7 +17,7 @@ class ActorAbstract {
     }
     private(set) var statusEffects = [StatusEffectAbstract]()
     private(set) var timedEvents = [TimedEventAbstract]()
-    private(set) var weapons = [WeaponAbstract]()
+    @DidSetPublished private(set) var weapons = [WeaponAbstract]()
     private(set) var buffs = [BuffAbstract]()
     private(set) var potions = [PotionAbstract]()
     @DidSetPublished private(set) var headArmor: ArmorAbstract = Armors.newNoHeadArmor()

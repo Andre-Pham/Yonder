@@ -9,7 +9,7 @@ import Foundation
 
 enum Proxies {
     
-    static let NO_ITEM = ItemAbstract()
+    static let NO_ITEM = ItemAbstract(name: "placeholderName", description: "placeholderDescription")
     static let NO_ACTOR = ActorAbstract(maxHealth: 1)
     
 }

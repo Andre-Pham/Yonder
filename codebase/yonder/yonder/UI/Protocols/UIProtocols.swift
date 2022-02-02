@@ -8,10 +8,6 @@
 import Foundation
 import SwiftUI
 
-typealias NamedDescribedVisualised = Named & Described & Visualised
-typealias NamedDescribed = Named & Described
-typealias NamedVisualised = Named & Visualised
-
 protocol Named {
     
     var name: String { get }

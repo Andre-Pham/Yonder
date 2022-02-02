@@ -7,14 +7,20 @@
 
 import Foundation
 
-class ItemAbstract {
+class ItemAbstract: Named, Described {
     
-    private(set) var damage: Int
-    private(set) var healthRestoration: Int
-    private(set) var remainingUses: Int
+    // UI related
+    public let name: String
+    public let description: String
+    
+    @DidSetPublished private(set) var damage: Int
+    @DidSetPublished private(set) var healthRestoration: Int
+    @DidSetPublished private(set) var remainingUses: Int
     public let id = UUID()
     
-    init(remainingUses: Int = 0, damage: Int = 0, healthRestoration: Int = 0) {
+    init(name: String, description: String, remainingUses: Int = 0, damage: Int = 0, healthRestoration: Int = 0) {
+        self.name = name
+        self.description = description
         self.remainingUses = remainingUses
         self.damage = damage
         self.healthRestoration = healthRestoration

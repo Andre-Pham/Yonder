@@ -11,10 +11,10 @@ class DamagePotion: PotionAbstract {
     
     public let basePurchasePrice: Int
     
-    init(damage: Int, potionCount: Int, basePurchasePrice: Int) {
+    init(name: String = "placeholderName", description: String = "placeholderDescription", damage: Int, potionCount: Int, basePurchasePrice: Int) {
         self.basePurchasePrice = basePurchasePrice
         
-        super.init(remainingUses: potionCount, damage: damage)
+        super.init(name: name, description: description, remainingUses: potionCount, damage: damage)
     }
     
     func use(owner: ActorAbstract, target: ActorAbstract) {

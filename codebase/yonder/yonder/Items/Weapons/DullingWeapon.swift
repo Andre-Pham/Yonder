@@ -13,11 +13,11 @@ class DullingWeapon: WeaponAbstract {
     public let damageLostPerUse: Int
     public let basePurchasePrice: Int
     
-    init(damage: Int, damageLostPerUse: Int, basePurchasePrice: Int) {
+    init(name: String = "placeholderName", description: String = "placeholderDescription", damage: Int, damageLostPerUse: Int, basePurchasePrice: Int) {
         self.damageLostPerUse = damageLostPerUse
         self.basePurchasePrice = basePurchasePrice
         
-        super.init(remainingUses: 1, damage: damage)
+        super.init(name: name, description: description, remainingUses: 1, damage: damage)
     }
     
     func use(owner: ActorAbstract, target: ActorAbstract) {

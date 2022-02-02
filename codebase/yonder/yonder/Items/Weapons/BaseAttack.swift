@@ -12,8 +12,8 @@ class BaseAttack: WeaponAbstract {
     public static let sharedID = UUID()
     public let basePurchasePrice = 0
     
-    init(damage: Int) {
-        super.init(remainingUses: 1, damage: damage)
+    init(name: String = "placeholderName", description: String = "placeholderDescription", damage: Int) {
+        super.init(name: name, description: description, remainingUses: 1, damage: damage)
     }
     
     func use(owner: ActorAbstract, target: ActorAbstract) {

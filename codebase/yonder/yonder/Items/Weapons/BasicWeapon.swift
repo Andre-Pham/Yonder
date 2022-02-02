@@ -12,10 +12,10 @@ class BasicWeapon: WeaponAbstract {
     public static let sharedID = UUID()
     public let basePurchasePrice: Int
     
-    init(damage: Int, durability: Int, basePurchasePrice: Int) {
+    init(name: String = "placeholderName", description: String = "placeholderDescription", damage: Int, durability: Int, basePurchasePrice: Int) {
         self.basePurchasePrice = basePurchasePrice
         
-        super.init(remainingUses: durability, damage: damage)
+        super.init(name: name, description: description, remainingUses: durability, damage: damage)
     }
     
     func use(owner: ActorAbstract, target: ActorAbstract) {

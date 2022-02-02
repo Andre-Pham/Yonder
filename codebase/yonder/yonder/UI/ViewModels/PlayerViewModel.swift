@@ -10,6 +10,7 @@ import Combine
 
 class PlayerViewModel: ObservableObject {
     
+    // player can be used within the ViewModel layer, but Views should only interact with ViewModels (not the Model layer)
     private(set) var player: Player
     private var subscriptions: Set<AnyCancellable> = []
     
@@ -19,6 +20,7 @@ class PlayerViewModel: ObservableObject {
     @Published private(set) var maxArmorPoints: Int
     @Published private(set) var gold: Int
     @Published private(set) var locationViewModel: LocationViewModel
+    @Published private(set) var weaponViewModels: [WeaponViewModel]
     
     init(_ player: Player) {
         self.player = player
@@ -34,6 +36,7 @@ class PlayerViewModel: ObservableObject {
         // Set other view models
         
         self.locationViewModel = LocationViewModel(self.player.location)
+        self.weaponViewModels = self.player.weapons.map { WeaponViewModel($0) }
         
         // Add Subscribers
         
@@ -70,6 +73,10 @@ class PlayerViewModel: ObservableObject {
         
         self.player.$location.sink(receiveValue: { newValue in
             self.locationViewModel = LocationViewModel(newValue)
+        }).store(in: &self.subscriptions)
+        
+        self.player.$weapons.sink(receiveValue: { newValue in
+            self.weaponViewModels = newValue.map { WeaponViewModel($0) }
         }).store(in: &self.subscriptions)
     }
     

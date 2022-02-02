@@ -11,6 +11,7 @@ import SwiftUI
 
 class LocationViewModel: ObservableObject {
     
+    // location can be used within the ViewModel layer, but Views should only interact with ViewModels (not the Model layer)
     private(set) var location: LocationAbstract
     private var subscriptions: Set<AnyCancellable> = []
     

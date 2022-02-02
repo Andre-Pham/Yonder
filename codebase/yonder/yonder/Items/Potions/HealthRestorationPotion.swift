@@ -11,10 +11,10 @@ class HealthRestorationPotion: PotionAbstract {
     
     public let basePurchasePrice: Int
     
-    init(healthRestoration: Int, potionCount: Int, basePurchasePrice: Int) {
+    init(name: String = "placeholderName", description: String = "placeholderDescription", healthRestoration: Int, potionCount: Int, basePurchasePrice: Int) {
         self.basePurchasePrice = basePurchasePrice
         
-        super.init(remainingUses: potionCount, healthRestoration: healthRestoration)
+        super.init(name: name, description: description, remainingUses: potionCount, healthRestoration: healthRestoration)
     }
     
     func use(owner: ActorAbstract, target: ActorAbstract) {

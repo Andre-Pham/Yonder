@@ -26,6 +26,14 @@ struct SettingsView: View {
             .background(Color.red)
             .foregroundColor(.white)
             .padding()
+            
+            Button("Weapon") {
+                GAME.player.addWeapon(BasicWeapon(damage: 5, durability: 5, basePurchasePrice: 5))
+            }
+            .padding()
+            .background(Color.red)
+            .foregroundColor(.white)
+            .padding()
         }
     }
 }

@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct InventoryView: View {
+    @StateObject private var playerViewModel = PlayerViewModel(GAME.player)
+    
     var body: some View {
-        Text("Hello, Inventory!")
+        GeometryReader { geo in
+            ScrollView {
+                VStack(spacing: YonderCoreGraphics.padding) {
+                    ForEach(playerViewModel.weaponViewModels, id: \.id) { weaponViewModel in
+                        YonderRectButtonLabel(text: weaponViewModel.name)
+                    }
+                }
+            }
+        }
     }
 }
 

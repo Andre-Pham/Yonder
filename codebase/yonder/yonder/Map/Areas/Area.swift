@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class Area: NamedDescribedVisualised {
+class Area: Named, Described, Visualised {
     
     // UI related
     public let name: String
