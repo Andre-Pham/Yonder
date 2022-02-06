@@ -26,148 +26,132 @@ struct MapGridView: View {
         
         ScrollView([.vertical, .horizontal], showsIndicators: false) {
             ZStack {
-                LazyVGrid(columns: gridItems, spacing: self.gridDimensions.spacing) {
-                    ForEach(0..<self.gridDimensions.hexagonCount, id: \.self) { index in
-                        ZStack {
-                            // Area image
-                            if let locationViewModel = self.getLocationViewModel(at: index) {
-                                locationViewModel.image
-                                    .resizable()
-                                    .clipShape(Hexagon())
-                                    .gridHexagonFrame(hexagonIndex: index)
-                                    .opacity(locationViewModel.hasBeenVisited || self.travelStateManager.travellingActive && self.fadeIsActive(on: locationViewModel) ? 1 : YonderCoreGraphics.unvisitedLocationImageOpacity)
-                                    .repeatFadingAnimation(bounds: (YonderCoreGraphics.unvisitedLocationImageOpacity, 1), active: self.travelStateManager.travellingActive && self.fadeIsActive(on: locationViewModel))
-                                    .id(self.animationSyncID)
-                                    .reverseScroll()
-                            }
-                            
-                            if (index+1)%12 == 0 {
-                                // Skip the last column
-                                // Required for the grid
-                                GridSpacerView()
-                            }
-                            else {
-                                // Hexagon grid background
-                                GridHexagonView(
-                                    hexagonIndex: index,
-                                    strokeStyle: .stroke,
-                                    strokeColor: Color.Yonder.outlineMinContrast)
-                            }
-                        }
+                MapGridLayer(gridItems: gridItems) { index in
+                    // Area image
+                    if let locationViewModel = self.getLocationViewModel(at: index) {
+                        locationViewModel.image
+                            .resizable()
+                            .clipShape(Hexagon())
+                            .gridHexagonFrame(hexagonIndex: index)
+                            .opacity(locationViewModel.hasBeenVisited || self.travelStateManager.travellingActive && self.fadeIsActive(on: locationViewModel) ? 1 : YonderCoreGraphics.unvisitedLocationImageOpacity)
+                            .repeatFadingAnimation(bounds: (YonderCoreGraphics.unvisitedLocationImageOpacity, 1), active: self.travelStateManager.travellingActive && self.fadeIsActive(on: locationViewModel))
+                            .id(self.animationSyncID)
+                            .reverseScroll()
+                    }
+                    
+                    if (index+1)%12 == 0 {
+                        // Skip the last column
+                        // Required for the grid
+                        GridSpacerView()
+                    }
+                    else {
+                        // Hexagon grid background
+                        GridHexagonView(
+                            hexagonIndex: index,
+                            strokeStyle: .stroke,
+                            strokeColor: Color.Yonder.outlineMinContrast)
                     }
                 }
                 
-                LazyVGrid(columns: gridItems, spacing: self.gridDimensions.spacing) {
-                    ForEach(0..<self.gridDimensions.hexagonCount, id: \.self) { index in
-                        ZStack {
-                            if let locationViewModel = self.getLocationViewModel(at: index) {
-                                if !locationViewModel.hasBeenVisited || locationViewModel.hasBeenVisited && self.fadeIsActive(on: locationViewModel) {
-                                    // Location outer border (dimmed)
-                                    GridHexagonView(
-                                        hexagonIndex: index,
-                                        strokeStyle: .stroke,
-                                        strokeColor: ColorManipulation.adjustBrightness(of: Color.Yonder.border, amount: YonderCoreGraphics.unvisitedLocationBrightness))
-                                }
-                            }
-                            else {
-                                // Required for the grid
-                                GridSpacerView()
-                            }
+                MapGridLayer(gridItems: gridItems) { index in
+                    if let locationViewModel = self.getLocationViewModel(at: index) {
+                        if !locationViewModel.hasBeenVisited || locationViewModel.hasBeenVisited && self.fadeIsActive(on: locationViewModel) {
+                            // Location outer border (dimmed)
+                            GridHexagonView(
+                                hexagonIndex: index,
+                                strokeStyle: .stroke,
+                                strokeColor: ColorManipulation.adjustBrightness(of: Color.Yonder.border, amount: YonderCoreGraphics.unvisitedLocationBrightness))
                         }
+                    }
+                    else {
+                        // Required for the grid
+                        GridSpacerView()
                     }
                 }
                 
-                LazyVGrid(columns: gridItems, spacing: self.gridDimensions.spacing) {
-                    ForEach(0..<self.gridDimensions.hexagonCount, id: \.self) { index in
-                        ZStack {
-                            if self.locationHasBeenVisited(at: index) && !self.fadeIsActive(at: index) {
-                                // Location outer border (not dimmed)
-                                GridHexagonView(
-                                    hexagonIndex: index,
-                                    strokeStyle: .stroke)
-                            }
-                            else if let locationViewModel = self.getLocationViewModel(at: index), self.fadeIsActive(on: locationViewModel) && self.travelStateManager.travellingActive {
-                                GridHexagonView(
-                                    hexagonIndex: index,
-                                    strokeStyle: .stroke,
-                                    strokeColor: Color.Yonder.border)
-                                    .repeatFadingAnimation()
-                                    .id(self.animationSyncID)
-                            }
-                            else {
-                                // Required for the grid
-                                GridSpacerView()
-                            }
-                            
-                            if let locationConnection = self.getLocationConnection(at: index) {
-                                // Grid connections (lines that connect hexagons)
-                                GridConnectionsView(
-                                    hexagonIndex: index,
-                                    locationConnection: locationConnection,
-                                    playerLocationViewModel: self.playerLocationViewModel,
-                                    locationViewModel: self.locationViewModels[index])
-                                    .id(self.animationSyncID)
-                            }
-                        }
+                MapGridLayer(gridItems: gridItems) { index in
+                    if self.locationHasBeenVisited(at: index) && !self.fadeIsActive(at: index) {
+                        // Location outer border (not dimmed)
+                        GridHexagonView(
+                            hexagonIndex: index,
+                            strokeStyle: .stroke)
+                    }
+                    else if let locationViewModel = self.getLocationViewModel(at: index), self.fadeIsActive(on: locationViewModel) && self.travelStateManager.travellingActive {
+                        GridHexagonView(
+                            hexagonIndex: index,
+                            strokeStyle: .stroke,
+                            strokeColor: Color.Yonder.border)
+                            .repeatFadingAnimation()
+                            .id(self.animationSyncID)
+                    }
+                    else {
+                        // Required for the grid
+                        GridSpacerView()
+                    }
+                    
+                    if let locationConnection = self.getLocationConnection(at: index) {
+                        // Grid connections (lines that connect hexagons)
+                        GridConnectionsView(
+                            hexagonIndex: index,
+                            locationConnection: locationConnection,
+                            playerLocationViewModel: self.playerLocationViewModel,
+                            locationViewModel: self.locationViewModels[index])
+                            .id(self.animationSyncID)
                     }
                 }
                 
-                LazyVGrid(columns: gridItems, spacing: self.gridDimensions.spacing) {
-                    ForEach(0..<self.gridDimensions.hexagonCount, id: \.self) { index in
-                        ZStack {
-                            if let locationViewModel = self.getLocationViewModel(at: index) {
-                                // Location hexagon inner border and fill
-                                GridHexagonView(
-                                    hexagonIndex: index,
-                                    scale: 0.65,
-                                    strokeStyle: .strokeBorder,
-                                    strokeColor: locationViewModel.hasBeenVisited && !self.fadeIsActive(on: locationViewModel) ? Color.Yonder.border : ColorManipulation.adjustBrightness(of: Color.Yonder.border, amount: YonderCoreGraphics.unvisitedLocationBrightness),
-                                    fill: true)
-                                    .onTapGesture {
-                                        if self.travelStateManager.travellingActive && locationViewModel.canBeTravelledTo(from: self.playerLocationViewModel.locationViewModel) {
-                                            self.playerViewModel.travel(to: locationViewModel)
-                                            
-                                            // Set all synced animations a new ID to reset their animation cycles
-                                            self.animationSyncID = UUID()
-                                        }
-                                    }
-                                
-                                // Location hexagon inner border fade animation
-                                if self.fadeIsActive(on: locationViewModel) && self.travelStateManager.travellingActive {
-                                    GridHexagonView(
-                                        hexagonIndex: index,
-                                        scale: 0.65,
-                                        strokeStyle: .strokeBorder,
-                                        strokeColor: Color.Yonder.border)
-                                        .repeatFadingAnimation()
-                                        .id(self.animationSyncID)
-                                }
-                                
-                                // Location icon
-                                GridHexagonIconView(locationType: locationViewModel.type)
-                                    .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
-                                    .opacity((locationViewModel.hasBeenVisited || self.travelStateManager.travellingActive && self.fadeIsActive(on: locationViewModel)) ? 1 : YonderCoreGraphics.unvisitedLocationImageOpacity)
-                                    .repeatFadingAnimation(bounds: (YonderCoreGraphics.unvisitedLocationImageOpacity, 1), active: self.travelStateManager.travellingActive && self.fadeIsActive(on: locationViewModel))
-                                    .id(self.animationSyncID)
-                                    .reverseScroll()
-                                
-                                // Triangle indicator
-                                if locationViewModel.id == self.playerLocationViewModel.id {
-                                    Triangle()
-                                        .strokeBorder(Color.Yonder.border, lineWidth: YonderCoreGraphics.mapGridLineWidth)
-                                        .background(Triangle().foregroundColor(.red))
-                                        .frame(width: 30)
-                                        .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index),
-                                                y: -abs(self.gridDimensions.getHorizontalOffset(hexagonIndex: index))*0.4)
-                                        .reverseScroll()
-                                        .repeatFadingAnimation()
+                MapGridLayer(gridItems: gridItems) { index in
+                    if let locationViewModel = self.getLocationViewModel(at: index) {
+                        // Location hexagon inner border and fill
+                        GridHexagonView(
+                            hexagonIndex: index,
+                            scale: 0.65,
+                            strokeStyle: .strokeBorder,
+                            strokeColor: locationViewModel.hasBeenVisited && !self.fadeIsActive(on: locationViewModel) ? Color.Yonder.border : ColorManipulation.adjustBrightness(of: Color.Yonder.border, amount: YonderCoreGraphics.unvisitedLocationBrightness),
+                            fill: true)
+                            .onTapGesture {
+                                if self.travelStateManager.travellingActive && locationViewModel.canBeTravelledTo(from: self.playerLocationViewModel.locationViewModel) {
+                                    self.playerViewModel.travel(to: locationViewModel)
+                                    
+                                    // Set all synced animations a new ID to reset their animation cycles
+                                    self.animationSyncID = UUID()
                                 }
                             }
-                            else {
-                                // Required for the grid
-                                GridSpacerView()
-                            }
+                        
+                        // Location hexagon inner border fade animation
+                        if self.fadeIsActive(on: locationViewModel) && self.travelStateManager.travellingActive {
+                            GridHexagonView(
+                                hexagonIndex: index,
+                                scale: 0.65,
+                                strokeStyle: .strokeBorder,
+                                strokeColor: Color.Yonder.border)
+                                .repeatFadingAnimation()
+                                .id(self.animationSyncID)
                         }
+                        
+                        // Location icon
+                        GridHexagonIconView(locationType: locationViewModel.type)
+                            .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
+                            .opacity((locationViewModel.hasBeenVisited || self.travelStateManager.travellingActive && self.fadeIsActive(on: locationViewModel)) ? 1 : YonderCoreGraphics.unvisitedLocationImageOpacity)
+                            .repeatFadingAnimation(bounds: (YonderCoreGraphics.unvisitedLocationImageOpacity, 1), active: self.travelStateManager.travellingActive && self.fadeIsActive(on: locationViewModel))
+                            .id(self.animationSyncID)
+                            .reverseScroll()
+                        
+                        // Triangle indicator
+                        if locationViewModel.id == self.playerLocationViewModel.id {
+                            Triangle()
+                                .strokeBorder(Color.Yonder.border, lineWidth: YonderCoreGraphics.mapGridLineWidth)
+                                .background(Triangle().foregroundColor(.red))
+                                .frame(width: 30)
+                                .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index),
+                                        y: -abs(self.gridDimensions.getHorizontalOffset(hexagonIndex: index))*0.4)
+                                .reverseScroll()
+                                .repeatFadingAnimation()
+                        }
+                    }
+                    else {
+                        // Required for the grid
+                        GridSpacerView()
                     }
                 }
             }

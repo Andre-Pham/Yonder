@@ -96,18 +96,3 @@ struct YonderButtonStyle: ButtonStyle {
             .brightness(configuration.isPressed ? YonderCoreGraphics.selectedButtonBrightness : 0)
     }
 }
-
-// Keeping this later for reference
-/*struct YonderButton<Content: View>: View {
-    private let content: () -> Content
-    
-    init(@ViewBuilder builder: @escaping () -> Content) {
-        self.content = builder
-    }
-    
-    var body: some View {
-        VStack {
-            content()
-        }
-    }
-}*/
