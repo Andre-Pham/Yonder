@@ -26,8 +26,8 @@ enum YonderTextSize {
     var value: CGFloat {
         switch self {
         case .title1: return 70
-        case .title2: return 40 // TEMP choice
-        case .title3: return 30 // TEMP choice
+        case .title2: return 35
+        case .title3: return 25 // TEMP choice
         case .title4: return 20
             
         case .buttonBody: return 24

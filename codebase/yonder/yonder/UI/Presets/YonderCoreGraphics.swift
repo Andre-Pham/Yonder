@@ -20,5 +20,6 @@ enum YonderCoreGraphics {
     static let unvisitedLocationImageOpacity = 0.5
     
     static let disabledButtonOpacity = 0.2
+    static let selectedButtonBrightness = -0.8
     
 }

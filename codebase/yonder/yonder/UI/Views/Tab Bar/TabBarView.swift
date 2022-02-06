@@ -29,25 +29,25 @@ struct TabBarView: View {
                     viewRounter: self.viewRounter,
                     correspondingPage: .options,
                     icon: YonderIcon(image: YonderImages.gameIcon),
-                    text: "Game")
+                    text: Term.options.capitalized)
                 
                 TabBarIconView(
                     viewRounter: self.viewRounter,
                     correspondingPage: .inventory,
                     icon: YonderIcon(image: YonderImages.inventoryIcon),
-                    text: "Inventory")
+                    text: Term.inventory.capitalized)
                 
                 TabBarIconView(
                     viewRounter: self.viewRounter,
                     correspondingPage: .map,
                     icon: YonderIcon(image: YonderImages.mapIcon),
-                    text: "Map")
+                    text: Term.map.capitalized)
                 
                 TabBarIconView(
                     viewRounter: self.viewRounter,
                     correspondingPage: .settings,
                     icon: YonderIcon(image: YonderImages.settingsIcon),
-                    text: "Settings")
+                    text: Term.settings.capitalized)
             }
             .frame(height: 55)
             .background(Color.Yonder.backgroundMaxDepth)

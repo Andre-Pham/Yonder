@@ -13,34 +13,26 @@ struct MapHeaderView: View {
     
     var body: some View {
         HStack(spacing: YonderCoreGraphics.padding) {
-            Button {
+            YonderSquareButton(text: "-") {
                 self.scaleStateManager.adjustScaleIndex(by: -1)
-            } label: {
-                YonderSquareButtonLabel(text: "-")
             }
             .disabled(self.scaleStateManager.scaleIsMin)
             .opacity(self.scaleStateManager.scaleIsMin ? YonderCoreGraphics.disabledButtonOpacity : 1)
             
-            Button {
+            YonderSquareButton(text: "+") {
                 self.scaleStateManager.adjustScaleIndex(by: 1)
-            } label: {
-                YonderSquareButtonLabel(text: "+")
             }
             .disabled(self.scaleStateManager.scaleIsMax)
             .opacity(self.scaleStateManager.scaleIsMax ? YonderCoreGraphics.disabledButtonOpacity : 1)
             
-            Button {
+            YonderWideButton(text: self.travelStateManager.travellingActive ? "Done" : Term.travel.capitalized) {
                 self.travelStateManager.toggleTravellingActiveState()
-            } label: {
-                YonderWideButtonLabel(text: self.travelStateManager.travellingActive ? "Done" : "Travel")
             }
             .disabled(self.travelStateManager.toggleTravellingActiveStateDisabled())
             .opacity(self.travelStateManager.toggleTravellingActiveStateDisabled() ? YonderCoreGraphics.disabledButtonOpacity : 1)
             
-            Button {
+            YonderSquareButton(text: "i") {
                 // Will expand with matchGeometryEffect to show legend
-            } label: {
-                YonderSquareButtonLabel(text: "i")
             }
         }
         .padding(.bottom, YonderCoreGraphics.padding)

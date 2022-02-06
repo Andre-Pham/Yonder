@@ -85,7 +85,7 @@ struct OptionsView: View {
                                     self.optionsStateManager.weaponOptionSelected()
                                     self.playerViewModel.equipArmor(Armors.newTestBodyArmor())
                                 } label: {
-                                    OptionView(title: "Select Weapon", geometry: geo)
+                                    OptionView(title: "Select \(Term.weapon.capitalized)", geometry: geo)
                                 }
                             }
                             
@@ -93,7 +93,7 @@ struct OptionsView: View {
                                 Button {
                                     self.optionsStateManager.travelOptionSelected(viewRouter: self.viewRouter, travelStateManager: self.travelStateManager)
                                 } label: {
-                                    OptionView(title: "Travel", geometry: geo)
+                                    OptionView(title: Term.travel.capitalized, geometry: geo)
                                 }
                                 /*.sheet(isPresented: self.$optionsStateManager.travelActionsActive.isActive) {
                                     MapView()
@@ -106,10 +106,8 @@ struct OptionsView: View {
                     
                     if self.optionsStateManager.activeActions.isActive {
                         VStack {
-                            Button {
+                            YonderWideButton(text: "Back") {
                                 self.optionsStateManager.closeActions()
-                            } label: {
-                                YonderWideButtonLabel(text: "Back")
                             }
                         }
                         .padding(.leading, YonderCoreGraphics.padding)

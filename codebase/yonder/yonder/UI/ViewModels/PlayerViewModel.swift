@@ -21,6 +21,12 @@ class PlayerViewModel: ObservableObject {
     @Published private(set) var gold: Int
     @Published private(set) var locationViewModel: LocationViewModel
     @Published private(set) var weaponViewModels: [WeaponViewModel]
+    @Published private(set) var headArmorViewModel: ArmorViewModel
+    @Published private(set) var bodyArmorViewModel: ArmorViewModel
+    @Published private(set) var legsArmorViewModel: ArmorViewModel
+    var allArmorViewModels: [ArmorViewModel] {
+        return [self.headArmorViewModel, self.bodyArmorViewModel, self.legsArmorViewModel]
+    }
     
     init(_ player: Player) {
         self.player = player
@@ -37,6 +43,9 @@ class PlayerViewModel: ObservableObject {
         
         self.locationViewModel = LocationViewModel(self.player.location)
         self.weaponViewModels = self.player.weapons.map { WeaponViewModel($0) }
+        self.headArmorViewModel = ArmorViewModel(self.player.headArmor)
+        self.bodyArmorViewModel = ArmorViewModel(self.player.bodyArmor)
+        self.legsArmorViewModel = ArmorViewModel(self.player.legsArmor)
         
         // Add Subscribers
         
@@ -57,13 +66,16 @@ class PlayerViewModel: ObservableObject {
                 self.maxArmorPoints = self.player.getMaxArmorPoints()
             }).store(in: &self.subscriptions)
         }
-        self.player.$headArmor.sink(receiveValue: { _ in
+        self.player.$headArmor.sink(receiveValue: { newValue in
+            self.headArmorViewModel = ArmorViewModel(newValue)
             self.maxArmorPoints = self.player.getMaxArmorPoints()
         }).store(in: &self.subscriptions)
-        self.player.$bodyArmor.sink(receiveValue: { _ in
+        self.player.$bodyArmor.sink(receiveValue: { newValue in
+            self.bodyArmorViewModel = ArmorViewModel(newValue)
             self.maxArmorPoints = self.player.getMaxArmorPoints()
         }).store(in: &self.subscriptions)
-        self.player.$legsArmor.sink(receiveValue: { _ in
+        self.player.$legsArmor.sink(receiveValue: { newValue in
+            self.legsArmorViewModel = ArmorViewModel(newValue)
             self.maxArmorPoints = self.player.getMaxArmorPoints()
         }).store(in: &self.subscriptions)
         

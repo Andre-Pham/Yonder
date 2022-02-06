@@ -22,18 +22,14 @@ struct MainMenuView: View {
                 YonderText(text: "Yonder", size: .title1)
                 
                 VStack(spacing: 30) {
-                    Button {
+                    YonderButton(text: "New Game") {
                         // Game is already newly created every time app starts up
                         self.showingMenu.toggle()
-                    } label: {
-                        YonderRectButtonLabel(text: "New Game")
                     }
                     
-                    Button {
+                    YonderButton(text: "Resume Game") {
                         // Find the game saved and resume it
                         self.showingMenu.toggle()
-                    } label: {
-                        YonderRectButtonLabel(text: "Resume Game")
                     }
                 }
                 .padding(40)

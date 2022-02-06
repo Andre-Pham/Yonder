@@ -9,9 +9,13 @@ import Foundation
 
 class ResistanceArmor: ArmorAbstract {
     
+    public let name: String
+    public let description: String
     public let basePurchasePrice: Int
     
-    init(type: ArmorType, armorPoints: Int, damageFraction: Double, basePurchasePrice: Int) {
+    init(name: String = "placeholderName", description: String = "placeholderDescription", type: ArmorType, armorPoints: Int, damageFraction: Double, basePurchasePrice: Int) {
+        self.name = name
+        self.description = description
         self.basePurchasePrice = basePurchasePrice
         
         super.init(
