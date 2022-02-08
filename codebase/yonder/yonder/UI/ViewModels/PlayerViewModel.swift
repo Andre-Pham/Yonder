@@ -36,6 +36,9 @@ class PlayerViewModel: ObservableObject {
     var allArmorViewModels: [ArmorViewModel] {
         return [self.headArmorViewModel, self.bodyArmorViewModel, self.legsArmorViewModel]
     }
+    var canEngage: Bool {
+        return self.locationViewModel.playerCanEngage
+    }
     
     init(_ player: Player) {
         self.player = player

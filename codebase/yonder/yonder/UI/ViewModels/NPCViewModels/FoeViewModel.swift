@@ -19,6 +19,7 @@ class FoeViewModel: ObservableObject {
     private(set) var description: String
     @Published private(set) var health: Int
     @Published private(set) var maxHealth: Int
+    @Published private(set) var isDead: Bool
     
     @Published private(set) var weaponViewModel: WeaponViewModel
     
@@ -32,6 +33,7 @@ class FoeViewModel: ObservableObject {
         self.description = self.foe.description
         self.health = self.foe.health
         self.maxHealth = self.foe.maxHealth
+        self.isDead = self.foe.isDead
         
         // Set other view models
         
@@ -41,6 +43,7 @@ class FoeViewModel: ObservableObject {
         
         self.foe.$health.sink(receiveValue: { newValue in
             self.health = newValue
+            self.isDead = self.foe.isDead
         }).store(in: &self.subscriptions)
         
         self.foe.$maxHealth.sink(receiveValue: { newValue in

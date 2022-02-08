@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 class OptionsStateManager: ObservableObject {
     
@@ -21,8 +22,7 @@ class OptionsStateManager: ObservableObject {
     }
     
     private let playerViewModel: PlayerViewModel
-    
-    private let hostileLocationTypes: [LocationType] = [.hostile, .challengeHostile, .boss]
+    private var subscriptions: Set<AnyCancellable> = []
     
     @Published private(set) var showOptions = true
     let optionColumns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
@@ -32,17 +32,29 @@ class OptionsStateManager: ObservableObject {
     }
     
     var weaponOptionActive: Bool {
-        return self.hostileLocationTypes.contains(self.playerViewModel.locationViewModel.type)
+        return self.playerViewModel.canEngage
     }
     @Published var weaponActionsActive = Status(false)
     @Published private(set) var travelOptionActive = true
-    @Published var travelActionsActive = Status(false)
     
     // Whenever an action is set to showing, its reference is passed here
     var activeActions = Status(false)
     
     init(playerViewModel: PlayerViewModel) {
         self.playerViewModel = playerViewModel
+        
+        // Add Subscribers
+        
+        // If there is a foe, and the foe dies, return to Options view
+        self.playerViewModel.$locationViewModel.sink(receiveValue: { newValue in
+            if let foeViewModel = newValue.getFoeViewModel() {
+                foeViewModel.$isDead.sink(receiveValue: { newValue in
+                    if newValue {
+                        self.closeActions()
+                    }
+                }).store(in: &self.subscriptions)
+            }
+        }).store(in: &self.subscriptions)
     }
     
     func closeActions() {
