@@ -17,9 +17,10 @@ class FoeViewModel: ObservableObject {
     private(set) var id: UUID
     private(set) var name: String
     private(set) var description: String
-    @Published private(set) var health: Int?
+    @Published private(set) var health: Int
+    @Published private(set) var maxHealth: Int
     
-    @Published private(set) var weaponViewModel: WeaponViewModel?
+    @Published private(set) var weaponViewModel: WeaponViewModel
     
     init(_ foe: FoeAbstract) {
         self.foe = foe
@@ -30,6 +31,7 @@ class FoeViewModel: ObservableObject {
         self.name = self.foe.name
         self.description = self.foe.description
         self.health = self.foe.health
+        self.maxHealth = self.foe.maxHealth
         
         // Set other view models
         
@@ -39,6 +41,10 @@ class FoeViewModel: ObservableObject {
         
         self.foe.$health.sink(receiveValue: { newValue in
             self.health = newValue
+        }).store(in: &self.subscriptions)
+        
+        self.foe.$maxHealth.sink(receiveValue: { newValue in
+            self.maxHealth = newValue
         }).store(in: &self.subscriptions)
     }
     

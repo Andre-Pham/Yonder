@@ -11,47 +11,19 @@ struct FoeCardView: View {
     @ObservedObject var foeViewModel: FoeViewModel
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 3) {
-            Text("Corn Man")
-                .font(YonderFonts.main())
-                .padding(.top)
-                .padding(.leading)
-                .padding(.trailing)
+        CardBody(name: foeViewModel.name) {
+            CardRowView(value: "\(self.foeViewModel.health)", maxValue: "\(self.foeViewModel.maxHealth)")
             
-            HStack {
-                Text("450")
-                    .font(YonderFonts.main(size: 26))
-                
-                Spacer()
-                
-                Text("/500")
-                    .font(YonderFonts.main(size: 18))
-            }
-            .padding(.leading)
-            .padding(.trailing)
-            
-            HStack {
-                Text("100")
-                    .font(YonderFonts.main(size: 26))
-                
-                Spacer()
-                
-                Text("/100")
-                    .font(YonderFonts.main(size: 18))
-            }
-            .padding(.leading)
-            .padding(.trailing)
-            
-            Spacer()
+            CardRowView(value: "\(self.foeViewModel.weaponViewModel.damage)")
         }
-        .foregroundColor(.Yonder.textMaxContrast)
-        .background(Color.Yonder.backgroundMaxDepth)
-        .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
     }
 }
 
 struct EnemyCardView_Previews: PreviewProvider {
     static var previews: some View {
-        FoeCardView(foeViewModel: FoeViewModel(FoeAbstract(maxHealth: 500, weapon: BasicWeapon(damage: 5, durability: 5, basePurchasePrice: 5))))
+        ZStack {
+            Color.Yonder.backgroundMaxDepth
+            FoeCardView(foeViewModel: FoeViewModel(FoeAbstract(maxHealth: 500, weapon: BasicWeapon(damage: 5, durability: 5, basePurchasePrice: 5))))
+        }
     }
 }
