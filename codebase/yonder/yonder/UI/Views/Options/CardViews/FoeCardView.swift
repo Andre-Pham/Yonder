@@ -12,9 +12,9 @@ struct FoeCardView: View {
     
     var body: some View {
         CardBody(name: foeViewModel.name) {
-            CardRowView(value: "\(self.foeViewModel.health)", maxValue: "\(self.foeViewModel.maxHealth)")
+            CardRowView(value: "\(self.foeViewModel.weaponViewModel.damage)", image: YonderImages.foeDamageIcon)
             
-            CardRowView(value: "\(self.foeViewModel.weaponViewModel.damage)")
+            CardRowView(value: "\(self.foeViewModel.health)", maxValue: "\(self.foeViewModel.maxHealth)", image: YonderImages.healthIcon)
         }
     }
 }

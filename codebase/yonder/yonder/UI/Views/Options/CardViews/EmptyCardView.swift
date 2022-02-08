@@ -10,6 +10,8 @@ import SwiftUI
 
 struct EmptyCardView: View {
     var body: some View {
-        YonderText(text: "Temp", size: .cardBody)
+        CardBody(name: "") {
+            
+        }
     }
 }

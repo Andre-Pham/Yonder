@@ -12,7 +12,9 @@ struct RestorerCardView: View {
     @ObservedObject var restorerViewModel: RestorerViewModel
     
     var body: some View {
-        YonderText(text: "Temp", size: .cardBody)
+        CardBody(name: self.restorerViewModel.name) {
+            
+        }
     }
 }
 

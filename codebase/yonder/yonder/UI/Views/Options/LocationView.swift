@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LocationView: View {
     @ObservedObject var locationViewModel: LocationViewModel
+    let cardHeight: CGFloat = 200
     
     var body: some View {
         GeometryReader { geo in
@@ -16,37 +17,33 @@ struct LocationView: View {
                 self.locationViewModel.image
                     .resizable()
                     .scaledToFill()
-                    .frame(width: geo.size.width, height: 180)
+                    .frame(width: geo.size.width, height: self.cardHeight)
                     .clipped()
                 
-                HStack(alignment: .bottom) {
-                    Text(self.locationViewModel.name)
-                        .font(YonderFonts.main(size: 28))
-                        .padding(.leading, YonderCoreGraphics.padding)
+                HStack {
+                    LocationIconView(locationType: self.locationViewModel.type)
+                    
+                    YonderText(text: self.locationViewModel.name, size: .cardBody)
                     
                     Spacer()
-                    
-                    Text(self.locationViewModel.typeAsString)
-                        .font(YonderFonts.main())
-                        .padding(.trailing, YonderCoreGraphics.padding)
-                        .padding(.bottom, 3)
                 }
+                .padding(.horizontal)
                 .foregroundColor(.Yonder.textMaxContrast)
-                .frame(width: geo.size.width, height: YonderCoreGraphics.padding*3)
                 .padding(.bottom, YonderCoreGraphics.borderWidth)
+                .frame(width: geo.size.width, height: 50)
                 .background(Color.Yonder.backgroundMaxDepth)
-                .frame(width: geo.size.width, height: 180, alignment: .bottomLeading)
+                .frame(width: geo.size.width, height: self.cardHeight, alignment: .bottomLeading)
             }
         }
         .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
         .frame(maxWidth: .infinity)
-        .frame(height: 180)
+        .frame(height: self.cardHeight)
         .padding(.horizontal, YonderCoreGraphics.padding)
     }
 }
 
 struct LocationView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationView(locationViewModel: LocationViewModel(NoLocation()))
+        LocationView(locationViewModel: LocationViewModel(HostileLocation(foe: FoeAbstract(maxHealth: 50, weapon: BaseAttack(damage: 50)))))
     }
 }

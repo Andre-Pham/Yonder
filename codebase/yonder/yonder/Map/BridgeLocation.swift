@@ -9,6 +9,6 @@ import Foundation
 
 class BridgeLocation: LocationAbstract {
     
-    var type: LocationType = .none
+    var type: LocationType = .bridge
     
 }

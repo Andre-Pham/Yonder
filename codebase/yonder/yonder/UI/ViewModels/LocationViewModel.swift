@@ -80,6 +80,8 @@ class LocationViewModel: ObservableObject {
             return FriendlyViewModel((self.location as! FriendlyLocation).friendly)
         case .boss:
             return nil
+        case .bridge:
+            return nil
         }
     }
     
@@ -103,6 +105,8 @@ class LocationViewModel: ObservableObject {
             return nil
         case .boss:
             return FoeViewModel((self.location as! BossLocation).boss)
+        case .bridge:
+            return nil
         }
     }
     
@@ -135,6 +139,8 @@ class LocationViewModel: ObservableObject {
             return "Restorer"
         case .shop:
             return "Shop"
+        case .bridge:
+            return "Warp"
         }
     }
     

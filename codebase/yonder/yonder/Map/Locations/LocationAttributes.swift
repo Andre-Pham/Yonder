@@ -23,4 +23,5 @@ enum LocationType {
     case quest // TODO: Implement quests later
     case friendly
     case boss
+    case bridge
 }

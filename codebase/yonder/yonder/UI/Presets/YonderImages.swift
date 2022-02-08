@@ -26,6 +26,7 @@ enum YonderImages {
     static let healthIcon = Image("Heart")
     static let shieldIcon = Image("Shield")
     static let goldIcon = Image("Coin")
+    static let foeDamageIcon = Image("ClawMarks")
     
     // MARK: - Location Icons
     
@@ -35,5 +36,6 @@ enum YonderImages {
     static let enhancerIcon = Image("Anvil")
     static let restorerIcon = Image("AngelAccessories")
     static let friendlyIcon = Image("Bonfire")
+    static let warpIcon = Image("Portal")
     
 }

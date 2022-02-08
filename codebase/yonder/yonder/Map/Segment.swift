@@ -31,8 +31,7 @@ class Segment {
         var rightAreaBridgeLocation = rightArea.leftBridgeLocations.randomElement()!
         if leftAreaBridgeLocation.hexagonCoordinate!.y == rightAreaBridgeLocation.hexagonCoordinate!.y {
             let illegalY = leftAreaBridgeLocation.hexagonCoordinate!.y
-            let reducedAreaIsLeft: Bool = (leftArea.rightBridgeLocations.count < rightArea.leftBridgeLocations.count ?
-                                           true : false)
+            let reducedAreaIsLeft: Bool = leftArea.rightBridgeLocations.count > rightArea.leftBridgeLocations.count
             if reducedAreaIsLeft {
                 leftArea.filterRightBridgeLocationsWithY(of: illegalY)
                 leftAreaBridgeLocation = leftArea.rightBridgeLocations.randomElement()!

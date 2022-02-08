@@ -9,10 +9,12 @@ import Foundation
 import SwiftUI
 
 struct FriendlyCardView: View {
-    @ObservedObject var friendlyCardView: FriendlyViewModel
+    @ObservedObject var friendlyViewModel: FriendlyViewModel
     
     var body: some View {
-        YonderText(text: "Temp", size: .cardBody)
+        CardBody(name: self.friendlyViewModel.name) {
+            
+        }
     }
 }
 

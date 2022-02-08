@@ -130,7 +130,7 @@ struct MapGridView: View {
                         }
                         
                         // Location icon
-                        GridHexagonIconView(locationType: locationViewModel.type)
+                        LocationIconView(locationType: locationViewModel.type)
                             .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index))
                             .opacity((locationViewModel.hasBeenVisited || self.travelStateManager.travellingActive && self.fadeIsActive(on: locationViewModel)) ? 1 : YonderCoreGraphics.unvisitedLocationImageOpacity)
                             .repeatFadingAnimation(bounds: (YonderCoreGraphics.unvisitedLocationImageOpacity, 1), active: self.travelStateManager.travellingActive && self.fadeIsActive(on: locationViewModel))

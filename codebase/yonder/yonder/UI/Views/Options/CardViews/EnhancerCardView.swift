@@ -9,10 +9,12 @@ import Foundation
 import SwiftUI
 
 struct EnhancerCardView: View {
-    @ObservedObject var enhancerCardView: EnhancerViewModel
+    @ObservedObject var enhancerViewModel: EnhancerViewModel
     
     var body: some View {
-        YonderText(text: "Temp", size: .cardBody)
+        CardBody(name: self.enhancerViewModel.name) {
+            
+        }
     }
 }
 

@@ -12,6 +12,8 @@ struct ShopKeeperCardView: View {
     @ObservedObject var shopKeeperViewModel: ShopKeeperViewModel
     
     var body: some View {
-        YonderText(text: "Temp", size: .cardBody)
+        CardBody(name: self.shopKeeperViewModel.name) {
+            
+        }
     }
 }

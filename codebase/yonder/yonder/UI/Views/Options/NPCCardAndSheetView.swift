@@ -26,15 +26,17 @@ struct NPCCardAndSheetView: View {
             case .shop:
                 ShopKeeperCardView(shopKeeperViewModel: self.locationViewModel.getInteractorViewModel() as! ShopKeeperViewModel)
             case .enhancer:
-                EnhancerCardView(enhancerCardView: self.locationViewModel.getInteractorViewModel() as! EnhancerViewModel)
+                EnhancerCardView(enhancerViewModel: self.locationViewModel.getInteractorViewModel() as! EnhancerViewModel)
             case .restorer:
                 RestorerCardView(restorerViewModel: self.locationViewModel.getInteractorViewModel() as! RestorerViewModel)
             case .quest:
                 EmptyCardView()
             case .friendly:
-                FriendlyCardView(friendlyCardView: self.locationViewModel.getInteractorViewModel() as! FriendlyViewModel)
+                FriendlyCardView(friendlyViewModel: self.locationViewModel.getInteractorViewModel() as! FriendlyViewModel)
             case .boss:
                 FoeCardView(foeViewModel: self.locationViewModel.getFoeViewModel()!)
+            case .bridge:
+                EmptyCardView()
             }
         }
         .sheet(isPresented: self.$optionsSheetsStateManager.npcSheetBinding) {
