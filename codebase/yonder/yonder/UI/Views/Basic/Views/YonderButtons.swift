@@ -22,6 +22,7 @@ struct YonderButton: View {
             YonderText(text: self.text, size: .buttonBody)
                 .frame(width: self.width)
                 .padding(.vertical, self.verticalPadding)
+                .background(Color.Yonder.backgroundMaxDepth) // Ensures entire button can be tapped
                 .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
         }
     }
@@ -80,6 +81,7 @@ struct YonderMultilineWideButton: View {
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, self.verticalPadding)
+            .background(Color.Yonder.backgroundMaxDepth) // Ensures entire button can be tapped
             .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
         }
         .buttonStyle(YonderButtonStyle())
@@ -99,6 +101,7 @@ struct YonderSquareButton: View {
             YonderText(text: self.text, size: .buttonBody)
                 .frame(width: YonderTextSize.buttonBody.value + self.verticalPadding*2)
                 .padding(.vertical, self.verticalPadding)
+                .background(Color.Yonder.backgroundMaxDepth) // Ensures entire button can be tapped
                 .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
         }
     }

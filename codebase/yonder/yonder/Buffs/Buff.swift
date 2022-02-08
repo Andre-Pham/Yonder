@@ -11,13 +11,15 @@ class BuffAbstract {
     
     var timeRemaining: Int
     var type: BuffType
+    var direction: BuffDirection
     // Smaller numbers are higher priority; calculations apply addition then multiplication
     // Addition has a priority of 0, multiplication has a priority of 1
     var priority: Int
     
-    init(duration: Int, type: BuffType, priority: Int) {
+    init(duration: Int, type: BuffType, direction: BuffDirection, priority: Int) {
         self.timeRemaining = duration
         self.type = type
+        self.direction = direction
         self.priority = priority
     }
     
@@ -28,6 +30,12 @@ class BuffAbstract {
         case armorPoints
         case price
         case goldBonus
+    }
+    
+    enum BuffDirection {
+        case outgoing
+        case incoming
+        case bidirectional
     }
     
     func decrementTimeRemaining() {

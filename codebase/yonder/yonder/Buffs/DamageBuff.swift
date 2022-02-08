@@ -11,10 +11,10 @@ class DamageBuff: BuffAbstract {
     
     private let damageDifference: Int
     
-    init(duration: Int, damageDifference: Int) {
+    init(direction: BuffDirection, duration: Int, damageDifference: Int) {
         self.damageDifference = damageDifference
         
-        super.init(duration: duration, type: .damage, priority: 0)
+        super.init(duration: duration, type: .damage, direction: direction, priority: 0)
     }
     
     override func applyDamage(to damage: Int, source: Any) -> Int? {

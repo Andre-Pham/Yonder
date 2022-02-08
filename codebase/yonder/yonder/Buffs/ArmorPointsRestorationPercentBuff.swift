@@ -11,10 +11,10 @@ class ArmorPointsRestorationPercentBuff: BuffAbstract {
     
     private let armorPointsFraction: Double
     
-    init(duration: Int, armorPointsFraction: Double) {
+    init(direction: BuffDirection, duration: Int, armorPointsFraction: Double) {
         self.armorPointsFraction = armorPointsFraction
         
-        super.init(duration: duration, type: .armorPoints, priority: 1)
+        super.init(duration: duration, type: .armorPoints, direction: direction, priority: 1)
     }
     
     override func applyArmorPoints(to armorPoints: Int, source: Any) -> Int? {

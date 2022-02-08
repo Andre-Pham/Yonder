@@ -21,7 +21,7 @@ class ResistanceArmor: ArmorAbstract {
         super.init(
             type: type,
             armorPoints: armorPoints,
-            armorBuffs: [DamagePercentBuff(duration: Constants.infinity, damageFraction: damageFraction)]
+            armorBuffs: [DamagePercentBuff(direction: .incoming, duration: Constants.infinity, damageFraction: damageFraction)]
         )
     }
     
