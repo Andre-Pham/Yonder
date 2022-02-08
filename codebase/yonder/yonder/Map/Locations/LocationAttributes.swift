@@ -25,3 +25,9 @@ enum LocationType {
     case boss
     case bridge
 }
+
+protocol FoeLocation {
+    
+    var foe: FoeAbstract { get }
+    
+}

@@ -66,9 +66,6 @@ struct OptionsView: View {
                                 } label: {
                                     OptionView(title: Term.travel.capitalized, geometry: geo)
                                 }
-                                /*.sheet(isPresented: self.$optionsStateManager.travelActionsActive.isActive) {
-                                    MapView()
-                                }*/
                             }
                         }
                         .padding(.leading, YonderCoreGraphics.padding)
@@ -79,6 +76,20 @@ struct OptionsView: View {
                         VStack {
                             YonderWideButton(text: "Back") {
                                 self.optionsStateManager.closeActions()
+                            }
+                            
+                            if self.optionsStateManager.weaponActionsActive.isActive {
+                                ForEach(self.playerViewModel.weaponViewModels, id: \.id) { weaponViewModel in
+                                    YonderMultilineWideButton(
+                                        text: [
+                                            "\(weaponViewModel.name)",
+                                            "\(weaponViewModel.damage) \(Term.damage.capitalized)",
+                                            "\(weaponViewModel.remainingUses) \(Term.remainingUses.capitalized)"
+                                        ],
+                                        alignment: .leading) {
+                                            self.playerViewModel.use(weaponViewModel: weaponViewModel)
+                                    }
+                                }
                             }
                         }
                         .padding(.leading, YonderCoreGraphics.padding)
@@ -92,6 +103,11 @@ struct OptionsView: View {
 
 struct OptionsView_Previews: PreviewProvider {
     static var previews: some View {
-        OptionsView()
+        ZStack {
+            Color.Yonder.backgroundMaxDepth
+                .ignoresSafeArea()
+            
+            OptionsView()
+        }
     }
 }

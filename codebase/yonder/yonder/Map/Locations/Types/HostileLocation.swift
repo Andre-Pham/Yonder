@@ -7,7 +7,7 @@
 
 import Foundation
 
-class HostileLocation: LocationAbstract {
+class HostileLocation: LocationAbstract, FoeLocation {
     
     private(set) var foe: FoeAbstract
     public let type: LocationType = .hostile

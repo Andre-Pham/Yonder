@@ -11,7 +11,7 @@ import SwiftUI
 struct YonderButton: View {
     let text: String
     var width: CGFloat = 200
-    var height: CGFloat = 50
+    var verticalPadding: CGFloat = 13
     
     let action: () -> Void
     
@@ -20,7 +20,8 @@ struct YonderButton: View {
             action()
         } label: {
             YonderText(text: self.text, size: .buttonBody)
-                .frame(width: self.width, height: self.height)
+                .frame(width: self.width)
+                .padding(.vertical, self.verticalPadding)
                 .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
         }
     }
@@ -28,7 +29,21 @@ struct YonderButton: View {
 
 struct YonderWideButton: View {
     let text: String
-    var height: CGFloat = 50
+    var verticalPadding: CGFloat = 13
+    var alignment: YonderButtonAlignment = .center
+    
+    let action: () -> Void
+    
+    var body: some View {
+        YonderMultilineWideButton(text: [self.text], verticalPadding: self.verticalPadding, alignment: self.alignment) {
+            action()
+        }
+    }
+}
+
+struct YonderMultilineWideButton: View {
+    let text: [String]
+    var verticalPadding: CGFloat = 13
     var alignment: YonderButtonAlignment = .center
     
     let action: () -> Void
@@ -37,31 +52,35 @@ struct YonderWideButton: View {
         Button {
             action()
         } label: {
-            ZStack {
-                Rectangle()
-                    .frame(maxWidth: .infinity)
-                    .frame(height: self.height)
-                    .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
-                
+            VStack {
                 switch self.alignment {
                 case .center:
-                    YonderText(text: self.text, size: .buttonBody)
+                    ForEach(Array(zip(self.text.indices, self.text)), id: \.0.self) { index, text in
+                        YonderText(text: text, size: index == 0 ? .buttonBody : .buttonBodySubscript)
+                    }
                 case .leading:
-                    HStack {
-                        YonderText(text: self.text, size: .buttonBody)
-                            .padding(.leading)
-                        
-                        Spacer()
+                    ForEach(Array(zip(self.text.indices, self.text)), id: \.0.self) { index, text in
+                        HStack {
+                            YonderText(text: text, size: index == 0 ? .buttonBody : .buttonBodySubscript)
+                                .padding(.leading)
+                            
+                            Spacer()
+                        }
                     }
                 case .trailing:
-                    HStack {
-                        Spacer()
-                        
-                        YonderText(text: self.text, size: .buttonBody)
-                            .padding(.trailing)
+                    ForEach(Array(zip(self.text.indices, self.text)), id: \.0.self) { index, text in
+                        HStack {
+                            Spacer()
+                            
+                            YonderText(text: text, size: index == 0 ? .buttonBody : .buttonBodySubscript)
+                                .padding(.trailing)
+                        }
                     }
                 }
             }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, self.verticalPadding)
+            .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
         }
         .buttonStyle(YonderButtonStyle())
     }
@@ -69,7 +88,7 @@ struct YonderWideButton: View {
 
 struct YonderSquareButton: View {
     let text: String
-    var sideLength: CGFloat = 50
+    var verticalPadding: CGFloat = 13
     
     let action: () -> Void
     
@@ -78,7 +97,8 @@ struct YonderSquareButton: View {
             action()
         } label: {
             YonderText(text: self.text, size: .buttonBody)
-                .frame(width: self.sideLength, height: self.sideLength)
+                .frame(width: YonderTextSize.buttonBody.value + self.verticalPadding*2)
+                .padding(.vertical, self.verticalPadding)
                 .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
         }
     }

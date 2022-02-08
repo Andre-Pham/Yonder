@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class PlayerViewModel: ObservableObject {
     
@@ -21,7 +22,14 @@ class PlayerViewModel: ObservableObject {
     @Published private(set) var gold: Int
     
     @Published private(set) var locationViewModel: LocationViewModel
-    @Published private(set) var weaponViewModels: [WeaponViewModel]
+    @Published private(set) var weaponViewModels: [WeaponViewModel] {
+        didSet {
+            // Changes to any WeaponViewModel will be published to the UI
+            for weapon in self.weaponViewModels {
+                weapon.objectWillChange.sink(receiveValue: { _ in self.objectWillChange.send() }).store(in: &self.subscriptions)
+            }
+        }
+    }
     @Published private(set) var headArmorViewModel: ArmorViewModel
     @Published private(set) var bodyArmorViewModel: ArmorViewModel
     @Published private(set) var legsArmorViewModel: ArmorViewModel
@@ -99,6 +107,14 @@ class PlayerViewModel: ObservableObject {
     
     func travel(to locationViewModel: LocationViewModel) {
         self.player.travel(to: locationViewModel.location)
+    }
+    
+    func use(weaponViewModel: WeaponViewModel) {
+        guard self.locationViewModel.location is FoeLocation else {
+            YonderDebugging.printError(message: "Weapon was used whilst location has no foe - hence no target", functionName: #function, className: "\(type(of: self))")
+            return
+        }
+        self.player.use(weaponViewModel.item as! Usable, on: (self.locationViewModel.location as! FoeLocation).foe)
     }
     
 }

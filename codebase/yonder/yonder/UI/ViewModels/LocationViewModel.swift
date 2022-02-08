@@ -104,7 +104,7 @@ class LocationViewModel: ObservableObject {
         case .friendly:
             return nil
         case .boss:
-            return FoeViewModel((self.location as! BossLocation).boss)
+            return FoeViewModel((self.location as! BossLocation).foe)
         case .bridge:
             return nil
         }

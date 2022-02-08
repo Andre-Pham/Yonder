@@ -17,6 +17,9 @@ import Combine
 class ObservableArray<T>: ObservableObject {
 
     @Published var array: [T] = []
+    var count: Int {
+        return self.array.count
+    }
     var cancellables = [AnyCancellable]()
 
     init(array: [T]) {

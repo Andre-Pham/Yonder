@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ChallengeHostileLocation: LocationAbstract {
+class ChallengeHostileLocation: LocationAbstract, FoeLocation {
     
     private(set) var foe: FoeAbstract
     public let type: LocationType = .challengeHostile

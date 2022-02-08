@@ -20,6 +20,9 @@ enum YonderTerminology {
     static let player = "you"
     static let foe = "hostile"
     
+    static let damage = "damage"
+    static let remainingUses = "remaining uses"
+    
     static let armor = "armor"
     static let headArmorSlot = "head"
     static let bodyArmorSlot = "body"

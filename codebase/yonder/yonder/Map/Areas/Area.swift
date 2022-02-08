@@ -64,7 +64,7 @@ class Area: Named, Described, Visualised {
     }
     
     func filterRightBridgeLocationsWithY(of y: Int) {
-        self.leftBridgeLocations = self.rightBridgeLocations.filter { $0.hexagonCoordinate!.y != y }
+        self.rightBridgeLocations = self.rightBridgeLocations.filter { $0.hexagonCoordinate!.y != y }
     }
     
 }

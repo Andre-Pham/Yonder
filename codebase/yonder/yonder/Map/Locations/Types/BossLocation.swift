@@ -7,13 +7,13 @@
 
 import Foundation
 
-class BossLocation: LocationAbstract {
+class BossLocation: LocationAbstract, FoeLocation {
     
-    private(set) var boss: FoeAbstract
+    private(set) var foe: FoeAbstract
     public let type: LocationType = .boss
     
     init(boss: FoeAbstract) {
-        self.boss = boss
+        self.foe = boss
     }
     
 }
