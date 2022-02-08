@@ -7,15 +7,17 @@
 
 import Foundation
 
-class Friendly {
+class Friendly: InteractorAbstract {
     
     private(set) var offers: [Offer]
     private(set) var offersAccepted = 0 // How many offers has the user already accepted
     private(set) var offerLimit: Int // How many offers can be accepted until the user must stop
     
-    init(offers: [Offer], offerLimit: Int) {
+    init(name: String = "placeholderName", description: String = "placerholderDescription", offers: [Offer], offerLimit: Int) {
         self.offers = offers
         self.offerLimit = offerLimit
+        
+        super.init(name: name, description: description)
     }
     
     func removeOffer(_ offer: Offer) {

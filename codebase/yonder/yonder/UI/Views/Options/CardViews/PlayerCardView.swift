@@ -36,6 +36,7 @@ struct PlayerCardView: View {
         }
         .foregroundColor(.Yonder.textMaxContrast)
         .background(Color.Yonder.backgroundMaxDepth)
+        .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
     }
 }
 

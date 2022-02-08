@@ -38,6 +38,10 @@ struct LocationView: View {
                 .frame(width: geo.size.width, height: 180, alignment: .bottomLeading)
             }
         }
+        .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
+        .frame(maxWidth: .infinity)
+        .frame(height: 180)
+        .padding(.horizontal, YonderCoreGraphics.padding)
     }
 }
 

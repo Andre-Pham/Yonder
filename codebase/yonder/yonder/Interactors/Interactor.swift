@@ -7,6 +7,14 @@
 
 import Foundation
 
-class InteractorAbstract {
+class InteractorAbstract: Named, Described {
+    
+    public let name: String
+    public let description: String
+    
+    init(name: String, description: String) {
+        self.name = name
+        self.description = description
+    }
     
 }

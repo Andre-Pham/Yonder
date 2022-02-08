@@ -60,6 +60,52 @@ class LocationViewModel: ObservableObject {
         }).store(in: &self.subscriptions)
     }
     
+    func getInteractorViewModel() -> InteractorViewModel? {
+        switch self.type {
+        case .none:
+            return nil
+        case .hostile:
+            return nil
+        case .challengeHostile:
+            return nil
+        case .shop:
+            return ShopKeeperViewModel((self.location as! ShopLocation).shopKeeper)
+        case .enhancer:
+            return EnhancerViewModel((self.location as! EnhancerLocation).enhancer)
+        case .restorer:
+            return RestorerViewModel((self.location as! RestorerLocation).restorer)
+        case .quest:
+            return nil
+        case .friendly:
+            return FriendlyViewModel((self.location as! FriendlyLocation).friendly)
+        case .boss:
+            return nil
+        }
+    }
+    
+    func getFoeViewModel() -> FoeViewModel? {
+        switch self.type {
+        case .none:
+            return nil
+        case .hostile:
+            return FoeViewModel((self.location as! HostileLocation).foe)
+        case .challengeHostile:
+            return FoeViewModel((self.location as! ChallengeHostileLocation).foe)
+        case .shop:
+            return nil
+        case .enhancer:
+            return nil
+        case .restorer:
+            return nil
+        case .quest:
+            return nil
+        case .friendly:
+            return nil
+        case .boss:
+            return FoeViewModel((self.location as! BossLocation).boss)
+        }
+    }
+    
     func canBeTravelledTo(from locationViewModel: LocationViewModel) -> Bool {
         for id in locationViewModel.nextLocationIDs {
             if id == self.id {

@@ -20,8 +20,10 @@ class Enhancer: InteractorAbstract {
         // Do the same for armor
     }
     
-    init(options: [UpgradeOptions]) {
+    init(name: String = "placeholderName", description: String = "placerholderDescription", options: [UpgradeOptions]) {
         self.options = options
+        
+        super.init(name: name, description: description)
     }
     
     func upgradeWeaponDamage(weapon: WeaponAbstract, by damage: Int, purchaser: Player, price: Int) {

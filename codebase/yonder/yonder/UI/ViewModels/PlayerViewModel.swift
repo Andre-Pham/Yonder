@@ -19,6 +19,7 @@ class PlayerViewModel: ObservableObject {
     @Published private(set) var armorPoints: Int
     @Published private(set) var maxArmorPoints: Int
     @Published private(set) var gold: Int
+    
     @Published private(set) var locationViewModel: LocationViewModel
     @Published private(set) var weaponViewModels: [WeaponViewModel]
     @Published private(set) var headArmorViewModel: ArmorViewModel

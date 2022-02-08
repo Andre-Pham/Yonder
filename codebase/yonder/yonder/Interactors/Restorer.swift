@@ -18,10 +18,12 @@ class Restorer: InteractorAbstract {
         case armorPoints
     }
     
-    init(options: [RestoreOptions], pricePerHealth: Int = 0, pricePerArmorPoint: Int = 0) {
+    init(name: String = "placeholderName", description: String = "placerholderDescription", options: [RestoreOptions], pricePerHealth: Int = 0, pricePerArmorPoint: Int = 0) {
         self.options = options
         self.pricePerHealth = pricePerHealth
         self.pricePerArmorPoint = pricePerArmorPoint
+        
+        super.init(name: name, description: description)
     }
     
     func restoreHealth(to purchaser: Player, amount: Int) {

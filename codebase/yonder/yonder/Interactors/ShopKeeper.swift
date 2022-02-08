@@ -7,13 +7,33 @@
 
 import Foundation
 
+class ShopKeeper: InteractorAbstract {
+    
+    private(set) var purchasableItems: [PurchasableItem]
+    
+    init(name: String = "placeholderName", description: String = "placerholderDescription", purchasableItems: [PurchasableItem]) {
+        self.purchasableItems = purchasableItems
+        
+        super.init(name: name, description: description)
+    }
+    
+    func purchaseItem(at index: Int, amount: Int, purchaser: Player) {
+        self.purchasableItems[index].purchase(amount: amount, purchaser: purchaser)
+        if self.purchasableItems[index].stockRemaining == 0 {
+            self.purchasableItems.remove(at: index)
+        }
+    }
+    
+}
+
+
 protocol Purchasable {
     
     var basePurchasePrice: Int { get }
     
 }
 
-struct PurchasableItem {
+class PurchasableItem {
     
     private(set) var item: Purchasable
     public let price: Int
@@ -25,7 +45,7 @@ struct PurchasableItem {
         self.stockRemaining = stock
     }
     
-    mutating func purchase(amount: Int, purchaser: Player) {
+    func purchase(amount: Int, purchaser: Player) {
         let adjustedPrice = BuffApps.getAdjustedPrice(purchaser: purchaser, price: self.price)
         var amountPurchased: Int = amount > stockRemaining ? stockRemaining : amount
         if self.item is ArmorAbstract {
@@ -49,23 +69,6 @@ struct PurchasableItem {
             for _ in 0..<amountPurchased {
                 purchaser.addWeapon(self.item as! WeaponAbstract)
             }
-        }
-    }
-    
-}
-
-class ShopKeeper: InteractorAbstract {
-    
-    private(set) var purchasableItems: [PurchasableItem]
-    
-    init(purchasableItems: [PurchasableItem]) {
-        self.purchasableItems = purchasableItems
-    }
-    
-    func purchaseItem(at index: Int, amount: Int, purchaser: Player) {
-        self.purchasableItems[index].purchase(amount: amount, purchaser: purchaser)
-        if self.purchasableItems[index].stockRemaining == 0 {
-            self.purchasableItems.remove(at: index)
         }
     }
     

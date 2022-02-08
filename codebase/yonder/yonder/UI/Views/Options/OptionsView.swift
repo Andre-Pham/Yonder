@@ -12,6 +12,7 @@ struct OptionsView: View {
     @EnvironmentObject private var travelStateManager: TravelStateManager
     @ObservedObject private var playerViewModel: PlayerViewModel
     @ObservedObject private var optionsStateManager: OptionsStateManager
+    @StateObject private var optionsSheetsStateManager = OptionsSheetsStateManager()
     
     init() {
         let playerViewModel = PlayerViewModel(GAME.player)
@@ -20,55 +21,25 @@ struct OptionsView: View {
         self.optionsStateManager = OptionsStateManager(playerViewModel: playerViewModel)
     }
     
-    @State private var showingPlayerSheet = false
-    @State private var showingNPCSheet = false
-    
     var body: some View {
         GeometryReader { geo in
             ScrollView {
                 VStack(spacing: YonderCoreGraphics.padding) {
                     LocationView(locationViewModel: self.playerViewModel.locationViewModel)
-                        .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 180)
-                        .padding(.leading, YonderCoreGraphics.padding)
-                        .padding(.trailing, YonderCoreGraphics.padding)
                     
                     HStack(spacing: YonderCoreGraphics.padding) {
-                        Button {
-                            self.showingPlayerSheet.toggle()
-                        } label: {
-                            PlayerCardView(playerViewModel: self.playerViewModel)
-                                .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
-                        }
-                        .sheet(isPresented: self.$showingPlayerSheet) {
-                            Text("Wow!")
-                        }
+                        PlayerCardAndSheetView(
+                            playerViewModel:
+                                self.playerViewModel,
+                            optionsSheetsStateManager:
+                                self.optionsSheetsStateManager)
                         
-                        Button {
-                            showingNPCSheet.toggle()
-                        } label: {
-                            EnemyCardView()
-                                .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
-                        }
-                        .sheet(isPresented: self.$showingNPCSheet) {
-                            ZStack {
-                                Color.Yonder.backgroundMaxDepth
-                                    .ignoresSafeArea()
-                                
-                                Rectangle()
-                                    .stroke(Color.Yonder.border, lineWidth: YonderCoreGraphics.borderWidth)
-                                    .frame(
-                                        width: geo.size.width-YonderCoreGraphics.padding*4,
-                                        height: geo.size.height)
-                                
-                                Text(":3")
-                                    .foregroundColor(.white)
-                            }
-                            .onTapGesture {
-                                self.showingNPCSheet = false
-                            }
-                        }
+                        NPCCardAndSheetView(
+                            locationViewModel:
+                                self.playerViewModel.locationViewModel,
+                            optionsSheetsStateManager:
+                                self.optionsSheetsStateManager,
+                            pageGeometry: geo)
                         
                     }
                     .padding(.leading, YonderCoreGraphics.padding)

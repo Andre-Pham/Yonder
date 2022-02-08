@@ -13,9 +13,7 @@ struct OptionView: View {
     
     var body: some View {
         VStack {
-            Text(self.title)
-                .foregroundColor(.Yonder.textMaxContrast)
-                .font(YonderFonts.main(size: 24))
+            YonderText(text: self.title, size: .buttonBody)
             // Icon would go underneith
         }
         .frame(width: geometry.size.width/3 - YonderCoreGraphics.padding*4/3, height: geometry.size.width/3 - YonderCoreGraphics.padding*2)

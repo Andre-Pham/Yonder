@@ -1,5 +1,5 @@
 //
-//  EnemyCardView.swift
+//  FoeCardView.swift
 //  yonder
 //
 //  Created by Andre Pham on 10/12/21.
@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct EnemyCardView: View {
+struct FoeCardView: View {
+    @ObservedObject var foeViewModel: FoeViewModel
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
             Text("Corn Man")
@@ -44,11 +46,12 @@ struct EnemyCardView: View {
         }
         .foregroundColor(.Yonder.textMaxContrast)
         .background(Color.Yonder.backgroundMaxDepth)
+        .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
     }
 }
 
 struct EnemyCardView_Previews: PreviewProvider {
     static var previews: some View {
-        EnemyCardView()
+        FoeCardView(foeViewModel: FoeViewModel(FoeAbstract(maxHealth: 500, weapon: BasicWeapon(damage: 5, durability: 5, basePurchasePrice: 5))))
     }
 }

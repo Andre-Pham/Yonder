@@ -7,9 +7,15 @@
 
 import Foundation
 
-class FoeAbstract: ActorAbstract {
+class FoeAbstract: ActorAbstract, Named, Described {
     
-    init(maxHealth: Int, weapon: WeaponAbstract) {
+    public let name: String
+    public let description: String
+    
+    init(name: String = "placeholderName", description: String = "placeholderDescription", maxHealth: Int, weapon: WeaponAbstract) {
+        self.name = name
+        self.description = description
+        
         super.init(maxHealth: maxHealth)
         
         self.addWeapon(weapon)
