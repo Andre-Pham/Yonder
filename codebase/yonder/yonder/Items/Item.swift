@@ -34,6 +34,14 @@ class ItemAbstract: Named, Described {
         self.remainingUses = uses
     }
     
+    func setDamage(to damage: Int) {
+        self.damage = damage
+    }
+    
+    func setHealthRestoration(to healthRestoration: Int) {
+        self.healthRestoration = healthRestoration
+    }
+    
     func adjustDamage(by damage: Int) {
         self.damage += damage
     }

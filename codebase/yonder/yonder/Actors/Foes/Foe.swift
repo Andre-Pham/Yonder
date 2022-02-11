@@ -12,7 +12,7 @@ class FoeAbstract: ActorAbstract, Named, Described {
     public let name: String
     public let description: String
     
-    init(name: String = "placeholderName", description: String = "placeholderDescription", maxHealth: Int, weapon: WeaponAbstract) {
+    init(name: String = "placeholderName", description: String = "placeholderDescription", maxHealth: Int, weapon: Weapon) {
         self.name = name
         self.description = description
         
@@ -21,7 +21,7 @@ class FoeAbstract: ActorAbstract, Named, Described {
         self.addWeapon(weapon)
     }
     
-    func getWeapon() -> WeaponAbstract {
+    func getWeapon() -> Weapon {
         return self.weapons.first!
     }
     

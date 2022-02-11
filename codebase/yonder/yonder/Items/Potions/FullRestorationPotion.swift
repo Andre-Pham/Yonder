@@ -9,6 +9,7 @@ import Foundation
 
 class FullRestorationPotion: PotionAbstract {
     
+    public static let sharedID = UUID()
     public let basePurchasePrice: Int
     
     init(name: String = "placeholderName", description: String = "placeholderDescription", potionCount: Int, basePurchasePrice: Int) {

@@ -17,7 +17,7 @@ class ActorAbstract {
     }
     private(set) var statusEffects = [StatusEffectAbstract]()
     private(set) var timedEvents = [TimedEventAbstract]()
-    @DidSetPublished private(set) var weapons = [WeaponAbstract]()
+    @DidSetPublished private(set) var weapons = [Weapon]()
     private(set) var buffs = [BuffAbstract]()
     private(set) var potions = [PotionAbstract]()
     @DidSetPublished private(set) var headArmor: ArmorAbstract = Armors.newNoHeadArmor()
@@ -128,11 +128,11 @@ class ActorAbstract {
     
     // MARK: - Weapons
     
-    func addWeapon(_ weapon: WeaponAbstract) {
+    func addWeapon(_ weapon: Weapon) {
         self.weapons.append(weapon)
     }
     
-    func removeWeapon(_ weapon: WeaponAbstract) {
+    func removeWeapon(_ weapon: Weapon) {
         guard let index = (self.weapons.firstIndex { $0.id == weapon.id }) else {
             return
         }
@@ -192,7 +192,7 @@ class ActorAbstract {
     
     // MARK: - Actor Interactions
     
-    func useWeaponOn(target: ActorAbstract, weapon: WeaponAbstract) {
+    func useWeaponOn(target: ActorAbstract, weapon: Weapon) {
         weapon.use(owner: self, target: target)
         if weapon.remainingUses == 0 {
             self.removeWeapon(weapon)
@@ -207,8 +207,8 @@ class ActorAbstract {
     }
     
     func use(_ usable: Usable, on target: ActorAbstract) {
-        if usable is WeaponAbstract {
-            self.useWeaponOn(target: target, weapon: usable as! WeaponAbstract)
+        if usable is Weapon {
+            self.useWeaponOn(target: target, weapon: usable as! Weapon)
         }
         else if usable is PotionAbstract {
             self.usePotionOn(target: target, potion: usable as! PotionAbstract)

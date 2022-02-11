@@ -10,10 +10,10 @@ import Foundation
 class PurchaseWeaponOffer: Offer {
     
     public let id: UUID = UUID()
-    public let weapon: WeaponAbstract
+    public let weapon: Weapon
     public let price: Int
     
-    init(weapon: WeaponAbstract, price: Int) {
+    init(weapon: Weapon, price: Int) {
         self.weapon = weapon
         self.price = price
     }

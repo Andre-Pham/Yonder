@@ -28,7 +28,7 @@ struct SettingsView: View {
             .padding()
             
             Button("Weapon") {
-                GAME.player.addWeapon(BasicWeapon(damage: 50, durability: 5, basePurchasePrice: 5))
+                GAME.player.addWeapon(Weapon(basePill: DamageBasePill(damage: 50, durability: 5), durabilityPill: DecrementDurabilityPill()))
             }
             .padding()
             .background(Color.red)

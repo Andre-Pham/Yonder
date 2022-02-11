@@ -13,7 +13,7 @@ enum ShopKeepers {
     
     static func newTestShopKeeper() -> ShopKeeper {
         return ShopKeeper(purchasableItems: [
-            PurchasableItem(item: Weapons.newTestBasicWeapon(), stock: 5)
+            PurchasableItem(item: Weapon(basePill: DamageBasePill(damage: 50, durability: 5), durabilityPill: DecrementDurabilityPill()), stock: 5)
         ])
     }
     

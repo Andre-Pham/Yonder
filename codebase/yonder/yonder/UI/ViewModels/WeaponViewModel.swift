@@ -10,7 +10,7 @@ import Combine
 
 class WeaponViewModel: ItemViewModel {
     
-    init(_ weapon: WeaponAbstract) {
+    init(_ weapon: Weapon) {
         super.init(weapon)
     }
     

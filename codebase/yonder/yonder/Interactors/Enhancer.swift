@@ -26,7 +26,7 @@ class Enhancer: InteractorAbstract {
         super.init(name: name, description: description)
     }
     
-    func upgradeWeaponDamage(weapon: WeaponAbstract, by damage: Int, purchaser: Player, price: Int) {
+    func upgradeWeaponDamage(weapon: Weapon, by damage: Int, purchaser: Player, price: Int) {
         let adjustedPrice = BuffApps.getAdjustedPrice(purchaser: purchaser, price: price)
         if purchaser.gold < adjustedPrice {
             return
@@ -35,7 +35,7 @@ class Enhancer: InteractorAbstract {
         weapon.adjustDamage(by: damage)
     }
     
-    func upgradeWeaponDurability(weapon: WeaponAbstract, by durability: Int, purchaser: Player, price: Int) {
+    func upgradeWeaponDurability(weapon: Weapon, by durability: Int, purchaser: Player, price: Int) {
         let adjustedPrice = BuffApps.getAdjustedPrice(purchaser: purchaser, price: price)
         if purchaser.gold < adjustedPrice {
             return

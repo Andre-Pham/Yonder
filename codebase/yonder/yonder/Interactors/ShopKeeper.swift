@@ -65,9 +65,9 @@ class PurchasableItem {
                 purchaser.addPotion(self.item as! PotionAbstract)
             }
         }
-        else if item is WeaponAbstract {
+        else if item is Weapon {
             for _ in 0..<amountPurchased {
-                purchaser.addWeapon(self.item as! WeaponAbstract)
+                purchaser.addWeapon(self.item as! Weapon)
             }
         }
     }
