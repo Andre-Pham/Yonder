@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FullHealTimedEvent: TimedEventAbstract {
+class FullHealTimedEvent: TimedEvent {
     
     var timeRemaining: Int {
         didSet {
@@ -16,7 +16,7 @@ class FullHealTimedEvent: TimedEventAbstract {
             }
         }
     }
-    let target: ActorAbstract
+    private let target: ActorAbstract
     
     init(timeToTrigger: Int, target: ActorAbstract) {
         self.timeRemaining = timeToTrigger

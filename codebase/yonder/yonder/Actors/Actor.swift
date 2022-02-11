@@ -15,8 +15,8 @@ class ActorAbstract {
     public var isDead: Bool {
         return self.health <= 0
     }
-    private(set) var statusEffects = [StatusEffectAbstract]()
-    private(set) var timedEvents = [TimedEventAbstract]()
+    private(set) var statusEffects = [StatusEffect]()
+    private(set) var timedEvents = [TimedEvent]()
     @DidSetPublished private(set) var weapons = [Weapon]()
     private(set) var buffs = [BuffAbstract]()
     private(set) var potions = [PotionAbstract]()
@@ -99,7 +99,7 @@ class ActorAbstract {
     
     // MARK: - Status Effects
     
-    func addStatusEffect(_ statusEffect: StatusEffectAbstract) {
+    func addStatusEffect(_ statusEffect: StatusEffect) {
         self.statusEffects.append(statusEffect)
     }
     
@@ -111,12 +111,12 @@ class ActorAbstract {
     
     // MARK: - Timed Events
     
-    func addTimedEvent(_ timedEvent: TimedEventAbstract) {
+    func addTimedEvent(_ timedEvent: TimedEvent) {
         self.timedEvents.append(timedEvent)
     }
     
     func decrementTimedEvents() {
-        var remainingTimedEvents = [TimedEventAbstract]()
+        var remainingTimedEvents = [TimedEvent]()
         for timedEvent in self.timedEvents {
             timedEvent.decrementTimeRemaining()
             if timedEvent.timeRemaining > 0 {

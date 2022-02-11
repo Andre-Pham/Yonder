@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BurnStatusEffect: StatusEffectAbstract {
+class BurnStatusEffect: StatusEffect {
     
     public let damage: Int
     
