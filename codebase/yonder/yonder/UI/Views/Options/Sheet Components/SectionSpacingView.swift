@@ -11,6 +11,6 @@ import SwiftUI
 struct SectionSpacingView: View {
     var body: some View {
         Rectangle()
-            .frame(height: YonderCoreGraphics.paragraphSpacing*2)
+            .frame(height: 10)
     }
 }
