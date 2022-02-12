@@ -22,16 +22,6 @@ struct InventoryView: View {
         GeometryReader { geo in
             ScrollView {
                 VStack(alignment: .leading, spacing: YonderCoreGraphics.padding) {
-                    YonderText(text: Term.stats.capitalized, size: .title2)
-                    
-                    VStack(alignment: .leading, spacing: 6) {
-                        StatView(title: Term.armorPoints.capitalized, value: "\(self.playerViewModel.armorPoints)", maxValue: "\(self.playerViewModel.maxArmorPoints)", image: YonderImages.shieldIcon)
-                        
-                        StatView(title: Term.health.capitalized, value: "\(self.playerViewModel.health)", maxValue: "\(self.playerViewModel.maxHealth)", image: YonderImages.healthIcon)
-                        
-                        StatView(title: Term.gold.capitalized, value: "\(Term.currencySymbol)\(self.playerViewModel.gold)", image: YonderImages.goldIcon)
-                    }
-                    
                     YonderText(text: Term.armor.capitalized, size: .title2)
                     
                     ForEach(self.playerViewModel.allArmorViewModels, id: \.id) { armorViewModel in
@@ -48,8 +38,6 @@ struct InventoryView: View {
                             }
                         }
                     }
-                    
-                    YonderText(text: Term.buffsAndEffects.capitalized, size: .title2)
                     
                     YonderText(text: Term.inventory.capitalized, size: .title2)
                     // Buttons to show weapons, potions

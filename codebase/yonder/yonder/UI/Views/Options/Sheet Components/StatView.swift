@@ -17,18 +17,18 @@ struct StatView: View {
     var body: some View {
         HStack {
             if let image = self.image {
-                YonderIcon(image: image)
+                YonderIcon(image: image, sideLength: .inspectSheet)
             }
             
             if maxValue.count > 0 {
                 HStack(alignment: .lastTextBaseline) {
-                    YonderText(text: "\(self.title): \(self.value)", size: .cardBody)
+                    YonderText(text: "\(self.title): \(self.value)", size: .inspectSheetBody)
                     
-                    YonderText(text: "/\(self.maxValue)", size: .cardSubscript)
+                    YonderText(text: "/\(self.maxValue)", size: .inspectSheetBody)
                 }
             }
             else {
-                YonderText(text: "\(self.title): \(self.value)", size: .cardBody)
+                YonderText(text: "\(self.title): \(self.value)", size: .inspectSheetBody)
             }
         }
     }

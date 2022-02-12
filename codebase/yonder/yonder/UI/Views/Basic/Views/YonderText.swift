@@ -24,6 +24,9 @@ enum YonderTextSize {
     case cardBody
     case cardSubscript
     
+    case inspectSheetTitle
+    case inspectSheetBody
+    
     // Also equal to height
     var value: CGFloat {
         switch self {
@@ -40,6 +43,9 @@ enum YonderTextSize {
         case .cardTitle: return 18
         case .cardBody: return 26
         case .cardSubscript: return 18
+        
+        case .inspectSheetTitle: return 28
+        case .inspectSheetBody: return 20
         }
     }
     

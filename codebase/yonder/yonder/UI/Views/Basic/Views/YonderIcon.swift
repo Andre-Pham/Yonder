@@ -8,14 +8,19 @@
 import Foundation
 import SwiftUI
 
+enum YonderIconSize: CGFloat {
+    case standard = 24
+    case inspectSheet = 18
+}
+
 struct YonderIcon: View {
     let image: Image
-    var sideLength: CGFloat = 24
+    var sideLength: YonderIconSize = .standard
     
     var body: some View {
         image
             .resizable()
             .scaledToFill()
-            .frame(width: self.sideLength, height: self.sideLength)
+            .frame(width: self.sideLength.rawValue, height: self.sideLength.rawValue)
     }
 }

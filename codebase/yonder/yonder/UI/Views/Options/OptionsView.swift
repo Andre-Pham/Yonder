@@ -32,7 +32,7 @@ struct OptionsView: View {
                             playerViewModel:
                                 self.playerViewModel,
                             optionsSheetsStateManager:
-                                self.optionsSheetsStateManager)
+                                self.optionsSheetsStateManager, pageGeometry: geo)
                         
                         NPCCardAndSheetView(
                             locationViewModel:

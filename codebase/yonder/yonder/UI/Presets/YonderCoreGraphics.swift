@@ -12,6 +12,7 @@ enum YonderCoreGraphics {
     
     static let padding: CGFloat = 12
     static let borderWidth: CGFloat = 2.7
+    static let paragraphSpacing: CGFloat = 6
     
     static let mapScales: [CGFloat] = [0.2, 0.35, 0.7, 1.0, 1.6]
     static let mapGridLineWidth: CGFloat = 4

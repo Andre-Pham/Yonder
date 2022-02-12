@@ -46,13 +46,26 @@ struct InspectSheet<Content: View>: View {
             Color.Yonder.backgroundMaxDepth
                 .ignoresSafeArea()
             
+            ScrollView(.vertical, showsIndicators: false) {
+                HStack {
+                    VStack(alignment: .leading, spacing: YonderCoreGraphics.paragraphSpacing) {
+                        content()
+                    }
+                    .padding(.top)
+                    .padding(.horizontal)
+                    
+                    Spacer()
+                }
+            }
+            .frame(
+                width: self.pageGeometry.size.width-YonderCoreGraphics.padding*4,
+                height: self.pageGeometry.size.height)
+            
             Rectangle()
                 .stroke(Color.Yonder.border, lineWidth: YonderCoreGraphics.borderWidth)
                 .frame(
                     width: self.pageGeometry.size.width-YonderCoreGraphics.padding*4,
                     height: self.pageGeometry.size.height)
-            
-            content()
         }
     }
 }
