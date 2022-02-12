@@ -117,7 +117,7 @@ class PlayerViewModel: ObservableObject {
             YonderDebugging.printError(message: "Weapon was used whilst location has no foe - hence no target", functionName: #function, className: "\(type(of: self))")
             return
         }
-        self.player.use(weaponViewModel.item as! Usable, on: (self.locationViewModel.location as! FoeLocation).foe)
+        self.player.useWeaponOn(target: (self.locationViewModel.location as! FoeLocation).foe, weapon: weaponViewModel.item as! Weapon)
     }
     
 }

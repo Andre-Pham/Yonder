@@ -28,6 +28,6 @@ enum LocationType {
 
 protocol FoeLocation {
     
-    var foe: FoeAbstract { get }
+    var foe: Foe { get }
     
 }

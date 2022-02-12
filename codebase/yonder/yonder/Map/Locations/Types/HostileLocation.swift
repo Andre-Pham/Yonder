@@ -9,10 +9,10 @@ import Foundation
 
 class HostileLocation: LocationAbstract, FoeLocation {
     
-    private(set) var foe: FoeAbstract
+    private(set) var foe: Foe
     public let type: LocationType = .hostile
     
-    init(foe: FoeAbstract) {
+    init(foe: Foe) {
         self.foe = foe
     }
     

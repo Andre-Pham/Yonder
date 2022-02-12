@@ -44,6 +44,6 @@ struct LocationView: View {
 
 struct LocationView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationView(locationViewModel: LocationViewModel(HostileLocation(foe: FoeAbstract(maxHealth: 50, weapon: BaseAttack(damage: 50)))))
+        LocationView(locationViewModel: LocationViewModel(HostileLocation(foe: Foe(maxHealth: 50, weapon: BaseAttack(damage: 50)))))
     }
 }

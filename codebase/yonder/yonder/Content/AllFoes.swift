@@ -11,8 +11,8 @@ enum Foes {
     
     // MARK: - Test Foes
     
-    static func newTestFoe() -> FoeAbstract {
-        return FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 100))
+    static func newTestFoe() -> Foe {
+        return Foe(maxHealth: 200, weapon: BaseAttack(damage: 100))
     }
     
     // MARK:  - Stage 0

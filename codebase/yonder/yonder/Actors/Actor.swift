@@ -197,25 +197,16 @@ class ActorAbstract {
         if weapon.remainingUses == 0 {
             self.removeWeapon(weapon)
         }
+        
+        if let foe = target as? Foe, let player = self as? Player {
+            foe.completeTurn(player: player)
+        }
     }
     
     func usePotionOn(target: ActorAbstract, potion: PotionAbstract) {
         potion.use(owner: self, target: target)
         if potion.remainingUses == 0 {
             self.removePotion(potion)
-        }
-    }
-    
-    func use(_ usable: Usable, on target: ActorAbstract) {
-        if usable is Weapon {
-            self.useWeaponOn(target: target, weapon: usable as! Weapon)
-        }
-        else if usable is PotionAbstract {
-            self.usePotionOn(target: target, potion: usable as! PotionAbstract)
-        }
-        else {
-            // This shouldn't be triggering unless in the future items are defined without further abstraction
-            usable.use(owner: self, target: target)
         }
     }
     

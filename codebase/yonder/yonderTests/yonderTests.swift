@@ -20,7 +20,7 @@ class yonderTests: XCTestCase {
     
     func testAttack() throws {
         let player = Player(maxHealth: 200, location: NoLocation())
-        let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 5))
+        let foe = Foe(maxHealth: 200, weapon: BaseAttack(damage: 5))
         foe.useWeaponOn(target: player, weapon: foe.getWeapon())
         XCTAssertTrue(player.health == 195)
     }
@@ -55,7 +55,7 @@ class yonderTests: XCTestCase {
     
     func testBuffs() throws {
         let player = Player(maxHealth: 200, location: NoLocation())
-        let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 5))
+        let foe = Foe(maxHealth: 200, weapon: BaseAttack(damage: 5))
         foe.addBuff(DamagePercentBuff(direction: .outgoing, duration: 5, damageFraction: 2.0))
         foe.addBuff(DamagePercentBuff(direction: .outgoing, duration: 5, damageFraction: 2.0))
         foe.useWeaponOn(target: player, weapon: foe.getWeapon())
@@ -64,7 +64,7 @@ class yonderTests: XCTestCase {
     
     func testBuffPriority() throws {
         let player = Player(maxHealth: 200, location: NoLocation())
-        let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 25))
+        let foe = Foe(maxHealth: 200, weapon: BaseAttack(damage: 25))
         foe.addBuff(DamagePercentBuff(direction: .outgoing, duration: 5, damageFraction: 2.0))
         foe.addBuff(DamageBuff(direction: .outgoing, duration: 5, damageDifference: 5))
         foe.addBuff(DamagePercentBuff(direction: .outgoing, duration: 5, damageFraction: 2.0))
@@ -76,7 +76,7 @@ class yonderTests: XCTestCase {
         let player = Player(maxHealth: 200, location: NoLocation())
         player.equipArmor(Armors.newTestHeadArmor())
         player.equipArmor(Armors.newTestBodyArmor())
-        let foe = FoeAbstract(maxHealth: 200, weapon: BaseAttack(damage: 100))
+        let foe = Foe(maxHealth: 200, weapon: BaseAttack(damage: 100))
         foe.useWeaponOn(target: player, weapon: foe.getWeapon())
         print(player.health)
         XCTAssertTrue(player.armorPoints == player.headArmor.armorPoints + player.bodyArmor.armorPoints - 64)
@@ -94,7 +94,7 @@ class yonderTests: XCTestCase {
         let player = Player(maxHealth: 200, location: NoLocation())
         let weapon = Weapon(basePill: DamageBasePill(damage: 7, durability: 1), durabilityPill: DullingDurabilityPill(damageLostPerUse: 2))
         player.addWeapon(weapon)
-        let foe = FoeAbstract(maxHealth: 200, weapon: Weapon(basePill: DamageBasePill(damage: 100, durability: 5), durabilityPill: InfiniteDurabilityPill()))
+        let foe = Foe(maxHealth: 200, weapon: Weapon(basePill: DamageBasePill(damage: 100, durability: 5), durabilityPill: InfiniteDurabilityPill()))
         player.useWeaponOn(target: foe, weapon: player.weapons.first!)
         player.useWeaponOn(target: foe, weapon: player.weapons.first!)
         player.useWeaponOn(target: foe, weapon: player.weapons.first!)
@@ -161,7 +161,7 @@ class yonderTests: XCTestCase {
     
     func testLocationCasting() throws {
         let location = LocationAbstractPart()
-        let combatLocation = HostileLocation(foe: FoeAbstract(maxHealth: 200, weapon: Weapon(basePill: DamageBasePill(damage: 4, durability: 2), durabilityPill: DecrementDurabilityPill())))
+        let combatLocation = HostileLocation(foe: Foe(maxHealth: 200, weapon: Weapon(basePill: DamageBasePill(damage: 4, durability: 2), durabilityPill: DecrementDurabilityPill())))
         location.addNextLocations([combatLocation])
         XCTAssertNoThrow((location.nextLocations.first! as! HostileLocation).foe)
         // Normally you'd only cast after you check that the location is of LocationType .hostile
@@ -186,14 +186,14 @@ class yonderTests: XCTestCase {
     func testPotionBuff() throws {
         let player = Player(maxHealth: 200, location: NoLocation())
         player.addBuff(PotionDamagePercentBuff(direction: .outgoing, duration: 5, damageFraction: 2.0))
-        let foe = FoeAbstract(maxHealth: 200, weapon: Weapon(basePill: DamageBasePill(damage: 10, durability: 5), durabilityPill: DecrementDurabilityPill()))
+        let foe = Foe(maxHealth: 200, weapon: Weapon(basePill: DamageBasePill(damage: 10, durability: 5), durabilityPill: DecrementDurabilityPill()))
         let weapon = Weapon(basePill: DamageBasePill(damage: 50, durability: 5), durabilityPill: DecrementDurabilityPill())
         let potion = DamagePotion(damage: 50, potionCount: 1, basePurchasePrice: 0)
         player.addWeapon(weapon)
         player.addPotion(potion)
         player.useWeaponOn(target: foe, weapon: weapon)
         XCTAssertEqual(foe.health, 150)
-        player.use(potion, on: foe)
+        player.usePotionOn(target: foe, potion: potion)
         XCTAssertEqual(foe.health, 50)
     }
     

@@ -11,7 +11,7 @@ import Combine
 class FoeViewModel: ObservableObject {
     
     // foe can be used within the ViewModel layer, but Views should only interact with ViewModels (not the Model layer)
-    private(set) var foe: FoeAbstract
+    private(set) var foe: Foe
     private var subscriptions: Set<AnyCancellable> = []
     
     private(set) var id: UUID
@@ -23,7 +23,7 @@ class FoeViewModel: ObservableObject {
     
     @Published private(set) var weaponViewModel: WeaponViewModel
     
-    init(_ foe: FoeAbstract) {
+    init(_ foe: Foe) {
         self.foe = foe
         
         // Set properties to match Interactor

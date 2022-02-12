@@ -23,7 +23,7 @@ struct EnemyCardView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.Yonder.backgroundMaxDepth
-            FoeCardView(foeViewModel: FoeViewModel(FoeAbstract(maxHealth: 500, weapon: Weapon(basePill: DamageBasePill(damage: 50, durability: 5), durabilityPill: DecrementDurabilityPill()))))
+            FoeCardView(foeViewModel: FoeViewModel(Foe(maxHealth: 500, weapon: Weapon(basePill: DamageBasePill(damage: 50, durability: 5), durabilityPill: DecrementDurabilityPill()))))
         }
     }
 }
