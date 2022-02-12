@@ -39,23 +39,9 @@ struct NPCCardAndSheetView: View {
                 EmptyCardView()
             }
         }
-        .sheet(isPresented: self.$optionsSheetsStateManager.npcSheetBinding) {
-            ZStack {
-                Color.Yonder.backgroundMaxDepth
-                    .ignoresSafeArea()
-                
-                Rectangle()
-                    .stroke(Color.Yonder.border, lineWidth: YonderCoreGraphics.borderWidth)
-                    .frame(
-                        width: pageGeometry.size.width-YonderCoreGraphics.padding*4,
-                        height: pageGeometry.size.height)
-                
-                Text(self.locationViewModel.typeAsString)
-                    .foregroundColor(.white)
-            }
-            .onTapGesture {
-                self.optionsSheetsStateManager.npcSheetBinding = false
-            }
-        }
+        .withInspectSheet(isPresented: self.$optionsSheetsStateManager.npcSheetBinding, pageGeometry: self.pageGeometry, content: AnyView(
+            Text(self.locationViewModel.typeAsString)
+                .foregroundColor(.white)
+        ))
     }
 }

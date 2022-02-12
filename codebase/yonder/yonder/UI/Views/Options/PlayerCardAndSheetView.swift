@@ -17,9 +17,9 @@ struct PlayerCardAndSheetView: View {
         } label: {
             PlayerCardView(playerViewModel: self.playerViewModel)
         }
-        .sheet(isPresented: self.$optionsSheetsStateManager.playerSheetBinding) {
+        /*.sheet(isPresented: self.$optionsSheetsStateManager.playerSheetBinding) {
             Text("Wow!")
-        }
+        }*/
     }
 }
 
