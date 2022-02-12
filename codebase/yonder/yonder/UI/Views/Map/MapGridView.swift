@@ -115,6 +115,8 @@ struct MapGridView: View {
                                     
                                     // Set all synced animations a new ID to reset their animation cycles
                                     self.animationSyncID = UUID()
+                                    
+                                    self.travelStateManager.setTravellingActive(to: false)
                                 }
                             }
                         

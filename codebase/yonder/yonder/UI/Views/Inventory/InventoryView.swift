@@ -35,9 +35,17 @@ struct InventoryView: View {
                     YonderText(text: Term.armor.capitalized, size: .title2)
                     
                     ForEach(self.playerViewModel.allArmorViewModels, id: \.id) { armorViewModel in
-                        YonderWideButton(text: "\(Term.armorSlot(of: armorViewModel.type).capitalized): \(armorViewModel.name)", alignment: .leading) {
-                            
-                            // do something
+                        YonderWideButtonBody {
+                            // Code
+                        } label: {
+                            HStack(alignment: .lastTextBaseline, spacing: 0) {
+                                YonderText(text: "\(Term.armorSlot(of: armorViewModel.type).capitalized): ", size: .buttonBodySubscript)
+                                    .padding(.leading)
+                                
+                                YonderText(text: "\(armorViewModel.name)", size: .buttonBody)
+                                
+                                Spacer()
+                            }
                         }
                     }
                     
