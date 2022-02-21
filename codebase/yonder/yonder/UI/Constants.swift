@@ -7,12 +7,6 @@
 
 import Foundation
 
-enum Constants {
-    
-    static let infinity = Int.max
-
-}
-
 enum MathConstants {
     
     static let hexagonWidthToHeight = 0.8660254

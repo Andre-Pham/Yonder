@@ -9,6 +9,7 @@ import Foundation
 
 class BuffAbstract {
     
+    var isInfinite: Bool = false
     var timeRemaining: Int
     var type: BuffType
     var direction: BuffDirection
@@ -16,8 +17,14 @@ class BuffAbstract {
     // Addition has a priority of 0, multiplication has a priority of 1
     var priority: Int
     
-    init(duration: Int, type: BuffType, direction: BuffDirection, priority: Int) {
-        self.timeRemaining = duration
+    init(duration: Int?, type: BuffType, direction: BuffDirection, priority: Int) {
+        if let duration = duration {
+            self.timeRemaining = duration
+        }
+        else {
+            self.timeRemaining = 1
+            self.isInfinite = true
+        }
         self.type = type
         self.direction = direction
         self.priority = priority
@@ -39,6 +46,9 @@ class BuffAbstract {
     }
     
     func decrementTimeRemaining() {
+        guard !isInfinite else {
+            return
+        }
         self.timeRemaining -= 1
     }
     

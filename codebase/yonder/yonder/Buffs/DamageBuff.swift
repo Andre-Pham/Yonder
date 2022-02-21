@@ -11,7 +11,7 @@ class DamageBuff: BuffAbstract {
     
     private let damageDifference: Int
     
-    init(direction: BuffDirection, duration: Int, damageDifference: Int) {
+    init(direction: BuffDirection, duration: Int?, damageDifference: Int) {
         self.damageDifference = damageDifference
         
         super.init(duration: duration, type: .damage, direction: direction, priority: 0)

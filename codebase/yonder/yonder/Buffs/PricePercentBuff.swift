@@ -11,7 +11,7 @@ class PricePercentBuff: BuffAbstract {
     
     private let priceFraction: Double
     
-    init(direction: BuffDirection, duration: Int, priceFraction: Double) {
+    init(direction: BuffDirection, duration: Int?, priceFraction: Double) {
         self.priceFraction = priceFraction
         
         super.init(duration: duration, type: .health, direction: direction, priority: 1)

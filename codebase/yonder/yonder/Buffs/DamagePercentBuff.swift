@@ -11,7 +11,7 @@ class DamagePercentBuff: BuffAbstract {
     
     private let damageFraction: Double
     
-    init(direction: BuffDirection, duration: Int, damageFraction: Double) {
+    init(direction: BuffDirection, duration: Int?, damageFraction: Double) {
         self.damageFraction = damageFraction
         
         super.init(duration: duration, type: .damage, direction: direction, priority: 1)

@@ -11,7 +11,7 @@ class HealthRestorationPercentBuff: BuffAbstract {
     
     private let healthFraction: Double
     
-    init(direction: BuffDirection, duration: Int, healthFraction: Double) {
+    init(direction: BuffDirection, duration: Int?, healthFraction: Double) {
         self.healthFraction = healthFraction
         
         super.init(duration: duration, type: .health, direction: direction, priority: 1)
