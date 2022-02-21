@@ -117,7 +117,18 @@ class PlayerViewModel: ObservableObject {
             YonderDebugging.printError(message: "Weapon was used whilst location has no foe - hence no target", functionName: #function, className: "\(type(of: self))")
             return
         }
-        self.player.useWeaponOn(target: (self.locationViewModel.location as! FoeLocation).foe, weapon: weaponViewModel.item as! Weapon)
+        var target: ActorAbstract
+        switch weaponViewModel.type {
+        case .damage:
+            target = (self.locationViewModel.location as! FoeLocation).foe
+        case .healthRestoration:
+            target = self.player
+        case .positiveEffect:
+            target = self.player
+        case .negativeEffect:
+            target = (self.locationViewModel.location as! FoeLocation).foe
+        }
+        self.player.useWeaponOn(target: target, weapon: weaponViewModel.item as! Weapon)
     }
     
 }

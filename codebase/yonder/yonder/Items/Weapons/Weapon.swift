@@ -40,7 +40,9 @@ class Weapon: ItemAbstract, Usable, Purchasable {
             target.damageAdjusted(sourceOwner: owner, using: self, for: self.damage)
         case .healthRestoration:
             target.restoreHealthAdjusted(sourceOwner: owner, using: self, for: self.healthRestoration)
-        case .effect:
+        case .positiveEffect:
+            break
+        case .negativeEffect:
             break
         }
         
@@ -65,5 +67,6 @@ class BaseAttack: Weapon {
 enum WeaponType {
     case damage
     case healthRestoration
-    case effect // Provides effect(s) without inflicting healing or damage
+    case positiveEffect // Provides beneficial effect(s) without inflicting direct healing or damage
+    case negativeEffect // Provides undesired effect(s) without inflicting direct healing or damage
 }

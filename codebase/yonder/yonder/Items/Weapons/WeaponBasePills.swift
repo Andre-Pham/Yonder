@@ -51,9 +51,28 @@ class HealthRestorationBasePill: WeaponBasePill {
     
 }
 
-class EffectBasePill: WeaponBasePill {
+class PositiveEffectBasePill: WeaponBasePill {
     
-    var type: WeaponType = .effect
+    var type: WeaponType = .positiveEffect
+    private(set) var durability: Int
+    
+    init(durability: Int) {
+        self.durability = durability
+    }
+    
+    func setup(weapon: Weapon) {
+        weapon.setRemainingUses(to: self.durability)
+    }
+    
+    func getValue() -> Int {
+        return 0
+    }
+    
+}
+
+class NegativeEffectBasePill: WeaponBasePill {
+    
+    var type: WeaponType = .negativeEffect
     private(set) var durability: Int
     
     init(durability: Int) {
