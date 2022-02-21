@@ -12,8 +12,8 @@ struct MapGridView: View {
     @EnvironmentObject private var travelStateManager: TravelStateManager
     @StateObject private var gridDimensions = GridDimensions()
     @ObservedObject var scaleStateManager: ScaleStateManager
-    @StateObject private var playerViewModel = PlayerViewModel(GAME.player)
-    @StateObject private var playerLocationViewModel = PlayerLocationViewModel(player: GAME.player)
+    @StateObject private var playerViewModel = gameManager.playerVM
+    @StateObject private var playerLocationViewModel = gameManager.playerLocationVM
     @State private var locationConnections = [LocationConnection?]()
     @StateObject var locationViewModels: ObservableArray<LocationViewModel> = ObservableArray(array: [LocationViewModel]()).observeChildrenChanges()
     
@@ -174,11 +174,7 @@ struct MapGridView: View {
         .reverseScroll()
         .environmentObject(self.gridDimensions)
         .onAppear {
-            self.locationConnections = LocationConnectionGenerator(
-                map: GAME.map,
-                hexagonCount: self.gridDimensions.hexagonCount,
-                columnsCount: self.gridDimensions.columnsCount)
-                .getAllLocationConnections()
+            self.locationConnections = gameManager.getMapLocationConnections(gridDimensions: self.gridDimensions)
             
             for locationConnection in self.locationConnections {
                 if locationConnection == nil {

@@ -12,7 +12,7 @@ struct InventoryView: View {
     @ObservedObject private var sheetsStateManager: InventorySheetsStateManager
     
     init() {
-        let playerViewModel = PlayerViewModel(GAME.player)
+        let playerViewModel = gameManager.playerVM
         
         self.playerViewModel = playerViewModel
         self.sheetsStateManager = InventorySheetsStateManager(playerViewModel: playerViewModel)

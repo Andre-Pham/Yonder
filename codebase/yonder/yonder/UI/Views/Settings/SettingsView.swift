@@ -7,12 +7,13 @@
 
 import SwiftUI
 
+/// This is for temporary testing... this breaks so many rules
 struct SettingsView: View {
     var body: some View {
         VStack {
             Text("Hello, Settings!")
             Button("Damage Player 100") {
-                GAME.player.damage(for: 100)
+                gameManager.playerVM.player.damage(for: 100)
             }
             .padding()
             .background(Color.red)
@@ -20,7 +21,7 @@ struct SettingsView: View {
             .padding()
             
             Button("Travel") {
-                GAME.player.travel(to: GAME.player.location.nextLocations.first!)
+                gameManager.playerVM.player.travel(to: gameManager.playerVM.player.location.nextLocations.first!)
             }
             .padding()
             .background(Color.red)
@@ -28,7 +29,7 @@ struct SettingsView: View {
             .padding()
             
             Button("Weapon") {
-                GAME.player.addWeapon(Weapon(basePill: DamageBasePill(damage: 50, durability: 5), durabilityPill: DecrementDurabilityPill()))
+                gameManager.playerVM.player.addWeapon(Weapon(basePill: DamageBasePill(damage: 50, durability: 5), durabilityPill: DecrementDurabilityPill()))
             }
             .padding()
             .background(Color.red)

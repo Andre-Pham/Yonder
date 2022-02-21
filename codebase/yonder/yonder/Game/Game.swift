@@ -7,8 +7,6 @@
 
 import Foundation
 
-var GAME = Game()
-
 class Game {
     
     private(set) var map: Map
