@@ -9,7 +9,7 @@ import Foundation
 
 protocol Usable {
     
-    func use(owner: ActorAbstract, target: ActorAbstract)
+    func use(owner: ActorAbstract, opposition: ActorAbstract)
     
 }
 

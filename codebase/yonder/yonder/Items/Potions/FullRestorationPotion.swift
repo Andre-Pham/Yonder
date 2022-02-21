@@ -9,7 +9,6 @@ import Foundation
 
 class FullRestorationPotion: PotionAbstract {
     
-    public static let sharedID = UUID()
     public let basePurchasePrice: Int
     
     init(name: String = "placeholderName", description: String = "placeholderDescription", potionCount: Int, basePurchasePrice: Int) {
@@ -18,8 +17,8 @@ class FullRestorationPotion: PotionAbstract {
         super.init(name: name, description: description, remainingUses: potionCount)
     }
     
-    func use(owner: ActorAbstract, target: ActorAbstract) {
-        target.restore(for: target.maxHealth + target.getMaxArmorPoints())
+    func use(owner: ActorAbstract, opposition: ActorAbstract) {
+        owner.restore(for: owner.maxHealth + owner.getMaxArmorPoints())
         self.adjustRemainingUses(by: -1)
     }
     

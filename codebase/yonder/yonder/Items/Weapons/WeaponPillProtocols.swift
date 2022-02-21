@@ -11,8 +11,6 @@ import Foundation
 /// Weapons can only take one of this pill.
 protocol WeaponBasePill {
     
-    var type: WeaponType { get }
-    
     func setup(weapon: Weapon)
     func getValue() -> Int
     
@@ -32,7 +30,7 @@ protocol WeaponEffectPill {
     
     var priority: WeaponEffectPillPriority { get }
     
-    func apply(owner: ActorAbstract, target: ActorAbstract)
+    func apply(owner: ActorAbstract, opposition: ActorAbstract)
     func getValue() -> Int
     
 }

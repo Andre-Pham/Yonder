@@ -30,6 +30,14 @@ class PlayerViewModel: ObservableObject {
             }
         }
     }
+    @Published private(set) var potionViewModels: [PotionViewModel] {
+        didSet {
+            // Changes to any PotionViewModel will be published to the UI
+            for potion in self.potionViewModels {
+                potion.objectWillChange.sink(receiveValue: { _ in self.objectWillChange.send() }).store(in: &self.subscriptions)
+            }
+        }
+    }
     @Published private(set) var headArmorViewModel: ArmorViewModel
     @Published private(set) var bodyArmorViewModel: ArmorViewModel
     @Published private(set) var legsArmorViewModel: ArmorViewModel
@@ -55,6 +63,7 @@ class PlayerViewModel: ObservableObject {
         
         self.locationViewModel = LocationViewModel(self.player.location)
         self.weaponViewModels = self.player.weapons.map { WeaponViewModel($0) }
+        self.potionViewModels = self.player.potions.map { PotionViewModel($0) }
         self.headArmorViewModel = ArmorViewModel(self.player.headArmor)
         self.bodyArmorViewModel = ArmorViewModel(self.player.bodyArmor)
         self.legsArmorViewModel = ArmorViewModel(self.player.legsArmor)
@@ -102,6 +111,10 @@ class PlayerViewModel: ObservableObject {
         self.player.$weapons.sink(receiveValue: { newValue in
             self.weaponViewModels = newValue.map { WeaponViewModel($0) }
         }).store(in: &self.subscriptions)
+        
+        self.player.$potions.sink(receiveValue: { newValue in
+            self.potionViewModels = newValue.map { PotionViewModel($0) }
+        }).store(in: &self.subscriptions)
     }
     
     func equipArmor(_ armor: ArmorAbstract) {
@@ -117,18 +130,15 @@ class PlayerViewModel: ObservableObject {
             YonderDebugging.printError(message: "Weapon was used whilst location has no foe - hence no target", functionName: #function, className: "\(type(of: self))")
             return
         }
-        var target: ActorAbstract
-        switch weaponViewModel.type {
-        case .damage:
-            target = (self.locationViewModel.location as! FoeLocation).foe
-        case .healthRestoration:
-            target = self.player
-        case .positiveEffect:
-            target = self.player
-        case .negativeEffect:
-            target = (self.locationViewModel.location as! FoeLocation).foe
+        self.player.useWeaponWhere(opposition: (self.locationViewModel.location as! FoeLocation).foe, weapon: weaponViewModel.item as! Weapon)
+    }
+    
+    func use(potionViewModel: PotionViewModel) {
+        guard self.locationViewModel.location is FoeLocation else {
+            YonderDebugging.printError(message: "Potion was used whilst location has no foe - hence no target", functionName: #function, className: "\(type(of: self))")
+            return
         }
-        self.player.useWeaponOn(target: target, weapon: weaponViewModel.item as! Weapon)
+        self.player.usePotionWhere(opposition: (self.locationViewModel.location as! FoeLocation).foe, potion: potionViewModel.item as! PotionAbstract)
     }
     
 }

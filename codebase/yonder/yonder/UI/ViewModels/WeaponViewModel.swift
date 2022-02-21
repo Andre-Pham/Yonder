@@ -10,11 +10,7 @@ import Combine
 
 class WeaponViewModel: ItemViewModel {
     
-    private(set) var type: WeaponType
-    
     init(_ weapon: Weapon) {
-        self.type = weapon.type
-        
         super.init(weapon)
     }
     

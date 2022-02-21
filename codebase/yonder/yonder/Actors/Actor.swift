@@ -19,7 +19,7 @@ class ActorAbstract {
     private(set) var timedEvents = [TimedEvent]()
     @DidSetPublished private(set) var weapons = [Weapon]()
     private(set) var buffs = [BuffAbstract]()
-    private(set) var potions = [PotionAbstract]()
+    @DidSetPublished private(set) var potions = [PotionAbstract]()
     @DidSetPublished private(set) var headArmor: ArmorAbstract = Armors.newNoHeadArmor()
     @DidSetPublished private(set) var bodyArmor: ArmorAbstract = Armors.newNoBodyArmor()
     @DidSetPublished private(set) var legsArmor: ArmorAbstract = Armors.newNoLegsArmor()
@@ -142,6 +142,12 @@ class ActorAbstract {
     // MARK: - Potions
     
     func addPotion(_ potion: PotionAbstract) {
+        for ownedPotion in self.potions {
+            if potion.isStackable(with: ownedPotion) {
+                ownedPotion.adjustRemainingUses(by: potion.remainingUses)
+                return
+            }
+        }
         self.potions.append(potion)
     }
     
@@ -192,19 +198,19 @@ class ActorAbstract {
     
     // MARK: - Actor Interactions
     
-    func useWeaponOn(target: ActorAbstract, weapon: Weapon) {
-        weapon.use(owner: self, target: target)
+    func useWeaponWhere(opposition: ActorAbstract, weapon: Weapon) {
+        weapon.use(owner: self, opposition: opposition)
         if weapon.remainingUses == 0 {
             self.removeWeapon(weapon)
         }
         
-        if let foe = target as? Foe, let player = self as? Player {
+        if let foe = opposition as? Foe, let player = self as? Player {
             foe.completeTurn(player: player)
         }
     }
     
-    func usePotionOn(target: ActorAbstract, potion: PotionAbstract) {
-        potion.use(owner: self, target: target)
+    func usePotionWhere(opposition: ActorAbstract, potion: PotionAbstract) {
+        potion.use(owner: self, opposition: opposition)
         if potion.remainingUses == 0 {
             self.removePotion(potion)
         }

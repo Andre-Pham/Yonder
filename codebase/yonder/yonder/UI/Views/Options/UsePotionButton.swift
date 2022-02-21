@@ -1,5 +1,5 @@
 //
-//  UseWeaponButton.swift
+//  UsePotionButton.swift
 //  yonder
 //
 //  Created by Andre Pham on 21/2/2022.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct UseWeaponButton: View {
+struct UsePotionButton: View {
     @ObservedObject var playerViewModel: PlayerViewModel
-    @ObservedObject var weaponViewModel: WeaponViewModel
+    @ObservedObject var potionViewModel: PotionViewModel
     @State private var useButtonActive = false
     
     var body: some View {
@@ -20,12 +20,12 @@ struct UseWeaponButton: View {
                 VStack {
                     HStack {
                         VStack(alignment: .leading) {
-                            YonderText(text: self.weaponViewModel.name, size: .buttonBody)
+                            YonderText(text: self.potionViewModel.name, size: .buttonBody)
                                 .padding(.bottom, YonderCoreGraphics.buttonTitleSpacing)
                             
-                            YonderText(text: "\(self.weaponViewModel.damage) \(Term.damage.capitalized)", size: .buttonBodySubscript)
+                            YonderText(text: self.potionViewModel.description, size: .buttonBodySubscript)
                             
-                            YonderText(text: "\(self.weaponViewModel.remainingUses) \(self.weaponViewModel.remainingUses > 1 ? Term.remainingUses.capitalized : Term.remainingUse.capitalized)", size: .buttonBodySubscript)
+                            YonderText(text: "\(self.potionViewModel.remainingUses) \(self.potionViewModel.remainingUses > 1 ? Term.potions.capitalized : Term.potion.capitalized) Left", size: .buttonBodySubscript)
                         }
                         
                         Spacer()
@@ -41,8 +41,8 @@ struct UseWeaponButton: View {
                 }
             }
             if self.useButtonActive {
-                YonderWideButton(text: Term.use.capitalized) {
-                    self.playerViewModel.use(weaponViewModel: self.weaponViewModel)
+                YonderWideButton(text: Term.quickUse.capitalized) {
+                    self.playerViewModel.use(potionViewModel: self.potionViewModel)
                 }
                 .padding(.horizontal, YonderCoreGraphics.padding)
                 .padding(.bottom, YonderCoreGraphics.padding)
@@ -51,18 +51,15 @@ struct UseWeaponButton: View {
     }
 }
 
-struct UseWeaponButton_Previews: PreviewProvider {
+struct UsePotionButton_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.Yonder.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            UseWeaponButton(
+            UsePotionButton(
                 playerViewModel: PlayerViewModel(Player(maxHealth: 200, location: FriendlyLocation(friendly: Friendly(offers: [], offerLimit: 0)))),
-                weaponViewModel: WeaponViewModel(Weapon(
-                    basePill: DamageBasePill(damage: 50, durability: 5),
-                    durabilityPill: DecrementDurabilityPill()
-            )))
+                potionViewModel: PotionViewModel(DamagePotion(damage: 50, potionCount: 3, basePurchasePrice: 100)))
         }
     }
 }

@@ -35,6 +35,14 @@ struct SettingsView: View {
             .background(Color.red)
             .foregroundColor(.white)
             .padding()
+            
+            Button("Potion") {
+                gameManager.playerVM.player.addPotion(HealthRestorationPotion(name: "Cool Potion", description: "Lots of healing", healthRestoration: 100, potionCount: 5, basePurchasePrice: 100))
+            }
+            .padding()
+            .background(Color.red)
+            .foregroundColor(.white)
+            .padding()
         }
     }
 }

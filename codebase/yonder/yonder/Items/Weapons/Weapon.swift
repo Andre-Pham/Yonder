@@ -10,14 +10,12 @@ import Foundation
 class Weapon: ItemAbstract, Usable, Purchasable {
     
     private(set) var basePurchasePrice: Int = 0
-    public let type: WeaponType
     private let basePill: WeaponBasePill
     private let durabilityPill: WeaponDurabilityPill
     private(set) var effectPills: [WeaponEffectPill]
     
     init(name: String = "placeholderName", description: String = "placeholderDescription", basePill: WeaponBasePill, durabilityPill: WeaponDurabilityPill, effectPills: [WeaponEffectPill] = []) {
         self.basePill = basePill
-        self.type = basePill.type
         self.durabilityPill = durabilityPill
         self.effectPills = effectPills
         
@@ -34,20 +32,16 @@ class Weapon: ItemAbstract, Usable, Purchasable {
             self.effectPills.map { $0.getValue() }.reduce(0, +))
     }
     
-    func use(owner: ActorAbstract, target: ActorAbstract) {
-        switch self.type {
-        case .damage:
-            target.damageAdjusted(sourceOwner: owner, using: self, for: self.damage)
-        case .healthRestoration:
-            target.restoreHealthAdjusted(sourceOwner: owner, using: self, for: self.healthRestoration)
-        case .positiveEffect:
-            break
-        case .negativeEffect:
-            break
+    func use(owner: ActorAbstract, opposition: ActorAbstract) {
+        if self.healthRestoration > 0 {
+            owner.restoreHealthAdjusted(sourceOwner: owner, using: self, for: self.healthRestoration)
+        }
+        if self.damage > 0 {
+            opposition.damageAdjusted(sourceOwner: owner, using: self, for: self.damage)
         }
         
         for pill in self.effectPills {
-            pill.apply(owner: owner, target: target)
+            pill.apply(owner: owner, opposition: opposition)
         }
         
         // Durability pill comes after, otherwise stuff like dulling pill wouldn't work as intended
@@ -62,11 +56,4 @@ class BaseAttack: Weapon {
         super.init(basePill: DamageBasePill(damage: damage, durability: 1), durabilityPill: InfiniteDurabilityPill())
     }
     
-}
-
-enum WeaponType {
-    case damage
-    case healthRestoration
-    case positiveEffect // Provides beneficial effect(s) without inflicting direct healing or damage
-    case negativeEffect // Provides undesired effect(s) without inflicting direct healing or damage
 }

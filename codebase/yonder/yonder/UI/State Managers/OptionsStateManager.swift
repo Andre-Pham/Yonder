@@ -35,6 +35,10 @@ class OptionsStateManager: ObservableObject {
         return self.playerViewModel.canEngage
     }
     @Published var weaponActionsActive = Status(false)
+    var potionOptionActive: Bool {
+        return self.playerViewModel.canEngage
+    }
+    @Published var potionActionsActive = Status(false)
     @Published private(set) var travelOptionActive = true
     
     // Whenever an action is set to showing, its reference is passed here
@@ -60,7 +64,7 @@ class OptionsStateManager: ObservableObject {
     func closeActions() {
         self.optionHeaderText = "Your Options"
         self.showOptions = true
-        self.activeActions = Status(false)
+        self.activeActions.isActive = false
     }
     
     func weaponOptionSelected() {
@@ -68,6 +72,13 @@ class OptionsStateManager: ObservableObject {
         self.showOptions = false
         self.weaponActionsActive = Status(true)
         self.activeActions = self.weaponActionsActive
+    }
+    
+    func potionOptionSelected() {
+        self.optionHeaderText = "Use Potion"
+        self.showOptions = false
+        self.potionActionsActive = Status(true)
+        self.activeActions = self.potionActionsActive
     }
     
     func travelOptionSelected(viewRouter: ViewRouter, travelStateManager: TravelStateManager) {

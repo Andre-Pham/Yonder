@@ -60,6 +60,14 @@ struct OptionsView: View {
                                 }
                             }
                             
+                            if optionsStateManager.potionOptionActive {
+                                Button {
+                                    self.optionsStateManager.potionOptionSelected()
+                                } label: {
+                                    OptionView(title: "Select \(Term.potion.capitalized)", geometry: geo)
+                                }
+                            }
+                            
                             if self.optionsStateManager.travelOptionActive {
                                 Button {
                                     self.optionsStateManager.travelOptionSelected(viewRouter: self.viewRouter, travelStateManager: self.travelStateManager)
@@ -85,6 +93,15 @@ struct OptionsView: View {
                                         weaponViewModel: weaponViewModel)
                                 }
                             }
+                            
+                            if self.optionsStateManager.potionActionsActive.isActive {
+                                ForEach(self.playerViewModel.potionViewModels, id: \.id) { potionViewModel in
+                                    UsePotionButton(
+                                        playerViewModel: self.playerViewModel,
+                                        potionViewModel: potionViewModel)
+                                }
+                            }
+                            
                         }
                         .padding(.leading, YonderCoreGraphics.padding)
                         .padding(.trailing, YonderCoreGraphics.padding)

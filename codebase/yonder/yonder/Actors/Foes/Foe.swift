@@ -27,7 +27,7 @@ class Foe: ActorAbstract, Named, Described {
     }
     
     func attack(_ player: Player) {
-        self.useWeaponOn(target: player, weapon: self.getWeapon())
+        self.useWeaponWhere(opposition: player, weapon: self.getWeapon())
     }
     
     func completeTurn(player: Player) {

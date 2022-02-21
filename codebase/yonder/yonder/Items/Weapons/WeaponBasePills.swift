@@ -9,7 +9,6 @@ import Foundation
 
 class DamageBasePill: WeaponBasePill {
     
-    var type: WeaponType = .damage
     private(set) var damage: Int
     private(set) var durability: Int
     
@@ -31,7 +30,6 @@ class DamageBasePill: WeaponBasePill {
 
 class HealthRestorationBasePill: WeaponBasePill {
     
-    var type: WeaponType = .healthRestoration
     private(set) var healthRestoration: Int
     private(set) var durability: Int
     
@@ -51,28 +49,8 @@ class HealthRestorationBasePill: WeaponBasePill {
     
 }
 
-class PositiveEffectBasePill: WeaponBasePill {
+class EffectBasePill: WeaponBasePill {
     
-    var type: WeaponType = .positiveEffect
-    private(set) var durability: Int
-    
-    init(durability: Int) {
-        self.durability = durability
-    }
-    
-    func setup(weapon: Weapon) {
-        weapon.setRemainingUses(to: self.durability)
-    }
-    
-    func getValue() -> Int {
-        return 0
-    }
-    
-}
-
-class NegativeEffectBasePill: WeaponBasePill {
-    
-    var type: WeaponType = .negativeEffect
     private(set) var durability: Int
     
     init(durability: Int) {

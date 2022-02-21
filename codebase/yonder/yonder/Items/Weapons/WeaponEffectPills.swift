@@ -16,8 +16,8 @@ class BurnStatusEffectEffectPill: WeaponEffectPill {
         self.tickDamage = tickDamage
     }
     
-    func apply(owner: ActorAbstract, target: ActorAbstract) {
-        target.addStatusEffect(BurnStatusEffect(damage: self.tickDamage))
+    func apply(owner: ActorAbstract, opposition: ActorAbstract) {
+        opposition.addStatusEffect(BurnStatusEffect(damage: self.tickDamage))
     }
     
     func getValue() -> Int {
