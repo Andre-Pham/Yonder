@@ -81,6 +81,9 @@ struct YonderWideButton: View {
 
 struct YonderMultilineWideButton: View {
     let text: [String]
+    var isMultiline: Bool {
+        return self.text.count > 1
+    }
     var verticalPadding: CGFloat = 13
     var alignment: YonderButtonAlignment = .center
     
@@ -95,12 +98,14 @@ struct YonderMultilineWideButton: View {
                 case .center:
                     ForEach(Array(zip(self.text.indices, self.text)), id: \.0.self) { index, text in
                         YonderText(text: text, size: index == 0 ? .buttonBody : .buttonBodySubscript)
+                            .padding(.bottom, index == 0 && self.isMultiline ? YonderCoreGraphics.buttonTitleSpacing : 0)
                     }
                 case .leading:
                     ForEach(Array(zip(self.text.indices, self.text)), id: \.0.self) { index, text in
                         HStack {
                             YonderText(text: text, size: index == 0 ? .buttonBody : .buttonBodySubscript)
                                 .padding(.leading)
+                                .padding(.bottom, index == 0 && self.isMultiline ? YonderCoreGraphics.buttonTitleSpacing : 0)
                             
                             Spacer()
                         }
@@ -112,6 +117,7 @@ struct YonderMultilineWideButton: View {
                             
                             YonderText(text: text, size: index == 0 ? .buttonBody : .buttonBodySubscript)
                                 .padding(.trailing)
+                                .padding(.bottom, index == 0 && self.isMultiline ? YonderCoreGraphics.buttonTitleSpacing : 0)
                         }
                     }
                 }

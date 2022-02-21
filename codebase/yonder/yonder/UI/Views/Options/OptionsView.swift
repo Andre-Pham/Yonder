@@ -80,15 +80,9 @@ struct OptionsView: View {
                             
                             if self.optionsStateManager.weaponActionsActive.isActive {
                                 ForEach(self.playerViewModel.weaponViewModels, id: \.id) { weaponViewModel in
-                                    YonderMultilineWideButton(
-                                        text: [
-                                            "\(weaponViewModel.name)",
-                                            "\(weaponViewModel.damage) \(Term.damage.capitalized)",
-                                            "\(weaponViewModel.remainingUses) \(Term.remainingUses.capitalized)"
-                                        ],
-                                        alignment: .leading) {
-                                            self.playerViewModel.use(weaponViewModel: weaponViewModel)
-                                    }
+                                    UseWeaponButton(
+                                        playerViewModel: self.playerViewModel,
+                                        weaponViewModel: weaponViewModel)
                                 }
                             }
                         }
