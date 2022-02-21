@@ -14,7 +14,7 @@ class HealthRestorationPercentBuff: BuffAbstract {
     init(direction: BuffDirection, duration: Int?, healthFraction: Double) {
         self.healthFraction = healthFraction
         
-        super.init(duration: duration, type: .health, direction: direction, priority: 1)
+        super.init(duration: duration, type: .health, direction: direction, priority: .second)
     }
     
     override func applyHealth(to health: Int, source: Any) -> Int? {

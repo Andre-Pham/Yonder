@@ -13,11 +13,15 @@ class BuffAbstract {
     var timeRemaining: Int
     var type: BuffType
     var direction: BuffDirection
-    // Smaller numbers are higher priority; calculations apply addition then multiplication
-    // Addition has a priority of 0, multiplication has a priority of 1
-    var priority: Int
+    var priority: BuffPriority
     
-    init(duration: Int?, type: BuffType, direction: BuffDirection, priority: Int) {
+    /// To be called by subclasses only.
+    /// - Parameters:
+    ///     - duration: How long the buff is applied for - nil for infinite duration
+    ///     - type: What stat the buff affects
+    ///     - direction: What direction the buff is applied to, for example, an outgoing damage buff increases damage dealt, but not recieved
+    ///     - priority: What order, relative to other buffs, is this buff applied
+    init(duration: Int?, type: BuffType, direction: BuffDirection, priority: BuffPriority) {
         if let duration = duration {
             self.timeRemaining = duration
         }
@@ -30,8 +34,9 @@ class BuffAbstract {
         self.priority = priority
     }
     
+    /// Indicates what stat the buff affects, and also is used as the indicator for which apply function is overwritten to have effect.
+    /// For each type, add a skeleton function in BuffAbstract to be overridden in the buff class.
     enum BuffType {
-        // For each type, add a skeleton function in BuffAbstract to be overridden in the buff class
         case damage
         case health
         case armorPoints
@@ -39,10 +44,17 @@ class BuffAbstract {
         case goldBonus
     }
     
+    /// What direction the buff is applied to, for example, an outgoing damage buff increases damage dealt, but not recieved.
     enum BuffDirection {
         case outgoing
         case incoming
         case bidirectional
+    }
+    
+    /// Addition has a priority of 0, multiplication has a priority of 1. This has an effect on the outcome due to the order of operations.
+    enum BuffPriority: Int {
+        case first = 0
+        case second = 1
     }
     
     func decrementTimeRemaining() {

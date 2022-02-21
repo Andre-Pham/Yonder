@@ -14,7 +14,7 @@ class PricePercentBuff: BuffAbstract {
     init(direction: BuffDirection, duration: Int?, priceFraction: Double) {
         self.priceFraction = priceFraction
         
-        super.init(duration: duration, type: .health, direction: direction, priority: 1)
+        super.init(duration: duration, type: .health, direction: direction, priority: .second)
     }
     
     override func applyPrice(to gold: Int) -> Int? {

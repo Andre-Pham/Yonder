@@ -14,7 +14,7 @@ class DamageBuff: BuffAbstract {
     init(direction: BuffDirection, duration: Int?, damageDifference: Int) {
         self.damageDifference = damageDifference
         
-        super.init(duration: duration, type: .damage, direction: direction, priority: 0)
+        super.init(duration: duration, type: .damage, direction: direction, priority: .first)
     }
     
     override func applyDamage(to damage: Int, source: Any) -> Int? {

@@ -16,6 +16,11 @@ class ArmorAbstractPart {
     private(set) var armorBuffs: [BuffAbstract]
     public let id = UUID()
     
+    /// To be called by subclasses only.
+    /// - Parameters:
+    ///     - type: Where the armor is worn
+    ///     - armorPoints: The 'health' of the armor
+    ///     - armorBuffs: The effects the armor gives when worn
     init(type: ArmorType, armorPoints: Int, armorBuffs: [BuffAbstract]) {
         self.type = type
         self.armorPoints = armorPoints

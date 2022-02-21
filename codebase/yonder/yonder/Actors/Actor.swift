@@ -161,7 +161,7 @@ class ActorAbstract {
     func getAllBuffsInPriority() -> [BuffAbstract] {
         let allBuffs: [BuffAbstract] = self.buffs + self.headArmor.armorBuffs + self.bodyArmor.armorBuffs + self.legsArmor.armorBuffs
         // Ascending order
-        return allBuffs.sorted(by: { $0.priority < $1.priority })
+        return allBuffs.sorted(by: { $0.priority.rawValue < $1.priority.rawValue })
     }
     
     // MARK: - Armor
