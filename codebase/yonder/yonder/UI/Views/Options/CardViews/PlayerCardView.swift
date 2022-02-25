@@ -14,17 +14,18 @@ struct PlayerCardView: View {
     var body: some View {
         CardBody(name: Term.player.capitalized) {
             CardRowView(
-                value: "\(self.playerViewModel.armorPoints)",
-                maxValue: "\(self.playerViewModel.maxArmorPoints)",
+                value: self.playerViewModel.armorPoints,
+                maxValue: self.playerViewModel.maxArmorPoints,
                 image: YonderImages.shieldIcon)
             
             CardRowView(
-                value: "\(self.playerViewModel.health)",
-                maxValue: "\(self.playerViewModel.maxHealth)",
+                value: self.playerViewModel.health,
+                maxValue: self.playerViewModel.maxHealth,
                 image: YonderImages.healthIcon)
             
             CardRowView(
-                value: "\(Term.currencySymbol)\(self.playerViewModel.gold)",
+                prefix: Term.currencySymbol,
+                value: self.playerViewModel.gold,
                 image: YonderImages.goldIcon)
         }
     }

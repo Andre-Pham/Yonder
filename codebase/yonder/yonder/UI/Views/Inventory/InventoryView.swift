@@ -32,7 +32,7 @@ struct InventoryView: View {
                                 YonderText(text: "\(Term.armorSlot(of: armorViewModel.type).capitalized): ", size: .buttonBodySubscript)
                                     .padding(.leading)
                                 
-                                YonderText(text: "\(armorViewModel.name)", size: .buttonBody)
+                                YonderText(text: armorViewModel.name, size: .buttonBody)
                                 
                                 Spacer()
                             }

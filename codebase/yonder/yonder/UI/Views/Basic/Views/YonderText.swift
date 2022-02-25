@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import MovingNumbersView // https://github.com/aunnnn/MovingNumbersView.git
 
 enum YonderTextSize {
     
@@ -27,7 +28,6 @@ enum YonderTextSize {
     case inspectSheetTitle
     case inspectSheetBody
     
-    // Also equal to height
     var value: CGFloat {
         switch self {
         case .title1: return 70
@@ -49,6 +49,14 @@ enum YonderTextSize {
         }
     }
     
+    // Only confirmed to work with main font Mx437_DOS-V_TWN16 (AKA DOS/V TWN16)
+    var height: CGFloat {
+        return self.value
+    }
+    var width: CGFloat {
+        return self.value*8/16 // 8:16 ratio
+    }
+    
 }
 
 struct YonderText: View {
@@ -61,4 +69,65 @@ struct YonderText: View {
             .font(YonderFonts.main(size: self.size.value))
             .foregroundColor(self.color)
     }
+}
+
+struct YonderNumeral: View {
+    let number: Int
+    let size: YonderTextSize
+    var color: Color = Color.Yonder.textMaxContrast
+    
+    var body: some View {
+        MovingNumbersView(
+            number: Double(self.number),
+            numberOfDecimalPlaces: 0,
+            // Work around for iOS15 bug that causes single-digit numbers with exact width to not appear
+            // https://github.com/aunnnn/MovingNumbersView/issues/3
+            // 10% extra padding isn't that noticable and fixes the issue
+            fixedWidth: (self.number < 10 && self.number > -10) ? self.size.width*(self.number < 0 ? 2 : 1)*1.1 : nil,
+            animationDuration: 0.6) { str in
+                // Builds each character
+                YonderText(text: str, size: self.size, color: self.color)
+        }
+    }
+}
+
+/// Creates a combination of text and numerals with the ordering based on the formatting provided.
+///
+/// Example:
+/// ``` format: [.text, .numeral, .text]
+///     text: ["Health: ", "%"]
+///     numbers: [500]
+/// ```
+/// Produces:
+/// ``` Health: 500% ```
+struct YonderTextAndNumeral: View {
+    let format: [YonderTextType]
+    let text: [String]
+    let numbers: [Int]
+    let size: YonderTextSize
+    var color: Color = Color.Yonder.textMaxContrast
+    
+    var body: some View {
+        var textReversed = Array(text.reversed())
+        var numbersReversed = Array(numbers.reversed())
+        HStack(spacing: 0) {
+            ForEach(self.format, id: \.self) { textType in
+                switch textType {
+                case .text:
+                    if let text = textReversed.popLast() {
+                        YonderText(text: text, size: self.size, color: self.color)
+                    }
+                case .numeral:
+                    if let num = numbersReversed.popLast() {
+                        YonderNumeral(number: num, size: self.size, color: self.color)
+                    }
+                }
+            }
+        }
+    }
+}
+
+enum YonderTextType {
+    case text
+    case numeral
 }

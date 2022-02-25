@@ -25,7 +25,11 @@ struct UsePotionButton: View {
                             
                             YonderText(text: self.potionViewModel.description, size: .buttonBodySubscript)
                             
-                            YonderText(text: "\(self.potionViewModel.remainingUses) \(self.potionViewModel.remainingUses > 1 ? Term.potions.capitalized : Term.potion.capitalized) Left", size: .buttonBodySubscript)
+                            YonderTextAndNumeral(
+                                format: [.numeral, .text],
+                                text: [" " + (self.potionViewModel.remainingUses > 1 ? Term.potions.capitalized : Term.potion.capitalized)],
+                                numbers: [self.potionViewModel.remainingUses],
+                                size: .buttonBodySubscript)
                         }
                         
                         Spacer()

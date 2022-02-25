@@ -21,6 +21,7 @@ enum YonderTerminology {
     static let foe = "hostile"
     
     static let damage = "damage"
+    static let healthRestoration = "healing"
     static let remainingUses = "remaining uses"
     static let remainingUse = "remaining use"
     static let use = "use"

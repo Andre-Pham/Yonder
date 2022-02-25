@@ -35,8 +35,9 @@ struct CardBody<Content: View>: View {
 }
 
 struct CardRowView: View {
-    var value: String
-    var maxValue: String = ""
+    var prefix: String? = nil
+    var value: Int
+    var maxValue: Int? = nil
     var image: Image? = nil
     
     var body: some View {
@@ -45,17 +46,19 @@ struct CardRowView: View {
                 YonderIcon(image: image)
             }
             
-            if self.maxValue.count > 0 {
-                HStack(alignment: .lastTextBaseline) {
-                    YonderText(text: self.value, size: .cardBody)
-                    
+            HStack(alignment: .lastTextBaseline) {
+                if let prefix = self.prefix {
+                    YonderTextAndNumeral(format: [.text, .numeral], text: [prefix], numbers: [self.value], size: .cardBody)
+                }
+                else {
+                    YonderNumeral(number: self.value, size: .cardBody)
+                }
+                
+                if let maxValue = maxValue {
                     Spacer()
                     
-                    YonderText(text: "/\(self.maxValue)", size: .cardSubscript)
+                    YonderTextAndNumeral(format: [.text, .numeral], text: ["/"], numbers: [maxValue], size: .cardSubscript)
                 }
-            }
-            else {
-                YonderText(text: self.value, size: .cardBody)
             }
         }
     }

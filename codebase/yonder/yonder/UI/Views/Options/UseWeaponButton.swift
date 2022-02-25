@@ -23,9 +23,27 @@ struct UseWeaponButton: View {
                             YonderText(text: self.weaponViewModel.name, size: .buttonBody)
                                 .padding(.bottom, YonderCoreGraphics.buttonTitleSpacing)
                             
-                            YonderText(text: "\(self.weaponViewModel.damage) \(Term.damage.capitalized)", size: .buttonBodySubscript)
+                            if self.weaponViewModel.damage > 0 {
+                                YonderTextAndNumeral(
+                                    format: [.numeral, .text],
+                                    text: [" " + Term.damage.capitalized],
+                                    numbers: [self.weaponViewModel.damage],
+                                    size: .buttonBodySubscript)
+                            }
                             
-                            YonderText(text: "\(self.weaponViewModel.remainingUses) \(self.weaponViewModel.remainingUses > 1 ? Term.remainingUses.capitalized : Term.remainingUse.capitalized)", size: .buttonBodySubscript)
+                            if self.weaponViewModel.healthRestoration > 0 {
+                                YonderTextAndNumeral(
+                                    format: [.numeral, .text],
+                                    text: [" " + Term.healthRestoration.capitalized],
+                                    numbers: [self.weaponViewModel.healthRestoration],
+                                    size: .buttonBodySubscript)
+                            }
+                            
+                            YonderTextAndNumeral(
+                                format: [.numeral, .text],
+                                text: [" " + (self.weaponViewModel.remainingUses > 1 ? Term.remainingUses.capitalized : Term.remainingUse.capitalized)],
+                                numbers: [self.weaponViewModel.remainingUses],
+                                size: .buttonBodySubscript)
                         }
                         
                         Spacer()
