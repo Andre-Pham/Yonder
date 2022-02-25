@@ -54,7 +54,6 @@ struct OptionsView: View {
                             if optionsStateManager.weaponOptionActive {
                                 Button {
                                     self.optionsStateManager.weaponOptionSelected()
-                                    self.playerViewModel.equipArmor(Armors.newTestBodyArmor())
                                 } label: {
                                     OptionView(title: "Select \(Term.weapon.capitalized)", geometry: geo)
                                 }
