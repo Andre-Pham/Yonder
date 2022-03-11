@@ -12,6 +12,7 @@ struct UseWeaponButton: View {
     @ObservedObject var weaponViewModel: WeaponViewModel
     @State private var useButtonActive = false
     
+    // Note: animation needs to be disabled when "use" isn't active, otherwise whenever the view updates, all buttons re-animate to their value
     var body: some View {
         ZStack(alignment: .bottom) {
             YonderWideButtonBody {
@@ -28,7 +29,8 @@ struct UseWeaponButton: View {
                                     format: [.numeral, .text],
                                     text: [" " + Term.damage.capitalized],
                                     numbers: [self.weaponViewModel.damage],
-                                    size: .buttonBodySubscript)
+                                    size: .buttonBodySubscript,
+                                    animationIsActive: self.useButtonActive)
                             }
                             
                             if self.weaponViewModel.healthRestoration > 0 {
@@ -36,14 +38,16 @@ struct UseWeaponButton: View {
                                     format: [.numeral, .text],
                                     text: [" " + Term.healthRestoration.capitalized],
                                     numbers: [self.weaponViewModel.healthRestoration],
-                                    size: .buttonBodySubscript)
+                                    size: .buttonBodySubscript,
+                                    animationIsActive: self.useButtonActive)
                             }
                             
                             YonderTextAndNumeral(
                                 format: [.numeral, .text],
                                 text: [" " + (self.weaponViewModel.remainingUses > 1 ? Term.remainingUses.capitalized : Term.remainingUse.capitalized)],
                                 numbers: [self.weaponViewModel.remainingUses],
-                                size: .buttonBodySubscript)
+                                size: .buttonBodySubscript,
+                                animationIsActive: self.useButtonActive)
                         }
                         
                         Spacer()

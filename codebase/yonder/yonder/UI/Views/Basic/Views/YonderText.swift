@@ -75,6 +75,7 @@ struct YonderNumeral: View {
     let number: Int
     let size: YonderTextSize
     var color: Color = Color.Yonder.textMaxContrast
+    var animationIsActive: Bool = true
     
     var body: some View {
         MovingNumbersView(
@@ -82,9 +83,9 @@ struct YonderNumeral: View {
             numberOfDecimalPlaces: 0,
             // Work around for iOS15 bug that causes single-digit numbers with exact width to not appear
             // https://github.com/aunnnn/MovingNumbersView/issues/3
-            // 10% extra padding isn't that noticable and fixes the issue
-            fixedWidth: (self.number < 10 && self.number > -10) ? self.size.width*(self.number < 0 ? 2 : 1)*1.1 : nil,
-            animationDuration: 0.6) { str in
+            // 15% extra padding isn't that noticable and fixes the issue
+            fixedWidth: (self.number < 10 && self.number > -10) ? self.size.width*(self.number < 0 ? 2 : 1)*1.15 : nil,
+            animationDuration: self.animationIsActive ? 0.6 : 0.0) { str in
                 // Builds each character
                 YonderText(text: str, size: self.size, color: self.color)
         }
@@ -106,6 +107,7 @@ struct YonderTextAndNumeral: View {
     let numbers: [Int]
     let size: YonderTextSize
     var color: Color = Color.Yonder.textMaxContrast
+    var animationIsActive: Bool = true
     
     var body: some View {
         var textReversed = Array(text.reversed())
@@ -119,7 +121,7 @@ struct YonderTextAndNumeral: View {
                     }
                 case .numeral:
                     if let num = numbersReversed.popLast() {
-                        YonderNumeral(number: num, size: self.size, color: self.color)
+                        YonderNumeral(number: num, size: self.size, color: self.color, animationIsActive: self.animationIsActive)
                     }
                 }
             }

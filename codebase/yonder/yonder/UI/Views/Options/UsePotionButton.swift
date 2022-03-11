@@ -12,6 +12,7 @@ struct UsePotionButton: View {
     @ObservedObject var potionViewModel: PotionViewModel
     @State private var useButtonActive = false
     
+    // Note: animation needs to be disabled when "use" isn't active, otherwise whenever the view updates, all buttons re-animate to their value
     var body: some View {
         ZStack(alignment: .bottom) {
             YonderWideButtonBody {
@@ -29,7 +30,8 @@ struct UsePotionButton: View {
                                 format: [.numeral, .text],
                                 text: [" " + (self.potionViewModel.remainingUses > 1 ? Term.potions.capitalized : Term.potion.capitalized)],
                                 numbers: [self.potionViewModel.remainingUses],
-                                size: .buttonBodySubscript)
+                                size: .buttonBodySubscript,
+                                animationIsActive: self.useButtonActive)
                         }
                         
                         Spacer()
