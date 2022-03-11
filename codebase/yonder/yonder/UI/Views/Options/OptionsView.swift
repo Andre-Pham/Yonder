@@ -55,7 +55,7 @@ struct OptionsView: View {
                                 Button {
                                     self.optionsStateManager.weaponOptionSelected()
                                 } label: {
-                                    OptionView(title: "Select \(Term.weapon.capitalized)", geometry: geo)
+                                    OptionView(title: "Select \(Term.weapon.capitalized)", geometry: geo, image: YonderImages.weaponOptionIcon)
                                 }
                             }
                             
@@ -63,7 +63,7 @@ struct OptionsView: View {
                                 Button {
                                     self.optionsStateManager.potionOptionSelected()
                                 } label: {
-                                    OptionView(title: "Select \(Term.potion.capitalized)", geometry: geo)
+                                    OptionView(title: "Select \(Term.potion.capitalized)", geometry: geo, image: YonderImages.missingIcon)
                                 }
                             }
                             
@@ -71,7 +71,7 @@ struct OptionsView: View {
                                 Button {
                                     self.optionsStateManager.travelOptionSelected(viewRouter: self.viewRouter, travelStateManager: self.travelStateManager)
                                 } label: {
-                                    OptionView(title: Term.travel.capitalized, geometry: geo)
+                                    OptionView(title: Term.travel.capitalized, geometry: geo, image: YonderImages.missingIcon)
                                 }
                             }
                         }

@@ -10,13 +10,22 @@ import SwiftUI
 struct OptionView: View {
     let title: String
     let geometry: GeometryProxy
+    let image: Image
+    var width: CGFloat {
+        geometry.size.width/3 - YonderCoreGraphics.padding*4/3
+    }
+    var height: CGFloat {
+        geometry.size.width/3 - YonderCoreGraphics.padding*2
+    }
     
     var body: some View {
         VStack {
-            YonderText(text: self.title, size: .buttonBody)
-            // Icon would go underneith
+            YonderIcon(image: self.image, sideLength: .large)
+            
+            YonderText(text: self.title, size: .optionBody)
         }
-        .frame(width: geometry.size.width/3 - YonderCoreGraphics.padding*4/3, height: geometry.size.width/3 - YonderCoreGraphics.padding*2)
+        .padding(.horizontal)
+        .frame(width: self.width, height: self.height)
         .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
     }
 }

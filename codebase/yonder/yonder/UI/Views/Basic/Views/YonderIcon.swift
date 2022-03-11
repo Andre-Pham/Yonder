@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 enum YonderIconSize: CGFloat {
+    case large = 38
     case standard = 24
     case inspectSheet = 18
 }

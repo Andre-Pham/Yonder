@@ -28,6 +28,8 @@ enum YonderTextSize {
     case inspectSheetTitle
     case inspectSheetBody
     
+    case optionBody
+    
     var value: CGFloat {
         switch self {
         case .title1: return 70
@@ -46,6 +48,8 @@ enum YonderTextSize {
         
         case .inspectSheetTitle: return 28
         case .inspectSheetBody: return 20
+            
+        case .optionBody: return 16
         }
     }
     
@@ -68,6 +72,7 @@ struct YonderText: View {
         Text(self.text)
             .font(YonderFonts.main(size: self.size.value))
             .foregroundColor(self.color)
+            .fixedSize(horizontal: false, vertical: true) // Text wraps instead of being cut off
     }
 }
 
