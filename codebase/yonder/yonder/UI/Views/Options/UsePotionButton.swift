@@ -47,7 +47,7 @@ struct UsePotionButton: View {
                 }
             }
             if self.useButtonActive {
-                YonderWideButton(text: Term.quickUse.capitalized) {
+                YonderWideButton(text: Term.instantUse.capitalized) {
                     self.playerViewModel.use(potionViewModel: self.potionViewModel)
                 }
                 .padding(.horizontal, YonderCoreGraphics.padding)

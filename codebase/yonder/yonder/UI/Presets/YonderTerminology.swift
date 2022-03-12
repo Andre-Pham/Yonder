@@ -25,7 +25,7 @@ enum YonderTerminology {
     static let remainingUses = "remaining uses"
     static let remainingUse = "remaining use"
     static let use = "use"
-    static let quickUse = "quick use"
+    static let instantUse = "instant use"
     
     static let armor = "armor"
     static let headArmorSlot = "head"
