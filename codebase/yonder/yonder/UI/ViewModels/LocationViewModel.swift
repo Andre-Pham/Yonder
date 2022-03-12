@@ -142,7 +142,7 @@ class LocationViewModel: ObservableObject {
         case .enhancer:
             return "Enhancer"
         case .friendly:
-            return "Wanderer"
+            return "Trader"
         case .hostile:
             return "Hostile"
         case .quest:
