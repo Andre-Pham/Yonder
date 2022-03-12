@@ -11,11 +11,22 @@ import Combine
 class FriendlyViewModel: InteractorViewModel {
     
     @Published private(set) var offers: [OfferViewModel]
+    @Published private(set) var offersRemaining: Int
     
     init(_ friendly: Friendly) {
+        // Set properties to match Friendly
+        self.offersRemaining = friendly.offersRemaining
+        
+        // Set other view models
         self.offers = friendly.offers.map { OfferViewModel($0) }
         
         super.init(friendly)
+        
+        // Add Subscribers
+        
+        friendly.$offersAccepted.sink(receiveValue: { _ in
+            self.offersRemaining = friendly.offersRemaining
+        }).store(in: &self.subscriptions)
     }
     
     func acceptOffer(_ offerViewModel: OfferViewModel, player: PlayerViewModel) {

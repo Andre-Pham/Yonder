@@ -10,8 +10,11 @@ import Foundation
 class Friendly: InteractorAbstract {
     
     private(set) var offers: [Offer]
-    private(set) var offersAccepted = 0 // How many offers has the user already accepted
+    @DidSetPublished private(set) var offersAccepted = 0 // How many offers has the user already accepted
     private(set) var offerLimit: Int // How many offers can be accepted until the user must stop
+    var offersRemaining: Int {
+        return self.offerLimit - offersAccepted
+    }
     
     init(name: String = "placeholderName", description: String = "placerholderDescription", offers: [Offer], offerLimit: Int) {
         self.offers = offers
@@ -31,7 +34,7 @@ class Friendly: InteractorAbstract {
         offer.acceptOffer(player: player)
         self.removeOffer(offer)
         self.offersAccepted += 1
-        if self.offersAccepted == self.offerLimit {
+        if self.offersRemaining == 0 {
             self.offers.removeAll()
         }
     }
