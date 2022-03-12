@@ -30,7 +30,10 @@ class LocationViewModel: ObservableObject {
         return self.location is BridgeLocation
     }
     var playerCanEngage: Bool {
-        return self.location is FoeLocation && !(self.location as! FoeLocation).foe.isDead
+        if let foeLocation = self.location as? FoeLocation {
+            return foeLocation.foe.isDead
+        }
+        return false
     }
     
     init(_ location: LocationAbstract) {

@@ -47,6 +47,9 @@ class PlayerViewModel: ObservableObject {
     var canEngage: Bool {
         return self.locationViewModel.playerCanEngage
     }
+    var canTravel: Bool {
+        return !self.canEngage || self.canEngage && self.self.locationViewModel.getFoeViewModel()?.isDead ?? true
+    }
     
     init(_ player: Player) {
         self.player = player

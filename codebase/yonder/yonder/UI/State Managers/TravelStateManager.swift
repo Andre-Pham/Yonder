@@ -10,8 +10,15 @@ import SwiftUI
 
 class TravelStateManager: ObservableObject {
     
+    private let playerViewModel: PlayerViewModel
     @Published private(set) var travellingActive = false
-    @Published private(set) var travellingAllowed = true
+    private var travellingAllowed: Bool {
+        return self.playerViewModel.canTravel
+    }
+    
+    init(playerViewModel: PlayerViewModel) {
+        self.playerViewModel = playerViewModel
+    }
     
     func toggleTravellingActiveStateDisabled() -> Bool {
         return !self.travellingActive && !self.travellingAllowed

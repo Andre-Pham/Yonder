@@ -22,6 +22,7 @@ class OptionsStateManager: ObservableObject {
     }
     
     private let playerViewModel: PlayerViewModel
+    private var foeViewModel: FoeViewModel?
     private var subscriptions: Set<AnyCancellable> = []
     
     @Published private(set) var showOptions = true
@@ -31,15 +32,22 @@ class OptionsStateManager: ObservableObject {
         return "[\(self.optionHeaderText)]"
     }
     
+    // Weapon option
     var weaponOptionActive: Bool {
         return self.playerViewModel.canEngage
     }
     @Published var weaponActionsActive = Status(false)
+    
+    // Potion option
     var potionOptionActive: Bool {
         return self.playerViewModel.canEngage
     }
     @Published var potionActionsActive = Status(false)
-    @Published private(set) var travelOptionActive = true
+    
+    // Travel option
+    var travelOptionActive: Bool {
+        return self.playerViewModel.canTravel
+    }
     
     // Whenever an action is set to showing, its reference is passed here
     var activeActions = Status(false)
@@ -51,6 +59,7 @@ class OptionsStateManager: ObservableObject {
         
         // If there is a foe, and the foe dies, return to Options view
         self.playerViewModel.$locationViewModel.sink(receiveValue: { newValue in
+            self.foeViewModel = newValue.getFoeViewModel()
             if let foeViewModel = newValue.getFoeViewModel() {
                 foeViewModel.$isDead.sink(receiveValue: { newValue in
                     if newValue {
