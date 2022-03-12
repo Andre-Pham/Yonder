@@ -32,7 +32,7 @@ class Friendly: InteractorAbstract {
         self.removeOffer(offer)
         self.offersAccepted += 1
         if self.offersAccepted == self.offerLimit {
-            self.offers = []
+            self.offers.removeAll()
         }
     }
     

@@ -35,6 +35,12 @@ class LocationViewModel: ObservableObject {
         }
         return false
     }
+    var playerHasOffers: Bool {
+        if let offerLocation = self.location as? FriendlyLocation {
+            return !offerLocation.friendly.offers.isEmpty
+        }
+        return false
+    }
     
     init(_ location: LocationAbstract) {
         self.location = location

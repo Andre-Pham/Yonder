@@ -57,5 +57,7 @@ enum YonderTerminology {
     static let potion = "potion"
     static let accessories = "accessories"
     static let accessory = "accessory"
+    static let offer = "offer"
+    static let offers = "offers"
     
 }

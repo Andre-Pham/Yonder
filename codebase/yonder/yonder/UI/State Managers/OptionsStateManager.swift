@@ -22,7 +22,6 @@ class OptionsStateManager: ObservableObject {
     }
     
     private let playerViewModel: PlayerViewModel
-    private var foeViewModel: FoeViewModel?
     private var subscriptions: Set<AnyCancellable> = []
     
     @Published private(set) var showOptions = true
@@ -49,6 +48,12 @@ class OptionsStateManager: ObservableObject {
         return self.playerViewModel.canTravel
     }
     
+    // Offer option
+    var offerOptionActive: Bool {
+        return self.playerViewModel.hasOffers
+    }
+    @Published var offerActionsActive = Status(false)
+    
     // Whenever an action is set to showing, its reference is passed here
     var activeActions = Status(false)
     
@@ -59,7 +64,6 @@ class OptionsStateManager: ObservableObject {
         
         // If there is a foe, and the foe dies, return to Options view
         self.playerViewModel.$locationViewModel.sink(receiveValue: { newValue in
-            self.foeViewModel = newValue.getFoeViewModel()
             if let foeViewModel = newValue.getFoeViewModel() {
                 foeViewModel.$isDead.sink(receiveValue: { newValue in
                     if newValue {
@@ -88,6 +92,13 @@ class OptionsStateManager: ObservableObject {
         self.showOptions = false
         self.potionActionsActive = Status(true)
         self.activeActions = self.potionActionsActive
+    }
+    
+    func offerOptionSelected() {
+        self.optionHeaderText = "Accept Offers"
+        self.showOptions = false
+        self.offerActionsActive = Status(true)
+        self.activeActions = self.offerActionsActive
     }
     
     func travelOptionSelected(viewRouter: ViewRouter, travelStateManager: TravelStateManager) {

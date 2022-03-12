@@ -9,11 +9,16 @@ import Foundation
 
 class PurchaseWeaponOffer: Offer {
     
+    public let name: String
+    public let description: String
+    
     public let id: UUID = UUID()
     public let weapon: Weapon
     public let price: Int
     
-    init(weapon: Weapon, price: Int) {
+    init(name: String = "placeholderName", description: String = "placeholderDescription", weapon: Weapon, price: Int) {
+        self.name = name
+        self.description = description
         self.weapon = weapon
         self.price = price
     }

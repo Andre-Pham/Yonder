@@ -67,6 +67,14 @@ struct OptionsView: View {
                                 }
                             }
                             
+                            if self.optionsStateManager.offerOptionActive {
+                                Button {
+                                    self.optionsStateManager.offerOptionSelected()
+                                } label: {
+                                    OptionView(title: "View \(Term.offers.capitalized)", geometry: geo, image: YonderImages.missingIcon)
+                                }
+                            }
+                            
                             if self.optionsStateManager.travelOptionActive {
                                 Button {
                                     self.optionsStateManager.travelOptionSelected(viewRouter: self.viewRouter, travelStateManager: self.travelStateManager)
@@ -101,6 +109,15 @@ struct OptionsView: View {
                                 }
                             }
                             
+                            if self.optionsStateManager.offerActionsActive.isActive {
+                                if let friendlyViewModel = self.playerViewModel.locationViewModel.getInteractorViewModel() as? FriendlyViewModel {
+                                    ForEach(friendlyViewModel.offers, id: \.id) { offer in
+                                        YonderMultilineWideButton(text: [offer.name, offer.description]) {
+                                            friendlyViewModel.acceptOffer(offer, player: self.playerViewModel)
+                                        }
+                                    }
+                                }
+                            }
                         }
                         .padding(.leading, YonderCoreGraphics.padding)
                         .padding(.trailing, YonderCoreGraphics.padding)

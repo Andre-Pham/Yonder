@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Offer {
+protocol Offer: Named, Described {
     
     var id: UUID { get }
     

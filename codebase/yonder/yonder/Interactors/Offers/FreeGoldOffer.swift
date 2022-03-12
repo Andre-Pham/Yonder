@@ -9,10 +9,15 @@ import Foundation
 
 class FreeGoldOffer: Offer {
     
+    public let name: String
+    public let description: String
+    
     public let id: UUID = UUID()
     public let goldAmount: Int
     
-    init(goldAmount: Int) {
+    init(name: String = "placeholderName", description: String = "placeholderDescription", goldAmount: Int) {
+        self.name = name
+        self.description = description
         self.goldAmount = goldAmount
     }
     
