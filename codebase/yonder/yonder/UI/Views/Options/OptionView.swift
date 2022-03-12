@@ -19,10 +19,18 @@ struct OptionView: View {
     }
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             YonderIcon(image: self.image, sideLength: .large)
+                .frame(height: height/2, alignment: .bottom)
             
-            YonderText(text: self.title, size: .optionBody)
+            VStack {
+                Spacer()
+                
+                YonderText(text: self.title, size: .optionBody)
+                
+                Spacer()
+                Spacer()
+            }
         }
         .padding(.horizontal)
         .frame(width: self.width, height: self.height)
