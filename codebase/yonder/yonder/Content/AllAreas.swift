@@ -14,6 +14,8 @@ let AREA_POOLS_STAGE_ORDERED: [[AreaPool]] = [
         
         AreaPool(
             areaName: "Overgrown Ironbark",
+            areaDescription: "placeholderDescription",
+            areaImage: YonderImages.placeholderImage,
             hostileLocations: [
                 HostileLocation(foe: Foes.newTestFoe()),
                 HostileLocation(foe: Foes.newTestFoe()),
@@ -72,6 +74,8 @@ let AREA_POOLS_STAGE_ORDERED: [[AreaPool]] = [
         
         AreaPool(
             areaName: "Overgrown Ironbark 2",
+            areaDescription: "placeholderDescription",
+            areaImage: YonderImages.placeholderImage,
             hostileLocations: [
                 HostileLocation(foe: Foes.newTestFoe()),
                 HostileLocation(foe: Foes.newTestFoe()),
@@ -135,6 +139,8 @@ let AREA_POOLS_STAGE_ORDERED: [[AreaPool]] = [
         
         AreaPool(
             areaName: "Glacier Rifts",
+            areaDescription: "placeholderDescription",
+            areaImage: YonderImages.placeholderImage,
             hostileLocations: [
                 HostileLocation(foe: Foes.newTestFoe()),
                 HostileLocation(foe: Foes.newTestFoe()),
@@ -193,6 +199,8 @@ let AREA_POOLS_STAGE_ORDERED: [[AreaPool]] = [
         
         AreaPool(
             areaName: "Glacier Rifts 2",
+            areaDescription: "placeholderDescription",
+            areaImage: YonderImages.placeholderImage,
             hostileLocations: [
                 HostileLocation(foe: Foes.newTestFoe()),
                 HostileLocation(foe: Foes.newTestFoe()),

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 // Pool of Locations to create an Area
 class AreaPool {
@@ -20,6 +21,8 @@ class AreaPool {
     }
     
     public let areaName: String
+    public let areaDescription: String
+    public let areaImage: Image
     public let id = UUID()
     private var hostileLocations: LocationCollection
     private var challengeHostileLocations: LocationCollection
@@ -28,8 +31,10 @@ class AreaPool {
     private var restorerLocations: LocationCollection
     private var friendlyLocations: LocationCollection
     
-    init(areaName: String, hostileLocations: [HostileLocation], challengeHostileLocations: [ChallengeHostileLocation], shopLocations: [ShopLocation], enhancerLocations: [EnhancerLocation], restorerLocations: [RestorerLocation], friendlyLocations: [FriendlyLocation]) {
+    init(areaName: String, areaDescription: String, areaImage: Image, hostileLocations: [HostileLocation], challengeHostileLocations: [ChallengeHostileLocation], shopLocations: [ShopLocation], enhancerLocations: [EnhancerLocation], restorerLocations: [RestorerLocation], friendlyLocations: [FriendlyLocation]) {
         self.areaName = areaName
+        self.areaDescription = areaDescription
+        self.areaImage = areaImage
         self.hostileLocations = LocationCollection(hostileLocations)
         self.challengeHostileLocations = LocationCollection(challengeHostileLocations)
         self.shopLocations = LocationCollection(shopLocations)

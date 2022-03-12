@@ -93,7 +93,7 @@ enum Generators {
             }
         }
         
-        return Area(arrangement: arrangement, locations: locations)
+        return Area(arrangement: arrangement, locations: locations, name: areaPool.areaName, description: areaPool.areaDescription, image: areaPool.areaImage)
     }
     
 }
