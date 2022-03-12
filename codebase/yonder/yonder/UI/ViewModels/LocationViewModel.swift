@@ -31,7 +31,7 @@ class LocationViewModel: ObservableObject {
     }
     var playerCanEngage: Bool {
         if let foeLocation = self.location as? FoeLocation {
-            return foeLocation.foe.isDead
+            return !foeLocation.foe.isDead
         }
         return false
     }
