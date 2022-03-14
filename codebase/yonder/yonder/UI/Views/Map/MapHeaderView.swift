@@ -28,8 +28,8 @@ struct MapHeaderView: View {
             YonderWideButton(text: self.travelStateManager.travellingActive ? "Done" : Term.travel.capitalized) {
                 self.travelStateManager.toggleTravellingActiveState()
             }
-            .disabled(self.travelStateManager.toggleTravellingActiveStateDisabled())
-            .opacity(self.travelStateManager.toggleTravellingActiveStateDisabled() ? YonderCoreGraphics.disabledButtonOpacity : 1)
+            .disabled(!self.travelStateManager.travellingAllowed)
+            .opacity(self.travelStateManager.travellingAllowed ? 1 : YonderCoreGraphics.disabledButtonOpacity)
             
             YonderSquareButton(text: "i") {
                 // Will expand with matchGeometryEffect to show legend

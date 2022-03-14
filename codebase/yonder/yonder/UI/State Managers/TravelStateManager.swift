@@ -7,25 +7,26 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 class TravelStateManager: ObservableObject {
     
     private let playerViewModel: PlayerViewModel
+    private var subscriptions: Set<AnyCancellable> = []
     @Published private(set) var travellingActive = false
-    private var travellingAllowed: Bool {
+    var travellingAllowed: Bool {
         return self.playerViewModel.canTravel
     }
     
     init(playerViewModel: PlayerViewModel) {
         self.playerViewModel = playerViewModel
-    }
-    
-    func toggleTravellingActiveStateDisabled() -> Bool {
-        return !self.travellingActive && !self.travellingAllowed
+        
+        // Updates travel options reactively to player
+        self.playerViewModel.objectWillChange.sink(receiveValue: { _ in self.objectWillChange.send() }).store(in: &self.subscriptions)
     }
     
     func toggleTravellingActiveState() {
-        if !self.toggleTravellingActiveStateDisabled() {
+        if self.travellingAllowed {
             self.travellingActive.toggle()
         }
     }
