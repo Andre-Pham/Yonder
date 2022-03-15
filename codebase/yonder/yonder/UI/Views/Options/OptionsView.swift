@@ -75,6 +75,14 @@ struct OptionsView: View {
                                 }
                             }
                             
+                            if self.optionsStateManager.purchaseRestorationOptionActive {
+                                Button {
+                                    self.optionsStateManager.purchaseRestorationOptionSelected()
+                                } label: {
+                                    OptionView(title: "Purchase \(Term.restoration.capitalized)", geometry: geo, image: YonderImages.missingIcon)
+                                }
+                            }
+                            
                             if self.optionsStateManager.travelOptionActive {
                                 Button {
                                     self.optionsStateManager.travelOptionSelected(viewRouter: self.viewRouter, travelStateManager: self.travelStateManager)
@@ -115,6 +123,14 @@ struct OptionsView: View {
                                         YonderMultilineWideButton(text: [offer.name, offer.description]) {
                                             friendlyViewModel.acceptOffer(offer, player: self.playerViewModel)
                                         }
+                                    }
+                                }
+                            }
+                            
+                            if self.optionsStateManager.purchaseRestorationActionsActive.isActive {
+                                if let restorerViewModel = self.playerViewModel.locationViewModel.getInteractorViewModel() as? RestorerViewModel {
+                                    ForEach(restorerViewModel.options, id: \.id) { option in
+                                        PurchaseRestorationButton(playerViewModel: self.playerViewModel, restorationOptionViewModel: option)
                                     }
                                 }
                             }

@@ -23,7 +23,7 @@ struct PlayerCardAndSheetView: View {
                 YonderText(text: "Your \(Term.stats.capitalized)", size: .inspectSheetTitle)
                     
                 VStack(alignment: .leading, spacing: 6) {
-                    StatView(title: Term.armorPoints.capitalized, value: self.playerViewModel.armorPoints, maxValue: self.playerViewModel.maxArmorPoints, image: YonderImages.shieldIcon)
+                    StatView(title: Term.armorPoints.capitalized, value: self.playerViewModel.armorPoints, maxValue: self.playerViewModel.maxArmorPoints, image: YonderImages.armorPointsIcon)
                     
                     StatView(title: Term.health.capitalized, value: self.playerViewModel.health, maxValue: self.playerViewModel.maxHealth, image: YonderImages.healthIcon)
                     

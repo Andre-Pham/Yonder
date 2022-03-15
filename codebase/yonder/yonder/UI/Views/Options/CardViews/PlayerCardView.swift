@@ -16,7 +16,7 @@ struct PlayerCardView: View {
             CardRowView(
                 value: self.playerViewModel.armorPoints,
                 maxValue: self.playerViewModel.maxArmorPoints,
-                image: YonderImages.shieldIcon)
+                image: YonderImages.armorPointsIcon)
             
             CardRowView(
                 value: self.playerViewModel.health,

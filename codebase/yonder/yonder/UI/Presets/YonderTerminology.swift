@@ -22,10 +22,16 @@ enum YonderTerminology {
     
     static let damage = "damage"
     static let healthRestoration = "healing"
+    static let healthRestore = "heal"
+    static let armorPointsRestoration = "repairing"
+    static let armorPointsRestore = "repair"
     static let remainingUses = "remaining uses"
     static let remainingUse = "remaining use"
     static let use = "use"
     static let instantUse = "instant use"
+    static let restoration = "mending"
+    static let restore = "restore"
+    static let purchase = "purchase"
     
     static let armor = "armor"
     static let headArmorSlot = "head"

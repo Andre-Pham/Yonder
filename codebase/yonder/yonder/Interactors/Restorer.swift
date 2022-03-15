@@ -9,16 +9,11 @@ import Foundation
 
 class Restorer: InteractorAbstract {
     
-    public let options: [RestoreOptions]
+    public let options: [RestoreOption]
     public let pricePerHealth: Int
     public let pricePerArmorPoint: Int
     
-    enum RestoreOptions {
-        case health
-        case armorPoints
-    }
-    
-    init(name: String = "placeholderName", description: String = "placerholderDescription", options: [RestoreOptions], pricePerHealth: Int = 0, pricePerArmorPoint: Int = 0) {
+    init(name: String = "placeholderName", description: String = "placerholderDescription", options: [RestoreOption], pricePerHealth: Int = 0, pricePerArmorPoint: Int = 0) {
         self.options = options
         self.pricePerHealth = pricePerHealth
         self.pricePerArmorPoint = pricePerArmorPoint
@@ -48,4 +43,9 @@ class Restorer: InteractorAbstract {
         purchaser.restoreArmorPointsAdjusted(sourceOwner: Proxies.NO_ACTOR, using: Proxies.NO_ITEM, for: amountPurchased)
     }
     
+}
+
+enum RestoreOption {
+    case health
+    case armorPoints
 }

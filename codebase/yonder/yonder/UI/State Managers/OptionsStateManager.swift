@@ -54,6 +54,12 @@ class OptionsStateManager: ObservableObject {
     }
     @Published var offerActionsActive = Status(false)
     
+    // Purchase restoration option
+    var purchaseRestorationOptionActive: Bool {
+        return self.playerViewModel.canPurchaseRestoration
+    }
+    @Published var purchaseRestorationActionsActive = Status(false)
+    
     // Whenever an action is set to showing, its reference is passed here
     var activeActions = Status(false)
     
@@ -99,6 +105,13 @@ class OptionsStateManager: ObservableObject {
         self.showOptions = false
         self.offerActionsActive = Status(true)
         self.activeActions = self.offerActionsActive
+    }
+    
+    func purchaseRestorationOptionSelected() {
+        self.optionHeaderText = "Purchase \(Term.restoration.capitalized)"
+        self.showOptions = false
+        self.purchaseRestorationActionsActive = Status(true)
+        self.activeActions = self.purchaseRestorationActionsActive
     }
     
     func travelOptionSelected(viewRouter: ViewRouter, travelStateManager: TravelStateManager) {

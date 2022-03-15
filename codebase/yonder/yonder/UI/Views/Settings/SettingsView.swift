@@ -51,6 +51,14 @@ struct SettingsView: View {
             .background(Color.red)
             .foregroundColor(.white)
             .padding()
+            
+            Button("Gold") {
+                gameManager.playerVM.player.modifyGold(by: 200)
+            }
+            .padding()
+            .background(Color.red)
+            .foregroundColor(.white)
+            .padding()
         }
     }
 }

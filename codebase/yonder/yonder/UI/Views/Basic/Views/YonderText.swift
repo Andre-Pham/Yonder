@@ -138,3 +138,40 @@ enum YonderTextType {
     case text
     case numeral
 }
+
+struct YonderIconTextPair: View {
+    let image: Image
+    let text: String
+    let size: YonderTextSize
+    var color: Color = Color.Yonder.textMaxContrast
+    
+    var body: some View {
+        HStack {
+            YonderIcon(image: self.image)
+            
+            YonderText(text: self.text, size: self.size, color: self.color)
+        }
+    }
+}
+
+struct YonderIconNumeralPair: View {
+    var prefix: String = ""
+    let image: Image
+    let numeral: Int
+    let size: YonderTextSize
+    var color: Color = Color.Yonder.textMaxContrast
+    var animationIsActive: Bool = true
+    
+    var body: some View {
+        HStack {
+            YonderIcon(image: self.image)
+            
+            if prefix.count > 0 {
+                YonderTextAndNumeral(format: [.text, .numeral], text: [self.prefix], numbers: [self.numeral], size: self.size, color: self.color, animationIsActive: self.animationIsActive)
+            }
+            else {
+                YonderNumeral(number: self.numeral, size: self.size, color: self.color, animationIsActive: self.animationIsActive)
+            }
+        }
+    }
+}

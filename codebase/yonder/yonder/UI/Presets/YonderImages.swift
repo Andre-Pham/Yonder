@@ -24,7 +24,7 @@ enum YonderImages {
     // MARK: - Stat Icons
     
     static let healthIcon = Image("Heart")
-    static let shieldIcon = Image("Shield")
+    static let armorPointsIcon = Image("Shield")
     static let goldIcon = Image("Coin")
     static let foeDamageIcon = Image("ClawMarks")
     static let itemDamageIcon = Image("StrikingBlade")

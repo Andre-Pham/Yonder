@@ -41,6 +41,12 @@ class LocationViewModel: ObservableObject {
         }
         return false
     }
+    var playerCanPurchaseRestoration: Bool {
+        if let restoreLocation = self.location as? RestorerLocation {
+            return !restoreLocation.restorer.options.isEmpty
+        }
+        return false
+    }
     
     init(_ location: LocationAbstract) {
         self.location = location
@@ -148,7 +154,7 @@ class LocationViewModel: ObservableObject {
         case .quest:
             return "Quest"
         case .restorer:
-            return "Restorer"
+            return "Mender"
         case .shop:
             return "Shop"
         case .bridge:
