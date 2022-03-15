@@ -48,4 +48,11 @@ class Restorer: InteractorAbstract {
 enum RestoreOption {
     case health
     case armorPoints
+    
+    var id: UUID {
+        switch self {
+        case .health: return UUID(uuidString: "536F97B9-2C1C-493C-BE6E-759AFCE2D2C5")!
+        case .armorPoints: return UUID(uuidString: "9B8E8B99-8687-4235-BC05-75E9136B551D")!
+        }
+    }
 }

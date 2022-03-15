@@ -24,7 +24,7 @@ struct PurchaseRestorationButton: View {
                             HStack {
                                 YonderText(text: "\(Term.restore.capitalized):", size: .buttonBody)
                                 
-                                YonderIconNumeralPair(image: self.restorationOptionViewModel.getImage(), numeral: self.baseRestorationAmount, size: .buttonBody, animationIsActive: false)
+                                YonderIconTextPair(image: self.restorationOptionViewModel.getImage(), text: "\(self.baseRestorationAmount)", size: .buttonBody)
                                 
                                 Spacer()
                                 

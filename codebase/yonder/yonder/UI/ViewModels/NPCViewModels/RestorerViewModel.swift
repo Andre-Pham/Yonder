@@ -27,12 +27,13 @@ class RestoreOptionViewModel: ObservableObject {
     
     private let restoreOption: RestoreOption
     private let restorerViewModel: RestorerViewModel
-    //public let id = UUID()
     private(set) var id: UUID
     
     init(restoreOption: RestoreOption, restorerViewModel: RestorerViewModel) {
         self.restoreOption = restoreOption
         self.restorerViewModel = restorerViewModel
+        
+        self.id = restoreOption.id
     }
     
     func getImage() -> Image {
