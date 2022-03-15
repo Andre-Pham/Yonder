@@ -51,6 +51,8 @@ struct PurchaseRestorationButton: View {
                 }
                 .padding(.horizontal, YonderCoreGraphics.padding)
                 .padding(.bottom, YonderCoreGraphics.padding)
+                .disabled(self.restorationOptionViewModel.restoreIsDisabled(playerViewModel: self.playerViewModel, amount: self.baseRestorationAmount))
+                .opacity(self.restorationOptionViewModel.restoreIsDisabled(playerViewModel: self.playerViewModel, amount: self.baseRestorationAmount) ? YonderCoreGraphics.disabledButtonOpacity : 1)
             }
         }
     }

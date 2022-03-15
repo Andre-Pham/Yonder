@@ -65,4 +65,16 @@ class RestoreOptionViewModel: ObservableObject {
         }
     }
     
+    func restoreIsDisabled(playerViewModel: PlayerViewModel, amount: Int) -> Bool {
+        if playerViewModel.gold < amount*self.getPricePerUnit() {
+            return true
+        }
+        switch self.restoreOption {
+        case .health:
+            return playerViewModel.player.health >= playerViewModel.player.maxHealth
+        case .armorPoints:
+            return playerViewModel.player.armorPoints >= playerViewModel.player.getMaxArmorPoints()
+        }
+    }
+    
 }
