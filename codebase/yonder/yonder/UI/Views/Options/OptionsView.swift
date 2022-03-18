@@ -64,19 +64,19 @@ struct OptionsView: View {
                             }
                             
                             if self.optionsStateManager.offerOptionActive {
-                                OptionButton(title: "View \(Term.offers.capitalized)", geometry: geo, image: YonderImages.missingIcon) {
+                                OptionButton(title: "View \(Term.offers.capitalized)", geometry: geo, image: self.playerViewModel.locationViewModel.getTypeImage()) {
                                     self.optionsStateManager.offerOptionSelected()
                                 }
                             }
                             
                             if self.optionsStateManager.purchaseRestorationOptionActive {
-                                OptionButton(title: "Purchase \(Term.restoration.capitalized)", geometry: geo, image: YonderImages.missingIcon) {
+                                OptionButton(title: "Purchase \(Term.restoration.capitalized)", geometry: geo, image: self.playerViewModel.locationViewModel.getTypeImage()) {
                                     self.optionsStateManager.purchaseRestorationOptionSelected()
                                 }
                             }
                             
                             if self.optionsStateManager.travelOptionActive {
-                                OptionButton(title: Term.travel.capitalized, geometry: geo, image: YonderImages.missingIcon) {
+                                OptionButton(title: Term.travel.capitalized, geometry: geo, image: YonderImages.mapIcon) {
                                     self.optionsStateManager.travelOptionSelected(
                                         viewRouter: self.viewRouter,
                                         travelStateManager: self.travelStateManager)

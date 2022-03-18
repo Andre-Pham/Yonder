@@ -34,7 +34,6 @@ enum YonderImages {
     
     static let weaponOptionIcon = Image("Axe")
     static let potionOptionIcon = Image("MissingIcon")
-    static let travelOptionIcon = Image("MissingIcon")
     
     // MARK: - Location Icons
     

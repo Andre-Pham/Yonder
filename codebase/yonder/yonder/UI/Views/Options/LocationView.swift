@@ -21,7 +21,7 @@ struct LocationView: View {
                     .clipped()
                 
                 HStack {
-                    LocationIconView(locationType: self.locationViewModel.type)
+                    YonderIcon(image: self.locationViewModel.getTypeImage())
                     
                     YonderText(text: self.locationViewModel.name, size: .cardBody)
                     
