@@ -52,42 +52,34 @@ struct OptionsView: View {
                     if self.optionsStateManager.showOptions {
                         LazyVGrid(columns: self.optionsStateManager.optionColumns, spacing: YonderCoreGraphics.padding) {
                             if optionsStateManager.weaponOptionActive {
-                                Button {
+                                OptionButton(title: "Select \(Term.weapon.capitalized)", geometry: geo, image: YonderImages.weaponOptionIcon) {
                                     self.optionsStateManager.weaponOptionSelected()
-                                } label: {
-                                    OptionView(title: "Select \(Term.weapon.capitalized)", geometry: geo, image: YonderImages.weaponOptionIcon)
                                 }
                             }
                             
                             if optionsStateManager.potionOptionActive {
-                                Button {
+                                OptionButton(title: "Select \(Term.potion.capitalized)", geometry: geo, image: YonderImages.missingIcon) {
                                     self.optionsStateManager.potionOptionSelected()
-                                } label: {
-                                    OptionView(title: "Select \(Term.potion.capitalized)", geometry: geo, image: YonderImages.missingIcon)
                                 }
                             }
                             
                             if self.optionsStateManager.offerOptionActive {
-                                Button {
+                                OptionButton(title: "View \(Term.offers.capitalized)", geometry: geo, image: YonderImages.missingIcon) {
                                     self.optionsStateManager.offerOptionSelected()
-                                } label: {
-                                    OptionView(title: "View \(Term.offers.capitalized)", geometry: geo, image: YonderImages.missingIcon)
                                 }
                             }
                             
                             if self.optionsStateManager.purchaseRestorationOptionActive {
-                                Button {
+                                OptionButton(title: "Purchase \(Term.restoration.capitalized)", geometry: geo, image: YonderImages.missingIcon) {
                                     self.optionsStateManager.purchaseRestorationOptionSelected()
-                                } label: {
-                                    OptionView(title: "Purchase \(Term.restoration.capitalized)", geometry: geo, image: YonderImages.missingIcon)
                                 }
                             }
                             
                             if self.optionsStateManager.travelOptionActive {
-                                Button {
-                                    self.optionsStateManager.travelOptionSelected(viewRouter: self.viewRouter, travelStateManager: self.travelStateManager)
-                                } label: {
-                                    OptionView(title: Term.travel.capitalized, geometry: geo, image: YonderImages.missingIcon)
+                                OptionButton(title: Term.travel.capitalized, geometry: geo, image: YonderImages.missingIcon) {
+                                    self.optionsStateManager.travelOptionSelected(
+                                        viewRouter: self.viewRouter,
+                                        travelStateManager: self.travelStateManager)
                                 }
                             }
                         }
