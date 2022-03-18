@@ -9,19 +9,23 @@ import Foundation
 
 /// This manages the current game instance and generates the player and player location view models (which in turn generate subsequent view models).
 /// Remember, view models are only to be used within the view layer and view model layer, not the model.
-var gameManager = GameManager()
+let gameManager = GameManager()
 class GameManager {
     
-    private var activeGame = Game()
-    var playerVM: PlayerViewModel {
-        return PlayerViewModel(self.activeGame.player)
-    }
-    var playerLocationVM: PlayerLocationViewModel {
-        return PlayerLocationViewModel(player: self.activeGame.player)
+    private var activeGame: Game
+    private(set) var playerVM: PlayerViewModel
+    private(set) var playerLocationVM: PlayerLocationViewModel
+    
+    init() {
+        self.activeGame = Game()
+        self.playerVM = PlayerViewModel(self.activeGame.player)
+        self.playerLocationVM = PlayerLocationViewModel(player: self.activeGame.player)
     }
     
     func setActiveGame(to game: Game) {
         self.activeGame = game
+        self.playerVM = PlayerViewModel(self.activeGame.player)
+        self.playerLocationVM = PlayerLocationViewModel(player: self.activeGame.player)
     }
     
     func getMapLocationConnections(gridDimensions: GridDimensions) -> [LocationConnection?] {
