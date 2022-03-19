@@ -24,18 +24,10 @@ struct OptionButton: View {
         Button {
             action()
         } label: {
-            VStack(spacing: 0) {
+            VStack {
                 YonderIcon(image: self.image, sideLength: .large)
-                    .frame(height: height/2, alignment: .bottom)
                 
-                VStack {
-                    Spacer()
-                    
-                    YonderText(text: self.title, size: .optionBody)
-                    
-                    Spacer()
-                    Spacer()
-                }
+                YonderText(text: self.title, size: .optionBody)
             }
             .padding(.horizontal)
             .frame(width: self.width, height: self.height)

@@ -20,19 +20,16 @@ struct LocationView: View {
                     .frame(width: geo.size.width, height: self.cardHeight)
                     .clipped()
                 
+                
                 HStack {
-                    YonderIcon(image: self.locationViewModel.getTypeImage())
-                    
-                    YonderText(text: self.locationViewModel.name, size: .cardBody)
+                    YonderIconTextPair(image: self.locationViewModel.getTypeImage(), text: self.locationViewModel.name, size: .cardBody)
                     
                     Spacer()
                 }
-                .padding(.horizontal)
-                .foregroundColor(.Yonder.textMaxContrast)
-                .padding(.bottom, YonderCoreGraphics.borderWidth)
-                .frame(width: geo.size.width, height: 50)
+                .padding(YonderCoreGraphics.padding)
+                .frame(width: geo.size.width - YonderCoreGraphics.borderWidth*2)
                 .background(Color.Yonder.backgroundMaxDepth)
-                .frame(width: geo.size.width, height: self.cardHeight, alignment: .bottomLeading)
+                .frame(width: geo.size.width - YonderCoreGraphics.borderWidth*2, height: self.cardHeight - YonderCoreGraphics.borderWidth*2, alignment: .bottomLeading)
             }
         }
         .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
