@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     // Any object shared between tab views should be defined here
     @StateObject private var viewRouter = ViewRouter()
-    @StateObject private var travelStateManager = TravelStateManager(playerViewModel: gameManager.playerVM)
+    @StateObject private var travelStateManager = TravelStateManager()
     
     var body: some View {
         GeometryReader { geo in

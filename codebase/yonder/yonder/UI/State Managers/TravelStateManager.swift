@@ -11,16 +11,14 @@ import Combine
 
 class TravelStateManager: ObservableObject {
     
-    private let playerViewModel: PlayerViewModel
+    private let playerViewModel = gameManager.playerVM
     private var subscriptions: Set<AnyCancellable> = []
     @Published private(set) var travellingActive = false
     var travellingAllowed: Bool {
         return self.playerViewModel.canTravel
     }
     
-    init(playerViewModel: PlayerViewModel) {
-        self.playerViewModel = playerViewModel
-        
+    init() {
         // Updates travel options reactively to player
         self.playerViewModel.objectWillChange.sink(receiveValue: { _ in self.objectWillChange.send() }).store(in: &self.subscriptions)
     }
