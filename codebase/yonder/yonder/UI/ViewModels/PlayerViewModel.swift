@@ -139,6 +139,10 @@ class PlayerViewModel: ObservableObject {
             YonderDebugging.printError(message: "Weapon was used whilst location has no foe - hence no target", functionName: #function, className: "\(type(of: self))")
             return
         }
+        guard !(self.locationViewModel.location as! FoeLocation).foe.isDead && weaponViewModel.remainingUses > 0 else {
+            // Illegal call - buttons can be triggered before they disappear if tapped fast enough
+            return
+        }
         self.player.useWeaponWhere(opposition: (self.locationViewModel.location as! FoeLocation).foe, weapon: weaponViewModel.item as! Weapon)
     }
     
