@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GridHexagonView: View {
-    @EnvironmentObject var gridDimensions: GridDimensions
+    @EnvironmentObject private var gridDimensions: GridDimensions
     
     let hexagonIndex: Int
     var scale: CGFloat = 1
@@ -72,7 +72,7 @@ extension InsettableShape {
 }
 
 struct GridHexagonFrame: ViewModifier {
-    @EnvironmentObject var gridDimensions: GridDimensions
+    @EnvironmentObject private var gridDimensions: GridDimensions
     let hexagonIndex: Int
     let scale: CGFloat
     

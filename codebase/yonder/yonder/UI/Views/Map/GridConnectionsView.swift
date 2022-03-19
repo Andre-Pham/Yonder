@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct GridConnectionsView: View {
-    @EnvironmentObject var travelStateManager: TravelStateManager
-    @EnvironmentObject var gridDimensions: GridDimensions
+    @EnvironmentObject private var travelStateManager: TravelStateManager
+    @EnvironmentObject private var gridDimensions: GridDimensions
     let hexagonIndex: Int
     let locationConnection: LocationConnection
     @ObservedObject var playerLocationViewModel: PlayerLocationViewModel

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct TabBarView: View {
-    @EnvironmentObject var viewRounter: ViewRouter
+    @EnvironmentObject private var viewRounter: ViewRouter
     
     var body: some View {
         VStack(spacing: 0) {

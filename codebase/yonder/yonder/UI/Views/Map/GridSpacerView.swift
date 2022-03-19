@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GridSpacerView: View {
-    @EnvironmentObject var gridDimensions: GridDimensions
+    @EnvironmentObject private var gridDimensions: GridDimensions
     
     var body: some View {
         Spacer()
