@@ -44,6 +44,12 @@ class LocationViewModel: ObservableObject {
         }
         return false
     }
+    var playerCanShop: Bool {
+        if let shopLocation = self.location as? ShopLocation {
+            return !shopLocation.shopKeeper.purchasableItems.isEmpty
+        }
+        return false
+    }
     
     init(_ location: LocationAbstract) {
         self.location = location

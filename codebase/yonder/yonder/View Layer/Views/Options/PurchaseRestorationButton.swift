@@ -45,6 +45,7 @@ struct PurchaseRestorationButton: View {
                     }
                 }
             }
+            
             if self.useButtonActive {
                 YonderWideButton(text: Term.purchase.capitalized) {
                     self.restorationOptionViewModel.restore(amount: self.baseRestorationAmount, to: self.playerViewModel)

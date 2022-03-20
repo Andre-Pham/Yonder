@@ -56,6 +56,8 @@ enum YonderTerminology {
     static let settings = "settings"
     
     static let travel = "travel"
+    static let shop = "shop"
+    static let purchaseItems = "shop"
     
     static let weapons = "weapons"
     static let weapon = "weapon"

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Weapon: ItemAbstract, Usable, Purchasable {
+class Weapon: ItemAbstract, Usable, Purchasable, Clonable {
     
     private(set) var basePurchasePrice: Int = 0
     private let basePill: WeaponBasePill
@@ -21,8 +21,19 @@ class Weapon: ItemAbstract, Usable, Purchasable {
         
         super.init(name: name, description: description)
         
-        self.basePurchasePrice = self.getCurrentPrice()
         self.basePill.setup(weapon: self)
+        self.basePurchasePrice = self.getCurrentPrice() // Needs setup to get current price
+    }
+    
+    required init(_ original: Weapon) {
+        self.basePill = original.basePill
+        self.durabilityPill = original.durabilityPill
+        self.effectPills = original.effectPills
+        
+        super.init(name: original.name, description: original.description)
+        
+        self.basePill.setup(weapon: self)
+        self.basePurchasePrice = original.basePurchasePrice
     }
     
     func getCurrentPrice() -> Int {
@@ -48,12 +59,26 @@ class Weapon: ItemAbstract, Usable, Purchasable {
         self.durabilityPill.use(on: self)
     }
     
+    func getPurchaseInfo() -> PurchaseableItemInfo {
+        return PurchaseableItemInfo(name: self.name)
+    }
+    
+    func beRecieved(by reciever: Player, amount: Int) {
+        for _ in 0..<amount {
+            reciever.addWeapon(self.clone())
+        }
+    }
+    
 }
 
 class BaseAttack: Weapon {
     
     init(damage: Int) {
         super.init(basePill: DamageBasePill(damage: damage, durability: 1), durabilityPill: InfiniteDurabilityPill())
+    }
+    
+    required init(_ original: Weapon) {
+        super.init(basePill: DamageBasePill(damage: original.damage, durability: 1), durabilityPill: InfiniteDurabilityPill())
     }
     
 }

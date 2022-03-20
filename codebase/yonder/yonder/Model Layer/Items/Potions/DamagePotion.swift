@@ -9,12 +9,8 @@ import Foundation
 
 class DamagePotion: PotionAbstract {
     
-    public let basePurchasePrice: Int
-    
     init(name: String = "placeholderName", description: String = "placeholderDescription", damage: Int, potionCount: Int, basePurchasePrice: Int) {
-        self.basePurchasePrice = basePurchasePrice
-        
-        super.init(name: name, description: description, remainingUses: potionCount, damage: damage)
+        super.init(name: name, description: description, remainingUses: potionCount, damage: damage, basePurchasePrice: basePurchasePrice)
     }
     
     func use(owner: ActorAbstract, opposition: ActorAbstract) {

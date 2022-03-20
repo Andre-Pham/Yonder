@@ -62,6 +62,7 @@ struct UseWeaponButton: View {
                     }
                 }
             }
+            
             if self.useButtonActive {
                 YonderWideButton(text: Term.use.capitalized) {
                     self.playerViewModel.use(weaponViewModel: self.weaponViewModel)

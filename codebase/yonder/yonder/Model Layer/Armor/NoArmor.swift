@@ -20,4 +20,12 @@ class NoArmor: ArmorAbstract {
         super.init(type: type, armorPoints: 0, armorBuffs: [])
     }
     
+    func getPurchaseInfo() -> PurchaseableItemInfo {
+        return PurchaseableItemInfo(name: self.name)
+    }
+    
+    func beRecieved(by reciever: Player, amount: Int) {
+        reciever.equipArmor(self)
+    }
+    
 }

@@ -110,7 +110,7 @@ struct MapGridView: View {
                             strokeColor: locationViewModel.hasBeenVisited && !self.fadeIsActive(on: locationViewModel) ? Color.Yonder.border : ColorManipulation.adjustBrightness(of: Color.Yonder.border, amount: YonderCoreGraphics.unvisitedLocationBrightness),
                             fill: true)
                             .onTapGesture {
-                                //self.playerViewModel.travel(to: locationViewModel) // Cheats
+                                self.playerViewModel.travel(to: locationViewModel) // Cheats
                                 if self.travelStateManager.travellingActive && locationViewModel.canBeTravelledTo(from: self.playerLocationViewModel.locationViewModel) {
                                     self.playerViewModel.travel(to: locationViewModel)
                                     

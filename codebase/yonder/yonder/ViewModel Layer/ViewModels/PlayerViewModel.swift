@@ -56,6 +56,9 @@ class PlayerViewModel: ObservableObject {
     var canPurchaseRestoration: Bool {
         return self.locationViewModel.playerCanPurchaseRestoration
     }
+    var canShop: Bool {
+        return self.locationViewModel.playerCanShop
+    }
     
     init(_ player: Player) {
         self.player = player

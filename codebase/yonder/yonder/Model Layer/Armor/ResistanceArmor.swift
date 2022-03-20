@@ -25,4 +25,12 @@ class ResistanceArmor: ArmorAbstract {
         )
     }
     
+    func getPurchaseInfo() -> PurchaseableItemInfo {
+        return PurchaseableItemInfo(name: self.name)
+    }
+    
+    func beRecieved(by reciever: Player, amount: Int) {
+        reciever.equipArmor(self)
+    }
+    
 }

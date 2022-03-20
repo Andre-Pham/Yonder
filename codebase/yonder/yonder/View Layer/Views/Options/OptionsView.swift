@@ -75,6 +75,12 @@ struct OptionsView: View {
                                 }
                             }
                             
+                            if self.optionsStateManager.shopOptionActive {
+                                OptionButton(title: Term.shop.capitalized, geometry: geo, image: self.playerViewModel.locationViewModel.getTypeImage()) {
+                                    self.optionsStateManager.shopOptionSelected()
+                                }
+                            }
+                            
                             if self.optionsStateManager.travelOptionActive {
                                 OptionButton(title: Term.travel.capitalized, geometry: geo, image: YonderImages.mapIcon) {
                                     self.optionsStateManager.travelOptionSelected(
@@ -123,6 +129,14 @@ struct OptionsView: View {
                                 if let restorerViewModel = self.playerViewModel.locationViewModel.getInteractorViewModel() as? RestorerViewModel {
                                     ForEach(restorerViewModel.options, id: \.id) { option in
                                         PurchaseRestorationButton(playerViewModel: self.playerViewModel, restorationOptionViewModel: option)
+                                    }
+                                }
+                            }
+                            
+                            if self.optionsStateManager.shopActionsActive.isActive {
+                                if let shopKeeperViewModel = self.playerViewModel.locationViewModel.getInteractorViewModel() as? ShopKeeperViewModel {
+                                    ForEach(shopKeeperViewModel.purchasables, id: \.id) { purchasable in
+                                        PurchaseFromShopKeeperButton(playerViewModel: self.playerViewModel, purchasableViewModel: purchasable, pageGeometry: geo)
                                     }
                                 }
                             }

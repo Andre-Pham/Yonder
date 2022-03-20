@@ -9,12 +9,18 @@ import Foundation
 
 class ShopKeeper: InteractorAbstract {
     
-    private(set) var purchasableItems: [PurchasableItem]
+    @DidSetPublished private(set) var purchasableItems: [PurchasableItem]
     
     init(name: String = "placeholderName", description: String = "placerholderDescription", purchasableItems: [PurchasableItem]) {
         self.purchasableItems = purchasableItems
         
         super.init(name: name, description: description)
+    }
+    
+    func purchaseItem(_ item: PurchasableItem, amount: Int, purchaser: Player) {
+        if let index = self.purchasableItems.firstIndex(where: { item.id == $0.id }) {
+            self.purchaseItem(at: index, amount: amount, purchaser: purchaser)
+        }
     }
     
     func purchaseItem(at index: Int, amount: Int, purchaser: Player) {
@@ -31,45 +37,51 @@ protocol Purchasable {
     
     var basePurchasePrice: Int { get }
     
+    func getPurchaseInfo() -> PurchaseableItemInfo
+    func beRecieved(by reciever: Player, amount: Int)
+    
 }
 
 class PurchasableItem {
     
     private(set) var item: Purchasable
     public let price: Int
-    private(set) var stockRemaining: Int
+    @DidSetPublished private(set) var stockRemaining: Int
+    public let id = UUID()
+    public let info: PurchaseableItemInfo
     
     init(item: Purchasable, stock: Int) {
         self.item = item
         self.price = item.basePurchasePrice
         self.stockRemaining = stock
+        self.info = item.getPurchaseInfo()
     }
     
     func purchase(amount: Int, purchaser: Player) {
+        guard self.canPurchase(amount: amount, purchaser: purchaser) else {
+            return
+        }
+        self.stockRemaining -= amount
+        purchaser.modifyGoldAdjusted(by: -amount*self.price)
+        self.item.beRecieved(by: purchaser, amount: amount)
+    }
+    
+    func canPurchase(amount: Int, purchaser: Player) -> Bool {
         let adjustedPrice = BuffApps.getAdjustedPrice(purchaser: purchaser, price: self.price)
-        var amountPurchased: Int = amount > stockRemaining ? stockRemaining : amount
-        if self.item is ArmorAbstract {
-            amountPurchased = 1
+        if amount > self.stockRemaining || amount*adjustedPrice > purchaser.gold {
+            return false
         }
-        if amountPurchased*adjustedPrice > purchaser.gold {
-            let amountAffordable: Double = Double(purchaser.gold)/Double(adjustedPrice)
-            amountPurchased = Int(floor(amountAffordable))
-        }
-        self.stockRemaining -= amountPurchased
-        purchaser.modifyGoldAdjusted(by: -amountPurchased*self.price)
-        if item is ArmorAbstract {
-            purchaser.equipArmor(self.item as! ArmorAbstract)
-        }
-        else if item is PotionAbstract {
-            for _ in 0..<amountPurchased {
-                purchaser.addPotion(self.item as! PotionAbstract)
-            }
-        }
-        else if item is Weapon {
-            for _ in 0..<amountPurchased {
-                purchaser.addWeapon(self.item as! Weapon)
-            }
-        }
+        return true
+    }
+    
+}
+
+class PurchaseableItemInfo {
+    
+    public let name: String
+    
+    init(name: String) {
+        self.name = name
     }
     
 }

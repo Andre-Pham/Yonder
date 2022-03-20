@@ -60,6 +60,12 @@ class OptionsStateManager: ObservableObject {
     }
     @Published var purchaseRestorationActionsActive = Status(false)
     
+    // Shop option
+    var shopOptionActive: Bool {
+        return self.playerViewModel.canShop
+    }
+    @Published var shopActionsActive = Status(false)
+    
     // Whenever an action is set to showing, its reference is passed here
     var activeActions = Status(false)
     
@@ -112,6 +118,13 @@ class OptionsStateManager: ObservableObject {
         self.showOptions = false
         self.purchaseRestorationActionsActive = Status(true)
         self.activeActions = self.purchaseRestorationActionsActive
+    }
+    
+    func shopOptionSelected() {
+        self.optionHeaderText = Term.purchaseItems.capitalized
+        self.showOptions = false
+        self.shopActionsActive = Status(true)
+        self.activeActions = self.shopActionsActive
     }
     
     func travelOptionSelected(viewRouter: ViewRouter, travelStateManager: TravelStateManager) {
