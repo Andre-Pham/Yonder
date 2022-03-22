@@ -8,15 +8,8 @@
 import SwiftUI
 
 struct InventoryView: View {
-    @ObservedObject private var playerViewModel: PlayerViewModel
-    @ObservedObject private var sheetsStateManager: InventorySheetsStateManager
-    
-    init() {
-        let playerViewModel = gameManager.playerVM
-        
-        self.playerViewModel = playerViewModel
-        self.sheetsStateManager = InventorySheetsStateManager(playerViewModel: playerViewModel)
-    }
+    @StateObject private var playerViewModel = gameManager.playerVM
+    @StateObject private var sheetsStateManager = InventorySheetsStateManager(playerViewModel: gameManager.playerVM)
     
     var body: some View {
         GeometryReader { geo in
@@ -46,14 +39,12 @@ struct InventoryView: View {
                     // Accessories (in the future)
                     // Weapons/Potions buttons
                     
-                    VStack(spacing: YonderCoreGraphics.padding) {
-                        ForEach(Array(zip(playerViewModel.weaponViewModels.indices, playerViewModel.weaponViewModels)), id: \.1.id) { index, weaponViewModel in
-                            YonderButton(text: weaponViewModel.name) {
-                                self.sheetsStateManager.presentWeaponSheet(at: index)
-                            }
-                            .sheet(isPresented: self.$sheetsStateManager.weaponSheetBindings[index]) {
-                                Text("Wow! \(index)")
-                            }
+                    ForEach(Array(zip(playerViewModel.weaponViewModels.indices, playerViewModel.weaponViewModels)), id: \.1.id) { index, weaponViewModel in
+                        YonderButton(text: weaponViewModel.name) {
+                            self.sheetsStateManager.presentWeaponSheet(at: index)
+                        }
+                        .sheet(isPresented: self.$sheetsStateManager.weaponSheetBindings[index]) {
+                            Text("Wow! \(index)")
                         }
                     }
                 }

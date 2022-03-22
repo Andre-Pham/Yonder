@@ -16,10 +16,23 @@ struct TabBarView: View {
             ZStack {
                 OptionsView()
                     .opacity(self.viewRounter.currentPage == .options ? 1 : 0)
-                InventoryView()
-                    .opacity(self.viewRounter.currentPage == .inventory ? 1 : 0)
+                
+                if self.viewRounter.currentPage == .inventory {
+                    // Other views we adjust the opacity to hide the view while maintaining state
+                    // We want to reload the inventory view every time we open it
+                    // Inventory view has to manage dynamic inspect sheets, for example, player weapons
+                    // Adding (for example) weapons in other tabs will modify the state of the inventory view's sheets
+                    // This is fine, except (for some reason) it breaks the animation for all sheets until inventory view is loaded in as the currently active view
+                    // To demonstate this:
+                    // 1. Maintain inventory view's state using opacity to dismiss it (like other views)
+                    // 2. Purchase/obtain a weapon in option view
+                    // 3. Open any inspect sheet in option view
+                    InventoryView()
+                }
+                
                 MapView()
                     .opacity(self.viewRounter.currentPage == .map ? 1 : 0)
+                
                 SettingsView()
                     .opacity(self.viewRounter.currentPage == .settings ? 1 : 0)
             }

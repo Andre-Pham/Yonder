@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PurchaseFromShopKeeperButton: View {
     @ObservedObject var playerViewModel: PlayerViewModel
-    var purchasableViewModel: PurchasableViewModel
+    @ObservedObject var purchasableViewModel: PurchasableViewModel
     var pageGeometry: GeometryProxy
     @State private var useButtonActive = false
     @State private var infoSheetActive = false
@@ -92,15 +92,3 @@ struct PurchaseFromShopKeeperButton: View {
         }
     }
 }
-
-// For later when i rework this
-/*struct PurchaseFromShopKeeperButton_Previews: PreviewProvider {
-    static var previews: some View {
-        ZStack {
-            Color.Yonder.backgroundMaxDepth
-            
-            PurchaseFromShopKeeperButton(playerViewModel: PlayerViewModel(Player(maxHealth: 200, location: NoLocation())), purchasableViewModel: PurchasableViewModel(purchasable: PurchasableItem(item: ResistanceArmor(name: "Cool Armor", description: "hi", type: .body, armorPoints: 200, damageFraction: 0.8, basePurchasePrice: 200), stock: 5), shopKeeperViewModel: ShopKeeperViewModel(ShopKeeper(name: "billy", description: "likes cake", purchasableItems: [PurchasableItem(item: ResistanceArmor(name: "Cool Armor", description: "hi", type: .body, armorPoints: 200, damageFraction: 0.8, basePurchasePrice: 200), stock: 5)]))))
-        }
-    }
-}
-*/
