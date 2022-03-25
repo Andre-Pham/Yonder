@@ -40,8 +40,10 @@ struct NPCCardAndSheetView: View {
             }
         }
         .withInspectSheet(isPresented: self.$optionsSheetsStateManager.npcSheetBinding, pageGeometry: self.pageGeometry, content: AnyView(
-            Text(self.locationViewModel.getTypeName())
-                .foregroundColor(.white)
+            VStack(alignment: .leading, spacing: YonderCoreGraphics.paragraphSpacing) {
+                Text(self.locationViewModel.getTypeName())
+                    .foregroundColor(.white)
+            }
         ))
     }
 }

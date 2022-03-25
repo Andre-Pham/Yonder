@@ -48,11 +48,9 @@ struct InspectSheet<Content: View>: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 HStack {
-                    VStack(alignment: .leading, spacing: YonderCoreGraphics.paragraphSpacing) {
-                        content()
-                    }
-                    .padding(.top)
-                    .padding(.horizontal)
+                    content()
+                        .padding(.top)
+                        .padding(.horizontal)
                     
                     Spacer()
                 }

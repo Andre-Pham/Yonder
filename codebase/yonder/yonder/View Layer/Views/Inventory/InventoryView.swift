@@ -43,9 +43,9 @@ struct InventoryView: View {
                         YonderButton(text: weaponViewModel.name) {
                             self.sheetsStateManager.presentWeaponSheet(at: index)
                         }
-                        .sheet(isPresented: self.$sheetsStateManager.weaponSheetBindings[index]) {
-                            Text("Wow! \(index)")
-                        }
+                        .withInspectSheet(isPresented: self.$sheetsStateManager.weaponSheetBindings[index], pageGeometry: geo, content: AnyView(
+                            ItemInspectView(itemViewModel: weaponViewModel)
+                        ))
                     }
                 }
                 .padding(.horizontal)

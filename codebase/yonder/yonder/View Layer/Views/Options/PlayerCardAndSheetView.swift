@@ -19,7 +19,7 @@ struct PlayerCardAndSheetView: View {
             PlayerCardView(playerViewModel: self.playerViewModel)
         }
         .withInspectSheet(isPresented: self.$optionsSheetsStateManager.playerSheetBinding, pageGeometry: self.pageGeometry, content: AnyView(
-            Group {
+            VStack(alignment: .leading, spacing: YonderCoreGraphics.paragraphSpacing) {
                 YonderText(text: "Your \(Term.stats.capitalized)", size: .inspectSheetTitle)
                     
                 VStack(alignment: .leading, spacing: 6) {
