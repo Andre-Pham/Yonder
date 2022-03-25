@@ -8,25 +8,25 @@
 import SwiftUI
 
 struct ItemInspectView: View {
-    var itemViewModel: ItemViewModel
+    @ObservedObject var itemViewModel: ItemViewModel
     
     var body: some View {
-        VStack(alignment: .leading, spacing: YonderCoreGraphics.paragraphSpacing) {
+        InspectBody {
             YonderText(text: self.itemViewModel.name, size: .inspectSheetTitle)
                 
-            VStack(alignment: .leading, spacing: 6) {
+            InspectStatsBody {
                 if self.itemViewModel.damage > 0 {
-                    StatView(title: Term.damage.capitalized, value: self.itemViewModel.damage, image: YonderImages.itemDamageIcon)
+                    InspectStatView(title: Term.damage.capitalized, value: self.itemViewModel.damage, image: YonderImages.itemDamageIcon)
                 }
                 
                 if self.itemViewModel.healthRestoration > 0 {
-                    StatView(title: Term.healthRestoration.capitalized, value: self.itemViewModel.healthRestoration, image: YonderImages.itemHealthRestorationIcon)
+                    InspectStatView(title: Term.healthRestoration.capitalized, value: self.itemViewModel.healthRestoration, image: YonderImages.itemHealthRestorationIcon)
                 }
                 
-                StatView(title: Term.remainingUses.capitalized, value: self.itemViewModel.remainingUses, image: YonderImages.durabilityIcon)
+                InspectStatView(title: Term.remainingUses.capitalized, value: self.itemViewModel.remainingUses, image: YonderImages.durabilityIcon)
             }
             
-            SectionSpacingView()
+            InspectSectionSpacingView()
             
             YonderText(text: self.itemViewModel.description, size: .inspectSheetBody)
         }

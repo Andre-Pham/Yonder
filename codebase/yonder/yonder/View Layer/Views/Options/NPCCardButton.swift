@@ -1,5 +1,5 @@
 //
-//  NPCCardAndSheetView.swift
+//  NPCCardButton.swift
 //  yonder
 //
 //  Created by Andre Pham on 8/2/2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NPCCardAndSheetView: View {
+struct NPCCardButton: View {
     @ObservedObject var locationViewModel: LocationViewModel
     @ObservedObject var optionsSheetsStateManager: OptionsSheetsStateManager
     let pageGeometry: GeometryProxy
@@ -40,6 +40,7 @@ struct NPCCardAndSheetView: View {
             }
         }
         .withInspectSheet(isPresented: self.$optionsSheetsStateManager.npcSheetBinding, pageGeometry: self.pageGeometry, content: AnyView(
+            // TODO: Make a unique inspect view for every NPC type
             VStack(alignment: .leading, spacing: YonderCoreGraphics.paragraphSpacing) {
                 Text(self.locationViewModel.getTypeName())
                     .foregroundColor(.white)

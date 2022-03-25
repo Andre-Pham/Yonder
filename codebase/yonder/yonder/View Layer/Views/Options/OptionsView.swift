@@ -28,13 +28,13 @@ struct OptionsView: View {
                     LocationView(locationViewModel: self.playerViewModel.locationViewModel)
                     
                     HStack(spacing: YonderCoreGraphics.padding) {
-                        PlayerCardAndSheetView(
+                        PlayerCardButton(
                             playerViewModel:
                                 self.playerViewModel,
                             optionsSheetsStateManager:
                                 self.optionsSheetsStateManager, pageGeometry: geo)
                         
-                        NPCCardAndSheetView(
+                        NPCCardButton(
                             locationViewModel:
                                 self.playerViewModel.locationViewModel,
                             optionsSheetsStateManager:
