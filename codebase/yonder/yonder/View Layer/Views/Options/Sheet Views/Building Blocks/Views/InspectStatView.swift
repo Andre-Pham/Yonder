@@ -1,40 +1,12 @@
 //
-//  InspectViewBuildingBlocks.swift
+//  InspectStatView.swift
 //  yonder
 //
-//  Created by Andre Pham on 25/3/2022.
+//  Created by Andre Pham on 2/4/2022.
 //
 
 import Foundation
 import SwiftUI
-
-struct InspectBody<Content: View>: View {
-    private let content: () -> Content
-    
-    init(@ViewBuilder builder: @escaping () -> Content) {
-        self.content = builder
-    }
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: YonderCoreGraphics.paragraphSpacing) {
-            content()
-        }
-    }
-}
-
-struct InspectStatsBody<Content: View>: View {
-    private let content: () -> Content
-    
-    init(@ViewBuilder builder: @escaping () -> Content) {
-        self.content = builder
-    }
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            content()
-        }
-    }
-}
 
 struct InspectStatView: View {
     let title: String
@@ -57,12 +29,5 @@ struct InspectStatView: View {
                 }
             }
         }
-    }
-}
-
-struct InspectSectionSpacingView: View {
-    var body: some View {
-        Rectangle()
-            .frame(height: 10)
     }
 }
