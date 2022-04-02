@@ -21,7 +21,7 @@ enum Maps {
             ],
             bossAreas: [])
         
-        return Generators.generateTerritoriesIntoMap(mapPool: mapPool)
+        return MapGenerator().generateTerritoriesIntoMap(mapPool: mapPool)
     }
     
 }
