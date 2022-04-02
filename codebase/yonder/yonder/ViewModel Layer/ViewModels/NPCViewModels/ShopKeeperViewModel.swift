@@ -54,4 +54,15 @@ class PurchasableViewModel: ObservableObject {
         return !self.purchasable.canPurchase(amount: amount, purchaser: playerViewModel.player)
     }
     
+    func getItemViewModel() -> ItemViewModel? {
+        if let item = self.purchasable.item as? ItemAbstract {
+            return ItemViewModel(item)
+        }
+        return nil
+    }
+    
+    func getNameAndDescription() -> (String, String) {
+        return (self.purchasable.info.name, self.purchasable.info.description)
+    }
+    
 }

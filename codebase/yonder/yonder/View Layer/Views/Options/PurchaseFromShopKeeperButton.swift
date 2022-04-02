@@ -59,8 +59,7 @@ struct PurchaseFromShopKeeperButton: View {
                         isPresented: self.$infoSheetActive,
                         pageGeometry: pageGeometry,
                         content: AnyView(
-                            // Place, for example, WeaponInspectView here
-                            YonderText(text: self.purchasableViewModel.name, size: .buttonBody)
+                            PurchasableInspectView(purchasableViewModel: self.purchasableViewModel)
                     ))
                     
                     YonderIconNumeralPair(image: YonderImages.goldIcon, numeral: self.purchasableViewModel.price, size: .buttonBody, animationIsActive: false)

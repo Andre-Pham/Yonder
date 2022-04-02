@@ -79,9 +79,11 @@ class PurchasableItem {
 class PurchaseableItemInfo {
     
     public let name: String
+    public let description: String
     
-    init(name: String) {
+    init(name: String, description: String) {
         self.name = name
+        self.description = description
     }
     
 }
