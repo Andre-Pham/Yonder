@@ -9,9 +9,11 @@ import Foundation
 
 class DecrementDurabilityPill: WeaponDurabilityPill {
     
-    let decrementation: Int
+    public let effectsDescription: String
+    public let decrementation: Int
     
     init(decrementBy amount: Int = 1) {
+        self.effectsDescription = "Loses \(amount) \(Term.weaponRemainingUses) every \(Term.use)."
         self.decrementation = -amount
     }
     
@@ -27,9 +29,11 @@ class DecrementDurabilityPill: WeaponDurabilityPill {
 
 class DullingDurabilityPill: WeaponDurabilityPill {
     
-    let damageLostPerUse: Int
+    public let effectsDescription: String
+    public let damageLostPerUse: Int
     
     init(damageLostPerUse: Int) {
+        self.effectsDescription = "Loses \(damageLostPerUse) damage every \(Term.use)."
         self.damageLostPerUse = damageLostPerUse
     }
     
@@ -47,6 +51,8 @@ class DullingDurabilityPill: WeaponDurabilityPill {
 }
 
 class InfiniteDurabilityPill: WeaponDurabilityPill {
+    
+    public let effectsDescription: String = "Has infinite \(Term.remainingUses)."
     
     func use(on weapon: Weapon) {
         // Do nothing - weapon has infinite durability

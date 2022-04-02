@@ -14,7 +14,12 @@ class PricePercentBuff: BuffAbstract {
     init(direction: BuffDirection, duration: Int?, priceFraction: Double) {
         self.priceFraction = priceFraction
         
-        super.init(duration: duration, type: .health, direction: direction, priority: .second)
+        var effectsDescription: String? = nil
+        if let magnitudeChange = Term.magnitudeChangeFromMultiplying(priceFraction) {
+            effectsDescription = "\(magnitudeChange.capitalized) \(Term.gold) \(Term.goldPaymentDirection(of: direction)) by \(Term.getPercentageFromDouble(priceFraction))"
+        }
+        
+        super.init(effectsDescription: effectsDescription, duration: duration, type: .health, direction: direction, priority: .second)
     }
     
     override func applyPrice(to gold: Int) -> Int? {

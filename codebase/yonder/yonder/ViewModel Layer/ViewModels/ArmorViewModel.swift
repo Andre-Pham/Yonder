@@ -19,6 +19,7 @@ class ArmorViewModel: ObservableObject {
     private(set) var type: ArmorType
     private(set) var name: String
     private(set) var description: String
+    @Published private(set) var effectsDescription: String?
     
     init(_ armor: ArmorAbstract) {
         self.armor = armor
@@ -30,11 +31,16 @@ class ArmorViewModel: ObservableObject {
         self.type = self.armor.type
         self.name = self.armor.name
         self.description = self.armor.description
+        self.effectsDescription = self.armor.effectsDescription
         
         // Add Subscribers
         
         self.armor.$armorPoints.sink(receiveValue: { newValue in
             self.armorPoints = newValue
+        }).store(in: &self.subscriptions)
+        
+        self.armor.$effectsDescription.sink(receiveValue: { newValue in
+            self.effectsDescription = newValue
         }).store(in: &self.subscriptions)
         
     }

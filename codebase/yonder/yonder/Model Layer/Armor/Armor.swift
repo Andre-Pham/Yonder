@@ -9,12 +9,13 @@ import Foundation
 
 typealias ArmorAbstract = ArmorAbstractPart & Purchasable & Named & Described
 
-class ArmorAbstractPart {
+class ArmorAbstractPart: EffectsDescribed {
     
     public let type: ArmorType
     @DidSetPublished private(set) var armorPoints: Int
     private(set) var armorBuffs: [BuffAbstract]
     public let id = UUID()
+    @DidSetPublished private(set) var effectsDescription: String?
     
     /// To be called by subclasses only.
     /// - Parameters:
@@ -25,6 +26,25 @@ class ArmorAbstractPart {
         self.type = type
         self.armorPoints = armorPoints
         self.armorBuffs = armorBuffs
+        self.effectsDescription = ArmorAbstractPart.getEffectsDescription(buffs: armorBuffs)
+    }
+    
+    private static func getEffectsDescription(buffs: [BuffAbstract]) -> String? {
+        var effectsDescription = ""
+        for buff in buffs {
+            if !effectsDescription.isEmpty {
+                effectsDescription += "\n"
+            }
+            if let buffDescription = buff.effectsDescription {
+                effectsDescription += buffDescription
+            }
+        }
+        return effectsDescription.isEmpty ? nil : effectsDescription
+    }
+    
+    func addBuff(buff: BuffAbstract) {
+        self.armorBuffs.append(buff)
+        self.effectsDescription = ArmorAbstractPart.getEffectsDescription(buffs: self.armorBuffs)
     }
     
     func adjustArmorPoints(by armorPoints: Int) {

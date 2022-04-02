@@ -19,7 +19,7 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable {
         self.durabilityPill = durabilityPill
         self.effectPills = effectPills
         
-        super.init(name: name, description: description)
+        super.init(name: name, description: description, effectsDescription: Weapon.getEffectsDescription(durabilityPill: durabilityPill, effectPills: effectPills))
         
         self.basePill.setup(weapon: self)
         self.basePurchasePrice = self.getCurrentPrice() // Needs setup to get current price
@@ -30,10 +30,23 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable {
         self.durabilityPill = original.durabilityPill
         self.effectPills = original.effectPills
         
-        super.init(name: original.name, description: original.description)
+        super.init(name: original.name, description: original.description, effectsDescription: original.effectsDescription)
         
         self.basePill.setup(weapon: self)
         self.basePurchasePrice = original.basePurchasePrice
+    }
+    
+    private static func getEffectsDescription(durabilityPill: WeaponDurabilityPill, effectPills: [WeaponEffectPill]) -> String {
+        var effectsDescription = durabilityPill.effectsDescription
+        for effectPill in effectPills {
+            effectsDescription += "\n" + effectPill.effectsDescription
+        }
+        return effectsDescription
+    }
+    
+    func addEffect(_ effect: WeaponEffectPill) {
+        self.effectPills.append(effect)
+        self.resetEffectsDescription(to: Weapon.getEffectsDescription(durabilityPill: self.durabilityPill, effectPills: self.effectPills))
     }
     
     func getCurrentPrice() -> Int {

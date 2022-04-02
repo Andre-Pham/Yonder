@@ -20,6 +20,7 @@ class ItemViewModel: ObservableObject {
     private(set) var id: UUID
     private(set) var name: String
     private(set) var description: String
+    @Published private(set) var effectsDescription: String?
     
     init(_ item: ItemAbstract) {
         self.item = item
@@ -32,6 +33,7 @@ class ItemViewModel: ObservableObject {
         self.id = self.item.id
         self.name = self.item.name
         self.description = self.item.description
+        self.effectsDescription = self.item.effectsDescription
         
         // Add Subscribers
         
@@ -45,6 +47,10 @@ class ItemViewModel: ObservableObject {
         
         self.item.$remainingUses.sink(receiveValue: { newValue in
             self.remainingUses = newValue
+        }).store(in: &self.subscriptions)
+        
+        self.item.$effectsDescription.sink(receiveValue: { newValue in
+            self.effectsDescription = newValue
         }).store(in: &self.subscriptions)
     }
     

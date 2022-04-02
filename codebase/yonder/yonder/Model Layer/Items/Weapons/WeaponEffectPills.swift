@@ -9,10 +9,12 @@ import Foundation
 
 class BurnStatusEffectEffectPill: WeaponEffectPill {
     
-    var priority: WeaponEffectPillPriority = .first
-    let tickDamage: Int
+    public let effectsDescription: String
+    public var priority: WeaponEffectPillPriority = .first
+    public let tickDamage: Int
     
     init(tickDamage: Int) {
+        self.effectsDescription = "Burns the opposing \(Term.foe) \(tickDamage) \(Term.damage) every \(Term.use)"
         self.tickDamage = tickDamage
     }
     

@@ -14,7 +14,12 @@ class HealthRestorationPercentBuff: BuffAbstract {
     init(direction: BuffDirection, duration: Int?, healthFraction: Double) {
         self.healthFraction = healthFraction
         
-        super.init(duration: duration, type: .health, direction: direction, priority: .second)
+        var effectsDescription: String? = nil
+        if let magnitudeChange = Term.magnitudeChangeFromMultiplying(healthFraction) {
+            effectsDescription = "\(magnitudeChange.capitalized) \(Term.health) \(Term.positiveEffectDirection(of: direction)) by \(Term.getPercentageFromDouble(healthFraction))"
+        }
+        
+        super.init(effectsDescription: effectsDescription, duration: duration, type: .health, direction: direction, priority: .second)
     }
     
     override func applyHealth(to health: Int, source: Any) -> Int? {

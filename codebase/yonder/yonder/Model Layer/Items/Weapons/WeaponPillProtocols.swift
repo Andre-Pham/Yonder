@@ -20,6 +20,8 @@ protocol WeaponBasePill {
 /// Weapons can only take one of this pill.
 protocol WeaponDurabilityPill {
     
+    var effectsDescription: String { get }
+    
     func use(on weapon: Weapon)
     func getValue() -> Int
     
@@ -27,6 +29,8 @@ protocol WeaponDurabilityPill {
 
 /// Pill that provides the weapon with additional effects, such as providing buffs.
 protocol WeaponEffectPill {
+    
+    var effectsDescription: String { get }
     
     var priority: WeaponEffectPillPriority { get }
     

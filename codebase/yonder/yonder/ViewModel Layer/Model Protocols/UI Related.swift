@@ -14,6 +14,12 @@ protocol Named {
     
 }
 
+protocol EffectsDescribed {
+    
+    var effectsDescription: String? { get }
+    
+}
+
 protocol Described {
     
     var description: String { get }

@@ -10,7 +10,7 @@ import Foundation
 class HealthRestorationPotion: PotionAbstract {
     
     init(name: String = "placeholderName", description: String = "placeholderDescription", healthRestoration: Int, potionCount: Int, basePurchasePrice: Int) {
-        super.init(name: name, description: description, remainingUses: potionCount, healthRestoration: healthRestoration, basePurchasePrice: basePurchasePrice)
+        super.init(name: name, description: description, effectsDescription: "\(Term.restores.capitalized) \(healthRestoration) \(Term.health).", remainingUses: potionCount, healthRestoration: healthRestoration, basePurchasePrice: basePurchasePrice)
     }
     
     func use(owner: ActorAbstract, opposition: ActorAbstract) {

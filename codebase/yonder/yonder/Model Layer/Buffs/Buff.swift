@@ -7,8 +7,9 @@
 
 import Foundation
 
-class BuffAbstract {
+class BuffAbstract: EffectsDescribed {
     
+    let effectsDescription: String?
     var isInfinite: Bool = false
     var timeRemaining: Int
     var type: BuffType
@@ -21,7 +22,8 @@ class BuffAbstract {
     ///     - type: What stat the buff affects
     ///     - direction: What direction the buff is applied to, for example, an outgoing damage buff increases damage dealt, but not recieved
     ///     - priority: What order, relative to other buffs, is this buff applied
-    init(duration: Int?, type: BuffType, direction: BuffDirection, priority: BuffPriority) {
+    init(effectsDescription: String?, duration: Int?, type: BuffType, direction: BuffDirection, priority: BuffPriority) {
+        self.effectsDescription = effectsDescription
         if let duration = duration {
             self.timeRemaining = duration
         }

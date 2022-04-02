@@ -27,10 +27,12 @@ enum YonderTerminology {
     static let armorPointsRestore = "repair"
     static let remainingUses = "remaining uses"
     static let remainingUse = "remaining use"
+    static let weaponRemainingUses = "durability"
     static let use = "use"
     static let instantUse = "instant use"
     static let restoration = "mending"
     static let restore = "restore"
+    static let restores = "restores"
     static let purchase = "purchase"
     
     static let armor = "armor"
@@ -67,5 +69,62 @@ enum YonderTerminology {
     static let accessory = "accessory"
     static let offer = "offer"
     static let offers = "offers"
+    
+    static func magnitudeChangeFromMultiplying(_ fraction: Double) -> String? {
+        if fraction < 1 {
+            return "reduces"
+        }
+        else if fraction > 1 {
+            return "increases"
+        }
+        return nil
+    }
+    
+    static func magnitudeChangeFromAdding(_ number: Int) -> String? {
+        if number < 0 {
+            return "reduces"
+        }
+        else if number > 0 {
+            return "increases"
+        }
+        return nil
+    }
+    
+    static func negativeEffectDirection(of direction: BuffAbstract.BuffDirection) -> String {
+        switch direction {
+        case .bidirectional:
+            return "dealt and recieved"
+        case .outgoing:
+            return "dealt"
+        case .incoming:
+            return "recieved"
+        }
+    }
+    
+    static func positiveEffectDirection(of direction: BuffAbstract.BuffDirection) -> String {
+        switch direction {
+        case .bidirectional:
+            return "restored and given to others"
+        case .outgoing:
+            return "given to others"
+        case .incoming:
+            return "restored"
+        }
+    }
+    
+    static func goldPaymentDirection(of direction: BuffAbstract.BuffDirection) -> String {
+        switch direction {
+        case .bidirectional:
+            return "earnt and paid out"
+        case .outgoing:
+            return "paid out"
+        case .incoming:
+            return "earnt"
+        }
+    }
+    
+    static func getPercentageFromDouble(_ fraction: Double) -> String {
+        return "\(round((100.0*(1.0 - fraction))))%"
+    }
     
 }

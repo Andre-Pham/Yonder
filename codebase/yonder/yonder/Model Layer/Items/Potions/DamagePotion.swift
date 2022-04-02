@@ -10,7 +10,7 @@ import Foundation
 class DamagePotion: PotionAbstract {
     
     init(name: String = "placeholderName", description: String = "placeholderDescription", damage: Int, potionCount: Int, basePurchasePrice: Int) {
-        super.init(name: name, description: description, remainingUses: potionCount, damage: damage, basePurchasePrice: basePurchasePrice)
+        super.init(name: name, description: description, effectsDescription: "Deals \(damage) \(Term.damage).", remainingUses: potionCount, damage: damage, basePurchasePrice: basePurchasePrice)
     }
     
     func use(owner: ActorAbstract, opposition: ActorAbstract) {

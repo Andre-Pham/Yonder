@@ -23,7 +23,11 @@ struct ItemInspectView: View {
                     InspectStatView(title: Term.healthRestoration.capitalized, value: self.itemViewModel.healthRestoration, image: YonderImages.itemHealthRestorationIcon)
                 }
                 
-                InspectStatView(title: Term.remainingUses.capitalized, value: self.itemViewModel.remainingUses, image: YonderImages.durabilityIcon)
+                InspectStatView(title: Term.weaponRemainingUses.capitalized, value: self.itemViewModel.remainingUses, image: YonderImages.durabilityIcon)
+            }
+            
+            if let effectsDescription = self.itemViewModel.effectsDescription {
+                YonderText(text: effectsDescription, size: .inspectSheetBody)
             }
             
             InspectSectionSpacingView()
@@ -33,13 +37,14 @@ struct ItemInspectView: View {
     }
 }
 
-struct WeaponInspectView_Previews: PreviewProvider {
+struct ItemInspectView_Previews: PreviewProvider {
     static var previews: some View {
-        ZStack {
+        ZStack(alignment: .topLeading) {
             Color.Yonder.backgroundMaxDepth
                 .ignoresSafeArea()
             
             ItemInspectView(itemViewModel: WeaponViewModel(Weapon(basePill: DamageBasePill(damage: 200, durability: 5), durabilityPill: DecrementDurabilityPill())))
+                .padding()
         }
     }
 }

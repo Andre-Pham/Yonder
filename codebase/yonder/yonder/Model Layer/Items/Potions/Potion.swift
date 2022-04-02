@@ -13,10 +13,10 @@ class PotionAbstractPart: ItemAbstract, Purchasable {
     
     public let basePurchasePrice: Int
     
-    init(name: String, description: String, remainingUses: Int = 0, damage: Int = 0, healthRestoration: Int = 0, basePurchasePrice: Int) {
+    init(name: String, description: String, effectsDescription: String?, remainingUses: Int = 0, damage: Int = 0, healthRestoration: Int = 0, basePurchasePrice: Int) {
         self.basePurchasePrice = basePurchasePrice
         
-        super.init(name: name, description: description, remainingUses: remainingUses, damage: damage, healthRestoration: healthRestoration)
+        super.init(name: name, description: description, effectsDescription: effectsDescription, remainingUses: remainingUses, damage: damage, healthRestoration: healthRestoration)
     }
     
     func isStackable(with potion: PotionAbstract) -> Bool {

@@ -13,9 +13,11 @@ class InventorySheetsStateManager: ObservableObject {
     private var subscriptions: Set<AnyCancellable> = []
     
     @Published var weaponSheetBindings: [Bool]
+    @Published var armorSheetBindings: [Bool]
     
     init(playerViewModel: PlayerViewModel) {
         self.weaponSheetBindings = Array(repeating: false, count: playerViewModel.weaponViewModels.count)
+        self.armorSheetBindings = Array(repeating: false, count: playerViewModel.allArmorViewModels.count)
         
         // Add Subscribers
         
@@ -26,6 +28,10 @@ class InventorySheetsStateManager: ObservableObject {
     
     func presentWeaponSheet(at index: Int) {
         self.weaponSheetBindings[index] = true
+    }
+    
+    func presentArmorSheet(at index: Int) {
+        self.armorSheetBindings[index] = true
     }
     
 }

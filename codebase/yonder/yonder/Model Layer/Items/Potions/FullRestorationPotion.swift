@@ -10,7 +10,7 @@ import Foundation
 class FullRestorationPotion: PotionAbstract {
     
     init(name: String = "placeholderName", description: String = "placeholderDescription", potionCount: Int, basePurchasePrice: Int) {
-        super.init(name: name, description: description, remainingUses: potionCount, basePurchasePrice: basePurchasePrice)
+        super.init(name: name, description: description, effectsDescription: "Fully \(Term.restores) your \(Term.health).", remainingUses: potionCount, basePurchasePrice: basePurchasePrice)
     }
     
     func use(owner: ActorAbstract, opposition: ActorAbstract) {
