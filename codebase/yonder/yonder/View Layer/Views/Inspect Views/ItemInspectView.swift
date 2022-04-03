@@ -9,6 +9,16 @@ import SwiftUI
 
 struct ItemInspectView: View {
     @ObservedObject var itemViewModel: ItemViewModel
+    var remainingUsesDescription: String {
+        switch itemViewModel {
+        case is WeaponViewModel:
+            return Term.weaponRemainingUses.capitalized
+        case is PotionViewModel:
+            return Term.potionRemainingUses.capitalized
+        default:
+            return Term.remainingUses.capitalized
+        }
+    }
     
     var body: some View {
         InspectBody {
@@ -23,7 +33,7 @@ struct ItemInspectView: View {
                     InspectStatView(title: Term.healthRestoration.capitalized, value: self.itemViewModel.healthRestoration, image: YonderImages.itemHealthRestorationIcon)
                 }
                 
-                InspectStatView(title: Term.weaponRemainingUses.capitalized, value: self.itemViewModel.remainingUses, image: YonderImages.durabilityIcon)
+                InspectStatView(title: self.remainingUsesDescription, value: self.itemViewModel.remainingUses, image: YonderImages.durabilityIcon)
             }
             
             if let effectsDescription = self.itemViewModel.effectsDescription {
