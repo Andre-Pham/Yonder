@@ -25,7 +25,6 @@ class OptionsStateManager: ObservableObject {
     private var subscriptions: Set<AnyCancellable> = []
     
     @Published private(set) var showOptions = true
-    let optionColumns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
     @Published private var optionHeaderText = "Your Options"
     var optionHeader: String {
         return "[\(self.optionHeaderText)]"

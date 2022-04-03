@@ -10,6 +10,7 @@ import SwiftUI
 struct InventoryView: View {
     @StateObject private var playerViewModel = gameManager.playerVM
     @StateObject private var sheetsStateManager = InventorySheetsStateManager(playerViewModel: gameManager.playerVM)
+    @StateObject private var inventoryStateManager = InventoryStateManager()
     
     var body: some View {
         GeometryReader { geo in
@@ -38,23 +39,53 @@ struct InventoryView: View {
                             ))
                     }
                     
+                    YonderText(text: Term.accessories.capitalized, size: .title2)
+                    
+                    // TODO: Implement after accessories are added
+                    
                     YonderText(text: Term.inventory.capitalized, size: .title2)
-                    // Buttons to show weapons, potions
                     
-                    // Armor
-                    // Accessories (in the future)
-                    // Weapons/Potions buttons
-                    
-                    ForEach(Array(zip(playerViewModel.weaponViewModels.indices, playerViewModel.weaponViewModels)), id: \.1.id) { index, weaponViewModel in
-                        YonderButton(text: weaponViewModel.name) {
-                            self.sheetsStateManager.presentWeaponSheet(at: index)
+                    YonderOptionsGrid {
+                        YonderGridOption(title: Term.weapons.capitalized, geometry: geo, image: YonderImages.weaponOptionIcon) {
+                            self.inventoryStateManager.weaponOptionSelected()
                         }
-                        .withInspectSheet(
-                            isPresented: self.$sheetsStateManager.weaponSheetBindings[index],
-                            pageGeometry: geo,
-                            content: AnyView(
-                            ItemInspectView(itemViewModel: weaponViewModel)
-                        ))
+                        
+                        YonderGridOption(title: Term.potions.capitalized, geometry: geo, image: YonderImages.potionOptionIcon) {
+                            self.inventoryStateManager.potionOptionSelected()
+                        }
+                    }
+                    
+                    if let header = self.inventoryStateManager.optionHeader {
+                        YonderText(text: header, size: .title4)
+                            .frame(maxWidth: .infinity)
+                    }
+                    
+                    if self.inventoryStateManager.weaponsActive {
+                        ForEach(Array(zip(playerViewModel.weaponViewModels.indices, playerViewModel.weaponViewModels)), id: \.1.id) { index, weaponViewModel in
+                            YonderWideButton(text: weaponViewModel.name) {
+                                self.sheetsStateManager.presentWeaponSheet(at: index)
+                            }
+                            .withInspectSheet(
+                                isPresented: self.$sheetsStateManager.weaponSheetBindings[index],
+                                pageGeometry: geo,
+                                content: AnyView(
+                                ItemInspectView(itemViewModel: weaponViewModel)
+                            ))
+                        }
+                    }
+                    
+                    if self.inventoryStateManager.potionsActive {
+                        ForEach(Array(zip(playerViewModel.potionViewModels.indices, playerViewModel.potionViewModels)), id: \.1.id) { index, potionViewModel in
+                            YonderWideButton(text: potionViewModel.name) {
+                                self.sheetsStateManager.presentPotionSheet(at: index)
+                            }
+                            .withInspectSheet(
+                                isPresented: self.$sheetsStateManager.potionSheetBindings[index],
+                                pageGeometry: geo,
+                                content: AnyView(
+                                ItemInspectView(itemViewModel: potionViewModel)
+                            ))
+                        }
                     }
                 }
                 .padding(.horizontal)

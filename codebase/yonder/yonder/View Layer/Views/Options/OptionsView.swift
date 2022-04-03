@@ -50,39 +50,39 @@ struct OptionsView: View {
                     YonderText(text: self.optionsStateManager.optionHeader, size: .title4)
                     
                     if self.optionsStateManager.showOptions {
-                        LazyVGrid(columns: self.optionsStateManager.optionColumns, spacing: YonderCoreGraphics.padding) {
+                        YonderOptionsGrid {
                             if optionsStateManager.weaponOptionActive {
-                                OptionButton(title: "Select \(Term.weapon.capitalized)", geometry: geo, image: YonderImages.weaponOptionIcon) {
+                                YonderGridOption(title: "Select \(Term.weapon.capitalized)", geometry: geo, image: YonderImages.weaponOptionIcon) {
                                     self.optionsStateManager.weaponOptionSelected()
                                 }
                             }
                             
                             if optionsStateManager.potionOptionActive {
-                                OptionButton(title: "Select \(Term.potion.capitalized)", geometry: geo, image: YonderImages.missingIcon) {
+                                YonderGridOption(title: "Select \(Term.potion.capitalized)", geometry: geo, image: YonderImages.missingIcon) {
                                     self.optionsStateManager.potionOptionSelected()
                                 }
                             }
                             
                             if self.optionsStateManager.offerOptionActive {
-                                OptionButton(title: "View \(Term.offers.capitalized)", geometry: geo, image: self.playerViewModel.locationViewModel.getTypeImage()) {
+                                YonderGridOption(title: "View \(Term.offers.capitalized)", geometry: geo, image: self.playerViewModel.locationViewModel.getTypeImage()) {
                                     self.optionsStateManager.offerOptionSelected()
                                 }
                             }
                             
                             if self.optionsStateManager.purchaseRestorationOptionActive {
-                                OptionButton(title: "Purchase \(Term.restoration.capitalized)", geometry: geo, image: self.playerViewModel.locationViewModel.getTypeImage()) {
+                                YonderGridOption(title: "Purchase \(Term.restoration.capitalized)", geometry: geo, image: self.playerViewModel.locationViewModel.getTypeImage()) {
                                     self.optionsStateManager.purchaseRestorationOptionSelected()
                                 }
                             }
                             
                             if self.optionsStateManager.shopOptionActive {
-                                OptionButton(title: Term.shop.capitalized, geometry: geo, image: self.playerViewModel.locationViewModel.getTypeImage()) {
+                                YonderGridOption(title: Term.shop.capitalized, geometry: geo, image: self.playerViewModel.locationViewModel.getTypeImage()) {
                                     self.optionsStateManager.shopOptionSelected()
                                 }
                             }
                             
                             if self.optionsStateManager.travelOptionActive {
-                                OptionButton(title: Term.travel.capitalized, geometry: geo, image: YonderImages.mapIcon) {
+                                YonderGridOption(title: Term.travel.capitalized, geometry: geo, image: YonderImages.mapIcon) {
                                     self.optionsStateManager.travelOptionSelected(
                                         viewRouter: self.viewRouter,
                                         travelStateManager: self.travelStateManager)
