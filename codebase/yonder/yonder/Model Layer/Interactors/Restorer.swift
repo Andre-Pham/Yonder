@@ -9,6 +9,18 @@ import Foundation
 
 class Restorer: InteractorAbstract {
     
+    enum RestoreOption {
+        case health
+        case armorPoints
+        
+        var id: UUID {
+            switch self {
+            case .health: return UUID(uuidString: "536F97B9-2C1C-493C-BE6E-759AFCE2D2C5")!
+            case .armorPoints: return UUID(uuidString: "9B8E8B99-8687-4235-BC05-75E9136B551D")!
+            }
+        }
+    }
+    
     public let options: [RestoreOption]
     public let pricePerHealth: Int
     public let pricePerArmorPoint: Int
@@ -43,16 +55,4 @@ class Restorer: InteractorAbstract {
         purchaser.restoreArmorPointsAdjusted(sourceOwner: Proxies.NO_ACTOR, using: Proxies.NO_ITEM, for: amountPurchased)
     }
     
-}
-
-enum RestoreOption {
-    case health
-    case armorPoints
-    
-    var id: UUID {
-        switch self {
-        case .health: return UUID(uuidString: "536F97B9-2C1C-493C-BE6E-759AFCE2D2C5")!
-        case .armorPoints: return UUID(uuidString: "9B8E8B99-8687-4235-BC05-75E9136B551D")!
-        }
-    }
 }

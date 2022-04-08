@@ -25,11 +25,11 @@ class RestorerViewModel: InteractorViewModel {
 
 class RestoreOptionViewModel: ObservableObject {
     
-    private let restoreOption: RestoreOption
+    private let restoreOption: Restorer.RestoreOption
     private let restorerViewModel: RestorerViewModel
     private(set) var id: UUID
     
-    init(restoreOption: RestoreOption, restorerViewModel: RestorerViewModel) {
+    init(restoreOption: Restorer.RestoreOption, restorerViewModel: RestorerViewModel) {
         self.restoreOption = restoreOption
         self.restorerViewModel = restorerViewModel
         
