@@ -52,7 +52,9 @@ enum YonderTerminology {
     }
     
     static let stats = "stats"
+    static let buffOrEffect = "status effect" // Covers both buffs(/debuffs) and status effects
     static let buffsAndEffects = "status effects" // Covers both buffs(/debuffs) and status effects
+    static let weaponEffect = "effect"
     static let options = "game"
     static let inventory = "inventory"
     static let map = "map"
