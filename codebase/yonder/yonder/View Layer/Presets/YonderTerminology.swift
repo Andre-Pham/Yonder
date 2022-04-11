@@ -35,6 +35,7 @@ enum YonderTerminology {
     static let restore = "restore"
     static let restores = "restores"
     static let purchase = "purchase"
+    static let enhance = "enhance"
     
     static let armor = "armor"
     static let headArmorSlot = "head"
@@ -72,6 +73,7 @@ enum YonderTerminology {
     static let accessory = "accessory"
     static let offer = "offer"
     static let offers = "offers"
+    static let enhanceables = "items"
     
     static func magnitudeChangeFromMultiplying(_ fraction: Double) -> String? {
         if fraction < 1 {

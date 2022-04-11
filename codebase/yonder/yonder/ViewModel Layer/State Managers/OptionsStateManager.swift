@@ -65,6 +65,12 @@ class OptionsStateManager: ObservableObject {
     }
     @Published var shopActionsActive = Status(false)
     
+    // Enhance option
+    var enhanceOptionActive: Bool {
+        return self.playerViewModel.canEnhance
+    }
+    @Published var enhanceActionsActive = Status(false)
+    
     // Whenever an action is set to showing, its reference is passed here
     var activeActions = Status(false)
     
@@ -92,21 +98,21 @@ class OptionsStateManager: ObservableObject {
     }
     
     func weaponOptionSelected() {
-        self.optionHeaderText = "Use Weapon"
+        self.optionHeaderText = "Use \(Term.weapon.capitalized)"
         self.showOptions = false
         self.weaponActionsActive = Status(true)
         self.activeActions = self.weaponActionsActive
     }
     
     func potionOptionSelected() {
-        self.optionHeaderText = "Use Potion"
+        self.optionHeaderText = "Use \(Term.potion.capitalized)"
         self.showOptions = false
         self.potionActionsActive = Status(true)
         self.activeActions = self.potionActionsActive
     }
     
     func offerOptionSelected() {
-        self.optionHeaderText = "Accept Offers"
+        self.optionHeaderText = "Accept \(Term.offers.capitalized)"
         self.showOptions = false
         self.offerActionsActive = Status(true)
         self.activeActions = self.offerActionsActive
@@ -124,6 +130,13 @@ class OptionsStateManager: ObservableObject {
         self.showOptions = false
         self.shopActionsActive = Status(true)
         self.activeActions = self.shopActionsActive
+    }
+    
+    func enhanceOptionSelected() {
+        self.optionHeaderText = "\(Term.enhance.capitalized) \(Term.enhanceables.capitalized)"
+        self.showOptions = false
+        self.enhanceActionsActive = Status(true)
+        self.activeActions = self.enhanceActionsActive
     }
     
     func travelOptionSelected(viewRouter: ViewRouter, travelStateManager: TravelStateManager) {

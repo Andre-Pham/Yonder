@@ -81,6 +81,12 @@ struct OptionsView: View {
                                 }
                             }
                             
+                            if self.optionsStateManager.enhanceOptionActive {
+                                YonderGridOption(title: Term.enhance.capitalized, geometry: geo, image: self.playerViewModel.locationViewModel.getTypeImage()) {
+                                    self.optionsStateManager.enhanceOptionSelected()
+                                }
+                            }
+                            
                             if self.optionsStateManager.travelOptionActive {
                                 YonderGridOption(title: Term.travel.capitalized, geometry: geo, image: YonderImages.mapIcon) {
                                     self.optionsStateManager.travelOptionSelected(
@@ -137,6 +143,14 @@ struct OptionsView: View {
                                 if let shopKeeperViewModel = self.playerViewModel.locationViewModel.getInteractorViewModel() as? ShopKeeperViewModel {
                                     ForEach(shopKeeperViewModel.purchasables, id: \.id) { purchasable in
                                         PurchaseFromShopKeeperButton(playerViewModel: self.playerViewModel, purchasableViewModel: purchasable, pageGeometry: geo)
+                                    }
+                                }
+                            }
+                            
+                            if self.optionsStateManager.enhanceActionsActive.isActive {
+                                if let enhancerViewModel = self.playerViewModel.locationViewModel.getInteractorViewModel() as? EnhancerViewModel {
+                                    ForEach(enhancerViewModel.enhanceOfferViewModels, id: \.id) { offer in
+                                        ViewEnhanceablesButton(playerViewModel: self.playerViewModel, enhanceOfferViewModel: offer, pageGeometry: geo)
                                     }
                                 }
                             }

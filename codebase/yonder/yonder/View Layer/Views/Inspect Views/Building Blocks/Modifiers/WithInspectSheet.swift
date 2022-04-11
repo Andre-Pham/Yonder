@@ -47,13 +47,9 @@ struct InspectSheet<Content: View>: View {
                 .ignoresSafeArea()
             
             ScrollView(.vertical, showsIndicators: false) {
-                HStack {
-                    content()
-                        .padding(.top)
-                        .padding(.horizontal)
-                    
-                    Spacer()
-                }
+                content()
+                    .padding(.top)
+                    .padding(.horizontal)
             }
             .frame(
                 width: self.pageGeometry.size.width-YonderCoreGraphics.padding*4,

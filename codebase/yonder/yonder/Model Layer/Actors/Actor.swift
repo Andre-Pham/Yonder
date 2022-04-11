@@ -26,6 +26,9 @@ class ActorAbstract {
     public var allArmorPieces: [ArmorAbstract] {
         return [self.headArmor, self.bodyArmor, self.legsArmor]
     }
+    public var allUpgradableArmorPieces: [ArmorAbstract] {
+        return self.allArmorPieces.filter { $0.allowsUpgrading }
+    }
     public let id = UUID()
     
     init(maxHealth: Int) {

@@ -50,6 +50,12 @@ class LocationViewModel: ObservableObject {
         }
         return false
     }
+    var playerCanEnhance: Bool {
+        if let enhanceLocation = self.location as? EnhancerLocation {
+            return !enhanceLocation.enhancer.enhanceOffers.isEmpty
+        }
+        return false
+    }
     
     init(_ location: LocationAbstract) {
         self.location = location

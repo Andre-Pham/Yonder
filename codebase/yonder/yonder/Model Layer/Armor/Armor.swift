@@ -17,19 +17,21 @@ class ArmorAbstract: EffectsDescribed, Purchasable, Named, Described, Enhanceabl
     private(set) var armorBuffs: [BuffAbstract]
     public let id = UUID()
     @DidSetPublished private(set) var effectsDescription: String?
+    private(set) var allowsUpgrading: Bool
     
     /// To be called by subclasses only.
     /// - Parameters:
     ///     - type: Where the armor is worn
     ///     - armorPoints: The 'health' of the armor
     ///     - armorBuffs: The effects the armor gives when worn
-    init(name: String, description: String, type: ArmorType, armorPoints: Int, basePurchasePrice: Int, armorBuffs: [BuffAbstract]) {
+    init(name: String, description: String, type: ArmorType, armorPoints: Int, basePurchasePrice: Int, allowsUpgrading: Bool = true, armorBuffs: [BuffAbstract]) {
         self.name = name
         self.description = description
         self.type = type
         self.armorPoints = armorPoints
         self.basePurchasePrice = basePurchasePrice
         self.armorBuffs = armorBuffs
+        self.allowsUpgrading = allowsUpgrading
         self.effectsDescription = ArmorAbstract.getEffectsDescription(buffs: armorBuffs)
     }
     

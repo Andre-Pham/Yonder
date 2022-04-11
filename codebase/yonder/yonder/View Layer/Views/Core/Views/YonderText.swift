@@ -67,11 +67,13 @@ struct YonderText: View {
     let text: String
     let size: YonderTextSize
     var color: Color = Color.Yonder.textMaxContrast
+    var multilineTextAlignment: TextAlignment = .leading
     
     var body: some View {
         Text(self.text)
             .font(YonderFonts.main(size: self.size.value))
             .foregroundColor(self.color)
+            .multilineTextAlignment(self.multilineTextAlignment)
             .fixedSize(horizontal: false, vertical: true) // Text wraps instead of being cut off
     }
 }

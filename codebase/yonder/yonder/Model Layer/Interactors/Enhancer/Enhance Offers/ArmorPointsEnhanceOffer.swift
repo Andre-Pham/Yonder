@@ -23,7 +23,7 @@ class ArmorPointsEnhanceOffer: EnhanceOffer {
     }
     
     func getEnhanceables(from player: Player) -> [Enhanceable] {
-        return player.weapons
+        return player.allUpgradableArmorPieces
     }
     
     func acceptOffer(player: Player, enhanceableID: UUID) {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class EnhanceOfferViewModel {
+class EnhanceOfferViewModel: ObservableObject {
     
     // offer can be used within the ViewModel layer, but Views should only interact with ViewModels (not the Model layer)
     private(set) var offer: EnhanceOffer
@@ -25,8 +25,16 @@ class EnhanceOfferViewModel {
         self.id = self.offer.id
     }
     
+    func canBeAfforded(by playerViewModel: PlayerViewModel) -> Bool {
+        return self.offer.canBePurchased(price: self.offer.price, purchaser: playerViewModel.player)
+    }
+    
     func accept(playerViewModel: PlayerViewModel, enhanceableID: UUID) {
         self.offer.acceptOffer(player: playerViewModel.player, enhanceableID: enhanceableID)
+    }
+    
+    func getEnhanceableInfos(playerViewModel: PlayerViewModel) -> [EnhanceInfoViewModel] {
+        return self.offer.getEnhanceables(from: playerViewModel.player).map { EnhanceInfoViewModel($0.getEnhanceInfo()) }
     }
     
 }
