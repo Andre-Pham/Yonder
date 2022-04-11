@@ -10,8 +10,14 @@ import Combine
 
 class EnhancerViewModel: InteractorViewModel {
     
+    @Published private(set) var enhanceOfferViewModels = [EnhanceOfferViewModel]()
+    
     init(_ enhancer: Enhancer) {
         super.init(enhancer)
+        
+        for enhanceOffer in enhancer.enhanceOffers {
+            self.enhanceOfferViewModels.append(EnhanceOfferViewModel(enhanceOffer))
+        }
     }
     
 }

@@ -14,18 +14,20 @@ class ArmorBuffEnhanceOffer: EnhanceOffer {
     public let name: String
     public let description: String
     private let buff: BuffAbstract
-    private(set) var candidateIDs: [UUID]
     
-    init(player: Player, price: Int, buff: BuffAbstract) {
+    init(price: Int, buff: BuffAbstract) {
         self.price = price
         self.buff = buff
         self.name = "Add \(Term.buffOrEffect.capitalized) to \(Term.armor.capitalized)"
         self.description = "Give some \(Term.armor) <\(buff.effectsDescription ?? "nothing")>."
-        self.candidateIDs = player.allArmorPieces.map { $0.id }
     }
     
-    func acceptOffer(player: Player, candidateID: UUID) {
-        if let armor = player.allArmorPieces.first(where: { $0.id == candidateID }),
+    func getEnhanceables(from player: Player) -> [Enhanceable] {
+        return player.allArmorPieces
+    }
+    
+    func acceptOffer(player: Player, enhanceableID: UUID) {
+        if let armor = player.allArmorPieces.first(where: { $0.id == enhanceableID }),
            self.canBePurchased(price: self.price, purchaser: player) {
             
             armor.addBuff(buff: self.buff)

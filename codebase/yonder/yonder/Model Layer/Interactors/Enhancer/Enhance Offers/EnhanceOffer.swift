@@ -11,9 +11,9 @@ protocol EnhanceOffer: Named, Described {
     
     var id: UUID { get }
     var price: Int { get }
-    var candidateIDs: [UUID] { get }
     
-    func acceptOffer(player: Player, candidateID: UUID)
+    func getEnhanceables(from player: Player) -> [Enhanceable]
+    func acceptOffer(player: Player, enhanceableID: UUID)
     
 }
 extension EnhanceOffer {

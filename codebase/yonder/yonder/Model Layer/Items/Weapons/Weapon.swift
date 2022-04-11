@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Weapon: ItemAbstract, Usable, Purchasable, Clonable {
+class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
     
     private(set) var basePurchasePrice: Int = 0
     private let basePill: WeaponBasePill
@@ -80,6 +80,10 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable {
         for _ in 0..<amount {
             reciever.addWeapon(self.clone())
         }
+    }
+    
+    func getEnhanceInfo() -> EnhanceInfo {
+        return EnhanceInfo(id: self.id, name: self.name)
     }
     
 }

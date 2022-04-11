@@ -9,23 +9,14 @@ import Foundation
 
 class NoArmor: ArmorAbstract {
     
-    public let name: String
-    public let description: String
-    public let basePurchasePrice = 0
-    
     init(type: ArmorType) {
-        self.name = Term.none.capitalized
-        self.description = "No \(Term.armorSlot(of: type)) \(Term.armor) equipped."
-        
-        super.init(type: type, armorPoints: 0, armorBuffs: [])
-    }
-    
-    func getPurchaseInfo() -> PurchaseableItemInfo {
-        return PurchaseableItemInfo(name: self.name, description: self.description)
-    }
-    
-    func beRecieved(by reciever: Player, amount: Int) {
-        reciever.equipArmor(self)
+        super.init(
+            name: Term.none.capitalized,
+            description: "No \(Term.armorSlot(of: type)) \(Term.armor) equipped.",
+            type: type,
+            armorPoints: 0,
+            basePurchasePrice: 0,
+            armorBuffs: [])
     }
     
 }

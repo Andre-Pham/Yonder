@@ -14,18 +14,20 @@ class WeaponDamageEnhanceOffer: EnhanceOffer {
     public let name: String
     public let description: String
     private let damage: Int
-    private(set) var candidateIDs: [UUID]
     
-    init(player: Player, price: Int, damage: Int) {
+    init(price: Int, damage: Int) {
         self.price = price
         self.damage = damage
         self.name = "Upgrade \(Term.weapon.capitalized) \(Term.damage.capitalized)"
         self.description = "Increase a \(Term.weapon)'s \(Term.damage) by \(damage)."
-        self.candidateIDs = player.weapons.map { $0.id }
     }
     
-    func acceptOffer(player: Player, candidateID: UUID) {
-        if let weapon = player.weapons.first(where: { $0.id == candidateID }),
+    func getEnhanceables(from player: Player) -> [Enhanceable] {
+        return player.weapons
+    }
+    
+    func acceptOffer(player: Player, enhanceableID: UUID) {
+        if let weapon = player.weapons.first(where: { $0.id == enhanceableID }),
            self.canBePurchased(price: self.price, purchaser: player) {
             
             weapon.adjustDamage(by: self.damage)
