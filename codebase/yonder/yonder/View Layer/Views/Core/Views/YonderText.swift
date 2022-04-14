@@ -90,7 +90,7 @@ struct YonderNumeral: View {
             numberOfDecimalPlaces: 0,
             // Work around for iOS15 bug that causes single-digit numbers with exact width to not appear
             // https://github.com/aunnnn/MovingNumbersView/issues/3
-            // 15% extra padding isn't that noticable and fixes the issue
+            // 15% extra padding isn't that noticeable and fixes the issue
             fixedWidth: (self.number < 10 && self.number > -10) ? self.size.width*(self.number < 0 ? 2 : 1)*1.15 : nil,
             animationDuration: self.animationIsActive ? 0.6 : 0.0) { str in
                 // Builds each character

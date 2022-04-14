@@ -8,15 +8,21 @@
 import Foundation
 import SwiftUI
 
+/// A popup that displays at the bottom of the parent view and displays text.
+///
+/// ``` @StateObject private var popupStateManager = PopupStateManager()
+///     // ...
+///     VStack {
+///         Button("Show message!") {
+///             self.popupStateManager.activatePopup()
+///         }
+///         // ...
+///     }
+///     .withFeedbackPopup(text: "Hello World", popupStateManager: self.popupStateManager)
+/// ```
 struct YonderFeedbackPopup: ViewModifier {
     
-    enum PopupDuration: Double {
-        case short = 2
-        case long = 3.5
-    }
-    
     let text: String
-    let duration: PopupDuration
     @ObservedObject var popupStateManager: PopupStateManager
     
     func body(content: Content) -> some View {
@@ -46,12 +52,12 @@ struct YonderFeedbackPopup: ViewModifier {
                 }
             }
         }
-        .animation(.linear(duration: 0.2), value: self.popupStateManager.isShowing)
+        .animation(.linear(duration: self.popupStateManager.transitionDuration), value: self.popupStateManager.isShowing)
     }
     
 }
 extension View {
-    func withFeedbackPopup(text: String, popupStateManager: PopupStateManager, duration: YonderFeedbackPopup.PopupDuration = .short) -> some View {
-        modifier(YonderFeedbackPopup(text: text, duration: duration, popupStateManager: popupStateManager))
+    func withFeedbackPopup(text: String, popupStateManager: PopupStateManager) -> some View {
+        modifier(YonderFeedbackPopup(text: text, popupStateManager: popupStateManager))
     }
 }
