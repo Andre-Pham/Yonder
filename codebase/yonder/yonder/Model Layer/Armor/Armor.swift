@@ -57,12 +57,12 @@ class ArmorAbstract: EffectsDescribed, Purchasable, Named, Described, Enhanceabl
         self.armorPoints += armorPoints
     }
     
-    func getPurchaseInfo() -> PurchaseableItemInfo {
-        return PurchaseableItemInfo(name: self.name, description: self.description)
+    func getPurchaseInfo() -> PurchasableItemInfo {
+        return PurchasableItemInfo(name: self.name, description: self.description)
     }
     
-    func beRecieved(by reciever: Player, amount: Int) {
-        reciever.equipArmor(self)
+    func beReceived(by receiver: Player, amount: Int) {
+        receiver.equipArmor(self)
     }
     
     func getEnhanceInfo() -> EnhanceInfo {

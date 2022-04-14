@@ -13,7 +13,7 @@ class PurchasableItem {
     public let price: Int
     @DidSetPublished private(set) var stockRemaining: Int
     public let id = UUID()
-    public let info: PurchaseableItemInfo
+    public let info: PurchasableItemInfo
     
     init(item: Purchasable, stock: Int) {
         self.item = item
@@ -28,7 +28,7 @@ class PurchasableItem {
         }
         self.stockRemaining -= amount
         purchaser.modifyGoldAdjusted(by: -amount*self.price)
-        self.item.beRecieved(by: purchaser, amount: amount)
+        self.item.beReceived(by: purchaser, amount: amount)
     }
     
     func canPurchase(amount: Int, purchaser: Player) -> Bool {

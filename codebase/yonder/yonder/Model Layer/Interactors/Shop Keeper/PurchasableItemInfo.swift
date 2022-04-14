@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PurchaseableItemInfo {
+class PurchasableItemInfo {
     
     public let name: String
     public let description: String

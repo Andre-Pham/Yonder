@@ -72,13 +72,13 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
         self.durabilityPill.use(on: self)
     }
     
-    func getPurchaseInfo() -> PurchaseableItemInfo {
-        return PurchaseableItemInfo(name: self.name, description: self.description)
+    func getPurchaseInfo() -> PurchasableItemInfo {
+        return PurchasableItemInfo(name: self.name, description: self.description)
     }
     
-    func beRecieved(by reciever: Player, amount: Int) {
+    func beReceived(by receiver: Player, amount: Int) {
         for _ in 0..<amount {
-            reciever.addWeapon(self.clone())
+            receiver.addWeapon(self.clone())
         }
     }
     

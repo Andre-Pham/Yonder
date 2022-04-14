@@ -28,7 +28,7 @@ class Player: ActorAbstract {
             self.modifyGold(by: BuffApps.getAdjustedPrice(purchaser: self, price: amount))
         }
         else if amount > 0 {
-            self.modifyGold(by: BuffApps.getAdjustedGoldWithBonus(reciever: self, gold: amount))
+            self.modifyGold(by: BuffApps.getAdjustedGoldWithBonus(receiver: self, gold: amount))
         }
     }
     

@@ -98,11 +98,11 @@ enum YonderTerminology {
     static func negativeEffectDirection(of direction: BuffAbstract.BuffDirection) -> String {
         switch direction {
         case .bidirectional:
-            return "dealt and recieved"
+            return "dealt and received"
         case .outgoing:
             return "dealt"
         case .incoming:
-            return "recieved"
+            return "received"
         }
     }
     

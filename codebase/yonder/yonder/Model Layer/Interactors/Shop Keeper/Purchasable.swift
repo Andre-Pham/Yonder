@@ -11,7 +11,7 @@ protocol Purchasable {
     
     var basePurchasePrice: Int { get }
     
-    func getPurchaseInfo() -> PurchaseableItemInfo
-    func beRecieved(by reciever: Player, amount: Int)
+    func getPurchaseInfo() -> PurchasableItemInfo
+    func beReceived(by receiver: Player, amount: Int)
     
 }

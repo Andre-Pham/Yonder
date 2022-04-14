@@ -23,13 +23,13 @@ class PotionAbstractPart: ItemAbstract, Purchasable {
         return self.damage == potion.damage && self.healthRestoration == potion.healthRestoration && self.name == potion.name && self.description == potion.description
     }
     
-    func getPurchaseInfo() -> PurchaseableItemInfo {
-        return PurchaseableItemInfo(name: self.name, description: self.description)
+    func getPurchaseInfo() -> PurchasableItemInfo {
+        return PurchasableItemInfo(name: self.name, description: self.description)
     }
     
-    func beRecieved(by reciever: Player, amount: Int) {
+    func beReceived(by receiver: Player, amount: Int) {
         for _ in 0..<amount {
-            reciever.addPotion(self as! PotionAbstract)
+            receiver.addPotion(self as! PotionAbstract)
         }
     }
     
