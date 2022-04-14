@@ -17,7 +17,7 @@ struct YonderFeedbackPopup: ViewModifier {
     
     let text: String
     let duration: PopupDuration
-    @Binding var isShowing: Bool
+    @ObservedObject var popupStateManager: PopupStateManager
     
     func body(content: Content) -> some View {
         ZStack {
@@ -31,7 +31,7 @@ struct YonderFeedbackPopup: ViewModifier {
         VStack {
             Spacer()
             
-            if self.isShowing {
+            if self.popupStateManager.isShowing {
                 Group {
                     YonderText(text: self.text, size: .buttonBody, color: .yellow)
                         .padding()
@@ -42,21 +42,16 @@ struct YonderFeedbackPopup: ViewModifier {
                 .padding(YonderCoreGraphics.padding)
                 .transition(.opacity)
                 .onTapGesture {
-                    self.isShowing = false
-                }
-                .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + self.duration.rawValue) {
-                        self.isShowing = false
-                    }
+                    self.popupStateManager.deactivatePopup()
                 }
             }
         }
-        .animation(.linear(duration: 0.3), value: self.isShowing)
+        .animation(.linear(duration: 0.2), value: self.popupStateManager.isShowing)
     }
     
 }
 extension View {
-    func withFeedbackPopup(text: String, isShowing: Binding<Bool>, duration: YonderFeedbackPopup.PopupDuration = .short) -> some View {
-        modifier(YonderFeedbackPopup(text: text, duration: duration, isShowing: isShowing))
+    func withFeedbackPopup(text: String, popupStateManager: PopupStateManager, duration: YonderFeedbackPopup.PopupDuration = .short) -> some View {
+        modifier(YonderFeedbackPopup(text: text, duration: duration, popupStateManager: popupStateManager))
     }
 }
