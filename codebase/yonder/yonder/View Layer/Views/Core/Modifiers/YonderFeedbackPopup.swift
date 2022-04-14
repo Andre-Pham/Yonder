@@ -23,6 +23,7 @@ import SwiftUI
 struct YonderFeedbackPopup: ViewModifier {
     
     let text: String
+    let color: Color
     @ObservedObject var popupStateManager: PopupStateManager
     
     func body(content: Content) -> some View {
@@ -39,7 +40,7 @@ struct YonderFeedbackPopup: ViewModifier {
             
             if self.popupStateManager.isShowing {
                 Group {
-                    YonderText(text: self.text, size: .buttonBody, color: .yellow)
+                    YonderText(text: self.text, size: .buttonBody, color: self.color)
                         .padding()
                 }
                 .frame(maxWidth: .infinity)
@@ -57,7 +58,7 @@ struct YonderFeedbackPopup: ViewModifier {
     
 }
 extension View {
-    func withFeedbackPopup(text: String, popupStateManager: PopupStateManager) -> some View {
-        modifier(YonderFeedbackPopup(text: text, popupStateManager: popupStateManager))
+    func withFeedbackPopup(text: String, color: Color = Color.Yonder.highlight, popupStateManager: PopupStateManager) -> some View {
+        modifier(YonderFeedbackPopup(text: text, color: color, popupStateManager: popupStateManager))
     }
 }

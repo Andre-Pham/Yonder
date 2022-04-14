@@ -27,7 +27,7 @@ extension Color {
         
         // MARK: - Other
         
-        //let highlight = Color("Assets#1988E9")
+        let highlight = Color.yellow
         let border = Color("Assets#FFFFFF")
         let outlineMinContrast = Color("Assets#1F1E20")
     }
