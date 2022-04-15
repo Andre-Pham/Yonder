@@ -20,7 +20,7 @@ class InventoryStateManager: ObservableObject {
         return nil
     }
     
-    func weaponOptionSelected() {
+    func weaponOptionSelected(weaponCount: Int) {
         if (self.weaponsActive) {
             self.weaponsActive = false
             self.optionHeaderText = nil
@@ -29,10 +29,13 @@ class InventoryStateManager: ObservableObject {
             self.weaponsActive = true
             self.potionsActive = false
             self.optionHeaderText = "Your \(Term.weapons.capitalized)"
+            if weaponCount == 0 {
+                self.optionHeaderText = "No \(Term.weapons.capitalized)"
+            }
         }
     }
     
-    func potionOptionSelected() {
+    func potionOptionSelected(potionCount: Int) {
         if (self.potionsActive) {
             self.potionsActive = false
             self.optionHeaderText = nil
@@ -41,6 +44,9 @@ class InventoryStateManager: ObservableObject {
             self.potionsActive = true
             self.weaponsActive = false
             self.optionHeaderText = "Your \(Term.potions.capitalized)"
+            if potionCount == 0 {
+                self.optionHeaderText = "No \(Term.potions.capitalized)"
+            }
         }
     }
     

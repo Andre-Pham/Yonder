@@ -47,11 +47,11 @@ struct InventoryView: View {
                     
                     YonderOptionsGrid {
                         YonderGridOption(title: Term.weapons.capitalized, geometry: geo, image: YonderImages.weaponOptionIcon) {
-                            self.inventoryStateManager.weaponOptionSelected()
+                            self.inventoryStateManager.weaponOptionSelected(weaponCount: self.playerViewModel.weaponViewModels.count)
                         }
                         
                         YonderGridOption(title: Term.potions.capitalized, geometry: geo, image: YonderImages.potionOptionIcon) {
-                            self.inventoryStateManager.potionOptionSelected()
+                            self.inventoryStateManager.potionOptionSelected(potionCount: self.playerViewModel.potionViewModels.count)
                         }
                     }
                     
