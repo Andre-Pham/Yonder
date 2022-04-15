@@ -64,12 +64,18 @@ class Restorer: InteractorAbstract {
         guard self.canBeAfforded(by: purchaser, amount: amount, option: .health) else {
             return
         }
+        guard !purchaser.isFullHealth else {
+            return
+        }
         purchaser.modifyGoldAdjusted(by: -self.getTotalCost(amount: amount, option: .health))
         purchaser.restoreHealthAdjusted(sourceOwner: Proxies.NO_ACTOR, using: Proxies.NO_ITEM, for: amount)
     }
     
     func restoreArmorPoints(to purchaser: Player, amount: Int) {
         guard self.canBeAfforded(by: purchaser, amount: amount, option: .armorPoints) else {
+            return
+        }
+        guard !purchaser.isFullArmorPoints else {
             return
         }
         purchaser.modifyGoldAdjusted(by: -self.getTotalCost(amount: amount, option: .armorPoints))

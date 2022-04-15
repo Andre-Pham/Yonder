@@ -30,6 +30,12 @@ class ActorAbstract {
         return self.allArmorPieces.filter { $0.allowsUpgrading }
     }
     public let id = UUID()
+    public var isFullHealth: Bool {
+        return !(self.health < self.maxHealth)
+    }
+    public var isFullArmorPoints: Bool {
+        return !(self.armorPoints < self.getMaxArmorPoints())
+    }
     
     init(maxHealth: Int) {
         self.maxHealth = maxHealth
