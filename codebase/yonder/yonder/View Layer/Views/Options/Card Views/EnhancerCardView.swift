@@ -18,3 +18,16 @@ struct EnhancerCardView: View {
     }
 }
 
+struct EnhancerCardView_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack {
+            Color.Yonder.backgroundMaxDepth
+                .ignoresSafeArea()
+            
+            EnhancerCardView(enhancerViewModel: EnhancerViewModel(Enhancer(
+                name: "Ana",
+                description: "You're powered up, get in there!",
+                offers: [WeaponDamageEnhanceOffer(price: 100, damage: 200)])))
+        }
+    }
+}

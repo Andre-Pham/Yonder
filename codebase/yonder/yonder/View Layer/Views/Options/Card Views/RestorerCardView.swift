@@ -18,3 +18,18 @@ struct RestorerCardView: View {
     }
 }
 
+struct RestorerCardView_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack {
+            Color.Yonder.backgroundMaxDepth
+                .ignoresSafeArea()
+            
+            RestorerCardView(restorerViewModel: RestorerViewModel(Restorer(
+                name: "Mercy",
+                description: "Heroes never die!",
+                options: [.health, .armorPoints],
+                pricePerHealth: 10,
+                pricePerArmorPoint: 10)))
+        }
+    }
+}

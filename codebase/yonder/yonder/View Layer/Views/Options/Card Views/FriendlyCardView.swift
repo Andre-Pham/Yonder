@@ -20,3 +20,16 @@ struct FriendlyCardView: View {
     }
 }
 
+struct FriendlyCardView_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack {
+            Color.Yonder.backgroundMaxDepth
+                .ignoresSafeArea()
+            
+            FriendlyCardView(friendlyViewModel: FriendlyViewModel(Friendly(
+                name: "Winston",
+                description: "With a Y",
+                offers: [FreeGoldOffer(goldAmount: 200)], offerLimit: 1)))
+        }
+    }
+}
