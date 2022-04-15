@@ -36,6 +36,7 @@ enum YonderTerminology {
     static let restores = "restores"
     static let purchase = "purchase"
     static let enhance = "enhance"
+    static let enhanced = "enhanced"
     
     static let armor = "armor"
     static let headArmorSlot = "head"

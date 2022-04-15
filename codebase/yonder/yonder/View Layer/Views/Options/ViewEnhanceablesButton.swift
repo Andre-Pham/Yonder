@@ -14,6 +14,7 @@ struct ViewEnhanceablesButton: View {
     @ObservedObject var purchaseEnhanceOfferStateManager: PurchaseEnhanceOfferStateManager
     @State private var viewButtonActive = false
     @State private var optionsSheetActive = false
+    @StateObject private var popupStateManager = PopupStateManager()
     
     init(playerViewModel: PlayerViewModel, enhanceOfferViewModel: EnhanceOfferViewModel, pageGeometry: GeometryProxy) {
         self.playerViewModel = playerViewModel
@@ -36,22 +37,26 @@ struct ViewEnhanceablesButton: View {
                 YonderText(text: self.enhanceOfferViewModel.description, size: .buttonBodySubscript)
             }
         }
-        .withInspectSheet(
-            isPresented: self.$optionsSheetActive,
-            pageGeometry: pageGeometry,
-            content: AnyView(
+        .sheet(isPresented: self.$optionsSheetActive) {
+            InspectSheet(pageGeometry: self.pageGeometry) {
                 VStack {
                     ForEach(Array(zip(enhanceOfferViewModel.getEnhanceableInfos(playerViewModel: self.playerViewModel).indices, enhanceOfferViewModel.getEnhanceableInfos(playerViewModel: self.playerViewModel))), id: \.1.id) { index, enhanceInfoViewModel in
                         
                         YonderExpandableWideButtonBody(isExpanded: self.$purchaseEnhanceOfferStateManager.purchaseButtonActiveBindings[index], expandedButtonText: Term.purchase.capitalized) {
                             // Expanded button is clicked
                             self.enhanceOfferViewModel.accept(playerViewModel: self.playerViewModel, enhanceableID: enhanceInfoViewModel.id)
+                            self.popupStateManager.activatePopup()
                         } label: {
                             YonderText(text: enhanceInfoViewModel.name, size: .buttonBody)
                         }
                     }
                 }
-        ))
+            }
+            .onTapGesture {
+                self.optionsSheetActive = false
+            }
+            .withFeedbackPopup(text: Term.enhanced.capitalized, padding: YonderCoreGraphics.padding*3, popupStateManager: self.popupStateManager)
+        }
     }
 }
 

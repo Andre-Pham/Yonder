@@ -24,6 +24,7 @@ struct YonderFeedbackPopup: ViewModifier {
     
     let text: String
     let color: Color
+    let padding: CGFloat
     @ObservedObject var popupStateManager: PopupStateManager
     
     func body(content: Content) -> some View {
@@ -46,7 +47,7 @@ struct YonderFeedbackPopup: ViewModifier {
                 .frame(maxWidth: .infinity)
                 .background(Color.Yonder.backgroundMaxDepth)
                 .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
-                .padding(YonderCoreGraphics.padding)
+                .padding(self.padding)
                 .transition(.opacity)
                 .onTapGesture {
                     self.popupStateManager.deactivatePopup()
@@ -58,7 +59,7 @@ struct YonderFeedbackPopup: ViewModifier {
     
 }
 extension View {
-    func withFeedbackPopup(text: String, color: Color = Color.Yonder.highlight, popupStateManager: PopupStateManager) -> some View {
-        modifier(YonderFeedbackPopup(text: text, color: color, popupStateManager: popupStateManager))
+    func withFeedbackPopup(text: String, color: Color = Color.Yonder.highlight, padding: CGFloat = YonderCoreGraphics.padding, popupStateManager: PopupStateManager) -> some View {
+        modifier(YonderFeedbackPopup(text: text, color: color, padding: padding, popupStateManager: popupStateManager))
     }
 }
