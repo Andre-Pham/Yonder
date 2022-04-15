@@ -30,7 +30,7 @@ struct YonderGridOption: View {
             VStack {
                 YonderIcon(image: self.image, sideLength: .large)
                 
-                YonderText(text: self.title, size: .optionBody)
+                YonderText(text: self.title, size: .optionBody, multilineTextAlignment: .center)
             }
             .padding(.horizontal)
             .frame(width: self.width, height: self.height)
