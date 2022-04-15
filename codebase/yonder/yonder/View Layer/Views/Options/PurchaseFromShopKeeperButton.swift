@@ -91,3 +91,40 @@ struct PurchaseFromShopKeeperButton: View {
         }
     }
 }
+
+struct PurchaseFromShopKeeperButton_Previews: PreviewProvider {
+    static var previews: some View {
+        GeometryReader { geo in
+            ZStack {
+                Color.Yonder.backgroundMaxDepth
+                    .ignoresSafeArea()
+                
+                PurchaseFromShopKeeperButton(
+                    playerViewModel: PlayerViewModel(
+                        Player(
+                            maxHealth: 200,
+                            location: NoLocation()
+                        )
+                    ),
+                    purchasableViewModel: PurchasableViewModel(
+                        purchasable: PurchasableItem(
+                            item: ArmorAbstract(
+                                name: "Cool Armor",
+                                description: "Very cool.",
+                                type: .body,
+                                armorPoints: 200,
+                                basePurchasePrice: 100,
+                                armorBuffs: []
+                            ),
+                            stock: 3
+                        ),
+                        shopKeeperViewModel: ShopKeeperViewModel(ShopKeeper(
+                            name: "ShopKeeper",
+                            description: "Sells things.",
+                            purchasableItems: []))
+                    ),
+                    pageGeometry: geo)
+            }
+        }
+    }
+}
