@@ -45,14 +45,9 @@ class RestoreOptionViewModel: ObservableObject {
         }
     }
     
-    func getPricePerUnit() -> Int {
+    func getBundlePrice() -> Int {
         let restorer = self.restorerViewModel.interactor as! Restorer
-        switch self.restoreOption {
-        case .health:
-            return restorer.pricePerHealth
-        case .armorPoints:
-            return restorer.pricePerArmorPoint
-        }
+        return restorer.getBundlePrice(option: self.restoreOption)
     }
     
     func restore(amount: Int, to playerViewModel: PlayerViewModel) {
@@ -66,7 +61,8 @@ class RestoreOptionViewModel: ObservableObject {
     }
     
     func restoreIsDisabled(playerViewModel: PlayerViewModel, amount: Int) -> Bool {
-        if playerViewModel.gold < amount*self.getPricePerUnit() {
+        let restorer = self.restorerViewModel.interactor as! Restorer
+        if !restorer.canBeAfforded(by: playerViewModel.player, amount: amount, option: self.restoreOption) {
             return true
         }
         switch self.restoreOption {

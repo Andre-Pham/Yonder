@@ -12,7 +12,7 @@ enum Restorers {
     // MARK: - Test Restorers
     
     static func newTestRestorer() -> Restorer {
-        return Restorer(options: [.armorPoints, .health], pricePerHealth: 10, pricePerArmorPoint: 15)
+        return Restorer(options: [.armorPoints, .health], pricePerHealthBundle: 10, pricePerArmorPointBundle: 15)
     }
     
     // MARK:  - Stage 0

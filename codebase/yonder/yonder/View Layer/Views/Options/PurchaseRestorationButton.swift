@@ -11,7 +11,7 @@ struct PurchaseRestorationButton: View {
     @ObservedObject var playerViewModel: PlayerViewModel
     @ObservedObject var restorationOptionViewModel: RestoreOptionViewModel
     @State private var useButtonActive = false
-    private let baseRestorationAmount = 10
+    private let baseRestorationAmount = Restorer.bundleSize
     
     var body: some View {
         YonderExpandableWideButtonBody(
@@ -28,7 +28,7 @@ struct PurchaseRestorationButton: View {
                         
                         Spacer()
                         
-                        YonderIconNumeralPair(prefix: Term.currencySymbol, image: YonderImages.goldIcon, numeral: self.restorationOptionViewModel.getPricePerUnit()*self.baseRestorationAmount, size: .buttonBody, animationIsActive: false)
+                        YonderIconNumeralPair(prefix: Term.currencySymbol, image: YonderImages.goldIcon, numeral: self.restorationOptionViewModel.getBundlePrice(), size: .buttonBody, animationIsActive: false)
                             .padding(.horizontal, YonderCoreGraphics.padding*1.5)
                             .padding(.vertical, YonderCoreGraphics.padding)
                             .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)

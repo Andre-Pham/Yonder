@@ -28,8 +28,8 @@ struct RestorerCardView_Previews: PreviewProvider {
                 name: "Mercy",
                 description: "Heroes never die!",
                 options: [.health, .armorPoints],
-                pricePerHealth: 10,
-                pricePerArmorPoint: 10)))
+                pricePerHealthBundle: 10,
+                pricePerArmorPointBundle: 10)))
         }
     }
 }
