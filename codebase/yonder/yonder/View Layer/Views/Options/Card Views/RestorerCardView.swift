@@ -13,7 +13,7 @@ struct RestorerCardView: View {
     
     var body: some View {
         CardBody(name: self.restorerViewModel.name) {
-            
+            CardInteractorTypeView()
         }
     }
 }

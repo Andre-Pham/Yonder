@@ -12,6 +12,7 @@ enum YonderIconSize: CGFloat {
     case large = 34
     case standard = 24
     case inspectSheet = 18
+    case cardSubscript = 14
 }
 
 struct YonderIcon: View {

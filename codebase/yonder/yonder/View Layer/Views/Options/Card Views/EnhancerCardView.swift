@@ -13,7 +13,7 @@ struct EnhancerCardView: View {
     
     var body: some View {
         CardBody(name: self.enhancerViewModel.name) {
-            
+            CardInteractorTypeView()
         }
     }
 }

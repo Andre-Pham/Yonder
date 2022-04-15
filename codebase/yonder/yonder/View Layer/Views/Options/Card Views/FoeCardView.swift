@@ -12,6 +12,8 @@ struct FoeCardView: View {
     
     var body: some View {
         CardBody(name: foeViewModel.name) {
+            CardInteractorTypeView()
+            
             CardRowView(
                 value: self.foeViewModel.weaponViewModel.damage,
                 image: YonderImages.foeDamageIcon)
