@@ -26,7 +26,7 @@ struct CardBody<Content: View>: View {
             
             Spacer()
         }
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.leading)
         .padding(.trailing)
         .foregroundColor(.Yonder.textMaxContrast)
