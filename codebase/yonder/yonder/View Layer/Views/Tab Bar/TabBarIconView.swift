@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct TabBarIconView: View {
-    @ObservedObject var viewRounter: ViewRouter
+    @ObservedObject var viewRouter: ViewRouter
     let correspondingPage: Page
     
     let icon: YonderIcon
@@ -29,10 +29,10 @@ struct TabBarIconView: View {
                     Spacer()
                 }
                 .onTapGesture {
-                    self.viewRounter.switchPage(to: self.correspondingPage)
+                    self.viewRouter.switchPage(to: self.correspondingPage)
                 }
                 
-                if self.viewRounter.currentPage == self.correspondingPage {
+                if self.viewRouter.currentPage == self.correspondingPage {
                     VStack {
                         HStack(spacing: 32) {
                             YonderText(text: "]", size: .tabBarIconCapsule)
