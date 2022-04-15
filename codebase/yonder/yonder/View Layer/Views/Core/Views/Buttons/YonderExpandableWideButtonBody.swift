@@ -30,12 +30,9 @@ struct YonderExpandableWideButtonBody<Content: View>: View {
                 self.isExpanded.toggle()
             } label: {
                 VStack {
-                    HStack {
-                        content()
-                        
-                        Spacer()
-                    }
-                    .padding(.horizontal, YonderCoreGraphics.padding)
+                    content()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal, YonderCoreGraphics.padding)
                     
                     if self.isExpanded {
                         // Expand button frame
