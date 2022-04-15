@@ -10,7 +10,7 @@ import SwiftUI
 
 struct TabBarIconView: View {
     @ObservedObject var viewRouter: ViewRouter
-    let correspondingPage: Page
+    let correspondingPage: ViewRouter.Page
     
     let icon: YonderIcon
     let text: String

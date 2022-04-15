@@ -68,20 +68,3 @@ struct TabBarView: View {
         }
     }
 }
-
-class ViewRouter: ObservableObject {
-    
-    @Published private(set) var currentPage: Page = .options
-    
-    func switchPage(to page: Page) {
-        self.currentPage = page
-    }
-    
-}
-
-enum Page {
-    case options
-    case inventory
-    case map
-    case settings
-}
