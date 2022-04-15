@@ -9,21 +9,21 @@ import Foundation
 import SwiftUI
 
 struct TabBarView: View {
-    @EnvironmentObject private var viewRounter: ViewRouter
+    @EnvironmentObject private var viewRouter: ViewRouter
     
     var body: some View {
         VStack(spacing: 0) {
             ZStack {
                 OptionsView()
-                    .opacity(self.viewRounter.currentPage == .options ? 1 : 0)
+                    .opacity(self.viewRouter.currentPage == .options ? 1 : 0)
                 
-                if self.viewRounter.currentPage == .inventory {
+                if self.viewRouter.currentPage == .inventory {
                     // Other views we adjust the opacity to hide the view while maintaining state
                     // We want to reload the inventory view every time we open it
                     // Inventory view has to manage dynamic inspect sheets, for example, player weapons
                     // Adding (for example) weapons in other tabs will modify the state of the inventory view's sheets
                     // This is fine, except (for some reason) it breaks the animation for all sheets until inventory view is loaded in as the currently active view
-                    // To demonstate this:
+                    // To demonstrate this:
                     // 1. Maintain inventory view's state using opacity to dismiss it (like other views)
                     // 2. Purchase/obtain a weapon in option view
                     // 3. Open any inspect sheet in option view
@@ -31,33 +31,33 @@ struct TabBarView: View {
                 }
                 
                 MapView()
-                    .opacity(self.viewRounter.currentPage == .map ? 1 : 0)
+                    .opacity(self.viewRouter.currentPage == .map ? 1 : 0)
                 
                 SettingsView()
-                    .opacity(self.viewRounter.currentPage == .settings ? 1 : 0)
+                    .opacity(self.viewRouter.currentPage == .settings ? 1 : 0)
             }
             
             HStack(spacing: 0) {
                 TabBarIconView(
-                    viewRounter: self.viewRounter,
+                    viewRouter: self.viewRouter,
                     correspondingPage: .options,
                     icon: YonderIcon(image: YonderImages.gameIcon),
                     text: Term.options.capitalized)
                 
                 TabBarIconView(
-                    viewRounter: self.viewRounter,
+                    viewRouter: self.viewRouter,
                     correspondingPage: .inventory,
                     icon: YonderIcon(image: YonderImages.inventoryIcon),
                     text: Term.inventory.capitalized)
                 
                 TabBarIconView(
-                    viewRounter: self.viewRounter,
+                    viewRouter: self.viewRouter,
                     correspondingPage: .map,
                     icon: YonderIcon(image: YonderImages.mapIcon),
                     text: Term.map.capitalized)
                 
                 TabBarIconView(
-                    viewRounter: self.viewRounter,
+                    viewRouter: self.viewRouter,
                     correspondingPage: .settings,
                     icon: YonderIcon(image: YonderImages.settingsIcon),
                     text: Term.settings.capitalized)
