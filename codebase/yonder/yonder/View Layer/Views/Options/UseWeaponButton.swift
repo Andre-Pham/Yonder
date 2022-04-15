@@ -14,61 +14,39 @@ struct UseWeaponButton: View {
     
     // Note: animation needs to be disabled when "use" isn't active, otherwise whenever the view updates, all buttons re-animate to their value
     var body: some View {
-        ZStack(alignment: .bottom) {
-            YonderWideButtonBody {
-                self.useButtonActive.toggle()
-            } label: {
-                VStack {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            YonderText(text: self.weaponViewModel.name, size: .buttonBody)
-                                .padding(.bottom, YonderCoreGraphics.buttonTitleSpacing)
-                            
-                            if self.weaponViewModel.damage > 0 {
-                                YonderTextAndNumeral(
-                                    format: [.numeral, .text],
-                                    text: [" " + Term.damage.capitalized],
-                                    numbers: [self.weaponViewModel.damage],
-                                    size: .buttonBodySubscript,
-                                    animationIsActive: self.useButtonActive)
-                            }
-                            
-                            if self.weaponViewModel.healthRestoration > 0 {
-                                YonderTextAndNumeral(
-                                    format: [.numeral, .text],
-                                    text: [" " + Term.healthRestoration.capitalized],
-                                    numbers: [self.weaponViewModel.healthRestoration],
-                                    size: .buttonBodySubscript,
-                                    animationIsActive: self.useButtonActive)
-                            }
-                            
-                            YonderTextAndNumeral(
-                                format: [.numeral, .text],
-                                text: [" " + (self.weaponViewModel.remainingUses > 1 ? Term.remainingUses.capitalized : Term.remainingUse.capitalized)],
-                                numbers: [self.weaponViewModel.remainingUses],
-                                size: .buttonBodySubscript,
-                                animationIsActive: self.useButtonActive)
-                        }
-                        
-                        Spacer()
-                    }
-                    .padding(.horizontal, YonderCoreGraphics.padding)
-                    
-                    if self.useButtonActive {
-                        // Expand button frame
-                        YonderWideButton(text: "") {}
-                        .padding(.top, YonderCoreGraphics.padding)
-                        .hidden()
-                    }
+        YonderExpandableWideButtonBody(
+            isExpanded: self.$useButtonActive,
+            expandedButtonText: Term.use.capitalized) {
+                self.playerViewModel.use(weaponViewModel: self.weaponViewModel)
+        } label: {
+            VStack(alignment: .leading) {
+                YonderText(text: self.weaponViewModel.name, size: .buttonBody)
+                    .padding(.bottom, YonderCoreGraphics.buttonTitleSpacing)
+                
+                if self.weaponViewModel.damage > 0 {
+                    YonderTextAndNumeral(
+                        format: [.numeral, .text],
+                        text: [" " + Term.damage.capitalized],
+                        numbers: [self.weaponViewModel.damage],
+                        size: .buttonBodySubscript,
+                        animationIsActive: self.useButtonActive)
                 }
-            }
-            
-            if self.useButtonActive {
-                YonderWideButton(text: Term.use.capitalized) {
-                    self.playerViewModel.use(weaponViewModel: self.weaponViewModel)
+                
+                if self.weaponViewModel.healthRestoration > 0 {
+                    YonderTextAndNumeral(
+                        format: [.numeral, .text],
+                        text: [" " + Term.healthRestoration.capitalized],
+                        numbers: [self.weaponViewModel.healthRestoration],
+                        size: .buttonBodySubscript,
+                        animationIsActive: self.useButtonActive)
                 }
-                .padding(.horizontal, YonderCoreGraphics.padding)
-                .padding(.bottom, YonderCoreGraphics.padding)
+                
+                YonderTextAndNumeral(
+                    format: [.numeral, .text],
+                    text: [" " + (self.weaponViewModel.remainingUses > 1 ? Term.remainingUses.capitalized : Term.remainingUse.capitalized)],
+                    numbers: [self.weaponViewModel.remainingUses],
+                    size: .buttonBodySubscript,
+                    animationIsActive: self.useButtonActive)
             }
         }
     }
