@@ -160,7 +160,7 @@ struct MapGridView: View {
             }
             .padding(.vertical, 75)
             .padding(.leading, 50)
-            .padding(.trailing, 50 - (self.gridDimensions.distanceBetweenColumnCentres)) // Accont for removed last column
+            .padding(.trailing, 50 - (self.gridDimensions.distanceBetweenColumnCentres)) // Account for removed last column
             .background(
                 GeometryReader { geo in
                     Color.clear.onAppear { self.scaleStateManager.setScrollViewSize(to: geo.size) }

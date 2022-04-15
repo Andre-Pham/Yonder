@@ -11,6 +11,7 @@ import SwiftUI
 struct InspectSectionSpacingView: View {
     var body: some View {
         Rectangle()
+            .foregroundColor(Color.Yonder.backgroundMaxDepth)
             .frame(height: 10)
     }
 }

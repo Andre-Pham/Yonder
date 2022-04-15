@@ -12,7 +12,8 @@ struct MapView: View {
     
     var body: some View {
         ZStack {
-            Color.black.ignoresSafeArea()
+            Color.Yonder.backgroundMaxDepth
+                .ignoresSafeArea()
             
             VStack(spacing: 0) {
                 MapHeaderView(scaleStateManager: self.scaleStateManager)
