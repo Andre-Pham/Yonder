@@ -14,27 +14,28 @@ struct PurchaseRestorationButton: View {
     private let baseRestorationAmount = Restorer.bundleSize
     
     var body: some View {
-        YonderExpandableWideButtonBody(
-            isExpanded: self.$useButtonActive,
-            isDisabled: self.restorationOptionViewModel.restoreIsDisabled(playerViewModel: self.playerViewModel, amount: self.baseRestorationAmount),
-            expandedButtonText: Term.purchase.capitalized) {
-                self.restorationOptionViewModel.restore(amount: self.baseRestorationAmount, to: self.playerViewModel)
-            } label: {
-                VStack {
-                    HStack {
-                        YonderText(text: "\(Term.restore.capitalized):", size: .buttonBody)
-                        
-                        YonderIconTextPair(image: self.restorationOptionViewModel.getImage(), text: "\(self.baseRestorationAmount)", size: .buttonBody)
-                        
-                        Spacer()
-                        
-                        YonderIconNumeralPair(prefix: Term.currencySymbol, image: YonderImages.goldIcon, numeral: self.restorationOptionViewModel.getBundlePrice(), size: .buttonBody, animationIsActive: false)
-                            .padding(.horizontal, YonderCoreGraphics.padding*1.5)
-                            .padding(.vertical, YonderCoreGraphics.padding)
-                            .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
-                    }
+        YonderExpandableWideButtonBody(isExpanded: self.$useButtonActive) {
+            VStack {
+                HStack {
+                    YonderText(text: "\(Term.restore.capitalized):", size: .buttonBody)
+                    
+                    YonderIconTextPair(image: self.restorationOptionViewModel.getImage(), text: "\(self.baseRestorationAmount)", size: .buttonBody)
+                    
+                    Spacer()
+                    
+                    YonderIconNumeralPair(prefix: Term.currencySymbol, image: YonderImages.goldIcon, numeral: self.restorationOptionViewModel.getBundlePrice(), size: .buttonBody, animationIsActive: false)
+                        .padding(.horizontal, YonderCoreGraphics.padding*1.5)
+                        .padding(.vertical, YonderCoreGraphics.padding)
+                        .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
                 }
             }
+        } expandedContent: {
+            YonderWideButton(text: Term.purchase.capitalized) {
+                self.restorationOptionViewModel.restore(amount: self.baseRestorationAmount, to: self.playerViewModel)
+            }
+            .disabled(self.restorationOptionViewModel.restoreIsDisabled(playerViewModel: self.playerViewModel, amount: self.baseRestorationAmount))
+            .opacity(self.restorationOptionViewModel.restoreIsDisabled(playerViewModel: self.playerViewModel, amount: self.baseRestorationAmount) ? YonderCoreGraphics.disabledButtonOpacity : 1)
+        }
     }
 }
 

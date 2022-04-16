@@ -7,21 +7,17 @@
 
 import SwiftUI
 
-struct YonderExpandableWideButtonBody<Content: View>: View {
+struct YonderExpandableWideButtonBody<Content: View, ExpandedContent: View>: View {
     private let content: () -> Content
-    let action: () -> Void
+    private let expandedContent: () -> ExpandedContent
     
-    // Binding so that animations can enable/disable themselves accordingly
+    // Binding also allows animations to be enabled/disabled accordingly
     @Binding var isExpanded: Bool
-    @State var isDisabled: Bool
-    private let expandedButtonText: String
     
-    init(isExpanded: Binding<Bool>, isDisabled: Bool = false, expandedButtonText: String, action: @escaping () -> Void, @ViewBuilder label: @escaping () -> Content) {
+    init(isExpanded: Binding<Bool>, @ViewBuilder label: @escaping () -> Content, @ViewBuilder expandedContent: @escaping () -> ExpandedContent) {
         self._isExpanded = isExpanded
-        self.isDisabled = isDisabled
-        self.expandedButtonText = expandedButtonText
-        self.action = action
         self.content = label
+        self.expandedContent = expandedContent
     }
     
     var body: some View {
@@ -36,21 +32,16 @@ struct YonderExpandableWideButtonBody<Content: View>: View {
                     
                     if self.isExpanded {
                         // Expand button frame
-                        YonderWideButton(text: "") {}
-                        .padding(.top, YonderCoreGraphics.padding)
-                        .hidden()
+                        expandedContent()
+                            .hidden()
                     }
                 }
             }
             
             if self.isExpanded {
-                YonderWideButton(text: self.expandedButtonText) {
-                    action()
-                }
-                .disabled(self.isDisabled)
-                .opacity(self.isDisabled ? YonderCoreGraphics.disabledButtonOpacity : 1)
-                .padding(.horizontal, YonderCoreGraphics.padding)
-                .padding(.bottom, YonderCoreGraphics.padding)
+                expandedContent()
+                    .padding(.horizontal, YonderCoreGraphics.padding)
+                    .padding(.bottom, YonderCoreGraphics.padding)
             }
         }
     }

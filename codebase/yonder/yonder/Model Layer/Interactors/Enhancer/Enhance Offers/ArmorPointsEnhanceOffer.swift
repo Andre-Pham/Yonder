@@ -30,7 +30,7 @@ class ArmorPointsEnhanceOffer: EnhanceOffer {
         if let armor = player.allArmorPieces.first(where: { $0.id == enhanceableID }),
            self.canBePurchased(price: self.price, purchaser: player) {
             
-            armor.adjustArmorPoints(by: self.armorPoints)
+            player.enhanceArmorPoints(of: armor, armorPoints: self.armorPoints)
             player.modifyGoldAdjusted(by: -self.price)
         }
     }

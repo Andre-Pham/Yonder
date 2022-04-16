@@ -105,14 +105,23 @@ class PlayerViewModel: ObservableObject {
         self.player.$headArmor.sink(receiveValue: { newValue in
             self.headArmorViewModel = ArmorViewModel(newValue)
             self.maxArmorPoints = self.player.getMaxArmorPoints()
+            self.headArmorViewModel.$armorPoints.sink(receiveValue: { _ in
+                self.maxArmorPoints = self.player.getMaxArmorPoints()
+            }).store(in: &self.subscriptions)
         }).store(in: &self.subscriptions)
         self.player.$bodyArmor.sink(receiveValue: { newValue in
             self.bodyArmorViewModel = ArmorViewModel(newValue)
             self.maxArmorPoints = self.player.getMaxArmorPoints()
+            self.bodyArmorViewModel.$armorPoints.sink(receiveValue: { _ in
+                self.maxArmorPoints = self.player.getMaxArmorPoints()
+            }).store(in: &self.subscriptions)
         }).store(in: &self.subscriptions)
         self.player.$legsArmor.sink(receiveValue: { newValue in
             self.legsArmorViewModel = ArmorViewModel(newValue)
             self.maxArmorPoints = self.player.getMaxArmorPoints()
+            self.legsArmorViewModel.$armorPoints.sink(receiveValue: { _ in
+                self.maxArmorPoints = self.player.getMaxArmorPoints()
+            }).store(in: &self.subscriptions)
         }).store(in: &self.subscriptions)
         
         self.player.$gold.sink(receiveValue: { newValue in

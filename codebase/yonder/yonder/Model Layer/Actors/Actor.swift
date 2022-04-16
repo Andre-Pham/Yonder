@@ -205,6 +205,19 @@ class ActorAbstract {
         }
     }
     
+    func hasArmorPieceEquipped(_ armor: ArmorAbstract) -> Bool {
+        return self.allArmorPieces.contains(where: { $0.id == armor.id })
+    }
+    
+    func enhanceArmorPoints(of armor: ArmorAbstract, armorPoints: Int) {
+        guard self.hasArmorPieceEquipped(armor) else {
+            YonderDebugging.printError(message: "Player is trying to enhance a piece of equipped armor that they actually don't have equipped", functionName: #function, className: "\(type(of: self))")
+            return
+        }
+        armor.adjustArmorPoints(by: armorPoints)
+        self.restoreArmorPoints(for: armorPoints)
+    }
+    
     // MARK: - Actor Interactions
     
     func useWeaponWhere(opposition: ActorAbstract, weapon: Weapon) {

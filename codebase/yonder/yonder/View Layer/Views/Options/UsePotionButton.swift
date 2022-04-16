@@ -14,25 +14,25 @@ struct UsePotionButton: View {
     
     // Note: animation needs to be disabled when "use" isn't active, otherwise whenever the view updates, all buttons re-animate to their value
     var body: some View {
-        YonderExpandableWideButtonBody(
-            isExpanded: self.$useButtonActive,
-            expandedButtonText: Term.instantUse.capitalized) {
-                self.playerViewModel.use(potionViewModel: self.potionViewModel)
-            } label: {
-                VStack(alignment: .leading) {
-                    YonderText(text: self.potionViewModel.name, size: .buttonBody)
-                        .padding(.bottom, YonderCoreGraphics.buttonTitleSpacing)
-                    
-                    YonderText(text: self.potionViewModel.description, size: .buttonBodySubscript)
-                    
-                    YonderTextAndNumeral(
-                        format: [.numeral, .text],
-                        text: [" " + (self.potionViewModel.remainingUses > 1 ? Term.potions.capitalized : Term.potion.capitalized)],
-                        numbers: [self.potionViewModel.remainingUses],
-                        size: .buttonBodySubscript,
-                        animationIsActive: self.useButtonActive)
-                }
+        YonderExpandableWideButtonBody(isExpanded: self.$useButtonActive) {
+            VStack(alignment: .leading) {
+                YonderText(text: self.potionViewModel.name, size: .buttonBody)
+                    .padding(.bottom, YonderCoreGraphics.buttonTitleSpacing)
+                
+                YonderText(text: self.potionViewModel.description, size: .buttonBodySubscript)
+                
+                YonderTextAndNumeral(
+                    format: [.numeral, .text],
+                    text: [" " + (self.potionViewModel.remainingUses > 1 ? Term.potions.capitalized : Term.potion.capitalized)],
+                    numbers: [self.potionViewModel.remainingUses],
+                    size: .buttonBodySubscript,
+                    animationIsActive: self.useButtonActive)
             }
+        } expandedContent: {
+            YonderWideButton(text: Term.instantUse.capitalized) {
+                self.playerViewModel.use(potionViewModel: self.potionViewModel)
+            }
+        }
     }
 }
 

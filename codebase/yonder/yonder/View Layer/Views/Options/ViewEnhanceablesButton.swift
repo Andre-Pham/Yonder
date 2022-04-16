@@ -16,6 +16,10 @@ struct ViewEnhanceablesButton: View {
     @State private var optionsSheetActive = false
     @StateObject private var popupStateManager = PopupStateManager()
     
+    var isDisabled: Bool {
+        return !self.enhanceOfferViewModel.canBeAfforded(by: self.playerViewModel) || enhanceOfferViewModel.getEnhanceableInfos(playerViewModel: self.playerViewModel).isEmpty
+    }
+    
     init(playerViewModel: PlayerViewModel, enhanceOfferViewModel: EnhanceOfferViewModel, pageGeometry: GeometryProxy) {
         self.playerViewModel = playerViewModel
         self.enhanceOfferViewModel = enhanceOfferViewModel
@@ -24,30 +28,33 @@ struct ViewEnhanceablesButton: View {
     }
     
     var body: some View {
-        YonderExpandableWideButtonBody(
-            isExpanded: self.$viewButtonActive,
-            isDisabled: !self.enhanceOfferViewModel.canBeAfforded(by: self.playerViewModel) || enhanceOfferViewModel.getEnhanceableInfos(playerViewModel: self.playerViewModel).isEmpty,
-            expandedButtonText: "View Options") {
-            // Expanded button is clicked
-            self.optionsSheetActive = true
-        } label: {
+        YonderExpandableWideButtonBody(isExpanded: self.$viewButtonActive) {
             VStack(alignment: .leading) {
                 YonderText(text: self.enhanceOfferViewModel.name, size: .buttonBody)
                 
                 YonderText(text: self.enhanceOfferViewModel.description, size: .buttonBodySubscript)
             }
+        } expandedContent: {
+            YonderWideButton(text: "View Options") {
+                self.optionsSheetActive = true
+            }
+            .disabled(self.isDisabled)
+            .opacity(self.isDisabled ? YonderCoreGraphics.disabledButtonOpacity : 1)
         }
         .sheet(isPresented: self.$optionsSheetActive) {
             InspectSheet(pageGeometry: self.pageGeometry) {
                 VStack {
                     ForEach(Array(zip(enhanceOfferViewModel.getEnhanceableInfos(playerViewModel: self.playerViewModel).indices, enhanceOfferViewModel.getEnhanceableInfos(playerViewModel: self.playerViewModel))), id: \.1.id) { index, enhanceInfoViewModel in
                         
-                        YonderExpandableWideButtonBody(isExpanded: self.$purchaseEnhanceOfferStateManager.purchaseButtonActiveBindings[index], expandedButtonText: Term.purchase.capitalized) {
-                            // Expanded button is clicked
-                            self.enhanceOfferViewModel.accept(playerViewModel: self.playerViewModel, enhanceableID: enhanceInfoViewModel.id)
-                            self.popupStateManager.activatePopup()
-                        } label: {
+                        YonderExpandableWideButtonBody(isExpanded: self.$purchaseEnhanceOfferStateManager.purchaseButtonActiveBindings[index]) {
                             YonderText(text: enhanceInfoViewModel.name, size: .buttonBody)
+                        } expandedContent: {
+                            YonderWideButton(text: Term.purchase.capitalized) {
+                                self.enhanceOfferViewModel.accept(playerViewModel: self.playerViewModel, enhanceableID: enhanceInfoViewModel.id)
+                                self.popupStateManager.activatePopup()
+                            }
+                            .disabled(self.isDisabled)
+                            .opacity(self.isDisabled ? YonderCoreGraphics.disabledButtonOpacity : 1)
                         }
                     }
                 }
