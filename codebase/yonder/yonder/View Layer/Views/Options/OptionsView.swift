@@ -58,7 +58,7 @@ struct OptionsView: View {
                             }
                             
                             if optionsStateManager.potionOptionActive {
-                                YonderGridOption(title: "Select \(Term.potion.capitalized)", geometry: geo, image: YonderImages.missingIcon) {
+                                YonderGridOption(title: "Select \(Term.potion.capitalized)", geometry: geo, image: YonderImages.potionOptionIcon) {
                                     self.optionsStateManager.potionOptionSelected()
                                 }
                             }

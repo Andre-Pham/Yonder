@@ -9,16 +9,6 @@ import SwiftUI
 
 struct ItemInspectView: View {
     @ObservedObject var itemViewModel: ItemViewModel
-    var remainingUsesDescription: String {
-        switch itemViewModel {
-        case is WeaponViewModel:
-            return Term.weaponRemainingUses.capitalized
-        case is PotionViewModel:
-            return Term.potionRemainingUses.capitalized
-        default:
-            return Term.remainingUses.capitalized
-        }
-    }
     
     var body: some View {
         InspectBody {
@@ -26,14 +16,14 @@ struct ItemInspectView: View {
                 
             InspectStatsBody {
                 if self.itemViewModel.damage > 0 {
-                    InspectStatView(title: Term.damage.capitalized, value: self.itemViewModel.damage, image: YonderImages.itemDamageIcon)
+                    InspectStatView(title: Term.damage.capitalized, value: self.itemViewModel.damage, image: self.itemViewModel.damageImage)
                 }
                 
                 if self.itemViewModel.healthRestoration > 0 {
-                    InspectStatView(title: Term.healthRestoration.capitalized, value: self.itemViewModel.healthRestoration, image: YonderImages.itemHealthRestorationIcon)
+                    InspectStatView(title: Term.healthRestoration.capitalized, value: self.itemViewModel.healthRestoration, image: self.itemViewModel.healthRestorationImage)
                 }
                 
-                InspectStatView(title: self.remainingUsesDescription, value: self.itemViewModel.remainingUses, image: YonderImages.durabilityIcon)
+                InspectStatView(title: self.itemViewModel.remainingUsesDescription, value: self.itemViewModel.remainingUses, image: self.itemViewModel.remainingUsesImage)
             }
             
             if let effectsDescription = self.itemViewModel.effectsDescription {

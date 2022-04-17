@@ -11,7 +11,11 @@ import Combine
 class PotionViewModel: ItemViewModel {
     
     init(_ potion: PotionAbstract) {
-        super.init(potion)
+        super.init(potion,
+                   remainingUsesDescription: Term.potionRemainingUses.capitalized,
+                   damageImage: YonderImages.potionDamageIcon,
+                   healthRestorationImage: YonderImages.potionHealthRestorationIcon,
+                   remainingUsesImage: YonderImages.potionRemainingUsesIcon)
     }
     
 }

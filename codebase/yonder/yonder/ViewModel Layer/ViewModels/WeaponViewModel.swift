@@ -7,11 +7,16 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class WeaponViewModel: ItemViewModel {
     
     init(_ weapon: Weapon) {
-        super.init(weapon)
+        super.init(weapon,
+                   remainingUsesDescription: Term.weaponRemainingUses.capitalized,
+                   damageImage: YonderImages.weaponDamageIcon,
+                   healthRestorationImage: YonderImages.weaponHealthRestorationIcon,
+                   remainingUsesImage: YonderImages.weaponRemainingUsesIcon)
     }
     
 }

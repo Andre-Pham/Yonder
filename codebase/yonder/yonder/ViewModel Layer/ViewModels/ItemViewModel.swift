@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import Combine
 
 class ItemViewModel: ObservableObject {
@@ -20,10 +21,22 @@ class ItemViewModel: ObservableObject {
     private(set) var id: UUID
     private(set) var name: String
     private(set) var description: String
+    private(set) var remainingUsesDescription: String
+    private(set) var damageImage: Image
+    private(set) var healthRestorationImage: Image
+    private(set) var remainingUsesImage: Image
     @Published private(set) var effectsDescription: String?
     
-    init(_ item: ItemAbstract) {
+    init(_ item: ItemAbstract,
+         remainingUsesDescription: String = Term.remainingUses.capitalized,
+         damageImage: Image = YonderImages.missingIcon,
+         healthRestorationImage: Image = YonderImages.missingIcon,
+         remainingUsesImage: Image = YonderImages.missingIcon) {
         self.item = item
+        self.remainingUsesDescription = remainingUsesDescription
+        self.damageImage = damageImage
+        self.healthRestorationImage = healthRestorationImage
+        self.remainingUsesImage = remainingUsesImage
         
         // Set properties to match Item
         
