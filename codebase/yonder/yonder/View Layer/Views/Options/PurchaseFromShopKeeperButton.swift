@@ -89,8 +89,7 @@ struct PurchaseFromShopKeeperButton: View {
                 }
                 .padding(.horizontal, YonderCoreGraphics.padding)
                 .padding(.bottom, YonderCoreGraphics.padding)
-                .disabled(self.purchasableViewModel.purchaseIsDisabled(for: self.playerViewModel, amount: self.amount))
-                .opacity(self.purchasableViewModel.purchaseIsDisabled(for: self.playerViewModel, amount: self.amount) ? YonderCoreGraphics.disabledButtonOpacity : 1)
+                .disabledWhen(self.purchasableViewModel.purchaseIsDisabled(for: self.playerViewModel, amount: self.amount))
             }
         }
     }

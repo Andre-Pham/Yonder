@@ -38,8 +38,7 @@ struct ViewEnhanceablesButton: View {
             YonderWideButton(text: "View Options") {
                 self.optionsSheetActive = true
             }
-            .disabled(self.isDisabled)
-            .opacity(self.isDisabled ? YonderCoreGraphics.disabledButtonOpacity : 1)
+            .disabledWhen(self.isDisabled)
         }
         .sheet(isPresented: self.$optionsSheetActive) {
             InspectSheet(pageGeometry: self.pageGeometry) {
@@ -53,8 +52,7 @@ struct ViewEnhanceablesButton: View {
                                 self.enhanceOfferViewModel.accept(playerViewModel: self.playerViewModel, enhanceableID: enhanceInfoViewModel.id)
                                 self.popupStateManager.activatePopup()
                             }
-                            .disabled(self.isDisabled)
-                            .opacity(self.isDisabled ? YonderCoreGraphics.disabledButtonOpacity : 1)
+                            .disabledWhen(self.isDisabled)
                         }
                     }
                 }

@@ -16,20 +16,17 @@ struct MapHeaderView: View {
             YonderSquareButton(text: "-") {
                 self.scaleStateManager.adjustScaleIndex(by: -1)
             }
-            .disabled(self.scaleStateManager.scaleIsMin)
-            .opacity(self.scaleStateManager.scaleIsMin ? YonderCoreGraphics.disabledButtonOpacity : 1)
+            .disabledWhen(self.scaleStateManager.scaleIsMin)
             
             YonderSquareButton(text: "+") {
                 self.scaleStateManager.adjustScaleIndex(by: 1)
             }
-            .disabled(self.scaleStateManager.scaleIsMax)
-            .opacity(self.scaleStateManager.scaleIsMax ? YonderCoreGraphics.disabledButtonOpacity : 1)
+            .disabledWhen(self.scaleStateManager.scaleIsMax)
             
             YonderWideButton(text: self.travelStateManager.travellingActive ? "Done" : Term.travel.capitalized) {
                 self.travelStateManager.toggleTravellingActiveState()
             }
-            .disabled(!self.travelStateManager.travellingAllowed)
-            .opacity(self.travelStateManager.travellingAllowed ? 1 : YonderCoreGraphics.disabledButtonOpacity)
+            .disabledWhen(!self.travelStateManager.travellingAllowed)
             
             YonderSquareButton(text: "i") {
                 // Will expand with matchGeometryEffect to show legend
