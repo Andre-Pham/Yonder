@@ -22,10 +22,18 @@ struct InspectStatView: View {
             }
             
             HStack(alignment: .lastTextBaseline) {
-                YonderTextAndNumeral(format: [.text, .numeral], text: ["\(self.title): \(self.prefix == nil ? "" : self.prefix!)"], numbers: [self.value], size: .inspectSheetBody)
+                YonderTextNumeralHStack {
+                    YonderText(text: "\(self.title): \(self.prefix == nil ? "" : self.prefix!)", size: .inspectSheetBody)
+                    
+                    YonderNumeral(number: self.value, size: .inspectSheetBody)
+                }
                 
                 if let maxValue = maxValue {
-                    YonderTextAndNumeral(format: [.text, .numeral], text: ["/"], numbers: [maxValue], size: .inspectSheetBody)
+                    YonderTextNumeralHStack {
+                        YonderText(text: "/", size: .inspectSheetBody)
+                        
+                        YonderNumeral(number: maxValue, size: .inspectSheetBody)
+                    }
                 }
             }
         }

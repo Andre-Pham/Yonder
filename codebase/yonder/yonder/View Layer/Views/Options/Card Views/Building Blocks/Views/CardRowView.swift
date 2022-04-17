@@ -22,7 +22,11 @@ struct CardRowView: View {
             
             HStack(alignment: .lastTextBaseline) {
                 if let prefix = self.prefix {
-                    YonderTextAndNumeral(format: [.text, .numeral], text: [prefix], numbers: [self.value], size: .cardBody)
+                    YonderTextNumeralHStack {
+                        YonderText(text: prefix, size: .cardBody)
+                        
+                        YonderNumeral(number: self.value, size: .cardBody)
+                    }
                 }
                 else {
                     YonderNumeral(number: self.value, size: .cardBody)
@@ -31,7 +35,11 @@ struct CardRowView: View {
                 if let maxValue = maxValue {
                     Spacer()
                     
-                    YonderTextAndNumeral(format: [.text, .numeral], text: ["/"], numbers: [maxValue], size: .cardSubscript)
+                    YonderTextNumeralHStack {
+                        YonderText(text: "/", size: .cardSubscript)
+                        
+                        YonderNumeral(number: maxValue, size: .cardSubscript)
+                    }
                 }
             }
         }

@@ -26,13 +26,17 @@ struct PurchaseFromShopKeeperButton: View {
                         VStack(alignment: .leading) {
                             YonderText(text: self.purchasableViewModel.name, size: .buttonBody)
                             
-                            YonderTextAndNumeral(format: [.text, .numeral], text: ["Remaining stock: "], numbers: [self.purchasableViewModel.stockRemaining], size: .buttonBodySubscript)
+                            YonderTextNumeralHStack {
+                                YonderText(text: "Remaining stock: ", size: .buttonBodySubscript)
+                                
+                                YonderNumeral(number: self.purchasableViewModel.stockRemaining, size: .buttonBodySubscript)
+                            }
                             
                             HStack {
                                 YonderWideButton(text: "Info", verticalPadding: YonderCoreGraphics.padding, action: {})
                                     .hidden()
                                 
-                                YonderIconNumeralPair(image: YonderImages.goldIcon, numeral: self.purchasableViewModel.price, size: .buttonBody, animationIsActive: false)
+                                YonderIconNumeralPair(image: YonderImages.goldIcon, numeral: self.purchasableViewModel.price, size: .buttonBody)
                                     .padding(.horizontal, YonderCoreGraphics.padding*1.5)
                                     .padding(.vertical, YonderCoreGraphics.padding)
                                     .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
@@ -62,7 +66,7 @@ struct PurchaseFromShopKeeperButton: View {
                             PurchasableInspectView(purchasableViewModel: self.purchasableViewModel)
                     ))
                     
-                    YonderIconNumeralPair(image: YonderImages.goldIcon, numeral: self.purchasableViewModel.price, size: .buttonBody, animationIsActive: false)
+                    YonderIconNumeralPair(image: YonderImages.goldIcon, numeral: self.purchasableViewModel.price, size: .buttonBody)
                         .padding(.horizontal, YonderCoreGraphics.padding*1.5)
                         .padding(.vertical, YonderCoreGraphics.padding)
                         .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)

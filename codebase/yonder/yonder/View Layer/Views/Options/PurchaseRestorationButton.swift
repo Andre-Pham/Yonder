@@ -23,7 +23,7 @@ struct PurchaseRestorationButton: View {
                     
                     Spacer()
                     
-                    YonderIconNumeralPair(prefix: Term.currencySymbol, image: YonderImages.goldIcon, numeral: self.restorationOptionViewModel.getBundlePrice(), size: .buttonBody, animationIsActive: false)
+                    YonderIconNumeralPair(prefix: Term.currencySymbol, image: YonderImages.goldIcon, numeral: self.restorationOptionViewModel.getBundlePrice(), size: .buttonBody)
                         .padding(.horizontal, YonderCoreGraphics.padding*1.5)
                         .padding(.vertical, YonderCoreGraphics.padding)
                         .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)

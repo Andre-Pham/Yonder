@@ -12,7 +12,6 @@ struct UseWeaponButton: View {
     @ObservedObject var weaponViewModel: WeaponViewModel
     @State private var useButtonActive = false
     
-    // Note: animation needs to be disabled when "use" isn't active, otherwise whenever the view updates, all buttons re-animate to their value
     var body: some View {
         YonderExpandableWideButtonBody(isExpanded: self.$useButtonActive) {
             VStack(alignment: .leading) {
@@ -20,29 +19,26 @@ struct UseWeaponButton: View {
                     .padding(.bottom, YonderCoreGraphics.buttonTitleSpacing)
                 
                 if self.weaponViewModel.damage > 0 {
-                    YonderTextAndNumeral(
-                        format: [.numeral, .text],
-                        text: [" " + Term.damage.capitalized],
-                        numbers: [self.weaponViewModel.damage],
-                        size: .buttonBodySubscript,
-                        animationIsActive: self.useButtonActive)
+                    YonderTextNumeralHStack {
+                        YonderNumeral(number: self.weaponViewModel.damage, size: .buttonBodySubscript)
+                        
+                        YonderText(text: " " + Term.damage.capitalized, size: .buttonBodySubscript)
+                    }
                 }
                 
                 if self.weaponViewModel.healthRestoration > 0 {
-                    YonderTextAndNumeral(
-                        format: [.numeral, .text],
-                        text: [" " + Term.healthRestoration.capitalized],
-                        numbers: [self.weaponViewModel.healthRestoration],
-                        size: .buttonBodySubscript,
-                        animationIsActive: self.useButtonActive)
+                    YonderTextNumeralHStack {
+                        YonderNumeral(number: self.weaponViewModel.healthRestoration, size: .buttonBodySubscript)
+                        
+                        YonderText(text: " " + Term.healthRestoration.capitalized, size: .buttonBodySubscript)
+                    }
                 }
                 
-                YonderTextAndNumeral(
-                    format: [.numeral, .text],
-                    text: [" " + (self.weaponViewModel.remainingUses > 1 ? Term.remainingUses.capitalized : Term.remainingUse.capitalized)],
-                    numbers: [self.weaponViewModel.remainingUses],
-                    size: .buttonBodySubscript,
-                    animationIsActive: self.useButtonActive)
+                YonderTextNumeralHStack {
+                    YonderNumeral(number: self.weaponViewModel.remainingUses, size: .buttonBodySubscript)
+                    
+                    YonderText(text: " " + (self.weaponViewModel.remainingUses > 1 ? Term.remainingUses.capitalized : Term.remainingUse.capitalized), size: .buttonBodySubscript)
+                }
             }
         } expandedContent: {
             YonderWideButton(text: Term.use.capitalized) {

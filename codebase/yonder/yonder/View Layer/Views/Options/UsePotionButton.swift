@@ -12,7 +12,6 @@ struct UsePotionButton: View {
     @ObservedObject var potionViewModel: PotionViewModel
     @State private var useButtonActive = false
     
-    // Note: animation needs to be disabled when "use" isn't active, otherwise whenever the view updates, all buttons re-animate to their value
     var body: some View {
         YonderExpandableWideButtonBody(isExpanded: self.$useButtonActive) {
             VStack(alignment: .leading) {
@@ -21,12 +20,11 @@ struct UsePotionButton: View {
                 
                 YonderText(text: self.potionViewModel.description, size: .buttonBodySubscript)
                 
-                YonderTextAndNumeral(
-                    format: [.numeral, .text],
-                    text: [" " + (self.potionViewModel.remainingUses > 1 ? Term.potions.capitalized : Term.potion.capitalized)],
-                    numbers: [self.potionViewModel.remainingUses],
-                    size: .buttonBodySubscript,
-                    animationIsActive: self.useButtonActive)
+                YonderTextNumeralHStack {
+                    YonderNumeral(number: self.potionViewModel.remainingUses, size: .buttonBodySubscript)
+                    
+                    YonderText(text: " " + (self.potionViewModel.remainingUses > 1 ? Term.potions.capitalized : Term.potion.capitalized), size: .buttonBodySubscript)
+                }
             }
         } expandedContent: {
             YonderWideButton(text: Term.instantUse.capitalized) {
