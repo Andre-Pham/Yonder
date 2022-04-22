@@ -24,7 +24,7 @@ class PotionAbstractPart: ItemAbstract, Purchasable {
     }
     
     func getPurchaseInfo() -> PurchasableItemInfo {
-        return PurchasableItemInfo(name: self.name, description: self.description)
+        return PurchasableItemInfo(name: self.name, description: self.description, type: .potion)
     }
     
     func beReceived(by receiver: Player, amount: Int) {

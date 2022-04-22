@@ -11,10 +11,12 @@ class PurchasableItemInfo {
     
     public let name: String
     public let description: String
+    public let type: PurchasableItem.PurchasableItemType
     
-    init(name: String, description: String) {
+    init(name: String, description: String, type: PurchasableItem.PurchasableItemType) {
         self.name = name
         self.description = description
+        self.type = type
     }
     
 }

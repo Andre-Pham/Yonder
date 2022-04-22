@@ -58,7 +58,7 @@ class ArmorAbstract: EffectsDescribed, Purchasable, Named, Described, Enhanceabl
     }
     
     func getPurchaseInfo() -> PurchasableItemInfo {
-        return PurchasableItemInfo(name: self.name, description: self.description)
+        return PurchasableItemInfo(name: self.name, description: self.description, type: .armor)
     }
     
     func beReceived(by receiver: Player, amount: Int) {

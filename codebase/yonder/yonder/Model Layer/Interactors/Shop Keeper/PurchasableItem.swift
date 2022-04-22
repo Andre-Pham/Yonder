@@ -9,6 +9,12 @@ import Foundation
 
 class PurchasableItem {
     
+    enum PurchasableItemType {
+        case weapon
+        case potion
+        case armor
+    }
+    
     private(set) var item: Purchasable
     public let price: Int
     @DidSetPublished private(set) var stockRemaining: Int

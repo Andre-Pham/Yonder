@@ -73,7 +73,7 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
     }
     
     func getPurchaseInfo() -> PurchasableItemInfo {
-        return PurchasableItemInfo(name: self.name, description: self.description)
+        return PurchasableItemInfo(name: self.name, description: self.description, type: .weapon)
     }
     
     func beReceived(by receiver: Player, amount: Int) {

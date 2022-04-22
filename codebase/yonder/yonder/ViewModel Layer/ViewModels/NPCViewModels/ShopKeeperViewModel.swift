@@ -55,8 +55,19 @@ class PurchasableViewModel: ObservableObject {
     }
     
     func getItemViewModel() -> ItemViewModel? {
-        if let item = self.purchasable.item as? ItemAbstract {
-            return ItemViewModel(item)
+        switch self.purchasable.info.type {
+        case .weapon:
+            return WeaponViewModel(self.purchasable.item as! Weapon)
+        case .potion:
+            return PotionViewModel(self.purchasable.item as! PotionAbstract)
+        case .armor:
+            return nil
+        }
+    }
+    
+    func getArmorViewModel() -> ArmorViewModel? {
+        if self.purchasable.info.type == .armor {
+            return ArmorViewModel(self.purchasable.item as! ArmorAbstract)
         }
         return nil
     }
