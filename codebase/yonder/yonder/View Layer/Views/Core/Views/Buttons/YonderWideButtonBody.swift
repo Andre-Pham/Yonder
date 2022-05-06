@@ -25,7 +25,7 @@ struct YonderWideButtonBody<Content: View>: View {
     
     let action: () -> Void
     
-    init(verticalPadding: CGFloat = 13, action: @escaping () -> Void, @ViewBuilder label: @escaping () -> Content) {
+    init(verticalPadding: CGFloat = YonderCoreGraphics.textVerticalPadding, action: @escaping () -> Void, @ViewBuilder label: @escaping () -> Content) {
         self.verticalPadding = verticalPadding
         self.action = action
         self.content = label

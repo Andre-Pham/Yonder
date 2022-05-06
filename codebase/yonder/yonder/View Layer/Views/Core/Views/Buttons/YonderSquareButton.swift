@@ -10,7 +10,7 @@ import SwiftUI
 
 struct YonderSquareButton: View {
     let text: String
-    var verticalPadding: CGFloat = 13
+    var verticalPadding: CGFloat = YonderCoreGraphics.textVerticalPadding
     
     let action: () -> Void
     

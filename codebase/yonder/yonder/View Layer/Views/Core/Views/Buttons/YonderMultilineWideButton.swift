@@ -13,7 +13,7 @@ struct YonderMultilineWideButton: View {
     var isMultiline: Bool {
         return self.text.count > 1
     }
-    var verticalPadding: CGFloat = 13
+    var verticalPadding: CGFloat = YonderCoreGraphics.textVerticalPadding
     var alignment: YonderButtonAlignment = .center
     
     let action: () -> Void

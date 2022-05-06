@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct YonderWideBorder: ViewModifier {
-    var verticalPadding: CGFloat = 13
+    var verticalPadding: CGFloat
     
     func body(content: Content) -> some View {
         content
@@ -20,7 +20,7 @@ struct YonderWideBorder: ViewModifier {
     }
 }
 extension View {
-    func yonderWideBorder(verticalPadding: CGFloat = 13) -> some View {
+    func yonderWideBorder(verticalPadding: CGFloat = YonderCoreGraphics.textVerticalPadding) -> some View {
         modifier(YonderWideBorder(verticalPadding: verticalPadding))
     }
 }

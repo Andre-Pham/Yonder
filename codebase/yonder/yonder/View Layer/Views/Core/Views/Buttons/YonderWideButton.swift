@@ -10,7 +10,7 @@ import SwiftUI
 
 struct YonderWideButton: View {
     let text: String
-    var verticalPadding: CGFloat = 13
+    var verticalPadding: CGFloat = YonderCoreGraphics.textVerticalPadding
     var alignment: YonderButtonAlignment = .center
     
     let action: () -> Void
