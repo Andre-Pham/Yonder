@@ -36,10 +36,7 @@ struct PurchaseFromShopKeeperButton: View {
                                 YonderWideButton(text: "Info", verticalPadding: YonderCoreGraphics.padding, action: {})
                                     .hidden()
                                 
-                                YonderIconNumeralPair(image: YonderImages.goldIcon, numeral: self.purchasableViewModel.price, size: .buttonBody)
-                                    .padding(.horizontal, YonderCoreGraphics.padding*1.5)
-                                    .padding(.vertical, YonderCoreGraphics.padding)
-                                    .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
+                                PriceTagView(price: self.purchasableViewModel.price)
                             }
                         }
                     }
@@ -66,10 +63,7 @@ struct PurchaseFromShopKeeperButton: View {
                             PurchasableInspectView(purchasableViewModel: self.purchasableViewModel)
                     ))
                     
-                    YonderIconNumeralPair(image: YonderImages.goldIcon, numeral: self.purchasableViewModel.price, size: .buttonBody)
-                        .padding(.horizontal, YonderCoreGraphics.padding*1.5)
-                        .padding(.vertical, YonderCoreGraphics.padding)
-                        .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
+                    PriceTagView(price: self.purchasableViewModel.price)
                         .hidden()
                 }
                 .padding(.horizontal, YonderCoreGraphics.padding)

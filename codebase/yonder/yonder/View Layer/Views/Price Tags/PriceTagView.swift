@@ -11,7 +11,7 @@ struct PriceTagView: View {
     let price: Int
     
     var body: some View {
-        YonderIconNumeralPair(image: YonderImages.goldIcon, numeral: self.price, size: .buttonBody)
+        YonderIconNumeralPair(prefix: "$", image: YonderImages.goldIcon, numeral: self.price, size: .buttonBody)
             .padding(.horizontal, YonderCoreGraphics.padding*1.5)
             .padding(.vertical, YonderCoreGraphics.padding)
             .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)

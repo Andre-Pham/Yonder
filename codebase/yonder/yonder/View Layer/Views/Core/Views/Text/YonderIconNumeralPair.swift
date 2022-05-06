@@ -9,6 +9,7 @@ import SwiftUI
 
 struct YonderIconNumeralPair: View {
     var prefix: String = ""
+    var suffix: String = ""
     let image: Image
     let numeral: Int
     let size: YonderTextSize
@@ -18,15 +19,16 @@ struct YonderIconNumeralPair: View {
         HStack {
             YonderIcon(image: self.image)
             
-            if prefix.count > 0 {
-                YonderTextNumeralHStack {
+            YonderTextNumeralHStack {
+                if !self.prefix.isEmpty {
                     YonderText(text: self.prefix, size: self.size, color: self.color)
-                    
-                    YonderNumeral(number: self.numeral, size: self.size, color: self.color)
                 }
-            }
-            else {
+                
                 YonderNumeral(number: self.numeral, size: self.size, color: self.color)
+                
+                if !self.suffix.isEmpty {
+                    YonderText(text: self.suffix, size: self.size, color: self.color)
+                }
             }
         }
     }

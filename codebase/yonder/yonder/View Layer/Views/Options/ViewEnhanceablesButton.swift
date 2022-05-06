@@ -12,7 +12,6 @@ struct ViewEnhanceablesButton: View {
     @ObservedObject var enhanceOfferViewModel: EnhanceOfferViewModel
     let pageGeometry: GeometryProxy
     @ObservedObject var purchaseEnhanceOfferStateManager: PurchaseEnhanceOfferStateManager
-    @State private var viewButtonActive = false
     @State private var optionsSheetActive = false
     @StateObject private var popupStateManager = PopupStateManager()
     
