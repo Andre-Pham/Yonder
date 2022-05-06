@@ -18,10 +18,10 @@ class BuffAbstract: EffectsDescribed {
     
     /// To be called by subclasses only.
     /// - Parameters:
-    ///     - duration: How long the buff is applied for - nil for infinite duration
-    ///     - type: What stat the buff affects
-    ///     - direction: What direction the buff is applied to, for example, an outgoing damage buff increases damage dealt, but not received
-    ///     - priority: What order, relative to other buffs, is this buff applied
+    ///   - duration: How long the buff is applied for - nil for infinite duration
+    ///   - type: What stat the buff affects
+    ///   - direction: What direction the buff is applied to, for example, an outgoing damage buff increases damage dealt, but not received
+    ///   - priority: What order, relative to other buffs, is this buff applied
     init(effectsDescription: String?, duration: Int?, type: BuffType, direction: BuffDirection, priority: BuffPriority) {
         self.effectsDescription = effectsDescription
         if let duration = duration {

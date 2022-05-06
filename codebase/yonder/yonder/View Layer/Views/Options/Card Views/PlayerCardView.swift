@@ -9,10 +9,11 @@ import SwiftUI
 
 struct PlayerCardView: View {
     @ObservedObject var playerViewModel: PlayerViewModel
-    @State private var showingPlayerSheet = false
+    var resizeToFit: Bool = true
     
     var body: some View {
-        CardBody(name: Term.player.capitalized) {
+        CardBody(name: Term.player.capitalized,
+                 resizeToFit: self.resizeToFit) {
             CardRowView(
                 value: self.playerViewModel.armorPoints,
                 maxValue: self.playerViewModel.maxArmorPoints,
@@ -35,6 +36,8 @@ struct PlayerCardView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.Yonder.backgroundMaxDepth
+                .ignoresSafeArea()
+            
             PlayerCardView(playerViewModel: PlayerViewModel(Player(maxHealth: 200, location: NoLocation())))
         }
     }

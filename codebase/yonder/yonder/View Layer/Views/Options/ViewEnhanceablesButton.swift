@@ -28,21 +28,30 @@ struct ViewEnhanceablesButton: View {
     }
     
     var body: some View {
-        YonderExpandableWideButtonBody(isExpanded: self.$viewButtonActive) {
-            VStack(alignment: .leading) {
-                YonderText(text: self.enhanceOfferViewModel.name, size: .buttonBody)
+        VStack(alignment: .leading) {
+            YonderText(text: self.enhanceOfferViewModel.name, size: .buttonBody)
+            
+            YonderText(text: self.enhanceOfferViewModel.description, size: .buttonBodySubscript)
+            
+            HStack(spacing: YonderCoreGraphics.padding) {
+                PriceTagView(price: self.enhanceOfferViewModel.price)
                 
-                YonderText(text: self.enhanceOfferViewModel.description, size: .buttonBodySubscript)
+                YonderWideButton(text: "View Options") {
+                    self.optionsSheetActive = true
+                }
+                .disabledWhen(self.isDisabled)
             }
-        } expandedContent: {
-            YonderWideButton(text: "View Options") {
-                self.optionsSheetActive = true
-            }
-            .disabledWhen(self.isDisabled)
         }
+        .yonderWideBorder()
         .sheet(isPresented: self.$optionsSheetActive) {
             InspectSheet(pageGeometry: self.pageGeometry) {
                 VStack {
+                    PlayerCardView(playerViewModel: self.playerViewModel, resizeToFit: false)
+                    
+                    WidePriceTagView(price: self.enhanceOfferViewModel.price, text: "Per \(Term.enhance.capitalized)")
+                    
+                    YonderText(text: "[Options]", size: .title4)
+                    
                     ForEach(Array(zip(enhanceOfferViewModel.getEnhanceableInfos(playerViewModel: self.playerViewModel).indices, enhanceOfferViewModel.getEnhanceableInfos(playerViewModel: self.playerViewModel))), id: \.1.id) { index, enhanceInfoViewModel in
                         
                         YonderExpandableWideButtonBody(isExpanded: self.$purchaseEnhanceOfferStateManager.purchaseButtonActiveBindings[index]) {

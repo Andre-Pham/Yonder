@@ -13,6 +13,7 @@ class EnhanceOfferViewModel: ObservableObject {
     private(set) var offer: EnhanceOffer
     @Published private(set) var name: String
     @Published private(set) var description: String
+    @Published private(set) var price: Int
     private(set) var id: UUID
     
     init(_ offer: EnhanceOffer) {
@@ -22,6 +23,7 @@ class EnhanceOfferViewModel: ObservableObject {
         
         self.name = self.offer.name
         self.description = self.offer.description
+        self.price = self.offer.price
         self.id = self.offer.id
     }
     
