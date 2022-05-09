@@ -106,6 +106,29 @@ class ActorAbstract {
         self.damage(for: adjustedAmount)
     }
     
+    func damageHealth(for amount: Int) {
+        self.health -= amount
+    }
+    
+    func damageHealthAdjusted(sourceOwner: ActorAbstract, using source: Any, for amount: Int) {
+        let adjustedAmount = BuffApps.getAppliedDamage(owner: sourceOwner, using: source, target: self, damage: amount)
+        self.damageHealth(for: adjustedAmount)
+    }
+    
+    func damageArmorPoints(for amount: Int) {
+        if self.armorPoints - amount < 0 {
+            self.armorPoints = 0
+        }
+        else {
+            self.armorPoints -= amount
+        }
+    }
+    
+    func damageArmorPointsAdjusted(sourceOwner: ActorAbstract, using source: Any, for amount: Int) {
+        let adjustedAmount = BuffApps.getAppliedDamage(owner: sourceOwner, using: source, target: self, damage: amount)
+        self.damageArmorPoints(for: adjustedAmount)
+    }
+    
     // MARK: - Status Effects
     
     func addStatusEffect(_ statusEffect: StatusEffect) {

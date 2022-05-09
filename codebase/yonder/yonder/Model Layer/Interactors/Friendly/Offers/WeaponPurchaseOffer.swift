@@ -11,8 +11,8 @@ class PurchaseWeaponOffer: Offer {
     
     public let name: String
     public let description: String
-    
     public let id: UUID = UUID()
+    
     public let weapon: Weapon
     public let price: Int
     

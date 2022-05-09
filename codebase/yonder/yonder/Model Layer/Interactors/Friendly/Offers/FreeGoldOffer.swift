@@ -11,8 +11,8 @@ class FreeGoldOffer: Offer {
     
     public let name: String
     public let description: String
-    
     public let id: UUID = UUID()
+    
     public let goldAmount: Int
     
     init(name: String = "placeholderName", description: String = "placeholderDescription", goldAmount: Int) {

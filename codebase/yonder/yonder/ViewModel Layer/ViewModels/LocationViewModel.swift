@@ -149,25 +149,25 @@ class LocationViewModel: ObservableObject {
     func getTypeName() -> String {
         switch self.type {
         case .none:
-            return "None"
+            return Term.none.capitalized
         case .boss:
-            return "Boss"
+            return Term.bossLocation.capitalized
         case .challengeHostile:
-            return "Mini Boss"
+            return Term.challengeHostileLocation.capitalized
         case .enhancer:
-            return "Enhancer"
+            return Term.enhancerLocation.capitalized
         case .friendly:
-            return "Trader"
+            return Term.friendlyLocation.capitalized
         case .hostile:
-            return "Hostile"
+            return Term.foeLocation.capitalized
         case .quest:
-            return "Quest"
+            return Term.questLocation.capitalized
         case .restorer:
-            return "Mender"
+            return Term.restorerLocation.capitalized
         case .shop:
-            return "Shop"
+            return Term.shopLocation.capitalized
         case .bridge:
-            return "Warp"
+            return Term.bridgeLocation.capitalized
         }
     }
     

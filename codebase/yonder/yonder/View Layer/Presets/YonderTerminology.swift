@@ -12,13 +12,36 @@ enum YonderTerminology {
     
     static let none = "none"
     
+    // MARK: - Stats
+    
     static let health = "health"
     static let armorPoints = "shields"
     static let gold = "gold"
     static let currencySymbol = "$"
     
+    // MARK: - Actors and Interactors
+    
     static let player = "you"
     static let foe = "hostile"
+    static let boss = "boss"
+    static let challengeHostile = "mini boss"
+    static let enhancer = "enhancer"
+    static let friendly = "trader"
+    static let quest = "quest"
+    static let restorer = "mender"
+    static let shopkeeper = "shopkeeper"
+    
+    // MARK: - Locations
+    
+    static let foeLocation = Term.foe
+    static let bossLocation = Term.boss
+    static let challengeHostileLocation = Term.challengeHostile
+    static let enhancerLocation = Term.enhancer
+    static let friendlyLocation = Term.friendly
+    static let questLocation = Term.quest
+    static let restorerLocation = Term.restorer
+    static let shopLocation = Term.shopkeeper
+    static let bridgeLocation = "warp"
     
     static let damage = "damage"
     static let healthRestoration = "healing"
