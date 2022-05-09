@@ -14,6 +14,12 @@ struct ShopKeeperCardView: View {
     var body: some View {
         CardBody(name: self.shopKeeperViewModel.name) {
             CardInteractorTypeView()
+            
+            CardPriceRangeView(
+                minPrice: self.shopKeeperViewModel.getLowestPrice(),
+                maxPrice: self.shopKeeperViewModel.getHighestPrice())
+            
+            CardOfferCountView(offerCount: self.shopKeeperViewModel.purchasables.count)
         }
     }
 }

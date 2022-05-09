@@ -20,4 +20,12 @@ class EnhancerViewModel: InteractorViewModel {
         }
     }
     
+    func getHighestPrice() -> Int {
+        return self.enhanceOfferViewModels.sorted { $0.price > $1.price }.first?.price ?? 0
+    }
+    
+    func getLowestPrice() -> Int {
+        return self.enhanceOfferViewModels.sorted { $0.price < $1.price }.first?.price ?? 0
+    }
+    
 }

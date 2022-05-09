@@ -16,7 +16,7 @@ struct YonderTextNumeralHStack<Content: View>: View {
     }
     
     var body: some View {
-        HStack(spacing: 0) {
+        HStack(alignment: .firstTextBaseline, spacing: 0) {
             content()
         }
     }

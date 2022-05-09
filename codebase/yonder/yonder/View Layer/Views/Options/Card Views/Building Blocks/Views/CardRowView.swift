@@ -11,8 +11,10 @@ import SwiftUI
 struct CardRowView: View {
     var prefix: String? = nil
     var value: Int
+    var maxValuePrefix: String? = nil
     var maxValue: Int? = nil
     var image: Image? = nil
+    var maxValueImage: Image? = nil
     
     var body: some View {
         HStack {
@@ -38,6 +40,15 @@ struct CardRowView: View {
                     YonderTextNumeralHStack {
                         YonderText(text: "/", size: .cardSubscript)
                         
+                        if let image = self.maxValueImage {
+                            YonderIcon(image: image, sideLength: .cardSubscript)
+                                .padding(.horizontal, 3)
+                        }
+                        
+                        if let prefix = self.maxValuePrefix {
+                            YonderText(text: prefix, size: .cardSubscript)
+                        }
+
                         YonderNumeral(number: maxValue, size: .cardSubscript)
                     }
                 }

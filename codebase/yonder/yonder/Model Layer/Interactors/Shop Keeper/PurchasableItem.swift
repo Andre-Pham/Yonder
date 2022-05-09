@@ -9,7 +9,7 @@ import Foundation
 
 class PurchasableItem {
     
-    enum PurchasableItemType {
+    enum PurchasableItemType: CaseIterable {
         case weapon
         case potion
         case armor

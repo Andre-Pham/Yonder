@@ -14,6 +14,10 @@ struct RestorerCardView: View {
     var body: some View {
         CardBody(name: self.restorerViewModel.name) {
             CardInteractorTypeView()
+            
+            ForEach(self.restorerViewModel.options, id: \.id) { option in
+                CardRowView(value: Restorer.bundleSize, maxValuePrefix: "$", maxValue: option.getBundlePrice(), image: option.getImage(), maxValueImage: YonderImages.goldIcon)
+            }
         }
     }
 }

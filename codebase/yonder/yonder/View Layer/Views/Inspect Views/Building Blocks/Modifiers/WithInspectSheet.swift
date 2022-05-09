@@ -19,9 +19,6 @@ struct WithInspectSheet: ViewModifier {
                 InspectSheet(pageGeometry: self.pageGeometry) {
                     self.viewContent
                 }
-                .onTapGesture {
-                    self.isPresented = false
-                }
             }
     }
 }
@@ -32,6 +29,7 @@ extension View {
 }
 
 struct InspectSheet<Content: View>: View {
+    @Environment(\.dismiss) var dismiss
     private let content: () -> Content
     
     let pageGeometry: GeometryProxy
@@ -60,6 +58,9 @@ struct InspectSheet<Content: View>: View {
                 .frame(
                     width: self.pageGeometry.size.width-YonderCoreGraphics.padding*4,
                     height: self.pageGeometry.size.height)
+        }
+        .onTapGesture {
+            dismiss()
         }
     }
 }

@@ -20,6 +20,14 @@ class ShopKeeperViewModel: InteractorViewModel {
         }
     }
     
+    func getHighestPrice() -> Int {
+        return self.purchasables.sorted { $0.price > $1.price }.first?.price ?? 0
+    }
+    
+    func getLowestPrice() -> Int {
+        return self.purchasables.sorted { $0.price < $1.price }.first?.price ?? 0
+    }
+    
 }
 
 class PurchasableViewModel: ObservableObject {
@@ -30,6 +38,7 @@ class PurchasableViewModel: ObservableObject {
     public let name: String
     private(set) var id: UUID
     public let price: Int
+    public let type: PurchasableItem.PurchasableItemType
     @Published private(set) var stockRemaining: Int
     
     init(purchasable: PurchasableItem, shopKeeperViewModel: ShopKeeperViewModel) {
@@ -39,6 +48,7 @@ class PurchasableViewModel: ObservableObject {
         self.name = purchasable.info.name
         self.id = purchasable.id
         self.price = purchasable.price
+        self.type = purchasable.info.type
         self.stockRemaining = purchasable.stockRemaining
         
         self.purchasable.$stockRemaining.sink(receiveValue: { newValue in

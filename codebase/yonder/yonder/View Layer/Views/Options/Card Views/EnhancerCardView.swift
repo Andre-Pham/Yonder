@@ -14,6 +14,12 @@ struct EnhancerCardView: View {
     var body: some View {
         CardBody(name: self.enhancerViewModel.name) {
             CardInteractorTypeView()
+            
+            CardPriceRangeView(
+                minPrice: self.enhancerViewModel.getLowestPrice(),
+                maxPrice: self.enhancerViewModel.getHighestPrice())
+            
+            CardOfferCountView(offerCount: self.enhancerViewModel.enhanceOfferViewModels.count)
         }
     }
 }

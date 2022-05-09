@@ -14,10 +14,15 @@ struct YonderIconNumeralPair: View {
     let numeral: Int
     let size: YonderTextSize
     var color: Color = Color.Yonder.textMaxContrast
+    var iconSize: YonderIconSize? = nil
     
     var body: some View {
         HStack {
-            YonderIcon(image: self.image)
+            if let iconSize = self.iconSize {
+                YonderIcon(image: self.image, sideLength: iconSize)
+            } else {
+                YonderIcon(image: self.image)
+            }
             
             YonderTextNumeralHStack {
                 if !self.prefix.isEmpty {
