@@ -16,7 +16,13 @@ struct RestorerCardView: View {
             CardInteractorTypeView()
             
             ForEach(self.restorerViewModel.options, id: \.id) { option in
-                CardRowView(value: Restorer.bundleSize, maxValuePrefix: "$", maxValue: option.getBundlePrice(), image: option.getImage(), maxValueImage: YonderImages.goldIcon)
+                YonderTextNumeralHStack {
+                    YonderIconNumeralPair(image: option.getImage(), numeral: Restorer.bundleSize, size: .cardSubscript, iconSize: .cardSubscript)
+                    
+                    YonderText(text: " / ", size: .cardSubscript)
+                    
+                    YonderIconNumeralPair(prefix: "$", image: YonderImages.goldIcon, numeral: option.getBundlePrice(), size: .cardSubscript, iconSize: .cardSubscript)
+                }
             }
         }
     }

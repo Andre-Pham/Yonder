@@ -40,11 +40,33 @@ struct NPCCardButton: View {
             }
         }
         .withInspectSheet(isPresented: self.$optionsSheetsStateManager.npcSheetBinding, pageGeometry: self.pageGeometry, content: AnyView(
-            // TODO: Make a unique inspect view for every NPC type
-            VStack(alignment: .leading, spacing: YonderCoreGraphics.paragraphSpacing) {
-                Text(self.locationViewModel.getTypeName())
-                    .foregroundColor(.white)
-            }
+            self.getInspectView()
         ))
     }
+    
+    func getInspectView() -> some View {
+        switch self.locationViewModel.type {
+        case .none:
+            return AnyView(EmptyView())
+        case .hostile:
+            return AnyView(FoeInspectView(foeViewModel: self.locationViewModel.getFoeViewModel()!))
+        case .challengeHostile:
+            return AnyView(EmptyView())
+        case .shop:
+            return AnyView(ShopKeeperInspectView(shopkeeperViewModel: self.locationViewModel.getInteractorViewModel() as! ShopKeeperViewModel))
+        case .enhancer:
+            return AnyView(EnhancerInspectView(enhancerViewModel: self.locationViewModel.getInteractorViewModel() as! EnhancerViewModel))
+        case .restorer:
+            return AnyView(RestorerInspectView(restorerViewModel: self.locationViewModel.getInteractorViewModel() as! RestorerViewModel))
+        case .quest:
+            return AnyView(EmptyView())
+        case .friendly:
+            return AnyView(FriendlyInspectView(friendlyViewModel: self.locationViewModel.getInteractorViewModel() as! FriendlyViewModel))
+        case .boss:
+            return AnyView(EmptyView())
+        case .bridge:
+            return AnyView(EmptyView())
+        }
+    }
+    
 }

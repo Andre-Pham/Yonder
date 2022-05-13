@@ -33,6 +33,7 @@ enum YonderImages {
     static let potionHealthRestorationIcon = Image("MissingIcon")
     static let weaponRemainingUsesIcon = Image("BrokenSword")
     static let potionRemainingUsesIcon = Image("Potion")
+    static let offerIcon = Image("MissingIcon")
     
     // MARK: - Option Icons
     

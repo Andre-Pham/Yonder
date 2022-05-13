@@ -11,15 +11,11 @@ struct FoeInspectView: View {
     @ObservedObject var foeViewModel: FoeViewModel
     
     var body: some View {
-        InspectBody {
-            YonderText(text: self.foeViewModel.name, size: .inspectSheetTitle)
-            
-            InspectNPCTypeView()
-            
-            YonderText(text: self.foeViewModel.description, size: .inspectSheetBody)
-            
-            InspectSectionSpacingView()
-            
+        InspectNPCBody(
+            name: self.foeViewModel.name,
+            description: self.foeViewModel.description,
+            locationType: LocationType.hostile
+        ) {
             YonderText(text: Term.stats.capitalized, size: .inspectSheetTitle)
             
             InspectStatsBody {
@@ -34,12 +30,6 @@ struct FoeInspectView: View {
                     value: self.foeViewModel.weaponViewModel.damage,
                     image: YonderImages.foeDamageIcon)
             }
-            
-            InspectSectionSpacingView()
-            
-            YonderText(text: "Info", size: .inspectSheetTitle)
-            
-            YonderText(text: LocationType.hostile.npcDescription, size: .inspectSheetBody)
         }
     }
 }

@@ -20,6 +20,20 @@ class ShopKeeperViewModel: InteractorViewModel {
         }
     }
     
+    func getOffersDescription() -> String {
+        let separator = "\n■ "
+        var description = ""
+        var purchasablesTypes = self.purchasables.map { $0.type }
+        purchasablesTypes = Array(Set(purchasablesTypes)) // Filter duplicaates
+        for type in purchasablesTypes {
+            if !description.isEmpty {
+                description += separator
+            }
+            description += type.name + "s"
+        }
+        return separator + description
+    }
+    
     func getHighestPrice() -> Int {
         return self.purchasables.sorted { $0.price > $1.price }.first?.price ?? 0
     }

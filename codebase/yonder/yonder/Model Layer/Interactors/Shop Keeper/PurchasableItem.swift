@@ -13,6 +13,17 @@ class PurchasableItem {
         case weapon
         case potion
         case armor
+        
+        var name: String {
+            switch self {
+            case .weapon:
+                return "Weapon"
+            case .potion:
+                return "Potion"
+            case .armor:
+                return "Armor"
+            }
+        }
     }
     
     private(set) var item: Purchasable

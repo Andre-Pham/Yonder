@@ -84,7 +84,7 @@ enum LocationType {
         case .challengeHostile:
             return "Mini bosses are tougher than regular hostiles, and also stop you from travelling. Luckily, they also reward better loot."
         case .shop:
-            return "Shopkeepers will sell to you for a fair price. Browse their shop to see what they have to offer - each item has 'remaining stock' which limits how much of it you can buy."
+            return "Shopkeepers will sell to you for a fair price. Browse their shop to see what they have to offer - each item has [remaining stock] which limits how much of it you can buy."
         case .enhancer:
             return "Enhancers have offers on certain gear they can upgrade. So long as you have the gold, you may upgrade a piece of gear however many times you desire."
         case .restorer:

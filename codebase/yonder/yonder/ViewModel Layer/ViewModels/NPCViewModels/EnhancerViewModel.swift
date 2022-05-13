@@ -20,6 +20,18 @@ class EnhancerViewModel: InteractorViewModel {
         }
     }
     
+    func getOffersDescription() -> String {
+        var description = ""
+        let names = self.enhanceOfferViewModels.map { $0.name }
+        for name in names {
+            if !description.isEmpty {
+                description += ", "
+            }
+            description += name
+        }
+        return description
+    }
+    
     func getHighestPrice() -> Int {
         return self.enhanceOfferViewModels.sorted { $0.price > $1.price }.first?.price ?? 0
     }
