@@ -87,6 +87,21 @@ class LocationViewModel: ObservableObject {
         }).store(in: &self.subscriptions)
     }
     
+    func getBridgeConnectedAreaViewModels() -> (AreaViewModel, AreaViewModel)? {
+        if !self.isBridge || self.location.nextLocations.count != 2 {
+            return nil
+        }
+        return (AreaViewModel(areaContent: self.location.nextLocations[0].areaContent),
+                AreaViewModel(areaContent: self.location.nextLocations[1].areaContent))
+    }
+    
+    func getBridgeConnectedLocationViewModels() -> (LocationViewModel, LocationViewModel)? {
+        if !self.isBridge || self.location.nextLocations.count != 2 {
+            return nil
+        }
+        return (LocationViewModel(self.location.nextLocations[0]), LocationViewModel(self.location.nextLocations[1]))
+    }
+    
     func getInteractorViewModel() -> InteractorViewModel? {
         switch self.type {
         case .none:

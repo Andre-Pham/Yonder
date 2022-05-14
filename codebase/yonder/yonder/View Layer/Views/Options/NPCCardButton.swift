@@ -36,7 +36,8 @@ struct NPCCardButton: View {
             case .boss:
                 FoeCardView(foeViewModel: self.locationViewModel.getFoeViewModel()!)
             case .bridge:
-                EmptyCardView()
+                let (area1ViewModel, area2ViewModel) = self.locationViewModel.getBridgeConnectedAreaViewModels()!
+                BridgeCardView(area1ViewModel: area1ViewModel, area2ViewModel: area2ViewModel)
             }
         }
         .withInspectSheet(isPresented: self.$optionsSheetsStateManager.npcSheetBinding, pageGeometry: self.pageGeometry, content: AnyView(
@@ -49,9 +50,9 @@ struct NPCCardButton: View {
         case .none:
             return AnyView(EmptyView())
         case .hostile:
-            return AnyView(FoeInspectView(foeViewModel: self.locationViewModel.getFoeViewModel()!))
+            return AnyView(HostileInspectView(foeViewModel: self.locationViewModel.getFoeViewModel()!))
         case .challengeHostile:
-            return AnyView(EmptyView())
+            return AnyView(ChallengeHostileInspectView(foeViewModel: self.locationViewModel.getFoeViewModel()!))
         case .shop:
             return AnyView(ShopKeeperInspectView(shopkeeperViewModel: self.locationViewModel.getInteractorViewModel() as! ShopKeeperViewModel))
         case .enhancer:
@@ -63,9 +64,10 @@ struct NPCCardButton: View {
         case .friendly:
             return AnyView(FriendlyInspectView(friendlyViewModel: self.locationViewModel.getInteractorViewModel() as! FriendlyViewModel))
         case .boss:
-            return AnyView(EmptyView())
+            return AnyView(BossInspectView(foeViewModel: self.locationViewModel.getFoeViewModel()!))
         case .bridge:
-            return AnyView(EmptyView())
+            let (location1ViewModel, location2ViewModel) = self.locationViewModel.getBridgeConnectedLocationViewModels()!
+            return AnyView(BridgeInspectView(location1ViewModel: location1ViewModel, location2ViewModel: location2ViewModel))
         }
     }
     

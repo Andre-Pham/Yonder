@@ -75,7 +75,7 @@ enum LocationType {
         }
     }
     
-    var npcDescription: String {
+    var description: String {
         switch self {
         case .none:
             return Term.none.capitalized

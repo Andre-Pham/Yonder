@@ -1,20 +1,20 @@
 //
-//  FoeInspectView.swift
+//  ChallengeHostileInspectView.swift
 //  yonder
 //
-//  Created by Andre Pham on 9/5/2022.
+//  Created by Andre Pham on 14/5/2022.
 //
 
 import SwiftUI
 
-struct FoeInspectView: View {
+struct ChallengeHostileInspectView: View {
     @ObservedObject var foeViewModel: FoeViewModel
     
     var body: some View {
         InspectNPCBody(
             name: self.foeViewModel.name,
             description: self.foeViewModel.description,
-            locationType: LocationType.hostile
+            locationType: LocationType.challengeHostile
         ) {
             YonderText(text: Term.stats.capitalized, size: .inspectSheetTitle)
             
@@ -34,13 +34,13 @@ struct FoeInspectView: View {
     }
 }
 
-struct FoeInspectView_Previews: PreviewProvider {
+struct ChallengeHostileInspectView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.Yonder.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            FoeInspectView(foeViewModel: FoeViewModel(Foe(maxHealth: 500, weapon: Weapon(basePill: DamageBasePill(damage: 50, durability: 5), durabilityPill: DecrementDurabilityPill()))))
+            ChallengeHostileInspectView(foeViewModel: FoeViewModel(Foe(maxHealth: 500, weapon: Weapon(basePill: DamageBasePill(damage: 50, durability: 5), durabilityPill: DecrementDurabilityPill()))))
         }
     }
 }

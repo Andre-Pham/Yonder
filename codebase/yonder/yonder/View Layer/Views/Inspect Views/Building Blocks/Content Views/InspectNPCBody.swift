@@ -36,7 +36,7 @@ struct InspectNPCBody<Content: View>: View {
             
             YonderText(text: "Info", size: .inspectSheetTitle)
             
-            YonderText(text: self.locationType.npcDescription, size: .inspectSheetBody)
+            YonderText(text: self.locationType.description, size: .inspectSheetBody)
         }
     }
 }
