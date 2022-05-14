@@ -28,12 +28,12 @@ enum YonderImages {
     static let goldIcon = Image("Coin")
     static let foeDamageIcon = Image("ClawMarks")
     static let weaponDamageIcon = Image("StrikingBlade")
-    static let potionDamageIcon = Image("MissingIcon")
-    static let weaponHealthRestorationIcon = Image("MissingIcon")
-    static let potionHealthRestorationIcon = Image("MissingIcon")
+    static let potionDamageIcon = Image("Explosion")
+    static let weaponHealthRestorationIcon = Image("Healing")
+    static let potionHealthRestorationIcon = Image("Healing")
     static let weaponRemainingUsesIcon = Image("BrokenSword")
     static let potionRemainingUsesIcon = Image("Potion")
-    static let offerIcon = Image("MissingIcon")
+    static let offerIcon = Image("Scroll")
     
     // MARK: - Option Icons
     
@@ -52,7 +52,7 @@ enum YonderImages {
     
     static let hostileIcon = Image("Skull")
     static let challengeHostileIcon = Image("GlowingSkull")
-    static let shopIcon = Image("Bag")
+    static let shopIcon = Image("Flag")
     static let enhancerIcon = Image("Anvil")
     static let restorerIcon = Image("AngelAccessories")
     static let friendlyIcon = Image("Bonfire")
