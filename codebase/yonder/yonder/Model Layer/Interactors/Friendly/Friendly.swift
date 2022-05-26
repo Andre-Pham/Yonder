@@ -16,7 +16,7 @@ class Friendly: InteractorAbstract {
         return self.offerLimit - offersAccepted
     }
     
-    init(name: String = "placeholderName", description: String = "placerholderDescription", offers: [Offer], offerLimit: Int) {
+    init(name: String = "placeholderName", description: String = "placeholderDescription", offers: [Offer], offerLimit: Int) {
         self.offers = offers
         self.offerLimit = offerLimit
         

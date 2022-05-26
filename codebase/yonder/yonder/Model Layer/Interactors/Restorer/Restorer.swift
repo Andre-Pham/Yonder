@@ -26,7 +26,7 @@ class Restorer: InteractorAbstract {
     public let pricePerHealthBundle: Int
     public let pricePerArmorPointBundle: Int
     
-    init(name: String = "placeholderName", description: String = "placerholderDescription", options: [RestoreOption], pricePerHealthBundle: Int = 0, pricePerArmorPointBundle: Int = 0) {
+    init(name: String = "placeholderName", description: String = "placeholderDescription", options: [RestoreOption], pricePerHealthBundle: Int = 0, pricePerArmorPointBundle: Int = 0) {
         self.options = options
         self.pricePerHealthBundle = pricePerHealthBundle
         self.pricePerArmorPointBundle = pricePerArmorPointBundle

@@ -11,7 +11,7 @@ class Enhancer: InteractorAbstract {
     
     public let enhanceOffers: [EnhanceOffer]
     
-    init(name: String = "placeholderName", description: String = "placerholderDescription", offers: [EnhanceOffer]) {
+    init(name: String = "placeholderName", description: String = "placeholderDescription", offers: [EnhanceOffer]) {
         self.enhanceOffers = offers
         
         super.init(name: name, description: description)
