@@ -27,7 +27,7 @@ class ActorAbstract {
         return [self.headArmor, self.bodyArmor, self.legsArmor]
     }
     public var allUpgradableArmorPieces: [ArmorAbstract] {
-        return self.allArmorPieces.filter { $0.allowsUpgrading }
+        return self.allArmorPieces.filter { !$0.hasAttribute(.upgradesDisallowed) }
     }
     public let id = UUID()
     public var isFullHealth: Bool {
