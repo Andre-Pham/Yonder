@@ -15,7 +15,7 @@ struct MainView: View {
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                Color.Yonder.backgroundMaxDepth
+                YonderColors.backgroundMaxDepth
                     .ignoresSafeArea()
                 
                 TabBarView()
@@ -23,7 +23,7 @@ struct MainView: View {
                     .environmentObject(self.travelStateManager)
                 
                 VStack {
-                    Color.Yonder.backgroundMaxDepth
+                    YonderColors.backgroundMaxDepth
                         .frame(
                             width: geo.size.width,
                             height: geo.safeAreaInsets.top,

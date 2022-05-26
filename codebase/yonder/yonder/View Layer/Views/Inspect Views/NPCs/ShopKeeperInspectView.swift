@@ -29,7 +29,7 @@ struct ShopKeeperInspectView: View {
 struct ShopKeeperInspectView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.Yonder.backgroundMaxDepth
+            YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
             ShopKeeperInspectView(shopkeeperViewModel: ShopKeeperViewModel(ShopKeeper(

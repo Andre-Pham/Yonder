@@ -7,29 +7,24 @@
 
 import SwiftUI
 
-extension Color {
+enum YonderColors {
     
-    static let Yonder = Color.YonderColors()
+    // MARK: - Background
     
-    struct YonderColors {
-        
-        // MARK: - Background
-        
-        let backgroundMaxDepth = Color("Assets#000000")
-        //let backgroundMidDepth = Color("Assets#000000")
-        //let backgroundMinDepth = Color("Assets#000000")
-        
-        // MARK: - Text
-        
-        let textMaxContrast = Color("Assets#FFFFFF")
-        //let textMidContrast = Color("Assets#BFC0C4")
-        //let textMinContrast = Color("Assets#93979C")
-        
-        // MARK: - Other
-        
-        let highlight = Color.yellow
-        let border = Color("Assets#FFFFFF")
-        let outlineMinContrast = Color("Assets#1F1E20")
-    }
+    static let backgroundMaxDepth = Color("Assets#000000")
+    //static let backgroundMidDepth = Color("Assets#000000")
+    //static let backgroundMinDepth = Color("Assets#000000")
+    
+    // MARK: - Text
+    
+    static let textMaxContrast = Color("Assets#FFFFFF")
+    //static let textMidContrast = Color("Assets#BFC0C4")
+    //static let textMinContrast = Color("Assets#93979C")
+    
+    // MARK: - Other
+    
+    static let highlight = Color.yellow
+    static let border = Color("Assets#FFFFFF")
+    static let outlineMinContrast = Color("Assets#1F1E20")
     
 }

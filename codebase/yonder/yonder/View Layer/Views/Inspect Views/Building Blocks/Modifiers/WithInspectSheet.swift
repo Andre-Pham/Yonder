@@ -41,7 +41,7 @@ struct InspectSheet<Content: View>: View {
     
     var body: some View {
         ZStack {
-            Color.Yonder.backgroundMaxDepth
+            YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
             ScrollView(.vertical, showsIndicators: false) {
@@ -54,7 +54,7 @@ struct InspectSheet<Content: View>: View {
                 height: self.pageGeometry.size.height)
             
             Rectangle()
-                .stroke(Color.Yonder.border, lineWidth: YonderCoreGraphics.borderWidth)
+                .stroke(YonderColors.border, lineWidth: YonderCoreGraphics.borderWidth)
                 .frame(
                     width: self.pageGeometry.size.width-YonderCoreGraphics.padding*4,
                     height: self.pageGeometry.size.height)

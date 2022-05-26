@@ -31,7 +31,7 @@ struct BridgeInspectView: View {
 struct BridgeInspectView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.Yonder.backgroundMaxDepth
+            YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
             BridgeInspectView(

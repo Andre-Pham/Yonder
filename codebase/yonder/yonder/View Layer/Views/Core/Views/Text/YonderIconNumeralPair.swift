@@ -13,7 +13,7 @@ struct YonderIconNumeralPair: View {
     let image: Image
     let numeral: Int
     let size: YonderTextSize
-    var color: Color = Color.Yonder.textMaxContrast
+    var color: Color = YonderColors.textMaxContrast
     var iconSize: YonderIconSize? = nil
     
     var body: some View {

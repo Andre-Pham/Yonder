@@ -31,7 +31,7 @@ struct CardPriceRangeView: View {
 struct CardPriceRangeView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.Yonder.backgroundMaxDepth
+            YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
             CardPriceRangeView(minPrice: 100, maxPrice: 1000)

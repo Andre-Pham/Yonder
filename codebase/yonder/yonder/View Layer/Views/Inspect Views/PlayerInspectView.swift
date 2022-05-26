@@ -32,7 +32,7 @@ struct PlayerInspectView: View {
 struct PlayerInspectView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.Yonder.backgroundMaxDepth
+            YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
             PlayerInspectView(playerViewModel: PlayerViewModel(Player(maxHealth: 200, location: NoLocation())))

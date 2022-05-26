@@ -12,7 +12,7 @@ struct MapView: View {
     
     var body: some View {
         ZStack {
-            Color.Yonder.backgroundMaxDepth
+            YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
             VStack(spacing: 0) {

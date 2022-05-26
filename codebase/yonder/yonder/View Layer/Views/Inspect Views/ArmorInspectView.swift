@@ -32,7 +32,7 @@ struct ArmorInspectView: View {
 struct ArmorInspectView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack(alignment: .topLeading) {
-            Color.Yonder.backgroundMaxDepth
+            YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
             ArmorInspectView(armorViewModel: ArmorViewModel(ResistanceArmor(name: "Cool Resistance Armor", description: "Very Shiny.", type: .body, armorPoints: 500, damageFraction: 0.8, basePurchasePrice: 200)))

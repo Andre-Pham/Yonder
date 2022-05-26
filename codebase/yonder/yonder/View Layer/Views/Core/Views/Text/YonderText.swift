@@ -10,7 +10,7 @@ import SwiftUI
 struct YonderText: View {
     let text: String
     let size: YonderTextSize
-    var color: Color = Color.Yonder.textMaxContrast
+    var color: Color = YonderColors.textMaxContrast
     var multilineTextAlignment: TextAlignment = .leading
     
     var body: some View {

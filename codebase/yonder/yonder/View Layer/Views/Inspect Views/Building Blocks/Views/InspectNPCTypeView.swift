@@ -20,7 +20,7 @@ struct InspectNPCTypeView: View {
 struct InspectNPCTypeView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.Yonder.backgroundMaxDepth
+            YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
             InspectNPCTypeView()

@@ -21,14 +21,14 @@ struct WidePriceTagView: View {
         .frame(maxWidth: .infinity)
         .padding(.horizontal, YonderCoreGraphics.padding*1.5)
         .padding(.vertical, YonderCoreGraphics.padding)
-        .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
+        .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
     }
 }
 
 struct WidePriceTagView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.Yonder.backgroundMaxDepth
+            YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
             WidePriceTagView(price: 100, text: "Each")

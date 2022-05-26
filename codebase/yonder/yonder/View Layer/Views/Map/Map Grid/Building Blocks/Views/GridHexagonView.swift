@@ -13,9 +13,9 @@ struct GridHexagonView: View {
     let hexagonIndex: Int
     var scale: CGFloat = 1
     var strokeStyle: GridHexagonViewStrokeStyle = .none
-    var strokeColor: Color = Color.Yonder.border
+    var strokeColor: Color = YonderColors.border
     var fill: Bool = false
-    var fillColor: Color = Color.Yonder.backgroundMaxDepth
+    var fillColor: Color = YonderColors.backgroundMaxDepth
     
     var body: some View {
         Hexagon()

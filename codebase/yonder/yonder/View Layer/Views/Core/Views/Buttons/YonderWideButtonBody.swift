@@ -38,8 +38,8 @@ struct YonderWideButtonBody<Content: View>: View {
             content()
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, self.verticalPadding)
-                .background(Color.Yonder.backgroundMaxDepth) // Ensures entire button can be tapped
-                .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
+                .background(YonderColors.backgroundMaxDepth) // Ensures entire button can be tapped
+                .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
         }
     }
 }

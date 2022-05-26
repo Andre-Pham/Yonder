@@ -28,11 +28,11 @@ struct LocationView: View {
                 }
                 .padding(YonderCoreGraphics.padding)
                 .frame(width: geo.size.width - YonderCoreGraphics.borderWidth*2)
-                .background(Color.Yonder.backgroundMaxDepth)
+                .background(YonderColors.backgroundMaxDepth)
                 .frame(width: geo.size.width - YonderCoreGraphics.borderWidth*2, height: self.cardHeight - YonderCoreGraphics.borderWidth*2, alignment: .bottomLeading)
             }
         }
-        .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
+        .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
         .frame(maxWidth: .infinity)
         .frame(height: self.cardHeight)
         .padding(.horizontal, YonderCoreGraphics.padding)

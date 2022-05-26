@@ -27,7 +27,7 @@ struct ShopKeeperCardView: View {
 struct ShopKeeperCardView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.Yonder.backgroundMaxDepth
+            YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
             ShopKeeperCardView(shopKeeperViewModel: ShopKeeperViewModel(ShopKeeper(

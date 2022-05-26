@@ -15,8 +15,8 @@ struct YonderWideBorder: ViewModifier {
             .frame(maxWidth: .infinity)
             .padding(.vertical, self.verticalPadding)
             .padding(.horizontal, YonderCoreGraphics.padding)
-            .background(Color.Yonder.backgroundMaxDepth)
-            .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
+            .background(YonderColors.backgroundMaxDepth)
+            .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
     }
 }
 extension View {

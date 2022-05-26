@@ -44,7 +44,7 @@ struct InspectNPCBody<Content: View>: View {
 struct InspectNPCBody_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.Yonder.backgroundMaxDepth
+            YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
             InspectNPCBody(

@@ -27,7 +27,7 @@ struct EnhancerCardView: View {
 struct EnhancerCardView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.Yonder.backgroundMaxDepth
+            YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
             EnhancerCardView(enhancerViewModel: EnhancerViewModel(Enhancer(

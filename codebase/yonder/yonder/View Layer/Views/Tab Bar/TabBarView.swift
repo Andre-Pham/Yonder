@@ -63,7 +63,7 @@ struct TabBarView: View {
                     text: Term.settings.capitalized)
             }
             .frame(height: 55)
-            .background(Color.Yonder.backgroundMaxDepth)
+            .background(YonderColors.backgroundMaxDepth)
             .edgesIgnoringSafeArea(.bottom)
         }
     }

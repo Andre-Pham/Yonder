@@ -22,7 +22,7 @@ struct InspectLocationView: View {
                 .scaledToFill()
                 .frame(height: 150)
                 .clipped()
-                .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
+                .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
             
             YonderWideButtonBody {
                 gameManager.playerVM.travel(to: self.locationViewModel)

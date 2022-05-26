@@ -34,7 +34,7 @@ struct YonderGridOption: View {
             }
             .padding(.horizontal)
             .frame(width: self.width, height: self.height)
-            .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
+            .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
         }
     }
 }

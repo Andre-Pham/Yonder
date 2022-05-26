@@ -20,7 +20,7 @@ struct CardInteractorTypeView: View {
 struct CardInteractorSubheading_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.Yonder.backgroundMaxDepth
+            YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
             CardInteractorTypeView()

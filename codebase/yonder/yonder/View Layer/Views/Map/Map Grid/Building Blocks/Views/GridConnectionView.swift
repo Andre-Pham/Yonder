@@ -18,7 +18,7 @@ struct GridConnectionView: View {
     let downAcross: Int // Use -/+ to determine left/right
     let spacing: CGFloat
     let horizontalOffset: CGFloat
-    var color: Color = Color.Yonder.border
+    var color: Color = YonderColors.border
     var style: GridConnectionStyle = .downAcross
     
     var downVGridConverted: CGFloat {

@@ -33,7 +33,7 @@ struct FriendlyInspectView: View {
 struct FriendlyInspectView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.Yonder.backgroundMaxDepth
+            YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
             FriendlyInspectView(friendlyViewModel: FriendlyViewModel(Friendly(

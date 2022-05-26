@@ -28,7 +28,7 @@ struct EnhancerInspectView: View {
 struct EnhancerInspectView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.Yonder.backgroundMaxDepth
+            YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
             EnhancerInspectView(enhancerViewModel: EnhancerViewModel(Enhancer(

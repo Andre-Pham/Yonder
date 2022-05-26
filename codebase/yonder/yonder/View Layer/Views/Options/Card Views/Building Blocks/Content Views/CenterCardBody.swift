@@ -30,7 +30,7 @@ struct CenterCardBody<Content: View>: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.leading)
         .padding(.trailing)
-        .foregroundColor(.Yonder.textMaxContrast)
-        .border(Color.Yonder.border, width: YonderCoreGraphics.borderWidth)
+        .foregroundColor(YonderColors.textMaxContrast)
+        .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
     }
 }

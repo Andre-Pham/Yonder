@@ -39,7 +39,7 @@ struct GridConnectionsView: View {
                                    downAcross: values.0,
                                    spacing: self.gridDimensions.spacing,
                                    horizontalOffset: self.gridDimensions.getHorizontalOffset(hexagonIndex: self.hexagonIndex),
-                                   color: Color.Yonder.border,
+                                   color: YonderColors.border,
                                    style: self.getGridConnectionStyle(to: coords, isBridge: isBridge))
                     .repeatFadingAnimation()
             }
@@ -61,9 +61,9 @@ struct GridConnectionsView: View {
     
     func getConnectionColor(from id: UUID) -> Color {
         if self.locationViewModel.locationIDsArrivedFrom.contains(id) && !self.fadeIsActive(on: id) {
-            return Color.Yonder.border
+            return YonderColors.border
         }
-        return Color.Yonder.border.adjustedBrightness(by: YonderCoreGraphics.unvisitedLocationBrightness)
+        return YonderColors.border.adjustedBrightness(by: YonderCoreGraphics.unvisitedLocationBrightness)
     }
     
     func fadeIsActive(on id: UUID) -> Bool {

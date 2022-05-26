@@ -15,7 +15,7 @@ struct YonderNumeral: View {
     
     init(number: Int,
          size: YonderTextSize,
-         color: Color = Color.Yonder.textMaxContrast) {
+         color: Color = YonderColors.textMaxContrast) {
         self.number = number
         self.size = size
         self.color = color

@@ -93,7 +93,7 @@ struct PurchaseFromShopKeeperButton_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader { geo in
             ZStack {
-                Color.Yonder.backgroundMaxDepth
+                YonderColors.backgroundMaxDepth
                     .ignoresSafeArea()
                 
                 PurchaseFromShopKeeperButton(

@@ -13,7 +13,7 @@ struct MainMenuView: View {
     
     var body: some View {
         ZStack {
-            Color.Yonder.backgroundMaxDepth
+            YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
             VStack(spacing: 12) {
@@ -37,7 +37,7 @@ struct MainMenuView: View {
                 Spacer()
                 Spacer()
             }
-            .foregroundColor(.Yonder.textMaxContrast)
+            .foregroundColor(YonderColors.textMaxContrast)
         }
     }
     

@@ -40,7 +40,7 @@ struct ItemInspectView: View {
 struct ItemInspectView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack(alignment: .topLeading) {
-            Color.Yonder.backgroundMaxDepth
+            YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
             ItemInspectView(itemViewModel: WeaponViewModel(Weapon(basePill: DamageBasePill(damage: 200, durability: 5), durabilityPill: DecrementDurabilityPill())))

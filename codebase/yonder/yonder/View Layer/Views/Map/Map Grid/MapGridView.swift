@@ -49,7 +49,7 @@ struct MapGridView: View {
                         GridHexagonView(
                             hexagonIndex: index,
                             strokeStyle: .stroke,
-                            strokeColor: Color.Yonder.outlineMinContrast)
+                            strokeColor: YonderColors.outlineMinContrast)
                     }
                 }
                 
@@ -60,7 +60,7 @@ struct MapGridView: View {
                             GridHexagonView(
                                 hexagonIndex: index,
                                 strokeStyle: .stroke,
-                                strokeColor: Color.Yonder.border.adjustedBrightness(by: YonderCoreGraphics.unvisitedLocationBrightness))
+                                strokeColor: YonderColors.border.adjustedBrightness(by: YonderCoreGraphics.unvisitedLocationBrightness))
                         }
                     }
                     else {
@@ -80,7 +80,7 @@ struct MapGridView: View {
                         GridHexagonView(
                             hexagonIndex: index,
                             strokeStyle: .stroke,
-                            strokeColor: Color.Yonder.border)
+                            strokeColor: YonderColors.border)
                             .repeatFadingAnimation()
                             .id(self.animationSyncID)
                     }
@@ -107,7 +107,7 @@ struct MapGridView: View {
                             hexagonIndex: index,
                             scale: 0.65,
                             strokeStyle: .strokeBorder,
-                            strokeColor: locationViewModel.hasBeenVisited && !self.fadeIsActive(on: locationViewModel) ? Color.Yonder.border : Color.Yonder.border.adjustedBrightness(by: YonderCoreGraphics.unvisitedLocationBrightness),
+                            strokeColor: locationViewModel.hasBeenVisited && !self.fadeIsActive(on: locationViewModel) ? YonderColors.border : YonderColors.border.adjustedBrightness(by: YonderCoreGraphics.unvisitedLocationBrightness),
                             fill: true)
                             .onTapGesture {
                                 self.playerViewModel.travel(to: locationViewModel) // Cheats
@@ -127,7 +127,7 @@ struct MapGridView: View {
                                 hexagonIndex: index,
                                 scale: 0.65,
                                 strokeStyle: .strokeBorder,
-                                strokeColor: Color.Yonder.border)
+                                strokeColor: YonderColors.border)
                                 .repeatFadingAnimation()
                                 .id(self.animationSyncID)
                         }
@@ -143,7 +143,7 @@ struct MapGridView: View {
                         // Triangle indicator
                         if locationViewModel.id == self.playerLocationViewModel.id {
                             Triangle()
-                                .strokeBorder(Color.Yonder.border, lineWidth: YonderCoreGraphics.mapGridLineWidth)
+                                .strokeBorder(YonderColors.border, lineWidth: YonderCoreGraphics.mapGridLineWidth)
                                 .background(Triangle().foregroundColor(.red))
                                 .frame(width: 30)
                                 .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: index),

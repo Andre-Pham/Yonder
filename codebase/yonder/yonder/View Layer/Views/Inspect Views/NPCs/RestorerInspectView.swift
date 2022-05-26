@@ -36,7 +36,7 @@ struct RestorerInspectView: View {
 struct RestorerInspectView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.Yonder.backgroundMaxDepth
+            YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
             RestorerInspectView(restorerViewModel: RestorerViewModel(Restorer(
