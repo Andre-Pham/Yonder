@@ -152,11 +152,17 @@ class yonderTests: XCTestCase {
         let weapon2 = Weapon(basePill: DamageBasePill(damage: 5, durability: 2), durabilityPill: DecrementDurabilityPill())
         let weapon3 = Weapon(basePill: DamageBasePill(damage: 4, durability: 2), durabilityPill: DecrementDurabilityPill())
         XCTAssertTrue(weapon1.id != weapon2.id && weapon2.id != weapon3.id && weapon1.id != weapon3.id)
+    }
+    
+    func testStackable() throws {
         let potion1 = DamagePotion(damage: 5, potionCount: 5, basePurchasePrice: 5)
-        let potion2 = DamagePotion(damage: 1, potionCount: 1, basePurchasePrice: 1)
+        let potion2 = DamagePotion(damage: 5, potionCount: 1, basePurchasePrice: 1)
         let potion3 = HealthRestorationPotion(healthRestoration: 5, potionCount: 5, basePurchasePrice: 5)
-        XCTAssertNotEqual(potion1.getSharedID(), potion3.getSharedID())
-        XCTAssertEqual(potion1.getSharedID(), potion2.getSharedID())
+        let potion4 = DamagePotion(damage: 4, potionCount: 1, basePurchasePrice: 1)
+        XCTAssertTrue(potion1.isStackable(with: potion2))
+        XCTAssertTrue(potion2.isStackable(with: potion1))
+        XCTAssertFalse(potion1.isStackable(with: potion3))
+        XCTAssertFalse(potion1.isStackable(with: potion4))
     }
     
     func testLocationCasting() throws {
@@ -214,7 +220,7 @@ class yonderTests: XCTestCase {
         let player = Player(maxHealth: 200, location: NoLocation())
         player.modifyGold(by: 200)
         let shopKeeper = ShopKeeper(purchasableItems: [
-            PurchasableItem(item: DamagePotion(damage: 100, potionCount: 10, basePurchasePrice: 50), stock: 2)
+            PurchasableItem(item: DamagePotion(damage: 100, potionCount: 2, basePurchasePrice: 50), stock: 2)
         ])
         shopKeeper.purchaseItem(at: 0, amount: 1, purchaser: player)
         XCTAssertEqual(player.gold, 150)
@@ -222,16 +228,17 @@ class yonderTests: XCTestCase {
         XCTAssertEqual(shopKeeper.purchasableItems.count, 1)
         shopKeeper.purchaseItem(at: 0, amount: 1, purchaser: player)
         XCTAssertEqual(player.gold, 100)
-        XCTAssertEqual(player.potions.count, 2)
+        XCTAssertEqual(player.potions.map { $0.potionCount }.reduce(0, +), 4)
         XCTAssertEqual(shopKeeper.purchasableItems.count, 0)
     }
     
     func testEnhancer() throws {
         let player = Player(maxHealth: 200, location: NoLocation())
         player.modifyGold(by: 201)
-        player.addWeapon(Weapon(basePill: DamageBasePill(damage: 100, durability: 5), durabilityPill: DecrementDurabilityPill()))
-        let enhancer = Enhancer(options: [.weaponDamage])
-        enhancer.upgradeWeaponDamage(weapon: player.weapons.first!, by: 50, purchaser: player, price: 200)
+        let weapon = Weapon(basePill: DamageBasePill(damage: 100, durability: 5), durabilityPill: DecrementDurabilityPill())
+        player.addWeapon(weapon)
+        let enhancer = Enhancer(offers: [WeaponDamageEnhanceOffer(price: 200, damage: 50)])
+        enhancer.enhanceOffers.first?.acceptOffer(player: player, enhanceableID: weapon.id)
         XCTAssertEqual(player.gold, 1)
         XCTAssertEqual(player.weapons.first!.damage, 150)
     }
@@ -240,10 +247,10 @@ class yonderTests: XCTestCase {
         let player = Player(maxHealth: 200, location: NoLocation())
         player.modifyGold(by: 200)
         player.damage(for: 150)
-        let restorer = Restorer(options: [.health], pricePerHealth: 5)
+        let restorer = Restorer(options: [.health], pricePerHealthBundle: 5)
         restorer.restoreHealth(to: player, amount: 20)
         XCTAssertEqual(player.health, 70)
-        XCTAssertEqual(player.gold, 200 - 5*20)
+        XCTAssertEqual(player.gold, 200 - 5*20/Restorer.bundleSize)
     }
     
     func testFriendly() throws {

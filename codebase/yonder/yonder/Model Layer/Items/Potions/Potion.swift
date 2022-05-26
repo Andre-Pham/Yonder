@@ -12,6 +12,9 @@ typealias PotionAbstract = PotionAbstractPart & Usable
 class PotionAbstractPart: ItemAbstract, Purchasable {
     
     public let basePurchasePrice: Int
+    var potionCount: Int {
+        return self.remainingUses
+    }
     
     init(name: String, description: String, effectsDescription: String?, remainingUses: Int = 0, damage: Int = 0, healthRestoration: Int = 0, basePurchasePrice: Int) {
         self.basePurchasePrice = basePurchasePrice
