@@ -60,7 +60,7 @@ struct MapGridView: View {
                             GridHexagonView(
                                 hexagonIndex: index,
                                 strokeStyle: .stroke,
-                                strokeColor: ColorManipulation.adjustBrightness(of: Color.Yonder.border, amount: YonderCoreGraphics.unvisitedLocationBrightness))
+                                strokeColor: Color.Yonder.border.adjustedBrightness(by: YonderCoreGraphics.unvisitedLocationBrightness))
                         }
                     }
                     else {
@@ -107,7 +107,7 @@ struct MapGridView: View {
                             hexagonIndex: index,
                             scale: 0.65,
                             strokeStyle: .strokeBorder,
-                            strokeColor: locationViewModel.hasBeenVisited && !self.fadeIsActive(on: locationViewModel) ? Color.Yonder.border : ColorManipulation.adjustBrightness(of: Color.Yonder.border, amount: YonderCoreGraphics.unvisitedLocationBrightness),
+                            strokeColor: locationViewModel.hasBeenVisited && !self.fadeIsActive(on: locationViewModel) ? Color.Yonder.border : Color.Yonder.border.adjustedBrightness(by: YonderCoreGraphics.unvisitedLocationBrightness),
                             fill: true)
                             .onTapGesture {
                                 self.playerViewModel.travel(to: locationViewModel) // Cheats

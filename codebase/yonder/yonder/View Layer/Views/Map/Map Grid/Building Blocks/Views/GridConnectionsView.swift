@@ -63,7 +63,7 @@ struct GridConnectionsView: View {
         if self.locationViewModel.locationIDsArrivedFrom.contains(id) && !self.fadeIsActive(on: id) {
             return Color.Yonder.border
         }
-        return ColorManipulation.adjustBrightness(of: Color.Yonder.border, amount: YonderCoreGraphics.unvisitedLocationBrightness)
+        return Color.Yonder.border.adjustedBrightness(by: YonderCoreGraphics.unvisitedLocationBrightness)
     }
     
     func fadeIsActive(on id: UUID) -> Bool {
