@@ -11,7 +11,7 @@ import Combine
 
 class TravelStateManager: ObservableObject {
     
-    private let playerViewModel = gameManager.playerVM
+    private let playerViewModel = GameManager.instance.playerVM
     private var subscriptions: Set<AnyCancellable> = []
     @Published private(set) var travellingActive = false
     var travellingAllowed: Bool {

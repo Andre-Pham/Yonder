@@ -25,7 +25,7 @@ struct InspectLocationView: View {
                 .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
             
             YonderWideButtonBody {
-                gameManager.playerVM.travel(to: self.locationViewModel)
+                GameManager.instance.playerVM.travel(to: self.locationViewModel)
                 dismiss()
             } label: {
                 YonderIconTextPair(image: self.locationViewModel.getTypeImage(), text: "Warp", size: .buttonBody)

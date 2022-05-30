@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct InventoryView: View {
-    @StateObject private var playerViewModel = gameManager.playerVM
-    @StateObject private var sheetsStateManager = InventorySheetsStateManager(playerViewModel: gameManager.playerVM)
+    @StateObject private var playerViewModel = GameManager.instance.playerVM
+    @StateObject private var sheetsStateManager = InventorySheetsStateManager(playerViewModel: GameManager.instance.playerVM)
     @StateObject private var inventoryStateManager = InventoryStateManager()
     
     var body: some View {

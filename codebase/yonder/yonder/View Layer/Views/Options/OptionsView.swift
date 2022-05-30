@@ -15,7 +15,7 @@ struct OptionsView: View {
     @StateObject private var optionsSheetsStateManager = OptionsSheetsStateManager()
     
     init() {
-        let playerViewModel = gameManager.playerVM
+        let playerViewModel = GameManager.instance.playerVM
         
         self.playerViewModel = playerViewModel
         self.optionsStateManager = OptionsStateManager(playerViewModel: playerViewModel)

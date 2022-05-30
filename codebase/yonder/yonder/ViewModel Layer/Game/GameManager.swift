@@ -9,17 +9,22 @@ import Foundation
 
 /// This manages the current game instance and generates the player and player location view models (which in turn generate subsequent view models).
 /// Remember, view models are only to be used within the view layer and view model layer, not the model.
-let gameManager = GameManager()
 class GameManager {
+    
+    static let instance = GameManager()
     
     private var activeGame: Game
     private(set) var playerVM: PlayerViewModel
     private(set) var playerLocationVM: PlayerLocationViewModel
     
-    init() {
+    private init() {
         self.activeGame = Game()
         self.playerVM = PlayerViewModel(self.activeGame.player)
         self.playerLocationVM = PlayerLocationViewModel(player: self.activeGame.player)
+    }
+    
+    func startNewGame() {
+        self.setActiveGame(to: Game())
     }
     
     func setActiveGame(to game: Game) {

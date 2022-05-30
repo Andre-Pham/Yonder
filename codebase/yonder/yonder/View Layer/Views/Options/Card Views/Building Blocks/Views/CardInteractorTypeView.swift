@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CardInteractorTypeView: View {
     private var location: LocationViewModel {
-        return gameManager.playerLocationVM.locationViewModel
+        return GameManager.instance.playerLocationVM.locationViewModel
     }
     
     var body: some View {

@@ -13,7 +13,7 @@ struct SettingsView: View {
         VStack {
             Text("Hello, Settings!")
             Button("Damage Player 100") {
-                gameManager.playerVM.player.damage(for: 100)
+                GameManager.instance.playerVM.player.damage(for: 100)
             }
             .padding()
             .background(Color.red)
@@ -21,7 +21,7 @@ struct SettingsView: View {
             .padding()
             
             Button("Travel") {
-                gameManager.playerVM.player.travel(to: gameManager.playerVM.player.location.nextLocations.first!)
+                GameManager.instance.playerVM.player.travel(to: GameManager.instance.playerVM.player.location.nextLocations.first!)
             }
             .padding()
             .background(Color.red)
@@ -29,7 +29,7 @@ struct SettingsView: View {
             .padding()
             
             Button("Weapon") {
-                gameManager.playerVM.player.addWeapon(Weapon(basePill: DamageBasePill(damage: 50, durability: 5), durabilityPill: DecrementDurabilityPill()))
+                GameManager.instance.playerVM.player.addWeapon(Weapon(basePill: DamageBasePill(damage: 50, durability: 5), durabilityPill: DecrementDurabilityPill()))
             }
             .padding()
             .background(Color.red)
@@ -37,7 +37,7 @@ struct SettingsView: View {
             .padding()
             
             Button("Potion") {
-                gameManager.playerVM.player.addPotion(HealthRestorationPotion(name: "Cool Potion", description: "Lots of healing", healthRestoration: 100, potionCount: 5, basePurchasePrice: 100))
+                GameManager.instance.playerVM.player.addPotion(HealthRestorationPotion(name: "Cool Potion", description: "Lots of healing", healthRestoration: 100, potionCount: 5, basePurchasePrice: 100))
             }
             .padding()
             .background(Color.red)
@@ -45,7 +45,7 @@ struct SettingsView: View {
             .padding()
             
             Button("Armor") {
-                gameManager.playerVM.equipArmor(Armors.newTestBodyArmor())
+                GameManager.instance.playerVM.equipArmor(Armors.newTestBodyArmor())
             }
             .padding()
             .background(Color.red)
@@ -53,7 +53,7 @@ struct SettingsView: View {
             .padding()
             
             Button("Gold") {
-                gameManager.playerVM.player.modifyGold(by: 200)
+                GameManager.instance.playerVM.player.modifyGold(by: 200)
             }
             .padding()
             .background(Color.red)
