@@ -9,19 +9,6 @@ import Foundation
 
 enum Armors {
     
-    // MARK: - No Armor
-    
-    // Empty armor slots
-    static func newNoHeadArmor() -> NoArmor {
-        return NoArmor(type: .head)
-    }
-    static func newNoBodyArmor() -> NoArmor {
-        return NoArmor(type: .body)
-    }
-    static func newNoLegsArmor() -> NoArmor {
-        return NoArmor(type: .legs)
-    }
-    
     // MARK: - Resistance Armor
     
     // Test armor set

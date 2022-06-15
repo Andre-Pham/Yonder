@@ -14,7 +14,7 @@ enum ArmorAttribute {
     var description: String? {
         switch self {
         case .upgradesDisallowed:
-            return "Can't receive upgrades"
+            return nil // E.g. "Can't receive upgrades"
         }
     }
     

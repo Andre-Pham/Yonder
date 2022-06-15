@@ -20,9 +20,9 @@ class ActorAbstract {
     @DidSetPublished private(set) var weapons = [Weapon]()
     private(set) var buffs = [BuffAbstract]()
     @DidSetPublished private(set) var potions = [PotionAbstract]()
-    @DidSetPublished private(set) var headArmor: ArmorAbstract = Armors.newNoHeadArmor()
-    @DidSetPublished private(set) var bodyArmor: ArmorAbstract = Armors.newNoBodyArmor()
-    @DidSetPublished private(set) var legsArmor: ArmorAbstract = Armors.newNoLegsArmor()
+    @DidSetPublished private(set) var headArmor: ArmorAbstract = NoArmor(type: .head)
+    @DidSetPublished private(set) var bodyArmor: ArmorAbstract = NoArmor(type: .body)
+    @DidSetPublished private(set) var legsArmor: ArmorAbstract = NoArmor(type: .legs)
     public var allArmorPieces: [ArmorAbstract] {
         return [self.headArmor, self.bodyArmor, self.legsArmor]
     }
