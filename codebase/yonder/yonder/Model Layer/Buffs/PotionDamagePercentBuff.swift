@@ -19,7 +19,7 @@ class PotionDamagePercentBuff: BuffAbstract {
             effectsDescription = "\(magnitudeChange.capitalized) \(Term.damage) \(Term.negativeEffectDirection(of: direction)) from \(Term.potions) by \(Term.getPercentageFromDouble(damageFraction))"
         }
         
-        super.init(effectsDescription: effectsDescription, duration: duration, type: .damage, direction: direction, priority: .first)
+        super.init(effectsDescription: effectsDescription, duration: duration, type: .damage, direction: direction, priority: .second)
     }
     
     override func applyDamage(to damage: Int, source: Any) -> Int? {

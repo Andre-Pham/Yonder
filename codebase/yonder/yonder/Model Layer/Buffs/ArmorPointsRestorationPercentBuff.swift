@@ -19,7 +19,7 @@ class ArmorPointsRestorationPercentBuff: BuffAbstract {
             effectsDescription = "\(magnitudeChange.capitalized) \(Term.armorPoints) \(Term.positiveEffectDirection(of: direction)) by \(Term.getPercentageFromDouble(armorPointsFraction))"
         }
         
-        super.init(effectsDescription: effectsDescription, duration: duration, type: .armorPoints, direction: direction, priority: .first)
+        super.init(effectsDescription: effectsDescription, duration: duration, type: .armorPoints, direction: direction, priority: .second)
     }
     
     override func applyArmorPoints(to armorPoints: Int, source: Any) -> Int? {
