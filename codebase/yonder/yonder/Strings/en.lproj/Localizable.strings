@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  yonder
+
+  Created by Andre Pham on 16/6/2022.
+  
+*/
+
+// MARK: - Main
+
+"gameName" = "Yonder";
+
+// MARK: - Main Menu
+
+"mainMenu.newGame" = "New Game";
+"mainMenu.resumeGame" = "Resume Game";
