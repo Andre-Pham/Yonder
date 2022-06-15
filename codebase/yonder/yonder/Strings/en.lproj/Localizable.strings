@@ -6,6 +6,11 @@
   
 */
 
+// Strings that take in parameters should be marked with an "XParam" suffix.
+// Example: "car.description1Param" = "The car has %@ wheels";
+// Params should be avoided unless deemed absolutely necessary.
+// Numbers should be displayed using `YonderNumeral` and related, rather than be embedded into a string.
+
 // MARK: - Main
 
 "gameName" = "Yonder";

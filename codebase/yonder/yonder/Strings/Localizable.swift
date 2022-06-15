@@ -64,6 +64,23 @@ extension Localizable {
         return NSLocalizedString(key, comment: "")
     }
     
+    /// Retrieves a localized with arguments inserted into "%@" positions.
+    /// - Parameters:
+    ///   - args: The arguments to replace the "%@" instances in the localized string (up to 6)
+    /// - Returns: The localized string
+    func localWithArgs(_ args: String...) -> String {
+        switch args.count {
+            case 0: return self.local
+            case 1: return String(format: self.local, args[0])
+            case 2: return String(format: self.local, args[0], args[1])
+            case 3: return String(format: self.local, args[0], args[1], args[2])
+            case 4: return String(format: self.local, args[0], args[1], args[2], args[3])
+            case 5: return String(format: self.local, args[0], args[1], args[2], args[3], args[4])
+            case 6: return String(format: self.local, args[0], args[1], args[2], args[3], args[4], args[5])
+            default: return self.local
+        }
+    }
+    
 }
 
 
