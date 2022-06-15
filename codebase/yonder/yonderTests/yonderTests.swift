@@ -209,7 +209,7 @@ class yonderTests: XCTestCase {
         player.damage(for: 300)
         player.addBuff(HealthRestorationPercentBuff(direction: .incoming, duration: 1, healthFraction: 2.0))
         player.addBuff(ArmorPointsRestorationPercentBuff(direction: .incoming, duration: 1, armorPointsFraction: 0.5))
-        player.restoreAdjusted(sourceOwner: Proxies.NO_ACTOR, using: Proxies.NO_ITEM, for: 100)
+        player.restoreAdjusted(sourceOwner: NoActor(), using: NoItem(), for: 100)
         // The first 50 restoration heals them back to full health (+100 health)
         // The next 50 are only 50% effective (+25 armor)
         XCTAssertEqual(player.health, 200)

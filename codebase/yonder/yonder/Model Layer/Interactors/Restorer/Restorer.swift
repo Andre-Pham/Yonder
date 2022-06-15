@@ -68,7 +68,7 @@ class Restorer: InteractorAbstract {
             return
         }
         purchaser.modifyGoldAdjusted(by: -self.getTotalCost(amount: amount, option: .health))
-        purchaser.restoreHealthAdjusted(sourceOwner: Proxies.NO_ACTOR, using: Proxies.NO_ITEM, for: amount)
+        purchaser.restoreHealthAdjusted(sourceOwner: NoActor(), using: NoItem(), for: amount)
     }
     
     func restoreArmorPoints(to purchaser: Player, amount: Int) {
@@ -79,7 +79,7 @@ class Restorer: InteractorAbstract {
             return
         }
         purchaser.modifyGoldAdjusted(by: -self.getTotalCost(amount: amount, option: .armorPoints))
-        purchaser.restoreArmorPointsAdjusted(sourceOwner: Proxies.NO_ACTOR, using: Proxies.NO_ITEM, for: amount)
+        purchaser.restoreArmorPointsAdjusted(sourceOwner: NoActor(), using: NoItem(), for: amount)
     }
     
 }
