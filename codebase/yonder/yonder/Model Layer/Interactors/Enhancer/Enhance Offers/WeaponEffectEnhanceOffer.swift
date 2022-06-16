@@ -18,8 +18,8 @@ class WeaponEffectEnhanceOffer: EnhanceOffer {
     init(price: Int, effectPill: WeaponEffectPill) {
         self.price = price
         self.effectPill = effectPill
-        self.name = "Add \(Term.weaponEffect.capitalized) to \(Term.weapon.capitalized)"
-        self.description = "Give a \(Term.weapon) <\(effectPill.effectsDescription)>."
+        self.name = Strings.EnhanceOffer.WeaponEffect.Name.local
+        self.description = Strings.EnhanceOffer.WeaponEffect.Description1Param.localWithArgs(effectPill.effectsDescription)
     }
     
     func getEnhanceables(from player: Player) -> [Enhanceable] {

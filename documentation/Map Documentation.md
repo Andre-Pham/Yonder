@@ -88,4 +88,3 @@ The locations are numbered to represent their indices.
 
 <img src="Assets/areaArrangementJ.png" alt="areaArrangementJ" width="40%" /> 
 
-

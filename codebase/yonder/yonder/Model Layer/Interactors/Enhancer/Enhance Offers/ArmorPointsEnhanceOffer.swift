@@ -18,8 +18,8 @@ class ArmorPointsEnhanceOffer: EnhanceOffer {
     init(price: Int, armorPoints: Int) {
         self.price = price
         self.armorPoints = armorPoints
-        self.name = "Upgrade \(Term.armor.capitalized) \(Term.armorPoints.capitalized)"
-        self.description = "Increase some \(Term.armor)'s \(Term.armorPoints) by \(armorPoints)."
+        self.name = Strings.EnhanceOffer.ArmorPoints.Name.local
+        self.description = Strings.EnhanceOffer.ArmorPoints.Description1Param.localWithArgs(armorPoints)
     }
     
     func getEnhanceables(from player: Player) -> [Enhanceable] {

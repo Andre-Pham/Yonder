@@ -15,7 +15,6 @@ fileprivate let separator = "."
 protocol Localizable {
     
     static var parent: LocalizeParent { get } // The enum type of the parent in the enum hierarchy
-    var rawValue: String { get } // The enum's type as a string, e.g. enum Car -> "Car"
     
 }
 /// Provides an interface for retrieving strings from .string files via an enum hierarchy.
@@ -42,7 +41,7 @@ extension Localizable {
     }
     
     private static var keyPath: String {
-        return appendToKeyPath(keyPath: self.parent?.parentKeyValue, keyValue: self.parentKeyValue)
+        return appendToKeyPath(keyPath: self.parent?.keyPath, keyValue: self.parentKeyValue)
     }
     
     private static var parentKeyValue: String {
@@ -50,7 +49,7 @@ extension Localizable {
     }
     
     private var keyValue: String {
-        return self.rawValue
+        return String(describing: self)
     }
     
     private var key: String {
@@ -64,11 +63,27 @@ extension Localizable {
         return NSLocalizedString(key, comment: "")
     }
     
-    /// Retrieves a localized with arguments inserted into "%@" positions.
+    /// Retrieves a localized string with String arguments inserted into "%@" positions.
     /// - Parameters:
-    ///   - args: The arguments to replace the "%@" instances in the localized string (up to 6)
+    ///   - args: The String arguments to replace the "%@" instances in the localized string (up to 6)
     /// - Returns: The localized string
     func localWithArgs(_ args: String...) -> String {
+        self.formatArgs(args)
+    }
+    
+    /// Retrieves a localized string with Int arguments inserted into "%@" positions.
+    /// - Parameters:
+    ///   - args: The Int arguments to replace the "%@" instances in the localized string (up to 6)
+    /// - Returns: The localized string
+    func localWithArgs(_ args: Int...) -> String {
+        self.formatArgs(args.map { String($0) })
+    }
+    
+    /// Formats string arguments into a localized string by replacing the "%@" instances with said arguments.
+    /// - Parameters:
+    ///   - args: The String arguments to replace the "%@" instances in the localized string (up to 6)
+    /// - Returns: The localized string
+    private func formatArgs(_ args: [String]) -> String {
         switch args.count {
             case 0: return self.local
             case 1: return String(format: self.local, args[0])

@@ -18,8 +18,12 @@ class ArmorBuffEnhanceOffer: EnhanceOffer {
     init(price: Int, buff: BuffAbstract) {
         self.price = price
         self.buff = buff
-        self.name = "Add \(Term.buffOrEffect.capitalized) to \(Term.armor.capitalized)"
-        self.description = "Give some \(Term.armor) <\(buff.effectsDescription ?? "nothing")>."
+        self.name = Strings.EnhanceOffer.ArmorBuff.Name.local
+        if let effectsDescription = buff.effectsDescription {
+            self.description = Strings.EnhanceOffer.ArmorBuff.Description1Param.localWithArgs(effectsDescription)
+        } else {
+            self.description = Strings.EnhanceOffer.ArmorBuff.MissingDescription.local
+        }
     }
     
     func getEnhanceables(from player: Player) -> [Enhanceable] {

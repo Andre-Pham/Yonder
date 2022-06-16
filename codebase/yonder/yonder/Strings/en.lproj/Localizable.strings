@@ -8,8 +8,7 @@
 
 // Strings that take in parameters should be marked with an "XParam" suffix.
 // Example: "car.description1Param" = "The car has %@ wheels";
-// Params should be avoided unless deemed absolutely necessary.
-// Numbers should be displayed using `YonderNumeral` and related, rather than be embedded into a string.
+// Numbers typically should be displayed using `YonderNumeral` and related, rather than be embedded into a string.
 
 // MARK: - Main
 
@@ -19,3 +18,26 @@
 
 "mainMenu.newGame" = "New Game";
 "mainMenu.resumeGame" = "Resume Game";
+
+// MARK: - Enhance Offers
+
+// Weapon Damage
+"enhanceOffer.weaponDamage.name" = "Upgrade Weapon Damage";
+"enhanceOffer.weaponDamage.description1Param" = "Increase a weapon's damage by %@.";
+
+// Armor Points
+"enhanceOffer.armorPoints.name" = "Upgrade Armor Shields";
+"enhanceOffer.armorPoints.description1Param" = "Increase some armor's shields by %@.";
+
+// Armor Buff
+"enhanceOffer.armorBuff.name" = "Add Ongoing Effect to Armor";
+"enhanceOffer.armorBuff.description1Param" = "Give some armor <%@>.";
+"enhanceOffer.armorBuff.missingDescription" = "Description not found.";
+
+// Weapon Effect
+"enhanceOffer.weaponEffect.name" = "Add Effect to Weapon";
+"enhanceOffer.weaponEffect.description1Param" = "Give a weapon <%@>.";
+
+// Weapon Durability
+"enhanceOffer.weaponDurability.name" = "Add Weapon Durability";
+"enhanceOffer.weaponDurability.description1Param" = "Increase a weapon's durability by %@."
