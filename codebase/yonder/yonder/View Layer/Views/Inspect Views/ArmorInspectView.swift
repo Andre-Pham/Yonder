@@ -35,7 +35,7 @@ struct ArmorInspectView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            ArmorInspectView(armorViewModel: ArmorViewModel(ResistanceArmor(name: "Cool Resistance Armor", description: "Very Shiny.", type: .body, armorPoints: 500, damageFraction: 0.8, basePurchasePrice: 200)))
+            ArmorInspectView(armorViewModel: PreviewObjects.armorViewModel)
                 .padding()
         }
     }

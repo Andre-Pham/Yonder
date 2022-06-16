@@ -32,12 +32,7 @@ struct ShopKeeperInspectView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            ShopKeeperInspectView(shopkeeperViewModel: ShopKeeperViewModel(ShopKeeper(
-                name: "Andre",
-                description: "I sell pancakes and maple syrup!!",
-                purchasableItems: [
-                    PurchasableItem(item: Weapon(basePill: DamageBasePill(damage: 200, durability: 5), durabilityPill: DullingDurabilityPill(damageLostPerUse: 50)), stock: 5)
-                ])))
+            ShopKeeperInspectView(shopkeeperViewModel: PreviewObjects.shopKeeperViewModel)
         }
     }
 }

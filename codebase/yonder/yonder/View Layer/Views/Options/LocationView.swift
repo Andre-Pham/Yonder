@@ -41,6 +41,11 @@ struct LocationView: View {
 
 struct LocationView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationView(locationViewModel: LocationViewModel(HostileLocation(foe: Foe(maxHealth: 50, weapon: BaseAttack(damage: 50)))))
+        ZStack {
+            YonderColors.backgroundMaxDepth
+                .ignoresSafeArea()
+            
+            LocationView(locationViewModel: PreviewObjects.locationViewModel())
+        }
     }
 }

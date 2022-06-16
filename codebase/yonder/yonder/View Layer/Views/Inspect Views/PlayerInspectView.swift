@@ -35,7 +35,7 @@ struct PlayerInspectView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            PlayerInspectView(playerViewModel: PlayerViewModel(Player(maxHealth: 200, location: NoLocation())))
+            PlayerInspectView(playerViewModel: PreviewObjects.playerViewModel)
         }
     }
 }

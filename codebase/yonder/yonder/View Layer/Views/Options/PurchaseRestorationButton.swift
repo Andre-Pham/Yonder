@@ -41,7 +41,9 @@ struct PurchaseRestorationButton_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            PurchaseRestorationButton(playerViewModel: PlayerViewModel(Player(maxHealth: 200, location: NoLocation())), restorationOptionViewModel: RestoreOptionViewModel(restoreOption: .health, restorerViewModel: RestorerViewModel(Restorer(options: [.health]))))
+            PurchaseRestorationButton(
+                playerViewModel: PreviewObjects.playerViewModel,
+                restorationOptionViewModel: PreviewObjects.restoreOptionViewModel)
         }
     }
 }

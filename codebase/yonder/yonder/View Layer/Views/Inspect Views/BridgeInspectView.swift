@@ -22,8 +22,6 @@ struct BridgeInspectView: View {
             InspectSectionSpacingView()
             
             InspectLocationView(locationViewModel: self.location2ViewModel)
-            
-            InspectSectionSpacingView()
         }
     }
 }
@@ -35,8 +33,8 @@ struct BridgeInspectView_Previews: PreviewProvider {
                 .ignoresSafeArea()
             
             BridgeInspectView(
-                location1ViewModel: LocationViewModel(FriendlyLocation(friendly: Friendly(name: "Billy", description: "Likes rainy days.", offers: [], offerLimit: 0))),
-                location2ViewModel: LocationViewModel(FriendlyLocation(friendly: Friendly(name: "Bob", description: "Hates Billy.", offers: [], offerLimit: 0))))
+                location1ViewModel: PreviewObjects.locationViewModel(),
+                location2ViewModel: PreviewObjects.alternateLocationViewModel())
         }
     }
 }

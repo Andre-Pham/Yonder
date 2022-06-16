@@ -40,7 +40,7 @@ struct FoeInspectView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            HostileInspectView(foeViewModel: FoeViewModel(Foe(maxHealth: 500, weapon: Weapon(basePill: DamageBasePill(damage: 50, durability: 5), durabilityPill: DecrementDurabilityPill()))))
+            HostileInspectView(foeViewModel: PreviewObjects.foeViewModel)
         }
     }
 }

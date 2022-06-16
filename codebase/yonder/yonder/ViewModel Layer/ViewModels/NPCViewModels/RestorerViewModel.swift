@@ -29,6 +29,9 @@ class RestoreOptionViewModel: ObservableObject {
     private let restorerViewModel: RestorerViewModel
     private(set) var id: UUID
     
+    /// - Parameters:
+    ///   - restoreOption: The restore option for purchase attached to this view model
+    ///   - restorerViewModel: ViewModel of the restorer providing this restore option (and optionally others)
     init(restoreOption: Restorer.RestoreOption, restorerViewModel: RestorerViewModel) {
         self.restoreOption = restoreOption
         self.restorerViewModel = restorerViewModel

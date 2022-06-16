@@ -43,7 +43,7 @@ struct ItemInspectView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            ItemInspectView(itemViewModel: WeaponViewModel(Weapon(basePill: DamageBasePill(damage: 200, durability: 5), durabilityPill: DecrementDurabilityPill())))
+            ItemInspectView(itemViewModel: PreviewObjects.weaponViewModel)
                 .padding()
         }
     }

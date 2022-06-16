@@ -23,3 +23,16 @@ struct PlayerCardButton: View {
         ))
     }
 }
+
+struct PlayerCardButton_Previews: PreviewProvider {
+    static var previews: some View {
+        GeometryReader { geo in
+            ZStack {
+                YonderColors.backgroundMaxDepth
+                    .ignoresSafeArea()
+                
+                PlayerCardButton(playerViewModel: PreviewObjects.playerViewModel, optionsSheetsStateManager: OptionsSheetsStateManager(), pageGeometry: geo)
+            }
+        }
+    }
+}

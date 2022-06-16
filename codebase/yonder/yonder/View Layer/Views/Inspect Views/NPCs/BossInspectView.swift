@@ -40,7 +40,7 @@ struct BossInspectView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            BossInspectView(foeViewModel: FoeViewModel(Foe(maxHealth: 500, weapon: Weapon(basePill: DamageBasePill(damage: 50, durability: 5), durabilityPill: DecrementDurabilityPill()))))
+            BossInspectView(foeViewModel: PreviewObjects.foeViewModel)
         }
     }
 }

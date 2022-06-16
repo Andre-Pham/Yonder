@@ -31,10 +31,7 @@ struct EnhancerInspectView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            EnhancerInspectView(enhancerViewModel: EnhancerViewModel(Enhancer(
-                name: "Ana",
-                description: "You're powered up, get in there!",
-                offers: [WeaponDamageEnhanceOffer(price: 100, damage: 200)])))
+            EnhancerInspectView(enhancerViewModel: PreviewObjects.enhancerViewModel)
         }
     }
 }

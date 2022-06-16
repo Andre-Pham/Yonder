@@ -36,10 +36,7 @@ struct FriendlyInspectView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            FriendlyInspectView(friendlyViewModel: FriendlyViewModel(Friendly(
-                name: "Winston",
-                description: "With a Y",
-                offers: [FreeGoldOffer(goldAmount: 200)], offerLimit: 1)))
+            FriendlyInspectView(friendlyViewModel: PreviewObjects.friendlyViewModel)
         }
     }
 }

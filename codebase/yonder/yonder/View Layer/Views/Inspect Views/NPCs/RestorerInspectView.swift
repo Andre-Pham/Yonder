@@ -39,12 +39,7 @@ struct RestorerInspectView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            RestorerInspectView(restorerViewModel: RestorerViewModel(Restorer(
-                name: "Mercy",
-                description: "Heroes never die!",
-                options: [.health, .armorPoints],
-                pricePerHealthBundle: 10,
-                pricePerArmorPointBundle: 10)))
+            RestorerInspectView(restorerViewModel: PreviewObjects.restorerViewModel)
         }
     }
 }

@@ -81,18 +81,8 @@ struct ViewEnhanceablesButton_Previews: PreviewProvider {
                     .ignoresSafeArea()
                 
                 ViewEnhanceablesButton(
-                    playerViewModel: PlayerViewModel(
-                        Player(
-                            maxHealth: 200,
-                            location: NoLocation()
-                        )
-                    ),
-                    enhanceOfferViewModel:
-                        EnhanceOfferViewModel(
-                            ArmorPointsEnhanceOffer(
-                                price: 100,
-                                armorPoints: 200)
-                        ),
+                    playerViewModel: PreviewObjects.playerViewModel,
+                    enhanceOfferViewModel: PreviewObjects.enhanceOfferViewModel,
                     pageGeometry: geo
                 )
             }

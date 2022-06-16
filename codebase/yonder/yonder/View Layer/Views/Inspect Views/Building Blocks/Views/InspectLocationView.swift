@@ -13,9 +13,11 @@ struct InspectLocationView: View {
     
     var body: some View {
         Group {
-            YonderText(text: self.locationViewModel.name, size: .inspectSheetTitle)
-            
-            YonderText(text: self.locationViewModel.description, size: .inspectSheetBody)
+            VStack(alignment: .leading) {
+                YonderText(text: self.locationViewModel.name, size: .inspectSheetTitle)
+                
+                YonderText(text: self.locationViewModel.description, size: .inspectSheetBody)
+            }
             
             self.locationViewModel.image
                 .resizable()
@@ -29,6 +31,19 @@ struct InspectLocationView: View {
                 dismiss()
             } label: {
                 YonderIconTextPair(image: self.locationViewModel.getTypeImage(), text: "Warp", size: .buttonBody)
+            }
+        }
+    }
+}
+
+struct InspectLocationView_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack {
+            YonderColors.backgroundMaxDepth
+                .ignoresSafeArea()
+            
+            InspectBody {
+                InspectLocationView(locationViewModel: PreviewObjects.locationViewModel())
             }
         }
     }

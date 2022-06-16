@@ -22,6 +22,11 @@ struct DefaultInspectView: View {
 
 struct DefaultInspectView_Previews: PreviewProvider {
     static var previews: some View {
-        DefaultInspectView(name: "name", description: "description")
+        ZStack {
+            YonderColors.backgroundMaxDepth
+                .ignoresSafeArea()
+            
+            DefaultInspectView(name: "name", description: "description")
+        }
     }
 }

@@ -97,29 +97,8 @@ struct PurchaseFromShopKeeperButton_Previews: PreviewProvider {
                     .ignoresSafeArea()
                 
                 PurchaseFromShopKeeperButton(
-                    playerViewModel: PlayerViewModel(
-                        Player(
-                            maxHealth: 200,
-                            location: NoLocation()
-                        )
-                    ),
-                    purchasableViewModel: PurchasableViewModel(
-                        purchasable: PurchasableItem(
-                            item: ArmorAbstract(
-                                name: "Cool Armor",
-                                description: "Very cool.",
-                                type: .body,
-                                armorPoints: 200,
-                                basePurchasePrice: 100,
-                                armorBuffs: []
-                            ),
-                            stock: 3
-                        ),
-                        shopKeeperViewModel: ShopKeeperViewModel(ShopKeeper(
-                            name: "ShopKeeper",
-                            description: "Sells things.",
-                            purchasableItems: []))
-                    ),
+                    playerViewModel: PreviewObjects.playerViewModel,
+                    purchasableViewModel: PreviewObjects.purchasableViewModel,
                     pageGeometry: geo)
             }
         }

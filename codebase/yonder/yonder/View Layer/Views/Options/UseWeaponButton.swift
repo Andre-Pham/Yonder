@@ -55,11 +55,8 @@ struct UseWeaponButton_Previews: PreviewProvider {
                 .ignoresSafeArea()
             
             UseWeaponButton(
-                playerViewModel: PlayerViewModel(Player(maxHealth: 200, location: FriendlyLocation(friendly: Friendly(offers: [], offerLimit: 0)))),
-                weaponViewModel: WeaponViewModel(Weapon(
-                    basePill: DamageBasePill(damage: 50, durability: 5),
-                    durabilityPill: DecrementDurabilityPill()
-            )))
+                playerViewModel: PreviewObjects.playerViewModel,
+                weaponViewModel: PreviewObjects.weaponViewModel)
         }
     }
 }

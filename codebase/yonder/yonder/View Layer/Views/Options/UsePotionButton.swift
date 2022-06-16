@@ -41,8 +41,8 @@ struct UsePotionButton_Previews: PreviewProvider {
                 .ignoresSafeArea()
             
             UsePotionButton(
-                playerViewModel: PlayerViewModel(Player(maxHealth: 200, location: FriendlyLocation(friendly: Friendly(offers: [], offerLimit: 0)))),
-                potionViewModel: PotionViewModel(DamagePotion(damage: 50, potionCount: 3, basePurchasePrice: 100)))
+                playerViewModel: PreviewObjects.playerViewModel,
+                potionViewModel: PreviewObjects.potionViewModel)
         }
     }
 }
