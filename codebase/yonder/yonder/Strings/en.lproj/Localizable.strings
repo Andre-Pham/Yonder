@@ -57,3 +57,17 @@
 
 // Burn Status Effect
 "weaponEffectPill.burnStatusEffect.description1Param" = "Inflicts a burn status effect, dealing %@ damage every turn.";
+
+// MARK: - Potions
+
+// Tiers
+"potion.tier1" = "I";
+"potion.tier2" = "II";
+"potion.tier3" = "III";
+"potion.tier4" = "IV";
+"potion.tier5" = "V";
+
+// Health Restoration Potion
+"potion.healthRestoration.name" = "Health Potion";
+"potion.healthRestoration.description" = "A deep crimson red solution brews in a clear elongated bottle. Warm to the touch, it smells of acrid.";
+"potion.healthRestoration.effectsDescription1Param" = "Restores %@ health.";

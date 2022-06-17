@@ -37,7 +37,7 @@ struct SettingsView: View {
             .padding()
             
             Button("Potion") {
-                GameManager.instance.playerVM.player.addPotion(HealthRestorationPotion(name: "Cool Potion", description: "Lots of healing", healthRestoration: 100, potionCount: 5, basePurchasePrice: 100))
+                GameManager.instance.playerVM.player.addPotion(HealthRestorationPotion(tier: .II, potionCount: 5, basePurchasePrice: 100))
             }
             .padding()
             .background(Color.red)

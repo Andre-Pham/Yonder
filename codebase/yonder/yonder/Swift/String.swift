@@ -16,4 +16,8 @@ extension String {
         return self
     }
     
+    func continuedBy(_ toJoin: String..., separator: String = " ") -> String {
+        return self + separator + toJoin.joined(separator: separator)
+    }
+    
 }

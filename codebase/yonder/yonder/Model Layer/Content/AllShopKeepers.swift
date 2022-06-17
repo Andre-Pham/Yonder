@@ -15,7 +15,7 @@ enum ShopKeepers {
         return ShopKeeper(purchasableItems: [
             PurchasableItem(item: Weapon(basePill: DamageBasePill(damage: 50, durability: 5), durabilityPill: DecrementDurabilityPill()), stock: 5),
             PurchasableItem(item: ArmorAbstract(name: "Strong Armor", description: "The toughest armor out there.", type: .body, armorPoints: 200, basePurchasePrice: 150, armorBuffs: []), stock: 1),
-            PurchasableItem(item: HealthRestorationPotion(healthRestoration: 200, potionCount: 3, basePurchasePrice: 100), stock: 5)
+            PurchasableItem(item: HealthRestorationPotion(tier: .III, potionCount: 3, basePurchasePrice: 100), stock: 5)
         ])
     }
     

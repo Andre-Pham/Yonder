@@ -90,4 +90,22 @@ enum Strings: Localizable {
             case Description1Param
         }
     }
+    
+    enum Potion: Localizable {
+        static let parent: LocalizeParent = Strings.self
+        
+        case Tier1
+        case Tier2
+        case Tier3
+        case Tier4
+        case Tier5
+        
+        enum HealthRestoration: Localizable {
+            static let parent: LocalizeParent = Potion.self
+            
+            case Name
+            case Description
+            case EffectsDescription1Param
+        }
+    }
 }

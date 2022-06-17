@@ -18,7 +18,9 @@ struct UsePotionButton: View {
                 YonderText(text: self.potionViewModel.name, size: .buttonBody)
                     .padding(.bottom, YonderCoreGraphics.buttonTitleSpacing)
                 
-                YonderText(text: self.potionViewModel.description, size: .buttonBodySubscript)
+                if let effectsDescription = self.potionViewModel.effectsDescription {
+                    YonderText(text: effectsDescription, size: .buttonBodySubscript)
+                }
                 
                 YonderTextNumeralHStack {
                     YonderNumeral(number: self.potionViewModel.remainingUses, size: .buttonBodySubscript)
