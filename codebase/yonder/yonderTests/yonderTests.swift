@@ -131,7 +131,7 @@ class yonderTests: XCTestCase {
         player = Player(maxHealth: 200, location: NoLocation())
         player.equipArmor(Armors.newTestHeadArmor())
         player.damage(for: 350)
-        player.addPotion(FullRestorationPotion(potionCount: 1, basePurchasePrice: 0))
+        player.addPotion(MaxRestorationPotion(potionCount: 1, basePurchasePrice: 0))
         player.potions.first!.use(owner: player, opposition: player)
         XCTAssertEqual(player.health, 200)
         XCTAssertEqual(player.armorPoints, 200)
