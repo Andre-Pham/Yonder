@@ -141,6 +141,10 @@ class ActorAbstract {
         }
     }
     
+    func clearStatusEffects() {
+        self.statusEffects.removeAll()
+    }
+    
     // MARK: - Timed Events
     
     func addTimedEvent(_ timedEvent: TimedEvent) {
@@ -156,6 +160,10 @@ class ActorAbstract {
             }
         }
         self.timedEvents = remainingTimedEvents
+    }
+    
+    func clearTimedEvents() {
+        self.timedEvents.removeAll()
     }
     
     // MARK: - Weapons
@@ -197,9 +205,27 @@ class ActorAbstract {
     }
     
     func getAllBuffsInPriority() -> [BuffAbstract] {
-        let allBuffs: [BuffAbstract] = self.buffs + self.headArmor.armorBuffs + self.bodyArmor.armorBuffs + self.legsArmor.armorBuffs
+        var allBuffs: [BuffAbstract] = Array(self.buffs)
+        for armorPiece in self.allArmorPieces {
+            allBuffs.append(contentsOf: armorPiece.armorBuffs)
+        }
         // Ascending order
         return allBuffs.sorted(by: { $0.priority.rawValue < $1.priority.rawValue })
+    }
+    
+    func decrementBuffs() {
+        var remainingBuffs = [BuffAbstract]()
+        for buff in self.buffs {
+            buff.decrementTimeRemaining()
+            if buff.timeRemaining > 0 {
+                remainingBuffs.append(buff)
+            }
+        }
+        self.buffs = remainingBuffs
+    }
+    
+    func clearBuffs() {
+        self.buffs.removeAll()
     }
     
     // MARK: - Armor

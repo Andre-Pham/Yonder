@@ -16,6 +16,17 @@ class CombatFlow {
         for act in [player, foe] {
             act.triggerStatusEffects()
             act.decrementTimedEvents()
+            act.decrementBuffs()
+        }
+        if player.isDead {
+            foe.clearStatusEffects()
+            foe.clearBuffs()
+            foe.clearTimedEvents()
+        }
+        if foe.isDead {
+            player.clearStatusEffects()
+            player.clearBuffs()
+            player.clearTimedEvents()
         }
         
         self.turnsTaken += 1
