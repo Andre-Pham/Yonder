@@ -58,4 +58,36 @@ enum Strings: Localizable {
             case Description1Param
         }
     }
+    
+    enum WeaponDurabilityPill: Localizable {
+        static let parent: LocalizeParent = Strings.self
+        
+        enum Decrement: Localizable {
+            static let parent: LocalizeParent = WeaponDurabilityPill.self
+            
+            case Description1Param
+        }
+        
+        enum Dulling: Localizable {
+            static let parent: LocalizeParent = WeaponDurabilityPill.self
+            
+            case Description1Param
+        }
+        
+        enum Infinite: Localizable {
+            static let parent: LocalizeParent = WeaponDurabilityPill.self
+            
+            case Description
+        }
+    }
+    
+    enum WeaponEffectPill: Localizable {
+        static let parent: LocalizeParent = Strings.self
+        
+        enum BurnStatusEffect: Localizable {
+            static let parent: LocalizeParent = WeaponEffectPill.self
+            
+            case Description1Param
+        }
+    }
 }

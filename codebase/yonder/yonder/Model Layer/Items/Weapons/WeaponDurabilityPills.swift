@@ -13,7 +13,7 @@ class DecrementDurabilityPill: WeaponDurabilityPill {
     public let decrementation: Int
     
     init(decrementBy amount: Int = 1) {
-        self.effectsDescription = "Loses \(amount) \(Term.weaponRemainingUses) every \(Term.use)."
+        self.effectsDescription = Strings.WeaponDurabilityPill.Decrement.Description1Param.localWithArgs(amount)
         self.decrementation = -amount
     }
     
@@ -33,7 +33,7 @@ class DullingDurabilityPill: WeaponDurabilityPill {
     public let damageLostPerUse: Int
     
     init(damageLostPerUse: Int) {
-        self.effectsDescription = "Loses \(damageLostPerUse) damage every \(Term.use)."
+        self.effectsDescription = Strings.WeaponDurabilityPill.Dulling.Description1Param.localWithArgs(damageLostPerUse)
         self.damageLostPerUse = damageLostPerUse
     }
     
@@ -52,7 +52,7 @@ class DullingDurabilityPill: WeaponDurabilityPill {
 
 class InfiniteDurabilityPill: WeaponDurabilityPill {
     
-    public let effectsDescription: String = "Has infinite \(Term.remainingUses)."
+    public let effectsDescription: String = Strings.WeaponDurabilityPill.Infinite.Description.local
     
     func use(on weapon: Weapon) {
         // Do nothing - weapon has infinite durability

@@ -14,7 +14,7 @@ class BurnStatusEffectEffectPill: WeaponEffectPill {
     public let tickDamage: Int
     
     init(tickDamage: Int) {
-        self.effectsDescription = "Burns the opposing \(Term.foe) \(tickDamage) \(Term.damage) every \(Term.use)"
+        self.effectsDescription = Strings.WeaponEffectPill.BurnStatusEffect.Description1Param.localWithArgs(tickDamage)
         self.tickDamage = tickDamage
     }
     

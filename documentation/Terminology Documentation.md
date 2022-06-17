@@ -19,16 +19,16 @@
 
 #### Player
 
-| Terminology    | Description                    | Example                                          |
-| -------------- | ------------------------------ | ------------------------------------------------ |
-| Ongoing Effect | A buff or debuff on the player | +50% Damage Status Effect                        |
-| Status Effect  | A status effect on the player  | Burning Status Effect (Take Damage Every "Turn") |
-|                |                                |                                                  |
-|                |                                |                                                  |
-|                |                                |                                                  |
-|                |                                |                                                  |
-|                |                                |                                                  |
-|                |                                |                                                  |
+| Terminology    | Description                    | Example                                        |
+| -------------- | ------------------------------ | ---------------------------------------------- |
+| Ongoing Effect | A buff or debuff on the player | +50% Damage Status Effect                      |
+| Status Effect  | A status effect on the player  | Burning Status Effect (Take Damage Every Turn) |
+|                |                                |                                                |
+|                |                                |                                                |
+|                |                                |                                                |
+|                |                                |                                                |
+|                |                                |                                                |
+|                |                                |                                                |
 
 #### Weapons
 

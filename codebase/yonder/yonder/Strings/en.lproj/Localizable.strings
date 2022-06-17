@@ -40,4 +40,20 @@
 
 // Weapon Durability
 "enhanceOffer.weaponDurability.name" = "Add Weapon Durability";
-"enhanceOffer.weaponDurability.description1Param" = "Increase a weapon's durability by %@."
+"enhanceOffer.weaponDurability.description1Param" = "Increase a weapon's durability by %@.";
+
+// MARK: - Weapon Durability Pills
+
+// Decrement
+"weaponDurabilityPill.decrement.description1Param" = "Loses %@ durability every use.";
+
+// Dulling
+"weaponDurabilityPill.dulling.description1Param" = "Loses %@ damage every use.";
+
+// Infinite
+"weaponDurabilityPill.infinite.description" = "Has infinite durability.";
+
+// MARK: - Weapon Effect Pills
+
+// Burn Status Effect
+"weaponEffectPill.burnStatusEffect.description1Param" = "Inflicts a burn status effect, dealing %@ damage every turn.";
