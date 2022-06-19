@@ -14,12 +14,22 @@ class ArmorPointsRestorationPercentBuff: BuffAbstract {
     init(direction: BuffDirection, duration: Int?, armorPointsFraction: Double) {
         self.armorPointsFraction = armorPointsFraction
         
-        var effectsDescription: String? = nil
-        if let magnitudeChange = Term.magnitudeChangeFromMultiplying(armorPointsFraction) {
-            effectsDescription = "\(magnitudeChange.capitalized) \(Term.armorPoints) \(Term.positiveEffectDirection(of: direction)) by \(Term.getPercentageFromDouble(armorPointsFraction))"
-        }
+        let effectsDescription = Self.buildPercentageEffectsDescription(
+            direction: direction,
+            fraction: armorPointsFraction,
+            outgoingIncrease: Strings.Buff.ArmorRestorationPercent.EffectsDescription.OutgoingIncrease1Param,
+            outgoingDecrease: Strings.Buff.ArmorRestorationPercent.EffectsDescription.OutgoingDecrease1Param,
+            incomingIncrease: Strings.Buff.ArmorRestorationPercent.EffectsDescription.IncomingIncrease1Param,
+            incomingDecrease: Strings.Buff.ArmorRestorationPercent.EffectsDescription.IncomingDecrease1Param,
+            bidirectionalIncrease: Strings.Buff.ArmorRestorationPercent.EffectsDescription.BidirectionalIncrease1Param,
+            bidirectionalDecrease: Strings.Buff.ArmorRestorationPercent.EffectsDescription.BidirectionalDecrease1Param)
         
-        super.init(effectsDescription: effectsDescription, duration: duration, type: .armorPoints, direction: direction, priority: .second)
+        super.init(
+            effectsDescription: effectsDescription,
+            duration: duration,
+            type: .armorPoints,
+            direction: direction,
+            priority: .second)
     }
     
     override func applyArmorPoints(to armorPoints: Int, source: Any) -> Int? {

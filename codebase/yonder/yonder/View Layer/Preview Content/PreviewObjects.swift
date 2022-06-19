@@ -98,7 +98,7 @@ enum PreviewObjects {
         durabilityPill: DecrementDurabilityPill()
     ))
     
-    static let potionViewModel = PotionViewModel(DamagePotion(damage: 50, potionCount: 3, basePurchasePrice: 100))
+    static let potionViewModel = PotionViewModel(DamagePotion(tier: .II, potionCount: 3, basePurchasePrice: 100))
     
     // MARK: - Map
     

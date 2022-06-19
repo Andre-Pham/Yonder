@@ -14,12 +14,22 @@ class PotionDamagePercentBuff: BuffAbstract {
     init(direction: BuffDirection, duration: Int?, damageFraction: Double) {
         self.damageFraction = damageFraction
         
-        var effectsDescription: String? = nil
-        if let magnitudeChange = Term.magnitudeChangeFromMultiplying(damageFraction) {
-            effectsDescription = "\(magnitudeChange.capitalized) \(Term.damage) \(Term.negativeEffectDirection(of: direction)) from \(Term.potions) by \(Term.getPercentageFromDouble(damageFraction))"
-        }
+        let effectsDescription = Self.buildPercentageEffectsDescription(
+            direction: direction,
+            fraction: damageFraction,
+            outgoingIncrease: Strings.Buff.PotionDamagePercent.EffectsDescription.OutgoingIncrease1Param,
+            outgoingDecrease: Strings.Buff.PotionDamagePercent.EffectsDescription.OutgoingDecrease1Param,
+            incomingIncrease: Strings.Buff.PotionDamagePercent.EffectsDescription.IncomingIncrease1Param,
+            incomingDecrease: Strings.Buff.PotionDamagePercent.EffectsDescription.IncomingDecrease1Param,
+            bidirectionalIncrease: Strings.Buff.PotionDamagePercent.EffectsDescription.BidirectionalIncrease1Param,
+            bidirectionalDecrease: Strings.Buff.PotionDamagePercent.EffectsDescription.BidirectionalDecrease1Param)
         
-        super.init(effectsDescription: effectsDescription, duration: duration, type: .damage, direction: direction, priority: .second)
+        super.init(
+            effectsDescription: effectsDescription,
+            duration: duration,
+            type: .damage,
+            direction: direction,
+            priority: .second)
     }
     
     override func applyDamage(to damage: Int, source: Any) -> Int? {

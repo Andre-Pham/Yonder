@@ -14,12 +14,22 @@ class DamagePercentBuff: BuffAbstract {
     init(direction: BuffDirection, duration: Int?, damageFraction: Double) {
         self.damageFraction = damageFraction
         
-        var effectsDescription: String? = nil
-        if let magnitudeChange = Term.magnitudeChangeFromMultiplying(damageFraction) {
-            effectsDescription = "\(magnitudeChange.capitalized) \(Term.damage) \(Term.negativeEffectDirection(of: direction)) by \(Term.getPercentageFromDouble(damageFraction))"
-        }
+        let effectsDescription = Self.buildPercentageEffectsDescription(
+            direction: direction,
+            fraction: damageFraction,
+            outgoingIncrease: Strings.Buff.DamagePercent.EffectsDescription.OutgoingIncrease1Param,
+            outgoingDecrease: Strings.Buff.DamagePercent.EffectsDescription.OutgoingDecrease1Param,
+            incomingIncrease: Strings.Buff.DamagePercent.EffectsDescription.IncomingIncrease1Param,
+            incomingDecrease: Strings.Buff.DamagePercent.EffectsDescription.IncomingDecrease1Param,
+            bidirectionalIncrease: Strings.Buff.DamagePercent.EffectsDescription.BidirectionalIncrease1Param,
+            bidirectionalDecrease: Strings.Buff.DamagePercent.EffectsDescription.BidirectionalDecrease1Param)
         
-        super.init(effectsDescription: effectsDescription, duration: duration, type: .damage, direction: direction, priority: .second)
+        super.init(
+            effectsDescription: effectsDescription,
+            duration: duration,
+            type: .damage,
+            direction: direction,
+            priority: .second)
     }
     
     override func applyDamage(to damage: Int, source: Any) -> Int? {

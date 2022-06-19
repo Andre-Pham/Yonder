@@ -74,7 +74,7 @@
 
 // Damage Potion
 "potion.damage.name" = "Damage Potion";
-"potion.damage.description" = "A cloudy concoction of shadowy purple and black streaks swirl in a pointed flask. You hear faint whispers when raising the flask to ear. The rigid form provides a confident grip for throwing."
+"potion.damage.description" = "A cloudy concoction of shadowy purple and black streaks swirl in a pointed flask. You hear faint whispers when raising the flask to ear. The rigid form provides a confident grip for throwing.";
 "potion.damage.effectsDescription1Param" = "Inflicts %@ damage.";
 
 // Max Health Restoration Potion
@@ -90,3 +90,53 @@
 // shield potion is shimmering silver and maybe cast in iron... has an acidic armoa, and is in a vial
 // thorn theme can be for the weakness potion (maybe thorns are on it or something "sealed by a thorn")
 // potion that increases your maximum health is green with accents of gold, like life fruit ("Potion of life")
+
+// MARK: - Buffs
+
+// Damage Percent
+"buff.damagePercent.effectsDescription.bidirectionalIncrease1Param" = "Increases damage dealt and taken by %@%%.";
+"buff.damagePercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces damage dealt and taken by %@%%.";
+"buff.damagePercent.effectsDescription.incomingIncrease1Param" = "Increases damage taken by %@%%.";
+"buff.damagePercent.effectsDescription.incomingDecrease1Param" = "Reduces damage taken by %@%%.";
+"buff.damagePercent.effectsDescription.outgoingIncrease1Param" = "Increases damage dealt by %@%%.";
+"buff.damagePercent.effectsDescription.outgoingDecrease1Param" = "Reduces damage dealt by %@%%.";
+
+// Potion Damage Percent
+"buff.potionDamagePercent.effectsDescription.bidirectionalIncrease1Param" = "Increases damage dealt and taken via potions by %@%%.";
+"buff.potionDamagePercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces damage dealt and taken via potions by %@%%.";
+"buff.potionDamagePercent.effectsDescription.incomingIncrease1Param" = "Increases damage taken via potions by %@%%.";
+"buff.potionDamagePercent.effectsDescription.incomingDecrease1Param" = "Reduces damage taken via potions by %@%%.";
+"buff.potionDamagePercent.effectsDescription.outgoingIncrease1Param" = "Increases damage dealt via potions by %@%%.";
+"buff.potionDamagePercent.effectsDescription.outgoingDecrease1Param" = "Reduces damage dealt via potions by %@%%.";
+
+// Damage
+"buff.damage.effectsDescription.bidirectionalIncrease1Param" = "Increases damage dealt and taken by %@.";
+"buff.damage.effectsDescription.bidirectionalDecrease1Param" = "Reduces damage dealt and taken by %@.";
+"buff.damage.effectsDescription.incomingIncrease1Param" = "Increases damage taken by %@.";
+"buff.damage.effectsDescription.incomingDecrease1Param" = "Reduces damage taken by %@.";
+"buff.damage.effectsDescription.outgoingIncrease1Param" = "Increases damage dealt by %@.";
+"buff.damage.effectsDescription.outgoingDecrease1Param" = "Reduces damage dealt by %@.";
+
+// Health Restoration Percent
+"buff.healthRestorationPercent.effectsDescription.bidirectionalIncrease1Param" = "Increases health restored and given to others by %@%%.";
+"buff.healthRestorationPercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces health restored and given to others by %@%%.";
+"buff.healthRestorationPercent.effectsDescription.incomingIncrease1Param" = "Increases health restored by %@%%.";
+"buff.healthRestorationPercent.effectsDescription.incomingDecrease1Param" = "Reduces health restored by %@%%.";
+"buff.healthRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases health given to others by %@%%.";
+"buff.healthRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces health given to others by %@%%.";
+
+// Armor Restoration Percent
+"buff.armorRestorationPercent.effectsDescription.bidirectionalIncrease1Param" = "Increases shields repaired and given to others by %@%%.";
+"buff.armorRestorationPercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces shields repaired and given to others by %@%%.";
+"buff.armorRestorationPercent.effectsDescription.incomingIncrease1Param" = "Increases shields repaired by %@%%.";
+"buff.armorRestorationPercent.effectsDescription.incomingDecrease1Param" = "Reduces shields repaired by %@%%.";
+"buff.armorRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases shields given to others by %@%%.";
+"buff.armorRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces shields given to others by %@%%.";
+
+// Price Percent
+"buff.pricePercent.effectsDescription.bidirectionalIncrease1Param" = "Increases gold earned and paid out by %@%%.";
+"buff.pricePercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces gold earned and paid out by %@%%.";
+"buff.pricePercent.effectsDescription.incomingIncrease1Param" = "Increases gold earned by %@%%.";
+"buff.pricePercent.effectsDescription.incomingDecrease1Param" = "Reduces gold earned by %@%%.";
+"buff.pricePercent.effectsDescription.outgoingIncrease1Param" = "Increases gold paid out by %@%%.";
+"buff.pricePercent.effectsDescription.outgoingDecrease1Param" = "Reduces gold paid out by %@%%.";

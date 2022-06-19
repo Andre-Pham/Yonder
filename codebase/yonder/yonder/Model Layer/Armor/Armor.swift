@@ -41,7 +41,7 @@ class ArmorAbstract: EffectsDescribed, Purchasable, Named, Described, Enhanceabl
         var descriptionLines = [String]()
         descriptionLines.append(contentsOf: buffs.compactMap { $0.effectsDescription })
         descriptionLines.append(contentsOf: attributes.compactMap { $0.description })
-        return descriptionLines.isEmpty ? nil : (descriptionLines.map { $0 + "." }).joined(separator: "\n")
+        return descriptionLines.isEmpty ? nil : descriptionLines.joined(separator: "\n")
     }
     
     private func refreshEffectsDescription() {

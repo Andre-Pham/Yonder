@@ -14,12 +14,22 @@ class HealthRestorationPercentBuff: BuffAbstract {
     init(direction: BuffDirection, duration: Int?, healthFraction: Double) {
         self.healthFraction = healthFraction
         
-        var effectsDescription: String? = nil
-        if let magnitudeChange = Term.magnitudeChangeFromMultiplying(healthFraction) {
-            effectsDescription = "\(magnitudeChange.capitalized) \(Term.health) \(Term.positiveEffectDirection(of: direction)) by \(Term.getPercentageFromDouble(healthFraction))"
-        }
+        let effectsDescription = Self.buildPercentageEffectsDescription(
+            direction: direction,
+            fraction: healthFraction,
+            outgoingIncrease: Strings.Buff.HealthRestorationPercent.EffectsDescription.OutgoingIncrease1Param,
+            outgoingDecrease: Strings.Buff.HealthRestorationPercent.EffectsDescription.OutgoingDecrease1Param,
+            incomingIncrease: Strings.Buff.HealthRestorationPercent.EffectsDescription.IncomingIncrease1Param,
+            incomingDecrease: Strings.Buff.HealthRestorationPercent.EffectsDescription.IncomingDecrease1Param,
+            bidirectionalIncrease: Strings.Buff.HealthRestorationPercent.EffectsDescription.BidirectionalIncrease1Param,
+            bidirectionalDecrease: Strings.Buff.HealthRestorationPercent.EffectsDescription.BidirectionalDecrease1Param)
         
-        super.init(effectsDescription: effectsDescription, duration: duration, type: .health, direction: direction, priority: .second)
+        super.init(
+            effectsDescription: effectsDescription,
+            duration: duration,
+            type: .health,
+            direction: direction,
+            priority: .second)
     }
     
     override func applyHealth(to health: Int, source: Any) -> Int? {
