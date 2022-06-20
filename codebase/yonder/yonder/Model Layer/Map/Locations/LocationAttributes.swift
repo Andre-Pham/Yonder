@@ -28,75 +28,50 @@ enum LocationType {
     var name: String {
         switch self {
         case .none:
-            return Term.none.capitalized
+            return Strings.Map.LocationType.None.Name.local
         case .hostile:
-            return Term.foeLocation.capitalized
+            return Strings.Map.LocationType.Hostile.Name.local
         case .challengeHostile:
-            return Term.challengeHostileLocation.capitalized
+            return Strings.Map.LocationType.ChallengeHostile.Name.local
         case .shop:
-            return Term.shopLocation.capitalized
+            return Strings.Map.LocationType.Shop.Name.local
         case .enhancer:
-            return Term.enhancerLocation.capitalized
+            return Strings.Map.LocationType.Enhancer.Name.local
         case .restorer:
-            return Term.restorerLocation.capitalized
+            return Strings.Map.LocationType.Restorer.Name.local
         case .quest:
-            return Term.questLocation.capitalized
+            return Strings.Map.LocationType.Quest.Name.local
         case .friendly:
-            return Term.friendlyLocation.capitalized
+            return Strings.Map.LocationType.Friendly.Name.local
         case .boss:
-            return Term.bossLocation.capitalized
+            return Strings.Map.LocationType.Boss.Name.local
         case .bridge:
-            return Term.bridgeLocation.capitalized
-        }
-    }
-    
-    var npcName: String {
-        switch self {
-        case .none:
-            return Term.none.capitalized
-        case .hostile:
-            return Term.foe.capitalized
-        case .challengeHostile:
-            return Term.challengeHostile.capitalized
-        case .shop:
-            return Term.shopkeeper.capitalized
-        case .enhancer:
-            return Term.enhancer.capitalized
-        case .restorer:
-            return Term.restorer.capitalized
-        case .quest:
-            return Term.quest.capitalized
-        case .friendly:
-            return Term.friendly.capitalized
-        case .boss:
-            return Term.boss.capitalized
-        case .bridge:
-            return Term.none.capitalized
+            return Strings.Map.LocationType.Bridge.Name.local
         }
     }
     
     var description: String {
         switch self {
         case .none:
-            return Term.none.capitalized
+            return Strings.Map.LocationType.None.Description.local
         case .hostile:
-            return "Hostiles engage you in combat, stop you from travelling, and drop loot upon defeat."
+            return Strings.Map.LocationType.Hostile.Description.local
         case .challengeHostile:
-            return "Mini bosses are tougher than regular hostiles, and also stop you from travelling. Luckily, they also reward better loot."
+            return Strings.Map.LocationType.ChallengeHostile.Description.local
         case .shop:
-            return "Shopkeepers will sell to you for a fair price. Browse their shop to see what they have to offer - each item has [remaining stock] which limits how much of it you can buy."
+            return Strings.Map.LocationType.Shop.Description.local
         case .enhancer:
-            return "Enhancers have offers on certain gear they can upgrade. So long as you have the gold, you may upgrade a piece of gear however many times you desire."
+            return Strings.Map.LocationType.Enhancer.Description.local
         case .restorer:
-            return "Menders will offer restoration of health and/or shields for gold."
+            return Strings.Map.LocationType.Restorer.Description.local
         case .quest:
-            return "Quests aren't implemented yet."
+            return Strings.Map.LocationType.Quest.Description.local
         case .friendly:
-            return "Traders will offer you any number of different types exchanges, which can vary wildly in nature. Each trader has a limit on the number of times you may accept an offer from them."
+            return Strings.Map.LocationType.Friendly.Description.local
         case .boss:
-            return "Bosses are the highest form of hostile you'll encounter. Be prepared for a tough fight."
+            return Strings.Map.LocationType.Boss.Description.local
         case .bridge:
-            return "Warps allow you to travel between areas, both forwards and backwards."
+            return Strings.Map.LocationType.Bridge.Description.local
         }
     }
 }

@@ -226,4 +226,82 @@ enum Strings: Localizable {
             }
         }
     }
+    
+    enum Map: Localizable {
+        static let parent: LocalizeParent = Strings.self
+        
+        enum LocationType: Localizable {
+            static let parent: LocalizeParent = Map.self
+            
+            enum None: Localizable {
+                static let parent: LocalizeParent = LocationType.self
+                
+                case Name
+                case Description
+            }
+            
+            enum Hostile: Localizable {
+                static let parent: LocalizeParent = LocationType.self
+                
+                case Name
+                case Description
+            }
+            
+            enum ChallengeHostile: Localizable {
+                static let parent: LocalizeParent = LocationType.self
+                
+                case Name
+                case Description
+            }
+            
+            enum Shop: Localizable {
+                static let parent: LocalizeParent = LocationType.self
+                
+                case Name
+                case Description
+            }
+            
+            enum Enhancer: Localizable {
+                static let parent: LocalizeParent = LocationType.self
+                
+                case Name
+                case Description
+            }
+            
+            enum Restorer: Localizable {
+                static let parent: LocalizeParent = LocationType.self
+                
+                case Name
+                case Description
+            }
+            
+            enum Quest: Localizable {
+                static let parent: LocalizeParent = LocationType.self
+                
+                case Name
+                case Description
+            }
+            
+            enum Friendly: Localizable {
+                static let parent: LocalizeParent = LocationType.self
+                
+                case Name
+                case Description
+            }
+            
+            enum Boss: Localizable {
+                static let parent: LocalizeParent = LocationType.self
+                
+                case Name
+                case Description
+            }
+            
+            enum Bridge: Localizable {
+                static let parent: LocalizeParent = LocationType.self
+                
+                case Name
+                case Description
+            }
+        }
+    }
 }
