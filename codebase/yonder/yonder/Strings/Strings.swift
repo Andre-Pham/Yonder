@@ -304,4 +304,39 @@ enum Strings: Localizable {
             }
         }
     }
+    
+    enum Armor: Localizable {
+        static let parent: LocalizeParent = Strings.self
+        
+        enum ArmorType: Localizable {
+            static let parent: LocalizeParent = Armor.self
+            
+            enum Head: Localizable {
+                static let parent: LocalizeParent = ArmorType.self
+                
+                case Name
+            }
+            
+            enum Legs: Localizable {
+                static let parent: LocalizeParent = ArmorType.self
+                
+                case Name
+            }
+            
+            enum Body: Localizable {
+                static let parent: LocalizeParent = ArmorType.self
+                
+                case Name
+            }
+        }
+        
+        enum NoArmor: Localizable {
+            static let parent: LocalizeParent = Armor.self
+            
+            case Name
+            case HeadDescription
+            case BodyDescription
+            case LegsDescription
+        }
+    }
 }

@@ -174,3 +174,19 @@
     // Bridge
 "map.locationType.bridge.name" = "Warp";
 "map.locationType.bridge.description" = "Warps allow you to travel between adjacent areas, both forwards and backwards.";
+
+// MARK: - Armor
+
+// Type
+    // Head
+"armor.armorType.head.name" = "Head";
+    // Body
+"armor.armorType.body.name" = "Body";
+    // Legs
+"armor.armorType.legs.name" = "Legs";
+
+// No Armor
+"armor.noArmor.name" = "None";
+"armor.noArmor.headDescription" = "No head armor equipped.";
+"armor.noArmor.bodyDescription" = "No body armor equipped.";
+"armor.noArmor.legsDescription" = "No legs armor equipped.";

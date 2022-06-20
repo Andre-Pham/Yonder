@@ -10,9 +10,19 @@ import Foundation
 class NoArmor: ArmorAbstract {
     
     init(type: ArmorType) {
+        let description: String
+        switch type {
+        case .head:
+            description = Strings.Armor.NoArmor.HeadDescription.local
+        case .body:
+            description = Strings.Armor.NoArmor.BodyDescription.local
+        case .legs:
+            description = Strings.Armor.NoArmor.LegsDescription.local
+        }
+        
         super.init(
-            name: Term.none.capitalized,
-            description: "No \(Term.armorSlot(of: type)) \(Term.armor) equipped.",
+            name: Strings.Armor.NoArmor.Name.local,
+            description: description,
             type: type,
             armorPoints: 0,
             basePurchasePrice: 0,

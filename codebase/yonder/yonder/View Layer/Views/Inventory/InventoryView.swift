@@ -23,7 +23,7 @@ struct InventoryView: View {
                             self.sheetsStateManager.presentArmorSheet(at: index)
                         } label: {
                             HStack(alignment: .lastTextBaseline, spacing: 0) {
-                                YonderText(text: "\(Term.armorSlot(of: armorViewModel.type).capitalized): ", size: .buttonBodySubscript)
+                                YonderText(text: "\(armorViewModel.type.name): ", size: .buttonBodySubscript)
                                     .padding(.leading)
                                 
                                 YonderText(text: armorViewModel.name, size: .buttonBody)
