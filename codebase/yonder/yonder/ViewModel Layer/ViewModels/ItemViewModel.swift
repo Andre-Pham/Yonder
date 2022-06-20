@@ -28,10 +28,10 @@ class ItemViewModel: ObservableObject {
     @Published private(set) var effectsDescription: String?
     
     init(_ item: ItemAbstract,
-         remainingUsesDescription: String = Term.remainingUses.capitalized,
-         damageImage: Image = YonderImages.missingIcon,
-         healthRestorationImage: Image = YonderImages.missingIcon,
-         remainingUsesImage: Image = YonderImages.missingIcon) {
+         remainingUsesDescription: String,
+         damageImage: Image,
+         healthRestorationImage: Image,
+         remainingUsesImage: Image) {
         self.item = item
         self.remainingUsesDescription = remainingUsesDescription
         self.damageImage = damageImage

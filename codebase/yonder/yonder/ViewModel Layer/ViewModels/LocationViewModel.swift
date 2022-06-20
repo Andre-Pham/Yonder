@@ -162,53 +162,11 @@ class LocationViewModel: ObservableObject {
     }
     
     func getTypeName() -> String {
-        switch self.type {
-        case .none:
-            return Term.none.capitalized
-        case .boss:
-            return Term.bossLocation.capitalized
-        case .challengeHostile:
-            return Term.challengeHostileLocation.capitalized
-        case .enhancer:
-            return Term.enhancerLocation.capitalized
-        case .friendly:
-            return Term.friendlyLocation.capitalized
-        case .hostile:
-            return Term.foeLocation.capitalized
-        case .quest:
-            return Term.questLocation.capitalized
-        case .restorer:
-            return Term.restorerLocation.capitalized
-        case .shop:
-            return Term.shopLocation.capitalized
-        case .bridge:
-            return Term.bridgeLocation.capitalized
-        }
+        return self.type.name
     }
     
     func getTypeImage() -> Image {
-        switch type {
-        case .none:
-            return YonderImages.missingIcon
-        case .hostile:
-            return YonderImages.hostileIcon
-        case .challengeHostile:
-            return YonderImages.challengeHostileIcon
-        case .shop:
-            return YonderImages.shopIcon
-        case .enhancer:
-            return YonderImages.enhancerIcon
-        case .restorer:
-            return YonderImages.restorerIcon
-        case .quest:
-            return YonderImages.missingIcon
-        case .friendly:
-            return YonderImages.friendlyIcon
-        case .boss:
-            return YonderImages.missingIcon
-        case .bridge:
-            return YonderImages.warpIcon
-        }
+        return self.type.image
     }
     
 }

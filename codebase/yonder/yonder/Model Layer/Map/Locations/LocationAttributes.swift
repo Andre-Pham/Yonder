@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum LocationBridgeAccessibility {
     case leftBridge // A bridge can be formed from this node to an area to the left
@@ -72,6 +73,31 @@ enum LocationType {
             return Strings.Map.LocationType.Boss.Description.local
         case .bridge:
             return Strings.Map.LocationType.Bridge.Description.local
+        }
+    }
+    
+    var image: Image {
+        switch self {
+        case .none:
+            return YonderImages.missingIcon
+        case .hostile:
+            return YonderImages.hostileIcon
+        case .challengeHostile:
+            return YonderImages.challengeHostileIcon
+        case .shop:
+            return YonderImages.shopIcon
+        case .enhancer:
+            return YonderImages.enhancerIcon
+        case .restorer:
+            return YonderImages.restorerIcon
+        case .quest:
+            return YonderImages.missingIcon
+        case .friendly:
+            return YonderImages.friendlyIcon
+        case .boss:
+            return YonderImages.missingIcon
+        case .bridge:
+            return YonderImages.warpIcon
         }
     }
 }
