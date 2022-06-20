@@ -177,7 +177,9 @@
 
 // MARK: - Armor
 
-// Type
+"armor.armorSlot" = "Armor Slot";
+
+// Armor Type
     // Head
 "armor.armorType.head.name" = "Head";
     // Body

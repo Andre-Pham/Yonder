@@ -15,6 +15,8 @@ struct ArmorInspectView: View {
             YonderText(text: self.armorViewModel.name, size: .inspectSheetTitle)
             
             InspectStatsBody {
+                YonderText(text: "\(Strings.Armor.ArmorSlot.local): \(self.armorViewModel.type.name)", size: .inspectSheetBody)
+                
                 InspectStatView(title: Term.armorPoints.capitalized, value: self.armorViewModel.armorPoints, image: YonderImages.armorPointsIcon)
             }
             

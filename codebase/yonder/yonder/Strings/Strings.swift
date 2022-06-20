@@ -308,6 +308,8 @@ enum Strings: Localizable {
     enum Armor: Localizable {
         static let parent: LocalizeParent = Strings.self
         
+        case ArmorSlot
+        
         enum ArmorType: Localizable {
             static let parent: LocalizeParent = Armor.self
             
