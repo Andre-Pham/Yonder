@@ -25,7 +25,7 @@ class OptionsStateManager: ObservableObject {
     private var subscriptions: Set<AnyCancellable> = []
     
     @Published private(set) var showOptions = true
-    @Published private var optionHeaderText = "Your Options"
+    @Published private var optionHeaderText = Strings.OptionsMenu.Header.Default.local
     var optionHeader: String {
         return "[\(self.optionHeaderText)]"
     }
@@ -92,48 +92,48 @@ class OptionsStateManager: ObservableObject {
     }
     
     func closeActions() {
-        self.optionHeaderText = "Your Options"
+        self.optionHeaderText = Strings.OptionsMenu.Header.Default.local
         self.showOptions = true
         self.activeActions.isActive = false
     }
     
     func weaponOptionSelected() {
-        self.optionHeaderText = "Use \(Term.weapon.capitalized)"
+        self.optionHeaderText = Strings.OptionsMenu.Header.Weapon.local
         self.showOptions = false
         self.weaponActionsActive = Status(true)
         self.activeActions = self.weaponActionsActive
     }
     
     func potionOptionSelected() {
-        self.optionHeaderText = "Use \(Term.potion.capitalized)"
+        self.optionHeaderText = Strings.OptionsMenu.Header.Potion.local
         self.showOptions = false
         self.potionActionsActive = Status(true)
         self.activeActions = self.potionActionsActive
     }
     
     func offerOptionSelected() {
-        self.optionHeaderText = "Accept \(Term.offers.capitalized)"
+        self.optionHeaderText = Strings.OptionsMenu.Header.Offer.local
         self.showOptions = false
         self.offerActionsActive = Status(true)
         self.activeActions = self.offerActionsActive
     }
     
     func purchaseRestorationOptionSelected() {
-        self.optionHeaderText = "Purchase \(Term.restoration.capitalized)"
+        self.optionHeaderText = Strings.OptionsMenu.Header.Restoration.local
         self.showOptions = false
         self.purchaseRestorationActionsActive = Status(true)
         self.activeActions = self.purchaseRestorationActionsActive
     }
     
     func shopOptionSelected() {
-        self.optionHeaderText = Term.purchaseItems.capitalized
+        self.optionHeaderText = Strings.OptionsMenu.Header.Shop.local
         self.showOptions = false
         self.shopActionsActive = Status(true)
         self.activeActions = self.shopActionsActive
     }
     
     func enhanceOptionSelected() {
-        self.optionHeaderText = "\(Term.enhance.capitalized) \(Term.enhanceables.capitalized)"
+        self.optionHeaderText = Strings.OptionsMenu.Header.Enhance.local
         self.showOptions = false
         self.enhanceActionsActive = Status(true)
         self.activeActions = self.enhanceActionsActive

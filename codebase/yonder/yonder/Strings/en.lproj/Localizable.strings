@@ -19,6 +19,41 @@
 "mainMenu.newGame" = "New Game";
 "mainMenu.resumeGame" = "Resume Game";
 
+// MARK: - Tab Bar
+
+"tabBar.game" = "Game";
+"tabBar.inventory" = "Inventory";
+"tabBar.map" = "Map";
+"tabBar.settings" = "Settings";
+
+// MARK: - Options Menu
+
+// Header
+"optionsMenu.header.default" = "Your Options";
+"optionsMenu.header.weapon" = "Use Weapon";
+"optionsMenu.header.potion" = "Use Potion";
+"optionsMenu.header.offer" = "Accept Offers";
+"optionsMenu.header.restoration" = "Purchase Mending";
+"optionsMenu.header.shop" = "Shop";
+"optionsMenu.header.enhance" = "Enhance Gear";
+
+// MARK: - Inventory
+
+// Titles
+"inventory.title.armor" = "Armor";
+"inventory.title.accessories" = "Accessories";
+"inventory.title.items" = "Inventory";
+
+// Weapons
+"inventory.weapons.header" = "Your Weapons";
+"inventory.weapons.headerZeroWeapons" = "No Weapons";
+"inventory.weapons.option" = "Weapons";
+
+// Potions
+"inventory.potions.header" = "Your Potions";
+"inventory.potions.headerZeroPotions" = "No Potions";
+"inventory.potions.option" = "Potions";
+
 // MARK: - Enhance Offers
 
 // Weapon Damage
@@ -42,6 +77,10 @@
 "enhanceOffer.weaponDurability.name" = "Add Weapon Durability";
 "enhanceOffer.weaponDurability.description1Param" = "Increase a weapon's durability by %@.";
 
+// MARK: - Weapons
+
+"weapon.remainingUses" = "Durability";
+
 // MARK: - Weapon Durability Pills
 
 // Decrement
@@ -59,6 +98,8 @@
 "weaponEffectPill.burnStatusEffect.description1Param" = "Inflicts a burn status effect, dealing %@ damage every turn.";
 
 // MARK: - Potions
+
+"potion.remainingUses" = "Potions";
 
 // Tiers
 "potion.tier1" = "I";
@@ -142,6 +183,11 @@
 "buff.pricePercent.effectsDescription.outgoingDecrease1Param" = "Reduces gold paid out by %@%%.";
 
 // MARK: - Map
+
+// Header
+"map.header.done" = "Done";
+"map.header.travel" = "Travel";
+"map.header.informationShorthand" = "i";
 
 // Location Type
     // None

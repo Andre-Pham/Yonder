@@ -28,9 +28,9 @@ class InventoryStateManager: ObservableObject {
         else {
             self.weaponsActive = true
             self.potionsActive = false
-            self.optionHeaderText = "Your \(Term.weapons.capitalized)"
+            self.optionHeaderText = Strings.Inventory.Weapons.Header.local
             if weaponCount == 0 {
-                self.optionHeaderText = "No \(Term.weapons.capitalized)"
+                self.optionHeaderText = Strings.Inventory.Weapons.HeaderZeroWeapons.local
             }
         }
     }
@@ -43,9 +43,9 @@ class InventoryStateManager: ObservableObject {
         else {
             self.potionsActive = true
             self.weaponsActive = false
-            self.optionHeaderText = "Your \(Term.potions.capitalized)"
+            self.optionHeaderText = Strings.Inventory.Weapons.Header.local
             if potionCount == 0 {
-                self.optionHeaderText = "No \(Term.potions.capitalized)"
+                self.optionHeaderText = Strings.Inventory.Potions.HeaderZeroPotions.local
             }
         }
     }

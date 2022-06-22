@@ -19,6 +19,59 @@ enum Strings: Localizable {
         case ResumeGame
     }
     
+    enum TabBar: Localizable {
+        static let parent: LocalizeParent = Strings.self
+        
+        case Game
+        case Inventory
+        case Map
+        case Settings
+    }
+    
+    enum OptionsMenu: Localizable {
+        static let parent: LocalizeParent = Strings.self
+        
+        enum Header: Localizable {
+            static let parent: LocalizeParent = OptionsMenu.self
+            
+            case Default
+            case Weapon
+            case Potion
+            case Offer
+            case Restoration
+            case Shop
+            case Enhance
+        }
+    }
+    
+    enum Inventory: Localizable {
+        static let parent: LocalizeParent = Strings.self
+        
+        enum Title: Localizable {
+            static let parent: LocalizeParent = Inventory.self
+            
+            case Armor
+            case Accessories
+            case Items
+        }
+        
+        enum Weapons: Localizable {
+            static let parent: LocalizeParent = Inventory.self
+            
+            case Header
+            case HeaderZeroWeapons
+            case Option
+        }
+        
+        enum Potions: Localizable {
+            static let parent: LocalizeParent = Inventory.self
+            
+            case Header
+            case HeaderZeroPotions
+            case Option
+        }
+    }
+    
     enum EnhanceOffer: Localizable {
         static let parent: LocalizeParent = Strings.self
         
@@ -59,6 +112,12 @@ enum Strings: Localizable {
         }
     }
     
+    enum Weapon: Localizable {
+        static let parent: LocalizeParent = Strings.self
+        
+        case RemainingUses
+    }
+    
     enum WeaponDurabilityPill: Localizable {
         static let parent: LocalizeParent = Strings.self
         
@@ -94,6 +153,7 @@ enum Strings: Localizable {
     enum Potion: Localizable {
         static let parent: LocalizeParent = Strings.self
         
+        case RemainingUses
         case Tier1
         case Tier2
         case Tier3
@@ -229,6 +289,14 @@ enum Strings: Localizable {
     
     enum Map: Localizable {
         static let parent: LocalizeParent = Strings.self
+        
+        enum Header: Localizable {
+            static let parent: LocalizeParent = Map.self
+            
+            case Done
+            case Travel
+            case InformationShorthand
+        }
         
         enum LocationType: Localizable {
             static let parent: LocalizeParent = Map.self

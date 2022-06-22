@@ -16,7 +16,7 @@ struct InventoryView: View {
         GeometryReader { geo in
             ScrollView {
                 VStack(alignment: .leading, spacing: YonderCoreGraphics.padding) {
-                    YonderText(text: Term.armor.capitalized, size: .title2)
+                    YonderText(text: Strings.Inventory.Title.Armor.local, size: .title2)
                     
                     ForEach(Array(zip(0..<self.playerViewModel.allArmorViewModels.count, self.playerViewModel.allArmorViewModels)), id: \.1.id) { index, armorViewModel in
                         YonderWideButtonBody {
@@ -39,18 +39,18 @@ struct InventoryView: View {
                             ))
                     }
                     
-                    YonderText(text: Term.accessories.capitalized, size: .title2)
+                    YonderText(text: Strings.Inventory.Title.Accessories.local, size: .title2)
                     
                     // TODO: Implement after accessories are added
                     
-                    YonderText(text: Term.inventory.capitalized, size: .title2)
+                    YonderText(text: Strings.Inventory.Title.Items.local, size: .title2)
                     
                     YonderOptionsGrid {
-                        YonderGridOption(title: Term.weapons.capitalized, geometry: geo, image: YonderImages.weaponOptionIcon) {
+                        YonderGridOption(title: Strings.Inventory.Weapons.Option.local, geometry: geo, image: YonderImages.weaponOptionIcon) {
                             self.inventoryStateManager.weaponOptionSelected(weaponCount: self.playerViewModel.weaponViewModels.count)
                         }
                         
-                        YonderGridOption(title: Term.potions.capitalized, geometry: geo, image: YonderImages.potionOptionIcon) {
+                        YonderGridOption(title: Strings.Inventory.Potions.Option.local, geometry: geo, image: YonderImages.potionOptionIcon) {
                             self.inventoryStateManager.potionOptionSelected(potionCount: self.playerViewModel.potionViewModels.count)
                         }
                     }
