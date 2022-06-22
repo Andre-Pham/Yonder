@@ -22,7 +22,7 @@ struct UseWeaponButton: View {
                     YonderTextNumeralHStack {
                         YonderNumeral(number: self.weaponViewModel.damage, size: .buttonBodySubscript)
                         
-                        YonderText(text: " " + Term.damage.capitalized, size: .buttonBodySubscript)
+                        YonderText(text: " " + Strings.Stat.Damage.local, size: .buttonBodySubscript)
                     }
                 }
                 
@@ -30,18 +30,18 @@ struct UseWeaponButton: View {
                     YonderTextNumeralHStack {
                         YonderNumeral(number: self.weaponViewModel.healthRestoration, size: .buttonBodySubscript)
                         
-                        YonderText(text: " " + Term.healthRestoration.capitalized, size: .buttonBodySubscript)
+                        YonderText(text: " " + Strings.Stat.HealthRestoration.local, size: .buttonBodySubscript)
                     }
                 }
                 
                 YonderTextNumeralHStack {
                     YonderNumeral(number: self.weaponViewModel.remainingUses, size: .buttonBodySubscript)
                     
-                    YonderText(text: " " + (self.weaponViewModel.remainingUses > 1 ? Term.remainingUses.capitalized : Term.remainingUse.capitalized), size: .buttonBodySubscript)
+                    YonderText(text: " " + (self.weaponViewModel.remainingUses == 1 ? Strings.Stat.Weapon.RemainingUsesSingular.local : Strings.Stat.Weapon.RemainingUses.local), size: .buttonBodySubscript)
                 }
             }
         } expandedContent: {
-            YonderWideButton(text: Term.use.capitalized) {
+            YonderWideButton(text: Strings.Button.Use.local) {
                 self.playerViewModel.use(weaponViewModel: self.weaponViewModel)
             }
         }

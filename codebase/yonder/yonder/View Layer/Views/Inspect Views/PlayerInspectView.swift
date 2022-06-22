@@ -15,11 +15,11 @@ struct PlayerInspectView: View {
             YonderText(text: Strings.Inspect.Title.PlayerStats.local, size: .inspectSheetTitle)
                 
             InspectStatsBody {
-                InspectStatView(title: Strings.Inspect.Stat.Shields.local, value: self.playerViewModel.armorPoints, maxValue: self.playerViewModel.maxArmorPoints, image: YonderImages.armorPointsIcon)
+                InspectStatView(title: Strings.Stat.Shields.local, value: self.playerViewModel.armorPoints, maxValue: self.playerViewModel.maxArmorPoints, image: YonderImages.armorPointsIcon)
                 
-                InspectStatView(title: Strings.Inspect.Stat.Health.local, value: self.playerViewModel.health, maxValue: self.playerViewModel.maxHealth, image: YonderImages.healthIcon)
+                InspectStatView(title: Strings.Stat.Health.local, value: self.playerViewModel.health, maxValue: self.playerViewModel.maxHealth, image: YonderImages.healthIcon)
                 
-                InspectStatView(title: Strings.Inspect.Stat.Gold.local, prefix: Strings.CurrencySymbol.local, value: self.playerViewModel.gold, image: YonderImages.goldIcon)
+                InspectStatView(title: Strings.Stat.Gold.local, prefix: Strings.CurrencySymbol.local, value: self.playerViewModel.gold, image: YonderImages.goldIcon)
             }
             
             InspectSectionSpacingView()

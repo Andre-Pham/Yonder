@@ -11,9 +11,9 @@ struct FriendlyInspectView: View {
     @ObservedObject var friendlyViewModel: FriendlyViewModel
     var offerDescription: String {
         if self.friendlyViewModel.offersRemaining == 1 {
-            return Strings.Inspect.Stat.Description.OffersRemainingSingular.local
+            return Strings.Stat.Description.OffersRemainingSingular.local
         }
-        return Strings.Inspect.Stat.Description.OffersRemaining1Param.localWithArgs(self.friendlyViewModel.offersRemaining)
+        return Strings.Stat.Description.OffersRemaining1Param.localWithArgs(self.friendlyViewModel.offersRemaining)
     }
     
     var body: some View {
@@ -25,7 +25,7 @@ struct FriendlyInspectView: View {
             YonderText(text: Strings.Inspect.Title.Stats.local, size: .inspectSheetTitle)
             
             InspectStatsBody {
-                InspectStatView(title: Strings.Inspect.Stat.OffersRemaining.local, value: self.friendlyViewModel.offersRemaining, image: YonderImages.offerIcon)
+                InspectStatView(title: Strings.Stat.OffersRemaining.local, value: self.friendlyViewModel.offersRemaining, image: YonderImages.offerIcon)
                 
                 YonderText(text: "(\(self.offerDescription))", size: .inspectSheetBody)
             }

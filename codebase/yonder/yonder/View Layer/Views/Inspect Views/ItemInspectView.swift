@@ -16,11 +16,11 @@ struct ItemInspectView: View {
                 
             InspectStatsBody {
                 if self.itemViewModel.damage > 0 {
-                    InspectStatView(title: Strings.Inspect.Stat.Damage.local, value: self.itemViewModel.damage, image: self.itemViewModel.damageImage)
+                    InspectStatView(title: Strings.Stat.Damage.local, value: self.itemViewModel.damage, image: self.itemViewModel.damageImage)
                 }
                 
                 if self.itemViewModel.healthRestoration > 0 {
-                    InspectStatView(title: Strings.Inspect.Stat.HealthRestoration.local, value: self.itemViewModel.healthRestoration, image: self.itemViewModel.healthRestorationImage)
+                    InspectStatView(title: Strings.Stat.HealthRestoration.local, value: self.itemViewModel.healthRestoration, image: self.itemViewModel.healthRestorationImage)
                 }
                 
                 InspectStatView(title: self.itemViewModel.remainingUsesDescription, value: self.itemViewModel.remainingUses, image: self.itemViewModel.remainingUsesImage)

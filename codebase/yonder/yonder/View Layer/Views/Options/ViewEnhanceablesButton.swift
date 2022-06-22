@@ -35,7 +35,7 @@ struct ViewEnhanceablesButton: View {
             HStack(spacing: YonderCoreGraphics.padding) {
                 PriceTagView(price: self.enhanceOfferViewModel.price)
                 
-                YonderWideButton(text: "View Options") {
+                YonderWideButton(text: Strings.Button.ViewOptions.local) {
                     self.optionsSheetActive = true
                 }
                 .disabledWhen(self.isDisabled)

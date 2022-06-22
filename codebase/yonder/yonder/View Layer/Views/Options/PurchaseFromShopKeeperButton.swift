@@ -53,7 +53,7 @@ struct PurchaseFromShopKeeperButton: View {
             
             VStack {
                 HStack {
-                    YonderWideButton(text: "Info", verticalPadding: YonderCoreGraphics.padding) {
+                    YonderWideButton(text: Strings.Button.Info.local, verticalPadding: YonderCoreGraphics.padding) {
                         self.infoSheetActive.toggle()
                     }
                     .withInspectSheet(
@@ -78,7 +78,7 @@ struct PurchaseFromShopKeeperButton: View {
             }
             
             if self.useButtonActive {
-                YonderWideButton(text: Term.purchase.capitalized) {
+                YonderWideButton(text: Strings.Button.Purchase.local) {
                     self.purchasableViewModel.purchase(by: self.playerViewModel, amount: self.amount)
                 }
                 .padding(.horizontal, YonderCoreGraphics.padding)

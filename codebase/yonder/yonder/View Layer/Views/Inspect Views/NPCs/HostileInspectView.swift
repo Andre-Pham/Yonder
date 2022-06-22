@@ -20,13 +20,13 @@ struct HostileInspectView: View {
             
             InspectStatsBody {
                 InspectStatView(
-                    title: Strings.Inspect.Stat.Health.local,
+                    title: Strings.Stat.Health.local,
                     value: self.foeViewModel.health,
                     maxValue: self.foeViewModel.maxHealth,
                     image: YonderImages.healthIcon)
                 
                 InspectStatView(
-                    title: Strings.Inspect.Stat.Damage.local,
+                    title: Strings.Stat.Damage.local,
                     value: self.foeViewModel.weaponViewModel.damage,
                     image: YonderImages.foeDamageIcon)
             }

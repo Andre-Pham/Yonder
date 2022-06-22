@@ -52,43 +52,43 @@ struct OptionsView: View {
                     if self.optionsStateManager.showOptions {
                         YonderOptionsGrid {
                             if optionsStateManager.weaponOptionActive {
-                                YonderGridOption(title: "Select \(Term.weapon.capitalized)", geometry: geo, image: YonderImages.weaponOptionIcon) {
+                                YonderGridOption(title: Strings.OptionsMenu.Option.Weapon.local, geometry: geo, image: YonderImages.weaponOptionIcon) {
                                     self.optionsStateManager.weaponOptionSelected()
                                 }
                             }
                             
                             if optionsStateManager.potionOptionActive {
-                                YonderGridOption(title: "Select \(Term.potion.capitalized)", geometry: geo, image: YonderImages.potionOptionIcon) {
+                                YonderGridOption(title: Strings.OptionsMenu.Option.Potion.local, geometry: geo, image: YonderImages.potionOptionIcon) {
                                     self.optionsStateManager.potionOptionSelected()
                                 }
                             }
                             
                             if self.optionsStateManager.offerOptionActive {
-                                YonderGridOption(title: "View \(Term.offers.capitalized)", geometry: geo, image: self.playerViewModel.locationViewModel.getTypeImage()) {
+                                YonderGridOption(title: Strings.OptionsMenu.Option.Offer.local, geometry: geo, image: self.playerViewModel.locationViewModel.getTypeImage()) {
                                     self.optionsStateManager.offerOptionSelected()
                                 }
                             }
                             
                             if self.optionsStateManager.purchaseRestorationOptionActive {
-                                YonderGridOption(title: "Purchase \(Term.restoration.capitalized)", geometry: geo, image: self.playerViewModel.locationViewModel.getTypeImage()) {
+                                YonderGridOption(title: Strings.OptionsMenu.Option.Restoration.local, geometry: geo, image: self.playerViewModel.locationViewModel.getTypeImage()) {
                                     self.optionsStateManager.purchaseRestorationOptionSelected()
                                 }
                             }
                             
                             if self.optionsStateManager.shopOptionActive {
-                                YonderGridOption(title: Term.shop.capitalized, geometry: geo, image: self.playerViewModel.locationViewModel.getTypeImage()) {
+                                YonderGridOption(title: Strings.OptionsMenu.Option.Shop.local, geometry: geo, image: self.playerViewModel.locationViewModel.getTypeImage()) {
                                     self.optionsStateManager.shopOptionSelected()
                                 }
                             }
                             
                             if self.optionsStateManager.enhanceOptionActive {
-                                YonderGridOption(title: Term.enhance.capitalized, geometry: geo, image: self.playerViewModel.locationViewModel.getTypeImage()) {
+                                YonderGridOption(title: Strings.OptionsMenu.Option.Enhance.local, geometry: geo, image: self.playerViewModel.locationViewModel.getTypeImage()) {
                                     self.optionsStateManager.enhanceOptionSelected()
                                 }
                             }
                             
                             if self.optionsStateManager.travelOptionActive {
-                                YonderGridOption(title: Term.travel.capitalized, geometry: geo, image: YonderImages.mapIcon) {
+                                YonderGridOption(title: Strings.OptionsMenu.Option.Travel.local, geometry: geo, image: YonderImages.mapIcon) {
                                     self.optionsStateManager.travelOptionSelected(
                                         viewRouter: self.viewRouter,
                                         travelStateManager: self.travelStateManager)

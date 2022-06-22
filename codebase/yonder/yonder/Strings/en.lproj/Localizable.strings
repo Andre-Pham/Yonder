@@ -38,6 +38,15 @@
 "optionsMenu.header.shop" = "Shop";
 "optionsMenu.header.enhance" = "Enhance Gear";
 
+// Option
+"optionsMenu.option.weapon" = "Select Weapon";
+"optionsMenu.option.potion" = "Select Potion";
+"optionsMenu.option.offer" = "View Offers";
+"optionsMenu.option.restoration" = "Purchase Mending";
+"optionsMenu.option.shop" = "Shop";
+"optionsMenu.option.enhance" = "Enhance";
+"optionsMenu.option.travel" = "Travel";
+
 // MARK: - Inventory
 
 // Titles
@@ -63,21 +72,40 @@
 "inspect.title.buffs" = "Ongoing Effects";
 "inspect.title.statusEffects" = "Status Effects";
 
-// Stat
-"inspect.stat.health" = "Health";
-"inspect.stat.damage" = "Damage";
-"inspect.stat.offersRemaining" = "Offers Remaining";
-"inspect.stat.healthRestoration" = "Healing";
-"inspect.stat.shields" = "Shields";
-"inspect.stat.gold" = "Gold";
-    // Description
-"inspect.stat.description.offersRemainingSingular" = "You may accept 1 more offer";
-"inspect.stat.description.offersRemaining1Param" = "You may accept %@ more offers";
-
 // MARK: - Cards
 
 // Player
 "card.player.name" = "You";
+
+// MARK: - Buttons
+
+"button.use" = "Use";
+"button.instantUse" = "Instant Use";
+"button.restore" = "Restore";
+"button.purchase" = "Purchase";
+"button.info" = "Info";
+"button.viewOptions" = "View Options";
+
+// MARK: - Stats
+
+"stat.health" = "Health";
+"stat.damage" = "Damage";
+"stat.offersRemaining" = "Offers Remaining";
+"stat.healthRestoration" = "Healing";
+"stat.shields" = "Shields";
+"stat.gold" = "Gold";
+
+// Weapon
+"stat.weapon.remainingUsesSingular" = "Durability";
+"stat.weapon.remainingUses" = "Durability";
+
+// Potion
+"stat.potion.remainingUsesSingular" = "Potion";
+"stat.potion.remainingUses" = "Potions";
+
+// Description
+"stat.description.offersRemainingSingular" = "You may accept 1 more offer";
+"stat.description.offersRemaining1Param" = "You may accept %@ more offers";
 
 // MARK: - Enhance Offers
 
@@ -102,10 +130,6 @@
 "enhanceOffer.weaponDurability.name" = "Add Weapon Durability";
 "enhanceOffer.weaponDurability.description1Param" = "Increase a weapon's durability by %@.";
 
-// MARK: - Weapons
-
-"weapon.remainingUses" = "Durability";
-
 // MARK: - Weapon Durability Pills
 
 // Decrement
@@ -123,8 +147,6 @@
 "weaponEffectPill.burnStatusEffect.description1Param" = "Inflicts a burn status effect, dealing %@ damage every turn.";
 
 // MARK: - Potions
-
-"potion.remainingUses" = "Potions";
 
 // Tiers
 "potion.tier1" = "I";
