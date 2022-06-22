@@ -13,6 +13,7 @@
 // MARK: - Main
 
 "gameName" = "Yonder";
+"currencySymbol" = "$";
 
 // MARK: - Main Menu
 
@@ -53,6 +54,30 @@
 "inventory.potions.header" = "Your Potions";
 "inventory.potions.headerZeroPotions" = "No Potions";
 "inventory.potions.option" = "Potions";
+
+// MARK: - Inspect
+
+// Title
+"inspect.title.stats" = "Stats";
+"inspect.title.playerStats" = "Your Stats";
+"inspect.title.buffs" = "Ongoing Effects";
+"inspect.title.statusEffects" = "Status Effects";
+
+// Stat
+"inspect.stat.health" = "Health";
+"inspect.stat.damage" = "Damage";
+"inspect.stat.offersRemaining" = "Offers Remaining";
+"inspect.stat.healthRestoration" = "Healing";
+"inspect.stat.shields" = "Shields";
+"inspect.stat.gold" = "Gold";
+    // Description
+"inspect.stat.description.offersRemainingSingular" = "You may accept 1 more offer";
+"inspect.stat.description.offersRemaining1Param" = "You may accept %@ more offers";
+
+// MARK: - Cards
+
+// Player
+"card.player.name" = "You";
 
 // MARK: - Enhance Offers
 

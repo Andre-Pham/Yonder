@@ -16,17 +16,17 @@ struct HostileInspectView: View {
             description: self.foeViewModel.description,
             locationType: LocationType.hostile
         ) {
-            YonderText(text: Term.stats.capitalized, size: .inspectSheetTitle)
+            YonderText(text: Strings.Inspect.Title.Stats.local, size: .inspectSheetTitle)
             
             InspectStatsBody {
                 InspectStatView(
-                    title: Term.health.capitalized,
+                    title: Strings.Inspect.Stat.Health.local,
                     value: self.foeViewModel.health,
                     maxValue: self.foeViewModel.maxHealth,
                     image: YonderImages.healthIcon)
                 
                 InspectStatView(
-                    title: Term.damage.capitalized,
+                    title: Strings.Inspect.Stat.Damage.local,
                     value: self.foeViewModel.weaponViewModel.damage,
                     image: YonderImages.foeDamageIcon)
             }

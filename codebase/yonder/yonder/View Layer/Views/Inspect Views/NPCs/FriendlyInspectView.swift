@@ -9,8 +9,11 @@ import SwiftUI
 
 struct FriendlyInspectView: View {
     @ObservedObject var friendlyViewModel: FriendlyViewModel
-    var offerSuffix: String {
-        return self.friendlyViewModel.offersRemaining == 1 ? "" : "s"
+    var offerDescription: String {
+        if self.friendlyViewModel.offersRemaining == 1 {
+            return Strings.Inspect.Stat.Description.OffersRemainingSingular.local
+        }
+        return Strings.Inspect.Stat.Description.OffersRemaining1Param.localWithArgs(self.friendlyViewModel.offersRemaining)
     }
     
     var body: some View {
@@ -19,12 +22,12 @@ struct FriendlyInspectView: View {
             description: self.friendlyViewModel.description,
             locationType: LocationType.friendly
         ) {
-            YonderText(text: Term.stats.capitalized, size: .inspectSheetTitle)
+            YonderText(text: Strings.Inspect.Title.Stats.local, size: .inspectSheetTitle)
             
             InspectStatsBody {
-                InspectStatView(title: "Offers remaining", value: self.friendlyViewModel.offersRemaining, image: YonderImages.offerIcon)
+                InspectStatView(title: Strings.Inspect.Stat.OffersRemaining.local, value: self.friendlyViewModel.offersRemaining, image: YonderImages.offerIcon)
                 
-                YonderText(text: "(You may accept \(self.friendlyViewModel.offersRemaining) more offer\(self.offerSuffix))", size: .inspectSheetBody)
+                YonderText(text: "(\(self.offerDescription))", size: .inspectSheetBody)
             }
         }
     }
