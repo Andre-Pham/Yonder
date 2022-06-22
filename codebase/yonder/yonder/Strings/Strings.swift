@@ -96,6 +96,19 @@ enum Strings: Localizable {
             case Buffs
             case StatusEffects
         }
+        
+        enum EnhanceOffers: Localizable {
+            static let parent: LocalizeParent = Inspect.self
+            
+            case priceTagSuffix
+            case header
+        }
+    }
+    
+    enum Feedback: Localizable {
+        static let parent: LocalizeParent = Strings.self
+        
+        case Enhanced
     }
     
     enum Stat: Localizable {

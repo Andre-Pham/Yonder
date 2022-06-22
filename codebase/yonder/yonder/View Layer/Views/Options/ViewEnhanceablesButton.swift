@@ -47,16 +47,16 @@ struct ViewEnhanceablesButton: View {
                 VStack {
                     PlayerCardView(playerViewModel: self.playerViewModel, resizeToFit: false)
                     
-                    WidePriceTagView(price: self.enhanceOfferViewModel.price, text: "Per \(Term.enhance.capitalized)")
+                    WidePriceTagView(price: self.enhanceOfferViewModel.price, text: Strings.Inspect.EnhanceOffers.priceTagSuffix.local)
                     
-                    YonderText(text: "[Options]", size: .title4)
+                    YonderText(text: "[\(Strings.Inspect.EnhanceOffers.header.local)]", size: .title4)
                     
                     ForEach(Array(zip(enhanceOfferViewModel.getEnhanceableInfos(playerViewModel: self.playerViewModel).indices, enhanceOfferViewModel.getEnhanceableInfos(playerViewModel: self.playerViewModel))), id: \.1.id) { index, enhanceInfoViewModel in
                         
                         YonderExpandableWideButtonBody(isExpanded: self.$purchaseEnhanceOfferStateManager.purchaseButtonActiveBindings[index]) {
                             YonderText(text: enhanceInfoViewModel.name, size: .buttonBody)
                         } expandedContent: {
-                            YonderWideButton(text: Term.purchase.capitalized) {
+                            YonderWideButton(text: Strings.Button.Purchase.local) {
                                 self.enhanceOfferViewModel.accept(playerViewModel: self.playerViewModel, enhanceableID: enhanceInfoViewModel.id)
                                 self.popupStateManager.activatePopup()
                             }
@@ -68,7 +68,7 @@ struct ViewEnhanceablesButton: View {
             .onTapGesture {
                 self.optionsSheetActive = false
             }
-            .withFeedbackPopup(text: Term.enhanced.capitalized, padding: YonderCoreGraphics.padding*3, popupStateManager: self.popupStateManager)
+            .withFeedbackPopup(text: Strings.Feedback.Enhanced.local, padding: YonderCoreGraphics.padding*3, popupStateManager: self.popupStateManager)
         }
     }
 }

@@ -72,6 +72,14 @@
 "inspect.title.buffs" = "Ongoing Effects";
 "inspect.title.statusEffects" = "Status Effects";
 
+// Enhance Offers
+"inspect.enhanceOffers.priceTagSuffix" = "Per Enhance";
+"inspect.enhanceOffers.header" = "Options";
+
+// MARK: - Feedback
+
+"feedback.enhanced" = "Enhanced";
+
 // MARK: - Cards
 
 // Player
