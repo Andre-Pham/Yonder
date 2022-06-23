@@ -1,8 +1,8 @@
 //
-//  WeaponEffectPills.swift
+//  BurnStatusEffectEffectPill.swift
 //  yonder
 //
-//  Created by Andre Pham on 11/2/2022.
+//  Created by Andre Pham on 23/6/2022.
 //
 
 import Foundation
@@ -10,7 +10,6 @@ import Foundation
 class BurnStatusEffectEffectPill: WeaponEffectPill {
     
     public let effectsDescription: String
-    public var priority: WeaponEffectPillPriority = .first
     public let tickDamage: Int
     
     init(tickDamage: Int) {
