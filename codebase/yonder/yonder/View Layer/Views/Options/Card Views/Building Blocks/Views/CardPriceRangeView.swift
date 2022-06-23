@@ -14,15 +14,15 @@ struct CardPriceRangeView: View {
     var body: some View {
         Group {
             YonderTextNumeralHStack {
-                YonderText(text: "L: ", size: .cardSubscript)
+                YonderText(text: Strings.Card.LowestPriceShorthand.local.rightPadded(by: ": "), size: .cardSubscript)
                 
-                YonderIconNumeralPair(prefix: "$", image: YonderImages.goldIcon, numeral: self.minPrice, size: .cardSubscript, iconSize: .cardSubscript)
+                YonderIconNumeralPair(prefix: Strings.CurrencySymbol.local, image: YonderImages.goldIcon, numeral: self.minPrice, size: .cardSubscript, iconSize: .cardSubscript)
             }
             
             YonderTextNumeralHStack {
-                YonderText(text: "H: ", size: .cardSubscript)
+                YonderText(text: Strings.Card.HighestPriceShorthand.local.rightPadded(by: ": "), size: .cardSubscript)
                 
-                YonderIconNumeralPair(prefix: "$", image: YonderImages.goldIcon, numeral: self.maxPrice, size: .cardSubscript, iconSize: .cardSubscript)
+                YonderIconNumeralPair(prefix: Strings.CurrencySymbol.local, image: YonderImages.goldIcon, numeral: self.maxPrice, size: .cardSubscript, iconSize: .cardSubscript)
             }
         }
     }
@@ -34,7 +34,9 @@ struct CardPriceRangeView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            CardPriceRangeView(minPrice: 100, maxPrice: 1000)
+            VStack {
+                CardPriceRangeView(minPrice: 100, maxPrice: 1000)
+            }
         }
     }
 }

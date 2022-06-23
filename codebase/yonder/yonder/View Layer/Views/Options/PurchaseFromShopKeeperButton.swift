@@ -27,13 +27,13 @@ struct PurchaseFromShopKeeperButton: View {
                             YonderText(text: self.purchasableViewModel.name, size: .buttonBody)
                             
                             YonderTextNumeralHStack {
-                                YonderText(text: "Remaining stock: ", size: .buttonBodySubscript)
+                                YonderText(text: Strings.Stat.RemainingStock.local.rightPadded(by: ": "), size: .buttonBodySubscript)
                                 
                                 YonderNumeral(number: self.purchasableViewModel.stockRemaining, size: .buttonBodySubscript)
                             }
                             
                             HStack {
-                                YonderWideButton(text: "Info", verticalPadding: YonderCoreGraphics.padding, action: {})
+                                YonderWideButton(text: Strings.Button.Info.local, verticalPadding: YonderCoreGraphics.padding, action: {})
                                     .hidden()
                                 
                                 PriceTagView(price: self.purchasableViewModel.price)

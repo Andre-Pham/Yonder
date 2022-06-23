@@ -29,7 +29,7 @@ class ShopKeeperViewModel: InteractorViewModel {
             if !description.isEmpty {
                 description += separator
             }
-            description += type.name + "s"
+            description += type.categoryDescription
         }
         return separator + description
     }

@@ -30,12 +30,7 @@ struct ShopKeeperCardView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            ShopKeeperCardView(shopKeeperViewModel: ShopKeeperViewModel(ShopKeeper(
-                name: "Andre",
-                description: "I sell pancakes and maple syrup!!",
-                purchasableItems: [
-                    PurchasableItem(item: Weapon(basePill: DamageBasePill(damage: 200, durability: 5), durabilityPill: DullingDurabilityPill(damageLostPerUse: 50)), stock: 5)
-                ])))
+            ShopKeeperCardView(shopKeeperViewModel: PreviewObjects.shopKeeperViewModel)
         }
     }
 }

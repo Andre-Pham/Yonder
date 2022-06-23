@@ -16,7 +16,7 @@ struct WidePriceTagView: View {
     
     var body: some View {
         HStack(spacing: 0) {
-            YonderIconNumeralPair(prefix: "$", suffix: self.displayText, image: YonderImages.goldIcon, numeral: self.price, size: .buttonBody)
+            YonderIconNumeralPair(prefix: Strings.CurrencySymbol.local, suffix: self.displayText, image: YonderImages.goldIcon, numeral: self.price, size: .buttonBody)
         }
         .frame(maxWidth: .infinity)
         .padding(.horizontal, YonderCoreGraphics.padding*1.5)

@@ -30,7 +30,7 @@ struct InspectLocationView: View {
                 GameManager.instance.playerVM.travel(to: self.locationViewModel)
                 dismiss()
             } label: {
-                YonderIconTextPair(image: self.locationViewModel.getTypeImage(), text: "Warp", size: .buttonBody)
+                YonderIconTextPair(image: self.locationViewModel.getTypeImage(), text: Strings.Button.Warp.local, size: .buttonBody)
             }
         }
     }

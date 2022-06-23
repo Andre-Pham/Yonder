@@ -38,7 +38,7 @@ struct PlayerCardView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            PlayerCardView(playerViewModel: PlayerViewModel(Player(maxHealth: 200, location: NoLocation())))
+            PlayerCardView(playerViewModel: PreviewObjects.playerViewModel)
         }
     }
 }

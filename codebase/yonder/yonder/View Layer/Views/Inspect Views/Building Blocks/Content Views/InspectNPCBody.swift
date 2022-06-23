@@ -34,7 +34,7 @@ struct InspectNPCBody<Content: View>: View {
             
             InspectSectionSpacingView()
             
-            YonderText(text: "Info", size: .inspectSheetTitle)
+            YonderText(text: Strings.Inspect.Title.Info.local, size: .inspectSheetTitle)
             
             YonderText(text: self.locationType.description, size: .inspectSheetBody)
         }

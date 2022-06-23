@@ -16,17 +16,17 @@ struct RestorerInspectView: View {
             description: self.restorerViewModel.description,
             locationType: LocationType.restorer
         ) {
-            YonderText(text: "Restore Options", size: .inspectSheetTitle)
+            YonderText(text: Strings.Inspect.Title.RestoreOptions.local, size: .inspectSheetTitle)
             
             ForEach(self.restorerViewModel.options, id: \.id) { option in
                 YonderTextNumeralHStack {
-                    YonderText(text: "■ Restore ", size: .inspectSheetBody)
+                    YonderText(text: "■" + option.actionDescription.padded(by: " "), size: .inspectSheetBody)
                     
-                    YonderIconNumeralPair(image: option.getImage(), numeral: Restorer.bundleSize, size: .inspectSheetBody, iconSize: .inspectSheet)
+                    YonderIconNumeralPair(image: option.image, numeral: Restorer.bundleSize, size: .inspectSheetBody, iconSize: .inspectSheet)
                     
-                    YonderText(text: " for ", size: .inspectSheetBody)
+                    YonderText(text: Strings.Inspect.Restorer.For.local.padded(by: " "), size: .inspectSheetBody)
                     
-                    YonderIconNumeralPair(prefix: "$", image: YonderImages.goldIcon, numeral: option.getBundlePrice(), size: .inspectSheetBody, iconSize: .inspectSheet)
+                    YonderIconNumeralPair(prefix: Strings.CurrencySymbol.local, image: YonderImages.goldIcon, numeral: option.getBundlePrice(), size: .inspectSheetBody, iconSize: .inspectSheet)
                 }
             }
         }

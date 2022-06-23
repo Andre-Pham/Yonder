@@ -17,11 +17,11 @@ struct RestorerCardView: View {
             
             ForEach(self.restorerViewModel.options, id: \.id) { option in
                 YonderTextNumeralHStack {
-                    YonderIconNumeralPair(image: option.getImage(), numeral: Restorer.bundleSize, size: .cardSubscript, iconSize: .cardSubscript)
+                    YonderIconNumeralPair(image: option.image, numeral: Restorer.bundleSize, size: .cardSubscript, iconSize: .cardSubscript)
                     
                     YonderText(text: " / ", size: .cardSubscript)
                     
-                    YonderIconNumeralPair(prefix: "$", image: YonderImages.goldIcon, numeral: option.getBundlePrice(), size: .cardSubscript, iconSize: .cardSubscript)
+                    YonderIconNumeralPair(prefix: Strings.CurrencySymbol.local, image: YonderImages.goldIcon, numeral: option.getBundlePrice(), size: .cardSubscript, iconSize: .cardSubscript)
                 }
             }
         }
@@ -34,12 +34,7 @@ struct RestorerCardView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            RestorerCardView(restorerViewModel: RestorerViewModel(Restorer(
-                name: "Mercy",
-                description: "Heroes never die!",
-                options: [.health, .armorPoints],
-                pricePerHealthBundle: 10,
-                pricePerArmorPointBundle: 10)))
+            RestorerCardView(restorerViewModel: PreviewObjects.restorerViewModel)
         }
     }
 }

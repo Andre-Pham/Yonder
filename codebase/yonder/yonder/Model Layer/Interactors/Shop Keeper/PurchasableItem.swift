@@ -14,14 +14,14 @@ class PurchasableItem {
         case potion
         case armor
         
-        var name: String {
+        var categoryDescription: String {
             switch self {
             case .weapon:
-                return "Weapon"
+                return Strings.PurchasableItem.Category.Weapons.local
             case .potion:
-                return "Potion"
+                return Strings.PurchasableItem.Category.Potions.local
             case .armor:
-                return "Armor"
+                return Strings.PurchasableItem.Category.Armor.local
             }
         }
     }

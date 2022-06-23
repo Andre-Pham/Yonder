@@ -95,6 +95,9 @@ enum Strings: Localizable {
             case PlayerStats
             case Buffs
             case StatusEffects
+            case Offers
+            case RestoreOptions
+            case Info
         }
         
         enum EnhanceOffers: Localizable {
@@ -102,6 +105,12 @@ enum Strings: Localizable {
             
             case priceTagSuffix
             case header
+        }
+        
+        enum Restorer: Localizable {
+            static let parent: LocalizeParent = Inspect.self
+            
+            case For
         }
     }
     
@@ -120,6 +129,9 @@ enum Strings: Localizable {
         case HealthRestoration
         case Shields
         case Gold
+        case Offers
+        case OffersSingular
+        case RemainingStock
         
         enum Weapon: Localizable {
             static let parent: LocalizeParent = Stat.self
@@ -140,11 +152,15 @@ enum Strings: Localizable {
             
             case OffersRemainingSingular
             case OffersRemaining1Param
+            case Selling
         }
     }
     
     enum Card: Localizable {
         static let parent: LocalizeParent = Strings.self
+        
+        case LowestPriceShorthand
+        case HighestPriceShorthand
         
         enum Player: Localizable {
             static let parent: LocalizeParent = Card.self
@@ -162,6 +178,8 @@ enum Strings: Localizable {
         case Purchase
         case Info
         case ViewOptions
+        case Warp
+        case Back
     }
     
     enum EnhanceOffer: Localizable {
@@ -204,6 +222,22 @@ enum Strings: Localizable {
         }
     }
     
+    enum RestoreOption: Localizable {
+        static let parent: LocalizeParent = Strings.self
+        
+        enum Health: Localizable {
+            static let parent: LocalizeParent = RestoreOption.self
+            
+            case Action
+        }
+        
+        enum Armor: Localizable {
+            static let parent: LocalizeParent = RestoreOption.self
+            
+            case Action
+        }
+    }
+    
     enum WeaponDurabilityPill: Localizable {
         static let parent: LocalizeParent = Strings.self
         
@@ -223,6 +257,18 @@ enum Strings: Localizable {
             static let parent: LocalizeParent = WeaponDurabilityPill.self
             
             case Description
+        }
+    }
+    
+    enum PurchasableItem: Localizable {
+        static let parent: LocalizeParent = Strings.self
+        
+        enum Category: Localizable {
+            static let parent: LocalizeParent = PurchasableItem.self
+            
+            case Weapons
+            case Potions
+            case Armor
         }
     }
     

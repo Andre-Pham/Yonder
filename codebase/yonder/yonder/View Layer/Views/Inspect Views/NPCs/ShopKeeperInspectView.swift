@@ -16,11 +16,11 @@ struct ShopKeeperInspectView: View {
             description: self.shopkeeperViewModel.description,
             locationType: LocationType.shop
         ) {
-            YonderText(text: "Offers", size: .inspectSheetTitle)
+            YonderText(text: Strings.Inspect.Title.Offers.local, size: .inspectSheetTitle)
             
-            InspectStatView(title: "Offers", value: self.shopkeeperViewModel.purchasables.count)
+            InspectStatView(title: Strings.Stat.Offers.local, value: self.shopkeeperViewModel.purchasables.count)
             
-            YonderText(text: "Selling: \(self.shopkeeperViewModel.getOffersDescription())", size: .inspectSheetBody)
+            YonderText(text: "\(Strings.Stat.Description.Selling.local): \(self.shopkeeperViewModel.getOffersDescription())", size: .inspectSheetBody)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
     }

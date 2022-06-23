@@ -26,10 +26,7 @@ struct FriendlyCardView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            FriendlyCardView(friendlyViewModel: FriendlyViewModel(Friendly(
-                name: "Winston",
-                description: "With a Y",
-                offers: [FreeGoldOffer(goldAmount: 200)], offerLimit: 1)))
+            FriendlyCardView(friendlyViewModel: PreviewObjects.friendlyViewModel)
         }
     }
 }

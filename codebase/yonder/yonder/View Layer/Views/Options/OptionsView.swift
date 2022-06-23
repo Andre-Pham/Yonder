@@ -101,7 +101,7 @@ struct OptionsView: View {
                     
                     if self.optionsStateManager.activeActions.isActive {
                         VStack {
-                            YonderWideButton(text: "Back") {
+                            YonderWideButton(text: Strings.Button.Back.local) {
                                 self.optionsStateManager.closeActions()
                             }
                             

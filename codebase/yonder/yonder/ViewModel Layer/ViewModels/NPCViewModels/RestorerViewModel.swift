@@ -29,6 +29,24 @@ class RestoreOptionViewModel: ObservableObject {
     private let restorerViewModel: RestorerViewModel
     private(set) var id: UUID
     
+    var image: Image {
+        switch self.restoreOption {
+        case .health:
+            return YonderImages.healthIcon
+        case .armorPoints:
+            return YonderImages.armorPointsIcon
+        }
+    }
+    
+    var actionDescription: String {
+        switch self.restoreOption {
+        case .health:
+            return Strings.RestoreOption.Health.Action.local
+        case .armorPoints:
+            return Strings.RestoreOption.Armor.Action.local
+        }
+    }
+    
     /// - Parameters:
     ///   - restoreOption: The restore option for purchase attached to this view model
     ///   - restorerViewModel: ViewModel of the restorer providing this restore option (and optionally others)
@@ -37,15 +55,6 @@ class RestoreOptionViewModel: ObservableObject {
         self.restorerViewModel = restorerViewModel
         
         self.id = restoreOption.id
-    }
-    
-    func getImage() -> Image {
-        switch self.restoreOption {
-        case .health:
-            return YonderImages.healthIcon
-        case .armorPoints:
-            return YonderImages.armorPointsIcon
-        }
     }
     
     func getBundlePrice() -> Int {

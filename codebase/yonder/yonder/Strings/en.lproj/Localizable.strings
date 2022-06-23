@@ -71,16 +71,25 @@
 "inspect.title.playerStats" = "Your Stats";
 "inspect.title.buffs" = "Ongoing Effects";
 "inspect.title.statusEffects" = "Status Effects";
+"inspect.title.offers" = "Offers";
+"inspect.title.restoreOptions" = "Mending Options";
+"inspect.title.info" = "Info";
 
 // Enhance Offers
 "inspect.enhanceOffers.priceTagSuffix" = "Per Enhance";
 "inspect.enhanceOffers.header" = "Options";
+
+// Restorer
+"inspect.restorer.for" = "for";
 
 // MARK: - Feedback
 
 "feedback.enhanced" = "Enhanced";
 
 // MARK: - Cards
+
+"card.lowestPriceShorthand" = "L";
+"card.highestPriceShorthand" = "H";
 
 // Player
 "card.player.name" = "You";
@@ -93,6 +102,8 @@
 "button.purchase" = "Purchase";
 "button.info" = "Info";
 "button.viewOptions" = "View Options";
+"button.warp" = "Warp";
+"button.back" = "Back";
 
 // MARK: - Stats
 
@@ -102,6 +113,9 @@
 "stat.healthRestoration" = "Healing";
 "stat.shields" = "Shields";
 "stat.gold" = "Gold";
+"stat.offers" = "Offers";
+"stat.offersSingular" = "Offer";
+"stat.remainingStock" = "Remaining Stock";
 
 // Weapon
 "stat.weapon.remainingUsesSingular" = "Durability";
@@ -114,6 +128,7 @@
 // Description
 "stat.description.offersRemainingSingular" = "You may accept 1 more offer";
 "stat.description.offersRemaining1Param" = "You may accept %@ more offers";
+"stat.description.selling" = "Selling";
 
 // MARK: - Enhance Offers
 
@@ -137,6 +152,21 @@
 // Weapon Durability
 "enhanceOffer.weaponDurability.name" = "Add Weapon Durability";
 "enhanceOffer.weaponDurability.description1Param" = "Increase a weapon's durability by %@.";
+
+// MARK: - Restore Options
+
+// Health
+"restoreOption.health.action" = "Heal";
+
+// Armor
+"restoreOption.armor.action" = "Repair";
+
+// MARK: - Purchasable Items
+
+// Category
+"purchasableItem.category.weapons" = "Weapons";
+"purchasableItem.category.potions" = "Potions";
+"purchasableItem.category.armor" = "Armor";
 
 // MARK: - Weapon Durability Pills
 

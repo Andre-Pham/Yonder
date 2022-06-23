@@ -19,7 +19,7 @@ struct PurchaseRestorationButton: View {
                 HStack {
                     YonderText(text: "\(Strings.Button.Restore.local):", size: .buttonBody)
                     
-                    YonderIconTextPair(image: self.restorationOptionViewModel.getImage(), text: "\(self.baseRestorationAmount)", size: .buttonBody)
+                    YonderIconTextPair(image: self.restorationOptionViewModel.image, text: "\(self.baseRestorationAmount)", size: .buttonBody)
                     
                     Spacer()
                     

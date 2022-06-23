@@ -22,7 +22,7 @@ struct UseWeaponButton: View {
                     YonderTextNumeralHStack {
                         YonderNumeral(number: self.weaponViewModel.damage, size: .buttonBodySubscript)
                         
-                        YonderText(text: " " + Strings.Stat.Damage.local, size: .buttonBodySubscript)
+                        YonderText(text: Strings.Stat.Damage.local.leftPadded(by: " "), size: .buttonBodySubscript)
                     }
                 }
                 
@@ -30,14 +30,14 @@ struct UseWeaponButton: View {
                     YonderTextNumeralHStack {
                         YonderNumeral(number: self.weaponViewModel.healthRestoration, size: .buttonBodySubscript)
                         
-                        YonderText(text: " " + Strings.Stat.HealthRestoration.local, size: .buttonBodySubscript)
+                        YonderText(text: Strings.Stat.HealthRestoration.local.leftPadded(by: " "), size: .buttonBodySubscript)
                     }
                 }
                 
                 YonderTextNumeralHStack {
                     YonderNumeral(number: self.weaponViewModel.remainingUses, size: .buttonBodySubscript)
                     
-                    YonderText(text: " " + (self.weaponViewModel.remainingUses == 1 ? Strings.Stat.Weapon.RemainingUsesSingular.local : Strings.Stat.Weapon.RemainingUses.local), size: .buttonBodySubscript)
+                    YonderText(text: (self.weaponViewModel.remainingUses == 1 ? Strings.Stat.Weapon.RemainingUsesSingular.local : Strings.Stat.Weapon.RemainingUses.local).leftPadded(by: " "), size: .buttonBodySubscript)
                 }
             }
         } expandedContent: {

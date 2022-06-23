@@ -25,7 +25,7 @@ struct UsePotionButton: View {
                 YonderTextNumeralHStack {
                     YonderNumeral(number: self.potionViewModel.remainingUses, size: .buttonBodySubscript)
                     
-                    YonderText(text: " " + (self.potionViewModel.remainingUses == 1 ? Strings.Stat.Potion.RemainingUsesSingular.local : Strings.Stat.Potion.RemainingUses.local), size: .buttonBodySubscript)
+                    YonderText(text: (self.potionViewModel.remainingUses == 1 ? Strings.Stat.Potion.RemainingUsesSingular.local : Strings.Stat.Potion.RemainingUses.local).leftPadded(by: " "), size: .buttonBodySubscript)
                 }
             }
         } expandedContent: {

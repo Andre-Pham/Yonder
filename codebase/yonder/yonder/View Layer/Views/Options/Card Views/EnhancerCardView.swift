@@ -30,10 +30,7 @@ struct EnhancerCardView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            EnhancerCardView(enhancerViewModel: EnhancerViewModel(Enhancer(
-                name: "Ana",
-                description: "You're powered up, get in there!",
-                offers: [WeaponDamageEnhanceOffer(price: 100, damage: 200)])))
+            EnhancerCardView(enhancerViewModel: PreviewObjects.enhancerViewModel)
         }
     }
 }

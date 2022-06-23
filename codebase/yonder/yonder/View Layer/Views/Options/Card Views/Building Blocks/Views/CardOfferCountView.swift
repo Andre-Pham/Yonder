@@ -9,15 +9,15 @@ import SwiftUI
 
 struct CardOfferCountView: View {
     let offerCount: Int
-    var plural: String {
-        return self.offerCount == 1 ? "" : "s"
+    var text: String {
+        return self.offerCount == 1 ? Strings.Stat.OffersSingular.local : Strings.Stat.Offers.local
     }
     
     var body: some View {
         YonderTextNumeralHStack {
             YonderNumeral(number: self.offerCount, size: .cardSubscript)
             
-            YonderText(text: " Offer" + self.plural, size: .cardSubscript)
+            YonderText(text: self.text.leftPadded(by: " "), size: .cardSubscript)
         }
     }
 }
