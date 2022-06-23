@@ -168,6 +168,16 @@
 "purchasableItem.category.potions" = "Potions";
 "purchasableItem.category.armor" = "Armor";
 
+// MARK: - Items
+
+"item.infinite" = "Infinite";
+
+// MARK: - Weapons
+
+// Default Player Weapon
+"weapon.defaultPlayerWeapon.name" = "Your Fists";
+"weapon.defaultPlayerWeapon.description" = "With no weapons, you're down to your bare hands and your wits.";
+
 // MARK: - Weapon Durability Pills
 
 // Decrement

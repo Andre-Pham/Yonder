@@ -15,5 +15,6 @@ protocol WeaponDurabilityPill {
     
     func use(on weapon: Weapon)
     func getValue() -> Int
+    func setupDurability(weapon: Weapon)
     
 }

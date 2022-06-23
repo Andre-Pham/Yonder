@@ -23,7 +23,11 @@ struct ItemInspectView: View {
                     InspectStatView(title: Strings.Stat.HealthRestoration.local, value: self.itemViewModel.healthRestoration, image: self.itemViewModel.healthRestorationImage)
                 }
                 
-                InspectStatView(title: self.itemViewModel.remainingUsesDescription, value: self.itemViewModel.remainingUses, image: self.itemViewModel.remainingUsesImage)
+                if self.itemViewModel.infiniteRemainingUses {
+                    InspectStatusView(title: self.itemViewModel.remainingUsesDescription, status: Strings.Item.Infinite.local, image: self.itemViewModel.remainingUsesImage)
+                } else {
+                    InspectStatView(title: self.itemViewModel.remainingUsesDescription, value: self.itemViewModel.remainingUses, image: self.itemViewModel.remainingUsesImage)
+                }
             }
             
             if let effectsDescription = self.itemViewModel.effectsDescription {
@@ -44,6 +48,14 @@ struct ItemInspectView_Previews: PreviewProvider {
                 .ignoresSafeArea()
             
             ItemInspectView(itemViewModel: PreviewObjects.weaponViewModel)
+                .padding()
+        }
+        
+        ZStack(alignment: .topLeading) {
+            YonderColors.backgroundMaxDepth
+                .ignoresSafeArea()
+            
+            ItemInspectView(itemViewModel: PreviewObjects.potionViewModel)
                 .padding()
         }
     }

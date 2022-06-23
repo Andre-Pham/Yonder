@@ -11,10 +11,17 @@ class DecrementDurabilityPill: WeaponDurabilityPill {
     
     public let effectsDescription: String
     public let decrementation: Int
+    private let durability: Int
     
-    init(decrementBy amount: Int = 1) {
+    init(durability: Int, decrementBy amount: Int = 1) {
+        self.durability = durability
         self.effectsDescription = Strings.WeaponDurabilityPill.Decrement.Description1Param.localWithArgs(amount)
         self.decrementation = -amount
+    }
+    
+    func setupDurability(weapon: Weapon) {
+        weapon.setRemainingUses(to: self.durability)
+        weapon.setInfiniteRemainingUses(to: false)
     }
     
     func use(on weapon: Weapon) {

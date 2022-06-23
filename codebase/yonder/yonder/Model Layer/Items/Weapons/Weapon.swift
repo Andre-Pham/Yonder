@@ -22,6 +22,7 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
         super.init(name: name, description: description, effectsDescription: Weapon.getEffectsDescription(durabilityPill: durabilityPill, effectPills: effectPills))
         
         self.basePill.setup(weapon: self)
+        self.durabilityPill.setupDurability(weapon: self)
         self.basePurchasePrice = self.getCurrentPrice() // Needs setup to get current price
     }
     
@@ -33,6 +34,7 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
         super.init(name: original.name, description: original.description, effectsDescription: original.effectsDescription)
         
         self.basePill.setup(weapon: self)
+        self.durabilityPill.setupDurability(weapon: self)
         self.basePurchasePrice = original.basePurchasePrice
     }
     
@@ -84,18 +86,6 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
     
     func getEnhanceInfo() -> EnhanceInfo {
         return EnhanceInfo(id: self.id, name: self.name)
-    }
-    
-}
-
-class BaseAttack: Weapon {
-    
-    init(damage: Int) {
-        super.init(basePill: DamageBasePill(damage: damage, durability: 1), durabilityPill: InfiniteDurabilityPill())
-    }
-    
-    required init(_ original: Weapon) {
-        super.init(basePill: DamageBasePill(damage: original.damage, durability: 1), durabilityPill: InfiniteDurabilityPill())
     }
     
 }

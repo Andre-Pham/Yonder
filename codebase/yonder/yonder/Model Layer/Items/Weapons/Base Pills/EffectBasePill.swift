@@ -9,14 +9,8 @@ import Foundation
 
 class EffectBasePill: WeaponBasePill {
     
-    private(set) var durability: Int
-    
-    init(durability: Int) {
-        self.durability = durability
-    }
-    
     func setup(weapon: Weapon) {
-        weapon.setRemainingUses(to: self.durability)
+        // Nothing to setup
     }
     
     func getValue() -> Int {

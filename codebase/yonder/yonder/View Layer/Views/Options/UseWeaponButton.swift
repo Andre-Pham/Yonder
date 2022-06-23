@@ -35,7 +35,11 @@ struct UseWeaponButton: View {
                 }
                 
                 YonderTextNumeralHStack {
-                    YonderNumeral(number: self.weaponViewModel.remainingUses, size: .buttonBodySubscript)
+                    if self.weaponViewModel.infiniteRemainingUses {
+                        YonderText(text: Strings.Item.Infinite.local, size: .buttonBodySubscript)
+                    } else {
+                        YonderNumeral(number: self.weaponViewModel.remainingUses, size: .buttonBodySubscript)
+                    }
                     
                     YonderText(text: (self.weaponViewModel.remainingUses == 1 ? Strings.Stat.Weapon.RemainingUsesSingular.local : Strings.Stat.Weapon.RemainingUses.local).leftPadded(by: " "), size: .buttonBodySubscript)
                 }

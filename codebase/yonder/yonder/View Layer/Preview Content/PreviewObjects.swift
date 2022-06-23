@@ -29,14 +29,14 @@ enum PreviewObjects {
     
     static let foeViewModel = FoeViewModel(Foe(
         maxHealth: 500,
-        weapon: Weapon(basePill: DamageBasePill(damage: 50, durability: 5), durabilityPill: DecrementDurabilityPill())
+        weapon: Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: DecrementDurabilityPill(durability: 5))
     ))
     
     static let shopKeeperViewModel = ShopKeeperViewModel(ShopKeeper(
         name: "Andre",
         description: "I sell pancakes and maple syrup!!",
         purchasableItems: [
-            PurchasableItem(item: Weapon(basePill: DamageBasePill(damage: 200, durability: 5), durabilityPill: DullingDurabilityPill(damageLostPerUse: 50)), stock: 5)
+            PurchasableItem(item: Weapon(basePill: DamageBasePill(damage: 200), durabilityPill: DullingDurabilityPill(damageLostPerUse: 50)), stock: 5)
         ]
     ))
     
@@ -94,8 +94,8 @@ enum PreviewObjects {
     // MARK: - Items
     
     static let weaponViewModel = WeaponViewModel(Weapon(
-        basePill: DamageBasePill(damage: 200, durability: 5),
-        durabilityPill: DecrementDurabilityPill()
+        basePill: DamageBasePill(damage: 200),
+        durabilityPill: DecrementDurabilityPill(durability: 5)
     ))
     
     static let potionViewModel = PotionViewModel(DamagePotion(tier: .II, potionCount: 3, basePurchasePrice: 100))

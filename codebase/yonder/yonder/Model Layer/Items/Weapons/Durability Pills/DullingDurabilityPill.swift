@@ -17,6 +17,11 @@ class DullingDurabilityPill: WeaponDurabilityPill {
         self.damageLostPerUse = damageLostPerUse
     }
     
+    func setupDurability(weapon: Weapon) {
+        weapon.setRemainingUses(to: 1)
+        weapon.setInfiniteRemainingUses(to: true)
+    }
+    
     func use(on weapon: Weapon) {
         weapon.adjustDamage(by: -self.damageLostPerUse)
         if weapon.damage <= 0 {

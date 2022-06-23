@@ -27,6 +27,7 @@ class CombatFlow {
             player.clearStatusEffects()
             player.clearBuffs()
             player.clearTimedEvents()
+            player.clearAttributes()
         }
         
         self.turnsTaken += 1

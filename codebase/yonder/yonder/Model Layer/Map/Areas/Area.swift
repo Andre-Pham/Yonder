@@ -10,12 +10,9 @@ import SwiftUI
 
 class Area: Named, Described, Visualised {
     
-    // UI related
     public let name: String
     public let description: String
     public let image: Image
-    
-    // In the future, maybe areas will be able to have multiple root and tip locations for even more choice
     public let rootLocation: LocationAbstract
     public let tipLocation: LocationAbstract
     private(set) var leftBridgeLocations = [LocationAbstract]()

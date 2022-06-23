@@ -238,6 +238,23 @@ enum Strings: Localizable {
         }
     }
     
+    enum Item: Localizable {
+        static let parent: LocalizeParent = Strings.self
+        
+        case Infinite
+    }
+    
+    enum Weapon: Localizable {
+        static let parent: LocalizeParent = Strings.self
+        
+        enum DefaultPlayerWeapon: Localizable {
+            static let parent: LocalizeParent = Weapon.self
+            
+            case Name
+            case Description
+        }
+    }
+    
     enum WeaponDurabilityPill: Localizable {
         static let parent: LocalizeParent = Strings.self
         

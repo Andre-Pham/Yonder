@@ -29,7 +29,7 @@ struct SettingsView: View {
             .padding()
             
             Button("Weapon") {
-                GameManager.instance.playerVM.player.addWeapon(Weapon(basePill: DamageBasePill(damage: 50, durability: 5), durabilityPill: DecrementDurabilityPill()))
+                GameManager.instance.playerVM.player.addWeapon(Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: DecrementDurabilityPill(durability: 5)))
             }
             .padding()
             .background(Color.red)

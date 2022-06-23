@@ -25,6 +25,7 @@ class ItemViewModel: ObservableObject {
     private(set) var damageImage: Image
     private(set) var healthRestorationImage: Image
     private(set) var remainingUsesImage: Image
+    private(set) var infiniteRemainingUses: Bool
     @Published private(set) var effectsDescription: String?
     
     init(_ item: ItemAbstract,
@@ -46,6 +47,7 @@ class ItemViewModel: ObservableObject {
         self.id = self.item.id
         self.name = self.item.name
         self.description = self.item.description
+        self.infiniteRemainingUses = self.item.infiniteRemainingUses
         self.effectsDescription = self.item.effectsDescription
         
         // Add Subscribers

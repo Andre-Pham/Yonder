@@ -9,23 +9,24 @@ import Foundation
 
 class ItemAbstract: Named, EffectsDescribed, Described {
     
-    // UI related
     public let name: String
     public let description: String
     @DidSetPublished private(set) var effectsDescription: String?
-    
     @DidSetPublished private(set) var damage: Int
     @DidSetPublished private(set) var healthRestoration: Int
     @DidSetPublished private(set) var remainingUses: Int
+    /// Indicates if the item has infinite uses or not - not actually used in logic, but as an indicator for rendering the UI
+    private(set) var infiniteRemainingUses: Bool
     public let id = UUID()
     
-    init(name: String, description: String, effectsDescription: String?, remainingUses: Int = 0, damage: Int = 0, healthRestoration: Int = 0) {
+    init(name: String, description: String, effectsDescription: String?, remainingUses: Int = 0, damage: Int = 0, healthRestoration: Int = 0, infiniteRemainingUses: Bool = false) {
         self.name = name
         self.description = description
         self.effectsDescription = effectsDescription
         self.remainingUses = remainingUses
         self.damage = damage
         self.healthRestoration = healthRestoration
+        self.infiniteRemainingUses = infiniteRemainingUses
     }
     
     func resetEffectsDescription(to description: String) {
@@ -46,6 +47,10 @@ class ItemAbstract: Named, EffectsDescribed, Described {
     
     func setHealthRestoration(to healthRestoration: Int) {
         self.healthRestoration = healthRestoration
+    }
+    
+    func setInfiniteRemainingUses(to status: Bool) {
+        self.infiniteRemainingUses = status
     }
     
     func adjustDamage(by damage: Int) {

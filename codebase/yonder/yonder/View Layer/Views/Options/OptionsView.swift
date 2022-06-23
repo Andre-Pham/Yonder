@@ -106,7 +106,7 @@ struct OptionsView: View {
                             }
                             
                             if self.optionsStateManager.weaponActionsActive.isActive {
-                                ForEach(self.playerViewModel.weaponViewModels, id: \.id) { weaponViewModel in
+                                ForEach(self.playerViewModel.applicableWeaponViewModels, id: \.id) { weaponViewModel in
                                     UseWeaponButton(
                                         playerViewModel: self.playerViewModel,
                                         weaponViewModel: weaponViewModel)

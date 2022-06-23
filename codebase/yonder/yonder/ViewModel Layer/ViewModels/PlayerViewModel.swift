@@ -30,6 +30,14 @@ class PlayerViewModel: ObservableObject {
             }
         }
     }
+    @Published private(set) var applicableWeaponViewModels: [WeaponViewModel] {
+        didSet {
+            // Changes to any WeaponViewModel will be published to the UI
+            for weapon in self.applicableWeaponViewModels {
+                weapon.objectWillChange.sink(receiveValue: { _ in self.objectWillChange.send() }).store(in: &self.subscriptions)
+            }
+        }
+    }
     @Published private(set) var potionViewModels: [PotionViewModel] {
         didSet {
             // Changes to any PotionViewModel will be published to the UI
@@ -78,6 +86,7 @@ class PlayerViewModel: ObservableObject {
         
         self.locationViewModel = LocationViewModel(self.player.location)
         self.weaponViewModels = self.player.weapons.map { WeaponViewModel($0) }
+        self.applicableWeaponViewModels = self.player.getApplicableWeapons().map { WeaponViewModel($0) }
         self.potionViewModels = self.player.potions.map { PotionViewModel($0) }
         self.headArmorViewModel = ArmorViewModel(self.player.headArmor)
         self.bodyArmorViewModel = ArmorViewModel(self.player.bodyArmor)
@@ -134,6 +143,7 @@ class PlayerViewModel: ObservableObject {
         
         self.player.$weapons.sink(receiveValue: { newValue in
             self.weaponViewModels = newValue.map { WeaponViewModel($0) }
+            self.applicableWeaponViewModels = self.player.getApplicableWeapons().map { WeaponViewModel($0) }
         }).store(in: &self.subscriptions)
         
         self.player.$potions.sink(receiveValue: { newValue in

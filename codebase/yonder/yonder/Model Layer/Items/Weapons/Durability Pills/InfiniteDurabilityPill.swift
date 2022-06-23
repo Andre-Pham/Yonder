@@ -11,6 +11,11 @@ class InfiniteDurabilityPill: WeaponDurabilityPill {
     
     public let effectsDescription: String = Strings.WeaponDurabilityPill.Infinite.Description.local
     
+    func setupDurability(weapon: Weapon) {
+        weapon.setRemainingUses(to: 1)
+        weapon.setInfiniteRemainingUses(to: true)
+    }
+    
     func use(on weapon: Weapon) {
         // Do nothing - weapon has infinite durability
     }
