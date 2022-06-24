@@ -228,6 +228,10 @@
 "potion.damage.description" = "A cloudy concoction of shadowy purple and black streaks swirl in a pointed flask. You hear faint whispers when raising the flask to ear. The rigid form provides a confident grip for throwing.";
 "potion.damage.effectsDescription1Param" = "Inflicts %@ damage.";
 
+// Damage Buff Potion
+"potion.damagePercent.name" = "Damage Buff Potion";
+"potion.damagePercent.description" = "A deep magenta solution stirs in an obtuse flask. Your arm feels invigorated merely holding the potion. A foreign symbol is marked on the front.";
+
 // Max Health Restoration Potion
 "potion.maxHealthRestoration.name" = "Max Health Potion";
 "potion.maxHealthRestoration.description" = "Leather and twine strap a circular flask of a radiating crimson red solution. It feels hot to the touch, with a foreign engraving embedded in the flask's seal.";
@@ -243,6 +247,8 @@
 // potion that increases your maximum health is green with accents of gold, like life fruit ("Potion of life")
 
 // MARK: - Buffs
+
+"buff.duration1Param" = "Lasts %@ turns.";
 
 // Damage Percent
 "buff.damagePercent.effectsDescription.bidirectionalIncrease1Param" = "Increases damage dealt and taken by %@%%.";

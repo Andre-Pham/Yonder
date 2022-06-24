@@ -38,6 +38,7 @@ struct SettingsView: View {
             
             Button("Potion") {
                 GameManager.instance.playerVM.player.addPotion(HealthRestorationPotion(tier: .II, potionCount: 5, basePurchasePrice: 100))
+                GameManager.instance.playerVM.player.addPotion(DamagePercentPotion(tier: .II, duration: 2, potionCount: 2, basePurchasePrice: 100))
             }
             .padding()
             .background(Color.red)

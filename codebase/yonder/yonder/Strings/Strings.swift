@@ -350,6 +350,13 @@ enum Strings: Localizable {
             case EffectsDescription1Param
         }
         
+        enum DamagePercent: Localizable {
+            static let parent: LocalizeParent = Potion.self
+            
+            case Name
+            case Description
+        }
+        
         enum MaxHealthRestoration: Localizable {
             static let parent: LocalizeParent = Potion.self
             
@@ -369,6 +376,8 @@ enum Strings: Localizable {
     
     enum Buff: Localizable {
         static let parent: LocalizeParent = Strings.self
+        
+        case Duration1Param
         
         enum DamagePercent: Localizable {
             static let parent: LocalizeParent = Buff.self

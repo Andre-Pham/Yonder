@@ -23,13 +23,14 @@ class BuffAbstract: EffectsDescribed {
     ///   - direction: What direction the buff is applied to, for example, an outgoing damage buff increases damage dealt, but not received
     ///   - priority: What order, relative to other buffs, is this buff applied
     init(effectsDescription: String?, duration: Int?, type: BuffType, direction: BuffDirection, priority: BuffPriority) {
-        self.effectsDescription = effectsDescription
         if let duration = duration {
             self.timeRemaining = duration
+            self.effectsDescription = effectsDescription?.continuedBy(Strings.Buff.Duration1Param.localWithArgs(duration))
         }
         else {
             self.timeRemaining = 1
             self.isInfinite = true
+            self.effectsDescription = effectsDescription
         }
         self.type = type
         self.direction = direction

@@ -9,7 +9,7 @@ import Foundation
 
 class DamagePotion: PotionAbstract {
     
-    /// The tier of the damage potion. Greater tiers restore greater damage.
+    /// The tier of the damage potion. Greater tiers deal greater damage.
     /// Raw value represents the amount of damage of each tier.
     enum Tier: Int {
         case I = 25
@@ -35,7 +35,7 @@ class DamagePotion: PotionAbstract {
     
     init(tier: Tier, potionCount: Int, basePurchasePrice: Int) {
         super.init(
-            name: Strings.Potion.Damage.Name.local,
+            name: Strings.Potion.Damage.Name.local.continuedBy(tier.string),
             description: Strings.Potion.Damage.Description.local,
             effectsDescription: Strings.Potion.Damage.EffectsDescription1Param.localWithArgs(tier.damage),
             remainingUses: potionCount,
