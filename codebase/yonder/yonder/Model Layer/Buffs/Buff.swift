@@ -11,10 +11,11 @@ class BuffAbstract: EffectsDescribed {
     
     private let effectsDescription: String?
     var isInfinite: Bool = false
-    var timeRemaining: Int
+    @DidSetPublished var timeRemaining: Int
     var type: BuffType
     var direction: BuffDirection
     var priority: BuffPriority
+    public let id = UUID()
     
     /// To be called by subclasses only.
     /// - Parameters:

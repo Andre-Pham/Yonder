@@ -46,11 +46,26 @@ class PlayerViewModel: ObservableObject {
             }
         }
     }
+    @Published private(set) var buffViewModels: [BuffViewModel] {
+        didSet {
+            // Changes to any BuffViewModel will be published to the UI
+            for buff in self.buffViewModels {
+                buff.objectWillChange.sink(receiveValue: { _ in self.objectWillChange.send() }).store(in: &self.subscriptions)
+            }
+        }
+    }
     @Published private(set) var headArmorViewModel: ArmorViewModel
     @Published private(set) var bodyArmorViewModel: ArmorViewModel
     @Published private(set) var legsArmorViewModel: ArmorViewModel
     var allArmorViewModels: [ArmorViewModel] {
         return [self.headArmorViewModel, self.bodyArmorViewModel, self.legsArmorViewModel]
+    }
+    var allBuffs: [BuffViewModel] {
+        var allBuffs = Array(self.buffViewModels)
+        for armorViewModel in self.allArmorViewModels {
+            allBuffs.append(contentsOf: armorViewModel.buffViewModels)
+        }
+        return allBuffs
     }
     var canEngage: Bool {
         return self.locationViewModel.playerCanEngage
@@ -88,6 +103,7 @@ class PlayerViewModel: ObservableObject {
         self.weaponViewModels = self.player.weapons.map { WeaponViewModel($0) }
         self.applicableWeaponViewModels = self.player.getApplicableWeapons().map { WeaponViewModel($0) }
         self.potionViewModels = self.player.potions.map { PotionViewModel($0) }
+        self.buffViewModels = self.player.buffs.map { BuffViewModel($0) }
         self.headArmorViewModel = ArmorViewModel(self.player.headArmor)
         self.bodyArmorViewModel = ArmorViewModel(self.player.bodyArmor)
         self.legsArmorViewModel = ArmorViewModel(self.player.legsArmor)
@@ -148,6 +164,10 @@ class PlayerViewModel: ObservableObject {
         
         self.player.$potions.sink(receiveValue: { newValue in
             self.potionViewModels = newValue.map { PotionViewModel($0) }
+        }).store(in: &self.subscriptions)
+        
+        self.player.$buffs.sink(receiveValue: { newValue in
+            self.buffViewModels = newValue.map { BuffViewModel($0) }
         }).store(in: &self.subscriptions)
     }
     

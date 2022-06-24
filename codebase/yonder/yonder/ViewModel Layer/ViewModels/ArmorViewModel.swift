@@ -20,6 +20,14 @@ class ArmorViewModel: ObservableObject {
     private(set) var name: String
     private(set) var description: String
     @Published private(set) var effectsDescription: String?
+    @Published private(set) var buffViewModels: [BuffViewModel] {
+        didSet {
+            // Changes to any BuffViewModel will be published to the UI
+            for buff in self.buffViewModels {
+                buff.objectWillChange.sink(receiveValue: { _ in self.objectWillChange.send() }).store(in: &self.subscriptions)
+            }
+        }
+    }
     
     init(_ armor: ArmorAbstract) {
         self.armor = armor
@@ -32,6 +40,7 @@ class ArmorViewModel: ObservableObject {
         self.name = self.armor.name
         self.description = self.armor.description
         self.effectsDescription = self.armor.getEffectsDescription()
+        self.buffViewModels = self.armor.armorBuffs.map { BuffViewModel($0) }
         
         // Add Subscribers
         
@@ -41,6 +50,7 @@ class ArmorViewModel: ObservableObject {
         
         self.armor.$armorBuffs.sink(receiveValue: { newValue in
             self.effectsDescription = self.armor.getEffectsDescription()
+            self.buffViewModels = newValue.map { BuffViewModel($0) }
         }).store(in: &self.subscriptions)
         
         self.armor.$armorAttributes.sink(receiveValue: { newValue in
