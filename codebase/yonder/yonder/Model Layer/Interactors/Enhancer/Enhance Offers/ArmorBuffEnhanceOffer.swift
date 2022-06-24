@@ -19,7 +19,7 @@ class ArmorBuffEnhanceOffer: EnhanceOffer {
         self.price = price
         self.buff = buff
         self.name = Strings.EnhanceOffer.ArmorBuff.Name.local
-        if let effectsDescription = buff.effectsDescription {
+        if let effectsDescription = buff.getEffectsDescription() {
             self.description = Strings.EnhanceOffer.ArmorBuff.Description1Param.localWithArgs(effectsDescription)
         } else {
             self.description = Strings.EnhanceOffer.ArmorBuff.MissingDescription.local

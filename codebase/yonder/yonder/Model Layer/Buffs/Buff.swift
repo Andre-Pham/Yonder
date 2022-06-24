@@ -9,7 +9,7 @@ import Foundation
 
 class BuffAbstract: EffectsDescribed {
     
-    let effectsDescription: String?
+    private let effectsDescription: String?
     var isInfinite: Bool = false
     var timeRemaining: Int
     var type: BuffType
@@ -57,6 +57,10 @@ class BuffAbstract: EffectsDescribed {
     enum BuffPriority: Int {
         case first = 0
         case second = 1
+    }
+    
+    func getEffectsDescription() -> String? {
+        return self.effectsDescription
     }
     
     func decrementTimeRemaining() {

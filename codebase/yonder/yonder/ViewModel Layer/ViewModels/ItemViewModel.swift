@@ -13,7 +13,7 @@ class ItemViewModel: ObservableObject {
     
     // item can be used within the ViewModel layer, but Views should only interact with ViewModels (not the Model layer)
     private(set) var item: ItemAbstract
-    private var subscriptions: Set<AnyCancellable> = []
+    var subscriptions: Set<AnyCancellable> = [] // Public so children can access
     
     @Published private(set) var damage: Int
     @Published private(set) var healthRestoration: Int
@@ -26,7 +26,7 @@ class ItemViewModel: ObservableObject {
     private(set) var healthRestorationImage: Image
     private(set) var remainingUsesImage: Image
     private(set) var infiniteRemainingUses: Bool
-    @Published private(set) var effectsDescription: String?
+    @Published private(set) var effectsDescription: String? = nil
     
     init(_ item: ItemAbstract,
          remainingUsesDescription: String,
@@ -48,7 +48,6 @@ class ItemViewModel: ObservableObject {
         self.name = self.item.name
         self.description = self.item.description
         self.infiniteRemainingUses = self.item.infiniteRemainingUses
-        self.effectsDescription = self.item.effectsDescription
         
         // Add Subscribers
         
@@ -63,10 +62,10 @@ class ItemViewModel: ObservableObject {
         self.item.$remainingUses.sink(receiveValue: { newValue in
             self.remainingUses = newValue
         }).store(in: &self.subscriptions)
-        
-        self.item.$effectsDescription.sink(receiveValue: { newValue in
-            self.effectsDescription = newValue
-        }).store(in: &self.subscriptions)
+    }
+    
+    func setEffectsDescription(to description: String?) {
+        self.effectsDescription = description
     }
     
 }

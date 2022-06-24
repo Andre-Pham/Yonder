@@ -10,7 +10,11 @@ import Foundation
 class NoItem: ItemAbstract {
     
     init() {
-        super.init(name: "NO_ITEM", description: "NO_ITEM_DESCRIPTION", effectsDescription: nil)
+        super.init(name: "NO_ITEM", description: "NO_ITEM_DESCRIPTION")
+    }
+    
+    func getEffectsDescription() -> String? {
+        return nil
     }
     
 }

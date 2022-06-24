@@ -14,10 +14,9 @@ class ArmorAbstract: EffectsDescribed, Purchasable, Named, Described, Enhanceabl
     public let type: ArmorType
     @DidSetPublished private(set) var armorPoints: Int
     public let basePurchasePrice: Int
-    private(set) var armorBuffs: [BuffAbstract]
+    @DidSetPublished private(set) var armorBuffs: [BuffAbstract]
+    @DidSetPublished private(set) var armorAttributes: [ArmorAttribute]
     public let id = UUID()
-    @DidSetPublished private(set) var effectsDescription: String?
-    private(set) var armorAttributes: [ArmorAttribute]
     
     /// To be called by subclasses only.
     /// - Parameters:
@@ -34,28 +33,21 @@ class ArmorAbstract: EffectsDescribed, Purchasable, Named, Described, Enhanceabl
         self.basePurchasePrice = basePurchasePrice
         self.armorBuffs = armorBuffs
         self.armorAttributes = armorAttributes
-        self.effectsDescription = ArmorAbstract.getEffectsDescription(buffs: armorBuffs, attributes: armorAttributes)
     }
     
-    private static func getEffectsDescription(buffs: [BuffAbstract], attributes: [ArmorAttribute]) -> String? {
+    func getEffectsDescription() -> String? {
         var descriptionLines = [String]()
-        descriptionLines.append(contentsOf: buffs.compactMap { $0.effectsDescription })
-        descriptionLines.append(contentsOf: attributes.compactMap { $0.description })
+        descriptionLines.append(contentsOf: self.armorBuffs.compactMap { $0.getEffectsDescription() })
+        descriptionLines.append(contentsOf: self.armorAttributes.compactMap { $0.description })
         return descriptionLines.isEmpty ? nil : descriptionLines.joined(separator: "\n")
-    }
-    
-    private func refreshEffectsDescription() {
-        self.effectsDescription = ArmorAbstract.getEffectsDescription(buffs: self.armorBuffs, attributes: self.armorAttributes)
     }
     
     func addBuff(buff: BuffAbstract) {
         self.armorBuffs.append(buff)
-        self.refreshEffectsDescription()
     }
     
     func addAttribute(_ attribute: ArmorAttribute) {
         self.armorAttributes.append(attribute)
-        self.refreshEffectsDescription()
     }
     
     func adjustArmorPoints(by armorPoints: Int) {

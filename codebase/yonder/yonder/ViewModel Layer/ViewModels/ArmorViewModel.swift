@@ -31,7 +31,7 @@ class ArmorViewModel: ObservableObject {
         self.type = self.armor.type
         self.name = self.armor.name
         self.description = self.armor.description
-        self.effectsDescription = self.armor.effectsDescription
+        self.effectsDescription = self.armor.getEffectsDescription()
         
         // Add Subscribers
         
@@ -39,10 +39,13 @@ class ArmorViewModel: ObservableObject {
             self.armorPoints = newValue
         }).store(in: &self.subscriptions)
         
-        self.armor.$effectsDescription.sink(receiveValue: { newValue in
-            self.effectsDescription = newValue
+        self.armor.$armorBuffs.sink(receiveValue: { newValue in
+            self.effectsDescription = self.armor.getEffectsDescription()
         }).store(in: &self.subscriptions)
         
+        self.armor.$armorAttributes.sink(receiveValue: { newValue in
+            self.effectsDescription = self.armor.getEffectsDescription()
+        }).store(in: &self.subscriptions)
     }
     
 }

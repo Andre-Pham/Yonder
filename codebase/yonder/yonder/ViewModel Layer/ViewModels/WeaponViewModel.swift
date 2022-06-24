@@ -17,6 +17,15 @@ class WeaponViewModel: ItemViewModel {
                    damageImage: YonderImages.weaponDamageIcon,
                    healthRestorationImage: YonderImages.weaponHealthRestorationIcon,
                    remainingUsesImage: YonderImages.weaponRemainingUsesIcon)
+        self.setEffectsDescription(to: weapon.getEffectsDescription())
+        
+        weapon.$effectPills.sink(receiveValue: { newValue in
+            self.setEffectsDescription(to: weapon.getEffectsDescription())
+        }).store(in: &self.subscriptions)
+        
+        weapon.$durabilityPill.sink(receiveValue: { newValue in
+            self.setEffectsDescription(to: weapon.getEffectsDescription())
+        }).store(in: &self.subscriptions)
     }
     
 }

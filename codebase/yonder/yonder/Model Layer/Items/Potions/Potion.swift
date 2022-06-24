@@ -12,14 +12,20 @@ typealias PotionAbstract = PotionAbstractPart & Usable
 class PotionAbstractPart: ItemAbstract, Purchasable {
     
     public let basePurchasePrice: Int
+    private let effectsDescription: String?
     var potionCount: Int {
         return self.remainingUses
     }
     
     init(name: String, description: String, effectsDescription: String?, remainingUses: Int = 0, damage: Int = 0, healthRestoration: Int = 0, basePurchasePrice: Int) {
         self.basePurchasePrice = basePurchasePrice
+        self.effectsDescription = effectsDescription
         
-        super.init(name: name, description: description, effectsDescription: effectsDescription, remainingUses: remainingUses, damage: damage, healthRestoration: healthRestoration)
+        super.init(name: name, description: description, remainingUses: remainingUses, damage: damage, healthRestoration: healthRestoration)
+    }
+    
+    func getEffectsDescription() -> String? {
+        return self.effectsDescription
     }
     
     func isStackable(with potion: PotionAbstract) -> Bool {

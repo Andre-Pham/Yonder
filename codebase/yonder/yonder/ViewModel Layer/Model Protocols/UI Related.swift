@@ -16,7 +16,7 @@ protocol Named {
 
 protocol EffectsDescribed {
     
-    var effectsDescription: String? { get }
+    func getEffectsDescription() -> String?
     
 }
 

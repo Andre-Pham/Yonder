@@ -16,6 +16,7 @@ class PotionViewModel: ItemViewModel {
                    damageImage: YonderImages.potionDamageIcon,
                    healthRestorationImage: YonderImages.potionHealthRestorationIcon,
                    remainingUsesImage: YonderImages.potionRemainingUsesIcon)
+        self.setEffectsDescription(to: potion.getEffectsDescription())
     }
     
 }

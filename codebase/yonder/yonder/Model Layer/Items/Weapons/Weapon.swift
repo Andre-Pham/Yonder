@@ -11,8 +11,8 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
     
     private(set) var basePurchasePrice: Int = 0
     private let basePill: WeaponBasePill
-    private let durabilityPill: WeaponDurabilityPill
-    private(set) var effectPills: [WeaponEffectPill]
+    @DidSetPublished private(set) var durabilityPill: WeaponDurabilityPill
+    @DidSetPublished private(set) var effectPills: [WeaponEffectPill]
     var fullSummary: String {
         var summaryComponents = [String]()
         summaryComponents.append(self.name)
@@ -22,7 +22,7 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
         if self.healthRestoration > 0 {
             summaryComponents.append(String(self.healthRestoration) + " " + Strings.Stat.HealthRestoration.local)
         }
-        if let effectsDescription = self.effectsDescription {
+        if let effectsDescription = self.getEffectsDescription() {
             summaryComponents.append(effectsDescription)
         }
         return summaryComponents.joined(separator: "\n")
@@ -33,7 +33,7 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
         self.durabilityPill = durabilityPill
         self.effectPills = effectPills
         
-        super.init(name: name, description: description, effectsDescription: Weapon.getEffectsDescription(durabilityPill: durabilityPill, effectPills: effectPills))
+        super.init(name: name, description: description)
         
         self.basePill.setup(weapon: self)
         self.durabilityPill.setupDurability(weapon: self)
@@ -45,16 +45,16 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
         self.durabilityPill = original.durabilityPill
         self.effectPills = original.effectPills
         
-        super.init(name: original.name, description: original.description, effectsDescription: original.effectsDescription)
+        super.init(name: original.name, description: original.description)
         
         self.basePill.setup(weapon: self)
         self.durabilityPill.setupDurability(weapon: self)
         self.basePurchasePrice = original.basePurchasePrice
     }
     
-    private static func getEffectsDescription(durabilityPill: WeaponDurabilityPill, effectPills: [WeaponEffectPill]) -> String {
-        var effectsDescription = durabilityPill.effectsDescription
-        for effectPill in effectPills {
+    func getEffectsDescription() -> String? {
+        var effectsDescription = self.durabilityPill.effectsDescription
+        for effectPill in self.effectPills {
             effectsDescription += "\n" + effectPill.effectsDescription
         }
         return effectsDescription
@@ -62,7 +62,6 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
     
     func addEffect(_ effect: WeaponEffectPill) {
         self.effectPills.append(effect)
-        self.resetEffectsDescription(to: Weapon.getEffectsDescription(durabilityPill: self.durabilityPill, effectPills: self.effectPills))
     }
     
     func getCurrentPrice() -> Int {
