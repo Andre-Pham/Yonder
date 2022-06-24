@@ -26,7 +26,14 @@ class OfferViewModel {
     }
     
     func accept(playerViewModel: PlayerViewModel) {
+        guard self.canBeAccepted(playerViewModel: playerViewModel) else {
+            return
+        }
         self.offer.acceptOffer(player: playerViewModel.player)
+    }
+    
+    func canBeAccepted(playerViewModel: PlayerViewModel) -> Bool {
+        return self.offer.meetsOfferRequirements(player: playerViewModel.player)
     }
     
 }

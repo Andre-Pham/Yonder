@@ -16,9 +16,9 @@ class PurchaseWeaponOffer: Offer {
     public let weapon: Weapon
     public let price: Int
     
-    init(name: String = "placeholderName", description: String = "placeholderDescription", weapon: Weapon, price: Int) {
-        self.name = name
-        self.description = description
+    init(weapon: Weapon, price: Int) {
+        self.name = Strings.Offer.WeaponPurchase.Name.local
+        self.description = Strings.Offer.WeaponPurchase.Description2Param.localWithArgs(String(price), weapon.fullSummary)
         self.weapon = weapon
         self.price = price
     }
@@ -26,6 +26,10 @@ class PurchaseWeaponOffer: Offer {
     func acceptOffer(player: Player) {
         player.modifyGoldAdjusted(by: -self.price)
         player.addWeapon(self.weapon)
+    }
+    
+    func meetsOfferRequirements(player: Player) -> Bool {
+        return player.canAfford(price: self.price)
     }
     
 }

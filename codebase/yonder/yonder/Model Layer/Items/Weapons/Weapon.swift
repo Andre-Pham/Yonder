@@ -13,6 +13,20 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
     private let basePill: WeaponBasePill
     private let durabilityPill: WeaponDurabilityPill
     private(set) var effectPills: [WeaponEffectPill]
+    var fullSummary: String {
+        var summaryComponents = [String]()
+        summaryComponents.append(self.name)
+        if self.damage > 0 {
+            summaryComponents.append(String(self.damage) + " " + Strings.Stat.Damage.local)
+        }
+        if self.healthRestoration > 0 {
+            summaryComponents.append(String(self.healthRestoration) + " " + Strings.Stat.HealthRestoration.local)
+        }
+        if let effectsDescription = self.effectsDescription {
+            summaryComponents.append(effectsDescription)
+        }
+        return summaryComponents.joined(separator: "\n")
+    }
     
     init(name: String = "placeholderName", description: String = "placeholderDescription", basePill: WeaponBasePill, durabilityPill: WeaponDurabilityPill, effectPills: [WeaponEffectPill] = []) {
         self.basePill = basePill

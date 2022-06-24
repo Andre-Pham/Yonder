@@ -16,9 +16,9 @@ class HealthForGoldOffer: Offer {
     public let health: Int
     public let goldReward: Int
     
-    init(name: String = "placeholderName", description: String = "placeholderDescription", health: Int, goldReward: Int) {
-        self.name = name
-        self.description = description
+    init(health: Int, goldReward: Int) {
+        self.name = Strings.Offer.HealthForGold.Name.local
+        self.description = Strings.Offer.HealthForGold.Description2Param.localWithArgs(health, goldReward)
         self.health = health
         self.goldReward = goldReward
     }
@@ -26,6 +26,12 @@ class HealthForGoldOffer: Offer {
     func acceptOffer(player: Player) {
         player.modifyGoldAdjusted(by: self.goldReward)
         player.damageHealth(for: self.health)
+    }
+    
+    func meetsOfferRequirements(player: Player) -> Bool {
+        // If the player wants to, let them
+        // Provides opportunities for phoenix abilities too
+        return true
     }
     
 }

@@ -15,14 +15,18 @@ class FreeGoldOffer: Offer {
     
     public let goldAmount: Int
     
-    init(name: String = "placeholderName", description: String = "placeholderDescription", goldAmount: Int) {
-        self.name = name
-        self.description = description
+    init(goldAmount: Int) {
+        self.name = Strings.Offer.FreeGold.Name.local
+        self.description = Strings.Offer.FreeGold.Description1Param.localWithArgs(goldAmount)
         self.goldAmount = goldAmount
     }
     
     func acceptOffer(player: Player) {
         player.modifyGoldAdjusted(by: self.goldAmount)
+    }
+    
+    func meetsOfferRequirements(player: Player) -> Bool {
+        return true
     }
     
 }

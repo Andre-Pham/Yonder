@@ -14,6 +14,7 @@
 
 "gameName" = "Yonder";
 "currencySymbol" = "$";
+"dotPoint" = "■";
 
 // MARK: - Main Menu
 
@@ -152,6 +153,20 @@
 // Weapon Durability
 "enhanceOffer.weaponDurability.name" = "Add Weapon Durability";
 "enhanceOffer.weaponDurability.description1Param" = "Increase a weapon's durability by %@.";
+
+// MARK: - Offers
+
+// Free Gold Offer
+"offer.freeGold.name" = "Free Gold!";
+"offer.freeGold.description1Param" = "%@ Gold. No strings attached.";
+
+// Weapon Purchase Offer
+"offer.weaponPurchase.name" = "Purchase Weapon for Gold";
+"offer.weaponPurchase.description2Param" = "Purchase for %@ gold:\n%@";
+
+// Health for Gold Offer
+"offer.healthForGold.name" = "Sacrifice Health for Gold";
+"offer.healthForGold.description2Param" = "Sacrifice %@ health, and in return, receive %@ gold.";
 
 // MARK: - Restore Options
 

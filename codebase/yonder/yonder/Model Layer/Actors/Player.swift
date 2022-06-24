@@ -56,4 +56,9 @@ class Player: ActorAbstract {
         return Array(self.weapons)
     }
     
+    func canAfford(price: Int) -> Bool {
+        let adjustedPrice = BuffApps.getAdjustedPrice(purchaser: self, price: price)
+        return adjustedPrice <= self.gold
+    }
+    
 }

@@ -12,6 +12,7 @@ enum Strings: Localizable {
     
     case GameName
     case CurrencySymbol
+    case DotPoint
     
     enum MainMenu: Localizable {
         static let parent: LocalizeParent = Strings.self
@@ -219,6 +220,31 @@ enum Strings: Localizable {
             
             case Name
             case Description1Param
+        }
+    }
+    
+    enum Offer: Localizable {
+        static let parent: LocalizeParent = Strings.self
+        
+        enum FreeGold: Localizable {
+            static let parent: LocalizeParent = Offer.self
+            
+            case Name
+            case Description1Param
+        }
+        
+        enum WeaponPurchase: Localizable {
+            static let parent: LocalizeParent = Offer.self
+            
+            case Name
+            case Description2Param
+        }
+        
+        enum HealthForGold: Localizable {
+            static let parent: LocalizeParent = Offer.self
+            
+            case Name
+            case Description2Param
         }
     }
     

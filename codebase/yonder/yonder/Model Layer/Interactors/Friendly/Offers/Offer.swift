@@ -12,5 +12,6 @@ protocol Offer: Named, Described {
     var id: UUID { get }
     
     func acceptOffer(player: Player)
+    func meetsOfferRequirements(player: Player) -> Bool
     
 }

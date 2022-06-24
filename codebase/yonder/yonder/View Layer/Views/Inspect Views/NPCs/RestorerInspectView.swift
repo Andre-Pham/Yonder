@@ -20,7 +20,7 @@ struct RestorerInspectView: View {
             
             ForEach(self.restorerViewModel.options, id: \.id) { option in
                 YonderTextNumeralHStack {
-                    YonderText(text: "■" + option.actionDescription.padded(by: " "), size: .inspectSheetBody)
+                    YonderText(text: Strings.DotPoint.local + option.actionDescription.padded(by: " "), size: .inspectSheetBody)
                     
                     YonderIconNumeralPair(image: option.image, numeral: Restorer.bundleSize, size: .inspectSheetBody, iconSize: .inspectSheet)
                     

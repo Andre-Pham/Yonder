@@ -127,6 +127,7 @@ struct OptionsView: View {
                                         YonderMultilineWideButton(text: [offer.name, offer.description]) {
                                             friendlyViewModel.acceptOffer(offer, player: self.playerViewModel)
                                         }
+                                        .disabledWhen(!offer.canBeAccepted(playerViewModel: self.playerViewModel))
                                     }
                                 }
                             }

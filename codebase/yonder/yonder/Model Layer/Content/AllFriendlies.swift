@@ -14,9 +14,10 @@ enum Friendlies {
     static func newTestFriendly() -> Friendly {
         return Friendly(
             offers: [
-                FreeGoldOffer(goldAmount: 500)
+                FreeGoldOffer(goldAmount: 500),
+                PurchaseWeaponOffer(weapon: Weapon(basePill: DamageBasePill(damage: 500), durabilityPill: InfiniteDurabilityPill()), price: 400)
             ],
-            offerLimit: 1)
+            offerLimit: 2)
     }
     
     // MARK:  - Stage 0

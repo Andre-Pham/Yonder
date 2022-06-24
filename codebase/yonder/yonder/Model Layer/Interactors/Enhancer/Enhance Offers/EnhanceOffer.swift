@@ -20,10 +20,7 @@ extension EnhanceOffer {
     
     func canBePurchased(price: Int, purchaser: Player) -> Bool {
         let adjustedPrice = BuffApps.getAdjustedPrice(purchaser: purchaser, price: price)
-        if adjustedPrice > purchaser.gold {
-            return false
-        }
-        return true
+        return adjustedPrice <= purchaser.gold
     }
     
 }
