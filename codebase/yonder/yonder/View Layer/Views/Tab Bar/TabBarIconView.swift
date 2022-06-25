@@ -41,7 +41,6 @@ struct TabBarIconView: View {
                             
                             YonderText(text: "]", size: .tabBarIconCapsule)
                         }
-                        // Icon padding, -3, to account for "]" character padding
                         .padding(.top, 21)
                         
                         Spacer()

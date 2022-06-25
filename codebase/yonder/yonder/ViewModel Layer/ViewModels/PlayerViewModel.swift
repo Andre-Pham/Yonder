@@ -199,4 +199,24 @@ class PlayerViewModel: ObservableObject {
         self.player.usePotionWhere(opposition: (self.locationViewModel.location as! FoeLocation).foe, potion: potionViewModel.item as! PotionAbstract)
     }
     
+    func getIndicativeDamage(itemViewModel: ItemViewModel, opposition: FoeViewModel) -> Int {
+        return self.player.getIndicativeDamage(of: itemViewModel.item, opposition: opposition.foe)
+    }
+    
+    func getIndicativePrice(from price: Int) -> Int {
+        return self.player.getIndicativePrice(from: price)
+    }
+    
+    func getIndicativePayout(from amount: Int) -> Int {
+        return self.player.getIndicativePayout(from: amount)
+    }
+    
+    func getIndicativeArmorPointsRestoration(of itemViewModel: ItemViewModel) -> Int {
+        return self.player.getIndicativeArmorPointsRestoration(of: itemViewModel.item)
+    }
+    
+    func getIndicativeHealthRestoration(of itemViewModel: ItemViewModel) -> Int {
+        return self.player.getIndicativeHealthRestoration(of: itemViewModel.item)
+    }
+    
 }

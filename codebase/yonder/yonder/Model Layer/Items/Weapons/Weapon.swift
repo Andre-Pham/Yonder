@@ -99,7 +99,7 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
     
     func beReceived(by receiver: Player, amount: Int) {
         for _ in 0..<amount {
-            receiver.addWeapon(self.clone())
+            receiver.addWeapon(self)
         }
     }
     

@@ -33,6 +33,12 @@ class HealthRestorationPercentBuff: BuffAbstract {
             priority: .second)
     }
     
+    required init(_ original: BuffAbstract) {
+        let original = original as! Self
+        self.healthFraction = original.healthFraction
+        super.init(original)
+    }
+    
     override func applyHealth(to health: Int, source: Any) -> Int? {
         return Int(round(Double(health)*self.healthFraction))
     }

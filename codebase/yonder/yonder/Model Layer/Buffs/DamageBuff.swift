@@ -33,6 +33,12 @@ class DamageBuff: BuffAbstract {
             priority: .first)
     }
     
+    required init(_ original: BuffAbstract) {
+        let original = original as! Self
+        self.damageDifference = original.damageDifference
+        super.init(original)
+    }
+    
     override func applyDamage(to damage: Int, source: Any) -> Int? {
         return self.damageDifference + damage
     }

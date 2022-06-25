@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BuffAbstract: EffectsDescribed {
+class BuffAbstract: EffectsDescribed, Clonable {
     
     public let sourceName: String
     private let effectsDescription: String?
@@ -41,6 +41,16 @@ class BuffAbstract: EffectsDescribed {
         self.type = type
         self.direction = direction
         self.priority = priority
+    }
+    
+    required init(_ original: BuffAbstract) {
+        self.sourceName = original.sourceName
+        self.timeRemaining = original.timeRemaining
+        self.initialTimeRemaining = original.initialTimeRemaining
+        self.effectsDescription = original.effectsDescription
+        self.type = original.type
+        self.direction = original.direction
+        self.priority = original.priority
     }
     
     /// Indicates what stat the buff affects, and also is used as the indicator for which apply function is overwritten to have effect.

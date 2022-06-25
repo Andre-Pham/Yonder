@@ -33,6 +33,12 @@ class PotionDamagePercentBuff: BuffAbstract {
             priority: .second)
     }
     
+    required init(_ original: BuffAbstract) {
+        let original = original as! Self
+        self.damageFraction = original.damageFraction
+        super.init(original)
+    }
+    
     override func applyDamage(to damage: Int, source: Any) -> Int? {
         if source is PotionAbstract {
             return Int(round(Double(damage)*self.damageFraction))

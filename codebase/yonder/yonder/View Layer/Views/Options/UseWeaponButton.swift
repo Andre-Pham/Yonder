@@ -22,6 +22,11 @@ struct UseWeaponButton: View {
                     YonderTextNumeralHStack {
                         YonderNumeral(number: self.weaponViewModel.damage, size: .buttonBodySubscript)
                         
+                        if let foeViewModel = GameManager.instance.playerLocationVM.locationViewModel.getFoeViewModel() {
+                            let indicativeDamage = self.playerViewModel.getIndicativeDamage(itemViewModel: self.weaponViewModel, opposition: foeViewModel)
+                            IndicativeNumeralView(original: self.weaponViewModel.damage, indicative: indicativeDamage, size: .buttonBodySubscript)
+                        }
+                        
                         YonderText(text: Strings.Stat.Damage.local.leftPadded(by: " "), size: .buttonBodySubscript)
                     }
                 }

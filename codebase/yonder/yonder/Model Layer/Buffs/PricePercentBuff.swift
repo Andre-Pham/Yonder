@@ -33,6 +33,12 @@ class PricePercentBuff: BuffAbstract {
             priority: .second)
     }
     
+    required init(_ original: BuffAbstract) {
+        let original = original as! Self
+        self.priceFraction = original.priceFraction
+        super.init(original)
+    }
+    
     override func applyPrice(to gold: Int) -> Int? {
         return Int(round(Double(gold)*self.priceFraction))
     }

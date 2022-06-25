@@ -61,4 +61,12 @@ class Player: ActorAbstract {
         return adjustedPrice <= self.gold
     }
     
+    func getIndicativePrice(from price: Int) -> Int {
+        return BuffApps.getAdjustedPrice(purchaser: self, price: price)
+    }
+    
+    func getIndicativePayout(from amount: Int) -> Int {
+        return BuffApps.getAdjustedGoldWithBonus(receiver: self, gold: amount)
+    }
+    
 }

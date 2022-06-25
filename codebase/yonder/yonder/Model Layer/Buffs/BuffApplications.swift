@@ -48,7 +48,7 @@ enum BuffApplications {
         return appliedHealthRestoration
     }
     
-    static func getAppliedArmorRestoration(owner: ActorAbstract, using source: Any, target: ActorAbstract, armorPointsRestoration: Int) -> Int {
+    static func getAppliedArmorPointsRestoration(owner: ActorAbstract, using source: Any, target: ActorAbstract, armorPointsRestoration: Int) -> Int {
         var appliedArmorPointsRestoration = armorPointsRestoration
         // Owner buffs
         for buff in owner.getAllBuffsInPriority() {

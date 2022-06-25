@@ -68,7 +68,7 @@ class ActorAbstract {
     }
     
     func restoreArmorPointsAdjusted(sourceOwner: ActorAbstract, using source: Any, for amount: Int) {
-        let adjustedAmount = BuffApps.getAppliedArmorRestoration(owner: sourceOwner, using: source, target: self, armorPointsRestoration: amount)
+        let adjustedAmount = BuffApps.getAppliedArmorPointsRestoration(owner: sourceOwner, using: source, target: self, armorPointsRestoration: amount)
         self.restoreArmorPoints(for: adjustedAmount)
     }
     
@@ -80,7 +80,7 @@ class ActorAbstract {
     
     func restoreAdjusted(sourceOwner: ActorAbstract, using source: Any, for amount: Int) {
         let healthToAdjusted: Double = Double(BuffApps.getAppliedHealthRestoration(owner: sourceOwner, using: source, target: self, healthRestoration: amount))/Double(amount)
-        let armorToAdjusted: Double = Double(BuffApps.getAppliedArmorRestoration(owner: sourceOwner, using: source, target: self, armorPointsRestoration: amount))/Double(amount)
+        let armorToAdjusted: Double = Double(BuffApps.getAppliedArmorPointsRestoration(owner: sourceOwner, using: source, target: self, armorPointsRestoration: amount))/Double(amount)
         let amountRemaining = max(0, Int(round(Double(amount)*healthToAdjusted)) - (self.maxHealth - self.health))
         let amountRemainingReadjusted = Int(round(armorToAdjusted*Double(amountRemaining)/healthToAdjusted))
         self.restoreHealth(for: Int(round(Double(amount)*healthToAdjusted)))
@@ -176,14 +176,14 @@ class ActorAbstract {
         return BuffApps.getAppliedHealthRestoration(owner: self, using: item, target: self, healthRestoration: item.healthRestoration)
     }
     
-    func getIndicativeArmorRestoration(of item: ItemAbstract) -> Int {
-        return BuffApps.getAppliedArmorRestoration(owner: self, using: item, target: self, armorPointsRestoration: item.armorPointsRestoration)
+    func getIndicativeArmorPointsRestoration(of item: ItemAbstract) -> Int {
+        return BuffApps.getAppliedArmorPointsRestoration(owner: self, using: item, target: self, armorPointsRestoration: item.armorPointsRestoration)
     }
     
     // MARK: - Weapons
     
     func addWeapon(_ weapon: Weapon) {
-        self.weapons.append(weapon)
+        self.weapons.append(weapon.clone())
     }
     
     func removeWeapon(_ weapon: Weapon) {
@@ -215,7 +215,7 @@ class ActorAbstract {
     // MARK: - Buffs
     
     func addBuff(_ buff: BuffAbstract) {
-        self.buffs.append(buff)
+        self.buffs.append(buff.clone())
     }
     
     func getAllBuffsInPriority() -> [BuffAbstract] {
