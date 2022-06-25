@@ -11,6 +11,8 @@ import SwiftUI
 
 class WeaponViewModel: ItemViewModel {
     
+    @Published private(set) var previewEffectsDescription: String?
+    
     init(_ weapon: Weapon) {
         super.init(weapon,
                    remainingUsesDescription: Strings.Stat.Weapon.RemainingUses.local,
@@ -18,10 +20,12 @@ class WeaponViewModel: ItemViewModel {
                    healthRestorationImage: YonderImages.weaponHealthRestorationIcon,
                    armorPointsRestorationImage: YonderImages.weaponArmorPointsRestorationIcon,
                    remainingUsesImage: YonderImages.weaponRemainingUsesIcon)
+        self.previewEffectsDescription = weapon.getEffectPillsDescription()
         self.setEffectsDescription(to: weapon.getEffectsDescription())
         
         weapon.$effectPills.sink(receiveValue: { newValue in
             self.setEffectsDescription(to: weapon.getEffectsDescription())
+            self.previewEffectsDescription = weapon.getEffectPillsDescription()
         }).store(in: &self.subscriptions)
         
         weapon.$durabilityPill.sink(receiveValue: { newValue in

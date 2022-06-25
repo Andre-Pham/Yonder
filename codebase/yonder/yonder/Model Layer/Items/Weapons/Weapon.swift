@@ -63,6 +63,14 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
         return effectsDescription
     }
     
+    func getEffectPillsDescription() -> String? {
+        var descriptions = [String]()
+        for effectPill in self.effectPills {
+            descriptions.append(effectPill.effectsDescription)
+        }
+        return descriptions.isEmpty ? nil : descriptions.joined(separator: "\n")
+    }
+    
     func addEffect(_ effect: WeaponEffectPill) {
         self.effectPills.append(effect)
     }

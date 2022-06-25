@@ -23,8 +23,10 @@ struct UseWeaponButton: View {
                         YonderNumeral(number: self.weaponViewModel.damage, size: .buttonBodySubscript)
                         
                         if let foeViewModel = GameManager.instance.playerLocationVM.locationViewModel.getFoeViewModel() {
-                            let indicativeDamage = self.playerViewModel.getIndicativeDamage(itemViewModel: self.weaponViewModel, opposition: foeViewModel)
-                            IndicativeNumeralView(original: self.weaponViewModel.damage, indicative: indicativeDamage, size: .buttonBodySubscript)
+                            IndicativeNumeralView(
+                                original: self.weaponViewModel.damage,
+                                indicative: self.playerViewModel.getIndicativeDamage(itemViewModel: self.weaponViewModel, opposition: foeViewModel),
+                                size: .buttonBodySubscript)
                         }
                         
                         YonderText(text: Strings.Stat.Damage.local.leftPadded(by: " "), size: .buttonBodySubscript)
@@ -35,6 +37,11 @@ struct UseWeaponButton: View {
                     YonderTextNumeralHStack {
                         YonderNumeral(number: self.weaponViewModel.healthRestoration, size: .buttonBodySubscript)
                         
+                        IndicativeNumeralView(
+                            original: self.weaponViewModel.healthRestoration,
+                            indicative: self.playerViewModel.getIndicativeHealthRestoration(of: self.weaponViewModel),
+                            size: .buttonBodySubscript)
+                        
                         YonderText(text: Strings.Stat.HealthRestoration.local.leftPadded(by: " "), size: .buttonBodySubscript)
                     }
                 }
@@ -43,8 +50,17 @@ struct UseWeaponButton: View {
                     YonderTextNumeralHStack {
                         YonderNumeral(number: self.weaponViewModel.armorPointsRestoration, size: .buttonBodySubscript)
                         
+                        IndicativeNumeralView(
+                            original: self.weaponViewModel.armorPointsRestoration,
+                            indicative: self.playerViewModel.getIndicativeArmorPointsRestoration(of: self.weaponViewModel),
+                            size: .buttonBodySubscript)
+                        
                         YonderText(text: Strings.Stat.ArmorPointsRestoration.local.leftPadded(by: " "), size: .buttonBodySubscript)
                     }
+                }
+                
+                if let effectsDescription = self.weaponViewModel.previewEffectsDescription {
+                    YonderText(text: effectsDescription, size: .buttonBodySubscript)
                 }
                 
                 YonderTextNumeralHStack {
