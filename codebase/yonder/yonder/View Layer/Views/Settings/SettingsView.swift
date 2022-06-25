@@ -11,7 +11,6 @@ import SwiftUI
 struct SettingsView: View {
     var body: some View {
         VStack {
-            Text("Hello, Settings!")
             Button("Damage Player 100") {
                 GameManager.instance.playerVM.player.damage(for: 100)
             }
@@ -39,6 +38,7 @@ struct SettingsView: View {
             
             Button("Potion") {
                 GameManager.instance.playerVM.player.addPotion(HealthRestorationPotion(tier: .II, potionCount: 5, basePurchasePrice: 100))
+                GameManager.instance.playerVM.player.addPotion(DamagePotion(tier: .II, potionCount: 1, basePurchasePrice: 10))
                 GameManager.instance.playerVM.player.addPotion(DamagePercentPotion(tier: .II, duration: 2, potionCount: 2, basePurchasePrice: 100))
             }
             .padding()
@@ -56,6 +56,15 @@ struct SettingsView: View {
             
             Button("Gold") {
                 GameManager.instance.playerVM.player.modifyGold(by: 200)
+            }
+            .padding()
+            .background(Color.red)
+            .foregroundColor(.white)
+            .padding()
+            
+            Button("Buff") {
+                GameManager.instance.playerVM.player.addBuff(DamagePercentBuff(sourceName: "Magic", direction: .bidirectional, duration: 2, damageFraction: 1.5))
+                GameManager.instance.playerVM.player.addBuff(HealthRestorationPercentBuff(sourceName: "Magic Healing", direction: .incoming, duration: 2, healthFraction: 2.0))
             }
             .padding()
             .background(Color.red)

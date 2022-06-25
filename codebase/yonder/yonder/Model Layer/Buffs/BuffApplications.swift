@@ -33,14 +33,14 @@ enum BuffApplications {
         var appliedHealthRestoration = healthRestoration
         // Owner buffs
         for buff in owner.getAllBuffsInPriority() {
-            if buff.type == .health && (buff.direction == .outgoing || buff.direction == .bidirectional) {
+            if buff.type == .health && (buff.direction == .incoming || buff.direction == .bidirectional) {
                 appliedHealthRestoration = buff.applyHealth(to: appliedHealthRestoration, source: source)!
             }
         }
         // Target buffs
         if owner.id != target.id {
             for buff in target.getAllBuffsInPriority() {
-                if buff.type == .health && (buff.direction == .incoming || buff.direction == .bidirectional) {
+                if buff.type == .health && (buff.direction == .outgoing || buff.direction == .bidirectional) {
                     appliedHealthRestoration = buff.applyHealth(to: appliedHealthRestoration, source: source)!
                 }
             }
@@ -52,14 +52,14 @@ enum BuffApplications {
         var appliedArmorPointsRestoration = armorPointsRestoration
         // Owner buffs
         for buff in owner.getAllBuffsInPriority() {
-            if buff.type == .armorPoints && (buff.direction == .outgoing || buff.direction == .bidirectional) {
+            if buff.type == .armorPoints && (buff.direction == .incoming || buff.direction == .bidirectional) {
                 appliedArmorPointsRestoration = buff.applyArmorPoints(to: appliedArmorPointsRestoration, source: source)!
             }
         }
         // Target buffs
         if owner.id != target.id {
             for buff in target.getAllBuffsInPriority() {
-                if buff.type == .armorPoints && (buff.direction == .incoming || buff.direction == .bidirectional) {
+                if buff.type == .armorPoints && (buff.direction == .outgoing || buff.direction == .bidirectional) {
                     appliedArmorPointsRestoration = buff.applyArmorPoints(to: appliedArmorPointsRestoration, source: source)!
                 }
             }
