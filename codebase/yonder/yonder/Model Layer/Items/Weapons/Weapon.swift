@@ -22,6 +22,9 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
         if self.healthRestoration > 0 {
             summaryComponents.append(String(self.healthRestoration) + " " + Strings.Stat.HealthRestoration.local)
         }
+        if self.armorPointsRestoration > 0 {
+            summaryComponents.append(String(self.armorPointsRestoration) + " " + Strings.Stat.ArmorPointsRestoration.local)
+        }
         if let effectsDescription = self.getEffectsDescription() {
             summaryComponents.append(effectsDescription)
         }
@@ -77,6 +80,9 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
         }
         if self.damage > 0 {
             opposition.damageAdjusted(sourceOwner: owner, using: self, for: self.damage)
+        }
+        if self.armorPointsRestoration > 0 {
+            owner.restoreArmorPointsAdjusted(sourceOwner: owner, using: self, for: self.armorPointsRestoration)
         }
         
         for pill in self.effectPills {

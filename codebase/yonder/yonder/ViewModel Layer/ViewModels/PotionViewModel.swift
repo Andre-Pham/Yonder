@@ -15,6 +15,7 @@ class PotionViewModel: ItemViewModel {
                    remainingUsesDescription: Strings.Stat.Potion.RemainingUses.local,
                    damageImage: YonderImages.potionDamageIcon,
                    healthRestorationImage: YonderImages.potionHealthRestorationIcon,
+                   armorPointsRestorationImage: YonderImages.potionArmorPointsRestorationIcon,
                    remainingUsesImage: YonderImages.potionRemainingUsesIcon)
         self.setEffectsDescription(to: potion.getEffectsDescription())
     }

@@ -166,6 +166,20 @@ class ActorAbstract {
         self.timedEvents.removeAll()
     }
     
+    // MARK: - Indicative Values
+    
+    func getIndicativeDamage(of item: ItemAbstract, opposition: ActorAbstract) -> Int {
+        return BuffApps.getAppliedDamage(owner: self, using: item, target: opposition, damage: item.damage)
+    }
+    
+    func getIndicativeHealthRestoration(of item: ItemAbstract) -> Int {
+        return BuffApps.getAppliedHealthRestoration(owner: self, using: item, target: self, healthRestoration: item.healthRestoration)
+    }
+    
+    func getIndicativeArmorRestoration(of item: ItemAbstract) -> Int {
+        return BuffApps.getAppliedArmorRestoration(owner: self, using: item, target: self, armorPointsRestoration: item.armorPointsRestoration)
+    }
+    
     // MARK: - Weapons
     
     func addWeapon(_ weapon: Weapon) {

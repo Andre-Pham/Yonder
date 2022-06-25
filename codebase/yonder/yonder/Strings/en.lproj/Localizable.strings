@@ -117,6 +117,7 @@
 "stat.offers" = "Offers";
 "stat.offersSingular" = "Offer";
 "stat.remainingStock" = "Remaining Stock";
+"stat.armorPointsRestoration" = "Armor Repair";
 
 // Weapon
 "stat.weapon.remainingUsesSingular" = "Durability";

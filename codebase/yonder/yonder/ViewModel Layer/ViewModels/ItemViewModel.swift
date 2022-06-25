@@ -17,6 +17,7 @@ class ItemViewModel: ObservableObject {
     
     @Published private(set) var damage: Int
     @Published private(set) var healthRestoration: Int
+    @Published private(set) var armorPointsRestoration: Int
     @Published private(set) var remainingUses: Int
     private(set) var id: UUID
     private(set) var name: String
@@ -24,6 +25,7 @@ class ItemViewModel: ObservableObject {
     private(set) var remainingUsesDescription: String
     private(set) var damageImage: Image
     private(set) var healthRestorationImage: Image
+    private(set) var armorPointsRestorationImage: Image
     private(set) var remainingUsesImage: Image
     private(set) var infiniteRemainingUses: Bool
     @Published private(set) var effectsDescription: String? = nil
@@ -32,17 +34,20 @@ class ItemViewModel: ObservableObject {
          remainingUsesDescription: String,
          damageImage: Image,
          healthRestorationImage: Image,
+         armorPointsRestorationImage: Image,
          remainingUsesImage: Image) {
         self.item = item
         self.remainingUsesDescription = remainingUsesDescription
         self.damageImage = damageImage
         self.healthRestorationImage = healthRestorationImage
+        self.armorPointsRestorationImage = armorPointsRestorationImage
         self.remainingUsesImage = remainingUsesImage
         
         // Set properties to match Item
         
         self.damage = self.item.damage
         self.healthRestoration = self.item.healthRestoration
+        self.armorPointsRestoration = self.item.armorPointsRestoration
         self.remainingUses = self.item.remainingUses
         self.id = self.item.id
         self.name = self.item.name
@@ -57,6 +62,10 @@ class ItemViewModel: ObservableObject {
         
         self.item.$healthRestoration.sink(receiveValue: { newValue in
             self.healthRestoration = newValue
+        }).store(in: &self.subscriptions)
+        
+        self.item.$armorPointsRestoration.sink(receiveValue: { newValue in
+            self.armorPointsRestoration = newValue
         }).store(in: &self.subscriptions)
         
         self.item.$remainingUses.sink(receiveValue: { newValue in

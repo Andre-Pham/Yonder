@@ -133,6 +133,7 @@ enum Strings: Localizable {
         case Offers
         case OffersSingular
         case RemainingStock
+        case ArmorPointsRestoration
         
         enum Weapon: Localizable {
             static let parent: LocalizeParent = Stat.self

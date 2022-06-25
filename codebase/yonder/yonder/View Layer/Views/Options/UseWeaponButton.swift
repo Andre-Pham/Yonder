@@ -34,6 +34,14 @@ struct UseWeaponButton: View {
                     }
                 }
                 
+                if self.weaponViewModel.armorPointsRestoration > 0 {
+                    YonderTextNumeralHStack {
+                        YonderNumeral(number: self.weaponViewModel.armorPointsRestoration, size: .buttonBodySubscript)
+                        
+                        YonderText(text: Strings.Stat.ArmorPointsRestoration.local.leftPadded(by: " "), size: .buttonBodySubscript)
+                    }
+                }
+                
                 YonderTextNumeralHStack {
                     if self.weaponViewModel.infiniteRemainingUses {
                         YonderText(text: Strings.Item.Infinite.local, size: .buttonBodySubscript)

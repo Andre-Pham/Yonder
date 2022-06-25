@@ -22,7 +22,7 @@ struct InspectOngoingEffects: View {
                             YonderText(text: "|", size: .inspectSheetBody)
                             
                             YonderTextNumeralHStack {
-                                YonderIconNumeralPair(image: YonderImages.timeRemaining, numeral: timeRemaining, size: .inspectSheetBody, iconSize: .inspectSheet)
+                                YonderIconNumeralPair(image: YonderImages.timeRemainingIcon, numeral: timeRemaining, size: .inspectSheetBody, iconSize: .inspectSheet)
                                 
                                 YonderText(text: "/\(initialTimeRemaining)", size: .inspectSheetBody)
                             }

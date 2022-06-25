@@ -23,6 +23,10 @@ struct ItemInspectView: View {
                     InspectStatView(title: Strings.Stat.HealthRestoration.local, value: self.itemViewModel.healthRestoration, image: self.itemViewModel.healthRestorationImage)
                 }
                 
+                if self.itemViewModel.armorPointsRestoration > 0 {
+                    InspectStatView(title: Strings.Stat.ArmorPointsRestoration.local, value: self.itemViewModel.armorPointsRestoration, image: self.itemViewModel.armorPointsRestorationImage)
+                }
+                
                 if self.itemViewModel.infiniteRemainingUses {
                     InspectStatusView(title: self.itemViewModel.remainingUsesDescription, status: Strings.Item.Infinite.local, image: self.itemViewModel.remainingUsesImage)
                 } else {

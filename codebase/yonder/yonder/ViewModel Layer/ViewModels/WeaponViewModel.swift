@@ -16,6 +16,7 @@ class WeaponViewModel: ItemViewModel {
                    remainingUsesDescription: Strings.Stat.Weapon.RemainingUses.local,
                    damageImage: YonderImages.weaponDamageIcon,
                    healthRestorationImage: YonderImages.weaponHealthRestorationIcon,
+                   armorPointsRestorationImage: YonderImages.weaponArmorPointsRestorationIcon,
                    remainingUsesImage: YonderImages.weaponRemainingUsesIcon)
         self.setEffectsDescription(to: weapon.getEffectsDescription())
         
