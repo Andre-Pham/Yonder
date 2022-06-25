@@ -217,7 +217,7 @@ class ActorAbstract {
         var remainingBuffs = [BuffAbstract]()
         for buff in self.buffs {
             buff.decrementTimeRemaining()
-            if buff.timeRemaining > 0 {
+            if buff.isInfinite || buff.timeRemaining! > 0 {
                 remainingBuffs.append(buff)
             }
         }

@@ -11,7 +11,7 @@ class DamagePercentBuff: BuffAbstract {
     
     private let damageFraction: Double
     
-    init(direction: BuffDirection, duration: Int?, damageFraction: Double) {
+    init(sourceName: String, direction: BuffDirection, duration: Int?, damageFraction: Double) {
         self.damageFraction = damageFraction
         
         let effectsDescription = Self.buildPercentageEffectsDescription(
@@ -25,6 +25,7 @@ class DamagePercentBuff: BuffAbstract {
             bidirectionalDecrease: Strings.Buff.DamagePercent.EffectsDescription.BidirectionalDecrease1Param)
         
         super.init(
+            sourceName: sourceName,
             effectsDescription: effectsDescription,
             duration: duration,
             type: .damage,

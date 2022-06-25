@@ -11,7 +11,7 @@ class ArmorPointsRestorationPercentBuff: BuffAbstract {
     
     private let armorPointsFraction: Double
     
-    init(direction: BuffDirection, duration: Int?, armorPointsFraction: Double) {
+    init(sourceName: String, direction: BuffDirection, duration: Int?, armorPointsFraction: Double) {
         self.armorPointsFraction = armorPointsFraction
         
         let effectsDescription = Self.buildPercentageEffectsDescription(
@@ -25,6 +25,7 @@ class ArmorPointsRestorationPercentBuff: BuffAbstract {
             bidirectionalDecrease: Strings.Buff.ArmorRestorationPercent.EffectsDescription.BidirectionalDecrease1Param)
         
         super.init(
+            sourceName: sourceName,
             effectsDescription: effectsDescription,
             duration: duration,
             type: .armorPoints,

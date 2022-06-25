@@ -14,6 +14,8 @@ class BuffViewModel: ObservableObject {
     private var subscriptions: Set<AnyCancellable> = []
     
     @Published private(set) var timeRemaining: Int?
+    private(set) var initialTimeRemaining: Int?
+    private(set) var sourceName: String
     private(set) var effectsDescription: String?
     private(set) var id: UUID
     
@@ -25,6 +27,8 @@ class BuffViewModel: ObservableObject {
         } else {
             self.timeRemaining = buff.timeRemaining
         }
+        self.initialTimeRemaining = buff.initialTimeRemaining
+        self.sourceName = buff.sourceName
         self.effectsDescription = buff.getEffectsDescription()
         self.id = buff.id
         

@@ -43,7 +43,7 @@ struct UsePotionButton_Previews: PreviewProvider {
                 .ignoresSafeArea()
             
             UsePotionButton(
-                playerViewModel: PreviewObjects.playerViewModel,
+                playerViewModel: PreviewObjects.playerViewModel(),
                 potionViewModel: PreviewObjects.potionViewModel)
         }
     }

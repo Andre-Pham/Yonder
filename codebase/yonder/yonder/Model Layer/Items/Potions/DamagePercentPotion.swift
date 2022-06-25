@@ -32,9 +32,10 @@ class DamagePercentPotion: PotionAbstract {
     private let buff: DamagePercentBuff
     
     init(tier: Tier, duration: Int, potionCount: Int, basePurchasePrice: Int) {
-        self.buff = DamagePercentBuff(direction: .outgoing, duration: duration, damageFraction: tier.damageFraction)
+        let name = Strings.Potion.DamagePercent.Name.local.continuedBy(tier.string)
+        self.buff = DamagePercentBuff(sourceName: name, direction: .outgoing, duration: duration, damageFraction: tier.damageFraction)
         super.init(
-            name: Strings.Potion.DamagePercent.Name.local.continuedBy(tier.string),
+            name: name,
             description: Strings.Potion.DamagePercent.Description.local,
             effectsDescription: self.buff.getEffectsDescription(),
             remainingUses: potionCount,

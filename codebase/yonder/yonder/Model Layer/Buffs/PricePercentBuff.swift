@@ -11,7 +11,7 @@ class PricePercentBuff: BuffAbstract {
     
     private let priceFraction: Double
     
-    init(direction: BuffDirection, duration: Int?, priceFraction: Double) {
+    init(sourceName: String, direction: BuffDirection, duration: Int?, priceFraction: Double) {
         self.priceFraction = priceFraction
         
         let effectsDescription = Self.buildPercentageEffectsDescription(
@@ -25,6 +25,7 @@ class PricePercentBuff: BuffAbstract {
             bidirectionalDecrease: Strings.Buff.PricePercent.EffectsDescription.BidirectionalDecrease1Param)
         
         super.init(
+            sourceName: sourceName,
             effectsDescription: effectsDescription,
             duration: duration,
             type: .health,

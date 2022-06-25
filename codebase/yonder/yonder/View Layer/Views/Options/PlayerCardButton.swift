@@ -31,7 +31,7 @@ struct PlayerCardButton_Previews: PreviewProvider {
                 YonderColors.backgroundMaxDepth
                     .ignoresSafeArea()
                 
-                PlayerCardButton(playerViewModel: PreviewObjects.playerViewModel, optionsSheetsStateManager: OptionsSheetsStateManager(), pageGeometry: geo)
+                PlayerCardButton(playerViewModel: PreviewObjects.playerViewModel(), optionsSheetsStateManager: OptionsSheetsStateManager(), pageGeometry: geo)
             }
         }
     }

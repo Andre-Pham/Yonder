@@ -11,10 +11,16 @@ enum PreviewObjects {
     
     // MARK: - Player
     
-    static let playerViewModel = PlayerViewModel(Player(
-        maxHealth: 200,
-        location: NoLocation()
-    ))
+    static func playerViewModel() -> PlayerViewModel {
+        let playerViewModel = PlayerViewModel(Player(
+            maxHealth: 200,
+            location: NoLocation()
+        ))
+        playerViewModel.player.equipArmor(
+            ArmorAbstract(name: "Strong Armor", description: "So so strong.", type: .body, armorPoints: 200, basePurchasePrice: 200, armorBuffs: [DamagePercentBuff(sourceName: "Strong Armor", direction: .outgoing, duration: nil, damageFraction: 1.2)])
+        )
+        return playerViewModel
+    }
     
     static let armorViewModel = ArmorViewModel(ResistanceArmor(
         name: "Cool Resistance Armor",

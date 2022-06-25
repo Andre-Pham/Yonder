@@ -11,7 +11,7 @@ class HealthRestorationPercentBuff: BuffAbstract {
     
     private let healthFraction: Double
     
-    init(direction: BuffDirection, duration: Int?, healthFraction: Double) {
+    init(sourceName: String, direction: BuffDirection, duration: Int?, healthFraction: Double) {
         self.healthFraction = healthFraction
         
         let effectsDescription = Self.buildPercentageEffectsDescription(
@@ -25,6 +25,7 @@ class HealthRestorationPercentBuff: BuffAbstract {
             bidirectionalDecrease: Strings.Buff.HealthRestorationPercent.EffectsDescription.BidirectionalDecrease1Param)
         
         super.init(
+            sourceName: sourceName,
             effectsDescription: effectsDescription,
             duration: duration,
             type: .health,

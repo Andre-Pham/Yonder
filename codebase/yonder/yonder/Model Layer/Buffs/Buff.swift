@@ -9,9 +9,13 @@ import Foundation
 
 class BuffAbstract: EffectsDescribed {
     
+    public let sourceName: String
     private let effectsDescription: String?
-    var isInfinite: Bool = false
-    @DidSetPublished var timeRemaining: Int
+    var isInfinite: Bool {
+        return self.timeRemaining == nil
+    }
+    @DidSetPublished var timeRemaining: Int?
+    public let initialTimeRemaining: Int?
     var type: BuffType
     var direction: BuffDirection
     var priority: BuffPriority
@@ -19,18 +23,19 @@ class BuffAbstract: EffectsDescribed {
     
     /// To be called by subclasses only.
     /// - Parameters:
+    ///   - sourceName: The source that applied this buff
     ///   - duration: How long the buff is applied for - nil for infinite duration
     ///   - type: What stat the buff affects
     ///   - direction: What direction the buff is applied to, for example, an outgoing damage buff increases damage dealt, but not received
     ///   - priority: What order, relative to other buffs, is this buff applied
-    init(effectsDescription: String?, duration: Int?, type: BuffType, direction: BuffDirection, priority: BuffPriority) {
-        if let duration = duration {
-            self.timeRemaining = duration
-            self.effectsDescription = effectsDescription?.continuedBy(Strings.Buff.Duration1Param.localWithArgs(duration))
-        }
-        else {
-            self.timeRemaining = 1
-            self.isInfinite = true
+    init(sourceName: String, effectsDescription: String?, duration: Int?, type: BuffType, direction: BuffDirection, priority: BuffPriority) {
+        self.sourceName = sourceName
+        self.timeRemaining = duration
+        self.initialTimeRemaining = duration
+        if let timeRemaining = duration {
+            self.effectsDescription = effectsDescription?.continuedBy(Strings.Buff.Duration1Param.localWithArgs(timeRemaining))
+        } else {
+            // Infinite duration
             self.effectsDescription = effectsDescription
         }
         self.type = type
@@ -69,7 +74,7 @@ class BuffAbstract: EffectsDescribed {
         guard !isInfinite else {
             return
         }
-        self.timeRemaining -= 1
+        self.timeRemaining! -= 1
     }
     
     func applyDamage(to damage: Int, source: Any) -> Int? {

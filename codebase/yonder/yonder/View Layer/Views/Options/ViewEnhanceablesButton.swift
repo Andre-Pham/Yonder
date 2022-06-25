@@ -81,7 +81,7 @@ struct ViewEnhanceablesButton_Previews: PreviewProvider {
                     .ignoresSafeArea()
                 
                 ViewEnhanceablesButton(
-                    playerViewModel: PreviewObjects.playerViewModel,
+                    playerViewModel: PreviewObjects.playerViewModel(),
                     enhanceOfferViewModel: PreviewObjects.enhanceOfferViewModel,
                     pageGeometry: geo
                 )

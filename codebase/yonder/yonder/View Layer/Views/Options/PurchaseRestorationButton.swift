@@ -42,7 +42,7 @@ struct PurchaseRestorationButton_Previews: PreviewProvider {
                 .ignoresSafeArea()
             
             PurchaseRestorationButton(
-                playerViewModel: PreviewObjects.playerViewModel,
+                playerViewModel: PreviewObjects.playerViewModel(),
                 restorationOptionViewModel: PreviewObjects.restoreOptionViewModel)
         }
     }

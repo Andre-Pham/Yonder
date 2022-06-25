@@ -26,16 +26,7 @@ struct PlayerInspectView: View {
             
             YonderText(text: Strings.Inspect.Title.Buffs.local, size: .inspectSheetTitle)
             
-            ForEach(self.playerViewModel.allBuffs, id: \.id) { buffViewModel in
-                if let effectsDescription = buffViewModel.effectsDescription {
-                    if let timeRemaining = buffViewModel.timeRemaining {
-                        // TODO: Localize this and revamp the UI with the clock icon and source name
-                        YonderText(text: effectsDescription + "\n(\(timeRemaining) turns remaining)", size: .inspectSheetBody)
-                    } else {
-                        YonderText(text: effectsDescription, size: .inspectSheetBody)
-                    }
-                }
-            }
+            InspectOngoingEffects(playerViewModel: self.playerViewModel)
             
             InspectSectionSpacingView()
             
@@ -50,7 +41,7 @@ struct PlayerInspectView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            PlayerInspectView(playerViewModel: PreviewObjects.playerViewModel)
+            PlayerInspectView(playerViewModel: PreviewObjects.playerViewModel())
         }
     }
 }
