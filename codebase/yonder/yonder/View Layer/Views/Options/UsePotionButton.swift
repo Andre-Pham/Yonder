@@ -18,8 +18,27 @@ struct UsePotionButton: View {
                 YonderText(text: self.potionViewModel.name, size: .buttonBody)
                     .padding(.bottom, YonderCoreGraphics.buttonTitleSpacing)
                 
-                if let effectsDescription = self.potionViewModel.effectsDescription {
-                    YonderText(text: effectsDescription, size: .buttonBodySubscript)
+                YonderTextNumeralHStack {
+                    if let effectsDescription = self.potionViewModel.effectsDescription {
+                        YonderText(text: effectsDescription, size: .buttonBodySubscript)
+                    }
+                    
+                    if let foeViewModel = GameManager.instance.playerLocationVM.locationViewModel.getFoeViewModel() {
+                        IndicativeNumeralView(
+                            original: self.potionViewModel.damage,
+                            indicative: self.playerViewModel.getIndicativeDamage(itemViewModel: self.potionViewModel, opposition: foeViewModel),
+                            size: .buttonBodySubscript)
+                    }
+                    
+                    IndicativeNumeralView(
+                        original: self.potionViewModel.healthRestoration,
+                        indicative: self.playerViewModel.getIndicativeHealthRestoration(of: self.potionViewModel),
+                        size: .buttonBodySubscript)
+                    
+                    IndicativeNumeralView(
+                        original: self.potionViewModel.armorPointsRestoration,
+                        indicative: self.playerViewModel.getIndicativeArmorPointsRestoration(of: self.potionViewModel),
+                        size: .buttonBodySubscript)
                 }
                 
                 YonderTextNumeralHStack {
