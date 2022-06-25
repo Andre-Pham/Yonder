@@ -43,6 +43,32 @@ struct IndicativeNumeralView: View {
                     }
             }
             .padding(.leading, self.padding)
+        } else {
+            // This is here for a reason. Don't delete!
+            // TLDR: If you completely remove this view, it can't bring itself back.
+            // When IndicativeNumeralView is not showing (self.showing),
+            // the entire view stops being rendered.
+            // This means that its state (original and indicative) stop
+            // being observed by the onChange modifiers.
+            // This means that the only way for this view to re-appear
+            // is for its entire parent view to be redrawn.
+            // By keeping an EmptyView, the view is still saved in
+            // memory, but is treated like it doesn't exist. By adding
+            // onChange modifiers to the empty view, this view's state
+            // (original and indicative) keep being observed for changes,
+            // hence the view will re-animate itself back onto the screen
+            // if the showing conditions are ever met.
+            EmptyView()
+                .onChange(of: self.indicative) { newValue in
+                    withAnimation {
+                        self.showing = self.original != newValue
+                    }
+                }
+                .onChange(of: self.original) { newValue in
+                    withAnimation {
+                        self.showing = newValue != self.indicative
+                    }
+                }
         }
     }
 }

@@ -14,9 +14,16 @@ struct FoeCardView: View {
         CardBody(name: foeViewModel.name) {
             CardInteractorTypeView()
             
-            CardRowView(
-                value: self.foeViewModel.weaponViewModel.damage,
-                image: YonderImages.foeDamageIcon)
+            YonderTextNumeralHStack {
+                CardRowView(
+                    value: self.foeViewModel.weaponViewModel.damage,
+                    image: YonderImages.foeDamageIcon)
+                
+                IndicativeNumeralView(
+                    original: self.foeViewModel.weaponViewModel.damage,
+                    indicative: self.foeViewModel.getIndicativeDamage(),
+                    size: .cardSubscript)
+            }
             
             CardRowView(
                 value: self.foeViewModel.health,

@@ -49,6 +49,11 @@ class FoeViewModel: ObservableObject {
         self.foe.$maxHealth.sink(receiveValue: { newValue in
             self.maxHealth = newValue
         }).store(in: &self.subscriptions)
+        
+    }
+    
+    func getIndicativeDamage() -> Int {
+        return self.foe.getIndicativeDamage(of: self.foe.getWeapon(), opposition: GameManager.instance.playerVM.player)
     }
     
 }
