@@ -36,6 +36,7 @@ class Player: ActorAbstract {
     func travel(to location: LocationAbstract) {
         location.setToVisited(from: self.location)
         self.location = location
+        self.onTurnCompletion()
     }
     
     func clearAttributes() {

@@ -42,6 +42,12 @@ class ActorAbstract {
         self.health = maxHealth
     }
     
+    func onTurnCompletion() {
+        self.triggerStatusEffects()
+        self.decrementTimedEvents()
+        self.decrementBuffs()
+    }
+    
     // MARK: - Health Related
     
     func restoreHealth(for amount: Int) {

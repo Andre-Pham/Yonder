@@ -14,19 +14,9 @@ class CombatFlow {
     func completeTurn(player: Player, foe: Foe) {
         foe.attack(player)
         for act in [player, foe] {
-            act.triggerStatusEffects()
-            act.decrementTimedEvents()
-            act.decrementBuffs()
-        }
-        if player.isDead {
-            foe.clearStatusEffects()
-            foe.clearBuffs()
-            foe.clearTimedEvents()
+            act.onTurnCompletion()
         }
         if foe.isDead {
-            player.clearStatusEffects()
-            player.clearBuffs()
-            player.clearTimedEvents()
             player.clearAttributes()
         }
         
