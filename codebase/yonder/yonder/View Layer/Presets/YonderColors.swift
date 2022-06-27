@@ -23,12 +23,12 @@ enum YonderColors {
     
     // MARK: - Indicative
     
-    static let higherIndicative = Color.yellow
-    static let lowerIndicative = Color("Assets#FF4350")
+    static let higherIndicative = Color("Assets#FFCF37")
+    static let lowerIndicative = Color("Assets#47B4FF")
     
     // MARK: - Other
     
-    static let highlight = Color.yellow
+    static let highlight = Color("Assets#FFCF37")
     static let border = Color("Assets#FFFFFF")
     static let outlineMinContrast = Color("Assets#1F1E20")
     
