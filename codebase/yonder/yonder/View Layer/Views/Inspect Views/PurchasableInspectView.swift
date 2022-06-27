@@ -9,10 +9,11 @@ import SwiftUI
 
 struct PurchasableInspectView: View {
     @ObservedObject var purchasableViewModel: PurchasableViewModel
+    @ObservedObject var playerViewModel: PlayerViewModel
     
     var body: some View {
         if let itemViewModel = self.purchasableViewModel.getItemViewModel() {
-            ItemInspectView(itemViewModel: itemViewModel)
+            ItemInspectView(itemViewModel: itemViewModel, playerViewModel: self.playerViewModel)
         } else if let armorViewModel = self.purchasableViewModel.getArmorViewModel() {
             ArmorInspectView(armorViewModel: armorViewModel)
         } else  {

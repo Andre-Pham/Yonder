@@ -33,7 +33,7 @@ struct ViewEnhanceablesButton: View {
             YonderText(text: self.enhanceOfferViewModel.description, size: .buttonBodySubscript)
             
             HStack(spacing: YonderCoreGraphics.padding) {
-                PriceTagView(price: self.enhanceOfferViewModel.price)
+                PriceTagView(price: self.enhanceOfferViewModel.price, indicativePrice: self.playerViewModel.getIndicativePrice(from: self.enhanceOfferViewModel.price))
                 
                 YonderWideButton(text: Strings.Button.ViewOptions.local) {
                     self.optionsSheetActive = true
@@ -47,7 +47,7 @@ struct ViewEnhanceablesButton: View {
                 VStack {
                     PlayerCardView(playerViewModel: self.playerViewModel, resizeToFit: false)
                     
-                    WidePriceTagView(price: self.enhanceOfferViewModel.price, text: Strings.Inspect.EnhanceOffers.priceTagSuffix.local)
+                    WidePriceTagView(price: self.enhanceOfferViewModel.price, indicativePrice: self.playerViewModel.getIndicativePrice(from: self.enhanceOfferViewModel.price), text: Strings.Inspect.EnhanceOffers.priceTagSuffix.local)
                     
                     YonderText(text: "[\(Strings.Inspect.EnhanceOffers.header.local)]", size: .title4)
                     

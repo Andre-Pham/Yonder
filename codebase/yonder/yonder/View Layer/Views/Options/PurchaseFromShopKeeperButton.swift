@@ -36,7 +36,7 @@ struct PurchaseFromShopKeeperButton: View {
                                 YonderWideButton(text: Strings.Button.Info.local, verticalPadding: YonderCoreGraphics.padding, action: {})
                                     .hidden()
                                 
-                                PriceTagView(price: self.purchasableViewModel.price)
+                                PriceTagView(price: self.purchasableViewModel.price, indicativePrice: self.playerViewModel.getIndicativePrice(from: self.purchasableViewModel.price))
                             }
                         }
                     }
@@ -60,10 +60,10 @@ struct PurchaseFromShopKeeperButton: View {
                         isPresented: self.$infoSheetActive,
                         pageGeometry: pageGeometry,
                         content: AnyView(
-                            PurchasableInspectView(purchasableViewModel: self.purchasableViewModel)
+                            PurchasableInspectView(purchasableViewModel: self.purchasableViewModel, playerViewModel: self.playerViewModel)
                     ))
                     
-                    PriceTagView(price: self.purchasableViewModel.price)
+                    PriceTagView(price: self.purchasableViewModel.price, indicativePrice: self.playerViewModel.getIndicativePrice(from: self.purchasableViewModel.price))
                         .hidden()
                 }
                 .padding(.horizontal, YonderCoreGraphics.padding)

@@ -26,5 +26,6 @@ enum YonderColors {
     static let highlight = Color.yellow
     static let border = Color("Assets#FFFFFF")
     static let outlineMinContrast = Color("Assets#1F1E20")
+    static let negativeRed = Color("Assets#FF4350")
     
 }

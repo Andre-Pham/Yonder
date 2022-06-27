@@ -12,14 +12,20 @@ enum BuffApplications {
     
     static func getAppliedDamage(owner: ActorAbstract, using source: Any, target: ActorAbstract, damage: Int) -> Int {
         var appliedDamage = damage
-        // Owner buffs
-        for buff in owner.getAllBuffsInPriority() {
-            if buff.type == .damage && (buff.direction == .outgoing || buff.direction == .bidirectional) {
-                appliedDamage = buff.applyDamage(to: appliedDamage, source: source)!
+        if owner.id == target.id {
+            for buff in target.getAllBuffsInPriority() {
+                if buff.type == .damage {
+                    appliedDamage = buff.applyDamage(to: appliedDamage, source: source)!
+                }
             }
-        }
-        // Target buffs
-        if owner.id != target.id {
+        } else {
+            // Owner buffs
+            for buff in owner.getAllBuffsInPriority() {
+                if buff.type == .damage && (buff.direction == .outgoing || buff.direction == .bidirectional) {
+                    appliedDamage = buff.applyDamage(to: appliedDamage, source: source)!
+                }
+            }
+            // Target buffs
             for buff in target.getAllBuffsInPriority() {
                 if buff.type == .damage && (buff.direction == .incoming || buff.direction == .bidirectional) {
                     appliedDamage = buff.applyDamage(to: appliedDamage, source: source)!
@@ -31,16 +37,22 @@ enum BuffApplications {
     
     static func getAppliedHealthRestoration(owner: ActorAbstract, using source: Any, target: ActorAbstract, healthRestoration: Int) -> Int {
         var appliedHealthRestoration = healthRestoration
-        // Owner buffs
-        for buff in owner.getAllBuffsInPriority() {
-            if buff.type == .health && (buff.direction == .incoming || buff.direction == .bidirectional) {
-                appliedHealthRestoration = buff.applyHealth(to: appliedHealthRestoration, source: source)!
-            }
-        }
-        // Target buffs
-        if owner.id != target.id {
+        if owner.id == target.id {
             for buff in target.getAllBuffsInPriority() {
+                if buff.type == .health {
+                    appliedHealthRestoration = buff.applyHealth(to: appliedHealthRestoration, source: source)!
+                }
+            }
+        } else {
+            // Owner buffs
+            for buff in owner.getAllBuffsInPriority() {
                 if buff.type == .health && (buff.direction == .outgoing || buff.direction == .bidirectional) {
+                    appliedHealthRestoration = buff.applyHealth(to: appliedHealthRestoration, source: source)!
+                }
+            }
+            // Target buffs
+            for buff in target.getAllBuffsInPriority() {
+                if buff.type == .health && (buff.direction == .incoming || buff.direction == .bidirectional) {
                     appliedHealthRestoration = buff.applyHealth(to: appliedHealthRestoration, source: source)!
                 }
             }
@@ -50,16 +62,22 @@ enum BuffApplications {
     
     static func getAppliedArmorPointsRestoration(owner: ActorAbstract, using source: Any, target: ActorAbstract, armorPointsRestoration: Int) -> Int {
         var appliedArmorPointsRestoration = armorPointsRestoration
-        // Owner buffs
-        for buff in owner.getAllBuffsInPriority() {
-            if buff.type == .armorPoints && (buff.direction == .incoming || buff.direction == .bidirectional) {
-                appliedArmorPointsRestoration = buff.applyArmorPoints(to: appliedArmorPointsRestoration, source: source)!
-            }
-        }
-        // Target buffs
-        if owner.id != target.id {
+        if owner.id == target.id {
             for buff in target.getAllBuffsInPriority() {
+                if buff.type == .armorPoints {
+                    appliedArmorPointsRestoration = buff.applyArmorPoints(to: appliedArmorPointsRestoration, source: source)!
+                }
+            }
+        } else {
+            // Owner buffs
+            for buff in owner.getAllBuffsInPriority() {
                 if buff.type == .armorPoints && (buff.direction == .outgoing || buff.direction == .bidirectional) {
+                    appliedArmorPointsRestoration = buff.applyArmorPoints(to: appliedArmorPointsRestoration, source: source)!
+                }
+            }
+            // Target buffs
+            for buff in target.getAllBuffsInPriority() {
+                if buff.type == .armorPoints && (buff.direction == .incoming || buff.direction == .bidirectional) {
                     appliedArmorPointsRestoration = buff.applyArmorPoints(to: appliedArmorPointsRestoration, source: source)!
                 }
             }

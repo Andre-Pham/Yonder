@@ -20,13 +20,13 @@ struct UseWeaponButton: View {
                 
                 if self.weaponViewModel.damage > 0 {
                     YonderTextNumeralHStack {
-                        YonderNumeral(number: self.weaponViewModel.damage, size: .buttonBodySubscript)
-                        
-                        if let foeViewModel = GameManager.instance.playerLocationVM.locationViewModel.getFoeViewModel() {
+                        if let foeViewModel = GameManager.instance.foeViewModel {
                             IndicativeNumeralView(
                                 original: self.weaponViewModel.damage,
                                 indicative: self.playerViewModel.getIndicativeDamage(itemViewModel: self.weaponViewModel, opposition: foeViewModel),
                                 size: .buttonBodySubscript)
+                        } else {
+                            YonderNumeral(number: self.weaponViewModel.damage, size: .buttonBodySubscript)
                         }
                         
                         YonderText(text: Strings.Stat.Damage.local.leftPadded(by: " "), size: .buttonBodySubscript)
@@ -35,8 +35,6 @@ struct UseWeaponButton: View {
                 
                 if self.weaponViewModel.healthRestoration > 0 {
                     YonderTextNumeralHStack {
-                        YonderNumeral(number: self.weaponViewModel.healthRestoration, size: .buttonBodySubscript)
-                        
                         IndicativeNumeralView(
                             original: self.weaponViewModel.healthRestoration,
                             indicative: self.playerViewModel.getIndicativeHealthRestoration(of: self.weaponViewModel),
@@ -48,8 +46,6 @@ struct UseWeaponButton: View {
                 
                 if self.weaponViewModel.armorPointsRestoration > 0 {
                     YonderTextNumeralHStack {
-                        YonderNumeral(number: self.weaponViewModel.armorPointsRestoration, size: .buttonBodySubscript)
-                        
                         IndicativeNumeralView(
                             original: self.weaponViewModel.armorPointsRestoration,
                             indicative: self.playerViewModel.getIndicativeArmorPointsRestoration(of: self.weaponViewModel),

@@ -28,7 +28,7 @@ class PricePercentBuff: BuffAbstract {
             sourceName: sourceName,
             effectsDescription: effectsDescription,
             duration: duration,
-            type: .health,
+            type: .price,
             direction: direction,
             priority: .second)
     }

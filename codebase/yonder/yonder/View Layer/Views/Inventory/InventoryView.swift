@@ -61,31 +61,11 @@ struct InventoryView: View {
                     }
                     
                     if self.inventoryStateManager.weaponsActive {
-                        ForEach(Array(zip(playerViewModel.weaponViewModels.indices, playerViewModel.weaponViewModels)), id: \.1.id) { index, weaponViewModel in
-                            YonderWideButton(text: weaponViewModel.name) {
-                                self.sheetsStateManager.presentWeaponSheet(at: index)
-                            }
-                            .withInspectSheet(
-                                isPresented: self.$sheetsStateManager.weaponSheetBindings[index],
-                                pageGeometry: geo,
-                                content: AnyView(
-                                ItemInspectView(itemViewModel: weaponViewModel)
-                            ))
-                        }
+                        InventoryWeaponsView(sheetsStateManager: self.sheetsStateManager, playerViewModel: self.playerViewModel, pageGeometry: geo)
                     }
                     
                     if self.inventoryStateManager.potionsActive {
-                        ForEach(Array(zip(playerViewModel.potionViewModels.indices, playerViewModel.potionViewModels)), id: \.1.id) { index, potionViewModel in
-                            YonderWideButton(text: potionViewModel.name) {
-                                self.sheetsStateManager.presentPotionSheet(at: index)
-                            }
-                            .withInspectSheet(
-                                isPresented: self.$sheetsStateManager.potionSheetBindings[index],
-                                pageGeometry: geo,
-                                content: AnyView(
-                                ItemInspectView(itemViewModel: potionViewModel)
-                            ))
-                        }
+                        InventoryPotionsView(sheetsStateManager: self.sheetsStateManager, playerViewModel: self.playerViewModel, pageGeometry: geo)
                     }
                 }
                 .padding(.horizontal)

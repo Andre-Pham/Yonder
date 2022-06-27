@@ -28,6 +28,7 @@ struct ChallengeHostileInspectView: View {
                 InspectStatView(
                     title: Strings.Stat.Damage.local,
                     value: self.foeViewModel.weaponViewModel.damage,
+                    indicativeValue: self.foeViewModel.getIndicativeDamage(),
                     image: YonderImages.foeDamageIcon)
             }
         }

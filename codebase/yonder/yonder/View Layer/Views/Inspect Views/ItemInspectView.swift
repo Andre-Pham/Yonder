@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ItemInspectView: View {
     @ObservedObject var itemViewModel: ItemViewModel
+    @ObservedObject var playerViewModel: PlayerViewModel
     
     var body: some View {
         InspectBody {
@@ -16,15 +17,19 @@ struct ItemInspectView: View {
                 
             InspectStatsBody {
                 if self.itemViewModel.damage > 0 {
-                    InspectStatView(title: Strings.Stat.Damage.local, value: self.itemViewModel.damage, image: self.itemViewModel.damageImage)
+                    if let foeViewModel = GameManager.instance.foeViewModel {
+                        InspectStatView(title: Strings.Stat.Damage.local, value: self.itemViewModel.damage, indicativeValue: self.playerViewModel.getIndicativeDamage(itemViewModel: self.itemViewModel, opposition: foeViewModel), image: self.itemViewModel.damageImage)
+                    } else {
+                        InspectStatView(title: Strings.Stat.Damage.local, value: self.itemViewModel.damage, indicativeValue: self.playerViewModel.getPassiveIndicativeDamage(itemViewModel: self.itemViewModel), image: self.itemViewModel.damageImage)
+                    }
                 }
                 
                 if self.itemViewModel.healthRestoration > 0 {
-                    InspectStatView(title: Strings.Stat.HealthRestoration.local, value: self.itemViewModel.healthRestoration, image: self.itemViewModel.healthRestorationImage)
+                    InspectStatView(title: Strings.Stat.HealthRestoration.local, value: self.itemViewModel.healthRestoration, indicativeValue: self.playerViewModel.getIndicativeHealthRestoration(of: self.itemViewModel), image: self.itemViewModel.healthRestorationImage)
                 }
                 
                 if self.itemViewModel.armorPointsRestoration > 0 {
-                    InspectStatView(title: Strings.Stat.ArmorPointsRestoration.local, value: self.itemViewModel.armorPointsRestoration, image: self.itemViewModel.armorPointsRestorationImage)
+                    InspectStatView(title: Strings.Stat.ArmorPointsRestoration.local, value: self.itemViewModel.armorPointsRestoration, indicativeValue: self.playerViewModel.getIndicativeArmorPointsRestoration(of: self.itemViewModel), image: self.itemViewModel.armorPointsRestorationImage)
                 }
                 
                 if self.itemViewModel.infiniteRemainingUses {
@@ -51,7 +56,7 @@ struct ItemInspectView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            ItemInspectView(itemViewModel: PreviewObjects.weaponViewModel)
+            ItemInspectView(itemViewModel: PreviewObjects.weaponViewModel, playerViewModel: PreviewObjects.playerViewModel())
                 .padding()
         }
         
@@ -59,7 +64,7 @@ struct ItemInspectView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            ItemInspectView(itemViewModel: PreviewObjects.potionViewModel)
+            ItemInspectView(itemViewModel: PreviewObjects.potionViewModel, playerViewModel: PreviewObjects.playerViewModel())
                 .padding()
         }
     }

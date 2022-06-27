@@ -19,11 +19,18 @@ struct PurchaseRestorationButton: View {
                 HStack {
                     YonderText(text: "\(Strings.Button.Restore.local):", size: .buttonBody)
                     
-                    YonderIconTextPair(image: self.restorationOptionViewModel.image, text: "\(self.baseRestorationAmount)", size: .buttonBody)
+                    HStack {
+                        YonderIcon(image: self.restorationOptionViewModel.image)
+                        
+                        IndicativeNumeralView(
+                            original: self.baseRestorationAmount,
+                            indicative: self.restorationOptionViewModel.getIndicativeRestoration(of: self.baseRestorationAmount, target: self.playerViewModel),
+                            size: .buttonBody)
+                    }
                     
                     Spacer()
                     
-                    PriceTagView(price: self.restorationOptionViewModel.getBundlePrice())
+                    PriceTagView(price: self.restorationOptionViewModel.getBundlePrice(), indicativePrice: self.playerViewModel.getIndicativePrice(from: self.restorationOptionViewModel.getBundlePrice()))
                 }
             }
         } expandedContent: {

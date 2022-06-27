@@ -65,6 +65,7 @@ struct SettingsView: View {
             Button("Buff") {
                 GameManager.instance.playerVM.player.addBuff(DamagePercentBuff(sourceName: "Magic", direction: .bidirectional, duration: 2, damageFraction: 1.5))
                 GameManager.instance.playerVM.player.addBuff(HealthRestorationPercentBuff(sourceName: "Magic Healing", direction: .incoming, duration: 2, healthFraction: 2.0))
+                GameManager.instance.playerVM.player.addBuff(PricePercentBuff(sourceName: "Fairy", direction: .outgoing, duration: 1, priceFraction: 2.0))
             }
             .padding()
             .background(Color.red)

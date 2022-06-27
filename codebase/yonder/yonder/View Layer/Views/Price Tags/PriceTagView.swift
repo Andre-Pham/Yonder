@@ -9,12 +9,30 @@ import SwiftUI
 
 struct PriceTagView: View {
     let price: Int
+    var indicativePrice: Int? = nil
+    private var indicativeColor: Color {
+        guard let indicativePrice = self.indicativePrice else {
+            return YonderColors.textMaxContrast
+        }
+        if indicativePrice < self.price {
+            return YonderColors.negativeRed
+        } else if indicativePrice > self.price {
+            return YonderColors.highlight
+        }
+        return YonderColors.textMaxContrast
+    }
     
     var body: some View {
-        YonderIconNumeralPair(prefix: Strings.CurrencySymbol.local, image: YonderImages.goldIcon, numeral: self.price, size: .buttonBody)
-            .padding(.horizontal, YonderCoreGraphics.padding*1.5)
-            .padding(.vertical, YonderCoreGraphics.padding)
-            .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
+        ZStack {
+            if let indicativePrice = indicativePrice {
+                YonderIconNumeralPair(prefix: Strings.CurrencySymbol.local, image: YonderImages.goldIcon, numeral: indicativePrice, size: .buttonBody, color: self.indicativeColor)
+            } else {
+                YonderIconNumeralPair(prefix: Strings.CurrencySymbol.local, image: YonderImages.goldIcon, numeral: self.price, size: .buttonBody)
+            }
+        }
+        .padding(.horizontal, YonderCoreGraphics.padding*1.5)
+        .padding(.vertical, YonderCoreGraphics.padding)
+        .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
     }
 }
 
@@ -24,7 +42,11 @@ struct PriceTagView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            PriceTagView(price: 100)
+            VStack {
+                PriceTagView(price: 100)
+                
+                PriceTagView(price: 100, indicativePrice: 200)
+            }
         }
     }
 }

@@ -16,6 +16,9 @@ class GameManager {
     private var activeGame: Game
     private(set) var playerVM: PlayerViewModel
     private(set) var playerLocationVM: PlayerLocationViewModel
+    var foeViewModel: FoeViewModel? {
+        return self.playerLocationVM.locationViewModel.getFoeViewModel()
+    }
     
     private init() {
         self.activeGame = Game()

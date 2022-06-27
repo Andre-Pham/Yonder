@@ -85,4 +85,13 @@ class RestoreOptionViewModel: ObservableObject {
         }
     }
     
+    func getIndicativeRestoration(of amount: Int, target: PlayerViewModel) -> Int {
+        switch self.restoreOption {
+        case .health:
+            return BuffApps.getAppliedHealthRestoration(owner: NoActor(), using: NoItem(), target: target.player, healthRestoration: amount)
+        case .armorPoints:
+            return BuffApps.getAppliedArmorPointsRestoration(owner: NoActor(), using: NoItem(), target: target.player, armorPointsRestoration: amount)
+        }
+    }
+    
 }

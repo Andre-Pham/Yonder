@@ -203,6 +203,10 @@ class PlayerViewModel: ObservableObject {
         return self.player.getIndicativeDamage(of: itemViewModel.item, opposition: opposition.foe)
     }
     
+    func getPassiveIndicativeDamage(itemViewModel: ItemViewModel) -> Int {
+        return self.player.getIndicativeDamage(of: itemViewModel.item, opposition: NoActor())
+    }
+    
     func getIndicativePrice(from price: Int) -> Int {
         return self.player.getIndicativePrice(from: price)
     }

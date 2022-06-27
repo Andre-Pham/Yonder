@@ -12,6 +12,7 @@ struct InspectStatView: View {
     let title: String
     var prefix: String? = nil
     let value: Int
+    var indicativeValue: Int? = nil
     var maxValue: Int? = nil
     var image: Image? = nil
     
@@ -26,6 +27,10 @@ struct InspectStatView: View {
                     YonderText(text: "\(self.title): \(self.prefix == nil ? "" : self.prefix!)", size: .inspectSheetBody)
                     
                     YonderNumeral(number: self.value, size: .inspectSheetBody)
+                    
+                    if let indicativeValue = self.indicativeValue {
+                        IndicativeAdditionView(original: self.value, indicative: indicativeValue, size: .inspectSheetBody)
+                    }
                 }
                 
                 if let maxValue = maxValue {

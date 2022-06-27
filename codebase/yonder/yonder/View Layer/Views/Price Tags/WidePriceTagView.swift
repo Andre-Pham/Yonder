@@ -9,14 +9,34 @@ import SwiftUI
 
 struct WidePriceTagView: View {
     let price: Int
+    var indicativePrice: Int? = nil
     var text: String = ""
     var displayText: String {
         return self.text.isEmpty ? "" : " " + self.text
     }
+    private var indicativeColor: Color {
+        guard let indicativePrice = self.indicativePrice else {
+            return YonderColors.textMaxContrast
+        }
+        if indicativePrice < self.price {
+            return YonderColors.negativeRed
+        } else if indicativePrice > self.price {
+            return YonderColors.highlight
+        }
+        return YonderColors.textMaxContrast
+    }
     
     var body: some View {
-        HStack(spacing: 0) {
-            YonderIconNumeralPair(prefix: Strings.CurrencySymbol.local, suffix: self.displayText, image: YonderImages.goldIcon, numeral: self.price, size: .buttonBody)
+        ZStack {
+            if let indicativePrice = self.indicativePrice {
+                YonderTextNumeralHStack {
+                    YonderIconNumeralPair(prefix: Strings.CurrencySymbol.local, image: YonderImages.goldIcon, numeral: indicativePrice, size: .buttonBody, color: self.indicativeColor)
+                    
+                    YonderText(text: self.displayText, size: .buttonBody)
+                }
+            } else {
+                YonderIconNumeralPair(prefix: Strings.CurrencySymbol.local, suffix: self.displayText, image: YonderImages.goldIcon, numeral: self.price, size: .buttonBody)
+            }
         }
         .frame(maxWidth: .infinity)
         .padding(.horizontal, YonderCoreGraphics.padding*1.5)
@@ -31,7 +51,11 @@ struct WidePriceTagView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            WidePriceTagView(price: 100, text: "Each")
+            VStack {
+                WidePriceTagView(price: 100, text: "Each")
+                
+                WidePriceTagView(price: 100, indicativePrice: 200, text: "Each")
+            }
         }
     }
 }

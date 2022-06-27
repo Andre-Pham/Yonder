@@ -18,7 +18,7 @@ struct IndicativeEffectsDescriptionView: View {
             YonderTextNumeralHStack {
                 YonderText(text: strings.0, size: self.size, color: self.color)
                 
-                IndicativeNumeralView(original: Int(round(original)), indicative: self.indicative, size: self.size, leftPadding: 0.0)
+                IndicativeNumeralView(original: Int(round(original)), indicative: self.indicative, size: self.size)
                 
                 YonderText(text: strings.1, size: self.size, color: self.color)
             }
@@ -27,7 +27,7 @@ struct IndicativeEffectsDescriptionView: View {
             YonderTextNumeralHStack {
                 YonderText(text: strings.0, size: self.size, color: self.color)
                 
-                IndicativeNumeralView(original: original, indicative: self.indicative, size: self.size, leftPadding: 0.0)
+                IndicativeNumeralView(original: original, indicative: self.indicative, size: self.size)
                 
                 YonderText(text: strings.1, size: self.size, color: self.color)
             }
@@ -43,7 +43,11 @@ struct IndicativeEffectsDescriptionView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            IndicativeEffectsDescriptionView(effectsDescription: "Inflicts 100 damage.", indicative: 250, size: .buttonBody)
+            VStack {
+                IndicativeEffectsDescriptionView(effectsDescription: "Inflicts 100 damage.", indicative: 250, size: .buttonBody)
+                
+                IndicativeEffectsDescriptionView(effectsDescription: "Inflicts 100 damage.", indicative: 50, size: .buttonBody)
+            }
         }
     }
 }

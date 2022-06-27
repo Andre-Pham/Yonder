@@ -18,27 +18,25 @@ struct UsePotionButton: View {
                 YonderText(text: self.potionViewModel.name, size: .buttonBody)
                     .padding(.bottom, YonderCoreGraphics.buttonTitleSpacing)
                 
-                YonderTextNumeralHStack {
-                    if let effectsDescription = self.potionViewModel.effectsDescription {
+                if let effectsDescription = self.potionViewModel.effectsDescription {
+                    if let foeViewModel = GameManager.instance.foeViewModel, self.potionViewModel.damage > 0 {
+                            IndicativeEffectsDescriptionView(
+                                effectsDescription: effectsDescription,
+                                indicative: self.playerViewModel.getIndicativeDamage(itemViewModel: self.potionViewModel, opposition: foeViewModel),
+                                size: .buttonBodySubscript)
+                    } else if self.potionViewModel.healthRestoration > 0 {
+                        IndicativeEffectsDescriptionView(
+                            effectsDescription: effectsDescription,
+                            indicative: self.playerViewModel.getIndicativeHealthRestoration(of: self.potionViewModel),
+                            size: .buttonBodySubscript)
+                    } else if self.potionViewModel.armorPointsRestoration > 0 {
+                        IndicativeEffectsDescriptionView(
+                            effectsDescription: effectsDescription,
+                            indicative: self.playerViewModel.getIndicativeArmorPointsRestoration(of: self.potionViewModel),
+                            size: .buttonBodySubscript)
+                    } else {
                         YonderText(text: effectsDescription, size: .buttonBodySubscript)
                     }
-                    
-                    if let foeViewModel = GameManager.instance.playerLocationVM.locationViewModel.getFoeViewModel() {
-                        IndicativeNumeralView(
-                            original: self.potionViewModel.damage,
-                            indicative: self.playerViewModel.getIndicativeDamage(itemViewModel: self.potionViewModel, opposition: foeViewModel),
-                            size: .buttonBodySubscript)
-                    }
-                    
-                    IndicativeNumeralView(
-                        original: self.potionViewModel.healthRestoration,
-                        indicative: self.playerViewModel.getIndicativeHealthRestoration(of: self.potionViewModel),
-                        size: .buttonBodySubscript)
-                    
-                    IndicativeNumeralView(
-                        original: self.potionViewModel.armorPointsRestoration,
-                        indicative: self.playerViewModel.getIndicativeArmorPointsRestoration(of: self.potionViewModel),
-                        size: .buttonBodySubscript)
                 }
                 
                 YonderTextNumeralHStack {
