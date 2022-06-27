@@ -46,7 +46,7 @@ extension String {
         return nil
     }
     
-    /// Separates a string by an Int embedded in the string. The int must occur only once.
+    /// Separates a string by an integer embedded in the string. The integer must occur only once.
     /// Example:
     /// ``` "I am 20 years old.".separatedBy(20) -> ("I am ", " years old.")
     /// ```
@@ -59,7 +59,7 @@ extension String {
         return nil
     }
     
-    /// Separates a string by a Double embedded in the string.
+    /// Separates a string by a double embedded in the string. The double must occur only once.
     /// Example:
     /// ``` "a10.b20.0x".separatedBy(20.0) -> ("a10.b", "x")
     /// ```
