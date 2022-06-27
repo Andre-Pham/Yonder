@@ -13,10 +13,10 @@ struct IndicativeNumeralView: View {
     let size: YonderTextSize
     private var color: Color {
         if self.indicative > self.original {
-            return YonderColors.highlight
+            return YonderColors.higherIndicative
         }
         else if self.indicative < self.original {
-            return YonderColors.negativeRed
+            return YonderColors.lowerIndicative
         }
         return YonderColors.textMaxContrast
     }

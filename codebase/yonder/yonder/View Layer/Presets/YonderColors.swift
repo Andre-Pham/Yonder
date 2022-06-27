@@ -21,11 +21,15 @@ enum YonderColors {
     //static let textMidContrast = Color("Assets#BFC0C4")
     //static let textMinContrast = Color("Assets#93979C")
     
+    // MARK: - Indicative
+    
+    static let higherIndicative = Color.yellow
+    static let lowerIndicative = Color("Assets#FF4350")
+    
     // MARK: - Other
     
     static let highlight = Color.yellow
     static let border = Color("Assets#FFFFFF")
     static let outlineMinContrast = Color("Assets#1F1E20")
-    static let negativeRed = Color("Assets#FF4350")
     
 }

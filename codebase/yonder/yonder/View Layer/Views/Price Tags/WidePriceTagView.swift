@@ -19,9 +19,9 @@ struct WidePriceTagView: View {
             return YonderColors.textMaxContrast
         }
         if indicativePrice < self.price {
-            return YonderColors.negativeRed
+            return YonderColors.lowerIndicative
         } else if indicativePrice > self.price {
-            return YonderColors.highlight
+            return YonderColors.higherIndicative
         }
         return YonderColors.textMaxContrast
     }

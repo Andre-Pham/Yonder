@@ -14,7 +14,7 @@ struct IndicativeAdditionView: View {
     let padding: CGFloat
     @State var showing: Bool
     private var color: Color {
-        return self.indicativeBonus < 0 ? YonderColors.negativeRed : YonderColors.highlight
+        return self.indicativeBonus < 0 ? YonderColors.lowerIndicative : YonderColors.higherIndicative
     }
     private var indicativeBonus: Int {
         return self.indicative - self.original
