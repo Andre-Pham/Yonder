@@ -208,7 +208,7 @@ class ActorAbstract {
                 return
             }
         }
-        self.potions.append(potion)
+        self.potions.append(potion.clone())
     }
     
     func removePotion(_ potion: PotionAbstract) {

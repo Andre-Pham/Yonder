@@ -18,6 +18,10 @@ class MaxHealthRestorationPotion: PotionAbstract {
             basePurchasePrice: basePurchasePrice)
     }
     
+    required init(_ original: PotionAbstractPart) {
+        super.init(original)
+    }
+    
     func use(owner: ActorAbstract, opposition: ActorAbstract) {
         owner.restoreHealth(for: owner.maxHealth) // Max health - no buffs adjustment needed
         self.adjustRemainingUses(by: -1)

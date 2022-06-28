@@ -43,6 +43,10 @@ class DamagePotion: PotionAbstract {
             basePurchasePrice: basePurchasePrice)
     }
     
+    required init(_ original: PotionAbstractPart) {
+        super.init(original)
+    }
+    
     func use(owner: ActorAbstract, opposition: ActorAbstract) {
         opposition.damageAdjusted(sourceOwner: owner, using: self, for: self.damage)
         self.adjustRemainingUses(by: -1)

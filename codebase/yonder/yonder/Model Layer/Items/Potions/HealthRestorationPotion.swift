@@ -43,6 +43,10 @@ class HealthRestorationPotion: PotionAbstract {
             basePurchasePrice: basePurchasePrice)
     }
     
+    required init(_ original: PotionAbstractPart) {
+        super.init(original)
+    }
+    
     func use(owner: ActorAbstract, opposition: ActorAbstract) {
         owner.restoreHealthAdjusted(sourceOwner: owner, using: self, for: self.healthRestoration)
         self.adjustRemainingUses(by: -1)

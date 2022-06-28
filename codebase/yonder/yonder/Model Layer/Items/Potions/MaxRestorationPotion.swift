@@ -18,6 +18,10 @@ class MaxRestorationPotion: PotionAbstract {
             basePurchasePrice: basePurchasePrice)
     }
     
+    required init(_ original: PotionAbstractPart) {
+        super.init(original)
+    }
+    
     func use(owner: ActorAbstract, opposition: ActorAbstract) {
         owner.restore(for: owner.maxHealth + owner.getMaxArmorPoints()) // Max stats - no buffs adjustment needed
         self.adjustRemainingUses(by: -1)

@@ -42,6 +42,12 @@ class DamagePercentPotion: PotionAbstract {
             basePurchasePrice: basePurchasePrice)
     }
     
+    required init(_ original: PotionAbstractPart) {
+        let original = original as! Self
+        self.buff = original.buff.clone()
+        super.init(original)
+    }
+    
     func use(owner: ActorAbstract, opposition: ActorAbstract) {
         owner.addBuff(self.buff)
         self.adjustRemainingUses(by: -1)

@@ -9,7 +9,7 @@ import Foundation
 
 typealias PotionAbstract = PotionAbstractPart & Usable
 
-class PotionAbstractPart: ItemAbstract, Purchasable {
+class PotionAbstractPart: ItemAbstract, Purchasable, Clonable {
     
     public let basePurchasePrice: Int
     private let effectsDescription: String?
@@ -22,6 +22,13 @@ class PotionAbstractPart: ItemAbstract, Purchasable {
         self.effectsDescription = effectsDescription
         
         super.init(name: name, description: description, remainingUses: remainingUses, damage: damage, healthRestoration: healthRestoration, armorPointsRestoration: armorPointsRestoration)
+    }
+    
+    required init(_ original: PotionAbstractPart) {
+        self.basePurchasePrice = original.basePurchasePrice
+        self.effectsDescription = original.effectsDescription
+        
+        super.init(name: original.name, description: original.description, remainingUses: original.remainingUses, damage: original.damage, healthRestoration: original.healthRestoration, armorPointsRestoration: original.armorPointsRestoration, infiniteRemainingUses: original.infiniteRemainingUses)
     }
     
     func getEffectsDescription() -> String? {
