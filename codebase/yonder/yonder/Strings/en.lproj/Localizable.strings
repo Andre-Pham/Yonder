@@ -210,6 +210,12 @@
 // Burn Status Effect
 "weaponEffectPill.burnStatusEffect.description1Param" = "Inflicts a burn status effect, dealing %@ damage every turn.";
 
+// MARK: - Status Effects
+
+// Burn
+"statusEffect.burn.name" = "Burning";
+"statusEffect.burn.effectsDescription1Param" = "Inflicts %@ damage to its possessor every turn.";
+
 // MARK: - Potions
 
 // Tiers

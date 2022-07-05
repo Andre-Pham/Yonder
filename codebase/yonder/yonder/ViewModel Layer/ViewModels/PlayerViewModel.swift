@@ -54,6 +54,14 @@ class PlayerViewModel: ObservableObject {
             }
         }
     }
+    @Published private(set) var statusEffectViewModels: [StatusEffectViewModel] {
+        didSet {
+            // Changes to any StatusEffectViewModel will be published to the UI
+            for statusEffect in self.statusEffectViewModels {
+                statusEffect.objectWillChange.sink(receiveValue: { _ in self.objectWillChange.send() }).store(in: &self.subscriptions)
+            }
+        }
+    }
     @Published private(set) var headArmorViewModel: ArmorViewModel
     @Published private(set) var bodyArmorViewModel: ArmorViewModel
     @Published private(set) var legsArmorViewModel: ArmorViewModel
@@ -104,6 +112,7 @@ class PlayerViewModel: ObservableObject {
         self.applicableWeaponViewModels = self.player.getApplicableWeapons().map { WeaponViewModel($0) }
         self.potionViewModels = self.player.potions.map { PotionViewModel($0) }
         self.buffViewModels = self.player.buffs.map { BuffViewModel($0) }
+        self.statusEffectViewModels = self.player.statusEffects.map { StatusEffectViewModel($0) }
         self.headArmorViewModel = ArmorViewModel(self.player.headArmor)
         self.bodyArmorViewModel = ArmorViewModel(self.player.bodyArmor)
         self.legsArmorViewModel = ArmorViewModel(self.player.legsArmor)
@@ -168,6 +177,10 @@ class PlayerViewModel: ObservableObject {
         
         self.player.$buffs.sink(receiveValue: { newValue in
             self.buffViewModels = newValue.map { BuffViewModel($0) }
+        }).store(in: &self.subscriptions)
+        
+        self.player.$statusEffects.sink(receiveValue: { newValue in
+            self.statusEffectViewModels = newValue.map { StatusEffectViewModel($0) }
         }).store(in: &self.subscriptions)
     }
     

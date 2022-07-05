@@ -71,6 +71,14 @@ struct SettingsView: View {
             .background(Color.red)
             .foregroundColor(.white)
             .padding()
+            
+            Button("Status Effect") {
+                GameManager.instance.playerVM.player.addStatusEffect(BurnStatusEffect(damage: 15, duration: 2))
+            }
+            .padding()
+            .background(Color.red)
+            .foregroundColor(.white)
+            .padding()
         }
     }
 }

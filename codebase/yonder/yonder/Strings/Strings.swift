@@ -326,6 +326,17 @@ enum Strings: Localizable {
         }
     }
     
+    enum StatusEffect: Localizable {
+        static let parent: LocalizeParent = Strings.self
+        
+        enum Burn: Localizable {
+            static let parent: LocalizeParent = StatusEffect.self
+            
+            case Name
+            case EffectsDescription1Param
+        }
+    }
+    
     enum Potion: Localizable {
         static let parent: LocalizeParent = Strings.self
         

@@ -19,6 +19,8 @@ enum PreviewObjects {
         playerViewModel.player.equipArmor(
             ArmorAbstract(name: "Strong Armor", description: "So so strong.", type: .body, armorPoints: 200, basePurchasePrice: 200, armorBuffs: [DamagePercentBuff(sourceName: "Strong Armor", direction: .outgoing, duration: nil, damageFraction: 1.2)])
         )
+        playerViewModel.player.addStatusEffect(BurnStatusEffect(damage: 12, duration: 5))
+        playerViewModel.player.addStatusEffect(BurnStatusEffect(damage: 15, duration: 5))
         return playerViewModel
     }
     

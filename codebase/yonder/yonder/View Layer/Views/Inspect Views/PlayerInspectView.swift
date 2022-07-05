@@ -31,6 +31,8 @@ struct PlayerInspectView: View {
             InspectSectionSpacingView()
             
             YonderText(text: Strings.Inspect.Title.StatusEffects.local, size: .inspectSheetTitle)
+            
+            InspectStatusEffects(playerViewModel: self.playerViewModel)
         }
     }
 }

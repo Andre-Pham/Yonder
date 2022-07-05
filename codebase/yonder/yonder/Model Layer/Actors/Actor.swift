@@ -15,8 +15,8 @@ class ActorAbstract {
     public var isDead: Bool {
         return self.health <= 0
     }
-    private(set) var statusEffects = [StatusEffect]()
-    private(set) var timedEvents = [TimedEvent]()
+    @DidSetPublished private(set) var statusEffects = [StatusEffectAbstract]()
+    @DidSetPublished private(set) var timedEvents = [TimedEvent]()
     @DidSetPublished private(set) var weapons = [Weapon]()
     @DidSetPublished private(set) var buffs = [BuffAbstract]()
     @DidSetPublished private(set) var potions = [PotionAbstract]()
@@ -137,14 +137,16 @@ class ActorAbstract {
     
     // MARK: - Status Effects
     
-    func addStatusEffect(_ statusEffect: StatusEffect) {
-        self.statusEffects.append(statusEffect)
+    func addStatusEffect(_ statusEffect: StatusEffectAbstract) {
+        self.statusEffects.append(statusEffect.clone())
     }
     
     func triggerStatusEffects() {
         for statusEffect in self.statusEffects {
             statusEffect.applyEffect(actor: self)
+            statusEffect.decrementTimeRemaining()
         }
+        self.statusEffects.removeAll(where: { $0.timeRemaining <= 0 })
     }
     
     func clearStatusEffects() {
