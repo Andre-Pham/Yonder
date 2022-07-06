@@ -27,7 +27,7 @@ struct IndicativeAdditionView: View {
         if let leftPadding = leftPadding {
             self.padding = leftPadding
         } else {
-            self.padding = size.width/5
+            self.padding = size.width(of: " ")
         }
         self.showing = original != indicative
     }

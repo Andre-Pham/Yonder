@@ -52,12 +52,14 @@ enum YonderTextSize {
         }
     }
     
-    // Only confirmed to work with main font Mx437_DOS-V_TWN16 (AKA DOS/V TWN16)
-    var height: CGFloat {
-        return self.value
+    func height(of string: String) -> CGFloat {
+        let size: CGSize = string.size(withAttributes: [.font: UIFont(name: "Mx437_DOS-V_TWN16", size: self.value)!])
+        return size.height/2 // This font requires /2 for some reason
     }
-    var width: CGFloat {
-        return self.value*8/16 // 8:16 ratio
+    
+    func width(of string: String) -> CGFloat {
+        let size: CGSize = string.size(withAttributes: [.font: UIFont(name: "Mx437_DOS-V_TWN16", size: self.value)!])
+        return size.width/2 // This font requires /2 for some reason
     }
     
 }

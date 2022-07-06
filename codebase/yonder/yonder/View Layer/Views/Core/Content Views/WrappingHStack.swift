@@ -17,8 +17,9 @@ struct WrappingHStack<Content: View>: View {
     @State private var totalHeight = CGFloat.zero
     
     init(horizontalSpacing: CGFloat = 8, verticalSpacing: CGFloat = 8, @ViewBuilder content: @escaping () -> Content) {
-        self.horizontalSpacing = horizontalSpacing
-        self.verticalSpacing = verticalSpacing
+        // Divide by 2 because every view has left AND right padding
+        self.horizontalSpacing = horizontalSpacing/2
+        self.verticalSpacing = verticalSpacing/2
         self.content = content
     }
     
@@ -28,6 +29,8 @@ struct WrappingHStack<Content: View>: View {
                 self.generateContent(geometry: geo)
             }
             .frame(height: self.totalHeight)
+            .padding(.horizontal, -self.horizontalSpacing)
+            .padding(.vertical, -self.verticalSpacing)
         }
     }
     
@@ -92,22 +95,22 @@ struct WrappingHStack<Content: View>: View {
 
 struct WrappingHStack_Previews: PreviewProvider {
     static var previews: some View {
-        WrappingHStack() {
+        WrappingHStack(horizontalSpacing: 8) {
             Rectangle()
-                .fill()
+                .fill(.red)
                 .frame(width: 120, height: 100)
             
             Rectangle()
-                .fill()
+                .fill(.red)
                 .frame(width: 70, height: 100)
             
             Rectangle()
-                .fill()
+                .fill(.red)
                 .frame(width: 120, height: 100)
             
             Rectangle()
-                .fill()
-                .frame(width: 40, height: 100)
+                .fill(.red)
+                .frame(width: 60, height: 100)
             
             Text("Any view can go here!")
                 .frame(height: 100)
@@ -115,7 +118,7 @@ struct WrappingHStack_Previews: PreviewProvider {
             Image(systemName: "square.and.pencil")
             
             Rectangle()
-                .fill()
+                .fill(.red)
                 .frame(width: 20, height: 100)
         }
     }
