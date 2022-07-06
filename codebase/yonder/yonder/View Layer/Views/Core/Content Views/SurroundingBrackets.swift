@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+/// Adds symmetrical surrounding brackets around text.
+/// Created because opening and closing brackets in the used font have asymmetrical horizontal padding.
 struct SurroundingBrackets<Content: View>: View {
     let bracket: String
     let size: YonderTextSize

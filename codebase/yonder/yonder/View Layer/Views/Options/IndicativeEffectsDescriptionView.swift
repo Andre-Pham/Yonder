@@ -13,9 +13,14 @@ struct IndicativeEffectsDescriptionView: View {
     let size: YonderTextSize
     var color: Color = YonderColors.textMaxContrast
     
+    var horizontalSpacing: CGFloat {
+        return self.size.width(of: " ")
+    }
+    let verticalSpacing: CGFloat = 0
+    
     var body: some View {
         if let original = self.effectsDescription.parseFirstDouble(), let strings = self.effectsDescription.separatedBy(double: original) {
-            WrappingHStack(horizontalSpacing: self.size.width(of: " "), verticalSpacing: 0) {
+            WrappingHStack(horizontalSpacing: self.horizontalSpacing, verticalSpacing: self.verticalSpacing) {
                 ForEach(strings.0.components(separatedBy: " "), id: \.self) { word in
                     YonderText(text: word, size: self.size, color: self.color)
                 }
@@ -28,7 +33,7 @@ struct IndicativeEffectsDescriptionView: View {
             }
         } else if let original = self.effectsDescription.parseFirstInt(), let strings = self.effectsDescription.separatedBy(int: original) {
             // Int has to go second in an else statement, otherwise "20.0%" would register 20 as an Int
-            WrappingHStack(horizontalSpacing: self.size.width(of: " "), verticalSpacing: 0) {
+            WrappingHStack(horizontalSpacing: self.horizontalSpacing, verticalSpacing: self.verticalSpacing) {
                 ForEach(strings.0.components(separatedBy: " "), id: \.self) { word in
                     YonderText(text: word, size: self.size, color: self.color)
                 }
