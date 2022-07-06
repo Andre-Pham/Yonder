@@ -10,14 +10,13 @@ import SwiftUI
 /// This is for temporary testing... this breaks so many rules
 struct SettingsView: View {
     var body: some View {
-        VStack {
+        ScrollView {
             Button("Damage Player 100") {
                 GameManager.instance.playerVM.player.damage(for: 100)
             }
             .padding()
             .background(Color.red)
             .foregroundColor(.white)
-            .padding()
             
             Button("Travel") {
                 GameManager.instance.playerVM.player.travel(to: GameManager.instance.playerVM.player.location.nextLocations.first!)
@@ -25,7 +24,6 @@ struct SettingsView: View {
             .padding()
             .background(Color.red)
             .foregroundColor(.white)
-            .padding()
             
             Button("Weapon") {
                 GameManager.instance.playerVM.player.addWeapon(Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: DecrementDurabilityPill(durability: 5)))
@@ -34,7 +32,6 @@ struct SettingsView: View {
             .padding()
             .background(Color.red)
             .foregroundColor(.white)
-            .padding()
             
             Button("Potion") {
                 GameManager.instance.playerVM.player.addPotion(HealthRestorationPotion(tier: .II, potionCount: 5, basePurchasePrice: 100))
@@ -44,7 +41,6 @@ struct SettingsView: View {
             .padding()
             .background(Color.red)
             .foregroundColor(.white)
-            .padding()
             
             Button("Armor") {
                 GameManager.instance.playerVM.equipArmor(Armors.newTestBodyArmor())
@@ -52,7 +48,6 @@ struct SettingsView: View {
             .padding()
             .background(Color.red)
             .foregroundColor(.white)
-            .padding()
             
             Button("Gold") {
                 GameManager.instance.playerVM.player.modifyGold(by: 200)
@@ -60,7 +55,6 @@ struct SettingsView: View {
             .padding()
             .background(Color.red)
             .foregroundColor(.white)
-            .padding()
             
             Button("Buff") {
                 GameManager.instance.playerVM.player.addBuff(DamagePercentBuff(sourceName: "Magic", direction: .bidirectional, duration: 2, damageFraction: 1.5))
@@ -70,7 +64,6 @@ struct SettingsView: View {
             .padding()
             .background(Color.red)
             .foregroundColor(.white)
-            .padding()
             
             Button("Status Effect") {
                 GameManager.instance.playerVM.player.addStatusEffect(BurnStatusEffect(damage: 15, duration: 2))
@@ -78,7 +71,6 @@ struct SettingsView: View {
             .padding()
             .background(Color.red)
             .foregroundColor(.white)
-            .padding()
         }
     }
 }
