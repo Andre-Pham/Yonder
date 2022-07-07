@@ -71,6 +71,13 @@ struct SettingsView: View {
             .padding()
             .background(Color.red)
             .foregroundColor(.white)
+            
+            Button("Timed Event") {
+                GameManager.instance.playerVM.player.addTimedEvent(MaxHealthRestorationTimedEvent(timeToTrigger: 2))
+            }
+            .padding()
+            .background(Color.red)
+            .foregroundColor(.white)
         }
     }
 }

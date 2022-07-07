@@ -21,6 +21,7 @@ enum PreviewObjects {
         )
         playerViewModel.player.addStatusEffect(BurnStatusEffect(damage: 12, duration: 5))
         playerViewModel.player.addStatusEffect(BurnStatusEffect(damage: 15, duration: 5))
+        playerViewModel.player.addTimedEvent(MaxHealthRestorationTimedEvent(timeToTrigger: 5))
         return playerViewModel
     }
     

@@ -96,6 +96,7 @@ enum Strings: Localizable {
             case PlayerStats
             case Buffs
             case StatusEffects
+            case TimedEvents
             case Offers
             case RestoreOptions
             case Info
@@ -334,6 +335,17 @@ enum Strings: Localizable {
             
             case Name
             case EffectsDescription1Param
+        }
+    }
+    
+    enum TimedEvent: Localizable {
+        static let parent: LocalizeParent = Strings.self
+        
+        enum MaxHealthRestoration: Localizable {
+            static let parent: LocalizeParent = TimedEvent.self
+            
+            case Name
+            case EffectsDescription
         }
     }
     

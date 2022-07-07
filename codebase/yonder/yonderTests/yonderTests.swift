@@ -43,7 +43,7 @@ class yonderTests: XCTestCase {
     func testTimedEvents() throws {
         let player = Player(maxHealth: 200, location: NoLocation())
         player.damage(for: 150)
-        let timedEvent = FullHealTimedEvent(timeToTrigger: 2, target: player)
+        let timedEvent = MaxHealthRestorationTimedEvent(timeToTrigger: 2, target: player)
         player.addTimedEvent(timedEvent)
         player.decrementTimedEvents()
         XCTAssertTrue(player.health == 50)

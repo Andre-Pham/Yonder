@@ -16,7 +16,7 @@ class ActorAbstract {
         return self.health <= 0
     }
     @DidSetPublished private(set) var statusEffects = [StatusEffectAbstract]()
-    @DidSetPublished private(set) var timedEvents = [TimedEvent]()
+    @DidSetPublished private(set) var timedEvents = [TimedEventAbstract]()
     @DidSetPublished private(set) var weapons = [Weapon]()
     @DidSetPublished private(set) var buffs = [BuffAbstract]()
     @DidSetPublished private(set) var potions = [PotionAbstract]()
@@ -155,13 +155,13 @@ class ActorAbstract {
     
     // MARK: - Timed Events
     
-    func addTimedEvent(_ timedEvent: TimedEvent) {
-        self.timedEvents.append(timedEvent)
+    func addTimedEvent(_ timedEvent: TimedEventAbstract) {
+        self.timedEvents.append(timedEvent.clone())
     }
     
     func decrementTimedEvents() {
         for timedEvent in self.timedEvents {
-            timedEvent.decrementTimeRemaining()
+            timedEvent.decrementTimeRemaining(target: self)
         }
         self.timedEvents.removeAll(where: { $0.isFinished })
     }

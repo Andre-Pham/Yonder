@@ -72,6 +72,7 @@
 "inspect.title.playerStats" = "Your Stats";
 "inspect.title.buffs" = "Ongoing Effects";
 "inspect.title.statusEffects" = "Status Effects";
+"inspect.title.timedEvents" = "Timed Events";
 "inspect.title.offers" = "Offers";
 "inspect.title.restoreOptions" = "Mending Options";
 "inspect.title.info" = "Info";
@@ -215,6 +216,12 @@
 // Burn
 "statusEffect.burn.name" = "Burning";
 "statusEffect.burn.effectsDescription1Param" = "Inflicts %@ damage to its possessor every turn.";
+
+// MARK: - Timed Events
+
+// Full Heal
+"timedEvent.maxHealthRestoration.name" = "Full Heal";
+"timedEvent.maxHealthRestoration.effectsDescription" = "Restores its possessor to full health when triggered.";
 
 // MARK: - Potions
 

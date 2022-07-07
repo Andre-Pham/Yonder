@@ -7,24 +7,19 @@
 
 import Foundation
 
-protocol TimedEvent {
+typealias TimedEventAbstract = TimedEventPart & EffectsDescribed & TracksTimer & PossibleIndicativeValue
+
+class TimedEventPart: Named, Clonable {
     
-    var timer: Timer { get }
+    public let name: String
+    public let id = UUID()
     
-    func triggerEvent()
-    
-}
-extension TimedEvent {
-    
-    var isFinished: Bool {
-        return self.timer.isFinished
+    init(name: String) {
+        self.name = name
     }
     
-    func decrementTimeRemaining() {
-        self.timer.tickDown()
-        if self.timer.isFinished {
-            self.triggerEvent()
-        }
+    required init(_ original: TimedEventPart) {
+        self.name = original.name
     }
     
 }

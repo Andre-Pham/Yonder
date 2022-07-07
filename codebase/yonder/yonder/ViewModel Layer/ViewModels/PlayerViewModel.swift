@@ -62,6 +62,14 @@ class PlayerViewModel: ObservableObject {
             }
         }
     }
+    @Published private(set) var timedEventsViewModels: [TimedEventViewModel] {
+        didSet {
+            // Changes to any TimedEventViewModel will be published to the UI
+            for timedEvent in self.timedEventsViewModels {
+                timedEvent.objectWillChange.sink(receiveValue: { _ in self.objectWillChange.send() }).store(in: &self.subscriptions)
+            }
+        }
+    }
     @Published private(set) var headArmorViewModel: ArmorViewModel
     @Published private(set) var bodyArmorViewModel: ArmorViewModel
     @Published private(set) var legsArmorViewModel: ArmorViewModel
@@ -113,6 +121,7 @@ class PlayerViewModel: ObservableObject {
         self.potionViewModels = self.player.potions.map { PotionViewModel($0) }
         self.buffViewModels = self.player.buffs.map { BuffViewModel($0) }
         self.statusEffectViewModels = self.player.statusEffects.map { StatusEffectViewModel($0) }
+        self.timedEventsViewModels = self.player.timedEvents.map { TimedEventViewModel($0) }
         self.headArmorViewModel = ArmorViewModel(self.player.headArmor)
         self.bodyArmorViewModel = ArmorViewModel(self.player.bodyArmor)
         self.legsArmorViewModel = ArmorViewModel(self.player.legsArmor)
@@ -181,6 +190,10 @@ class PlayerViewModel: ObservableObject {
         
         self.player.$statusEffects.sink(receiveValue: { newValue in
             self.statusEffectViewModels = newValue.map { StatusEffectViewModel($0) }
+        }).store(in: &self.subscriptions)
+        
+        self.player.$timedEvents.sink(receiveValue: { newValue in
+            self.timedEventsViewModels = newValue.map { TimedEventViewModel($0) }
         }).store(in: &self.subscriptions)
     }
     

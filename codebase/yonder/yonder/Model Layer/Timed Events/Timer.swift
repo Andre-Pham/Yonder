@@ -7,15 +7,22 @@
 
 import Foundation
 
-class Timer {
+class Timer: Clonable {
     
-    private(set) var timeLeft: Int
+    @DidSetPublished private(set) var timeLeft: Int
+    public let initialTime: Int
     var isFinished: Bool {
         return self.timeLeft <= 0
     }
     
     init(startTime: Int) {
         self.timeLeft = startTime
+        self.initialTime = startTime
+    }
+    
+    required init(_ original: Timer) {
+        self.timeLeft = original.timeLeft
+        self.initialTime = original.initialTime
     }
     
     func tickDown() {
