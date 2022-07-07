@@ -9,9 +9,22 @@ import Foundation
 
 protocol TimedEvent {
     
-    var timeRemaining: Int { get set }
+    var timer: Timer { get }
     
-    func decrementTimeRemaining()
     func triggerEvent()
+    
+}
+extension TimedEvent {
+    
+    var isFinished: Bool {
+        return self.timer.isFinished
+    }
+    
+    func decrementTimeRemaining() {
+        self.timer.tickDown()
+        if self.timer.isFinished {
+            self.triggerEvent()
+        }
+    }
     
 }

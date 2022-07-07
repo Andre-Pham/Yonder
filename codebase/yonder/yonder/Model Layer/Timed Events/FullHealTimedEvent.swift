@@ -9,26 +9,16 @@ import Foundation
 
 class FullHealTimedEvent: TimedEvent {
     
-    var timeRemaining: Int {
-        didSet {
-            if timeRemaining == 0 {
-                self.triggerEvent()
-            }
-        }
-    }
+    public let timer: Timer
     private let target: ActorAbstract
     
     init(timeToTrigger: Int, target: ActorAbstract) {
-        self.timeRemaining = timeToTrigger
+        self.timer = Timer(startTime: timeToTrigger)
         self.target = target
     }
     
-    func decrementTimeRemaining() {
-        self.timeRemaining -= 1
-    }
-    
     func triggerEvent() {
-        self.target.restoreHealth(for: target.maxHealth)
+        self.target.restoreHealth(for: self.target.maxHealth)
     }
     
 }

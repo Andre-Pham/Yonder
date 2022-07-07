@@ -160,14 +160,10 @@ class ActorAbstract {
     }
     
     func decrementTimedEvents() {
-        var remainingTimedEvents = [TimedEvent]()
         for timedEvent in self.timedEvents {
             timedEvent.decrementTimeRemaining()
-            if timedEvent.timeRemaining > 0 {
-                remainingTimedEvents.append(timedEvent)
-            }
         }
-        self.timedEvents = remainingTimedEvents
+        self.timedEvents.removeAll(where: { $0.isFinished })
     }
     
     func clearTimedEvents() {
