@@ -15,7 +15,7 @@ struct YonderOptionsGrid<Content: View>: View {
     }
     
     var optionColumns: [GridItem] {
-        Array(repeating: .init(.flexible()), count: LayoutConstants.optionsGridColumnCount)
+        Array(repeating: .init(.flexible()), count: YonderGridConstants.optionsGridColumnCount)
     }
     
     var body: some View {

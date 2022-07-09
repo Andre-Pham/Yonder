@@ -81,7 +81,7 @@ class RestoreOptionViewModel: ObservableObject {
         case .health:
             return playerViewModel.player.health >= playerViewModel.player.maxHealth
         case .armorPoints:
-            return playerViewModel.player.armorPoints >= playerViewModel.player.getMaxArmorPoints()
+            return playerViewModel.player.armorPoints >= playerViewModel.player.maxArmorPoints
         }
     }
     

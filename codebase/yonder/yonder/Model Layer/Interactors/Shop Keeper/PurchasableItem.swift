@@ -13,6 +13,7 @@ class PurchasableItem {
         case weapon
         case potion
         case armor
+        case accessory
         
         var categoryDescription: String {
             switch self {
@@ -22,6 +23,8 @@ class PurchasableItem {
                 return Strings.PurchasableItem.Category.Potions.local
             case .armor:
                 return Strings.PurchasableItem.Category.Armor.local
+            case .accessory:
+                return Strings.PurchasableItem.Category.Accessories.local
             }
         }
     }

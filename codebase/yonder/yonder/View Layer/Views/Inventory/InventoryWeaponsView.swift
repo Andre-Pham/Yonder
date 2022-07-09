@@ -30,7 +30,14 @@ struct InventoryWeaponsView: View {
 struct InventoryWeaponsView_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader { geo in
-            InventoryWeaponsView(sheetsStateManager: InventorySheetsStateManager(playerViewModel: PreviewObjects.playerViewModel()), playerViewModel: PreviewObjects.playerViewModel(), pageGeometry: geo)
+            ZStack {
+                YonderColors.backgroundMaxDepth
+                    .ignoresSafeArea()
+                
+                VStack(alignment: .leading) {
+                    InventoryWeaponsView(sheetsStateManager: InventorySheetsStateManager(playerViewModel: PreviewObjects.playerViewModel()), playerViewModel: PreviewObjects.playerViewModel(), pageGeometry: geo)
+                }
+            }
         }
     }
 }

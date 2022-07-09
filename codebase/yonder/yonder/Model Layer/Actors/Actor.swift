@@ -12,6 +12,11 @@ class ActorAbstract {
     @DidSetPublished private(set) var maxHealth: Int
     @DidSetPublished private(set) var health: Int
     @DidSetPublished private(set) var armorPoints: Int = 0
+    public var maxArmorPoints: Int {
+        let fromArmorPieces = self.allArmorPieces.reduce(0) { $0 + $1.armorPoints }
+        let fromAccessories = self.accessorySlots.allAccessories.reduce(0) { $0 + $1.armorPointsBonus }
+        return fromArmorPieces + fromAccessories
+    }
     public var isDead: Bool {
         return self.health <= 0
     }
@@ -23,6 +28,7 @@ class ActorAbstract {
     @DidSetPublished private(set) var headArmor: ArmorAbstract = NoArmor(type: .head)
     @DidSetPublished private(set) var bodyArmor: ArmorAbstract = NoArmor(type: .body)
     @DidSetPublished private(set) var legsArmor: ArmorAbstract = NoArmor(type: .legs)
+    public let accessorySlots = AccessorySlots()
     public var allArmorPieces: [ArmorAbstract] {
         return [self.headArmor, self.bodyArmor, self.legsArmor]
     }
@@ -34,7 +40,7 @@ class ActorAbstract {
         return !(self.health < self.maxHealth)
     }
     public var isFullArmorPoints: Bool {
-        return !(self.armorPoints < self.getMaxArmorPoints())
+        return !(self.armorPoints < self.maxArmorPoints)
     }
     
     init(maxHealth: Int) {
@@ -46,6 +52,24 @@ class ActorAbstract {
         self.triggerStatusEffects()
         self.decrementTimedEvents()
         self.decrementBuffs()
+    }
+    
+    // MARK: - Max Health Related
+    
+    func adjustMaxHealth(by amount: Int) {
+        self.maxHealth += amount
+        if self.health > self.maxHealth {
+            self.health = self.maxHealth
+        }
+    }
+    
+    func adjustBonusHealth(by amount: Int) {
+        if amount > 0 {
+            self.health += amount
+        } else {
+            self.health = min(self.health, self.maxHealth + amount)
+        }
+        self.maxHealth += amount
     }
     
     // MARK: - Health Related
@@ -65,8 +89,8 @@ class ActorAbstract {
     }
     
     func restoreArmorPoints(for amount: Int) {
-        if self.armorPoints + amount > self.getMaxArmorPoints() {
-            self.armorPoints = self.getMaxArmorPoints()
+        if self.armorPoints + amount > self.maxArmorPoints {
+            self.armorPoints = self.maxArmorPoints
         }
         else {
             self.armorPoints += amount
@@ -227,6 +251,9 @@ class ActorAbstract {
         for armorPiece in self.allArmorPieces {
             allBuffs.append(contentsOf: armorPiece.armorBuffs)
         }
+        for accessory in self.accessorySlots.allAccessories {
+            allBuffs.append(contentsOf: accessory.buffs)
+        }
         // Ascending order
         return allBuffs.sorted(by: { $0.priority.rawValue < $1.priority.rawValue })
     }
@@ -248,24 +275,21 @@ class ActorAbstract {
     
     // MARK: - Armor
     
-    func getMaxArmorPoints() -> Int {
-        return self.allArmorPieces.reduce(0) { $0 + $1.armorPoints }
-    }
-    
     func equipArmor(_ armor: ArmorAbstract) {
+        let armor = armor.clone()
         switch armor.type {
         case .head:
-            self.armorPoints = min(self.armorPoints, self.getMaxArmorPoints() - self.headArmor.armorPoints)
+            self.armorPoints = min(self.armorPoints, self.maxArmorPoints - self.headArmor.armorPoints)
             self.headArmor = armor
             self.armorPoints += armor.armorPoints
             return
         case .body:
-            self.armorPoints = min(self.armorPoints, self.getMaxArmorPoints() - self.bodyArmor.armorPoints)
+            self.armorPoints = min(self.armorPoints, self.maxArmorPoints - self.bodyArmor.armorPoints)
             self.bodyArmor = armor
             self.armorPoints += armor.armorPoints
             return
         case .legs:
-            self.armorPoints = min(self.armorPoints, self.getMaxArmorPoints() - self.legsArmor.armorPoints)
+            self.armorPoints = min(self.armorPoints, self.maxArmorPoints - self.legsArmor.armorPoints)
             self.bodyArmor = armor
             self.armorPoints += armor.armorPoints
             return
@@ -283,6 +307,37 @@ class ActorAbstract {
         }
         armor.adjustArmorPoints(by: armorPoints)
         self.restoreArmorPoints(for: armorPoints)
+    }
+    
+    // MARK: - Accessories
+    
+    func equipAccessory(_ accessory: Accessory, replacing: UUID?) {
+        let accessory = accessory.clone()
+        let previousMaxArmorPoints = self.maxArmorPoints
+        if let replaced = self.accessorySlots.insert(accessory, replacing: replacing) {
+            self.adjustBonusHealth(by: -replaced.healthBonus)
+            self.armorPoints = min(self.armorPoints, previousMaxArmorPoints - replaced.armorPointsBonus)
+        }
+        if self.accessorySlots.hasEquipped(accessory) {
+            self.adjustBonusHealth(by: accessory.healthBonus)
+            self.armorPoints += accessory.armorPointsBonus
+        }
+    }
+    
+    func unequipAccessory(id: UUID) {
+        if let accessory = self.accessorySlots.accessories.first(where: { $0.id == id }) {
+            self.unequipAccessory(accessory)
+        }
+    }
+    
+    func unequipAccessory(_ accessory: Accessory) {
+        guard self.accessorySlots.hasEquipped(accessory) else {
+            return
+        }
+        let previousMaxArmorPoints = self.maxArmorPoints
+        self.accessorySlots.remove(accessory)
+        self.adjustBonusHealth(by: -accessory.healthBonus)
+        self.armorPoints = min(self.armorPoints, previousMaxArmorPoints - accessory.armorPointsBonus)
     }
     
     // MARK: - Actor Interactions

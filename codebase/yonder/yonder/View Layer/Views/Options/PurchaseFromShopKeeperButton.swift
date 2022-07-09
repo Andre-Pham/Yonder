@@ -13,6 +13,7 @@ struct PurchaseFromShopKeeperButton: View {
     var pageGeometry: GeometryProxy
     @State private var useButtonActive = false
     @State private var infoSheetActive = false
+    @State private var accessorySelectionSheetActive = false
     private let amount = 1
     
     // TODO: - This entire button really needs a rework, but i'm not really sure how to implement layered buttons without using this approach
@@ -79,11 +80,30 @@ struct PurchaseFromShopKeeperButton: View {
             
             if self.useButtonActive {
                 YonderWideButton(text: Strings.Button.Purchase.local) {
-                    self.purchasableViewModel.purchase(by: self.playerViewModel, amount: self.amount)
+                    if let _ = self.purchasableViewModel.getAccessoryViewModel() {
+                        self.accessorySelectionSheetActive = true
+                    } else {
+                        self.purchasableViewModel.purchase(by: self.playerViewModel, amount: self.amount)
+                    }
                 }
                 .padding(.horizontal, YonderCoreGraphics.padding)
                 .padding(.bottom, YonderCoreGraphics.padding)
                 .disabledWhen(self.purchasableViewModel.purchaseIsDisabled(for: self.playerViewModel, amount: self.amount))
+                .withInspectSheet(
+                    isPresented: self.$accessorySelectionSheetActive,
+                    pageGeometry: self.pageGeometry,
+                    content: AnyView(
+                        AccessorySlotSelectionInspectView(playerViewModel: self.playerViewModel) { selection in
+                            guard let _ = self.purchasableViewModel.getAccessoryViewModel() else {
+                                return
+                            }
+                            if let id = selection {
+                                // If nil, we're inserting to an empty accessory slot
+                                self.playerViewModel.unequipAccessory(id: id)
+                            }
+                            self.purchasableViewModel.purchase(by: self.playerViewModel, amount: self.amount)
+                        }
+                ))
             }
         }
     }

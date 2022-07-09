@@ -16,59 +16,66 @@ struct InventoryView: View {
         GeometryReader { geo in
             ScrollView {
                 VStack(alignment: .leading, spacing: YonderCoreGraphics.padding) {
-                    YonderText(text: Strings.Inventory.Title.Armor.local, size: .title2)
+                    // Armor
+                    Group {
+                        YonderText(text: Strings.Inventory.Title.Armor.local, size: .title2)
+                        
+                        InventoryArmorView(sheetsStateManager: self.sheetsStateManager, playerViewModel: self.playerViewModel, pageGeometry: geo)
+                    }
                     
-                    ForEach(Array(zip(0..<self.playerViewModel.allArmorViewModels.count, self.playerViewModel.allArmorViewModels)), id: \.1.id) { index, armorViewModel in
-                        YonderWideButtonBody {
-                            self.sheetsStateManager.presentArmorSheet(at: index)
-                        } label: {
-                            HStack(alignment: .lastTextBaseline, spacing: 0) {
-                                YonderText(text: "\(armorViewModel.type.name): ", size: .buttonBodySubscript)
-                                    .padding(.leading)
-                                
-                                YonderText(text: armorViewModel.name, size: .buttonBody)
-                                
-                                Spacer()
-                            }
+                    // Accessories
+                    Group {
+                        YonderText(text: Strings.Inventory.Title.Accessories.local, size: .title2)
+                        
+                        InventoryAccessoriesView(sheetsStateManager: self.sheetsStateManager, playerViewModel: self.playerViewModel, pageGeometry: geo)
+                    }
+                    
+                    // Peripheral Accessory
+                    Group {
+                        YonderText(text: Strings.Inventory.Title.PeripheralAccessory.local, size: .title2)
+                        
+                        YonderWideButton(text: self.playerViewModel.peripheralAccessoryViewModel.name) {
+                            self.sheetsStateManager.peripheralAccessorySheetBinding = true
                         }
                         .withInspectSheet(
-                            isPresented: self.$sheetsStateManager.armorSheetBindings[index],
+                            isPresented: self.$sheetsStateManager.peripheralAccessorySheetBinding,
                             pageGeometry: geo,
                             content: AnyView(
-                                ArmorInspectView(armorViewModel: armorViewModel)
+                                AccessoryInspectView(accessoryViewModel: self.playerViewModel.peripheralAccessoryViewModel)
                             ))
                     }
                     
-                    YonderText(text: Strings.Inventory.Title.Accessories.local, size: .title2)
-                    
-                    // TODO: Implement after accessories are added
-                    
-                    YonderText(text: Strings.Inventory.Title.Items.local, size: .title2)
-                    
-                    YonderOptionsGrid {
-                        YonderGridOption(title: Strings.Inventory.Weapons.Option.local, geometry: geo, image: YonderImages.weaponOptionIcon) {
-                            self.inventoryStateManager.weaponOptionSelected(weaponCount: self.playerViewModel.weaponViewModels.count)
+                    // Items
+                    Group {
+                        YonderText(text: Strings.Inventory.Title.Items.local, size: .title2)
+                        
+                        YonderOptionsGrid {
+                            YonderGridOption(title: Strings.Inventory.Weapons.Option.local, geometry: geo, image: YonderImages.weaponOptionIcon) {
+                                self.inventoryStateManager.weaponOptionSelected(weaponCount: self.playerViewModel.weaponViewModels.count)
+                            }
+                            
+                            YonderGridOption(title: Strings.Inventory.Potions.Option.local, geometry: geo, image: YonderImages.potionOptionIcon) {
+                                self.inventoryStateManager.potionOptionSelected(potionCount: self.playerViewModel.potionViewModels.count)
+                            }
                         }
                         
-                        YonderGridOption(title: Strings.Inventory.Potions.Option.local, geometry: geo, image: YonderImages.potionOptionIcon) {
-                            self.inventoryStateManager.potionOptionSelected(potionCount: self.playerViewModel.potionViewModels.count)
+                        if let header = self.inventoryStateManager.optionHeader {
+                            YonderText(text: header, size: .title4)
+                                .frame(maxWidth: .infinity)
                         }
-                    }
-                    
-                    if let header = self.inventoryStateManager.optionHeader {
-                        YonderText(text: header, size: .title4)
-                            .frame(maxWidth: .infinity)
-                    }
-                    
-                    if self.inventoryStateManager.weaponsActive {
-                        InventoryWeaponsView(sheetsStateManager: self.sheetsStateManager, playerViewModel: self.playerViewModel, pageGeometry: geo)
-                    }
-                    
-                    if self.inventoryStateManager.potionsActive {
-                        InventoryPotionsView(sheetsStateManager: self.sheetsStateManager, playerViewModel: self.playerViewModel, pageGeometry: geo)
+                        
+                        if self.inventoryStateManager.weaponsActive {
+                            InventoryWeaponsView(sheetsStateManager: self.sheetsStateManager, playerViewModel: self.playerViewModel, pageGeometry: geo)
+                        }
+                        
+                        if self.inventoryStateManager.potionsActive {
+                            InventoryPotionsView(sheetsStateManager: self.sheetsStateManager, playerViewModel: self.playerViewModel, pageGeometry: geo)
+                        }
                     }
                 }
                 .padding(.horizontal)
+                // Extended scrolling without needing content to scroll to
+                .padding(.bottom, geo.size.height/2)
             }
         }
     }

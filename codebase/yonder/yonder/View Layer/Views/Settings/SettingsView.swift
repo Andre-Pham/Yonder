@@ -11,73 +11,91 @@ import SwiftUI
 struct SettingsView: View {
     var body: some View {
         ScrollView {
-            Button("Damage Player 100") {
-                GameManager.instance.playerVM.player.damage(for: 100)
+            Group {
+                Button("Damage Player 100") {
+                    GameManager.instance.playerVM.player.damage(for: 100)
+                }
+                .padding()
+                .background(Color.red)
+                .foregroundColor(.white)
+                
+                Button("Travel") {
+                    GameManager.instance.playerVM.player.travel(to: GameManager.instance.playerVM.player.location.nextLocations.first!)
+                }
+                .padding()
+                .background(Color.red)
+                .foregroundColor(.white)
+                
+                Button("Weapon") {
+                    GameManager.instance.playerVM.player.addWeapon(Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: DecrementDurabilityPill(durability: 5)))
+                    GameManager.instance.playerVM.player.addWeapon(Weapon(basePill: ArmorPointsRestorationBasePill(armorPointsRestoration: 50), durabilityPill: DecrementDurabilityPill(durability: 3)))
+                }
+                .padding()
+                .background(Color.red)
+                .foregroundColor(.white)
+                
+                Button("Potion") {
+                    GameManager.instance.playerVM.player.addPotion(HealthRestorationPotion(tier: .II, potionCount: 5, basePurchasePrice: 100))
+                    GameManager.instance.playerVM.player.addPotion(DamagePotion(tier: .II, potionCount: 1, basePurchasePrice: 10))
+                    GameManager.instance.playerVM.player.addPotion(DamagePercentPotion(tier: .II, duration: 2, potionCount: 2, basePurchasePrice: 100))
+                }
+                .padding()
+                .background(Color.red)
+                .foregroundColor(.white)
+                
+                Button("Armor") {
+                    GameManager.instance.playerVM.player.equipArmor(Armors.newTestBodyArmor())
+                }
+                .padding()
+                .background(Color.red)
+                .foregroundColor(.white)
+                
+                Button("Gold") {
+                    GameManager.instance.playerVM.player.modifyGold(by: 200)
+                }
+                .padding()
+                .background(Color.red)
+                .foregroundColor(.white)
+                
+                Button("Buff") {
+                    GameManager.instance.playerVM.player.addBuff(DamagePercentBuff(sourceName: "Magic", direction: .bidirectional, duration: 2, damageFraction: 1.5))
+                    GameManager.instance.playerVM.player.addBuff(HealthRestorationPercentBuff(sourceName: "Magic Healing", direction: .incoming, duration: 2, healthFraction: 2.0))
+                    GameManager.instance.playerVM.player.addBuff(PricePercentBuff(sourceName: "Fairy", direction: .outgoing, duration: 1, priceFraction: 2.0))
+                }
+                .padding()
+                .background(Color.red)
+                .foregroundColor(.white)
+                
+                Button("Status Effect") {
+                    GameManager.instance.playerVM.player.addStatusEffect(BurnStatusEffect(damage: 15, duration: 2))
+                }
+                .padding()
+                .background(Color.red)
+                .foregroundColor(.white)
+                
+                Button("Timed Event") {
+                    GameManager.instance.playerVM.player.addTimedEvent(MaxHealthRestorationTimedEvent(timeToTrigger: 2))
+                }
+                .padding()
+                .background(Color.red)
+                .foregroundColor(.white)
+                
+                Button("Accessory") {
+                    GameManager.instance.playerVM.player.equipAccessory(Accessory(name: "Glasses", description: "Lets you see better.", type: .regular, healthBonus: 0, armorPointsBonus: 10, basePurchasePrice: 5, buffs: [PricePercentBuff(sourceName: "Glasses", direction: .outgoing, duration: nil, priceFraction: 0.5)]), replacing: nil)
+                }
+                .padding()
+                .background(Color.red)
+                .foregroundColor(.white)
             }
-            .padding()
-            .background(Color.red)
-            .foregroundColor(.white)
             
-            Button("Travel") {
-                GameManager.instance.playerVM.player.travel(to: GameManager.instance.playerVM.player.location.nextLocations.first!)
+            Group {
+                Button("Peripheral Accessory") {
+                    GameManager.instance.playerVM.player.equipAccessory(Accessory(name: "Shield", description: "An iron sheild.", type: .peripheral, healthBonus: 0, armorPointsBonus: 100, basePurchasePrice: 200, buffs: [DamagePercentBuff(sourceName: "Shield", direction: .incoming, duration: nil, damageFraction: 0.5)]), replacing: nil)
+                }
+                .padding()
+                .background(Color.red)
+                .foregroundColor(.white)
             }
-            .padding()
-            .background(Color.red)
-            .foregroundColor(.white)
-            
-            Button("Weapon") {
-                GameManager.instance.playerVM.player.addWeapon(Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: DecrementDurabilityPill(durability: 5)))
-                GameManager.instance.playerVM.player.addWeapon(Weapon(basePill: ArmorPointsRestorationBasePill(armorPointsRestoration: 50), durabilityPill: DecrementDurabilityPill(durability: 3)))
-            }
-            .padding()
-            .background(Color.red)
-            .foregroundColor(.white)
-            
-            Button("Potion") {
-                GameManager.instance.playerVM.player.addPotion(HealthRestorationPotion(tier: .II, potionCount: 5, basePurchasePrice: 100))
-                GameManager.instance.playerVM.player.addPotion(DamagePotion(tier: .II, potionCount: 1, basePurchasePrice: 10))
-                GameManager.instance.playerVM.player.addPotion(DamagePercentPotion(tier: .II, duration: 2, potionCount: 2, basePurchasePrice: 100))
-            }
-            .padding()
-            .background(Color.red)
-            .foregroundColor(.white)
-            
-            Button("Armor") {
-                GameManager.instance.playerVM.equipArmor(Armors.newTestBodyArmor())
-            }
-            .padding()
-            .background(Color.red)
-            .foregroundColor(.white)
-            
-            Button("Gold") {
-                GameManager.instance.playerVM.player.modifyGold(by: 200)
-            }
-            .padding()
-            .background(Color.red)
-            .foregroundColor(.white)
-            
-            Button("Buff") {
-                GameManager.instance.playerVM.player.addBuff(DamagePercentBuff(sourceName: "Magic", direction: .bidirectional, duration: 2, damageFraction: 1.5))
-                GameManager.instance.playerVM.player.addBuff(HealthRestorationPercentBuff(sourceName: "Magic Healing", direction: .incoming, duration: 2, healthFraction: 2.0))
-                GameManager.instance.playerVM.player.addBuff(PricePercentBuff(sourceName: "Fairy", direction: .outgoing, duration: 1, priceFraction: 2.0))
-            }
-            .padding()
-            .background(Color.red)
-            .foregroundColor(.white)
-            
-            Button("Status Effect") {
-                GameManager.instance.playerVM.player.addStatusEffect(BurnStatusEffect(damage: 15, duration: 2))
-            }
-            .padding()
-            .background(Color.red)
-            .foregroundColor(.white)
-            
-            Button("Timed Event") {
-                GameManager.instance.playerVM.player.addTimedEvent(MaxHealthRestorationTimedEvent(timeToTrigger: 2))
-            }
-            .padding()
-            .background(Color.red)
-            .foregroundColor(.white)
         }
     }
 }

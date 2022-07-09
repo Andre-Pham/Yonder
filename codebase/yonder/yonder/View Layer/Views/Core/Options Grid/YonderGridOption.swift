@@ -13,7 +13,7 @@ struct YonderGridOption: View {
     let title: String
     let geometry: GeometryProxy
     let image: Image
-    let columnCount = CGFloat(LayoutConstants.optionsGridColumnCount)
+    let columnCount = CGFloat(YonderGridConstants.optionsGridColumnCount)
     var width: CGFloat {
         geometry.size.width/columnCount - YonderCoreGraphics.padding*(columnCount+1)/columnCount
     }

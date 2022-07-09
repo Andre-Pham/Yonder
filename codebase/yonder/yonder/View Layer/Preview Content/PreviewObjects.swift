@@ -22,6 +22,7 @@ enum PreviewObjects {
         playerViewModel.player.addStatusEffect(BurnStatusEffect(damage: 12, duration: 5))
         playerViewModel.player.addStatusEffect(BurnStatusEffect(damage: 15, duration: 5))
         playerViewModel.player.addTimedEvent(MaxHealthRestorationTimedEvent(timeToTrigger: 5))
+        playerViewModel.player.equipAccessory(Accessory(name: "Scarf", description: "A warm wooly scarf to keep you warm.", type: .regular, healthBonus: 100, armorPointsBonus: 0, basePurchasePrice: 25, buffs: []), replacing: nil)
         return playerViewModel
     }
     
@@ -32,6 +33,26 @@ enum PreviewObjects {
         armorPoints: 500,
         damageFraction: 0.8,
         basePurchasePrice: 200
+    ))
+    
+    static let accessoryViewModel = AccessoryViewModel(Accessory(
+        name: "Cool Accessory",
+        description: "An accessory that's so very cool.",
+        type: .regular,
+        healthBonus: 0,
+        armorPointsBonus: 0,
+        basePurchasePrice: 0,
+        buffs: [DamagePercentBuff(sourceName: "Cool Accessory", direction: .outgoing, duration: nil, damageFraction: 1.5)]
+    ))
+    
+    static let peripheralAccessoryViewModel = AccessoryViewModel(Accessory(
+        name: "Cooler Accessory",
+        description: "An accessory that's even more cool.",
+        type: .peripheral,
+        healthBonus: 10,
+        armorPointsBonus: 20,
+        basePurchasePrice: 100,
+        buffs: [DamagePercentBuff(sourceName: "Cool Accessory", direction: .outgoing, duration: nil, damageFraction: 1.5)]
     ))
     
     // MARK: - NPCs

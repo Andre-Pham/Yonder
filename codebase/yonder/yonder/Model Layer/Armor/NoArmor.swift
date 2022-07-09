@@ -30,4 +30,8 @@ class NoArmor: ArmorAbstract {
             armorAttributes: [.upgradesDisallowed])
     }
     
+    required init(_ original: ArmorAbstract) {
+        super.init(original)
+    }
+    
 }

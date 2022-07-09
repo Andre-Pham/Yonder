@@ -66,6 +66,7 @@ enum Strings: Localizable {
             
             case Armor
             case Accessories
+            case PeripheralAccessory
             case Items
         }
         
@@ -83,6 +84,14 @@ enum Strings: Localizable {
             case Header
             case HeaderZeroPotions
             case Option
+        }
+        
+        enum Accessories: Localizable {
+            static let parent: LocalizeParent = Inventory.self
+            
+            case HeaderZeroAccessories
+            case Slot
+            case EmptySlots
         }
     }
     
@@ -105,8 +114,16 @@ enum Strings: Localizable {
         enum EnhanceOffers: Localizable {
             static let parent: LocalizeParent = Inspect.self
             
-            case priceTagSuffix
-            case header
+            case PriceTagSuffix
+            case Header
+        }
+        
+        enum AccessorySlotSelection: Localizable {
+            static let parent: LocalizeParent = Inspect.self
+            
+            case Title
+            case Description
+            case Header
         }
         
         enum Restorer: Localizable {
@@ -135,6 +152,8 @@ enum Strings: Localizable {
         case OffersSingular
         case RemainingStock
         case ArmorPointsRestoration
+        case HealthBonus
+        case ArmorPointsBonus
         
         enum Weapon: Localizable {
             static let parent: LocalizeParent = Stat.self
@@ -183,6 +202,7 @@ enum Strings: Localizable {
         case ViewOptions
         case Warp
         case Back
+        case InsertToEmptySlot
     }
     
     enum EnhanceOffer: Localizable {
@@ -314,6 +334,7 @@ enum Strings: Localizable {
             case Weapons
             case Potions
             case Armor
+            case Accessories
         }
     }
     
@@ -616,4 +637,34 @@ enum Strings: Localizable {
             case LegsDescription
         }
     }
+    
+    enum Accessory: Localizable {
+        static let parent: LocalizeParent = Strings.self
+        
+        enum AccessoryType: Localizable {
+            static let parent: LocalizeParent = Accessory.self
+            
+            enum Regular: Localizable {
+                static let parent: LocalizeParent = AccessoryType.self
+                
+                case Name
+                case NamePlural
+            }
+            
+            enum Peripheral: Localizable {
+                static let parent: LocalizeParent = AccessoryType.self
+                
+                case Name
+            }
+        }
+        
+        enum NoAccessory: Localizable {
+            static let parent: LocalizeParent = Accessory.self
+            
+            case Name
+            case RegularDescription
+            case PeripheralDescription
+        }
+    }
+    
 }

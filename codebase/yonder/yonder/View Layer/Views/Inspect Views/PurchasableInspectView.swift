@@ -16,7 +16,9 @@ struct PurchasableInspectView: View {
             ItemInspectView(itemViewModel: itemViewModel, playerViewModel: self.playerViewModel)
         } else if let armorViewModel = self.purchasableViewModel.getArmorViewModel() {
             ArmorInspectView(armorViewModel: armorViewModel)
-        } else  {
+        } else if let accessoryViewModel = self.purchasableViewModel.getAccessoryViewModel() {
+            AccessoryInspectView(accessoryViewModel: accessoryViewModel)
+        } else {
             let (name, description) = self.purchasableViewModel.getNameAndDescription()
             DefaultInspectView(name: name, description: description)
         }

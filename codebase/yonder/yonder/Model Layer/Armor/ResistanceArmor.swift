@@ -21,4 +21,8 @@ class ResistanceArmor: ArmorAbstract {
         )
     }
     
+    required init(_ original: ArmorAbstract) {
+        super.init(original)
+    }
+    
 }

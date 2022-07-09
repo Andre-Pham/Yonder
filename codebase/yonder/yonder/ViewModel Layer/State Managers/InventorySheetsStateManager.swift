@@ -15,11 +15,14 @@ class InventorySheetsStateManager: ObservableObject {
     @Published var armorSheetBindings: [Bool]
     @Published var weaponSheetBindings: [Bool]
     @Published var potionSheetBindings: [Bool]
+    @Published var accessorySheetBindings: [Bool]
+    @Published var peripheralAccessorySheetBinding: Bool = false
     
     init(playerViewModel: PlayerViewModel) {
         self.armorSheetBindings = Array(repeating: false, count: playerViewModel.allArmorViewModels.count)
         self.weaponSheetBindings = Array(repeating: false, count: playerViewModel.weaponViewModels.count)
         self.potionSheetBindings = Array(repeating: false, count: playerViewModel.potionViewModels.count)
+        self.accessorySheetBindings = Array(repeating: false, count: playerViewModel.accessoryViewModels.count)
         
         // Add Subscribers
         
@@ -29,6 +32,10 @@ class InventorySheetsStateManager: ObservableObject {
         
         playerViewModel.$potionViewModels.sink(receiveValue: { newValue in
             self.potionSheetBindings = Array(repeating: false, count: newValue.count)
+        }).store(in: &self.subscriptions)
+        
+        playerViewModel.$accessoryViewModels.sink(receiveValue: { newValue in
+            self.accessorySheetBindings = Array(repeating: false, count: newValue.count)
         }).store(in: &self.subscriptions)
     }
     
@@ -42,6 +49,10 @@ class InventorySheetsStateManager: ObservableObject {
     
     func presentPotionSheet(at index: Int) {
         self.potionSheetBindings[index] = true
+    }
+    
+    func presentAccessorySheet(at index: Int) {
+        self.accessorySheetBindings[index] = true
     }
     
 }

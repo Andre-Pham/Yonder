@@ -70,6 +70,24 @@ class PlayerViewModel: ObservableObject {
             }
         }
     }
+    @Published private(set) var accessoryViewModels: [AccessoryViewModel] {
+        didSet {
+            // Changes to any AccessoryViewModel will be published to the UI
+            for accessory in self.accessoryViewModels {
+                accessory.objectWillChange.sink(receiveValue: { _ in self.objectWillChange.send() }).store(in: &self.subscriptions)
+            }
+        }
+    }
+    var accessorySlotCount: Int {
+        return self.player.accessorySlots.accessorySlotCount
+    }
+    var accessorySlotsFull: Bool {
+        return self.player.accessorySlots.accessorySlotsFull
+    }
+    var emptyAccessorySlotsCount: Int {
+        return self.accessorySlotCount - self.accessoryViewModels.count
+    }
+    @Published private(set) var peripheralAccessoryViewModel: AccessoryViewModel
     @Published private(set) var headArmorViewModel: ArmorViewModel
     @Published private(set) var bodyArmorViewModel: ArmorViewModel
     @Published private(set) var legsArmorViewModel: ArmorViewModel
@@ -81,6 +99,10 @@ class PlayerViewModel: ObservableObject {
         for armorViewModel in self.allArmorViewModels {
             allBuffs.append(contentsOf: armorViewModel.buffViewModels)
         }
+        for accessoryViewModel in self.accessoryViewModels {
+            allBuffs.append(contentsOf: accessoryViewModel.buffViewModels)
+        }
+        allBuffs.append(contentsOf: self.peripheralAccessoryViewModel.buffViewModels)
         return allBuffs
     }
     var canEngage: Bool {
@@ -110,7 +132,7 @@ class PlayerViewModel: ObservableObject {
         self.health = self.player.health
         self.maxHealth = self.player.maxHealth
         self.armorPoints = self.player.armorPoints
-        self.maxArmorPoints = self.player.getMaxArmorPoints()
+        self.maxArmorPoints = self.player.maxArmorPoints
         self.gold = self.player.gold
         
         // Set other view models
@@ -122,6 +144,8 @@ class PlayerViewModel: ObservableObject {
         self.buffViewModels = self.player.buffs.map { BuffViewModel($0) }
         self.statusEffectViewModels = self.player.statusEffects.map { StatusEffectViewModel($0) }
         self.timedEventsViewModels = self.player.timedEvents.map { TimedEventViewModel($0) }
+        self.accessoryViewModels = self.player.accessorySlots.accessories.map { AccessoryViewModel($0) }
+        self.peripheralAccessoryViewModel = AccessoryViewModel(self.player.accessorySlots.peripheralAccessory)
         self.headArmorViewModel = ArmorViewModel(self.player.headArmor)
         self.bodyArmorViewModel = ArmorViewModel(self.player.bodyArmor)
         self.legsArmorViewModel = ArmorViewModel(self.player.legsArmor)
@@ -142,29 +166,39 @@ class PlayerViewModel: ObservableObject {
         
         for armorPiece in self.player.allArmorPieces {
             armorPiece.$armorPoints.sink(receiveValue: { _ in
-                self.maxArmorPoints = self.player.getMaxArmorPoints()
+                self.maxArmorPoints = self.player.maxArmorPoints
             }).store(in: &self.subscriptions)
         }
         self.player.$headArmor.sink(receiveValue: { newValue in
             self.headArmorViewModel = ArmorViewModel(newValue)
-            self.maxArmorPoints = self.player.getMaxArmorPoints()
+            self.maxArmorPoints = self.player.maxArmorPoints
             self.headArmorViewModel.$armorPoints.sink(receiveValue: { _ in
-                self.maxArmorPoints = self.player.getMaxArmorPoints()
+                self.maxArmorPoints = self.player.maxArmorPoints
             }).store(in: &self.subscriptions)
         }).store(in: &self.subscriptions)
         self.player.$bodyArmor.sink(receiveValue: { newValue in
             self.bodyArmorViewModel = ArmorViewModel(newValue)
-            self.maxArmorPoints = self.player.getMaxArmorPoints()
+            self.maxArmorPoints = self.player.maxArmorPoints
             self.bodyArmorViewModel.$armorPoints.sink(receiveValue: { _ in
-                self.maxArmorPoints = self.player.getMaxArmorPoints()
+                self.maxArmorPoints = self.player.maxArmorPoints
             }).store(in: &self.subscriptions)
         }).store(in: &self.subscriptions)
         self.player.$legsArmor.sink(receiveValue: { newValue in
             self.legsArmorViewModel = ArmorViewModel(newValue)
-            self.maxArmorPoints = self.player.getMaxArmorPoints()
+            self.maxArmorPoints = self.player.maxArmorPoints
             self.legsArmorViewModel.$armorPoints.sink(receiveValue: { _ in
-                self.maxArmorPoints = self.player.getMaxArmorPoints()
+                self.maxArmorPoints = self.player.maxArmorPoints
             }).store(in: &self.subscriptions)
+        }).store(in: &self.subscriptions)
+        
+        self.player.accessorySlots.$accessories.sink(receiveValue: { newValue in
+            self.accessoryViewModels = newValue.map { AccessoryViewModel($0) }
+            self.maxArmorPoints = self.player.maxArmorPoints
+        }).store(in: &self.subscriptions)
+        
+        self.player.accessorySlots.$peripheralAccessory.sink(receiveValue: { newValue in
+            self.peripheralAccessoryViewModel = AccessoryViewModel(newValue)
+            self.maxArmorPoints = self.player.maxArmorPoints
         }).store(in: &self.subscriptions)
         
         self.player.$gold.sink(receiveValue: { newValue in
@@ -197,8 +231,20 @@ class PlayerViewModel: ObservableObject {
         }).store(in: &self.subscriptions)
     }
     
-    func equipArmor(_ armor: ArmorAbstract) {
-        self.player.equipArmor(armor)
+    func equipArmor(_ armorViewModel: ArmorViewModel) {
+        self.player.equipArmor(armorViewModel.armor)
+    }
+    
+    func equipAccessory(_ accessoryViewModel: AccessoryViewModel, replacing: UUID?) {
+        self.player.equipAccessory(accessoryViewModel.accessory, replacing: replacing)
+    }
+    
+    func unequipAccessory(_ accessoryViewModel: AccessoryViewModel) {
+        self.player.unequipAccessory(accessoryViewModel.accessory)
+    }
+    
+    func unequipAccessory(id: UUID) {
+        self.player.unequipAccessory(id: id)
     }
     
     func travel(to locationViewModel: LocationViewModel) {

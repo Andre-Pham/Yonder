@@ -47,9 +47,11 @@ struct ViewEnhanceablesButton: View {
                 VStack {
                     PlayerCardView(playerViewModel: self.playerViewModel, resizeToFit: false)
                     
-                    WidePriceTagView(price: self.enhanceOfferViewModel.price, indicativePrice: self.playerViewModel.getIndicativePrice(from: self.enhanceOfferViewModel.price), text: Strings.Inspect.EnhanceOffers.priceTagSuffix.local)
+                    WidePriceTagView(price: self.enhanceOfferViewModel.price, indicativePrice: self.playerViewModel.getIndicativePrice(from: self.enhanceOfferViewModel.price), text: Strings.Inspect.EnhanceOffers.PriceTagSuffix.local)
                     
-                    YonderText(text: "[\(Strings.Inspect.EnhanceOffers.header.local)]", size: .title4)
+                    SurroundingBrackets(bracket: "[", size: .title4) {
+                        YonderText(text: Strings.Inspect.EnhanceOffers.Header.local, size: .title4)
+                    }
                     
                     ForEach(Array(zip(enhanceOfferViewModel.getEnhanceableInfos(playerViewModel: self.playerViewModel).indices, enhanceOfferViewModel.getEnhanceableInfos(playerViewModel: self.playerViewModel))), id: \.1.id) { index, enhanceInfoViewModel in
                         

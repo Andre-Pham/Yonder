@@ -7,12 +7,6 @@
 
 import Foundation
 
-enum LayoutConstants {
-    
-    static let optionsGridColumnCount: Int = 3
-    
-}
-
 enum MathConstants {
     
     static let hexagonWidthToHeight = 0.8660254

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ArmorAbstract: EffectsDescribed, Purchasable, Named, Described, Enhanceable {
+class ArmorAbstract: EffectsDescribed, Purchasable, Named, Described, Enhanceable, Clonable {
     
     public let name: String
     public let description: String
@@ -33,6 +33,16 @@ class ArmorAbstract: EffectsDescribed, Purchasable, Named, Described, Enhanceabl
         self.basePurchasePrice = basePurchasePrice
         self.armorBuffs = armorBuffs
         self.armorAttributes = armorAttributes
+    }
+    
+    required init(_ original: ArmorAbstract) {
+        self.name = original.name
+        self.description = original.description
+        self.type = original.type
+        self.armorPoints = original.armorPoints
+        self.basePurchasePrice = original.basePurchasePrice
+        self.armorBuffs = original.armorBuffs.clone()
+        self.armorAttributes = Array(original.armorAttributes)
     }
     
     func getEffectsDescription() -> String? {

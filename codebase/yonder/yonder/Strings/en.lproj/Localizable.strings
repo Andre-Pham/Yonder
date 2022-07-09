@@ -53,6 +53,7 @@
 // Titles
 "inventory.title.armor" = "Armor";
 "inventory.title.accessories" = "Accessories";
+"inventory.title.peripheralAccessory" = "Peripheral Accessory";
 "inventory.title.items" = "Inventory";
 
 // Weapons
@@ -64,6 +65,11 @@
 "inventory.potions.header" = "Your Potions";
 "inventory.potions.headerZeroPotions" = "No Potions";
 "inventory.potions.option" = "Potions";
+
+// Accessories
+"inventory.accessories.headerZeroAccessories" = "No Accessories";
+"inventory.accessories.slot" = "Slot";
+"inventory.accessories.emptySlots" = "Empty Slots";
 
 // MARK: - Inspect
 
@@ -80,6 +86,11 @@
 // Enhance Offers
 "inspect.enhanceOffers.priceTagSuffix" = "Per Enhance";
 "inspect.enhanceOffers.header" = "Options";
+
+// Accessory Slot Selection
+"inspect.accessorySlotSelection.title" = "Select Accessory Slot";
+"inspect.accessorySlotSelection.description" = "Select which accessory slot to insert the accessory.";
+"inspect.accessorySlotSelection.header" = "Accessory Slot Options";
 
 // Restorer
 "inspect.restorer.for" = "for";
@@ -106,6 +117,7 @@
 "button.viewOptions" = "View Options";
 "button.warp" = "Warp";
 "button.back" = "Back";
+"button.insertToEmptySlot" = "Insert to Empty Slot";
 
 // MARK: - Stats
 
@@ -119,6 +131,8 @@
 "stat.offersSingular" = "Offer";
 "stat.remainingStock" = "Remaining Stock";
 "stat.armorPointsRestoration" = "Armor Repair";
+"stat.healthBonus" = "Health Bonus";
+"stat.armorPointsBonus" = "Shields Bonus";
 
 // Weapon
 "stat.weapon.remainingUsesSingular" = "Durability";
@@ -184,6 +198,7 @@
 "purchasableItem.category.weapons" = "Weapons";
 "purchasableItem.category.potions" = "Potions";
 "purchasableItem.category.armor" = "Armor";
+"purchasableItem.category.accessories" = "Accessories";
 
 // MARK: - Items
 
@@ -368,3 +383,15 @@
 "armor.noArmor.headDescription" = "No head armor equipped.";
 "armor.noArmor.bodyDescription" = "No body armor equipped.";
 "armor.noArmor.legsDescription" = "No legs armor equipped.";
+
+// MARK: - Accessories
+
+// Accessory Type
+"accessory.accessoryType.regular.name" = "Accessory";
+"accessory.accessoryType.regular.namePlural" = "Accessories";
+"accessory.accessoryType.peripheral.name" = "Peripheral Accessory";
+
+// No Accessory
+"accessory.noAccessory.name" = "Empty";
+"accessory.noAccessory.regularDescription" = "No accessory equipped in this slot.";
+"accessory.noAccessory.peripheralDescription" = "No peripheral accessory equipped.";
