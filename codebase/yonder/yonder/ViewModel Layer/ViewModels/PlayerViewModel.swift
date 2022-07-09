@@ -239,12 +239,12 @@ class PlayerViewModel: ObservableObject {
         self.player.equipAccessory(accessoryViewModel.accessory, replacing: replacing)
     }
     
-    func unequipAccessory(_ accessoryViewModel: AccessoryViewModel) {
-        self.player.unequipAccessory(accessoryViewModel.accessory)
+    func unequipAccessory(_ accessoryViewModel: AccessoryViewModel, cacheLocation: Bool = false) {
+        self.player.unequipAccessory(accessoryViewModel.accessory, cacheLocation: cacheLocation)
     }
     
-    func unequipAccessory(id: UUID) {
-        self.player.unequipAccessory(id: id)
+    func unequipAccessory(id: UUID, cacheLocation: Bool = false) {
+        self.player.unequipAccessory(id: id, cacheLocation: cacheLocation)
     }
     
     func travel(to locationViewModel: LocationViewModel) {

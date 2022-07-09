@@ -10,6 +10,7 @@ import Foundation
 class AccessorySlots {
     
     public let accessorySlotCount = 4
+    private var cachedInsertLocation: Int? = nil
     @DidSetPublished private(set) var accessories = [Accessory]()
     @DidSetPublished private(set) var peripheralAccessory: Accessory = NoAccessory(type: .peripheral)
     var allAccessories: [Accessory] {
@@ -30,7 +31,12 @@ class AccessorySlots {
             if let replacing = replacing {
                 return self.replaceAccessory(id: replacing, newAccessory: accessory)
             } else if !self.accessorySlotsFull {
-                self.accessories.append(accessory)
+                if let cachedInsertLocation = self.cachedInsertLocation {
+                    self.accessories.insert(accessory, at: cachedInsertLocation)
+                    self.cachedInsertLocation = nil
+                } else {
+                    self.accessories.append(accessory)
+                }
             } else {
                 return nil
             }
@@ -46,12 +52,21 @@ class AccessorySlots {
         return self.allAccessories.contains(where: { $0.id == accessory.id })
     }
     
-    func remove(_ accessory: Accessory) {
+    /// Remove a specified accessory. Optionally cache its location for the next equipped accessory to be inserted into.
+    /// Typically removing an accessory precedes adding one in its place, hence the option to cache its location is given.
+    /// (The accessory being removed can't always be replaced directly using `insert`, for example, in cases such as purchasing accessories.)
+    /// - Parameters:
+    ///   - accessory: The accessory to be removed
+    ///   - cacheLocation: Whether or not to cache its location for the next equipped accessory to be inserted into
+    func remove(_ accessory: Accessory, cacheLocation: Bool = false) {
         switch accessory.type {
         case .peripheral:
             self.peripheralAccessory = NoAccessory(type: .peripheral)
         case .regular:
             if let position = self.accessories.firstIndex(where: { $0.id == accessory.id }) {
+                if cacheLocation {
+                    self.cachedInsertLocation = position
+                }
                 self.accessories.remove(at: position)
             }
         }

@@ -99,7 +99,7 @@ struct PurchaseFromShopKeeperButton: View {
                             }
                             if let id = selection {
                                 // If nil, we're inserting to an empty accessory slot
-                                self.playerViewModel.unequipAccessory(id: id)
+                                self.playerViewModel.unequipAccessory(id: id, cacheLocation: true)
                             }
                             self.purchasableViewModel.purchase(by: self.playerViewModel, amount: self.amount)
                         }

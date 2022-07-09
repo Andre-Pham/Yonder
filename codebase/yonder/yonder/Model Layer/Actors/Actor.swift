@@ -324,18 +324,18 @@ class ActorAbstract {
         }
     }
     
-    func unequipAccessory(id: UUID) {
+    func unequipAccessory(id: UUID, cacheLocation: Bool = false) {
         if let accessory = self.accessorySlots.accessories.first(where: { $0.id == id }) {
-            self.unequipAccessory(accessory)
+            self.unequipAccessory(accessory, cacheLocation: cacheLocation)
         }
     }
     
-    func unequipAccessory(_ accessory: Accessory) {
+    func unequipAccessory(_ accessory: Accessory, cacheLocation: Bool = false) {
         guard self.accessorySlots.hasEquipped(accessory) else {
             return
         }
         let previousMaxArmorPoints = self.maxArmorPoints
-        self.accessorySlots.remove(accessory)
+        self.accessorySlots.remove(accessory, cacheLocation: cacheLocation)
         self.adjustBonusHealth(by: -accessory.healthBonus)
         self.armorPoints = min(self.armorPoints, previousMaxArmorPoints - accessory.armorPointsBonus)
     }
