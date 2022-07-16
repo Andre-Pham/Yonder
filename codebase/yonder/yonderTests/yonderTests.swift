@@ -43,7 +43,7 @@ class yonderTests: XCTestCase {
     func testTimedEvents() throws {
         let player = Player(maxHealth: 200, location: NoLocation())
         player.damage(for: 150)
-        let timedEvent = MaxHealthRestorationTimedEvent(timeToTrigger: 2, target: player)
+        let timedEvent = MaxHealthRestorationTimedEvent(timeToTrigger: 2)
         player.addTimedEvent(timedEvent)
         player.decrementTimedEvents()
         XCTAssertTrue(player.health == 50)
@@ -154,6 +154,15 @@ class yonderTests: XCTestCase {
         let weapon2 = Weapon(basePill: DamageBasePill(damage: 5), durabilityPill: DecrementDurabilityPill(durability: 2))
         let weapon3 = Weapon(basePill: DamageBasePill(damage: 4), durabilityPill: DecrementDurabilityPill(durability: 2))
         XCTAssertTrue(weapon1.id != weapon2.id && weapon2.id != weapon3.id && weapon1.id != weapon3.id)
+    }
+    
+    func testSubscriber() throws {
+        let weapon = Weapon(basePill: LifestealBasePill(damage: 50), durabilityPill: InfiniteDurabilityPill())
+        XCTAssert(weapon.damage == 50)
+        XCTAssert(weapon.healthRestoration == 50)
+        weapon.setDamage(to: 100)
+        XCTAssert(weapon.damage == 100)
+        XCTAssert(weapon.healthRestoration == 100)
     }
     
     func testStackable() throws {

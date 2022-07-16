@@ -13,6 +13,8 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
     private let basePill: WeaponBasePill
     @DidSetPublished private(set) var durabilityPill: WeaponDurabilityPill
     @DidSetPublished private(set) var effectPills: [WeaponEffectPill]
+    private(set) var onUseSubscribers = [OnUseSubscriber]()
+    private(set) var afterUseSubscribers = [AfterUseSubscriber]()
     var fullSummary: String {
         var summaryComponents = [String]()
         summaryComponents.append(self.name)
@@ -83,6 +85,8 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
     }
     
     func use(owner: ActorAbstract, opposition: ActorAbstract) {
+        self.onUseSubscribers.forEach({ $0.onUse(self, owner: owner, opposition: opposition) })
+        
         if self.healthRestoration > 0 {
             owner.restoreHealthAdjusted(sourceOwner: owner, using: self, for: self.healthRestoration)
         }
@@ -96,9 +100,10 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
         for pill in self.effectPills {
             pill.apply(owner: owner, opposition: opposition)
         }
-        
         // Durability pill comes after, otherwise stuff like dulling pill wouldn't work as intended
         self.durabilityPill.use(on: self)
+        
+        self.afterUseSubscribers.forEach({ $0.afterUse(self, owner: owner, opposition: opposition) })
     }
     
     func getPurchaseInfo() -> PurchasableItemInfo {
@@ -113,6 +118,14 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
     
     func getEnhanceInfo() -> EnhanceInfo {
         return EnhanceInfo(id: self.id, name: self.name)
+    }
+    
+    func addOnUseSubscriber(_ subscriber: OnUseSubscriber) {
+        self.onUseSubscribers.append(subscriber)
+    }
+    
+    func addAfterUseSubscriber(_ subscriber: AfterUseSubscriber) {
+        self.afterUseSubscribers.append(subscriber)
     }
     
 }
