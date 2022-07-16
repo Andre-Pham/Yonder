@@ -23,9 +23,7 @@ class Area: Named, Described, Visualised {
     
     // locations are received from LocationsGenerator
     init(arrangement: AreaArrangements, locations: [LocationAbstract], name: String = "placeholderName", description: String = "placeholderDescription", image: Image = YonderImages.placeholderImage) {
-        if locations.count != arrangement.locationCount {
-            YonderDebugging.printError(message: "Number of locations provided to generate Area doesn't match expected number for the arrangement", functionName: #function, className: "\(type(of: self))")
-        }
+        assert(locations.count == arrangement.locationCount, "Number of locations provided to generate Area doesn't match expected number for the arrangement")
         self.arrangement = arrangement
         self.locations = locations
         self.rootLocation = locations.first!

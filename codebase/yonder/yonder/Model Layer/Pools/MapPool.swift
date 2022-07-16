@@ -24,7 +24,7 @@ class MapPool {
             let territory = self.territoryPoolsInStageOrder[stage]
             return territory
         }
-        YonderDebugging.printError(message: "Territory pool missing territory to grab", functionName: #function, className: "\(type(of: self))")
+        assertionFailure("Territory pool missing territory to grab")
         return nil
     }
     

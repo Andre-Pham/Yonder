@@ -22,11 +22,7 @@ class Segment {
         self.leftArea = leftArea
         self.rightArea = rightArea
         self.bridgeLocation = BridgeLocation()
-        guard (leftArea.rightBridgeLocations.count > 0 &&
-               rightArea.leftBridgeLocations.count > 0) else {
-            YonderDebugging.printError(message: "Segment Areas were defined without bridge locations", functionName: #function, className: "\(type(of: self))")
-            return
-        }
+        assert(leftArea.rightBridgeLocations.count > 0 && rightArea.leftBridgeLocations.count > 0, "Segment Areas were defined without bridge locations")
         var leftAreaBridgeLocation = leftArea.rightBridgeLocations.randomElement()!
         var rightAreaBridgeLocation = rightArea.leftBridgeLocations.randomElement()!
         if leftAreaBridgeLocation.hexagonCoordinate!.y == rightAreaBridgeLocation.hexagonCoordinate!.y {

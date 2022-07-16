@@ -65,14 +65,14 @@ class MapGenerator {
         
         while nonHostileLocationsCount > 0 {
             guard let locationIndex = locationIndexPool.randomElement() else {
-                YonderDebugging.printError(message: "Location index pool doesn't have sufficient location indices to match the expected number of non-hostile locations", functionName: #function, className: "\(type(of: self))")
+                assertionFailure("Location index pool doesn't have sufficient location indices to match the expected number of non-hostile locations")
                 break
             }
             locationIndexPool.remove(at: locationIndexPool.firstIndex(of: locationIndex)!)
             nonHostileLocationsCount -= 1
             
             guard let locationIndexContainer = nonHostileOptions.randomElement() else {
-                YonderDebugging.printError(message: "All non-hostile location options were filled, which shouldn't be possible", functionName: #function, className: "\(type(of: self))")
+                assertionFailure("All non-hostile location options were filled, which shouldn't be possible")
                 break
             }
             locationIndexContainer.addIndex(locationIndex)

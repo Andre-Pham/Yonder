@@ -31,7 +31,7 @@ class TerritoryPool {
             self.removeAreaPool(areaPool: areaPool)
             return areaPool
         }
-        YonderDebugging.printError(message: "Area pool has no more areas to grab", functionName: #function, className: "\(type(of: self))")
+        assertionFailure("Area pool has no more areas to grab")
         return nil
     }
     

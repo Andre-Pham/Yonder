@@ -301,10 +301,7 @@ class ActorAbstract {
     }
     
     func enhanceArmorPoints(of armor: ArmorAbstract, armorPoints: Int) {
-        guard self.hasArmorPieceEquipped(armor) else {
-            YonderDebugging.printError(message: "Player is trying to enhance a piece of equipped armor that they actually don't have equipped", functionName: #function, className: "\(type(of: self))")
-            return
-        }
+        assert(self.hasArmorPieceEquipped(armor), "Player is trying to enhance a piece of equipped armor that they actually don't have equipped")
         armor.adjustArmorPoints(by: armorPoints)
         self.restoreArmorPoints(for: armorPoints)
     }

@@ -65,7 +65,7 @@ class AreaPool {
     private func removeLocation(location: LocationAbstract) {
         if let locationArray = self.getLocationArray(of: location.type) {
             guard let index = (locationArray.items.firstIndex { $0.id == location.id }) else {
-                YonderDebugging.printError(message: "Function should find a location with a matching ID to remove", functionName: #function, className: "\(type(of: self))")
+                assertionFailure("Function should find a location with a matching ID to remove")
                 return
             }
             locationArray.items.remove(at: index)
@@ -79,7 +79,7 @@ class AreaPool {
                 return location
             }
         }
-        YonderDebugging.printError(message: "Function grabbing location from pool shouldn't be returning NoLocation, either no locations of specified type remaining or wrong type specified", functionName: #function, className: "\(type(of: self))")
+        assertionFailure("Function grabbing location from pool shouldn't be returning NoLocation, either no locations of specified type remaining or wrong type specified")
         return NoLocation()
     }
     

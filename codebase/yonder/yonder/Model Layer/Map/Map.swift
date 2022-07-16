@@ -19,9 +19,7 @@ class Map {
         self.bossAreasInOrder = bossAreasInOrder
         self.startingLocation = NoLocation()
         
-        guard self.territoriesInOrder.count > 0 else {
-            fatalError("No territories were defined for the map")
-        }
+        assert(self.territoriesInOrder.count > 0, "No territories were defined for the map")
         // Connect the starting location to the first area
         for area in self.territoriesInOrder[0].segment.allAreas {
             self.startingLocation.addNextLocations([area.rootLocation])

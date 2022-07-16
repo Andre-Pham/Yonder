@@ -56,6 +56,7 @@ extension String {
         if components.count == 2 {
             return (components[0], components[1])
         }
+        assertionFailure("Received a string that doesn't contain a single instance of a specified Int")
         return nil
     }
     
@@ -69,6 +70,7 @@ extension String {
         if components.count == 2 {
             return (components[0], components[1])
         }
+        assertionFailure("Received a string that doesn't contain a single instance of a specified Double")
         return nil
     }
     

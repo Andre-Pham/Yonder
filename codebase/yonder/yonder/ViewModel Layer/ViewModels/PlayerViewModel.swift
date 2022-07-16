@@ -253,7 +253,7 @@ class PlayerViewModel: ObservableObject {
     
     func use(weaponViewModel: WeaponViewModel) {
         guard self.locationViewModel.location is FoeLocation else {
-            YonderDebugging.printError(message: "Weapon was used whilst location has no foe - hence no target", functionName: #function, className: "\(type(of: self))")
+            assertionFailure("Weapon was used whilst location has no foe - hence no target")
             return
         }
         guard !(self.locationViewModel.location as! FoeLocation).foe.isDead && weaponViewModel.remainingUses > 0 else {
@@ -265,7 +265,7 @@ class PlayerViewModel: ObservableObject {
     
     func use(potionViewModel: PotionViewModel) {
         guard self.locationViewModel.location is FoeLocation else {
-            YonderDebugging.printError(message: "Potion was used whilst location has no foe - hence no target", functionName: #function, className: "\(type(of: self))")
+            assertionFailure("Potion was used whilst location has no foe - hence no target")
             return
         }
         self.player.usePotionWhere(opposition: (self.locationViewModel.location as! FoeLocation).foe, potion: potionViewModel.item as! PotionAbstract)

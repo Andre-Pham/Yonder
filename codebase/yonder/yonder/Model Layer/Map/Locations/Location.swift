@@ -53,16 +53,12 @@ class LocationAbstractPart {
     }
     
     func setBridgeAccessibility(_ bridgeAccessibility: LocationBridgeAccessibility) {
-        if self.bridgeAccessibility != .noBridge {
-            YonderDebugging.printError(message: "Bridge accessbility has been set more than once, which shouldn't be occuring", functionName: #function, className: "\(type(of: self))")
-        }
+        assert(self.bridgeAccessibility == .noBridge, "Bridge accessbility has been set more than once, which shouldn't be occuring")
         self.bridgeAccessibility = bridgeAccessibility
     }
     
     func setHexagonCoordinate(_ x: Int, _ y: Int) {
-        if self.hexagonCoordinate != nil {
-            YonderDebugging.printError(message: "Hexagon coordinate has been set more than once, which shouldn't be occuring - set from (\(String(describing: self.hexagonCoordinate?.x)), \(String(describing: self.hexagonCoordinate?.y))) to (\(x), \(y))", functionName: #function, className: "\(type(of: self))")
-        }
+        assert(self.hexagonCoordinate == nil, "Hexagon coordinate has been set more than once, which shouldn't be occuring - set from (\(String(describing: self.hexagonCoordinate?.x)), \(String(describing: self.hexagonCoordinate?.y))) to (\(x), \(y))")
         self.hexagonCoordinate = HexagonCoordinate(x, y)
     }
     
