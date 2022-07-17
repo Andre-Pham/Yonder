@@ -12,6 +12,7 @@ class Player: ActorAbstract {
     @DidSetPublished private(set) var location: LocationAbstract
     @DidSetPublished private(set) var gold = 0
     private(set) var attributes = [PlayerAttribute]()
+    @DidSetPublished private(set) var loot: LootBag? = nil
     
     init(maxHealth: Int, location: LocationAbstract) {
         self.location = location
@@ -68,6 +69,10 @@ class Player: ActorAbstract {
     
     func getIndicativePayout(from amount: Int) -> Int {
         return BuffApps.getAdjustedGoldWithBonus(receiver: self, gold: amount)
+    }
+    
+    func setLoot(to loot: LootBag?) {
+        self.loot = loot
     }
     
 }

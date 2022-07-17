@@ -80,7 +80,7 @@ struct PurchaseFromShopKeeperButton: View {
             
             if self.useButtonActive {
                 YonderWideButton(text: Strings.Button.Purchase.local) {
-                    if let _ = self.purchasableViewModel.getAccessoryViewModel() {
+                    if let accessory = self.purchasableViewModel.getAccessoryViewModel(), accessory.isPeripheral {
                         self.accessorySelectionSheetActive = true
                     } else {
                         self.purchasableViewModel.purchase(by: self.playerViewModel, amount: self.amount)

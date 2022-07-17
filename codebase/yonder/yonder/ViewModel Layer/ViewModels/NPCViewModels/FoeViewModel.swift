@@ -22,6 +22,7 @@ class FoeViewModel: ObservableObject {
     @Published private(set) var isDead: Bool
     
     @Published private(set) var weaponViewModel: WeaponViewModel
+    @Published private(set) var lootOptionsViewModel: LootOptionsViewModel
     
     init(_ foe: Foe) {
         self.foe = foe
@@ -38,6 +39,7 @@ class FoeViewModel: ObservableObject {
         // Set other view models
         
         self.weaponViewModel = WeaponViewModel(self.foe.getWeapon())
+        self.lootOptionsViewModel = LootOptionsViewModel(self.foe.loot)
         
         // Add Subscribers
         

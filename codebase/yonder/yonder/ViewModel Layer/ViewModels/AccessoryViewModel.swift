@@ -39,6 +39,9 @@ class AccessoryViewModel: ObservableObject {
     var noStats: Bool {
         return !(self.healthBonus > 0 || self.armorPointsBonus > 0)
     }
+    var isPeripheral: Bool {
+        return self.accessory.type == .peripheral
+    }
     
     init(_ accessory: Accessory) {
         self.accessory = accessory

@@ -12,10 +12,15 @@ class Foe: ActorAbstract, Named, Described {
     public let name: String
     public let description: String
     private let combatFlow = CombatFlow()
+    public let loot: LootOptions
+    var canBeLooted: Bool {
+        return self.isDead && !self.loot.isLooted
+    }
     
-    init(name: String = "placeholderName", description: String = "placeholderDescription", maxHealth: Int, weapon: Weapon) {
+    init(name: String = "placeholderName", description: String = "placeholderDescription", maxHealth: Int, weapon: Weapon, loot: LootOptions) {
         self.name = name
         self.description = description
+        self.loot = loot
         
         super.init(maxHealth: maxHealth)
         
@@ -23,6 +28,7 @@ class Foe: ActorAbstract, Named, Described {
     }
     
     func getWeapon() -> Weapon {
+        assert(self.weapons.count == 1, "Foe has more or less than 1 weapon, which shouldn't be possible")
         return self.weapons.first!
     }
     

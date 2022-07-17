@@ -44,14 +44,14 @@ enum YonderImages {
     
     static let weaponOptionIcon = YonderImages.weaponIcon
     static let potionOptionIcon = YonderImages.potionIcon
-    static let lootOptionIcon = YonderImages.lootIcon
+    static let chooseLootBagOptionIcon = Image("MissingIcon") // "TreasureChest"
+    static let lootOptionIcon = Image("Bag")
     
     // MARK: - Item Icons
     
     static let weaponIcon = Image("Axe")
     static let potionIcon = Image("Potion")
     static let armorIcon = Image("Bracer")
-    static let lootIcon = Image("Bag")
     
     // MARK: - Location Icons
     

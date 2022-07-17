@@ -87,6 +87,26 @@ struct OptionsView: View {
                                 }
                             }
                             
+                            if self.optionsStateManager.chooseLootBagOptionActive {
+                                YonderGridOption(
+                                    title: Strings.OptionsMenu.Option.ChooseLootBag.local,
+                                    geometry: geo,
+                                    image: YonderImages.chooseLootBagOptionIcon
+                                ) {
+                                    self.optionsStateManager.chooseLootBagOptionSelected()
+                                }
+                            }
+                            
+                            if self.optionsStateManager.lootOptionActive {
+                                YonderGridOption(
+                                    title: Strings.OptionsMenu.Option.Loot.local,
+                                    geometry: geo,
+                                    image: YonderImages.lootOptionIcon
+                                ) {
+                                    self.optionsStateManager.lootOptionSelected()
+                                }
+                            }
+                            
                             if self.optionsStateManager.travelOptionActive {
                                 YonderGridOption(title: Strings.OptionsMenu.Option.Travel.local, geometry: geo, image: YonderImages.mapIcon) {
                                     self.optionsStateManager.travelOptionSelected(
@@ -153,6 +173,26 @@ struct OptionsView: View {
                                     ForEach(enhancerViewModel.enhanceOfferViewModels, id: \.id) { offer in
                                         ViewEnhanceablesButton(playerViewModel: self.playerViewModel, enhanceOfferViewModel: offer, pageGeometry: geo)
                                     }
+                                }
+                            }
+                            
+                            if self.optionsStateManager.chooseLootBagActionsActive.isActive {
+                                if let foeViewModel = self.playerViewModel.locationViewModel.getFoeViewModel() {
+                                    ForEach(foeViewModel.lootOptionsViewModel.lootBagViewModels, id: \.id) { lootBagViewModel in
+                                        LootBagButton(
+                                            playerViewModel: self.playerViewModel,
+                                            lootOptionsViewModel: foeViewModel.lootOptionsViewModel,
+                                            lootBagViewModel: lootBagViewModel)
+                                    }
+                                }
+                            }
+                            
+                            if self.optionsStateManager.lootActionsActive.isActive {
+                                if let lootBagViewModel = self.playerViewModel.lootBagViewModel {
+                                    CollectLootView(
+                                        playerViewModel: self.playerViewModel,
+                                        lootBagViewModel: lootBagViewModel,
+                                        pageGeometry: geo)
                                 }
                             }
                         }

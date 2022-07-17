@@ -38,6 +38,8 @@
 "optionsMenu.header.restoration" = "Purchase Mending";
 "optionsMenu.header.shop" = "Shop";
 "optionsMenu.header.enhance" = "Enhance Gear";
+"optionsMenu.header.chooseLootBag" = "Choose One";
+"optionsMenu.header.loot" = "Loot";
 
 // Option
 "optionsMenu.option.weapon" = "Select Weapon";
@@ -47,6 +49,8 @@
 "optionsMenu.option.shop" = "Shop";
 "optionsMenu.option.enhance" = "Enhance";
 "optionsMenu.option.travel" = "Travel";
+"optionsMenu.option.chooseLootBag" = "Choose Loot Bag";
+"optionsMenu.option.loot" = "Loot";
 
 // MARK: - Inventory
 
@@ -118,6 +122,10 @@
 "button.warp" = "Warp";
 "button.back" = "Back";
 "button.insertToEmptySlot" = "Insert to Empty Slot";
+"button.select" = "Select";
+"button.collect" = "Collect";
+"button.equip" = "Equip";
+"button.finished" = "Finished";
 
 // MARK: - Stats
 
@@ -146,6 +154,27 @@
 "stat.description.offersRemainingSingular" = "You may accept 1 more offer";
 "stat.description.offersRemaining1Param" = "You may accept %@ more offers";
 "stat.description.selling" = "Selling";
+
+// MARK: - Loot
+
+"loot.lootBagName.amber" = "Amber Bag";
+"loot.lootBagName.violet" = "Violet Bag";
+"loot.lootBagName.ebony" = "Ebony Bag";
+"loot.lootBagName.rose" = "Rose Bag";
+"loot.lootBagName.fern" = "Fern Bag";
+"loot.lootBagName.tangerine" = "Tangerine Bag";
+"loot.lootBagName.azure" = "Azure Bag";
+"loot.lootBagName.sage" = "Sage Bag";
+"loot.lootBagName.midnight" = "Midnight Bag";
+"loot.lootBagName.cobalt" = "Cobalt Bag";
+"loot.lootBagName.scarlet" = "Scarlet Bag";
+"loot.lootBagName.sangria" = "Sangria Bag";
+
+"loot.category.weapons" = "Weapons";
+"loot.category.potions" = "Potions";
+"loot.category.accessories" = "Accessories";
+"loot.category.armors" = "Armor Pieces";
+"loot.category.gold" = "Gold";
 
 // MARK: - Enhance Offers
 

@@ -43,7 +43,7 @@ class InventoryStateManager: ObservableObject {
         else {
             self.potionsActive = true
             self.weaponsActive = false
-            self.optionHeaderText = Strings.Inventory.Weapons.Header.local
+            self.optionHeaderText = Strings.Inventory.Potions.Header.local
             if potionCount == 0 {
                 self.optionHeaderText = Strings.Inventory.Potions.HeaderZeroPotions.local
             }

@@ -56,6 +56,12 @@ class LocationViewModel: ObservableObject {
         }
         return false
     }
+    var playerCanChooseLootBag: Bool {
+        if let foeViewModel = self.location as? FoeLocation {
+            return foeViewModel.foe.canBeLooted
+        }
+        return false
+    }
     
     init(_ location: LocationAbstract) {
         self.location = location

@@ -43,6 +43,8 @@ enum Strings: Localizable {
             case Restoration
             case Shop
             case Enhance
+            case ChooseLootBag
+            case Loot
         }
         
         enum Option: Localizable {
@@ -55,6 +57,8 @@ enum Strings: Localizable {
             case Shop
             case Enhance
             case Travel
+            case ChooseLootBag
+            case Loot
         }
     }
     
@@ -178,6 +182,37 @@ enum Strings: Localizable {
         }
     }
     
+    enum Loot: Localizable {
+        static let parent: LocalizeParent = Strings.self
+        
+        enum LootBagName: Localizable {
+            static let parent: LocalizeParent = Loot.self
+            
+            case Amber
+            case Violet
+            case Ebony
+            case Rose
+            case Fern
+            case Tangerine
+            case Azure
+            case Sage
+            case Midnight
+            case Cobalt
+            case Scarlet
+            case Sangria
+        }
+        
+        enum Category: Localizable {
+            static let parent: LocalizeParent = Loot.self
+            
+            case Weapons
+            case Potions
+            case Accessories
+            case Armors
+            case Gold
+        }
+    }
+    
     enum Card: Localizable {
         static let parent: LocalizeParent = Strings.self
         
@@ -203,6 +238,10 @@ enum Strings: Localizable {
         case Warp
         case Back
         case InsertToEmptySlot
+        case Select
+        case Collect
+        case Equip
+        case Finished
     }
     
     enum EnhanceOffer: Localizable {

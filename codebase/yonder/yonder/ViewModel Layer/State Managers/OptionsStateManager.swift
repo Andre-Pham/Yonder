@@ -71,6 +71,18 @@ class OptionsStateManager: ObservableObject {
     }
     @Published var enhanceActionsActive = Status(false)
     
+    // Choose loot bag option
+    var chooseLootBagOptionActive: Bool {
+        return self.playerViewModel.canChooseLootBag
+    }
+    @Published var chooseLootBagActionsActive = Status(false)
+    
+    // Loot option
+    var lootOptionActive: Bool {
+        return self.playerViewModel.canLoot
+    }
+    @Published var lootActionsActive = Status(false)
+    
     // Whenever an action is set to showing, its reference is passed here
     var activeActions = Status(false)
     
@@ -79,7 +91,7 @@ class OptionsStateManager: ObservableObject {
         
         // Add Subscribers
         
-        // If there is a foe, and the foe dies, return to Options view
+        // If there is a foe, and the foe dies, return to options view
         self.playerViewModel.$locationViewModel.sink(receiveValue: { newValue in
             if let foeViewModel = newValue.getFoeViewModel() {
                 foeViewModel.$isDead.sink(receiveValue: { newValue in
@@ -88,6 +100,12 @@ class OptionsStateManager: ObservableObject {
                     }
                 }).store(in: &self.subscriptions)
             }
+        }).store(in: &self.subscriptions)
+        
+        // If the player is suddenly able to loot (assuming they've selected a loot bag), return to options view
+        // If the player is suddenly unable to loot, stop them from taking items - return to options view
+        self.playerViewModel.$lootBagViewModel.sink(receiveValue: { _ in
+            self.closeActions()
         }).store(in: &self.subscriptions)
     }
     
@@ -137,6 +155,20 @@ class OptionsStateManager: ObservableObject {
         self.showOptions = false
         self.enhanceActionsActive = Status(true)
         self.activeActions = self.enhanceActionsActive
+    }
+    
+    func chooseLootBagOptionSelected() {
+        self.optionHeaderText = Strings.OptionsMenu.Header.ChooseLootBag.local
+        self.showOptions = false
+        self.chooseLootBagActionsActive = Status(true)
+        self.activeActions = self.chooseLootBagActionsActive
+    }
+    
+    func lootOptionSelected() {
+        self.optionHeaderText = Strings.OptionsMenu.Header.Loot.local
+        self.showOptions = false
+        self.lootActionsActive = Status(true)
+        self.activeActions = self.lootActionsActive
     }
     
     func travelOptionSelected(viewRouter: ViewRouter, travelStateManager: TravelStateManager) {

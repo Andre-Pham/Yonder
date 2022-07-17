@@ -22,6 +22,7 @@ class PlayerViewModel: ObservableObject {
     @Published private(set) var gold: Int
     
     @Published private(set) var locationViewModel: LocationViewModel
+    @Published private(set) var lootBagViewModel: LootBagViewModel?
     @Published private(set) var weaponViewModels: [WeaponViewModel] {
         didSet {
             // Changes to any WeaponViewModel will be published to the UI
@@ -109,7 +110,9 @@ class PlayerViewModel: ObservableObject {
         return self.locationViewModel.playerCanEngage
     }
     var canTravel: Bool {
-        return !self.canEngage || self.canEngage && self.self.locationViewModel.getFoeViewModel()?.isDead ?? true
+        let notInCombat = !self.canEngage
+        let noLootAvailable = !self.canLoot && !self.canChooseLootBag
+        return notInCombat && noLootAvailable
     }
     var hasOffers: Bool {
         return self.locationViewModel.playerHasOffers
@@ -122,6 +125,12 @@ class PlayerViewModel: ObservableObject {
     }
     var canEnhance: Bool {
         return self.locationViewModel.playerCanEnhance
+    }
+    var canChooseLootBag: Bool {
+        return self.locationViewModel.playerCanChooseLootBag
+    }
+    var canLoot: Bool {
+        return self.lootBagViewModel != nil
     }
     
     init(_ player: Player) {
@@ -138,6 +147,7 @@ class PlayerViewModel: ObservableObject {
         // Set other view models
         
         self.locationViewModel = LocationViewModel(self.player.location)
+        self.lootBagViewModel = self.player.loot == nil ? nil : LootBagViewModel(self.player.loot!)
         self.weaponViewModels = self.player.weapons.map { WeaponViewModel($0) }
         self.applicableWeaponViewModels = self.player.getApplicableWeapons().map { WeaponViewModel($0) }
         self.potionViewModels = self.player.potions.map { PotionViewModel($0) }
@@ -207,6 +217,10 @@ class PlayerViewModel: ObservableObject {
         
         self.player.$location.sink(receiveValue: { newValue in
             self.locationViewModel = LocationViewModel(newValue)
+        }).store(in: &self.subscriptions)
+        
+        self.player.$loot.sink(receiveValue: { newValue in
+            self.lootBagViewModel = newValue == nil ? nil : LootBagViewModel(newValue!)
         }).store(in: &self.subscriptions)
         
         self.player.$weapons.sink(receiveValue: { newValue in
@@ -293,6 +307,10 @@ class PlayerViewModel: ObservableObject {
     
     func getIndicativeHealthRestoration(of itemViewModel: ItemViewModel) -> Int {
         return self.player.getIndicativeHealthRestoration(of: itemViewModel.item)
+    }
+    
+    func finishLooting() {
+        self.player.setLoot(to: nil)
     }
     
 }

@@ -55,11 +55,27 @@ enum PreviewObjects {
         buffs: [DamagePercentBuff(sourceName: "Cool Accessory", direction: .outgoing, duration: nil, damageFraction: 1.5)]
     ))
     
+    // MARK: - Loot
+    
+    static var lootBagViewModel: LootBagViewModel {
+        let lootBag = LootBag()
+        lootBag.addArmorLoot(self.armorViewModel.armor)
+        lootBag.addPotionLoot(DamagePotion(tier: .II, potionCount: 3, basePurchasePrice: 200))
+        lootBag.addAccessoryLoot(self.accessoryViewModel.accessory)
+        lootBag.addWeaponLoot(Weapon(basePill: LifestealBasePill(damage: 100), durabilityPill: InfiniteDurabilityPill()))
+        lootBag.addGoldLoot(100)
+        return LootBagViewModel(lootBag)
+    }
+    
+    static var lootOptionsViewModel: LootOptionsViewModel {
+        return LootOptionsViewModel(LootOptions(self.lootBagViewModel.lootBag, self.lootBagViewModel.lootBag, self.lootBagViewModel.lootBag))
+    }
+    
     // MARK: - NPCs
     
     static let foeViewModel = FoeViewModel(Foe(
         maxHealth: 500,
-        weapon: Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: DecrementDurabilityPill(durability: 5))
+        weapon: Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: DecrementDurabilityPill(durability: 5)), loot: NoLootOptions()
     ))
     
     static let shopKeeperViewModel = ShopKeeperViewModel(ShopKeeper(
@@ -135,25 +151,25 @@ enum PreviewObjects {
     private static let area = Area(
         arrangement: .A,
         locations: [
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100))),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100))),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100))),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100))),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100))),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100))),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100))),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100))),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100))),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100))),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100))),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100))),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100))),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100))),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100))),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100))),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100))),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100))),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100)))
+            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions()))
         ],
         name: "Glacier Rifts",
         description: "placeholderDescription",
