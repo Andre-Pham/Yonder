@@ -34,9 +34,9 @@ enum YonderImages {
     static let weaponRemainingUsesIcon = Image("BrokenSword")
     static let potionRemainingUsesIcon = Image("Potion")
     static let offerIcon = Image("Scroll")
-    static let timeRemainingIcon = Image("MissingIcon") // "Clock"
-    static let weaponArmorPointsRestorationIcon = Image("MissingIcon")
-    static let potionArmorPointsRestorationIcon = Image("MissingIcon")
+    static let timeRemainingIcon = Image("Clock")
+    static let weaponArmorPointsRestorationIcon = Image("MetalPlating")
+    static let potionArmorPointsRestorationIcon = Image("MetalPlating")
     static let healthBonusIcon = YonderImages.healthIcon
     static let armorPointsBonusIcon = YonderImages.armorPointsIcon
     
@@ -44,7 +44,7 @@ enum YonderImages {
     
     static let weaponOptionIcon = YonderImages.weaponIcon
     static let potionOptionIcon = YonderImages.potionIcon
-    static let chooseLootBagOptionIcon = Image("MissingIcon") // "TreasureChest"
+    static let chooseLootBagOptionIcon = Image("TreasureChest")
     static let lootOptionIcon = Image("Bag")
     
     // MARK: - Item Icons
