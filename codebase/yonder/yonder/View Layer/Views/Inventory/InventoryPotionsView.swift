@@ -35,7 +35,7 @@ struct InventoryPotionsView_Previews: PreviewProvider {
                     .ignoresSafeArea()
                 
                 VStack(alignment: .leading) {
-                    InventoryPotionsView(sheetsStateManager: InventorySheetsStateManager(playerViewModel: PreviewObjects.playerViewModel()), playerViewModel: PreviewObjects.playerViewModel(), pageGeometry: geo)
+                    InventoryPotionsView(sheetsStateManager: InventorySheetsStateManager(playerViewModel: PreviewObjects.playerViewModel), playerViewModel: PreviewObjects.playerViewModel, pageGeometry: geo)
                 }
             }
         }

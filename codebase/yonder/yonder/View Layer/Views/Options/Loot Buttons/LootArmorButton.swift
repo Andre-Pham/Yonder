@@ -38,7 +38,7 @@ struct LootArmorButton_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader { geo in
             PreviewContentView {
-                LootArmorButton(armorViewModel: PreviewObjects.armorViewModel, playerViewModel: PreviewObjects.playerViewModel(), lootBagViewModel: PreviewObjects.lootBagViewModel, pageGeometry: geo)
+                LootArmorButton(armorViewModel: PreviewObjects.armorViewModel, playerViewModel: PreviewObjects.playerViewModel, lootBagViewModel: PreviewObjects.lootBagViewModel, pageGeometry: geo)
             }
         }
     }

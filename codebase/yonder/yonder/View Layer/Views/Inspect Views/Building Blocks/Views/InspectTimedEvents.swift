@@ -47,7 +47,7 @@ struct InspectTimedEvents_Previews: PreviewProvider {
                 .ignoresSafeArea()
             
             VStack {
-                InspectTimedEvents(playerViewModel: PreviewObjects.playerViewModel())
+                InspectTimedEvents(playerViewModel: PreviewObjects.playerViewModel)
             }
         }
     }

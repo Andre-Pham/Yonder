@@ -70,7 +70,7 @@ struct CollectLootView_Previews: PreviewProvider {
         GeometryReader { geo in
             PreviewContentView {
                 VStack {
-                    CollectLootView(playerViewModel: PreviewObjects.playerViewModel(), lootBagViewModel: PreviewObjects.lootBagViewModel, pageGeometry: geo)
+                    CollectLootView(playerViewModel: PreviewObjects.playerViewModel, lootBagViewModel: PreviewObjects.lootBagViewModel, pageGeometry: geo)
                 }
             }
         }

@@ -11,181 +11,293 @@ enum PreviewObjects {
     
     // MARK: - Player
     
-    static func playerViewModel() -> PlayerViewModel {
-        let playerViewModel = PlayerViewModel(Player(
-            maxHealth: 200,
-            location: NoLocation()
-        ))
-        playerViewModel.player.equipArmor(
-            ArmorAbstract(name: "Strong Armor", description: "So so strong.", type: .body, armorPoints: 200, basePurchasePrice: 200, armorBuffs: [DamagePercentBuff(sourceName: "Strong Armor", direction: .outgoing, duration: nil, damageFraction: 1.2)])
-        )
-        playerViewModel.player.addStatusEffect(BurnStatusEffect(damage: 12, duration: 5))
-        playerViewModel.player.addStatusEffect(BurnStatusEffect(damage: 15, duration: 5))
-        playerViewModel.player.addTimedEvent(MaxHealthRestorationTimedEvent(timeToTrigger: 5))
-        playerViewModel.player.equipAccessory(Accessory(name: "Scarf", description: "A warm wooly scarf to keep you warm.", type: .regular, healthBonus: 100, armorPointsBonus: 0, basePurchasePrice: 25, buffs: []), replacing: nil)
-        return playerViewModel
+    // MODEL
+    
+    private static var player: Player {
+        let player = Player(maxHealth: 200, location: NoLocation())
+        player.equipArmor(Self.armor)
+        player.addStatusEffect(BurnStatusEffect(damage: 12, duration: 5))
+        player.addStatusEffect(BurnStatusEffect(damage: 15, duration: 5))
+        player.addTimedEvent(MaxHealthRestorationTimedEvent(timeToTrigger: 5))
+        player.equipAccessory(Self.accessory, replacing: nil)
+        return player
     }
     
-    static let armorViewModel = ArmorViewModel(ResistanceArmor(
-        name: "Cool Resistance Armor",
-        description: "Very Shiny.",
-        type: .body,
-        armorPoints: 500,
-        damageFraction: 0.8,
-        basePurchasePrice: 200
-    ))
+    // VIEW MODEL
     
-    static let accessoryViewModel = AccessoryViewModel(Accessory(
-        name: "Cool Accessory",
-        description: "An accessory that's so very cool.",
-        type: .regular,
-        healthBonus: 0,
-        armorPointsBonus: 0,
-        basePurchasePrice: 0,
-        buffs: [DamagePercentBuff(sourceName: "Cool Accessory", direction: .outgoing, duration: nil, damageFraction: 1.5)]
-    ))
+    static var playerViewModel: PlayerViewModel {
+        return PlayerViewModel(Self.player)
+    }
     
-    static let peripheralAccessoryViewModel = AccessoryViewModel(Accessory(
-        name: "Cooler Accessory",
-        description: "An accessory that's even more cool.",
-        type: .peripheral,
-        healthBonus: 10,
-        armorPointsBonus: 20,
-        basePurchasePrice: 100,
-        buffs: [DamagePercentBuff(sourceName: "Cool Accessory", direction: .outgoing, duration: nil, damageFraction: 1.5)]
-    ))
+    // MARK: - Armor
+    
+    // MODEL
+    
+    private static var armor: ArmorAbstract {
+        return ArmorAbstract(
+            name: "Cool Armor",
+            description: "Very cool. Looks shiny.",
+            type: .body,
+            armorPoints: 500,
+            basePurchasePrice: 200,
+            armorBuffs: [DamagePercentBuff(sourceName: "Cool Armor", direction: .incoming, duration: nil, damageFraction: 0.8)]
+        )
+    }
+    
+    // VIEW MODEL
+    
+    static var armorViewModel: ArmorViewModel {
+        return ArmorViewModel(Self.armor)
+    }
+    
+    // MARK: - Accessories
+    
+    // MODEL
+    
+    private static var accessory: Accessory {
+        return Accessory(
+            name: "Cool Accessory",
+            description: "An accessory that's so very cool.",
+            type: .regular,
+            healthBonus: 0,
+            armorPointsBonus: 0,
+            basePurchasePrice: 0,
+            buffs: [DamagePercentBuff(sourceName: "Cool Accessory", direction: .outgoing, duration: nil, damageFraction: 1.5)]
+        )
+    }
+    
+    private static var peripheralAccessory: Accessory {
+        return Accessory(
+            name: "Cooler Accessory",
+            description: "An accessory that's even more cool.",
+            type: .peripheral,
+            healthBonus: 10,
+            armorPointsBonus: 20,
+            basePurchasePrice: 100,
+            buffs: [DamagePercentBuff(sourceName: "Cool Accessory", direction: .outgoing, duration: nil, damageFraction: 1.5)]
+        )
+    }
+    
+    // VIEW MODEL
+    
+    static var accessoryViewModel: AccessoryViewModel {
+        return AccessoryViewModel(Self.accessory)
+    }
+    
+    static var peripheralAccessoryViewModel: AccessoryViewModel {
+        return AccessoryViewModel(Self.peripheralAccessory)
+    }
     
     // MARK: - Loot
     
-    static var lootBagViewModel: LootBagViewModel {
+    // MODEL
+    
+    private static var lootBag: LootBag {
         let lootBag = LootBag()
         lootBag.addArmorLoot(self.armorViewModel.armor)
         lootBag.addPotionLoot(DamagePotion(tier: .II, potionCount: 3, basePurchasePrice: 200))
-        lootBag.addAccessoryLoot(self.accessoryViewModel.accessory)
+        lootBag.addAccessoryLoot(self.accessory)
         lootBag.addWeaponLoot(Weapon(basePill: LifestealBasePill(damage: 100), durabilityPill: InfiniteDurabilityPill()))
         lootBag.addGoldLoot(100)
-        return LootBagViewModel(lootBag)
+        return lootBag
+    }
+    
+    private static var lootOptions: LootOptions {
+        return LootOptions(self.lootBag, self.lootBag, self.lootBag)
+    }
+    
+    // VIEW MODEL
+    
+    static var lootBagViewModel: LootBagViewModel {
+        return LootBagViewModel(Self.lootBag)
     }
     
     static var lootOptionsViewModel: LootOptionsViewModel {
-        return LootOptionsViewModel(LootOptions(self.lootBagViewModel.lootBag, self.lootBagViewModel.lootBag, self.lootBagViewModel.lootBag))
+        return LootOptionsViewModel(Self.lootOptions)
     }
     
     // MARK: - NPCs
     
-    static let foeViewModel = FoeViewModel(Foe(
-        maxHealth: 500,
-        weapon: Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: DecrementDurabilityPill(durability: 5)), loot: NoLootOptions()
-    ))
+    // MODEL
     
-    static let shopKeeperViewModel = ShopKeeperViewModel(ShopKeeper(
-        name: "Andre",
-        description: "I sell pancakes and maple syrup!!",
-        purchasableItems: [
-            PurchasableItem(item: Weapon(basePill: DamageBasePill(damage: 200), durabilityPill: DullingDurabilityPill(damageLostPerUse: 50)), stock: 5)
-        ]
-    ))
+    private static var foe: Foe {
+        return Foe(
+            maxHealth: 500,
+            weapon: Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: DecrementDurabilityPill(durability: 5)), loot: NoLootOptions()
+        )
+    }
     
-    static let enhancerViewModel = EnhancerViewModel(Enhancer(
-        name: "Ana",
-        description: "You're powered up, get in there!",
-        offers: [WeaponDamageEnhanceOffer(price: 100, damage: 200)]
-    ))
+    private static var shopKeeper: ShopKeeper {
+        return ShopKeeper(
+            name: "Andre",
+            description: "I sell pancakes and maple syrup!!",
+            purchasableItems: [
+                PurchasableItem(item: Weapon(basePill: DamageBasePill(damage: 200), durabilityPill: DullingDurabilityPill(damageLostPerUse: 50)), stock: 5)
+            ]
+        )
+    }
     
-    static let restorerViewModel = RestorerViewModel(Restorer(
-        name: "Mercy",
-        description: "Heroes never die!",
-        options: [.health, .armorPoints],
-        pricePerHealthBundle: 10,
-        pricePerArmorPointBundle: 10
-    ))
+    private static var enhancer: Enhancer {
+        return Enhancer(
+            name: "Ana",
+            description: "You're powered up, get in there!",
+            offers: [WeaponDamageEnhanceOffer(price: 100, damage: 200)]
+        )
+    }
     
-    static let friendlyViewModel = FriendlyViewModel(Friendly(
-        name: "Winston",
-        description: "With a Y",
-        offers: [FreeGoldOffer(goldAmount: 200)],
-        offerLimit: 1
-    ))
+    private static var restorer: Restorer {
+        return Restorer(
+            name: "Mercy",
+            description: "Heroes never die!",
+            options: [.health, .armorPoints],
+            pricePerHealthBundle: 10,
+            pricePerArmorPointBundle: 10
+        )
+    }
+    
+    private static var friendly: Friendly {
+        return Friendly(
+            name: "Winston",
+            description: "With a Y",
+            offers: [FreeGoldOffer(goldAmount: 200)],
+            offerLimit: 1
+        )
+    }
+    
+    // VIEW MODEL
+    
+    static var foeViewModel: FoeViewModel {
+        return FoeViewModel(Self.foe)
+    }
+    
+    static var shopKeeperViewModel: ShopKeeperViewModel {
+        return ShopKeeperViewModel(Self.shopKeeper)
+    }
+    
+    static var enhancerViewModel: EnhancerViewModel {
+        return EnhancerViewModel(Self.enhancer)
+    }
+    
+    static var restorerViewModel: RestorerViewModel {
+        return RestorerViewModel(Self.restorer)
+    }
+    
+    static var friendlyViewModel: FriendlyViewModel {
+        return FriendlyViewModel(Self.friendly)
+    }
     
     // MARK: - NPC Extensions
     
-    static let restoreOptionViewModel = RestoreOptionViewModel(
-        restoreOption: .health,
-        restorerViewModel: RestorerViewModel(Restorer(options: [.health]))
-    )
+    // MODEL
     
-    static let purchasableViewModel = PurchasableViewModel(
-        purchasable: PurchasableItem(
-            item: ArmorAbstract(
-                name: "Cool Armor",
-                description: "Very cool.",
-                type: .body,
-                armorPoints: 200,
-                basePurchasePrice: 100,
-                armorBuffs: []
-            ),
-            stock: 3
-        ),
-        shopKeeperViewModel: ShopKeeperViewModel(ShopKeeper(
-            name: "ShopKeeper",
-            description: "Sells things.",
-            purchasableItems: []
-        ))
-    )
+    private static var purchasableItem: PurchasableItem {
+        return PurchasableItem(item: Self.armor, stock: 3)
+    }
     
-    static let enhanceOfferViewModel = EnhanceOfferViewModel(
-        ArmorPointsEnhanceOffer(price: 100, armorPoints: 200)
-    )
+    private static var enhanceOffer: EnhanceOffer {
+        return ArmorPointsEnhanceOffer(price: 100, armorPoints: 200)
+    }
+    
+    // VIEW MODEL
+    
+    static var restoreOptionViewModel: RestoreOptionViewModel {
+        return RestoreOptionViewModel(restoreOption: .health, restorerViewModel: Self.restorerViewModel)
+    }
+    
+    static var purchasableViewModel: PurchasableViewModel {
+        return PurchasableViewModel(
+            purchasable: Self.purchasableItem,
+            shopKeeperViewModel: ShopKeeperViewModel(ShopKeeper(
+                name: "Billy",
+                description: "Sells things.",
+                purchasableItems: [Self.purchasableItem])
+            )
+        )
+    }
+    
+    static var enhanceOfferViewModel: EnhanceOfferViewModel {
+        return EnhanceOfferViewModel(Self.enhanceOffer)
+    }
     
     // MARK: - Items
     
-    static let weaponViewModel = WeaponViewModel(Weapon(
-        basePill: DamageBasePill(damage: 200),
-        durabilityPill: DecrementDurabilityPill(durability: 5)
-    ))
+    // MODEL
     
-    static let potionViewModel = PotionViewModel(DamagePotion(tier: .II, potionCount: 3, basePurchasePrice: 100))
+    private static var weapon: Weapon {
+        return Weapon(
+            basePill: DamageBasePill(damage: 200),
+            durabilityPill: DecrementDurabilityPill(durability: 5)
+        )
+    }
+    
+    private static var potion: PotionAbstract {
+        return DamagePotion(tier: .II, potionCount: 3, basePurchasePrice: 100)
+    }
+    
+    // VIEW MODEL
+    
+    static var weaponViewModel: WeaponViewModel {
+        return WeaponViewModel(Self.weapon)
+    }
+    
+    static var potionViewModel: PotionViewModel {
+        return PotionViewModel(Self.potion)
+    }
     
     // MARK: - Map
     
-    private static let area = Area(
-        arrangement: .A,
-        locations: [
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-            HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions()))
-        ],
-        name: "Glacier Rifts",
-        description: "placeholderDescription",
-        image: YonderImages.placeholderImage
-    )
+    // MODEL
     
-    static func locationViewModel() -> LocationViewModel {
-        let location = FriendlyLocation(friendly: Friendly(name: "Billy", description: "Likes rainy days.", offers: [], offerLimit: 0))
-        location.setAreaContent(PreviewObjects.area)
-        return LocationViewModel(location)
+    private static var area: Area {
+        return Area(
+            arrangement: .A,
+            locations: [
+                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
+                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions()))
+            ],
+            name: "Glacier Rifts",
+            description: "placeholderDescription",
+            image: YonderImages.placeholderImage
+        )
     }
     
-    static func alternateLocationViewModel() -> LocationViewModel {
-        let location = FriendlyLocation(friendly: Friendly(name: "Bob", description: "Hates Billy.", offers: [], offerLimit: 0))
-        location.setAreaContent(PreviewObjects.area)
-        return LocationViewModel(location)
+    private static var location: LocationAbstract {
+        let location = FriendlyLocation(friendly: Self.friendly)
+        location.setAreaContent(Self.area)
+        return location
+    }
+    
+    private static var alternateLocation: LocationAbstract {
+        let location = HostileLocation(foe: Self.foe)
+        location.setAreaContent(Self.area)
+        return location
+    }
+    
+    // VIEW MODEL
+    
+    static var locationViewModel: LocationViewModel {
+        return LocationViewModel(Self.location)
+    }
+    
+    static var alternateLocationViewModel: LocationViewModel {
+        return LocationViewModel(Self.alternateLocation)
     }
     
 }

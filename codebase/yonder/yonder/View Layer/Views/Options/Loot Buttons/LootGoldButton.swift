@@ -28,7 +28,7 @@ struct LootGoldButton_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            LootGoldButton(amount: 500, playerViewModel: PreviewObjects.playerViewModel(), lootBagViewModel: PreviewObjects.lootBagViewModel)
+            LootGoldButton(amount: 500, playerViewModel: PreviewObjects.playerViewModel, lootBagViewModel: PreviewObjects.lootBagViewModel)
         }
     }
 }

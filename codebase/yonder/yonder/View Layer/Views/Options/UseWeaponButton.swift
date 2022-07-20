@@ -84,7 +84,7 @@ struct UseWeaponButton_Previews: PreviewProvider {
                 .ignoresSafeArea()
             
             UseWeaponButton(
-                playerViewModel: PreviewObjects.playerViewModel(),
+                playerViewModel: PreviewObjects.playerViewModel,
                 weaponViewModel: PreviewObjects.weaponViewModel)
         }
     }

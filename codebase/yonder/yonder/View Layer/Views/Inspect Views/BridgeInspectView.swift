@@ -33,8 +33,8 @@ struct BridgeInspectView_Previews: PreviewProvider {
                 .ignoresSafeArea()
             
             BridgeInspectView(
-                location1ViewModel: PreviewObjects.locationViewModel(),
-                location2ViewModel: PreviewObjects.alternateLocationViewModel())
+                location1ViewModel: PreviewObjects.locationViewModel,
+                location2ViewModel: PreviewObjects.alternateLocationViewModel)
         }
     }
 }

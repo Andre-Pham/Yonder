@@ -35,7 +35,7 @@ struct LootBagButton_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            LootBagButton(playerViewModel: PreviewObjects.playerViewModel(), lootOptionsViewModel: PreviewObjects.lootOptionsViewModel, lootBagViewModel: PreviewObjects.lootBagViewModel)
+            LootBagButton(playerViewModel: PreviewObjects.playerViewModel, lootOptionsViewModel: PreviewObjects.lootOptionsViewModel, lootBagViewModel: PreviewObjects.lootBagViewModel)
         }
     }
 }

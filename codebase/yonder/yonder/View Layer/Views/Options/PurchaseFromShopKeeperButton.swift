@@ -117,7 +117,7 @@ struct PurchaseFromShopKeeperButton_Previews: PreviewProvider {
                     .ignoresSafeArea()
                 
                 PurchaseFromShopKeeperButton(
-                    playerViewModel: PreviewObjects.playerViewModel(),
+                    playerViewModel: PreviewObjects.playerViewModel,
                     purchasableViewModel: PreviewObjects.purchasableViewModel,
                     pageGeometry: geo)
             }

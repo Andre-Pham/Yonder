@@ -43,7 +43,7 @@ struct InspectLocationView_Previews: PreviewProvider {
                 .ignoresSafeArea()
             
             InspectBody {
-                InspectLocationView(locationViewModel: PreviewObjects.locationViewModel())
+                InspectLocationView(locationViewModel: PreviewObjects.locationViewModel)
             }
         }
     }

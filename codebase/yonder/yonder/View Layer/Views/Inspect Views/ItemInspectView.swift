@@ -56,7 +56,7 @@ struct ItemInspectView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            ItemInspectView(itemViewModel: PreviewObjects.weaponViewModel, playerViewModel: PreviewObjects.playerViewModel())
+            ItemInspectView(itemViewModel: PreviewObjects.weaponViewModel, playerViewModel: PreviewObjects.playerViewModel)
                 .padding()
         }
         
@@ -64,7 +64,7 @@ struct ItemInspectView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            ItemInspectView(itemViewModel: PreviewObjects.potionViewModel, playerViewModel: PreviewObjects.playerViewModel())
+            ItemInspectView(itemViewModel: PreviewObjects.potionViewModel, playerViewModel: PreviewObjects.playerViewModel)
                 .padding()
         }
     }

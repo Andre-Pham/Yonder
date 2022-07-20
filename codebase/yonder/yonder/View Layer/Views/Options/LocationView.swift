@@ -45,7 +45,7 @@ struct LocationView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            LocationView(locationViewModel: PreviewObjects.locationViewModel())
+            LocationView(locationViewModel: PreviewObjects.locationViewModel)
         }
     }
 }

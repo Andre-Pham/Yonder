@@ -42,7 +42,7 @@ struct InspectOngoingEffects_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            InspectOngoingEffects(playerViewModel: PreviewObjects.playerViewModel())
+            InspectOngoingEffects(playerViewModel: PreviewObjects.playerViewModel)
         }
     }
 }

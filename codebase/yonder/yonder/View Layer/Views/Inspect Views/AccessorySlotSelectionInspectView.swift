@@ -54,7 +54,7 @@ struct AccessorySlotSelectionInspectView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            AccessorySlotSelectionInspectView(playerViewModel: PreviewObjects.playerViewModel()) { selection in
+            AccessorySlotSelectionInspectView(playerViewModel: PreviewObjects.playerViewModel) { selection in
                 print(selection?.uuidString ?? "nil")
             }
         }

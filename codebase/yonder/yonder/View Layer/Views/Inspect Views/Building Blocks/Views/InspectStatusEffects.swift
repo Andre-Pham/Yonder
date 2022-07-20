@@ -47,7 +47,7 @@ struct InspectStatusEffects_Previews: PreviewProvider {
                 .ignoresSafeArea()
             
             VStack {
-                InspectStatusEffects(playerViewModel: PreviewObjects.playerViewModel())
+                InspectStatusEffects(playerViewModel: PreviewObjects.playerViewModel)
             }
         }
     }

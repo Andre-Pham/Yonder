@@ -44,7 +44,7 @@ struct InventoryArmorView_Previews: PreviewProvider {
                     .ignoresSafeArea()
                 
                 VStack(alignment: .leading) {
-                    InventoryArmorView(sheetsStateManager: InventorySheetsStateManager(playerViewModel: PreviewObjects.playerViewModel()), playerViewModel: PreviewObjects.playerViewModel(), pageGeometry: geo)
+                    InventoryArmorView(sheetsStateManager: InventorySheetsStateManager(playerViewModel: PreviewObjects.playerViewModel), playerViewModel: PreviewObjects.playerViewModel, pageGeometry: geo)
                 }
             }
         }
