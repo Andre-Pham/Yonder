@@ -10,6 +10,7 @@ import Foundation
 class ArmorPointsRestorationBasePill: WeaponBasePill {
     
     private(set) var armorPointsRestoration: Int
+    public let effectsDescription: String? = nil
     
     init(armorPointsRestoration: Int) {
         self.armorPointsRestoration = armorPointsRestoration

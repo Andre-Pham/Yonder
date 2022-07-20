@@ -58,11 +58,15 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
     }
     
     func getEffectsDescription() -> String? {
-        var effectsDescription = self.durabilityPill.effectsDescription
-        for effectPill in self.effectPills {
-            effectsDescription += "\n" + effectPill.effectsDescription
+        var components = [String]()
+        if let basePillEffectsDescription = self.basePill.effectsDescription {
+            components.append(basePillEffectsDescription)
         }
-        return effectsDescription
+        components.append(self.durabilityPill.effectsDescription)
+        for effectPill in self.effectPills {
+            components.append(effectPill.effectsDescription)
+        }
+        return components.joined(separator: "\n")
     }
     
     func getEffectPillsDescription() -> String? {

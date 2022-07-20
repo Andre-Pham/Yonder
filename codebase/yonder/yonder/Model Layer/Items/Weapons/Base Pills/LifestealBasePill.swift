@@ -7,12 +7,14 @@
 
 import Foundation
 
-class LifestealBasePill: WeaponBasePill, DamageSubscriber {
+class LifestealBasePill: WeaponBasePill, DamageSubscriber, HealthRestorationSubscriber {
     
     private(set) var damage: Int
+    public let effectsDescription: String?
     
     init(damage: Int) {
         self.damage = damage
+        self.effectsDescription = Strings.WeaponBasePill.Lifesteal.EffectsDescription.local
     }
     
     func setup(weapon: Weapon) {
@@ -27,6 +29,12 @@ class LifestealBasePill: WeaponBasePill, DamageSubscriber {
     
     func onDamageChange(_ item: ItemAbstract, old: Int) {
         item.setHealthRestoration(to: item.damage)
+    }
+    
+    func onHealthRestorationChange(_ item: ItemAbstract, old: Int) {
+        if item.healthRestoration != item.damage {
+            item.setHealthRestoration(to: item.damage)
+        }
     }
     
 }

@@ -10,6 +10,7 @@ import Foundation
 class DamageBasePill: WeaponBasePill {
     
     private(set) var damage: Int
+    public let effectsDescription: String? = nil
     
     init(damage: Int) {
         self.damage = damage

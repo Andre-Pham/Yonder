@@ -9,6 +9,8 @@ import Foundation
 
 class EffectBasePill: WeaponBasePill {
     
+    public let effectsDescription: String? = nil
+    
     func setup(weapon: Weapon) {
         // Nothing to setup
     }

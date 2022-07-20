@@ -11,6 +11,8 @@ import Foundation
 /// Weapons can only take one of this pill.
 protocol WeaponBasePill {
     
+    var effectsDescription: String? { get }
+    
     func setup(weapon: Weapon)
     func getValue() -> Int
     

@@ -239,6 +239,10 @@
 "weapon.defaultPlayerWeapon.name" = "Your Fists";
 "weapon.defaultPlayerWeapon.description" = "With no weapons, you're down to your bare hands and your wits.";
 
+// MARK: - Weapon Base Pills
+
+"weaponBasePill.lifesteal.effectsDescription" = "Always restores health equal to this weapon's damage.";
+
 // MARK: - Weapon Durability Pills
 
 // Decrement
