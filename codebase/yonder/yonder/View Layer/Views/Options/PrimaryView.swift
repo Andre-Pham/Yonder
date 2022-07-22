@@ -1,5 +1,5 @@
 //
-//  OptionsView.swift
+//  PrimaryView.swift
 //  yonder
 //
 //  Created by Andre Pham on 10/12/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OptionsView: View {
+struct PrimaryView: View {
     @EnvironmentObject private var viewRouter: ViewRouter
     @EnvironmentObject private var travelStateManager: TravelStateManager
     @ObservedObject private var playerViewModel: PlayerViewModel
@@ -211,7 +211,7 @@ struct OptionsView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            OptionsView()
+            PrimaryView()
         }
     }
 }

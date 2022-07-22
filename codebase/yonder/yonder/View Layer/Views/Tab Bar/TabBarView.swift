@@ -14,8 +14,8 @@ struct TabBarView: View {
     var body: some View {
         VStack(spacing: 0) {
             ZStack {
-                OptionsView()
-                    .opacity(self.viewRouter.currentPage == .options ? 1 : 0)
+                PrimaryView()
+                    .opacity(self.viewRouter.currentPage == .primary ? 1 : 0)
                 
                 if self.viewRouter.currentPage == .inventory {
                     // Other views we adjust the opacity to hide the view while maintaining state
@@ -40,7 +40,7 @@ struct TabBarView: View {
             HStack(spacing: 0) {
                 TabBarIconView(
                     viewRouter: self.viewRouter,
-                    correspondingPage: .options,
+                    correspondingPage: .primary,
                     icon: YonderIcon(image: YonderImages.gameIcon),
                     text: Strings.TabBar.Game.local)
                 

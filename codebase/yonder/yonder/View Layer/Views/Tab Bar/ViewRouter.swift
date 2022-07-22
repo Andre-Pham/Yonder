@@ -10,13 +10,13 @@ import Foundation
 class ViewRouter: ObservableObject {
     
     enum Page {
-        case options
+        case primary
         case inventory
         case map
         case settings
     }
     
-    @Published private(set) var currentPage: Page = .options
+    @Published private(set) var currentPage: Page = .primary
     
     func switchPage(to page: Page) {
         self.currentPage = page
