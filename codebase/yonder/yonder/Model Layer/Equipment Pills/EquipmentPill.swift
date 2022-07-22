@@ -17,14 +17,17 @@ protocol HasPriceValue {
 
 class EquipmentPillAbstractPart: Clonable {
     
+    public let sourceName: String
     public let effectsDescription: String
     public let id = UUID()
     
-    init(effectsDescription: String) {
+    init(sourceName: String, effectsDescription: String) {
+        self.sourceName = sourceName
         self.effectsDescription = effectsDescription
     }
     
     required init(_ original: EquipmentPillAbstractPart) {
+        self.sourceName = original.sourceName
         self.effectsDescription = original.effectsDescription
     }
     

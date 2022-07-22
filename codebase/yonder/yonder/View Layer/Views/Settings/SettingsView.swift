@@ -90,7 +90,7 @@ struct SettingsView: View {
             
             Group {
                 Button("Peripheral Accessory") {
-                    GameManager.instance.playerVM.player.equipAccessory(Accessory(name: "Vampire Fang", description: "Sharp and bloody.", type: .peripheral, healthBonus: 0, armorPointsBonus: 0, basePurchasePrice: 200, buffs: [], equipmentPills: [WeaponLifestealEquipmentPill(lifestealFraction: 0.5)]), replacing: nil)
+                    GameManager.instance.playerVM.player.equipAccessory(Accessory(name: "Vampire Fang", description: "Sharp and bloody.", type: .peripheral, healthBonus: 0, armorPointsBonus: 0, basePurchasePrice: 200, buffs: [], equipmentPills: [WeaponLifestealEquipmentPill(lifestealFraction: 0.5, sourceName: "Vampire Fang")]), replacing: nil)
                 }
                 .padding()
                 .background(Color.red)

@@ -11,9 +11,14 @@ class WeaponLifestealEquipmentPill: EquipmentPillAbstract, AfterActorAttackSubsc
     
     private let lifestealFraction: Double
     
-    init(lifestealFraction: Double) {
+    init(lifestealFraction: Double, sourceName: String) {
         self.lifestealFraction = lifestealFraction
-        super.init(effectsDescription: Strings.EquipmentPill.WeaponLifesteal.EffectsDescription1Param.localWithArgs((lifestealFraction*100.0).toString()))
+        
+        super.init(
+            sourceName: sourceName,
+            effectsDescription: Strings.EquipmentPill.WeaponLifesteal.EffectsDescription1Param
+                .localWithArgs((lifestealFraction*100.0).toString())
+        )
         
         ActorPublisher.addSubscriber(self)
     }
@@ -21,7 +26,8 @@ class WeaponLifestealEquipmentPill: EquipmentPillAbstract, AfterActorAttackSubsc
     required init(_ original: EquipmentPillAbstractPart) {
         let original = original as! Self
         self.lifestealFraction = original.lifestealFraction
-        super.init(effectsDescription: original.effectsDescription)
+        
+        super.init(original)
         
         ActorPublisher.addSubscriber(self)
     }
