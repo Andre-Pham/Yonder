@@ -106,6 +106,17 @@ class PlayerViewModel: ObservableObject {
         allBuffs.append(contentsOf: self.peripheralAccessoryViewModel.buffViewModels)
         return allBuffs
     }
+    var allEquipmentEffects: [EquipmentEffectViewModel] {
+        var allEquipmentEffects = [EquipmentEffectViewModel]()
+        for armorViewModel in self.allArmorViewModels {
+            allEquipmentEffects.append(contentsOf: armorViewModel.equipmentEffectViewModels)
+        }
+        for accessoryViewModel in self.accessoryViewModels {
+            allEquipmentEffects.append(contentsOf: accessoryViewModel.equipmentEffectViewModels)
+        }
+        allEquipmentEffects.append(contentsOf: self.peripheralAccessoryViewModel.equipmentEffectViewModels)
+        return allEquipmentEffects
+    }
     var canEngage: Bool {
         return self.locationViewModel.playerCanEngage
     }

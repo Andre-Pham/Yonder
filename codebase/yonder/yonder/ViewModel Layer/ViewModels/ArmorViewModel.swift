@@ -28,6 +28,7 @@ class ArmorViewModel: ObservableObject {
             }
         }
     }
+    @Published private(set) var equipmentEffectViewModels: [EquipmentEffectViewModel]
     
     init(_ armor: ArmorAbstract) {
         self.armor = armor
@@ -41,6 +42,7 @@ class ArmorViewModel: ObservableObject {
         self.description = self.armor.description
         self.effectsDescription = self.armor.getEffectsDescription()
         self.buffViewModels = self.armor.armorBuffs.map { BuffViewModel($0) }
+        self.equipmentEffectViewModels = self.armor.equipmentPills.map { EquipmentEffectViewModel($0) }
         
         // Add Subscribers
         
@@ -51,6 +53,11 @@ class ArmorViewModel: ObservableObject {
         self.armor.$armorBuffs.sink(receiveValue: { newValue in
             self.effectsDescription = self.armor.getEffectsDescription()
             self.buffViewModels = newValue.map { BuffViewModel($0) }
+        }).store(in: &self.subscriptions)
+        
+        self.armor.$equipmentPills.sink(receiveValue: { newValue in
+            self.effectsDescription = self.armor.getEffectsDescription()
+            self.equipmentEffectViewModels = self.armor.equipmentPills.map { EquipmentEffectViewModel($0) }
         }).store(in: &self.subscriptions)
         
         self.armor.$armorAttributes.sink(receiveValue: { newValue in

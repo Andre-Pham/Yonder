@@ -28,6 +28,7 @@ class AccessoryViewModel: ObservableObject {
             }
         }
     }
+    @Published private(set) var equipmentEffectViewModels: [EquipmentEffectViewModel]
     var accessoryTypeDescription: String {
         switch self.accessory.type {
         case .peripheral:
@@ -53,6 +54,7 @@ class AccessoryViewModel: ObservableObject {
         self.id = accessory.id
         self.effectsDescription = accessory.getEffectsDescription()
         self.buffViewModels = self.accessory.buffs.map { BuffViewModel($0) }
+        self.equipmentEffectViewModels = self.accessory.equipmentPills.map { EquipmentEffectViewModel($0) }
         
         self.accessory.$healthBonus.sink(receiveValue: { newValue in
             self.healthBonus = newValue
@@ -64,6 +66,11 @@ class AccessoryViewModel: ObservableObject {
         
         self.accessory.$buffs.sink(receiveValue: { newValue in
             self.buffViewModels = newValue.map { BuffViewModel($0) }
+            self.effectsDescription = self.accessory.getEffectsDescription()
+        }).store(in: &self.subscriptions)
+        
+        self.accessory.$equipmentPills.sink(receiveValue: { newValue in
+            self.equipmentEffectViewModels = self.accessory.equipmentPills.map { EquipmentEffectViewModel($0) }
             self.effectsDescription = self.accessory.getEffectsDescription()
         }).store(in: &self.subscriptions)
     }

@@ -15,7 +15,7 @@ class ArmorAbstract: EffectsDescribed, Purchasable, Named, Described, Enhanceabl
     @DidSetPublished private(set) var armorPoints: Int
     public let basePurchasePrice: Int
     @DidSetPublished private(set) var armorBuffs: [BuffAbstract]
-    private(set) var equipmentPills: [EquipmentPillAbstract]
+    @DidSetPublished private(set) var equipmentPills: [EquipmentPillAbstract]
     @DidSetPublished private(set) var armorAttributes: [ArmorAttribute]
     public let id = UUID()
     
@@ -59,6 +59,10 @@ class ArmorAbstract: EffectsDescribed, Purchasable, Named, Described, Enhanceabl
     
     func addBuff(buff: BuffAbstract) {
         self.armorBuffs.append(buff)
+    }
+    
+    func addEquipmentPill(_ pill: EquipmentPillAbstract) {
+        self.equipmentPills.append(pill)
     }
     
     func hasEffect(_ equipmentPill: EquipmentPillAbstract) -> Bool {

@@ -22,13 +22,15 @@ struct PlayerInspectView: View {
                 InspectStatView(title: Strings.Stat.Gold.local, prefix: Strings.CurrencySymbol.local, value: self.playerViewModel.gold, image: YonderImages.goldIcon)
             }
             
-            // Ongoing Effects (Buffs)
+            // Ongoing Effects
             Group {
                 InspectSectionSpacingView()
                 
                 YonderText(text: Strings.Inspect.Title.Buffs.local, size: .inspectSheetTitle)
                 
-                InspectOngoingEffects(playerViewModel: self.playerViewModel)
+                InspectEquipmentEffects(playerViewModel: self.playerViewModel)
+                
+                InspectBuffs(playerViewModel: self.playerViewModel)
             }
             
             // Status Effects

@@ -1,5 +1,5 @@
 //
-//  InspectOngoingEffects.swift
+//  InspectBuffs.swift
 //  yonder
 //
 //  Created by Andre Pham on 25/6/2022.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct InspectOngoingEffects: View {
+struct InspectBuffs: View {
     @ObservedObject var playerViewModel: PlayerViewModel
     
     var body: some View {
@@ -42,7 +42,9 @@ struct InspectOngoingEffects_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            InspectOngoingEffects(playerViewModel: PreviewObjects.playerViewModel)
+            InspectBody {
+                InspectBuffs(playerViewModel: PreviewObjects.playerViewModel)
+            }
         }
     }
 }
