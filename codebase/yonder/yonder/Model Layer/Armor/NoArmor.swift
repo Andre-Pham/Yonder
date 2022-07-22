@@ -27,6 +27,7 @@ class NoArmor: ArmorAbstract {
             armorPoints: 0,
             basePurchasePrice: 0,
             armorBuffs: [],
+            equipmentPills: [],
             armorAttributes: [.upgradesDisallowed])
     }
     

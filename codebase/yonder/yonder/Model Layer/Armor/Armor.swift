@@ -15,6 +15,7 @@ class ArmorAbstract: EffectsDescribed, Purchasable, Named, Described, Enhanceabl
     @DidSetPublished private(set) var armorPoints: Int
     public let basePurchasePrice: Int
     @DidSetPublished private(set) var armorBuffs: [BuffAbstract]
+    private(set) var equipmentPills: [EquipmentPillAbstract]
     @DidSetPublished private(set) var armorAttributes: [ArmorAttribute]
     public let id = UUID()
     
@@ -23,15 +24,17 @@ class ArmorAbstract: EffectsDescribed, Purchasable, Named, Described, Enhanceabl
     ///   - type: Where the armor is worn
     ///   - armorPoints: The 'health' of the armor
     ///   - basePurchasePrice: The base purchase price of the armor before additional costs
-    ///   - armorBuffs: The effects the armor gives when worn
+    ///   - armorBuffs: The buffs/debuffs the armor gives when worn
+    ///   - equipmentPills: The effects this gives when worn
     ///   - armorAttributes: Attributes that apply to the armor
-    init(name: String, description: String, type: ArmorType, armorPoints: Int, basePurchasePrice: Int, armorBuffs: [BuffAbstract], armorAttributes: [ArmorAttribute] = []) {
+    init(name: String, description: String, type: ArmorType, armorPoints: Int, basePurchasePrice: Int, armorBuffs: [BuffAbstract], equipmentPills: [EquipmentPillAbstract], armorAttributes: [ArmorAttribute] = []) {
         self.name = name
         self.description = description
         self.type = type
         self.armorPoints = armorPoints
         self.basePurchasePrice = basePurchasePrice
         self.armorBuffs = armorBuffs
+        self.equipmentPills = equipmentPills
         self.armorAttributes = armorAttributes
     }
     
@@ -42,18 +45,24 @@ class ArmorAbstract: EffectsDescribed, Purchasable, Named, Described, Enhanceabl
         self.armorPoints = original.armorPoints
         self.basePurchasePrice = original.basePurchasePrice
         self.armorBuffs = original.armorBuffs.clone()
+        self.equipmentPills = original.equipmentPills.map { $0.clone() }
         self.armorAttributes = Array(original.armorAttributes)
     }
     
     func getEffectsDescription() -> String? {
         var descriptionLines = [String]()
         descriptionLines.append(contentsOf: self.armorBuffs.compactMap { $0.getEffectsDescription() })
+        descriptionLines.append(contentsOf: self.equipmentPills.map { $0.effectsDescription })
         descriptionLines.append(contentsOf: self.armorAttributes.compactMap { $0.description })
         return descriptionLines.isEmpty ? nil : descriptionLines.joined(separator: "\n")
     }
     
     func addBuff(buff: BuffAbstract) {
         self.armorBuffs.append(buff)
+    }
+    
+    func hasEffect(_ equipmentPill: EquipmentPillAbstract) -> Bool {
+        return self.equipmentPills.contains(where: { $0.id == equipmentPill.id })
     }
     
     func addAttribute(_ attribute: ArmorAttribute) {

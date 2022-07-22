@@ -17,7 +17,8 @@ class ResistanceArmor: ArmorAbstract {
             type: type,
             armorPoints: armorPoints,
             basePurchasePrice: basePurchasePrice,
-            armorBuffs: [DamagePercentBuff(sourceName: name, direction: .incoming, duration: nil, damageFraction: damageFraction)]
+            armorBuffs: [DamagePercentBuff(sourceName: name, direction: .incoming, duration: nil, damageFraction: damageFraction)],
+            equipmentPills: []
         )
     }
     

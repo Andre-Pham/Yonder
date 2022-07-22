@@ -27,7 +27,7 @@ class WeaponLifestealEquipmentPill: EquipmentPillAbstract, AfterActorAttackSubsc
     }
     
     func afterActorAttack(actor: ActorAbstract, weapon: Weapon, target: ActorAbstract) {
-        guard actor.accessorySlots.hasEffect(self) else {
+        guard actor.hasEquipmentEffect(self) else {
             return
         }
         let damageDealt = actor.getIndicativeDamage(of: weapon, opposition: target)

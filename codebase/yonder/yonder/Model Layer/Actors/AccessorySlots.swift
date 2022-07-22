@@ -54,7 +54,7 @@ class AccessorySlots {
     
     func hasEffect(_ equipmentPill: EquipmentPillAbstract) -> Bool {
         for accessory in self.allAccessories {
-            if accessory.effectPills.contains(where: { $0.id == equipmentPill.id }) {
+            if accessory.hasEffect(equipmentPill) {
                 return true
             }
         }

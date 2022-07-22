@@ -81,7 +81,7 @@ struct SettingsView: View {
                 .foregroundColor(.white)
                 
                 Button("Accessory") {
-                    GameManager.instance.playerVM.player.equipAccessory(Accessory(name: "Glasses", description: "Lets you see better.", type: .regular, healthBonus: 0, armorPointsBonus: 10, basePurchasePrice: 5, buffs: [PricePercentBuff(sourceName: "Glasses", direction: .outgoing, duration: nil, priceFraction: 0.5)], effectPills: []), replacing: nil)
+                    GameManager.instance.playerVM.player.equipAccessory(Accessory(name: "Glasses", description: "Lets you see better.", type: .regular, healthBonus: 0, armorPointsBonus: 10, basePurchasePrice: 5, buffs: [PricePercentBuff(sourceName: "Glasses", direction: .outgoing, duration: nil, priceFraction: 0.5)], equipmentPills: []), replacing: nil)
                 }
                 .padding()
                 .background(Color.red)
@@ -90,7 +90,7 @@ struct SettingsView: View {
             
             Group {
                 Button("Peripheral Accessory") {
-                    GameManager.instance.playerVM.player.equipAccessory(Accessory(name: "Vampire Fang", description: "Sharp and bloody.", type: .peripheral, healthBonus: 0, armorPointsBonus: 0, basePurchasePrice: 200, buffs: [], effectPills: [WeaponLifestealEquipmentPill(lifestealFraction: 0.5)]), replacing: nil)
+                    GameManager.instance.playerVM.player.equipAccessory(Accessory(name: "Vampire Fang", description: "Sharp and bloody.", type: .peripheral, healthBonus: 0, armorPointsBonus: 0, basePurchasePrice: 200, buffs: [], equipmentPills: [WeaponLifestealEquipmentPill(lifestealFraction: 0.5)]), replacing: nil)
                 }
                 .padding()
                 .background(Color.red)

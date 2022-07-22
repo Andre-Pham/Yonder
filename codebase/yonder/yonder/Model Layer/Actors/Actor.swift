@@ -341,6 +341,17 @@ class ActorAbstract {
         self.armorPoints = min(self.armorPoints, previousMaxArmorPoints - accessory.armorPointsBonus)
     }
     
+    // MARK: - Equipment (Accessories/Armor)
+    
+    func hasEquipmentEffect(_ equipmentPill: EquipmentPillAbstract) -> Bool {
+        for armorPiece in self.allArmorPieces {
+            if armorPiece.hasEffect(equipmentPill) {
+                return true
+            }
+        }
+        return self.accessorySlots.hasEffect(equipmentPill)
+    }
+    
     // MARK: - Actor Interactions
     
     func useWeaponWhere(opposition: ActorAbstract, weapon: Weapon) {

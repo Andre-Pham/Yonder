@@ -26,7 +26,7 @@ class NoAccessory: Accessory {
             armorPointsBonus: 0,
             basePurchasePrice: 0,
             buffs: [],
-            effectPills: [])
+            equipmentPills: [])
     }
     
     required init(_ original: Accessory) {

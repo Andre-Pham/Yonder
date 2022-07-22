@@ -16,7 +16,7 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
     @DidSetPublished private(set) var armorPointsBonus: Int
     public let basePurchasePrice: Int
     @DidSetPublished private(set) var buffs: [BuffAbstract]
-    private(set) var effectPills: [EquipmentPillAbstract]
+    private(set) var equipmentPills: [EquipmentPillAbstract]
     public let id = UUID()
     
     /// To be called by subclasses only.
@@ -25,9 +25,9 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
     ///   - healthBonus: The health this provides as a bonus
     ///   - armorPointsBonus: The armor points this provides as a bonus
     ///   - basePurchasePrice: The base purchase price of this before additional costs
-    ///   - buffs: The buffs this gives when worn
-    ///   - effectPills: The effects this gives when worn
-    init(name: String, description: String, type: AccessoryType, healthBonus: Int, armorPointsBonus: Int, basePurchasePrice: Int, buffs: [BuffAbstract], effectPills: [EquipmentPillAbstract]) {
+    ///   - buffs: The buffs/debuffs this gives when worn
+    ///   - equipmentPills: The effects this gives when worn
+    init(name: String, description: String, type: AccessoryType, healthBonus: Int, armorPointsBonus: Int, basePurchasePrice: Int, buffs: [BuffAbstract], equipmentPills: [EquipmentPillAbstract]) {
         self.name = name
         self.description = description
         self.type = type
@@ -35,7 +35,7 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
         self.armorPointsBonus = armorPointsBonus
         self.basePurchasePrice = basePurchasePrice
         self.buffs = buffs
-        self.effectPills = effectPills
+        self.equipmentPills = equipmentPills
     }
     
     required init(_ original: Accessory) {
@@ -46,18 +46,22 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
         self.armorPointsBonus = original.armorPointsBonus
         self.basePurchasePrice = original.basePurchasePrice
         self.buffs = original.buffs.clone()
-        self.effectPills = original.effectPills.map { $0.clone() }
+        self.equipmentPills = original.equipmentPills.map { $0.clone() }
     }
     
     func getEffectsDescription() -> String? {
         var descriptionLines = [String]()
         descriptionLines.append(contentsOf: self.buffs.compactMap { $0.getEffectsDescription() })
-        descriptionLines.append(contentsOf: self.effectPills.map { $0.effectsDescription })
+        descriptionLines.append(contentsOf: self.equipmentPills.map { $0.effectsDescription })
         return descriptionLines.isEmpty ? nil : descriptionLines.joined(separator: "\n")
     }
     
     func addBuff(buff: BuffAbstract) {
         self.buffs.append(buff)
+    }
+    
+    func hasEffect(_ equipmentPill: EquipmentPillAbstract) -> Bool {
+        return self.equipmentPills.contains(where: { $0.id == equipmentPill.id })
     }
     
     func adjustArmorPointBonus(by armorPoints: Int) {
