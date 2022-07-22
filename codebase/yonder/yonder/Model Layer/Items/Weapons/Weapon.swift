@@ -92,13 +92,13 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
         self.onUseSubscribers.forEach({ $0.onUse(self, owner: owner, opposition: opposition) })
         
         if self.healthRestoration > 0 {
-            owner.restoreHealthAdjusted(sourceOwner: owner, using: self, for: self.healthRestoration)
+            owner.delayedRestorationValues.addRestorationAdjusted(type: .health, sourceOwner: owner, using: self, for: self.healthRestoration)
         }
         if self.damage > 0 {
-            opposition.damageAdjusted(sourceOwner: owner, using: self, for: self.damage)
+            opposition.delayedDamageValues.addDamageAdjusted(sourceOwner: owner, using: self, for: self.damage)
         }
         if self.armorPointsRestoration > 0 {
-            owner.restoreArmorPointsAdjusted(sourceOwner: owner, using: self, for: self.armorPointsRestoration)
+            owner.delayedRestorationValues.addRestorationAdjusted(type: .armorPoints, sourceOwner: owner, using: self, for: self.armorPointsRestoration)
         }
         
         for pill in self.effectPills {

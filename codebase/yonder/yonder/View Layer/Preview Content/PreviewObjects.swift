@@ -62,7 +62,7 @@ enum PreviewObjects {
             healthBonus: 0,
             armorPointsBonus: 0,
             basePurchasePrice: 0,
-            buffs: [DamagePercentBuff(sourceName: "Cool Accessory", direction: .outgoing, duration: nil, damageFraction: 1.5)]
+            buffs: [DamagePercentBuff(sourceName: "Cool Accessory", direction: .outgoing, duration: nil, damageFraction: 1.5)], effectPills: []
         )
     }
     
@@ -74,7 +74,7 @@ enum PreviewObjects {
             healthBonus: 10,
             armorPointsBonus: 20,
             basePurchasePrice: 100,
-            buffs: [DamagePercentBuff(sourceName: "Cool Accessory", direction: .outgoing, duration: nil, damageFraction: 1.5)]
+            buffs: [DamagePercentBuff(sourceName: "Cool Accessory", direction: .outgoing, duration: nil, damageFraction: 1.5)], effectPills: []
         )
     }
     

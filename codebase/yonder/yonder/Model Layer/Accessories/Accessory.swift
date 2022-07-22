@@ -16,6 +16,7 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
     @DidSetPublished private(set) var armorPointsBonus: Int
     public let basePurchasePrice: Int
     @DidSetPublished private(set) var buffs: [BuffAbstract]
+    private(set) var effectPills: [EquipmentPillAbstract]
     public let id = UUID()
     
     /// To be called by subclasses only.
@@ -24,8 +25,9 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
     ///   - healthBonus: The health this provides as a bonus
     ///   - armorPointsBonus: The armor points this provides as a bonus
     ///   - basePurchasePrice: The base purchase price of this before additional costs
-    ///   - buffs: The effects this gives when worn
-    init(name: String, description: String, type: AccessoryType, healthBonus: Int, armorPointsBonus: Int, basePurchasePrice: Int, buffs: [BuffAbstract]) {
+    ///   - buffs: The buffs this gives when worn
+    ///   - effectPills: The effects this gives when worn
+    init(name: String, description: String, type: AccessoryType, healthBonus: Int, armorPointsBonus: Int, basePurchasePrice: Int, buffs: [BuffAbstract], effectPills: [EquipmentPillAbstract]) {
         self.name = name
         self.description = description
         self.type = type
@@ -33,6 +35,7 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
         self.armorPointsBonus = armorPointsBonus
         self.basePurchasePrice = basePurchasePrice
         self.buffs = buffs
+        self.effectPills = effectPills
     }
     
     required init(_ original: Accessory) {
@@ -43,11 +46,13 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
         self.armorPointsBonus = original.armorPointsBonus
         self.basePurchasePrice = original.basePurchasePrice
         self.buffs = original.buffs.clone()
+        self.effectPills = original.effectPills.map { $0.clone() }
     }
     
     func getEffectsDescription() -> String? {
         var descriptionLines = [String]()
         descriptionLines.append(contentsOf: self.buffs.compactMap { $0.getEffectsDescription() })
+        descriptionLines.append(contentsOf: self.effectPills.map { $0.effectsDescription })
         return descriptionLines.isEmpty ? nil : descriptionLines.joined(separator: "\n")
     }
     

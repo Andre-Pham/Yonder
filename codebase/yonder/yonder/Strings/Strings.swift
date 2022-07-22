@@ -716,4 +716,14 @@ enum Strings: Localizable {
         }
     }
     
+    enum EquipmentPill: Localizable {
+        static let parent: LocalizeParent = Strings.self
+        
+        enum WeaponLifesteal: Localizable {
+            static let parent: LocalizeParent = EquipmentPill.self
+            
+            case EffectsDescription1Param
+        }
+    }
+    
 }

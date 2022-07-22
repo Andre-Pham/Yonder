@@ -52,6 +52,15 @@ class AccessorySlots {
         return self.allAccessories.contains(where: { $0.id == accessory.id })
     }
     
+    func hasEffect(_ equipmentPill: EquipmentPillAbstract) -> Bool {
+        for accessory in self.allAccessories {
+            if accessory.effectPills.contains(where: { $0.id == equipmentPill.id }) {
+                return true
+            }
+        }
+        return false
+    }
+    
     /// Remove a specified accessory. Optionally cache its location for the next equipped accessory to be inserted into.
     /// Typically removing an accessory precedes adding one in its place, hence the option to cache its location is given.
     /// (The accessory being removed can't always be replaced directly using `insert`, for example, in cases such as purchasing accessories.)

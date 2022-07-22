@@ -428,3 +428,7 @@
 "accessory.noAccessory.name" = "Empty";
 "accessory.noAccessory.regularDescription" = "No accessory equipped in this slot.";
 "accessory.noAccessory.peripheralDescription" = "No peripheral accessory equipped.";
+
+// MARK: - Equipment Pills
+
+"equipmentPill.weaponLifesteal.effectsDescription1Param" = "Restores %@%% of all weapon damage dealt as health.";

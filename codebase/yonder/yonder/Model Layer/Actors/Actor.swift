@@ -42,6 +42,8 @@ class ActorAbstract {
     public var isFullArmorPoints: Bool {
         return !(self.armorPoints < self.maxArmorPoints)
     }
+    public let delayedDamageValues = DelayedDamageValues()
+    public let delayedRestorationValues = DelayedRestorationValues()
     
     init(maxHealth: Int) {
         self.maxHealth = maxHealth
@@ -49,6 +51,8 @@ class ActorAbstract {
     }
     
     func onTurnCompletion() {
+        self.delayedDamageValues.consume(by: self)
+        self.delayedRestorationValues.consume(by: self)
         self.triggerStatusEffects()
         self.decrementTimedEvents()
         self.decrementBuffs()
@@ -340,10 +344,14 @@ class ActorAbstract {
     // MARK: - Actor Interactions
     
     func useWeaponWhere(opposition: ActorAbstract, weapon: Weapon) {
+        ActorPublisher.publishOnActorAttack(actor: self, weapon: weapon, target: opposition)
+        
         weapon.use(owner: self, opposition: opposition)
         if weapon.remainingUses == 0 {
             self.removeWeapon(weapon)
         }
+        
+        ActorPublisher.publishAfterActorAttack(actor: self, weapon: weapon, target: opposition)
         
         if let foe = opposition as? Foe, let player = self as? Player {
             foe.completeTurn(player: player)

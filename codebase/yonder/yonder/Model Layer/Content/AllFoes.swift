@@ -20,8 +20,8 @@ enum Foes {
         lootBag2.addPotionLoot(HealthRestorationPotion(tier: .V, potionCount: 4, basePurchasePrice: 10))
         let lootBag3 = LootBag()
         lootBag3.addWeaponLoot(Weapon(basePill: LifestealBasePill(damage: 100), durabilityPill: DecrementDurabilityPill(durability: 5)))
-        lootBag3.addAccessoryLoot(Accessory(name: "Accessory Loot", description: "This is some spooky armor.", type: .regular, healthBonus: 100, armorPointsBonus: 0, basePurchasePrice: 100, buffs: []))
-        lootBag3.addAccessoryLoot(Accessory(name: "Accessory Peri Loot", description: "This is some scary armor.", type: .peripheral, healthBonus: 0, armorPointsBonus: 100, basePurchasePrice: 100, buffs: []))
+        lootBag3.addAccessoryLoot(Accessory(name: "Accessory Loot", description: "This is some spooky armor.", type: .regular, healthBonus: 100, armorPointsBonus: 0, basePurchasePrice: 100, buffs: [], effectPills: []))
+        lootBag3.addAccessoryLoot(Accessory(name: "Accessory Peri Loot", description: "This is some scary armor.", type: .peripheral, healthBonus: 0, armorPointsBonus: 100, basePurchasePrice: 100, buffs: [], effectPills: []))
         
         return Foe(
             maxHealth: 200,
