@@ -36,8 +36,7 @@ struct CardBody<Content: View>: View {
         }
         .padding(.bottom)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.leading)
-        .padding(.trailing)
+        .padding(.horizontal)
         .foregroundColor(YonderColors.textMaxContrast)
         .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
     }

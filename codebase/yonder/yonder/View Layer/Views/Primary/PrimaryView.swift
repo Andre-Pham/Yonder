@@ -42,8 +42,7 @@ struct PrimaryView: View {
                             pageGeometry: geo)
                         
                     }
-                    .padding(.leading, YonderCoreGraphics.padding)
-                    .padding(.trailing, YonderCoreGraphics.padding)
+                    .padding(.horizontal, YonderCoreGraphics.padding)
                     .frame(maxWidth: .infinity)
                     .frame(height: geo.size.width/2 - YonderCoreGraphics.padding*1.5)
                     
@@ -54,8 +53,7 @@ struct PrimaryView: View {
                             playerViewModel: self.playerViewModel,
                             optionsStateManager: self.optionsStateManager,
                             pageGeometry: geo)
-                        .padding(.leading, YonderCoreGraphics.padding)
-                        .padding(.trailing, YonderCoreGraphics.padding)
+                        .padding(.horizontal, YonderCoreGraphics.padding)
                     }
                     
                     if self.optionsStateManager.activeActions.isActive {
@@ -63,8 +61,7 @@ struct PrimaryView: View {
                             playerViewModel: self.playerViewModel,
                             optionsStateManager: self.optionsStateManager,
                             pageGeometry: geo)
-                        .padding(.leading, YonderCoreGraphics.padding)
-                        .padding(.trailing, YonderCoreGraphics.padding)
+                        .padding(.horizontal, YonderCoreGraphics.padding)
                     }
                 }
             }
