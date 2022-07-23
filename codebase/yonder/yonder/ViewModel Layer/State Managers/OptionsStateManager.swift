@@ -11,20 +11,12 @@ import Combine
 
 class OptionsStateManager: ObservableObject {
     
-    /// Used as a Bool, but can have its reference saved or passed around.
-    class Status {
-        // Public so it can be used to for binding
-        var isActive: Bool
-        
-        init(_ status: Bool) {
-            self.isActive = status
-        }
-    }
-    
     private let playerViewModel: PlayerViewModel
     private var subscriptions: Set<AnyCancellable> = []
     
     @Published private(set) var showOptions = true
+    @Published private(set) var showActions = false
+    let animation: Animation = .easeOut(duration: 0.3)
     @Published private var optionHeaderText = Strings.OptionsMenu.Header.Default.local
     var optionHeader: String {
         return "[\(self.optionHeaderText)]"
@@ -34,13 +26,13 @@ class OptionsStateManager: ObservableObject {
     var weaponOptionActive: Bool {
         return self.playerViewModel.canEngage
     }
-    @Published var weaponActionsActive = Status(false)
+    @Published var weaponActionsActive = false
     
     // Potion option
     var potionOptionActive: Bool {
         return self.playerViewModel.canEngage
     }
-    @Published var potionActionsActive = Status(false)
+    @Published var potionActionsActive = false
     
     // Travel option
     var travelOptionActive: Bool {
@@ -51,40 +43,37 @@ class OptionsStateManager: ObservableObject {
     var offerOptionActive: Bool {
         return self.playerViewModel.hasOffers
     }
-    @Published var offerActionsActive = Status(false)
+    @Published var offerActionsActive = false
     
     // Purchase restoration option
     var purchaseRestorationOptionActive: Bool {
         return self.playerViewModel.canPurchaseRestoration
     }
-    @Published var purchaseRestorationActionsActive = Status(false)
+    @Published var purchaseRestorationActionsActive = false
     
     // Shop option
     var shopOptionActive: Bool {
         return self.playerViewModel.canShop
     }
-    @Published var shopActionsActive = Status(false)
+    @Published var shopActionsActive = false
     
     // Enhance option
     var enhanceOptionActive: Bool {
         return self.playerViewModel.canEnhance
     }
-    @Published var enhanceActionsActive = Status(false)
+    @Published var enhanceActionsActive = false
     
     // Choose loot bag option
     var chooseLootBagOptionActive: Bool {
         return self.playerViewModel.canChooseLootBag
     }
-    @Published var chooseLootBagActionsActive = Status(false)
+    @Published var chooseLootBagActionsActive = false
     
     // Loot option
     var lootOptionActive: Bool {
         return self.playerViewModel.canLoot
     }
-    @Published var lootActionsActive = Status(false)
-    
-    // Whenever an action is set to showing, its reference is passed here
-    var activeActions = Status(false)
+    @Published var lootActionsActive = false
     
     init(playerViewModel: PlayerViewModel) {
         self.playerViewModel = playerViewModel
@@ -111,64 +100,90 @@ class OptionsStateManager: ObservableObject {
     
     func closeActions() {
         self.optionHeaderText = Strings.OptionsMenu.Header.Default.local
-        self.showOptions = true
-        self.activeActions.isActive = false
+        withAnimation(self.animation) {
+            self.showOptions = true
+            self.showActions = false
+            self.weaponActionsActive = false
+            self.potionActionsActive = false
+            self.offerActionsActive = false
+            self.purchaseRestorationActionsActive = false
+            self.shopActionsActive = false
+            self.enhanceActionsActive = false
+            self.chooseLootBagActionsActive = false
+            self.lootActionsActive = false
+        }
     }
     
     func weaponOptionSelected() {
         self.optionHeaderText = Strings.OptionsMenu.Header.Weapon.local
-        self.showOptions = false
-        self.weaponActionsActive = Status(true)
-        self.activeActions = self.weaponActionsActive
+        withAnimation(self.animation) {
+            self.showOptions = false
+            self.weaponActionsActive = true
+            self.showActions = true
+        }
     }
     
     func potionOptionSelected() {
         self.optionHeaderText = Strings.OptionsMenu.Header.Potion.local
-        self.showOptions = false
-        self.potionActionsActive = Status(true)
-        self.activeActions = self.potionActionsActive
+        withAnimation(self.animation) {
+            self.showOptions = false
+            self.potionActionsActive = true
+            self.showActions = true
+        }
     }
     
     func offerOptionSelected() {
         self.optionHeaderText = Strings.OptionsMenu.Header.Offer.local
-        self.showOptions = false
-        self.offerActionsActive = Status(true)
-        self.activeActions = self.offerActionsActive
+        withAnimation(self.animation) {
+            self.showOptions = false
+            self.offerActionsActive = true
+            self.showActions = true
+        }
     }
     
     func purchaseRestorationOptionSelected() {
         self.optionHeaderText = Strings.OptionsMenu.Header.Restoration.local
-        self.showOptions = false
-        self.purchaseRestorationActionsActive = Status(true)
-        self.activeActions = self.purchaseRestorationActionsActive
+        withAnimation(self.animation) {
+            self.showOptions = false
+            self.purchaseRestorationActionsActive = true
+            self.showActions = true
+        }
     }
     
     func shopOptionSelected() {
         self.optionHeaderText = Strings.OptionsMenu.Header.Shop.local
-        self.showOptions = false
-        self.shopActionsActive = Status(true)
-        self.activeActions = self.shopActionsActive
+        withAnimation(self.animation) {
+            self.showOptions = false
+            self.shopActionsActive = true
+            self.showActions = true
+        }
     }
     
     func enhanceOptionSelected() {
         self.optionHeaderText = Strings.OptionsMenu.Header.Enhance.local
-        self.showOptions = false
-        self.enhanceActionsActive = Status(true)
-        self.activeActions = self.enhanceActionsActive
+        withAnimation(self.animation) {
+            self.showOptions = false
+            self.enhanceActionsActive = true
+            self.showActions = true
+        }
     }
     
     func chooseLootBagOptionSelected() {
         self.optionHeaderText = Strings.OptionsMenu.Header.ChooseLootBag.local
-        self.showOptions = false
-        self.chooseLootBagActionsActive = Status(true)
-        self.activeActions = self.chooseLootBagActionsActive
+        withAnimation(self.animation) {
+            self.showOptions = false
+            self.chooseLootBagActionsActive = true
+            self.showActions = true
+        }
     }
     
     func lootOptionSelected() {
         self.optionHeaderText = Strings.OptionsMenu.Header.Loot.local
-        self.showOptions = false
-        self.lootActionsActive = Status(true)
-        self.activeActions = self.lootActionsActive
+        withAnimation(self.animation) {
+            self.showOptions = false
+            self.lootActionsActive = true
+            self.showActions = true
+        }
     }
     
     func travelOptionSelected(viewRouter: ViewRouter, travelStateManager: TravelStateManager) {

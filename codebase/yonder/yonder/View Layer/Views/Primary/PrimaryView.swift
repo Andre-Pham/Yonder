@@ -54,16 +54,19 @@ struct PrimaryView: View {
                             optionsStateManager: self.optionsStateManager,
                             pageGeometry: geo)
                         .padding(.horizontal, YonderCoreGraphics.padding)
+                        .transition(.move(edge: .bottom).combined(with: .opacity))
                     }
                     
-                    if self.optionsStateManager.activeActions.isActive {
+                    if self.optionsStateManager.showActions {
                         ActionsView(
                             playerViewModel: self.playerViewModel,
                             optionsStateManager: self.optionsStateManager,
                             pageGeometry: geo)
                         .padding(.horizontal, YonderCoreGraphics.padding)
+                        .transition(.move(edge: .bottom).combined(with: .opacity))
                     }
                 }
+                .padding(.bottom, 100)
             }
         }
     }

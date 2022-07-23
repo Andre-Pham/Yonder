@@ -13,12 +13,12 @@ struct ActionsView: View {
     let pageGeometry: GeometryProxy
     
     var body: some View {
-        VStack {
+        Group {
             YonderWideButton(text: Strings.Button.Back.local) {
                 self.optionsStateManager.closeActions()
             }
             
-            if self.optionsStateManager.weaponActionsActive.isActive {
+            if self.optionsStateManager.weaponActionsActive {
                 ForEach(self.playerViewModel.applicableWeaponViewModels, id: \.id) { weaponViewModel in
                     UseWeaponButton(
                         playerViewModel: self.playerViewModel,
@@ -26,7 +26,7 @@ struct ActionsView: View {
                 }
             }
             
-            if self.optionsStateManager.potionActionsActive.isActive {
+            if self.optionsStateManager.potionActionsActive {
                 ForEach(self.playerViewModel.potionViewModels, id: \.id) { potionViewModel in
                     UsePotionButton(
                         playerViewModel: self.playerViewModel,
@@ -34,7 +34,7 @@ struct ActionsView: View {
                 }
             }
             
-            if self.optionsStateManager.offerActionsActive.isActive {
+            if self.optionsStateManager.offerActionsActive {
                 if let friendlyViewModel = self.playerViewModel.locationViewModel.getInteractorViewModel() as? FriendlyViewModel {
                     ForEach(friendlyViewModel.offers, id: \.id) { offer in
                         YonderMultilineWideButton(text: [offer.name, offer.description]) {
@@ -45,7 +45,7 @@ struct ActionsView: View {
                 }
             }
             
-            if self.optionsStateManager.purchaseRestorationActionsActive.isActive {
+            if self.optionsStateManager.purchaseRestorationActionsActive {
                 if let restorerViewModel = self.playerViewModel.locationViewModel.getInteractorViewModel() as? RestorerViewModel {
                     ForEach(restorerViewModel.options, id: \.id) { option in
                         PurchaseRestorationButton(playerViewModel: self.playerViewModel, restorationOptionViewModel: option)
@@ -53,7 +53,7 @@ struct ActionsView: View {
                 }
             }
             
-            if self.optionsStateManager.shopActionsActive.isActive {
+            if self.optionsStateManager.shopActionsActive {
                 if let shopKeeperViewModel = self.playerViewModel.locationViewModel.getInteractorViewModel() as? ShopKeeperViewModel {
                     ForEach(shopKeeperViewModel.purchasables, id: \.id) { purchasable in
                         PurchaseFromShopKeeperButton(playerViewModel: self.playerViewModel, purchasableViewModel: purchasable, pageGeometry: self.pageGeometry)
@@ -61,7 +61,7 @@ struct ActionsView: View {
                 }
             }
             
-            if self.optionsStateManager.enhanceActionsActive.isActive {
+            if self.optionsStateManager.enhanceActionsActive {
                 if let enhancerViewModel = self.playerViewModel.locationViewModel.getInteractorViewModel() as? EnhancerViewModel {
                     ForEach(enhancerViewModel.enhanceOfferViewModels, id: \.id) { offer in
                         ViewEnhanceablesButton(playerViewModel: self.playerViewModel, enhanceOfferViewModel: offer, pageGeometry: self.pageGeometry)
@@ -69,7 +69,7 @@ struct ActionsView: View {
                 }
             }
             
-            if self.optionsStateManager.chooseLootBagActionsActive.isActive {
+            if self.optionsStateManager.chooseLootBagActionsActive {
                 if let foeViewModel = self.playerViewModel.locationViewModel.getFoeViewModel() {
                     ForEach(foeViewModel.lootOptionsViewModel.lootBagViewModels, id: \.id) { lootBagViewModel in
                         LootBagButton(
@@ -80,7 +80,7 @@ struct ActionsView: View {
                 }
             }
             
-            if self.optionsStateManager.lootActionsActive.isActive {
+            if self.optionsStateManager.lootActionsActive {
                 if let lootBagViewModel = self.playerViewModel.lootBagViewModel {
                     CollectLootView(
                         playerViewModel: self.playerViewModel,
