@@ -15,21 +15,25 @@ class ItemAbstractPart: Named, Described {
     public let description: String
     @DidSetPublished private(set) var damage: Int {
         didSet {
+            self.damageDidSet()
             self.damageSubscribers.forEach({ $0.onDamageChange(self as! ItemAbstract, old: oldValue) })
         }
     }
     @DidSetPublished private(set) var healthRestoration: Int {
         didSet {
+            self.healthRestorationDidSet()
             self.healthRestorationSubscribers.forEach({ $0.onHealthRestorationChange(self as! ItemAbstract, old: oldValue) })
         }
     }
     @DidSetPublished private(set) var armorPointsRestoration: Int {
         didSet {
+            self.armorPointsRestorationDidSet()
             self.armorPointsRestorationSubscribers.forEach({ $0.onArmorPointsRestorationChange(self as! ItemAbstract, old: oldValue) })
         }
     }
     @DidSetPublished private(set) var remainingUses: Int {
         didSet {
+            self.remainingUsesDidSet()
             self.remainingUsesSubscribers.forEach({ $0.onRemainingUsesChange(self as! ItemAbstract, old: oldValue) })
         }
     }
@@ -90,6 +94,14 @@ class ItemAbstractPart: Named, Described {
     func adjustArmorPointsRestoration(by armorPointsRestoration: Int) {
         self.armorPointsRestoration += armorPointsRestoration
     }
+    
+    // MARK: - Subclasses
+    
+    /// Override these in subclasses if you wish to observe these properties.
+    func damageDidSet() { }
+    func healthRestorationDidSet() { }
+    func armorPointsRestorationDidSet() { }
+    func remainingUsesDidSet() { }
     
     // MARK: - Subscribers
     

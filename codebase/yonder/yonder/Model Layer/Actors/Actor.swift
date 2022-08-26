@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ActorAbstract {
+class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscriber {
     
     @DidSetPublished private(set) var maxHealth: Int
     @DidSetPublished private(set) var health: Int
@@ -48,6 +48,9 @@ class ActorAbstract {
     init(maxHealth: Int) {
         self.maxHealth = maxHealth
         self.health = maxHealth
+        
+        OnNoWeaponDurabilityPublisher.subscribe(self)
+        OnNoPotionsRemainingPublisher.subscribe(self)
     }
     
     func onTurnCompletion() {
@@ -225,6 +228,12 @@ class ActorAbstract {
         self.weapons.remove(at: index)
     }
     
+    func onNoWeaponDurability(weapon: Weapon) {
+        if self.weapons.contains(where: { $0.id == weapon.id }) {
+            self.removeWeapon(weapon)
+        }
+    }
+    
     // MARK: - Potions
     
     func addPotion(_ potion: PotionAbstract) {
@@ -242,6 +251,12 @@ class ActorAbstract {
             return
         }
         self.potions.remove(at: index)
+    }
+    
+    func onNoPotionsRemaining(potion: PotionAbstract) {
+        if self.potions.contains(where: { $0.id == potion.id }) {
+            self.removePotion(potion)
+        }
     }
     
     // MARK: - Buffs
@@ -355,14 +370,11 @@ class ActorAbstract {
     // MARK: - Actor Interactions
     
     func useWeaponWhere(opposition: ActorAbstract, weapon: Weapon) {
-        ActorPublisher.publishOnActorAttack(actor: self, weapon: weapon, target: opposition)
+        OnActorAttackPublisher.publish(actor: self, weapon: weapon, target: opposition)
         
         weapon.use(owner: self, opposition: opposition)
-        if weapon.remainingUses == 0 {
-            self.removeWeapon(weapon)
-        }
         
-        ActorPublisher.publishAfterActorAttack(actor: self, weapon: weapon, target: opposition)
+        AfterActorAttackPublisher.publish(actor: self, weapon: weapon, target: opposition)
         
         if let foe = opposition as? Foe, let player = self as? Player {
             foe.completeTurn(player: player)
@@ -371,9 +383,6 @@ class ActorAbstract {
     
     func usePotionWhere(opposition: ActorAbstract, potion: PotionAbstract) {
         potion.use(owner: self, opposition: opposition)
-        if potion.remainingUses == 0 {
-            self.removePotion(potion)
-        }
     }
     
 }

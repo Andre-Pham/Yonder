@@ -132,4 +132,10 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
         self.afterUseSubscribers.append(subscriber)
     }
     
+    override func remainingUsesDidSet() {
+        if self.remainingUses == 0 {
+            OnNoWeaponDurabilityPublisher.publish(weapon: self)
+        }
+    }
+    
 }

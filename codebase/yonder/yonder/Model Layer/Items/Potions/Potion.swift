@@ -49,4 +49,10 @@ class PotionAbstractPart: ItemAbstract, Purchasable, Clonable {
         }
     }
     
+    override func remainingUsesDidSet() {
+        if self.remainingUses == 0 {
+            OnNoPotionsRemainingPublisher.publish(potion: self as! PotionAbstract)
+        }
+    }
+    
 }

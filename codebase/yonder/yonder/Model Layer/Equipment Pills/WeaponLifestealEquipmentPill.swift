@@ -20,7 +20,7 @@ class WeaponLifestealEquipmentPill: EquipmentPillAbstract, AfterActorAttackSubsc
                 .localWithArgs((lifestealFraction*100.0).toString())
         )
         
-        ActorPublisher.addSubscriber(self)
+        AfterActorAttackPublisher.subscribe(self)
     }
     
     required init(_ original: EquipmentPillAbstractPart) {
@@ -29,7 +29,7 @@ class WeaponLifestealEquipmentPill: EquipmentPillAbstract, AfterActorAttackSubsc
         
         super.init(original)
         
-        ActorPublisher.addSubscriber(self)
+        AfterActorAttackPublisher.subscribe(self)
     }
     
     func afterActorAttack(actor: ActorAbstract, weapon: Weapon, target: ActorAbstract) {
