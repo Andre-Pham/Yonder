@@ -193,7 +193,7 @@ class yonderTests: XCTestCase {
     func testPurchasing() throws {
         let shopKeeper = ShopKeeper(purchasableItems: [
             PurchasableItem(item: HealthRestorationPotion(tier: .IV, potionCount: 1, basePurchasePrice: 200), stock: 1),
-            PurchasableItem(item: ResistanceArmor(type: .body, armorPoints: 200, damageFraction: 0.8, basePurchasePrice: 100), stock: 1)
+            PurchasableItem(item: Armor(name: "Cool Armor", description: "Cool.", type: .body, armorPoints: 200, basePurchasePrice: 100, armorBuffs: [], equipmentPills: []), stock: 1)
         ])
         let player = Player(maxHealth: 200, location: NoLocation())
         player.modifyGold(by: 1000)
@@ -202,7 +202,7 @@ class yonderTests: XCTestCase {
         XCTAssertEqual(player.potions.count, 1)
         shopKeeper.purchaseItem(at: 0, amount: 1, purchaser: player)
         XCTAssertEqual(player.gold, 700)
-        XCTAssertTrue(player.bodyArmor is ResistanceArmor)
+        XCTAssertTrue(player.bodyArmor.armorPoints == 200)
     }
     
     func testPotionBuff() throws {

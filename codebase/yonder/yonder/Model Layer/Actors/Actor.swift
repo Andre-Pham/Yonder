@@ -369,6 +369,12 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
     
     // MARK: - Actor Interactions
     
+    /// Use a given weapon whilst an opposition exists. Triggers the end of turn if it's the player attacking a foe.
+    /// The opposition merely needs to be present. The weapon can be targeting either the owner (e.g. healing weapons) or the opposition (e.g. damage weapons).
+    /// This actor technically doesn't need to own the weapon. For example, the DefaultPlayerWeapon isn't owned by the player, yet can be used.
+    /// - Parameters:
+    ///   - opposition: The opposition the actor is in combat with
+    ///   - weapon: The weapon being used - not necessarily targeting the opposition
     func useWeaponWhere(opposition: ActorAbstract, weapon: Weapon) {
         OnActorAttackPublisher.publish(actor: self, weapon: weapon, target: opposition)
         

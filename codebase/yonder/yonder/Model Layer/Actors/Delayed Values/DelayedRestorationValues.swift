@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// Holds restoration values to be applied (consumed) to an actor later, rather than immediately.
+/// See `DelayedDamageValues` for more details.
 class DelayedRestorationValues {
     
     enum RestorationType {

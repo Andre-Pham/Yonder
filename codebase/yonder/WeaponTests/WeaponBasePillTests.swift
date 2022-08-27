@@ -1,5 +1,5 @@
 //
-//  BasePillTests.swift
+//  WeaponBasePillTests.swift
 //  WeaponTests
 //
 //  Created by Andre Pham on 27/8/2022.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import yonder
 
-class BasePillTests: XCTestCase {
+class WeaponBasePillTests: XCTestCase {
     
     let player = Player(maxHealth: 500, location: NoLocation())
     let foe = Foe(maxHealth: 500, weapon: BaseAttack(damage: 0), loot: LootOptions(LootBag(), LootBag(), LootBag()))
@@ -16,6 +16,8 @@ class BasePillTests: XCTestCase {
     override func setUp() async throws {
         self.player.damage(for: 150)
     }
+    
+    // MARK: - Basic
 
     func testDamageBasePill() throws {
         let weapon = Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: InfiniteDurabilityPill())
@@ -67,6 +69,16 @@ class BasePillTests: XCTestCase {
         self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
         XCTAssertEqual(self.foe.health, 450)
         XCTAssertEqual(self.player.health, 400)
+    }
+    
+     // MARK: - Interactions
+    
+    func testLifestealWithDulling() throws {
+        let weapon = Weapon(basePill: LifestealBasePill(damage: 100), durabilityPill: DullingDurabilityPill(damageLostPerUse: 50))
+        self.player.addWeapon(weapon)
+        self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
+        XCTAssertEqual(self.foe.health, 400)
+        XCTAssertEqual(self.player.health, 450)
     }
 
 }

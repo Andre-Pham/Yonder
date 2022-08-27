@@ -7,7 +7,7 @@
 
 import Foundation
 
-class WeaponLifestealEquipmentPill: EquipmentPillAbstract, AfterActorAttackSubscriber {
+class WeaponLifestealEquipmentPill: EquipmentPillAbstract, OnActorAttackSubscriber {
     
     private let lifestealFraction: Double
     
@@ -20,7 +20,7 @@ class WeaponLifestealEquipmentPill: EquipmentPillAbstract, AfterActorAttackSubsc
                 .localWithArgs((lifestealFraction*100.0).toString())
         )
         
-        AfterActorAttackPublisher.subscribe(self)
+        OnActorAttackPublisher.subscribe(self)
     }
     
     required init(_ original: EquipmentPillAbstractPart) {
@@ -29,10 +29,10 @@ class WeaponLifestealEquipmentPill: EquipmentPillAbstract, AfterActorAttackSubsc
         
         super.init(original)
         
-        AfterActorAttackPublisher.subscribe(self)
+        OnActorAttackPublisher.subscribe(self)
     }
     
-    func afterActorAttack(actor: ActorAbstract, weapon: Weapon, target: ActorAbstract) {
+    func onActorAttack(actor: ActorAbstract, weapon: Weapon, target: ActorAbstract) {
         guard actor.hasEquipmentEffect(self) else {
             return
         }

@@ -1,5 +1,5 @@
 //
-//  DurabilityPillTests.swift
+//  WeaponDurabilityPillTests.swift
 //  WeaponTests
 //
 //  Created by Andre Pham on 27/8/2022.
@@ -8,7 +8,9 @@
 import XCTest
 @testable import yonder
 
-class DurabilityPillTests: XCTestCase {
+class WeaponDurabilityPillTests: XCTestCase {
+    
+    // MARK: - Basic
 
     func testDecrementDurabilityPill() throws {
         let weapon = Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: DecrementDurabilityPill(durability: 5, decrementBy: 2))
