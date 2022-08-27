@@ -724,6 +724,12 @@ enum Strings: Localizable {
             
             case EffectsDescription1Param
         }
+        
+        enum Thorns: Localizable {
+            static let parent: LocalizeParent = EquipmentPill.self
+            
+            case EffectsDescription1Param
+        }
     }
     
 }

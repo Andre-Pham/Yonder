@@ -20,7 +20,7 @@ class yonderTests: XCTestCase {
     
     func testAttack() throws {
         let player = Player(maxHealth: 200, location: NoLocation())
-        let foe = Foe(maxHealth: 200, weapon: BaseAttack(damage: 5), loot: LootOptions(LootBag(), LootBag(), LootBag()))
+        let foe = Foe(maxHealth: 200, weapon: BaseAttack(damage: 5), loot: NoLootOptions())
         foe.useWeaponWhere(opposition: player, weapon: foe.getWeapon())
         player.onTurnCompletion() // Account for delayed values
         XCTAssertTrue(player.health == 195)
@@ -56,7 +56,7 @@ class yonderTests: XCTestCase {
     
     func testBuffs() throws {
         let player = Player(maxHealth: 200, location: NoLocation())
-        let foe = Foe(maxHealth: 200, weapon: BaseAttack(damage: 5), loot: LootOptions(LootBag(), LootBag(), LootBag()))
+        let foe = Foe(maxHealth: 200, weapon: BaseAttack(damage: 5), loot: NoLootOptions())
         foe.addBuff(DamagePercentBuff(sourceName: "testBuffs", direction: .outgoing, duration: 5, damageFraction: 2.0))
         foe.addBuff(DamagePercentBuff(sourceName: "testBuffs", direction: .outgoing, duration: 5, damageFraction: 2.0))
         foe.useWeaponWhere(opposition: player, weapon: foe.getWeapon())
@@ -66,7 +66,7 @@ class yonderTests: XCTestCase {
     
     func testBuffPriority() throws {
         let player = Player(maxHealth: 200, location: NoLocation())
-        let foe = Foe(maxHealth: 200, weapon: BaseAttack(damage: 25), loot: LootOptions(LootBag(), LootBag(), LootBag()))
+        let foe = Foe(maxHealth: 200, weapon: BaseAttack(damage: 25), loot: NoLootOptions())
         foe.addBuff(DamagePercentBuff(sourceName: "testBuffPriority", direction: .outgoing, duration: 5, damageFraction: 2.0))
         foe.addBuff(DamageBuff(sourceName: "testBuffPriority", direction: .outgoing, duration: 5, damageDifference: 5))
         foe.addBuff(DamagePercentBuff(sourceName: "testBuffPriority", direction: .outgoing, duration: 5, damageFraction: 2.0))
@@ -79,7 +79,7 @@ class yonderTests: XCTestCase {
         let player = Player(maxHealth: 200, location: NoLocation())
         player.equipArmor(Armors.newTestHeadArmor())
         player.equipArmor(Armors.newTestBodyArmor())
-        let foe = Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: LootOptions(LootBag(), LootBag(), LootBag()))
+        let foe = Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
         foe.useWeaponWhere(opposition: player, weapon: foe.getWeapon())
         player.onTurnCompletion() // Account for delayed values
         print(player.health)
@@ -100,7 +100,7 @@ class yonderTests: XCTestCase {
         let weapon = Weapon(basePill: DamageBasePill(damage: 7), durabilityPill: DullingDurabilityPill(damageLostPerUse: 2))
         player.addWeapon(weapon)
         let playerWeapon = player.weapons.first! // Adding a weapon clones it
-        let foe = Foe(maxHealth: 200, weapon: Weapon(basePill: DamageBasePill(damage: 100), durabilityPill: InfiniteDurabilityPill()), loot: LootOptions(LootBag(), LootBag(), LootBag()))
+        let foe = Foe(maxHealth: 200, weapon: Weapon(basePill: DamageBasePill(damage: 100), durabilityPill: InfiniteDurabilityPill()), loot: NoLootOptions())
         player.useWeaponWhere(opposition: foe, weapon: playerWeapon)
         player.useWeaponWhere(opposition: foe, weapon: playerWeapon)
         player.useWeaponWhere(opposition: foe, weapon: playerWeapon)
@@ -183,7 +183,7 @@ class yonderTests: XCTestCase {
     
     func testLocationCasting() throws {
         let location = LocationAbstractPart()
-        let combatLocation = HostileLocation(foe: Foe(maxHealth: 200, weapon: Weapon(basePill: DamageBasePill(damage: 4), durabilityPill: DecrementDurabilityPill(durability: 2)), loot: LootOptions(LootBag(), LootBag(), LootBag())))
+        let combatLocation = HostileLocation(foe: Foe(maxHealth: 200, weapon: Weapon(basePill: DamageBasePill(damage: 4), durabilityPill: DecrementDurabilityPill(durability: 2)), loot: NoLootOptions()))
         location.addNextLocations([combatLocation])
         XCTAssertNoThrow((location.nextLocations.first! as! HostileLocation).foe)
         // Normally you'd only cast after you check that the location is of LocationType .hostile
@@ -208,7 +208,7 @@ class yonderTests: XCTestCase {
     func testPotionBuff() throws {
         let player = Player(maxHealth: 200, location: NoLocation())
         player.addBuff(PotionDamagePercentBuff(sourceName: "testPotionBuff", direction: .outgoing, duration: 5, damageFraction: 2.0))
-        let foe = Foe(maxHealth: 200, weapon: Weapon(basePill: DamageBasePill(damage: 10), durabilityPill: DecrementDurabilityPill(durability: 5)), loot: LootOptions(LootBag(), LootBag(), LootBag()))
+        let foe = Foe(maxHealth: 200, weapon: Weapon(basePill: DamageBasePill(damage: 10), durabilityPill: DecrementDurabilityPill(durability: 5)), loot: NoLootOptions())
         let weapon = Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: DecrementDurabilityPill(durability: 5))
         let potion = DamagePotion(tier: .II, potionCount: 1, basePurchasePrice: 0)
         player.addWeapon(weapon)

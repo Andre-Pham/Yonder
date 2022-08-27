@@ -1,5 +1,5 @@
 //
-//  OnNoPotionsRemainingPublisher.swift
+//  OnNoPotionsRemaining.swift
 //  yonder
 //
 //  Created by Andre Pham on 27/8/2022.

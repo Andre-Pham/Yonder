@@ -432,3 +432,4 @@
 // MARK: - Equipment Pills
 
 "equipmentPill.weaponLifesteal.effectsDescription1Param" = "Restores %@%% of all weapon damage dealt as health.";
+"equipmentPill.thorns.effectsDescription1Param" = "Upon taking damage from a hostile, deal %@%% back.";

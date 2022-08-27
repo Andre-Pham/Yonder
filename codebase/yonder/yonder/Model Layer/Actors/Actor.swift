@@ -383,7 +383,7 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
         AfterActorAttackPublisher.publish(actor: self, weapon: weapon, target: opposition)
         
         if let foe = opposition as? Foe, let player = self as? Player {
-            foe.completeTurn(player: player)
+            foe.completeTurn(player: player, playerUsed: weapon)
         }
     }
     

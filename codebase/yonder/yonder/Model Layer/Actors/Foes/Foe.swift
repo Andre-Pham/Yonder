@@ -36,8 +36,8 @@ class Foe: ActorAbstract, Named, Described {
         self.useWeaponWhere(opposition: player, weapon: self.getWeapon())
     }
     
-    func completeTurn(player: Player) {
-        self.combatFlow.completeTurn(player: player, foe: self)
+    func completeTurn(player: Player, playerUsed item: ItemAbstract) {
+        self.combatFlow.completeTurn(player: player, playerUsed: item, foe: self)
     }
     
 }

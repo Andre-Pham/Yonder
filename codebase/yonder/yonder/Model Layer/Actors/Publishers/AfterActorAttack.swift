@@ -1,5 +1,5 @@
 //
-//  AfterActorAttackSubscriber.swift
+//  AfterActorAttack.swift
 //  yonder
 //
 //  Created by Andre Pham on 22/7/2022.

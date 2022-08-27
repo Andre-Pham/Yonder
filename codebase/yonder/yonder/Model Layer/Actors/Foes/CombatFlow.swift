@@ -11,8 +11,11 @@ class CombatFlow {
     
     private(set) var turnsTaken = 0
     
-    func completeTurn(player: Player, foe: Foe) {
+    func completeTurn(player: Player, playerUsed playerItem: ItemAbstract, foe: Foe) {
         foe.attack(player)
+        
+        OnTurnEndPublisher.publish(player: player, playerUsed: playerItem, foe: foe)
+        
         for act in [player, foe] {
             act.onTurnCompletion()
         }
@@ -21,6 +24,8 @@ class CombatFlow {
         }
         
         self.turnsTaken += 1
+        
+        AfterTurnEndPublisher.publish(player: player, playerUsed: playerItem, foe: foe)
     }
     
 }

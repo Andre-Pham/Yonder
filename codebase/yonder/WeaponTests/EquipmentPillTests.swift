@@ -11,19 +11,29 @@ import XCTest
 class EquipmentPillTests: XCTestCase {
     
     let player = Player(maxHealth: 500, location: NoLocation())
-    let foe = Foe(maxHealth: 500, weapon: BaseAttack(damage: 0), loot: LootOptions(LootBag(), LootBag(), LootBag()))
+    let foe = Foe(maxHealth: 500, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
+    let foeZeroAttack = Foe(maxHealth: 500, weapon: BaseAttack(damage: 0), loot: NoLootOptions())
+    let accessory = Accessory(name: "Test Accessory", description: "For testing.", type: .regular, healthBonus: 0, armorPointsBonus: 0, basePurchasePrice: 0, buffs: [], equipmentPills: [])
     
     // MARK: - Basic
+    
+    func testThorns() throws {
+        self.accessory.addEquipmentPill(ThornsEquipmentPill(thornsFraction: 0.5, sourceName: "Test Accessory"))
+        self.player.equipAccessory(self.accessory, replacing: nil)
+        self.player.useWeaponWhere(opposition: self.foe, weapon: BaseAttack(damage: 0))
+        XCTAssertEqual(self.foe.health, 450)
+    }
     
     // MARK: - Interactions
 
     func testWeaponLifestealWithDulling() throws {
         let weapon = Weapon(basePill: DamageBasePill(damage: 100), durabilityPill: DullingDurabilityPill(damageLostPerUse: 50))
         self.player.addWeapon(weapon)
-        self.player.equipAccessory(Accessory(name: "Lifesteal Accessory", description: "Very cool.", type: .regular, healthBonus: 0, armorPointsBonus: 0, basePurchasePrice: 0, buffs: [], equipmentPills: [WeaponLifestealEquipmentPill(lifestealFraction: 1.0, sourceName: "")]), replacing: nil)
+        self.accessory.addEquipmentPill(WeaponLifestealEquipmentPill(lifestealFraction: 1.0, sourceName: "Test Accessory"))
+        self.player.equipAccessory(self.accessory, replacing: nil)
         self.player.damage(for: 200)
-        self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
-        XCTAssertEqual(self.foe.health, 400)
+        self.player.useWeaponWhere(opposition: self.foeZeroAttack, weapon: weapon)
+        XCTAssertEqual(self.foeZeroAttack.health, 400)
         XCTAssertEqual(self.player.health, 400)
     }
 
