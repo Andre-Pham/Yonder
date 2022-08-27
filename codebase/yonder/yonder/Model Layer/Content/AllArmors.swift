@@ -12,16 +12,14 @@ enum Armors {
     // MARK: - Resistance Armor
     
     // Test armor set
-    static func newTestHeadArmor() -> ResistanceArmor {
-        return ResistanceArmor(type: .head, armorPoints: 200, damageFraction: 0.8, basePurchasePrice: 200)
+    static func newTestHeadArmor() -> ArmorAbstract {
+        return ArmorAbstract(name: "Resistance Armor", description: "Very resistive.", type: .head, armorPoints: 200, basePurchasePrice: 200, armorBuffs: [DamagePercentBuff(sourceName: "Resistance Armor", direction: .incoming, duration: nil, damageFraction: 0.8)], equipmentPills: [])
     }
-    static func newTestBodyArmor() -> ResistanceArmor {
-        return ResistanceArmor(type: .body, armorPoints: 200, damageFraction: 0.8, basePurchasePrice: 200)
+    static func newTestBodyArmor() -> ArmorAbstract {
+        return ArmorAbstract(name: "Resistance Armor", description: "Very resistive.", type: .body, armorPoints: 200, basePurchasePrice: 200, armorBuffs: [DamagePercentBuff(sourceName: "Resistance Armor", direction: .incoming, duration: nil, damageFraction: 0.8)], equipmentPills: [])
     }
-    static func newTestLegsArmor() -> ResistanceArmor {
-        return ResistanceArmor(type: .legs, armorPoints: 200, damageFraction: 0.8, basePurchasePrice: 200)
+    static func newTestLegsArmor() -> ArmorAbstract {
+        return ArmorAbstract(name: "Resistance Armor", description: "Very resistive.", type: .legs, armorPoints: 200, basePurchasePrice: 200, armorBuffs: [DamagePercentBuff(sourceName: "Resistance Armor", direction: .incoming, duration: nil, damageFraction: 0.8)], equipmentPills: [])
     }
-    
-    // Future sets follow the naming scheme, e.g. "newFireBreathHeadArmor"
     
 }
