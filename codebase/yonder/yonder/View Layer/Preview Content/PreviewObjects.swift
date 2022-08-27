@@ -33,8 +33,8 @@ enum PreviewObjects {
     
     // MODEL
     
-    private static var armor: ArmorAbstract {
-        return ArmorAbstract(
+    private static var armor: Armor {
+        return Armor(
             name: "Cool Armor",
             description: "Very cool. Looks shiny.",
             type: .body,

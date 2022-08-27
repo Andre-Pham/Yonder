@@ -14,7 +14,7 @@ enum Foes {
     static func newTestFoe() -> Foe {
         let lootBag1 = LootBag()
         lootBag1.addGoldLoot(500)
-        lootBag1.addArmorLoot(ArmorAbstract(name: "Armor Loot", description: "Some weak armor.", type: .legs, armorPoints: 200, basePurchasePrice: 200, armorBuffs: [DamageBuff(sourceName: "Armor Loot", direction: .outgoing, duration: nil, damageDifference: 5)], equipmentPills: []))
+        lootBag1.addArmorLoot(Armor(name: "Armor Loot", description: "Some weak armor.", type: .legs, armorPoints: 200, basePurchasePrice: 200, armorBuffs: [DamageBuff(sourceName: "Armor Loot", direction: .outgoing, duration: nil, damageDifference: 5)], equipmentPills: []))
         let lootBag2 = LootBag()
         lootBag2.addPotionLoot(DamagePotion(tier: .I, potionCount: 4, basePurchasePrice: 10))
         lootBag2.addPotionLoot(HealthRestorationPotion(tier: .V, potionCount: 4, basePurchasePrice: 10))

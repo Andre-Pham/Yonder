@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ArmorAbstract: EffectsDescribed, Purchasable, Named, Described, Enhanceable, Clonable {
+class Armor: EffectsDescribed, Purchasable, Named, Described, Enhanceable, Clonable {
     
     public let name: String
     public let description: String
@@ -38,7 +38,7 @@ class ArmorAbstract: EffectsDescribed, Purchasable, Named, Described, Enhanceabl
         self.armorAttributes = armorAttributes
     }
     
-    required init(_ original: ArmorAbstract) {
+    required init(_ original: Armor) {
         self.name = original.name
         self.description = original.description
         self.type = original.type

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NoArmor: ArmorAbstract {
+class NoArmor: Armor {
     
     init(type: ArmorType) {
         let description: String
@@ -31,7 +31,7 @@ class NoArmor: ArmorAbstract {
             armorAttributes: [.upgradesDisallowed])
     }
     
-    required init(_ original: ArmorAbstract) {
+    required init(_ original: Armor) {
         super.init(original)
     }
     

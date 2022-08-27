@@ -11,7 +11,7 @@ import Combine
 class ArmorViewModel: ObservableObject {
     
     // armor can be used within the ViewModel layer, but Views should only interact with ViewModels (not the Model layer)
-    private(set) var armor: ArmorAbstract
+    private(set) var armor: Armor
     private var subscriptions: Set<AnyCancellable> = []
     
     @Published private(set) var armorPoints: Int
@@ -30,7 +30,7 @@ class ArmorViewModel: ObservableObject {
     }
     @Published private(set) var equipmentEffectViewModels: [EquipmentEffectViewModel]
     
-    init(_ armor: ArmorAbstract) {
+    init(_ armor: Armor) {
         self.armor = armor
         
         // Set properties to match Item

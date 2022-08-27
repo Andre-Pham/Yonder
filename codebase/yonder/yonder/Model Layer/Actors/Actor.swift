@@ -25,14 +25,14 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
     @DidSetPublished private(set) var weapons = [Weapon]()
     @DidSetPublished private(set) var buffs = [BuffAbstract]()
     @DidSetPublished private(set) var potions = [PotionAbstract]()
-    @DidSetPublished private(set) var headArmor: ArmorAbstract = NoArmor(type: .head)
-    @DidSetPublished private(set) var bodyArmor: ArmorAbstract = NoArmor(type: .body)
-    @DidSetPublished private(set) var legsArmor: ArmorAbstract = NoArmor(type: .legs)
+    @DidSetPublished private(set) var headArmor: Armor = NoArmor(type: .head)
+    @DidSetPublished private(set) var bodyArmor: Armor = NoArmor(type: .body)
+    @DidSetPublished private(set) var legsArmor: Armor = NoArmor(type: .legs)
     public let accessorySlots = AccessorySlots()
-    public var allArmorPieces: [ArmorAbstract] {
+    public var allArmorPieces: [Armor] {
         return [self.headArmor, self.bodyArmor, self.legsArmor]
     }
-    public var allUpgradableArmorPieces: [ArmorAbstract] {
+    public var allUpgradableArmorPieces: [Armor] {
         return self.allArmorPieces.filter { !$0.hasAttribute(.upgradesDisallowed) }
     }
     public let id = UUID()
@@ -294,7 +294,7 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
     
     // MARK: - Armor
     
-    func equipArmor(_ armor: ArmorAbstract) {
+    func equipArmor(_ armor: Armor) {
         let armor = armor.clone()
         switch armor.type {
         case .head:
@@ -315,11 +315,11 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
         }
     }
     
-    func hasArmorPieceEquipped(_ armor: ArmorAbstract) -> Bool {
+    func hasArmorPieceEquipped(_ armor: Armor) -> Bool {
         return self.allArmorPieces.contains(where: { $0.id == armor.id })
     }
     
-    func enhanceArmorPoints(of armor: ArmorAbstract, armorPoints: Int) {
+    func enhanceArmorPoints(of armor: Armor, armorPoints: Int) {
         assert(self.hasArmorPieceEquipped(armor), "Player is trying to enhance a piece of equipped armor that they actually don't have equipped")
         armor.adjustArmorPoints(by: armorPoints)
         self.restoreArmorPoints(for: armorPoints)

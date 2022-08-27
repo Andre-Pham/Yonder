@@ -93,7 +93,7 @@ class PurchasableViewModel: ObservableObject {
     
     func getArmorViewModel() -> ArmorViewModel? {
         if self.purchasable.info.type == .armor {
-            return ArmorViewModel(self.purchasable.item as! ArmorAbstract)
+            return ArmorViewModel(self.purchasable.item as! Armor)
         }
         return nil
     }

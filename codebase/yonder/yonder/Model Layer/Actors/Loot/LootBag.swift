@@ -9,7 +9,7 @@ import Foundation
 
 class LootBag {
     
-    @DidSetPublished private(set) var armorLoot = [ArmorAbstract]()
+    @DidSetPublished private(set) var armorLoot = [Armor]()
     @DidSetPublished private(set) var weaponLoot = [Weapon]()
     @DidSetPublished private(set) var potionLoot = [PotionAbstract]()
     @DidSetPublished private(set) var accessoryLoot = [Accessory]()
@@ -86,7 +86,7 @@ class LootBag {
         self.name = LootBag.availableNames[newIndex]
     }
     
-    func addArmorLoot(_ armor: ArmorAbstract) {
+    func addArmorLoot(_ armor: Armor) {
         self.armorLoot.append(armor.clone())
     }
     
