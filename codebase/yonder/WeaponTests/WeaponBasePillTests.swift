@@ -69,6 +69,10 @@ class WeaponBasePillTests: XCTestCase {
         self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
         XCTAssertEqual(self.foe.health, 450)
         XCTAssertEqual(self.player.health, 400)
+        weapon.setDamage(to: 5)
+        XCTAssertEqual(weapon.healthRestoration, 5)
+        weapon.setHealthRestoration(to: 20)
+        XCTAssertEqual(weapon.healthRestoration, 5)
     }
     
      // MARK: - Interactions
