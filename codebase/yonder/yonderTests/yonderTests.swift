@@ -10,48 +10,12 @@ import XCTest
 
 class yonderTests: XCTestCase {
 
-    func testActorHealth() throws {
-        let actor = ActorAbstract(maxHealth: 250)
-        actor.damage(for: 50)
-        XCTAssertEqual(actor.health, 200)
-        actor.restoreHealth(for: 500)
-        XCTAssertEqual(actor.health, actor.maxHealth)
-    }
-    
     func testAttack() throws {
         let player = Player(maxHealth: 200, location: NoLocation())
         let foe = Foe(maxHealth: 200, weapon: BaseAttack(damage: 5), loot: NoLootOptions())
         foe.useWeaponWhere(opposition: player, weapon: foe.getWeapon())
         player.onTurnCompletion() // Account for delayed values
         XCTAssertTrue(player.health == 195)
-    }
-    
-    func testDeath() throws {
-        let player = Player(maxHealth: 200, location: NoLocation())
-        player.damage(for: 150)
-        XCTAssertTrue(!player.isDead)
-        player.damage(for: 150)
-        XCTAssertTrue(player.isDead)
-    }
-    
-    func testStatusEffects() throws {
-        let player = Player(maxHealth: 200, location: NoLocation())
-        player.addStatusEffect(BurnStatusEffect(damage: 5, duration: 5))
-        player.triggerStatusEffects()
-        XCTAssertTrue(player.health == 195)
-    }
-    
-    func testTimedEvents() throws {
-        let player = Player(maxHealth: 200, location: NoLocation())
-        player.damage(for: 150)
-        let timedEvent = MaxHealthRestorationTimedEvent(timeToTrigger: 2)
-        player.addTimedEvent(timedEvent)
-        player.decrementTimedEvents()
-        XCTAssertTrue(player.health == 50)
-        XCTAssertTrue(player.timedEvents.count == 1)
-        player.decrementTimedEvents()
-        XCTAssertTrue(player.health == 200)
-        XCTAssertTrue(player.timedEvents.count == 0)
     }
     
     func testBuffs() throws {
