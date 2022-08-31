@@ -241,7 +241,7 @@
 
 // MARK: - Weapon Base Pills
 
-"weaponBasePill.lifesteal.effectsDescription" = "Always restores health equal to this weapon's damage.";
+"weaponBasePill.lifesteal.effectsDescription" = "Always has health restoration equal to this weapon's damage.";
 
 // MARK: - Weapon Durability Pills
 

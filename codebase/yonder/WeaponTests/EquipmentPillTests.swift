@@ -17,11 +17,20 @@ class EquipmentPillTests: XCTestCase {
     
     // MARK: - Basic
     
-    func testThorns() throws {
+    func testThornsEquipmentPill() throws {
         self.accessory.addEquipmentPill(ThornsEquipmentPill(thornsFraction: 0.5, sourceName: "Test Accessory"))
         self.player.equipAccessory(self.accessory, replacing: nil)
         self.player.useWeaponWhere(opposition: self.foe, weapon: BaseAttack(damage: 0))
         XCTAssertEqual(self.foe.health, 450)
+    }
+    
+    func testWeaponLifestealEquipmentPill() throws {
+        self.accessory.addEquipmentPill(WeaponLifestealEquipmentPill(lifestealFraction: 0.5, sourceName: "Test Accessory"))
+        self.player.equipAccessory(self.accessory, replacing: nil)
+        self.player.damage(for: 200)
+        self.player.useWeaponWhere(opposition: self.foeZeroAttack, weapon: BaseAttack(damage: 100))
+        XCTAssertEqual(self.foeZeroAttack.health, 400)
+        XCTAssertEqual(self.player.health, 350)
     }
     
     // MARK: - Interactions
@@ -35,6 +44,17 @@ class EquipmentPillTests: XCTestCase {
         self.player.useWeaponWhere(opposition: self.foeZeroAttack, weapon: weapon)
         XCTAssertEqual(self.foeZeroAttack.health, 400)
         XCTAssertEqual(self.player.health, 400)
+    }
+    
+    func testWeaponLifestealWithBuffs() throws {
+        self.accessory.addEquipmentPill(WeaponLifestealEquipmentPill(lifestealFraction: 1.0, sourceName: "Test Accessory"))
+        self.player.equipAccessory(self.accessory, replacing: nil)
+        self.player.damage(for: 400)
+        self.player.addBuff(HealthRestorationPercentBuff(sourceName: "", direction: .incoming, duration: nil, healthFraction: 2.0))
+        self.player.addBuff(DamagePercentBuff(sourceName: "", direction: .outgoing, duration: nil, damageFraction: 2.0))
+        self.player.useWeaponWhere(opposition: self.foeZeroAttack, weapon: BaseAttack(damage: 50))
+        // 50 damage. x2 from damage buff = 100 damage. -> 100 healing. x2 from health buff = 200 healing.
+        XCTAssertEqual(self.player.health, 300)
     }
 
 }

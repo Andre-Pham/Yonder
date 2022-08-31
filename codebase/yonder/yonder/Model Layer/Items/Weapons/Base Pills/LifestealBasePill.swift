@@ -21,6 +21,7 @@ class LifestealBasePill: WeaponBasePill, DamageSubscriber, HealthRestorationSubs
         weapon.setDamage(to: self.damage)
         weapon.setHealthRestoration(to: self.damage)
         weapon.addDamageSubscriber(self)
+        weapon.addHealthRestorationSubscriber(self)
     }
     
     func getValue() -> Int {
