@@ -9,14 +9,6 @@ import XCTest
 @testable import yonder
 
 class yonderTests: XCTestCase {
-
-    func testAttack() throws {
-        let player = Player(maxHealth: 200, location: NoLocation())
-        let foe = Foe(maxHealth: 200, weapon: BaseAttack(damage: 5), loot: NoLootOptions())
-        foe.useWeaponWhere(opposition: player, weapon: foe.getWeapon())
-        player.onTurnCompletion() // Account for delayed values
-        XCTAssertTrue(player.health == 195)
-    }
     
     func testBuffs() throws {
         let player = Player(maxHealth: 200, location: NoLocation())
@@ -132,17 +124,6 @@ class yonderTests: XCTestCase {
         weapon.setDamage(to: 100)
         XCTAssert(weapon.damage == 100)
         XCTAssert(weapon.healthRestoration == 100)
-    }
-    
-    func testStackable() throws {
-        let potion1 = DamagePotion(tier: .I, potionCount: 5, basePurchasePrice: 5)
-        let potion2 = DamagePotion(tier: .I, potionCount: 1, basePurchasePrice: 1)
-        let potion3 = HealthRestorationPotion(tier: .I, potionCount: 5, basePurchasePrice: 5)
-        let potion4 = DamagePotion(tier: .II, potionCount: 1, basePurchasePrice: 1)
-        XCTAssertTrue(potion1.isStackable(with: potion2))
-        XCTAssertTrue(potion2.isStackable(with: potion1))
-        XCTAssertFalse(potion1.isStackable(with: potion3))
-        XCTAssertFalse(potion1.isStackable(with: potion4))
     }
     
     func testLocationCasting() throws {

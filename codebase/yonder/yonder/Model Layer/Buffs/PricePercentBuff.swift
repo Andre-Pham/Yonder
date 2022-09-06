@@ -11,11 +11,11 @@ class PricePercentBuff: BuffAbstract {
     
     private let priceFraction: Double
     
-    init(sourceName: String, direction: BuffDirection, duration: Int?, priceFraction: Double) {
+    init(sourceName: String, duration: Int?, priceFraction: Double) {
         self.priceFraction = priceFraction
         
         let effectsDescription = Self.buildPercentageEffectsDescription(
-            direction: direction,
+            direction: .outgoing,
             fraction: priceFraction,
             outgoingIncrease: Strings.Buff.PricePercent.EffectsDescription.OutgoingIncrease1Param,
             outgoingDecrease: Strings.Buff.PricePercent.EffectsDescription.OutgoingDecrease1Param,
@@ -29,7 +29,7 @@ class PricePercentBuff: BuffAbstract {
             effectsDescription: effectsDescription,
             duration: duration,
             type: .price,
-            direction: direction,
+            direction: .outgoing,
             priority: .second)
     }
     

@@ -124,6 +124,10 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
         self.restoreArmorPoints(for: amountRemainingReadjusted)
     }
     
+    func setHealth(to amount: Int) {
+        self.health = min(amount, self.maxHealth)
+    }
+    
     func damage(for amount: Int) {
         if self.armorPoints > amount {
             self.armorPoints -= amount

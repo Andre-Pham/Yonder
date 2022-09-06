@@ -60,7 +60,7 @@ struct SettingsView: View {
                 Button("Buff") {
                     GameManager.instance.playerVM.player.addBuff(DamagePercentBuff(sourceName: "Magic", direction: .bidirectional, duration: 2, damageFraction: 1.5))
                     GameManager.instance.playerVM.player.addBuff(HealthRestorationPercentBuff(sourceName: "Magic Healing", direction: .incoming, duration: 2, healthFraction: 2.0))
-                    GameManager.instance.playerVM.player.addBuff(PricePercentBuff(sourceName: "Fairy", direction: .outgoing, duration: 1, priceFraction: 2.0))
+                    GameManager.instance.playerVM.player.addBuff(PricePercentBuff(sourceName: "Fairy", duration: 1, priceFraction: 2.0))
                 }
                 .padding()
                 .background(Color.red)
@@ -81,7 +81,7 @@ struct SettingsView: View {
                 .foregroundColor(.white)
                 
                 Button("Accessory") {
-                    GameManager.instance.playerVM.player.equipAccessory(Accessory(name: "Glasses", description: "Lets you see better.", type: .regular, healthBonus: 0, armorPointsBonus: 10, basePurchasePrice: 5, buffs: [PricePercentBuff(sourceName: "Glasses", direction: .outgoing, duration: nil, priceFraction: 0.5)], equipmentPills: []), replacing: nil)
+                    GameManager.instance.playerVM.player.equipAccessory(Accessory(name: "Glasses", description: "Lets you see better.", type: .regular, healthBonus: 0, armorPointsBonus: 10, basePurchasePrice: 5, buffs: [PricePercentBuff(sourceName: "Glasses", duration: nil, priceFraction: 0.5)], equipmentPills: []), replacing: nil)
                 }
                 .padding()
                 .background(Color.red)

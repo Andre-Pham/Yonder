@@ -59,6 +59,8 @@ class BuffAbstract: EffectsDescribed, Clonable {
         case damage
         case health
         case armorPoints
+        /// Price and gold bonus can't be merged into a single "gold buff".
+        /// This is because there is no "owner" and "target"; there is no buff direction, and only the player will have gold buffs to apply. So this means if you had a buff that increased prices, its apply method would increase all gold transactions, meaning the player's received gold would also increase along with prices.
         case price
         case goldBonus
     }

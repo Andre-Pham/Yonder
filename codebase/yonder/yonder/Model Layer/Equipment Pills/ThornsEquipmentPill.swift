@@ -36,11 +36,11 @@ class ThornsEquipmentPill: EquipmentPillAbstract, OnTurnEndSubscriber {
         if player.hasEquipmentEffect(self) {
             let damageTaken = foe.getIndicativeDamage(of: foe.getWeapon(), opposition: player)
             let damage = Int(round(Double(damageTaken)*self.thornsFraction))
-            foe.delayedDamageValues.addDamageAdjusted(sourceOwner: player, using: self, for: damage)
+            foe.delayedDamageValues.addDamageAdjusted(sourceOwner: player, using: self, target: foe, for: damage)
         } else if foe.hasEquipmentEffect(self) {
             let damageTaken = player.getIndicativeDamage(of: playerItem, opposition: foe)
             let damage = Int(round(Double(damageTaken)*self.thornsFraction))
-            player.delayedDamageValues.addDamageAdjusted(sourceOwner: foe, using: self, for: damage)
+            player.delayedDamageValues.addDamageAdjusted(sourceOwner: foe, using: self, target: player, for: damage)
         }
     }
     

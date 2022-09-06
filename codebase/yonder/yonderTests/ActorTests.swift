@@ -25,5 +25,15 @@ class ActorTests: XCTestCase {
         self.actor.damage(for: 1)
         XCTAssertTrue(self.actor.isDead)
     }
+    
+    func testMaxHealth() throws {
+        XCTAssertEqual(self.actor.health, self.actor.maxHealth)
+        self.actor.damage(for: 100)
+        XCTAssertEqual(self.actor.maxHealth, 200)
+        XCTAssertEqual(self.actor.health, 100)
+        self.actor.adjustBonusHealth(by: 100)
+        XCTAssertEqual(self.actor.maxHealth, 300)
+        XCTAssertEqual(self.actor.health, 200)
+    }
 
 }

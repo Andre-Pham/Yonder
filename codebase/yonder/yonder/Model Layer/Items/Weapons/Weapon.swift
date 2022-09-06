@@ -91,11 +91,13 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
     func use(owner: ActorAbstract, opposition: ActorAbstract) {
         self.onUseSubscribers.forEach({ $0.onUse(self, owner: owner, opposition: opposition) })
         
+        // We only want buffs to apply to weapons that already have the relevant property
+        // E.g a health staff that heals, a +10 damage weapon buff shouldn't suddenly cause the healing staff to deal damage
         if self.healthRestoration > 0 {
             owner.delayedRestorationValues.addRestorationAdjusted(type: .health, sourceOwner: owner, using: self, for: self.healthRestoration)
         }
         if self.damage > 0 {
-            opposition.delayedDamageValues.addDamageAdjusted(sourceOwner: owner, using: self, for: self.damage)
+            opposition.delayedDamageValues.addDamageAdjusted(sourceOwner: owner, using: self, target: opposition, for: self.damage)
         }
         if self.armorPointsRestoration > 0 {
             owner.delayedRestorationValues.addRestorationAdjusted(type: .armorPoints, sourceOwner: owner, using: self, for: self.armorPointsRestoration)
