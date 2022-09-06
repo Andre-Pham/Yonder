@@ -14,16 +14,16 @@ class CombatFlowTests: XCTestCase {
     let foe = Foe(maxHealth: 500, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
     
     func testDamageWeaponAndBuff() throws {
-        self.player.addBuff(DamagePercentBuff(sourceName: "", direction: .outgoing, duration: nil, damageFraction: 2.0))
-        self.player.addBuff(DamagePercentBuff(sourceName: "", direction: .incoming, duration: nil, damageFraction: 0.5))
+        self.player.addBuff(DamagePercentBuff(sourceName: "", direction: .outgoing, duration: 1, damageFraction: 2.0))
+        self.player.addBuff(DamagePercentBuff(sourceName: "", direction: .incoming, duration: 1, damageFraction: 0.5))
         self.player.useWeaponWhere(opposition: self.foe, weapon: BaseAttack(damage: 100))
         XCTAssertEqual(self.player.health, 500 - 100/2)
         XCTAssertEqual(self.foe.health, 500 - 100*2)
     }
     
     func testHealthRestorationAndBuff() throws {
-        self.player.addBuff(HealthRestorationPercentBuff(sourceName: "", direction: .incoming, duration: nil, healthFraction: 2.0))
-        self.foe.addBuff(DamageBuff(sourceName: "", direction: .outgoing, duration: nil, damageDifference: 100))
+        self.player.addBuff(HealthRestorationPercentBuff(sourceName: "", direction: .incoming, duration: 1, healthFraction: 2.0))
+        self.foe.addBuff(DamageBuff(sourceName: "", direction: .outgoing, duration: 1, damageDifference: 100))
         self.player.useWeaponWhere(opposition: self.foe, weapon: Weapon(basePill: HealthRestorationBasePill(healthRestoration: 50), durabilityPill: InfiniteDurabilityPill()))
         XCTAssertEqual(self.player.health, 500 - (100 + 100) + 50*2)
         XCTAssertEqual(self.foe.health, 500)
