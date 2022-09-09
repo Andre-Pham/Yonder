@@ -32,7 +32,10 @@ class ThornsEquipmentPill: EquipmentPillAbstract, OnTurnEndSubscriber {
         OnTurnEndPublisher.subscribe(self)
     }
     
-    func onTurnEnd(player: Player, playerUsed playerItem: ItemAbstract, foe: Foe) {
+    func onTurnEnd(player: Player, playerUsed playerItem: ItemAbstract?, foe: Foe?) {
+        guard let playerItem = playerItem, let foe = foe else {
+            return
+        }
         if player.hasEquipmentEffect(self) {
             let damageTaken = foe.getIndicativeDamage(of: foe.getWeapon(), opposition: player)
             let damage = Int(round(Double(damageTaken)*self.thornsFraction))

@@ -384,6 +384,7 @@ enum Strings: Localizable {
             case Potions
             case Armor
             case Accessories
+            case Consumables
         }
     }
     
@@ -465,6 +466,89 @@ enum Strings: Localizable {
             case Name
             case Description
             case EffectsDescription
+        }
+    }
+    
+    enum Consumable: Localizable {
+        static let parent: LocalizeParent = Strings.self
+        
+        enum RandomHealth: Localizable {
+            static let parent: LocalizeParent = Consumable.self
+            
+            case Name
+            case Description
+            case EffectsDescription
+        }
+        
+        enum MultiplyGold: Localizable {
+            static let parent: LocalizeParent = Consumable.self
+            
+            case Name
+            case Description
+            case EffectsDescription1Param
+        }
+        
+        enum TurnImprovingRestoration: Localizable {
+            static let parent: LocalizeParent = Consumable.self
+            
+            case Name
+            case Description
+            case EffectsDescription2Param
+        }
+        
+        enum AdjustMaxHealth: Localizable {
+            static let parent: LocalizeParent = Consumable.self
+            
+            case EffectsDescription1Param
+            
+            enum Name: Localizable {
+                static let parent: LocalizeParent = AdjustMaxHealth.self
+                
+                case Tier1
+                case Tier2
+                case Tier3
+                case Tier4
+            }
+            
+            enum Description: Localizable {
+                static let parent: LocalizeParent = AdjustMaxHealth.self
+                
+                case Tier1
+                case Tier2
+                case Tier3
+                case Tier4
+            }
+        }
+        
+        enum RipeningSetHealth: Localizable {
+            static let parent: LocalizeParent = Consumable.self
+            
+            enum Name: Localizable {
+                static let parent: LocalizeParent = RipeningSetHealth.self
+                
+                case Stage1
+                case Stage2
+                case Stage3
+                case Stage4
+            }
+            
+            enum Description: Localizable {
+                static let parent: LocalizeParent = RipeningSetHealth.self
+                
+                case Stage1
+                case Stage2
+                case Stage3
+                case Stage4
+            }
+            
+            enum EffectsDescription: Localizable {
+                static let parent: LocalizeParent = RipeningSetHealth.self
+                
+                case Stage11Param
+                case Stage21Param
+                case Stage31Param
+                case Stage4
+            }
         }
     }
     

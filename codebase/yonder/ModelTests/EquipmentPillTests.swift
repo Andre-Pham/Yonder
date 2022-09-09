@@ -14,6 +14,7 @@ class EquipmentPillTests: XCTestCase {
     let foe = Foe(maxHealth: 500, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
     let foeZeroAttack = Foe(maxHealth: 500, weapon: BaseAttack(damage: 0), loot: NoLootOptions())
     let accessory = Accessory(name: "Test Accessory", description: "For testing.", type: .regular, healthBonus: 0, armorPointsBonus: 0, basePurchasePrice: 0, buffs: [], equipmentPills: [])
+    let turnManager = TestsTurnManager.turnManager
     
     // MARK: - Basic
     

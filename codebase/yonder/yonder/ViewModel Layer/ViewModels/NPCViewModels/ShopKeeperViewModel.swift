@@ -88,6 +88,8 @@ class PurchasableViewModel: ObservableObject {
             return nil
         case .accessory:
             return nil
+        case .consumable:
+            return nil
         }
     }
     

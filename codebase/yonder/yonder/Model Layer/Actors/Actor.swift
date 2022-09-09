@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscriber {
+class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscriber, OnNoConsumablesRemainingSubscriber {
     
     @DidSetPublished private(set) var maxHealth: Int
     @DidSetPublished private(set) var health: Int
@@ -25,6 +25,7 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
     @DidSetPublished private(set) var weapons = [Weapon]()
     @DidSetPublished private(set) var buffs = [BuffAbstract]()
     @DidSetPublished private(set) var potions = [PotionAbstract]()
+    @DidSetPublished private(set) var consumables = [ConsumableAbstract]()
     @DidSetPublished private(set) var headArmor: Armor = NoArmor(type: .head)
     @DidSetPublished private(set) var bodyArmor: Armor = NoArmor(type: .body)
     @DidSetPublished private(set) var legsArmor: Armor = NoArmor(type: .legs)
@@ -51,14 +52,7 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
         
         OnNoWeaponDurabilityPublisher.subscribe(self)
         OnNoPotionsRemainingPublisher.subscribe(self)
-    }
-    
-    func onTurnCompletion() {
-        self.delayedDamageValues.consume(by: self)
-        self.delayedRestorationValues.consume(by: self)
-        self.triggerStatusEffects()
-        self.decrementTimedEvents()
-        self.decrementBuffs()
+        OnNoConsumablesRemainingPublisher.subscribe(self)
     }
     
     // MARK: - Max Health Related
@@ -238,6 +232,20 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
         }
     }
     
+    /// Use a given weapon whilst an opposition exists.
+    /// The opposition merely needs to be present. The weapon can be targeting either the owner (e.g. healing weapons) or the opposition (e.g. damage weapons).
+    /// This actor technically doesn't need to own the weapon. For example, the DefaultPlayerWeapon isn't owned by the player, yet can be used.
+    /// - Parameters:
+    ///   - opposition: The opposition the actor is in combat with
+    ///   - weapon: The weapon being used - not necessarily targeting the opposition
+    func useWeaponWhere(opposition: ActorAbstract, weapon: Weapon) {
+        OnActorAttackPublisher.publish(actor: self, weapon: weapon, target: opposition)
+        
+        weapon.use(owner: self, opposition: opposition)
+        
+        AfterActorAttackPublisher.publish(actor: self, weapon: weapon, target: opposition)
+    }
+    
     // MARK: - Potions
     
     func addPotion(_ potion: PotionAbstract) {
@@ -261,6 +269,39 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
         if self.potions.contains(where: { $0.id == potion.id }) {
             self.removePotion(potion)
         }
+    }
+    
+    func usePotionWhere(opposition: ActorAbstract, potion: PotionAbstract) {
+        potion.use(owner: self, opposition: opposition)
+    }
+    
+    // MARK: - Consumables
+    
+    func addConsumable(_ consumable: ConsumableAbstract) {
+        for ownedConsumable in self.consumables {
+            if consumable.isStackable(with: ownedConsumable) {
+                ownedConsumable.adjustStack(by: consumable.stack)
+                return
+            }
+        }
+        self.consumables.append(consumable.clone())
+    }
+    
+    func removeConsumable(_ consumable: ConsumableAbstract) {
+        guard let index = (self.consumables.firstIndex(where: { $0.id == consumable.id })) else {
+            return
+        }
+        self.consumables.remove(at: index)
+    }
+    
+    func onNoConsumablesRemaining(consumable: ConsumableAbstract) {
+        if self.consumables.contains(where: { $0.id == consumable.id }) {
+            self.removeConsumable(consumable)
+        }
+    }
+    
+    func useConsumableWhere(opposition: ActorAbstract?, consumable: ConsumableAbstract) {
+        consumable.use(owner: self, opposition: opposition)
     }
     
     // MARK: - Buffs
@@ -369,30 +410,6 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
             }
         }
         return self.accessorySlots.hasEffect(equipmentPill)
-    }
-    
-    // MARK: - Actor Interactions
-    
-    /// Use a given weapon whilst an opposition exists. Triggers the end of turn if it's the player attacking a foe.
-    /// The opposition merely needs to be present. The weapon can be targeting either the owner (e.g. healing weapons) or the opposition (e.g. damage weapons).
-    /// This actor technically doesn't need to own the weapon. For example, the DefaultPlayerWeapon isn't owned by the player, yet can be used.
-    /// - Parameters:
-    ///   - opposition: The opposition the actor is in combat with
-    ///   - weapon: The weapon being used - not necessarily targeting the opposition
-    func useWeaponWhere(opposition: ActorAbstract, weapon: Weapon) {
-        OnActorAttackPublisher.publish(actor: self, weapon: weapon, target: opposition)
-        
-        weapon.use(owner: self, opposition: opposition)
-        
-        AfterActorAttackPublisher.publish(actor: self, weapon: weapon, target: opposition)
-        
-        if let foe = opposition as? Foe, let player = self as? Player {
-            foe.completeTurn(player: player, playerUsed: weapon)
-        }
-    }
-    
-    func usePotionWhere(opposition: ActorAbstract, potion: PotionAbstract) {
-        potion.use(owner: self, opposition: opposition)
     }
     
 }

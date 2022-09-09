@@ -11,7 +11,6 @@ class Foe: ActorAbstract, Named, Described {
     
     public let name: String
     public let description: String
-    private let combatFlow = CombatFlow()
     public let loot: LootOptions
     var canBeLooted: Bool {
         return self.isDead && !self.loot.isLooted
@@ -34,10 +33,6 @@ class Foe: ActorAbstract, Named, Described {
     
     func attack(_ player: Player) {
         self.useWeaponWhere(opposition: player, weapon: self.getWeapon())
-    }
-    
-    func completeTurn(player: Player, playerUsed item: ItemAbstract) {
-        self.combatFlow.completeTurn(player: player, playerUsed: item, foe: self)
     }
     
 }

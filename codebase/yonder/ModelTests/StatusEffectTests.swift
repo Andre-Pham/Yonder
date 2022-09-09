@@ -11,19 +11,20 @@ import XCTest
 class StatusEffectTests: XCTestCase {
 
     let player = Player(maxHealth: 500, location: NoLocation())
+    let turnManager = TestsTurnManager.turnManager
     
     // MARK: - Basic
     
     func testStatusEffectExpiration() throws {
         self.player.addStatusEffect(BurnStatusEffect(damage: 10, duration: 1))
         XCTAssertEqual(self.player.statusEffects.count, 1)
-        self.player.onTurnCompletion()
+        self.turnManager.completeTurn(player: self.player)
         XCTAssertTrue(self.player.statusEffects.isEmpty)
     }
     
     func testBurnStatusEffect() throws {
         self.player.addStatusEffect(BurnStatusEffect(damage: 10, duration: 2))
-        self.player.onTurnCompletion()
+        self.turnManager.completeTurn(player: self.player)
         XCTAssertEqual(self.player.health, 490)
     }
 

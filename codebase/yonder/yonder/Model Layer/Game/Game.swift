@@ -11,6 +11,7 @@ class Game {
     
     private(set) var map: Map
     private(set) var player: Player
+    public let turnManager = TurnManager()
     
     init() {
         self.map = Maps.newMap()

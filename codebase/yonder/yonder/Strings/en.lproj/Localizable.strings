@@ -228,6 +228,7 @@
 "purchasableItem.category.potions" = "Potions";
 "purchasableItem.category.armor" = "Armor";
 "purchasableItem.category.accessories" = "Accessories";
+"purchasableItem.category.consumables" = "Consumables";
 
 // MARK: - Items
 
@@ -307,6 +308,48 @@
 // shield potion is shimmering silver and maybe cast in iron... has an acidic armoa, and is in a vial
 // thorn theme can be for the weakness potion (maybe thorns are on it or something "sealed by a thorn")
 // potion that increases your maximum health is green with accents of gold, like life fruit ("Potion of life")
+
+// MARK: - Consumables
+
+// Random Health
+"consumable.randomHealth.name" = "Bleeding Dice";
+"consumable.randomHealth.description" = "A pair of fleshy dice kept in a sealed pouch. Where they roll they leave red.";
+"consumable.randomHealth.effectsDescription" = "Set your health to a new random value.";
+
+// Multiply Gold
+"consumable.multiplyGold.name" = "Dragonhoard Wishing Stone";
+"consumable.multiplyGold.description" = "A stone of pure glimmering gold with a crystal dragon eye embedded in it.";
+"consumable.multiplyGold.effectsDescription1Param" = "Increase your current gold by %@%%.";
+
+// Turn Improving Restoration
+"consumable.turnImprovingRestoration.name" = "Cellular Blessing";
+"consumable.turnImprovingRestoration.description" = "A bright token of materialised light.";
+"consumable.turnImprovingRestoration.effectsDescription2Param" = "Restore %@. Improves by %@ restoration every turn.\n(Any restoration left over after reaching full health overflows to shields)";
+
+// Adjust Max Health
+"consumable.adjustMaxHealth.name.tier1" = "Life Seed";
+"consumable.adjustMaxHealth.name.tier2" = "Life Root";
+"consumable.adjustMaxHealth.name.tier3" = "Life Sprout";
+"consumable.adjustMaxHealth.name.tier4" = "Life Flower";
+"consumable.adjustMaxHealth.description.tier1" = "A small round seed. It radiates energy and emits glowing particles of lush green and gold.";
+"consumable.adjustMaxHealth.description.tier2" = "A sprouting root. It radiates energy and emits glowing particles of lush green and gold.";
+"consumable.adjustMaxHealth.description.tier3" = "A palm-sized sprout. It radiates energy and emits glowing particles of lush green and gold.";
+"consumable.adjustMaxHealth.description.tier4" = "A magnificent fully bloomed flower. It radiates energy and emits glowing particles of lush green and gold.";
+"consumable.adjustMaxHealth.effectsDescription1Param" = "Permanently increases your maximum health by %@.";
+
+// Ripening Set Health
+"consumable.ripeningSetHealth.name.stage1" = "Unripe Glowberry";
+"consumable.ripeningSetHealth.name.stage2" = "Half Ripe Glowberry";
+"consumable.ripeningSetHealth.name.stage3" = "Ripe Glowberry";
+"consumable.ripeningSetHealth.name.stage4" = "Senescent Glowberry";
+"consumable.ripeningSetHealth.description.stage1" = "An unripe glowberry. It's bright green, stiff, and round.";
+"consumable.ripeningSetHealth.description.stage2" = "A half ripe glowberry. It's aquamarine and has grown two fold.";
+"consumable.ripeningSetHealth.description.stage3" = "A ripened glowberry. It's a brilliant blue, with soft flesh and considerable weight.";
+"consumable.ripeningSetHealth.description.stage4" = "A senescent glowberry. It's become a deep teal, and wrinkled to its original size.";
+"consumable.ripeningSetHealth.effectsDescription.stage11Param" = "Sets you to 1/3 your maximum health. Ripens more in %@ turns.";
+"consumable.ripeningSetHealth.effectsDescription.stage21Param" = "Sets you to 2/3 your maximum health. Fully ripens in %@ turns.";
+"consumable.ripeningSetHealth.effectsDescription.stage31Param" = "Sets you to your maximum health. Goes bad in %@ turns.";
+"consumable.ripeningSetHealth.effectsDescription.stage4" = "Does nothing. To dispose, consume this item.";
 
 // MARK: - Buffs
 

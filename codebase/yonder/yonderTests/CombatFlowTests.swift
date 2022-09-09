@@ -12,6 +12,7 @@ class CombatFlowTests: XCTestCase {
 
     let player = Player(maxHealth: 500, location: NoLocation())
     let foe = Foe(maxHealth: 500, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
+    let turnManager = TestsTurnManager.turnManager
     
     func testDamageWeaponAndBuff() throws {
         self.player.addBuff(DamagePercentBuff(sourceName: "", direction: .outgoing, duration: 1, damageFraction: 2.0))

@@ -15,6 +15,7 @@ class BuffTests: XCTestCase {
     let foeZeroAttack = Foe(maxHealth: 500, weapon: BaseAttack(damage: 0), loot: NoLootOptions())
     let baseHealthRestorationWeapon = Weapon(basePill: HealthRestorationBasePill(healthRestoration: 100), durabilityPill: InfiniteDurabilityPill())
     let baseArmorPointsRestorationWeapon = Weapon(basePill: ArmorPointsRestorationBasePill(armorPointsRestoration: 100), durabilityPill: InfiniteDurabilityPill())
+    let turnManager = TestsTurnManager.turnManager
     
     // MARK: - Basic
     
@@ -22,9 +23,9 @@ class BuffTests: XCTestCase {
         let buff = DamageBuff(sourceName: "", direction: .incoming, duration: 2, damageDifference: 5)
         XCTAssertFalse(buff.isInfinite)
         self.player.addBuff(buff)
-        self.player.onTurnCompletion()
+        self.turnManager.completeTurn(player: self.player)
         XCTAssertEqual(self.player.buffs.first!.timeRemaining, 1)
-        self.player.onTurnCompletion()
+        self.turnManager.completeTurn(player: self.player)
         XCTAssertTrue(self.player.buffs.isEmpty)
     }
     
@@ -34,7 +35,7 @@ class BuffTests: XCTestCase {
         self.player.addBuff(buff)
         let timeRemaining = buff.timeRemaining
         XCTAssertTrue(timeRemaining == nil)
-        self.player.onTurnCompletion()
+        self.turnManager.completeTurn(player: self.player)
         XCTAssertEqual(timeRemaining, buff.timeRemaining)
     }
     

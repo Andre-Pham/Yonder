@@ -8,7 +8,7 @@
 import Foundation
 
 /// Holds damage values to be applied (consumed) to an actor later, rather than immediately.
-/// This allows the handling of "simultaneous" actions. If a hostile attacks a player for 100, and the player heals for 100, these actions would be expected to occur simultaneously, so the player's health has no change. By using delayed values, we can ensure that any damage is consumed before any healing so that simultaneous actions result in the expected outcome.
+/// Applying damage values later rather than immediately allows the handling of "simultaneous" actions. If a hostile attacks a player for 100, and the player heals for 100, these actions would be expected to occur simultaneously, so the player's health has no change. By using delayed values, we can ensure that any damage is consumed before any healing so that simultaneous actions result in the expected outcome.
 /// This also allows for values to be calculated after an action. For example, consider a weapon lifesteal accessory. You need to get the damage the weapon will do before it attacks, but restore health after attacks have been completed. By delaying the damage and health restoration, you can calculate the weapon's damage before attacking whilst only applying the health restoration after the player has taken damage.
 class DelayedDamageValues {
     

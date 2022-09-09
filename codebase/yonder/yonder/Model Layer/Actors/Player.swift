@@ -21,6 +21,10 @@ class Player: ActorAbstract {
         super.init(maxHealth: maxHealth)
     }
     
+    func setGold(to amount: Int) {
+        self.gold = amount
+    }
+    
     func modifyGold(by amount: Int) {
         self.gold += amount
     }
@@ -35,9 +39,12 @@ class Player: ActorAbstract {
     }
     
     func travel(to location: LocationAbstract) {
+        OnPlayerTravelPublisher.publish(player: self, newLocation: location)
+        
         location.setToVisited(from: self.location)
         self.location = location
-        self.onTurnCompletion()
+        
+        AfterPlayerTravelPublisher.publish(player: self)
     }
     
     func clearAttributes() {

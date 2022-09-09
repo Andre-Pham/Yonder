@@ -13,6 +13,7 @@ class WeaponEffectPillTests: XCTestCase {
     let player = Player(maxHealth: 500, location: NoLocation())
     let foe = Foe(maxHealth: 500, weapon: BaseAttack(damage: 0), loot: LootOptions(LootBag(), LootBag(), LootBag()))
     let weapon = Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: InfiniteDurabilityPill())
+    let turnManager = TestsTurnManager.turnManager
     
     // MARK: - Basic
 
