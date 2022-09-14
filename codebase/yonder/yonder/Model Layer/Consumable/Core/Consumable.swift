@@ -13,7 +13,7 @@ class ConsumableAbstractPart: Named, Described, Clonable, Purchasable {
     
     private(set) var name: String
     private(set) var description: String
-    private(set) var stack = 1 {
+    @DidSetPublished private(set) var stack = 1 {
         didSet {
             if self.stack <= 0 {
                 OnNoConsumablesRemainingPublisher.publish(consumable: self as! ConsumableAbstract)

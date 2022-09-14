@@ -90,6 +90,14 @@ enum Strings: Localizable {
             case Option
         }
         
+        enum Consumables: Localizable {
+            static let parent: LocalizeParent = Inventory.self
+            
+            case Header
+            case HeaderZeroConsumables
+            case Option
+        }
+        
         enum Accessories: Localizable {
             static let parent: LocalizeParent = Inventory.self
             
@@ -167,6 +175,13 @@ enum Strings: Localizable {
         }
         
         enum Potion: Localizable {
+            static let parent: LocalizeParent = Stat.self
+            
+            case RemainingUsesSingular
+            case RemainingUses
+        }
+        
+        enum Consumable: Localizable {
             static let parent: LocalizeParent = Stat.self
             
             case RemainingUsesSingular

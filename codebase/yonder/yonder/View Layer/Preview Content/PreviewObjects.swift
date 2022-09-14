@@ -20,6 +20,7 @@ enum PreviewObjects {
         player.addStatusEffect(BurnStatusEffect(damage: 15, duration: 5))
         player.addTimedEvent(MaxHealthRestorationTimedEvent(timeToTrigger: 5))
         player.equipAccessory(Self.accessory, replacing: nil)
+        player.addConsumable(TurnImprovingRestoration(basePurchasePrice: 10))
         return player
     }
     
@@ -245,6 +246,20 @@ enum PreviewObjects {
     
     static var potionViewModel: PotionViewModel {
         return PotionViewModel(Self.potion)
+    }
+    
+    // MARK: - Consumables
+    
+    // MODEL
+    
+    private static var consumable: ConsumableAbstract {
+        return RipeningSetHealthConsumable(basePurchasePrice: 10)
+    }
+    
+    // VIEW MODEL
+    
+    static var consumableViewModel: ConsumableViewModel {
+        return ConsumableViewModel(Self.consumable)
     }
     
     // MARK: - Map

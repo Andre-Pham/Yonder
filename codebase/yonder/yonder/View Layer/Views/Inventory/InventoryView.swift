@@ -57,6 +57,10 @@ struct InventoryView: View {
                             YonderGridOption(title: Strings.Inventory.Potions.Option.local, geometry: geo, image: YonderImages.potionOptionIcon) {
                                 self.inventoryStateManager.potionOptionSelected(potionCount: self.playerViewModel.potionViewModels.count)
                             }
+                            
+                            YonderGridOption(title: Strings.Inventory.Consumables.Option.local, geometry: geo, image: YonderImages.consumableOptionIcon) {
+                                self.inventoryStateManager.consumableOptionSelected(consumableCount: self.playerViewModel.consumableViewModels.count)
+                            }
                         }
                         
                         if let header = self.inventoryStateManager.optionHeader {
@@ -70,6 +74,10 @@ struct InventoryView: View {
                         
                         if self.inventoryStateManager.potionsActive {
                             InventoryPotionsView(sheetsStateManager: self.sheetsStateManager, playerViewModel: self.playerViewModel, pageGeometry: geo)
+                        }
+                        
+                        if self.inventoryStateManager.consumablesActive {
+                            InventoryConsumablesView(sheetsStateManager: self.sheetsStateManager, playerViewModel: self.playerViewModel, pageGeometry: geo)
                         }
                     }
                 }

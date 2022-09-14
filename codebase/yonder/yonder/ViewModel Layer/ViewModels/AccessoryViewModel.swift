@@ -10,7 +10,7 @@ import Combine
 
 class AccessoryViewModel: ObservableObject {
     
-    // armor can be used within the ViewModel layer, but Views should only interact with ViewModels (not the Model layer)
+    // accessory can be used within the ViewModel layer, but Views should only interact with ViewModels (not the Model layer)
     private(set) var accessory: Accessory
     private var subscriptions: Set<AnyCancellable> = []
     

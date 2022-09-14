@@ -47,6 +47,14 @@ class PlayerViewModel: ObservableObject {
             }
         }
     }
+    @Published private(set) var consumableViewModels: [ConsumableViewModel] {
+        didSet {
+            // Changes to any ConsumableViewModel will be published to the UI
+            for consumable in self.consumableViewModels {
+                consumable.objectWillChange.sink(receiveValue: { _ in self.objectWillChange.send() }).store(in: &self.subscriptions)
+            }
+        }
+    }
     @Published private(set) var buffViewModels: [BuffViewModel] {
         didSet {
             // Changes to any BuffViewModel will be published to the UI
@@ -162,6 +170,7 @@ class PlayerViewModel: ObservableObject {
         self.weaponViewModels = self.player.weapons.map { WeaponViewModel($0) }
         self.applicableWeaponViewModels = self.player.getApplicableWeapons().map { WeaponViewModel($0) }
         self.potionViewModels = self.player.potions.map { PotionViewModel($0) }
+        self.consumableViewModels = self.player.consumables.map { ConsumableViewModel($0) }
         self.buffViewModels = self.player.buffs.map { BuffViewModel($0) }
         self.statusEffectViewModels = self.player.statusEffects.map { StatusEffectViewModel($0) }
         self.timedEventsViewModels = self.player.timedEvents.map { TimedEventViewModel($0) }
@@ -241,6 +250,10 @@ class PlayerViewModel: ObservableObject {
         
         self.player.$potions.sink(receiveValue: { newValue in
             self.potionViewModels = newValue.map { PotionViewModel($0) }
+        }).store(in: &self.subscriptions)
+        
+        self.player.$consumables.sink(receiveValue: { newValue in
+            self.consumableViewModels = newValue.map { ConsumableViewModel($0) }
         }).store(in: &self.subscriptions)
         
         self.player.$buffs.sink(receiveValue: { newValue in
