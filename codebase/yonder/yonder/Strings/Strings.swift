@@ -39,6 +39,7 @@ enum Strings: Localizable {
             case Default
             case Weapon
             case Potion
+            case Consumable
             case Offer
             case Restoration
             case Shop
@@ -52,6 +53,7 @@ enum Strings: Localizable {
             
             case Weapon
             case Potion
+            case Consumable
             case Offer
             case Restoration
             case Shop
@@ -156,6 +158,7 @@ enum Strings: Localizable {
         
         case Health
         case Damage
+        case Restoration
         case OffersRemaining
         case HealthRestoration
         case Shields
@@ -184,7 +187,7 @@ enum Strings: Localizable {
         enum Consumable: Localizable {
             static let parent: LocalizeParent = Stat.self
             
-            case RemainingUsesSingular
+            case Remaining
             case RemainingUses
         }
         

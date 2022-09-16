@@ -34,6 +34,10 @@ struct UsePotionButton: View {
                             effectsDescription: effectsDescription,
                             indicative: self.playerViewModel.getIndicativeArmorPointsRestoration(of: self.potionViewModel),
                             size: .buttonBodySubscript)
+                    } else if self.potionViewModel.restoration > 0 {
+                        YonderText(text: effectsDescription, size: .buttonBodySubscript)
+                        
+                        YonderText(text: self.playerViewModel.getIndicativeRestorationString(itemViewModel: self.potionViewModel), size: .buttonBodySubscript)
                     } else {
                         YonderText(text: effectsDescription, size: .buttonBodySubscript)
                     }

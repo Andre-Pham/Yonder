@@ -34,6 +34,12 @@ struct ActionsView: View {
                 }
             }
             
+            if self.optionsStateManager.consumableActionsActive {
+                ForEach(self.playerViewModel.consumableViewModels, id: \.id) { consumableViewModel in
+                    UseConsumableButton(playerViewModel: self.playerViewModel, consumableViewModel: consumableViewModel)
+                }
+            }
+            
             if self.optionsStateManager.offerActionsActive {
                 if let friendlyViewModel = self.playerViewModel.locationViewModel.getInteractorViewModel() as? FriendlyViewModel {
                     ForEach(friendlyViewModel.offers, id: \.id) { offer in

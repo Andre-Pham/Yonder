@@ -21,7 +21,7 @@ struct InventoryConsumablesView: View {
                 isPresented: self.$sheetsStateManager.consumableSheetBindings[index],
                 pageGeometry: self.pageGeometry,
                 content: AnyView(
-                    ConsumableInspectView(consumableViewModel: consumableViewModel, playerViewModel: self.playerViewModel)
+                    ItemInspectView(itemViewModel: consumableViewModel, playerViewModel: self.playerViewModel)
             ))
         }
     }

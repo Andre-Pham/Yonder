@@ -9,8 +9,8 @@ import Foundation
 
 class TurnImprovingRestoration: ConsumableAbstract, OnTurnEndSubscriber {
     
-    /// The amount this restores
-    private var restoration = 10
+    /// The amount of restoration this consumable starts with
+    private let startingRestoration = 10
     /// The amount of restoration this improves by every turn
     private let restorationIncrease = 2
     
@@ -18,7 +18,9 @@ class TurnImprovingRestoration: ConsumableAbstract, OnTurnEndSubscriber {
         super.init(
             name: Strings.Consumable.TurnImprovingRestoration.Name.local,
             description: Strings.Consumable.TurnImprovingRestoration.Description.local,
-            basePurchasePrice: basePurchasePrice
+            effectsDescription: Strings.Consumable.TurnImprovingRestoration.EffectsDescription2Param.localWithArgs(self.startingRestoration, self.restorationIncrease),
+            basePurchasePrice: basePurchasePrice,
+            restoration: self.startingRestoration
         )
         
         OnTurnEndPublisher.subscribe(self)
@@ -26,18 +28,20 @@ class TurnImprovingRestoration: ConsumableAbstract, OnTurnEndSubscriber {
     
     required init(_ original: ConsumableAbstractPart) {
         let original = original as! Self
-        self.restoration = original.restoration
-        super.init(original)
+        super.init(
+            name: original.name,
+            description: original.description,
+            effectsDescription: original.effectsDescription,
+            basePurchasePrice: original.basePurchasePrice,
+            restoration: original.restoration
+        )
         
         OnTurnEndPublisher.subscribe(self)
     }
     
-    func getEffectsDescription() -> String? {
-        return Strings.Consumable.TurnImprovingRestoration.EffectsDescription2Param.localWithArgs(self.restoration, self.restorationIncrease)
-    }
-    
     func use(owner: ActorAbstract, opposition: ActorAbstract?) {
         owner.restoreAdjusted(sourceOwner: owner, using: self, for: self.restoration)
+        self.adjustRemainingUses(by: -1)
     }
     
     func isStackable(with consumable: ConsumableAbstract) -> Bool {
@@ -48,7 +52,11 @@ class TurnImprovingRestoration: ConsumableAbstract, OnTurnEndSubscriber {
     }
     
     func onTurnEnd(player: Player, playerUsed: ItemAbstract?, foe: Foe?) {
-        self.restoration += self.restorationIncrease
+        self.adjustRestoration(by: self.restorationIncrease)
+    }
+    
+    override func restorationDidSet() {
+        self.setEffectsDescription(to: Strings.Consumable.TurnImprovingRestoration.EffectsDescription2Param.localWithArgs(self.restoration, self.restorationIncrease))
     }
 
 }

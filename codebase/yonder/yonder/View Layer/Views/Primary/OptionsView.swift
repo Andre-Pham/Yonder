@@ -79,6 +79,12 @@ struct OptionsView: View {
                         travelStateManager: self.travelStateManager)
                 }
             }
+            
+            if optionsStateManager.consumableOptionActive {
+                YonderGridOption(title: Strings.OptionsMenu.Option.Consumable.local, geometry: self.pageGeometry, image: YonderImages.consumableOptionIcon) {
+                    self.optionsStateManager.consumableOptionSelected()
+                }
+            }
         }
     }
 }

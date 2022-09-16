@@ -14,9 +14,11 @@ class MultiplyGoldConsumable: ConsumableAbstract {
     init(basePurchasePrice: Int, goldFraction: Double) {
         self.goldFraction = goldFraction
         
+        let percentage = (100.0*abs(1.0 - self.goldFraction)).toString(decimalPlaces: 0)
         super.init(
             name: Strings.Consumable.MultiplyGold.Name.local,
             description: Strings.Consumable.MultiplyGold.Description.local,
+            effectsDescription: Strings.Consumable.MultiplyGold.EffectsDescription1Param.localWithArgs(percentage),
             basePurchasePrice: basePurchasePrice
         )
     }
@@ -27,15 +29,10 @@ class MultiplyGoldConsumable: ConsumableAbstract {
         super.init(original)
     }
     
-    func getEffectsDescription() -> String? {
-        let percentage = (100.0*abs(1.0 - self.goldFraction)).toString(decimalPlaces: 0)
-        return Strings.Consumable.MultiplyGold.EffectsDescription1Param.localWithArgs(percentage)
-    }
-    
     func use(owner: ActorAbstract, opposition: ActorAbstract?) {
         if let player = owner as? Player {
             player.modifyGoldAdjusted(by: Int(round(Double(player.gold)*abs(1.0 - self.goldFraction))))
-            self.adjustStack(by: -1)
+            self.adjustRemainingUses(by: -1)
         }
     }
     

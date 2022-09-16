@@ -24,7 +24,7 @@ class ConsumableTests: XCTestCase {
         self.player.addConsumable(MultiplyGoldConsumable(basePurchasePrice: 10, goldFraction: 2.0))
         self.player.addConsumable(MultiplyGoldConsumable(basePurchasePrice: 10, goldFraction: 2.0))
         XCTAssertEqual(self.player.consumables.count, 1)
-        XCTAssertEqual(self.player.consumables.first!.stack, 2)
+        XCTAssertEqual(self.player.consumables.first!.remainingUses, 2)
     }
     
     func testRandomHealthConsumable() throws {

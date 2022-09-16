@@ -8,29 +8,20 @@
 import Foundation
 import Combine
 
-class ConsumableViewModel: ObservableObject {
-    
-    // consumable can be used within the ViewModel layer, but Views should only interact with ViewModels (not the Model layer)
-    private(set) var consumable: ConsumableAbstract
-    private var subscriptions: Set<AnyCancellable> = []
-    
-    public let name: String
-    public let description: String
-    public let id: UUID
-    public let effectsDescription: String?
-    @Published private(set) var stack: Int
+class ConsumableViewModel: ItemViewModel {
     
     init(_ consumable: ConsumableAbstract) {
-        self.consumable = consumable
+        super.init(consumable,
+                   remainingUsesDescription: Strings.Stat.Consumable.RemainingUses.local,
+                   damageImage: YonderImages.consumableDamageIcon,
+                   restorationImage: YonderImages.consumableRestorationIcon,
+                   healthRestorationImage: YonderImages.consumableHealthRestorationIcon,
+                   armorPointsRestorationImage: YonderImages.consumableArmorPointsRestorationIcon,
+                   remainingUsesImage: YonderImages.consumableRemainingUsesIcon)
+        self.setEffectsDescription(to: consumable.effectsDescription)
         
-        self.name = consumable.name
-        self.description = consumable.description
-        self.id = consumable.id
-        self.effectsDescription = consumable.getEffectsDescription()
-        self.stack = consumable.stack
-        
-        self.consumable.$stack.sink(receiveValue: { newValue in
-            self.stack = newValue
+        consumable.$effectsDescription.sink(receiveValue: { newValue in
+            self.setEffectsDescription(to: newValue)
         }).store(in: &self.subscriptions)
     }
     

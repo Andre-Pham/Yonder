@@ -24,6 +24,12 @@ struct ItemInspectView: View {
                     }
                 }
                 
+                if self.itemViewModel.restoration > 0 {
+                    InspectStatView(title: Strings.Stat.Restoration.local, value: self.itemViewModel.restoration, image: self.itemViewModel.restorationImage)
+                    
+                    YonderText(text: self.playerViewModel.getIndicativeRestorationString(itemViewModel: self.itemViewModel), size: .inspectSheetBody)
+                }
+                
                 if self.itemViewModel.healthRestoration > 0 {
                     InspectStatView(title: Strings.Stat.HealthRestoration.local, value: self.itemViewModel.healthRestoration, indicativeValue: self.playerViewModel.getIndicativeHealthRestoration(of: self.itemViewModel), image: self.itemViewModel.healthRestorationImage)
                 }
@@ -65,6 +71,14 @@ struct ItemInspectView_Previews: PreviewProvider {
                 .ignoresSafeArea()
             
             ItemInspectView(itemViewModel: PreviewObjects.potionViewModel, playerViewModel: PreviewObjects.playerViewModel)
+                .padding()
+        }
+        
+        ZStack(alignment: .topLeading) {
+            YonderColors.backgroundMaxDepth
+                .ignoresSafeArea()
+            
+            ItemInspectView(itemViewModel: PreviewObjects.consumableViewModel, playerViewModel: PreviewObjects.playerViewModel)
                 .padding()
         }
     }

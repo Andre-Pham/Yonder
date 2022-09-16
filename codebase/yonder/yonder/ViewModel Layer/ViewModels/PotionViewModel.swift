@@ -14,6 +14,7 @@ class PotionViewModel: ItemViewModel {
         super.init(potion,
                    remainingUsesDescription: Strings.Stat.Potion.RemainingUses.local,
                    damageImage: YonderImages.potionDamageIcon,
+                   restorationImage: YonderImages.potionRestorationIcon,
                    healthRestorationImage: YonderImages.potionHealthRestorationIcon,
                    armorPointsRestorationImage: YonderImages.potionArmorPointsRestorationIcon,
                    remainingUsesImage: YonderImages.potionRemainingUsesIcon)

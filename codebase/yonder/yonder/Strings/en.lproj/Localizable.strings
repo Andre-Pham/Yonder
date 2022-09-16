@@ -34,6 +34,7 @@
 "optionsMenu.header.default" = "Your Options";
 "optionsMenu.header.weapon" = "Use Weapon";
 "optionsMenu.header.potion" = "Use Potion";
+"optionsMenu.header.consumable" = "Use Item";
 "optionsMenu.header.offer" = "Accept Offers";
 "optionsMenu.header.restoration" = "Purchase Mending";
 "optionsMenu.header.shop" = "Shop";
@@ -44,6 +45,7 @@
 // Option
 "optionsMenu.option.weapon" = "Select Weapon";
 "optionsMenu.option.potion" = "Select Potion";
+"optionsMenu.option.consumable" = "Select Item";
 "optionsMenu.option.offer" = "View Offers";
 "optionsMenu.option.restoration" = "Purchase Mending";
 "optionsMenu.option.shop" = "Shop";
@@ -136,6 +138,7 @@
 
 "stat.health" = "Health";
 "stat.damage" = "Damage";
+"stat.restoration" = "Restoration";
 "stat.offersRemaining" = "Offers Remaining";
 "stat.healthRestoration" = "Healing";
 "stat.shields" = "Shields";
@@ -156,7 +159,7 @@
 "stat.potion.remainingUses" = "Potions";
 
 // Consumable
-"stat.consumable.remainingUsesSingular" = "Item";
+"stat.consumable.remaining" = "Remaining";
 "stat.consumable.remainingUses" = "Item Stack";
 
 // Description
@@ -333,7 +336,7 @@
 // Turn Improving Restoration
 "consumable.turnImprovingRestoration.name" = "Cellular Blessing";
 "consumable.turnImprovingRestoration.description" = "A bright token of materialised light.";
-"consumable.turnImprovingRestoration.effectsDescription2Param" = "Restore %@. Improves by %@ restoration every turn.\n(Any restoration left over after reaching full health overflows to shields)";
+"consumable.turnImprovingRestoration.effectsDescription2Param" = "Restore %@ (overflows from health to shields). Improves by %@ restoration every turn.";
 
 // Adjust Max Health
 "consumable.adjustMaxHealth.name.tier1" = "Life Seed";
@@ -355,9 +358,9 @@
 "consumable.ripeningSetHealth.description.stage2" = "A half ripe glowberry. It's aquamarine and has grown two fold.";
 "consumable.ripeningSetHealth.description.stage3" = "A ripened glowberry. It's a brilliant blue, with soft flesh and considerable weight.";
 "consumable.ripeningSetHealth.description.stage4" = "A senescent glowberry. It's become a deep teal, and wrinkled to its original unripened size.";
-"consumable.ripeningSetHealth.effectsDescription.stage11Param" = "Sets you to 1/3 your maximum health. Ripens more in %@ turns.";
-"consumable.ripeningSetHealth.effectsDescription.stage21Param" = "Sets you to 2/3 your maximum health. Fully ripens in %@ turns.";
-"consumable.ripeningSetHealth.effectsDescription.stage31Param" = "Sets you to your maximum health. Goes bad in %@ turns.";
+"consumable.ripeningSetHealth.effectsDescription.stage11Param" = "Sets you to 1/3 your maximum health. Ripens more in %@ turn(s).";
+"consumable.ripeningSetHealth.effectsDescription.stage21Param" = "Sets you to 2/3 your maximum health. Fully ripens in %@ turn(s).";
+"consumable.ripeningSetHealth.effectsDescription.stage31Param" = "Sets you to your maximum health. Goes bad in %@ turn(s).";
 "consumable.ripeningSetHealth.effectsDescription.stage4" = "Does nothing. To dispose, consume this item.";
 
 // MARK: - Buffs

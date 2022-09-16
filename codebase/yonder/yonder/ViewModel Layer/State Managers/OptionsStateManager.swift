@@ -34,6 +34,12 @@ class OptionsStateManager: ObservableObject {
     }
     @Published var potionActionsActive = false
     
+    // Consumable option
+    var consumableOptionActive: Bool {
+        return self.playerViewModel.canConsume
+    }
+    @Published var consumableActionsActive = false
+    
     // Travel option
     var travelOptionActive: Bool {
         return self.playerViewModel.canTravel
@@ -105,6 +111,7 @@ class OptionsStateManager: ObservableObject {
             self.showActions = false
             self.weaponActionsActive = false
             self.potionActionsActive = false
+            self.consumableActionsActive = false
             self.offerActionsActive = false
             self.purchaseRestorationActionsActive = false
             self.shopActionsActive = false
@@ -128,6 +135,15 @@ class OptionsStateManager: ObservableObject {
         withAnimation(self.animation) {
             self.showOptions = false
             self.potionActionsActive = true
+            self.showActions = true
+        }
+    }
+    
+    func consumableOptionSelected() {
+        self.optionHeaderText = Strings.OptionsMenu.Header.Consumable.local
+        withAnimation(self.animation) {
+            self.showOptions = false
+            self.consumableActionsActive = true
             self.showActions = true
         }
     }

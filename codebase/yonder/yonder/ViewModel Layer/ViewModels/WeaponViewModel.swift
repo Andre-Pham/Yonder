@@ -17,6 +17,7 @@ class WeaponViewModel: ItemViewModel {
         super.init(weapon,
                    remainingUsesDescription: Strings.Stat.Weapon.RemainingUses.local,
                    damageImage: YonderImages.weaponDamageIcon,
+                   restorationImage: YonderImages.weaponRestorationIcon,
                    healthRestorationImage: YonderImages.weaponHealthRestorationIcon,
                    armorPointsRestorationImage: YonderImages.weaponArmorPointsRestorationIcon,
                    remainingUsesImage: YonderImages.weaponRemainingUsesIcon)

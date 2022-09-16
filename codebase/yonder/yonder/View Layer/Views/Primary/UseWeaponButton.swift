@@ -33,6 +33,16 @@ struct UseWeaponButton: View {
                     }
                 }
                 
+                if self.weaponViewModel.restoration > 0 {
+                    YonderTextNumeralHStack {
+                        YonderNumeral(number: self.weaponViewModel.restoration, size: .buttonBodySubscript)
+                        
+                        YonderText(text: Strings.Stat.Restoration.local.leftPadded(by: " "), size: .buttonBodySubscript)
+                    }
+                    
+                    YonderText(text: self.playerViewModel.getIndicativeRestorationString(itemViewModel: self.weaponViewModel), size: .buttonBodySubscript)
+                }
+                
                 if self.weaponViewModel.healthRestoration > 0 {
                     YonderTextNumeralHStack {
                         IndicativeNumeralView(

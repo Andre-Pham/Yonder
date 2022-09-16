@@ -110,12 +110,9 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
     }
     
     func restoreAdjusted(sourceOwner: ActorAbstract, using source: Any, for amount: Int) {
-        let healthToAdjusted: Double = Double(BuffApps.getAppliedHealthRestoration(owner: sourceOwner, using: source, target: self, healthRestoration: amount))/Double(amount)
-        let armorToAdjusted: Double = Double(BuffApps.getAppliedArmorPointsRestoration(owner: sourceOwner, using: source, target: self, armorPointsRestoration: amount))/Double(amount)
-        let amountRemaining = max(0, Int(round(Double(amount)*healthToAdjusted)) - (self.maxHealth - self.health))
-        let amountRemainingReadjusted = Int(round(armorToAdjusted*Double(amountRemaining)/healthToAdjusted))
-        self.restoreHealth(for: Int(round(Double(amount)*healthToAdjusted)))
-        self.restoreArmorPoints(for: amountRemainingReadjusted)
+        let (healthRestoration, armorPointsRestoration) = BuffApps.getAppliedRestoration(owner: sourceOwner, using: source, target: self, restoration: amount)
+        self.restoreHealth(for: healthRestoration)
+        self.restoreArmorPoints(for: armorPointsRestoration)
     }
     
     func setHealth(to amount: Int) {
@@ -205,6 +202,10 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
         return BuffApps.getAppliedDamage(owner: self, using: item, target: opposition, damage: item.damage)
     }
     
+    func getIndicativeRestoration(of item: ItemAbstract) -> (Int, Int) {
+        return BuffApps.getAppliedRestoration(owner: self, using: item, target: self, restoration: item.restoration)
+    }
+    
     func getIndicativeHealthRestoration(of item: ItemAbstract) -> Int {
         return BuffApps.getAppliedHealthRestoration(owner: self, using: item, target: self, healthRestoration: item.healthRestoration)
     }
@@ -280,7 +281,7 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
     func addConsumable(_ consumable: ConsumableAbstract) {
         for ownedConsumable in self.consumables {
             if consumable.isStackable(with: ownedConsumable) {
-                ownedConsumable.adjustStack(by: consumable.stack)
+                ownedConsumable.adjustRemainingUses(by: consumable.remainingUses)
                 return
             }
         }

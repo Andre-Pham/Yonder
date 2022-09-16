@@ -48,7 +48,8 @@ class RipeningSetHealthConsumable: ConsumableAbstract, OnTurnEndSubscriber {
     private let stage4TurnsRequired = 24
     private var stage: RipeningStage = .stage1 {
         didSet {
-            self.updateNameAndDescription(name: self.stage.name, description: self.stage.description)
+            self.setName(to: self.stage.name)
+            self.setDescription(to: self.stage.description)
         }
     }
     private var turnsPassed = 0 {
@@ -60,11 +61,17 @@ class RipeningSetHealthConsumable: ConsumableAbstract, OnTurnEndSubscriber {
             } else if self.turnsPassed == self.stage4TurnsRequired {
                 self.stage = .stage4
             }
+            self.setEffectsDescription(to: self.getStageEffectsDescription())
         }
     }
     
     init(basePurchasePrice: Int) {
-        super.init(name: self.stage.name, description: self.stage.description, basePurchasePrice: basePurchasePrice)
+        super.init(
+            name: self.stage.name,
+            description: self.stage.description,
+            effectsDescription: Strings.Consumable.RipeningSetHealth.EffectsDescription.Stage11Param.localWithArgs(self.stage2TurnsRequired),
+            basePurchasePrice: basePurchasePrice
+        )
         
         OnTurnEndPublisher.subscribe(self)
     }
@@ -78,7 +85,7 @@ class RipeningSetHealthConsumable: ConsumableAbstract, OnTurnEndSubscriber {
         OnTurnEndPublisher.subscribe(self)
     }
     
-    func getEffectsDescription() -> String? {
+    func getStageEffectsDescription() -> String {
         switch self.stage {
         case .stage1:
             return Strings.Consumable.RipeningSetHealth.EffectsDescription.Stage11Param.localWithArgs(self.stage2TurnsRequired - self.turnsPassed)
@@ -93,7 +100,7 @@ class RipeningSetHealthConsumable: ConsumableAbstract, OnTurnEndSubscriber {
     
     func use(owner: ActorAbstract, opposition: ActorAbstract?) {
         self.stage.use(on: owner)
-        self.adjustStack(by: -1)
+        self.adjustRemainingUses(by: -1)
     }
     
     func isStackable(with consumable: ConsumableAbstract) -> Bool {

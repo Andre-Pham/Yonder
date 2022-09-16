@@ -128,6 +128,10 @@ class PlayerViewModel: ObservableObject {
     var canEngage: Bool {
         return self.locationViewModel.playerCanEngage
     }
+    var canConsume: Bool {
+        // The player can use consumables at any time, assuming they have any
+        return !self.consumableViewModels.isEmpty
+    }
     var canTravel: Bool {
         let notInCombat = !self.canEngage
         let noLootAvailable = !self.canLoot && !self.canChooseLootBag
@@ -309,8 +313,17 @@ class PlayerViewModel: ObservableObject {
         self.player.usePotionWhere(opposition: (self.locationViewModel.location as! FoeLocation).foe, potion: potionViewModel.item as! PotionAbstract)
     }
     
+    func use(consumableViewModel: ConsumableViewModel) {
+        self.player.useConsumableWhere(opposition: (self.locationViewModel.location as? FoeLocation)?.foe, consumable: consumableViewModel.item as! ConsumableAbstract)
+    }
+    
     func getIndicativeDamage(itemViewModel: ItemViewModel, opposition: FoeViewModel) -> Int {
         return self.player.getIndicativeDamage(of: itemViewModel.item, opposition: opposition.foe)
+    }
+    
+    func getIndicativeRestorationString(itemViewModel: ItemViewModel) -> String {
+        let (healthRestoration, armorPointsRestoration) = self.player.getIndicativeRestoration(of: itemViewModel.item)
+        return "(\(healthRestoration) \(Strings.Stat.Health.local) / \(armorPointsRestoration) \(Strings.Stat.ArmorPointsRestoration.local))"
     }
     
     func getPassiveIndicativeDamage(itemViewModel: ItemViewModel) -> Int {

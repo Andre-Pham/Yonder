@@ -16,36 +16,43 @@ class ItemViewModel: ObservableObject {
     var subscriptions: Set<AnyCancellable> = [] // Public so children can access
     
     @Published private(set) var damage: Int
+    @Published private(set) var restoration: Int
     @Published private(set) var healthRestoration: Int
     @Published private(set) var armorPointsRestoration: Int
     @Published private(set) var remainingUses: Int
     private(set) var id: UUID
-    private(set) var name: String
-    private(set) var description: String
+    @Published private(set) var name: String
+    @Published private(set) var description: String
     private(set) var remainingUsesDescription: String
     private(set) var damageImage: Image
+    private(set) var restorationImage: Image
     private(set) var healthRestorationImage: Image
     private(set) var armorPointsRestorationImage: Image
     private(set) var remainingUsesImage: Image
     private(set) var infiniteRemainingUses: Bool
     @Published private(set) var effectsDescription: String? = nil
+    public let requiresFoeForUsage: Bool
     
     init(_ item: ItemAbstract,
          remainingUsesDescription: String,
          damageImage: Image,
+         restorationImage: Image,
          healthRestorationImage: Image,
          armorPointsRestorationImage: Image,
          remainingUsesImage: Image) {
         self.item = item
         self.remainingUsesDescription = remainingUsesDescription
         self.damageImage = damageImage
+        self.restorationImage = restorationImage
         self.healthRestorationImage = healthRestorationImage
         self.armorPointsRestorationImage = armorPointsRestorationImage
         self.remainingUsesImage = remainingUsesImage
+        self.requiresFoeForUsage = item.requiresFoeForUsage
         
         // Set properties to match Item
         
         self.damage = self.item.damage
+        self.restoration = self.item.restoration
         self.healthRestoration = self.item.healthRestoration
         self.armorPointsRestoration = self.item.armorPointsRestoration
         self.remainingUses = self.item.remainingUses
@@ -60,6 +67,10 @@ class ItemViewModel: ObservableObject {
             self.damage = newValue
         }).store(in: &self.subscriptions)
         
+        self.item.$restoration.sink(receiveValue: { newValue in
+            self.restoration = newValue
+        }).store(in: &self.subscriptions)
+        
         self.item.$healthRestoration.sink(receiveValue: { newValue in
             self.healthRestoration = newValue
         }).store(in: &self.subscriptions)
@@ -70,6 +81,14 @@ class ItemViewModel: ObservableObject {
         
         self.item.$remainingUses.sink(receiveValue: { newValue in
             self.remainingUses = newValue
+        }).store(in: &self.subscriptions)
+        
+        self.item.$name.sink(receiveValue: { newValue in
+            self.name = newValue
+        }).store(in: &self.subscriptions)
+        
+        self.item.$description.sink(receiveValue: { newValue in
+            self.description = newValue
         }).store(in: &self.subscriptions)
     }
     

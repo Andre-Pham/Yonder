@@ -42,7 +42,12 @@ class BonusHealthConsumable: ConsumableAbstract {
             name = Strings.Consumable.AdjustMaxHealth.Name.Tier4.local
             description = Strings.Consumable.AdjustMaxHealth.Description.Tier4.local
         }
-        super.init(name: name, description: description, basePurchasePrice: basePurchasePrice)
+        super.init(
+            name: name,
+            description: description,
+            effectsDescription: Strings.Consumable.AdjustMaxHealth.EffectsDescription1Param.localWithArgs(tier.amount),
+            basePurchasePrice: basePurchasePrice
+        )
     }
     
     required init(_ original: ConsumableAbstractPart) {
@@ -51,13 +56,9 @@ class BonusHealthConsumable: ConsumableAbstract {
         super.init(original)
     }
     
-    func getEffectsDescription() -> String? {
-        return Strings.Consumable.AdjustMaxHealth.EffectsDescription1Param.localWithArgs(self.tier.amount)
-    }
-    
     func use(owner: ActorAbstract, opposition: ActorAbstract?) {
         owner.adjustBonusHealth(by: self.tier.amount)
-        self.adjustStack(by: -1)
+        self.adjustRemainingUses(by: -1)
     }
     
     func isStackable(with consumable: ConsumableAbstract) -> Bool {

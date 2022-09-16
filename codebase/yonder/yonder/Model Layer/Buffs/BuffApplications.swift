@@ -35,6 +35,16 @@ enum BuffApplications {
         return appliedDamage
     }
     
+    static func getAppliedRestoration(owner: ActorAbstract, using source: Any, target: ActorAbstract, restoration: Int) -> (Int, Int) {
+        let healthMultiplier: Double = Double(BuffApps.getAppliedHealthRestoration(owner: owner, using: source, target: target, healthRestoration: restoration))/Double(restoration)
+        let armorMultiplier: Double = Double(BuffApps.getAppliedArmorPointsRestoration(owner: owner, using: source, target: target, armorPointsRestoration: restoration))/Double(restoration)
+        let availableHealthRestoration = Double(restoration)*healthMultiplier
+        let healthRestoration = min(Double(target.maxHealth - target.health), availableHealthRestoration)
+        let availableArmorPointsRestoration = (Double(restoration) - healthRestoration/healthMultiplier)*armorMultiplier
+        let armorPointsRestoration = min(Double(target.maxArmorPoints - target.armorPoints), availableArmorPointsRestoration)
+        return (Int(round(healthRestoration)), Int(round(armorPointsRestoration)))
+    }
+    
     static func getAppliedHealthRestoration(owner: ActorAbstract, using source: Any, target: ActorAbstract, healthRestoration: Int) -> Int {
         var appliedHealthRestoration = healthRestoration
         if owner.id == target.id {
