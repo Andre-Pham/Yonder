@@ -10,7 +10,7 @@ import Combine
 
 class PotionViewModel: ItemViewModel {
     
-    init(_ potion: PotionAbstract) {
+    init(_ potion: Potion) {
         super.init(potion,
                    remainingUsesDescription: Strings.Stat.Potion.RemainingUses.local,
                    damageImage: YonderImages.potionDamageIcon,

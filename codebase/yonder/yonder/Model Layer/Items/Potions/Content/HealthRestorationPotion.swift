@@ -7,7 +7,7 @@
 
 import Foundation
 
-class HealthRestorationPotion: PotionAbstract {
+class HealthRestorationPotion: Potion {
     
     /// The tier of the health potion. Greater tiers restore greater health.
     /// Raw value represents the amount of health restoration of each tier.
@@ -43,7 +43,7 @@ class HealthRestorationPotion: PotionAbstract {
             basePurchasePrice: basePurchasePrice)
     }
     
-    required init(_ original: PotionAbstractPart) {
+    required init(_ original: PotionAbstract) {
         super.init(original)
     }
     

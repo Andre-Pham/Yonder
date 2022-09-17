@@ -8,7 +8,7 @@
 import Foundation
 
 // This is pretty much for testing
-class NoLocation: LocationAbstract {
+class NoLocation: Location {
     
     public let type: LocationType = .none
     

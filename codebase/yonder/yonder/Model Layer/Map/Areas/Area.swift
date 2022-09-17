@@ -13,16 +13,16 @@ class Area: Named, Described, Visualised {
     public let name: String
     public let description: String
     public let image: Image
-    public let rootLocation: LocationAbstract
-    public let tipLocation: LocationAbstract
-    private(set) var leftBridgeLocations = [LocationAbstract]()
-    private(set) var rightBridgeLocations = [LocationAbstract]()
+    public let rootLocation: Location
+    public let tipLocation: Location
+    private(set) var leftBridgeLocations = [Location]()
+    private(set) var rightBridgeLocations = [Location]()
     public let arrangement: AreaArrangements
-    public let locations: [LocationAbstract]
+    public let locations: [Location]
     public let id = UUID()
     
     // locations are received from LocationsGenerator
-    init(arrangement: AreaArrangements, locations: [LocationAbstract], name: String = "placeholderName", description: String = "placeholderDescription", image: Image = YonderImages.placeholderImage) {
+    init(arrangement: AreaArrangements, locations: [Location], name: String = "placeholderName", description: String = "placeholderDescription", image: Image = YonderImages.placeholderImage) {
         assert(locations.count == arrangement.locationCount, "Number of locations provided to generate Area doesn't match expected number for the arrangement")
         self.arrangement = arrangement
         self.locations = locations
@@ -36,7 +36,7 @@ class Area: Named, Described, Visualised {
         self.generateAreaArrangement()
     }
     
-    func addNextLocations(from location: LocationAbstract, to nextLocations: [LocationAbstract]) {
+    func addNextLocations(from location: Location, to nextLocations: [Location]) {
         location.addNextLocations(nextLocations)
         for location in nextLocations {
             if location.bridgeAccessibility == .leftBridge {

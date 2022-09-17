@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias LocationAbstract = LocationAbstractPart & LocationTyped
+typealias Location = LocationAbstract & LocationTyped
 
 protocol LocationTyped {
     
@@ -15,15 +15,15 @@ protocol LocationTyped {
     
 }
 
-class LocationAbstractPart {
+class LocationAbstract {
     
-    private(set) var nextLocations = [LocationAbstract]()
+    private(set) var nextLocations = [Location]()
     private(set) var bridgeLocation: BridgeLocation?
     private(set) var bridgeAccessibility: LocationBridgeAccessibility
     private(set) var hexagonCoordinate: HexagonCoordinate?
     private(set) var areaContent = AreaContentContainer()
     @DidSetPublished private(set) var hasBeenVisited = false
-    @DidSetPublished private(set) var locationsArrivedFrom = [LocationAbstract]()
+    @DidSetPublished private(set) var locationsArrivedFrom = [Location]()
     public let id = UUID()
     
     init() {
@@ -31,20 +31,20 @@ class LocationAbstractPart {
         self.hexagonCoordinate = nil
     }
     
-    func setToVisited(from location: LocationAbstract) {
+    func setToVisited(from location: Location) {
         self.hasBeenVisited = true
         self.addLocationArrivedFrom(location)
         if location is BridgeLocation || self is BridgeLocation {
             // Becuase you can travel "backwards" on bridge locations
-            location.addLocationArrivedFrom(self as! LocationAbstract)
+            location.addLocationArrivedFrom(self as! Location)
         }
     }
     
-    func addLocationArrivedFrom(_ location: LocationAbstract) {
+    func addLocationArrivedFrom(_ location: Location) {
         self.locationsArrivedFrom.append(location)
     }
     
-    func addNextLocations(_ locations: [LocationAbstract]) {
+    func addNextLocations(_ locations: [Location]) {
         self.nextLocations.append(contentsOf: locations)
     }
     

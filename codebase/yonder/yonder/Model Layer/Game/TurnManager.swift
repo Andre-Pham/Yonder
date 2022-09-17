@@ -35,7 +35,7 @@ class TurnManager: AfterActorAttackSubscriber, AfterPlayerTravelSubscriber {
     ///   - player: The player ending their turn
     ///   - playerItem: The item the player used
     ///   - foe: The foe that was present during the item's use
-    func completeTurn(player: Player, playerUsed playerItem: ItemAbstract, foe: Foe) {
+    func completeTurn(player: Player, playerUsed playerItem: Item, foe: Foe) {
         OnTurnEndPublisher.publish(player: player, playerUsed: playerItem, foe: foe)
         
         for act in [player, foe] {

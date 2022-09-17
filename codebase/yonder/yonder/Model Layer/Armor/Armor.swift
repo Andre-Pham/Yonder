@@ -15,7 +15,7 @@ class Armor: EffectsDescribed, Purchasable, Named, Described, Enhanceable, Clona
     @DidSetPublished private(set) var armorPoints: Int
     public let basePurchasePrice: Int
     @DidSetPublished private(set) var armorBuffs: [BuffAbstract]
-    @DidSetPublished private(set) var equipmentPills: [EquipmentPillAbstract]
+    @DidSetPublished private(set) var equipmentPills: [EquipmentPill]
     @DidSetPublished private(set) var armorAttributes: [ArmorAttribute]
     public let id = UUID()
     
@@ -27,7 +27,7 @@ class Armor: EffectsDescribed, Purchasable, Named, Described, Enhanceable, Clona
     ///   - armorBuffs: The buffs/debuffs the armor gives when worn
     ///   - equipmentPills: The effects this gives when worn
     ///   - armorAttributes: Attributes that apply to the armor
-    init(name: String, description: String, type: ArmorType, armorPoints: Int, basePurchasePrice: Int, armorBuffs: [BuffAbstract], equipmentPills: [EquipmentPillAbstract], armorAttributes: [ArmorAttribute] = []) {
+    init(name: String, description: String, type: ArmorType, armorPoints: Int, basePurchasePrice: Int, armorBuffs: [BuffAbstract], equipmentPills: [EquipmentPill], armorAttributes: [ArmorAttribute] = []) {
         self.name = name
         self.description = description
         self.type = type
@@ -61,11 +61,11 @@ class Armor: EffectsDescribed, Purchasable, Named, Described, Enhanceable, Clona
         self.armorBuffs.append(buff)
     }
     
-    func addEquipmentPill(_ pill: EquipmentPillAbstract) {
+    func addEquipmentPill(_ pill: EquipmentPill) {
         self.equipmentPills.append(pill)
     }
     
-    func hasEffect(_ equipmentPill: EquipmentPillAbstract) -> Bool {
+    func hasEffect(_ equipmentPill: EquipmentPill) -> Bool {
         return self.equipmentPills.contains(where: { $0.id == equipmentPill.id })
     }
     

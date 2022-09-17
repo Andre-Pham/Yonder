@@ -15,7 +15,7 @@ class OnPlayerTravelPublisher {
         self.subscribers.append(WeakOnPlayerTravelSubscriber(value: subscriber))
     }
     
-    static func publish(player: Player, newLocation: LocationAbstract) {
+    static func publish(player: Player, newLocation: Location) {
         for sub in Self.subscribers {
             sub.value?.onPlayerTravel(player: player, newLocation: newLocation)
         }
@@ -26,7 +26,7 @@ class OnPlayerTravelPublisher {
 
 protocol OnPlayerTravelSubscriber: AnyObject {
     
-    func onPlayerTravel(player: Player, newLocation: LocationAbstract)
+    func onPlayerTravel(player: Player, newLocation: Location)
     
 }
 

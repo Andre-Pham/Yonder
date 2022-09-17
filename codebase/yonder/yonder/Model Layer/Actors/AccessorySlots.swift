@@ -52,7 +52,7 @@ class AccessorySlots {
         return self.allAccessories.contains(where: { $0.id == accessory.id })
     }
     
-    func hasEffect(_ equipmentPill: EquipmentPillAbstract) -> Bool {
+    func hasEffect(_ equipmentPill: EquipmentPill) -> Bool {
         for accessory in self.allAccessories {
             if accessory.hasEffect(equipmentPill) {
                 return true

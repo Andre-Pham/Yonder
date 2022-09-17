@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BridgeLocation: LocationAbstract {
+class BridgeLocation: Location {
     
     var type: LocationType = .bridge
     

@@ -85,7 +85,7 @@ class MapGenerator {
             hostileLocationIndices.addIndex(index)
         }
         
-        var locations = [LocationAbstract](repeating: NoLocation(), count: arrangement.locationCount)
+        var locations = [Location](repeating: NoLocation(), count: arrangement.locationCount)
         
         for locationIndexContainer in allOptions {
             for locationIndex in locationIndexContainer.indices {

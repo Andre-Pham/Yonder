@@ -13,9 +13,9 @@ class AreaPool {
     
     // So getLocationArray passes references rather than new arrays with the contents copied over
     private class LocationCollection {
-        var items: [LocationAbstract]
+        var items: [Location]
         
-        init(_ items: [LocationAbstract]) {
+        init(_ items: [Location]) {
             self.items = items
         }
     }
@@ -62,7 +62,7 @@ class AreaPool {
         }
     }
     
-    private func removeLocation(location: LocationAbstract) {
+    private func removeLocation(location: Location) {
         if let locationArray = self.getLocationArray(of: location.type) {
             guard let index = (locationArray.items.firstIndex { $0.id == location.id }) else {
                 assertionFailure("Function should find a location with a matching ID to remove")
@@ -72,7 +72,7 @@ class AreaPool {
         }
     }
     
-    func grabLocation(locationType: LocationType) -> LocationAbstract {
+    func grabLocation(locationType: LocationType) -> Location {
         if let locationArray = self.getLocationArray(of: locationType) {
             if let location = locationArray.items.randomElement() {
                 self.removeLocation(location: location)

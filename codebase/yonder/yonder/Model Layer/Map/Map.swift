@@ -11,7 +11,7 @@ class Map {
     
     private(set) var territoriesInOrder: [Territory]
     private(set) var bossAreasInOrder: [BossArea]
-    private(set) var startingLocation: LocationAbstract
+    private(set) var startingLocation: Location
     
     // Currently expects territoriesInOrder.count == bossAreasInOrder*2+1, but this will change eventually to support the final boss, and have it so the map ends on a boss, not a singular territory
     init(territoriesInOrder: [Territory], bossAreasInOrder: [BossArea]) {

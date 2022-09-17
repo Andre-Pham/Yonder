@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FriendlyLocation: LocationAbstract {
+class FriendlyLocation: Location {
     
     private(set) var friendly: Friendly
     public let type: LocationType = .friendly

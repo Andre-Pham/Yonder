@@ -40,7 +40,7 @@ class PotionDamagePercentBuff: BuffAbstract {
     }
     
     override func applyDamage(to damage: Int, source: Any) -> Int? {
-        if source is PotionAbstract {
+        if source is Potion {
             return Int(round(Double(damage)*self.damageFraction))
         }
         return damage

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RipeningSetHealthConsumable: ConsumableAbstract, OnTurnEndSubscriber {
+class RipeningSetHealthConsumable: Consumable, OnTurnEndSubscriber {
     
     enum RipeningStage {
         case stage1
@@ -76,7 +76,7 @@ class RipeningSetHealthConsumable: ConsumableAbstract, OnTurnEndSubscriber {
         OnTurnEndPublisher.subscribe(self)
     }
     
-    required init(_ original: ConsumableAbstractPart) {
+    required init(_ original: ConsumableAbstract) {
         let original = original as! Self
         self.stage = original.stage
         self.turnsPassed = original.turnsPassed
@@ -103,14 +103,14 @@ class RipeningSetHealthConsumable: ConsumableAbstract, OnTurnEndSubscriber {
         self.adjustRemainingUses(by: -1)
     }
     
-    func isStackable(with consumable: ConsumableAbstract) -> Bool {
+    func isStackable(with consumable: Consumable) -> Bool {
         if let consumable = consumable as? Self {
             return self.stage == consumable.stage && self.turnsPassed == consumable.turnsPassed
         }
         return false
     }
     
-    func onTurnEnd(player: Player, playerUsed: ItemAbstract?, foe: Foe?) {
+    func onTurnEnd(player: Player, playerUsed: Item?, foe: Foe?) {
         if player.consumables.contains(where: { $0.id == self.id }) {
             self.turnsPassed += 1
         }

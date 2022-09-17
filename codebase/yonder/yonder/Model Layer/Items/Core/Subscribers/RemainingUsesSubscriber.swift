@@ -9,6 +9,6 @@ import Foundation
 
 protocol RemainingUsesSubscriber {
     
-    func onRemainingUsesChange(_ item: ItemAbstract, old: Int)
+    func onRemainingUsesChange(_ item: Item, old: Int)
     
 }

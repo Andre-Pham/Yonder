@@ -9,12 +9,12 @@ import Foundation
 
 class Player: ActorAbstract {
     
-    @DidSetPublished private(set) var location: LocationAbstract
+    @DidSetPublished private(set) var location: Location
     @DidSetPublished private(set) var gold = 0
     private(set) var attributes = [PlayerAttribute]()
     @DidSetPublished private(set) var loot: LootBag? = nil
     
-    init(maxHealth: Int, location: LocationAbstract) {
+    init(maxHealth: Int, location: Location) {
         self.location = location
         location.setToVisited(from: NoLocation())
         
@@ -38,7 +38,7 @@ class Player: ActorAbstract {
         }
     }
     
-    func travel(to location: LocationAbstract) {
+    func travel(to location: Location) {
         OnPlayerTravelPublisher.publish(player: self, newLocation: location)
         
         location.setToVisited(from: self.location)

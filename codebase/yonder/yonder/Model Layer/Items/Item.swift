@@ -7,40 +7,40 @@
 
 import Foundation
 
-typealias ItemAbstract = ItemAbstractPart & EffectsDescribed
+typealias Item = ItemAbstract & EffectsDescribed
 
-class ItemAbstractPart: Named, Described {
+class ItemAbstract: Named, Described {
     
     @DidSetPublished private(set) var name: String
     @DidSetPublished private(set) var description: String
     @DidSetPublished private(set) var damage: Int {
         didSet {
             self.damageDidSet()
-            self.damageSubscribers.forEach({ $0.onDamageChange(self as! ItemAbstract, old: oldValue) })
+            self.damageSubscribers.forEach({ $0.onDamageChange(self as! Item, old: oldValue) })
         }
     }
     @DidSetPublished private(set) var restoration: Int {
         didSet {
             self.restorationDidSet()
-            self.restorationSubscribers.forEach({ $0.onRestorationChange(self as! ItemAbstract, old: oldValue) })
+            self.restorationSubscribers.forEach({ $0.onRestorationChange(self as! Item, old: oldValue) })
         }
     }
     @DidSetPublished private(set) var healthRestoration: Int {
         didSet {
             self.healthRestorationDidSet()
-            self.healthRestorationSubscribers.forEach({ $0.onHealthRestorationChange(self as! ItemAbstract, old: oldValue) })
+            self.healthRestorationSubscribers.forEach({ $0.onHealthRestorationChange(self as! Item, old: oldValue) })
         }
     }
     @DidSetPublished private(set) var armorPointsRestoration: Int {
         didSet {
             self.armorPointsRestorationDidSet()
-            self.armorPointsRestorationSubscribers.forEach({ $0.onArmorPointsRestorationChange(self as! ItemAbstract, old: oldValue) })
+            self.armorPointsRestorationSubscribers.forEach({ $0.onArmorPointsRestorationChange(self as! Item, old: oldValue) })
         }
     }
     @DidSetPublished private(set) var remainingUses: Int {
         didSet {
             self.remainingUsesDidSet()
-            self.remainingUsesSubscribers.forEach({ $0.onRemainingUsesChange(self as! ItemAbstract, old: oldValue) })
+            self.remainingUsesSubscribers.forEach({ $0.onRemainingUsesChange(self as! Item, old: oldValue) })
         }
     }
     private(set) var damageSubscribers = [DamageSubscriber]()

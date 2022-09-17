@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MaxHealthRestorationPotion: PotionAbstract {
+class MaxHealthRestorationPotion: Potion {
     
     init(potionCount: Int, basePurchasePrice: Int) {
         super.init(
@@ -18,7 +18,7 @@ class MaxHealthRestorationPotion: PotionAbstract {
             basePurchasePrice: basePurchasePrice)
     }
     
-    required init(_ original: PotionAbstractPart) {
+    required init(_ original: PotionAbstract) {
         super.init(original)
     }
     

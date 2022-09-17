@@ -8,7 +8,7 @@
 import Foundation
 
 /// Gives the user permanent bonus health.
-class BonusHealthConsumable: ConsumableAbstract {
+class BonusHealthConsumable: Consumable {
     
     enum Tier: Int {
         case I = 25
@@ -50,7 +50,7 @@ class BonusHealthConsumable: ConsumableAbstract {
         )
     }
     
-    required init(_ original: ConsumableAbstractPart) {
+    required init(_ original: ConsumableAbstract) {
         let original = original as! Self
         self.tier = original.tier
         super.init(original)
@@ -61,7 +61,7 @@ class BonusHealthConsumable: ConsumableAbstract {
         self.adjustRemainingUses(by: -1)
     }
     
-    func isStackable(with consumable: ConsumableAbstract) -> Bool {
+    func isStackable(with consumable: Consumable) -> Bool {
         if let consumable = consumable as? Self {
             return consumable.tier == self.tier
         }

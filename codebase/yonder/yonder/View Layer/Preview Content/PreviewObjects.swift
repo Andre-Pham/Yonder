@@ -234,7 +234,7 @@ enum PreviewObjects {
         )
     }
     
-    private static var potion: PotionAbstract {
+    private static var potion: Potion {
         return DamagePotion(tier: .II, potionCount: 3, basePurchasePrice: 100)
     }
     
@@ -252,7 +252,7 @@ enum PreviewObjects {
     
     // MODEL
     
-    private static var consumable: ConsumableAbstract {
+    private static var consumable: Consumable {
         return RipeningSetHealthConsumable(basePurchasePrice: 10)
     }
     
@@ -296,13 +296,13 @@ enum PreviewObjects {
         )
     }
     
-    private static var location: LocationAbstract {
+    private static var location: Location {
         let location = FriendlyLocation(friendly: Self.friendly)
         location.setAreaContent(Self.area)
         return location
     }
     
-    private static var alternateLocation: LocationAbstract {
+    private static var alternateLocation: Location {
         let location = HostileLocation(foe: Self.foe)
         location.setAreaContent(Self.area)
         return location

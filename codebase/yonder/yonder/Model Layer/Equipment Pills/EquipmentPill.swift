@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias EquipmentPillAbstract = EquipmentPillAbstractPart & HasPriceValue
+typealias EquipmentPill = EquipmentPillAbstract & HasPriceValue
 
 protocol HasPriceValue {
     
@@ -15,7 +15,7 @@ protocol HasPriceValue {
     
 }
 
-class EquipmentPillAbstractPart: Clonable {
+class EquipmentPillAbstract: Clonable {
     
     public let sourceName: String
     public let effectsDescription: String
@@ -26,7 +26,7 @@ class EquipmentPillAbstractPart: Clonable {
         self.effectsDescription = effectsDescription
     }
     
-    required init(_ original: EquipmentPillAbstractPart) {
+    required init(_ original: EquipmentPillAbstract) {
         self.sourceName = original.sourceName
         self.effectsDescription = original.effectsDescription
     }

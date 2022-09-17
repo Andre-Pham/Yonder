@@ -25,7 +25,7 @@ class PotionTests: XCTestCase {
         XCTAssertFalse(potion1.isStackable(with: potion3))
         XCTAssertFalse(potion1.isStackable(with: potion4))
         for potion in [potion1, potion2, potion3, potion4] {
-            self.player.addPotion(potion as! PotionAbstract)
+            self.player.addPotion(potion as! Potion)
         }
         XCTAssertEqual(self.player.potions.count, 3)
     }

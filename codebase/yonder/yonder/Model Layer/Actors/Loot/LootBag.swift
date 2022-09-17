@@ -11,7 +11,7 @@ class LootBag {
     
     @DidSetPublished private(set) var armorLoot = [Armor]()
     @DidSetPublished private(set) var weaponLoot = [Weapon]()
-    @DidSetPublished private(set) var potionLoot = [PotionAbstract]()
+    @DidSetPublished private(set) var potionLoot = [Potion]()
     @DidSetPublished private(set) var accessoryLoot = [Accessory]()
     @DidSetPublished private(set) var goldLoot: Int = 0
     private(set) var name: String
@@ -94,7 +94,7 @@ class LootBag {
         self.weaponLoot.append(weapon.clone())
     }
     
-    func addPotionLoot(_ potion: PotionAbstract) {
+    func addPotionLoot(_ potion: Potion) {
         self.potionLoot.append(potion.clone())
     }
     

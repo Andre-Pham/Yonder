@@ -15,7 +15,7 @@ class OnNoConsumablesRemainingPublisher {
         self.subscribers.append(WeakOnNoConsumablesRemainingSubscriber(value: subscriber))
     }
     
-    static func publish(consumable: ConsumableAbstract) {
+    static func publish(consumable: Consumable) {
         for sub in Self.subscribers {
             sub.value?.onNoConsumablesRemaining(consumable: consumable)
         }
@@ -26,7 +26,7 @@ class OnNoConsumablesRemainingPublisher {
 
 protocol OnNoConsumablesRemainingSubscriber: AnyObject {
     
-    func onNoConsumablesRemaining(consumable: ConsumableAbstract)
+    func onNoConsumablesRemaining(consumable: Consumable)
     
 }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DamagePercentPotion: PotionAbstract {
+class DamagePercentPotion: Potion {
     
     /// The tier of the damage percent potion.
     /// Raw value represents the damage fraction of each tier.
@@ -42,7 +42,7 @@ class DamagePercentPotion: PotionAbstract {
             basePurchasePrice: basePurchasePrice)
     }
     
-    required init(_ original: PotionAbstractPart) {
+    required init(_ original: PotionAbstract) {
         let original = original as! Self
         self.buff = original.buff.clone()
         super.init(original)

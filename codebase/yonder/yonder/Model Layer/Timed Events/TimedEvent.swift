@@ -7,9 +7,9 @@
 
 import Foundation
 
-typealias TimedEventAbstract = TimedEventPart & EffectsDescribed & TracksTimer & PossibleIndicativeValue
+typealias TimedEvent = TimedEventAbstract & EffectsDescribed & TracksTimer & PossibleIndicativeValue
 
-class TimedEventPart: Named, Clonable {
+class TimedEventAbstract: Named, Clonable {
     
     public let name: String
     public let id = UUID()
@@ -18,7 +18,7 @@ class TimedEventPart: Named, Clonable {
         self.name = name
     }
     
-    required init(_ original: TimedEventPart) {
+    required init(_ original: TimedEventAbstract) {
         self.name = original.name
     }
     

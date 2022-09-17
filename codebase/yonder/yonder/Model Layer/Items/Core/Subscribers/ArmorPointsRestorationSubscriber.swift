@@ -9,6 +9,6 @@ import Foundation
 
 protocol ArmorPointsRestorationSubscriber {
     
-    func onArmorPointsRestorationChange(_ item: ItemAbstract, old: Int)
+    func onArmorPointsRestorationChange(_ item: Item, old: Int)
     
 }

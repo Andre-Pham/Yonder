@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ThornsEquipmentPill: EquipmentPillAbstract, OnTurnEndSubscriber {
+class ThornsEquipmentPill: EquipmentPill, OnTurnEndSubscriber {
     
     private let thornsFraction: Double
     
@@ -23,7 +23,7 @@ class ThornsEquipmentPill: EquipmentPillAbstract, OnTurnEndSubscriber {
         OnTurnEndPublisher.subscribe(self)
     }
     
-    required init(_ original: EquipmentPillAbstractPart) {
+    required init(_ original: EquipmentPillAbstract) {
         let original = original as! Self
         self.thornsFraction = original.thornsFraction
         
@@ -32,7 +32,7 @@ class ThornsEquipmentPill: EquipmentPillAbstract, OnTurnEndSubscriber {
         OnTurnEndPublisher.subscribe(self)
     }
     
-    func onTurnEnd(player: Player, playerUsed playerItem: ItemAbstract?, foe: Foe?) {
+    func onTurnEnd(player: Player, playerUsed playerItem: Item?, foe: Foe?) {
         guard let playerItem = playerItem, let foe = foe else {
             return
         }

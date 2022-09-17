@@ -15,7 +15,7 @@ class OnNoPotionsRemainingPublisher {
         self.subscribers.append(WeakOnNoPotionsRemainingSubscriber(value: subscriber))
     }
     
-    static func publish(potion: PotionAbstract) {
+    static func publish(potion: Potion) {
         for sub in Self.subscribers {
             sub.value?.onNoPotionsRemaining(potion: potion)
         }
@@ -26,7 +26,7 @@ class OnNoPotionsRemainingPublisher {
 
 protocol OnNoPotionsRemainingSubscriber: AnyObject {
     
-    func onNoPotionsRemaining(potion: PotionAbstract)
+    func onNoPotionsRemaining(potion: Potion)
     
 }
 

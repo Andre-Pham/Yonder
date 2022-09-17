@@ -36,11 +36,11 @@ class LifestealBasePill: WeaponBasePill, DamageSubscriber, HealthRestorationSubs
         return self.damage*3/2
     }
     
-    func onDamageChange(_ item: ItemAbstract, old: Int) {
+    func onDamageChange(_ item: Item, old: Int) {
         item.setHealthRestoration(to: item.damage)
     }
     
-    func onHealthRestorationChange(_ item: ItemAbstract, old: Int) {
+    func onHealthRestorationChange(_ item: Item, old: Int) {
         if item.healthRestoration != item.damage {
             item.setHealthRestoration(to: item.damage)
         }

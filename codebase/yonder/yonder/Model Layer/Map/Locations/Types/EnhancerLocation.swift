@@ -7,7 +7,7 @@
 
 import Foundation
 
-class EnhancerLocation: LocationAbstract {
+class EnhancerLocation: Location {
     
     private(set) var enhancer: Enhancer
     public let type: LocationType = .enhancer

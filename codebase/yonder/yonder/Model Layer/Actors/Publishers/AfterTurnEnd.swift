@@ -15,7 +15,7 @@ class AfterTurnEndPublisher {
         self.subscribers.append(WeakAfterTurnEndSubscriber(value: subscriber))
     }
     
-    static func publish(player: Player, playerUsed item: ItemAbstract?, foe: Foe?) {
+    static func publish(player: Player, playerUsed item: Item?, foe: Foe?) {
         for sub in Self.subscribers {
             sub.value?.afterTurnEnd(player: player, playerUsed: item, foe: foe)
         }
@@ -26,7 +26,7 @@ class AfterTurnEndPublisher {
 
 protocol AfterTurnEndSubscriber: AnyObject {
     
-    func afterTurnEnd(player: Player, playerUsed: ItemAbstract?, foe: Foe?)
+    func afterTurnEnd(player: Player, playerUsed: Item?, foe: Foe?)
     
 }
 

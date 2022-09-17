@@ -9,6 +9,6 @@ import Foundation
 
 protocol HealthRestorationSubscriber {
     
-    func onHealthRestorationChange(_ item: ItemAbstract, old: Int)
+    func onHealthRestorationChange(_ item: Item, old: Int)
     
 }

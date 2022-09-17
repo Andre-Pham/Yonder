@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RandomHealthConsumable: ConsumableAbstract {
+class RandomHealthConsumable: Consumable {
     
     init(basePurchasePrice: Int) {
         super.init(
@@ -18,7 +18,7 @@ class RandomHealthConsumable: ConsumableAbstract {
         )
     }
     
-    required init(_ original: ConsumableAbstractPart) {
+    required init(_ original: ConsumableAbstract) {
         super.init(original)
     }
     
@@ -31,7 +31,7 @@ class RandomHealthConsumable: ConsumableAbstract {
         self.adjustRemainingUses(by: -1)
     }
     
-    func isStackable(with consumable: ConsumableAbstract) -> Bool {
+    func isStackable(with consumable: Consumable) -> Bool {
         return consumable is Self
     }
     

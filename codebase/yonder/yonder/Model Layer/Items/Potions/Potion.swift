@@ -7,9 +7,9 @@
 
 import Foundation
 
-typealias PotionAbstract = PotionAbstractPart & Usable
+typealias Potion = PotionAbstract & Usable
 
-class PotionAbstractPart: ItemAbstract, Purchasable, Clonable {
+class PotionAbstract: Item, Purchasable, Clonable {
     
     public let basePurchasePrice: Int
     private let effectsDescription: String?
@@ -24,7 +24,7 @@ class PotionAbstractPart: ItemAbstract, Purchasable, Clonable {
         super.init(name: name, description: description, remainingUses: remainingUses, damage: damage, restoration: restoration, healthRestoration: healthRestoration, armorPointsRestoration: armorPointsRestoration)
     }
     
-    required init(_ original: PotionAbstractPart) {
+    required init(_ original: PotionAbstract) {
         self.basePurchasePrice = original.basePurchasePrice
         self.effectsDescription = original.effectsDescription
         
@@ -35,7 +35,7 @@ class PotionAbstractPart: ItemAbstract, Purchasable, Clonable {
         return self.effectsDescription
     }
     
-    func isStackable(with potion: PotionAbstract) -> Bool {
+    func isStackable(with potion: Potion) -> Bool {
         return self.damage == potion.damage && self.healthRestoration == potion.healthRestoration && self.armorPointsRestoration == potion.armorPointsRestoration && self.name == potion.name && self.description == potion.description
     }
     
@@ -45,13 +45,13 @@ class PotionAbstractPart: ItemAbstract, Purchasable, Clonable {
     
     func beReceived(by receiver: Player, amount: Int) {
         for _ in 0..<amount {
-            receiver.addPotion(self as! PotionAbstract)
+            receiver.addPotion(self as! Potion)
         }
     }
     
     override func remainingUsesDidSet() {
         if self.remainingUses == 0 {
-            OnNoPotionsRemainingPublisher.publish(potion: self as! PotionAbstract)
+            OnNoPotionsRemainingPublisher.publish(potion: self as! Potion)
         }
     }
     

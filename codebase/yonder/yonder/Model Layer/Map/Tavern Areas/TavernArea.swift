@@ -9,10 +9,10 @@ import Foundation
 
 class TavernArea {
     
-    private(set) var rootLocations = [LocationAbstract]()
-    private(set) var tipLocations = [LocationAbstract]()
+    private(set) var rootLocations = [Location]()
+    private(set) var tipLocations = [Location]()
     public let arrangement: TavernAreaArrangements
-    public let locations: [LocationAbstract]
+    public let locations: [Location]
     
     init(restorer: RestorerLocation, potionShop: ShopLocation, enhancer: EnhancerLocation) {
         self.arrangement = .S
@@ -38,7 +38,7 @@ class TavernArea {
         self.generateAreaArrangement()
     }
     
-    func addRootLocations(_ locations: [LocationAbstract]) {
+    func addRootLocations(_ locations: [Location]) {
         self.rootLocations.append(contentsOf: locations)
     }
     
@@ -47,7 +47,7 @@ class TavernArea {
         self.addRootLocations(locations)
     }
     
-    func addTipLocations(_ locations: [LocationAbstract]) {
+    func addTipLocations(_ locations: [Location]) {
         self.tipLocations.append(contentsOf: locations)
     }
     
@@ -56,7 +56,7 @@ class TavernArea {
         self.addTipLocations(locations)
     }
     
-    func addNextLocations(from location: LocationAbstract, to nextLocations: [LocationAbstract]) {
+    func addNextLocations(from location: Location, to nextLocations: [Location]) {
         location.addNextLocations(nextLocations)
     }
     
@@ -66,7 +66,7 @@ class TavernArea {
         self.addNextLocations(from: location, to: nextLocations)
     }
     
-    func createUndirectedEdge(between location: LocationAbstract, and otherLocation: LocationAbstract) {
+    func createUndirectedEdge(between location: Location, and otherLocation: Location) {
         location.addNextLocations([otherLocation])
         otherLocation.addNextLocations([location])
     }

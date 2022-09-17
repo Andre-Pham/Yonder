@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
+class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
     
     private(set) var basePurchasePrice: Int = 0
     private let basePill: WeaponBasePill

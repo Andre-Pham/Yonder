@@ -10,7 +10,7 @@ import Combine
 
 class TimedEventViewModel: ObservableObject {
     
-    private(set) var timedEvent: TimedEventAbstract
+    private(set) var timedEvent: TimedEvent
     private var subscriptions: Set<AnyCancellable> = []
     
     @Published private(set) var timeRemaining: Int
@@ -19,7 +19,7 @@ class TimedEventViewModel: ObservableObject {
     public let effectsDescription: String?
     public let id: UUID
     
-    init(_ timedEvent: TimedEventAbstract) {
+    init(_ timedEvent: TimedEvent) {
         self.timedEvent = timedEvent
         
         self.timeRemaining = timedEvent.timer.timeLeft

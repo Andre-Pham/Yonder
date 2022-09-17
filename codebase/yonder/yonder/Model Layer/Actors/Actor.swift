@@ -20,12 +20,12 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
     public var isDead: Bool {
         return self.health <= 0
     }
-    @DidSetPublished private(set) var statusEffects = [StatusEffectAbstract]()
-    @DidSetPublished private(set) var timedEvents = [TimedEventAbstract]()
+    @DidSetPublished private(set) var statusEffects = [StatusEffect]()
+    @DidSetPublished private(set) var timedEvents = [TimedEvent]()
     @DidSetPublished private(set) var weapons = [Weapon]()
     @DidSetPublished private(set) var buffs = [BuffAbstract]()
-    @DidSetPublished private(set) var potions = [PotionAbstract]()
-    @DidSetPublished private(set) var consumables = [ConsumableAbstract]()
+    @DidSetPublished private(set) var potions = [Potion]()
+    @DidSetPublished private(set) var consumables = [Consumable]()
     @DidSetPublished private(set) var headArmor: Armor = NoArmor(type: .head)
     @DidSetPublished private(set) var bodyArmor: Armor = NoArmor(type: .body)
     @DidSetPublished private(set) var legsArmor: Armor = NoArmor(type: .legs)
@@ -163,7 +163,7 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
     
     // MARK: - Status Effects
     
-    func addStatusEffect(_ statusEffect: StatusEffectAbstract) {
+    func addStatusEffect(_ statusEffect: StatusEffect) {
         self.statusEffects.append(statusEffect.clone())
     }
     
@@ -181,7 +181,7 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
     
     // MARK: - Timed Events
     
-    func addTimedEvent(_ timedEvent: TimedEventAbstract) {
+    func addTimedEvent(_ timedEvent: TimedEvent) {
         self.timedEvents.append(timedEvent.clone())
     }
     
@@ -198,19 +198,19 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
     
     // MARK: - Indicative Values
     
-    func getIndicativeDamage(of item: ItemAbstract, opposition: ActorAbstract) -> Int {
+    func getIndicativeDamage(of item: Item, opposition: ActorAbstract) -> Int {
         return BuffApps.getAppliedDamage(owner: self, using: item, target: opposition, damage: item.damage)
     }
     
-    func getIndicativeRestoration(of item: ItemAbstract) -> (Int, Int) {
+    func getIndicativeRestoration(of item: Item) -> (Int, Int) {
         return BuffApps.getAppliedRestoration(owner: self, using: item, target: self, restoration: item.restoration)
     }
     
-    func getIndicativeHealthRestoration(of item: ItemAbstract) -> Int {
+    func getIndicativeHealthRestoration(of item: Item) -> Int {
         return BuffApps.getAppliedHealthRestoration(owner: self, using: item, target: self, healthRestoration: item.healthRestoration)
     }
     
-    func getIndicativeArmorPointsRestoration(of item: ItemAbstract) -> Int {
+    func getIndicativeArmorPointsRestoration(of item: Item) -> Int {
         return BuffApps.getAppliedArmorPointsRestoration(owner: self, using: item, target: self, armorPointsRestoration: item.armorPointsRestoration)
     }
     
@@ -249,7 +249,7 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
     
     // MARK: - Potions
     
-    func addPotion(_ potion: PotionAbstract) {
+    func addPotion(_ potion: Potion) {
         for ownedPotion in self.potions {
             if potion.isStackable(with: ownedPotion) {
                 ownedPotion.adjustRemainingUses(by: potion.remainingUses)
@@ -259,26 +259,26 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
         self.potions.append(potion.clone())
     }
     
-    func removePotion(_ potion: PotionAbstract) {
+    func removePotion(_ potion: Potion) {
         guard let index = (self.potions.firstIndex { $0.id == potion.id }) else {
             return
         }
         self.potions.remove(at: index)
     }
     
-    func onNoPotionsRemaining(potion: PotionAbstract) {
+    func onNoPotionsRemaining(potion: Potion) {
         if self.potions.contains(where: { $0.id == potion.id }) {
             self.removePotion(potion)
         }
     }
     
-    func usePotionWhere(opposition: ActorAbstract, potion: PotionAbstract) {
+    func usePotionWhere(opposition: ActorAbstract, potion: Potion) {
         potion.use(owner: self, opposition: opposition)
     }
     
     // MARK: - Consumables
     
-    func addConsumable(_ consumable: ConsumableAbstract) {
+    func addConsumable(_ consumable: Consumable) {
         for ownedConsumable in self.consumables {
             if consumable.isStackable(with: ownedConsumable) {
                 ownedConsumable.adjustRemainingUses(by: consumable.remainingUses)
@@ -288,20 +288,20 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
         self.consumables.append(consumable.clone())
     }
     
-    func removeConsumable(_ consumable: ConsumableAbstract) {
+    func removeConsumable(_ consumable: Consumable) {
         guard let index = (self.consumables.firstIndex(where: { $0.id == consumable.id })) else {
             return
         }
         self.consumables.remove(at: index)
     }
     
-    func onNoConsumablesRemaining(consumable: ConsumableAbstract) {
+    func onNoConsumablesRemaining(consumable: Consumable) {
         if self.consumables.contains(where: { $0.id == consumable.id }) {
             self.removeConsumable(consumable)
         }
     }
     
-    func useConsumableWhere(opposition: ActorAbstract?, consumable: ConsumableAbstract) {
+    func useConsumableWhere(opposition: ActorAbstract?, consumable: Consumable) {
         consumable.use(owner: self, opposition: opposition)
     }
     
@@ -404,7 +404,7 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
     
     // MARK: - Equipment (Accessories/Armor)
     
-    func hasEquipmentEffect(_ equipmentPill: EquipmentPillAbstract) -> Bool {
+    func hasEquipmentEffect(_ equipmentPill: EquipmentPill) -> Bool {
         for armorPiece in self.allArmorPieces {
             if armorPiece.hasEffect(equipmentPill) {
                 return true

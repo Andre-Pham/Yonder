@@ -83,7 +83,7 @@ class PurchasableViewModel: ObservableObject {
         case .weapon:
             return WeaponViewModel(self.purchasable.item as! Weapon)
         case .potion:
-            return PotionViewModel(self.purchasable.item as! PotionAbstract)
+            return PotionViewModel(self.purchasable.item as! Potion)
         case .armor:
             return nil
         case .accessory:

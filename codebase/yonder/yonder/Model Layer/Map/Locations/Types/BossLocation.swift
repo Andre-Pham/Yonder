@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BossLocation: LocationAbstract, FoeLocation {
+class BossLocation: Location, FoeLocation {
     
     private(set) var foe: Foe
     public let type: LocationType = .boss

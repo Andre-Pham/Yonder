@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ShopLocation: LocationAbstract {
+class ShopLocation: Location {
     
     private(set) var shopKeeper: ShopKeeper
     public let type: LocationType = .shop

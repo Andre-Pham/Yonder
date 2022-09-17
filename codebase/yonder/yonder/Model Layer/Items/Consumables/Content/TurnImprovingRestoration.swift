@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TurnImprovingRestoration: ConsumableAbstract, OnTurnEndSubscriber {
+class TurnImprovingRestoration: Consumable, OnTurnEndSubscriber {
     
     /// The amount of restoration this consumable starts with
     private let startingRestoration = 10
@@ -26,7 +26,7 @@ class TurnImprovingRestoration: ConsumableAbstract, OnTurnEndSubscriber {
         OnTurnEndPublisher.subscribe(self)
     }
     
-    required init(_ original: ConsumableAbstractPart) {
+    required init(_ original: ConsumableAbstract) {
         let original = original as! Self
         super.init(
             name: original.name,
@@ -44,14 +44,14 @@ class TurnImprovingRestoration: ConsumableAbstract, OnTurnEndSubscriber {
         self.adjustRemainingUses(by: -1)
     }
     
-    func isStackable(with consumable: ConsumableAbstract) -> Bool {
+    func isStackable(with consumable: Consumable) -> Bool {
         if let consumable = consumable as? Self {
             return consumable.restoration == self.restoration && consumable.restorationIncrease == self.restorationIncrease
         }
         return false
     }
     
-    func onTurnEnd(player: Player, playerUsed: ItemAbstract?, foe: Foe?) {
+    func onTurnEnd(player: Player, playerUsed: Item?, foe: Foe?) {
         self.adjustRestoration(by: self.restorationIncrease)
     }
     

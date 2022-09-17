@@ -9,6 +9,6 @@ import Foundation
 
 protocol RestorationSubscriber {
     
-    func onRestorationChange(_ item: ItemAbstract, old: Int)
+    func onRestorationChange(_ item: Item, old: Int)
     
 }

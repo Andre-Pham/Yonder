@@ -7,9 +7,9 @@
 
 import Foundation
 
-typealias StatusEffectAbstract = StatusEffectPart & EffectsDescribed & AppliesEffect & PossibleIndicativeValue
+typealias StatusEffect = StatusEffectAbstract & EffectsDescribed & AppliesEffect & PossibleIndicativeValue
 
-class StatusEffectPart: Named, Clonable {
+class StatusEffectAbstract: Named, Clonable {
     
     public let name: String
     @DidSetPublished private(set) var timeRemaining: Int
@@ -22,7 +22,7 @@ class StatusEffectPart: Named, Clonable {
         self.initialTimeRemaining = duration
     }
     
-    required init(_ original: StatusEffectPart) {
+    required init(_ original: StatusEffectAbstract) {
         self.name = original.name
         self.timeRemaining = original.timeRemaining
         self.initialTimeRemaining = original.initialTimeRemaining

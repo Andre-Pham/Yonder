@@ -11,8 +11,8 @@ class Territory {
     
     private(set) var segment: Segment
     private(set) var tavernArea: TavernArea
-    public let rootLocations: [LocationAbstract]
-    public let tipLocations: [LocationAbstract]
+    public let rootLocations: [Location]
+    public let tipLocations: [Location]
     
     init(segment: Segment, followingTavernArea: TavernArea) {
         self.segment = segment

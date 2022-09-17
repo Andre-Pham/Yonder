@@ -43,7 +43,7 @@ class Segment {
             bridgeNode: self.bridgeLocation)
     }
     
-    func addBridgingNode(leftLocation: LocationAbstract, rightLocation: LocationAbstract, bridgeNode: BridgeLocation) {
+    func addBridgingNode(leftLocation: Location, rightLocation: Location, bridgeNode: BridgeLocation) {
         leftLocation.setBridgeLocation(bridgeNode)
         rightLocation.setBridgeLocation(bridgeNode)
         bridgeNode.addNextLocations([leftLocation, rightLocation])

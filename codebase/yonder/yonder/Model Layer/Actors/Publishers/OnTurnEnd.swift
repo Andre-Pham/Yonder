@@ -15,7 +15,7 @@ class OnTurnEndPublisher {
         self.subscribers.append(WeakOnTurnEndSubscriber(value: subscriber))
     }
     
-    static func publish(player: Player, playerUsed item: ItemAbstract?, foe: Foe?) {
+    static func publish(player: Player, playerUsed item: Item?, foe: Foe?) {
         for sub in Self.subscribers {
             sub.value?.onTurnEnd(player: player, playerUsed: item, foe: foe)
         }
@@ -26,7 +26,7 @@ class OnTurnEndPublisher {
 
 protocol OnTurnEndSubscriber: AnyObject {
     
-    func onTurnEnd(player: Player, playerUsed: ItemAbstract?, foe: Foe?)
+    func onTurnEnd(player: Player, playerUsed: Item?, foe: Foe?)
     
 }
 

@@ -12,7 +12,7 @@ import SwiftUI
 class LocationViewModel: ObservableObject {
     
     // location can be used within the ViewModel layer, but Views should only interact with ViewModels (not the Model layer)
-    private(set) var location: LocationAbstract
+    private(set) var location: Location
     private var subscriptions: Set<AnyCancellable> = []
     
     @Published private(set) var hasBeenVisited: Bool
@@ -63,7 +63,7 @@ class LocationViewModel: ObservableObject {
         return false
     }
     
-    init(_ location: LocationAbstract) {
+    init(_ location: Location) {
         self.location = location
         
         // Set properties to match Location
@@ -180,7 +180,7 @@ class LocationViewModel: ObservableObject {
 /// A lot of LocationViewModels can exist at once so this is a lightweight version that contains less information and no subscribers or publishers.
 struct LightweightLocationViewModel {
     
-    private let location: LocationAbstract
+    private let location: Location
     var isBridge: Bool {
         return self.location is BridgeLocation
     }
@@ -188,7 +188,7 @@ struct LightweightLocationViewModel {
         return self.location.id
     }
     
-    init(_ location: LocationAbstract) {
+    init(_ location: Location) {
         self.location = location
     }
     

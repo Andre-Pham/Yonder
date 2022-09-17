@@ -9,6 +9,6 @@ import Foundation
 
 protocol DamageSubscriber {
     
-    func onDamageChange(_ item: ItemAbstract, old: Int)
+    func onDamageChange(_ item: Item, old: Int)
     
 }

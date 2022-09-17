@@ -9,6 +9,6 @@ import Foundation
 
 protocol ConsumableIsStackable {
     
-    func isStackable(with consumable: ConsumableAbstract) -> Bool
+    func isStackable(with consumable: Consumable) -> Bool
     
 }

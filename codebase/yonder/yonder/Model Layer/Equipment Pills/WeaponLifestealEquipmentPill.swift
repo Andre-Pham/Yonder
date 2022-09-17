@@ -7,7 +7,7 @@
 
 import Foundation
 
-class WeaponLifestealEquipmentPill: EquipmentPillAbstract, OnActorAttackSubscriber {
+class WeaponLifestealEquipmentPill: EquipmentPill, OnActorAttackSubscriber {
     
     private let lifestealFraction: Double
     
@@ -23,7 +23,7 @@ class WeaponLifestealEquipmentPill: EquipmentPillAbstract, OnActorAttackSubscrib
         OnActorAttackPublisher.subscribe(self)
     }
     
-    required init(_ original: EquipmentPillAbstractPart) {
+    required init(_ original: EquipmentPillAbstract) {
         let original = original as! Self
         self.lifestealFraction = original.lifestealFraction
         

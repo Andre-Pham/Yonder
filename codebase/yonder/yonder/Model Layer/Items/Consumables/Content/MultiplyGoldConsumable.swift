@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MultiplyGoldConsumable: ConsumableAbstract {
+class MultiplyGoldConsumable: Consumable {
     
     private let goldFraction: Double
     
@@ -23,7 +23,7 @@ class MultiplyGoldConsumable: ConsumableAbstract {
         )
     }
     
-    required init(_ original: ConsumableAbstractPart) {
+    required init(_ original: ConsumableAbstract) {
         let original = original as! Self
         self.goldFraction = original.goldFraction
         super.init(original)
@@ -36,7 +36,7 @@ class MultiplyGoldConsumable: ConsumableAbstract {
         }
     }
     
-    func isStackable(with consumable: ConsumableAbstract) -> Bool {
+    func isStackable(with consumable: Consumable) -> Bool {
         if let consumable = consumable as? Self {
             return self.goldFraction == consumable.goldFraction
         }

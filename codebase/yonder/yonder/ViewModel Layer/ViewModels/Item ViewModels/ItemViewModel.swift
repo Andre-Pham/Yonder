@@ -12,7 +12,7 @@ import Combine
 class ItemViewModel: ObservableObject {
     
     // item can be used within the ViewModel layer, but Views should only interact with ViewModels (not the Model layer)
-    private(set) var item: ItemAbstract
+    private(set) var item: Item
     var subscriptions: Set<AnyCancellable> = [] // Public so children can access
     
     @Published private(set) var damage: Int
@@ -33,7 +33,7 @@ class ItemViewModel: ObservableObject {
     @Published private(set) var effectsDescription: String? = nil
     public let requiresFoeForUsage: Bool
     
-    init(_ item: ItemAbstract,
+    init(_ item: Item,
          remainingUsesDescription: String,
          damageImage: Image,
          restorationImage: Image,

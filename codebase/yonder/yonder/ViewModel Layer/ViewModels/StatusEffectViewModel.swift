@@ -10,7 +10,7 @@ import Combine
 
 class StatusEffectViewModel: ObservableObject {
     
-    private(set) var statusEffect: StatusEffectAbstract
+    private(set) var statusEffect: StatusEffect
     private var subscriptions: Set<AnyCancellable> = []
     
     @Published private(set) var timeRemaining: Int
@@ -19,7 +19,7 @@ class StatusEffectViewModel: ObservableObject {
     public let effectsDescription: String?
     public let id: UUID
     
-    init(_ statusEffect: StatusEffectAbstract) {
+    init(_ statusEffect: StatusEffect) {
         self.statusEffect = statusEffect
         
         self.timeRemaining = statusEffect.timeRemaining

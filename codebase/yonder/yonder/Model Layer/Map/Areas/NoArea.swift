@@ -10,7 +10,7 @@ import Foundation
 class NoArea: Area {
     
     init() {
-        super.init(arrangement: .A, locations: [LocationAbstract](repeating: NoLocation(), count: AreaArrangements.A.locationCount))
+        super.init(arrangement: .A, locations: [Location](repeating: NoLocation(), count: AreaArrangements.A.locationCount))
     }
     
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NoItem: ItemAbstract {
+class NoItem: Item {
     
     init() {
         super.init(name: "NO_ITEM", description: "NO_ITEM_DESCRIPTION")

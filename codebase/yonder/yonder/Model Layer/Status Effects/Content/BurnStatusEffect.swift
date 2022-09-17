@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BurnStatusEffect: StatusEffectAbstract {
+class BurnStatusEffect: StatusEffect {
     
     private let damage: Int
     
@@ -16,7 +16,7 @@ class BurnStatusEffect: StatusEffectAbstract {
         super.init(name: Strings.StatusEffect.Burn.Name.local, duration: duration)
     }
     
-    required init(_ original: StatusEffectPart) {
+    required init(_ original: StatusEffectAbstract) {
         let original = original as! Self
         self.damage = original.damage
         super.init(original)

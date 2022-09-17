@@ -310,11 +310,11 @@ class PlayerViewModel: ObservableObject {
             assertionFailure("Potion was used whilst location has no foe - hence no target")
             return
         }
-        self.player.usePotionWhere(opposition: (self.locationViewModel.location as! FoeLocation).foe, potion: potionViewModel.item as! PotionAbstract)
+        self.player.usePotionWhere(opposition: (self.locationViewModel.location as! FoeLocation).foe, potion: potionViewModel.item as! Potion)
     }
     
     func use(consumableViewModel: ConsumableViewModel) {
-        self.player.useConsumableWhere(opposition: (self.locationViewModel.location as? FoeLocation)?.foe, consumable: consumableViewModel.item as! ConsumableAbstract)
+        self.player.useConsumableWhere(opposition: (self.locationViewModel.location as? FoeLocation)?.foe, consumable: consumableViewModel.item as! Consumable)
     }
     
     func getIndicativeDamage(itemViewModel: ItemViewModel, opposition: FoeViewModel) -> Int {

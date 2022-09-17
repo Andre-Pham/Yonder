@@ -10,7 +10,7 @@ import Combine
 
 class ConsumableViewModel: ItemViewModel {
     
-    init(_ consumable: ConsumableAbstract) {
+    init(_ consumable: Consumable) {
         super.init(consumable,
                    remainingUsesDescription: Strings.Stat.Consumable.RemainingUses.local,
                    damageImage: YonderImages.consumableDamageIcon,

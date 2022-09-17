@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DamagePotion: PotionAbstract {
+class DamagePotion: Potion {
     
     /// The tier of the damage potion. Greater tiers deal greater damage.
     /// Raw value represents the amount of damage of each tier.
@@ -43,7 +43,7 @@ class DamagePotion: PotionAbstract {
             basePurchasePrice: basePurchasePrice)
     }
     
-    required init(_ original: PotionAbstractPart) {
+    required init(_ original: PotionAbstract) {
         super.init(original)
     }
     

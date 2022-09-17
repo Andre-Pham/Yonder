@@ -171,7 +171,7 @@ class LocationConnection {
     private let mapGridColumnsCount: Int
     private let areaPosition: Int
     private let territoryPosition: Int
-    private let location: LocationAbstract
+    private let location: Location
     var locationHexagonIndex: Int {
         return self.coordinatesToHexagonIndex(self.location.hexagonCoordinate!)
     }
@@ -181,7 +181,7 @@ class LocationConnection {
     var locationID: UUID {
         return self.location.id
     }
-    private var previousLocations = [LocationAbstract]()
+    private var previousLocations = [Location]()
     private(set) var previousLocationIndicesFromRightArea = [Int]()
     private(set) var previousLocationIndicesFromLeftArea = [Int]()
     private(set) var previousLocationIndicesFromPreviousTavernArea = [Int]()
@@ -209,14 +209,14 @@ class LocationConnection {
         return result
     }
     
-    init(location: LocationAbstract, mapGridColumnsCount: Int, areaPosition: Int, territoryPosition: Int) {
+    init(location: Location, mapGridColumnsCount: Int, areaPosition: Int, territoryPosition: Int) {
         self.location = location
         self.mapGridColumnsCount = mapGridColumnsCount
         self.areaPosition = areaPosition
         self.territoryPosition = territoryPosition
     }
     
-    func addPreviousLocation(_ location: LocationAbstract, flipConnectionRight: Bool = false, flipConnectionLeft: Bool = false, previousTavernArea: Bool = false) {
+    func addPreviousLocation(_ location: Location, flipConnectionRight: Bool = false, flipConnectionLeft: Bool = false, previousTavernArea: Bool = false) {
         guard !(self.previousLocations.map { $0.id }).contains(location.id) else {
             return
         }

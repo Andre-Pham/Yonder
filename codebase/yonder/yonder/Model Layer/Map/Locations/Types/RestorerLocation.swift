@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RestorerLocation: LocationAbstract {
+class RestorerLocation: Location {
     
     private(set) var restorer: Restorer
     public let type: LocationType = .restorer

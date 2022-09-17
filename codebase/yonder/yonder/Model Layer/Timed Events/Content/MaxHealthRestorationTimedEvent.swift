@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MaxHealthRestorationTimedEvent: TimedEventAbstract {
+class MaxHealthRestorationTimedEvent: TimedEvent {
     
     public let timer: Timer
     
@@ -16,7 +16,7 @@ class MaxHealthRestorationTimedEvent: TimedEventAbstract {
         super.init(name: Strings.TimedEvent.MaxHealthRestoration.Name.local)
     }
     
-    required init(_ original: TimedEventPart) {
+    required init(_ original: TimedEventAbstract) {
         let original = original as! Self
         self.timer = original.timer.clone()
         super.init(original)
