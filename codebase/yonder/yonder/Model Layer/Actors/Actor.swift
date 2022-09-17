@@ -119,6 +119,14 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
         self.health = min(amount, self.maxHealth)
     }
     
+    func setArmorPoints(to amount: Int) {
+        if amount > self.maxArmorPoints {
+            self.armorPoints = self.maxArmorPoints
+        } else {
+            self.armorPoints = max(amount, 0)
+        }
+    }
+    
     func damage(for amount: Int) {
         if self.armorPoints > amount {
             self.armorPoints -= amount
@@ -347,17 +355,14 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
             self.armorPoints = min(self.armorPoints, self.maxArmorPoints - self.headArmor.armorPoints)
             self.headArmor = armor
             self.armorPoints += armor.armorPoints
-            return
         case .body:
             self.armorPoints = min(self.armorPoints, self.maxArmorPoints - self.bodyArmor.armorPoints)
             self.bodyArmor = armor
             self.armorPoints += armor.armorPoints
-            return
         case .legs:
             self.armorPoints = min(self.armorPoints, self.maxArmorPoints - self.legsArmor.armorPoints)
-            self.bodyArmor = armor
+            self.legsArmor = armor
             self.armorPoints += armor.armorPoints
-            return
         }
     }
     
@@ -369,6 +374,19 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
         assert(self.hasArmorPieceEquipped(armor), "Player is trying to enhance a piece of equipped armor that they actually don't have equipped")
         armor.adjustArmorPoints(by: armorPoints)
         self.restoreArmorPoints(for: armorPoints)
+    }
+    
+    func unequipArmor(_ armor: Armor) {
+        assert(self.hasArmorPieceEquipped(armor), "Player is trying to uneqiup armor they aren't wearing")
+        self.armorPoints = min(self.armorPoints, self.maxArmorPoints - armor.armorPoints)
+        switch armor.type {
+        case .head:
+            self.headArmor = NoArmor(type: .head)
+        case .body:
+            self.bodyArmor = NoArmor(type: .body)
+        case .legs:
+            self.legsArmor = NoArmor(type: .legs)
+        }
     }
     
     // MARK: - Accessories
@@ -411,6 +429,16 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
             }
         }
         return self.accessorySlots.hasEffect(equipmentPill)
+    }
+    
+    func unequipEquipmentEffect(_ equipmentPill: EquipmentPill) {
+        if let accessory = self.accessorySlots.allAccessories.first(where: { $0.hasEffect(equipmentPill) }) {
+            self.unequipAccessory(accessory)
+        } else if let armor = self.allArmorPieces.first(where: { $0.hasEffect(equipmentPill) }) {
+            self.unequipArmor(armor)
+        } else {
+            assertionFailure("Player failed to unequip phoenix equipment")
+        }
     }
     
 }

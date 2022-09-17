@@ -34,6 +34,22 @@ class EquipmentPillTests: XCTestCase {
         XCTAssertEqual(self.player.health, 350)
     }
     
+    func testPhoenixEquipmentPill() throws {
+        self.accessory.addEquipmentPill(PhoenixEquipmentPill(sourceName: "Test Accessory"))
+        self.player.equipAccessory(self.accessory, replacing: nil)
+        self.player.damage(for: 500)
+        self.turnManager.completeTurn(player: self.player)
+        XCTAssertTrue(!self.player.isDead)
+        XCTAssertTrue(self.player.accessorySlots.accessories.isEmpty)
+        
+        let armor = Armor(name: "", description: "", type: .body, armorPoints: 0, basePurchasePrice: 10, armorBuffs: [], equipmentPills: [PhoenixEquipmentPill(sourceName: "")])
+        self.player.equipArmor(armor)
+        self.player.damage(for: 1000)
+        self.turnManager.completeTurn(player: self.player)
+        XCTAssertTrue(!self.player.isDead)
+        XCTAssertTrue(self.player.bodyArmor is NoArmor)
+    }
+    
     // MARK: - Interactions
 
     func testWeaponLifestealWithDulling() throws {

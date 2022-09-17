@@ -838,6 +838,12 @@ enum Strings: Localizable {
             
             case EffectsDescription1Param
         }
+        
+        enum Phoenix: Localizable {
+            static let parent: LocalizeParent = EquipmentPill.self
+            
+            case EffectsDescription1Param
+        }
     }
     
 }
