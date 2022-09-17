@@ -17,6 +17,15 @@ class BurnStatusEffectEffectPill: WeaponEffectPill {
         self.effectsDescription = Strings.WeaponEffectPill.BurnStatusEffect.Description1Param.localWithArgs(tickDamage)
         self.tickDamage = tickDamage
         self.initialDuration = duration
+        super.init()
+    }
+    
+    required init(_ original: WeaponEffectPillAbstract) {
+        let original = original as! Self
+        self.effectsDescription = original.effectsDescription
+        self.tickDamage = original.tickDamage
+        self.initialDuration = original.initialDuration
+        super.init(original)
     }
     
     func apply(owner: ActorAbstract, opposition: ActorAbstract) {
@@ -24,7 +33,7 @@ class BurnStatusEffectEffectPill: WeaponEffectPill {
     }
     
     func getValue() -> Int {
-        return 10*self.tickDamage
+        return self.tickDamage*self.initialDuration
     }
     
 }

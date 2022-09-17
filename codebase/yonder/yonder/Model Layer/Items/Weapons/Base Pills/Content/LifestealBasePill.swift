@@ -15,6 +15,14 @@ class LifestealBasePill: WeaponBasePill, DamageSubscriber, HealthRestorationSubs
     init(damage: Int) {
         self.damage = damage
         self.effectsDescription = Strings.WeaponBasePill.Lifesteal.EffectsDescription.local
+        super.init()
+    }
+    
+    required init(_ original: WeaponBasePillAbstract) {
+        let original = original as! Self
+        self.damage = original.damage
+        self.effectsDescription = original.effectsDescription
+        super.init(original)
     }
     
     func setup(weapon: Weapon) {
@@ -25,7 +33,7 @@ class LifestealBasePill: WeaponBasePill, DamageSubscriber, HealthRestorationSubs
     }
     
     func getValue() -> Int {
-        return self.damage*2
+        return self.damage*3/2
     }
     
     func onDamageChange(_ item: ItemAbstract, old: Int) {

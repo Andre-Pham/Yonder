@@ -17,6 +17,15 @@ class DecrementDurabilityPill: WeaponDurabilityPill {
         self.durability = durability
         self.effectsDescription = Strings.WeaponDurabilityPill.Decrement.Description1Param.localWithArgs(amount)
         self.decrementation = -amount
+        super.init()
+    }
+    
+    required init(_ original: WeaponDurabilityPillAbstract) {
+        let original = original as! Self
+        self.durability = original.durability
+        self.effectsDescription = original.effectsDescription
+        self.decrementation = original.decrementation
+        super.init(original)
     }
     
     func setupDurability(weapon: Weapon) {

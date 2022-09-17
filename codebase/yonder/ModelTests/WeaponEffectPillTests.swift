@@ -11,7 +11,7 @@ import XCTest
 class WeaponEffectPillTests: XCTestCase {
 
     let player = Player(maxHealth: 500, location: NoLocation())
-    let foe = Foe(maxHealth: 500, weapon: BaseAttack(damage: 0), loot: LootOptions(LootBag(), LootBag(), LootBag()))
+    let foe = Foe(maxHealth: 500, weapon: BaseAttack(damage: 0), loot: NoLootOptions())
     let weapon = Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: InfiniteDurabilityPill())
     let turnManager = TestsTurnManager.turnManager
     
@@ -26,6 +26,25 @@ class WeaponEffectPillTests: XCTestCase {
         self.player.useWeaponWhere(opposition: self.foe, weapon: self.weapon)
         XCTAssertEqual(self.foe.statusEffects.count, 1)
         XCTAssertEqual(self.foe.health, 445)
+    }
+    
+    func testGoblinEffectPill() throws {
+        self.weapon.setDamage(to: 0)
+        self.weapon.addEffect(GoblinEffectPill(goldPerSteal: 100, damage: 200))
+        let foe = Foe(maxHealth: 200, weapon: self.weapon, loot: NoLootOptions())
+        self.player.setGold(to: 150)
+        foe.attack(self.player)
+        self.turnManager.completeTurn(player: self.player, playerUsed: NoItem(), foe: foe)
+        XCTAssertEqual(self.player.health, 500)
+        XCTAssertEqual(self.player.gold, 50)
+        foe.attack(self.player)
+        self.turnManager.completeTurn(player: self.player, playerUsed: NoItem(), foe: foe)
+        XCTAssertEqual(self.player.health, 500)
+        XCTAssertEqual(self.player.gold, 0)
+        foe.attack(self.player)
+        self.turnManager.completeTurn(player: self.player, playerUsed: NoItem(), foe: foe)
+        XCTAssertEqual(self.player.health, 300)
+        XCTAssertEqual(self.player.gold, 0)
     }
 
 }

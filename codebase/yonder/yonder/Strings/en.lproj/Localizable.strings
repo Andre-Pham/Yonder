@@ -272,6 +272,9 @@
 // Burn Status Effect
 "weaponEffectPill.burnStatusEffect.description1Param" = "Inflicts a burn status effect, dealing %@ damage every turn.";
 
+// Goblin
+"weaponEffectPill.goblin.description2Param" = "Steal %@ gold. If no gold remains, deal %@ damage instead.";
+
 // MARK: - Status Effects
 
 // Burn

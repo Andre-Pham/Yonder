@@ -14,6 +14,13 @@ class HealthRestorationBasePill: WeaponBasePill {
     
     init(healthRestoration: Int) {
         self.healthRestoration = healthRestoration
+        super.init()
+    }
+    
+    required init(_ original: WeaponBasePillAbstract) {
+        let original = original as! Self
+        self.healthRestoration = original.healthRestoration
+        super.init(original)
     }
     
     func setup(weapon: Weapon) {

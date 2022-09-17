@@ -11,6 +11,15 @@ class EffectBasePill: WeaponBasePill {
     
     public let effectsDescription: String? = nil
     
+    override init() {
+        // This is required to provide an empty initialiser
+        super.init()
+    }
+    
+    required init(_ original: WeaponBasePillAbstract) {
+        super.init(original)
+    }
+    
     func setup(weapon: Weapon) {
         // Nothing to setup
     }

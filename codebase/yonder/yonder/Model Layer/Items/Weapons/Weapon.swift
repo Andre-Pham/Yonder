@@ -44,15 +44,26 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
     }
     
     required init(_ original: Weapon) {
-        self.basePill = original.basePill
-        self.durabilityPill = original.durabilityPill
-        self.effectPills = original.effectPills
+        self.basePill = original.basePill.clone()
+        self.durabilityPill = original.durabilityPill.clone()
+        self.effectPills = original.effectPills.map { $0.clone() }
         
         super.init(name: original.name, description: original.description)
         
+        // These are still required to setup subscribers and such
         self.basePill.setup(weapon: self)
         self.durabilityPill.setupDurability(weapon: self)
         self.basePurchasePrice = original.basePurchasePrice
+        
+        // The item's state needs to be restored
+        self.setName(to: original.name)
+        self.setDescription(to: original.description)
+        self.setDamage(to: original.damage)
+        self.setRestoration(to: original.restoration)
+        self.setHealthRestoration(to: original.healthRestoration)
+        self.setArmorPointsRestoration(to: original.armorPointsRestoration)
+        self.setInfiniteRemainingUses(to: original.infiniteRemainingUses)
+        self.setRemainingUses(to: original.remainingUses)
     }
     
     func getEffectsDescription() -> String? {
@@ -118,6 +129,18 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
     
     func getEnhanceInfo() -> EnhanceInfo {
         return EnhanceInfo(id: self.id, name: self.name)
+    }
+    
+    func hasBasePill(_ pill: WeaponBasePill) -> Bool {
+        return self.basePill.id == pill.id
+    }
+    
+    func hasDurabilityPill(_ pill: WeaponDurabilityPill) -> Bool {
+        return self.durabilityPill.id == pill.id
+    }
+    
+    func hasEffectPill(_ pill: WeaponEffectPill) -> Bool {
+        return self.effectPills.contains(where: { $0.id == pill.id })
     }
     
     override func remainingUsesDidSet() {

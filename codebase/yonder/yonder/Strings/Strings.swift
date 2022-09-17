@@ -414,6 +414,12 @@ enum Strings: Localizable {
             
             case Description1Param
         }
+        
+        enum Goblin: Localizable {
+            static let parent: LocalizeParent = WeaponEffectPill.self
+            
+            case Description2Param
+        }
     }
     
     enum StatusEffect: Localizable {

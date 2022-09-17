@@ -14,6 +14,13 @@ class DamageBasePill: WeaponBasePill {
     
     init(damage: Int) {
         self.damage = damage
+        super.init()
+    }
+    
+    required init(_ original: WeaponBasePillAbstract) {
+        let original = original as! Self
+        self.damage = original.damage
+        super.init(original)
     }
     
     func setup(weapon: Weapon) {

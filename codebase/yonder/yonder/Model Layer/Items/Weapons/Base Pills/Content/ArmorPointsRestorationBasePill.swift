@@ -14,6 +14,13 @@ class ArmorPointsRestorationBasePill: WeaponBasePill {
     
     init(armorPointsRestoration: Int) {
         self.armorPointsRestoration = armorPointsRestoration
+        super.init()
+    }
+    
+    required init(_ original: WeaponBasePillAbstract) {
+        let original = original as! Self
+        self.armorPointsRestoration = original.armorPointsRestoration
+        super.init(original)
     }
     
     func setup(weapon: Weapon) {

@@ -11,6 +11,15 @@ class InfiniteDurabilityPill: WeaponDurabilityPill {
     
     public let effectsDescription: String = Strings.WeaponDurabilityPill.Infinite.Description.local
     
+    override init() {
+        // This is required to provide an empty initialiser
+        super.init()
+    }
+    
+    required init(_ original: WeaponDurabilityPillAbstract) {
+        super.init(original)
+    }
+    
     func setupDurability(weapon: Weapon) {
         weapon.setRemainingUses(to: 1)
         weapon.setInfiniteRemainingUses(to: true)

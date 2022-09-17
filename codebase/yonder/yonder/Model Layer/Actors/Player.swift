@@ -22,11 +22,11 @@ class Player: ActorAbstract {
     }
     
     func setGold(to amount: Int) {
-        self.gold = amount
+        self.gold = max(amount, 0)
     }
     
     func modifyGold(by amount: Int) {
-        self.gold += amount
+        self.gold = max(self.gold + amount, 0)
     }
     
     func modifyGoldAdjusted(by amount: Int) {

@@ -8,11 +8,22 @@
 import Foundation
 
 /// Pill that provides the weapon with additional effects, such as providing buffs.
-protocol WeaponEffectPill {
+typealias WeaponEffectPill = WeaponEffectPillAbstract & WeaponEffectPillProtocol
+
+protocol WeaponEffectPillProtocol {
     
     var effectsDescription: String { get }
     
     func apply(owner: ActorAbstract, opposition: ActorAbstract)
     func getValue() -> Int
+    
+}
+
+class WeaponEffectPillAbstract: Clonable {
+    
+    public let id = UUID()
+    
+    init() { }
+    required init(_ original: WeaponEffectPillAbstract) { }
     
 }
