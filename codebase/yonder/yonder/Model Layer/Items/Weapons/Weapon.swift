@@ -13,8 +13,6 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
     private let basePill: WeaponBasePill
     @DidSetPublished private(set) var durabilityPill: WeaponDurabilityPill
     @DidSetPublished private(set) var effectPills: [WeaponEffectPill]
-    private(set) var onUseSubscribers = [OnUseSubscriber]()
-    private(set) var afterUseSubscribers = [AfterUseSubscriber]()
     var fullSummary: String {
         var summaryComponents = [String]()
         summaryComponents.append(self.name)
@@ -89,8 +87,6 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
     }
     
     func use(owner: ActorAbstract, opposition: ActorAbstract) {
-        self.onUseSubscribers.forEach({ $0.onUse(self, owner: owner, opposition: opposition) })
-        
         // We only want buffs to apply to weapons that already have the relevant property
         // E.g a health staff that heals, a +10 damage weapon buff shouldn't suddenly cause the healing staff to deal damage
         if self.healthRestoration > 0 {
@@ -108,8 +104,6 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
         }
         // Durability pill comes after, otherwise stuff like dulling pill wouldn't work as intended
         self.durabilityPill.use(on: self)
-        
-        self.afterUseSubscribers.forEach({ $0.afterUse(self, owner: owner, opposition: opposition) })
     }
     
     func getPurchaseInfo() -> PurchasableItemInfo {
@@ -124,14 +118,6 @@ class Weapon: ItemAbstract, Usable, Purchasable, Clonable, Enhanceable {
     
     func getEnhanceInfo() -> EnhanceInfo {
         return EnhanceInfo(id: self.id, name: self.name)
-    }
-    
-    func addOnUseSubscriber(_ subscriber: OnUseSubscriber) {
-        self.onUseSubscribers.append(subscriber)
-    }
-    
-    func addAfterUseSubscriber(_ subscriber: AfterUseSubscriber) {
-        self.afterUseSubscribers.append(subscriber)
     }
     
     override func remainingUsesDidSet() {
