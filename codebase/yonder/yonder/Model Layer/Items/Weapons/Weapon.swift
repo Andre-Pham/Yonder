@@ -21,6 +21,7 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
             WeaponPillBox.setEffectPills(weapon: self)
         }
     }
+    @DidSetPublished private(set) var buffPills: [WeaponBuffPill]
     var fullSummary: String {
         var summaryComponents = [String]()
         summaryComponents.append(self.name)
@@ -39,10 +40,11 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
         return summaryComponents.joined(separator: "\n")
     }
     
-    init(name: String = "placeholderName", description: String = "placeholderDescription", basePill: WeaponBasePill, durabilityPill: WeaponDurabilityPill, effectPills: [WeaponEffectPill] = []) {
+    init(name: String = "placeholderName", description: String = "placeholderDescription", basePill: WeaponBasePill, durabilityPill: WeaponDurabilityPill, effectPills: [WeaponEffectPill] = [], buffPills: [WeaponBuffPill] = []) {
         self.basePill = basePill
         self.durabilityPill = durabilityPill
         self.effectPills = effectPills
+        self.buffPills = buffPills
         
         super.init(name: name, description: description)
         
@@ -58,6 +60,7 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
         self.basePill = original.basePill.clone()
         self.durabilityPill = original.durabilityPill.clone()
         self.effectPills = original.effectPills.map { $0.clone() }
+        self.buffPills = original.buffPills.map { $0.clone() }
         
         super.init(name: original.name, description: original.description)
         
@@ -80,6 +83,38 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
         self.setRemainingUses(to: original.remainingUses)
     }
     
+    override func getIndicativeDamage(owner: ActorAbstract, opposition: ActorAbstract) -> Int {
+        var damageApplied = self.damage
+        for pill in self.buffPills {
+            damageApplied = pill.applyDamage(weapon: self, owner: owner, opposition: opposition)
+        }
+        return damageApplied
+    }
+    
+    override func getIndicativeRestoration(owner: ActorAbstract, opposition: ActorAbstract) -> Int {
+        var restorationApplied = self.restoration
+        for pill in self.buffPills {
+            restorationApplied = pill.applyRestoration(weapon: self, owner: owner, opposition: opposition)
+        }
+        return restorationApplied
+    }
+    
+    override func getIndicativeHealthRestoration(owner: ActorAbstract, opposition: ActorAbstract) -> Int {
+        var healthApplied = self.healthRestoration
+        for pill in self.buffPills {
+            healthApplied = pill.applyHealthRestoration(weapon: self, owner: owner, opposition: opposition)
+        }
+        return healthApplied
+    }
+    
+    override func getIndicativeArmorPointsRestoration(owner: ActorAbstract, opposition: ActorAbstract) -> Int {
+        var armorPointsApplied = self.armorPointsRestoration
+        for pill in self.buffPills {
+            armorPointsApplied = pill.applyArmorPointsRestoration(weapon: self, owner: owner, opposition: opposition)
+        }
+        return armorPointsApplied
+    }
+    
     func getEffectsDescription() -> String? {
         var components = [String]()
         if let basePillEffectsDescription = self.basePill.effectsDescription {
@@ -89,19 +124,29 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
         for effectPill in self.effectPills {
             components.append(effectPill.effectsDescription)
         }
+        for buffPill in self.buffPills {
+            components.append(buffPill.effectsDescription)
+        }
         return components.joined(separator: "\n")
     }
     
-    func getEffectPillsDescription() -> String? {
+    func getPreviewEffectsDescription() -> String? {
         var descriptions = [String]()
         for effectPill in self.effectPills {
             descriptions.append(effectPill.effectsDescription)
+        }
+        for buffPill in self.buffPills {
+            descriptions.append(buffPill.effectsDescription)
         }
         return descriptions.isEmpty ? nil : descriptions.joined(separator: "\n")
     }
     
     func addEffect(_ effect: WeaponEffectPill) {
         self.effectPills.append(effect)
+    }
+    
+    func addBuff(_ buff: WeaponBuffPill) {
+        self.buffPills.append(buff)
     }
     
     func getCurrentPrice() -> Int {
@@ -115,13 +160,16 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
         // We only want buffs to apply to weapons that already have the relevant property
         // E.g a health staff that heals, a +10 damage weapon buff shouldn't suddenly cause the healing staff to deal damage
         if self.healthRestoration > 0 {
-            owner.delayedRestorationValues.addRestorationAdjusted(type: .health, sourceOwner: owner, using: self, for: self.healthRestoration)
+            owner.delayedRestorationValues.addRestorationAdjusted(type: .health, sourceOwner: owner, using: self, for: self.getIndicativeHealthRestoration(owner: owner, opposition: opposition))
         }
         if self.damage > 0 {
-            opposition.delayedDamageValues.addDamageAdjusted(sourceOwner: owner, using: self, target: opposition, for: self.damage)
+            opposition.delayedDamageValues.addDamageAdjusted(sourceOwner: owner, using: self, target: opposition, for: self.getIndicativeDamage(owner: owner, opposition: opposition))
         }
         if self.armorPointsRestoration > 0 {
-            owner.delayedRestorationValues.addRestorationAdjusted(type: .armorPoints, sourceOwner: owner, using: self, for: self.armorPointsRestoration)
+            owner.delayedRestorationValues.addRestorationAdjusted(type: .armorPoints, sourceOwner: owner, using: self, for: self.getIndicativeArmorPointsRestoration(owner: owner, opposition: opposition))
+        }
+        if self.restoration > 0 {
+            owner.delayedRestorationValues.addRestorationAdjusted(type: .overflow, sourceOwner: owner, using: self, for: self.getIndicativeRestoration(owner: owner, opposition: opposition))
         }
         
         for pill in self.effectPills {
@@ -154,6 +202,10 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
     }
     
     func hasEffectPill(_ pill: WeaponEffectPill) -> Bool {
+        return self.effectPills.contains(where: { $0.id == pill.id })
+    }
+    
+    func hasBuffPill(_ pill: WeaponBuffPill) -> Bool {
         return self.effectPills.contains(where: { $0.id == pill.id })
     }
     

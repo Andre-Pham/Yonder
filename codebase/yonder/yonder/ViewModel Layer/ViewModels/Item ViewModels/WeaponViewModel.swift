@@ -21,12 +21,17 @@ class WeaponViewModel: ItemViewModel {
                    healthRestorationImage: YonderImages.weaponHealthRestorationIcon,
                    armorPointsRestorationImage: YonderImages.weaponArmorPointsRestorationIcon,
                    remainingUsesImage: YonderImages.weaponRemainingUsesIcon)
-        self.previewEffectsDescription = weapon.getEffectPillsDescription()
+        self.previewEffectsDescription = weapon.getPreviewEffectsDescription()
         self.setEffectsDescription(to: weapon.getEffectsDescription())
         
         weapon.$effectPills.sink(receiveValue: { newValue in
             self.setEffectsDescription(to: weapon.getEffectsDescription())
-            self.previewEffectsDescription = weapon.getEffectPillsDescription()
+            self.previewEffectsDescription = weapon.getPreviewEffectsDescription()
+        }).store(in: &self.subscriptions)
+        
+        weapon.$buffPills.sink(receiveValue: { newValue in
+            self.setEffectsDescription(to: weapon.getEffectsDescription())
+            self.previewEffectsDescription = weapon.getPreviewEffectsDescription()
         }).store(in: &self.subscriptions)
         
         weapon.$durabilityPill.sink(receiveValue: { newValue in

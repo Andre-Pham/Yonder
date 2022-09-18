@@ -130,6 +130,12 @@ class ItemAbstract: Named, Described {
     func armorPointsRestorationDidSet() { }
     func remainingUsesDidSet() { }
     
+    /// Override these in subclasses if it has an ability to buff these stats internally.
+    func getIndicativeDamage(owner: ActorAbstract, opposition: ActorAbstract) -> Int { return self.damage }
+    func getIndicativeRestoration(owner: ActorAbstract, opposition: ActorAbstract) -> Int { return self.restoration }
+    func getIndicativeHealthRestoration(owner: ActorAbstract, opposition: ActorAbstract) -> Int { return self.healthRestoration }
+    func getIndicativeArmorPointsRestoration(owner: ActorAbstract, opposition: ActorAbstract) -> Int { return self.armorPointsRestoration }
+    
     // MARK: - Subscribers
     
     func addDamageSubscriber(_ subscriber: DamageSubscriber) {

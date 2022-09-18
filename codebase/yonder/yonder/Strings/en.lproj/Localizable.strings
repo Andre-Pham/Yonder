@@ -278,6 +278,13 @@
 // Copy Attack
 "weaponEffectPill.copyAttack.description" = "After this performs the final blow on a hostile, this weapon's damage copies their attack.";
 
+// MARK: - Weapon Buff Pills
+
+// Armor Damage Percent
+"weaponBuffPill.armorDamagePercent.increaseDescription1Param" = "Deals %@%% more damage to shields.";
+"weaponBuffPill.armorDamagePercent.decreaseDescription1Param" = "Deals %@%% less damage to shields.";
+"weaponBuffPill.armorDamagePercent.descriptionMultiplier1Param" = "Deals %@x more damage to shields.";
+
 // MARK: - Status Effects
 
 // Burn

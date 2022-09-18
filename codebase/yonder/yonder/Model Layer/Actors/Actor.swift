@@ -207,19 +207,19 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
     // MARK: - Indicative Values
     
     func getIndicativeDamage(of item: Item, opposition: ActorAbstract) -> Int {
-        return BuffApps.getAppliedDamage(owner: self, using: item, target: opposition, damage: item.damage)
+        return BuffApps.getAppliedDamage(owner: self, using: item, target: opposition, damage: item.getIndicativeDamage(owner: self, opposition: opposition))
     }
     
     func getIndicativeRestoration(of item: Item) -> (Int, Int) {
-        return BuffApps.getAppliedRestoration(owner: self, using: item, target: self, restoration: item.restoration)
+        return BuffApps.getAppliedRestoration(owner: self, using: item, target: self, restoration: item.getIndicativeRestoration(owner: self, opposition: NoActor()))
     }
     
     func getIndicativeHealthRestoration(of item: Item) -> Int {
-        return BuffApps.getAppliedHealthRestoration(owner: self, using: item, target: self, healthRestoration: item.healthRestoration)
+        return BuffApps.getAppliedHealthRestoration(owner: self, using: item, target: self, healthRestoration: item.getIndicativeHealthRestoration(owner: self, opposition: NoActor()))
     }
     
     func getIndicativeArmorPointsRestoration(of item: Item) -> Int {
-        return BuffApps.getAppliedArmorPointsRestoration(owner: self, using: item, target: self, armorPointsRestoration: item.armorPointsRestoration)
+        return BuffApps.getAppliedArmorPointsRestoration(owner: self, using: item, target: self, armorPointsRestoration: item.getIndicativeArmorPointsRestoration(owner: self, opposition: NoActor()))
     }
     
     // MARK: - Weapons
