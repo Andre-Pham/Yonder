@@ -11,8 +11,16 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
     
     private(set) var basePurchasePrice: Int = 0
     private let basePill: WeaponBasePill
-    @DidSetPublished private(set) var durabilityPill: WeaponDurabilityPill
-    @DidSetPublished private(set) var effectPills: [WeaponEffectPill]
+    @DidSetPublished private(set) var durabilityPill: WeaponDurabilityPill {
+        didSet {
+            WeaponPillBox.setDurabilityPills(weapon: self)
+        }
+    }
+    @DidSetPublished private(set) var effectPills: [WeaponEffectPill] {
+        didSet {
+            WeaponPillBox.setEffectPills(weapon: self)
+        }
+    }
     var fullSummary: String {
         var summaryComponents = [String]()
         summaryComponents.append(self.name)
@@ -41,6 +49,9 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
         self.basePill.setup(weapon: self)
         self.durabilityPill.setupDurability(weapon: self)
         self.basePurchasePrice = self.getCurrentPrice() // Needs setup to get current price
+        
+        WeaponPillBox.setDurabilityPills(weapon: self)
+        WeaponPillBox.setEffectPills(weapon: self)
     }
     
     required init(_ original: Weapon) {
@@ -54,6 +65,9 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
         self.basePill.setup(weapon: self)
         self.durabilityPill.setupDurability(weapon: self)
         self.basePurchasePrice = original.basePurchasePrice
+        
+        WeaponPillBox.setDurabilityPills(weapon: self)
+        WeaponPillBox.setEffectPills(weapon: self)
         
         // The item's state needs to be restored
         self.setName(to: original.name)

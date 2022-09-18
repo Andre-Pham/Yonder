@@ -420,6 +420,12 @@ enum Strings: Localizable {
             
             case Description2Param
         }
+        
+        enum CopyAttack: Localizable {
+            static let parent: LocalizeParent = WeaponEffectPill.self
+            
+            case Description
+        }
     }
     
     enum StatusEffect: Localizable {

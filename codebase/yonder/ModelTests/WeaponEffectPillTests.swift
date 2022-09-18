@@ -23,7 +23,7 @@ class WeaponEffectPillTests: XCTestCase {
         XCTAssertEqual(weapon.effectPills.count, 1)
         // Test logic
         self.player.addWeapon(self.weapon)
-        self.player.useWeaponWhere(opposition: self.foe, weapon: self.weapon)
+        self.player.useWeaponWhere(opposition: self.foe, weapon: self.player.weapons.first!)
         XCTAssertEqual(self.foe.statusEffects.count, 1)
         XCTAssertEqual(self.foe.health, 445)
     }
@@ -37,14 +37,29 @@ class WeaponEffectPillTests: XCTestCase {
         self.turnManager.completeTurn(player: self.player, playerUsed: NoItem(), foe: foe)
         XCTAssertEqual(self.player.health, 500)
         XCTAssertEqual(self.player.gold, 50)
+        XCTAssertEqual(foe.getWeapon().damage, 0)
         foe.attack(self.player)
         self.turnManager.completeTurn(player: self.player, playerUsed: NoItem(), foe: foe)
         XCTAssertEqual(self.player.health, 500)
         XCTAssertEqual(self.player.gold, 0)
+        XCTAssertEqual(foe.getWeapon().damage, 200)
         foe.attack(self.player)
         self.turnManager.completeTurn(player: self.player, playerUsed: NoItem(), foe: foe)
         XCTAssertEqual(self.player.health, 300)
         XCTAssertEqual(self.player.gold, 0)
+        self.player.modifyGold(by: 1)
+        XCTAssertEqual(foe.getWeapon().damage, 0)
+    }
+    
+    func testCopyAttackEffectPill() throws {
+        self.weapon.addEffect(CopyAttackEffectPill())
+        self.foe.getWeapon().setDamage(to: 20)
+        self.player.addWeapon(self.weapon)
+        self.player.useWeaponWhere(opposition: self.foe, weapon: self.player.weapons.first!)
+        XCTAssertEqual(self.player.weapons.first!.damage, 50)
+        self.foe.setHealth(to: 1)
+        self.player.useWeaponWhere(opposition: self.foe, weapon: self.player.weapons.first!)
+        XCTAssertEqual(self.player.weapons.first!.damage, 20)
     }
 
 }

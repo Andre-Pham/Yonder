@@ -10,7 +10,11 @@ import Foundation
 class Player: ActorAbstract {
     
     @DidSetPublished private(set) var location: Location
-    @DidSetPublished private(set) var gold = 0
+    @DidSetPublished private(set) var gold = 0 {
+        didSet {
+            OnGoldChangePublisher.publish(player: self)
+        }
+    }
     private(set) var attributes = [PlayerAttribute]()
     @DidSetPublished private(set) var loot: LootBag? = nil
     

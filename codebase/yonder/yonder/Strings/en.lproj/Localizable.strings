@@ -275,6 +275,9 @@
 // Goblin
 "weaponEffectPill.goblin.description2Param" = "Steal %@ gold. If no gold remains, deal %@ damage instead.";
 
+// Copy Attack
+"weaponEffectPill.copyAttack.description" = "After this performs the final blow on a hostile, this weapon's damage copies their attack.";
+
 // MARK: - Status Effects
 
 // Burn
