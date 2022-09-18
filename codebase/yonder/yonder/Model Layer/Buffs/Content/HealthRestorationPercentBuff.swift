@@ -39,7 +39,7 @@ class HealthRestorationPercentBuff: BuffAbstract {
         super.init(original)
     }
     
-    override func applyHealth(to health: Int, source: Any) -> Int? {
+    override func applyHealth(to health: Int, source: Any) -> Int {
         return Int(round(Double(health)*self.healthFraction))
     }
     

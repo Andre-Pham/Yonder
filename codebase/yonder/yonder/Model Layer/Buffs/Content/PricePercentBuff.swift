@@ -39,7 +39,7 @@ class PricePercentBuff: BuffAbstract {
         super.init(original)
     }
     
-    override func applyPrice(to gold: Int) -> Int? {
+    override func applyPrice(to gold: Int) -> Int {
         return Int(round(Double(gold)*self.priceFraction))
     }
     

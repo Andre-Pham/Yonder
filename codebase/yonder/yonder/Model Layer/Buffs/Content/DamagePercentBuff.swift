@@ -39,7 +39,7 @@ class DamagePercentBuff: BuffAbstract {
         super.init(original)
     }
     
-    override func applyDamage(to damage: Int, source: Any) -> Int? {
+    override func applyDamage(to damage: Int, source: Any) -> Int {
         return Int(round(Double(damage)*self.damageFraction))
     }
     

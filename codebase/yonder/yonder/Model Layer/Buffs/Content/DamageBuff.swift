@@ -39,7 +39,7 @@ class DamageBuff: BuffAbstract {
         super.init(original)
     }
     
-    override func applyDamage(to damage: Int, source: Any) -> Int? {
+    override func applyDamage(to damage: Int, source: Any) -> Int {
         return self.damageDifference + damage
     }
     

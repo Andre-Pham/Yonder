@@ -15,20 +15,20 @@ enum BuffApplications {
         if owner.id == target.id {
             for buff in target.getAllBuffsInPriority() {
                 if buff.type == .damage {
-                    appliedDamage = buff.applyDamage(to: appliedDamage, source: source)!
+                    appliedDamage = buff.applyDamage(to: appliedDamage, source: source)
                 }
             }
         } else {
             // Owner buffs
             for buff in owner.getAllBuffsInPriority() {
                 if buff.type == .damage && (buff.direction == .outgoing || buff.direction == .bidirectional) {
-                    appliedDamage = buff.applyDamage(to: appliedDamage, source: source)!
+                    appliedDamage = buff.applyDamage(to: appliedDamage, source: source)
                 }
             }
             // Target buffs
             for buff in target.getAllBuffsInPriority() {
                 if buff.type == .damage && (buff.direction == .incoming || buff.direction == .bidirectional) {
-                    appliedDamage = buff.applyDamage(to: appliedDamage, source: source)!
+                    appliedDamage = buff.applyDamage(to: appliedDamage, source: source)
                 }
             }
         }
@@ -50,20 +50,20 @@ enum BuffApplications {
         if owner.id == target.id {
             for buff in target.getAllBuffsInPriority() {
                 if buff.type == .health {
-                    appliedHealthRestoration = buff.applyHealth(to: appliedHealthRestoration, source: source)!
+                    appliedHealthRestoration = buff.applyHealth(to: appliedHealthRestoration, source: source)
                 }
             }
         } else {
             // Owner buffs
             for buff in owner.getAllBuffsInPriority() {
                 if buff.type == .health && (buff.direction == .outgoing || buff.direction == .bidirectional) {
-                    appliedHealthRestoration = buff.applyHealth(to: appliedHealthRestoration, source: source)!
+                    appliedHealthRestoration = buff.applyHealth(to: appliedHealthRestoration, source: source)
                 }
             }
             // Target buffs
             for buff in target.getAllBuffsInPriority() {
                 if buff.type == .health && (buff.direction == .incoming || buff.direction == .bidirectional) {
-                    appliedHealthRestoration = buff.applyHealth(to: appliedHealthRestoration, source: source)!
+                    appliedHealthRestoration = buff.applyHealth(to: appliedHealthRestoration, source: source)
                 }
             }
         }
@@ -75,20 +75,20 @@ enum BuffApplications {
         if owner.id == target.id {
             for buff in target.getAllBuffsInPriority() {
                 if buff.type == .armorPoints {
-                    appliedArmorPointsRestoration = buff.applyArmorPoints(to: appliedArmorPointsRestoration, source: source)!
+                    appliedArmorPointsRestoration = buff.applyArmorPoints(to: appliedArmorPointsRestoration, source: source)
                 }
             }
         } else {
             // Owner buffs
             for buff in owner.getAllBuffsInPriority() {
                 if buff.type == .armorPoints && (buff.direction == .outgoing || buff.direction == .bidirectional) {
-                    appliedArmorPointsRestoration = buff.applyArmorPoints(to: appliedArmorPointsRestoration, source: source)!
+                    appliedArmorPointsRestoration = buff.applyArmorPoints(to: appliedArmorPointsRestoration, source: source)
                 }
             }
             // Target buffs
             for buff in target.getAllBuffsInPriority() {
                 if buff.type == .armorPoints && (buff.direction == .incoming || buff.direction == .bidirectional) {
-                    appliedArmorPointsRestoration = buff.applyArmorPoints(to: appliedArmorPointsRestoration, source: source)!
+                    appliedArmorPointsRestoration = buff.applyArmorPoints(to: appliedArmorPointsRestoration, source: source)
                 }
             }
         }
@@ -99,7 +99,7 @@ enum BuffApplications {
         var adjustedPrice = price
         for buff in purchaser.getAllBuffsInPriority() {
             if buff.type == .price {
-                adjustedPrice = buff.applyPrice(to: adjustedPrice)!
+                adjustedPrice = buff.applyPrice(to: adjustedPrice)
             }
         }
         return adjustedPrice
@@ -109,7 +109,7 @@ enum BuffApplications {
         var adjustedGold = gold
         for buff in receiver.getAllBuffsInPriority() {
             if buff.type == .goldBonus {
-                adjustedGold = buff.applyGoldBonus(to: adjustedGold)!
+                adjustedGold = buff.applyGoldBonus(to: adjustedGold)
             }
         }
         return adjustedGold

@@ -39,7 +39,7 @@ class ArmorPointsRestorationPercentBuff: BuffAbstract {
         super.init(original)
     }
     
-    override func applyArmorPoints(to armorPoints: Int, source: Any) -> Int? {
+    override func applyArmorPoints(to armorPoints: Int, source: Any) -> Int {
         return Int(round(Double(armorPoints)*self.armorPointsFraction))
     }
     

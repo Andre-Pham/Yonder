@@ -89,24 +89,24 @@ class BuffAbstract: EffectsDescribed, Clonable {
         self.timeRemaining! -= 1
     }
     
-    func applyDamage(to damage: Int, source: Any) -> Int? {
-        return nil
+    func applyDamage(to damage: Int, source: Any) -> Int {
+        return damage
     }
     
-    func applyHealth(to health: Int, source: Any) -> Int? {
-        return nil
+    func applyHealth(to health: Int, source: Any) -> Int {
+        return health
     }
     
-    func applyArmorPoints(to armorPoints: Int, source: Any) -> Int? {
-        return nil
+    func applyArmorPoints(to armorPoints: Int, source: Any) -> Int {
+        return armorPoints
     }
     
-    func applyPrice(to gold: Int) -> Int? {
-        return nil
+    func applyPrice(to gold: Int) -> Int {
+        return gold
     }
     
-    func applyGoldBonus(to gold: Int) -> Int? {
-        return nil
+    func applyGoldBonus(to gold: Int) -> Int {
+        return gold
     }
     
 }
