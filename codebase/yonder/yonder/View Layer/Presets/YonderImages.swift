@@ -38,7 +38,7 @@ enum YonderImages {
     static let consumableHealthRestorationIcon = Image("Healing")
     static let weaponRemainingUsesIcon = Image("BrokenSword")
     static let potionRemainingUsesIcon = Image("Potion")
-    static let consumableRemainingUsesIcon = YonderImages.missingIcon
+    static let consumableRemainingUsesIcon = Image("Fruit")
     static let offerIcon = Image("Scroll")
     static let timeRemainingIcon = Image("Clock")
     static let weaponArmorPointsRestorationIcon = Image("MetalPlating")
@@ -60,7 +60,7 @@ enum YonderImages {
     static let weaponIcon = Image("Axe")
     static let potionIcon = Image("Potion")
     static let armorIcon = Image("Bracer")
-    static let consumableIcon = YonderImages.missingIcon
+    static let consumableIcon = Image("Fruit")
     
     // MARK: - Location Icons
     
