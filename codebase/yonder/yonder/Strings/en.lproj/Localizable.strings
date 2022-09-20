@@ -412,6 +412,14 @@
 "buff.healthRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases health given to others by %@%%.";
 "buff.healthRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces health given to others by %@%%.";
 
+// Health Restoration
+"buff.healthRestoration.effectsDescription.bidirectionalIncrease1Param" = "Increases health restored and given to others by %@.";
+"buff.healthRestoration.effectsDescription.bidirectionalDecrease1Param" = "Reduces health restored and given to others by %@.";
+"buff.healthRestoration.effectsDescription.incomingIncrease1Param" = "Increases health restored by %@.";
+"buff.healthRestoration.effectsDescription.incomingDecrease1Param" = "Reduces health restored by %@.";
+"buff.healthRestoration.effectsDescription.outgoingIncrease1Param" = "Increases health given to others by %@.";
+"buff.healthRestoration.effectsDescription.outgoingDecrease1Param" = "Reduces health given to others by %@.";
+
 // Armor Restoration Percent
 "buff.armorRestorationPercent.effectsDescription.bidirectionalIncrease1Param" = "Increases shields repaired and given to others by %@%%.";
 "buff.armorRestorationPercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces shields repaired and given to others by %@%%.";
@@ -419,6 +427,14 @@
 "buff.armorRestorationPercent.effectsDescription.incomingDecrease1Param" = "Reduces shields repaired by %@%%.";
 "buff.armorRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases shields given to others by %@%%.";
 "buff.armorRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces shields given to others by %@%%.";
+
+// Armor Restoration
+"buff.armorRestoration.effectsDescription.bidirectionalIncrease1Param" = "Increases shields repaired and given to others by %@.";
+"buff.armorRestoration.effectsDescription.bidirectionalDecrease1Param" = "Reduces shields repaired and given to others by %@.";
+"buff.armorRestoration.effectsDescription.incomingIncrease1Param" = "Increases shields repaired by %@.";
+"buff.armorRestoration.effectsDescription.incomingDecrease1Param" = "Reduces shields repaired by %@.";
+"buff.armorRestoration.effectsDescription.outgoingIncrease1Param" = "Increases shields given to others by %@.";
+"buff.armorRestoration.effectsDescription.outgoingDecrease1Param" = "Reduces shields given to others by %@.";
 
 // Price Percent
 "buff.pricePercent.effectsDescription.bidirectionalIncrease1Param" = "Increases gold earned and paid out by %@%%.";

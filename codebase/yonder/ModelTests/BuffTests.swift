@@ -124,5 +124,15 @@ class BuffTests: XCTestCase {
         XCTAssertEqual(self.player.getIndicativeDamage(of: BaseAttack(damage: 100), opposition: NoActor()), 100)
         XCTAssertEqual(self.player.getIndicativeDamage(of: DamagePotion(tier: .I, potionCount: 1, basePurchasePrice: 10), opposition: NoActor()), DamagePotion.Tier.I.damage*2)
     }
+    
+    func testArmorPointsRestorationBuff() throws {
+        self.player.addBuff(ArmorPointsRestorationBuff(sourceName: "", direction: .incoming, duration: nil, armorPointsDifference: 5))
+        XCTAssertEqual(self.player.getIndicativeArmorPointsRestoration(of: self.baseArmorPointsRestorationWeapon), 105)
+    }
+    
+    func testHealthRestorationBuff() throws {
+        self.player.addBuff(HealthRestorationBuff(sourceName: "", direction: .incoming, duration: nil, healthDifference: 5))
+        XCTAssertEqual(self.player.getIndicativeHealthRestoration(of: self.baseHealthRestorationWeapon), 105)
+    }
 
 }

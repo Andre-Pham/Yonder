@@ -644,11 +644,41 @@ enum Strings: Localizable {
             }
         }
         
+        enum HealthRestoration: Localizable {
+            static let parent: LocalizeParent = Buff.self
+            
+            enum EffectsDescription: Localizable {
+                static let parent: LocalizeParent = HealthRestoration.self
+                
+                case BidirectionalIncrease1Param
+                case BidirectionalDecrease1Param
+                case IncomingIncrease1Param
+                case IncomingDecrease1Param
+                case OutgoingIncrease1Param
+                case OutgoingDecrease1Param
+            }
+        }
+        
         enum ArmorRestorationPercent: Localizable {
             static let parent: LocalizeParent = Buff.self
             
             enum EffectsDescription: Localizable {
                 static let parent: LocalizeParent = ArmorRestorationPercent.self
+                
+                case BidirectionalIncrease1Param
+                case BidirectionalDecrease1Param
+                case IncomingIncrease1Param
+                case IncomingDecrease1Param
+                case OutgoingIncrease1Param
+                case OutgoingDecrease1Param
+            }
+        }
+        
+        enum ArmorRestoration: Localizable {
+            static let parent: LocalizeParent = Buff.self
+            
+            enum EffectsDescription: Localizable {
+                static let parent: LocalizeParent = ArmorRestoration.self
                 
                 case BidirectionalIncrease1Param
                 case BidirectionalDecrease1Param
