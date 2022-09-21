@@ -9,17 +9,21 @@ import Foundation
 import SwiftUI
 
 struct WithInspectSheet: ViewModifier {
+    /// Published variables must not be bound to view updates, hence seperate internal state is managed along with the binding
+    /// For more information, see https://github.com/Andre-Pham/yonder/issues/5
+    @State private var isPresentedState = false
     @Binding var isPresented: Bool
     let pageGeometry: GeometryProxy
     var viewContent: AnyView
     
     func body(content: Content) -> some View {
         content
-            .sheet(isPresented: self.$isPresented) {
+            .sheet(isPresented: self.$isPresentedState) {
                 InspectSheet(pageGeometry: self.pageGeometry) {
                     self.viewContent
                 }
             }
+            .sync(self.$isPresented, with: self.$isPresentedState)
     }
 }
 extension View {
