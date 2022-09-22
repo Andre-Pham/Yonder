@@ -101,7 +101,7 @@ struct SettingsView: View {
                     GameManager.instance.playerVM.player.addConsumable(MultiplyGoldConsumable(basePurchasePrice: 10, goldFraction: 2.0))
                     GameManager.instance.playerVM.player.addConsumable(BonusHealthConsumable(basePurchasePrice: 10, tier: .II))
                     GameManager.instance.playerVM.player.addConsumable(RipeningSetHealthConsumable(basePurchasePrice: 10))
-                    GameManager.instance.playerVM.player.addConsumable(TurnImprovingRestoration(basePurchasePrice: 10))
+                    GameManager.instance.playerVM.player.addConsumable(TurnImprovingRestorationConsumable(basePurchasePrice: 10))
                 }
                 .padding()
                 .background(Color.red)

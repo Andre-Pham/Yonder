@@ -16,6 +16,13 @@
 "currencySymbol" = "$";
 "dotPoint" = "■";
 
+// Tiers
+"tier1" = "I";
+"tier2" = "II";
+"tier3" = "III";
+"tier4" = "IV";
+"tier5" = "V";
+
 // MARK: - Main Menu
 
 "mainMenu.newGame" = "New Game";
@@ -299,13 +306,6 @@
 
 // MARK: - Potions
 
-// Tiers
-"potion.tier1" = "I";
-"potion.tier2" = "II";
-"potion.tier3" = "III";
-"potion.tier4" = "IV";
-"potion.tier5" = "V";
-
 // Health Restoration Potion
 "potion.healthRestoration.name" = "Health Potion";
 "potion.healthRestoration.description" = "A scarlet red solution brews in a clear elongated bottle. Warm to the touch, it smells of acrid.";
@@ -375,6 +375,11 @@
 "consumable.ripeningSetHealth.effectsDescription.stage21Param" = "Sets you to 2/3 your maximum health. Fully ripens in %@ turn(s).";
 "consumable.ripeningSetHealth.effectsDescription.stage31Param" = "Sets you to your maximum health. Goes bad in %@ turn(s).";
 "consumable.ripeningSetHealth.effectsDescription.stage4" = "Does nothing. To dispose, consume this item.";
+
+// Restore Armor Points
+"consumable.restoreArmorPoints.name" = "Armor Patch";
+"consumable.restoreArmorPoints.description" = "A scrap piece of metal perfect for patching up your armor.";
+"consumable.restoreArmorPoints.effectsDescription1Param" = "Repairs %@ shields.";
 
 // MARK: - Buffs
 
@@ -484,6 +489,22 @@
 "buff.armorRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases shields given to others by %@%%.";
 "buff.armorRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces shields given to others by %@%%.";
 
+// Weapon Armor Restoration Percent
+"buff.weaponArmorRestorationPercent.effectsDescription.bidirectionalIncrease1Param" = "Increases shields repaired and given to others via weapons by %@%%.";
+"buff.weaponArmorRestorationPercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces shields repaired and given to others via weaopns by %@%%.";
+"buff.weaponArmorRestorationPercent.effectsDescription.incomingIncrease1Param" = "Increases shields repaired via weapons by %@%%.";
+"buff.weaponArmorRestorationPercent.effectsDescription.incomingDecrease1Param" = "Reduces shields repaired via weapons by %@%%.";
+"buff.weaponArmorRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases shields given to others via weapons by %@%%.";
+"buff.weaponArmorRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces shields given to others via weapons by %@%%.";
+
+// Consumable Armor Restoration Percent
+"buff.consumableArmorRestorationPercent.effectsDescription.bidirectionalIncrease1Param" = "Increases shields repaired and given to others via items by %@%%.";
+"buff.consumableArmorRestorationPercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces shields repaired and given to others via items by %@%%.";
+"buff.consumableArmorRestorationPercent.effectsDescription.incomingIncrease1Param" = "Increases shields repaired via items by %@%%.";
+"buff.consumableArmorRestorationPercent.effectsDescription.incomingDecrease1Param" = "Reduces shields repaired via items by %@%%.";
+"buff.consumableArmorRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases shields given to others via items by %@%%.";
+"buff.consumableArmorRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces shields given to others via items by %@%%.";
+
 // Armor Restoration
 "buff.armorRestoration.effectsDescription.bidirectionalIncrease1Param" = "Increases shields repaired and given to others by %@.";
 "buff.armorRestoration.effectsDescription.bidirectionalDecrease1Param" = "Reduces shields repaired and given to others by %@.";
@@ -491,6 +512,22 @@
 "buff.armorRestoration.effectsDescription.incomingDecrease1Param" = "Reduces shields repaired by %@.";
 "buff.armorRestoration.effectsDescription.outgoingIncrease1Param" = "Increases shields given to others by %@.";
 "buff.armorRestoration.effectsDescription.outgoingDecrease1Param" = "Reduces shields given to others by %@.";
+
+// Weapon Armor Restoration
+"buff.weaponArmorRestoration.effectsDescription.bidirectionalIncrease1Param" = "Increases shields repaired and given to others by %@.";
+"buff.weaponArmorRestoration.effectsDescription.bidirectionalDecrease1Param" = "Reduces shields repaired and given to others by %@.";
+"buff.weaponArmorRestoration.effectsDescription.incomingIncrease1Param" = "Increases shields repaired by %@.";
+"buff.weaponArmorRestoration.effectsDescription.incomingDecrease1Param" = "Reduces shields repaired by %@.";
+"buff.weaponArmorRestoration.effectsDescription.outgoingIncrease1Param" = "Increases shields given to others by %@.";
+"buff.weaponArmorRestoration.effectsDescription.outgoingDecrease1Param" = "Reduces shields given to others by %@.";
+
+// Consumable Armor Restoration
+"buff.consumableArmorRestoration.effectsDescription.bidirectionalIncrease1Param" = "Increases shields repaired and given to others by %@.";
+"buff.consumableArmorRestoration.effectsDescription.bidirectionalDecrease1Param" = "Reduces shields repaired and given to others by %@.";
+"buff.consumableArmorRestoration.effectsDescription.incomingIncrease1Param" = "Increases shields repaired by %@.";
+"buff.consumableArmorRestoration.effectsDescription.incomingDecrease1Param" = "Reduces shields repaired by %@.";
+"buff.consumableArmorRestoration.effectsDescription.outgoingIncrease1Param" = "Increases shields given to others by %@.";
+"buff.consumableArmorRestoration.effectsDescription.outgoingDecrease1Param" = "Reduces shields given to others by %@.";
 
 // Price Percent
 "buff.pricePercent.effectsDescription.bidirectionalIncrease1Param" = "Increases gold earned and paid out by %@%%.";

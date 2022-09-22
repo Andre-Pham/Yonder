@@ -176,5 +176,29 @@ class BuffTests: XCTestCase {
         XCTAssertEqual(self.player.getIndicativeHealthRestoration(of: self.baseHealthRestorationWeapon), 110)
         XCTAssertEqual(self.player.getIndicativeHealthRestoration(of: HealthRestorationPotion(tier: .I, potionCount: 1, basePurchasePrice: 10)), HealthRestorationPotion.Tier.I.healthRestoration)
     }
+    
+    func testWeaponArmorPointsRestorationPercentBuff() throws {
+        self.player.addBuff(WeaponArmorPointsRestorationPercentBuff(sourceName: "", direction: .incoming, duration: nil, armorPointsFraction: 2.0))
+        XCTAssertEqual(self.player.getIndicativeArmorPointsRestoration(of: self.baseArmorPointsRestorationWeapon), 200)
+        XCTAssertEqual(self.player.getIndicativeArmorPointsRestoration(of: RestoreArmorPointsConsumable(basePurchasePrice: 0, tier: .I)), RestoreArmorPointsConsumable.Tier.I.armorPointsRestoration)
+    }
+    
+    func testConsumableArmorPointsRestorationPercentBuff() throws {
+        self.player.addBuff(ConsumableArmorPointsRestorationPercentBuff(sourceName: "", direction: .incoming, duration: nil, armorPointsFraction: 2.0))
+        XCTAssertEqual(self.player.getIndicativeArmorPointsRestoration(of: self.baseArmorPointsRestorationWeapon), 100)
+        XCTAssertEqual(self.player.getIndicativeArmorPointsRestoration(of: RestoreArmorPointsConsumable(basePurchasePrice: 0, tier: .I)), RestoreArmorPointsConsumable.Tier.I.armorPointsRestoration*2)
+    }
+    
+    func testWeaponArmorPointsRestorationBuff() throws {
+        self.player.addBuff(WeaponArmorPointsRestorationBuff(sourceName: "", direction: .incoming, duration: nil, armorPointsDifference: 10))
+        XCTAssertEqual(self.player.getIndicativeArmorPointsRestoration(of: self.baseArmorPointsRestorationWeapon), 110)
+        XCTAssertEqual(self.player.getIndicativeArmorPointsRestoration(of: RestoreArmorPointsConsumable(basePurchasePrice: 0, tier: .I)), RestoreArmorPointsConsumable.Tier.I.armorPointsRestoration)
+    }
+    
+    func testConsumableArmorPointsRestorationBuff() throws {
+        self.player.addBuff(ConsumableArmorPointsRestorationBuff(sourceName: "", direction: .incoming, duration: nil, armorPointsDifference: 10))
+        XCTAssertEqual(self.player.getIndicativeArmorPointsRestoration(of: self.baseArmorPointsRestorationWeapon), 100)
+        XCTAssertEqual(self.player.getIndicativeArmorPointsRestoration(of: RestoreArmorPointsConsumable(basePurchasePrice: 0, tier: .I)), RestoreArmorPointsConsumable.Tier.I.armorPointsRestoration + 10)
+    }
 
 }

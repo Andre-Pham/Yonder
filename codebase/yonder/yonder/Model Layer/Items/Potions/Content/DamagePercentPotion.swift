@@ -18,9 +18,9 @@ class DamagePercentPotion: Potion {
         
         var string: String {
             switch self {
-            case .I: return Strings.Potion.Tier1.local
-            case .II: return Strings.Potion.Tier2.local
-            case .III: return Strings.Potion.Tier3.local
+            case .I: return Strings.Tier1.local
+            case .II: return Strings.Tier2.local
+            case .III: return Strings.Tier3.local
             }
         }
         

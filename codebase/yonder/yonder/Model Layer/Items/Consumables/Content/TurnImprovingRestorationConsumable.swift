@@ -1,5 +1,5 @@
 //
-//  TurnImprovingRestoration.swift
+//  TurnImprovingRestorationConsumable.swift
 //  yonder
 //
 //  Created by Andre Pham on 7/9/2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TurnImprovingRestoration: Consumable, OnTurnEndSubscriber {
+class TurnImprovingRestorationConsumable: Consumable, OnTurnEndSubscriber {
     
     /// The amount of restoration this consumable starts with
     private let startingRestoration = 10

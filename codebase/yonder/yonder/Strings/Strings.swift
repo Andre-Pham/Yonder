@@ -14,6 +14,12 @@ enum Strings: Localizable {
     case CurrencySymbol
     case DotPoint
     
+    case Tier1
+    case Tier2
+    case Tier3
+    case Tier4
+    case Tier5
+    
     enum MainMenu: Localizable {
         static let parent: LocalizeParent = Strings.self
         
@@ -465,12 +471,6 @@ enum Strings: Localizable {
     enum Potion: Localizable {
         static let parent: LocalizeParent = Strings.self
         
-        case Tier1
-        case Tier2
-        case Tier3
-        case Tier4
-        case Tier5
-        
         enum HealthRestoration: Localizable {
             static let parent: LocalizeParent = Potion.self
             
@@ -591,6 +591,14 @@ enum Strings: Localizable {
                 case Stage31Param
                 case Stage4
             }
+        }
+        
+        enum RestoreArmorPoints: Localizable {
+            static let parent: LocalizeParent = Consumable.self
+            
+            case Name
+            case Description
+            case EffectsDescription1Param
         }
     }
     
@@ -764,11 +772,71 @@ enum Strings: Localizable {
             }
         }
         
+        enum WeaponArmorRestorationPercent: Localizable {
+            static let parent: LocalizeParent = Buff.self
+            
+            enum EffectsDescription: Localizable {
+                static let parent: LocalizeParent = WeaponArmorRestorationPercent.self
+                
+                case BidirectionalIncrease1Param
+                case BidirectionalDecrease1Param
+                case IncomingIncrease1Param
+                case IncomingDecrease1Param
+                case OutgoingIncrease1Param
+                case OutgoingDecrease1Param
+            }
+        }
+        
+        enum ConsumableArmorRestorationPercent: Localizable {
+            static let parent: LocalizeParent = Buff.self
+            
+            enum EffectsDescription: Localizable {
+                static let parent: LocalizeParent = ConsumableArmorRestorationPercent.self
+                
+                case BidirectionalIncrease1Param
+                case BidirectionalDecrease1Param
+                case IncomingIncrease1Param
+                case IncomingDecrease1Param
+                case OutgoingIncrease1Param
+                case OutgoingDecrease1Param
+            }
+        }
+        
         enum ArmorRestoration: Localizable {
             static let parent: LocalizeParent = Buff.self
             
             enum EffectsDescription: Localizable {
                 static let parent: LocalizeParent = ArmorRestoration.self
+                
+                case BidirectionalIncrease1Param
+                case BidirectionalDecrease1Param
+                case IncomingIncrease1Param
+                case IncomingDecrease1Param
+                case OutgoingIncrease1Param
+                case OutgoingDecrease1Param
+            }
+        }
+        
+        enum WeaponArmorRestoration: Localizable {
+            static let parent: LocalizeParent = Buff.self
+            
+            enum EffectsDescription: Localizable {
+                static let parent: LocalizeParent = WeaponArmorRestoration.self
+                
+                case BidirectionalIncrease1Param
+                case BidirectionalDecrease1Param
+                case IncomingIncrease1Param
+                case IncomingDecrease1Param
+                case OutgoingIncrease1Param
+                case OutgoingDecrease1Param
+            }
+        }
+        
+        enum ConsumableArmorRestoration: Localizable {
+            static let parent: LocalizeParent = Buff.self
+            
+            enum EffectsDescription: Localizable {
+                static let parent: LocalizeParent = ConsumableArmorRestoration.self
                 
                 case BidirectionalIncrease1Param
                 case BidirectionalDecrease1Param

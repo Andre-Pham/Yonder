@@ -20,11 +20,11 @@ class HealthRestorationPotion: Potion {
         
         var string: String {
             switch self {
-            case .I: return Strings.Potion.Tier1.local
-            case .II: return Strings.Potion.Tier2.local
-            case .III: return Strings.Potion.Tier3.local
-            case .IV: return Strings.Potion.Tier4.local
-            case .V: return Strings.Potion.Tier5.local
+            case .I: return Strings.Tier1.local
+            case .II: return Strings.Tier2.local
+            case .III: return Strings.Tier3.local
+            case .IV: return Strings.Tier4.local
+            case .V: return Strings.Tier5.local
             }
         }
         
