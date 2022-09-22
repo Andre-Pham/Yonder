@@ -134,5 +134,47 @@ class BuffTests: XCTestCase {
         self.player.addBuff(HealthRestorationBuff(sourceName: "", direction: .incoming, duration: nil, healthDifference: 5))
         XCTAssertEqual(self.player.getIndicativeHealthRestoration(of: self.baseHealthRestorationWeapon), 105)
     }
+    
+    func testWeaponDamagePercentBuff() throws {
+        self.player.addBuff(WeaponDamagePercentBuff(sourceName: "", direction: .outgoing, duration: nil, damageFraction: 2.0))
+        XCTAssertEqual(self.player.getIndicativeDamage(of: BaseAttack(damage: 100), opposition: NoActor()), 200)
+        XCTAssertEqual(self.player.getIndicativeDamage(of: DamagePotion(tier: .I, potionCount: 1, basePurchasePrice: 10), opposition: NoActor()), DamagePotion.Tier.I.damage)
+    }
+    
+    func testPotionDamageBuff() throws {
+        self.player.addBuff(PotionDamageBuff(sourceName: "", direction: .outgoing, duration: nil, damageDifference: 10))
+        XCTAssertEqual(self.player.getIndicativeDamage(of: BaseAttack(damage: 100), opposition: NoActor()), 100)
+        XCTAssertEqual(self.player.getIndicativeDamage(of: DamagePotion(tier: .I, potionCount: 1, basePurchasePrice: 10), opposition: NoActor()), DamagePotion.Tier.I.damage + 10)
+    }
+    
+    func testWeaponDamageBuff() throws {
+        self.player.addBuff(WeaponDamageBuff(sourceName: "", direction: .outgoing, duration: nil, damageDifference: 10))
+        XCTAssertEqual(self.player.getIndicativeDamage(of: BaseAttack(damage: 100), opposition: NoActor()), 110)
+        XCTAssertEqual(self.player.getIndicativeDamage(of: DamagePotion(tier: .I, potionCount: 1, basePurchasePrice: 10), opposition: NoActor()), DamagePotion.Tier.I.damage)
+    }
+    
+    func testPotionHealthRestorationPercentBuff() throws {
+        self.player.addBuff(PotionHealthRestorationPercentBuff(sourceName: "", direction: .incoming, duration: nil, healthFraction: 2.0))
+        XCTAssertEqual(self.player.getIndicativeHealthRestoration(of: self.baseHealthRestorationWeapon), 100)
+        XCTAssertEqual(self.player.getIndicativeHealthRestoration(of: HealthRestorationPotion(tier: .I, potionCount: 1, basePurchasePrice: 10)), HealthRestorationPotion.Tier.I.healthRestoration*2)
+    }
+    
+    func testWeaponHealthRestorationPercentBuff() throws {
+        self.player.addBuff(WeaponHealthRestorationPercentBuff(sourceName: "", direction: .incoming, duration: nil, healthFraction: 2.0))
+        XCTAssertEqual(self.player.getIndicativeHealthRestoration(of: self.baseHealthRestorationWeapon), 200)
+        XCTAssertEqual(self.player.getIndicativeHealthRestoration(of: HealthRestorationPotion(tier: .I, potionCount: 1, basePurchasePrice: 10)), HealthRestorationPotion.Tier.I.healthRestoration)
+    }
+    
+    func testPotionHealthRestorationBuff() throws {
+        self.player.addBuff(PotionHealthRestorationBuff(sourceName: "", direction: .incoming, duration: nil, healthDifference: 10))
+        XCTAssertEqual(self.player.getIndicativeHealthRestoration(of: self.baseHealthRestorationWeapon), 100)
+        XCTAssertEqual(self.player.getIndicativeHealthRestoration(of: HealthRestorationPotion(tier: .I, potionCount: 1, basePurchasePrice: 10)), HealthRestorationPotion.Tier.I.healthRestoration + 10)
+    }
+    
+    func testWeaponHealthRestorationBuff() throws {
+        self.player.addBuff(WeaponHealthRestorationBuff(sourceName: "", direction: .incoming, duration: nil, healthDifference: 10))
+        XCTAssertEqual(self.player.getIndicativeHealthRestoration(of: self.baseHealthRestorationWeapon), 110)
+        XCTAssertEqual(self.player.getIndicativeHealthRestoration(of: HealthRestorationPotion(tier: .I, potionCount: 1, basePurchasePrice: 10)), HealthRestorationPotion.Tier.I.healthRestoration)
+    }
 
 }

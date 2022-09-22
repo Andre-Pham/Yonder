@@ -396,6 +396,14 @@
 "buff.potionDamagePercent.effectsDescription.outgoingIncrease1Param" = "Increases damage dealt via potions by %@%%.";
 "buff.potionDamagePercent.effectsDescription.outgoingDecrease1Param" = "Reduces damage dealt via potions by %@%%.";
 
+// Weapon Damage Percent
+"buff.weaponDamagePercent.effectsDescription.bidirectionalIncrease1Param" = "Increases damage dealt and taken via potions by %@%%.";
+"buff.weaponDamagePercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces damage dealt and taken via weapons/attacks by %@%%.";
+"buff.weaponDamagePercent.effectsDescription.incomingIncrease1Param" = "Increases damage taken via weapons/attacks by %@%%.";
+"buff.weaponDamagePercent.effectsDescription.incomingDecrease1Param" = "Reduces damage taken via weapons/attacks by %@%%.";
+"buff.weaponDamagePercent.effectsDescription.outgoingIncrease1Param" = "Increases damage dealt via weapons by %@%%.";
+"buff.weaponDamagePercent.effectsDescription.outgoingDecrease1Param" = "Reduces damage dealt via weapons by %@%%.";
+
 // Damage
 "buff.damage.effectsDescription.bidirectionalIncrease1Param" = "Increases damage dealt and taken by %@.";
 "buff.damage.effectsDescription.bidirectionalDecrease1Param" = "Reduces damage dealt and taken by %@.";
@@ -403,6 +411,22 @@
 "buff.damage.effectsDescription.incomingDecrease1Param" = "Reduces damage taken by %@.";
 "buff.damage.effectsDescription.outgoingIncrease1Param" = "Increases damage dealt by %@.";
 "buff.damage.effectsDescription.outgoingDecrease1Param" = "Reduces damage dealt by %@.";
+
+// Potion Damage
+"buff.potionDamage.effectsDescription.bidirectionalIncrease1Param" = "Increases damage dealt and taken via potions by %@.";
+"buff.potionDamage.effectsDescription.bidirectionalDecrease1Param" = "Reduces damage dealt and taken via potions by %@.";
+"buff.potionDamage.effectsDescription.incomingIncrease1Param" = "Increases damage taken via potions by %@.";
+"buff.potionDamage.effectsDescription.incomingDecrease1Param" = "Reduces damage taken via potions by %@.";
+"buff.potionDamage.effectsDescription.outgoingIncrease1Param" = "Increases damage dealt via potions by %@.";
+"buff.potionDamage.effectsDescription.outgoingDecrease1Param" = "Reduces damage dealt via potions by %@.";
+
+// Weapon Damage
+"buff.weaponDamage.effectsDescription.bidirectionalIncrease1Param" = "Increases damage dealt and taken via weapons/attacks by %@.";
+"buff.weaponDamage.effectsDescription.bidirectionalDecrease1Param" = "Reduces damage dealt and taken via weapons/attacks by %@.";
+"buff.weaponDamage.effectsDescription.incomingIncrease1Param" = "Increases damage taken via weapons/attacks by %@.";
+"buff.weaponDamage.effectsDescription.incomingDecrease1Param" = "Reduces damage taken via weapons/attacks by %@.";
+"buff.weaponDamage.effectsDescription.outgoingIncrease1Param" = "Increases damage dealt via weapons by %@.";
+"buff.weaponDamage.effectsDescription.outgoingDecrease1Param" = "Reduces damage dealt via weapons by %@.";
 
 // Health Restoration Percent
 "buff.healthRestorationPercent.effectsDescription.bidirectionalIncrease1Param" = "Increases health restored and given to others by %@%%.";
@@ -412,6 +436,22 @@
 "buff.healthRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases health given to others by %@%%.";
 "buff.healthRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces health given to others by %@%%.";
 
+// Potion Health Restoration Percent
+"buff.potionHealthRestorationPercent.effectsDescription.bidirectionalIncrease1Param" = "Increases health restored and given to others via potions by %@%%.";
+"buff.potionHealthRestorationPercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces health restored and given to others via potions by %@%%.";
+"buff.potionHealthRestorationPercent.effectsDescription.incomingIncrease1Param" = "Increases health restored via potions by %@%%.";
+"buff.potionHealthRestorationPercent.effectsDescription.incomingDecrease1Param" = "Reduces health restored via potions by %@%%.";
+"buff.potionHealthRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases health given to others via potions by %@%%.";
+"buff.potionHealthRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces health given to others via potions by %@%%.";
+
+// Weapon Health Restoration Percent
+"buff.weaponHealthRestorationPercent.effectsDescription.bidirectionalIncrease1Param" = "Increases health restored and given to others via weapons by %@%%.";
+"buff.weaponHealthRestorationPercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces health restored and given to others via weapons by %@%%.";
+"buff.weaponHealthRestorationPercent.effectsDescription.incomingIncrease1Param" = "Increases health restored via weapons by %@%%.";
+"buff.weaponHealthRestorationPercent.effectsDescription.incomingDecrease1Param" = "Reduces health restored via weapons by %@%%.";
+"buff.weaponHealthRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases health given to others via weapons by %@%%.";
+"buff.weaponHealthRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces health given to others via weapons by %@%%.";
+
 // Health Restoration
 "buff.healthRestoration.effectsDescription.bidirectionalIncrease1Param" = "Increases health restored and given to others by %@.";
 "buff.healthRestoration.effectsDescription.bidirectionalDecrease1Param" = "Reduces health restored and given to others by %@.";
@@ -419,6 +459,22 @@
 "buff.healthRestoration.effectsDescription.incomingDecrease1Param" = "Reduces health restored by %@.";
 "buff.healthRestoration.effectsDescription.outgoingIncrease1Param" = "Increases health given to others by %@.";
 "buff.healthRestoration.effectsDescription.outgoingDecrease1Param" = "Reduces health given to others by %@.";
+
+// Potion Health Restoration
+"buff.potionHealthRestoration.effectsDescription.bidirectionalIncrease1Param" = "Increases health restored and given to others via potions by %@.";
+"buff.potionHealthRestoration.effectsDescription.bidirectionalDecrease1Param" = "Reduces health restored and given to others via potions by %@.";
+"buff.potionHealthRestoration.effectsDescription.incomingIncrease1Param" = "Increases health restored via potions by %@.";
+"buff.potionHealthRestoration.effectsDescription.incomingDecrease1Param" = "Reduces health restored via potions by %@.";
+"buff.potionHealthRestoration.effectsDescription.outgoingIncrease1Param" = "Increases health given to others via potions by %@.";
+"buff.potionHealthRestoration.effectsDescription.outgoingDecrease1Param" = "Reduces health given to others via potions by %@.";
+
+// Weapon Health Restoration
+"buff.weaponHealthRestoration.effectsDescription.bidirectionalIncrease1Param" = "Increases health restored and given to others via weapons by %@.";
+"buff.weaponHealthRestoration.effectsDescription.bidirectionalDecrease1Param" = "Reduces health restored and given to others via weapons by %@.";
+"buff.weaponHealthRestoration.effectsDescription.incomingIncrease1Param" = "Increases health restored via weapons by %@.";
+"buff.weaponHealthRestoration.effectsDescription.incomingDecrease1Param" = "Reduces health restored via weapons by %@.";
+"buff.weaponHealthRestoration.effectsDescription.outgoingIncrease1Param" = "Increases health given to others via weapons by %@.";
+"buff.weaponHealthRestoration.effectsDescription.outgoingDecrease1Param" = "Reduces health given to others via weapons by %@.";
 
 // Armor Restoration Percent
 "buff.armorRestorationPercent.effectsDescription.bidirectionalIncrease1Param" = "Increases shields repaired and given to others by %@%%.";
