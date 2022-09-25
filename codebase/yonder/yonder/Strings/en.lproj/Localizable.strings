@@ -530,12 +530,20 @@
 "buff.consumableArmorRestoration.effectsDescription.outgoingDecrease1Param" = "Reduces shields given to others by %@.";
 
 // Price Percent
-"buff.pricePercent.effectsDescription.bidirectionalIncrease1Param" = "Increases gold earned and paid out by %@%%.";
-"buff.pricePercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces gold earned and paid out by %@%%.";
-"buff.pricePercent.effectsDescription.incomingIncrease1Param" = "Increases gold earned by %@%%.";
-"buff.pricePercent.effectsDescription.incomingDecrease1Param" = "Reduces gold earned by %@%%.";
 "buff.pricePercent.effectsDescription.outgoingIncrease1Param" = "Increases gold paid out by %@%%.";
 "buff.pricePercent.effectsDescription.outgoingDecrease1Param" = "Reduces gold paid out by %@%%.";
+
+// Price
+"buff.price.effectsDescription.outgoingIncrease2Param" = "Increases gold paid out by %@%@.";
+"buff.price.effectsDescription.outgoingDecrease2Param" = "Decreases gold paid out by %@%@.";
+
+// Gold Percent
+"buff.goldPercent.effectsDescription.incomingIncrease1Param" = "Increases all gold received by %@%%.";
+"buff.goldPercent.effectsDescription.incomingDecrease1Param" = "Decreases all gold received by %@%%.";
+
+// Gold
+"buff.gold.effectsDescription.incomingIncrease2Param" = "Increases all gold received by %@%@.";
+"buff.gold.effectsDescription.incomingDecrease2Param" = "Decreases all gold received by %@%@.";
 
 // MARK: - Map
 

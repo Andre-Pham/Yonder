@@ -20,7 +20,7 @@ extension BuffAbstract {
         bidirectionalDecrease: Localizable
     ) -> String? {
         var effectsDescription: String? = nil
-        let percentage = (100.0*abs(1.0 - fraction)).toString(decimalPlaces: 1)
+        let percentage = fraction.toRelativePercentage()
         switch direction {
         case .outgoing:
             if fraction.multiplyingIncreases() {

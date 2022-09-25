@@ -853,12 +853,41 @@ enum Strings: Localizable {
             enum EffectsDescription: Localizable {
                 static let parent: LocalizeParent = PricePercent.self
                 
-                case BidirectionalIncrease1Param
-                case BidirectionalDecrease1Param
-                case IncomingIncrease1Param
-                case IncomingDecrease1Param
                 case OutgoingIncrease1Param
                 case OutgoingDecrease1Param
+            }
+        }
+        
+        enum Price: Localizable {
+            static let parent: LocalizeParent = Buff.self
+            
+            enum EffectsDescription: Localizable {
+                static let parent: LocalizeParent = Price.self
+                
+                case OutgoingIncrease2Param
+                case OutgoingDecrease2Param
+            }
+        }
+        
+        enum GoldPercent: Localizable {
+            static let parent: LocalizeParent = Buff.self
+            
+            enum EffectsDescription: Localizable {
+                static let parent: LocalizeParent = GoldPercent.self
+                
+                case IncomingIncrease1Param
+                case IncomingDecrease1Param
+            }
+        }
+        
+        enum Gold: Localizable {
+            static let parent: LocalizeParent = Buff.self
+            
+            enum EffectsDescription: Localizable {
+                static let parent: LocalizeParent = Gold.self
+                
+                case IncomingIncrease2Param
+                case IncomingDecrease2Param
             }
         }
         

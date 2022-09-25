@@ -14,15 +14,12 @@ class PricePercentBuff: BuffAbstract {
     init(sourceName: String, duration: Int?, priceFraction: Double) {
         self.priceFraction = priceFraction
         
-        let effectsDescription = Self.buildPercentageEffectsDescription(
-            direction: .outgoing,
-            fraction: priceFraction,
-            outgoingIncrease: Strings.Buff.PricePercent.EffectsDescription.OutgoingIncrease1Param,
-            outgoingDecrease: Strings.Buff.PricePercent.EffectsDescription.OutgoingDecrease1Param,
-            incomingIncrease: Strings.Buff.PricePercent.EffectsDescription.IncomingIncrease1Param,
-            incomingDecrease: Strings.Buff.PricePercent.EffectsDescription.IncomingDecrease1Param,
-            bidirectionalIncrease: Strings.Buff.PricePercent.EffectsDescription.BidirectionalIncrease1Param,
-            bidirectionalDecrease: Strings.Buff.PricePercent.EffectsDescription.BidirectionalDecrease1Param)
+        var effectsDescription: String? = nil
+        if self.priceFraction.multiplyingDecreases() {
+            effectsDescription = Strings.Buff.PricePercent.EffectsDescription.OutgoingDecrease1Param.localWithArgs(priceFraction.toRelativePercentage())
+        } else if self.priceFraction.multiplyingIncreases() {
+            effectsDescription = Strings.Buff.PricePercent.EffectsDescription.OutgoingIncrease1Param.localWithArgs(priceFraction.toRelativePercentage())
+        }
         
         super.init(
             sourceName: sourceName,

@@ -200,5 +200,27 @@ class BuffTests: XCTestCase {
         XCTAssertEqual(self.player.getIndicativeArmorPointsRestoration(of: self.baseArmorPointsRestorationWeapon), 100)
         XCTAssertEqual(self.player.getIndicativeArmorPointsRestoration(of: RestoreArmorPointsConsumable(basePurchasePrice: 0, tier: .I)), RestoreArmorPointsConsumable.Tier.I.armorPointsRestoration + 10)
     }
+    
+    func testPriceBuff() throws {
+        self.player.addBuff(PriceBuff(sourceName: "", duration: nil, priceDifference: 50))
+        self.player.modifyGold(by: 500)
+        self.player.modifyGoldAdjusted(by: -100)
+        XCTAssertEqual(self.player.gold, 500 - 100 + 50)
+    }
+    
+    func testGoldPercentBuff() throws {
+        self.player.addBuff(GoldPercentBuff(sourceName: "", duration: nil, goldFraction: 2.0))
+        self.player.modifyGoldAdjusted(by: 500)
+        XCTAssertEqual(self.player.gold, 500*2)
+    }
+    
+    func testGoldBuff() throws {
+        self.player.addBuff(GoldBuff(sourceName: "", duration: nil, goldDifference: 100))
+        self.player.modifyGoldAdjusted(by: 50)
+        XCTAssertEqual(self.player.gold, 150)
+        self.player.addBuff(GoldBuff(sourceName: "", duration: nil, goldDifference: -1000))
+        self.player.modifyGoldAdjusted(by: 50)
+        XCTAssertEqual(self.player.gold, 0)
+    }
 
 }

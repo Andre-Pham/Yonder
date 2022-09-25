@@ -18,7 +18,7 @@ class ArmorDamagePercentBuffPill: WeaponBuffPill {
             let multiplier = Int(damageFraction)
             self.effectsDescription = Strings.WeaponBuffPill.ArmorDamagePercent.DescriptionMultiplier1Param.localWithArgs(multiplier)
         } else {
-            let percentage = (100.0*abs(1.0 - self.damageFraction)).toString(decimalPlaces: 1)
+            let percentage = self.damageFraction.toRelativePercentage()
             self.effectsDescription = (damageFraction > 1.0 ?
                 Strings.WeaponBuffPill.ArmorDamagePercent.IncreaseDescription1Param.localWithArgs(percentage) :
                 Strings.WeaponBuffPill.ArmorDamagePercent.DecreaseDescription1Param.localWithArgs(percentage))

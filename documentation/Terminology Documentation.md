@@ -110,6 +110,19 @@
 |             |                                                       |           |
 |             |                                                       |           |
 
+#### Consumables
+
+| Terminology | Description                                          | Example |
+| ----------- | ---------------------------------------------------- | ------- |
+| Item Stack  | The remaining uses of an item stack before losing it | 5 Items |
+|             |                                                      |         |
+|             |                                                      |         |
+|             |                                                      |         |
+|             |                                                      |         |
+|             |                                                      |         |
+|             |                                                      |         |
+|             |                                                      |         |
+
 ## NPCs
 
 #### Types
