@@ -1,20 +1,20 @@
 //
-//  DamagePercentBuffPotion.swift
+//  WeaknessPotion.swift
 //  yonder
 //
-//  Created by Andre Pham on 24/6/2022.
+//  Created by Andre Pham on 26/9/2022.
 //
 
 import Foundation
 
-class DamagePercentBuffPotion: Potion {
+class WeaknessPotion: Potion {
     
-    /// The tier of the damage percent potion.
+    /// The tier of the weakness potion.
     /// Raw value represents the damage fraction of each tier.
     enum Tier: Double {
-        case I = 1.2
-        case II = 1.5
-        case III = 2.0
+        case I = 0.8
+        case II = 0.5
+        case III = 0.2
         
         var string: String {
             switch self {
@@ -36,14 +36,14 @@ class DamagePercentBuffPotion: Potion {
     private let tier: Tier
     
     init(tier: Tier, duration: Int, potionCount: Int, basePurchasePrice: Int) {
-        let name = Strings.Potion.DamagePercent.Name.local.continuedBy(tier.string)
+        let name = Strings.Potion.Weakness.Name.local.continuedBy(tier.string)
         self.buff = DamagePercentBuff(sourceName: name, direction: .outgoing, duration: duration, damageFraction: tier.damageFraction)
         self.duration = duration
         self.tier = tier
         super.init(
             name: name,
-            description: Strings.Potion.DamagePercent.Description.local,
-            effectsDescription: Strings.Potion.ApplyToSelf.local.continuedBy(self.buff.getEffectsDescription() ?? ""),
+            description: Strings.Potion.Weakness.Description.local,
+            effectsDescription: Strings.Potion.ApplyToFoe.local.continuedBy(self.buff.getEffectsDescription() ?? ""),
             remainingUses: potionCount,
             basePurchasePrice: basePurchasePrice)
         assert(self.buff.getEffectsDescription() != nil, "Buff that should have an effects description doesn't have one")
@@ -58,7 +58,7 @@ class DamagePercentBuffPotion: Potion {
     }
     
     func use(owner: ActorAbstract, opposition: ActorAbstract) {
-        owner.addBuff(self.buff)
+        opposition.addBuff(self.buff)
         self.adjustRemainingUses(by: -1)
     }
     

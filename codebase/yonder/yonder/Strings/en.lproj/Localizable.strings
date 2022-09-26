@@ -306,6 +306,10 @@
 
 // MARK: - Potions
 
+// Direction
+"potion.applyToSelf" = "(Applied to self)";
+"potion.applyToFoe" = "(Applied to hostile)";
+
 // Health Restoration Potion
 "potion.healthRestoration.name" = "Health Potion";
 "potion.healthRestoration.description" = "A scarlet red solution brews in a clear elongated bottle. Warm to the touch, it smells of acrid.";
@@ -320,6 +324,10 @@
 "potion.damagePercent.name" = "Damage Buff Potion";
 "potion.damagePercent.description" = "A deep magenta solution stirs in an obtuse flask. Your arm feels invigorated merely holding the potion. A foreign symbol is marked on the front.";
 
+// Health Restoration Buff Potion
+"potion.healthRestorationPercent.name" = "Health Buff Potion";
+"potion.healthRestorationPercent.description" = "A shimmering gold brew sparkles in a clear round flask. It's warm and smells of honey.";
+
 // Max Health Restoration Potion
 "potion.maxHealthRestoration.name" = "Max Health Potion";
 "potion.maxHealthRestoration.description" = "Leather and twine strap a circular flask of a radiating crimson red solution. It feels hot to the touch, with a foreign engraving embedded in the flask's seal.";
@@ -330,9 +338,9 @@
 "potion.maxRestoration.description" = "A chained cap cast of pure gold seals an elegant flask, full to the brim of a beaming golden mixture. A black metal casting encapsulates the potion, which elicits an endearing sweet honeyed fragrance.";
 "potion.maxRestoration.effectsDescription" = "Fully restores your health and shields.";
 
-// shield potion is shimmering silver and maybe cast in iron... has an acidic armoa, and is in a vial
-// thorn theme can be for the weakness potion (maybe thorns are on it or something "sealed by a thorn")
-// potion that increases your maximum health is green with accents of gold, like life fruit ("Potion of life")
+// Weakness Potion
+"potion.weakness.name" = "Weakness Potion";
+"potion.weakness.description" = "Boiling fluid of purple and black swells hisses. The bottle, sealed by thorns, is clouded and cracked.";
 
 // MARK: - Consumables
 

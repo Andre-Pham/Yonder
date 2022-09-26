@@ -1,20 +1,20 @@
 //
-//  DamagePercentBuffPotion.swift
+//  HealthRestorationPercentBuffPotion.swift
 //  yonder
 //
-//  Created by Andre Pham on 24/6/2022.
+//  Created by Andre Pham on 26/9/2022.
 //
 
 import Foundation
 
-class DamagePercentBuffPotion: Potion {
+class HealthRestorationPercentBuffPotion: Potion {
     
-    /// The tier of the damage percent potion.
-    /// Raw value represents the damage fraction of each tier.
+    /// The tier of the health restoration percent potion.
+    /// Raw value represents the health restoration fraction of each tier.
     enum Tier: Double {
-        case I = 1.2
-        case II = 1.5
-        case III = 2.0
+        case I = 1.5
+        case II = 2.0
+        case III = 3.0
         
         var string: String {
             switch self {
@@ -24,25 +24,25 @@ class DamagePercentBuffPotion: Potion {
             }
         }
         
-        var damageFraction: Double {
+        var healthRestorationFraction: Double {
             return self.rawValue
         }
     }
     
-    private let buff: DamagePercentBuff
+    private let buff: HealthRestorationPercentBuff
     
     /// To determine if potion is stackable
     private let duration: Int
     private let tier: Tier
     
     init(tier: Tier, duration: Int, potionCount: Int, basePurchasePrice: Int) {
-        let name = Strings.Potion.DamagePercent.Name.local.continuedBy(tier.string)
-        self.buff = DamagePercentBuff(sourceName: name, direction: .outgoing, duration: duration, damageFraction: tier.damageFraction)
+        let name = Strings.Potion.HealthRestorationPercent.Name.local.continuedBy(tier.string)
+        self.buff = HealthRestorationPercentBuff(sourceName: name, direction: .incoming, duration: duration, healthFraction: tier.healthRestorationFraction)
         self.duration = duration
         self.tier = tier
         super.init(
             name: name,
-            description: Strings.Potion.DamagePercent.Description.local,
+            description: Strings.Potion.HealthRestoration.Description.local,
             effectsDescription: Strings.Potion.ApplyToSelf.local.continuedBy(self.buff.getEffectsDescription() ?? ""),
             remainingUses: potionCount,
             basePurchasePrice: basePurchasePrice)
