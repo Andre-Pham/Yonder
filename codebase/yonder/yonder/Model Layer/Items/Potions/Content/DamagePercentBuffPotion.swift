@@ -31,9 +31,15 @@ class DamagePercentBuffPotion: Potion {
     
     private let buff: DamagePercentBuff
     
+    /// To determine if potion is stackable
+    private let duration: Int
+    private let tier: Tier
+    
     init(tier: Tier, duration: Int, potionCount: Int, basePurchasePrice: Int) {
         let name = Strings.Potion.DamagePercent.Name.local.continuedBy(tier.string)
         self.buff = DamagePercentBuff(sourceName: name, direction: .outgoing, duration: duration, damageFraction: tier.damageFraction)
+        self.duration = duration
+        self.tier = tier
         super.init(
             name: name,
             description: Strings.Potion.DamagePercent.Description.local,
@@ -45,12 +51,23 @@ class DamagePercentBuffPotion: Potion {
     required init(_ original: PotionAbstract) {
         let original = original as! Self
         self.buff = original.buff.clone()
+        self.duration = original.duration
+        self.tier = original.tier
         super.init(original)
     }
     
     func use(owner: ActorAbstract, opposition: ActorAbstract) {
         owner.addBuff(self.buff)
         self.adjustRemainingUses(by: -1)
+    }
+    
+    override func isStackable(with potion: Potion) -> Bool {
+        if let potion = potion as? DamagePercentBuffPotion {
+            return (super.isStackable(with: potion) &&
+                    self.duration == potion.duration &&
+                    self.tier == potion.tier)
+        }
+        return false
     }
     
 }
