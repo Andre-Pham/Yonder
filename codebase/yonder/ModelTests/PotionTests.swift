@@ -67,8 +67,8 @@ class PotionTests: XCTestCase {
         XCTAssertEqual(self.player.health, self.player.maxHealth)
     }
     
-    func testDamagePercentPotion() throws {
-        let potion = DamagePercentPotion(tier: .I, duration: 1, potionCount: 1, basePurchasePrice: 10)
+    func testDamagePercentBuffPotion() throws {
+        let potion = DamagePercentBuffPotion(tier: .I, duration: 1, potionCount: 1, basePurchasePrice: 10)
         self.player.usePotionWhere(opposition: self.foeZeroAttack, potion: potion)
         XCTAssertEqual(self.player.buffs.count, 1)
         if let damagePercentBuff = self.player.buffs.first {

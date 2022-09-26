@@ -1,5 +1,5 @@
 //
-//  DamagePercentPotion.swift
+//  DamagePercentBuffPotion.swift
 //  yonder
 //
 //  Created by Andre Pham on 24/6/2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DamagePercentPotion: Potion {
+class DamagePercentBuffPotion: Potion {
     
     /// The tier of the damage percent potion.
     /// Raw value represents the damage fraction of each tier.
