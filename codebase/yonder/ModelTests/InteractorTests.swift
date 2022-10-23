@@ -14,15 +14,17 @@ class InteractorTests: XCTestCase {
 
     func testPurchasing() throws {
         let shopKeeper = ShopKeeper(purchasableItems: [
-            PurchasableItem(item: HealthRestorationPotion(tier: .IV, potionCount: 1, basePurchasePrice: 200), stock: 1),
-            PurchasableItem(item: Armor(name: "Cool Armor", description: "Cool.", type: .body, armorPoints: 200, basePurchasePrice: 100, armorBuffs: [], equipmentPills: []), stock: 1)
+            PurchasableItem(item: HealthRestorationPotion(tier: .IV, potionCount: 1), stock: 1),
+            PurchasableItem(item: Armor(name: "Cool Armor", description: "Cool.", type: .body, armorPoints: 200, armorBuffs: [], equipmentPills: []), stock: 1)
         ])
-        self.player.modifyGold(by: 1000)
+        let price0 = shopKeeper.purchasableItems[0].price
+        let price1 = shopKeeper.purchasableItems[1].price
+        self.player.modifyGold(by: 10000)
         shopKeeper.purchaseItem(at: 0, amount: 1, purchaser: self.player)
-        XCTAssertEqual(self.player.gold, 800)
+        XCTAssertEqual(self.player.gold, 10000 - price0)
         XCTAssertEqual(self.player.potions.count, 1)
         shopKeeper.purchaseItem(at: 0, amount: 1, purchaser: self.player)
-        XCTAssertEqual(self.player.gold, 700)
+        XCTAssertEqual(self.player.gold, 10000 - price0 - price1)
         XCTAssertTrue(self.player.bodyArmor.armorPoints == 200)
     }
     
@@ -39,16 +41,17 @@ class InteractorTests: XCTestCase {
     }
     
     func testShopKeeper() throws {
-        self.player.modifyGold(by: 200)
+        self.player.modifyGold(by: 10000)
         let shopKeeper = ShopKeeper(purchasableItems: [
-            PurchasableItem(item: DamagePotion(tier: .III, potionCount: 2, basePurchasePrice: 50), stock: 2)
+            PurchasableItem(item: DamagePotion(tier: .III, potionCount: 2), stock: 2)
         ])
+        let price = shopKeeper.purchasableItems[0].price
         shopKeeper.purchaseItem(at: 0, amount: 1, purchaser: self.player)
-        XCTAssertEqual(self.player.gold, 150)
+        XCTAssertEqual(self.player.gold, 10000 - price)
         XCTAssertEqual(self.player.potions.count, 1)
         XCTAssertEqual(shopKeeper.purchasableItems.count, 1)
         shopKeeper.purchaseItem(at: 0, amount: 1, purchaser: self.player)
-        XCTAssertEqual(self.player.gold, 100)
+        XCTAssertEqual(self.player.gold, 10000 - price*2)
         XCTAssertEqual(self.player.potions.map { $0.potionCount }.reduce(0, +), 4)
         XCTAssertEqual(shopKeeper.purchasableItems.count, 0)
     }

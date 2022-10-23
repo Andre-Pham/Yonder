@@ -32,8 +32,8 @@ class LifestealBasePill: WeaponBasePill, DamageSubscriber, HealthRestorationSubs
         weapon.addHealthRestorationSubscriber(self)
     }
     
-    func getValue() -> Int {
-        return self.damage*3/2
+    func calculateBasePurchasePrice() -> Int {
+        return Pricing.playerHealthRestorationStat.getValue(amount: self.damage)
     }
     
     func onDamageChange(_ item: Item, old: Int) {

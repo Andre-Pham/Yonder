@@ -52,8 +52,9 @@ class GoblinEffectPill: WeaponEffectPill, OnGoldChangeSubscriber {
         }
     }
     
-    func getValue() -> Int {
-        return (self.damage + self.goldPerSteal)/2
+    func calculateBasePurchasePrice() -> Int {
+        assertionFailure("GoblinEffectPill is being used on a non-player, and only players have gold to steal")
+        return 0
     }
     
 }

@@ -28,8 +28,13 @@ class PhoenixEquipmentPill: EquipmentPill, AfterTurnEndSubscriber {
         AfterTurnEndPublisher.subscribe(self)
     }
     
-    func getValue() -> Int {
-        return 200 + self.healthSetTo/2
+    func getValue(whenTargeting target: Target) -> Int {
+        switch target {
+        case .player:
+            return 200 + Pricing.playerHealthRestorationStat.getValue(amount: self.healthSetTo)
+        case .foe:
+            return 200 + Pricing.foeHealthRestorationStat.getValue(amount: self.healthSetTo)
+        }
     }
     
     func afterTurnEnd(player: Player, playerUsed: Item?, foe: Foe?) {

@@ -7,14 +7,14 @@
 
 import Foundation
 
-class ConsumableArmorPointsRestorationBuff: BuffAbstract {
+class ConsumableArmorPointsRestorationBuff: Buff {
     
     private let armorPointsDifference: Int
     
     init(sourceName: String, direction: BuffDirection, duration: Int?, armorPointsDifference: Int) {
         self.armorPointsDifference = armorPointsDifference
         
-        let effectsDescription = Self.buildMagnitudeEffectsDescription(
+        let effectsDescription = BuffEffectsDescription.buildMagnitudeEffectsDescription(
             direction: direction,
             difference: armorPointsDifference,
             outgoingIncrease: Strings.Buff.ConsumableArmorRestoration.EffectsDescription.OutgoingIncrease1Param,
@@ -44,6 +44,17 @@ class ConsumableArmorPointsRestorationBuff: BuffAbstract {
             return self.armorPointsDifference + armorPoints
         }
         return armorPoints
+    }
+    
+    func getValue(whenTargeting target: Target) -> Int {
+        return Pricing.getBuffValue(
+            flipIncomingOutgoing: target == .foe,
+            incomingStat: Pricing.playerArmorPointsRestorationStat,
+            outgoingStat: Pricing.foeArmorPointsRestorationStat,
+            amount: self.armorPointsDifference,
+            duration: self.timeRemaining,
+            direction: self.direction
+        )
     }
     
 }

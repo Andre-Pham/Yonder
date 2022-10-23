@@ -35,9 +35,9 @@ struct SettingsView: View {
                 .foregroundColor(.white)
                 
                 Button("Potion") {
-                    GameManager.instance.playerVM.player.addPotion(HealthRestorationPotion(tier: .II, potionCount: 5, basePurchasePrice: 100))
-                    GameManager.instance.playerVM.player.addPotion(DamagePotion(tier: .II, potionCount: 1, basePurchasePrice: 10))
-                    GameManager.instance.playerVM.player.addPotion(DamagePercentBuffPotion(tier: .II, duration: 2, potionCount: 2, basePurchasePrice: 100))
+                    GameManager.instance.playerVM.player.addPotion(HealthRestorationPotion(tier: .II, potionCount: 5))
+                    GameManager.instance.playerVM.player.addPotion(DamagePotion(tier: .II, potionCount: 1))
+                    GameManager.instance.playerVM.player.addPotion(DamagePercentBuffPotion(tier: .II, duration: 2, potionCount: 2))
                 }
                 .padding()
                 .background(Color.red)
@@ -81,7 +81,7 @@ struct SettingsView: View {
                 .foregroundColor(.white)
                 
                 Button("Accessory") {
-                    GameManager.instance.playerVM.player.equipAccessory(Accessory(name: "Glasses", description: "Lets you see better.", type: .regular, healthBonus: 0, armorPointsBonus: 10, basePurchasePrice: 5, buffs: [PricePercentBuff(sourceName: "Glasses", duration: nil, priceFraction: 0.5)], equipmentPills: []), replacing: nil)
+                    GameManager.instance.playerVM.player.equipAccessory(Accessory(name: "Glasses", description: "Lets you see better.", type: .regular, healthBonus: 0, armorPointsBonus: 10, buffs: [PricePercentBuff(sourceName: "Glasses", duration: nil, priceFraction: 0.5)], equipmentPills: []), replacing: nil)
                 }
                 .padding()
                 .background(Color.red)
@@ -90,18 +90,18 @@ struct SettingsView: View {
             
             Group {
                 Button("Peripheral Accessory") {
-                    GameManager.instance.playerVM.player.equipAccessory(Accessory(name: "Vampire Fang", description: "Sharp and bloody.", type: .peripheral, healthBonus: 0, armorPointsBonus: 0, basePurchasePrice: 200, buffs: [], equipmentPills: [WeaponLifestealEquipmentPill(lifestealFraction: 0.5, sourceName: "Vampire Fang")]), replacing: nil)
+                    GameManager.instance.playerVM.player.equipAccessory(Accessory(name: "Vampire Fang", description: "Sharp and bloody.", type: .peripheral, healthBonus: 0, armorPointsBonus: 0, buffs: [], equipmentPills: [WeaponLifestealEquipmentPill(lifestealFraction: 0.5, sourceName: "Vampire Fang")]), replacing: nil)
                 }
                 .padding()
                 .background(Color.red)
                 .foregroundColor(.white)
                 
                 Button("Consumables") {
-                    GameManager.instance.playerVM.player.addConsumable(RandomHealthConsumable(basePurchasePrice: 10))
-                    GameManager.instance.playerVM.player.addConsumable(MultiplyGoldConsumable(basePurchasePrice: 10, goldFraction: 2.0))
-                    GameManager.instance.playerVM.player.addConsumable(BonusHealthConsumable(basePurchasePrice: 10, tier: .II))
-                    GameManager.instance.playerVM.player.addConsumable(RipeningSetHealthConsumable(basePurchasePrice: 10))
-                    GameManager.instance.playerVM.player.addConsumable(TurnImprovingRestorationConsumable(basePurchasePrice: 10))
+                    GameManager.instance.playerVM.player.addConsumable(RandomHealthConsumable())
+                    GameManager.instance.playerVM.player.addConsumable(MultiplyGoldConsumable(goldFraction: 2.0))
+                    GameManager.instance.playerVM.player.addConsumable(BonusHealthConsumable(tier: .II))
+                    GameManager.instance.playerVM.player.addConsumable(RipeningSetHealthConsumable())
+                    GameManager.instance.playerVM.player.addConsumable(TurnImprovingRestorationConsumable())
                 }
                 .padding()
                 .background(Color.red)

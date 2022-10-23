@@ -14,8 +14,7 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
     public let type: AccessoryType
     @DidSetPublished private(set) var healthBonus: Int
     @DidSetPublished private(set) var armorPointsBonus: Int
-    public let basePurchasePrice: Int
-    @DidSetPublished private(set) var buffs: [BuffAbstract]
+    @DidSetPublished private(set) var buffs: [Buff]
     @DidSetPublished private(set) var equipmentPills: [EquipmentPill]
     public let id = UUID()
     
@@ -24,16 +23,14 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
     ///   - type: The type of accessory which determines the slot in which it may be equipped
     ///   - healthBonus: The health this provides as a bonus
     ///   - armorPointsBonus: The armor points this provides as a bonus
-    ///   - basePurchasePrice: The base purchase price of this before additional costs
     ///   - buffs: The buffs/debuffs this gives when worn
     ///   - equipmentPills: The effects this gives when worn
-    init(name: String, description: String, type: AccessoryType, healthBonus: Int, armorPointsBonus: Int, basePurchasePrice: Int, buffs: [BuffAbstract], equipmentPills: [EquipmentPill]) {
+    init(name: String, description: String, type: AccessoryType, healthBonus: Int, armorPointsBonus: Int, buffs: [Buff], equipmentPills: [EquipmentPill]) {
         self.name = name
         self.description = description
         self.type = type
         self.healthBonus = healthBonus
         self.armorPointsBonus = armorPointsBonus
-        self.basePurchasePrice = basePurchasePrice
         self.buffs = buffs
         self.equipmentPills = equipmentPills
     }
@@ -44,8 +41,7 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
         self.type = original.type
         self.healthBonus = original.healthBonus
         self.armorPointsBonus = original.armorPointsBonus
-        self.basePurchasePrice = original.basePurchasePrice
-        self.buffs = original.buffs.clone()
+        self.buffs = original.buffs.map { $0.clone() }
         self.equipmentPills = original.equipmentPills.map { $0.clone() }
     }
     
@@ -56,7 +52,7 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
         return descriptionLines.isEmpty ? nil : descriptionLines.joined(separator: "\n")
     }
     
-    func addBuff(buff: BuffAbstract) {
+    func addBuff(buff: Buff) {
         self.buffs.append(buff)
     }
     
@@ -90,6 +86,19 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
         // 2. Remove the accessory in that slot, if applicable
         // 3. Call this
         receiver.equipAccessory(self, replacing: nil)
+    }
+    
+    func getBasePurchasePrice() -> Int {
+        // Purchases are always made by the player, and accessories' buffs apply to their owner
+        // hence buff target is player, along with the health, armor points and equipment pills
+        var totalValue = Pricing.playerHealthStat.getValue(amount: self.healthBonus) + Pricing.playerArmorPointsStat.getValue(amount: self.armorPointsBonus)
+        for buff in self.buffs {
+            totalValue += buff.getValue(whenTargeting: .player)
+        }
+        for pill in self.equipmentPills {
+            totalValue += pill.getValue(whenTargeting: .player)
+        }
+        return totalValue
     }
     
 }

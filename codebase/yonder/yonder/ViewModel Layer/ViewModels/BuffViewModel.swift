@@ -10,7 +10,7 @@ import Combine
 
 class BuffViewModel: ObservableObject {
     
-    private(set) var buff: BuffAbstract
+    private(set) var buff: Buff
     private var subscriptions: Set<AnyCancellable> = []
     
     @Published private(set) var timeRemaining: Int?
@@ -19,7 +19,7 @@ class BuffViewModel: ObservableObject {
     private(set) var effectsDescription: String?
     private(set) var id: UUID
     
-    init(_ buff: BuffAbstract) {
+    init(_ buff: Buff) {
         self.buff = buff
         
         if buff.isInfinite {

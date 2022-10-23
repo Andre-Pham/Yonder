@@ -11,12 +11,11 @@ import Foundation
 /// Weapons can only take one of this pill.
 typealias WeaponDurabilityPill = WeaponDurabilityPillAbstract & WeaponDurabilityPillProtocol
 
-protocol WeaponDurabilityPillProtocol {
+protocol WeaponDurabilityPillProtocol: HasPurchasablePrice {
     
     var effectsDescription: String { get }
     
     func use(on weapon: Weapon)
-    func getValue() -> Int
     func setupDurability(weapon: Weapon)
     
 }

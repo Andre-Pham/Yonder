@@ -31,7 +31,7 @@ class CombatFlowTests: XCTestCase {
     }
     
     func testArmorPointsRestoration() throws {
-        self.player.equipArmor(Armor(name: "", description: "", type: .body, armorPoints: 50, basePurchasePrice: 10, armorBuffs: [], equipmentPills: []))
+        self.player.equipArmor(Armor(name: "", description: "", type: .body, armorPoints: 50, armorBuffs: [], equipmentPills: []))
         self.player.useWeaponWhere(opposition: self.foe, weapon: Weapon(basePill: ArmorPointsRestorationBasePill(armorPointsRestoration: 25), durabilityPill: InfiniteDurabilityPill()))
         XCTAssertEqual(self.player.health, 450)
         XCTAssertEqual(self.player.armorPoints, 25)

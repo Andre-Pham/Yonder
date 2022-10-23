@@ -7,14 +7,14 @@
 
 import Foundation
 
-class DamagePercentBuff: BuffAbstract {
+class DamagePercentBuff: Buff {
     
     private let damageFraction: Double
     
     init(sourceName: String, direction: BuffDirection, duration: Int?, damageFraction: Double) {
         self.damageFraction = damageFraction
         
-        let effectsDescription = Self.buildPercentageEffectsDescription(
+        let effectsDescription = BuffEffectsDescription.buildPercentageEffectsDescription(
             direction: direction,
             fraction: damageFraction,
             outgoingIncrease: Strings.Buff.DamagePercent.EffectsDescription.OutgoingIncrease1Param,
@@ -41,6 +41,17 @@ class DamagePercentBuff: BuffAbstract {
     
     override func applyDamage(to damage: Int, source: Any) -> Int {
         return Int(round(Double(damage)*self.damageFraction))
+    }
+    
+    func getValue(whenTargeting target: Target) -> Int {
+        return Pricing.getBuffValue(
+            flipIncomingOutgoing: target == .foe,
+            incomingStat: Pricing.foeDamageStat,
+            outgoingStat: Pricing.playerDamageStat,
+            fraction: self.damageFraction,
+            duration: self.timeRemaining,
+            direction: self.direction
+        )
     }
     
 }

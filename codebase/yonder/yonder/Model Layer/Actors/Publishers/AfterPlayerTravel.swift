@@ -17,7 +17,7 @@ class AfterPlayerTravelPublisher {
     
     static func publish(player: Player) {
         for sub in Self.subscribers {
-            sub.value?.AfterPlayerTravel(player: player)
+            sub.value?.afterPlayerTravel(player: player)
         }
     }
     
@@ -26,7 +26,7 @@ class AfterPlayerTravelPublisher {
 
 protocol AfterPlayerTravelSubscriber: AnyObject {
     
-    func AfterPlayerTravel(player: Player)
+    func afterPlayerTravel(player: Player)
     
 }
 

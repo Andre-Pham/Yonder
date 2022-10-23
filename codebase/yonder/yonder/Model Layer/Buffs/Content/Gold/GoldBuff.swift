@@ -7,7 +7,7 @@
 
 import Foundation
 
-class GoldBuff: BuffAbstract {
+class GoldBuff: Buff {
     
     private let goldDifference: Int
     
@@ -32,7 +32,7 @@ class GoldBuff: BuffAbstract {
             effectsDescription: effectsDescription,
             duration: duration,
             type: .goldBonus,
-            direction: .outgoing,
+            direction: .incoming,
             priority: .first)
     }
     
@@ -44,6 +44,17 @@ class GoldBuff: BuffAbstract {
     
     override func applyGoldBonus(to gold: Int) -> Int {
         return self.goldDifference + gold
+    }
+    
+    func getValue(whenTargeting target: Target) -> Int {
+        return Pricing.getBuffValue(
+            flipIncomingOutgoing: target == .foe,
+            incomingStat: Pricing.receivedGoldStat,
+            outgoingStat: Pricing.noStat,
+            amount: self.goldDifference,
+            duration: self.timeRemaining,
+            direction: self.direction
+        )
     }
     
 }

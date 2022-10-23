@@ -27,8 +27,8 @@ class HealthRestorationBasePill: WeaponBasePill {
         weapon.setHealthRestoration(to: self.healthRestoration)
     }
     
-    func getValue() -> Int {
-        return self.healthRestoration
+    func calculateBasePurchasePrice() -> Int {
+        return Pricing.playerHealthRestorationStat.getValue(amount: self.healthRestoration)
     }
     
 }

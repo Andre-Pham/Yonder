@@ -33,14 +33,13 @@ class HealthRestorationPotion: Potion {
         }
     }
     
-    init(tier: Tier, potionCount: Int, basePurchasePrice: Int) {
+    init(tier: Tier, potionCount: Int) {
         super.init(
             name: Strings.Potion.HealthRestoration.Name.local.continuedBy(tier.string),
             description: Strings.Potion.HealthRestoration.Description.local,
             effectsDescription: Strings.Potion.HealthRestoration.EffectsDescription1Param.localWithArgs(tier.healthRestoration),
             remainingUses: potionCount,
-            healthRestoration: tier.healthRestoration,
-            basePurchasePrice: basePurchasePrice)
+            healthRestoration: tier.healthRestoration)
     }
     
     required init(_ original: PotionAbstract) {
@@ -50,6 +49,10 @@ class HealthRestorationPotion: Potion {
     func use(owner: ActorAbstract, opposition: ActorAbstract) {
         owner.restoreHealthAdjusted(sourceOwner: owner, using: self, for: self.healthRestoration)
         self.adjustRemainingUses(by: -1)
+    }
+    
+    func calculateBasePurchasePrice() -> Int {
+        return Pricing.playerHealthRestorationStat.getValue(amount: self.healthRestoration, uses: self.remainingUses)
     }
     
 }

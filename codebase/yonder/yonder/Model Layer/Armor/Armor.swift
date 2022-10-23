@@ -13,8 +13,7 @@ class Armor: EffectsDescribed, Purchasable, Named, Described, Enhanceable, Clona
     public let description: String
     public let type: ArmorType
     @DidSetPublished private(set) var armorPoints: Int
-    public let basePurchasePrice: Int
-    @DidSetPublished private(set) var armorBuffs: [BuffAbstract]
+    @DidSetPublished private(set) var armorBuffs: [Buff]
     @DidSetPublished private(set) var equipmentPills: [EquipmentPill]
     @DidSetPublished private(set) var armorAttributes: [ArmorAttribute]
     public let id = UUID()
@@ -23,16 +22,14 @@ class Armor: EffectsDescribed, Purchasable, Named, Described, Enhanceable, Clona
     /// - Parameters:
     ///   - type: Where the armor is worn
     ///   - armorPoints: The 'health' of the armor
-    ///   - basePurchasePrice: The base purchase price of the armor before additional costs
     ///   - armorBuffs: The buffs/debuffs the armor gives when worn
     ///   - equipmentPills: The effects this gives when worn
     ///   - armorAttributes: Attributes that apply to the armor
-    init(name: String, description: String, type: ArmorType, armorPoints: Int, basePurchasePrice: Int, armorBuffs: [BuffAbstract], equipmentPills: [EquipmentPill], armorAttributes: [ArmorAttribute] = []) {
+    init(name: String, description: String, type: ArmorType, armorPoints: Int, armorBuffs: [Buff], equipmentPills: [EquipmentPill], armorAttributes: [ArmorAttribute] = []) {
         self.name = name
         self.description = description
         self.type = type
         self.armorPoints = armorPoints
-        self.basePurchasePrice = basePurchasePrice
         self.armorBuffs = armorBuffs
         self.equipmentPills = equipmentPills
         self.armorAttributes = armorAttributes
@@ -43,8 +40,7 @@ class Armor: EffectsDescribed, Purchasable, Named, Described, Enhanceable, Clona
         self.description = original.description
         self.type = original.type
         self.armorPoints = original.armorPoints
-        self.basePurchasePrice = original.basePurchasePrice
-        self.armorBuffs = original.armorBuffs.clone()
+        self.armorBuffs = original.armorBuffs.map { $0.clone() }
         self.equipmentPills = original.equipmentPills.map { $0.clone() }
         self.armorAttributes = Array(original.armorAttributes)
     }
@@ -57,7 +53,7 @@ class Armor: EffectsDescribed, Purchasable, Named, Described, Enhanceable, Clona
         return descriptionLines.isEmpty ? nil : descriptionLines.joined(separator: "\n")
     }
     
-    func addBuff(buff: BuffAbstract) {
+    func addBuff(buff: Buff) {
         self.armorBuffs.append(buff)
     }
     
@@ -91,6 +87,19 @@ class Armor: EffectsDescribed, Purchasable, Named, Described, Enhanceable, Clona
     
     func hasAttribute(_ attribute: ArmorAttribute) -> Bool {
         return self.armorAttributes.contains(attribute)
+    }
+    
+    func getBasePurchasePrice() -> Int {
+        // Purchases are always made by the player, and armors' buffs apply to their owner
+        // hence buff target is player, along with the health, armor points and equipment pills
+        var totalValue = Pricing.playerArmorPointsStat.getValue(amount: self.armorPoints)
+        for buff in self.armorBuffs {
+            totalValue += buff.getValue(whenTargeting: .player)
+        }
+        for pill in self.equipmentPills {
+            totalValue += pill.getValue(whenTargeting: .player)
+        }
+        return totalValue
     }
     
 }

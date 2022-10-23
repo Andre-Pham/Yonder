@@ -24,6 +24,7 @@ class GameManager {
         self.activeGame = Game()
         self.playerVM = PlayerViewModel(self.activeGame.player)
         self.playerLocationVM = PlayerLocationViewModel(player: self.activeGame.player)
+        Pricing.instance.setGameContext(to: self.activeGame.gameContext)
     }
     
     func startNewGame() {
@@ -34,6 +35,7 @@ class GameManager {
         self.activeGame = game
         self.playerVM = PlayerViewModel(self.activeGame.player)
         self.playerLocationVM = PlayerLocationViewModel(player: self.activeGame.player)
+        Pricing.instance.setGameContext(to: game.gameContext)
     }
     
     func getMapLocationConnections(gridDimensions: GridDimensions) -> [LocationConnection?] {

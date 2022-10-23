@@ -37,7 +37,7 @@ class ActorTests: XCTestCase {
     }
     
     func testRestorationAdjusted() throws {
-        self.actor.equipArmor(Armor(name: "", description: "", type: .body, armorPoints: 500, basePurchasePrice: 10, armorBuffs: [], equipmentPills: []))
+        self.actor.equipArmor(Armor(name: "", description: "", type: .body, armorPoints: 500, armorBuffs: [], equipmentPills: []))
         self.actor.damage(for: 600) // Set to 100/200 health, 0/500 armor
         self.actor.addBuff(HealthRestorationPercentBuff(sourceName: "", direction: .incoming, duration: nil, healthFraction: 2.0))
         self.actor.addBuff(ArmorPointsRestorationPercentBuff(sourceName: "", direction: .incoming, duration: nil, armorPointsFraction: 3.0))
@@ -48,9 +48,9 @@ class ActorTests: XCTestCase {
     }
     
     func testEquipArmor() throws {
-        let headArmor = Armor(name: "", description: "", type: .head, armorPoints: 100, basePurchasePrice: 10, armorBuffs: [], equipmentPills: [])
-        let bodyArmor = Armor(name: "", description: "", type: .body, armorPoints: 200, basePurchasePrice: 10, armorBuffs: [], equipmentPills: [])
-        let legsArmor = Armor(name: "", description: "", type: .legs, armorPoints: 300, basePurchasePrice: 10, armorBuffs: [], equipmentPills: [])
+        let headArmor = Armor(name: "", description: "", type: .head, armorPoints: 100, armorBuffs: [], equipmentPills: [])
+        let bodyArmor = Armor(name: "", description: "", type: .body, armorPoints: 200, armorBuffs: [], equipmentPills: [])
+        let legsArmor = Armor(name: "", description: "", type: .legs, armorPoints: 300, armorBuffs: [], equipmentPills: [])
         self.actor.equipArmor(headArmor)
         XCTAssertEqual(self.actor.headArmor.armorPoints, headArmor.armorPoints)
         XCTAssertEqual(self.actor.armorPoints, headArmor.armorPoints)
@@ -64,16 +64,16 @@ class ActorTests: XCTestCase {
         XCTAssertEqual(self.actor.legsArmor.armorPoints, legsArmor.armorPoints)
         XCTAssertEqual(self.actor.armorPoints, headArmor.armorPoints + bodyArmor.armorPoints + legsArmor.armorPoints - 250)
         XCTAssertEqual(self.actor.maxArmorPoints, headArmor.armorPoints + bodyArmor.armorPoints + legsArmor.armorPoints)
-        let replacementArmor = Armor(name: "", description: "", type: .legs, armorPoints: 150, basePurchasePrice: 10, armorBuffs: [], equipmentPills: [])
+        let replacementArmor = Armor(name: "", description: "", type: .legs, armorPoints: 150, armorBuffs: [], equipmentPills: [])
         self.actor.equipArmor(replacementArmor)
         XCTAssertEqual(self.actor.armorPoints, 450)
         XCTAssertEqual(self.actor.maxArmorPoints, headArmor.armorPoints + bodyArmor.armorPoints + replacementArmor.armorPoints)
     }
     
     func testUnequipArmor() throws {
-        let headArmor = Armor(name: "", description: "", type: .head, armorPoints: 500, basePurchasePrice: 10, armorBuffs: [], equipmentPills: [])
-        let bodyArmor = Armor(name: "", description: "", type: .body, armorPoints: 500, basePurchasePrice: 10, armorBuffs: [], equipmentPills: [])
-        let legsArmor = Armor(name: "", description: "", type: .legs, armorPoints: 500, basePurchasePrice: 10, armorBuffs: [], equipmentPills: [])
+        let headArmor = Armor(name: "", description: "", type: .head, armorPoints: 500, armorBuffs: [], equipmentPills: [])
+        let bodyArmor = Armor(name: "", description: "", type: .body, armorPoints: 500, armorBuffs: [], equipmentPills: [])
+        let legsArmor = Armor(name: "", description: "", type: .legs, armorPoints: 500, armorBuffs: [], equipmentPills: [])
         self.actor.equipArmor(headArmor)
         self.actor.equipArmor(bodyArmor)
         self.actor.equipArmor(legsArmor)

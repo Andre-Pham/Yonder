@@ -9,7 +9,6 @@ import Foundation
 
 class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
     
-    private(set) var basePurchasePrice: Int = 0
     private let basePill: WeaponBasePill
     @DidSetPublished private(set) var durabilityPill: WeaponDurabilityPill {
         didSet {
@@ -50,7 +49,6 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
         
         self.basePill.setup(weapon: self)
         self.durabilityPill.setupDurability(weapon: self)
-        self.basePurchasePrice = self.getCurrentPrice() // Needs setup to get current price
         
         WeaponPillBox.setDurabilityPills(weapon: self)
         WeaponPillBox.setEffectPills(weapon: self)
@@ -67,7 +65,6 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
         // These are still required to setup subscribers and such
         self.basePill.setup(weapon: self)
         self.durabilityPill.setupDurability(weapon: self)
-        self.basePurchasePrice = original.basePurchasePrice
         
         WeaponPillBox.setDurabilityPills(weapon: self)
         WeaponPillBox.setEffectPills(weapon: self)
@@ -149,13 +146,6 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
         self.buffPills.append(buff)
     }
     
-    func getCurrentPrice() -> Int {
-        return self.remainingUses*(
-            self.basePill.getValue() +
-            self.durabilityPill.getValue() +
-            self.effectPills.map { $0.getValue() }.reduce(0, +))
-    }
-    
     func use(owner: ActorAbstract, opposition: ActorAbstract) {
         // We only want buffs to apply to weapons that already have the relevant property
         // E.g a health staff that heals, a +10 damage weapon buff shouldn't suddenly cause the healing staff to deal damage
@@ -187,6 +177,15 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
         for _ in 0..<amount {
             receiver.addWeapon(self)
         }
+    }
+    
+    func getBasePurchasePrice() -> Int {
+        return self.remainingUses*(
+            self.basePill.calculateBasePurchasePrice() +
+            self.durabilityPill.calculateBasePurchasePrice() +
+            self.effectPills.map { $0.calculateBasePurchasePrice() }.reduce(0, +) +
+            self.buffPills.map { $0.calculateBasePurchasePrice() }.reduce(0, +)
+        )
     }
     
     func getEnhanceInfo() -> EnhanceInfo {

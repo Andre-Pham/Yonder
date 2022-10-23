@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias Buff = BuffAbstract & HasPriceValue
+
 class BuffAbstract: EffectsDescribed, Clonable {
     
     public let sourceName: String

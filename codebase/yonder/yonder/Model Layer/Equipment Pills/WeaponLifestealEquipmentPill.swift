@@ -41,8 +41,15 @@ class WeaponLifestealEquipmentPill: EquipmentPill, OnActorAttackSubscriber {
         actor.delayedRestorationValues.addRestorationAdjusted(type: .health, sourceOwner: actor, using: self, for: healthToRestore)
     }
     
-    func getValue() -> Int {
-        return Int(round(self.lifestealFraction*10.0))
+    func getValue(whenTargeting target: Target) -> Int {
+        return Pricing.getBuffValue(
+            flipIncomingOutgoing: target == .foe,
+            incomingStat: Pricing.foeDamageStat,
+            outgoingStat: Pricing.playerDamageStat,
+            fraction: self.lifestealFraction,
+            duration: nil,
+            direction: .outgoing
+        )
     }
     
 }

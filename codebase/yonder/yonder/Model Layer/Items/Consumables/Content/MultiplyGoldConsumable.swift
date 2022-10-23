@@ -11,15 +11,14 @@ class MultiplyGoldConsumable: Consumable {
     
     private let goldFraction: Double
     
-    init(basePurchasePrice: Int, goldFraction: Double) {
+    init(goldFraction: Double) {
         self.goldFraction = goldFraction
         
         let percentage = self.goldFraction.toRelativePercentage(decimalPlaces: 0)
         super.init(
             name: Strings.Consumable.MultiplyGold.Name.local,
             description: Strings.Consumable.MultiplyGold.Description.local,
-            effectsDescription: Strings.Consumable.MultiplyGold.EffectsDescription1Param.localWithArgs(percentage),
-            basePurchasePrice: basePurchasePrice
+            effectsDescription: Strings.Consumable.MultiplyGold.EffectsDescription1Param.localWithArgs(percentage)
         )
     }
     
@@ -41,6 +40,10 @@ class MultiplyGoldConsumable: Consumable {
             return self.goldFraction == consumable.goldFraction
         }
         return false
+    }
+    
+    func calculateBasePurchasePrice() -> Int {
+        return Pricing.playerGoldStat.getValue(amount: Pricing.playerGoldStat.baseStatAmount, uses: self.remainingUses)
     }
     
 }

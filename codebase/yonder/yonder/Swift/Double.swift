@@ -34,4 +34,8 @@ extension Double {
         return self >= 0 && self < 1
     }
     
+    func toRoundedInt() -> Int {
+        return Int(Darwin.round(self))
+    }
+    
 }

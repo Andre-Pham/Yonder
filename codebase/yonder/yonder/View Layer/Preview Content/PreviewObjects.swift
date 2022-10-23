@@ -20,7 +20,7 @@ enum PreviewObjects {
         player.addStatusEffect(BurnStatusEffect(damage: 15, duration: 5))
         player.addTimedEvent(MaxHealthRestorationTimedEvent(timeToTrigger: 5))
         player.equipAccessory(Self.accessory, replacing: nil)
-        player.addConsumable(TurnImprovingRestorationConsumable(basePurchasePrice: 10))
+        player.addConsumable(TurnImprovingRestorationConsumable())
         return player
     }
     
@@ -40,7 +40,6 @@ enum PreviewObjects {
             description: "Very cool. Looks shiny.",
             type: .body,
             armorPoints: 500,
-            basePurchasePrice: 200,
             armorBuffs: [DamagePercentBuff(sourceName: "Cool Armor", direction: .incoming, duration: nil, damageFraction: 0.8)],
             equipmentPills: []
         )
@@ -63,7 +62,6 @@ enum PreviewObjects {
             type: .regular,
             healthBonus: 0,
             armorPointsBonus: 0,
-            basePurchasePrice: 0,
             buffs: [DamagePercentBuff(sourceName: "Cool Accessory", direction: .outgoing, duration: nil, damageFraction: 1.5)],
             equipmentPills: []
         )
@@ -76,7 +74,6 @@ enum PreviewObjects {
             type: .peripheral,
             healthBonus: 10,
             armorPointsBonus: 20,
-            basePurchasePrice: 100,
             buffs: [DamagePercentBuff(sourceName: "Cool Accessory", direction: .outgoing, duration: nil, damageFraction: 1.5)],
             equipmentPills: []
         )
@@ -99,7 +96,7 @@ enum PreviewObjects {
     private static var lootBag: LootBag {
         let lootBag = LootBag()
         lootBag.addArmorLoot(self.armorViewModel.armor)
-        lootBag.addPotionLoot(DamagePotion(tier: .II, potionCount: 3, basePurchasePrice: 200))
+        lootBag.addPotionLoot(DamagePotion(tier: .II, potionCount: 3))
         lootBag.addAccessoryLoot(self.accessory)
         lootBag.addWeaponLoot(Weapon(basePill: LifestealBasePill(damage: 100), durabilityPill: InfiniteDurabilityPill()))
         lootBag.addGoldLoot(100)
@@ -235,7 +232,7 @@ enum PreviewObjects {
     }
     
     private static var potion: Potion {
-        return DamagePotion(tier: .II, potionCount: 3, basePurchasePrice: 100)
+        return DamagePotion(tier: .II, potionCount: 3)
     }
     
     // VIEW MODEL
@@ -253,7 +250,7 @@ enum PreviewObjects {
     // MODEL
     
     private static var consumable: Consumable {
-        return RipeningSetHealthConsumable(basePurchasePrice: 10)
+        return RipeningSetHealthConsumable()
     }
     
     // VIEW MODEL

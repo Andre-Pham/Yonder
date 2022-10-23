@@ -7,14 +7,14 @@
 
 import Foundation
 
-class ArmorPointsRestorationPercentBuff: BuffAbstract {
+class ArmorPointsRestorationPercentBuff: Buff {
     
     private let armorPointsFraction: Double
     
     init(sourceName: String, direction: BuffDirection, duration: Int?, armorPointsFraction: Double) {
         self.armorPointsFraction = armorPointsFraction
         
-        let effectsDescription = Self.buildPercentageEffectsDescription(
+        let effectsDescription = BuffEffectsDescription.buildPercentageEffectsDescription(
             direction: direction,
             fraction: armorPointsFraction,
             outgoingIncrease: Strings.Buff.ArmorRestorationPercent.EffectsDescription.OutgoingIncrease1Param,
@@ -41,6 +41,17 @@ class ArmorPointsRestorationPercentBuff: BuffAbstract {
     
     override func applyArmorPoints(to armorPoints: Int, source: Any) -> Int {
         return Int(round(Double(armorPoints)*self.armorPointsFraction))
+    }
+    
+    func getValue(whenTargeting target: Target) -> Int {
+        return Pricing.getBuffValue(
+            flipIncomingOutgoing: target == .foe,
+            incomingStat: Pricing.playerArmorPointsRestorationStat,
+            outgoingStat: Pricing.foeArmorPointsRestorationStat,
+            fraction: self.armorPointsFraction,
+            duration: self.timeRemaining,
+            direction: self.direction
+        )
     }
     
 }

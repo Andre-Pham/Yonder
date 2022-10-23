@@ -18,7 +18,7 @@ class WeaponBuffPillTests: XCTestCase {
 
     func testArmorDamagePercentBuffPill() throws {
         let weapon = Weapon(basePill: DamageBasePill(damage: 5), durabilityPill: InfiniteDurabilityPill(), buffPills: [ArmorDamagePercentBuffPill(damageFraction: 2.0)])
-        self.foe.equipAccessory(Accessory(name: "", description: "", type: .regular, healthBonus: 0, armorPointsBonus: 3, basePurchasePrice: 10, buffs: [], equipmentPills: []), replacing: nil)
+        self.foe.equipAccessory(Accessory(name: "", description: "", type: .regular, healthBonus: 0, armorPointsBonus: 3, buffs: [], equipmentPills: []), replacing: nil)
         self.player.addWeapon(weapon)
         self.player.useWeaponWhere(opposition: self.foe, weapon: self.player.weapons.first!)
         // Foe has 500 health, 3 armor

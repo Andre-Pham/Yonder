@@ -32,8 +32,9 @@ class BurnStatusEffectEffectPill: WeaponEffectPill {
         opposition.addStatusEffect(BurnStatusEffect(damage: self.tickDamage, duration: self.initialDuration))
     }
     
-    func getValue() -> Int {
-        return self.tickDamage*self.initialDuration
+    func calculateBasePurchasePrice() -> Int {
+        // I'm giving a 30% discount because it's delayed
+        return (Double(Pricing.playerDamageStat.getValue(amount: self.tickDamage)*self.initialDuration)*0.7).toRoundedInt()
     }
     
 }

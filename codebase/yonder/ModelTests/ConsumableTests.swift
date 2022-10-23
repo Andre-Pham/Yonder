@@ -15,35 +15,35 @@ class ConsumableTests: XCTestCase {
     let turnManager = TestsTurnManager.turnManager
     
     func testConsumableRemoval() throws {
-        self.player.addConsumable(MultiplyGoldConsumable(basePurchasePrice: 10, goldFraction: 2.0))
+        self.player.addConsumable(MultiplyGoldConsumable(goldFraction: 2.0))
         self.player.useConsumableWhere(opposition: nil, consumable: self.player.consumables.first!)
         XCTAssertEqual(self.player.consumables.count, 0)
     }
     
     func testStackable() throws {
-        self.player.addConsumable(MultiplyGoldConsumable(basePurchasePrice: 10, goldFraction: 2.0))
-        self.player.addConsumable(MultiplyGoldConsumable(basePurchasePrice: 10, goldFraction: 2.0))
+        self.player.addConsumable(MultiplyGoldConsumable(goldFraction: 2.0))
+        self.player.addConsumable(MultiplyGoldConsumable(goldFraction: 2.0))
         XCTAssertEqual(self.player.consumables.count, 1)
         XCTAssertEqual(self.player.consumables.first!.remainingUses, 2)
     }
     
     func testRandomHealthConsumable() throws {
         var health = self.player.health
-        self.player.useConsumableWhere(opposition: nil, consumable: RandomHealthConsumable(basePurchasePrice: 10))
+        self.player.useConsumableWhere(opposition: nil, consumable: RandomHealthConsumable())
         XCTAssertNotEqual(health, self.player.health)
         health = self.player.health
-        self.player.useConsumableWhere(opposition: nil, consumable: RandomHealthConsumable(basePurchasePrice: 10))
+        self.player.useConsumableWhere(opposition: nil, consumable: RandomHealthConsumable())
         XCTAssertNotEqual(health, self.player.health)
     }
     
     func testMultiplyGoldConsumable() throws {
         self.player.modifyGold(by: 500)
-        self.player.useConsumableWhere(opposition: nil, consumable: MultiplyGoldConsumable(basePurchasePrice: 10, goldFraction: 2.0))
+        self.player.useConsumableWhere(opposition: nil, consumable: MultiplyGoldConsumable(goldFraction: 2.0))
         XCTAssertEqual(self.player.gold, 1000)
     }
     
     func testAdjustMaxHealthConsumable() throws {
-        self.player.useConsumableWhere(opposition: nil, consumable: BonusHealthConsumable(basePurchasePrice: 10, tier: .I))
+        self.player.useConsumableWhere(opposition: nil, consumable: BonusHealthConsumable(tier: .I))
         XCTAssertEqual(self.player.maxHealth, 500 + BonusHealthConsumable.Tier.I.amount)
         XCTAssertEqual(self.player.health, 500 + BonusHealthConsumable.Tier.I.amount)
     }
@@ -51,7 +51,7 @@ class ConsumableTests: XCTestCase {
     func testRipeningSetHealthConsumable() throws {
         // Add 4 to the stack
         for _ in 0..<4 {
-            self.player.addConsumable(RipeningSetHealthConsumable(basePurchasePrice: 10))
+            self.player.addConsumable(RipeningSetHealthConsumable())
         }
         self.player.adjustBonusHealth(by: 999 - self.player.health)
         self.player.useConsumableWhere(opposition: nil, consumable: self.player.consumables.first!)
@@ -71,8 +71,8 @@ class ConsumableTests: XCTestCase {
     func testTurnImprovingRestorationConsumable() throws {
         let startingRestoration = 10
         let restorationIncrease = 2
-        self.player.addConsumable(TurnImprovingRestorationConsumable(basePurchasePrice: 10))
-        self.player.addConsumable(TurnImprovingRestorationConsumable(basePurchasePrice: 10))
+        self.player.addConsumable(TurnImprovingRestorationConsumable())
+        self.player.addConsumable(TurnImprovingRestorationConsumable())
         self.player.setHealth(to: 100)
         self.player.useConsumableWhere(opposition: nil, consumable: self.player.consumables.first!)
         XCTAssertEqual(self.player.health, 100 + startingRestoration)
@@ -82,7 +82,7 @@ class ConsumableTests: XCTestCase {
     }
     
     func testRestoreArmorPointsConsumable() throws {
-        let consumable = RestoreArmorPointsConsumable(basePurchasePrice: 10, tier: .I)
+        let consumable = RestoreArmorPointsConsumable(tier: .I)
         XCTAssertEqual(self.player.getIndicativeArmorPointsRestoration(of: consumable), consumable.tier.armorPointsRestoration)
     }
 

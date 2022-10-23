@@ -25,7 +25,7 @@ class TurnManager: AfterActorAttackSubscriber, AfterPlayerTravelSubscriber {
         }
     }
     
-    func AfterPlayerTravel(player: Player) {
+    func afterPlayerTravel(player: Player) {
         self.completeTurn(player: player)
     }
     

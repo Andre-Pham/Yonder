@@ -36,14 +36,13 @@ class RestoreArmorPointsConsumable: Consumable {
     
     public let tier: Tier
     
-    init(basePurchasePrice: Int, tier: Tier) {
+    init(tier: Tier) {
         self.tier = tier
         
         super.init(
             name: Strings.Consumable.RestoreArmorPoints.Name.local.continuedBy(tier.string),
             description: Strings.Consumable.RestoreArmorPoints.Description.local,
             effectsDescription: Strings.Consumable.RestoreArmorPoints.EffectsDescription1Param.localWithArgs(tier.armorPointsRestoration),
-            basePurchasePrice: basePurchasePrice,
             armorPointsRestoration: self.tier.armorPointsRestoration
         )
     }
@@ -63,6 +62,10 @@ class RestoreArmorPointsConsumable: Consumable {
             return consumable.tier == self.tier
         }
         return false
+    }
+    
+    func calculateBasePurchasePrice() -> Int {
+        return Pricing.playerArmorPointsRestorationStat.getValue(amount: self.armorPointsRestoration, uses: self.remainingUses)
     }
     
 }

@@ -10,11 +10,9 @@ import Foundation
 /// Pill that affects the behaviour of one of a weapon's base stats (damage, restoration, healthRestoration, armorPointsRestoration)
 typealias WeaponBuffPill = WeaponBuffPillAbstract & WeaponBuffPillProtocol
 
-protocol WeaponBuffPillProtocol {
+protocol WeaponBuffPillProtocol: HasPurchasablePrice {
     
     var effectsDescription: String { get }
-    
-    func getValue() -> Int
     
 }
 

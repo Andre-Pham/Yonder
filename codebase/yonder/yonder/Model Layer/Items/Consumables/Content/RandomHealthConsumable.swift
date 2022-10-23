@@ -9,12 +9,11 @@ import Foundation
 
 class RandomHealthConsumable: Consumable {
     
-    init(basePurchasePrice: Int) {
+    init() {
         super.init(
             name: Strings.Consumable.RandomHealth.Name.local,
             description: Strings.Consumable.RandomHealth.Description.local,
-            effectsDescription: Strings.Consumable.RandomHealth.EffectsDescription.local,
-            basePurchasePrice: basePurchasePrice
+            effectsDescription: Strings.Consumable.RandomHealth.EffectsDescription.local
         )
     }
     
@@ -33,6 +32,10 @@ class RandomHealthConsumable: Consumable {
     
     func isStackable(with consumable: Consumable) -> Bool {
         return consumable is Self
+    }
+    
+    func calculateBasePurchasePrice() -> Int {
+        return Pricing.playerHealthRestorationStat.getValue(amount: Pricing.playerHealthStat.baseStatAmount/3, uses: self.remainingUses)
     }
     
 }

@@ -7,22 +7,19 @@
 
 import Foundation
 
-typealias Consumable = ConsumableAbstract & AlwaysUsable & ConsumableIsStackable
+typealias Consumable = ConsumableAbstract & AlwaysUsable & ConsumableIsStackable & HasPurchasablePrice
 
 class ConsumableAbstract: Item, Clonable, Purchasable {
     
-    public let basePurchasePrice: Int
     @DidSetPublished private(set) var effectsDescription: String? = nil
     
-    init(name: String, description: String, effectsDescription: String?, basePurchasePrice: Int, requiresFoeForUsage: Bool = false, damage: Int = 0, restoration: Int = 0, healthRestoration: Int = 0, armorPointsRestoration: Int = 0) {
+    init(name: String, description: String, effectsDescription: String?, requiresFoeForUsage: Bool = false, damage: Int = 0, restoration: Int = 0, healthRestoration: Int = 0, armorPointsRestoration: Int = 0) {
         self.effectsDescription = effectsDescription
-        self.basePurchasePrice = basePurchasePrice
         super.init(name: name, description: description, remainingUses: 1, damage: damage, restoration: restoration, healthRestoration: healthRestoration, armorPointsRestoration: armorPointsRestoration, requiresFoeForUsage: requiresFoeForUsage)
     }
     
     required init(_ original: ConsumableAbstract) {
         self.effectsDescription = original.effectsDescription
-        self.basePurchasePrice = original.basePurchasePrice
         super.init(name: original.name, description: original.description, remainingUses: original.remainingUses, damage: original.damage, restoration: original.restoration, healthRestoration: original.healthRestoration, armorPointsRestoration: original.armorPointsRestoration, requiresFoeForUsage: original.requiresFoeForUsage)
     }
     
@@ -39,6 +36,10 @@ class ConsumableAbstract: Item, Clonable, Purchasable {
             self.setRemainingUses(to: self.remainingUses*amount)
         }
         receiver.addConsumable(self as! Consumable)
+    }
+    
+    func getBasePurchasePrice() -> Int {
+        return (self as! Consumable).calculateBasePurchasePrice()
     }
     
     func getEffectsDescription() -> String? {

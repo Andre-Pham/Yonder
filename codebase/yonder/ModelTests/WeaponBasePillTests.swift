@@ -54,7 +54,7 @@ class WeaponBasePillTests: XCTestCase {
         XCTAssertEqual(weapon.armorPointsRestoration, 50)
         // Test logic
         self.player.addWeapon(weapon)
-        self.player.equipArmor(Armor(name: "Armor", description: "Armor.", type: .body, armorPoints: 100, basePurchasePrice: 0, armorBuffs: [], equipmentPills: []))
+        self.player.equipArmor(Armor(name: "Armor", description: "Armor.", type: .body, armorPoints: 100, armorBuffs: [], equipmentPills: []))
         self.player.damage(for: 100)
         self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
         XCTAssertEqual(self.player.armorPoints, 50)

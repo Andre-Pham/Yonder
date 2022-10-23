@@ -7,14 +7,14 @@
 
 import Foundation
 
-class WeaponDamageBuff: BuffAbstract {
+class WeaponDamageBuff: Buff {
     
     private let damageDifference: Int
     
     init(sourceName: String, direction: BuffDirection, duration: Int?, damageDifference: Int) {
         self.damageDifference = damageDifference
         
-        let effectsDescription = Self.buildMagnitudeEffectsDescription(
+        let effectsDescription = BuffEffectsDescription.buildMagnitudeEffectsDescription(
             direction: direction,
             difference: damageDifference,
             outgoingIncrease: Strings.Buff.WeaponDamage.EffectsDescription.OutgoingIncrease1Param,
@@ -44,6 +44,17 @@ class WeaponDamageBuff: BuffAbstract {
             return self.damageDifference + damage
         }
         return damage
+    }
+    
+    func getValue(whenTargeting target: Target) -> Int {
+        return Pricing.getBuffValue(
+            flipIncomingOutgoing: target == .foe,
+            incomingStat: Pricing.foeDamageStat,
+            outgoingStat: Pricing.playerDamageStat,
+            amount: self.damageDifference,
+            duration: self.timeRemaining,
+            direction: self.direction
+        )
     }
     
 }

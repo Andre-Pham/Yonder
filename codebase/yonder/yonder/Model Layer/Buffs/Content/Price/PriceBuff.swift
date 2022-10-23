@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PriceBuff: BuffAbstract {
+class PriceBuff: Buff {
     
     private let priceDifference: Int
     
@@ -44,6 +44,17 @@ class PriceBuff: BuffAbstract {
     
     override func applyPrice(to gold: Int) -> Int {
         return self.priceDifference + gold
+    }
+    
+    func getValue(whenTargeting target: Target) -> Int {
+        return Pricing.getBuffValue(
+            flipIncomingOutgoing: target == .foe,
+            incomingStat: Pricing.noStat,
+            outgoingStat: Pricing.priceStat,
+            amount: self.priceDifference,
+            duration: self.timeRemaining,
+            direction: self.direction
+        )
     }
     
 }

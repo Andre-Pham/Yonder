@@ -24,7 +24,6 @@ class NoAccessory: Accessory {
             type: type,
             healthBonus: 0,
             armorPointsBonus: 0,
-            basePurchasePrice: 0,
             buffs: [],
             equipmentPills: [])
     }

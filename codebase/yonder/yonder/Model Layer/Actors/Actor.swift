@@ -23,7 +23,7 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
     @DidSetPublished private(set) var statusEffects = [StatusEffect]()
     @DidSetPublished private(set) var timedEvents = [TimedEvent]()
     @DidSetPublished private(set) var weapons = [Weapon]()
-    @DidSetPublished private(set) var buffs = [BuffAbstract]()
+    @DidSetPublished private(set) var buffs = [Buff]()
     @DidSetPublished private(set) var potions = [Potion]()
     @DidSetPublished private(set) var consumables = [Consumable]()
     @DidSetPublished private(set) var headArmor: Armor = NoArmor(type: .head)
@@ -315,12 +315,12 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
     
     // MARK: - Buffs
     
-    func addBuff(_ buff: BuffAbstract) {
+    func addBuff(_ buff: Buff) {
         self.buffs.append(buff.clone())
     }
     
-    func getAllBuffsInPriority() -> [BuffAbstract] {
-        var allBuffs: [BuffAbstract] = Array(self.buffs)
+    func getAllBuffsInPriority() -> [Buff] {
+        var allBuffs: [Buff] = Array(self.buffs)
         for armorPiece in self.allArmorPieces {
             allBuffs.append(contentsOf: armorPiece.armorBuffs)
         }
@@ -332,7 +332,7 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
     }
     
     func decrementBuffs() {
-        var remainingBuffs = [BuffAbstract]()
+        var remainingBuffs = [Buff]()
         for buff in self.buffs {
             buff.decrementTimeRemaining()
             if buff.isInfinite || buff.timeRemaining! > 0 {

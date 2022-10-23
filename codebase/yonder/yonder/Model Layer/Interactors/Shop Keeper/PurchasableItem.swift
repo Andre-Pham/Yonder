@@ -33,14 +33,15 @@ class PurchasableItem {
     }
     
     private(set) var item: Purchasable
-    public let price: Int
+    public var price: Int {
+        return self.item.getBasePurchasePrice()
+    }
     @DidSetPublished private(set) var stockRemaining: Int
     public let id = UUID()
     public let info: PurchasableItemInfo
     
     init(item: Purchasable, stock: Int) {
         self.item = item
-        self.price = item.basePurchasePrice
         self.stockRemaining = stock
         self.info = item.getPurchaseInfo()
     }

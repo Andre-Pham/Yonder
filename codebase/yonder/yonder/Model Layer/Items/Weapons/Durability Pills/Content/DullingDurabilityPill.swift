@@ -37,7 +37,7 @@ class DullingDurabilityPill: WeaponDurabilityPill {
         }
     }
     
-    func getValue() -> Int {
+    func calculateBasePurchasePrice() -> Int {
         return 0
     }
     

@@ -7,25 +7,22 @@
 
 import Foundation
 
-typealias Potion = PotionAbstract & Usable
+typealias Potion = PotionAbstract & Usable & HasPurchasablePrice
 
 class PotionAbstract: Item, Purchasable, Clonable {
     
-    public let basePurchasePrice: Int
     private let effectsDescription: String?
     var potionCount: Int {
         return self.remainingUses
     }
     
-    init(name: String, description: String, effectsDescription: String?, remainingUses: Int = 0, damage: Int = 0, restoration: Int = 0, healthRestoration: Int = 0, armorPointsRestoration: Int = 0, basePurchasePrice: Int) {
-        self.basePurchasePrice = basePurchasePrice
+    init(name: String, description: String, effectsDescription: String?, remainingUses: Int = 0, damage: Int = 0, restoration: Int = 0, healthRestoration: Int = 0, armorPointsRestoration: Int = 0) {
         self.effectsDescription = effectsDescription
         
         super.init(name: name, description: description, remainingUses: remainingUses, damage: damage, restoration: restoration, healthRestoration: healthRestoration, armorPointsRestoration: armorPointsRestoration)
     }
     
     required init(_ original: PotionAbstract) {
-        self.basePurchasePrice = original.basePurchasePrice
         self.effectsDescription = original.effectsDescription
         
         super.init(name: original.name, description: original.description, remainingUses: original.remainingUses, damage: original.damage, restoration: original.restoration, healthRestoration: original.healthRestoration, armorPointsRestoration: original.armorPointsRestoration, infiniteRemainingUses: original.infiniteRemainingUses)
@@ -53,6 +50,10 @@ class PotionAbstract: Item, Purchasable, Clonable {
         if self.remainingUses == 0 {
             OnNoPotionsRemainingPublisher.publish(potion: self as! Potion)
         }
+    }
+    
+    func getBasePurchasePrice() -> Int {
+        return (self as! Potion).calculateBasePurchasePrice()
     }
     
 }

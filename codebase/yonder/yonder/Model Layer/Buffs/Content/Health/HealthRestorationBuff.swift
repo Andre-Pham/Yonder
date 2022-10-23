@@ -7,14 +7,14 @@
 
 import Foundation
 
-class HealthRestorationBuff: BuffAbstract {
+class HealthRestorationBuff: Buff {
     
     private let healthDifference: Int
     
     init(sourceName: String, direction: BuffDirection, duration: Int?, healthDifference: Int) {
         self.healthDifference = healthDifference
         
-        let effectsDescription = Self.buildMagnitudeEffectsDescription(
+        let effectsDescription = BuffEffectsDescription.buildMagnitudeEffectsDescription(
             direction: direction,
             difference: healthDifference,
             outgoingIncrease: Strings.Buff.HealthRestoration.EffectsDescription.OutgoingIncrease1Param,
@@ -41,6 +41,17 @@ class HealthRestorationBuff: BuffAbstract {
     
     override func applyHealth(to health: Int, source: Any) -> Int {
         return self.healthDifference + health
+    }
+    
+    func getValue(whenTargeting target: Target) -> Int {
+        return Pricing.getBuffValue(
+            flipIncomingOutgoing: target == .foe,
+            incomingStat: Pricing.playerHealthRestorationStat,
+            outgoingStat: Pricing.foeHealthRestorationStat,
+            amount: self.healthDifference,
+            duration: self.timeRemaining,
+            direction: self.direction
+        )
     }
     
 }

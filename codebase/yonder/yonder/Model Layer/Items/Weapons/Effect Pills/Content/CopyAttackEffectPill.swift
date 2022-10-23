@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Whenever this weapon kills a foe, this weapon copy that foe's damage.
 class CopyAttackEffectPill: WeaponEffectPill, AfterTurnEndSubscriber {
     
     public let effectsDescription: String
@@ -38,8 +39,8 @@ class CopyAttackEffectPill: WeaponEffectPill, AfterTurnEndSubscriber {
         }
     }
     
-    func getValue() -> Int {
-        return 50
+    func calculateBasePurchasePrice() -> Int {
+        return 40
     }
     
 }

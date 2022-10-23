@@ -7,10 +7,10 @@
 
 import Foundation
 
-extension BuffAbstract {
+enum BuffEffectsDescription {
     
     static func buildPercentageEffectsDescription(
-        direction: BuffDirection,
+        direction: Buff.BuffDirection,
         fraction: Double,
         outgoingIncrease: Localizable,
         outgoingDecrease: Localizable,
@@ -45,7 +45,7 @@ extension BuffAbstract {
     }
     
     static func buildMagnitudeEffectsDescription(
-        direction: BuffDirection,
+        direction: Buff.BuffDirection,
         difference: Int,
         outgoingIncrease: Localizable,
         outgoingDecrease: Localizable,

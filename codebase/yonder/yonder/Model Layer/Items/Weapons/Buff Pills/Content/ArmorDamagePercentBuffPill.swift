@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// "Does X% more damage to armor"
 class ArmorDamagePercentBuffPill: WeaponBuffPill {
     
     private let damageFraction: Double
@@ -45,8 +46,15 @@ class ArmorDamagePercentBuffPill: WeaponBuffPill {
         }
     }
     
-    func getValue() -> Int {
-        return 250
+    func calculateBasePurchasePrice() -> Int {
+        return Pricing.getBuffValue(
+            flipIncomingOutgoing: false,
+            incomingStat: Pricing.noStat,
+            outgoingStat: Pricing.playerDamageStat,
+            fraction: self.damageFraction,
+            duration: 1,
+            direction: .outgoing
+        )*Pricing.foeArmorPointsStat.baseStatAmount/(Pricing.foeArmorPointsStat.baseStatAmount + Pricing.foeHealthStat.baseStatAmount)
     }
     
 }

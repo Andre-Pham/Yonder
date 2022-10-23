@@ -33,14 +33,13 @@ class DamagePotion: Potion {
         }
     }
     
-    init(tier: Tier, potionCount: Int, basePurchasePrice: Int) {
+    init(tier: Tier, potionCount: Int) {
         super.init(
             name: Strings.Potion.Damage.Name.local.continuedBy(tier.string),
             description: Strings.Potion.Damage.Description.local,
             effectsDescription: Strings.Potion.Damage.EffectsDescription1Param.localWithArgs(tier.damage),
             remainingUses: potionCount,
-            damage: tier.damage,
-            basePurchasePrice: basePurchasePrice)
+            damage: tier.damage)
     }
     
     required init(_ original: PotionAbstract) {
@@ -50,6 +49,10 @@ class DamagePotion: Potion {
     func use(owner: ActorAbstract, opposition: ActorAbstract) {
         opposition.damageAdjusted(sourceOwner: owner, using: self, for: self.damage)
         self.adjustRemainingUses(by: -1)
+    }
+    
+    func calculateBasePurchasePrice() -> Int {
+        return Pricing.playerDamageStat.getValue(amount: self.damage, uses: self.remainingUses)
     }
     
 }

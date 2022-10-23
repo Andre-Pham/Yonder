@@ -9,12 +9,6 @@ import Foundation
 
 typealias EquipmentPill = EquipmentPillAbstract & HasPriceValue
 
-protocol HasPriceValue {
-    
-    func getValue() -> Int
-    
-}
-
 class EquipmentPillAbstract: Clonable {
     
     public let sourceName: String

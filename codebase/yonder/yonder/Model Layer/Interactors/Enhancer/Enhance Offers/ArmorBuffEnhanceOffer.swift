@@ -13,9 +13,9 @@ class ArmorBuffEnhanceOffer: EnhanceOffer {
     public let price: Int
     public let name: String
     public let description: String
-    private let buff: BuffAbstract
+    private let buff: Buff
     
-    init(price: Int, buff: BuffAbstract) {
+    init(price: Int, buff: Buff) {
         self.price = price
         self.buff = buff
         self.name = Strings.EnhanceOffer.ArmorBuff.Name.local

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class GoldPercentBuff: BuffAbstract {
+class GoldPercentBuff: Buff {
     
     private let goldFraction: Double
     
@@ -38,6 +38,17 @@ class GoldPercentBuff: BuffAbstract {
     
     override func applyGoldBonus(to gold: Int) -> Int {
         return Int(round(Double(gold)*self.goldFraction))
+    }
+    
+    func getValue(whenTargeting target: Target) -> Int {
+        return Pricing.getBuffValue(
+            flipIncomingOutgoing: target == .foe,
+            incomingStat: Pricing.receivedGoldStat,
+            outgoingStat: Pricing.noStat,
+            fraction: self.goldFraction,
+            duration: self.timeRemaining,
+            direction: self.direction
+        )
     }
     
 }

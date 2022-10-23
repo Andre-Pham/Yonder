@@ -27,8 +27,8 @@ class ArmorPointsRestorationBasePill: WeaponBasePill {
         weapon.setArmorPointsRestoration(to: self.armorPointsRestoration)
     }
     
-    func getValue() -> Int {
-        return self.armorPointsRestoration
+    func calculateBasePurchasePrice() -> Int {
+        return Pricing.playerArmorPointsRestorationStat.getValue(amount: self.armorPointsRestoration)
     }
     
 }

@@ -27,8 +27,8 @@ class DamageBasePill: WeaponBasePill {
         weapon.setDamage(to: self.damage)
     }
     
-    func getValue() -> Int {
-        return self.damage
+    func calculateBasePurchasePrice() -> Int {
+        return Pricing.playerDamageStat.getValue(amount: self.damage)
     }
     
 }

@@ -65,12 +65,11 @@ class RipeningSetHealthConsumable: Consumable, OnTurnEndSubscriber {
         }
     }
     
-    init(basePurchasePrice: Int) {
+    init() {
         super.init(
             name: self.stage.name,
             description: self.stage.description,
-            effectsDescription: Strings.Consumable.RipeningSetHealth.EffectsDescription.Stage11Param.localWithArgs(self.stage2TurnsRequired),
-            basePurchasePrice: basePurchasePrice
+            effectsDescription: Strings.Consumable.RipeningSetHealth.EffectsDescription.Stage11Param.localWithArgs(self.stage2TurnsRequired)
         )
         
         OnTurnEndPublisher.subscribe(self)
@@ -114,6 +113,10 @@ class RipeningSetHealthConsumable: Consumable, OnTurnEndSubscriber {
         if player.consumables.contains(where: { $0.id == self.id }) {
             self.turnsPassed += 1
         }
+    }
+    
+    func calculateBasePurchasePrice() -> Int {
+        return Pricing.playerHealthRestorationStat.getValue(amount: Pricing.playerHealthStat.baseStatAmount/2, uses: self.remainingUses)
     }
     
 }

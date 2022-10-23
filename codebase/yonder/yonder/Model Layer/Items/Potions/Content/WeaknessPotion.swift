@@ -35,7 +35,7 @@ class WeaknessPotion: Potion {
     private let duration: Int
     private let tier: Tier
     
-    init(tier: Tier, duration: Int, potionCount: Int, basePurchasePrice: Int) {
+    init(tier: Tier, duration: Int, potionCount: Int) {
         let name = Strings.Potion.Weakness.Name.local.continuedBy(tier.string)
         self.buff = DamagePercentBuff(sourceName: name, direction: .outgoing, duration: duration, damageFraction: tier.damageFraction)
         self.duration = duration
@@ -44,8 +44,7 @@ class WeaknessPotion: Potion {
             name: name,
             description: Strings.Potion.Weakness.Description.local,
             effectsDescription: Strings.Potion.ApplyToFoe.local.continuedBy(self.buff.getEffectsDescription() ?? ""),
-            remainingUses: potionCount,
-            basePurchasePrice: basePurchasePrice)
+            remainingUses: potionCount)
         assert(self.buff.getEffectsDescription() != nil, "Buff that should have an effects description doesn't have one")
     }
     
@@ -69,6 +68,10 @@ class WeaknessPotion: Potion {
                     self.tier == potion.tier)
         }
         return false
+    }
+    
+    func calculateBasePurchasePrice() -> Int {
+        return self.remainingUses*self.buff.getValue(whenTargeting: .foe)
     }
     
 }

@@ -37,7 +37,7 @@ class DecrementDurabilityPill: WeaponDurabilityPill {
         weapon.adjustRemainingUses(by: self.decrementation)
     }
     
-    func getValue() -> Int {
+    func calculateBasePurchasePrice() -> Int {
         return 0
     }
     

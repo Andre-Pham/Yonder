@@ -24,7 +24,7 @@ class EffectBasePill: WeaponBasePill {
         // Nothing to setup
     }
     
-    func getValue() -> Int {
+    func calculateBasePurchasePrice() -> Int {
         return 0
     }
     

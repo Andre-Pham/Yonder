@@ -29,7 +29,7 @@ class InfiniteDurabilityPill: WeaponDurabilityPill {
         // Do nothing - weapon has infinite durability
     }
 
-    func getValue() -> Int {
+    func calculateBasePurchasePrice() -> Int {
         return 500
     }
     

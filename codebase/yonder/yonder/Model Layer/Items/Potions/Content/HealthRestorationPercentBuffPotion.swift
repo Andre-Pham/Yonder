@@ -35,7 +35,7 @@ class HealthRestorationPercentBuffPotion: Potion {
     private let duration: Int
     private let tier: Tier
     
-    init(tier: Tier, duration: Int, potionCount: Int, basePurchasePrice: Int) {
+    init(tier: Tier, duration: Int, potionCount: Int) {
         let name = Strings.Potion.HealthRestorationPercent.Name.local.continuedBy(tier.string)
         self.buff = HealthRestorationPercentBuff(sourceName: name, direction: .incoming, duration: duration, healthFraction: tier.healthRestorationFraction)
         self.duration = duration
@@ -44,8 +44,7 @@ class HealthRestorationPercentBuffPotion: Potion {
             name: name,
             description: Strings.Potion.HealthRestoration.Description.local,
             effectsDescription: Strings.Potion.ApplyToSelf.local.continuedBy(self.buff.getEffectsDescription() ?? ""),
-            remainingUses: potionCount,
-            basePurchasePrice: basePurchasePrice)
+            remainingUses: potionCount)
         assert(self.buff.getEffectsDescription() != nil, "Buff that should have an effects description doesn't have one")
     }
     
@@ -69,6 +68,10 @@ class HealthRestorationPercentBuffPotion: Potion {
                     self.tier == potion.tier)
         }
         return false
+    }
+    
+    func calculateBasePurchasePrice() -> Int {
+        return self.remainingUses*self.buff.getValue(whenTargeting: .player)
     }
     
 }

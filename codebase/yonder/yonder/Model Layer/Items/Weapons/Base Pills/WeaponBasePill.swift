@@ -11,12 +11,11 @@ import Foundation
 /// Weapons can only take one of this pill.
 typealias WeaponBasePill = WeaponBasePillAbstract & WeaponBasePillProtocol
 
-protocol WeaponBasePillProtocol {
+protocol WeaponBasePillProtocol: HasPurchasablePrice {
     
     var effectsDescription: String? { get }
     
     func setup(weapon: Weapon)
-    func getValue() -> Int
     
 }
 

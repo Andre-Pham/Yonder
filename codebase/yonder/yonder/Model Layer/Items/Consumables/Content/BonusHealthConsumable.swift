@@ -23,7 +23,7 @@ class BonusHealthConsumable: Consumable {
     
     public let tier: Tier
     
-    init(basePurchasePrice: Int, tier: Tier) {
+    init(tier: Tier) {
         self.tier = tier
         
         var name: String
@@ -45,8 +45,7 @@ class BonusHealthConsumable: Consumable {
         super.init(
             name: name,
             description: description,
-            effectsDescription: Strings.Consumable.AdjustMaxHealth.EffectsDescription1Param.localWithArgs(tier.amount),
-            basePurchasePrice: basePurchasePrice
+            effectsDescription: Strings.Consumable.AdjustMaxHealth.EffectsDescription1Param.localWithArgs(tier.amount)
         )
     }
     
@@ -66,6 +65,10 @@ class BonusHealthConsumable: Consumable {
             return consumable.tier == self.tier
         }
         return false
+    }
+    
+    func calculateBasePurchasePrice() -> Int {
+        return Pricing.playerPermanentHealthStat.getValue(amount: self.tier.amount, uses: self.remainingUses)
     }
     
 }

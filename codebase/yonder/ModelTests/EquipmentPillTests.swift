@@ -13,7 +13,7 @@ class EquipmentPillTests: XCTestCase {
     let player = Player(maxHealth: 500, location: NoLocation())
     let foe = Foe(maxHealth: 500, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
     let foeZeroAttack = Foe(maxHealth: 500, weapon: BaseAttack(damage: 0), loot: NoLootOptions())
-    let accessory = Accessory(name: "Test Accessory", description: "For testing.", type: .regular, healthBonus: 0, armorPointsBonus: 0, basePurchasePrice: 0, buffs: [], equipmentPills: [])
+    let accessory = Accessory(name: "Test Accessory", description: "For testing.", type: .regular, healthBonus: 0, armorPointsBonus: 0, buffs: [], equipmentPills: [])
     let turnManager = TestsTurnManager.turnManager
     
     // MARK: - Basic
@@ -42,7 +42,7 @@ class EquipmentPillTests: XCTestCase {
         XCTAssertTrue(!self.player.isDead)
         XCTAssertTrue(self.player.accessorySlots.accessories.isEmpty)
         
-        let armor = Armor(name: "", description: "", type: .body, armorPoints: 0, basePurchasePrice: 10, armorBuffs: [], equipmentPills: [PhoenixEquipmentPill(sourceName: "")])
+        let armor = Armor(name: "", description: "", type: .body, armorPoints: 0, armorBuffs: [], equipmentPills: [PhoenixEquipmentPill(sourceName: "")])
         self.player.equipArmor(armor)
         self.player.damage(for: 1000)
         self.turnManager.completeTurn(player: self.player)
