@@ -51,9 +51,38 @@ final class PricingTests: XCTestCase {
     }
     
     func testBalance() throws {
-        print("========== PRICING BALANCE REPORT ==========")
+        var desc: String
+        var price: String
+        print("============================== PRICING BALANCE REPORT ==============================")
         
-        print("========== END OF REPORT ===================")
+        let damagePotion = DamagePotion(tier: .II, potionCount: 3)
+        desc = "\(damagePotion.remainingUses)x \(damagePotion.name). \(DamagePotion.Tier.II.damage) damage."
+        price = "$\(damagePotion.getBasePurchasePrice())"
+        print(self.insertSpaces(start: desc, end: price))
+        
+        let healthRestorationPotion = HealthRestorationPotion(tier: .II, potionCount: 1)
+        desc = "\(healthRestorationPotion.remainingUses)x \(healthRestorationPotion.name). \(HealthRestorationPotion.Tier.II.healthRestoration) healing."
+        price = "$\(healthRestorationPotion.getBasePurchasePrice())"
+        print(self.insertSpaces(start: desc, end: price))
+        
+        let resistanceArmor = Armor(name: "Resistance Armor", description: "", type: .body, armorPoints: 200, armorBuffs: [DamagePercentBuff(sourceName: "Resistance Armor", direction: .incoming, duration: nil, damageFraction: 0.8)], equipmentPills: [], armorAttributes: [])
+        desc = "\(resistanceArmor.name). \(resistanceArmor.armorPoints) shields. \(resistanceArmor.getEffectsDescription()!)"
+        price = "$\(resistanceArmor.getBasePurchasePrice())"
+        print(self.insertSpaces(start: desc, end: price))
+        
+        let basicWeapon = Weapon(name: "Weapon", description: "", basePill: DamageBasePill(damage: 50), durabilityPill: DecrementDurabilityPill(durability: 5), effectPills: [], buffPills: [])
+        desc = "\(basicWeapon.name). \(basicWeapon.remainingUses) durability. \(basicWeapon.damage) damage."
+        price = "$\(basicWeapon.getBasePurchasePrice())"
+        print(self.insertSpaces(start: desc, end: price))
+        
+        print("============================== END OF REPORT =======================================")
+    }
+    
+    private func insertSpaces(start: String, end: String) -> String {
+        let requiredLength = 84
+        let requiredCount = requiredLength - start.count - end.count
+        let spaces = String(repeating: " ", count: requiredCount)
+        return start + spaces + end
     }
 
 }
