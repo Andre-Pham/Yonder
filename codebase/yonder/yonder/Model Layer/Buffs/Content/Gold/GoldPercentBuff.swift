@@ -42,12 +42,9 @@ class GoldPercentBuff: Buff {
     
     func getValue(whenTargeting target: Target) -> Int {
         return Pricing.getBuffValue(
-            flipIncomingOutgoing: target == .foe,
-            incomingStat: Pricing.receivedGoldStat,
-            outgoingStat: Pricing.noStat,
             fraction: self.goldFraction,
-            duration: self.timeRemaining,
-            direction: self.direction
+            stat: Pricing.receivedGoldStat,
+            timeRemaining: self.timeRemaining
         )
     }
     

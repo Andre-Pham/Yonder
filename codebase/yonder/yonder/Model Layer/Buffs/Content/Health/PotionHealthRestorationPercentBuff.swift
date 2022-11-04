@@ -47,12 +47,13 @@ class PotionHealthRestorationPercentBuff: Buff {
     }
     
     func getValue(whenTargeting target: Target) -> Int {
-        return Pricing.getBuffValue(
-            flipIncomingOutgoing: target == .foe,
-            incomingStat: Pricing.playerHealthRestorationStat,
-            outgoingStat: Pricing.foeHealthRestorationStat,
+        return Pricing.getTargetedBuffValue(
             fraction: self.healthFraction,
-            duration: self.timeRemaining,
+            defaultTargetsOwner: true,
+            target: target,
+            playerStat: Pricing.playerHealthRestorationStat,
+            foeStat: Pricing.foeHealthRestorationStat,
+            timeRemaining: self.timeRemaining,
             direction: self.direction
         )
     }

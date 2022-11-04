@@ -48,14 +48,12 @@ class ThornsEquipmentPill: EquipmentPill, OnTurnEndSubscriber {
     }
     
     func getValue(whenTargeting target: Target) -> Int {
-        return Pricing.getBuffValue(
-            flipIncomingOutgoing: target == .foe,
-            incomingStat: Pricing.playerDamageStat,
-            outgoingStat: Pricing.foeDamageStat,
-            fraction: self.thornsFraction,
-            duration: nil,
-            direction: .outgoing
-        )
+        switch target {
+        case .player:
+            return Pricing.playerDamageStat.getValue(amount: Pricing.foeDamageStat.fractionOfBaseStatAmount(self.thornsFraction), uses: Pricing.Stat.infiniteDuration)
+        case .foe:
+            return Pricing.foeDamageStat.getValue(amount: Pricing.playerDamageStat.fractionOfBaseStatAmount(self.thornsFraction), uses: Pricing.Stat.infiniteDuration)
+        }
     }
     
 }

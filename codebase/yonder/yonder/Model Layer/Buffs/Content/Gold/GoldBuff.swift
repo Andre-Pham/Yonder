@@ -48,12 +48,9 @@ class GoldBuff: Buff {
     
     func getValue(whenTargeting target: Target) -> Int {
         return Pricing.getBuffValue(
-            flipIncomingOutgoing: target == .foe,
-            incomingStat: Pricing.receivedGoldStat,
-            outgoingStat: Pricing.noStat,
             amount: self.goldDifference,
-            duration: self.timeRemaining,
-            direction: self.direction
+            stat: Pricing.receivedGoldStat,
+            timeRemaining: self.timeRemaining
         )
     }
     

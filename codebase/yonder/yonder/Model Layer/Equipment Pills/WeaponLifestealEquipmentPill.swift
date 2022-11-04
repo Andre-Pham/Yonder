@@ -42,14 +42,12 @@ class WeaponLifestealEquipmentPill: EquipmentPill, OnActorAttackSubscriber {
     }
     
     func getValue(whenTargeting target: Target) -> Int {
-        return Pricing.getBuffValue(
-            flipIncomingOutgoing: target == .foe,
-            incomingStat: Pricing.foeDamageStat,
-            outgoingStat: Pricing.playerDamageStat,
-            fraction: self.lifestealFraction,
-            duration: nil,
-            direction: .outgoing
-        )
+        switch target {
+        case .player:
+            return Pricing.playerHealthRestorationStat.getValue(amount: Pricing.playerDamageStat.fractionOfBaseStatAmount(self.lifestealFraction), uses: Pricing.Stat.infiniteDuration)
+        case .foe:
+            return Pricing.foeHealthRestorationStat.getValue(amount: Pricing.foeDamageStat.fractionOfBaseStatAmount(self.lifestealFraction), uses: Pricing.Stat.infiniteDuration)
+        }
     }
     
 }

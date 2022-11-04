@@ -7,14 +7,16 @@
 
 import Foundation
 
+/// A utility class for managing the pricing of anything and everything to ensure consistency and balance across the game.
 class Pricing {
     
     // MARK: - Singleton
     
     private(set) static var instance: Pricing = Pricing()
     private(set) var gameContext: GameContext? = nil
+    private(set) var injectedStage: Int? = nil
     var stage: Int {
-        return self.gameContext?.stage ?? 0
+        return self.injectedStage ?? (self.gameContext?.stage ?? 0)
     }
     
     private init() { }
@@ -23,29 +25,46 @@ class Pricing {
         self.gameContext = gameContext
     }
     
-    // MARK: - Stat Type
+    func injectStage(_ stage: Int?) {
+        self.injectedStage = stage
+    }
     
+    // MARK: - Stats
+    
+    /// Represents a stat that has value and a "base" amount.
+    /// Base stats should be the average/expected stat for a stage 0 entity that HAS that stat.
     class Stat {
         
         /// Value of one unit of the stat, e.g. 1 damage = 1 gold
-        public let value: Double
+        fileprivate let value: Double
         /// Base stat to base prices off
-        public let baseStat: Double
+        fileprivate let baseStat: Double
+        /// The base stat to base prices off to be used independently from implemented `Pricing` algorithms, with stage multiplier factored in
         public var baseStatAmount: Int {
             let stage = Pricing.instance.stage
-            return Int(self.baseStat*pow(self.stageMultiplier, Double(stage)))
+            return (self.baseStat*pow(self.stageMultiplier, Double(stage))).toRoundedInt()
         }
         /// How much base stats are expected to increase per stage, e.g. health is expected to increase by ~20% per stage
-        public let stageMultiplier: Double
-        /// The direction where increasing this stat benefits the player, e.g. player damage is .outgoing, foe damage is .incoming
-        /// `nil` indicates buffs can't be applied to this stat
-        public let playerPrefers: Buff.BuffDirection?
+        fileprivate let stageMultiplier: Double
+        ///
+        fileprivate let playerWantsIncreased: Bool
+        /// Value is multiplied by duration, but if an item's effect lasts forever (e.g. an accessory) it has a flat multipler
+        public static let infiniteDuration = 30
         
-        init(value: Double, baseStat: Double, stageMultiplier: Double, playerPrefers: Buff.BuffDirection?) {
+        fileprivate init(value: Double, baseStat: Double, stageMultiplier: Double, playerWantsIncreased: Bool) {
             self.value = value
             self.baseStat = baseStat
             self.stageMultiplier = stageMultiplier
-            self.playerPrefers = playerPrefers
+            self.playerWantsIncreased = playerWantsIncreased
+        }
+        
+        func fractionOfBaseStatAmount(_ fraction: Double) -> Int {
+            let stage = Pricing.instance.stage
+            return (self.baseStat*pow(self.stageMultiplier, Double(stage))*fraction).toRoundedInt()
+        }
+        
+        private func getValueSign(statIncreases: Bool) -> Int {
+            return (statIncreases == self.playerWantsIncreased) ? 1 : -1
         }
         
         /// Get the value of a certain amount of a stat.
@@ -56,112 +75,107 @@ class Pricing {
         ///   - uses: A multiplier for the amount, e.g. 5 potions will do the 5x the damage as 1 potion
         /// - Returns: The value of the amount of a stat
         func getValue(amount: Int, uses: Int = 1) -> Int {
+            return self.getValueSign(statIncreases: amount > 0)*uses*(Double(amount)*self.value).toRoundedInt()
+        }
+        
+        fileprivate func getBuffValue(fraction: Double, duration: Int?) -> Int {
             let stage = Pricing.instance.stage
-            return uses*(Double(amount)*self.value*pow(self.stageMultiplier, Double(stage))).toRoundedInt()
+            return self.getValueSign(statIncreases: fraction.multiplyingIncreases())*(self.baseStat*abs(1.0 - fraction)*self.value*(Double(duration ?? Self.infiniteDuration))*pow(self.stageMultiplier, Double(stage))).toRoundedInt()
+        }
+        
+        fileprivate func getBuffValue(amount: Int, duration: Int?) -> Int {
+            return self.getValueSign(statIncreases: amount > 0)*(Double(amount)*self.value*Double(duration ?? Self.infiniteDuration)).toRoundedInt()
         }
         
     }
     
     // MARK: - Utility Implementation
     
-    /// Value is multiplied by duration, but if an item's effect lasts forever (e.g. an accessory) it has a flat multipler
-    private static let infiniteDuration = 30
-    
-    /// When no stat applies
-    static let noStat = Stat(value: 0.0, baseStat: 0.0, stageMultiplier: 0.0, playerPrefers: nil)
-    
     /// Damage dealt by the player
-    static let playerDamageStat = Stat(value: 1.0, baseStat: 100.0, stageMultiplier: 1.2, playerPrefers: .outgoing)
+    static let playerDamageStat = Stat(value: 1.0, baseStat: 100.0, stageMultiplier: 1.2, playerWantsIncreased: true)
     /// Health restoration towards the player
-    static let playerHealthRestorationStat = Stat(value: 0.5, baseStat: 200.0, stageMultiplier: 1.2, playerPrefers: .incoming)
+    static let playerHealthRestorationStat = Stat(value: 0.5, baseStat: 200.0, stageMultiplier: 1.2, playerWantsIncreased: true)
     /// Armor points restoration towards the player
-    static let playerArmorPointsRestorationStat = Stat(value: 0.5, baseStat: 200.0, stageMultiplier: 1.2, playerPrefers: .incoming)
+    static let playerArmorPointsRestorationStat = Stat(value: 0.5, baseStat: 200.0, stageMultiplier: 1.2, playerWantsIncreased: true)
     /// Bonus health (e.g. an accessory that gives +10 bonus health while equipped)
-    static let playerHealthStat = Stat(value: 3.0, baseStat: 200.0, stageMultiplier: 1.2, playerPrefers: nil)
+    static let playerHealthStat = Stat(value: 3.0, baseStat: 200.0, stageMultiplier: 1.2, playerWantsIncreased: true)
     /// Armor points (e.g. an accessory or armor that gives +10 armor points)
-    static let playerArmorPointsStat = Stat(value: 3.0, baseStat: 300.0, stageMultiplier: 1.5, playerPrefers: nil)
+    static let playerArmorPointsStat = Stat(value: 3.0, baseStat: 300.0, stageMultiplier: 1.5, playerWantsIncreased: true)
     /// Permanent health for the player
-    static let playerPermanentHealthStat = Stat(value: 6.0, baseStat: 200.0, stageMultiplier: 1.2, playerPrefers: nil)
+    static let playerPermanentHealthStat = Stat(value: 6.0, baseStat: 200.0, stageMultiplier: 1.2, playerWantsIncreased: true)
     /// Gold owned by player
-    static let playerGoldStat = Stat(value: 1.0, baseStat: 1000.0, stageMultiplier: 1.2, playerPrefers: nil)
+    static let playerGoldStat = Stat(value: 1.0, baseStat: 1000.0, stageMultiplier: 1.2, playerWantsIncreased: true)
     
-    /// Foe health, for example, if an item halved a foe's health and it was used at stage 0, its value would be $1 x 200.0 / 2, equal to $100
-    static let foeHealthStat = Stat(value: 1.0, baseStat: 200.0, stageMultiplier: 1.2, playerPrefers: nil)
+    /// Foe health
+    static let foeHealthStat = Stat(value: 1.0, baseStat: 200.0, stageMultiplier: 1.2, playerWantsIncreased: false)
     /// Foe armor points
-    static let foeArmorPointsStat = Stat(value: 1.0, baseStat: 50.0, stageMultiplier: 1.2, playerPrefers: nil)
+    static let foeArmorPointsStat = Stat(value: 1.0, baseStat: 50.0, stageMultiplier: 1.2, playerWantsIncreased: false)
     /// Foe damage dealt to player
-    static let foeDamageStat = Stat(value: 0.5, baseStat: 75.0, stageMultiplier: 1.1, playerPrefers: .incoming)
+    static let foeDamageStat = Stat(value: 0.5, baseStat: 75.0, stageMultiplier: 1.1, playerWantsIncreased: false)
     /// Foe health restoration
-    static let foeHealthRestorationStat = Stat(value: 1.0, baseStat: 0.0, stageMultiplier: 0.0, playerPrefers: .outgoing)
+    static let foeHealthRestorationStat = Stat(value: 1.0, baseStat: 15.0, stageMultiplier: 1.02, playerWantsIncreased: false)
     /// Foe health restoration
-    static let foeArmorPointsRestorationStat = Stat(value: 1.0, baseStat: 0.0, stageMultiplier: 0.0, playerPrefers: .outgoing)
+    static let foeArmorPointsRestorationStat = Stat(value: 1.0, baseStat: 15.0, stageMultiplier: 1.02, playerWantsIncreased: false)
     
     /// Gold received by player from looting, etc.
-    static let receivedGoldStat = Stat(value: 1.0, baseStat: 150.0, stageMultiplier: 1.05, playerPrefers: .incoming)
-    /// Gold paid out by player
-    /// Prices can't be .outgoing, however if the fraction decreases prices we need the player preference to also be unaligned with the buff direction, hence .outgoing is necessary
-    static let priceStat = Stat(value: 1.0, baseStat: 50.0, stageMultiplier: 1.1, playerPrefers: .outgoing)
+    static let receivedGoldStat = Stat(value: 1.0, baseStat: 150.0, stageMultiplier: 1.05, playerWantsIncreased: true)
+    /// Gold paid out by player, e.g. purchasing from a shop.
+    static let priceStat = Stat(value: 1.0, baseStat: 50.0, stageMultiplier: 1.1, playerWantsIncreased: false)
     
-    static func getBuffValue(
-        flipIncomingOutgoing: Bool,
-        incomingStat: Stat,
-        outgoingStat: Stat,
-        fraction: Double,
-        duration: Int?,
-        direction: Buff.BuffDirection
+    private static func selectValue(
+        playerValue: Int,
+        foeValue: Int,
+        target: Target,
+        direction: Buff.BuffDirection,
+        targetsOwner: Bool
     ) -> Int {
-        let incomingStat: Stat = flipIncomingOutgoing ? outgoingStat : incomingStat
-        let outgoingStat: Stat = flipIncomingOutgoing ? incomingStat : outgoingStat
-        
-        let stat: Stat
+        var usePlayerValue: Bool
         switch direction {
-        case .incoming:
-            stat = incomingStat
         case .outgoing:
-            stat = outgoingStat
+            usePlayerValue = target == .player
+        case .incoming:
+            usePlayerValue = target == .foe
         case .bidirectional:
-            stat = outgoingStat
+            return foeValue + playerValue
         }
-        
-        // E.g. .outgoing is preferred when there's an increase in player damage
-        let preferenceDirectionAlignsWithIncrease = stat.playerPrefers == direction && fraction.multiplyingIncreases()
-        // E.g. .incoming is preferred when there's a decrease in player damage
-        let preferenceDirectionAlignsWithDecrease = stat.playerPrefers != direction && fraction.multiplyingDecreases()
-        
-        let stage = Pricing.instance.stage
-        let sign = (preferenceDirectionAlignsWithIncrease || preferenceDirectionAlignsWithDecrease) ? 1 : -1
-        return sign*(stat.baseStat*abs(1.0 - fraction)*stat.value*(Double(duration ?? Self.infiniteDuration))*pow(stat.stageMultiplier, Double(stage))).toRoundedInt()
+        if targetsOwner {
+            usePlayerValue.toggle()
+        }
+        return usePlayerValue ? playerValue : foeValue
     }
     
-    static func getBuffValue(
-        flipIncomingOutgoing: Bool,
-        incomingStat: Stat,
-        outgoingStat: Stat,
-        amount: Int,
-        duration: Int?,
-        direction: Buff.BuffDirection
-    ) -> Int {
-        let incomingStat: Stat = flipIncomingOutgoing ? outgoingStat : incomingStat
-        let outgoingStat: Stat = flipIncomingOutgoing ? incomingStat : outgoingStat
-        
-        let stat: Stat
-        switch direction {
-        case .incoming:
-            stat = incomingStat
-        case .outgoing:
-            stat = outgoingStat
-        case .bidirectional:
-            stat = outgoingStat
-        }
-        
-        // E.g. .outgoing is preferred when there's an increase in player damage
-        let preferenceDirectionAlignsWithIncrease = stat.playerPrefers == direction && amount > 0
-        // E.g. .incoming is preferred when there's a decrease in player damage
-        let preferenceDirectionAlignsWithDecrease = stat.playerPrefers != direction && amount < 0
-        
-        let stage = Pricing.instance.stage
-        let sign = (preferenceDirectionAlignsWithIncrease || preferenceDirectionAlignsWithDecrease) ? 1 : -1
-        return sign*(Double(amount)*stat.value*Double(duration ?? Self.infiniteDuration)*pow(stat.stageMultiplier, Double(stage))).toRoundedInt()
+    static func getTargetedBuffValue(amount: Int, defaultTargetsOwner: Bool, target: Target, playerStat: Stat, foeStat: Stat, timeRemaining: Int?, direction: Buff.BuffDirection) -> Int {
+        let playerStatValue = playerStat.getBuffValue(amount: amount, duration: timeRemaining)
+        let foeStatValue = foeStat.getBuffValue(amount: amount, duration: timeRemaining)
+        return Self.selectValue(
+            playerValue: playerStatValue,
+            foeValue: foeStatValue,
+            target: target,
+            direction: direction,
+            targetsOwner: defaultTargetsOwner
+        )
+    }
+    
+    static func getTargetedBuffValue(fraction: Double, defaultTargetsOwner: Bool, target: Target, playerStat: Stat, foeStat: Stat, timeRemaining: Int?, direction: Buff.BuffDirection) -> Int {
+        let playerStatValue = playerStat.getBuffValue(fraction: fraction, duration: timeRemaining)
+        let foeStatValue = foeStat.getBuffValue(fraction: fraction, duration: timeRemaining)
+        return Self.selectValue(
+            playerValue: playerStatValue,
+            foeValue: foeStatValue,
+            target: target,
+            direction: direction,
+            targetsOwner: defaultTargetsOwner
+        )
+    }
+    
+    static func getBuffValue(amount: Int, stat: Stat, timeRemaining: Int?) -> Int {
+        let statValue = stat.getBuffValue(amount: amount, duration: timeRemaining)
+        return statValue
+    }
+    
+    static func getBuffValue(fraction: Double, stat: Stat, timeRemaining: Int?) -> Int {
+        let statValue = stat.getBuffValue(fraction: fraction, duration: timeRemaining)
+        return statValue
     }
     
 }

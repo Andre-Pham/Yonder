@@ -47,12 +47,13 @@ class WeaponArmorPointsRestorationPercentBuff: Buff {
     }
     
     func getValue(whenTargeting target: Target) -> Int {
-        return Pricing.getBuffValue(
-            flipIncomingOutgoing: target == .foe,
-            incomingStat: Pricing.playerArmorPointsRestorationStat,
-            outgoingStat: Pricing.foeArmorPointsRestorationStat,
+        return Pricing.getTargetedBuffValue(
             fraction: self.armorPointsFraction,
-            duration: self.timeRemaining,
+            defaultTargetsOwner: true,
+            target: target,
+            playerStat: Pricing.playerArmorPointsRestorationStat,
+            foeStat: Pricing.foeArmorPointsRestorationStat,
+            timeRemaining: self.timeRemaining,
             direction: self.direction
         )
     }

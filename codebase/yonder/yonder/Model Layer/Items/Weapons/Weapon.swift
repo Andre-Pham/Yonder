@@ -20,7 +20,11 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
             WeaponPillBox.setEffectPills(weapon: self)
         }
     }
-    @DidSetPublished private(set) var buffPills: [WeaponBuffPill]
+    @DidSetPublished private(set) var buffPills: [WeaponBuffPill] {
+        didSet {
+            WeaponPillBox.setBuffPills(weapon: self)
+        }
+    }
     var fullSummary: String {
         var summaryComponents = [String]()
         summaryComponents.append(self.name)
@@ -52,6 +56,7 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
         
         WeaponPillBox.setDurabilityPills(weapon: self)
         WeaponPillBox.setEffectPills(weapon: self)
+        WeaponPillBox.setBuffPills(weapon: self)
     }
     
     required init(_ original: Weapon) {
@@ -68,6 +73,7 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
         
         WeaponPillBox.setDurabilityPills(weapon: self)
         WeaponPillBox.setEffectPills(weapon: self)
+        WeaponPillBox.setBuffPills(weapon: self)
         
         // The item's state needs to be restored
         self.setName(to: original.name)

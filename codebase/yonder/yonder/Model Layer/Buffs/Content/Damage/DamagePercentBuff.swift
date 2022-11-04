@@ -44,12 +44,13 @@ class DamagePercentBuff: Buff {
     }
     
     func getValue(whenTargeting target: Target) -> Int {
-        return Pricing.getBuffValue(
-            flipIncomingOutgoing: target == .foe,
-            incomingStat: Pricing.foeDamageStat,
-            outgoingStat: Pricing.playerDamageStat,
+        return Pricing.getTargetedBuffValue(
             fraction: self.damageFraction,
-            duration: self.timeRemaining,
+            defaultTargetsOwner: false,
+            target: target,
+            playerStat: Pricing.playerDamageStat,
+            foeStat: Pricing.foeDamageStat,
+            timeRemaining: self.timeRemaining,
             direction: self.direction
         )
     }

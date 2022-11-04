@@ -13,6 +13,7 @@ class WeaponPillBox {
     
     private static var durabilityPills = [UUID: WeakWeapon]()
     private static var effectPills = [UUID: WeakWeapon]()
+    private static var buffPills = [UUID: WeakWeapon]()
     
     static func setDurabilityPills(weapon: Weapon) {
         Self.durabilityPills[weapon.durabilityPill.id] = WeakWeapon(weapon)
@@ -24,12 +25,22 @@ class WeaponPillBox {
         }
     }
     
+    static func setBuffPills(weapon: Weapon) {
+        for buffPill in weapon.buffPills {
+            Self.buffPills[buffPill.id] = WeakWeapon(weapon)
+        }
+    }
+    
     static func getWeapon(from durabilityPill: WeaponDurabilityPill) -> Weapon? {
         return Self.durabilityPills[durabilityPill.id]?.value
     }
     
     static func getWeapon(from effectPill: WeaponEffectPill) -> Weapon? {
         return Self.effectPills[effectPill.id]?.value
+    }
+    
+    static func getWeapon(from buffPill: WeaponBuffPill) -> Weapon? {
+        return Self.buffPills[buffPill.id]?.value
     }
     
 }

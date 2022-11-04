@@ -42,12 +42,9 @@ class PricePercentBuff: Buff {
     
     func getValue(whenTargeting target: Target) -> Int {
         return Pricing.getBuffValue(
-            flipIncomingOutgoing: target == .foe,
-            incomingStat: Pricing.noStat,
-            outgoingStat: Pricing.priceStat,
             fraction: self.priceFraction,
-            duration: self.timeRemaining,
-            direction: self.direction
+            stat: Pricing.priceStat,
+            timeRemaining: self.timeRemaining
         )
     }
     

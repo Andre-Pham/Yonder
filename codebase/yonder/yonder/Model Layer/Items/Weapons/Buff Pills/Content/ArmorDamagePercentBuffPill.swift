@@ -47,12 +47,24 @@ class ArmorDamagePercentBuffPill: WeaponBuffPill {
     }
     
     func calculateBasePurchasePrice() -> Int {
-        return Pricing.getBuffValue(
-            flipIncomingOutgoing: false,
-            incomingStat: Pricing.noStat,
-            outgoingStat: Pricing.playerDamageStat,
+        let timeRemaining: Int?
+        if let weapon = WeaponPillBox.getWeapon(from: self) {
+            if weapon.infiniteRemainingUses {
+                timeRemaining = nil
+            } else {
+                timeRemaining = weapon.remainingUses
+            }
+        } else {
+            assertionFailure("Buff pill belongs to no weapon")
+            timeRemaining = nil
+        }
+        return Pricing.getTargetedBuffValue(
             fraction: self.damageFraction,
-            duration: 1,
+            defaultTargetsOwner: false,
+            target: .foe,
+            playerStat: Pricing.playerDamageStat,
+            foeStat: Pricing.foeDamageStat,
+            timeRemaining: timeRemaining,
             direction: .outgoing
         )*Pricing.foeArmorPointsStat.baseStatAmount/(Pricing.foeArmorPointsStat.baseStatAmount + Pricing.foeHealthStat.baseStatAmount)
     }
