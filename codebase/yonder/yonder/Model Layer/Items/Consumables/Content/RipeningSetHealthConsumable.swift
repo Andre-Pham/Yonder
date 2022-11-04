@@ -26,19 +26,19 @@ class RipeningSetHealthConsumable: Consumable, OnTurnEndSubscriber {
         
         var name: String {
             switch self {
-            case .stage1: return Strings.Consumable.RipeningSetHealth.Name.Stage1.local
-            case .stage2: return Strings.Consumable.RipeningSetHealth.Name.Stage2.local
-            case .stage3: return Strings.Consumable.RipeningSetHealth.Name.Stage3.local
-            case .stage4: return Strings.Consumable.RipeningSetHealth.Name.Stage4.local
+            case .stage1: return Strings("consumable.ripeningSetHealth.name.stage1").local
+            case .stage2: return Strings("consumable.ripeningSetHealth.name.stage2").local
+            case .stage3: return Strings("consumable.ripeningSetHealth.name.stage3").local
+            case .stage4: return Strings("consumable.ripeningSetHealth.name.stage4").local
             }
         }
         
         var description: String {
             switch self {
-            case .stage1: return Strings.Consumable.RipeningSetHealth.Description.Stage1.local
-            case .stage2: return Strings.Consumable.RipeningSetHealth.Description.Stage2.local
-            case .stage3: return Strings.Consumable.RipeningSetHealth.Description.Stage3.local
-            case .stage4: return Strings.Consumable.RipeningSetHealth.Description.Stage4.local
+            case .stage1: return Strings("consumable.ripeningSetHealth.description.stage1").local
+            case .stage2: return Strings("consumable.ripeningSetHealth.description.stage2").local
+            case .stage3: return Strings("consumable.ripeningSetHealth.description.stage3").local
+            case .stage4: return Strings("consumable.ripeningSetHealth.description.stage4").local
             }
         }
     }
@@ -69,7 +69,7 @@ class RipeningSetHealthConsumable: Consumable, OnTurnEndSubscriber {
         super.init(
             name: self.stage.name,
             description: self.stage.description,
-            effectsDescription: Strings.Consumable.RipeningSetHealth.EffectsDescription.Stage11Param.localWithArgs(self.stage2TurnsRequired)
+            effectsDescription: Strings("consumable.ripeningSetHealth.effectsDescription.stage11Param").localWithArgs(self.stage2TurnsRequired)
         )
         
         OnTurnEndPublisher.subscribe(self)
@@ -87,13 +87,13 @@ class RipeningSetHealthConsumable: Consumable, OnTurnEndSubscriber {
     func getStageEffectsDescription() -> String {
         switch self.stage {
         case .stage1:
-            return Strings.Consumable.RipeningSetHealth.EffectsDescription.Stage11Param.localWithArgs(self.stage2TurnsRequired - self.turnsPassed)
+            return Strings("consumable.ripeningSetHealth.effectsDescription.stage11Param").localWithArgs(self.stage2TurnsRequired - self.turnsPassed)
         case .stage2:
-            return Strings.Consumable.RipeningSetHealth.EffectsDescription.Stage21Param.localWithArgs(self.stage3TurnsRequired - self.turnsPassed)
+            return Strings("consumable.ripeningSetHealth.effectsDescription.stage21Param").localWithArgs(self.stage3TurnsRequired - self.turnsPassed)
         case .stage3:
-            return Strings.Consumable.RipeningSetHealth.EffectsDescription.Stage31Param.localWithArgs(self.stage4TurnsRequired - self.turnsPassed)
+            return Strings("consumable.ripeningSetHealth.effectsDescription.stage31Param").localWithArgs(self.stage4TurnsRequired - self.turnsPassed)
         case .stage4:
-            return Strings.Consumable.RipeningSetHealth.EffectsDescription.Stage4.local
+            return Strings("consumable.ripeningSetHealth.effectsDescription.stage4").local
         }
     }
     

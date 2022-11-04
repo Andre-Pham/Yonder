@@ -16,8 +16,7 @@ class ThornsEquipmentPill: EquipmentPill, OnTurnEndSubscriber {
         
         super.init(
             sourceName: sourceName,
-            effectsDescription: Strings.EquipmentPill.Thorns.EffectsDescription1Param
-                .localWithArgs((thornsFraction*100.0).toString())
+            effectsDescription: Strings("equipmentPill.thorns.effectsDescription1Param").localWithArgs((thornsFraction*100.0).toString())
         )
         
         OnTurnEndPublisher.subscribe(self)

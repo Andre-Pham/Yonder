@@ -21,11 +21,11 @@ class RestoreArmorPointsConsumable: Consumable {
         
         var string: String {
             switch self {
-            case .I: return Strings.Tier1.local
-            case .II: return Strings.Tier2.local
-            case .III: return Strings.Tier3.local
-            case .IV: return Strings.Tier4.local
-            case .V: return Strings.Tier5.local
+            case .I: return Strings("tier1").local
+            case .II: return Strings("tier2").local
+            case .III: return Strings("tier3").local
+            case .IV: return Strings("tier4").local
+            case .V: return Strings("tier5").local
             }
         }
         
@@ -40,9 +40,9 @@ class RestoreArmorPointsConsumable: Consumable {
         self.tier = tier
         
         super.init(
-            name: Strings.Consumable.RestoreArmorPoints.Name.local.continuedBy(tier.string),
-            description: Strings.Consumable.RestoreArmorPoints.Description.local,
-            effectsDescription: Strings.Consumable.RestoreArmorPoints.EffectsDescription1Param.localWithArgs(tier.armorPointsRestoration),
+            name: Strings("consumable.restoreArmorPoints.name").local.continuedBy(tier.string),
+            description: Strings("consumable.restoreArmorPoints.description").local,
+            effectsDescription: Strings("consumable.restoreArmorPoints.effectsDescription1Param").localWithArgs(tier.armorPointsRestoration),
             armorPointsRestoration: self.tier.armorPointsRestoration
         )
     }

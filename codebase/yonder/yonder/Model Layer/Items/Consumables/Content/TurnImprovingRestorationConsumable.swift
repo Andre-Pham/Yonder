@@ -16,9 +16,9 @@ class TurnImprovingRestorationConsumable: Consumable, OnTurnEndSubscriber {
     
     init() {
         super.init(
-            name: Strings.Consumable.TurnImprovingRestoration.Name.local,
-            description: Strings.Consumable.TurnImprovingRestoration.Description.local,
-            effectsDescription: Strings.Consumable.TurnImprovingRestoration.EffectsDescription2Param.localWithArgs(self.startingRestoration, self.restorationIncrease),
+            name: Strings("consumable.turnImprovingRestoration.name").local,
+            description: Strings("consumable.turnImprovingRestoration.description").local,
+            effectsDescription: Strings("consumable.turnImprovingRestoration.effectsDescription2Param").localWithArgs(self.startingRestoration, self.restorationIncrease),
             restoration: self.startingRestoration
         )
         
@@ -54,7 +54,7 @@ class TurnImprovingRestorationConsumable: Consumable, OnTurnEndSubscriber {
     }
     
     override func restorationDidSet() {
-        self.setEffectsDescription(to: Strings.Consumable.TurnImprovingRestoration.EffectsDescription2Param.localWithArgs(self.restoration, self.restorationIncrease))
+        self.setEffectsDescription(to: Strings("consumable.turnImprovingRestoration.effectsDescription2Param").localWithArgs(self.restoration, self.restorationIncrease))
     }
     
     func calculateBasePurchasePrice() -> Int {

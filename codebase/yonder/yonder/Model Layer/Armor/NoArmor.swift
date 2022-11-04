@@ -13,15 +13,15 @@ class NoArmor: Armor {
         let description: String
         switch type {
         case .head:
-            description = Strings.Armor.NoArmor.HeadDescription.local
+            description = Strings("armor.noArmor.headDescription").local
         case .body:
-            description = Strings.Armor.NoArmor.BodyDescription.local
+            description = Strings("armor.noArmor.bodyDescription").local
         case .legs:
-            description = Strings.Armor.NoArmor.LegsDescription.local
+            description = Strings("armor.noArmor.legsDescription").local
         }
         
         super.init(
-            name: Strings.Armor.NoArmor.Name.local,
+            name: Strings("armor.noArmor.name").local,
             description: description,
             type: type,
             armorPoints: 0,

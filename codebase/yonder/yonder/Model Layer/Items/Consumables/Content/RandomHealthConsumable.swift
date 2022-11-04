@@ -11,9 +11,9 @@ class RandomHealthConsumable: Consumable {
     
     init() {
         super.init(
-            name: Strings.Consumable.RandomHealth.Name.local,
-            description: Strings.Consumable.RandomHealth.Description.local,
-            effectsDescription: Strings.Consumable.RandomHealth.EffectsDescription.local
+            name: Strings("consumable.randomHealth.name").local,
+            description: Strings("consumable.randomHealth.description").local,
+            effectsDescription: Strings("consumable.randomHealth.effectsDescription").local
         )
     }
     

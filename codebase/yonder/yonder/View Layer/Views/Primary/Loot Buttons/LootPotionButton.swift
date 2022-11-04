@@ -17,7 +17,7 @@ struct LootPotionButton: View {
     var body: some View {
         LootButton(
             text: self.potionViewModel.name,
-            collectText: Strings.Button.Collect.local,
+            collectText: Strings("button.collect").local,
             infoButton: true
         ) {
             self.lootBagViewModel.collectPotion(potionViewModel: self.potionViewModel, playerViewModel: self.playerViewModel)

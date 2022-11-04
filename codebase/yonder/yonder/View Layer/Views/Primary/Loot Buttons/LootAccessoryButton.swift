@@ -18,7 +18,7 @@ struct LootAccessoryButton: View {
     var body: some View {
         LootButton(
             text: self.accessoryViewModel.name,
-            collectText: Strings.Button.Equip.local,
+            collectText: Strings("button.equip").local,
             infoButton: true
         ) {
             if self.accessoryViewModel.isPeripheral {

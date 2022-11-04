@@ -15,7 +15,7 @@ struct InventoryAccessoriesView: View {
     var body: some View {
         if self.playerViewModel.accessoryViewModels.count == 0 {
             SurroundingBrackets(bracket: "[", size: .title4) {
-                YonderText(text: Strings.Inventory.Accessories.HeaderZeroAccessories.local, size: .title4)
+                YonderText(text: Strings("inventory.accessories.headerZeroAccessories").local, size: .title4)
             }
         }
         
@@ -24,7 +24,7 @@ struct InventoryAccessoriesView: View {
                 self.sheetsStateManager.presentAccessorySheet(at: index)
             } label: {
                 HStack(alignment: .firstTextBaseline, spacing: 0) {
-                    YonderText(text: Strings.Inventory.Accessories.Slot.local.continuedBy("\(index+1): "), size: .buttonBodySubscript)
+                    YonderText(text: Strings("inventory.accessories.slot").local.continuedBy("\(index+1): "), size: .buttonBodySubscript)
                         .padding(.leading)
                     
                     YonderText(text: accessoryViewModel.name, size: .buttonBody)
@@ -42,7 +42,7 @@ struct InventoryAccessoriesView: View {
         
         if !self.playerViewModel.accessorySlotsFull && playerViewModel.accessoryViewModels.count != 0 {
             SurroundingBrackets(bracket: "[", size: .title4) {
-                YonderText(text: "+\(self.playerViewModel.emptyAccessorySlotsCount)".continuedBy(Strings.Inventory.Accessories.EmptySlots.local), size: .title4)
+                YonderText(text: "+\(self.playerViewModel.emptyAccessorySlotsCount)".continuedBy(Strings("inventory.accessories.emptySlots").local), size: .title4)
             }
         }
     }

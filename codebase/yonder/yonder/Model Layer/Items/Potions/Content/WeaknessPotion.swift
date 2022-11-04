@@ -18,9 +18,9 @@ class WeaknessPotion: Potion {
         
         var string: String {
             switch self {
-            case .I: return Strings.Tier1.local
-            case .II: return Strings.Tier2.local
-            case .III: return Strings.Tier3.local
+            case .I: return Strings("tier1").local
+            case .II: return Strings("tier2").local
+            case .III: return Strings("tier3").local
             }
         }
         
@@ -36,14 +36,14 @@ class WeaknessPotion: Potion {
     private let tier: Tier
     
     init(tier: Tier, duration: Int, potionCount: Int) {
-        let name = Strings.Potion.Weakness.Name.local.continuedBy(tier.string)
+        let name = Strings("potion.weakness.name").local.continuedBy(tier.string)
         self.buff = DamagePercentBuff(sourceName: name, direction: .outgoing, duration: duration, damageFraction: tier.damageFraction)
         self.duration = duration
         self.tier = tier
         super.init(
             name: name,
-            description: Strings.Potion.Weakness.Description.local,
-            effectsDescription: Strings.Potion.ApplyToFoe.local.continuedBy(self.buff.getEffectsDescription() ?? ""),
+            description: Strings("potion.weakness.description").local,
+            effectsDescription: Strings("potion.applyToFoe").local.continuedBy(self.buff.getEffectsDescription() ?? ""),
             remainingUses: potionCount)
         assert(self.buff.getEffectsDescription() != nil, "Buff that should have an effects description doesn't have one")
     }

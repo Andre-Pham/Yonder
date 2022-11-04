@@ -17,12 +17,12 @@ class WeaponArmorPointsRestorationBuff: Buff {
         let effectsDescription = BuffEffectsDescription.buildMagnitudeEffectsDescription(
             direction: direction,
             difference: armorPointsDifference,
-            outgoingIncrease: Strings.Buff.WeaponArmorRestoration.EffectsDescription.OutgoingIncrease1Param,
-            outgoingDecrease: Strings.Buff.WeaponArmorRestoration.EffectsDescription.OutgoingDecrease1Param,
-            incomingIncrease: Strings.Buff.WeaponArmorRestoration.EffectsDescription.IncomingIncrease1Param,
-            incomingDecrease: Strings.Buff.WeaponArmorRestoration.EffectsDescription.IncomingDecrease1Param,
-            bidirectionalIncrease: Strings.Buff.WeaponArmorRestoration.EffectsDescription.BidirectionalIncrease1Param,
-            bidirectionalDecrease: Strings.Buff.WeaponArmorRestoration.EffectsDescription.BidirectionalDecrease1Param)
+            outgoingIncrease: Strings("buff.weaponArmorRestoration.effectsDescription.outgoingIncrease1Param"),
+            outgoingDecrease: Strings("buff.weaponArmorRestoration.effectsDescription.outgoingDecrease1Param"),
+            incomingIncrease: Strings("buff.weaponArmorRestoration.effectsDescription.incomingIncrease1Param"),
+            incomingDecrease: Strings("buff.weaponArmorRestoration.effectsDescription.incomingDecrease1Param"),
+            bidirectionalIncrease: Strings("buff.weaponArmorRestoration.effectsDescription.bidirectionalIncrease1Param"),
+            bidirectionalDecrease: Strings("buff.weaponArmorRestoration.effectsDescription.bidirectionalDecrease1Param"))
         
         super.init(
             sourceName: sourceName,

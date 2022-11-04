@@ -22,7 +22,7 @@ struct LootBagButton: View {
                 YonderText(text: self.lootBagViewModel.description, size: .buttonBodySubscript)
             }
         } expandedContent: {
-            YonderWideButton(text: Strings.Button.Select.local) {
+            YonderWideButton(text: Strings("button.select").local) {
                 self.lootOptionsViewModel.take(self.lootBagViewModel, playerViewModel: self.playerViewModel)
             }
         }

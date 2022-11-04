@@ -21,7 +21,7 @@ struct RestorerCardView: View {
                     
                     YonderText(text: " / ", size: .cardSubscript)
                     
-                    YonderIconNumeralPair(prefix: Strings.CurrencySymbol.local, image: YonderImages.goldIcon, numeral: option.getBundlePrice(), size: .cardSubscript, iconSize: .cardSubscript)
+                    YonderIconNumeralPair(prefix: Strings("currencySymbol").local, image: YonderImages.goldIcon, numeral: option.getBundlePrice(), size: .cardSubscript, iconSize: .cardSubscript)
                 }
             }
         }

@@ -17,8 +17,8 @@ class PurchaseWeaponOffer: Offer {
     public let price: Int
     
     init(weapon: Weapon, price: Int) {
-        self.name = Strings.Offer.WeaponPurchase.Name.local
-        self.description = Strings.Offer.WeaponPurchase.Description2Param.localWithArgs(String(price), weapon.fullSummary)
+        self.name = Strings("offer.weaponPurchase.name").local
+        self.description = Strings("offer.weaponPurchase.description2Param").localWithArgs(String(price), weapon.fullSummary)
         self.weapon = weapon
         self.price = price
     }

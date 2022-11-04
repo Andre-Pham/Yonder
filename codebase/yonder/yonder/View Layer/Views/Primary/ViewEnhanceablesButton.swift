@@ -35,7 +35,7 @@ struct ViewEnhanceablesButton: View {
             HStack(spacing: YonderCoreGraphics.padding) {
                 PriceTagView(price: self.enhanceOfferViewModel.price, indicativePrice: self.playerViewModel.getIndicativePrice(from: self.enhanceOfferViewModel.price))
                 
-                YonderWideButton(text: Strings.Button.ViewOptions.local) {
+                YonderWideButton(text: Strings("button.viewOptions").local) {
                     self.optionsSheetActive = true
                 }
                 .disabledWhen(self.isDisabled)
@@ -47,10 +47,10 @@ struct ViewEnhanceablesButton: View {
                 VStack {
                     PlayerCardView(playerViewModel: self.playerViewModel, resizeToFit: false)
                     
-                    WidePriceTagView(price: self.enhanceOfferViewModel.price, indicativePrice: self.playerViewModel.getIndicativePrice(from: self.enhanceOfferViewModel.price), text: Strings.Inspect.EnhanceOffers.PriceTagSuffix.local)
+                    WidePriceTagView(price: self.enhanceOfferViewModel.price, indicativePrice: self.playerViewModel.getIndicativePrice(from: self.enhanceOfferViewModel.price), text: Strings("inspect.enhanceOffers.priceTagSuffix").local)
                     
                     SurroundingBrackets(bracket: "[", size: .title4) {
-                        YonderText(text: Strings.Inspect.EnhanceOffers.Header.local, size: .title4)
+                        YonderText(text: Strings("inspect.enhanceOffers.header").local, size: .title4)
                     }
                     
                     ForEach(Array(zip(enhanceOfferViewModel.getEnhanceableInfos(playerViewModel: self.playerViewModel).indices, enhanceOfferViewModel.getEnhanceableInfos(playerViewModel: self.playerViewModel))), id: \.1.id) { index, enhanceInfoViewModel in
@@ -58,7 +58,7 @@ struct ViewEnhanceablesButton: View {
                         YonderExpandableWideButtonBody(isExpanded: self.$purchaseEnhanceOfferStateManager.purchaseButtonActiveBindings[index]) {
                             YonderText(text: enhanceInfoViewModel.name, size: .buttonBody)
                         } expandedContent: {
-                            YonderWideButton(text: Strings.Button.Purchase.local) {
+                            YonderWideButton(text: Strings("button.purchase").local) {
                                 self.enhanceOfferViewModel.accept(playerViewModel: self.playerViewModel, enhanceableID: enhanceInfoViewModel.id)
                                 self.popupStateManager.activatePopup()
                             }
@@ -70,7 +70,7 @@ struct ViewEnhanceablesButton: View {
             .onTapGesture {
                 self.optionsSheetActive = false
             }
-            .withFeedbackPopup(text: Strings.Feedback.Enhanced.local, padding: YonderCoreGraphics.padding*3, popupStateManager: self.popupStateManager)
+            .withFeedbackPopup(text: Strings("feedback.enhanced").local, padding: YonderCoreGraphics.padding*3, popupStateManager: self.popupStateManager)
         }
     }
 }

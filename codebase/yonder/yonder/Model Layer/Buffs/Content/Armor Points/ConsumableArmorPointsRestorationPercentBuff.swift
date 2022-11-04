@@ -17,12 +17,12 @@ class ConsumableArmorPointsRestorationPercentBuff: Buff {
         let effectsDescription = BuffEffectsDescription.buildPercentageEffectsDescription(
             direction: direction,
             fraction: armorPointsFraction,
-            outgoingIncrease: Strings.Buff.ConsumableArmorRestorationPercent.EffectsDescription.OutgoingIncrease1Param,
-            outgoingDecrease: Strings.Buff.ConsumableArmorRestorationPercent.EffectsDescription.OutgoingDecrease1Param,
-            incomingIncrease: Strings.Buff.ConsumableArmorRestorationPercent.EffectsDescription.IncomingIncrease1Param,
-            incomingDecrease: Strings.Buff.ConsumableArmorRestorationPercent.EffectsDescription.IncomingDecrease1Param,
-            bidirectionalIncrease: Strings.Buff.ConsumableArmorRestorationPercent.EffectsDescription.BidirectionalIncrease1Param,
-            bidirectionalDecrease: Strings.Buff.ConsumableArmorRestorationPercent.EffectsDescription.BidirectionalDecrease1Param)
+            outgoingIncrease: Strings("buff.consumableArmorRestorationPercent.effectsDescription.outgoingIncrease1Param"),
+            outgoingDecrease: Strings("buff.consumableArmorRestorationPercent.effectsDescription.outgoingDecrease1Param"),
+            incomingIncrease: Strings("buff.consumableArmorRestorationPercent.effectsDescription.incomingIncrease1Param"),
+            incomingDecrease: Strings("buff.consumableArmorRestorationPercent.effectsDescription.incomingDecrease1Param"),
+            bidirectionalIncrease: Strings("buff.consumableArmorRestorationPercent.effectsDescription.bidirectionalIncrease1Param"),
+            bidirectionalDecrease: Strings("buff.consumableArmorRestorationPercent.effectsDescription.bidirectionalDecrease1Param"))
         
         super.init(
             sourceName: sourceName,

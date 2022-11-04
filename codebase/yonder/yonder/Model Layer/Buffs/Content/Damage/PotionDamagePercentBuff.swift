@@ -17,12 +17,12 @@ class PotionDamagePercentBuff: Buff {
         let effectsDescription = BuffEffectsDescription.buildPercentageEffectsDescription(
             direction: direction,
             fraction: damageFraction,
-            outgoingIncrease: Strings.Buff.PotionDamagePercent.EffectsDescription.OutgoingIncrease1Param,
-            outgoingDecrease: Strings.Buff.PotionDamagePercent.EffectsDescription.OutgoingDecrease1Param,
-            incomingIncrease: Strings.Buff.PotionDamagePercent.EffectsDescription.IncomingIncrease1Param,
-            incomingDecrease: Strings.Buff.PotionDamagePercent.EffectsDescription.IncomingDecrease1Param,
-            bidirectionalIncrease: Strings.Buff.PotionDamagePercent.EffectsDescription.BidirectionalIncrease1Param,
-            bidirectionalDecrease: Strings.Buff.PotionDamagePercent.EffectsDescription.BidirectionalDecrease1Param)
+            outgoingIncrease: Strings("buff.potionDamagePercent.effectsDescription.outgoingIncrease1Param"),
+            outgoingDecrease: Strings("buff.potionDamagePercent.effectsDescription.outgoingDecrease1Param"),
+            incomingIncrease: Strings("buff.potionDamagePercent.effectsDescription.incomingIncrease1Param"),
+            incomingDecrease: Strings("buff.potionDamagePercent.effectsDescription.incomingDecrease1Param"),
+            bidirectionalIncrease: Strings("buff.potionDamagePercent.effectsDescription.bidirectionalIncrease1Param"),
+            bidirectionalDecrease: Strings("buff.potionDamagePercent.effectsDescription.bidirectionalDecrease1Param"))
         
         super.init(
             sourceName: sourceName,

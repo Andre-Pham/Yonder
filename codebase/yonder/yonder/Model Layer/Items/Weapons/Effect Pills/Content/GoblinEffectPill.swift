@@ -16,7 +16,7 @@ class GoblinEffectPill: WeaponEffectPill, OnGoldChangeSubscriber {
     init(goldPerSteal: Int, damage: Int) {
         self.goldPerSteal = goldPerSteal
         self.damage = damage
-        self.effectsDescription = Strings.WeaponEffectPill.Goblin.Description2Param.localWithArgs(self.goldPerSteal, self.damage)
+        self.effectsDescription = Strings("weaponEffectPill.goblin.description2Param").localWithArgs(self.goldPerSteal, self.damage)
         super.init()
         
         OnGoldChangePublisher.subscribe(self)

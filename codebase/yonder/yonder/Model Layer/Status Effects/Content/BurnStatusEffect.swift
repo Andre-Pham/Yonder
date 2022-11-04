@@ -13,7 +13,7 @@ class BurnStatusEffect: StatusEffect {
     
     init(damage: Int, duration: Int) {
         self.damage = damage
-        super.init(name: Strings.StatusEffect.Burn.Name.local, duration: duration)
+        super.init(name: Strings("statusEffect.burn.name").local, duration: duration)
     }
     
     required init(_ original: StatusEffectAbstract) {
@@ -23,7 +23,7 @@ class BurnStatusEffect: StatusEffect {
     }
     
     func getEffectsDescription() -> String? {
-        return Strings.StatusEffect.Burn.EffectsDescription1Param.localWithArgs(self.damage)
+        return Strings("statusEffect.burn.effectsDescription1Param").localWithArgs(self.damage)
     }
     
     func applyEffect(actor: ActorAbstract) {

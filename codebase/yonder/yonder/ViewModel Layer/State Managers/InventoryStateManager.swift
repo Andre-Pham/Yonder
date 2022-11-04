@@ -34,9 +34,9 @@ class InventoryStateManager: ObservableObject {
         } else {
             self.disableAll()
             self.weaponsActive = true
-            self.optionHeaderText = Strings.Inventory.Weapons.Header.local
+            self.optionHeaderText = Strings("inventory.weapons.header").local
             if weaponCount == 0 {
-                self.optionHeaderText = Strings.Inventory.Weapons.HeaderZeroWeapons.local
+                self.optionHeaderText = Strings("inventory.weapons.headerZeroWeapons").local
             }
         }
     }
@@ -48,9 +48,9 @@ class InventoryStateManager: ObservableObject {
         } else {
             self.disableAll()
             self.potionsActive = true
-            self.optionHeaderText = Strings.Inventory.Potions.Header.local
+            self.optionHeaderText = Strings("inventory.potions.header").local
             if potionCount == 0 {
-                self.optionHeaderText = Strings.Inventory.Potions.HeaderZeroPotions.local
+                self.optionHeaderText = Strings("inventory.potions.headerZeroPotions").local
             }
         }
     }
@@ -62,9 +62,9 @@ class InventoryStateManager: ObservableObject {
         } else {
             self.disableAll()
             self.consumablesActive = true
-            self.optionHeaderText = Strings.Inventory.Consumables.Header.local
+            self.optionHeaderText = Strings("inventory.consumables.header").local
             if consumableCount == 0 {
-                self.optionHeaderText = Strings.Inventory.Consumables.HeaderZeroConsumables.local
+                self.optionHeaderText = Strings("inventory.consumables.headerZeroConsumables").local
             }
         }
     }

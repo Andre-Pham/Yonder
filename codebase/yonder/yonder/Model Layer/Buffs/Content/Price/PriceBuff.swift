@@ -16,13 +16,13 @@ class PriceBuff: Buff {
         
         var effectsDescription: String? = nil
         if self.priceDifference < 0 {
-            effectsDescription = Strings.Buff.Price.EffectsDescription.OutgoingDecrease2Param.localWithArgs(
-                Strings.CurrencySymbol.local,
+            effectsDescription = Strings("buff.price.effectsDescription.outgoingDecrease2Param").localWithArgs(
+                Strings("currencySymbol").local,
                 String(self.priceDifference)
             )
         } else if self.priceDifference > 0 {
-            effectsDescription = Strings.Buff.Price.EffectsDescription.OutgoingIncrease2Param.localWithArgs(
-                Strings.CurrencySymbol.local,
+            effectsDescription = Strings("buff.price.effectsDescription.outgoingIncrease2Param").localWithArgs(
+                Strings("currencySymbol").local,
                 String(self.priceDifference)
             )
         }

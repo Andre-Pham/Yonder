@@ -10,7 +10,7 @@ import SwiftUI
 struct CardOfferCountView: View {
     let offerCount: Int
     var text: String {
-        return self.offerCount == 1 ? Strings.Stat.OffersSingular.local : Strings.Stat.Offers.local
+        return self.offerCount == 1 ? Strings("stat.offersSingular").local : Strings("stat.offers").local
     }
     
     var body: some View {

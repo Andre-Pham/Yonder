@@ -46,12 +46,12 @@ struct UseConsumableButton: View {
                 YonderTextNumeralHStack {
                     YonderNumeral(number: self.consumableViewModel.remainingUses, size: .buttonBodySubscript)
                     
-                    YonderText(text: Strings.Stat.Consumable.Remaining.local.leftPadded(by: " "), size: .buttonBodySubscript)
+                    YonderText(text: Strings("stat.consumable.remaining").local.leftPadded(by: " "), size: .buttonBodySubscript)
                 }
                 .padding(.top, YonderCoreGraphics.paragraphSpacing)
             }
         } expandedContent: {
-            YonderWideButton(text: Strings.Button.InstantUse.local) {
+            YonderWideButton(text: Strings("button.instantUse").local) {
                 self.playerViewModel.use(consumableViewModel: self.consumableViewModel)
             }
             .disabledWhen(self.playerViewModel.locationViewModel.getFoeViewModel() == nil && self.consumableViewModel.requiresFoeForUsage)

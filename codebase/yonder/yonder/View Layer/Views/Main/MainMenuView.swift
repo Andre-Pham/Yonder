@@ -19,15 +19,15 @@ struct MainMenuView: View {
             VStack(spacing: 12) {
                 Spacer()
                 
-                YonderText(text: Strings.GameName.local, size: .title1)
+                YonderText(text: Strings("gameName").local, size: .title1)
                 
                 VStack(spacing: 30) {
-                    YonderButton(text: Strings.MainMenu.NewGame.local) {
+                    YonderButton(text: Strings("mainMenu.newGame").local) {
                         // Game is already newly created every time app starts up
                         self.showingMenu.toggle()
                     }
                     
-                    YonderButton(text: Strings.MainMenu.ResumeGame.local) {
+                    YonderButton(text: Strings("mainMenu.resumeGame").local) {
                         // Find the game saved and resume it
                         self.showingMenu.toggle()
                     }

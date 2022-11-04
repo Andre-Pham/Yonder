@@ -17,7 +17,7 @@ struct LootArmorButton: View {
     var body: some View {
         LootButton(
             text: self.armorViewModel.name,
-            collectText: Strings.Button.Equip.local,
+            collectText: Strings("button.equip").local,
             infoButton: true
         ) {
             self.lootBagViewModel.collectArmor(armorViewModel: self.armorViewModel, playerViewModel: self.playerViewModel)

@@ -41,9 +41,9 @@ class RestoreOptionViewModel: ObservableObject {
     var actionDescription: String {
         switch self.restoreOption {
         case .health:
-            return Strings.RestoreOption.Health.Action.local
+            return Strings("restoreOption.health.action").local
         case .armorPoints:
-            return Strings.RestoreOption.Armor.Action.local
+            return Strings("restoreOption.armor.action").local
         }
     }
     

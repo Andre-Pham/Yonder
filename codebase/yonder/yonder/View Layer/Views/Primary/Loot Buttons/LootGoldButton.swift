@@ -14,8 +14,8 @@ struct LootGoldButton: View {
     
     var body: some View {
         LootButton(
-            text: Strings.Loot.Category.Gold.local.rightPadded(by: ":".continuedBy(Strings.CurrencySymbol.local + String(self.amount))),
-            collectText: Strings.Button.Collect.local
+            text: Strings("loot.category.gold").local.rightPadded(by: ":".continuedBy(Strings("currencySymbol").local + String(self.amount))),
+            collectText: Strings("button.collect").local
         ) {
             self.lootBagViewModel.collectGold(playerViewModel: self.playerViewModel)
         }

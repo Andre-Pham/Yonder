@@ -18,21 +18,21 @@ struct InventoryView: View {
                 VStack(alignment: .leading, spacing: YonderCoreGraphics.padding) {
                     // Armor
                     Group {
-                        YonderText(text: Strings.Inventory.Title.Armor.local, size: .title2)
+                        YonderText(text: Strings("inventory.title.armor").local, size: .title2)
                         
                         InventoryArmorView(sheetsStateManager: self.sheetsStateManager, playerViewModel: self.playerViewModel, pageGeometry: geo)
                     }
                     
                     // Accessories
                     Group {
-                        YonderText(text: Strings.Inventory.Title.Accessories.local, size: .title2)
+                        YonderText(text: Strings("inventory.title.accessories").local, size: .title2)
                         
                         InventoryAccessoriesView(sheetsStateManager: self.sheetsStateManager, playerViewModel: self.playerViewModel, pageGeometry: geo)
                     }
                     
                     // Peripheral Accessory
                     Group {
-                        YonderText(text: Strings.Inventory.Title.PeripheralAccessory.local, size: .title2)
+                        YonderText(text: Strings("inventory.title.peripheralAccessory").local, size: .title2)
                         
                         YonderWideButton(text: self.playerViewModel.peripheralAccessoryViewModel.name) {
                             self.sheetsStateManager.peripheralAccessorySheetBinding = true
@@ -47,18 +47,18 @@ struct InventoryView: View {
                     
                     // Items
                     Group {
-                        YonderText(text: Strings.Inventory.Title.Items.local, size: .title2)
+                        YonderText(text: Strings("inventory.title.items").local, size: .title2)
                         
                         YonderOptionsGrid {
-                            YonderGridOption(title: Strings.Inventory.Weapons.Option.local, geometry: geo, image: YonderImages.weaponOptionIcon) {
+                            YonderGridOption(title: Strings("inventory.weapons.option").local, geometry: geo, image: YonderImages.weaponOptionIcon) {
                                 self.inventoryStateManager.weaponOptionSelected(weaponCount: self.playerViewModel.weaponViewModels.count)
                             }
                             
-                            YonderGridOption(title: Strings.Inventory.Potions.Option.local, geometry: geo, image: YonderImages.potionOptionIcon) {
+                            YonderGridOption(title: Strings("inventory.potions.option").local, geometry: geo, image: YonderImages.potionOptionIcon) {
                                 self.inventoryStateManager.potionOptionSelected(potionCount: self.playerViewModel.potionViewModels.count)
                             }
                             
-                            YonderGridOption(title: Strings.Inventory.Consumables.Option.local, geometry: geo, image: YonderImages.consumableOptionIcon) {
+                            YonderGridOption(title: Strings("inventory.consumables.option").local, geometry: geo, image: YonderImages.consumableOptionIcon) {
                                 self.inventoryStateManager.consumableOptionSelected(consumableCount: self.playerViewModel.consumableViewModels.count)
                             }
                         }

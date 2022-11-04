@@ -18,11 +18,11 @@ class ArmorBuffEnhanceOffer: EnhanceOffer {
     init(price: Int, buff: Buff) {
         self.price = price
         self.buff = buff
-        self.name = Strings.EnhanceOffer.ArmorBuff.Name.local
+        self.name = Strings("enhanceOffer.armorBuff.name").local
         if let effectsDescription = buff.getEffectsDescription() {
-            self.description = Strings.EnhanceOffer.ArmorBuff.Description1Param.localWithArgs(effectsDescription)
+            self.description = Strings("enhanceOffer.armorBuff.description1Param").localWithArgs(effectsDescription)
         } else {
-            self.description = Strings.EnhanceOffer.ArmorBuff.MissingDescription.local
+            self.description = Strings("enhanceOffer.armorBuff.missingDescription").local
         }
     }
     

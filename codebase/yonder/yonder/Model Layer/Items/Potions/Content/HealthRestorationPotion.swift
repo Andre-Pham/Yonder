@@ -20,11 +20,11 @@ class HealthRestorationPotion: Potion {
         
         var string: String {
             switch self {
-            case .I: return Strings.Tier1.local
-            case .II: return Strings.Tier2.local
-            case .III: return Strings.Tier3.local
-            case .IV: return Strings.Tier4.local
-            case .V: return Strings.Tier5.local
+            case .I: return Strings("tier1").local
+            case .II: return Strings("tier2").local
+            case .III: return Strings("tier3").local
+            case .IV: return Strings("tier4").local
+            case .V: return Strings("tier5").local
             }
         }
         
@@ -35,9 +35,9 @@ class HealthRestorationPotion: Potion {
     
     init(tier: Tier, potionCount: Int) {
         super.init(
-            name: Strings.Potion.HealthRestoration.Name.local.continuedBy(tier.string),
-            description: Strings.Potion.HealthRestoration.Description.local,
-            effectsDescription: Strings.Potion.HealthRestoration.EffectsDescription1Param.localWithArgs(tier.healthRestoration),
+            name: Strings("potion.healthRestoration.name").local.continuedBy(tier.string),
+            description: Strings("potion.healthRestoration.description").local,
+            effectsDescription: Strings("potion.healthRestoration.effectsDescription1Param").localWithArgs(tier.healthRestoration),
             remainingUses: potionCount,
             healthRestoration: tier.healthRestoration)
     }

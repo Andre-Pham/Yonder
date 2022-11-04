@@ -16,9 +16,9 @@ class MultiplyGoldConsumable: Consumable {
         
         let percentage = self.goldFraction.toRelativePercentage(decimalPlaces: 0)
         super.init(
-            name: Strings.Consumable.MultiplyGold.Name.local,
-            description: Strings.Consumable.MultiplyGold.Description.local,
-            effectsDescription: Strings.Consumable.MultiplyGold.EffectsDescription1Param.localWithArgs(percentage)
+            name: Strings("consumable.multiplyGold.name").local,
+            description: Strings("consumable.multiplyGold.description").local,
+            effectsDescription: Strings("consumable.multiplyGold.effectsDescription1Param").localWithArgs(percentage)
         )
     }
     

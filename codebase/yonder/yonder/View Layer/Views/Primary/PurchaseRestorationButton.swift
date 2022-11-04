@@ -17,7 +17,7 @@ struct PurchaseRestorationButton: View {
         YonderExpandableWideButtonBody(isExpanded: self.$useButtonActive) {
             VStack {
                 HStack {
-                    YonderText(text: "\(Strings.Button.Restore.local):", size: .buttonBody)
+                    YonderText(text: "\(Strings("button.restore").local):", size: .buttonBody)
                     
                     HStack {
                         YonderIcon(image: self.restorationOptionViewModel.image)
@@ -34,7 +34,7 @@ struct PurchaseRestorationButton: View {
                 }
             }
         } expandedContent: {
-            YonderWideButton(text: Strings.Button.Purchase.local) {
+            YonderWideButton(text: Strings("button.purchase").local) {
                 self.restorationOptionViewModel.restore(amount: self.baseRestorationAmount, to: self.playerViewModel)
             }
             .disabledWhen(self.restorationOptionViewModel.restoreIsDisabled(playerViewModel: self.playerViewModel, amount: self.baseRestorationAmount))

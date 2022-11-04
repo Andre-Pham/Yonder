@@ -19,22 +19,22 @@ class LootBag {
         var components = [String]()
         if !self.armorLoot.isEmpty {
             components.append(
-                Strings.DotPoint.local
-                    .continuedBy(Strings.Loot.Category.Armors.local).rightPadded(by: ":")
+                Strings("dotPoint").local
+                    .continuedBy(Strings("loot.category.armors").local).rightPadded(by: ":")
                     .continuedBy(String(self.armorLoot.count))
             )
         }
         if !self.accessoryLoot.isEmpty {
             components.append(
-                Strings.DotPoint.local
-                    .continuedBy(Strings.Loot.Category.Accessories.local).rightPadded(by: ":")
+                Strings("dotPoint").local
+                    .continuedBy(Strings("loot.category.accessories").local).rightPadded(by: ":")
                     .continuedBy(String(self.accessoryLoot.count))
             )
         }
         if !self.weaponLoot.isEmpty {
             components.append(
-                Strings.DotPoint.local
-                    .continuedBy(Strings.Loot.Category.Weapons.local).rightPadded(by: ":")
+                Strings("dotPoint").local
+                    .continuedBy(Strings("loot.category.weapons").local).rightPadded(by: ":")
                     .continuedBy(String(self.weaponLoot.count))
             )
         }
@@ -42,16 +42,16 @@ class LootBag {
             var count = 0
             self.potionLoot.forEach({ count += $0.potionCount })
             components.append(
-                Strings.DotPoint.local
-                    .continuedBy(Strings.Loot.Category.Potions.local).rightPadded(by: ":")
+                Strings("dotPoint").local
+                    .continuedBy(Strings("loot.category.potions").local).rightPadded(by: ":")
                     .continuedBy(String(count))
             )
         }
         if self.goldLoot > 0 {
             components.append(
-                Strings.DotPoint.local
-                    .continuedBy(Strings.Loot.Category.Gold.local).rightPadded(by: ":")
-                    .continuedBy(String(self.goldLoot).leftPadded(by: Strings.CurrencySymbol.local))
+                Strings("dotPoint").local
+                    .continuedBy(Strings("loot.category.gold").local).rightPadded(by: ":")
+                    .continuedBy(String(self.goldLoot).leftPadded(by: Strings("currencySymbol").local))
             )
         }
         return components.joined(separator: "\n")
@@ -59,18 +59,18 @@ class LootBag {
     public let id = UUID()
     
     private static let availableNames: [String] = [
-        Strings.Loot.LootBagName.Amber.local,
-        Strings.Loot.LootBagName.Violet.local,
-        Strings.Loot.LootBagName.Ebony.local,
-        Strings.Loot.LootBagName.Rose.local,
-        Strings.Loot.LootBagName.Fern.local,
-        Strings.Loot.LootBagName.Tangerine.local,
-        Strings.Loot.LootBagName.Azure.local,
-        Strings.Loot.LootBagName.Sage.local,
-        Strings.Loot.LootBagName.Midnight.local,
-        Strings.Loot.LootBagName.Cobalt.local,
-        Strings.Loot.LootBagName.Scarlet.local,
-        Strings.Loot.LootBagName.Sangria.local
+        Strings("loot.lootBagName.amber").local,
+        Strings("loot.lootBagName.violet").local,
+        Strings("loot.lootBagName.ebony").local,
+        Strings("loot.lootBagName.rose").local,
+        Strings("loot.lootBagName.fern").local,
+        Strings("loot.lootBagName.tangerine").local,
+        Strings("loot.lootBagName.azure").local,
+        Strings("loot.lootBagName.sage").local,
+        Strings("loot.lootBagName.midnight").local,
+        Strings("loot.lootBagName.cobalt").local,
+        Strings("loot.lootBagName.scarlet").local,
+        Strings("loot.lootBagName.sangria").local
     ]
     
     init() {

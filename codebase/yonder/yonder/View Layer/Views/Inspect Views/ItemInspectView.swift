@@ -18,28 +18,28 @@ struct ItemInspectView: View {
             InspectStatsBody {
                 if self.itemViewModel.damage > 0 {
                     if let foeViewModel = GameManager.instance.foeViewModel {
-                        InspectStatView(title: Strings.Stat.Damage.local, value: self.itemViewModel.damage, indicativeValue: self.playerViewModel.getIndicativeDamage(itemViewModel: self.itemViewModel, opposition: foeViewModel), image: self.itemViewModel.damageImage)
+                        InspectStatView(title: Strings("stat.damage").local, value: self.itemViewModel.damage, indicativeValue: self.playerViewModel.getIndicativeDamage(itemViewModel: self.itemViewModel, opposition: foeViewModel), image: self.itemViewModel.damageImage)
                     } else {
-                        InspectStatView(title: Strings.Stat.Damage.local, value: self.itemViewModel.damage, indicativeValue: self.playerViewModel.getPassiveIndicativeDamage(itemViewModel: self.itemViewModel), image: self.itemViewModel.damageImage)
+                        InspectStatView(title: Strings("stat.damage").local, value: self.itemViewModel.damage, indicativeValue: self.playerViewModel.getPassiveIndicativeDamage(itemViewModel: self.itemViewModel), image: self.itemViewModel.damageImage)
                     }
                 }
                 
                 if self.itemViewModel.restoration > 0 {
-                    InspectStatView(title: Strings.Stat.Restoration.local, value: self.itemViewModel.restoration, image: self.itemViewModel.restorationImage)
+                    InspectStatView(title: Strings("stat.restoration").local, value: self.itemViewModel.restoration, image: self.itemViewModel.restorationImage)
                     
                     YonderText(text: self.playerViewModel.getIndicativeRestorationString(itemViewModel: self.itemViewModel), size: .inspectSheetBody)
                 }
                 
                 if self.itemViewModel.healthRestoration > 0 {
-                    InspectStatView(title: Strings.Stat.HealthRestoration.local, value: self.itemViewModel.healthRestoration, indicativeValue: self.playerViewModel.getIndicativeHealthRestoration(of: self.itemViewModel), image: self.itemViewModel.healthRestorationImage)
+                    InspectStatView(title: Strings("stat.healthRestoration").local, value: self.itemViewModel.healthRestoration, indicativeValue: self.playerViewModel.getIndicativeHealthRestoration(of: self.itemViewModel), image: self.itemViewModel.healthRestorationImage)
                 }
                 
                 if self.itemViewModel.armorPointsRestoration > 0 {
-                    InspectStatView(title: Strings.Stat.ArmorPointsRestoration.local, value: self.itemViewModel.armorPointsRestoration, indicativeValue: self.playerViewModel.getIndicativeArmorPointsRestoration(of: self.itemViewModel), image: self.itemViewModel.armorPointsRestorationImage)
+                    InspectStatView(title: Strings("stat.armorPointsRestoration").local, value: self.itemViewModel.armorPointsRestoration, indicativeValue: self.playerViewModel.getIndicativeArmorPointsRestoration(of: self.itemViewModel), image: self.itemViewModel.armorPointsRestorationImage)
                 }
                 
                 if self.itemViewModel.infiniteRemainingUses {
-                    InspectStatusView(title: self.itemViewModel.remainingUsesDescription, status: Strings.Item.Infinite.local, image: self.itemViewModel.remainingUsesImage)
+                    InspectStatusView(title: self.itemViewModel.remainingUsesDescription, status: Strings("item.infinite").local, image: self.itemViewModel.remainingUsesImage)
                 } else {
                     InspectStatView(title: self.itemViewModel.remainingUsesDescription, value: self.itemViewModel.remainingUses, image: self.itemViewModel.remainingUsesImage)
                 }

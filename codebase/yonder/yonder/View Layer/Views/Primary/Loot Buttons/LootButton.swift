@@ -20,7 +20,7 @@ struct LootButton: View {
             
             HStack {
                 if self.infoButton {
-                    YonderWideButton(text: Strings.Button.Info.local) {
+                    YonderWideButton(text: Strings("button.info").local) {
                         self.onInfo()
                     }
                 }

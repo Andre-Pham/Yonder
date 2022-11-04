@@ -16,8 +16,7 @@ class WeaponLifestealEquipmentPill: EquipmentPill, OnActorAttackSubscriber {
         
         super.init(
             sourceName: sourceName,
-            effectsDescription: Strings.EquipmentPill.WeaponLifesteal.EffectsDescription1Param
-                .localWithArgs((lifestealFraction*100.0).toString())
+            effectsDescription: Strings("equipmentPill.weaponLifesteal.effectsDescription1Param").localWithArgs((lifestealFraction*100.0).toString())
         )
         
         OnActorAttackPublisher.subscribe(self)

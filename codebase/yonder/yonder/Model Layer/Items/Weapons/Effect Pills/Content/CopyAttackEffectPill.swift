@@ -13,7 +13,7 @@ class CopyAttackEffectPill: WeaponEffectPill, AfterTurnEndSubscriber {
     public let effectsDescription: String
     
     override init() {
-        self.effectsDescription = Strings.WeaponEffectPill.CopyAttack.Description.local
+        self.effectsDescription = Strings("weaponEffectPill.copyAttack.description").local
         super.init()
         
         AfterTurnEndPublisher.subscribe(self)

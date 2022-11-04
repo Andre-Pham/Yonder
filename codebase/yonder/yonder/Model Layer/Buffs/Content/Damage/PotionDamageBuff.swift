@@ -17,12 +17,12 @@ class PotionDamageBuff: Buff {
         let effectsDescription = BuffEffectsDescription.buildMagnitudeEffectsDescription(
             direction: direction,
             difference: damageDifference,
-            outgoingIncrease: Strings.Buff.PotionDamage.EffectsDescription.OutgoingIncrease1Param,
-            outgoingDecrease: Strings.Buff.PotionDamage.EffectsDescription.OutgoingDecrease1Param,
-            incomingIncrease: Strings.Buff.PotionDamage.EffectsDescription.IncomingIncrease1Param,
-            incomingDecrease: Strings.Buff.PotionDamage.EffectsDescription.IncomingDecrease1Param,
-            bidirectionalIncrease: Strings.Buff.PotionDamage.EffectsDescription.BidirectionalIncrease1Param,
-            bidirectionalDecrease: Strings.Buff.PotionDamage.EffectsDescription.BidirectionalDecrease1Param)
+            outgoingIncrease: Strings("buff.potionDamage.effectsDescription.outgoingIncrease1Param"),
+            outgoingDecrease: Strings("buff.potionDamage.effectsDescription.outgoingDecrease1Param"),
+            incomingIncrease: Strings("buff.potionDamage.effectsDescription.incomingIncrease1Param"),
+            incomingDecrease: Strings("buff.potionDamage.effectsDescription.incomingDecrease1Param"),
+            bidirectionalIncrease: Strings("buff.potionDamage.effectsDescription.bidirectionalIncrease1Param"),
+            bidirectionalDecrease: Strings("buff.potionDamage.effectsDescription.bidirectionalDecrease1Param"))
         
         super.init(
             sourceName: sourceName,

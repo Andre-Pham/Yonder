@@ -29,50 +29,50 @@ enum LocationType {
     var name: String {
         switch self {
         case .none:
-            return Strings.Map.LocationType.None.Name.local
+            return Strings("map.locationType.none.name").local
         case .hostile:
-            return Strings.Map.LocationType.Hostile.Name.local
+            return Strings("map.locationType.hostile.name").local
         case .challengeHostile:
-            return Strings.Map.LocationType.ChallengeHostile.Name.local
+            return Strings("map.locationType.challengeHostile.name").local
         case .shop:
-            return Strings.Map.LocationType.Shop.Name.local
+            return Strings("map.locationType.shop.name").local
         case .enhancer:
-            return Strings.Map.LocationType.Enhancer.Name.local
+            return Strings("map.locationType.enhancer.name").local
         case .restorer:
-            return Strings.Map.LocationType.Restorer.Name.local
+            return Strings("map.locationType.restorer.name").local
         case .quest:
-            return Strings.Map.LocationType.Quest.Name.local
+            return Strings("map.locationType.quest.name").local
         case .friendly:
-            return Strings.Map.LocationType.Friendly.Name.local
+            return Strings("map.locationType.friendly.name").local
         case .boss:
-            return Strings.Map.LocationType.Boss.Name.local
+            return Strings("map.locationType.boss.name").local
         case .bridge:
-            return Strings.Map.LocationType.Bridge.Name.local
+            return Strings("map.locationType.bridge.name").local
         }
     }
     
     var description: String {
         switch self {
         case .none:
-            return Strings.Map.LocationType.None.Description.local
+            return Strings("map.locationType.none.description").local
         case .hostile:
-            return Strings.Map.LocationType.Hostile.Description.local
+            return Strings("map.locationType.hostile.description").local
         case .challengeHostile:
-            return Strings.Map.LocationType.ChallengeHostile.Description.local
+            return Strings("map.locationType.challengeHostile.description").local
         case .shop:
-            return Strings.Map.LocationType.Shop.Description.local
+            return Strings("map.locationType.shop.description").local
         case .enhancer:
-            return Strings.Map.LocationType.Enhancer.Description.local
+            return Strings("map.locationType.enhancer.description").local
         case .restorer:
-            return Strings.Map.LocationType.Restorer.Description.local
+            return Strings("map.locationType.restorer.description").local
         case .quest:
-            return Strings.Map.LocationType.Quest.Description.local
+            return Strings("map.locationType.quest.description").local
         case .friendly:
-            return Strings.Map.LocationType.Friendly.Description.local
+            return Strings("map.locationType.friendly.description").local
         case .boss:
-            return Strings.Map.LocationType.Boss.Description.local
+            return Strings("map.locationType.boss.description").local
         case .bridge:
-            return Strings.Map.LocationType.Bridge.Description.local
+            return Strings("map.locationType.bridge.description").local
         }
     }
     

@@ -12,7 +12,7 @@ class ConsumableViewModel: ItemViewModel {
     
     init(_ consumable: Consumable) {
         super.init(consumable,
-                   remainingUsesDescription: Strings.Stat.Consumable.RemainingUses.local,
+                   remainingUsesDescription: Strings("stat.consumable.remainingUses").local,
                    damageImage: YonderImages.consumableDamageIcon,
                    restorationImage: YonderImages.consumableRestorationIcon,
                    healthRestorationImage: YonderImages.consumableHealthRestorationIcon,

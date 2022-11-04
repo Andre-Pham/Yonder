@@ -32,9 +32,9 @@ class AccessoryViewModel: ObservableObject {
     var accessoryTypeDescription: String {
         switch self.accessory.type {
         case .peripheral:
-            return Strings.Accessory.AccessoryType.Peripheral.Name.local
+            return Strings("accessory.accessoryType.peripheral.name").local
         case .regular:
-            return Strings.Accessory.AccessoryType.Regular.Name.local
+            return Strings("accessory.accessoryType.regular.name").local
         }
     }
     var noStats: Bool {

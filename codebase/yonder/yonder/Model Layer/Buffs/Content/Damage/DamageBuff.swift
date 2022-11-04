@@ -17,12 +17,12 @@ class DamageBuff: Buff {
         let effectsDescription = BuffEffectsDescription.buildMagnitudeEffectsDescription(
             direction: direction,
             difference: damageDifference,
-            outgoingIncrease: Strings.Buff.Damage.EffectsDescription.OutgoingIncrease1Param,
-            outgoingDecrease: Strings.Buff.Damage.EffectsDescription.OutgoingDecrease1Param,
-            incomingIncrease: Strings.Buff.Damage.EffectsDescription.IncomingIncrease1Param,
-            incomingDecrease: Strings.Buff.Damage.EffectsDescription.IncomingDecrease1Param,
-            bidirectionalIncrease: Strings.Buff.Damage.EffectsDescription.BidirectionalIncrease1Param,
-            bidirectionalDecrease: Strings.Buff.Damage.EffectsDescription.BidirectionalDecrease1Param)
+            outgoingIncrease: Strings("buff.damage.effectsDescription.outgoingIncrease1Param"),
+            outgoingDecrease: Strings("buff.damage.effectsDescription.outgoingDecrease1Param"),
+            incomingIncrease: Strings("buff.damage.effectsDescription.incomingIncrease1Param"),
+            incomingDecrease: Strings("buff.damage.effectsDescription.incomingDecrease1Param"),
+            bidirectionalIncrease: Strings("buff.damage.effectsDescription.bidirectionalIncrease1Param"),
+            bidirectionalDecrease: Strings("buff.damage.effectsDescription.bidirectionalDecrease1Param"))
         
         super.init(
             sourceName: sourceName,

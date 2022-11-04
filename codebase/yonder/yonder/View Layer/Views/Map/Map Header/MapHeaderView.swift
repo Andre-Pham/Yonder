@@ -23,12 +23,12 @@ struct MapHeaderView: View {
             }
             .disabledWhen(self.scaleStateManager.scaleIsMax)
             
-            YonderWideButton(text: self.travelStateManager.travellingActive ? Strings.Map.Header.Done.local : Strings.Map.Header.Travel.local) {
+            YonderWideButton(text: self.travelStateManager.travellingActive ? Strings("map.header.done").local : Strings("map.header.travel").local) {
                 self.travelStateManager.toggleTravellingActiveState()
             }
             .disabledWhen(!self.travelStateManager.travellingAllowed)
             
-            YonderSquareButton(text: Strings.Map.Header.InformationShorthand.local) {
+            YonderSquareButton(text: Strings("map.header.informationShorthand").local) {
                 // Will expand with matchGeometryEffect to show legend
             }
         }

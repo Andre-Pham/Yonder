@@ -17,12 +17,12 @@ class PotionHealthRestorationPercentBuff: Buff {
         let effectsDescription = BuffEffectsDescription.buildPercentageEffectsDescription(
             direction: direction,
             fraction: healthFraction,
-            outgoingIncrease: Strings.Buff.PotionHealthRestorationPercent.EffectsDescription.OutgoingIncrease1Param,
-            outgoingDecrease: Strings.Buff.PotionHealthRestorationPercent.EffectsDescription.OutgoingDecrease1Param,
-            incomingIncrease: Strings.Buff.PotionHealthRestorationPercent.EffectsDescription.IncomingIncrease1Param,
-            incomingDecrease: Strings.Buff.PotionHealthRestorationPercent.EffectsDescription.IncomingDecrease1Param,
-            bidirectionalIncrease: Strings.Buff.PotionHealthRestorationPercent.EffectsDescription.BidirectionalIncrease1Param,
-            bidirectionalDecrease: Strings.Buff.PotionHealthRestorationPercent.EffectsDescription.BidirectionalDecrease1Param)
+            outgoingIncrease: Strings("buff.potionHealthRestorationPercent.effectsDescription.outgoingIncrease1Param"),
+            outgoingDecrease: Strings("buff.potionHealthRestorationPercent.effectsDescription.outgoingDecrease1Param"),
+            incomingIncrease: Strings("buff.potionHealthRestorationPercent.effectsDescription.incomingIncrease1Param"),
+            incomingDecrease: Strings("buff.potionHealthRestorationPercent.effectsDescription.incomingDecrease1Param"),
+            bidirectionalIncrease: Strings("buff.potionHealthRestorationPercent.effectsDescription.bidirectionalIncrease1Param"),
+            bidirectionalDecrease: Strings("buff.potionHealthRestorationPercent.effectsDescription.bidirectionalDecrease1Param"))
         
         super.init(
             sourceName: sourceName,

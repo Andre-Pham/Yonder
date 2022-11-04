@@ -18,8 +18,8 @@ class WeaponDamageEnhanceOffer: EnhanceOffer {
     init(price: Int, damage: Int) {
         self.price = price
         self.damage = damage
-        self.name = Strings.EnhanceOffer.WeaponDamage.Name.local
-        self.description = Strings.EnhanceOffer.WeaponDamage.Description1Param.localWithArgs(damage)
+        self.name = Strings("enhanceOffer.weaponDamage.name").local
+        self.description = Strings("enhanceOffer.weaponDamage.description1Param").localWithArgs(damage)
     }
     
     func getEnhanceables(from player: Player) -> [Enhanceable] {

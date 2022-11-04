@@ -15,7 +15,7 @@ class DecrementDurabilityPill: WeaponDurabilityPill {
     
     init(durability: Int, decrementBy amount: Int = 1) {
         self.durability = durability
-        self.effectsDescription = Strings.WeaponDurabilityPill.Decrement.Description1Param.localWithArgs(amount)
+        self.effectsDescription = Strings("weaponDurabilityPill.decrement.description1Param").localWithArgs(amount)
         self.decrementation = -amount
         super.init()
     }

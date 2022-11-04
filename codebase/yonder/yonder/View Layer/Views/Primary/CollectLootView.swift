@@ -58,7 +58,7 @@ struct CollectLootView: View {
                 )
             }
             
-            YonderWideButton(text: Strings.Button.Finished.local) {
+            YonderWideButton(text: Strings("button.finished").local) {
                 self.playerViewModel.finishLooting()
             }
         }

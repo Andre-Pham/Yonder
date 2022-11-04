@@ -17,12 +17,12 @@ class ArmorDamagePercentBuffPill: WeaponBuffPill {
         self.damageFraction = damageFraction
         if self.damageFraction.truncatingRemainder(dividingBy: 1.0) == 0.0 {
             let multiplier = Int(damageFraction)
-            self.effectsDescription = Strings.WeaponBuffPill.ArmorDamagePercent.DescriptionMultiplier1Param.localWithArgs(multiplier)
+            self.effectsDescription = Strings("weaponBuffPill.armorDamagePercent.descriptionMultiplier1Param").localWithArgs(multiplier)
         } else {
             let percentage = self.damageFraction.toRelativePercentage()
             self.effectsDescription = (damageFraction > 1.0 ?
-                Strings.WeaponBuffPill.ArmorDamagePercent.IncreaseDescription1Param.localWithArgs(percentage) :
-                Strings.WeaponBuffPill.ArmorDamagePercent.DecreaseDescription1Param.localWithArgs(percentage))
+                Strings("weaponBuffPill.armorDamagePercent.increaseDescription1Param").localWithArgs(percentage) :
+                Strings("weaponBuffPill.armorDamagePercent.decreaseDescription1Param").localWithArgs(percentage))
         }
         super.init()
     }

@@ -14,15 +14,15 @@ struct AccessorySlotSelectionInspectView: View {
     
     var body: some View {
         InspectBody {
-            YonderText(text: Strings.Inspect.AccessorySlotSelection.Title.local, size: .inspectSheetTitle)
+            YonderText(text: Strings("inspect.accessorySlotSelection.title").local, size: .inspectSheetTitle)
             
-            YonderText(text: Strings.Inspect.AccessorySlotSelection.Description.local, size: .inspectSheetBody)
+            YonderText(text: Strings("inspect.accessorySlotSelection.description").local, size: .inspectSheetBody)
             
             InspectSectionSpacingView()
             
             VStack {
                 SurroundingBrackets(bracket: "[", size: .title4) {
-                    YonderText(text: Strings.Inspect.AccessorySlotSelection.Header.local, size: .title4)
+                    YonderText(text: Strings("inspect.accessorySlotSelection.header").local, size: .title4)
                 }
                 .frame(maxWidth: .infinity)
                 
@@ -39,7 +39,7 @@ struct AccessorySlotSelectionInspectView: View {
                         dismiss()
                     } label: {
                         SurroundingBrackets(bracket: "[", size: .buttonBody) {
-                            YonderText(text: Strings.Button.InsertToEmptySlot.local, size: .buttonBody)
+                            YonderText(text: Strings("button.insertToEmptySlot").local, size: .buttonBody)
                         }
                     }
                 }

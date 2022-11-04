@@ -14,8 +14,7 @@ class PhoenixEquipmentPill: EquipmentPill, AfterTurnEndSubscriber {
     init(sourceName: String) {
         super.init(
             sourceName: sourceName,
-            effectsDescription: Strings.EquipmentPill.Phoenix.EffectsDescription1Param
-                .localWithArgs(self.healthSetTo)
+            effectsDescription: Strings("equipmentPill.phoenix.effectsDescription1Param").localWithArgs(self.healthSetTo)
         )
         
         AfterTurnEndPublisher.subscribe(self)

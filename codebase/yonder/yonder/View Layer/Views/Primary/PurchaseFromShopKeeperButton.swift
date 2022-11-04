@@ -28,13 +28,13 @@ struct PurchaseFromShopKeeperButton: View {
                             YonderText(text: self.purchasableViewModel.name, size: .buttonBody)
                             
                             YonderTextNumeralHStack {
-                                YonderText(text: Strings.Stat.RemainingStock.local.rightPadded(by: ": "), size: .buttonBodySubscript)
+                                YonderText(text: Strings("stat.remainingStock").local.rightPadded(by: ": "), size: .buttonBodySubscript)
                                 
                                 YonderNumeral(number: self.purchasableViewModel.stockRemaining, size: .buttonBodySubscript)
                             }
                             
                             HStack {
-                                YonderWideButton(text: Strings.Button.Info.local, verticalPadding: YonderCoreGraphics.padding, action: {})
+                                YonderWideButton(text: Strings("button.info").local, verticalPadding: YonderCoreGraphics.padding, action: {})
                                     .hidden()
                                 
                                 PriceTagView(price: self.purchasableViewModel.price, indicativePrice: self.playerViewModel.getIndicativePrice(from: self.purchasableViewModel.price))
@@ -54,7 +54,7 @@ struct PurchaseFromShopKeeperButton: View {
             
             VStack {
                 HStack {
-                    YonderWideButton(text: Strings.Button.Info.local, verticalPadding: YonderCoreGraphics.padding) {
+                    YonderWideButton(text: Strings("button.info").local, verticalPadding: YonderCoreGraphics.padding) {
                         self.infoSheetActive.toggle()
                     }
                     .withInspectSheet(
@@ -79,7 +79,7 @@ struct PurchaseFromShopKeeperButton: View {
             }
             
             if self.useButtonActive {
-                YonderWideButton(text: Strings.Button.Purchase.local) {
+                YonderWideButton(text: Strings("button.purchase").local) {
                     if let accessory = self.purchasableViewModel.getAccessoryViewModel(), accessory.isPeripheral {
                         self.accessorySelectionSheetActive = true
                     } else {

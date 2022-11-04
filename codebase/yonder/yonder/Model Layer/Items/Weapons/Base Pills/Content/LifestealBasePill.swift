@@ -14,7 +14,7 @@ class LifestealBasePill: WeaponBasePill, DamageSubscriber, HealthRestorationSubs
     
     init(damage: Int) {
         self.damage = damage
-        self.effectsDescription = Strings.WeaponBasePill.Lifesteal.EffectsDescription.local
+        self.effectsDescription = Strings("weaponBasePill.lifesteal.effectsDescription").local
         super.init()
     }
     

@@ -14,7 +14,7 @@ class BurnStatusEffectEffectPill: WeaponEffectPill {
     private let initialDuration: Int
     
     init(tickDamage: Int, duration: Int) {
-        self.effectsDescription = Strings.WeaponEffectPill.BurnStatusEffect.Description1Param.localWithArgs(tickDamage)
+        self.effectsDescription = Strings("weaponEffectPill.burnStatusEffect.description1Param").localWithArgs(tickDamage)
         self.tickDamage = tickDamage
         self.initialDuration = duration
         super.init()

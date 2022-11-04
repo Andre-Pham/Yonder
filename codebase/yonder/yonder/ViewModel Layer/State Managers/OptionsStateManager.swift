@@ -17,7 +17,7 @@ class OptionsStateManager: ObservableObject {
     @Published private(set) var showOptions = true
     @Published private(set) var showActions = false
     let animation: Animation = .easeOut(duration: 0.3)
-    @Published private var optionHeaderText = Strings.OptionsMenu.Header.Default.local
+    @Published private var optionHeaderText = Strings("optionsMenu.header.default").local
     var optionHeader: String {
         return "[\(self.optionHeaderText)]"
     }
@@ -105,7 +105,7 @@ class OptionsStateManager: ObservableObject {
     }
     
     func closeActions() {
-        self.optionHeaderText = Strings.OptionsMenu.Header.Default.local
+        self.optionHeaderText = Strings("optionsMenu.header.default").local
         withAnimation(self.animation) {
             self.showOptions = true
             self.showActions = false
@@ -122,7 +122,7 @@ class OptionsStateManager: ObservableObject {
     }
     
     func weaponOptionSelected() {
-        self.optionHeaderText = Strings.OptionsMenu.Header.Weapon.local
+        self.optionHeaderText = Strings("optionsMenu.header.weapon").local
         withAnimation(self.animation) {
             self.showOptions = false
             self.weaponActionsActive = true
@@ -131,7 +131,7 @@ class OptionsStateManager: ObservableObject {
     }
     
     func potionOptionSelected() {
-        self.optionHeaderText = Strings.OptionsMenu.Header.Potion.local
+        self.optionHeaderText = Strings("optionsMenu.header.potion").local
         withAnimation(self.animation) {
             self.showOptions = false
             self.potionActionsActive = true
@@ -140,7 +140,7 @@ class OptionsStateManager: ObservableObject {
     }
     
     func consumableOptionSelected() {
-        self.optionHeaderText = Strings.OptionsMenu.Header.Consumable.local
+        self.optionHeaderText = Strings("optionsMenu.header.consumable").local
         withAnimation(self.animation) {
             self.showOptions = false
             self.consumableActionsActive = true
@@ -149,7 +149,7 @@ class OptionsStateManager: ObservableObject {
     }
     
     func offerOptionSelected() {
-        self.optionHeaderText = Strings.OptionsMenu.Header.Offer.local
+        self.optionHeaderText = Strings("optionsMenu.header.offer").local
         withAnimation(self.animation) {
             self.showOptions = false
             self.offerActionsActive = true
@@ -158,7 +158,7 @@ class OptionsStateManager: ObservableObject {
     }
     
     func purchaseRestorationOptionSelected() {
-        self.optionHeaderText = Strings.OptionsMenu.Header.Restoration.local
+        self.optionHeaderText = Strings("optionsMenu.header.restoration").local
         withAnimation(self.animation) {
             self.showOptions = false
             self.purchaseRestorationActionsActive = true
@@ -167,7 +167,7 @@ class OptionsStateManager: ObservableObject {
     }
     
     func shopOptionSelected() {
-        self.optionHeaderText = Strings.OptionsMenu.Header.Shop.local
+        self.optionHeaderText = Strings("optionsMenu.header.shop").local
         withAnimation(self.animation) {
             self.showOptions = false
             self.shopActionsActive = true
@@ -176,7 +176,7 @@ class OptionsStateManager: ObservableObject {
     }
     
     func enhanceOptionSelected() {
-        self.optionHeaderText = Strings.OptionsMenu.Header.Enhance.local
+        self.optionHeaderText = Strings("optionsMenu.header.enhance").local
         withAnimation(self.animation) {
             self.showOptions = false
             self.enhanceActionsActive = true
@@ -185,7 +185,7 @@ class OptionsStateManager: ObservableObject {
     }
     
     func chooseLootBagOptionSelected() {
-        self.optionHeaderText = Strings.OptionsMenu.Header.ChooseLootBag.local
+        self.optionHeaderText = Strings("optionsMenu.header.chooseLootBag").local
         withAnimation(self.animation) {
             self.showOptions = false
             self.chooseLootBagActionsActive = true
@@ -194,7 +194,7 @@ class OptionsStateManager: ObservableObject {
     }
     
     func lootOptionSelected() {
-        self.optionHeaderText = Strings.OptionsMenu.Header.Loot.local
+        self.optionHeaderText = Strings("optionsMenu.header.loot").local
         withAnimation(self.animation) {
             self.showOptions = false
             self.lootActionsActive = true

@@ -16,13 +16,13 @@ class GoldBuff: Buff {
         
         var effectsDescription: String? = nil
         if self.goldDifference < 0 {
-            effectsDescription = Strings.Buff.Gold.EffectsDescription.IncomingDecrease2Param.localWithArgs(
-                Strings.CurrencySymbol.local,
+            effectsDescription = Strings("buff.gold.effectsDescription.incomingDecrease2Param").localWithArgs(
+                Strings("currencySymbol").local,
                 String(self.goldDifference)
             )
         } else if self.goldDifference > 0 {
-            effectsDescription = Strings.Buff.Gold.EffectsDescription.IncomingIncrease2Param.localWithArgs(
-                Strings.CurrencySymbol.local,
+            effectsDescription = Strings("buff.gold.effectsDescription.incomingIncrease2Param").localWithArgs(
+                Strings("currencySymbol").local,
                 String(self.goldDifference)
             )
         }

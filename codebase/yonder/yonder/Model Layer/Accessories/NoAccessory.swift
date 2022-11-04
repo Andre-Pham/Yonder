@@ -13,13 +13,13 @@ class NoAccessory: Accessory {
         let description: String
         switch type {
         case .regular:
-            description = Strings.Accessory.NoAccessory.RegularDescription.local
+            description = Strings("accessory.noAccessory.regularDescription").local
         case .peripheral:
-            description = Strings.Accessory.NoAccessory.PeripheralDescription.local
+            description = Strings("accessory.noAccessory.peripheralDescription").local
         }
         
         super.init(
-            name: Strings.Accessory.NoAccessory.Name.local,
+            name: Strings("accessory.noAccessory.name").local,
             description: description,
             type: type,
             healthBonus: 0,

@@ -12,12 +12,12 @@ enum BuffEffectsDescription {
     static func buildPercentageEffectsDescription(
         direction: Buff.BuffDirection,
         fraction: Double,
-        outgoingIncrease: Localizable,
-        outgoingDecrease: Localizable,
-        incomingIncrease: Localizable,
-        incomingDecrease: Localizable,
-        bidirectionalIncrease: Localizable,
-        bidirectionalDecrease: Localizable
+        outgoingIncrease: Strings,
+        outgoingDecrease: Strings,
+        incomingIncrease: Strings,
+        incomingDecrease: Strings,
+        bidirectionalIncrease: Strings,
+        bidirectionalDecrease: Strings
     ) -> String? {
         var effectsDescription: String? = nil
         let percentage = fraction.toRelativePercentage()
@@ -47,12 +47,12 @@ enum BuffEffectsDescription {
     static func buildMagnitudeEffectsDescription(
         direction: Buff.BuffDirection,
         difference: Int,
-        outgoingIncrease: Localizable,
-        outgoingDecrease: Localizable,
-        incomingIncrease: Localizable,
-        incomingDecrease: Localizable,
-        bidirectionalIncrease: Localizable,
-        bidirectionalDecrease: Localizable
+        outgoingIncrease: Strings,
+        outgoingDecrease: Strings,
+        incomingIncrease: Strings,
+        incomingDecrease: Strings,
+        bidirectionalIncrease: Strings,
+        bidirectionalDecrease: Strings
     ) -> String? {
         var effectsDescription: String? = nil
         let effectsMagnitude = abs(difference)

@@ -46,11 +46,11 @@ struct UsePotionButton: View {
                 YonderTextNumeralHStack {
                     YonderNumeral(number: self.potionViewModel.remainingUses, size: .buttonBodySubscript)
                     
-                    YonderText(text: (self.potionViewModel.remainingUses == 1 ? Strings.Stat.Potion.RemainingUsesSingular.local : Strings.Stat.Potion.RemainingUses.local).leftPadded(by: " "), size: .buttonBodySubscript)
+                    YonderText(text: (self.potionViewModel.remainingUses == 1 ? Strings("stat.potion.remainingUsesSingular").local : Strings("stat.potion.remainingUses").local).leftPadded(by: " "), size: .buttonBodySubscript)
                 }
             }
         } expandedContent: {
-            YonderWideButton(text: Strings.Button.InstantUse.local) {
+            YonderWideButton(text: Strings("button.instantUse").local) {
                 self.playerViewModel.use(potionViewModel: self.potionViewModel)
             }
         }

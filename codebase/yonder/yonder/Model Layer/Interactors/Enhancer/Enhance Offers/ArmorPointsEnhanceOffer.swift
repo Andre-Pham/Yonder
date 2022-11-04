@@ -18,8 +18,8 @@ class ArmorPointsEnhanceOffer: EnhanceOffer {
     init(price: Int, armorPoints: Int) {
         self.price = price
         self.armorPoints = armorPoints
-        self.name = Strings.EnhanceOffer.ArmorPoints.Name.local
-        self.description = Strings.EnhanceOffer.ArmorPoints.Description1Param.localWithArgs(armorPoints)
+        self.name = Strings("enhanceOffer.armorPoints.name").local
+        self.description = Strings("enhanceOffer.armorPoints.description1Param").localWithArgs(armorPoints)
     }
     
     func getEnhanceables(from player: Player) -> [Enhanceable] {

@@ -29,7 +29,7 @@ struct UseWeaponButton: View {
                             YonderNumeral(number: self.weaponViewModel.damage, size: .buttonBodySubscript)
                         }
                         
-                        YonderText(text: Strings.Stat.Damage.local.leftPadded(by: " "), size: .buttonBodySubscript)
+                        YonderText(text: Strings("stat.damage").local.leftPadded(by: " "), size: .buttonBodySubscript)
                     }
                 }
                 
@@ -37,7 +37,7 @@ struct UseWeaponButton: View {
                     YonderTextNumeralHStack {
                         YonderNumeral(number: self.weaponViewModel.restoration, size: .buttonBodySubscript)
                         
-                        YonderText(text: Strings.Stat.Restoration.local.leftPadded(by: " "), size: .buttonBodySubscript)
+                        YonderText(text: Strings("stat.restoration").local.leftPadded(by: " "), size: .buttonBodySubscript)
                     }
                     
                     YonderText(text: self.playerViewModel.getIndicativeRestorationString(itemViewModel: self.weaponViewModel), size: .buttonBodySubscript)
@@ -50,7 +50,7 @@ struct UseWeaponButton: View {
                             indicative: self.playerViewModel.getIndicativeHealthRestoration(of: self.weaponViewModel),
                             size: .buttonBodySubscript)
                         
-                        YonderText(text: Strings.Stat.HealthRestoration.local.leftPadded(by: " "), size: .buttonBodySubscript)
+                        YonderText(text: Strings("stat.healthRestoration").local.leftPadded(by: " "), size: .buttonBodySubscript)
                     }
                 }
                 
@@ -61,7 +61,7 @@ struct UseWeaponButton: View {
                             indicative: self.playerViewModel.getIndicativeArmorPointsRestoration(of: self.weaponViewModel),
                             size: .buttonBodySubscript)
                         
-                        YonderText(text: Strings.Stat.ArmorPointsRestoration.local.leftPadded(by: " "), size: .buttonBodySubscript)
+                        YonderText(text: Strings("stat.armorPointsRestoration").local.leftPadded(by: " "), size: .buttonBodySubscript)
                     }
                 }
                 
@@ -71,16 +71,16 @@ struct UseWeaponButton: View {
                 
                 YonderTextNumeralHStack {
                     if self.weaponViewModel.infiniteRemainingUses {
-                        YonderText(text: Strings.Item.Infinite.local, size: .buttonBodySubscript)
+                        YonderText(text: Strings("item.infinite").local, size: .buttonBodySubscript)
                     } else {
                         YonderNumeral(number: self.weaponViewModel.remainingUses, size: .buttonBodySubscript)
                     }
                     
-                    YonderText(text: (self.weaponViewModel.remainingUses == 1 ? Strings.Stat.Weapon.RemainingUsesSingular.local : Strings.Stat.Weapon.RemainingUses.local).leftPadded(by: " "), size: .buttonBodySubscript)
+                    YonderText(text: (self.weaponViewModel.remainingUses == 1 ? Strings("stat.weapon.remainingUsesSingular").local : Strings("stat.weapon.remainingUses").local).leftPadded(by: " "), size: .buttonBodySubscript)
                 }
             }
         } expandedContent: {
-            YonderWideButton(text: Strings.Button.Use.local) {
+            YonderWideButton(text: Strings("button.use").local) {
                 self.playerViewModel.use(weaponViewModel: self.weaponViewModel)
             }
         }

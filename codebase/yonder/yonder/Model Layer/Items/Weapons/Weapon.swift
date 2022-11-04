@@ -29,13 +29,13 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
         var summaryComponents = [String]()
         summaryComponents.append(self.name)
         if self.damage > 0 {
-            summaryComponents.append(String(self.damage) + " " + Strings.Stat.Damage.local)
+            summaryComponents.append(String(self.damage) + " " + Strings("stat.damage").local)
         }
         if self.healthRestoration > 0 {
-            summaryComponents.append(String(self.healthRestoration) + " " + Strings.Stat.HealthRestoration.local)
+            summaryComponents.append(String(self.healthRestoration) + " " + Strings("stat.healthRestoration").local)
         }
         if self.armorPointsRestoration > 0 {
-            summaryComponents.append(String(self.armorPointsRestoration) + " " + Strings.Stat.ArmorPointsRestoration.local)
+            summaryComponents.append(String(self.armorPointsRestoration) + " " + Strings("stat.armorPointsRestoration").local)
         }
         if let effectsDescription = self.getEffectsDescription() {
             summaryComponents.append(effectsDescription)

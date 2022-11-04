@@ -16,9 +16,9 @@ class PricePercentBuff: Buff {
         
         var effectsDescription: String? = nil
         if self.priceFraction.multiplyingDecreases() {
-            effectsDescription = Strings.Buff.PricePercent.EffectsDescription.OutgoingDecrease1Param.localWithArgs(priceFraction.toRelativePercentage())
+            effectsDescription = Strings("buff.pricePercent.effectsDescription.outgoingDecrease1Param").localWithArgs(priceFraction.toRelativePercentage())
         } else if self.priceFraction.multiplyingIncreases() {
-            effectsDescription = Strings.Buff.PricePercent.EffectsDescription.OutgoingIncrease1Param.localWithArgs(priceFraction.toRelativePercentage())
+            effectsDescription = Strings("buff.pricePercent.effectsDescription.outgoingIncrease1Param").localWithArgs(priceFraction.toRelativePercentage())
         }
         
         super.init(

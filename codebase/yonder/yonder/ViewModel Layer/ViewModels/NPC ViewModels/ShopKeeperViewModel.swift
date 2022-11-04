@@ -21,7 +21,7 @@ class ShopKeeperViewModel: InteractorViewModel {
     }
     
     func getOffersDescription() -> String {
-        let separator = "\n\(Strings.DotPoint.local) "
+        let separator = "\n\(Strings("dotPoint").local) "
         var description = ""
         var purchasablesTypes = self.purchasables.map { $0.type }
         purchasablesTypes = Array(Set(purchasablesTypes)) // Filter duplicaates

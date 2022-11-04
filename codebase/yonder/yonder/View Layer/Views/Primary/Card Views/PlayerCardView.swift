@@ -12,7 +12,7 @@ struct PlayerCardView: View {
     var resizeToFit: Bool = true
     
     var body: some View {
-        CardBody(name: Strings.Card.Player.Name.local,
+        CardBody(name: Strings("card.player.name").local,
                  resizeToFit: self.resizeToFit) {
             CardRowView(
                 value: self.playerViewModel.armorPoints,
@@ -25,7 +25,7 @@ struct PlayerCardView: View {
                 image: YonderImages.healthIcon)
             
             CardRowView(
-                prefix: Strings.CurrencySymbol.local,
+                prefix: Strings("currencySymbol").local,
                 value: self.playerViewModel.gold,
                 image: YonderImages.goldIcon)
         }

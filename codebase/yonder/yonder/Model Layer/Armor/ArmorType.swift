@@ -16,11 +16,11 @@ enum ArmorType {
     var name: String {
         switch self {
         case .head:
-            return Strings.Armor.ArmorType.Head.Name.local
+            return Strings("armor.armorType.head.name").local
         case .body:
-            return Strings.Armor.ArmorType.Body.Name.local
+            return Strings("armor.armorType.body.name").local
         case .legs:
-            return Strings.Armor.ArmorType.Legs.Name.local
+            return Strings("armor.armorType.legs.name").local
         }
     }
     

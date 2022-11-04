@@ -30,22 +30,22 @@ class BonusHealthConsumable: Consumable {
         var description: String
         switch tier {
         case .I:
-            name = Strings.Consumable.AdjustMaxHealth.Name.Tier1.local
-            description = Strings.Consumable.AdjustMaxHealth.Description.Tier1.local
+            name = Strings("consumable.adjustMaxHealth.name.tier1").local
+            description = Strings("consumable.adjustMaxHealth.description.tier1").local
         case .II:
-            name = Strings.Consumable.AdjustMaxHealth.Name.Tier2.local
-            description = Strings.Consumable.AdjustMaxHealth.Description.Tier2.local
+            name = Strings("consumable.adjustMaxHealth.name.tier2").local
+            description = Strings("consumable.adjustMaxHealth.description.tier2").local
         case .III:
-            name = Strings.Consumable.AdjustMaxHealth.Name.Tier3.local
-            description = Strings.Consumable.AdjustMaxHealth.Description.Tier3.local
+            name = Strings("consumable.adjustMaxHealth.name.tier3").local
+            description = Strings("consumable.adjustMaxHealth.description.tier3").local
         case .IV:
-            name = Strings.Consumable.AdjustMaxHealth.Name.Tier4.local
-            description = Strings.Consumable.AdjustMaxHealth.Description.Tier4.local
+            name = Strings("consumable.adjustMaxHealth.name.tier4").local
+            description = Strings("consumable.adjustMaxHealth.description.tier4").local
         }
         super.init(
             name: name,
             description: description,
-            effectsDescription: Strings.Consumable.AdjustMaxHealth.EffectsDescription1Param.localWithArgs(tier.amount)
+            effectsDescription: Strings("consumable.adjustMaxHealth.effectsDescription1Param").localWithArgs(tier.amount)
         )
     }
     

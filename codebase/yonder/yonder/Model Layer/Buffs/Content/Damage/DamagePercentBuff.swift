@@ -17,12 +17,12 @@ class DamagePercentBuff: Buff {
         let effectsDescription = BuffEffectsDescription.buildPercentageEffectsDescription(
             direction: direction,
             fraction: damageFraction,
-            outgoingIncrease: Strings.Buff.DamagePercent.EffectsDescription.OutgoingIncrease1Param,
-            outgoingDecrease: Strings.Buff.DamagePercent.EffectsDescription.OutgoingDecrease1Param,
-            incomingIncrease: Strings.Buff.DamagePercent.EffectsDescription.IncomingIncrease1Param,
-            incomingDecrease: Strings.Buff.DamagePercent.EffectsDescription.IncomingDecrease1Param,
-            bidirectionalIncrease: Strings.Buff.DamagePercent.EffectsDescription.BidirectionalIncrease1Param,
-            bidirectionalDecrease: Strings.Buff.DamagePercent.EffectsDescription.BidirectionalDecrease1Param)
+            outgoingIncrease: Strings("buff.damagePercent.effectsDescription.outgoingIncrease1Param"),
+            outgoingDecrease: Strings("buff.damagePercent.effectsDescription.outgoingDecrease1Param"),
+            incomingIncrease: Strings("buff.damagePercent.effectsDescription.incomingIncrease1Param"),
+            incomingDecrease: Strings("buff.damagePercent.effectsDescription.incomingDecrease1Param"),
+            bidirectionalIncrease: Strings("buff.damagePercent.effectsDescription.bidirectionalIncrease1Param"),
+            bidirectionalDecrease: Strings("buff.damagePercent.effectsDescription.bidirectionalDecrease1Param"))
         
         super.init(
             sourceName: sourceName,

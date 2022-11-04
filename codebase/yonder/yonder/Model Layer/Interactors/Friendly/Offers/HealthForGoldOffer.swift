@@ -17,8 +17,8 @@ class HealthForGoldOffer: Offer {
     public let goldReward: Int
     
     init(health: Int, goldReward: Int) {
-        self.name = Strings.Offer.HealthForGold.Name.local
-        self.description = Strings.Offer.HealthForGold.Description2Param.localWithArgs(health, goldReward)
+        self.name = Strings("offer.healthForGold.name").local
+        self.description = Strings("offer.healthForGold.description2Param").localWithArgs(health, goldReward)
         self.health = health
         self.goldReward = goldReward
     }

@@ -19,15 +19,15 @@ class PurchasableItem {
         var categoryDescription: String {
             switch self {
             case .weapon:
-                return Strings.PurchasableItem.Category.Weapons.local
+                return Strings("purchasableItem.category.weapons").local
             case .potion:
-                return Strings.PurchasableItem.Category.Potions.local
+                return Strings("purchasableItem.category.potions").local
             case .armor:
-                return Strings.PurchasableItem.Category.Armor.local
+                return Strings("purchasableItem.category.armor").local
             case .accessory:
-                return Strings.PurchasableItem.Category.Accessories.local
+                return Strings("purchasableItem.category.accessories").local
             case .consumable:
-                return Strings.PurchasableItem.Category.Consumables.local
+                return Strings("purchasableItem.category.consumables").local
             }
         }
     }

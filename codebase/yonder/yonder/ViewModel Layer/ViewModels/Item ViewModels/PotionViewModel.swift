@@ -12,7 +12,7 @@ class PotionViewModel: ItemViewModel {
     
     init(_ potion: Potion) {
         super.init(potion,
-                   remainingUsesDescription: Strings.Stat.Potion.RemainingUses.local,
+                   remainingUsesDescription: Strings("stat.potion.remainingUses").local,
                    damageImage: YonderImages.potionDamageIcon,
                    restorationImage: YonderImages.potionRestorationIcon,
                    healthRestorationImage: YonderImages.potionHealthRestorationIcon,

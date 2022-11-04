@@ -16,8 +16,8 @@ class FreeGoldOffer: Offer {
     public let goldAmount: Int
     
     init(goldAmount: Int) {
-        self.name = Strings.Offer.FreeGold.Name.local
-        self.description = Strings.Offer.FreeGold.Description1Param.localWithArgs(goldAmount)
+        self.name = Strings("offer.freeGold.name").local
+        self.description = Strings("offer.freeGold.description1Param").localWithArgs(goldAmount)
         self.goldAmount = goldAmount
     }
     

@@ -17,12 +17,12 @@ class WeaponHealthRestorationBuff: Buff {
         let effectsDescription = BuffEffectsDescription.buildMagnitudeEffectsDescription(
             direction: direction,
             difference: healthDifference,
-            outgoingIncrease: Strings.Buff.WeaponHealthRestoration.EffectsDescription.OutgoingIncrease1Param,
-            outgoingDecrease: Strings.Buff.WeaponHealthRestoration.EffectsDescription.OutgoingDecrease1Param,
-            incomingIncrease: Strings.Buff.WeaponHealthRestoration.EffectsDescription.IncomingIncrease1Param,
-            incomingDecrease: Strings.Buff.WeaponHealthRestoration.EffectsDescription.IncomingDecrease1Param,
-            bidirectionalIncrease: Strings.Buff.WeaponHealthRestoration.EffectsDescription.BidirectionalIncrease1Param,
-            bidirectionalDecrease: Strings.Buff.WeaponHealthRestoration.EffectsDescription.BidirectionalDecrease1Param)
+            outgoingIncrease: Strings("buff.weaponHealthRestoration.effectsDescription.outgoingIncrease1Param"),
+            outgoingDecrease: Strings("buff.weaponHealthRestoration.effectsDescription.outgoingDecrease1Param"),
+            incomingIncrease: Strings("buff.weaponHealthRestoration.effectsDescription.incomingIncrease1Param"),
+            incomingDecrease: Strings("buff.weaponHealthRestoration.effectsDescription.incomingDecrease1Param"),
+            bidirectionalIncrease: Strings("buff.weaponHealthRestoration.effectsDescription.bidirectionalIncrease1Param"),
+            bidirectionalDecrease: Strings("buff.weaponHealthRestoration.effectsDescription.bidirectionalDecrease1Param"))
         
         super.init(
             sourceName: sourceName,

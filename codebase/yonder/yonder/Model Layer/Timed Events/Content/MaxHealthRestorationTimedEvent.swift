@@ -13,7 +13,7 @@ class MaxHealthRestorationTimedEvent: TimedEvent {
     
     init(timeToTrigger: Int) {
         self.timer = Timer(startTime: timeToTrigger)
-        super.init(name: Strings.TimedEvent.MaxHealthRestoration.Name.local)
+        super.init(name: Strings("timedEvent.maxHealthRestoration.name").local)
     }
     
     required init(_ original: TimedEventAbstract) {
@@ -31,7 +31,7 @@ class MaxHealthRestorationTimedEvent: TimedEvent {
     }
     
     func getEffectsDescription() -> String? {
-        return Strings.TimedEvent.MaxHealthRestoration.EffectsDescription.local
+        return Strings("timedEvent.maxHealthRestoration.effectsDescription").local
     }
     
 }

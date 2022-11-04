@@ -14,7 +14,7 @@ struct ActionsView: View {
     
     var body: some View {
         Group {
-            YonderWideButton(text: Strings.Button.Back.local) {
+            YonderWideButton(text: Strings("button.back").local) {
                 self.optionsStateManager.closeActions()
             }
             

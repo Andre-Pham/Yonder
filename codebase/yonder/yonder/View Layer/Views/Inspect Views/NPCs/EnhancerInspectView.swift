@@ -16,7 +16,7 @@ struct EnhancerInspectView: View {
             description: self.enhancerViewModel.description,
             locationType: LocationType.enhancer
         ) {
-            YonderText(text: Strings.Inspect.Title.Offers.local, size: .inspectSheetTitle)
+            YonderText(text: Strings("inspect.title.offers").local, size: .inspectSheetTitle)
             
             ForEach(self.enhancerViewModel.enhanceOfferViewModels, id: \.id) { offer in
                 YonderText(text: "[\(offer.name)]\n\(offer.description)", size: .inspectSheetBody)

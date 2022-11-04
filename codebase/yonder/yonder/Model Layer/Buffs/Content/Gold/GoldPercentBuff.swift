@@ -16,9 +16,9 @@ class GoldPercentBuff: Buff {
         
         var effectsDescription: String? = nil
         if self.goldFraction.multiplyingDecreases() {
-            effectsDescription = Strings.Buff.GoldPercent.EffectsDescription.IncomingDecrease1Param.localWithArgs(goldFraction.toRelativePercentage())
+            effectsDescription = Strings("buff.goldPercent.effectsDescription.incomingDecrease1Param").localWithArgs(goldFraction.toRelativePercentage())
         } else if self.goldFraction.multiplyingIncreases() {
-            effectsDescription = Strings.Buff.GoldPercent.EffectsDescription.IncomingIncrease1Param.localWithArgs(goldFraction.toRelativePercentage())
+            effectsDescription = Strings("buff.goldPercent.effectsDescription.incomingIncrease1Param").localWithArgs(goldFraction.toRelativePercentage())
         }
         
         super.init(

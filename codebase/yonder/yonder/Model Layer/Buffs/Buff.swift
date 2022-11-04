@@ -35,7 +35,7 @@ class BuffAbstract: EffectsDescribed, Clonable {
         self.timeRemaining = duration
         self.initialTimeRemaining = duration
         if let timeRemaining = duration {
-            self.effectsDescription = effectsDescription?.continuedBy(Strings.Buff.Duration1Param.localWithArgs(timeRemaining))
+            self.effectsDescription = effectsDescription?.continuedBy(Strings("buff.duration1Param").localWithArgs(timeRemaining))
         } else {
             // Infinite duration
             self.effectsDescription = effectsDescription

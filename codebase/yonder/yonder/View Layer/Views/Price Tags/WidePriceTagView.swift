@@ -30,12 +30,12 @@ struct WidePriceTagView: View {
         ZStack {
             if let indicativePrice = self.indicativePrice {
                 YonderTextNumeralHStack {
-                    YonderIconNumeralPair(prefix: Strings.CurrencySymbol.local, image: YonderImages.goldIcon, numeral: indicativePrice, size: .buttonBody, color: self.indicativeColor)
+                    YonderIconNumeralPair(prefix: Strings("currencySymbol").local, image: YonderImages.goldIcon, numeral: indicativePrice, size: .buttonBody, color: self.indicativeColor)
                     
                     YonderText(text: self.displayText, size: .buttonBody)
                 }
             } else {
-                YonderIconNumeralPair(prefix: Strings.CurrencySymbol.local, suffix: self.displayText, image: YonderImages.goldIcon, numeral: self.price, size: .buttonBody)
+                YonderIconNumeralPair(prefix: Strings("currencySymbol").local, suffix: self.displayText, image: YonderImages.goldIcon, numeral: self.price, size: .buttonBody)
             }
         }
         .frame(maxWidth: .infinity)

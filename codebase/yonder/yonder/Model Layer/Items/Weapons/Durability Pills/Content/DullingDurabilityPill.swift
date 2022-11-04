@@ -13,7 +13,7 @@ class DullingDurabilityPill: WeaponDurabilityPill {
     public let damageLostPerUse: Int
     
     init(damageLostPerUse: Int) {
-        self.effectsDescription = Strings.WeaponDurabilityPill.Dulling.Description1Param.localWithArgs(damageLostPerUse)
+        self.effectsDescription = Strings("weaponDurabilityPill.dulling.description1Param").localWithArgs(damageLostPerUse)
         self.damageLostPerUse = damageLostPerUse
         super.init()
     }

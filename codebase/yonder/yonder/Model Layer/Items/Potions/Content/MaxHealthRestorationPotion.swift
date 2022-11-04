@@ -11,9 +11,9 @@ class MaxHealthRestorationPotion: Potion {
     
     init(potionCount: Int) {
         super.init(
-            name: Strings.Potion.MaxHealthRestoration.Name.local,
-            description: Strings.Potion.MaxHealthRestoration.Description.local,
-            effectsDescription: Strings.Potion.MaxHealthRestoration.EffectsDescription.local,
+            name: Strings("potion.maxHealthRestoration.name").local,
+            description: Strings("potion.maxHealthRestoration.description").local,
+            effectsDescription: Strings("potion.maxHealthRestoration.effectsDescription").local,
             remainingUses: potionCount)
     }
     
