@@ -98,7 +98,7 @@ enum PreviewObjects {
         lootBag.addArmorLoot(self.armorViewModel.armor)
         lootBag.addPotionLoot(DamagePotion(tier: .II, potionCount: 3))
         lootBag.addAccessoryLoot(self.accessory)
-        lootBag.addWeaponLoot(Weapon(basePill: LifestealBasePill(damage: 100), durabilityPill: InfiniteDurabilityPill()))
+        lootBag.addWeaponLoot(Weapon(basePill: DamageBasePill(damage: 100), durabilityPill: InfiniteDurabilityPill(), effectPills: [LifestealEffectPill(lifestealFraction: 0.5)]))
         lootBag.addGoldLoot(100)
         return lootBag
     }

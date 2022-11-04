@@ -19,7 +19,7 @@ enum Foes {
         lootBag2.addPotionLoot(DamagePotion(tier: .I, potionCount: 4))
         lootBag2.addPotionLoot(HealthRestorationPotion(tier: .V, potionCount: 4))
         let lootBag3 = LootBag()
-        lootBag3.addWeaponLoot(Weapon(basePill: LifestealBasePill(damage: 100), durabilityPill: DecrementDurabilityPill(durability: 5)))
+        lootBag3.addWeaponLoot(Weapon(basePill: DamageBasePill(damage: 100), durabilityPill: DecrementDurabilityPill(durability: 5), effectPills: [LifestealEffectPill(lifestealFraction: 0.5)]))
         lootBag3.addAccessoryLoot(Accessory(name: "Accessory Loot", description: "This is some spooky armor.", type: .regular, healthBonus: 100, armorPointsBonus: 0, buffs: [], equipmentPills: []))
         lootBag3.addAccessoryLoot(Accessory(name: "Accessory Peri Loot", description: "This is some scary armor.", type: .peripheral, healthBonus: 0, armorPointsBonus: 100, buffs: [], equipmentPills: []))
         

@@ -59,31 +59,5 @@ class WeaponBasePillTests: XCTestCase {
         self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
         XCTAssertEqual(self.player.armorPoints, 50)
     }
-    
-    func testLifestealBasePill() throws {
-        let weapon = Weapon(basePill: LifestealBasePill(damage: 50), durabilityPill: InfiniteDurabilityPill())
-        // Test setup
-        XCTAssertEqual(weapon.damage, 50)
-        XCTAssertEqual(weapon.healthRestoration, 50)
-        // Test logic
-        self.player.addWeapon(weapon)
-        self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
-        XCTAssertEqual(self.foe.health, 450)
-        XCTAssertEqual(self.player.health, 400)
-        weapon.setDamage(to: 5)
-        XCTAssertEqual(weapon.healthRestoration, 5)
-        weapon.setHealthRestoration(to: 20)
-        XCTAssertEqual(weapon.healthRestoration, 5)
-    }
-    
-     // MARK: - Interactions
-    
-    func testLifestealWithDulling() throws {
-        let weapon = Weapon(basePill: LifestealBasePill(damage: 100), durabilityPill: DullingDurabilityPill(damageLostPerUse: 50))
-        self.player.addWeapon(weapon)
-        self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
-        XCTAssertEqual(self.foe.health, 400)
-        XCTAssertEqual(self.player.health, 450)
-    }
 
 }

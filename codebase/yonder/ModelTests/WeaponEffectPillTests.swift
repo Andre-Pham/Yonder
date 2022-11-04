@@ -61,5 +61,19 @@ class WeaponEffectPillTests: XCTestCase {
         self.player.useWeaponWhere(opposition: self.foe, weapon: self.player.weapons.first!)
         XCTAssertEqual(self.player.weapons.first!.damage, 20)
     }
+    
+    func testLifestealEffectPill() throws {
+        let weapon = Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: InfiniteDurabilityPill(), effectPills: [LifestealEffectPill(lifestealFraction: 1.0)])
+        self.player.damage(for: 150)
+        self.player.addWeapon(weapon)
+        self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
+        XCTAssertEqual(self.foe.health, 450)
+        XCTAssertEqual(self.player.health, 400)
+        weapon.setDamage(to: 100)
+        self.foe.addBuff(DamageBuff(sourceName: "", direction: .incoming, duration: nil, damageDifference: -10))
+        self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
+        XCTAssertEqual(self.foe.health, 360)
+        XCTAssertEqual(self.player.health, 490)
+    }
 
 }

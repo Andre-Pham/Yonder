@@ -261,7 +261,7 @@
 
 // MARK: - Weapon Base Pills
 
-"weaponBasePill.lifesteal.effectsDescription" = "Always has health restoration equal to this weapon's damage.";
+// (none)
 
 // MARK: - Weapon Durability Pills
 
@@ -284,6 +284,9 @@
 
 // Copy Attack
 "weaponEffectPill.copyAttack.description" = "After this performs the final blow on a hostile, this weapon's damage copies their attack.";
+
+// Lifesteal
+"weaponEffectPill.lifesteal.description1Param" = "Upon use, restores %@%% of damage dealt as health.";
 
 // MARK: - Weapon Buff Pills
 
