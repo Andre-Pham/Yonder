@@ -1,5 +1,5 @@
 //
-//  TurnImprovingRestorationConsumable.swift
+//  TravelImprovingRestorationConsumable.swift
 //  yonder
 //
 //  Created by Andre Pham on 7/9/2022.
@@ -7,22 +7,22 @@
 
 import Foundation
 
-class TurnImprovingRestorationConsumable: Consumable, OnTurnEndSubscriber {
+class TravelImprovingRestorationConsumable: Consumable, OnPlayerTravelSubscriber {
     
     /// The amount of restoration this consumable starts with
     private let startingRestoration = 10
-    /// The amount of restoration this improves by every turn
-    private let restorationIncrease = 2
+    /// The amount of restoration this improves by every travel
+    private let restorationIncrease = 8
     
     init() {
         super.init(
-            name: Strings("consumable.turnImprovingRestoration.name").local,
-            description: Strings("consumable.turnImprovingRestoration.description").local,
-            effectsDescription: Strings("consumable.turnImprovingRestoration.effectsDescription2Param").localWithArgs(self.startingRestoration, self.restorationIncrease),
+            name: Strings("consumable.travelImprovingRestoration.name").local,
+            description: Strings("consumable.travelImprovingRestoration.description").local,
+            effectsDescription: Strings("consumable.travelImprovingRestoration.effectsDescription2Param").localWithArgs(self.startingRestoration, self.restorationIncrease),
             restoration: self.startingRestoration
         )
         
-        OnTurnEndPublisher.subscribe(self)
+        OnPlayerTravelPublisher.subscribe(self)
     }
     
     required init(_ original: ConsumableAbstract) {
@@ -34,7 +34,7 @@ class TurnImprovingRestorationConsumable: Consumable, OnTurnEndSubscriber {
             restoration: original.restoration
         )
         
-        OnTurnEndPublisher.subscribe(self)
+        OnPlayerTravelPublisher.subscribe(self)
     }
     
     func use(owner: ActorAbstract, opposition: ActorAbstract?) {
@@ -49,12 +49,12 @@ class TurnImprovingRestorationConsumable: Consumable, OnTurnEndSubscriber {
         return false
     }
     
-    func onTurnEnd(player: Player, playerUsed: Item?, foe: Foe?) {
+    func onPlayerTravel(player: Player, newLocation: Location) {
         self.adjustRestoration(by: self.restorationIncrease)
     }
     
     override func restorationDidSet() {
-        self.setEffectsDescription(to: Strings("consumable.turnImprovingRestoration.effectsDescription2Param").localWithArgs(self.restoration, self.restorationIncrease))
+        self.setEffectsDescription(to: Strings("consumable.travelImprovingRestoration.effectsDescription2Param").localWithArgs(self.restoration, self.restorationIncrease))
     }
     
     func calculateBasePurchasePrice() -> Int {

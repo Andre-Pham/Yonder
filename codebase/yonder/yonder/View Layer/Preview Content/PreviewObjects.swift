@@ -20,7 +20,7 @@ enum PreviewObjects {
         player.addStatusEffect(BurnStatusEffect(damage: 15, duration: 5))
         player.addTimedEvent(MaxHealthRestorationTimedEvent(timeToTrigger: 5))
         player.equipAccessory(Self.accessory, replacing: nil)
-        player.addConsumable(TurnImprovingRestorationConsumable())
+        player.addConsumable(TravelImprovingRestorationConsumable())
         return player
     }
     

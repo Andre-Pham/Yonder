@@ -358,9 +358,9 @@
 "consumable.multiplyGold.effectsDescription1Param" = "Increase your current gold by %@%%.";
 
 // Turn Improving Restoration
-"consumable.turnImprovingRestoration.name" = "Cellular Blessing";
-"consumable.turnImprovingRestoration.description" = "A bright token of materialised light.";
-"consumable.turnImprovingRestoration.effectsDescription2Param" = "Restore %@ (overflows from health to shields). Improves by %@ restoration every turn.";
+"consumable.travelImprovingRestoration.name" = "Cellular Blessing";
+"consumable.travelImprovingRestoration.description" = "A bright token of materialised light.";
+"consumable.travelImprovingRestoration.effectsDescription2Param" = "Restore %@ (overflows from health to shields). Improves by %@ restoration after every travel.";
 
 // Adjust Max Health
 "consumable.adjustMaxHealth.name.tier1" = "Life Seed";
@@ -382,9 +382,9 @@
 "consumable.ripeningSetHealth.description.stage2" = "A half ripe glowberry. It's aquamarine and has grown two fold.";
 "consumable.ripeningSetHealth.description.stage3" = "A ripened glowberry. It's a brilliant blue, with soft flesh and considerable weight.";
 "consumable.ripeningSetHealth.description.stage4" = "A senescent glowberry. It's become a deep teal, and wrinkled to its original unripened size.";
-"consumable.ripeningSetHealth.effectsDescription.stage11Param" = "Sets you to 1/3 your maximum health. Ripens more in %@ turn(s).";
-"consumable.ripeningSetHealth.effectsDescription.stage21Param" = "Sets you to 2/3 your maximum health. Fully ripens in %@ turn(s).";
-"consumable.ripeningSetHealth.effectsDescription.stage31Param" = "Sets you to your maximum health. Goes bad in %@ turn(s).";
+"consumable.ripeningSetHealth.effectsDescription.stage11Param" = "Sets you to 1/3 your maximum health. Ripens more after %@ more travel(s).";
+"consumable.ripeningSetHealth.effectsDescription.stage21Param" = "Sets you to 2/3 your maximum health. Fully ripens after %@ more travel(s).";
+"consumable.ripeningSetHealth.effectsDescription.stage31Param" = "Sets you to your maximum health. Goes bad after %@ more travel(s).";
 "consumable.ripeningSetHealth.effectsDescription.stage4" = "Does nothing. To dispose, consume this item.";
 
 // Restore Armor Points

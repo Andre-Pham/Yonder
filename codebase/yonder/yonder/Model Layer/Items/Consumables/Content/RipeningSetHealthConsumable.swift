@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RipeningSetHealthConsumable: Consumable, OnTurnEndSubscriber {
+class RipeningSetHealthConsumable: Consumable, OnPlayerTravelSubscriber {
     
     enum RipeningStage {
         case stage1
@@ -72,7 +72,7 @@ class RipeningSetHealthConsumable: Consumable, OnTurnEndSubscriber {
             effectsDescription: Strings("consumable.ripeningSetHealth.effectsDescription.stage11Param").localWithArgs(self.stage2TurnsRequired)
         )
         
-        OnTurnEndPublisher.subscribe(self)
+        OnPlayerTravelPublisher.subscribe(self)
     }
     
     required init(_ original: ConsumableAbstract) {
@@ -81,7 +81,7 @@ class RipeningSetHealthConsumable: Consumable, OnTurnEndSubscriber {
         self.turnsPassed = original.turnsPassed
         super.init(original)
         
-        OnTurnEndPublisher.subscribe(self)
+        OnPlayerTravelPublisher.subscribe(self)
     }
     
     func getStageEffectsDescription() -> String {
@@ -109,7 +109,7 @@ class RipeningSetHealthConsumable: Consumable, OnTurnEndSubscriber {
         return false
     }
     
-    func onTurnEnd(player: Player, playerUsed: Item?, foe: Foe?) {
+    func onPlayerTravel(player: Player, newLocation: Location) {
         if player.consumables.contains(where: { $0.id == self.id }) {
             self.turnsPassed += 1
         }

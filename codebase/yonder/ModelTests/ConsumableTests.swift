@@ -12,7 +12,6 @@ class ConsumableTests: XCTestCase {
 
     let player = Player(maxHealth: 500, location: NoLocation())
     let foe = Foe(maxHealth: 500, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
-    let turnManager = TestsTurnManager.turnManager
     
     func testConsumableRemoval() throws {
         self.player.addConsumable(MultiplyGoldConsumable(goldFraction: 2.0))
@@ -56,13 +55,13 @@ class ConsumableTests: XCTestCase {
         self.player.adjustBonusHealth(by: 999 - self.player.health)
         self.player.useConsumableWhere(opposition: nil, consumable: self.player.consumables.first!)
         XCTAssertEqual(self.player.health, 999/3)
-        for _ in 0..<8 { self.turnManager.completeTurn(player: self.player) }
+        for _ in 0..<8 { self.player.travel(to: NoLocation()) }
         self.player.useConsumableWhere(opposition: nil, consumable: self.player.consumables.first!)
         XCTAssertEqual(self.player.health, 2*999/3)
-        for _ in 0..<8 { self.turnManager.completeTurn(player: self.player) }
+        for _ in 0..<8 { self.player.travel(to: NoLocation()) }
         self.player.useConsumableWhere(opposition: nil, consumable: self.player.consumables.first!)
         XCTAssertEqual(self.player.health, self.player.maxHealth)
-        for _ in 0..<8 { self.turnManager.completeTurn(player: self.player) }
+        for _ in 0..<8 { self.player.travel(to: NoLocation()) }
         self.player.setHealth(to: 1)
         self.player.useConsumableWhere(opposition: nil, consumable: self.player.consumables.first!)
         XCTAssertEqual(self.player.health, 1)
@@ -70,13 +69,13 @@ class ConsumableTests: XCTestCase {
     
     func testTurnImprovingRestorationConsumable() throws {
         let startingRestoration = 10
-        let restorationIncrease = 2
-        self.player.addConsumable(TurnImprovingRestorationConsumable())
-        self.player.addConsumable(TurnImprovingRestorationConsumable())
+        let restorationIncrease = 8
+        self.player.addConsumable(TravelImprovingRestorationConsumable())
+        self.player.addConsumable(TravelImprovingRestorationConsumable())
         self.player.setHealth(to: 100)
         self.player.useConsumableWhere(opposition: nil, consumable: self.player.consumables.first!)
         XCTAssertEqual(self.player.health, 100 + startingRestoration)
-        for _ in 0..<10 { self.turnManager.completeTurn(player: self.player) }
+        for _ in 0..<10 { self.player.travel(to: NoLocation()) }
         self.player.useConsumableWhere(opposition: nil, consumable: self.player.consumables.first!)
         XCTAssertEqual(self.player.health, 110 + startingRestoration + restorationIncrease*10)
     }
