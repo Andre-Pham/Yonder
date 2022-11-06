@@ -38,4 +38,12 @@ extension Double {
         return Int(Darwin.round(self))
     }
     
+    func compound(multiply: Double, index: Double) -> Double {
+        return self*pow(multiply, index)
+    }
+    
+    func compound(multiply: Double, index: Int) -> Double {
+        return self.compound(multiply: multiply, index: Double(index))
+    }
+    
 }
