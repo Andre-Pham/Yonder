@@ -193,6 +193,7 @@
 "loot.category.potions" = "Potions";
 "loot.category.accessories" = "Accessories";
 "loot.category.armors" = "Armor Pieces";
+"loot.category.consumables" = "Items";
 "loot.category.gold" = "Gold";
 
 // MARK: - Enhance Offers

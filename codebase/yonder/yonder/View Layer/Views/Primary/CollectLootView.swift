@@ -41,6 +41,15 @@ struct CollectLootView: View {
                 )
             }
             
+            ForEach(self.lootBagViewModel.consumableViewModelLoot, id: \.id) { consumableViewModel in
+                LootConsumableButton(
+                    consumableViewModel: consumableViewModel,
+                    playerViewModel: self.playerViewModel,
+                    lootBagViewModel: self.lootBagViewModel,
+                    pageGeometry: self.pageGeometry
+                )
+            }
+            
             ForEach(self.lootBagViewModel.potionViewModelLoot, id: \.id) { potionViewModel in
                 LootPotionButton(
                     potionViewModel: potionViewModel,

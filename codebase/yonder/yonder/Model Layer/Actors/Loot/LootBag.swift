@@ -13,6 +13,7 @@ class LootBag {
     @DidSetPublished private(set) var weaponLoot = [Weapon]()
     @DidSetPublished private(set) var potionLoot = [Potion]()
     @DidSetPublished private(set) var accessoryLoot = [Accessory]()
+    @DidSetPublished private(set) var consumableLoot = [Consumable]()
     @DidSetPublished private(set) var goldLoot: Int = 0
     var totalValue: Int {
         var sum = 0
@@ -20,6 +21,7 @@ class LootBag {
         self.weaponLoot.forEach({ sum += $0.getBasePurchasePrice() })
         self.potionLoot.forEach({ sum += $0.getBasePurchasePrice() })
         self.accessoryLoot.forEach({ sum += $0.getBasePurchasePrice() })
+        self.consumableLoot.forEach({ sum += $0.getBasePurchasePrice() })
         sum += self.goldLoot
         return sum
     }
@@ -45,6 +47,15 @@ class LootBag {
                 Strings("dotPoint").local
                     .continuedBy(Strings("loot.category.weapons").local).rightPadded(by: ":")
                     .continuedBy(String(self.weaponLoot.count))
+            )
+        }
+        if !self.consumableLoot.isEmpty {
+            var count = 0
+            self.consumableLoot.forEach({ count += $0.remainingUses })
+            components.append(
+                Strings("dotPoint").local
+                    .continuedBy(Strings("loot.category.consumables").local).rightPadded(by: ":")
+                    .continuedBy(String(count))
             )
         }
         if !self.potionLoot.isEmpty {
@@ -111,6 +122,10 @@ class LootBag {
         self.accessoryLoot.append(accessory.clone())
     }
     
+    func addConsumableLoot(_ consumable: Consumable) {
+        self.consumableLoot.append(consumable.clone())
+    }
+    
     func addGoldLoot(_ gold: Int) {
         self.goldLoot += gold
     }
@@ -140,6 +155,13 @@ class LootBag {
         if let index = self.accessoryLoot.firstIndex(where: { $0.id == id }) {
             let accessory = self.accessoryLoot.remove(at: index)
             player.equipAccessory(accessory, replacing: replacing)
+        }
+    }
+    
+    func collectConsumable(id: UUID, player: Player) {
+        if let index = self.consumableLoot.firstIndex(where: { $0.id == id }) {
+            let consumables = self.consumableLoot.remove(at: index)
+            player.addConsumable(consumables)
         }
     }
     
