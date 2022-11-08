@@ -22,4 +22,17 @@ enum Armors {
         return Armor(name: "Resistance Armor", description: "Very resistive.", type: .legs, armorPoints: 200, armorBuffs: [DamagePercentBuff(sourceName: "Resistance Armor", direction: .incoming, duration: nil, damageFraction: 0.8)], equipmentPills: [])
     }
     
+    static func regularArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
+        let targetArmorPoints = 100.0.compound(multiply: 1.5, index: stage).toRoundedInt()
+        let armorPoints = Random.selectFromNormalDistribution(mid: targetArmorPoints, boundFraction: 0.25).nearest(5)
+        return Armor(
+            name: profile.armorName,
+            description: profile.armorDescription,
+            type: type,
+            armorPoints: armorPoints,
+            armorBuffs: [],
+            equipmentPills: []
+        )
+    }
+    
 }

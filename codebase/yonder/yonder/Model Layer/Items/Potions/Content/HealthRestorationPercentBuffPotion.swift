@@ -11,7 +11,7 @@ class HealthRestorationPercentBuffPotion: Potion {
     
     /// The tier of the health restoration percent potion.
     /// Raw value represents the health restoration fraction of each tier.
-    enum Tier: Double {
+    enum Tier: Double, CaseIterable {
         case I = 1.5
         case II = 2.0
         case III = 3.0

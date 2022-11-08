@@ -11,7 +11,7 @@ class WeaknessPotion: Potion {
     
     /// The tier of the weakness potion.
     /// Raw value represents the damage fraction of each tier.
-    enum Tier: Double {
+    enum Tier: Double, CaseIterable {
         case I = 0.8
         case II = 0.5
         case III = 0.2

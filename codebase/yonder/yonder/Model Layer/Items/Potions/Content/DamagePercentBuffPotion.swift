@@ -11,7 +11,7 @@ class DamagePercentBuffPotion: Potion {
     
     /// The tier of the damage percent potion.
     /// Raw value represents the damage fraction of each tier.
-    enum Tier: Double {
+    enum Tier: Double, CaseIterable {
         case I = 1.2
         case II = 1.5
         case III = 2.0

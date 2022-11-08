@@ -11,7 +11,7 @@ class HealthRestorationPotion: Potion {
     
     /// The tier of the health potion. Greater tiers restore greater health.
     /// Raw value represents the amount of health restoration of each tier.
-    enum Tier: Int {
+    enum Tier: Int, CaseIterable {
         case I = 25
         case II = 50
         case III = 100

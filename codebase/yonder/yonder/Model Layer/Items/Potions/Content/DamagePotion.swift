@@ -11,7 +11,7 @@ class DamagePotion: Potion {
     
     /// The tier of the damage potion. Greater tiers deal greater damage.
     /// Raw value represents the amount of damage of each tier.
-    enum Tier: Int {
+    enum Tier: Int, CaseIterable {
         case I = 25
         case II = 50
         case III = 100

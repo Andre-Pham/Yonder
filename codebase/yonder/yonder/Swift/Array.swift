@@ -30,4 +30,14 @@ extension Array {
         }
     }
     
+    /// Populates this array by repeating a callback that returns an array.
+    /// - Parameters:
+    ///   - count: The number of times to repeat the callback
+    ///   - callback: The callback which returns an array of elements to be added to the array
+    mutating func populateContentsOf(count: Int, _ callback: () -> [Element]) {
+        for _ in 0..<count {
+            self.append(contentsOf: callback())
+        }
+    }
+    
 }

@@ -14,6 +14,15 @@ class LootBag {
     @DidSetPublished private(set) var potionLoot = [Potion]()
     @DidSetPublished private(set) var accessoryLoot = [Accessory]()
     @DidSetPublished private(set) var goldLoot: Int = 0
+    var totalValue: Int {
+        var sum = 0
+        self.armorLoot.forEach({ sum += $0.getBasePurchasePrice() })
+        self.weaponLoot.forEach({ sum += $0.getBasePurchasePrice() })
+        self.potionLoot.forEach({ sum += $0.getBasePurchasePrice() })
+        self.accessoryLoot.forEach({ sum += $0.getBasePurchasePrice() })
+        sum += self.goldLoot
+        return sum
+    }
     private(set) var name: String
     var description: String {
         var components = [String]()
