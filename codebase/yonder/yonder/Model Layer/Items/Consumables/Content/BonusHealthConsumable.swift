@@ -10,7 +10,7 @@ import Foundation
 /// Gives the user permanent bonus health.
 class BonusHealthConsumable: Consumable {
     
-    enum Tier: Int {
+    enum Tier: Int, CaseIterable {
         case I = 25
         case II = 50
         case III = 100
@@ -23,7 +23,7 @@ class BonusHealthConsumable: Consumable {
     
     public let tier: Tier
     
-    init(tier: Tier) {
+    init(tier: Tier, amount: Int) {
         self.tier = tier
         
         var name: String
@@ -45,7 +45,8 @@ class BonusHealthConsumable: Consumable {
         super.init(
             name: name,
             description: description,
-            effectsDescription: Strings("consumable.adjustMaxHealth.effectsDescription1Param").localWithArgs(tier.amount)
+            effectsDescription: Strings("consumable.adjustMaxHealth.effectsDescription1Param").localWithArgs(tier.amount),
+            remainingUses: amount
         )
     }
     

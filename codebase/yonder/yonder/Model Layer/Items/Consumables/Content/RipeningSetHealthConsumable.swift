@@ -65,11 +65,12 @@ class RipeningSetHealthConsumable: Consumable, OnPlayerTravelSubscriber {
         }
     }
     
-    init() {
+    init(amount: Int) {
         super.init(
             name: self.stage.name,
             description: self.stage.description,
-            effectsDescription: Strings("consumable.ripeningSetHealth.effectsDescription.stage11Param").localWithArgs(self.stage2TurnsRequired)
+            effectsDescription: Strings("consumable.ripeningSetHealth.effectsDescription.stage11Param").localWithArgs(self.stage2TurnsRequired),
+            remainingUses: amount
         )
         
         OnPlayerTravelPublisher.subscribe(self)

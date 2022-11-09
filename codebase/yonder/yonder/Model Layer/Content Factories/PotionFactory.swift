@@ -22,7 +22,7 @@ class PotionFactory {
         
         // Health restoration
         weights = FactoryUtil.createLinearSequence(start: 50, end: 10, count: HealthRestorationPotion.Tier.allCases.count)
-        self.shiftWeights(weights: &weights)
+        FactoryUtil.shiftWeights(stage: self.stage, weights: &weights)
         potions.populate(count: 20) {
             let potionCount = Random.selectFromNormalDistribution(min: 2, max: 5)
             let index = FactoryUtil.randomWeightedIndex(weights)
@@ -38,7 +38,7 @@ class PotionFactory {
         
         // Damage
         weights = FactoryUtil.createLinearSequence(start: 50, end: 10, count: DamagePotion.Tier.allCases.count)
-        self.shiftWeights(weights: &weights)
+        FactoryUtil.shiftWeights(stage: self.stage, weights: &weights)
         potions.populate(count: 20) {
             let potionCount = Random.selectFromNormalDistribution(min: 2, max: 5)
             let index = FactoryUtil.randomWeightedIndex(weights)
@@ -87,33 +87,6 @@ class PotionFactory {
         
         potions.shuffle()
         self.potionSupply.append(contentsOf: potions)
-    }
-    
-    /// Shifts the weights in an array so that stronger potions appear more frequently in later stages.
-    /// Example:
-    /// ``` // (self.stage = 7)
-    ///     var weights = [50, 40, 30, 20, 10]
-    ///     shiftWeights(weights: &weights)
-    ///     // weights = [29, 26, 30, 34, 31]
-    /// ```
-    /// - Parameters:
-    ///   - weights: The weights to be shifted (favouring the right)
-    private func shiftWeights(weights: inout [Int]) {
-        let maxAdjustment = Int(floor(Double(weights.count)/2) + 1)
-        var movingAdjustment = maxAdjustment
-        var index = 0
-        while movingAdjustment >= 1 {
-            weights[index] -= movingAdjustment*self.stage
-            movingAdjustment -= 1
-            index += 1
-        }
-        movingAdjustment = maxAdjustment
-        index = weights.count-1
-        while movingAdjustment >= 1 {
-            weights[index] += movingAdjustment*self.stage
-            movingAdjustment -= 1
-            index -= 1
-        }
     }
     
     func deliver() -> Potion {

@@ -11,14 +11,15 @@ class MultiplyGoldConsumable: Consumable {
     
     private let goldFraction: Double
     
-    init(goldFraction: Double) {
+    init(goldFraction: Double, amount: Int) {
         self.goldFraction = goldFraction
         
         let percentage = self.goldFraction.toRelativePercentage(decimalPlaces: 0)
         super.init(
             name: Strings("consumable.multiplyGold.name").local,
             description: Strings("consumable.multiplyGold.description").local,
-            effectsDescription: Strings("consumable.multiplyGold.effectsDescription1Param").localWithArgs(percentage)
+            effectsDescription: Strings("consumable.multiplyGold.effectsDescription1Param").localWithArgs(percentage),
+            remainingUses: amount
         )
     }
     

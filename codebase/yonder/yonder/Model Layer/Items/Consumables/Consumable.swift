@@ -13,9 +13,9 @@ class ConsumableAbstract: Item, Clonable, Purchasable {
     
     @DidSetPublished private(set) var effectsDescription: String? = nil
     
-    init(name: String, description: String, effectsDescription: String?, requiresFoeForUsage: Bool = false, damage: Int = 0, restoration: Int = 0, healthRestoration: Int = 0, armorPointsRestoration: Int = 0) {
+    init(name: String, description: String, effectsDescription: String?, requiresFoeForUsage: Bool = false, remainingUses: Int, damage: Int = 0, restoration: Int = 0, healthRestoration: Int = 0, armorPointsRestoration: Int = 0) {
         self.effectsDescription = effectsDescription
-        super.init(name: name, description: description, remainingUses: 1, damage: damage, restoration: restoration, healthRestoration: healthRestoration, armorPointsRestoration: armorPointsRestoration, requiresFoeForUsage: requiresFoeForUsage)
+        super.init(name: name, description: description, remainingUses: remainingUses, damage: damage, restoration: restoration, healthRestoration: healthRestoration, armorPointsRestoration: armorPointsRestoration, requiresFoeForUsage: requiresFoeForUsage)
     }
     
     required init(_ original: ConsumableAbstract) {

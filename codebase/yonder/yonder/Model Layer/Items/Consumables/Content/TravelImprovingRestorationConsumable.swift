@@ -14,11 +14,12 @@ class TravelImprovingRestorationConsumable: Consumable, OnPlayerTravelSubscriber
     /// The amount of restoration this improves by every travel
     private let restorationIncrease = 8
     
-    init() {
+    init(amount: Int) {
         super.init(
             name: Strings("consumable.travelImprovingRestoration.name").local,
             description: Strings("consumable.travelImprovingRestoration.description").local,
             effectsDescription: Strings("consumable.travelImprovingRestoration.effectsDescription2Param").localWithArgs(self.startingRestoration, self.restorationIncrease),
+            remainingUses: amount,
             restoration: self.startingRestoration
         )
         
@@ -27,12 +28,7 @@ class TravelImprovingRestorationConsumable: Consumable, OnPlayerTravelSubscriber
     
     required init(_ original: ConsumableAbstract) {
         let original = original as! Self
-        super.init(
-            name: original.name,
-            description: original.description,
-            effectsDescription: original.effectsDescription,
-            restoration: original.restoration
-        )
+        super.init(original)
         
         OnPlayerTravelPublisher.subscribe(self)
     }

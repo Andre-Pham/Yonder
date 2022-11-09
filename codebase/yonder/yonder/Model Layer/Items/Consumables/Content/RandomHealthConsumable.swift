@@ -9,11 +9,12 @@ import Foundation
 
 class RandomHealthConsumable: Consumable {
     
-    init() {
+    init(amount: Int) {
         super.init(
             name: Strings("consumable.randomHealth.name").local,
             description: Strings("consumable.randomHealth.description").local,
-            effectsDescription: Strings("consumable.randomHealth.effectsDescription").local
+            effectsDescription: Strings("consumable.randomHealth.effectsDescription").local,
+            remainingUses: amount
         )
     }
     

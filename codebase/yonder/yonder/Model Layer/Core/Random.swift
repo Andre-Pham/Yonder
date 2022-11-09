@@ -61,7 +61,7 @@ enum Random {
         let c = minY - min*m
         // Find y, where the x coordinate of the random point lies on the linear equation
         let y = m*randomPoint.0 + c
-        if y < randomPoint.1 {
+        if y > randomPoint.1 {
             // Random point lies on the rectangle/triangle polygon
             return randomPoint.0
         } else {

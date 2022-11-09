@@ -12,7 +12,7 @@ class RestoreArmorPointsConsumable: Consumable {
     
     /// The tier of the consumable. Greater tiers restore more armor points.
     /// Raw value represents the armor points restoration of each tier.
-    enum Tier: Int {
+    enum Tier: Int, CaseIterable {
         case I = 25
         case II = 50
         case III = 100
@@ -36,13 +36,14 @@ class RestoreArmorPointsConsumable: Consumable {
     
     public let tier: Tier
     
-    init(tier: Tier) {
+    init(tier: Tier, amount: Int) {
         self.tier = tier
         
         super.init(
             name: Strings("consumable.restoreArmorPoints.name").local.continuedBy(tier.string),
             description: Strings("consumable.restoreArmorPoints.description").local,
             effectsDescription: Strings("consumable.restoreArmorPoints.effectsDescription1Param").localWithArgs(tier.armorPointsRestoration),
+            remainingUses: amount,
             armorPointsRestoration: self.tier.armorPointsRestoration
         )
     }

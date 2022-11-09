@@ -52,5 +52,32 @@ enum FactoryUtil {
         return 0
     }
     
+    /// Shifts the weights in an array so that stronger items appear more frequently in later stages.
+    /// Example:
+    /// ``` // (self.stage = 7)
+    ///     var weights = [50, 40, 30, 20, 10]
+    ///     shiftWeights(weights: &weights)
+    ///     // weights = [29, 26, 30, 34, 31]
+    /// ```
+    /// - Parameters:
+    ///   - weights: The weights to be shifted (favouring the right)
+    static func shiftWeights(stage: Int, weights: inout [Int]) {
+        let maxAdjustment = Int(floor(Double(weights.count)/2) + 1)
+        var movingAdjustment = maxAdjustment
+        var index = 0
+        while movingAdjustment >= 1 {
+            weights[index] -= movingAdjustment*stage
+            movingAdjustment -= 1
+            index += 1
+        }
+        movingAdjustment = maxAdjustment
+        index = weights.count-1
+        while movingAdjustment >= 1 {
+            weights[index] += movingAdjustment*stage
+            movingAdjustment -= 1
+            index -= 1
+        }
+    }
+    
 }
 
