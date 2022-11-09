@@ -24,6 +24,7 @@ class LootBagFactory {
         bag.addPotionLoot(<#T##potion: Potion##Potion#>)
         bag.addWeaponLoot(<#T##weapon: Weapon##Weapon#>)
         bag.addAccessoryLoot(<#T##accessory: Accessory##Accessory#>)
+        bag.addConsumableLoot(<#T##consumable: Consumable##Consumable#>)
         while bag.
                 
         LootOptions

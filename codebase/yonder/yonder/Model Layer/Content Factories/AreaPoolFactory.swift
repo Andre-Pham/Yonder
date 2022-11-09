@@ -17,6 +17,7 @@ class AreaPoolFactory {
         var areaWeaponFactory = WeaponFactory(stage: stage, areaTags: areaProfile.tags)
         var areaPotionFactory = PotionFactory(stage: stage)
         var areaArmorFactory = ArmorFactory(stage: stage, areaTags: areaProfile.tags)
+        var areaAccessoryFactory = AccessoryFactory(stage: stage, areaTags: areaProfile.tags)
         // I'll need to pass all the loot into the areaFoes so it can take it from that
         var areaFoeFactory = FoeFactory(stage: stage, areaTags: areaProfile.tags)
         
