@@ -10,16 +10,9 @@ import Foundation
 class MapPoolFactory {
     
     func build() -> MapPool {
-        
-        // MARK: IMPORTANT NOTE
-        // The profile buckets need to be instantiated here and passed down
-        // This is because each stage can't have overlapping profiles
-        // Currently each stage is instantiating a new bucket
-        
+        let territoryPoolFactory = TerritoryPoolFactory()
         let mapPool = MapPool(
-            territoryPoolsInStageOrder: [
-                
-            ],
+            territoryPoolsInStageOrder: territoryPoolFactory.deliver(count: 8),
             bossAreas: [
                 
             ]

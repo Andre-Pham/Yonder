@@ -45,4 +45,12 @@ class AreaProfileBucket {
         return stageProfiles.remove(at: index)
     }
     
+    func grabProfiles(count: Int, stage: Int) -> [AreaProfile] {
+        var profiles = [AreaProfile]()
+        for _ in 0..<count {
+            profiles.append(self.grabProfile(stage: stage))
+        }
+        return profiles
+    }
+    
 }

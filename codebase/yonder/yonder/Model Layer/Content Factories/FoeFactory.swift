@@ -11,12 +11,13 @@ class FoeFactory {
     
     private let stage: Int
     private let areaTags: AreaProfileTagAllocation
-    private let foeProfileBucket = FoeProfileBucket()
+    private let foeProfileBucket: FoeProfileBucket
     private var foeSupply = [Foe]()
     
-    init(stage: Int, areaTags: AreaProfileTagAllocation) {
+    init(stage: Int, areaTags: AreaProfileTagAllocation, profileBucket: FoeProfileBucket) {
         self.stage = stage
         self.areaTags = areaTags
+        self.foeProfileBucket = profileBucket
     }
     
     private func buildFoes(stage: Int, tags: AreaProfileTagAllocation) {

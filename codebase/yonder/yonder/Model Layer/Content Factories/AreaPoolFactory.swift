@@ -2,31 +2,26 @@
 //  AreaPoolFactory.swift
 //  yonder
 //
-//  Created by Andre Pham on 6/11/2022.
+//  Created by Andre Pham on 10/11/2022.
 //
 
 import Foundation
 
 class AreaPoolFactory {
     
-    private let areaProfileBucket = AreaProfileBucket()
+    private let areaProfile: AreaProfile
+    private let factoryBundle: AreaFactoryBundle
     
-    func build(stage: Int) -> AreaPool {
-        let areaProfile = self.areaProfileBucket.grabProfile(stage: stage)
-        
-        var areaWeaponFactory = WeaponFactory(stage: stage, areaTags: areaProfile.tags)
-        var areaPotionFactory = PotionFactory(stage: stage)
-        var areaArmorFactory = ArmorFactory(stage: stage, areaTags: areaProfile.tags)
-        var areaAccessoryFactory = AccessoryFactory(stage: stage, areaTags: areaProfile.tags)
-        var areaConsumableFactory = ConsumableFactory(stage: stage)
-        // I'll need to pass all the loot into the areaFoes so it can take it from that
-        var areaFoeFactory = FoeFactory(stage: stage, areaTags: areaProfile.tags)
-        
-        
+    init(areaProfile: AreaProfile, factoryBundle: AreaFactoryBundle) {
+        self.areaProfile = areaProfile
+        self.factoryBundle = factoryBundle
+    }
+    
+    func deliver() -> AreaPool {
         let areaPool = AreaPool(
-            areaName: areaProfile.areaName,
-            areaDescription: areaProfile.areaDescription,
-            areaImage: areaProfile.areaImage,
+            areaName: self.areaProfile.areaName,
+            areaDescription: self.areaProfile.areaDescription,
+            areaImage: self.areaProfile.areaImage,
             hostileLocations: <#T##[HostileLocation]#>,
             challengeHostileLocations: <#T##[ChallengeHostileLocation]#>,
             shopLocations: <#T##[ShopLocation]#>,
@@ -34,6 +29,7 @@ class AreaPoolFactory {
             restorerLocations: <#T##[RestorerLocation]#>,
             friendlyLocations: <#T##[FriendlyLocation]#>
         )
+        return areaPool
     }
     
 }

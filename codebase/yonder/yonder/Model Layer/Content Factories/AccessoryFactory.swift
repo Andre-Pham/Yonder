@@ -11,12 +11,13 @@ class AccessoryFactory {
     
     private let stage: Int
     private let areaTags: AreaProfileTagAllocation
-    private let accessoryProfileBucket = AccessoryProfileBucket()
+    private let accessoryProfileBucket: AccessoryProfileBucket
     private var accessorySupply = [Accessory]()
     
-    init(stage: Int, areaTags: AreaProfileTagAllocation) {
+    init(stage: Int, areaTags: AreaProfileTagAllocation, profileBucket: AccessoryProfileBucket) {
         self.stage = stage
         self.areaTags = areaTags
+        self.accessoryProfileBucket = profileBucket
     }
     
     private func buildAccessories(stage: Int, tags: AreaProfileTagAllocation) {

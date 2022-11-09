@@ -11,12 +11,13 @@ class WeaponFactory {
     
     private let stage: Int
     private let areaTags: AreaProfileTagAllocation
-    private let weaponProfileBucket = WeaponProfileBucket()
+    private let weaponProfileBucket: WeaponProfileBucket
     private var weaponSupply = [Weapon]()
     
-    init(stage: Int, areaTags: AreaProfileTagAllocation) {
+    init(stage: Int, areaTags: AreaProfileTagAllocation, profileBucket: WeaponProfileBucket) {
         self.stage = stage
         self.areaTags = areaTags
+        self.weaponProfileBucket = profileBucket
     }
     
     private func buildWeapons(stage: Int, tags: AreaProfileTagAllocation) {

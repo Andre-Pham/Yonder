@@ -11,12 +11,13 @@ class ArmorFactory {
     
     private let stage: Int
     private let areaTags: AreaProfileTagAllocation
-    private let armorProfileBucket = ArmorProfileBucket()
+    private let armorProfileBucket: ArmorProfileBucket
     private var armorSupply = [Armor]()
     
-    init(stage: Int, areaTags: AreaProfileTagAllocation) {
+    init(stage: Int, areaTags: AreaProfileTagAllocation, profileBucket: ArmorProfileBucket) {
         self.stage = stage
         self.areaTags = areaTags
+        self.armorProfileBucket = profileBucket
     }
     
     private func buildArmors(stage: Int, tags: AreaProfileTagAllocation) {
