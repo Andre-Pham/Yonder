@@ -12,30 +12,29 @@ class FoeFactory {
     private let stage: Int
     private let areaTags: AreaProfileTagAllocation
     private let foeProfileBucket: FoeProfileBucket
+    private let lootOptionsFactory: LootOptionsFactory
     private var foeSupply = [Foe]()
     
-    init(stage: Int, areaTags: AreaProfileTagAllocation, profileBucket: FoeProfileBucket) {
+    init(stage: Int, areaTags: AreaProfileTagAllocation, profileBucket: FoeProfileBucket, lootFactoryBundle: LootFactoryBundle) {
         self.stage = stage
         self.areaTags = areaTags
         self.foeProfileBucket = profileBucket
+        self.lootOptionsFactory = LootOptionsFactory(stage: stage, lootFactories: lootFactoryBundle)
     }
     
     private func buildFoes(stage: Int, tags: AreaProfileTagAllocation) {
-        
-        // I'll need to retrieve profiles that match the area profile tag and foe type
-        // I'll also need to generate appropriate loot based on the stage and area profile tag
-        
         var foes = [Foe]()
+        
+        // Regular
         foes.populate(count: 20) {
-            Foes.newRegularFoe(profile: self.foeProfileBucket.grabProfile(areaTag: tags.getTag(), foeTag: .regular), stage: stage, loot: <#T##LootOptions#>)
+            Foes.newRegularFoe(profile: self.foeProfileBucket.grabProfile(areaTag: tags.getTag(), foeTag: .regular), stage: stage, loot: self.lootOptionsFactory.deliver())
         }
         foes.populate(count: 5) {
             Foes.newRegularTankFoe(profile: <#T##FoeProfile#>, stage: <#T##Int#>, loot: <#T##LootOptions#>)
         }
         // repeat for all types of foes
         
-        // shuffle foes
-        
+        self.foeSupply.shuffle()
         self.foeSupply.append(contentsOf: foes)
     }
     

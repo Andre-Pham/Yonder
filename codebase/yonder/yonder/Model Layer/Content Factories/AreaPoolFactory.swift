@@ -18,12 +18,21 @@ class AreaPoolFactory {
     }
     
     func deliver() -> AreaPool {
+        let hostileLocations = self.factoryBundle.foeFactory
+            .deliver(count: 20)
+            .map({ HostileLocation(foe: $0) })
+        let challengeHostileLocations = self.factoryBundle.challengeHostileFactory
+            .deliver(count: 20)
+            .map({ ChallengeHostileLocation(foe: $0) })
+        
+        // Now i'll need a shopkeeper factory, an enhancer factory, a restorer factory and a friendly factory
+        
         let areaPool = AreaPool(
             areaName: self.areaProfile.areaName,
             areaDescription: self.areaProfile.areaDescription,
             areaImage: self.areaProfile.areaImage,
-            hostileLocations: <#T##[HostileLocation]#>,
-            challengeHostileLocations: <#T##[ChallengeHostileLocation]#>,
+            hostileLocations: hostileLocations,
+            challengeHostileLocations: challengeHostileLocations,
             shopLocations: <#T##[ShopLocation]#>,
             enhancerLocations: <#T##[EnhancerLocation]#>,
             restorerLocations: <#T##[RestorerLocation]#>,

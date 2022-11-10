@@ -21,16 +21,37 @@ class TerritoryPoolFactory {
         
         let areaProfiles = self.areaProfileBucket.grabProfiles(count: 2, stage: stage)
         for areaProfile in areaProfiles {
-            let factories = AreaFactoryBundle(
+            let lootFactories = LootFactoryBundle(
                 weapons: WeaponFactory(stage: stage, areaTags: areaProfile.tags, profileBucket: self.weaponProfileBucket),
                 potions: PotionFactory(stage: stage),
                 armors: ArmorFactory(stage: stage, areaTags: areaProfile.tags, profileBucket: self.armorProfileBucket),
                 accessories: AccessoryFactory(stage: stage, areaTags: areaProfile.tags, profileBucket: self.accessoryProfileBucket),
-                consumables: ConsumableFactory(stage: stage),
-                foes: FoeFactory(stage: stage, areaTags: areaProfile.tags, profileBucket: self.foeProfileBucket)
+                consumables: ConsumableFactory(stage: stage)
             )
-            let areaPoolFactory = AreaPoolFactory(areaProfile: areaProfile, factoryBundle: factories)
-            let tavernAreaFactory = TavernAreaFactory(factoryBundle: factories)
+            let challengeLootFactories = LootFactoryBundle(
+                weapons: WeaponFactory(stage: stage + 3, areaTags: areaProfile.tags, profileBucket: self.weaponProfileBucket),
+                potions: PotionFactory(stage: stage + 3),
+                armors: ArmorFactory(stage: stage + 3, areaTags: areaProfile.tags, profileBucket: self.armorProfileBucket),
+                accessories: AccessoryFactory(stage: stage + 3, areaTags: areaProfile.tags, profileBucket: self.accessoryProfileBucket),
+                consumables: ConsumableFactory(stage: stage + 3)
+            )
+            let areaFactories = AreaFactoryBundle(
+                loot: lootFactories,
+                foes: FoeFactory(
+                    stage: stage,
+                    areaTags: areaProfile.tags,
+                    profileBucket: self.foeProfileBucket,
+                    lootFactoryBundle: lootFactories
+                ),
+                challengeHostiles: FoeFactory(
+                    stage: stage + 2,
+                    areaTags: areaProfile.tags,
+                    profileBucket: self.foeProfileBucket,
+                    lootFactoryBundle: challengeLootFactories
+                )
+            )
+            let areaPoolFactory = AreaPoolFactory(areaProfile: areaProfile, factoryBundle: areaFactories)
+            let tavernAreaFactory = TavernAreaFactory(factoryBundle: areaFactories)
             areaPools.append(areaPoolFactory.deliver())
             tavernAreas.append(tavernAreaFactory.deliver())
         }
