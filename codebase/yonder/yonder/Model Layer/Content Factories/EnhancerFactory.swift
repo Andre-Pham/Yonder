@@ -12,7 +12,6 @@ class EnhancerFactory {
     private let stage: Int
     private let areaTags: AreaProfileTagAllocation
     private let enhancerProfileBucket: EnhancerProfileBucket
-    private var enhancerSupply = [Enhancer]()
     
     init(stage: Int, areaTags: AreaProfileTagAllocation, enhancerProfileBucket: EnhancerProfileBucket) {
         self.stage = stage
@@ -34,10 +33,14 @@ class EnhancerFactory {
             }
             // TODO: Add remaining enhance offers
         }
+        if offers.count > offerCount {
+            offers.shuffle()
+            offers = Array(offers.prefix(offerCount))
+        }
         return Enhancer(
             name: profile.enhancerName,
             description: profile.enhancerDescription,
-            offers: Array(offers.prefix(offerCount))
+            offers: offers
         )
     }
     

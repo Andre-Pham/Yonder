@@ -13,7 +13,6 @@ class ShopKeeperFactory {
     private let stage: Int
     private let areaTags: AreaProfileTagAllocation
     private let shopKeeperProfileBucket: ShopKeeperProfileBucket
-    private var shopKeeperSupply = [ShopKeeper]()
     
     init(stage: Int, areaTags: AreaProfileTagAllocation, shopKeeperBucket: ShopKeeperProfileBucket, lootFactories: LootFactoryBundle) {
         self.stage = stage
