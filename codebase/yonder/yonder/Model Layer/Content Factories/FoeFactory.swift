@@ -30,7 +30,7 @@ class FoeFactory {
             Foes.newRegularFoe(profile: self.foeProfileBucket.grabProfile(areaTag: tags.getTag(), foeTag: .regular), stage: stage, loot: self.lootOptionsFactory.deliver())
         }
         foes.populate(count: 5) {
-            Foes.newRegularTankFoe(profile: <#T##FoeProfile#>, stage: <#T##Int#>, loot: <#T##LootOptions#>)
+            Foes.newRegularTankFoe(profile: self.foeProfileBucket.grabProfile(areaTag: tags.getTag(), foeTag: .regularTank), stage: stage, loot: self.lootOptionsFactory.deliver())
         }
         // repeat for all types of foes
         

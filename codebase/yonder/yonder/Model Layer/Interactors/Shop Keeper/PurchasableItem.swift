@@ -33,17 +33,23 @@ class PurchasableItem {
     }
     
     private(set) var item: Purchasable
+    private let priceAdjustment: Double
     public var price: Int {
-        return self.item.getBasePurchasePrice()
+        return (self.priceAdjustment*Double(self.item.getBasePurchasePrice())).toRoundedInt()
     }
     @DidSetPublished private(set) var stockRemaining: Int
     public let id = UUID()
     public let info: PurchasableItemInfo
     
-    init(item: Purchasable, stock: Int) {
+    init(
+        item: Purchasable,
+        stock: Int,
+        priceAdjustment: Double = Random.selectFromNormalDistribution(min: 0.65, max: 1.35)
+    ) {
         self.item = item
         self.stockRemaining = stock
         self.info = item.getPurchaseInfo()
+        self.priceAdjustment = priceAdjustment
     }
     
     func purchase(amount: Int, purchaser: Player) {

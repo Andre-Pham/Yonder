@@ -37,6 +37,24 @@ enum Random {
         return Self.selectFromNormalDistribution(min: mid - boundMidDifference, max: mid + boundMidDifference)
     }
     
+    static func selectFromNormalDistribution(min: Double, max: Double, decimalPlaces: Int = 5) -> Double {
+        let multiplier = pow(10, Double(decimalPlaces))
+        let intMin = (min*multiplier).toRoundedInt()
+        let intMax = (max*multiplier).toRoundedInt()
+        let outcome = self.selectFromNormalDistribution(min: intMin, max: intMax)
+        return Double(outcome)/multiplier
+    }
+    
+    static func selectFromNormalDistribution(mid: Double, boundMidDifference: Double, decimalPlaces: Int = 5) -> Double {
+        let boundMidDifference = abs(boundMidDifference)
+        return Self.selectFromNormalDistribution(min: mid - boundMidDifference, max: mid + boundMidDifference, decimalPlaces: decimalPlaces)
+    }
+    
+    static func selectFromNormalDistribution(mid: Double, boundFraction: Double, decimalPlaces: Int = 5) -> Double {
+        let boundMidDifference = mid*boundFraction
+        return Self.selectFromNormalDistribution(min: mid - boundMidDifference, max: mid + boundMidDifference, decimalPlaces: decimalPlaces)
+    }
+    
     /// Randomly returns a double between the min and max where the probability of selecting a value is proportional to it's height in a linear distribution.
     /// - Parameters:
     ///   - min: The minimum returnable value
