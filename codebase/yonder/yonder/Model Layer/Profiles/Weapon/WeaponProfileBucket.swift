@@ -10,7 +10,7 @@ import Foundation
 class WeaponProfileBucket {
     
     private var profiles: [WeaponProfile] = [
-        // Populate
+        // TODO: Populate
     ]
     
     func grabProfile(areaTag: AreaProfileTag, weaponTags: [WeaponProfileTag]) -> WeaponProfile {

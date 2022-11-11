@@ -10,7 +10,7 @@ import Foundation
 class AccessoryProfileBucket {
     
     private var profiles: [AccessoryProfile] = [
-        // Populate
+        // TODO: Populate
         
         // Note to self:
         // accessoryType should play a role in the profile, e.g. a shield would be a peripheral accessory, a ring would be a regular accessory

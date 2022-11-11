@@ -28,6 +28,9 @@ class TerritoryPoolFactory {
                 accessories: AccessoryFactory(stage: stage, areaTags: areaProfile.tags, profileBucket: self.accessoryProfileBucket),
                 consumables: ConsumableFactory(stage: stage)
             )
+            let npcFactories = InteractorFactoryBundle(
+                // TODO: Populate
+            )
             let challengeLootFactories = LootFactoryBundle(
                 weapons: WeaponFactory(stage: stage + 3, areaTags: areaProfile.tags, profileBucket: self.weaponProfileBucket),
                 potions: PotionFactory(stage: stage + 3),

@@ -10,7 +10,7 @@ import Foundation
 class ShopKeeperProfileBucket {
     
     private var profiles: [ShopKeeperProfile] = [
-        // Populate
+        // TODO: Populate
     ]
     
     func grabProfile(areaTag: AreaProfileTag) -> ShopKeeperProfile {

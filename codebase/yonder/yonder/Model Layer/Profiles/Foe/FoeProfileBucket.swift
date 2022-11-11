@@ -10,7 +10,7 @@ import Foundation
 class FoeProfileBucket {
     
     private var profiles: [FoeProfile] = [
-        // Populate
+        // TODO: Populate
     ]
     
     func grabProfile(areaTag: AreaProfileTag, foeTag: FoeProfileTag) -> FoeProfile {

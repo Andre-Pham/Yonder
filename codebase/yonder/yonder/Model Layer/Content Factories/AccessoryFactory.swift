@@ -37,7 +37,7 @@ class AccessoryFactory {
                 )
             }
         }
-        // repeat for all remaining accessories
+        // TODO: Repeat for all remaining accessories
         
         accessories.shuffle()
         self.accessorySupply.append(contentsOf: accessories)

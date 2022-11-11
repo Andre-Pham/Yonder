@@ -10,7 +10,7 @@ import Foundation
 class ArmorProfileBucket {
     
     private var profiles: [ArmorProfile] = [
-        // Populate
+        // TODO: Populate
     ]
     
     func grabProfile(areaTag: AreaProfileTag, armorTag: ArmorProfileTag, armorType: ArmorType) -> ArmorProfile {

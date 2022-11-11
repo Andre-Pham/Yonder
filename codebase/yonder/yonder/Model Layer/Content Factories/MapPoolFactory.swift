@@ -14,7 +14,7 @@ class MapPoolFactory {
         let mapPool = MapPool(
             territoryPoolsInStageOrder: territoryPoolFactory.deliver(count: 8),
             bossAreas: [
-                
+                // TODO: Populate
             ]
         )
     }

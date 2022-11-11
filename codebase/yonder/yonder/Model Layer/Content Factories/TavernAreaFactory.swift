@@ -16,7 +16,7 @@ class TavernAreaFactory {
     }
     
     func deliver() -> TavernArea {
-        
+        // TODO: Complete method
     }
     
 }

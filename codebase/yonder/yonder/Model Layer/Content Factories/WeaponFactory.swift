@@ -26,7 +26,7 @@ class WeaponFactory {
         weapons.populate(count: 20) {
             Weapons.damageWeapon(profile: self.weaponProfileBucket.grabProfile(areaTag: tags.getTag(), weaponTags: [.damage]), stage: stage)
         }
-        // repeat for all types of weapons
+        // TODO: Repeat for all types of weapons
         
         weapons.shuffle()
         self.weaponSupply.append(contentsOf: weapons)

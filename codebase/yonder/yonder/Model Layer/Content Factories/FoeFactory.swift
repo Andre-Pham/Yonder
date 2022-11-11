@@ -32,7 +32,7 @@ class FoeFactory {
         foes.populate(count: 5) {
             Foes.newRegularTankFoe(profile: self.foeProfileBucket.grabProfile(areaTag: tags.getTag(), foeTag: .regularTank), stage: stage, loot: self.lootOptionsFactory.deliver())
         }
-        // repeat for all types of foes
+        // TODO: Repeat for all types of foes
         
         self.foeSupply.shuffle()
         self.foeSupply.append(contentsOf: foes)

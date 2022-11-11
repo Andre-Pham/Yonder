@@ -25,7 +25,7 @@ class AreaPoolFactory {
             .deliver(count: 20)
             .map({ ChallengeHostileLocation(foe: $0) })
         
-        // Now i'll need a shopkeeper factory, an enhancer factory, a restorer factory and a friendly factory
+        // TODO: Now i'll need a shopkeeper factory, an enhancer factory, a restorer factory and a friendly factory
         
         let areaPool = AreaPool(
             areaName: self.areaProfile.areaName,

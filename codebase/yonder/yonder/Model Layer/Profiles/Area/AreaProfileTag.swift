@@ -13,5 +13,6 @@ enum AreaProfileTag {
     case wood
     case rock
     case divine
+    // TODO: Add remaining
     
 }

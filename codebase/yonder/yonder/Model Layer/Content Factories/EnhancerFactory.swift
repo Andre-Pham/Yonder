@@ -32,7 +32,7 @@ class EnhancerFactory {
             if Random.roll(1, in: 30) {
                 offers.append(EnhanceOffers.newWeaponLifesteal(stage: stage))
             }
-            // Add remaining enhance offers
+            // TODO: Add remaining enhance offers
         }
         return Enhancer(
             name: profile.enhancerName,

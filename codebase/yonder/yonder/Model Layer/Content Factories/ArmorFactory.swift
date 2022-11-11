@@ -37,7 +37,7 @@ class ArmorFactory {
                 )
             }
         }
-        // repeat for all remaining armors
+        // TODO: Repeat for all remaining armors
         
         armors.shuffle()
         self.armorSupply.append(contentsOf: armors)

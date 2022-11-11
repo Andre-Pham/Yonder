@@ -10,6 +10,7 @@ import Foundation
 class AreaProfileBucket {
     
     private var profiles: [[AreaProfile]] = [
+        // TODO: Populate
         // Stage 0
         [
             AreaProfile(areaName: "TempArea", areaDescription: "TempDesc", areaImage: YonderImages.missingIcon, tags: AreaProfileTagAllocation(tags: (.wood, 1)))
