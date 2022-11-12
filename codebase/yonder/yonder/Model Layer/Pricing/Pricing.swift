@@ -25,8 +25,20 @@ class Pricing {
         self.gameContext = gameContext
     }
     
-    func injectStage(_ stage: Int?) {
+    private func injectStage(_ stage: Int?) {
         self.injectedStage = stage
+    }
+    
+    /// Conduct a pricing calculation using a specific stage.
+    /// - Parameters:
+    ///   - stage: The stage to be used for the calculation
+    ///   - calculation: The calculation that uses the stage and returns a value
+    /// - Returns: The return value of the passed in calculation
+    static func usingStage(stage: Int, _ calculation: () -> Int) -> Int {
+        Self.instance.injectStage(stage)
+        let result = calculation()
+        Self.instance.injectStage(nil)
+        return result
     }
     
     // MARK: - Stats

@@ -31,12 +31,14 @@ class RestorerFactory {
         }
         let profile = self.restorerProfileBucket.grabProfile(areaTag: tags.getTag(), restoreOptions: restoreOptions)
         // A discount is applied to restorer prices since otherwise potions would out-value them every time
-        Pricing.instance.injectStage(stage)
-        let healthFairValue = Pricing.playerHealthRestorationStat.getValue(amount: 10)
+        let healthFairValue = Pricing.usingStage(stage: stage) {
+            Pricing.playerHealthRestorationStat.getValue(amount: 10)
+        }
         let healthMinValue = (Double(healthFairValue)/2.0).toRoundedInt()
-        let armorPointsFairValue = Pricing.playerArmorPointsRestorationStat.getValue(amount: 10)
+        let armorPointsFairValue = Pricing.usingStage(stage: stage) {
+            Pricing.playerArmorPointsRestorationStat.getValue(amount: 10)
+        }
         let armorPointsMinValue = (Double(armorPointsFairValue)/2.0).toRoundedInt()
-        Pricing.instance.injectStage(nil)
         let healthPrice = Int.random(in: healthMinValue...healthFairValue)
         let armorPointsPrice = Int.random(in: armorPointsMinValue...armorPointsFairValue)
         return Restorer(

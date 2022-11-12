@@ -13,6 +13,5 @@ protocol Offer: Named, Described {
     
     func acceptOffer(player: Player)
     func meetsOfferRequirements(player: Player) -> Bool
-    static func build(stage: Int) -> Offer
     
 }

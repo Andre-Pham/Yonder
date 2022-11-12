@@ -21,11 +21,6 @@ class FreeGoldOffer: Offer {
         self.goldAmount = goldAmount
     }
     
-    static func build(stage: Int) -> Offer {
-        let amount = Int(Double(Int.random(in: 2...10)*50)*(1 + Double(stage)/10))
-        return FreeGoldOffer(goldAmount: amount)
-    }
-    
     func acceptOffer(player: Player) {
         player.modifyGoldAdjusted(by: self.goldAmount)
     }

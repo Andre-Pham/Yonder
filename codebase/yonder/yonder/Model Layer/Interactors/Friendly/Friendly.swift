@@ -13,7 +13,7 @@ class Friendly: InteractorAbstract {
     @DidSetPublished private(set) var offersAccepted = 0 // How many offers has the user already accepted
     private(set) var offerLimit: Int // How many offers can be accepted until the user must stop
     var offersRemaining: Int {
-        return self.offerLimit - offersAccepted
+        return self.offerLimit - self.offersAccepted
     }
     
     init(name: String = "placeholderName", description: String = "placeholderDescription", offers: [Offer], offerLimit: Int) {

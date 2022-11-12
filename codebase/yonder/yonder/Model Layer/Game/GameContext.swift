@@ -9,7 +9,9 @@ import Foundation
 
 class GameContext: OnPlayerTravelSubscriber {
     
-    private(set) var stage: Int
+    private(set) var stage: Int {
+        didSet { AfterStageChangePublisher.publish(newStage: self.stage) }
+    }
     private let map: Map
     
     init(map: Map) {

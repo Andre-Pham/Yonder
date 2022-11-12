@@ -222,8 +222,8 @@
 // MARK: - Offers
 
 // Free Gold Offer
-"offer.freeGold.name" = "Free Gold!";
-"offer.freeGold.description1Param" = "%@ Gold. No strings attached.";
+"offer.freeGold.name" = "Gift of Gold";
+"offer.freeGold.description1Param" = "Receive %@ Gold.";
 
 // Weapon Purchase Offer
 "offer.weaponPurchase.name" = "Purchase Weapon for Gold";
@@ -232,6 +232,22 @@
 // Health for Gold Offer
 "offer.healthForGold.name" = "Sacrifice Health for Gold";
 "offer.healthForGold.description2Param" = "Sacrifice %@ health, and in return, receive %@ gold.";
+
+// Free Restoration Offer
+"offer.freeRestoration.name" = "Gift of Restoration";
+"offer.freeRestoration.description1Param" = "Restore %@ health/shields.";
+
+// Free Weapon
+"offer.freeWeapon.name" = "Free Weapon";
+"offer.freeWeapon.description1Param" = "Receive the weapon:\n%@";
+
+// Sell Potions
+"offer.sellPotions.name" = "Sell Your Potions";
+"offer.sellPotions.description" = "Sell ALL your potions for 3x their market value.";
+
+// Max Health for Armor Points
+"offer.maxHealthForArmorPoints.name" = "Max Health for Shields";
+"offer.maxHealthForArmorPoints.description" = "Reduce your max health by half. Double the shields of all your equipped armor.";
 
 // MARK: - Restore Options
 
@@ -259,6 +275,14 @@
 // Default Player Weapon
 "weapon.defaultPlayerWeapon.name" = "Your Fists";
 "weapon.defaultPlayerWeapon.description" = "With no weapons, you're down to your bare hands and your wits.";
+
+// Dragon Slayer
+"weapon.dragonSlayer.name" = "Dragon Slayer";
+"weapon.dragonSlayer.description" = "A shining silver blade of massive proportions. The symmetrical blade glows in the light.";
+
+// Simple Shiv
+"weapon.simpleShiv.name" = "Simple Shiv";
+"weapon.simpleShiv.description" = "A simply carved shiv. It's worn from years of use.";
 
 // MARK: - Weapon Base Pills
 

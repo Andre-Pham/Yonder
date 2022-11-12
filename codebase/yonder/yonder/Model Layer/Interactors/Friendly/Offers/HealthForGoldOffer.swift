@@ -23,12 +23,6 @@ class HealthForGoldOffer: Offer {
         self.goldReward = goldReward
     }
     
-    static func build(stage: Int) -> Offer {
-        let health = Int(Double(Int.random(in: 1...7)*50))
-        let goldReward = Int(round(Double(health)*(1.0 + Double.random(in: 0...1)))).nearest(10)
-        return HealthForGoldOffer(health: health, goldReward: goldReward)
-    }
-    
     func acceptOffer(player: Player) {
         player.modifyGoldAdjusted(by: self.goldReward)
         player.damageHealth(for: self.health)
