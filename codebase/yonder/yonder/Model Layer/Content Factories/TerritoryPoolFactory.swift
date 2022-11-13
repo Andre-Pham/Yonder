@@ -13,6 +13,10 @@ class TerritoryPoolFactory {
     private let armorProfileBucket = ArmorProfileBucket()
     private let weaponProfileBucket = WeaponProfileBucket()
     private let foeProfileBucket = FoeProfileBucket()
+    private let shopKeeperProfileBucket = ShopKeeperProfileBucket()
+    private let enhancerProfileBucket = EnhancerProfileBucket()
+    private let restorerProfileBucket = RestorerProfileBucket()
+    private let friendlyProfileBucket = FriendlyProfileBucket()
     private let areaProfileBucket = AreaProfileBucket()
     
     func deliver(stage: Int) -> TerritoryPool {
@@ -22,14 +26,51 @@ class TerritoryPoolFactory {
         let areaProfiles = self.areaProfileBucket.grabProfiles(count: 2, stage: stage)
         for areaProfile in areaProfiles {
             let lootFactories = LootFactoryBundle(
-                weapons: WeaponFactory(stage: stage, areaTags: areaProfile.tags, profileBucket: self.weaponProfileBucket),
-                potions: PotionFactory(stage: stage),
-                armors: ArmorFactory(stage: stage, areaTags: areaProfile.tags, profileBucket: self.armorProfileBucket),
-                accessories: AccessoryFactory(stage: stage, areaTags: areaProfile.tags, profileBucket: self.accessoryProfileBucket),
-                consumables: ConsumableFactory(stage: stage)
+                weapons: WeaponFactory(
+                    stage: stage,
+                    areaTags: areaProfile.tags,
+                    profileBucket: self.weaponProfileBucket
+                ),
+                potions: PotionFactory(
+                    stage: stage
+                ),
+                armors: ArmorFactory(
+                    stage: stage,
+                    areaTags: areaProfile.tags,
+                    profileBucket: self.armorProfileBucket
+                ),
+                accessories: AccessoryFactory(
+                    stage: stage,
+                    areaTags: areaProfile.tags,
+                    profileBucket: self.accessoryProfileBucket
+                ),
+                consumables: ConsumableFactory(
+                    stage: stage
+                )
             )
             let npcFactories = InteractorFactoryBundle(
-                // TODO: Populate
+                shopKeeperFactory: ShopKeeperFactory(
+                    stage: stage,
+                    areaTags: areaProfile.tags,
+                    shopKeeperBucket: self.shopKeeperProfileBucket,
+                    lootFactories: lootFactories
+                ),
+                enhancerFactory: EnhancerFactory(
+                    stage: stage,
+                    areaTags: areaProfile.tags,
+                    enhancerProfileBucket: self.enhancerProfileBucket
+                ),
+                restorerFactory: RestorerFactory(
+                    stage: stage,
+                    areaTags: areaProfile.tags,
+                    restorerProfileBucket: self.restorerProfileBucket
+                ),
+                friendlyFactory: FriendlyFactory(
+                    stage: stage,
+                    areaTags: areaProfile.tags,
+                    friendlyProfileBucket: self.friendlyProfileBucket,
+                    lootFactory: lootFactories
+                )
             )
             let challengeLootFactories = LootFactoryBundle(
                 weapons: WeaponFactory(stage: stage + 3, areaTags: areaProfile.tags, profileBucket: self.weaponProfileBucket),
@@ -39,7 +80,7 @@ class TerritoryPoolFactory {
                 consumables: ConsumableFactory(stage: stage + 3)
             )
             let areaFactories = AreaFactoryBundle(
-                loot: lootFactories,
+                interactors: npcFactories,
                 foes: FoeFactory(
                     stage: stage,
                     areaTags: areaProfile.tags,

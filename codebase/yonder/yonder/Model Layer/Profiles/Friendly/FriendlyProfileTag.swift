@@ -20,10 +20,4 @@ enum FriendlyProfileTag {
     /// The player just gets something for free
     case generous
     
-    // curse for blessing: player healing is permanently reduced by 20% (curse)
-    // but the player's damage is permanently increased by 30% (blessing)
-    // (give the curse and blessing cool names, you pass it in via the buff source)
-    
-    // all weapons get +5 attack
-    
 }

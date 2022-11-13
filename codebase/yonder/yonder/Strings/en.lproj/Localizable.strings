@@ -249,6 +249,24 @@
 "offer.maxHealthForArmorPoints.name" = "Max Health for Shields";
 "offer.maxHealthForArmorPoints.description" = "Reduce your max health by half. Double the shields of all your equipped armor.";
 
+// Gold for Price Buff
+"offer.goldForPriceBuff.curse.name" = "Cursed Gold";
+"offer.goldForPriceBuff.curse.description2Param" = "Receive %@ gold. You are cursed so that all prices are permanently %@%% higher.";
+"offer.goldForPriceBuff.blessing.name" = "Gold Blessing";
+"offer.goldForPriceBuff.blessing.description2Param" = "Pay %@ gold. You are blessed so that all prices are permanently %@%% lower.";
+
+// Buff Every Weapon Damage
+"offer.buffEveryWeaponDamage.name" = "Sharpen Weapons";
+"offer.buffEveryWeaponDamage.description1Param" = "Give all your currently owned weapons +%@ damage.";
+
+// Increment Every Potion Count
+"offer.incrementEveryPotionCount.name" = "Duplicate Potions";
+"offer.incrementEveryPotionCount.description1Param" = "For each unique potion your own, increase the remaining amount by %@.";
+
+// Free Items
+"offer.freeItems.name" = "Free Loot!";
+"offer.freeItems.description1Param" = "Take the following potions and items to aid you in your journey:\n%@";
+
 // MARK: - Restore Options
 
 // Health

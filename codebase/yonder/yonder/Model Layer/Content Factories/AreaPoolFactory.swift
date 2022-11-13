@@ -24,21 +24,29 @@ class AreaPoolFactory {
         let challengeHostileLocations = self.factoryBundle.challengeHostileFactory
             .deliver(count: 20)
             .map({ ChallengeHostileLocation(foe: $0) })
-        
-        // TODO: Now i'll need a shopkeeper factory, an enhancer factory, a restorer factory and a friendly factory
-        
-        let areaPool = AreaPool(
+        let shopLocations = self.factoryBundle.interactorFactories.shopKeeperFactory
+            .deliver(count: 6)
+            .map({ ShopLocation(shopKeeper: $0) })
+        let enhancerLocations = self.factoryBundle.interactorFactories.enhancerFactory
+            .deliver(count: 6)
+            .map({ EnhancerLocation(enhancer: $0) })
+        let restorerLocations = self.factoryBundle.interactorFactories.restorerFactory
+            .deliver(count: 6)
+            .map({ RestorerLocation(restorer: $0) })
+        let friendlyLocations = self.factoryBundle.interactorFactories.friendlyFactory
+            .deliver(count: 6)
+            .map({ FriendlyLocation(friendly: $0) })
+        return AreaPool(
             areaName: self.areaProfile.areaName,
             areaDescription: self.areaProfile.areaDescription,
             areaImage: self.areaProfile.areaImage,
             hostileLocations: hostileLocations,
             challengeHostileLocations: challengeHostileLocations,
-            shopLocations: <#T##[ShopLocation]#>,
-            enhancerLocations: <#T##[EnhancerLocation]#>,
-            restorerLocations: <#T##[RestorerLocation]#>,
-            friendlyLocations: <#T##[FriendlyLocation]#>
+            shopLocations: shopLocations,
+            enhancerLocations: enhancerLocations,
+            restorerLocations: restorerLocations,
+            friendlyLocations: friendlyLocations
         )
-        return areaPool
     }
     
 }

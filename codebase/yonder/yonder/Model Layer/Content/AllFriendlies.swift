@@ -113,4 +113,43 @@ enum Friendlies {
         )
     }
     
+    static func newGoldBlessingOrCurseFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
+        let cursePriceFraction = 1.1
+        let blessingPriceFraction = 0.9
+        let gold = (1000 + (sqrt(Double(stage)*10_000_000)*0.5).toRoundedInt()).nearest(100)
+        return Friendly(
+            name: profile.friendlyName,
+            description: profile.friendlyDescription,
+            offers: [
+                GoldForPriceBuffOffer(gold: gold, priceFraction: cursePriceFraction),
+                GoldForPriceBuffOffer(gold: -gold, priceFraction: blessingPriceFraction)
+            ],
+            offerLimit: Int.random(in: 1...3)
+        )
+    }
+    
+    static func newWeaponDamageOrPotionCountFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
+        let damage = (30.0.compound(multiply: 1.2, index: stage)).toRoundedInt()
+        return Friendly(
+            name: profile.friendlyName,
+            description: profile.friendlyDescription,
+            offers: [
+                BuffEveryWeaponDamageOffer(damage: damage),
+                IncrementEveryPotionCountOffer(increment: 1)
+            ],
+            offerLimit: 1
+        )
+    }
+    
+    static func newFreeItemsFriendly(profile: FriendlyProfile, stage: Int, lootFactory: LootFactoryBundle) -> Friendly {
+        let potions = lootFactory.potionFactory.deliver(count: Int.random(in: 1...3))
+        let consumables = lootFactory.consumableFactory.deliver(count: Int.random(in: 1...3))
+        return Friendly(
+            name: profile.friendlyName,
+            description: profile.friendlyDescription,
+            offers: [FreeItemsOffer(potions: potions, consumables: consumables)],
+            offerLimit: 1
+        )
+    }
+    
 }

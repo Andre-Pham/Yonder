@@ -9,12 +9,12 @@ import Foundation
 
 class AreaFactoryBundle {
     
-    public let lootFactories: LootFactoryBundle
+    public let interactorFactories: InteractorFactoryBundle
     public let foeFactory: FoeFactory
     public let challengeHostileFactory: FoeFactory
     
-    init(loot: LootFactoryBundle, foes: FoeFactory, challengeHostiles: FoeFactory) {
-        self.lootFactories = loot
+    init(interactors: InteractorFactoryBundle, foes: FoeFactory, challengeHostiles: FoeFactory) {
+        self.interactorFactories = interactors
         self.foeFactory = foes
         self.challengeHostileFactory = challengeHostiles
     }
