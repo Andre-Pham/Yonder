@@ -35,14 +35,14 @@ class FriendlyFactory {
     }
     
     func deliver() -> Friendly {
-        guard !self.friendlySupply.isEmpty else {
+        if self.friendlySupply.isEmpty {
             self.buildFriendlies(stage: self.stage, tags: self.areaTags)
         }
         return self.friendlySupply.popLast()!
     }
     
     func deliver(count: Int) -> [Friendly] {
-        guard self.friendlySupply.count >= count else {
+        if self.friendlySupply.count < count {
             self.buildFriendlies(stage: self.stage, tags: self.areaTags)
         }
         return self.friendlySupply.dropLast(count)

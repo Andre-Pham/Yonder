@@ -20,21 +20,21 @@ class TavernArea {
         self.generateAreaArrangement()
     }
     
-    init(restorer: RestorerLocation, potionShop: ShopLocation, enhancer: EnhancerLocation, weaponShop: ShopLocation) {
+    init(restorer: RestorerLocation, potionShop: ShopLocation, enhancer: EnhancerLocation, otherShop: ShopLocation) {
         self.arrangement = .M
-        self.locations = [restorer, potionShop, enhancer, weaponShop]
+        self.locations = [restorer, potionShop, enhancer, otherShop]
         self.generateAreaArrangement()
     }
     
-    init(restorer: RestorerLocation, potionShop: ShopLocation, enhancer: EnhancerLocation, weaponShop: ShopLocation, friendly: FriendlyLocation) {
+    init(restorer: RestorerLocation, potionShop: ShopLocation, enhancer: EnhancerLocation, otherShop: ShopLocation, friendly: FriendlyLocation) {
         self.arrangement = .L
-        self.locations = [restorer, potionShop, enhancer, weaponShop, friendly]
+        self.locations = [restorer, potionShop, enhancer, otherShop, friendly]
         self.generateAreaArrangement()
     }
     
-    init(restorer: RestorerLocation, potionShop: ShopLocation, enhancer: EnhancerLocation, weaponShop: ShopLocation, friendly: FriendlyLocation, secondFriendly: FriendlyLocation) {
+    init(restorer: RestorerLocation, potionShop: ShopLocation, enhancer: EnhancerLocation, otherShop: ShopLocation, friendly: FriendlyLocation, secondFriendly: FriendlyLocation) {
         self.arrangement = .XL
-        self.locations = [restorer, potionShop, enhancer, weaponShop, friendly, secondFriendly]
+        self.locations = [restorer, potionShop, enhancer, otherShop, friendly, secondFriendly]
         self.generateAreaArrangement()
     }
     

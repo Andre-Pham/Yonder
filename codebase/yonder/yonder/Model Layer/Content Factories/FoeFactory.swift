@@ -39,14 +39,14 @@ class FoeFactory {
     }
     
     func deliver() -> Foe {
-        guard !self.foeSupply.isEmpty else {
+        if self.foeSupply.isEmpty {
             self.buildFoes(stage: self.stage, tags: self.areaTags)
         }
         return self.foeSupply.popLast()!
     }
     
     func deliver(count: Int) -> [Foe] {
-        guard self.foeSupply.count >= count else {
+        if self.foeSupply.count < count {
             self.buildFoes(stage: self.stage, tags: self.areaTags)
         }
         return self.foeSupply.dropLast(count)

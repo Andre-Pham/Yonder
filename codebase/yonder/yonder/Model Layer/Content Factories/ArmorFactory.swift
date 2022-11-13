@@ -52,14 +52,14 @@ class ArmorFactory {
     }
     
     func deliver() -> Armor {
-        guard !self.armorSupply.isEmpty else {
+        if self.armorSupply.isEmpty {
             self.buildArmors(stage: self.stage, tags: self.areaTags)
         }
         return self.armorSupply.popLast()!
     }
     
     func deliver(count: Int) -> [Armor] {
-        guard self.armorSupply.count >= count else {
+        if self.armorSupply.count < count {
             self.buildArmors(stage: self.stage, tags: self.areaTags)
         }
         return self.armorSupply.dropLast(count)

@@ -60,14 +60,14 @@ class AccessoryFactory {
     }
     
     func deliver() -> Accessory {
-        guard !self.accessorySupply.isEmpty else {
+        if self.accessorySupply.isEmpty {
             self.buildAccessories(stage: self.stage, tags: self.areaTags)
         }
         return self.accessorySupply.popLast()!
     }
     
     func deliver(count: Int) -> [Accessory] {
-        guard self.accessorySupply.count >= count else {
+        if self.accessorySupply.count < count {
             self.buildAccessories(stage: self.stage, tags: self.areaTags)
         }
         return self.accessorySupply.dropLast(count)

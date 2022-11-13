@@ -90,14 +90,14 @@ class PotionFactory {
     }
     
     func deliver() -> Potion {
-        guard !self.potionSupply.isEmpty else {
+        if self.potionSupply.isEmpty {
             self.buildPotions(stage: self.stage)
         }
         return self.potionSupply.popLast()!
     }
     
     func deliver(count: Int) -> [Potion] {
-        guard self.potionSupply.count >= count else {
+        if self.potionSupply.count < count {
             self.buildPotions(stage: self.stage)
         }
         return self.potionSupply.dropLast(count)

@@ -33,14 +33,14 @@ class WeaponFactory {
     }
     
     func deliver() -> Weapon {
-        guard !self.weaponSupply.isEmpty else {
+        if self.weaponSupply.isEmpty {
             self.buildWeapons(stage: self.stage, tags: self.areaTags)
         }
         return self.weaponSupply.popLast()!
     }
     
     func deliver(count: Int) -> [Weapon] {
-        guard self.weaponSupply.count >= count else {
+        if self.weaponSupply.count < count {
             self.buildWeapons(stage: self.stage, tags: self.areaTags)
         }
         return self.weaponSupply.dropLast(count)

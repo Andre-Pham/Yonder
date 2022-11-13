@@ -48,7 +48,7 @@ class TerritoryPoolFactory {
                     stage: stage
                 )
             )
-            let npcFactories = InteractorFactoryBundle(
+            let interactorFactories = InteractorFactoryBundle(
                 shopKeeperFactory: ShopKeeperFactory(
                     stage: stage,
                     areaTags: areaProfile.tags,
@@ -80,7 +80,7 @@ class TerritoryPoolFactory {
                 consumables: ConsumableFactory(stage: stage + 3)
             )
             let areaFactories = AreaFactoryBundle(
-                interactors: npcFactories,
+                interactors: interactorFactories,
                 foes: FoeFactory(
                     stage: stage,
                     areaTags: areaProfile.tags,
@@ -95,7 +95,7 @@ class TerritoryPoolFactory {
                 )
             )
             let areaPoolFactory = AreaPoolFactory(areaProfile: areaProfile, factoryBundle: areaFactories)
-            let tavernAreaFactory = TavernAreaFactory(factoryBundle: areaFactories)
+            let tavernAreaFactory = TavernAreaFactory(stage: stage, factoryBundle: areaFactories)
             areaPools.append(areaPoolFactory.deliver())
             tavernAreas.append(tavernAreaFactory.deliver())
         }

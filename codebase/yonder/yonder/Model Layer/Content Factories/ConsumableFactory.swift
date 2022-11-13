@@ -67,14 +67,14 @@ class ConsumableFactory {
     }
     
     func deliver() -> Consumable {
-        guard !self.consumableSupply.isEmpty else {
+        if self.consumableSupply.isEmpty {
             self.buildConsumables(stage: self.stage)
         }
         return self.consumableSupply.popLast()!
     }
     
     func deliver(count: Int) -> [Consumable] {
-        guard self.consumableSupply.count >= count else {
+        if self.consumableSupply.count < count {
             self.buildConsumables(stage: self.stage)
         }
         return self.consumableSupply.dropLast(count)
