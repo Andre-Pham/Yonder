@@ -672,7 +672,8 @@
 
 "equipmentPill.weaponLifesteal.effectsDescription1Param" = "Restores %@%% of all weapon damage dealt as health.";
 "equipmentPill.thorns.effectsDescription1Param" = "Upon taking damage from a hostile, deal %@%% back.";
-"equipmentPill.phoenix.effectsDescription1Param" = "Upon taking fatal damage, revive yourself with %@ health and unequip this.";
+"equipmentPill.phoenix.partial.effectsDescription1Param" = "Upon taking fatal damage, revive yourself with %@ health and unequip this.";
+"equipmentPill.phoenix.max.effectsDescription" = "Upon taking fatal damage, revive yourself with full health and unequip this.";
 
 // MARK: - Shop Keepers
 

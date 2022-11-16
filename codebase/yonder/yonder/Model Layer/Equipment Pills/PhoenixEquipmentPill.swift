@@ -9,12 +9,19 @@ import Foundation
 
 class PhoenixEquipmentPill: EquipmentPill, AfterTurnEndSubscriber {
     
-    private let healthSetTo = 50
+    private let healthSetTo: Int?
     
-    init(sourceName: String) {
+    init(healthSetTo: Int?, sourceName: String) {
+        self.healthSetTo = healthSetTo
+        
+        let effectsDescription = (
+            healthSetTo == nil ?
+            Strings("equipmentPill.phoenix.max.effectsDescription").local :
+            Strings("equipmentPill.phoenix.partial.effectsDescription1Param").localWithArgs(healthSetTo!)
+        )
         super.init(
             sourceName: sourceName,
-            effectsDescription: Strings("equipmentPill.phoenix.effectsDescription1Param").localWithArgs(self.healthSetTo)
+            effectsDescription: effectsDescription
         )
         
         AfterTurnEndPublisher.subscribe(self)
@@ -30,15 +37,15 @@ class PhoenixEquipmentPill: EquipmentPill, AfterTurnEndSubscriber {
     func getValue(whenTargeting target: Target) -> Int {
         switch target {
         case .player:
-            return 200 + Pricing.playerHealthRestorationStat.getValue(amount: self.healthSetTo)
+            return 200 + Pricing.playerHealthRestorationStat.getValue(amount: self.healthSetTo ?? Pricing.playerHealthStat.baseStatAmount)
         case .foe:
-            return 200 + Pricing.foeHealthRestorationStat.getValue(amount: self.healthSetTo)
+            return 200 + Pricing.foeHealthRestorationStat.getValue(amount: self.healthSetTo ?? Pricing.foeHealthStat.baseStatAmount)
         }
     }
     
     func afterTurnEnd(player: Player, playerUsed: Item?, foe: Foe?) {
         if player.isDead && player.hasEquipmentEffect(self) {
-            player.setHealth(to: self.healthSetTo)
+            player.setHealth(to: self.healthSetTo ?? player.maxHealth)
             player.unequipEquipmentEffect(self)
         }
     }
