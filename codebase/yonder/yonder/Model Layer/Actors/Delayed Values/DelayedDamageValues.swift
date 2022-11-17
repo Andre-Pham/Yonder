@@ -21,6 +21,9 @@ class DelayedDamageValues {
     typealias DamageValue = (damage: Int, type: DamageType)
     
     private var values = [DamageValue]()
+    var totalStoredDamage: Int {
+        return self.values.map({ $0.damage }).reduce(0, +)
+    }
     
     func addDamageAdjusted(sourceOwner: ActorAbstract, using source: Any, target: ActorAbstract, for damage: Int, type: DamageType = .regular) {
         let damage = BuffApps.getAppliedDamage(owner: sourceOwner, using: source, target: target, damage: damage)

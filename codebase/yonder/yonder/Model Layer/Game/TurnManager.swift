@@ -22,11 +22,13 @@ class TurnManager: AfterActorAttackSubscriber, AfterPlayerTravelSubscriber {
         if let player = actor as? Player, let foe = target as? Foe {
             foe.attack(player)
             self.completeTurn(player: player, playerUsed: weapon, foe: foe)
+            self.startTurn(player: player, playerUsed: weapon, foe: foe)
         }
     }
     
     func afterPlayerTravel(player: Player) {
         self.completeTurn(player: player)
+        self.startTurn(player: player)
     }
     
     /// Completes a turn after the player uses an item.
@@ -36,6 +38,7 @@ class TurnManager: AfterActorAttackSubscriber, AfterPlayerTravelSubscriber {
     ///   - playerItem: The item the player used
     ///   - foe: The foe that was present during the item's use
     func completeTurn(player: Player, playerUsed playerItem: Item, foe: Foe) {
+        OnCombatTurnEndPublisher.publish(player: player, playerUsed: playerItem, foe: foe)
         OnTurnEndPublisher.publish(player: player, playerUsed: playerItem, foe: foe)
         
         for act in [player, foe] {
@@ -46,6 +49,7 @@ class TurnManager: AfterActorAttackSubscriber, AfterPlayerTravelSubscriber {
         }
         self.turnsTaken += 1
         
+        AfterCombatTurnEndPublisher.publish(player: player, playerUsed: playerItem, foe: foe)
         AfterTurnEndPublisher.publish(player: player, playerUsed: playerItem, foe: foe)
     }
     
@@ -60,6 +64,15 @@ class TurnManager: AfterActorAttackSubscriber, AfterPlayerTravelSubscriber {
         self.turnsTaken += 1
         
         AfterTurnEndPublisher.publish(player: player, playerUsed: nil, foe: nil)
+    }
+    
+    func startTurn(player: Player, playerUsed playerItem: Item, foe: Foe) {
+        OnTurnStartPublisher.publish(player: player, foe: foe)
+        OnCombatTurnStartPublisher.publish(player: player, playerUsed: playerItem, foe: foe)
+    }
+    
+    func startTurn(player: Player) {
+        OnTurnStartPublisher.publish(player: player, foe: nil)
     }
     
     private func triggerEndTurnActorEffects(on actor: ActorAbstract) {

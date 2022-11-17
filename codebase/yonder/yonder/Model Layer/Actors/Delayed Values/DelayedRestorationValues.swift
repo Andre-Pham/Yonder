@@ -20,6 +20,12 @@ class DelayedRestorationValues {
     typealias RestorationValue = (amount: Int, applyBuffs: Bool, source: Any?, sourceOwner: ActorAbstract, type: RestorationType)
     
     private var values = [RestorationValue]()
+    var totalStoredHealthRestoration: Int {
+        return self.values.filter({ $0.type == .health }).map({ $0.amount }).reduce(0, +)
+    }
+    var totalStoredArmorPointsRestoration: Int {
+        return self.values.filter({ $0.type == .armorPoints }).map({ $0.amount }).reduce(0, +)
+    }
     
     func addRestoration(type: RestorationType, amount: Int) {
         self.values.append(RestorationValue(amount: amount, applyBuffs: false, source: nil, sourceOwner: NoActor(), type: type))

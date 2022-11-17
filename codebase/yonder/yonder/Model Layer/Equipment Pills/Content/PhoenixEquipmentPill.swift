@@ -29,6 +29,7 @@ class PhoenixEquipmentPill: EquipmentPill, AfterTurnEndSubscriber {
     
     required init(_ original: EquipmentPillAbstract) {
         let original = original as! Self
+        self.healthSetTo = original.healthSetTo
         super.init(original)
         
         AfterTurnEndPublisher.subscribe(self)

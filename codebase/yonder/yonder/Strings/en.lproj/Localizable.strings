@@ -674,6 +674,10 @@
 "equipmentPill.thorns.effectsDescription1Param" = "Upon taking damage from a hostile, deal %@%% back.";
 "equipmentPill.phoenix.partial.effectsDescription1Param" = "Upon taking fatal damage, revive yourself with %@ health and unequip this.";
 "equipmentPill.phoenix.max.effectsDescription" = "Upon taking fatal damage, revive yourself with full health and unequip this.";
+"equipmentPill.loseArmorGainHealth.effectsDescription1Param" = "%@%% of all damage dealt to your shields during combat is restored as health.";
+"equipmentPill.restoreAfterKill.healthAndArmorPoints.effectsDescription2Param" = "Upon defeating any hostile, restore %@ health and %@ shields.";
+"equipmentPill.restoreAfterKill.health.effectsDescription1Param" = "Upon defeating any hostile, restore, restore %@ health.";
+"equipmentPill.restoreAfterKill.armorPoints.effectsDescription1Param" = "Upon defeating any hostile, restore %@ shields.";
 
 // MARK: - Shop Keepers
 

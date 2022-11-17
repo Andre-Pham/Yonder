@@ -321,6 +321,44 @@ enum Accessories {
         )
     }
     
+    static func loseArmorGainHealthAccessory(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
+        let fractionRange = Range(type: type, regular: (0.05, 0.5), peripheral: (0.5, 1.0))
+        let fraction = fractionRange.selectFromLinearDistribution(minY: 10, maxY: 1)
+        let pill = LoseArmorGainHealthEquipmentPill(restorationFraction: fraction, sourceName: profile.accessoryName)
+        return Accessory(
+            name: profile.accessoryName,
+            description: profile.accessoryDescription,
+            type: type,
+            healthBonus: 0,
+            armorPointsBonus: 0,
+            buffs: [],
+            equipmentPills: [pill]
+        )
+    }
+    
+    static func restoreAfterKillEquipmentPill(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
+        let healthRange = Range(type: type, regular: (25, 50), peripheral: (50, 100))
+        healthRange.compound(multiply: 1.2, index: stage)
+        let armorPointsRange = Range(type: type, regular: (40, 80), peripheral: (80, 200))
+        armorPointsRange.compound(multiply: 1.2, index: stage)
+        let health = healthRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
+        let armorPoints = armorPointsRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
+        let pill = RestoreAfterKillEquipmentPill(
+            healthRestoration: Random.roll(1, in: 2) ? health : 0,
+            armorPointsRestoration: armorPoints,
+            sourceName: profile.accessoryName
+        )
+        return Accessory(
+            name: profile.accessoryName,
+            description: profile.accessoryDescription,
+            type: type,
+            healthBonus: 0,
+            armorPointsBonus: 0,
+            buffs: [],
+            equipmentPills: [pill]
+        )
+    }
+    
 }
 
 fileprivate class Range {

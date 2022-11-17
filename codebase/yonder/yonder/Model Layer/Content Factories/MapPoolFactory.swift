@@ -17,6 +17,7 @@ class MapPoolFactory {
                 // TODO: Populate
             ]
         )
+        return mapPool
     }
     
 }
