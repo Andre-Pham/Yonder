@@ -358,7 +358,7 @@ enum Accessories {
     static func restoreAfterKillEquipmentPill(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
         let healthRange = Range(type: type, regular: (25, 50), peripheral: (50, 100))
         healthRange.compound(multiply: 1.2, index: stage)
-        let armorPointsRange = Range(type: type, regular: (40, 80), peripheral: (80, 200))
+        let armorPointsRange = Range(type: type, regular: (50, 150), peripheral: (150, 300))
         armorPointsRange.compound(multiply: 1.2, index: stage)
         let health = healthRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         let armorPoints = armorPointsRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
@@ -367,6 +367,39 @@ enum Accessories {
             armorPointsRestoration: armorPoints,
             sourceName: profile.accessoryName
         )
+        return Accessory(
+            name: profile.accessoryName,
+            description: profile.accessoryDescription,
+            type: type,
+            healthBonus: 0,
+            armorPointsBonus: 0,
+            buffs: [],
+            equipmentPills: [pill]
+        )
+    }
+    
+    // 20
+    static func restoreAfterTravelEquipmentPill(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
+        let restorationRange = Range(type: type, regular: (50, 100), peripheral: (100, 200))
+        restorationRange.compound(multiply: 1.2, index: stage)
+        let restoration = restorationRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
+        let pill = RestoreAfterTravelEquipmentPill(restoration: restoration, sourceName: profile.accessoryName)
+        return Accessory(
+            name: profile.accessoryName,
+            description: profile.accessoryDescription,
+            type: type,
+            healthBonus: 0,
+            armorPointsBonus: 0,
+            buffs: [],
+            equipmentPills: [pill]
+        )
+    }
+    
+    // 21
+    static func stealPermanentHealthAfterKillEquipmentPill(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
+        let maxHealthFractionRange = Range(type: type, regular: (0.03, 0.06), peripheral: (0.06, 0.1))
+        let maxHealthFraction = maxHealthFractionRange.selectFromLinearDistribution(minY: 10, maxY: 1)
+        let pill = PermanentHealthAfterKillEquipmentPill(maxHealthFraction: maxHealthFraction, sourceName: profile.accessoryName)
         return Accessory(
             name: profile.accessoryName,
             description: profile.accessoryDescription,

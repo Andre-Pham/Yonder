@@ -678,6 +678,8 @@
 "equipmentPill.restoreAfterKill.healthAndArmorPoints.effectsDescription2Param" = "Upon defeating any hostile, restore %@ health and %@ shields.";
 "equipmentPill.restoreAfterKill.health.effectsDescription1Param" = "Upon defeating any hostile, restore, restore %@ health.";
 "equipmentPill.restoreAfterKill.armorPoints.effectsDescription1Param" = "Upon defeating any hostile, restore %@ shields.";
+"equipmentPill.restoreAfterTravel.effectsDescription1Param" = "After travelling, restore %@ (overflows from health to shields).";
+"equipmentPill.permanentHealthAfterKill.effectsDescription1Param" = "Upon defeating any hostile, steal %@%% of their maximum health as permanent health";
 
 // MARK: - Shop Keepers
 

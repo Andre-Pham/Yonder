@@ -36,7 +36,7 @@ class WeaponLifestealEquipmentPill: EquipmentPill, OnActorAttackSubscriber {
             return
         }
         let damageDealt = actor.getIndicativeDamage(of: weapon, opposition: target)
-        let healthToRestore = Int(round(Double(damageDealt)*self.lifestealFraction))
+        let healthToRestore = (Double(damageDealt)*self.lifestealFraction).toRoundedInt()
         actor.delayedRestorationValues.addRestorationAdjusted(type: .health, sourceOwner: actor, using: self, for: healthToRestore)
     }
     

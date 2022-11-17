@@ -156,6 +156,20 @@ class AccessoryFactory {
             count: 3,
             tag: .special
         )
+        // 20
+        self.addAccessory(
+            to: &accessories,
+            method: Accessories.restoreAfterTravelEquipmentPill,
+            count: 5,
+            tag: .health
+        )
+        // 21
+        self.addAccessory(
+            to: &accessories,
+            method: Accessories.stealPermanentHealthAfterKillEquipmentPill,
+            count: 3,
+            tag: .health
+        )
         
         accessories.shuffle()
         self.accessorySupply.append(contentsOf: accessories)
