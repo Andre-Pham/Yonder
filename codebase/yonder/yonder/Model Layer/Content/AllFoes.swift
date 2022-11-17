@@ -9,8 +9,7 @@ import Foundation
 
 enum Foes {
     
-    // MARK: - Test Foes
-    
+    // TODO: Remove
     static func newTestFoe() -> Foe {
         let lootBag1 = LootBag()
         lootBag1.addGoldLoot(500)

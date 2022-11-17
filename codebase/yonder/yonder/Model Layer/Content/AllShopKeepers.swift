@@ -9,8 +9,7 @@ import Foundation
 
 enum ShopKeepers {
     
-    // MARK: - Test ShopKeepers
-    
+    // TODO: Remove
     static func newTestShopKeeper() -> ShopKeeper {
         return ShopKeeper(purchasableItems: [
             PurchasableItem(item: Accessory(name: "Damage/Health Accessory", description: "Very sharp, be careful while holding!", type: .regular, healthBonus: 50, armorPointsBonus: 0, buffs: [DamagePercentBuff(sourceName: "Damage/Health Accessory", direction: .outgoing, duration: nil, damageFraction: 1.5)], equipmentPills: []), stock: 5),
@@ -19,7 +18,5 @@ enum ShopKeepers {
             PurchasableItem(item: HealthRestorationPotion(tier: .III, potionCount: 3), stock: 5)
         ])
     }
-    
-    // MARK:  - Stage 0
     
 }

@@ -9,6 +9,7 @@ import Foundation
 
 enum Friendlies {
     
+    // TODO: Remove
     static func newTestFriendly() -> Friendly {
         return Friendly(
             offers: [

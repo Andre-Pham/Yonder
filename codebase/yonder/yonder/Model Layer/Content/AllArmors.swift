@@ -9,15 +9,17 @@ import Foundation
 
 enum Armors {
     
-    // MARK: - Resistance Armor
-    
-    // Test armor set
+    // TODO: Remove
     static func newTestHeadArmor() -> Armor {
         return Armor(name: "Resistance Armor", description: "Very resistive.", type: .head, armorPoints: 200, armorBuffs: [DamagePercentBuff(sourceName: "Resistance Armor", direction: .incoming, duration: nil, damageFraction: 0.8)], equipmentPills: [])
     }
+    
+    // TODO: Remove
     static func newTestBodyArmor() -> Armor {
         return Armor(name: "Resistance Armor", description: "Very resistive.", type: .body, armorPoints: 200, armorBuffs: [DamagePercentBuff(sourceName: "Resistance Armor", direction: .incoming, duration: nil, damageFraction: 0.8)], equipmentPills: [])
     }
+    
+    // TODO: Remove
     static func newTestLegsArmor() -> Armor {
         return Armor(name: "Resistance Armor", description: "Very resistive.", type: .legs, armorPoints: 200, armorBuffs: [DamagePercentBuff(sourceName: "Resistance Armor", direction: .incoming, duration: nil, damageFraction: 0.8)], equipmentPills: [])
     }

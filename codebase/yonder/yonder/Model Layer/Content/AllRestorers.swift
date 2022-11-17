@@ -9,8 +9,7 @@ import Foundation
 
 enum Restorers {
     
-    // MARK: - Test Restorers
-    
+    // TODO: Remove
     static func newTestRestorer() -> Restorer {
         return Restorer(options: [.armorPoints, .health], pricePerHealthBundle: 10, pricePerArmorPointBundle: 15)
     }

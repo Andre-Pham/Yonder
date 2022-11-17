@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO: Remove
 let TAVERN_AREAS_STAGE0: [TavernArea] = [
     // Testing for now
     TavernArea(
@@ -15,6 +16,7 @@ let TAVERN_AREAS_STAGE0: [TavernArea] = [
         enhancer: EnhancerLocation(enhancer: Enhancers.newTestEnhancer()))
 ]
 
+// TODO: Remove
 let TAVERN_AREAS_STAGE1: [TavernArea] = [
     // Testing for now
     TavernArea(
