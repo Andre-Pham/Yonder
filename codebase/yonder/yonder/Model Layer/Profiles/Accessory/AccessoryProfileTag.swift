@@ -24,5 +24,7 @@ enum AccessoryProfileTag: CaseIterable {
     case health
     /// Applies to accessories that do a bit (or a lot) of everything and don't have a strong single theme
     case everything
+    /// Applies to accessories that have a unique effect, like the phoenix accessory
+    case special
     
 }
