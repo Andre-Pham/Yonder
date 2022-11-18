@@ -19,12 +19,12 @@ class DataObject {
         self.add(key: "object", value: className)
     }
     
-    init(dataObjects: [DataObject]) {
-        self.json = JSON(dataObjects.map { $0.json })
-    }
-    
     init(rawString: String) {
         self.json = JSON(parseJSON: rawString)
+    }
+    
+    fileprivate init(dataObjects: [DataObject]) {
+        self.json = JSON(dataObjects.map { $0.json })
     }
     
     fileprivate init(json: JSON) {
@@ -56,8 +56,14 @@ class DataObject {
     }
     
     @discardableResult
-    func add(key: String, value: DataObject) -> Self {
-        self.json[key] = value.json
+    func add(key: String, value: Storable) -> Self {
+        self.json[key] = value.toDataObject().json
+        return self
+    }
+    
+    @discardableResult
+    func add<T: Storable>(key: String, value: [T]) -> Self {
+        self.json[key] = value.toDataObject().json
         return self
     }
     
@@ -77,12 +83,20 @@ class DataObject {
         return self.json[key].bool ?? onFail
     }
     
-    func getObjectArray(_ key: String) -> [DataObject] {
-        return (self.json[key].array ?? []).map { DataObject(json: $0) }
+    func getObject<T>(_ key: String, type: T.Type) -> T where T: Storable {
+        return DataObject(json: JSON(self.json[key].object)).restore(type)
     }
     
-    func getObject(_ key: String) -> DataObject {
-        return DataObject(json: JSON(self.json[key].object))
+    func getObjectOptional<T>(_ key: String, type: T.Type) -> T? where T: Storable {
+        return DataObject(json: JSON(self.json[key].object)).restoreOptional(type)
+    }
+    
+    func getObjectArray<T>(_ key: String, type: T.Type) -> [T] where T: Storable {
+        return ((self.json[key].array ?? []).map { DataObject(json: $0) }).restoreArray(type)
+    }
+    
+    func toRawString() -> String {
+        return self.json.rawString()!
     }
     
     func restore<T>(_ type: T.Type) -> T where T: Storable {
@@ -93,10 +107,6 @@ class DataObject {
         return self.parse() as? T
     }
     
-    func toRawString() -> String {
-        return self.json.rawString()!
-    }
-    
     private func parse() -> Storable? {
         if let className = self.json["object"].string {
             var activeClassName = className
@@ -104,9 +114,37 @@ class DataObject {
                 activeClassName = Self.legacyClassNames[activeClassName]!
             }
             let nameSpace = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
-            return (NSClassFromString("\(nameSpace).\(activeClassName)") as! Storable.Type).init(dataObject: DataObject(json: json))
+            return (NSClassFromString("\(nameSpace).\(activeClassName)") as! Storable.Type).init(dataObject: DataObject(json: self.json))
         }
         return nil
+    }
+    
+}
+
+extension Array where Element: DataObject {
+    
+    fileprivate func restoreArray<T>(_ type: T.Type) -> [T] where T: Storable {
+        var restored = Array<T>()
+        for element in self {
+            guard let restoredElement = element.restoreOptional(T.self) else {
+                assertionFailure("DataObject of type \(String(describing: T.self)) could not be restored")
+                continue
+            }
+            restored.append(restoredElement)
+        }
+        return restored
+    }
+    
+}
+
+extension Array where Element: Storable {
+    
+    fileprivate func toDataObject() -> DataObject {
+        var objects = Array<DataObject>()
+        for element in self {
+            objects.append(element.toDataObject())
+        }
+        return DataObject(dataObjects: objects)
     }
     
 }

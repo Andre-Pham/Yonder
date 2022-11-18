@@ -65,16 +65,16 @@ class Student: Person {
     
     required init(dataObject: DataObject) {
         self.depressionLevel = dataObject.get("depressionLevel")
-        self.homework = dataObject.getObjectArray("homework").restoreArray(Homework.self)
-        self.teacher = dataObject.getObject("teacher").restore(Teacher.self)
+        self.homework = dataObject.getObjectArray("homework", type: Homework.self)
+        self.teacher = dataObject.getObject("teacher", type: Teacher.self)
         super.init(dataObject: dataObject)
     }
     
     override func toDataObject() -> DataObject {
         return super.toDataObject()
             .add(key: "depressionLevel", value: self.depressionLevel)
-            .add(key: "homework", value: self.homework.toDataObject())
-            .add(key: "teacher", value: self.teacher.toDataObject())
+            .add(key: "homework", value: self.homework)
+            .add(key: "teacher", value: self.teacher)
     }
     
 }
