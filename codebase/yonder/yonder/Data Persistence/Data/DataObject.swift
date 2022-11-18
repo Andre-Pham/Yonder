@@ -11,9 +11,13 @@ import SwiftyJSON
 /// Refer to DummyClasses.swift for usage example.
 class DataObject {
     
+    // MARK: - Properties
+    
     private static let legacyClassNames: [String: String] = [:]
     
     private var json = JSON()
+    
+    // MARK: - Initialisers
     
     init(className: String) {
         self.add(key: "object", value: className)
@@ -30,6 +34,8 @@ class DataObject {
     fileprivate init(json: JSON) {
         self.json = json
     }
+    
+    // MARK: - Data addition methods
     
     @discardableResult
     func add(key: String, value: String) -> Self {
@@ -67,6 +73,8 @@ class DataObject {
         return self
     }
     
+    // MARK: - Data retrieval methods
+    
     func get(_ key: String, onFail: String = "") -> String {
         return self.json[key].string ?? onFail
     }
@@ -95,9 +103,13 @@ class DataObject {
         return ((self.json[key].array ?? []).map { DataObject(json: $0) }).restoreArray(type)
     }
     
+    // MARK: - String export
+    
     func toRawString() -> String {
         return self.json.rawString()!
     }
+    
+    // MARK: - Storable export
     
     func restore<T>(_ type: T.Type) -> T where T: Storable {
         return self.parse() as! T
