@@ -97,11 +97,11 @@ struct SettingsView: View {
                 .foregroundColor(.white)
                 
                 Button("Consumables") {
-                    GameManager.instance.playerVM.player.addConsumable(RandomHealthConsumable())
-                    GameManager.instance.playerVM.player.addConsumable(MultiplyGoldConsumable(goldFraction: 2.0))
-                    GameManager.instance.playerVM.player.addConsumable(BonusHealthConsumable(tier: .II))
-                    GameManager.instance.playerVM.player.addConsumable(RipeningSetHealthConsumable())
-                    GameManager.instance.playerVM.player.addConsumable(TravelImprovingRestorationConsumable())
+                    GameManager.instance.playerVM.player.addConsumable(RandomHealthConsumable(amount: 1))
+                    GameManager.instance.playerVM.player.addConsumable(MultiplyGoldConsumable(goldFraction: 2.0, amount: 1))
+                    GameManager.instance.playerVM.player.addConsumable(BonusHealthConsumable(tier: .II, amount: 1))
+                    GameManager.instance.playerVM.player.addConsumable(RipeningSetHealthConsumable(amount: 1))
+                    GameManager.instance.playerVM.player.addConsumable(TravelImprovingRestorationConsumable(amount: 1))
                 }
                 .padding()
                 .background(Color.red)

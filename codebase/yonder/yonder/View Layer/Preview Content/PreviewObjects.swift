@@ -20,7 +20,7 @@ enum PreviewObjects {
         player.addStatusEffect(BurnStatusEffect(damage: 15, duration: 5))
         player.addTimedEvent(MaxHealthRestorationTimedEvent(timeToTrigger: 5))
         player.equipAccessory(Self.accessory, replacing: nil)
-        player.addConsumable(TravelImprovingRestorationConsumable())
+        player.addConsumable(TravelImprovingRestorationConsumable(amount: 1))
         return player
     }
     
@@ -250,7 +250,7 @@ enum PreviewObjects {
     // MODEL
     
     private static var consumable: Consumable {
-        return RipeningSetHealthConsumable()
+        return RipeningSetHealthConsumable(amount: 1)
     }
     
     // VIEW MODEL

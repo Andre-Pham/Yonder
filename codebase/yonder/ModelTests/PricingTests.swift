@@ -43,10 +43,8 @@ final class PricingTests: XCTestCase {
     
     func testStages() throws {
         let buff = HealthRestorationPercentBuff(sourceName: "", direction: .incoming, duration: nil, healthFraction: 2.0)
-        Pricing.instance.injectStage(1)
-        let price1 = buff.getValue(whenTargeting: .player)
-        Pricing.instance.injectStage(5)
-        let price2 = buff.getValue(whenTargeting: .player)
+        let price1 = Pricing.usingStage(stage: 1) { buff.getValue(whenTargeting: .player) }
+        let price2 = Pricing.usingStage(stage: 5) { buff.getValue(whenTargeting: .player) }
         XCTAssertTrue(price1 < price2)
     }
     

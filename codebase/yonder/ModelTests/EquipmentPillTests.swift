@@ -35,14 +35,14 @@ class EquipmentPillTests: XCTestCase {
     }
     
     func testPhoenixEquipmentPill() throws {
-        self.accessory.addEquipmentPill(PhoenixEquipmentPill(sourceName: "Test Accessory"))
+        self.accessory.addEquipmentPill(PhoenixEquipmentPill(healthSetTo: 50, sourceName: "Test Accessory"))
         self.player.equipAccessory(self.accessory, replacing: nil)
         self.player.damage(for: 500)
         self.turnManager.completeTurn(player: self.player)
         XCTAssertTrue(!self.player.isDead)
         XCTAssertTrue(self.player.accessorySlots.accessories.isEmpty)
         
-        let armor = Armor(name: "", description: "", type: .body, armorPoints: 0, armorBuffs: [], equipmentPills: [PhoenixEquipmentPill(sourceName: "")])
+        let armor = Armor(name: "", description: "", type: .body, armorPoints: 0, armorBuffs: [], equipmentPills: [PhoenixEquipmentPill(healthSetTo: 50, sourceName: "")])
         self.player.equipArmor(armor)
         self.player.damage(for: 1000)
         self.turnManager.completeTurn(player: self.player)
