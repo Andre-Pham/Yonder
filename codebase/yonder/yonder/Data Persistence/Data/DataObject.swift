@@ -27,11 +27,7 @@ class DataObject {
         self.json = JSON(parseJSON: rawString)
     }
     
-    fileprivate init(dataObjects: [DataObject]) {
-        self.json = JSON(dataObjects.map { $0.json })
-    }
-    
-    fileprivate init(json: JSON) {
+    private init(json: JSON) {
         self.json = json
     }
     
@@ -69,7 +65,7 @@ class DataObject {
     
     @discardableResult
     func add<T: Storable>(key: String, value: [T]) -> Self {
-        self.json[key] = value.toDataObject().json
+        self.json[key] = JSON(value.map { $0.toDataObject().json })
         return self
     }
     
@@ -145,18 +141,6 @@ extension Array where Element: DataObject {
             restored.append(restoredElement)
         }
         return restored
-    }
-    
-}
-
-extension Array where Element: Storable {
-    
-    fileprivate func toDataObject() -> DataObject {
-        var objects = Array<DataObject>()
-        for element in self {
-            objects.append(element.toDataObject())
-        }
-        return DataObject(dataObjects: objects)
     }
     
 }

@@ -69,8 +69,6 @@ enum Random {
         // 2. Select a random point on this polygon (note the side with the higher Y is more likely to be chosen)
         // 3. Return the x coordinate of the randomly selected point
         
-        let leftPoint = (min, minY)
-        let rightPoint = (max, maxY)
         let rectHeight = Double.minimum(minY, maxY)
         let triangleHeight = Double.maximum(minY, maxY) - rectHeight
         let randomPoint = (Double.random(in: min...max), Double.random(in: 0...(rectHeight + triangleHeight/2)))
