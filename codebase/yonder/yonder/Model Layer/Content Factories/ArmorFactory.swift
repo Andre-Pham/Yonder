@@ -23,32 +23,60 @@ class ArmorFactory {
     private func buildArmors(stage: Int, tags: AreaProfileTagAllocation) {
         var armors = [Armor]()
         
-        // Regular
-        armors.populateContentsOf(count: 20) {
-            self.compileArmorSet() { armorType in
-                Armors.regularArmor(
-                    profile: self.armorProfileBucket.grabProfile(
-                        areaTag: tags.getTag(),
-                        armorTag: ArmorProfileTag.allCases.randomElement()!,
-                        armorType: armorType
-                    ),
-                    stage: stage,
-                    type: armorType
-                )
-            }
-        }
-        // TODO: Repeat for all remaining armors
+        // 01
+        self.addArmor(to: &armors, method: Armors.regularArmor, count: 25, tag: .heavyweight)
+        // 02
+        self.addArmor(to: &armors, method: Armors.damagePercentArmor, count: 4, tag: .lightweight)
+        // 03
+        self.addArmor(to: &armors, method: Armors.highDamagePercentArmor, count: 4, tag: .lightweight)
+        // 04
+        self.addArmor(to: &armors, method: Armors.damageArmor, count: 4, tag: .lightweight)
+        // 05
+        self.addArmor(to: &armors, method: Armors.highDamageArmor, count: 4, tag: .lightweight)
+        // 06
+        self.addArmor(to: &armors, method: Armors.resistanceArmor, count: 4, tag: .heavyweight)
+        // 07
+        self.addArmor(to: &armors, method: Armors.highResistanceArmor, count: 4, tag: .heavyweight)
+        // 08
+        self.addArmor(to: &armors, method: Armors.damageNegationArmor, count: 4, tag: .heavyweight)
+        // 09
+        self.addArmor(to: &armors, method: Armors.highDamageNegationArmor, count: 4, tag: .heavyweight)
+        // 10
+        self.addArmor(to: &armors, method: Armors.thornsArmor, count: 4, tag: .heavyweight)
+        // 11
+        self.addArmor(to: &armors, method: Armors.restorationPercentArmor, count: 4, tag: .heavyweight)
+        // 12
+        self.addArmor(to: &armors, method: Armors.thornsAndResistanceArmor, count: 4, tag: .heavyweight)
+        // 13
+        self.addArmor(to: &armors, method: Armors.bitOfEverythingArmor, count: 2, tag: .lightweight)
+        // 14
+        self.addArmor(to: &armors, method: Armors.phoenixArmor, count: 2, tag: .heavyweight)
+        // 15
+        self.addArmor(to: &armors, method: Armors.alchemistArmor, count: 2, tag: .lightweight)
+        // 16
+        self.addArmor(to: &armors, method: Armors.bladeMasterArmor, count: 2, tag: .lightweight)
         
         armors.shuffle()
         self.armorSupply.append(contentsOf: armors)
     }
     
-    private func compileArmorSet(_ callback: (_ armorType: ArmorType) -> Armor) -> [Armor] {
-        var armors = [Armor]()
-        for armorType in ArmorType.allCases {
-            armors.append(callback(armorType))
+    private func addArmor(
+        to armors: inout [Armor],
+        method: (_ profile: ArmorProfile, _ stage: Int, _ type: ArmorType) -> Armor,
+        count: Int,
+        tag: ArmorProfileTag
+    ) {
+        let allTypes = ArmorType.allCases
+        var typeIndex = Int.random(in: 0..<allTypes.count)
+        armors.populate(count: count) {
+            let armorType = allTypes[typeIndex]
+            typeIndex += 1
+            return method(
+                self.armorProfileBucket.grabProfile(areaTag: self.areaTags.getTag(), armorTag: tag, armorType: armorType),
+                self.stage,
+                armorType
+            )
         }
-        return armors
     }
     
     func deliver() -> Armor {
