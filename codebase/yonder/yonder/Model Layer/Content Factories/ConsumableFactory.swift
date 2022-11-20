@@ -62,6 +62,9 @@ class ConsumableFactory {
             return RestoreArmorPointsConsumable(tier: tier, amount: amount)
         }
         
+        // TODO: Add a consumable that gives massive damage buffs to both the foe and the player
+        // Call it "explosive rune" or something along those lines
+        
         consumables.shuffle()
         self.consumableSupply.append(contentsOf: consumables)
     }

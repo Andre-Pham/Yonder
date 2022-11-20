@@ -413,30 +413,20 @@ enum Accessories {
     
 }
 
-fileprivate class Range {
-    
-    private(set) var min: Double
-    var minInt: Int { self.min.toRoundedInt() }
-    private(set) var max: Double
-    var maxInt: Int { self.max.toRoundedInt() }
+fileprivate class Range: StatRange {
     
     init(type: AccessoryType, regular: (Double, Double), peripheral: (Double, Double)) {
-        self.min = (type == .regular ? regular.0 : peripheral.0)
-        self.max = (type == .regular ? regular.1 : peripheral.1)
+        super.init(
+            min: (type == .regular ? regular.0 : peripheral.0),
+            max: (type == .regular ? regular.1 : peripheral.1)
+        )
     }
-    
+
     init(type: AccessoryType, regular: (Int, Int), peripheral: (Int, Int)) {
-        self.min = Double(type == .regular ? regular.0 : peripheral.0)
-        self.max = Double(type == .regular ? regular.1 : peripheral.1)
-    }
-    
-    func compound(multiply: Double, index: Int) {
-        self.min = self.min.compound(multiply: multiply, index: index)
-        self.max = self.max.compound(multiply: multiply, index: index)
-    }
-    
-    func selectFromLinearDistribution(minY: Double, maxY: Double) -> Double {
-        return Random.selectFromLinearDistribution(min: self.min, max: self.max, minY: minY, maxY: maxY)
+        super.init(
+            min: Double(type == .regular ? regular.0 : peripheral.0),
+            max: Double(type == .regular ? regular.1 : peripheral.1)
+        )
     }
     
 }
