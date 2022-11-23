@@ -37,8 +37,7 @@ class LifestealEffectPill: WeaponEffectPill {
     
     func calculateBasePurchasePrice() -> Int {
         Pricing.playerHealthRestorationStat.getValue(
-            amount: Pricing.playerDamageStat.fractionOfBaseStatAmount(self.lifestealFraction),
-            uses: 5
+            amount: Pricing.playerDamageStat.fractionOfBaseStatAmount(self.lifestealFraction)
         )
     }
     

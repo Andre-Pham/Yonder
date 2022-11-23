@@ -54,9 +54,8 @@ enum FactoryUtil {
     
     /// Shifts the weights in an array so that stronger items appear more frequently in later stages.
     /// Example:
-    /// ``` // (self.stage = 7)
-    ///     var weights = [50, 40, 30, 20, 10]
-    ///     shiftWeights(weights: &weights)
+    /// ``` var weights = [50, 40, 30, 20, 10]
+    ///     shiftWeights(stage: 7, weights: &weights)
     ///     // weights = [29, 26, 30, 34, 31]
     /// ```
     /// - Parameters:

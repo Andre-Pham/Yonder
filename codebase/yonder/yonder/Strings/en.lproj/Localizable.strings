@@ -331,6 +331,21 @@
 // Lifesteal
 "weaponEffectPill.lifesteal.description1Param" = "Upon use, restores %@%% of damage dealt as health.";
 
+// Grow Damage
+"weaponEffectPill.growDamage.description1Param" = "After attacking, this weapon's damage increases by %@.";
+
+// Damage Restoration Swap
+"weaponEffectPill.damageRestorationSwap.description" = "After attacking, this weapon's damage and restoration stats swap.";
+
+// Consume Attack
+"weaponEffectPill.consumeAttack.description" = "After this performs the final below on a hostile, their attack damage is added to this weapon.";
+
+// Self Damage
+"weaponEffectPill.selfDamage.description1Param" = "Every attack also damages you for %@.";
+
+// Armor to Damage
+"weaponEffectPill.armorToDamage.description" = "Upon use your shields are converted into a burst of damage.";
+
 // MARK: - Weapon Buff Pills
 
 // Armor Damage Percent

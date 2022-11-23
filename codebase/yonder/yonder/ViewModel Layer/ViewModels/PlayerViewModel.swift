@@ -323,7 +323,7 @@ class PlayerViewModel: ObservableObject {
     
     func getIndicativeRestorationString(itemViewModel: ItemViewModel) -> String {
         let (healthRestoration, armorPointsRestoration) = self.player.getIndicativeRestoration(of: itemViewModel.item)
-        return "(\(healthRestoration) \(Strings("stat.health").local) / \(armorPointsRestoration) \(Strings("stat.armorPointsRestoration").local))"
+        return "(\(healthRestoration) \(Strings("stat.health").local) / \(armorPointsRestoration) \(Strings("stat.shields").local))"
     }
     
     func getPassiveIndicativeDamage(itemViewModel: ItemViewModel) -> Int {

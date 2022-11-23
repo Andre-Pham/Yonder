@@ -87,7 +87,7 @@ enum Armors {
     static func damageArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
         let armorPointsRange = ArmorPointsRange(type: type, min: 35, max: 85)
         let armorPoints = armorPointsRange.select(stage: stage)
-        let damageBonusRange = Range(min: 5, max: 35)
+        let damageBonusRange = StatRange(min: 5, max: 35)
         damageBonusRange.compound(multiply: 1.2, index: stage)
         let damageBonus = damageBonusRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Armor(
@@ -111,7 +111,7 @@ enum Armors {
     static func highDamageArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
         let armorPointsRange = ArmorPointsRange(type: type, min: 15, max: 55)
         let armorPoints = armorPointsRange.select(stage: stage)
-        let damageBonusRange = Range(min: 40, max: 85)
+        let damageBonusRange = StatRange(min: 40, max: 85)
         damageBonusRange.compound(multiply: 1.2, index: stage)
         let damageBonus = damageBonusRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Armor(
@@ -179,7 +179,7 @@ enum Armors {
     static func damageNegationArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
         let armorPointsRange = ArmorPointsRange(type: type, min: 45, max: 100)
         let armorPoints = armorPointsRange.select(stage: stage)
-        let damageNegationRange = Range(min: 10, max: 45)
+        let damageNegationRange = StatRange(min: 10, max: 45)
         damageNegationRange.compound(multiply: 1.2, index: stage)
         let damageNegation = damageNegationRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Armor(
@@ -203,7 +203,7 @@ enum Armors {
     static func highDamageNegationArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
         let armorPointsRange = ArmorPointsRange(type: type, min: 25, max: 75)
         let armorPoints = armorPointsRange.select(stage: stage)
-        let damageNegationRange = Range(min: 40, max: 65)
+        let damageNegationRange = StatRange(min: 40, max: 65)
         damageNegationRange.compound(multiply: 1.2, index: stage)
         let damageNegation = damageNegationRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Armor(
@@ -463,11 +463,5 @@ fileprivate class ArmorPointsRange: StatRange {
         self.compound(multiply: 1.5, index: stage)
         return self.selectFromLinearDistribution(minY: minY, maxY: maxY).toRoundedInt().nearest(5)
     }
-    
-}
-
-fileprivate class Range: StatRange {
-    
-    // Currently equivalent to StatRange
     
 }

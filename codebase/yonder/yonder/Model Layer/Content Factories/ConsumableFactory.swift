@@ -65,6 +65,8 @@ class ConsumableFactory {
         // TODO: Add a consumable that gives massive damage buffs to both the foe and the player
         // Call it "explosive rune" or something along those lines
         
+        // TODO: Add a consumable that restores both the player and foe to full health and shields
+        
         consumables.shuffle()
         self.consumableSupply.append(contentsOf: consumables)
     }
