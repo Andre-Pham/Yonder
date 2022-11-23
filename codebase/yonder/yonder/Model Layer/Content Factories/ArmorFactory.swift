@@ -20,7 +20,7 @@ class ArmorFactory {
         self.armorProfileBucket = profileBucket
     }
     
-    private func buildArmors(stage: Int, tags: AreaProfileTagAllocation) {
+    private func buildArmors() {
         var armors = [Armor]()
         
         // 01
@@ -81,14 +81,14 @@ class ArmorFactory {
     
     func deliver() -> Armor {
         if self.armorSupply.isEmpty {
-            self.buildArmors(stage: self.stage, tags: self.areaTags)
+            self.buildArmors()
         }
         return self.armorSupply.popLast()!
     }
     
     func deliver(count: Int) -> [Armor] {
         if self.armorSupply.count < count {
-            self.buildArmors(stage: self.stage, tags: self.areaTags)
+            self.buildArmors()
         }
         return self.armorSupply.dropLast(count)
     }

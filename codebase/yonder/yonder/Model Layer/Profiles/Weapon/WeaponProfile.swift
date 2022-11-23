@@ -12,9 +12,9 @@ class WeaponProfile {
     public let weaponName: String
     public let weaponDescription: String
     public let areaTags: [AreaProfileTag]
-    public let weaponTags: WeaponProfileTagAllocation
+    public let weaponTags: [WeaponProfileTag]
     
-    init(weaponName: String, weaponDescription: String, areaTags: [AreaProfileTag], weaponTags: WeaponProfileTagAllocation) {
+    init(weaponName: String, weaponDescription: String, areaTags: [AreaProfileTag], weaponTags: [WeaponProfileTag]) {
         self.weaponName = weaponName
         self.weaponDescription = weaponDescription
         self.areaTags = areaTags

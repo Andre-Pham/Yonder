@@ -69,7 +69,7 @@ enum Weapons {
     }
     
     // 05
-    static func acuteHeathRestorationWeapon(profile: WeaponProfile, stage: Int) -> Weapon {
+    static func acuteHealthRestorationWeapon(profile: WeaponProfile, stage: Int) -> Weapon {
         let health = WeaponStatRange(target: 300, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
         let durability: Int = StatRange(min: 1, max: 3).selectFromNormalDistribution()
         return Weapon(
@@ -97,7 +97,7 @@ enum Weapons {
     }
     
     // 07
-    static func acuteHealthRestorationWeapon(profile: WeaponProfile, stage: Int) -> Weapon {
+    static func acuteArmorRestorationWeapon(profile: WeaponProfile, stage: Int) -> Weapon {
         let armorPoints = WeaponStatRange(target: 300, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
         let durability: Int = StatRange(min: 1, max: 3).selectFromNormalDistribution()
         return Weapon(

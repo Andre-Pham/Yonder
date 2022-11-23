@@ -13,11 +13,12 @@ class WeaponProfileBucket {
         // TODO: Populate
     ]
     
-    func grabProfile(areaTag: AreaProfileTag, weaponTags: [WeaponProfileTag]) -> WeaponProfile {
-        let weaponTagAllocation = WeaponProfileTagAllocation(tags: weaponTags)
+    func grabProfile(areaTag: AreaProfileTag, weaponTag: WeaponProfileTag) -> WeaponProfile {
         var matchingIndices = [Int]()
         for (index, profile) in self.profiles.enumerated() {
-            if profile.areaTags.contains(where: { $0 == areaTag }) && profile.weaponTags.tagsCode == weaponTagAllocation.tagsCode {
+            if (profile.areaTags.contains(where: { $0 == areaTag }) &&
+                profile.weaponTags.contains(where: { $0 == weaponTag })
+            ) {
                 matchingIndices.append(index)
             }
         }
