@@ -49,6 +49,10 @@ struct ItemInspectView: View {
                 YonderText(text: effectsDescription, size: .inspectSheetBody)
             }
             
+            if self.itemViewModel.requiresFoeForUsage {
+                YonderText(text: Strings("item.requiresCombat").local, size: .inspectSheetBody)
+            }
+            
             InspectSectionSpacingView()
             
             YonderText(text: self.itemViewModel.description, size: .inspectSheetBody)

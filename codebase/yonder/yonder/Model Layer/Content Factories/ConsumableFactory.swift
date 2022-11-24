@@ -62,8 +62,18 @@ class ConsumableFactory {
             return RestoreArmorPointsConsumable(tier: tier, amount: amount)
         }
         
-        // TODO: Add a consumable that gives massive damage buffs to both the foe and the player
-        // Call it "explosive rune" or something along those lines
+        // Damage buff all
+        consumables.populate(count: 2) {
+            let tier = DamageBuffAllConsumable.Tier.allCases.randomElement()!
+            let amount = Int.random(in: 1...2)
+            return DamageBuffAllConsumable(tier: tier, amount: amount)
+        }
+        
+        // Max restore all
+        consumables.populate(count: 2) {
+            let amount = Int.random(in: 1...2)
+            return MaxRestoreAllConsumable(amount: amount)
+        }
         
         // TODO: Add a consumable that restores both the player and foe to full health and shields
         

@@ -55,6 +55,7 @@ class RestoreArmorPointsConsumable: Consumable {
     }
     
     func use(owner: ActorAbstract, opposition: ActorAbstract?) {
+        owner.restoreArmorPointsAdjusted(sourceOwner: owner, using: self, for: self.armorPointsRestoration)
         self.adjustRemainingUses(by: -1)
     }
     

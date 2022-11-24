@@ -102,6 +102,7 @@ struct SettingsView: View {
                     GameManager.instance.playerVM.player.addConsumable(BonusHealthConsumable(tier: .II, amount: 1))
                     GameManager.instance.playerVM.player.addConsumable(RipeningSetHealthConsumable(amount: 1))
                     GameManager.instance.playerVM.player.addConsumable(TravelImprovingRestorationConsumable(amount: 1))
+                    GameManager.instance.playerVM.player.addConsumable(MaxRestoreAllConsumable(amount: 3))
                 }
                 .padding()
                 .background(Color.red)

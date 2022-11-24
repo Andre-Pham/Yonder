@@ -140,6 +140,7 @@
 "button.collect" = "Collect";
 "button.equip" = "Equip";
 "button.finished" = "Finished";
+"button.requiresCombat" = "Requires Combat";
 
 // MARK: - Stats
 
@@ -287,6 +288,7 @@
 // MARK: - Items
 
 "item.infinite" = "Infinite";
+"item.requiresCombat" = "Can only be used in combat.";
 
 // MARK: - Weapons
 
@@ -449,6 +451,16 @@
 "consumable.restoreArmorPoints.name" = "Armor Patch";
 "consumable.restoreArmorPoints.description" = "A scrap piece of metal perfect for patching up your armor.";
 "consumable.restoreArmorPoints.effectsDescription1Param" = "Repairs %@ shields.";
+
+// Damage Buff All
+"consumable.damageBuffAll.name" = "Field Enrage Rune";
+"consumable.damageBuffAll.description" = "Casting the rune envelops the battlefield in a lashing crimson streak, enraging all inside.";
+"consumable.damageBuffAll.effectsDescription2Param" = "Increases the damage dealt by you and the opposing hostile by %@%% for %@ turns.";
+
+// Max Restore All
+"consumable.maxRestoreAll.name" = "Field Restoration Rune";
+"consumable.maxRestoreAll.description" = "Casting the rune brands the battlefield with a glyph of spectacular light before dissipating.";
+"consumable.maxRestoreAll.effectsDescription" = "Restores you and the opposing hostile to full health and shields.";
 
 // MARK: - Buffs
 

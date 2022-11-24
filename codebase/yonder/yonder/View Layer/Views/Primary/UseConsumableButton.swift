@@ -11,6 +11,9 @@ struct UseConsumableButton: View {
     @ObservedObject var playerViewModel: PlayerViewModel
     @ObservedObject var consumableViewModel: ConsumableViewModel
     @State private var useButtonActive = false
+    private var isDisabled: Bool {
+        self.playerViewModel.locationViewModel.getFoeViewModel() == nil && self.consumableViewModel.requiresFoeForUsage
+    }
     
     var body: some View {
         YonderExpandableWideButtonBody(isExpanded: self.$useButtonActive) {
@@ -51,10 +54,10 @@ struct UseConsumableButton: View {
                 .padding(.top, YonderCoreGraphics.paragraphSpacing)
             }
         } expandedContent: {
-            YonderWideButton(text: Strings("button.instantUse").local) {
+            YonderWideButton(text: self.isDisabled ? Strings("button.requiresCombat").local : Strings("button.instantUse").local) {
                 self.playerViewModel.use(consumableViewModel: self.consumableViewModel)
             }
-            .disabledWhen(self.playerViewModel.locationViewModel.getFoeViewModel() == nil && self.consumableViewModel.requiresFoeForUsage)
+            .disabledWhen(self.isDisabled)
         }
     }
 }
