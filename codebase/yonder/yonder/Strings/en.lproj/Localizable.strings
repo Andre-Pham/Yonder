@@ -200,24 +200,24 @@
 // MARK: - Enhance Offers
 
 // Weapon Damage
-"enhanceOffer.weaponDamage.name" = "Upgrade Weapon Damage";
+"enhanceOffer.weaponDamage.name" = "Weapon Damage";
 "enhanceOffer.weaponDamage.description1Param" = "Increase a weapon's damage by %@.";
 
 // Armor Points
-"enhanceOffer.armorPoints.name" = "Upgrade Armor Shields";
+"enhanceOffer.armorPoints.name" = "Armor Shields";
 "enhanceOffer.armorPoints.description1Param" = "Increase some armor's shields by %@.";
 
 // Armor Buff
-"enhanceOffer.armorBuff.name" = "Add Ongoing Effect to Armor";
-"enhanceOffer.armorBuff.description1Param" = "Give some armor <%@>.";
+"enhanceOffer.armorBuff.name" = "Armor Upgrade";
+"enhanceOffer.armorBuff.description1Param" = "Give some armor \"%@\".";
 "enhanceOffer.armorBuff.missingDescription" = "Description not found.";
 
 // Weapon Effect
-"enhanceOffer.weaponEffect.name" = "Add Effect to Weapon";
-"enhanceOffer.weaponEffect.description1Param" = "Give a weapon <%@>.";
+"enhanceOffer.weaponEffect.name" = "Weapon Upgrade";
+"enhanceOffer.weaponEffect.description1Param" = "Give a weapon \"%@\".";
 
 // Weapon Durability
-"enhanceOffer.weaponDurability.name" = "Add Weapon Durability";
+"enhanceOffer.weaponDurability.name" = "Weapon Durability";
 "enhanceOffer.weaponDurability.description1Param" = "Increase a weapon's durability by %@.";
 
 // MARK: - Offers

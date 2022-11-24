@@ -23,7 +23,7 @@ class WeaponDamageEnhanceOffer: EnhanceOffer {
     }
     
     func getEnhanceables(from player: Player) -> [Enhanceable] {
-        return player.weapons
+        return player.weapons.filter({ $0.damage > 0 })
     }
     
     func acceptOffer(player: Player, enhanceableID: UUID) {
