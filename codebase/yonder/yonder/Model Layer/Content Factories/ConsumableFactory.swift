@@ -16,7 +16,7 @@ class ConsumableFactory {
         self.stage = stage
     }
     
-    private func buildConsumables(stage: Int) {
+    private func buildConsumables() {
         var consumables = [Consumable]()
         var weights: [Int]
         
@@ -83,14 +83,14 @@ class ConsumableFactory {
     
     func deliver() -> Consumable {
         if self.consumableSupply.isEmpty {
-            self.buildConsumables(stage: self.stage)
+            self.buildConsumables()
         }
         return self.consumableSupply.popLast()!
     }
     
     func deliver(count: Int) -> [Consumable] {
         if self.consumableSupply.count < count {
-            self.buildConsumables(stage: self.stage)
+            self.buildConsumables()
         }
         return self.consumableSupply.dropLast(count)
     }
