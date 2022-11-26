@@ -13,9 +13,7 @@ struct Strings {
     
     init(_ path: String) {
         self.local = NSLocalizedString(path, comment: "")
-        if self.local == path {
-            assertionFailure("String path \"\(path)\" has no matching string.")
-        }
+        assert(self.local != path, "String path \"\(path)\" has no matching string.")
     }
     
     /// Retrieves a localized string with String arguments inserted into "%@" positions.

@@ -11,7 +11,7 @@ typealias Buff = BuffAbstract & HasPriceValue
 
 class BuffAbstract: EffectsDescribed, Clonable {
     
-    public let sourceName: String
+    private(set) var sourceName: String
     private let effectsDescription: String?
     var isInfinite: Bool {
         return self.timeRemaining == nil
@@ -82,6 +82,10 @@ class BuffAbstract: EffectsDescribed, Clonable {
     
     func getEffectsDescription() -> String? {
         return self.effectsDescription
+    }
+    
+    func updateSource(to sourceName: String) {
+        self.sourceName = sourceName
     }
     
     func decrementTimeRemaining() {

@@ -25,11 +25,15 @@ class EnhancerFactory {
         let offerCount = Int.random(in: 2...4)
         while offers.count < offerCount {
             // Order doesn't affect outcome because the loop doesn't immediately break if the offer count is reached
+            // We can't just add lots of each and shuffle because that may cause many duplicate enhance offers
+            
+            // 01
             if Random.roll(1, in: 10) {
-                offers.append(EnhanceOffers.newWeaponDamage(stage: stage))
+                offers.append(EnhanceOffers.damageForWeapon(stage: stage))
             }
+            // 02
             if Random.roll(1, in: 30) {
-                offers.append(EnhanceOffers.newWeaponLifesteal(stage: stage))
+                offers.append(EnhanceOffers.lifestealForWeapon(stage: stage))
             }
             // TODO: Add remaining enhance offers
         }

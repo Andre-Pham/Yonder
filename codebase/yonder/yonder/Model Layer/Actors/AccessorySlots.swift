@@ -11,16 +11,21 @@ class AccessorySlots {
     
     public let accessorySlotCount = 4
     private var cachedInsertLocation: Int? = nil
+    /// Regular accessories
     @DidSetPublished private(set) var accessories = [Accessory]()
+    /// Peripheral accessory
     @DidSetPublished private(set) var peripheralAccessory: Accessory = NoAccessory(type: .peripheral)
+    /// Regular accessories and peripheral accessory
     var allAccessories: [Accessory] {
         var accessories = Array(self.accessories)
         accessories.append(self.peripheralAccessory)
         return accessories
     }
+    /// Armor points provided by all accessories
     var maxArmorPoints: Int {
         return self.allAccessories.reduce(0) { $0 + $1.armorPointsBonus }
     }
+    /// True if the number of regular accessories has reached its limit
     var accessorySlotsFull: Bool {
         return self.accessories.count >= self.accessorySlotCount
     }

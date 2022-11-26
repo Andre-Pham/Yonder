@@ -63,7 +63,7 @@ enum Random {
     ///   - maxY: The height of the distribution at x = `max`
     /// - Returns:
     ///   - A double between `min` and `max`
-    static func selectFromLinearDistribution(min: Double, max: Double, minY: Double, maxY: Double) -> Double {
+    static func selectFromLinearDistribution(min: Double, max: Double, minY: Double, maxY: Double, decimalPlaces: Int = 2) -> Double {
         // Steps:
         // 1. Create a polygon with the points (min, 0), (min, minY), (max, maxY), (max, 0)
         // 2. Select a random point on this polygon (note the side with the higher Y is more likely to be chosen)
@@ -79,10 +79,10 @@ enum Random {
         let y = m*randomPoint.0 + c
         if y > randomPoint.1 {
             // Random point lies on the rectangle/triangle polygon
-            return randomPoint.0
+            return randomPoint.0.rounded(decimalPlaces: decimalPlaces)
         } else {
             // Random point needs to be translated - we only care about its x value
-            return randomPoint.0 - 2*(randomPoint.0 - (max + min)/2)
+            return (randomPoint.0 - 2*(randomPoint.0 - (max + min)/2)).rounded(decimalPlaces: decimalPlaces)
         }
     }
     

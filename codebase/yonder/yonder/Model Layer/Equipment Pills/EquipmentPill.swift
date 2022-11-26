@@ -11,7 +11,7 @@ typealias EquipmentPill = EquipmentPillAbstract & HasPriceValue
 
 class EquipmentPillAbstract: Clonable {
     
-    public let sourceName: String
+    private(set) var sourceName: String
     public let effectsDescription: String
     public let id = UUID()
     
@@ -23,6 +23,10 @@ class EquipmentPillAbstract: Clonable {
     required init(_ original: EquipmentPillAbstract) {
         self.sourceName = original.sourceName
         self.effectsDescription = original.effectsDescription
+    }
+    
+    func updateSource(to sourceName: String) {
+        self.sourceName = sourceName
     }
     
 }

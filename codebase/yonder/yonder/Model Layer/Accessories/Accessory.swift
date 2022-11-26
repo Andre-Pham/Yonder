@@ -53,11 +53,15 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
     }
     
     func addBuff(buff: Buff) {
-        self.buffs.append(buff)
+        let toAdd = buff.clone()
+        toAdd.updateSource(to: self.name)
+        self.buffs.append(toAdd)
     }
     
     func addEquipmentPill(_ pill: EquipmentPill) {
-        self.equipmentPills.append(pill)
+        let toAdd = pill.clone()
+        toAdd.updateSource(to: self.name)
+        self.equipmentPills.append(toAdd)
     }
     
     func hasEffect(_ equipmentPill: EquipmentPill) -> Bool {

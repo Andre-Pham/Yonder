@@ -199,6 +199,10 @@
 
 // MARK: - Enhance Offers
 
+// Temporary Source Name
+// (buffs/pills that require a source are provided with this until their source is updated after purchase)
+"enhanceOffer.source" = "Enhancer";
+
 // Weapon Damage
 "enhanceOffer.weaponDamage.name" = "Weapon Damage";
 "enhanceOffer.weaponDamage.description1Param" = "Increase a weapon's damage by %@.";
@@ -209,16 +213,39 @@
 
 // Armor Buff
 "enhanceOffer.armorBuff.name" = "Armor Upgrade";
-"enhanceOffer.armorBuff.description1Param" = "Give some armor \"%@\".";
-"enhanceOffer.armorBuff.missingDescription" = "Description not found.";
+"enhanceOffer.armorBuff.description1Param" = "Give some armor [%@].";
 
 // Weapon Effect
 "enhanceOffer.weaponEffect.name" = "Weapon Upgrade";
-"enhanceOffer.weaponEffect.description1Param" = "Give a weapon \"%@\".";
+"enhanceOffer.weaponEffect.description1Param" = "Give a weapon [%@].";
 
 // Weapon Durability
 "enhanceOffer.weaponDurability.name" = "Weapon Durability";
 "enhanceOffer.weaponDurability.description1Param" = "Increase a weapon's durability by %@.";
+
+// Armor Equipment Pill
+"enhanceOffer.armorEquipmentPill.name" = "Armor Upgrade";
+"enhanceOffer.armorEquipmentPill.description1Param" = "Give some armor [%@].";
+
+// Accessory Health
+"enhanceOffer.accessoryHealth.name" = "Accessory Bonus Health";
+"enhanceOffer.accessoryHealth.description1Param" = "Select an accessory to give %@ bonus health (accessory bonus health adds to your total health pool).";
+
+// Equipment Pill
+"enhanceOffer.equipmentPill.name" = "Equipment Upgrade";
+"enhanceOffer.equipmentPill.description1Param" = "Give some equipment [%@].";
+
+// Double Weapon Health Restoration
+"enhanceOffer.doubleWeaponHealthRestoration.name" = "Double Weapon Healing";
+"enhanceOffer.doubleWeaponHealthRestoration.description" = "Double a weapon's healing stat.";
+
+// Double Weapon Armor Points Restoration
+"enhanceOffer.doubleWeaponArmorPointsRestoration.name" = "Double Weapon Armor Repair";
+"enhanceOffer.doubleWeaponArmorPointsRestoration.description" = "Double a weapon's armor repair stat (double shields restored).";
+
+// Accessory Buff
+"enhanceOffer.accessoryBuff.name" = "Accessory Upgrade";
+"enhanceOffer.accessoryBuff.description1Param" = "Give some accessory [%@].";
 
 // MARK: - Offers
 

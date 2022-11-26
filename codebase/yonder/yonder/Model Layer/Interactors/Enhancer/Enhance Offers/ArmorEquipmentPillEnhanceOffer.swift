@@ -1,25 +1,25 @@
 //
-//  ArmorBuffEnhanceOffer.swift
+//  ArmorEquipmentPillEnhanceOffer.swift
 //  yonder
 //
-//  Created by Andre Pham on 8/4/2022.
+//  Created by Andre Pham on 26/11/2022.
 //
 
 import Foundation
 
-class ArmorBuffEnhanceOffer: EnhanceOffer {
+class ArmorEquipmentPillEnhanceOffer: EnhanceOffer {
     
     public let id: UUID = UUID()
     public let price: Int
     public let name: String
     public let description: String
-    private let buff: Buff
+    private let pill: EquipmentPill
     
-    init(price: Int, buff: Buff) {
+    init(price: Int, pill: EquipmentPill) {
         self.price = price
-        self.buff = buff
-        self.name = Strings("enhanceOffer.armorBuff.name").local
-        self.description = Strings("enhanceOffer.armorBuff.description1Param").localWithArgs(buff.getEffectsDescription()!)
+        self.pill = pill
+        self.name = Strings("enhanceOffer.armorEquipmentPill.name").local
+        self.description = Strings("enhanceOffer.armorEquipmentPill.description1Param").localWithArgs(pill.effectsDescription)
     }
     
     func getEnhanceables(from player: Player) -> [Enhanceable] {
@@ -30,7 +30,7 @@ class ArmorBuffEnhanceOffer: EnhanceOffer {
         if let armor = player.allArmorPieces.first(where: { $0.id == enhanceableID }),
            self.canBePurchased(price: self.price, purchaser: player) {
             
-            armor.addBuff(buff: self.buff)
+            armor.addEquipmentPill(self.pill)
             player.modifyGoldAdjusted(by: -self.price)
         }
     }

@@ -54,11 +54,15 @@ class Armor: EffectsDescribed, Purchasable, Named, Described, Enhanceable, Clona
     }
     
     func addBuff(buff: Buff) {
-        self.armorBuffs.append(buff)
+        let toAdd = buff.clone()
+        toAdd.updateSource(to: self.name)
+        self.armorBuffs.append(toAdd)
     }
     
     func addEquipmentPill(_ pill: EquipmentPill) {
-        self.equipmentPills.append(pill)
+        let toAdd = pill.clone()
+        toAdd.updateSource(to: self.name)
+        self.equipmentPills.append(toAdd)
     }
     
     func hasEffect(_ equipmentPill: EquipmentPill) -> Bool {
