@@ -19,7 +19,8 @@ enum Friendlies {
             offerLimit: 2)
     }
     
-    static func newGoldOrRestorationFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
+    // 01
+    static func goldOrRestorationFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
         let restorationAmount = 150.0.compound(multiply: 1.1, index: stage).toRoundedInt()
         let goldAmount = Pricing.usingStage(stage: stage) {
             // Bonus because otherwise immediate value of restoration is almost always better than potential value provided by gold
@@ -37,7 +38,8 @@ enum Friendlies {
         )
     }
     
-    static func newDragonSlayerFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
+    // 02
+    static func dragonSlayerFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
         let damage = (100.0.compound(multiply: 1.2, index: stage)*3.0).toRoundedInt().nearest(5)
         let dulling = (Double(damage)/12.0).toRoundedInt()
         let dragonSlayer = Weapon(
@@ -61,7 +63,8 @@ enum Friendlies {
         )
     }
     
-    static func newHealthForGoldFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
+    // 03
+    static func healthForGoldFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
         let health = 100
         let goldReward = Pricing.usingStage(stage: stage) {
             let fairPrice = Pricing.foeDamageStat.getValue(amount: health)
@@ -77,7 +80,8 @@ enum Friendlies {
         )
     }
     
-    static func newShivFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
+    // 04
+    static func shivFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
         let shiv = Weapon(
             name: Strings("weapon.simpleShiv.name").local,
             description: Strings("weapon.simpleShiv.description").local,
@@ -96,7 +100,8 @@ enum Friendlies {
         )
     }
     
-    static func newSellPotionsFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
+    // 05
+    static func sellPotionsFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
         return Friendly(
             name: profile.friendlyName,
             description: profile.friendlyDescription,
@@ -105,7 +110,8 @@ enum Friendlies {
         )
     }
     
-    static func newMaxPointsForArmorPointsFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
+    // 06
+    static func maxPointsForArmorPointsFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
         return Friendly(
             name: profile.friendlyName,
             description: profile.friendlyDescription,
@@ -114,7 +120,8 @@ enum Friendlies {
         )
     }
     
-    static func newGoldBlessingOrCurseFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
+    // 07
+    static func goldBlessingOrCurseFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
         let cursePriceFraction = 1.1
         let blessingPriceFraction = 0.9
         let gold = (1000 + (sqrt(Double(stage)*10_000_000)*0.5).toRoundedInt()).nearest(100)
@@ -129,7 +136,8 @@ enum Friendlies {
         )
     }
     
-    static func newWeaponDamageOrPotionCountFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
+    // 08
+    static func weaponDamageOrPotionCountFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
         let damage = (30.0.compound(multiply: 1.2, index: stage)).toRoundedInt()
         return Friendly(
             name: profile.friendlyName,
@@ -142,7 +150,8 @@ enum Friendlies {
         )
     }
     
-    static func newFreeItemsFriendly(profile: FriendlyProfile, stage: Int, lootFactory: LootFactoryBundle) -> Friendly {
+    // 09
+    static func freeItemsFriendly(profile: FriendlyProfile, stage: Int, lootFactory: LootFactoryBundle) -> Friendly {
         let potions = lootFactory.potionFactory.deliver(count: Int.random(in: 1...3))
         let consumables = lootFactory.consumableFactory.deliver(count: Int.random(in: 1...3))
         return Friendly(

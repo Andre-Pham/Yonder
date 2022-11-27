@@ -22,28 +22,64 @@ class FriendlyFactory {
         self.lootFactory = lootFactory
     }
     
-    private func buildFriendlies(stage: Int, tags: AreaProfileTagAllocation) {
+    private func buildFriendlies() {
         var friendlies = [Friendly]()
         
-        friendlies.populate(count: 5) {
-            Friendlies.newGoldOrRestorationFriendly(profile: self.friendlyProfileBucket.grabProfile(areaTag: tags.getTag(), friendlyTag: .generous), stage: stage)
-        }
-        // TODO: Repeat for all friendlies
+        // 01
+        self.addFriendly(to: &friendlies, method: Friendlies.goldOrRestorationFriendly, count: 3, tag: .generous)
+        // 02
+        self.addFriendly(to: &friendlies, method: Friendlies.dragonSlayerFriendly, count: 1, tag: .shop)
+        // 03
+        self.addFriendly(to: &friendlies, method: Friendlies.healthForGoldFriendly, count: 3, tag: .sacrifice)
+        // 04
+        self.addFriendly(to: &friendlies, method: Friendlies.shivFriendly, count: 1, tag: .generous)
+        // 05
+        self.addFriendly(to: &friendlies, method: Friendlies.sellPotionsFriendly, count: 2, tag: .trade)
+        // 06
+        self.addFriendly(to: &friendlies, method: Friendlies.maxPointsForArmorPointsFriendly, count: 2, tag: .sacrifice)
+        // 07
+        self.addFriendly(to: &friendlies, method: Friendlies.goldBlessingOrCurseFriendly, count: 2, tag: .curse)
+        // 08
+        self.addFriendly(to: &friendlies, method: Friendlies.weaponDamageOrPotionCountFriendly, count: 2, tag: .generous)
+        // 09
+        self.addFriendly(to: &friendlies, method: Friendlies.freeItemsFriendly, count: 5, tag: .generous)
         
         friendlies.shuffle()
         self.friendlySupply.append(contentsOf: friendlies)
     }
     
+    private func addFriendly(
+        to friendlies: inout [Friendly],
+        method: (_ profile: FriendlyProfile, _ stage: Int) -> Friendly,
+        count: Int,
+        tag: FriendlyProfileTag
+    ) {
+        friendlies.populate(count: count) {
+            method(self.friendlyProfileBucket.grabProfile(areaTag: self.areaTags.getTag(), friendlyTag: tag), self.stage)
+        }
+    }
+    
+    private func addFriendly(
+        to friendlies: inout [Friendly],
+        method: (_ profile: FriendlyProfile, _ stage: Int, _ lootFactory: LootFactoryBundle) -> Friendly,
+        count: Int,
+        tag: FriendlyProfileTag
+    ) {
+        friendlies.populate(count: count) {
+            method(self.friendlyProfileBucket.grabProfile(areaTag: self.areaTags.getTag(), friendlyTag: tag), self.stage, self.lootFactory)
+        }
+    }
+    
     func deliver() -> Friendly {
         if self.friendlySupply.isEmpty {
-            self.buildFriendlies(stage: self.stage, tags: self.areaTags)
+            self.buildFriendlies()
         }
         return self.friendlySupply.popLast()!
     }
     
     func deliver(count: Int) -> [Friendly] {
         if self.friendlySupply.count < count {
-            self.buildFriendlies(stage: self.stage, tags: self.areaTags)
+            self.buildFriendlies()
         }
         return self.friendlySupply.dropLast(count)
     }

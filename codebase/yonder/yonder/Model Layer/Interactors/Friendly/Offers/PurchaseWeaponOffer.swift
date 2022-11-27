@@ -1,5 +1,5 @@
 //
-//  WeaponPurchaseOffer.swift
+//  PurchaseWeaponOffer.swift
 //  yonder
 //
 //  Created by Andre Pham on 3/12/21.

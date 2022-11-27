@@ -75,8 +75,6 @@ class ConsumableFactory {
             return MaxRestoreAllConsumable(amount: amount)
         }
         
-        // TODO: Add a consumable that restores both the player and foe to full health and shields
-        
         consumables.shuffle()
         self.consumableSupply.append(contentsOf: consumables)
     }
