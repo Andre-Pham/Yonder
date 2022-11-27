@@ -10,11 +10,11 @@ import Foundation
 enum FoeProfileTag {
     
     case regular
-    case regularTank
-    case regularGlassCannon
+    case regularObtuse
+    case regularAcute
     case goblin
-    case goblinTank
-    case goblinGlassCannon
+    case goblinObtuse
+    case goblinAcute
     case brute
     
 }

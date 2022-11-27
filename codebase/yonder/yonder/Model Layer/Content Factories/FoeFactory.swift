@@ -22,32 +22,53 @@ class FoeFactory {
         self.lootOptionsFactory = LootOptionsFactory(stage: stage, lootFactories: lootFactoryBundle)
     }
     
-    private func buildFoes(stage: Int, tags: AreaProfileTagAllocation) {
+    private func buildFoes() {
         var foes = [Foe]()
         
-        // Regular
-        foes.populate(count: 20) {
-            Foes.newRegularFoe(profile: self.foeProfileBucket.grabProfile(areaTag: tags.getTag(), foeTag: .regular), stage: stage, loot: self.lootOptionsFactory.deliver())
-        }
-        foes.populate(count: 5) {
-            Foes.newRegularTankFoe(profile: self.foeProfileBucket.grabProfile(areaTag: tags.getTag(), foeTag: .regularTank), stage: stage, loot: self.lootOptionsFactory.deliver())
-        }
-        // TODO: Repeat for all types of foes
+        // 01
+        self.addFoe(to: &foes, method: Foes.newRegularFoe, count: 20, tag: .regular)
+        // 02
+        self.addFoe(to: &foes, method: Foes.newRegularObtuseFoe, count: 5, tag: .regularObtuse)
+        // 03
+        self.addFoe(to: &foes, method: Foes.newRegularAcuteFoe, count: 5, tag: .regularAcute)
+        // 04
+        self.addFoe(to: &foes, method: Foes.newGoblinFoe, count: 5, tag: .goblin)
+        // 05
+        self.addFoe(to: &foes, method: Foes.newGoblinObtuseFoe, count: 2, tag: .goblinObtuse)
+        // 06
+        self.addFoe(to: &foes, method: Foes.newGoblinAcuteFoe, count: 2, tag: .goblinAcute)
+        // 07
+        self.addFoe(to: &foes, method: Foes.newBruteFoe, count: 5, tag: .brute)
         
         self.foeSupply.shuffle()
         self.foeSupply.append(contentsOf: foes)
     }
     
+    private func addFoe(
+        to foes: inout [Foe],
+        method: (_ profile: FoeProfile, _ stage: Int, _ loot: LootOptions) -> Foe,
+        count: Int,
+        tag: FoeProfileTag
+    ) {
+        foes.populate(count: count) {
+            method(
+                self.foeProfileBucket.grabProfile(areaTag: self.areaTags.getTag(), foeTag: tag),
+                self.stage,
+                self.lootOptionsFactory.deliver()
+            )
+        }
+    }
+    
     func deliver() -> Foe {
         if self.foeSupply.isEmpty {
-            self.buildFoes(stage: self.stage, tags: self.areaTags)
+            self.buildFoes()
         }
         return self.foeSupply.popLast()!
     }
     
     func deliver(count: Int) -> [Foe] {
         if self.foeSupply.count < count {
-            self.buildFoes(stage: self.stage, tags: self.areaTags)
+            self.buildFoes()
         }
         return self.foeSupply.dropLast(count)
     }

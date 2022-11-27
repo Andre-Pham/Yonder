@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Weapons content.
+/// Weapon content.
 /// "acute" prefix indicates that durability is sacrificed for high stats.
 /// "obtuse" prefix indicates that stats are sacrificed for high durability.
 enum Weapons {
