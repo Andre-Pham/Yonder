@@ -11,11 +11,11 @@ import Foundation
 class MapPool {
     
     private(set) var territoryPoolsInStageOrder: [TerritoryPool]
-    private(set) var bossAreas: [BossArea]
+    private(set) var bossAreaPoolsInOrder: [BossAreaPool]
     
-    init(territoryPoolsInStageOrder: [TerritoryPool], bossAreas: [BossArea]) {
+    init(territoryPoolsInStageOrder: [TerritoryPool], bossAreaPoolsInOrder: [BossAreaPool]) {
         self.territoryPoolsInStageOrder = territoryPoolsInStageOrder
-        self.bossAreas = bossAreas
+        self.bossAreaPoolsInOrder = bossAreaPoolsInOrder
     }
     
     func grabTerritoryPool(stage: Int) -> TerritoryPool? {

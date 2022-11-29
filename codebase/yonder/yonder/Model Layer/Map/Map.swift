@@ -14,12 +14,14 @@ class Map {
     private(set) var bossAreasInOrder: [BossArea]
     private(set) var startingLocation: Location
     
-    // Currently expects territoriesInOrder.count == bossAreasInOrder*2+1, but this will change eventually to support the final boss, and have it so the map ends on a boss, not a singular territory
     init(territoriesInOrder: [Territory], bossAreasInOrder: [BossArea]) {
         self.territoriesInOrder = territoriesInOrder
         self.bossAreasInOrder = bossAreasInOrder
         self.startingLocation = NoLocation()
         assert(self.territoriesInOrder.count > 0, "No territories were defined for the map")
+        assert(self.bossAreasInOrder.count > 0, "No bosses were defined for the map")
+        assert(self.territoriesInOrder.count%Self.territoriesPerBoss == 0, "The multiple of territories provided don't match the expected amount to ensure that for every boss, there are \(Self.territoriesPerBoss) territories")
+        assert(self.territoriesInOrder.count == self.bossAreasInOrder.count*Self.territoriesPerBoss, "Number of bosses doesn't correspond to number of territories defined for the map")
         
         var territoryIndex = 0
         var bossAreaIndex = 0

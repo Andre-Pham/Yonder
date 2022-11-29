@@ -37,18 +37,27 @@ enum Maps {
                     tavernAreas: [TavernAreas.newTestTavernArea()]
                 ),
             ],
-            bossAreas: [
-                BossArea(
-                    bossLocation: BossLocation(boss: Foe(name: "Boss", description: "Big boss.", maxHealth: 10000, weapon: BaseAttack(damage: 1000), loot: NoLootOptions())),
-                    restorerLocation: RestorerLocation(restorer: Restorer(options: [.health, .armorPoints]))
+            bossAreaPoolsInOrder: [
+                BossAreaPool(
+                    bossLocations: [
+                        BossLocation(boss: Foe(name: "Boss 1", description: "Big boss.", maxHealth: 10000, weapon: BaseAttack(damage: 1000), loot: NoLootOptions())),
+                        BossLocation(boss: Foe(name: "Boss 2", description: "Lil boss.", maxHealth: 10000, weapon: BaseAttack(damage: 1000), loot: NoLootOptions()))
+                    ],
+                    restorerLocations: [RestorerLocation(restorer: Restorer(options: [.health, .armorPoints]))]
                 ),
-                BossArea(
-                    bossLocation: BossLocation(boss: Foe(name: "Boss", description: "Big boss.", maxHealth: 10000, weapon: BaseAttack(damage: 1000), loot: NoLootOptions())),
-                    restorerLocation: RestorerLocation(restorer: Restorer(options: [.health, .armorPoints]))
+                BossAreaPool(
+                    bossLocations: [
+                        BossLocation(boss: Foe(name: "Boss 1", description: "Big boss.", maxHealth: 10000, weapon: BaseAttack(damage: 1000), loot: NoLootOptions())),
+                        BossLocation(boss: Foe(name: "Boss 2", description: "Lil boss.", maxHealth: 10000, weapon: BaseAttack(damage: 1000), loot: NoLootOptions()))
+                    ],
+                    restorerLocations: [RestorerLocation(restorer: Restorer(options: [.health, .armorPoints]))]
                 ),
-                BossArea(
-                    bossLocation: BossLocation(boss: Foe(name: "Boss", description: "Big boss.", maxHealth: 10000, weapon: BaseAttack(damage: 1000), loot: NoLootOptions())),
-                    restorerLocation: RestorerLocation(restorer: Restorer(options: [.health, .armorPoints]))
+                BossAreaPool(
+                    bossLocations: [
+                        BossLocation(boss: Foe(name: "Boss 1", description: "Big boss.", maxHealth: 10000, weapon: BaseAttack(damage: 1000), loot: NoLootOptions())),
+                        BossLocation(boss: Foe(name: "Boss 2", description: "Lil boss.", maxHealth: 10000, weapon: BaseAttack(damage: 1000), loot: NoLootOptions()))
+                    ],
+                    restorerLocations: [RestorerLocation(restorer: Restorer(options: [.health, .armorPoints]))]
                 ),
             ])
         

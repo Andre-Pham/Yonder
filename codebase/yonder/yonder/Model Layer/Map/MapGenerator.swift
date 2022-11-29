@@ -13,10 +13,16 @@ class MapGenerator {
         let areaArrangementPool = AreaArrangementPool()
         var territories = [Territory]()
         for territoryStage in 0..<mapPool.territoryPoolsInStageOrder.count {
-            territories.append(generateSegmentsIntoTerritory(arrangementPool: areaArrangementPool, mapPool: mapPool, stage: territoryStage))
+            territories.append(self.generateSegmentsIntoTerritory(arrangementPool: areaArrangementPool, mapPool: mapPool, stage: territoryStage))
         }
-        // TODO: Implement boss pools and such
-        return Map(territoriesInOrder: territories, bossAreasInOrder: mapPool.bossAreas)
+        var bossAreas = [BossArea]()
+        for bossAreaPool in mapPool.bossAreaPoolsInOrder {
+            bossAreas.append(BossArea(
+                bossLocation: bossAreaPool.grabBossLocation(),
+                restorerLocation: bossAreaPool.grabRestorerLocation()
+            ))
+        }
+        return Map(territoriesInOrder: territories, bossAreasInOrder: bossAreas)
     }
     
     private func generateSegmentsIntoTerritory(arrangementPool: AreaArrangementPool, mapPool: MapPool, stage: Int) -> Territory {
