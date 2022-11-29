@@ -15,9 +15,8 @@ class MapGenerator {
         for territoryStage in 0..<mapPool.territoryPoolsInStageOrder.count {
             territories.append(generateSegmentsIntoTerritory(arrangementPool: areaArrangementPool, mapPool: mapPool, stage: territoryStage))
         }
-        
-        // TODO: - Add boss stuff
-        return Map(territoriesInOrder: territories, bossAreasInOrder: [])
+        // TODO: Implement boss pools and such
+        return Map(territoriesInOrder: territories, bossAreasInOrder: mapPool.bossAreas)
     }
     
     private func generateSegmentsIntoTerritory(arrangementPool: AreaArrangementPool, mapPool: MapPool, stage: Int) -> Territory {

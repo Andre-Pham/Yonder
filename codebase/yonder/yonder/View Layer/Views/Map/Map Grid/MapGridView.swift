@@ -39,7 +39,7 @@ struct MapGridView: View {
                             .reverseScroll()
                     }
                     
-                    if (index+1)%12 == 0 {
+                    if (index+1)%(self.gridDimensions.columnsCount*2) == 0 {
                         // Skip the last column
                         // Required for the grid
                         GridSpacerView()

@@ -13,13 +13,44 @@ enum Maps {
         let mapPool = MapPool(
             territoryPoolsInStageOrder: [
                 TerritoryPool(
-                    areaPools: AREA_POOLS_STAGE_ORDERED[0],
-                    tavernAreas: TAVERN_AREAS_STAGE0),
+                    areaPools: [Areas.newTestAreaPool(1), Areas.newTestAreaPool(2)],
+                    tavernAreas: [TavernAreas.newTestTavernArea()]
+                ),
                 TerritoryPool(
-                    areaPools: AREA_POOLS_STAGE_ORDERED[1],
-                    tavernAreas: TAVERN_AREAS_STAGE1),
+                    areaPools: [Areas.newTestAreaPool(3), Areas.newTestAreaPool(4)],
+                    tavernAreas: [TavernAreas.newTestTavernArea()]
+                ),
+                TerritoryPool(
+                    areaPools: [Areas.newTestAreaPool(5), Areas.newTestAreaPool(6)],
+                    tavernAreas: [TavernAreas.newTestTavernArea()]
+                ),
+                TerritoryPool(
+                    areaPools: [Areas.newTestAreaPool(7), Areas.newTestAreaPool(8)],
+                    tavernAreas: [TavernAreas.newTestTavernArea()]
+                ),
+                TerritoryPool(
+                    areaPools: [Areas.newTestAreaPool(9), Areas.newTestAreaPool(10)],
+                    tavernAreas: [TavernAreas.newTestTavernArea()]
+                ),
+                TerritoryPool(
+                    areaPools: [Areas.newTestAreaPool(11), Areas.newTestAreaPool(12)],
+                    tavernAreas: [TavernAreas.newTestTavernArea()]
+                ),
             ],
-            bossAreas: [])
+            bossAreas: [
+                BossArea(
+                    bossLocation: BossLocation(boss: Foe(name: "Boss", description: "Big boss.", maxHealth: 10000, weapon: BaseAttack(damage: 1000), loot: NoLootOptions())),
+                    restorerLocation: RestorerLocation(restorer: Restorer(options: [.health, .armorPoints]))
+                ),
+                BossArea(
+                    bossLocation: BossLocation(boss: Foe(name: "Boss", description: "Big boss.", maxHealth: 10000, weapon: BaseAttack(damage: 1000), loot: NoLootOptions())),
+                    restorerLocation: RestorerLocation(restorer: Restorer(options: [.health, .armorPoints]))
+                ),
+                BossArea(
+                    bossLocation: BossLocation(boss: Foe(name: "Boss", description: "Big boss.", maxHealth: 10000, weapon: BaseAttack(damage: 1000), loot: NoLootOptions())),
+                    restorerLocation: RestorerLocation(restorer: Restorer(options: [.health, .armorPoints]))
+                ),
+            ])
         
         return MapGenerator().generateTerritoriesIntoMap(mapPool: mapPool)
     }

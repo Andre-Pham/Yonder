@@ -15,7 +15,7 @@ class GridDimensions: ObservableObject {
     let spacing: CGFloat
     let hexagonFrameHeight: CGFloat
     
-    let maxLocationHeight: Int = 100 // TEMP
+    let maxLocationHeight: Int = 300 // TEMP
     let hexagonCount: Int
     let hexagonFrameWidth: CGFloat
     let hexagonWidth: CGFloat

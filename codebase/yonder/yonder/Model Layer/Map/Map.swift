@@ -9,6 +9,7 @@ import Foundation
 
 class Map {
     
+    static let territoriesPerBoss = 2
     private(set) var territoriesInOrder: [Territory]
     private(set) var bossAreasInOrder: [BossArea]
     private(set) var startingLocation: Location
@@ -18,55 +19,38 @@ class Map {
         self.territoriesInOrder = territoriesInOrder
         self.bossAreasInOrder = bossAreasInOrder
         self.startingLocation = NoLocation()
-        
         assert(self.territoriesInOrder.count > 0, "No territories were defined for the map")
-        // Connect the starting location to the first area
-        for area in self.territoriesInOrder[0].segment.allAreas {
-            self.startingLocation.addNextLocations([area.rootLocation])
-        }
         
-        // TEMP, until bosses are added in
-        for territoryIndex in 0..<self.territoriesInOrder.count-1 {
-            let territory = self.territoriesInOrder[territoryIndex]
-            let nextTerritory = self.territoriesInOrder[territoryIndex+1]
-            
-            for tipLocation in territory.tipLocations {
-                tipLocation.addNextLocations(nextTerritory.rootLocations)
-            }
-        }
-        
-        /*let territoriesPerBoss = 2
         var territoryIndex = 0
-        var bossIndex = 0
-        var bossesToAddRemaining = bossAreasInOrder.count
-        while bossesToAddRemaining > 0 {
-            let territory = self.territoriesInOrder[territoryIndex]
-            let nextTerritory = self.territoriesInOrder[territoryIndex+1]
-            
-            if territoryIndex%territoriesPerBoss == 1 {
-                // Add boss area in between territories
-                let bossArea = self.bossAreasInOrder[bossIndex]
-                
-                for tipLocation in territory.tipLocations {
-                    tipLocation.addNextLocations([bossArea.bossLocation])
+        var bossAreaIndex = 0
+        var liveTipLocations: [LocationAbstract] = [self.startingLocation]
+        while bossAreasInOrder.count > bossAreaIndex {
+            if (territoryIndex + bossAreaIndex + 1)%(Self.territoriesPerBoss + 1) == 0 {
+                // Attach boss area
+                let bossArea = self.bossAreasInOrder[bossAreaIndex]
+                for tipLocation in liveTipLocations {
+                    tipLocation.addNextLocations(bossArea.rootLocations)
                 }
-                bossArea.restorerLocation.addNextLocations(nextTerritory.rootLocations)
-                
-                bossesToAddRemaining -= 1
-                bossIndex += 1
-            }
-            else {
-                for tipLocation in territory.tipLocations {
-                    tipLocation.addNextLocations(nextTerritory.rootLocations)
+                liveTipLocations = bossArea.tipLocations
+                bossAreaIndex += 1
+            } else {
+                // Attach territory
+                let territory = self.territoriesInOrder[territoryIndex]
+                for tipLocation in liveTipLocations {
+                    tipLocation.addNextLocations(territory.rootLocations)
                 }
+                liveTipLocations = territory.tipLocations
+                territoryIndex += 1
             }
-            
-            territoryIndex += 1
-        }*/
+        }
     }
     
     func getPreviousTavernAreaToTerritory(at territoryIndex: Int) -> TavernArea? {
         return territoryIndex > 0 ? self.territoriesInOrder[territoryIndex-1].tavernArea : nil
+    }
+    
+    func getPreviousBossAreaToTerritory(at territoryIndex: Int) -> BossArea? {
+        return territoryIndex >= Self.territoriesPerBoss && territoryIndex%Self.territoriesPerBoss == 0 ? self.bossAreasInOrder[territoryIndex/Self.territoriesPerBoss - 1] : nil
     }
     
 }
