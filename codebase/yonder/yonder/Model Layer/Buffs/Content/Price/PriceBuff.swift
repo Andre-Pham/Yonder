@@ -18,7 +18,7 @@ class PriceBuff: Buff {
         if self.priceDifference < 0 {
             effectsDescription = Strings("buff.price.effectsDescription.outgoingDecrease2Param").localWithArgs(
                 Strings("currencySymbol").local,
-                String(self.priceDifference)
+                String(abs(self.priceDifference))
             )
         } else if self.priceDifference > 0 {
             effectsDescription = Strings("buff.price.effectsDescription.outgoingIncrease2Param").localWithArgs(
