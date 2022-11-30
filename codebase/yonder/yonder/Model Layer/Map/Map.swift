@@ -9,7 +9,6 @@ import Foundation
 
 class Map {
     
-    static let territoriesPerBoss = 2
     private(set) var territoriesInOrder: [Territory]
     private(set) var bossAreasInOrder: [BossArea]
     private(set) var startingLocation: Location
@@ -20,14 +19,14 @@ class Map {
         self.startingLocation = NoLocation()
         assert(self.territoriesInOrder.count > 0, "No territories were defined for the map")
         assert(self.bossAreasInOrder.count > 0, "No bosses were defined for the map")
-        assert(self.territoriesInOrder.count%Self.territoriesPerBoss == 0, "The multiple of territories provided don't match the expected amount to ensure that for every boss, there are \(Self.territoriesPerBoss) territories")
-        assert(self.territoriesInOrder.count == self.bossAreasInOrder.count*Self.territoriesPerBoss, "Number of bosses doesn't correspond to number of territories defined for the map")
+        assert(self.territoriesInOrder.count%MapConfig.territoriesPerBoss == 0, "The multiple of territories provided don't match the expected amount to ensure that for every boss, there are \(MapConfig.territoriesPerBoss) territories")
+        assert(self.territoriesInOrder.count == self.bossAreasInOrder.count*MapConfig.territoriesPerBoss, "Number of bosses doesn't correspond to number of territories defined for the map")
         
         var territoryIndex = 0
         var bossAreaIndex = 0
         var liveTipLocations: [LocationAbstract] = [self.startingLocation]
         while bossAreasInOrder.count > bossAreaIndex {
-            if (territoryIndex + bossAreaIndex + 1)%(Self.territoriesPerBoss + 1) == 0 {
+            if (territoryIndex + bossAreaIndex + 1)%(MapConfig.territoriesPerBoss + 1) == 0 {
                 // Attach boss area
                 let bossArea = self.bossAreasInOrder[bossAreaIndex]
                 for tipLocation in liveTipLocations {
@@ -52,7 +51,7 @@ class Map {
     }
     
     func getPreviousBossAreaToTerritory(at territoryIndex: Int) -> BossArea? {
-        return territoryIndex >= Self.territoriesPerBoss && territoryIndex%Self.territoriesPerBoss == 0 ? self.bossAreasInOrder[territoryIndex/Self.territoriesPerBoss - 1] : nil
+        return territoryIndex >= MapConfig.territoriesPerBoss && territoryIndex%MapConfig.territoriesPerBoss == 0 ? self.bossAreasInOrder[territoryIndex/MapConfig.territoriesPerBoss - 1] : nil
     }
     
 }

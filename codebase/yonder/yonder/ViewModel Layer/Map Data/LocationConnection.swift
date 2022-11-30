@@ -32,7 +32,7 @@ class LocationConnectionGenerator {
                 let previousTipLocations: [Location]
                 if territoryIndex == 0 {
                     previousTipLocations = [Location]()
-                } else if territoryIndex%Map.territoriesPerBoss == 0 {
+                } else if territoryIndex%MapConfig.territoriesPerBoss == 0 {
                     previousTipLocations = self.map.getPreviousBossAreaToTerritory(at: territoryIndex)!.tipLocations
                 } else {
                     previousTipLocations = self.map.getPreviousTavernAreaToTerritory(at: territoryIndex)!.tipLocations
@@ -56,7 +56,7 @@ class LocationConnectionGenerator {
                 correspondingTerritoryPosition: territoryIndex
             ))
             
-            if territoryIndex%Map.territoriesPerBoss == 1 {
+            if territoryIndex%MapConfig.territoriesPerBoss == 1 {
                 allLocationConnections.append(contentsOf: self.getBossAreaLocationConnections(
                     bossArea: self.map.bossAreasInOrder[(territoryIndex-1)/2],
                     attachingTipLocations: territory.tipLocations,
@@ -91,8 +91,8 @@ class LocationConnectionGenerator {
         for location in attachingTipLocations {
             for nextLocation in location.nextLocations {
                 if nextLocation.id == area.rootLocation.id {
-                    let previousAreaIsTavern = correspondingTerritoryPosition != 0 && correspondingTerritoryPosition%Map.territoriesPerBoss == 1
-                    let previousAreaIsBoss = correspondingTerritoryPosition != 0 && correspondingTerritoryPosition%Map.territoriesPerBoss == 0
+                    let previousAreaIsTavern = correspondingTerritoryPosition != 0 && correspondingTerritoryPosition%MapConfig.territoriesPerBoss == 1
+                    let previousAreaIsBoss = correspondingTerritoryPosition != 0 && correspondingTerritoryPosition%MapConfig.territoriesPerBoss == 0
                     result[0].addPreviousLocation(location, flipConnectionLeft: areaPosition == 1, previousTavernArea: previousAreaIsTavern, previousBossArea: previousAreaIsBoss)
                 }
             }

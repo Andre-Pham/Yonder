@@ -11,11 +11,10 @@ class MapPoolFactory {
     
     func build() -> MapPool {
         let territoryPoolFactory = TerritoryPoolFactory()
+        let bossAreaPoolFactory = BossAreaPoolFactory()
         let mapPool = MapPool(
-            territoryPoolsInStageOrder: territoryPoolFactory.deliver(count: 8),
-            bossAreaPoolsInOrder: [
-                // TODO: Populate
-            ]
+            territoryPoolsInStageOrder: territoryPoolFactory.deliver(count: MapConfig.territoryCount),
+            bossAreaPoolsInOrder: bossAreaPoolFactory.deliver(count: MapConfig.bossCount)
         )
         return mapPool
     }
