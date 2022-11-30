@@ -214,7 +214,7 @@ class LocationConnection {
     let ROWS_IN_AREA = 11
     let ROWS_BETWEEN_AREAS = 5
     let COLUMNS_BETWEEN_AREA_TIPS = 6
-    let ROWS_ADDED_BY_BOSS_AREA = 3
+    let ROWS_ADDED_BY_BOSS_AREA = 4
     
     private let mapGridColumnsCount: Int
     private let areaPosition: Int

@@ -26,8 +26,8 @@ class BossArea {
         self.restorerLocation = restorerLocation
         
         self.bossLocation.addNextLocations([restorerLocation])
-        self.bossLocation.setHexagonCoordinate(5, 31)
-        self.restorerLocation.setHexagonCoordinate(5, 33)
+        self.bossLocation.setHexagonCoordinate(5, 33)
+        self.restorerLocation.setHexagonCoordinate(5, 35)
     }
     
 }
