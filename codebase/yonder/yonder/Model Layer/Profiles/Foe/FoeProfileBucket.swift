@@ -14,9 +14,17 @@ class FoeProfileBucket {
     ]
     
     func grabProfile(areaTag: AreaProfileTag, foeTag: FoeProfileTag) -> FoeProfile {
+        let randomProfile = RandomProfile(prefix: "Foe")
+        return FoeProfile(
+            foeName: randomProfile.name,
+            foeDescription: randomProfile.description,
+            foeTags: [],
+            areaTags: []
+        )
+        
         var matchingIndices = [Int]()
         for (index, profile) in self.profiles.enumerated() {
-            if profile.areaTags.contains(where: { $0 == areaTag }) && profile.foeTags.contains(where: { $0 == foeTag }) {
+            if profile.matchesAreaTag(areaTag) && profile.foeTags.contains(where: { $0 == foeTag }) {
                 matchingIndices.append(index)
             }
         }

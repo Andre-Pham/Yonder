@@ -73,14 +73,13 @@ class AreaPool {
     }
     
     func grabLocation(locationType: LocationType) -> Location {
-        if let locationArray = self.getLocationArray(of: locationType) {
-            if let location = locationArray.items.randomElement() {
-                self.removeLocation(location: location)
-                return location
-            }
+        guard let locationArray = self.getLocationArray(of: locationType),
+              let location = locationArray.items.randomElement() else {
+            assertionFailure("Function grabbing location from pool shouldn't be returning NoLocation, either no locations of specified type remaining or wrong type specified")
+            return NoLocation()
         }
-        assertionFailure("Function grabbing location from pool shouldn't be returning NoLocation, either no locations of specified type remaining or wrong type specified")
-        return NoLocation()
+        self.removeLocation(location: location)
+        return location
     }
     
 }

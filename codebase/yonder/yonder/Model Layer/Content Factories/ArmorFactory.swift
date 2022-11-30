@@ -57,7 +57,7 @@ class ArmorFactory {
         self.addArmor(to: &armors, method: Armors.bladeMasterArmor, count: 2, tag: .lightweight)
         
         armors.shuffle()
-        self.armorSupply.append(contentsOf: armors)
+        self.armorSupply.appendToFront(contentsOf: armors)
     }
     
     private func addArmor(
@@ -70,7 +70,7 @@ class ArmorFactory {
         var typeIndex = Int.random(in: 0..<allTypes.count)
         armors.populate(count: count) {
             let armorType = allTypes[typeIndex]
-            typeIndex += 1
+            typeIndex = (typeIndex + 1)%allTypes.count
             return method(
                 self.armorProfileBucket.grabProfile(areaTag: self.areaTags.getTag(), armorTag: tag, armorType: armorType),
                 self.stage,
@@ -87,10 +87,12 @@ class ArmorFactory {
     }
     
     func deliver(count: Int) -> [Armor] {
-        if self.armorSupply.count < count {
+        let initialCount = self.armorSupply.count
+        while self.armorSupply.count < count {
             self.buildArmors()
+            assert(initialCount < self.armorSupply.count, "No armors being generated - infinite loop")
         }
-        return self.armorSupply.dropLast(count)
+        return self.armorSupply.takeLast(count)
     }
     
 }

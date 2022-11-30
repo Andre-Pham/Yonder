@@ -67,7 +67,7 @@ enum EnhanceOffers {
 
     // 06
     static func resistanceForArmor(stage: Int) -> EnhanceOffer {
-        let resistance = Random.selectFromLinearDistribution(min: 0.9, max: 0.6, minY: 10, maxY: 1)
+        let resistance = Random.selectFromLinearDistribution(min: 0.6, max: 0.9, minY: 1, maxY: 10)
         let buff = DamagePercentBuff(sourceName: Strings("enhanceOffer.source").local, direction: .incoming, duration: nil, damageFraction: resistance)
         let price = Random.selectFromNormalDistribution(
             mid: buff.getValue(whenTargeting: .player),
@@ -172,7 +172,7 @@ enum EnhanceOffers {
 
     // 15
     static func pricePercentBuffForAccessory(stage: Int) -> EnhanceOffer {
-        let priceFraction = Random.selectFromLinearDistribution(min: 0.9, max: 0.6, minY: 10, maxY: 1)
+        let priceFraction = Random.selectFromLinearDistribution(min: 0.6, max: 0.9, minY: 1, maxY: 10)
         let buff = PricePercentBuff(sourceName: Strings("enhanceOffer.source").local, duration: nil, priceFraction: priceFraction)
         let price = Random.selectFromNormalDistribution(
             mid: buff.getValue(whenTargeting: .player),

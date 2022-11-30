@@ -76,7 +76,7 @@ class ConsumableFactory {
         }
         
         consumables.shuffle()
-        self.consumableSupply.append(contentsOf: consumables)
+        self.consumableSupply.appendToFront(contentsOf: consumables)
     }
     
     func deliver() -> Consumable {
@@ -87,10 +87,12 @@ class ConsumableFactory {
     }
     
     func deliver(count: Int) -> [Consumable] {
-        if self.consumableSupply.count < count {
+        let initialCount = self.consumableSupply.count
+        while self.consumableSupply.count < count {
             self.buildConsumables()
+            assert(initialCount < self.consumableSupply.count, "No consumables being generated - infinite loop")
         }
-        return self.consumableSupply.dropLast(count)
+        return self.consumableSupply.takeLast(count)
     }
     
 }

@@ -14,11 +14,17 @@ class WeaponProfileBucket {
     ]
     
     func grabProfile(areaTag: AreaProfileTag, weaponTag: WeaponProfileTag) -> WeaponProfile {
+        let randomProfile = RandomProfile(prefix: "Weapon")
+        return WeaponProfile(
+            weaponName: randomProfile.name,
+            weaponDescription: randomProfile.description,
+            areaTags: [],
+            weaponTags: []
+        )
+        
         var matchingIndices = [Int]()
         for (index, profile) in self.profiles.enumerated() {
-            if (profile.areaTags.contains(where: { $0 == areaTag }) &&
-                profile.weaponTags.contains(where: { $0 == weaponTag })
-            ) {
+            if (profile.matchesAreaTag(areaTag) && profile.weaponTags.contains(where: { $0 == weaponTag })) {
                 matchingIndices.append(index)
             }
         }

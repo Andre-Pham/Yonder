@@ -16,11 +16,13 @@ class StatRange {
     var maxInt: Int { self.max.toRoundedInt() }
 
     init(min: Double, max: Double) {
+        assert(min <= max, "min <= max required")
         self.min = min
         self.max = max
     }
     
     init(min: Int, max: Int) {
+        assert(min <= max, "min <= max required")
         self.min = Double(min)
         self.max = Double(max)
     }

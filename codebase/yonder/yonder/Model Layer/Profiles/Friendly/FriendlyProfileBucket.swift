@@ -14,9 +14,17 @@ class FriendlyProfileBucket {
     ]
     
     func grabProfile(areaTag: AreaProfileTag, friendlyTag: FriendlyProfileTag) -> FriendlyProfile {
+        let randomProfile = RandomProfile(prefix: "Friendly")
+        return FriendlyProfile(
+            friendlyName: randomProfile.name,
+            friendlyDescription: randomProfile.description,
+            areaTags: [],
+            friendlyTag: .sacrifice
+        )
+        
         var matchingIndices = [Int]()
         for (index, profile) in self.profiles.enumerated() {
-            if (profile.areaTags.contains(where: { $0 == areaTag }) && profile.friendlyTag == friendlyTag) {
+            if (profile.matchesAreaTag(areaTag) && profile.friendlyTag == friendlyTag) {
                 matchingIndices.append(index)
             }
         }

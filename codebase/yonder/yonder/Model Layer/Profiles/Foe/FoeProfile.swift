@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FoeProfile {
+class FoeProfile: AreaThemedProfile {
     
     public let foeName: String
     public let foeDescription: String

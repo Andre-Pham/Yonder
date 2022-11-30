@@ -42,9 +42,10 @@ enum Bosses {
     
     // TODO: Remove
     private static func testBoss() -> Foe {
+        let randomProfile = RandomProfile(prefix: "Boss")
         return Foe(
-            name: "Big Bad Boss",
-            description: "Rawr.",
+            name: randomProfile.name,
+            description: randomProfile.description,
             maxHealth: 1000,
             weapon: BaseAttack(damage: 1000),
             loot: NoLootOptions()

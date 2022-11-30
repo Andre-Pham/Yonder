@@ -86,7 +86,7 @@ class PotionFactory {
         }
         
         potions.shuffle()
-        self.potionSupply.append(contentsOf: potions)
+        self.potionSupply.appendToFront(contentsOf: potions)
     }
     
     func deliver() -> Potion {
@@ -97,10 +97,12 @@ class PotionFactory {
     }
     
     func deliver(count: Int) -> [Potion] {
-        if self.potionSupply.count < count {
+        let initialCount = self.potionSupply.count
+        while self.potionSupply.count < count {
             self.buildPotions(stage: self.stage)
+            assert(initialCount < self.potionSupply.count, "No potions being generated - infinite loop")
         }
-        return self.potionSupply.dropLast(count)
+        return self.potionSupply.takeLast(count)
     }
     
 }

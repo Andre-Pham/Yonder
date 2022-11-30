@@ -7,7 +7,7 @@
 
 import Foundation
 
-class WeaponProfile {
+class WeaponProfile: AreaThemedProfile {
     
     public let weaponName: String
     public let weaponDescription: String

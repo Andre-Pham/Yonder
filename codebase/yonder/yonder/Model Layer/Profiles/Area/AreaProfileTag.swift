@@ -9,6 +9,7 @@ import Foundation
 
 enum AreaProfileTag {
     
+    case all // Not to be allocated to area profiles, only entities that can be allocated to any area
     case magic
     case wood
     case rock

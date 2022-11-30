@@ -19,9 +19,18 @@ class AccessoryProfileBucket {
     ]
     
     func grabProfile(areaTag: AreaProfileTag, accessoryTag: AccessoryProfileTag, accessoryType: AccessoryType) -> AccessoryProfile {
+        let randomProfile = RandomProfile(prefix: "Accessory")
+        return AccessoryProfile(
+            accessoryName: randomProfile.name,
+            accessoryDescription: randomProfile.description,
+            areaTags: [],
+            accessoryTag: .everything,
+            accessoryType: .regular
+        )
+        
         var matchingIndices = [Int]()
         for (index, profile) in self.profiles.enumerated() {
-            if (profile.areaTags.contains(where: { $0 == areaTag }) &&
+            if (profile.matchesAreaTag(areaTag) &&
                 profile.accessoryTag == accessoryTag &&
                 profile.accessoryType == accessoryType
             ) {

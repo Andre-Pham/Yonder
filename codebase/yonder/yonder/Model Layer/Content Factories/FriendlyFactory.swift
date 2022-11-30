@@ -45,7 +45,7 @@ class FriendlyFactory {
         self.addFriendly(to: &friendlies, method: Friendlies.freeItemsFriendly, count: 5, tag: .generous)
         
         friendlies.shuffle()
-        self.friendlySupply.append(contentsOf: friendlies)
+        self.friendlySupply.appendToFront(contentsOf: friendlies)
     }
     
     private func addFriendly(
@@ -78,10 +78,12 @@ class FriendlyFactory {
     }
     
     func deliver(count: Int) -> [Friendly] {
-        if self.friendlySupply.count < count {
+        let initialCount = self.friendlySupply.count
+        while self.friendlySupply.count < count {
             self.buildFriendlies()
+            assert(initialCount < self.friendlySupply.count, "No friendlies being generated - infinite loop")
         }
-        return self.friendlySupply.dropLast(count)
+        return self.friendlySupply.takeLast(count)
     }
     
 }

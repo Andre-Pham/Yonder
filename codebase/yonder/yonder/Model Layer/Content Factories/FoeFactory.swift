@@ -41,7 +41,7 @@ class FoeFactory {
         self.addFoe(to: &foes, method: Foes.newBruteFoe, count: 5, tag: .brute)
         
         self.foeSupply.shuffle()
-        self.foeSupply.append(contentsOf: foes)
+        self.foeSupply.appendToFront(contentsOf: foes)
     }
     
     private func addFoe(
@@ -67,10 +67,12 @@ class FoeFactory {
     }
     
     func deliver(count: Int) -> [Foe] {
-        if self.foeSupply.count < count {
+        let initialCount = self.foeSupply.count
+        while self.foeSupply.count < count {
             self.buildFoes()
+            assert(initialCount < self.foeSupply.count, "No foes being generated - infinite loop")
         }
-        return self.foeSupply.dropLast(count)
+        return self.foeSupply.takeLast(count)
     }
     
 }

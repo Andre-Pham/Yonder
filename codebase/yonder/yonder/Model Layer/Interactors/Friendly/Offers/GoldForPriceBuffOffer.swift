@@ -20,11 +20,11 @@ class GoldForPriceBuffOffer: Offer {
         self.gold = gold
         self.priceFraction = priceFraction
         if gold > 0 && priceFraction.multiplyingIncreases() {
-            self.name = Strings("offer.goldForPriceBuff.curse.description").local
+            self.name = Strings("offer.goldForPriceBuff.curse.name").local
             self.description = Strings("offer.goldForPriceBuff.curse.description2Param").localWithArgs(String(gold), priceFraction.toRelativePercentage())
         } else {
             assert(gold < 0 && priceFraction.multiplyingDecreases(), "Invalid parameters provided for offer")
-            self.name = Strings("offer.goldForPriceBuff.blessing.description").local
+            self.name = Strings("offer.goldForPriceBuff.blessing.name").local
             self.description = Strings("offer.goldForPriceBuff.blessing.description2Param").localWithArgs(String(abs(gold)), priceFraction.toRelativePercentage())
         }
     }

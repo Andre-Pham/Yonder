@@ -16,8 +16,8 @@ class IncrementEveryPotionCountOffer: Offer {
     public let amount: Int
     
     init(increment: Int) {
-        self.name = Strings("incrementEveryPotionCount.name").local
-        self.description = Strings("incrementEveryPotionCount.description1Param").localWithArgs(increment)
+        self.name = Strings("offer.incrementEveryPotionCount.name").local
+        self.description = Strings("offer.incrementEveryPotionCount.description1Param").localWithArgs(increment)
         self.amount = increment
         assert(increment > 0, "Negative or 0 increment is not permitted")
     }

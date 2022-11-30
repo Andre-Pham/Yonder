@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FriendlyProfile {
+class FriendlyProfile: AreaThemedProfile {
     
     public let friendlyName: String
     public let friendlyDescription: String

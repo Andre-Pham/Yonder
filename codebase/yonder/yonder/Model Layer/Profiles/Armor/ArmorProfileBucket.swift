@@ -14,9 +14,18 @@ class ArmorProfileBucket {
     ]
     
     func grabProfile(areaTag: AreaProfileTag, armorTag: ArmorProfileTag, armorType: ArmorType) -> ArmorProfile {
+        let randomProfile = RandomProfile(prefix: "Armor")
+        return ArmorProfile(
+            armorName: randomProfile.name,
+            armorDescription: randomProfile.description,
+            areaTags: [],
+            armorTag: .heavyweight,
+            armorType: .body
+        )
+        
         var matchingIndices = [Int]()
         for (index, profile) in self.profiles.enumerated() {
-            if (profile.areaTags.contains(where: { $0 == areaTag }) &&
+            if (profile.matchesAreaTag(areaTag) &&
                 profile.armorTag == armorTag &&
                 profile.armorType == armorType
             ) {

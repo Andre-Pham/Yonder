@@ -43,7 +43,7 @@ class RestorerFactory {
         }
         
         restorers.shuffle()
-        self.restorerSupply.append(contentsOf: restorers)
+        self.restorerSupply.appendToFront(contentsOf: restorers)
     }
     
     private func getProfile(options: [Restorer.RestoreOption]) -> RestorerProfile {
@@ -58,10 +58,12 @@ class RestorerFactory {
     }
     
     func deliver(count: Int) -> [Restorer] {
-        if self.restorerSupply.count < count {
+        let initialCount = self.restorerSupply.count
+        while self.restorerSupply.count < count {
             self.buildRestorers()
+            assert(initialCount < self.restorerSupply.count, "No restorers being generated - infinite loop")
         }
-        return self.restorerSupply.dropLast(count)
+        return self.restorerSupply.takeLast(count)
     }
     
 }

@@ -14,12 +14,18 @@ class RestorerProfileBucket {
     ]
     
     func grabProfile(areaTag: AreaProfileTag, restoreOptions: [Restorer.RestoreOption]) -> RestorerProfile {
+        let randomProfile = RandomProfile(prefix: "Restorer")
+        return RestorerProfile(
+            restorerName: randomProfile.name,
+            restorerDescription: randomProfile.description,
+            areaTags: [],
+            restoreOptions: []
+        )
+        
         var matchingIndices = [Int]()
         let allocation = RestoreOptionsAllocation(options: restoreOptions)
         for (index, profile) in self.profiles.enumerated() {
-            if (profile.areaTags.contains(where: { $0 == areaTag }) &&
-                profile.restoreOptions.optionsCode == allocation.optionsCode
-            ) {
+            if (profile.matchesAreaTag(areaTag) && profile.restoreOptions.optionsCode == allocation.optionsCode) {
                 matchingIndices.append(index)
             }
         }

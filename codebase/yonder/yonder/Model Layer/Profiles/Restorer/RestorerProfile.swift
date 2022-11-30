@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RestorerProfile {
+class RestorerProfile: AreaThemedProfile {
     
     public let restorerName: String
     public let restorerDescription: String

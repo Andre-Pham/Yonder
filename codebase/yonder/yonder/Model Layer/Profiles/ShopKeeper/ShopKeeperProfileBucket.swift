@@ -14,9 +14,16 @@ class ShopKeeperProfileBucket {
     ]
     
     func grabProfile(areaTag: AreaProfileTag) -> ShopKeeperProfile {
+        let randomProfile = RandomProfile(prefix: "Shop Keeper")
+        return ShopKeeperProfile(
+            shopKeeperName: randomProfile.name,
+            shopKeeperDescription: randomProfile.description,
+            areaTags: []
+        )
+        
         var matchingIndices = [Int]()
         for (index, profile) in self.profiles.enumerated() {
-            if profile.areaTags.contains(where: { $0 == areaTag }) {
+            if profile.matchesAreaTag(areaTag) {
                 matchingIndices.append(index)
             }
         }

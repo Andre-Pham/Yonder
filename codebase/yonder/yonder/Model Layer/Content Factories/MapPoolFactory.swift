@@ -9,7 +9,7 @@ import Foundation
 
 class MapPoolFactory {
     
-    func build() -> MapPool {
+    func deliver() -> MapPool {
         let territoryPoolFactory = TerritoryPoolFactory()
         let bossAreaPoolFactory = BossAreaPoolFactory()
         let mapPool = MapPool(

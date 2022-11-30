@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AccessoryProfile {
+class AccessoryProfile: AreaThemedProfile {
     
     public let accessoryName: String
     public let accessoryDescription: String

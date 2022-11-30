@@ -39,6 +39,14 @@ class AreaProfileBucket {
     ]
     
     func grabProfile(stage: Int) -> AreaProfile {
+        let randomProfile = RandomProfile(prefix: "Area")
+        return AreaProfile(
+            areaName: randomProfile.name,
+            areaDescription: randomProfile.description,
+            areaImage: YonderImages.placeholderImage,
+            tags: AreaProfileTagAllocation(tags: (.wood, 1))
+        )
+        
         assert(self.profiles.count > stage, "Requesting profile from non-existent stage")
         var stageProfiles = self.profiles[stage]
         assert(!stageProfiles.isEmpty, "Attempted to grab a profile when there are none left for the provided stage")

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class EnhancerProfile {
+class EnhancerProfile: AreaThemedProfile {
     
     public let enhancerName: String
     public let enhancerDescription: String

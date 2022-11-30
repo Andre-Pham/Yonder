@@ -172,7 +172,7 @@ class AccessoryFactory {
         )
         
         accessories.shuffle()
-        self.accessorySupply.append(contentsOf: accessories)
+        self.accessorySupply.appendToFront(contentsOf: accessories)
     }
     
     private func addAccessory(
@@ -203,10 +203,12 @@ class AccessoryFactory {
     }
     
     func deliver(count: Int) -> [Accessory] {
-        if self.accessorySupply.count < count {
+        let initialCount = self.accessorySupply.count
+        while self.accessorySupply.count < count {
             self.buildAccessories()
+            assert(initialCount < self.accessorySupply.count, "No accessories being generated - infinite loop")
         }
-        return self.accessorySupply.dropLast(count)
+        return self.accessorySupply.takeLast(count)
     }
     
 }

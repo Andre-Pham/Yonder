@@ -14,9 +14,16 @@ class EnhancerProfileBucket {
     ]
     
     func grabProfile(areaTag: AreaProfileTag) -> EnhancerProfile {
+        let randomProfile = RandomProfile(prefix: "Enhancer")
+        return EnhancerProfile(
+            enhancerName: randomProfile.name,
+            enhancerDescription: randomProfile.description,
+            areaTags: []
+        )
+        
         var matchingIndices = [Int]()
         for (index, profile) in self.profiles.enumerated() {
-            if profile.areaTags.contains(where: { $0 == areaTag }) {
+            if profile.matchesAreaTag(areaTag) {
                 matchingIndices.append(index)
             }
         }

@@ -135,7 +135,7 @@ enum Armors {
     static func resistanceArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
         let armorPointsRange = ArmorPointsRange(type: type, min: 55, max: 120)
         let armorPoints = armorPointsRange.select(stage: stage)
-        let resistance = Random.selectFromLinearDistribution(min: 0.95, max: 0.7, minY: 10, maxY: 1)
+        let resistance = Random.selectFromLinearDistribution(min: 0.7, max: 0.95, minY: 1, maxY: 10)
         return Armor(
             name: profile.armorName,
             description: profile.armorDescription,
@@ -157,7 +157,7 @@ enum Armors {
     static func highResistanceArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
         let armorPointsRange = ArmorPointsRange(type: type, min: 40, max: 95)
         let armorPoints = armorPointsRange.select(stage: stage)
-        let resistance = Random.selectFromLinearDistribution(min: 0.8, max: 0.6, minY: 10, maxY: 1)
+        let resistance = Random.selectFromLinearDistribution(min: 0.6, max: 0.8, minY: 1, maxY: 10)
         return Armor(
             name: profile.armorName,
             description: profile.armorDescription,
@@ -272,7 +272,7 @@ enum Armors {
     static func thornsAndResistanceArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
         let armorPointsRange = ArmorPointsRange(type: type, min: 45, max: 105)
         let armorPoints = armorPointsRange.select(stage: stage)
-        let resistance = Random.selectFromLinearDistribution(min: 0.95, max: 0.8, minY: 10, maxY: 1)
+        let resistance = Random.selectFromLinearDistribution(min: 0.8, max: 0.95, minY: 1, maxY: 10)
         let thornsFraction = Random.selectFromLinearDistribution(min: 0.05, max: 0.2, minY: 10, maxY: 1)
         return Armor(
             name: profile.armorName,
@@ -298,7 +298,7 @@ enum Armors {
         let armorPointsRange = ArmorPointsRange(type: type, min: 30, max: 75)
         let armorPoints = armorPointsRange.select(stage: stage)
         let damageFraction = Random.selectFromLinearDistribution(min: 1.05, max: 1.15, minY: 20, maxY: 1)
-        let resistance = Random.selectFromLinearDistribution(min: 0.95, max: 0.85, minY: 20, maxY: 1)
+        let resistance = Random.selectFromLinearDistribution(min: 0.85, max: 0.95, minY: 1, maxY: 20)
         let thornsFraction = Random.selectFromLinearDistribution(min: 0.05, max: 0.15, minY: 20, maxY: 1)
         let armorRestorationFraction = Random.selectFromLinearDistribution(min: 1.05, max: 1.15, minY: 20, maxY: 1)
         return Armor(

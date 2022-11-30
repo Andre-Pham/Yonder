@@ -15,7 +15,8 @@ class Game {
     public let turnManager = TurnManager()
     
     init() {
-        self.map = Maps.newMap()
+        //self.map = Maps.newMap()
+        self.map = MapFactory().deliver()
         self.player = Player(maxHealth: 500, location: self.map.startingLocation)
         self.gameContext = GameContext(map: self.map)
     }

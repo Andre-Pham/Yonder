@@ -11,8 +11,8 @@ enum Accessories {
     
     // 01
     static func resistanceAccessory(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
-        let resistanceRange = AccessoryStatRange(type: type, regular: (0.95, 0.75), peripheral: (0.75, 0.5))
-        let damageFractionPercent = resistanceRange.selectFromLinearDistribution(minY: 10, maxY: 1)
+        let resistanceRange = AccessoryStatRange(type: type, regular: (0.75, 0.95), peripheral: (0.5, 0.75))
+        let damageFractionPercent = resistanceRange.selectFromLinearDistribution(minY: 1, maxY: 10)
         return Accessory(
             name: profile.accessoryName,
             description: profile.accessoryDescription,
@@ -107,8 +107,8 @@ enum Accessories {
         armorPointsRange.compound(multiply: 1.5, index: stage)
         let health = healthRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         let armorPoints = armorPointsRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
-        let resistanceRange = AccessoryStatRange(type: type, regular: (0.95, 0.85), peripheral: (0.85, 0.7))
-        let damageFractionPercent = resistanceRange.selectFromLinearDistribution(minY: 10, maxY: 1)
+        let resistanceRange = AccessoryStatRange(type: type, regular: (0.85, 0.95), peripheral: (0.7, 0.85))
+        let damageFractionPercent = resistanceRange.selectFromLinearDistribution(minY: 1, maxY: 10)
         return Accessory(
             name: profile.accessoryName,
             description: profile.accessoryDescription,
@@ -272,8 +272,8 @@ enum Accessories {
     
     // 14
     static func priceBuffAccessory(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
-        let priceRange = AccessoryStatRange(type: type, regular: (0.95, 0.75), peripheral: (0.75, 0.5))
-        let pricePercent = priceRange.selectFromLinearDistribution(minY: 10, maxY: 1)
+        let priceRange = AccessoryStatRange(type: type, regular: (0.75, 0.95), peripheral: (0.5, 0.75))
+        let pricePercent = priceRange.selectFromLinearDistribution(minY: 1, maxY: 10)
         return Accessory(
             name: profile.accessoryName,
             description: profile.accessoryDescription,

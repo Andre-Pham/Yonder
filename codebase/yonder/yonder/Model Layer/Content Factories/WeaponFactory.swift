@@ -97,7 +97,7 @@ class WeaponFactory {
         }
         
         weapons.shuffle()
-        self.weaponSupply.append(contentsOf: weapons)
+        self.weaponSupply.appendToFront(contentsOf: weapons)
     }
     
     private func getProfile(for tag: WeaponProfileTag) -> WeaponProfile {
@@ -112,10 +112,12 @@ class WeaponFactory {
     }
     
     func deliver(count: Int) -> [Weapon] {
-        if self.weaponSupply.count < count {
+        let initialCount = self.weaponSupply.count
+        while self.weaponSupply.count < count {
             self.buildWeapons()
+            assert(initialCount < self.weaponSupply.count, "No weapons being generated - infinite loop")
         }
-        return self.weaponSupply.dropLast(count)
+        return self.weaponSupply.takeLast(count)
     }
     
 }

@@ -40,4 +40,44 @@ extension Array {
         }
     }
     
+    /// Take the last x elements from the array (removes the elements).
+    /// Example:
+    /// ``` var myArray = [1, 2, 3, 4, 5]
+    ///     myArray.takeFirst(3) -> [1, 2, 3]
+    ///     // myArray = [4, 5]
+    /// ```
+    /// - Parameters:
+    ///   - count: The number of elements to take
+    /// - Returns: The last x elements
+    mutating func takeFirst(_ count: Int) -> [Element] {
+        assert(self.count >= count, "Attempting to take more elements than what exists in the array")
+        let result = Array(self[0..<count])
+        self = Array(self.dropFirst(count))
+        return result
+    }
+    
+    /// Take the first x elements from the array (removes the elements).
+    /// Example:
+    /// ``` var myArray = [1, 2, 3, 4, 5]
+    ///     myArray.takeLast(3) -> [3, 4, 5]
+    ///     // myArray = [1, 2]
+    /// ```
+    /// - Parameters:
+    ///   - count: The number of elements to take
+    /// - Returns: The first x elements
+    mutating func takeLast(_ count: Int) -> [Element] {
+        assert(self.count >= count, "Attempting to take more elements than what exists in the array")
+        let result = Array(self[(self.count - count)..<(self.count)])
+        self = self.dropLast(count)
+        return result
+    }
+    
+    mutating func appendToFront(_ newElement: Element) {
+        self.insert(newElement, at: 0)
+    }
+    
+    mutating func appendToFront(contentsOf: [Element]) {
+        self.insert(contentsOf: contentsOf, at: 0)
+    }
+    
 }

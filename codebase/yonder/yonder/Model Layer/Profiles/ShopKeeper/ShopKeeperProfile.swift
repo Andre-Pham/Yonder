@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ShopKeeperProfile {
+class ShopKeeperProfile: AreaThemedProfile {
     
     public let shopKeeperName: String
     public let shopKeeperDescription: String
