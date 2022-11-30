@@ -12,15 +12,19 @@ struct PurchasableInspectView: View {
     @ObservedObject var playerViewModel: PlayerViewModel
     
     var body: some View {
-        if let itemViewModel = self.purchasableViewModel.getItemViewModel() {
-            ItemInspectView(itemViewModel: itemViewModel, playerViewModel: self.playerViewModel)
-        } else if let armorViewModel = self.purchasableViewModel.getArmorViewModel() {
-            ArmorInspectView(armorViewModel: armorViewModel)
-        } else if let accessoryViewModel = self.purchasableViewModel.getAccessoryViewModel() {
-            AccessoryInspectView(accessoryViewModel: accessoryViewModel)
-        } else {
-            let (name, description) = self.purchasableViewModel.getNameAndDescription()
-            DefaultInspectView(name: name, description: description)
+        switch purchasableViewModel.type {
+        case .weapon, .potion, .consumable:
+            if let itemViewModel = self.purchasableViewModel.getItemViewModel() {
+                ItemInspectView(itemViewModel: itemViewModel, playerViewModel: self.playerViewModel)
+            }
+        case .armor:
+            if let armorViewModel = self.purchasableViewModel.getArmorViewModel() {
+                ArmorInspectView(armorViewModel: armorViewModel)
+            }
+        case .accessory:
+            if let accessoryViewModel = self.purchasableViewModel.getAccessoryViewModel() {
+                AccessoryInspectView(accessoryViewModel: accessoryViewModel)
+            }
         }
     }
 }

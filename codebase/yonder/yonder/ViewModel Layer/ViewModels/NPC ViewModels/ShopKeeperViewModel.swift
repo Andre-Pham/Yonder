@@ -89,7 +89,7 @@ class PurchasableViewModel: ObservableObject {
         case .accessory:
             return nil
         case .consumable:
-            return nil
+            return ConsumableViewModel(self.purchasable.item as! Consumable)
         }
     }
     

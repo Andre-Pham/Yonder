@@ -37,7 +37,7 @@ class PotionAbstract: Item, Purchasable, Clonable {
     }
     
     func getPurchaseInfo() -> PurchasableItemInfo {
-        return PurchasableItemInfo(name: self.name, description: self.description, type: .potion)
+        return PurchasableItemInfo(name: "\(self.name) (x\(self.remainingUses))", description: self.description, type: .potion)
     }
     
     func beReceived(by receiver: Player, amount: Int) {

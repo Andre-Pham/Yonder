@@ -96,7 +96,7 @@ class Pricing {
         }
         
         fileprivate func getBuffValue(amount: Int, duration: Int?) -> Int {
-            return self.getValueSign(statIncreases: amount > 0)*(Double(amount)*self.value*Double(duration ?? Self.infiniteDuration)).toRoundedInt()
+            return self.getValueSign(statIncreases: amount > 0)*(Double(abs(amount))*self.value*Double(duration ?? Self.infiniteDuration)).toRoundedInt()
         }
         
     }

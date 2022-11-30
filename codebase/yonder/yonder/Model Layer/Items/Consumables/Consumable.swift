@@ -28,7 +28,7 @@ class ConsumableAbstract: Item, Clonable, Purchasable {
     }
     
     func getPurchaseInfo() -> PurchasableItemInfo {
-        return PurchasableItemInfo(name: self.name, description: self.description, type: .consumable)
+        return PurchasableItemInfo(name: "\(self.name) (x\(self.remainingUses))", description: self.description, type: .consumable)
     }
     
     func beReceived(by receiver: Player, amount: Int) {
