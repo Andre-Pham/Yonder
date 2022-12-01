@@ -14,21 +14,26 @@ class DataObject {
     // MARK: - Properties
     
     private static let legacyClassNames: [String: String] = [:]
+    private let objectField = "object"
     
+    private var objectName = String() // For debugging
     private var json = JSON()
     
     // MARK: - Initialisers
     
     init(_ object: Storable) {
-        self.add(key: "object", value: object.className)
+        self.add(key: self.objectField, value: object.className)
+        self.objectName = object.className
     }
     
     init(rawString: String) {
         self.json = JSON(parseJSON: rawString)
+        self.objectName = self.get(self.objectField)
     }
     
     private init(json: JSON) {
         self.json = json
+        self.objectName = self.get(self.objectField)
     }
     
     // MARK: - Data addition methods
@@ -72,19 +77,27 @@ class DataObject {
     // MARK: - Data retrieval methods
     
     func get(_ key: String, onFail: String = "") -> String {
-        return self.json[key].string ?? onFail
+        let retrieval = self.json[key].string
+        assert(retrieval != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)'")
+        return retrieval ?? onFail
     }
     
     func get(_ key: String, onFail: Int = 0) -> Int {
-        return self.json[key].int ?? onFail
+        let retrieval = self.json[key].int
+        assert(retrieval != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)'")
+        return retrieval ?? onFail
     }
     
     func get(_ key: String, onFail: Double = 0.0) -> Double {
-        return self.json[key].double ?? onFail
+        let retrieval = self.json[key].double
+        assert(retrieval != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)'")
+        return retrieval ?? onFail
     }
     
     func get(_ key: String, onFail: Bool) -> Bool {
-        return self.json[key].bool ?? onFail
+        let retrieval = self.json[key].bool
+        assert(retrieval != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)'")
+        return retrieval ?? onFail
     }
     
     func getObject<T>(_ key: String, type: T.Type) -> T where T: Storable {
@@ -108,11 +121,17 @@ class DataObject {
     // MARK: - Storable export
     
     func restore<T>(_ type: T.Type) -> T where T: Storable {
-        return self.parse() as! T
+        let parse = self.parse()
+        guard let object = parse as? T else {
+            fatalError("Object \(type.self) could not be restored - some class within its inheritance tree likely forgot to add a variable within the toDataObject call")
+        }
+        return object
     }
     
     func restoreOptional<T>(_ type: T.Type) -> T? where T: Storable {
-        return self.parse() as? T
+        let parse = self.parse() as? T
+        assert(parse != nil, "Object \(type.self) failed to be restored - some class within its inheritance tree likely forgot to add a variable within the toDataObject call")
+        return parse
     }
     
     private func parse() -> Storable? {
