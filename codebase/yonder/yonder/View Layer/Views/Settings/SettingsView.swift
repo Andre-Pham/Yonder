@@ -44,7 +44,7 @@ struct SettingsView: View {
                 .foregroundColor(.white)
                 
                 Button("Armor") {
-                    GameManager.instance.playerVM.player.equipArmor(Armors.newTestBodyArmor())
+                    GameManager.instance.playerVM.player.equipArmor(TestContent.newTestBodyArmor())
                 }
                 .padding()
                 .background(Color.red)

@@ -9,16 +9,6 @@ import Foundation
 
 enum Friendlies {
     
-    // TODO: Remove
-    static func newTestFriendly() -> Friendly {
-        return Friendly(
-            offers: [
-                FreeGoldOffer(goldAmount: 500),
-                PurchaseWeaponOffer(weapon: Weapon(basePill: DamageBasePill(damage: 500), durabilityPill: InfiniteDurabilityPill()), price: 400)
-            ],
-            offerLimit: 2)
-    }
-    
     // 01
     static func goldOrRestorationFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
         let restorationAmount = 150.0.compound(multiply: 1.1, index: stage).toRoundedInt()

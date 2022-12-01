@@ -9,11 +9,6 @@ import Foundation
 
 enum Restorers {
     
-    // TODO: Remove
-    static func newTestRestorer() -> Restorer {
-        return Restorer(options: [.armorPoints, .health], pricePerHealthBundle: 10, pricePerArmorPointBundle: 15)
-    }
-    
     static func newRestorer(profile: RestorerProfile, stage: Int, restoreOptions: [Restorer.RestoreOption]) -> Restorer {
         // A discount is applied to restorer prices since otherwise potions would out-value them every time
         let healthFairValue = Pricing.usingStage(stage: stage) {
