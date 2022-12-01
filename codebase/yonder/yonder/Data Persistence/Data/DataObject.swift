@@ -19,8 +19,8 @@ class DataObject {
     
     // MARK: - Initialisers
     
-    init(className: String) {
-        self.add(key: "object", value: className)
+    init(_ object: Storable) {
+        self.add(key: "object", value: object.className)
     }
     
     init(rawString: String) {

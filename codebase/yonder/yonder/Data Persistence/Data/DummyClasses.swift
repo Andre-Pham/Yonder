@@ -39,7 +39,7 @@ class Person: Storable {
     }
     
     func toDataObject() -> DataObject {
-        return DataObject(className: self.className)
+        return DataObject(self)
             .add(key: "firstName", value: self.firstName)
             .add(key: "lastName", value: self.lastName)
             .add(key: "age", value: self.age)
@@ -112,7 +112,7 @@ class Homework: Storable {
     }
     
     func toDataObject() -> DataObject {
-        return DataObject(className: self.className)
+        return DataObject(self)
             .add(key: "answers", value: self.answers)
     }
     

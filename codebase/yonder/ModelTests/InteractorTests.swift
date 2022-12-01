@@ -29,7 +29,7 @@ class InteractorTests: XCTestCase {
     }
     
     func testRestoreAdjusted() throws {
-        self.player.equipArmor(Armors.newTestBodyArmor()) // 200 armorPoints
+        self.player.equipArmor(TestContent.newTestBodyArmor()) // 200 armorPoints
         self.player.damage(for: 300)
         self.player.addBuff(HealthRestorationPercentBuff(sourceName: "testRestoreAdjusted", direction: .incoming, duration: 1, healthFraction: 2.0))
         self.player.addBuff(ArmorPointsRestorationPercentBuff(sourceName: "testRestoreAdjusted", direction: .incoming, duration: 1, armorPointsFraction: 0.5))
