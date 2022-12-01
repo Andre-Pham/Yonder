@@ -13,8 +13,8 @@ class DataObjectTests: XCTestCase {
     let student = Student(firstName: "Andre", lastName: "Pham", age: 21, depressionLevel: 50)
     
     override func setUp() async throws {
-        self.student.addHomework(Homework(answers: "2x + 5"))
-        self.student.addHomework(Homework(answers: "Something smart"))
+        self.student.addHomework(Homework(answers: "2x + 5", grade: nil))
+        self.student.addHomework(Homework(answers: "Something smart", grade: 99))
     }
     
     func testSerialisation() throws {
@@ -45,6 +45,8 @@ class DataObjectTests: XCTestCase {
         XCTAssertEqual(self.student.homework.count, reinstantiatedStudent.homework.count)
         XCTAssertEqual(self.student.homework.first?.answers, reinstantiatedStudent.homework.first?.answers)
         XCTAssertEqual(self.student.homework.last?.answers, reinstantiatedStudent.homework.last?.answers)
+        XCTAssertEqual(self.student.homework.first?.grade, reinstantiatedStudent.homework.first?.grade)
+        XCTAssertEqual(self.student.homework.last?.grade, reinstantiatedStudent.homework.last?.grade)
     }
 
 }

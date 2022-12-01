@@ -102,18 +102,22 @@ class Teacher: Person {
 class Homework: Storable {
     
     public let answers: String
+    public var grade: Int?
     
-    init(answers: String) {
+    init(answers: String, grade: Int?) {
         self.answers = answers
+        self.grade = grade
     }
     
     required init(dataObject: DataObject) {
         self.answers = dataObject.get("answers")
+        self.grade = dataObject.get("grade")
     }
     
     func toDataObject() -> DataObject {
         return DataObject(self)
             .add(key: "answers", value: self.answers)
+            .add(key: "grade", value: self.grade)
     }
     
 }

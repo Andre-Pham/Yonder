@@ -45,8 +45,20 @@ class DataObject {
     }
     
     @discardableResult
+    func add(key: String, value: String?) -> Self {
+        self.json[key] = JSON(value ?? JSON.null)
+        return self
+    }
+    
+    @discardableResult
     func add(key: String, value: Int) -> Self {
         self.json[key] = JSON(value)
+        return self
+    }
+    
+    @discardableResult
+    func add(key: String, value: Int?) -> Self {
+        self.json[key] = JSON(value ?? JSON.null)
         return self
     }
     
@@ -57,8 +69,20 @@ class DataObject {
     }
     
     @discardableResult
+    func add(key: String, value: Double?) -> Self {
+        self.json[key] = JSON(value ?? JSON.null)
+        return self
+    }
+    
+    @discardableResult
     func add(key: String, value: Bool) -> Self {
         self.json[key] = JSON(value)
+        return self
+    }
+    
+    @discardableResult
+    func add(key: String, value: Bool?) -> Self {
+        self.json[key] = JSON(value ?? JSON.null)
         return self
     }
     
@@ -82,10 +106,18 @@ class DataObject {
         return retrieval ?? onFail
     }
     
+    func get(_ key: String) -> String? {
+        return self.json[key].string
+    }
+    
     func get(_ key: String, onFail: Int = 0) -> Int {
         let retrieval = self.json[key].int
         assert(retrieval != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)'")
         return retrieval ?? onFail
+    }
+    
+    func get(_ key: String) -> Int? {
+        return self.json[key].int
     }
     
     func get(_ key: String, onFail: Double = 0.0) -> Double {
@@ -94,10 +126,18 @@ class DataObject {
         return retrieval ?? onFail
     }
     
+    func get(_ key: String) -> Double? {
+        return self.json[key].double
+    }
+    
     func get(_ key: String, onFail: Bool) -> Bool {
         let retrieval = self.json[key].bool
         assert(retrieval != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)'")
         return retrieval ?? onFail
+    }
+    
+    func get(_ key: String) -> Bool? {
+        return self.json[key].bool
     }
     
     func getObject<T>(_ key: String, type: T.Type) -> T where T: Storable {
