@@ -39,50 +39,15 @@ class DataObject {
     // MARK: - Data addition methods
     
     @discardableResult
-    func add(key: String, value: String) -> Self {
+    func add<T>(key: String, value: T) -> Self {
+        assert(
+            value is String || value is Int || value is Double || value is Bool ||
+            value is String? || value is Int? || value is Double? || value is Bool? ||
+            value is [String] || value is [Int] || value is [Double] || value is [Bool] ||
+            value is [String?] || value is [Int?] || value is [Double?] || value is [Bool?],
+            "value must be an accepted primitive type"
+        )
         self.json[key] = JSON(value)
-        return self
-    }
-    
-    @discardableResult
-    func add(key: String, value: String?) -> Self {
-        self.json[key] = JSON(value ?? JSON.null)
-        return self
-    }
-    
-    @discardableResult
-    func add(key: String, value: Int) -> Self {
-        self.json[key] = JSON(value)
-        return self
-    }
-    
-    @discardableResult
-    func add(key: String, value: Int?) -> Self {
-        self.json[key] = JSON(value ?? JSON.null)
-        return self
-    }
-    
-    @discardableResult
-    func add(key: String, value: Double) -> Self {
-        self.json[key] = JSON(value)
-        return self
-    }
-    
-    @discardableResult
-    func add(key: String, value: Double?) -> Self {
-        self.json[key] = JSON(value ?? JSON.null)
-        return self
-    }
-    
-    @discardableResult
-    func add(key: String, value: Bool) -> Self {
-        self.json[key] = JSON(value)
-        return self
-    }
-    
-    @discardableResult
-    func add(key: String, value: Bool?) -> Self {
-        self.json[key] = JSON(value ?? JSON.null)
         return self
     }
     
@@ -110,6 +75,21 @@ class DataObject {
         return self.json[key].string
     }
     
+    func get(_ key: String) -> [String] {
+        let array = self.json[key].array
+        assert(array != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)'")
+        let valueArray = (array ?? []).map { $0.stringValue }
+        assert(array?.count == valueArray.count, "JSON array came with \(array?.count ?? -1) elements, but only \(valueArray.count) could be restored")
+        return valueArray
+    }
+    
+    func get(_ key: String) -> [String?] {
+        let array = self.json[key].array
+        assert(array != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)'")
+        let valueArray = (array ?? []).map { $0.string }
+        return valueArray
+    }
+    
     func get(_ key: String, onFail: Int = 0) -> Int {
         let retrieval = self.json[key].int
         assert(retrieval != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)'")
@@ -118,6 +98,21 @@ class DataObject {
     
     func get(_ key: String) -> Int? {
         return self.json[key].int
+    }
+    
+    func get(_ key: String) -> [Int] {
+        let array = self.json[key].array
+        assert(array != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)'")
+        let valueArray = (array ?? []).map { $0.intValue }
+        assert(array?.count == valueArray.count, "JSON array came with \(array?.count ?? -1) elements, but only \(valueArray.count) could be restored")
+        return valueArray
+    }
+    
+    func get(_ key: String) -> [Int?] {
+        let array = self.json[key].array
+        assert(array != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)'")
+        let valueArray = (array ?? []).map { $0.int }
+        return valueArray
     }
     
     func get(_ key: String, onFail: Double = 0.0) -> Double {
@@ -130,6 +125,21 @@ class DataObject {
         return self.json[key].double
     }
     
+    func get(_ key: String) -> [Double] {
+        let array = self.json[key].array
+        assert(array != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)'")
+        let valueArray = (array ?? []).map { $0.doubleValue }
+        assert(array?.count == valueArray.count, "JSON array came with \(array?.count ?? -1) elements, but only \(valueArray.count) could be restored")
+        return valueArray
+    }
+    
+    func get(_ key: String) -> [Double?] {
+        let array = self.json[key].array
+        assert(array != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)'")
+        let valueArray = (array ?? []).map { $0.double }
+        return valueArray
+    }
+    
     func get(_ key: String, onFail: Bool) -> Bool {
         let retrieval = self.json[key].bool
         assert(retrieval != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)'")
@@ -138,6 +148,21 @@ class DataObject {
     
     func get(_ key: String) -> Bool? {
         return self.json[key].bool
+    }
+    
+    func get(_ key: String) -> [Bool] {
+        let array = self.json[key].array
+        assert(array != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)'")
+        let valueArray = (array ?? []).map { $0.boolValue }
+        assert(array?.count == valueArray.count, "JSON array came with \(array?.count ?? -1) elements, but only \(valueArray.count) could be restored")
+        return valueArray
+    }
+    
+    func get(_ key: String) -> [Bool?] {
+        let array = self.json[key].array
+        assert(array != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)'")
+        let valueArray = (array ?? []).map { $0.bool }
+        return valueArray
     }
     
     func getObject<T>(_ key: String, type: T.Type) -> T where T: Storable {
@@ -149,7 +174,9 @@ class DataObject {
     }
     
     func getObjectArray<T>(_ key: String, type: T.Type) -> [T] where T: Storable {
-        return ((self.json[key].array ?? []).map { DataObject(json: $0) }).restoreArray(type)
+        let array = self.json[key].array
+        assert(array != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)'")
+        return ((array ?? []).map { DataObject(json: $0) }).restoreArray(type)
     }
     
     // MARK: - String export

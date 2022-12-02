@@ -52,10 +52,12 @@ class Student: Person {
     private(set) var homework = [Homework]()
     private(set) var depressionLevel: Int
     private(set) var teacher: Teacher
+    private(set) var favouriteColours: [String]
     
-    init(firstName: String, lastName: String, age: Int, depressionLevel: Int) {
+    init(firstName: String, lastName: String, age: Int, depressionLevel: Int, favouriteColours: [String]) {
         self.depressionLevel = depressionLevel
         self.teacher = Teacher(firstName: "Mr", lastName: "Math", age: 500)
+        self.favouriteColours = favouriteColours
         super.init(firstName: firstName, lastName: lastName, age: age)
     }
     
@@ -67,6 +69,7 @@ class Student: Person {
         self.depressionLevel = dataObject.get("depressionLevel")
         self.homework = dataObject.getObjectArray("homework", type: Homework.self)
         self.teacher = dataObject.getObject("teacher", type: Teacher.self)
+        self.favouriteColours = dataObject.get("favouriteColours")
         super.init(dataObject: dataObject)
     }
     
@@ -75,6 +78,7 @@ class Student: Person {
             .add(key: "depressionLevel", value: self.depressionLevel)
             .add(key: "homework", value: self.homework)
             .add(key: "teacher", value: self.teacher)
+            .add(key: "favouriteColours", value: self.favouriteColours)
     }
     
 }

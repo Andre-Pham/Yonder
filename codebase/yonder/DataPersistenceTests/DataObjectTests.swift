@@ -10,7 +10,7 @@ import XCTest
 
 class DataObjectTests: XCTestCase {
     
-    let student = Student(firstName: "Andre", lastName: "Pham", age: 21, depressionLevel: 50)
+    let student = Student(firstName: "Andre", lastName: "Pham", age: 21, depressionLevel: 50, favouriteColours: ["Red, Green, Blue"])
     
     override func setUp() async throws {
         self.student.addHomework(Homework(answers: "2x + 5", grade: nil))
@@ -47,6 +47,7 @@ class DataObjectTests: XCTestCase {
         XCTAssertEqual(self.student.homework.last?.answers, reinstantiatedStudent.homework.last?.answers)
         XCTAssertEqual(self.student.homework.first?.grade, reinstantiatedStudent.homework.first?.grade)
         XCTAssertEqual(self.student.homework.last?.grade, reinstantiatedStudent.homework.last?.grade)
+        XCTAssertEqual(self.student.favouriteColours, reinstantiatedStudent.favouriteColours)
     }
 
 }
