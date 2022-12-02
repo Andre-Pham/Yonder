@@ -34,4 +34,14 @@ class NoArmor: Armor {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+
+    required init(dataObject: DataObject) {
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+    }
+    
 }

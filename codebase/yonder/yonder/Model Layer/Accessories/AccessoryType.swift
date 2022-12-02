@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AccessoryType: CaseIterable {
+enum AccessoryType: String, CaseIterable {
     
     case regular
     case peripheral

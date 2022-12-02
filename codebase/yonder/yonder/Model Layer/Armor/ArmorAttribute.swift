@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ArmorAttribute {
+enum ArmorAttribute: String {
     
     case upgradesDisallowed
     

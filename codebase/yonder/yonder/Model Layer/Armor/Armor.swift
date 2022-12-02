@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Armor: EffectsDescribed, Purchasable, Named, Described, Enhanceable, Clonable {
+class Armor: EffectsDescribed, Purchasable, Named, Described, Enhanceable, Clonable, Storable {
     
     public let name: String
     public let description: String
@@ -44,6 +44,42 @@ class Armor: EffectsDescribed, Purchasable, Named, Described, Enhanceable, Clona
         self.equipmentPills = original.equipmentPills.map { $0.clone() }
         self.armorAttributes = Array(original.armorAttributes)
     }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case name
+        case description
+        case type
+        case armorPoints
+        case armorBuffs
+        case equipmentPills
+        case armorAttributes
+    }
+
+    required init(dataObject: DataObject) {
+        self.name = dataObject.get(Field.name.rawValue)
+        self.description = dataObject.get(Field.description.rawValue)
+        self.type = ArmorType(rawValue: dataObject.get(Field.type.rawValue)) ?? .body
+        self.armorPoints = dataObject.get(Field.armorPoints.rawValue)
+        self.armorBuffs = dataObject.getObjectArray(Field.armorBuffs.rawValue, type: BuffAbstract.self) as! [any Buff]
+        self.equipmentPills = dataObject.getObjectArray(Field.equipmentPills.rawValue, type: EquipmentPillAbstract.self) as! [any EquipmentPill]
+        let attributes: [ArmorAttribute?] = dataObject.get(Field.armorAttributes.rawValue).map { ArmorAttribute(rawValue: $0) }
+        self.armorAttributes = attributes.compactMap({ $0 })
+    }
+
+    func toDataObject() -> DataObject {
+        return DataObject(self)
+            .add(key: Field.name.rawValue, value: self.name)
+            .add(key: Field.description.rawValue, value: self.description)
+            .add(key: Field.type.rawValue, value: self.type.rawValue)
+            .add(key: Field.armorPoints.rawValue, value: self.armorPoints)
+            .add(key: Field.armorBuffs.rawValue, value: self.armorBuffs)
+            .add(key: Field.equipmentPills.rawValue, value: self.equipmentPills)
+            .add(key: Field.armorAttributes.rawValue, value: self.armorAttributes.map { $0.rawValue })
+    }
+
+    // MARK: - Functions
     
     func getEffectsDescription() -> String? {
         var descriptionLines = [String]()

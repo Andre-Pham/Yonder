@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, Clonable {
+class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, Clonable, Storable {
     
     public let name: String
     public let description: String
@@ -44,6 +44,41 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
         self.buffs = original.buffs.map { $0.clone() }
         self.equipmentPills = original.equipmentPills.map { $0.clone() }
     }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case name
+        case description
+        case type
+        case healthBonus
+        case armorPointsBonus
+        case buffs
+        case equipmentPills
+    }
+
+    required init(dataObject: DataObject) {
+        self.name = dataObject.get(Field.name.rawValue)
+        self.description = dataObject.get(Field.description.rawValue)
+        self.type = AccessoryType(rawValue: dataObject.get(Field.type.rawValue)) ?? .regular
+        self.healthBonus = dataObject.get(Field.healthBonus.rawValue)
+        self.armorPointsBonus = dataObject.get(Field.armorPointsBonus.rawValue)
+        self.buffs = dataObject.getObjectArray(Field.buffs.rawValue, type: BuffAbstract.self) as! [any Buff]
+        self.equipmentPills = dataObject.getObjectArray(Field.equipmentPills.rawValue, type: EquipmentPillAbstract.self) as! [any EquipmentPill]
+    }
+
+    func toDataObject() -> DataObject {
+        return DataObject(self)
+            .add(key: Field.name.rawValue, value: self.name)
+            .add(key: Field.description.rawValue, value: self.description)
+            .add(key: Field.type.rawValue, value: self.type.rawValue)
+            .add(key: Field.healthBonus.rawValue, value: self.healthBonus)
+            .add(key: Field.armorPointsBonus.rawValue, value: self.armorPointsBonus)
+            .add(key: Field.buffs.rawValue, value: self.buffs)
+            .add(key: Field.equipmentPills.rawValue, value: self.equipmentPills)
+    }
+
+    // MARK: - Functions
     
     func getEffectsDescription() -> String? {
         var descriptionLines = [String]()

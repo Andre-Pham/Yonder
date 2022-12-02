@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ArmorType: CaseIterable {
+enum ArmorType: String, CaseIterable {
     
     case head
     case body
