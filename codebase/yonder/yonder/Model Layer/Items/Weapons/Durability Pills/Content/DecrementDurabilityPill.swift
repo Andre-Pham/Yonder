@@ -28,6 +28,30 @@ class DecrementDurabilityPill: WeaponDurabilityPill {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case durability
+        case effectsDescription
+        case decrementation
+    }
+
+    required init(dataObject: DataObject) {
+        self.durability = dataObject.get(Field.durability.rawValue)
+        self.effectsDescription = dataObject.get(Field.effectsDescription.rawValue)
+        self.decrementation = dataObject.get(Field.decrementation.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.durability.rawValue, value: self.durability)
+            .add(key: Field.effectsDescription.rawValue, value: self.effectsDescription)
+            .add(key: Field.decrementation.rawValue, value: self.decrementation)
+    }
+
+    // MARK: - Functions
+    
     func setupDurability(weapon: Weapon) {
         weapon.setRemainingUses(to: self.durability)
         weapon.setInfiniteRemainingUses(to: false)

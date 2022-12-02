@@ -39,6 +39,24 @@ class PotionDamagePercentBuff: Buff {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case damageFraction
+    }
+
+    required init(dataObject: DataObject) {
+        self.damageFraction = dataObject.get(Field.damageFraction.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.damageFraction.rawValue, value: self.damageFraction)
+    }
+
+    // MARK: - Functions
+    
     override func applyDamage(to damage: Int, source: Any) -> Int {
         if source is Potion {
             return Int(round(Double(damage)*self.damageFraction))

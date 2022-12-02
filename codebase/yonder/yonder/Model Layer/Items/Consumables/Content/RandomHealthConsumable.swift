@@ -22,6 +22,18 @@ class RandomHealthConsumable: Consumable {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+
+    required init(dataObject: DataObject) {
+        super.init(dataObject: dataObject)
+    }
+    
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+    }
+    
+    // MARK: - Functions
+    
     func use(owner: ActorAbstract, opposition: ActorAbstract?) {
         // We don't want to set the player to the health they're already at... that'd be boring.
         var range = [Int](1...owner.maxHealth)

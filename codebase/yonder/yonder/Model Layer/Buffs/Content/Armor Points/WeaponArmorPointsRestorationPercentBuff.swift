@@ -39,6 +39,24 @@ class WeaponArmorPointsRestorationPercentBuff: Buff {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case armorPointsFraction
+    }
+
+    required init(dataObject: DataObject) {
+        self.armorPointsFraction = dataObject.get(Field.armorPointsFraction.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.armorPointsFraction.rawValue, value: self.armorPointsFraction)
+    }
+
+    // MARK: - Functions
+    
     override func applyArmorPoints(to armorPoints: Int, source: Any) -> Int {
         if source is Weapon {
             return Int(round(Double(armorPoints)*self.armorPointsFraction))

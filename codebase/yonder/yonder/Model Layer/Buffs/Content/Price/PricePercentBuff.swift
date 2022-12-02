@@ -36,6 +36,24 @@ class PricePercentBuff: Buff {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case priceFraction
+    }
+
+    required init(dataObject: DataObject) {
+        self.priceFraction = dataObject.get(Field.priceFraction.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.priceFraction.rawValue, value: self.priceFraction)
+    }
+
+    // MARK: - Functions
+    
     override func applyPrice(to gold: Int) -> Int {
         return Int(round(Double(gold)*self.priceFraction))
     }

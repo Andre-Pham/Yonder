@@ -10,11 +10,10 @@ import Foundation
 class WeaknessPotion: Potion {
     
     /// The tier of the weakness potion.
-    /// Raw value represents the damage fraction of each tier.
-    enum Tier: Double, CaseIterable {
-        case I = 0.8
-        case II = 0.5
-        case III = 0.2
+    enum Tier: Int, CaseIterable {
+        case I = 1
+        case II = 2
+        case III = 3
         
         var string: String {
             switch self {
@@ -25,7 +24,11 @@ class WeaknessPotion: Potion {
         }
         
         var damageFraction: Double {
-            return self.rawValue
+            switch self {
+            case .I: return 0.8
+            case .II: return 0.5
+            case .III: return 0.2
+            }
         }
     }
     
@@ -55,6 +58,30 @@ class WeaknessPotion: Potion {
         self.tier = original.tier
         super.init(original)
     }
+    
+    // MARK: - Serialisation
+        
+    private enum Field: String {
+        case buff
+        case duration
+        case tier
+    }
+    
+    required init(dataObject: DataObject) {
+        self.buff = dataObject.getObject(Field.buff.rawValue, type: DamagePercentBuff.self)
+        self.duration = dataObject.get(Field.duration.rawValue)
+        self.tier = Tier(rawValue: dataObject.get(Field.tier.rawValue)) ?? .I
+        super.init(dataObject: dataObject)
+    }
+    
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.buff.rawValue, value: self.buff)
+            .add(key: Field.duration.rawValue, value: self.duration)
+            .add(key: Field.tier.rawValue, value: self.tier.rawValue)
+    }
+    
+    // MARK: - Functions
     
     func use(owner: ActorAbstract, opposition: ActorAbstract) {
         opposition.addBuff(self.buff)

@@ -13,11 +13,11 @@ class RestoreArmorPointsConsumable: Consumable {
     /// The tier of the consumable. Greater tiers restore more armor points.
     /// Raw value represents the armor points restoration of each tier.
     enum Tier: Int, CaseIterable {
-        case I = 25
-        case II = 50
-        case III = 100
-        case IV = 200
-        case V = 400
+        case I = 1
+        case II = 2
+        case III = 3
+        case IV = 4
+        case V = 5
         
         var string: String {
             switch self {
@@ -30,7 +30,13 @@ class RestoreArmorPointsConsumable: Consumable {
         }
         
         var armorPointsRestoration: Int {
-            return self.rawValue
+            switch self {
+            case .I: return 25
+            case .II: return 50
+            case .III: return 100
+            case .IV: return 200
+            case .V: return 400
+            }
         }
     }
     
@@ -53,6 +59,24 @@ class RestoreArmorPointsConsumable: Consumable {
         self.tier = original.tier
         super.init(original)
     }
+    
+    // MARK: - Serialisation
+    
+    private enum Field: String {
+        case tier
+    }
+    
+    required init(dataObject: DataObject) {
+        self.tier = Tier(rawValue: dataObject.get(Field.tier.rawValue)) ?? .I
+        super.init(dataObject: dataObject)
+    }
+    
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.tier.rawValue, value: self.tier.rawValue)
+    }
+    
+    // MARK: - Functions
     
     func use(owner: ActorAbstract, opposition: ActorAbstract?) {
         owner.restoreArmorPointsAdjusted(sourceOwner: owner, using: self, for: self.armorPointsRestoration)

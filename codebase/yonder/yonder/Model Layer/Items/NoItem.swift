@@ -13,6 +13,18 @@ class NoItem: Item {
         super.init(name: "NO_ITEM", description: "NO_ITEM_DESCRIPTION")
     }
     
+    // MARK: - Serialisation
+    
+    required init(dataObject: DataObject) {
+        super.init(dataObject: dataObject)
+    }
+    
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+    }
+    
+    // MARK: - Functions
+    
     func getEffectsDescription() -> String? {
         return nil
     }

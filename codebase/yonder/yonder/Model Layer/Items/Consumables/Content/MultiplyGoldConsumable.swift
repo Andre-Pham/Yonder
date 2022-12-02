@@ -29,6 +29,24 @@ class MultiplyGoldConsumable: Consumable {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+    
+    private enum Field: String {
+        case goldFraction
+    }
+    
+    required init(dataObject: DataObject) {
+        self.goldFraction = dataObject.get(Field.goldFraction.rawValue)
+        super.init(dataObject: dataObject)
+    }
+    
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.goldFraction.rawValue, value: self.goldFraction)
+    }
+    
+    // MARK: - Functions
+    
     func use(owner: ActorAbstract, opposition: ActorAbstract?) {
         if let player = owner as? Player {
             player.modifyGoldAdjusted(by: Int(round(Double(player.gold)*abs(1.0 - self.goldFraction))))

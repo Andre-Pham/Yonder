@@ -22,6 +22,24 @@ class ArmorToDamageEffectPill: WeaponEffectPill {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case effectsDescription
+    }
+
+    required init(dataObject: DataObject) {
+        self.effectsDescription = dataObject.get(Field.effectsDescription.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.effectsDescription.rawValue, value: self.effectsDescription)
+    }
+
+    // MARK: - Functions
+    
     func apply(owner: ActorAbstract, opposition: ActorAbstract) {
         guard let weapon = WeaponPillBox.getWeapon(from: self) else {
             assertionFailure("ArmorToDamageEffectPill has no matching weapon")

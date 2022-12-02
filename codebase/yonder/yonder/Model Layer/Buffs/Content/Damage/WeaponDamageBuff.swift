@@ -39,6 +39,24 @@ class WeaponDamageBuff: Buff {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case damageDifference
+    }
+
+    required init(dataObject: DataObject) {
+        self.damageDifference = dataObject.get(Field.damageDifference.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.damageDifference.rawValue, value: self.damageDifference)
+    }
+
+    // MARK: - Functions
+    
     override func applyDamage(to damage: Int, source: Any) -> Int {
         if source is Weapon {
             return self.damageDifference + damage

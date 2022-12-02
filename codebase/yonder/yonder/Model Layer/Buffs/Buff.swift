@@ -9,7 +9,7 @@ import Foundation
 
 typealias Buff = BuffAbstract & HasPriceValue
 
-class BuffAbstract: EffectsDescribed, Clonable {
+class BuffAbstract: EffectsDescribed, Clonable, Storable {
     
     private(set) var sourceName: String
     private let effectsDescription: String?
@@ -55,9 +55,45 @@ class BuffAbstract: EffectsDescribed, Clonable {
         self.priority = original.priority
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case sourceName
+        case timeRemaining
+        case initialTimeRemaining
+        case effectsDescription
+        case type
+        case direction
+        case priority
+    }
+
+    required init(dataObject: DataObject) {
+        self.sourceName = dataObject.get(Field.sourceName.rawValue)
+        self.timeRemaining = dataObject.get(Field.timeRemaining.rawValue)
+        self.initialTimeRemaining = dataObject.get(Field.initialTimeRemaining.rawValue)
+        self.effectsDescription = dataObject.get(Field.effectsDescription.rawValue)
+        // If any of these fail it's pretty much game over, just bail
+        self.type = BuffType(rawValue: dataObject.get(Field.type.rawValue))!
+        self.direction = BuffDirection(rawValue: dataObject.get(Field.direction.rawValue))!
+        self.priority = BuffPriority(rawValue: dataObject.get(Field.priority.rawValue))!
+    }
+
+    func toDataObject() -> DataObject {
+        return DataObject(self)
+            .add(key: Field.sourceName.rawValue, value: self.sourceName)
+            .add(key: Field.timeRemaining.rawValue, value: self.timeRemaining)
+            .add(key: Field.initialTimeRemaining.rawValue, value: self.initialTimeRemaining)
+            .add(key: Field.effectsDescription.rawValue, value: self.effectsDescription)
+            .add(key: Field.type.rawValue, value: self.type.rawValue)
+            .add(key: Field.direction.rawValue, value: self.direction.rawValue)
+            .add(key: Field.priority.rawValue, value: self.priority.rawValue)
+    }
+
+    // MARK: - Enums
+    
     /// Indicates what stat the buff affects, and also is used as the indicator for which apply function is overwritten to have effect.
     /// For each type, add a skeleton function in BuffAbstract to be overridden in the buff class.
-    enum BuffType {
+    enum BuffType: String {
         case damage
         case health
         case armorPoints
@@ -68,7 +104,7 @@ class BuffAbstract: EffectsDescribed, Clonable {
     }
     
     /// What direction the buff is applied to, for example, an outgoing damage buff increases damage dealt, but not received.
-    enum BuffDirection {
+    enum BuffDirection: String {
         case outgoing
         case incoming
         case bidirectional
@@ -79,6 +115,8 @@ class BuffAbstract: EffectsDescribed, Clonable {
         case first = 0
         case second = 1
     }
+    
+    // MARK: - Functions
     
     func getEffectsDescription() -> String? {
         return self.effectsDescription

@@ -25,6 +25,27 @@ class GrowDamageEffectPill: WeaponEffectPill {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case effectsDescription
+        case damageIncrease
+    }
+
+    required init(dataObject: DataObject) {
+        self.effectsDescription = dataObject.get(Field.effectsDescription.rawValue)
+        self.damageIncrease = dataObject.get(Field.damageIncrease.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.effectsDescription.rawValue, value: self.effectsDescription)
+            .add(key: Field.damageIncrease.rawValue, value: self.damageIncrease)
+    }
+
+    // MARK: - Functions
+    
     func apply(owner: ActorAbstract, opposition: ActorAbstract) {
         WeaponPillBox.getWeapon(from: self)?.adjustDamage(by: self.damageIncrease)
     }

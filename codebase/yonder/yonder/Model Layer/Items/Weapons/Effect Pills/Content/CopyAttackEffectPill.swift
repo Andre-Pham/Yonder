@@ -27,6 +27,24 @@ class CopyAttackEffectPill: WeaponEffectPill, AfterTurnEndSubscriber {
         AfterTurnEndPublisher.subscribe(self)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case effectsDescription
+    }
+
+    required init(dataObject: DataObject) {
+        self.effectsDescription = dataObject.get(Field.effectsDescription.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.effectsDescription.rawValue, value: self.effectsDescription)
+    }
+
+    // MARK: - Functions
+    
     func apply(owner: ActorAbstract, opposition: ActorAbstract) {
         // No nothing
     }

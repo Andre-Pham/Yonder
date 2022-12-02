@@ -42,6 +42,24 @@ class PriceBuff: Buff {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case priceDifference
+    }
+
+    required init(dataObject: DataObject) {
+        self.priceDifference = dataObject.get(Field.priceDifference.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.priceDifference.rawValue, value: self.priceDifference)
+    }
+
+    // MARK: - Functions
+    
     override func applyPrice(to gold: Int) -> Int {
         return self.priceDifference + gold
     }

@@ -75,7 +75,7 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
         WeaponPillBox.setEffectPills(weapon: self)
         WeaponPillBox.setBuffPills(weapon: self)
         
-        // The item's state needs to be restored
+        // The item's state needs to be restored, e.g. damage enhancements must be accounted for
         self.setName(to: original.name)
         self.setDescription(to: original.description)
         self.setDamage(to: original.damage)
@@ -85,6 +85,69 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
         self.setInfiniteRemainingUses(to: original.infiniteRemainingUses)
         self.setRemainingUses(to: original.remainingUses)
     }
+    
+    // MARK: - Serialisation
+    
+    private enum Field: String {
+        case basePill
+        case durabilityPill
+        case effectPills
+        case buffPills
+        // These aren't properties but need to be restored
+        case name
+        case description
+        case damage
+        case restoration
+        case healthRestoration
+        case armorPointsRestoration
+        case infiniteRemainingUses
+        case remainingUses
+    }
+    
+    required init(dataObject: DataObject) {
+        self.basePill = dataObject.getObject(Field.basePill.rawValue, type: WeaponBasePillAbstract.self) as! any WeaponBasePill
+        self.durabilityPill = dataObject.getObject(Field.durabilityPill.rawValue, type: WeaponDurabilityPillAbstract.self) as! any WeaponDurabilityPill
+        self.effectPills = dataObject.getObjectArray(Field.effectPills.rawValue, type: WeaponEffectPillAbstract.self) as! [any WeaponEffectPill]
+        self.buffPills = dataObject.getObjectArray(Field.effectPills.rawValue, type: WeaponBuffPillAbstract.self) as! [any WeaponBuffPill]
+        
+        super.init(dataObject: dataObject)
+        
+        // These are still required to setup subscribers and such
+        self.basePill.setup(weapon: self)
+        self.durabilityPill.setupDurability(weapon: self)
+        
+        WeaponPillBox.setDurabilityPills(weapon: self)
+        WeaponPillBox.setEffectPills(weapon: self)
+        WeaponPillBox.setBuffPills(weapon: self)
+        
+        // The item's state needs to be restored, e.g. damage enhancements must be accounted for
+        self.setName(to: dataObject.get(Field.name.rawValue))
+        self.setDescription(to: dataObject.get(Field.description.rawValue))
+        self.setDamage(to: dataObject.get(Field.damage.rawValue))
+        self.setRestoration(to: dataObject.get(Field.restoration.rawValue))
+        self.setHealthRestoration(to: dataObject.get(Field.healthRestoration.rawValue))
+        self.setArmorPointsRestoration(to: dataObject.get(Field.armorPointsRestoration.rawValue))
+        self.setInfiniteRemainingUses(to: dataObject.get(Field.infiniteRemainingUses.rawValue, onFail: false))
+        self.setRemainingUses(to: dataObject.get(Field.remainingUses.rawValue))
+    }
+    
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.basePill.rawValue, value: self.basePill as WeaponBasePillAbstract)
+            .add(key: Field.durabilityPill.rawValue, value: self.durabilityPill as WeaponDurabilityPillAbstract)
+            .add(key: Field.effectPills.rawValue, value: self.effectPills as [WeaponEffectPillAbstract])
+            .add(key: Field.buffPills.rawValue, value: self.buffPills as [WeaponBuffPillAbstract])
+            .add(key: Field.name.rawValue, value: self.name)
+            .add(key: Field.description.rawValue, value: self.description)
+            .add(key: Field.damage.rawValue, value: self.damage)
+            .add(key: Field.restoration.rawValue, value: self.restoration)
+            .add(key: Field.healthRestoration.rawValue, value: self.healthRestoration)
+            .add(key: Field.armorPointsRestoration.rawValue, value: self.armorPointsRestoration)
+            .add(key: Field.infiniteRemainingUses.rawValue, value: self.infiniteRemainingUses)
+            .add(key: Field.remainingUses.rawValue, value: self.remainingUses)
+    }
+    
+    // MARK: - Functions
     
     override func getIndicativeDamage(owner: ActorAbstract, opposition: ActorAbstract) -> Int {
         var damageApplied = self.damage

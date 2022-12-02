@@ -87,7 +87,7 @@ class DataObject {
     }
     
     @discardableResult
-    func add(key: String, value: Storable) -> Self {
+    func add<T: Storable>(key: String, value: T) -> Self {
         self.json[key] = value.toDataObject().json
         return self
     }

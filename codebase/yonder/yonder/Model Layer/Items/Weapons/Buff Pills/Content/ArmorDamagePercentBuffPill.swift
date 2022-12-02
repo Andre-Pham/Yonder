@@ -34,6 +34,27 @@ class ArmorDamagePercentBuffPill: WeaponBuffPill {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+    
+    private enum Field: String {
+        case damageFraction
+        case effectsDescription
+    }
+    
+    required init(dataObject: DataObject) {
+        self.damageFraction = dataObject.get(Field.damageFraction.rawValue)
+        self.effectsDescription = dataObject.get(Field.effectsDescription.rawValue)
+        super.init(dataObject: dataObject)
+    }
+    
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.damageFraction.rawValue, value: self.damageFraction)
+            .add(key: Field.effectsDescription.rawValue, value: self.effectsDescription)
+    }
+    
+    // MARK: - Functions
+    
     override func applyDamage(weapon: Weapon, owner: ActorAbstract, opposition: ActorAbstract) -> Int {
         let evening = opposition.armorPoints%2 == 0 ? 0 : 1
         let damageBonusRequiredToRemoveArmorPoints = (opposition.armorPoints - evening)/2

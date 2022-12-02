@@ -23,6 +23,18 @@ class MaxRestoreAllConsumable: Consumable {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+    
+    required init(dataObject: DataObject) {
+        super.init(dataObject: dataObject)
+    }
+    
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+    }
+    
+    // MARK: - Functions
+    
     func use(owner: ActorAbstract, opposition: ActorAbstract?) {
         guard let opposition else {
             assertionFailure("Consumable that requires an opposition is being used without one")

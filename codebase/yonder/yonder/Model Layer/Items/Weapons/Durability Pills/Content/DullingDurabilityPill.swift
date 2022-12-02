@@ -25,6 +25,27 @@ class DullingDurabilityPill: WeaponDurabilityPill {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case effectsDescription
+        case damageLostPerUse
+    }
+
+    required init(dataObject: DataObject) {
+        self.effectsDescription = dataObject.get(Field.effectsDescription.rawValue)
+        self.damageLostPerUse = dataObject.get(Field.damageLostPerUse.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.effectsDescription.rawValue, value: self.effectsDescription)
+            .add(key: Field.damageLostPerUse.rawValue, value: self.damageLostPerUse)
+    }
+
+    // MARK: - Functions
+    
     func setupDurability(weapon: Weapon) {
         weapon.setRemainingUses(to: 1)
         weapon.setInfiniteRemainingUses(to: true)

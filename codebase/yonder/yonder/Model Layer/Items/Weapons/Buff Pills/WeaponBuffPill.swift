@@ -16,12 +16,23 @@ protocol WeaponBuffPillProtocol: HasPurchasablePrice {
     
 }
 
-class WeaponBuffPillAbstract: Clonable {
+class WeaponBuffPillAbstract: Clonable, Storable {
     
     public let id = UUID()
     
     init() { }
+    
     required init(_ original: WeaponBuffPillAbstract) { }
+    
+    // MARK: - Serialisation
+    
+    required init(dataObject: DataObject) { }
+    
+    func toDataObject() -> DataObject {
+        return DataObject(self)
+    }
+    
+    // MARK: - Functions
     
     func applyDamage(weapon: Weapon, owner: ActorAbstract, opposition: ActorAbstract) -> Int {
         return weapon.damage

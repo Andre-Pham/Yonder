@@ -9,7 +9,7 @@ import Foundation
 
 typealias Item = ItemAbstract & EffectsDescribed
 
-class ItemAbstract: Named, Described {
+class ItemAbstract: Named, Described, Storable {
     
     @DidSetPublished private(set) var name: String
     @DidSetPublished private(set) var description: String
@@ -63,6 +63,45 @@ class ItemAbstract: Named, Described {
         self.armorPointsRestoration = armorPointsRestoration
         self.infiniteRemainingUses = infiniteRemainingUses
         self.requiresFoeForUsage = requiresFoeForUsage
+    }
+    
+    // MARK: - Serialisation
+    
+    private enum Field: String {
+        case name
+        case description
+        case remainingUses
+        case damage
+        case restoration
+        case healthRestoration
+        case armorPointsRestoration
+        case infiniteRemainingUses
+        case requiresFoeForUsage
+    }
+
+    required init(dataObject: DataObject) {
+        self.name = dataObject.get(Field.name.rawValue)
+        self.description = dataObject.get(Field.description.rawValue)
+        self.remainingUses = dataObject.get(Field.remainingUses.rawValue)
+        self.damage = dataObject.get(Field.damage.rawValue)
+        self.restoration = dataObject.get(Field.restoration.rawValue)
+        self.healthRestoration = dataObject.get(Field.healthRestoration.rawValue)
+        self.armorPointsRestoration = dataObject.get(Field.armorPointsRestoration.rawValue)
+        self.infiniteRemainingUses = dataObject.get(Field.infiniteRemainingUses.rawValue, onFail: false)
+        self.requiresFoeForUsage = dataObject.get(Field.requiresFoeForUsage.rawValue, onFail: false)
+    }
+
+    func toDataObject() -> DataObject {
+        return DataObject(self)
+            .add(key: Field.name.rawValue, value: self.name)
+            .add(key: Field.description.rawValue, value: self.description)
+            .add(key: Field.remainingUses.rawValue, value: self.remainingUses)
+            .add(key: Field.damage.rawValue, value: self.damage)
+            .add(key: Field.restoration.rawValue, value: self.restoration)
+            .add(key: Field.healthRestoration.rawValue, value: self.healthRestoration)
+            .add(key: Field.armorPointsRestoration.rawValue, value: self.armorPointsRestoration)
+            .add(key: Field.infiniteRemainingUses.rawValue, value: self.infiniteRemainingUses)
+            .add(key: Field.requiresFoeForUsage.rawValue, value: self.requiresFoeForUsage)
     }
     
     // MARK: - Setters

@@ -42,6 +42,24 @@ class GoldBuff: Buff {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case goldDifference
+    }
+
+    required init(dataObject: DataObject) {
+        self.goldDifference = dataObject.get(Field.goldDifference.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.goldDifference.rawValue, value: self.goldDifference)
+    }
+
+    // MARK: - Functions
+    
     override func applyGoldBonus(to gold: Int) -> Int {
         return self.goldDifference + gold
     }

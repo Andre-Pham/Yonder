@@ -23,6 +23,24 @@ class HealthRestorationBasePill: WeaponBasePill {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case healthRestoration
+    }
+
+    required init(dataObject: DataObject) {
+        self.healthRestoration = dataObject.get(Field.healthRestoration.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.healthRestoration.rawValue, value: self.healthRestoration)
+    }
+
+    // MARK: - Functions
+    
     func setup(weapon: Weapon) {
         weapon.setHealthRestoration(to: self.healthRestoration)
     }

@@ -9,11 +9,11 @@ import Foundation
 
 class RipeningSetHealthConsumable: Consumable, OnPlayerTravelSubscriber {
     
-    enum RipeningStage {
-        case stage1
-        case stage2
-        case stage3
-        case stage4
+    enum RipeningStage: Int {
+        case stage1 = 1
+        case stage2 = 2
+        case stage3 = 3
+        case stage4 = 4
         
         func use(on actor: ActorAbstract) {
             switch self {
@@ -84,6 +84,29 @@ class RipeningSetHealthConsumable: Consumable, OnPlayerTravelSubscriber {
         
         OnPlayerTravelPublisher.subscribe(self)
     }
+    
+    // MARK: - Serialisation
+    
+    private enum Field: String {
+        case stage
+        case turnsPassed
+    }
+    
+    required init(dataObject: DataObject) {
+        self.stage = RipeningStage(rawValue: dataObject.get(Field.stage.rawValue)) ?? .stage1
+        self.turnsPassed = dataObject.get(Field.turnsPassed.rawValue)
+        super.init(dataObject: dataObject)
+        
+        OnPlayerTravelPublisher.subscribe(self)
+    }
+    
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.stage.rawValue, value: self.stage.rawValue)
+            .add(key: Field.turnsPassed.rawValue, value: self.turnsPassed)
+    }
+    
+    // MARK: - Functions
     
     func getStageEffectsDescription() -> String {
         switch self.stage {

@@ -21,6 +21,18 @@ class MaxRestorationPotion: Potion {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+    
+    required init(dataObject: DataObject) {
+        super.init(dataObject: dataObject)
+    }
+    
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+    }
+    
+    // MARK: - Functions
+    
     func use(owner: ActorAbstract, opposition: ActorAbstract) {
         owner.restore(for: owner.maxHealth + owner.maxArmorPoints) // Max stats - no buffs adjustment needed
         self.adjustRemainingUses(by: -1)

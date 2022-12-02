@@ -107,6 +107,28 @@ struct SettingsView: View {
                 .padding()
                 .background(Color.red)
                 .foregroundColor(.white)
+                
+                Button("Print Weapons") {
+                    let weapons = GameManager.instance.playerVM.player.weapons
+                    for weapon in weapons {
+                        let dataObject = weapon.toDataObject()
+                        print(dataObject.toRawString())
+                    }
+                }
+                .padding()
+                .background(Color.red)
+                .foregroundColor(.white)
+                
+                Button("Print Consumables") {
+                    let consumables = GameManager.instance.playerVM.player.consumables
+                    for consumable in consumables {
+                        let dataObject = consumable.toDataObject()
+                        print(dataObject.toRawString())
+                    }
+                }
+                .padding()
+                .background(Color.red)
+                .foregroundColor(.white)
             }
         }
     }

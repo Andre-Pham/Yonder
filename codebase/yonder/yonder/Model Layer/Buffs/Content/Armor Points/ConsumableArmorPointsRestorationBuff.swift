@@ -39,6 +39,24 @@ class ConsumableArmorPointsRestorationBuff: Buff {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case armorPointsDifference
+    }
+
+    required init(dataObject: DataObject) {
+        self.armorPointsDifference = dataObject.get(Field.armorPointsDifference.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.armorPointsDifference.rawValue, value: self.armorPointsDifference)
+    }
+
+    // MARK: - Functions
+    
     override func applyArmorPoints(to armorPoints: Int, source: Any) -> Int {
         if source is Consumable {
             return self.armorPointsDifference + armorPoints

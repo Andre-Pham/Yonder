@@ -18,11 +18,20 @@ protocol WeaponEffectPillProtocol: HasPurchasablePrice {
     
 }
 
-class WeaponEffectPillAbstract: Clonable {
+class WeaponEffectPillAbstract: Clonable, Storable {
     
     public let id = UUID()
     
     init() { }
+    
     required init(_ original: WeaponEffectPillAbstract) { }
+    
+    // MARK: - Serialisation
+    
+    required init(dataObject: DataObject) { }
+    
+    func toDataObject() -> DataObject {
+        return DataObject(self)
+    }
     
 }

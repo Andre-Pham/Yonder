@@ -11,13 +11,22 @@ import Foundation
 class BonusHealthConsumable: Consumable {
     
     enum Tier: Int, CaseIterable {
-        case I = 25
-        case II = 50
-        case III = 100
-        case IV = 200
+        case I = 1
+        case II = 2
+        case III = 3
+        case IV = 4
         
         var amount: Int {
-            return self.rawValue
+            switch self {
+            case .I:
+                return 25
+            case .II:
+                return 50
+            case .III:
+                return 100
+            case .IV:
+                return 200
+            }
         }
     }
     
@@ -55,6 +64,24 @@ class BonusHealthConsumable: Consumable {
         self.tier = original.tier
         super.init(original)
     }
+    
+    // MARK: - Serialisation
+    
+    private enum Field: String {
+        case tier
+    }
+    
+    required init(dataObject: DataObject) {
+        self.tier = Tier(rawValue: dataObject.get(Field.tier.rawValue)) ?? .I
+        super.init(dataObject: dataObject)
+    }
+    
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.tier.rawValue, value: self.tier.rawValue)
+    }
+    
+    // MARK: - Functions
     
     func use(owner: ActorAbstract, opposition: ActorAbstract?) {
         owner.adjustBonusHealth(by: self.tier.amount)

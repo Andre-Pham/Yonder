@@ -39,6 +39,24 @@ class WeaponHealthRestorationBuff: Buff {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case healthDifference
+    }
+
+    required init(dataObject: DataObject) {
+        self.healthDifference = dataObject.get(Field.healthDifference.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.healthDifference.rawValue, value: self.healthDifference)
+    }
+
+    // MARK: - Functions
+    
     override func applyHealth(to health: Int, source: Any) -> Int {
         if source is Weapon {
             return self.healthDifference + health

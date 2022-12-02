@@ -11,10 +11,10 @@ import Foundation
 class DamageBuffAllConsumable: Consumable {
     
     /// The tier of the consumable. Greater tiers give bigger buffs.
-    enum Tier: Double, CaseIterable {
-        case I = 1.5
-        case II = 2.0
-        case III = 3.0
+    enum Tier: Int, CaseIterable {
+        case I = 1
+        case II = 2
+        case III = 3
         
         var string: String {
             switch self {
@@ -25,7 +25,11 @@ class DamageBuffAllConsumable: Consumable {
         }
         
         var damageFraction: Double {
-            return self.rawValue
+            switch self {
+            case .I: return 1.5
+            case .II: return 2.0
+            case .III: return 3.0
+            }
         }
     }
     
@@ -49,6 +53,24 @@ class DamageBuffAllConsumable: Consumable {
         self.tier = original.tier
         super.init(original)
     }
+    
+    // MARK: - Serialisation
+    
+    private enum Field: String {
+        case tier
+    }
+    
+    required init(dataObject: DataObject) {
+        self.tier = Tier(rawValue: dataObject.get(Field.tier.rawValue)) ?? .I
+        super.init(dataObject: dataObject)
+    }
+    
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.tier.rawValue, value: self.tier.rawValue)
+    }
+    
+    // MARK: - Functions
     
     func use(owner: ActorAbstract, opposition: ActorAbstract?) {
         guard let opposition else {

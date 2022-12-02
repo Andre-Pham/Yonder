@@ -20,11 +20,20 @@ protocol WeaponDurabilityPillProtocol: HasPurchasablePrice {
     
 }
 
-class WeaponDurabilityPillAbstract: Clonable {
+class WeaponDurabilityPillAbstract: Clonable, Storable {
     
     public let id = UUID()
     
     init() { }
+    
     required init(_ original: WeaponDurabilityPillAbstract) { }
+    
+    // MARK: - Serialisation
+    
+    required init(dataObject: DataObject) { }
+    
+    func toDataObject() -> DataObject {
+        return DataObject(self)
+    }
     
 }

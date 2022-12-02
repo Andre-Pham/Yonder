@@ -23,6 +23,24 @@ class ArmorPointsRestorationBasePill: WeaponBasePill {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case armorPointsRestoration
+    }
+
+    required init(dataObject: DataObject) {
+        self.armorPointsRestoration = dataObject.get(Field.armorPointsRestoration.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.armorPointsRestoration.rawValue, value: self.armorPointsRestoration)
+    }
+
+    // MARK: - Functions
+    
     func setup(weapon: Weapon) {
         weapon.setArmorPointsRestoration(to: self.armorPointsRestoration)
     }

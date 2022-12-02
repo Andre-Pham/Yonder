@@ -28,6 +28,30 @@ class BurnStatusEffectEffectPill: WeaponEffectPill {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case effectsDescription
+        case tickDamage
+        case initialDuration
+    }
+
+    required init(dataObject: DataObject) {
+        self.effectsDescription = dataObject.get(Field.effectsDescription.rawValue)
+        self.tickDamage = dataObject.get(Field.tickDamage.rawValue)
+        self.initialDuration = dataObject.get(Field.initialDuration.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.effectsDescription.rawValue, value: self.effectsDescription)
+            .add(key: Field.tickDamage.rawValue, value: self.tickDamage)
+            .add(key: Field.initialDuration.rawValue, value: self.initialDuration)
+    }
+
+    // MARK: - Functions
+    
     func apply(owner: ActorAbstract, opposition: ActorAbstract) {
         opposition.addStatusEffect(BurnStatusEffect(damage: self.tickDamage, duration: self.initialDuration))
     }

@@ -33,6 +33,20 @@ class TravelImprovingRestorationConsumable: Consumable, OnPlayerTravelSubscriber
         OnPlayerTravelPublisher.subscribe(self)
     }
     
+    // MARK: - Serialisation
+    
+    required init(dataObject: DataObject) {
+        super.init(dataObject: dataObject)
+        
+        OnPlayerTravelPublisher.subscribe(self)
+    }
+    
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+    }
+    
+    // MARK: - Functions
+    
     func use(owner: ActorAbstract, opposition: ActorAbstract?) {
         owner.restoreAdjusted(sourceOwner: owner, using: self, for: self.restoration)
         self.adjustRemainingUses(by: -1)

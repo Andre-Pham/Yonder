@@ -19,11 +19,20 @@ protocol WeaponBasePillProtocol: HasPurchasablePrice {
     
 }
 
-class WeaponBasePillAbstract: Clonable {
+class WeaponBasePillAbstract: Clonable, Storable {
     
     public let id = UUID()
     
     init() { }
+    
     required init(_ original: WeaponBasePillAbstract) { }
+    
+    // MARK: - Serialisation
+    
+    required init(dataObject: DataObject) { }
+    
+    func toDataObject() -> DataObject {
+        return DataObject(self)
+    }
     
 }

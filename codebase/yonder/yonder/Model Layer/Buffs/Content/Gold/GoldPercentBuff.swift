@@ -36,6 +36,24 @@ class GoldPercentBuff: Buff {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case goldFraction
+    }
+
+    required init(dataObject: DataObject) {
+        self.goldFraction = dataObject.get(Field.goldFraction.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.goldFraction.rawValue, value: self.goldFraction)
+    }
+
+    // MARK: - Functions
+    
     override func applyGoldBonus(to gold: Int) -> Int {
         return Int(round(Double(gold)*self.goldFraction))
     }

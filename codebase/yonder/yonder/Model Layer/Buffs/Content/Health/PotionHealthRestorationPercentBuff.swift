@@ -39,6 +39,24 @@ class PotionHealthRestorationPercentBuff: Buff {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case healthFraction
+    }
+
+    required init(dataObject: DataObject) {
+        self.healthFraction = dataObject.get(Field.healthFraction.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.healthFraction.rawValue, value: self.healthFraction)
+    }
+
+    // MARK: - Functions
+    
     override func applyHealth(to health: Int, source: Any) -> Int {
         if source is Potion {
             return Int(round(Double(health)*self.healthFraction))

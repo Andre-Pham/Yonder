@@ -23,6 +23,24 @@ class ConsumableAbstract: Item, Clonable, Purchasable {
         super.init(name: original.name, description: original.description, remainingUses: original.remainingUses, damage: original.damage, restoration: original.restoration, healthRestoration: original.healthRestoration, armorPointsRestoration: original.armorPointsRestoration, requiresFoeForUsage: original.requiresFoeForUsage)
     }
     
+    // MARK: - Serialisation
+    
+    private enum Field: String {
+        case effectsDescription
+    }
+    
+    required init(dataObject: DataObject) {
+        self.effectsDescription = dataObject.get(Field.effectsDescription.rawValue)
+        super.init(dataObject: dataObject)
+    }
+    
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.effectsDescription.rawValue, value: self.effectsDescription)
+    }
+    
+    // MARK: - Functions
+    
     func setEffectsDescription(to effectsDescription: String) {
         self.effectsDescription = effectsDescription
     }

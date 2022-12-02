@@ -17,4 +17,14 @@ class DefaultPlayerWeapon: Weapon {
         super.init(basePill: DamageBasePill(damage: original.damage), durabilityPill: InfiniteDurabilityPill())
     }
     
+    // MARK: - Serialisation
+
+    required init(dataObject: DataObject) {
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+    }
+    
 }

@@ -10,13 +10,12 @@ import Foundation
 class HealthRestorationPotion: Potion {
     
     /// The tier of the health potion. Greater tiers restore greater health.
-    /// Raw value represents the amount of health restoration of each tier.
-    enum Tier: Int, CaseIterable {
-        case I = 25
-        case II = 50
-        case III = 100
-        case IV = 200
-        case V = 400
+    enum Tier: CaseIterable {
+        case I
+        case II
+        case III
+        case IV
+        case V
         
         var string: String {
             switch self {
@@ -29,7 +28,13 @@ class HealthRestorationPotion: Potion {
         }
         
         var healthRestoration: Int {
-            return self.rawValue
+            switch self {
+            case .I: return 25
+            case .II: return 50
+            case .III: return 100
+            case .IV: return 200
+            case .V: return 400
+            }
         }
     }
     
@@ -45,6 +50,18 @@ class HealthRestorationPotion: Potion {
     required init(_ original: PotionAbstract) {
         super.init(original)
     }
+    
+    // MARK: - Serialisation
+    
+    required init(dataObject: DataObject) {
+        super.init(dataObject: dataObject)
+    }
+    
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+    }
+    
+    // MARK: - Functions
     
     func use(owner: ActorAbstract, opposition: ActorAbstract) {
         owner.restoreHealthAdjusted(sourceOwner: owner, using: self, for: self.healthRestoration)
