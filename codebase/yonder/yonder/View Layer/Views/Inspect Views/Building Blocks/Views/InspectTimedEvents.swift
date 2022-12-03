@@ -20,7 +20,7 @@ struct InspectTimedEvents: View {
                         YonderText(text: "|", size: .inspectSheetBody)
                         
                         YonderTextNumeralHStack {
-                            YonderIconNumeralPair(image: YonderImages.timeRemainingIcon, numeral: timedEventViewModel.timeRemaining, size: .inspectSheetBody, iconSize: .inspectSheet)
+                            YonderIconNumeralPair(image: YonderIcons.timeRemainingIcon, numeral: timedEventViewModel.timeRemaining, size: .inspectSheetBody, iconSize: .inspectSheet)
                             
                             YonderText(text: "/\(timedEventViewModel.initialTimeRemaining)", size: .inspectSheetBody)
                         }

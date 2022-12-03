@@ -25,7 +25,7 @@ struct FriendlyInspectView: View {
             YonderText(text: Strings("inspect.title.stats").local, size: .inspectSheetTitle)
             
             InspectStatsBody {
-                InspectStatView(title: Strings("stat.offersRemaining").local, value: self.friendlyViewModel.offersRemaining, image: YonderImages.offerIcon)
+                InspectStatView(title: Strings("stat.offersRemaining").local, value: self.friendlyViewModel.offersRemaining, image: YonderIcons.offerIcon)
                 
                 YonderText(text: "(\(self.offerDescription))", size: .inspectSheetBody)
             }

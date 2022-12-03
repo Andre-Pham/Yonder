@@ -17,12 +17,12 @@ struct FoeCardView: View {
             CardRowView(
                 value: self.foeViewModel.weaponViewModel.damage,
                 indicativeValue: self.foeViewModel.getIndicativeDamage(),
-                image: YonderImages.foeDamageIcon)
+                image: YonderIcons.foeDamageIcon)
             
             CardRowView(
                 value: self.foeViewModel.health,
                 maxValue: self.foeViewModel.maxHealth,
-                image: YonderImages.healthIcon)
+                image: YonderIcons.healthIcon)
         }
     }
 }

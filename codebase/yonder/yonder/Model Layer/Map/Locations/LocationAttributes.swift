@@ -79,25 +79,25 @@ enum LocationType: Int {
     var image: Image {
         switch self {
         case .none:
-            return YonderImages.missingIcon
+            return YonderIcons.missingIcon
         case .hostile:
-            return YonderImages.hostileIcon
+            return YonderIcons.hostileIcon
         case .challengeHostile:
-            return YonderImages.challengeHostileIcon
+            return YonderIcons.challengeHostileIcon
         case .shop:
-            return YonderImages.shopIcon
+            return YonderIcons.shopIcon
         case .enhancer:
-            return YonderImages.enhancerIcon
+            return YonderIcons.enhancerIcon
         case .restorer:
-            return YonderImages.restorerIcon
+            return YonderIcons.restorerIcon
         case .quest:
-            return YonderImages.missingIcon
+            return YonderIcons.missingIcon
         case .friendly:
-            return YonderImages.friendlyIcon
+            return YonderIcons.friendlyIcon
         case .boss:
-            return YonderImages.missingIcon
+            return YonderIcons.missingIcon
         case .bridge:
-            return YonderImages.warpIcon
+            return YonderIcons.warpIcon
         }
     }
 }

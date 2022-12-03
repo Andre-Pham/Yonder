@@ -16,11 +16,11 @@ class WeaponViewModel: ItemViewModel {
     init(_ weapon: Weapon) {
         super.init(weapon,
                    remainingUsesDescription: Strings("stat.weapon.remainingUses").local,
-                   damageImage: YonderImages.weaponDamageIcon,
-                   restorationImage: YonderImages.weaponRestorationIcon,
-                   healthRestorationImage: YonderImages.weaponHealthRestorationIcon,
-                   armorPointsRestorationImage: YonderImages.weaponArmorPointsRestorationIcon,
-                   remainingUsesImage: YonderImages.weaponRemainingUsesIcon)
+                   damageImage: YonderIcons.weaponDamageIcon,
+                   restorationImage: YonderIcons.weaponRestorationIcon,
+                   healthRestorationImage: YonderIcons.weaponHealthRestorationIcon,
+                   armorPointsRestorationImage: YonderIcons.weaponArmorPointsRestorationIcon,
+                   remainingUsesImage: YonderIcons.weaponRemainingUsesIcon)
         self.previewEffectsDescription = weapon.getPreviewEffectsDescription()
         self.setEffectsDescription(to: weapon.getEffectsDescription())
         

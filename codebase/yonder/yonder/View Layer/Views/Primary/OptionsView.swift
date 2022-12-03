@@ -17,13 +17,13 @@ struct OptionsView: View {
     var body: some View {
         YonderOptionsGrid {
             if optionsStateManager.weaponOptionActive {
-                YonderGridOption(title: Strings("optionsMenu.option.weapon").local, geometry: self.pageGeometry, image: YonderImages.weaponOptionIcon) {
+                YonderGridOption(title: Strings("optionsMenu.option.weapon").local, geometry: self.pageGeometry, image: YonderIcons.weaponOptionIcon) {
                     self.optionsStateManager.weaponOptionSelected()
                 }
             }
             
             if optionsStateManager.potionOptionActive {
-                YonderGridOption(title: Strings("optionsMenu.option.potion").local, geometry: self.pageGeometry, image: YonderImages.potionOptionIcon) {
+                YonderGridOption(title: Strings("optionsMenu.option.potion").local, geometry: self.pageGeometry, image: YonderIcons.potionOptionIcon) {
                     self.optionsStateManager.potionOptionSelected()
                 }
             }
@@ -56,7 +56,7 @@ struct OptionsView: View {
                 YonderGridOption(
                     title: Strings("optionsMenu.option.chooseLootBag").local,
                     geometry: self.pageGeometry,
-                    image: YonderImages.chooseLootBagOptionIcon
+                    image: YonderIcons.chooseLootBagOptionIcon
                 ) {
                     self.optionsStateManager.chooseLootBagOptionSelected()
                 }
@@ -66,14 +66,14 @@ struct OptionsView: View {
                 YonderGridOption(
                     title: Strings("optionsMenu.option.loot").local,
                     geometry: self.pageGeometry,
-                    image: YonderImages.lootOptionIcon
+                    image: YonderIcons.lootOptionIcon
                 ) {
                     self.optionsStateManager.lootOptionSelected()
                 }
             }
             
             if self.optionsStateManager.travelOptionActive {
-                YonderGridOption(title: Strings("optionsMenu.option.travel").local, geometry: self.pageGeometry, image: YonderImages.mapIcon) {
+                YonderGridOption(title: Strings("optionsMenu.option.travel").local, geometry: self.pageGeometry, image: YonderIcons.mapIcon) {
                     self.optionsStateManager.travelOptionSelected(
                         viewRouter: self.viewRouter,
                         travelStateManager: self.travelStateManager)
@@ -81,7 +81,7 @@ struct OptionsView: View {
             }
             
             if optionsStateManager.consumableOptionActive {
-                YonderGridOption(title: Strings("optionsMenu.option.consumable").local, geometry: self.pageGeometry, image: YonderImages.consumableOptionIcon) {
+                YonderGridOption(title: Strings("optionsMenu.option.consumable").local, geometry: self.pageGeometry, image: YonderIcons.consumableOptionIcon) {
                     self.optionsStateManager.consumableOptionSelected()
                 }
             }

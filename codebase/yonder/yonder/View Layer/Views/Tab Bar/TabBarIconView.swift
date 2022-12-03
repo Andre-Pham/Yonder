@@ -59,7 +59,7 @@ struct TabBarIconView_Previews: PreviewProvider {
         ZStack {
             Color.black
             
-            TabBarIconView(viewRouter: ViewRouter(), correspondingPage: .primary, icon: YonderIcon(image: YonderImages.settingsIcon), text: "Settings")
+            TabBarIconView(viewRouter: ViewRouter(), correspondingPage: .primary, icon: YonderIcon(image: YonderIcons.settingsIcon), text: "Settings")
         }
     }
 }

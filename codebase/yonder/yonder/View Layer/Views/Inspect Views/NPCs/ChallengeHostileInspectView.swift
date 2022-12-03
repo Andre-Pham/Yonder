@@ -23,13 +23,13 @@ struct ChallengeHostileInspectView: View {
                     title: Strings("stat.health").local,
                     value: self.foeViewModel.health,
                     maxValue: self.foeViewModel.maxHealth,
-                    image: YonderImages.healthIcon)
+                    image: YonderIcons.healthIcon)
                 
                 InspectStatView(
                     title: Strings("stat.damage").local,
                     value: self.foeViewModel.weaponViewModel.damage,
                     indicativeValue: self.foeViewModel.getIndicativeDamage(),
-                    image: YonderImages.foeDamageIcon)
+                    image: YonderIcons.foeDamageIcon)
             }
         }
     }

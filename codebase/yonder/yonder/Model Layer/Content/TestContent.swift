@@ -70,7 +70,7 @@ enum TestContent {
         return AreaPool(
             areaName: "TEST AREA \(number)",
             areaDescription: "placeholderDescription \(number)",
-            areaImageName: YonderImages.placeholderImage.name,
+            areaImageName: YonderIcons.placeholderImage.name,
             hostileLocations: [
                 HostileLocation(foe: Self.newTestFoe()),
                 HostileLocation(foe: Self.newTestFoe()),

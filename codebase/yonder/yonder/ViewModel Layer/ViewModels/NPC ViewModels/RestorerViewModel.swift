@@ -32,9 +32,9 @@ class RestoreOptionViewModel: ObservableObject {
     var image: Image {
         switch self.restoreOption {
         case .health:
-            return YonderImages.healthIcon
+            return YonderIcons.healthIcon
         case .armorPoints:
-            return YonderImages.armorPointsIcon
+            return YonderIcons.armorPointsIcon
         }
     }
     

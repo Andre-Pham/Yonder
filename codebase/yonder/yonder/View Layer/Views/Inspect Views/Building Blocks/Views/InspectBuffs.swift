@@ -22,7 +22,7 @@ struct InspectBuffs: View {
                             YonderText(text: "|", size: .inspectSheetBody)
                             
                             YonderTextNumeralHStack {
-                                YonderIconNumeralPair(image: YonderImages.timeRemainingIcon, numeral: timeRemaining, size: .inspectSheetBody, iconSize: .inspectSheet)
+                                YonderIconNumeralPair(image: YonderIcons.timeRemainingIcon, numeral: timeRemaining, size: .inspectSheetBody, iconSize: .inspectSheet)
                                 
                                 YonderText(text: "/\(initialTimeRemaining)", size: .inspectSheetBody)
                             }

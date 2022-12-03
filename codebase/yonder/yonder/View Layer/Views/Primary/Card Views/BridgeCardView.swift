@@ -19,7 +19,7 @@ struct BridgeCardView: View {
                 YonderText(text: "↑", size: .title2)
                     .padding(.top, 4)
                 
-                YonderIcon(image: YonderImages.warpIcon)
+                YonderIcon(image: YonderIcons.warpIcon)
                     .padding(.vertical, YonderCoreGraphics.padding)
                 
                 YonderText(text: "↑", size: .title2)
@@ -46,13 +46,13 @@ struct BridgeCardView_Previews: PreviewProvider {
     
     static func getAreaContent1() -> LocationContext {
         let content = LocationContext()
-        content.setContext(name: "Australia", description: "Hot.", imageName: YonderImages.placeholderImage.name)
+        content.setContext(name: "Australia", description: "Hot.", imageName: YonderIcons.placeholderImage.name)
         return content
     }
     
     static func getAreaContent2() -> LocationContext {
         let content = LocationContext()
-        content.setContext(name: "Canada", description: "Cold.", imageName: YonderImages.placeholderImage.name)
+        content.setContext(name: "Canada", description: "Cold.", imageName: YonderIcons.placeholderImage.name)
         return content
     }
 }

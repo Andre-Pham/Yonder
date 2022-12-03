@@ -16,13 +16,13 @@ struct CardPriceRangeView: View {
             YonderTextNumeralHStack {
                 YonderText(text: Strings("card.lowestPriceShorthand").local.rightPadded(by: ": "), size: .cardSubscript)
                 
-                YonderIconNumeralPair(prefix: Strings("currencySymbol").local, image: YonderImages.goldIcon, numeral: self.minPrice, size: .cardSubscript, iconSize: .cardSubscript)
+                YonderIconNumeralPair(prefix: Strings("currencySymbol").local, image: YonderIcons.goldIcon, numeral: self.minPrice, size: .cardSubscript, iconSize: .cardSubscript)
             }
             
             YonderTextNumeralHStack {
                 YonderText(text: Strings("card.highestPriceShorthand").local.rightPadded(by: ": "), size: .cardSubscript)
                 
-                YonderIconNumeralPair(prefix: Strings("currencySymbol").local, image: YonderImages.goldIcon, numeral: self.maxPrice, size: .cardSubscript, iconSize: .cardSubscript)
+                YonderIconNumeralPair(prefix: Strings("currencySymbol").local, image: YonderIcons.goldIcon, numeral: self.maxPrice, size: .cardSubscript, iconSize: .cardSubscript)
             }
         }
     }

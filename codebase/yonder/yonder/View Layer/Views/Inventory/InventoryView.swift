@@ -50,15 +50,15 @@ struct InventoryView: View {
                         YonderText(text: Strings("inventory.title.items").local, size: .title2)
                         
                         YonderOptionsGrid {
-                            YonderGridOption(title: Strings("inventory.weapons.option").local, geometry: geo, image: YonderImages.weaponOptionIcon) {
+                            YonderGridOption(title: Strings("inventory.weapons.option").local, geometry: geo, image: YonderIcons.weaponOptionIcon) {
                                 self.inventoryStateManager.weaponOptionSelected(weaponCount: self.playerViewModel.weaponViewModels.count)
                             }
                             
-                            YonderGridOption(title: Strings("inventory.potions.option").local, geometry: geo, image: YonderImages.potionOptionIcon) {
+                            YonderGridOption(title: Strings("inventory.potions.option").local, geometry: geo, image: YonderIcons.potionOptionIcon) {
                                 self.inventoryStateManager.potionOptionSelected(potionCount: self.playerViewModel.potionViewModels.count)
                             }
                             
-                            YonderGridOption(title: Strings("inventory.consumables.option").local, geometry: geo, image: YonderImages.consumableOptionIcon) {
+                            YonderGridOption(title: Strings("inventory.consumables.option").local, geometry: geo, image: YonderIcons.consumableOptionIcon) {
                                 self.inventoryStateManager.consumableOptionSelected(consumableCount: self.playerViewModel.consumableViewModels.count)
                             }
                         }

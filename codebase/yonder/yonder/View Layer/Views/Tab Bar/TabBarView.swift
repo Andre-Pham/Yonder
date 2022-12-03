@@ -41,25 +41,25 @@ struct TabBarView: View {
                 TabBarIconView(
                     viewRouter: self.viewRouter,
                     correspondingPage: .primary,
-                    icon: YonderIcon(image: YonderImages.gameIcon),
+                    icon: YonderIcon(image: YonderIcons.gameIcon),
                     text: Strings("tabBar.game").local)
                 
                 TabBarIconView(
                     viewRouter: self.viewRouter,
                     correspondingPage: .inventory,
-                    icon: YonderIcon(image: YonderImages.inventoryIcon),
+                    icon: YonderIcon(image: YonderIcons.inventoryIcon),
                     text: Strings("tabBar.inventory").local)
                 
                 TabBarIconView(
                     viewRouter: self.viewRouter,
                     correspondingPage: .map,
-                    icon: YonderIcon(image: YonderImages.mapIcon),
+                    icon: YonderIcon(image: YonderIcons.mapIcon),
                     text: Strings("tabBar.map").local)
                 
                 TabBarIconView(
                     viewRouter: self.viewRouter,
                     correspondingPage: .settings,
-                    icon: YonderIcon(image: YonderImages.settingsIcon),
+                    icon: YonderIcon(image: YonderIcons.settingsIcon),
                     text: Strings("tabBar.settings").local)
             }
             .frame(height: 55)

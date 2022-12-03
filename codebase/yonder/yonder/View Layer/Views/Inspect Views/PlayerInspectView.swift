@@ -15,11 +15,11 @@ struct PlayerInspectView: View {
             YonderText(text: Strings("inspect.title.playerStats").local, size: .inspectSheetTitle)
                 
             InspectStatsBody {
-                InspectStatView(title: Strings("stat.shields").local, value: self.playerViewModel.armorPoints, maxValue: self.playerViewModel.maxArmorPoints, image: YonderImages.armorPointsIcon)
+                InspectStatView(title: Strings("stat.shields").local, value: self.playerViewModel.armorPoints, maxValue: self.playerViewModel.maxArmorPoints, image: YonderIcons.armorPointsIcon)
                 
-                InspectStatView(title: Strings("stat.health").local, value: self.playerViewModel.health, maxValue: self.playerViewModel.maxHealth, image: YonderImages.healthIcon)
+                InspectStatView(title: Strings("stat.health").local, value: self.playerViewModel.health, maxValue: self.playerViewModel.maxHealth, image: YonderIcons.healthIcon)
                 
-                InspectStatView(title: Strings("stat.gold").local, prefix: Strings("currencySymbol").local, value: self.playerViewModel.gold, image: YonderImages.goldIcon)
+                InspectStatView(title: Strings("stat.gold").local, prefix: Strings("currencySymbol").local, value: self.playerViewModel.gold, image: YonderIcons.goldIcon)
             }
             
             // Ongoing Effects

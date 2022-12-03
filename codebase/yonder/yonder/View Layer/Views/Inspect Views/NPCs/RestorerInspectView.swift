@@ -26,7 +26,7 @@ struct RestorerInspectView: View {
                     
                     YonderText(text: Strings("inspect.restorer.for").local.padded(by: " "), size: .inspectSheetBody)
                     
-                    YonderIconNumeralPair(prefix: Strings("currencySymbol").local, image: YonderImages.goldIcon, numeral: option.getBundlePrice(), size: .inspectSheetBody, iconSize: .inspectSheet)
+                    YonderIconNumeralPair(prefix: Strings("currencySymbol").local, image: YonderIcons.goldIcon, numeral: option.getBundlePrice(), size: .inspectSheetBody, iconSize: .inspectSheet)
                 }
             }
         }

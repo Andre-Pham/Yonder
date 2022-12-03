@@ -21,11 +21,11 @@ struct AccessoryInspectView: View {
             if !self.accessoryViewModel.noStats {
                 InspectStatsBody {
                     if self.accessoryViewModel.healthBonus > 0 {
-                        InspectStatView(title: Strings("stat.healthBonus").local, value: self.accessoryViewModel.healthBonus, image: YonderImages.healthBonusIcon)
+                        InspectStatView(title: Strings("stat.healthBonus").local, value: self.accessoryViewModel.healthBonus, image: YonderIcons.healthBonusIcon)
                     }
                     
                     if self.accessoryViewModel.armorPointsBonus > 0 {
-                        InspectStatView(title: Strings("stat.armorPointsBonus").local, value: self.accessoryViewModel.armorPointsBonus, image: YonderImages.armorPointsIcon)
+                        InspectStatView(title: Strings("stat.armorPointsBonus").local, value: self.accessoryViewModel.armorPointsBonus, image: YonderIcons.armorPointsIcon)
                     }
                 }
             }

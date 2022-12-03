@@ -41,6 +41,6 @@ struct YonderIconNumeralPair: View {
 
 struct YonderIconNumeralPair_Previews: PreviewProvider {
     static var previews: some View {
-        YonderIconNumeralPair(image: YonderImages.armorPointsIcon, numeral: 500, size: .buttonBody, color: .black)
+        YonderIconNumeralPair(image: YonderIcons.armorPointsIcon, numeral: 500, size: .buttonBody, color: .black)
     }
 }

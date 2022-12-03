@@ -17,17 +17,17 @@ struct PlayerCardView: View {
             CardRowView(
                 value: self.playerViewModel.armorPoints,
                 maxValue: self.playerViewModel.maxArmorPoints,
-                image: YonderImages.armorPointsIcon)
+                image: YonderIcons.armorPointsIcon)
             
             CardRowView(
                 value: self.playerViewModel.health,
                 maxValue: self.playerViewModel.maxHealth,
-                image: YonderImages.healthIcon)
+                image: YonderIcons.healthIcon)
             
             CardRowView(
                 prefix: Strings("currencySymbol").local,
                 value: self.playerViewModel.gold,
-                image: YonderImages.goldIcon)
+                image: YonderIcons.goldIcon)
         }
     }
 }

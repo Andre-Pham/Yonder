@@ -1,5 +1,5 @@
 //
-//  YonderImages.swift
+//  YonderIcons.swift
 //  yonder
 //
 //  Created by Andre Pham on 10/12/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum YonderImages {
+enum YonderIcons {
     
     // MARK: - Placeholders
     
@@ -30,9 +30,9 @@ enum YonderImages {
     static let weaponDamageIcon = Image("StrikingBlade")
     static let potionDamageIcon = Image("Explosion")
     static let consumableDamageIcon = Image("Explosion")
-    static let weaponRestorationIcon = YonderImages.missingIcon
-    static let potionRestorationIcon = YonderImages.missingIcon
-    static let consumableRestorationIcon = YonderImages.missingIcon
+    static let weaponRestorationIcon = YonderIcons.missingIcon
+    static let potionRestorationIcon = YonderIcons.missingIcon
+    static let consumableRestorationIcon = YonderIcons.missingIcon
     static let weaponHealthRestorationIcon = Image("Healing")
     static let potionHealthRestorationIcon = Image("Healing")
     static let consumableHealthRestorationIcon = Image("Healing")
@@ -44,14 +44,14 @@ enum YonderImages {
     static let weaponArmorPointsRestorationIcon = Image("MetalPlating")
     static let potionArmorPointsRestorationIcon = Image("MetalPlating")
     static let consumableArmorPointsRestorationIcon = Image("MetalPlating")
-    static let healthBonusIcon = YonderImages.healthIcon
-    static let armorPointsBonusIcon = YonderImages.armorPointsIcon
+    static let healthBonusIcon = YonderIcons.healthIcon
+    static let armorPointsBonusIcon = YonderIcons.armorPointsIcon
     
     // MARK: - Option Icons
     
-    static let weaponOptionIcon = YonderImages.weaponIcon
-    static let potionOptionIcon = YonderImages.potionIcon
-    static let consumableOptionIcon = YonderImages.consumableIcon
+    static let weaponOptionIcon = YonderIcons.weaponIcon
+    static let potionOptionIcon = YonderIcons.potionIcon
+    static let consumableOptionIcon = YonderIcons.consumableIcon
     static let chooseLootBagOptionIcon = Image("TreasureChest")
     static let lootOptionIcon = Image("Bag")
     

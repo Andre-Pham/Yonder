@@ -20,7 +20,7 @@ struct InspectStatusEffects: View {
                         YonderText(text: "|", size: .inspectSheetBody)
                         
                         YonderTextNumeralHStack {
-                            YonderIconNumeralPair(image: YonderImages.timeRemainingIcon, numeral: statusEffectViewModel.timeRemaining, size: .inspectSheetBody, iconSize: .inspectSheet)
+                            YonderIconNumeralPair(image: YonderIcons.timeRemainingIcon, numeral: statusEffectViewModel.timeRemaining, size: .inspectSheetBody, iconSize: .inspectSheet)
                             
                             YonderText(text: "/\(statusEffectViewModel.initialTimeRemaining)", size: .inspectSheetBody)
                         }

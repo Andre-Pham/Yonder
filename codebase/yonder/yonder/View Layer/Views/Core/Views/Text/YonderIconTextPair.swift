@@ -29,6 +29,6 @@ struct YonderIconTextPair: View {
 
 struct YonderIconTextPair_Previews: PreviewProvider {
     static var previews: some View {
-        YonderIconTextPair(image: YonderImages.friendlyIcon, text: "Yonder", size: .buttonBody, color: .black)
+        YonderIconTextPair(image: YonderIcons.friendlyIcon, text: "Yonder", size: .buttonBody, color: .black)
     }
 }

@@ -13,11 +13,11 @@ class PotionViewModel: ItemViewModel {
     init(_ potion: Potion) {
         super.init(potion,
                    remainingUsesDescription: Strings("stat.potion.remainingUses").local,
-                   damageImage: YonderImages.potionDamageIcon,
-                   restorationImage: YonderImages.potionRestorationIcon,
-                   healthRestorationImage: YonderImages.potionHealthRestorationIcon,
-                   armorPointsRestorationImage: YonderImages.potionArmorPointsRestorationIcon,
-                   remainingUsesImage: YonderImages.potionRemainingUsesIcon)
+                   damageImage: YonderIcons.potionDamageIcon,
+                   restorationImage: YonderIcons.potionRestorationIcon,
+                   healthRestorationImage: YonderIcons.potionHealthRestorationIcon,
+                   armorPointsRestorationImage: YonderIcons.potionArmorPointsRestorationIcon,
+                   remainingUsesImage: YonderIcons.potionRemainingUsesIcon)
         self.setEffectsDescription(to: potion.getEffectsDescription())
     }
     

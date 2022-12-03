@@ -17,7 +17,7 @@ struct ArmorInspectView: View {
             InspectStatsBody {
                 YonderText(text: "\(Strings("armor.armorSlot").local): \(self.armorViewModel.type.name)", size: .inspectSheetBody)
                 
-                InspectStatView(title: Strings("stat.shields").local, value: self.armorViewModel.armorPoints, image: YonderImages.armorPointsIcon)
+                InspectStatView(title: Strings("stat.shields").local, value: self.armorViewModel.armorPoints, image: YonderIcons.armorPointsIcon)
             }
             
             if let effectsDescription = self.armorViewModel.effectsDescription {

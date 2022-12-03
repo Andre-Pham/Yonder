@@ -15,7 +15,7 @@ struct FriendlyCardView: View {
         CardBody(name: self.friendlyViewModel.name) {
             CardInteractorTypeView()
             
-            CardRowView(value: friendlyViewModel.offersRemaining, image: YonderImages.offerIcon)
+            CardRowView(value: friendlyViewModel.offersRemaining, image: YonderIcons.offerIcon)
         }
     }
 }
