@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Segment {
+class Segment: Storable {
     
     private(set) var leftArea: Area
     private(set) var rightArea: Area
@@ -42,6 +42,29 @@ class Segment {
             rightLocation: rightAreaBridgeLocation,
             bridgeNode: self.bridgeLocation)
     }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case leftArea
+        case rightArea
+        case bridgeLocation
+    }
+
+    required init(dataObject: DataObject) {
+        self.leftArea = dataObject.getObject(Field.leftArea.rawValue, type: Area.self)
+        self.rightArea = dataObject.getObject(Field.rightArea.rawValue, type: Area.self)
+        self.bridgeLocation = dataObject.getObject(Field.bridgeLocation.rawValue, type: BridgeLocation.self)
+    }
+
+    func toDataObject() -> DataObject {
+        return DataObject(self)
+            .add(key: Field.leftArea.rawValue, value: self.leftArea)
+            .add(key: Field.rightArea.rawValue, value: self.rightArea)
+            .add(key: Field.bridgeLocation.rawValue, value: self.bridgeLocation)
+    }
+
+    // MARK: - Functions
     
     func addBridgingNode(leftLocation: Location, rightLocation: Location, bridgeNode: BridgeLocation) {
         leftLocation.setBridgeLocation(bridgeNode)

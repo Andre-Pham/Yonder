@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TavernArea {
+class TavernArea: Storable {
     
     private(set) var rootLocations = [Location]()
     private(set) var tipLocations = [Location]()
@@ -17,26 +17,52 @@ class TavernArea {
     init(restorer: RestorerLocation, potionShop: ShopLocation, enhancer: EnhancerLocation) {
         self.arrangement = .S
         self.locations = [restorer, potionShop, enhancer]
+        self.addRootAndTipLocations()
         self.generateAreaArrangement()
     }
     
     init(restorer: RestorerLocation, potionShop: ShopLocation, enhancer: EnhancerLocation, otherShop: ShopLocation) {
         self.arrangement = .M
         self.locations = [restorer, potionShop, enhancer, otherShop]
+        self.addRootAndTipLocations()
         self.generateAreaArrangement()
     }
     
     init(restorer: RestorerLocation, potionShop: ShopLocation, enhancer: EnhancerLocation, otherShop: ShopLocation, friendly: FriendlyLocation) {
         self.arrangement = .L
         self.locations = [restorer, potionShop, enhancer, otherShop, friendly]
+        self.addRootAndTipLocations()
         self.generateAreaArrangement()
     }
     
     init(restorer: RestorerLocation, potionShop: ShopLocation, enhancer: EnhancerLocation, otherShop: ShopLocation, friendly: FriendlyLocation, secondFriendly: FriendlyLocation) {
         self.arrangement = .XL
         self.locations = [restorer, potionShop, enhancer, otherShop, friendly, secondFriendly]
+        self.addRootAndTipLocations()
         self.generateAreaArrangement()
     }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case arrangement
+        case locations
+    }
+
+    required init(dataObject: DataObject) {
+        self.arrangement = TavernAreaArrangements(rawValue: dataObject.get(Field.arrangement.rawValue)) ?? .S
+        self.locations = dataObject.getObjectArray(Field.locations.rawValue, type: LocationAbstract.self) as! [any Location]
+        self.addRootAndTipLocations()
+        // We don't re-generate area arrangement because the serialised locations already have that data
+    }
+
+    func toDataObject() -> DataObject {
+        return DataObject(self)
+            .add(key: Field.arrangement.rawValue, value: self.arrangement.rawValue)
+            .add(key: Field.locations.rawValue, value: self.locations as [LocationAbstract])
+    }
+
+    // MARK: - Functions
     
     func addRootLocations(_ locations: [Location]) {
         self.rootLocations.append(contentsOf: locations)

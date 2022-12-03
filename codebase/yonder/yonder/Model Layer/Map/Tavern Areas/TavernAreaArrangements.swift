@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TavernAreaArrangements: CaseIterable {
+enum TavernAreaArrangements: String, CaseIterable {
     
     case S // Small
     case M // Medium
@@ -27,6 +27,15 @@ enum TavernAreaArrangements: CaseIterable {
 
 extension TavernArea {
     
+    func addRootAndTipLocations() {
+        switch self.arrangement {
+        case .S: self.addRootAndTipLocationsS()
+        case .M: self.addRootAndTipLocationsM()
+        case .L: self.addRootAndTipLocationsL()
+        case .XL: self.addRootAndTipLocationsXL()
+        }
+    }
+    
     func generateAreaArrangement() {
         switch self.arrangement {
         case .S: self.generateTavernAreaArrangementS()
@@ -36,10 +45,27 @@ extension TavernArea {
         }
     }
     
-    func generateTavernAreaArrangementS() {
+    private func addRootAndTipLocationsS() {
         self.addRootLocations(0)
         self.addTipLocations(2)
-        
+    }
+    
+    private func addRootAndTipLocationsM() {
+        self.addRootLocations(0)
+        self.addTipLocations(3)
+    }
+    
+    private func addRootAndTipLocationsL() {
+        self.addRootLocations(0)
+        self.addTipLocations(4)
+    }
+    
+    private func addRootAndTipLocationsXL() {
+        self.addRootLocations(0)
+        self.addTipLocations(5)
+    }
+    
+    private func generateTavernAreaArrangementS() {
         self.locations[0].setHexagonCoordinate(5, 25)
         self.locations[1].setHexagonCoordinate(4, 26)
         self.locations[2].setHexagonCoordinate(5, 27)
@@ -49,10 +75,7 @@ extension TavernArea {
         self.createUndirectedEdge(between: 1, and: 2)
     }
     
-    func generateTavernAreaArrangementM() {
-        self.addRootLocations(0)
-        self.addTipLocations(3)
-        
+    private func generateTavernAreaArrangementM() {
         self.locations[0].setHexagonCoordinate(5, 25)
         self.locations[1].setHexagonCoordinate(4, 26)
         self.locations[2].setHexagonCoordinate(6, 26)
@@ -64,10 +87,7 @@ extension TavernArea {
         self.createUndirectedEdge(between: 2, and: 3)
     }
     
-    func generateTavernAreaArrangementL() {
-        self.addRootLocations(0)
-        self.addTipLocations(4)
-        
+    private func generateTavernAreaArrangementL() {
         self.locations[0].setHexagonCoordinate(5, 25)
         self.locations[1].setHexagonCoordinate(4, 26)
         self.locations[2].setHexagonCoordinate(6, 26)
@@ -81,10 +101,7 @@ extension TavernArea {
         self.createUndirectedEdge(between: 3, and: 4)
     }
     
-    func generateTavernAreaArrangementXL() {
-        self.addRootLocations(0)
-        self.addTipLocations(5)
-        
+    private func generateTavernAreaArrangementXL() {
         self.locations[0].setHexagonCoordinate(5, 25)
         self.locations[1].setHexagonCoordinate(4, 26)
         self.locations[2].setHexagonCoordinate(6, 26)

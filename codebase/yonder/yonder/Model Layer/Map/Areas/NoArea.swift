@@ -13,4 +13,14 @@ class NoArea: Area {
         super.init(arrangement: .A, locations: [Location](repeating: NoLocation(), count: AreaArrangements.A.locationCount))
     }
     
+    // MARK: - Serialisation
+
+    required init(dataObject: DataObject) {
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+    }
+    
 }

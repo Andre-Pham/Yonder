@@ -21,7 +21,13 @@ class LocationAbstract: Storable {
     var nextLocations: [Location] {
         LocationCache.getLocations(ids: self.nextLocationIDs)
     }
-    private(set) var bridgeLocation: BridgeLocation?
+    private var bridgeLocationID: UUID?
+    var bridgeLocation: BridgeLocation? {
+        if let id = self.bridgeLocationID {
+            return (LocationCache.getLocation(id: id) as! BridgeLocation)
+        }
+        return nil
+    }
     private(set) var bridgeAccessibility: LocationBridgeAccessibility
     private(set) var hexagonCoordinate: HexagonCoordinate?
     private(set) var context = LocationContext()
@@ -35,7 +41,10 @@ class LocationAbstract: Storable {
     init() {
         self.bridgeAccessibility = .noBridge
         self.hexagonCoordinate = nil
-        self.id = UUID() // Locations refer to next locations by id so ids must remain consistent
+        // Locations refer to next locations by id
+        // Location references are also stored by id (e.g. in Area)
+        // Hence ids must remain consistent between serialisation and restoration
+        self.id = UUID()
         
         LocationCache.addLocation(self as! Location)
     }
@@ -44,7 +53,7 @@ class LocationAbstract: Storable {
 
     private enum Field: String {
         case nextLocationIDs
-        case bridgeLocation
+        case bridgeLocationID
         case bridgeAccessibility
         case hexagonCoordinate
         case context
@@ -56,7 +65,8 @@ class LocationAbstract: Storable {
     required init(dataObject: DataObject) {
         let nextLocationStrings: [String] = dataObject.get(Field.nextLocationIDs.rawValue)
         self.nextLocationIDs = nextLocationStrings.map({ UUID(uuidString: $0)! })
-        self.bridgeLocation = dataObject.getObjectOptional(Field.bridgeLocation.rawValue, type: BridgeLocation.self)
+        let bridgeLocationString: String? = dataObject.get(Field.bridgeLocationID.rawValue)
+        self.bridgeLocationID = bridgeLocationString == nil ? nil : UUID(uuidString: bridgeLocationString!)
         self.bridgeAccessibility = LocationBridgeAccessibility(rawValue: dataObject.get(Field.bridgeAccessibility.rawValue)) ?? .noBridge
         self.hexagonCoordinate = dataObject.getObjectOptional(Field.hexagonCoordinate.rawValue, type: HexagonCoordinate.self)
         self.context = dataObject.getObject(Field.context.rawValue, type: LocationContext.self)
@@ -71,7 +81,7 @@ class LocationAbstract: Storable {
     func toDataObject() -> DataObject {
         return DataObject(self)
             .add(key: Field.nextLocationIDs.rawValue, value: self.nextLocationIDs.map({ $0.uuidString }))
-            .add(key: Field.bridgeLocation.rawValue, value: self.bridgeLocation)
+            .add(key: Field.bridgeLocationID.rawValue, value: self.bridgeLocationID?.uuidString)
             .add(key: Field.bridgeAccessibility.rawValue, value: self.bridgeAccessibility.rawValue)
             .add(key: Field.hexagonCoordinate.rawValue, value: self.hexagonCoordinate)
             .add(key: Field.context.rawValue, value: self.context)
@@ -100,7 +110,7 @@ class LocationAbstract: Storable {
     }
     
     func setBridgeLocation(_ bridgeLocation: BridgeLocation) {
-        self.bridgeLocation = bridgeLocation
+        self.bridgeLocationID = bridgeLocation.id
     }
     
     func setBridgeAccessibility(_ bridgeAccessibility: LocationBridgeAccessibility) {

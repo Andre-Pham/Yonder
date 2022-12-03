@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Map {
+class Map: Storable {
     
     private(set) var territoriesInOrder: [Territory]
     private(set) var bossAreasInOrder: [BossArea]
@@ -45,6 +45,29 @@ class Map {
             }
         }
     }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case territoriesInOrder
+        case bossAreasInOrder
+        case startingLocation
+    }
+
+    required init(dataObject: DataObject) {
+        self.territoriesInOrder = dataObject.getObjectArray(Field.territoriesInOrder.rawValue, type: Territory.self)
+        self.bossAreasInOrder = dataObject.getObjectArray(Field.bossAreasInOrder.rawValue, type: BossArea.self)
+        self.startingLocation = dataObject.getObject(Field.startingLocation.rawValue, type: LocationAbstract.self) as! any Location
+    }
+
+    func toDataObject() -> DataObject {
+        return DataObject(self)
+            .add(key: Field.territoriesInOrder.rawValue, value: self.territoriesInOrder)
+            .add(key: Field.bossAreasInOrder.rawValue, value: self.bossAreasInOrder)
+            .add(key: Field.startingLocation.rawValue, value: self.startingLocation)
+    }
+
+    // MARK: - Functions
     
     func getPreviousTavernAreaToTerritory(at territoryIndex: Int) -> TavernArea? {
         return territoryIndex > 0 ? self.territoriesInOrder[territoryIndex-1].tavernArea : nil

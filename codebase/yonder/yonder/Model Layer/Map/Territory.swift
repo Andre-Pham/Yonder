@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Territory {
+class Territory: Storable {
     
     private(set) var segment: Segment
     private(set) var tavernArea: TavernArea
@@ -24,6 +24,27 @@ class Territory {
         
         self.rootLocations = self.segment.allAreas.map { $0.rootLocation }
         self.tipLocations = self.tavernArea.tipLocations
+    }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case segment
+        case tavernArea
+    }
+
+    required init(dataObject: DataObject) {
+        self.segment = dataObject.getObject(Field.segment.rawValue, type: Segment.self)
+        self.tavernArea = dataObject.getObject(Field.tavernArea.rawValue, type: TavernArea.self)
+        
+        self.rootLocations = self.segment.allAreas.map { $0.rootLocation }
+        self.tipLocations = self.tavernArea.tipLocations
+    }
+
+    func toDataObject() -> DataObject {
+        return DataObject(self)
+            .add(key: Field.segment.rawValue, value: self.segment)
+            .add(key: Field.tavernArea.rawValue, value: self.tavernArea)
     }
     
 }
