@@ -26,13 +26,17 @@ class LocationAbstract: Storable {
     private(set) var hexagonCoordinate: HexagonCoordinate?
     private(set) var context = LocationContext()
     @DidSetPublished private(set) var hasBeenVisited = false
-    @DidSetPublished private(set) var locationsArrivedFrom = [Location]()
+    @DidSetPublished private(set) var locationIDsArrivedFrom = [UUID]()
+    var locationsArrivedFrom: [Location] {
+        LocationCache.getLocations(ids: self.locationIDsArrivedFrom)
+    }
     public let id: UUID
     
     init() {
         self.bridgeAccessibility = .noBridge
         self.hexagonCoordinate = nil
         self.id = UUID() // Locations refer to next locations by id so ids must remain consistent
+        
         LocationCache.addLocation(self as! Location)
     }
     
@@ -45,20 +49,22 @@ class LocationAbstract: Storable {
         case hexagonCoordinate
         case context
         case hasBeenVisited
-        case locationsArrivedFrom
+        case locationIDsArrivedFrom
         case id
     }
 
     required init(dataObject: DataObject) {
-        let stringIDs: [String] = dataObject.get(Field.nextLocationIDs.rawValue)
-        self.nextLocationIDs = stringIDs.map({ UUID(uuidString: $0)! })
+        let nextLocationStrings: [String] = dataObject.get(Field.nextLocationIDs.rawValue)
+        self.nextLocationIDs = nextLocationStrings.map({ UUID(uuidString: $0)! })
         self.bridgeLocation = dataObject.getObjectOptional(Field.bridgeLocation.rawValue, type: BridgeLocation.self)
         self.bridgeAccessibility = LocationBridgeAccessibility(rawValue: dataObject.get(Field.bridgeAccessibility.rawValue)) ?? .noBridge
         self.hexagonCoordinate = dataObject.getObjectOptional(Field.hexagonCoordinate.rawValue, type: HexagonCoordinate.self)
         self.context = dataObject.getObject(Field.context.rawValue, type: LocationContext.self)
         self.hasBeenVisited = dataObject.get(Field.hasBeenVisited.rawValue, onFail: false)
-        self.locationsArrivedFrom = dataObject.getObjectArray(Field.locationsArrivedFrom.rawValue, type: LocationAbstract.self) as! [any Location]
+        let arrivedFromLocationStrings: [String] = dataObject.get(Field.locationIDsArrivedFrom.rawValue)
+        self.locationIDsArrivedFrom = arrivedFromLocationStrings.map({ UUID(uuidString: $0)! })
         self.id = UUID(uuidString: dataObject.get(Field.id.rawValue))!
+        
         LocationCache.addLocation(self as! Location)
     }
 
@@ -70,7 +76,7 @@ class LocationAbstract: Storable {
             .add(key: Field.hexagonCoordinate.rawValue, value: self.hexagonCoordinate)
             .add(key: Field.context.rawValue, value: self.context)
             .add(key: Field.hasBeenVisited.rawValue, value: self.hasBeenVisited)
-            .add(key: Field.locationsArrivedFrom.rawValue, value: self.locationsArrivedFrom as [LocationAbstract])
+            .add(key: Field.locationIDsArrivedFrom.rawValue, value: self.locationIDsArrivedFrom.map({ $0.uuidString }))
             .add(key: Field.id.rawValue, value: self.id.uuidString)
     }
 
@@ -86,7 +92,7 @@ class LocationAbstract: Storable {
     }
     
     func addLocationArrivedFrom(_ location: Location) {
-        self.locationsArrivedFrom.append(location)
+        self.locationIDsArrivedFrom.append(location.id)
     }
     
     func addNextLocations(_ locations: [Location]) {

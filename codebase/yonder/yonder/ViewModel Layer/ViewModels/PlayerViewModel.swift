@@ -239,8 +239,8 @@ class PlayerViewModel: ObservableObject {
             self.gold = newValue
         }).store(in: &self.subscriptions)
         
-        self.player.$location.sink(receiveValue: { newValue in
-            self.locationViewModel = LocationViewModel(newValue)
+        self.player.$locationID.sink(receiveValue: { newValue in
+            self.locationViewModel = LocationViewModel(self.player.location)
         }).store(in: &self.subscriptions)
         
         self.player.$loot.sink(receiveValue: { newValue in

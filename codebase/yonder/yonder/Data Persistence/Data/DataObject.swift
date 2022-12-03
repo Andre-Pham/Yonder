@@ -91,25 +91,29 @@ class DataObject {
     
     @discardableResult
     func add(key: String, value: Double) -> Self {
-        self.json[key] = JSON(value)
+        self.json[key] = JSON(Decimal(value))
         return self
     }
     
     @discardableResult
     func add(key: String, value: Double?) -> Self {
-        self.json[key] = JSON(value ?? JSON.null)
+        if let value {
+            self.json[key] = JSON(Decimal(value))
+        } else {
+            self.json[key] = JSON.null
+        }
         return self
     }
     
     @discardableResult
     func add(key: String, value: [Double]) -> Self {
-        self.json[key] = JSON(value)
+        self.json[key] = JSON(value.map({ Double($0) }))
         return self
     }
     
     @discardableResult
     func add(key: String, value: [Double?]) -> Self {
-        self.json[key] = JSON(value)
+        self.json[key] = JSON(value.map({ $0 == nil ? nil : Double($0!) }))
         return self
     }
     

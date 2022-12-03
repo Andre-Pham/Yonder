@@ -22,8 +22,8 @@ class PlayerLocationViewModel: ObservableObject {
         
         // Add Subscribers
         
-        player.$location.sink(receiveValue: { newValue in
-            self.locationViewModel = LocationViewModel(newValue)
+        player.$locationID.sink(receiveValue: { newValue in
+            self.locationViewModel = LocationViewModel(player.location)
         }).store(in: &self.subscriptions)
     }
     

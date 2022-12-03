@@ -21,7 +21,8 @@ class LocationCache {
         if let location = Self.locations[id]?.value {
             return location
         }
-        assertionFailure("Location could not be found in cache")
+        // This doesn't mean the location is necessarily missing from the cache, in most cases
+        // NoLocation is deallocated and wont shop up in the cache
         return NoLocation()
     }
     

@@ -69,7 +69,7 @@ class LocationViewModel: ObservableObject {
         // Set properties to match Location
         
         self.hasBeenVisited = self.location.hasBeenVisited
-        self.locationIDsArrivedFrom = self.location.locationsArrivedFrom.map { $0.id }
+        self.locationIDsArrivedFrom = self.location.locationIDsArrivedFrom
         self.id = self.location.id
         self.name = location.context.name
         self.description = location.context.description
@@ -86,8 +86,8 @@ class LocationViewModel: ObservableObject {
             self.hasBeenVisited = newValue
         }).store(in: &self.subscriptions)
         
-        self.location.$locationsArrivedFrom.sink(receiveValue: { newValue in
-            if let newID = newValue.last?.id {
+        self.location.$locationIDsArrivedFrom.sink(receiveValue: { newValue in
+            if let newID = newValue.last {
                 self.locationIDsArrivedFrom.append(newID)
             }
         }).store(in: &self.subscriptions)

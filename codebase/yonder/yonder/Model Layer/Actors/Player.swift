@@ -9,7 +9,10 @@ import Foundation
 
 class Player: ActorAbstract {
     
-    @DidSetPublished private(set) var location: Location
+    @DidSetPublished private(set) var locationID: UUID
+    var location: Location {
+        LocationCache.getLocation(id: self.locationID)
+    }
     @DidSetPublished private(set) var gold = 0 {
         didSet {
             OnGoldChangePublisher.publish(player: self)
@@ -19,7 +22,7 @@ class Player: ActorAbstract {
     @DidSetPublished private(set) var loot: LootBag? = nil
     
     init(maxHealth: Int, location: Location) {
-        self.location = location
+        self.locationID = location.id
         location.setToVisited(from: NoLocation())
         
         super.init(maxHealth: maxHealth)
@@ -28,14 +31,14 @@ class Player: ActorAbstract {
     // MARK: - Serialisation
 
     private enum Field: String {
-        case location
+        case locationID
         case gold
         case attributes
         case loot
     }
 
     required init(dataObject: DataObject) {
-        self.location = dataObject.getObject(Field.location.rawValue, type: LocationAbstract.self) as! any Location
+        self.locationID = UUID(uuidString: dataObject.get(Field.locationID.rawValue))!
         self.gold = dataObject.get(Field.gold.rawValue)
         let attributes: [PlayerAttribute?] = dataObject.get(Field.attributes.rawValue).map { PlayerAttribute(rawValue: $0) }
         self.attributes = attributes.compactMap({ $0 })
@@ -45,7 +48,7 @@ class Player: ActorAbstract {
 
     override func toDataObject() -> DataObject {
         return super.toDataObject()
-            .add(key: Field.location.rawValue, value: self.location)
+            .add(key: Field.locationID.rawValue, value: self.locationID.uuidString)
             .add(key: Field.gold.rawValue, value: self.gold)
             .add(key: Field.attributes.rawValue, value: self.attributes.map { $0.rawValue })
             .add(key: Field.loot.rawValue, value: self.loot)
@@ -74,7 +77,7 @@ class Player: ActorAbstract {
         OnPlayerTravelPublisher.publish(player: self, newLocation: location)
         
         location.setToVisited(from: self.location)
-        self.location = location
+        self.locationID = location.id
         
         AfterPlayerTravelPublisher.publish(player: self)
     }
