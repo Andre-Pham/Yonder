@@ -14,10 +14,10 @@ class AreaViewModel: ObservableObject {
     public let description: String
     public let image: Image
     
-    init(areaContent: LocationContext) {
-        self.name = areaContent.name
-        self.description = areaContent.description
-        self.image = areaContent.image
+    init(locationContext: LocationContext) {
+        self.name = locationContext.name
+        self.description = locationContext.description
+        self.image = locationContext.image
     }
     
 }

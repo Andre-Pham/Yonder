@@ -97,8 +97,8 @@ class LocationViewModel: ObservableObject {
         if !self.isBridge || self.location.nextLocations.count != 2 {
             return nil
         }
-        return (AreaViewModel(areaContent: self.location.nextLocations[0].context),
-                AreaViewModel(areaContent: self.location.nextLocations[1].context))
+        return (AreaViewModel(locationContext: self.location.nextLocations[0].context),
+                AreaViewModel(locationContext: self.location.nextLocations[1].context))
     }
     
     func getBridgeConnectedLocationViewModels() -> (LocationViewModel, LocationViewModel)? {

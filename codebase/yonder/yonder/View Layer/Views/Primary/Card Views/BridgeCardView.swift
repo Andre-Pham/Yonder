@@ -39,18 +39,18 @@ struct BridgeCardView_Previews: PreviewProvider {
                 .ignoresSafeArea()
             
             BridgeCardView(
-                area1ViewModel: AreaViewModel(areaContent: getAreaContent1()),
-                area2ViewModel: AreaViewModel(areaContent: getAreaContent2()))
+                area1ViewModel: AreaViewModel(locationContext: getContext1()),
+                area2ViewModel: AreaViewModel(locationContext: getContext2()))
         }
     }
     
-    static func getAreaContent1() -> LocationContext {
+    static func getContext1() -> LocationContext {
         let content = LocationContext()
         content.setContext(name: "Australia", description: "Hot.", imageResource: YonderImages.placeholderImage)
         return content
     }
     
-    static func getAreaContent2() -> LocationContext {
+    static func getContext2() -> LocationContext {
         let content = LocationContext()
         content.setContext(name: "Canada", description: "Cold.", imageResource: YonderImages.placeholderImage)
         return content
