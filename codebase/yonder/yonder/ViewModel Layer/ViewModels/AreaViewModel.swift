@@ -14,7 +14,7 @@ class AreaViewModel: ObservableObject {
     public let description: String
     public let image: Image
     
-    init(areaContent: AreaContentContainer) {
+    init(areaContent: LocationContext) {
         self.name = areaContent.name
         self.description = areaContent.description
         self.image = areaContent.image

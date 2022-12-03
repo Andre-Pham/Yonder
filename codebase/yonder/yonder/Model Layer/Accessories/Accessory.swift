@@ -74,8 +74,8 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
             .add(key: Field.type.rawValue, value: self.type.rawValue)
             .add(key: Field.healthBonus.rawValue, value: self.healthBonus)
             .add(key: Field.armorPointsBonus.rawValue, value: self.armorPointsBonus)
-            .add(key: Field.buffs.rawValue, value: self.buffs)
-            .add(key: Field.equipmentPills.rawValue, value: self.equipmentPills)
+            .add(key: Field.buffs.rawValue, value: self.buffs as [BuffAbstract])
+            .add(key: Field.equipmentPills.rawValue, value: self.equipmentPills as [EquipmentPillAbstract])
     }
 
     // MARK: - Functions

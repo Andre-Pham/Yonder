@@ -44,15 +44,15 @@ struct BridgeCardView_Previews: PreviewProvider {
         }
     }
     
-    static func getAreaContent1() -> AreaContentContainer {
-        let content = AreaContentContainer()
-        content.setContent(name: "Australia", description: "Hot.", image: YonderImages.missingIcon)
+    static func getAreaContent1() -> LocationContext {
+        let content = LocationContext()
+        content.setContext(name: "Australia", description: "Hot.", imageName: YonderImages.placeholderImage.name)
         return content
     }
     
-    static func getAreaContent2() -> AreaContentContainer {
-        let content = AreaContentContainer()
-        content.setContent(name: "Canada", description: "Cold.", image: YonderImages.missingIcon)
+    static func getAreaContent2() -> LocationContext {
+        let content = LocationContext()
+        content.setContext(name: "Canada", description: "Cold.", imageName: YonderImages.placeholderImage.name)
         return content
     }
 }

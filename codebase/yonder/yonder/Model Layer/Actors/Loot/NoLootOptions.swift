@@ -13,4 +13,14 @@ class NoLootOptions: LootOptions {
         super.init(LootBag(), LootBag(), LootBag())
     }
     
+    // MARK: - Serialisation
+
+    required init(dataObject: DataObject) {
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+    }
+    
 }

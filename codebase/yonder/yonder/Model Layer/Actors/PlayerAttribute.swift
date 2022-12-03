@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum PlayerAttribute {
+enum PlayerAttribute: Int {
     
-    case cantAttack
+    case cantAttack = 0
     
 }

@@ -26,6 +26,30 @@ class Foe: ActorAbstract, Named, Described {
         self.addWeapon(weapon)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case name
+        case description
+        case loot
+    }
+
+    required init(dataObject: DataObject) {
+        self.name = dataObject.get(Field.name.rawValue)
+        self.description = dataObject.get(Field.description.rawValue)
+        self.loot = dataObject.getObject(Field.loot.rawValue, type: LootOptions.self)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.name.rawValue, value: self.name)
+            .add(key: Field.description.rawValue, value: self.description)
+            .add(key: Field.loot.rawValue, value: self.loot)
+    }
+
+    // MARK: - Functions
+    
     func getWeapon() -> Weapon {
         assert(self.weapons.count == 1, "Foe has more or less than 1 weapon, which shouldn't be possible")
         return self.weapons.first!

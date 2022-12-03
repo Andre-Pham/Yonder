@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LootBag {
+class LootBag: Storable {
     
     @DidSetPublished private(set) var armorLoot = [Armor]()
     @DidSetPublished private(set) var weaponLoot = [Weapon]()
@@ -96,6 +96,41 @@ class LootBag {
     init() {
         self.name = LootBag.availableNames.randomElement()!
     }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case armorLoot
+        case weaponLoot
+        case potionLoot
+        case accessoryLoot
+        case consumableLoot
+        case goldLoot
+        case name
+    }
+
+    required init(dataObject: DataObject) {
+        self.armorLoot = dataObject.getObjectArray(Field.armorLoot.rawValue, type: Armor.self)
+        self.weaponLoot = dataObject.getObjectArray(Field.weaponLoot.rawValue, type: Weapon.self)
+        self.potionLoot = dataObject.getObjectArray(Field.potionLoot.rawValue, type: PotionAbstract.self) as! [any Potion]
+        self.accessoryLoot = dataObject.getObjectArray(Field.accessoryLoot.rawValue, type: Accessory.self)
+        self.consumableLoot = dataObject.getObjectArray(Field.consumableLoot.rawValue, type: ConsumableAbstract.self) as! [any Consumable]
+        self.goldLoot = dataObject.get(Field.goldLoot.rawValue)
+        self.name = dataObject.get(Field.name.rawValue)
+    }
+
+    func toDataObject() -> DataObject {
+        return DataObject(self)
+            .add(key: Field.armorLoot.rawValue, value: self.armorLoot)
+            .add(key: Field.weaponLoot.rawValue, value: self.weaponLoot)
+            .add(key: Field.potionLoot.rawValue, value: self.potionLoot as [PotionAbstract])
+            .add(key: Field.accessoryLoot.rawValue, value: self.accessoryLoot)
+            .add(key: Field.consumableLoot.rawValue, value: self.consumableLoot as [ConsumableAbstract])
+            .add(key: Field.goldLoot.rawValue, value: self.goldLoot)
+            .add(key: Field.name.rawValue, value: self.name)
+    }
+
+    // MARK: - Functions
     
     func reassignName(banned: [String] = []) {
         let currentIndex = LootBag.availableNames.firstIndex(of: self.name)!

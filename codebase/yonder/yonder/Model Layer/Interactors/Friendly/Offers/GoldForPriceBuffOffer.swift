@@ -9,25 +9,45 @@ import Foundation
 
 class GoldForPriceBuffOffer: Offer {
     
-    public let name: String
-    public let description: String
-    public let id: UUID = UUID()
-    
     public let gold: Int
     public let priceFraction: Double
     
     init(gold: Int, priceFraction: Double) {
         self.gold = gold
         self.priceFraction = priceFraction
+        let name: String
+        let description: String
         if gold > 0 && priceFraction.multiplyingIncreases() {
-            self.name = Strings("offer.goldForPriceBuff.curse.name").local
-            self.description = Strings("offer.goldForPriceBuff.curse.description2Param").localWithArgs(String(gold), priceFraction.toRelativePercentage())
+            name = Strings("offer.goldForPriceBuff.curse.name").local
+            description = Strings("offer.goldForPriceBuff.curse.description2Param").localWithArgs(String(gold), priceFraction.toRelativePercentage())
         } else {
             assert(gold < 0 && priceFraction.multiplyingDecreases(), "Invalid parameters provided for offer")
-            self.name = Strings("offer.goldForPriceBuff.blessing.name").local
-            self.description = Strings("offer.goldForPriceBuff.blessing.description2Param").localWithArgs(String(abs(gold)), priceFraction.toRelativePercentage())
+            name = Strings("offer.goldForPriceBuff.blessing.name").local
+            description = Strings("offer.goldForPriceBuff.blessing.description2Param").localWithArgs(String(abs(gold)), priceFraction.toRelativePercentage())
         }
+        super.init(name: name, description: description)
     }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case gold
+        case priceFraction
+    }
+
+    required init(dataObject: DataObject) {
+        self.gold = dataObject.get(Field.gold.rawValue)
+        self.priceFraction = dataObject.get(Field.priceFraction.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.gold.rawValue, value: self.gold)
+            .add(key: Field.priceFraction.rawValue, value: self.priceFraction)
+    }
+
+    // MARK: - Functions
     
     func acceptOffer(player: Player) {
         player.modifyGoldAdjusted(by: self.gold)

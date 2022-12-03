@@ -9,22 +9,41 @@ import Foundation
 
 class FreeItemsOffer: Offer {
     
-    public let name: String
-    public let description: String
-    public let id: UUID = UUID()
-    
     public let potions: [Potion]
     public let consumables: [Consumable]
     
     init(potions: [Potion], consumables: [Consumable]) {
+        self.potions = potions
+        self.consumables = consumables
         let names = (potions.map({ Strings("dotPoint").local.continuedBy($0.name) }) +
                      consumables.map({ Strings("dotPoint").local.continuedBy($0.name) }))
         let namesDescription = names.joined(separator: "\n")
-        self.name = Strings("offer.freeItems.name").local
-        self.description = Strings("offer.freeItems.description1Param").localWithArgs(namesDescription)
-        self.potions = potions
-        self.consumables = consumables
+        super.init(
+            name: Strings("offer.freeItems.name").local,
+            description: Strings("offer.freeItems.description1Param").localWithArgs(namesDescription)
+        )
     }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case potions
+        case consumables
+    }
+
+    required init(dataObject: DataObject) {
+        self.potions = dataObject.getObjectArray(Field.potions.rawValue, type: PotionAbstract.self) as! [any Potion]
+        self.consumables = dataObject.getObjectArray(Field.consumables.rawValue, type: ConsumableAbstract.self) as! [any Consumable]
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.potions.rawValue, value: self.potions as [PotionAbstract])
+            .add(key: Field.consumables.rawValue, value: self.consumables as [ConsumableAbstract])
+    }
+
+    // MARK: - Functions
     
     func acceptOffer(player: Player) {
         self.potions.forEach({ player.addPotion($0) })

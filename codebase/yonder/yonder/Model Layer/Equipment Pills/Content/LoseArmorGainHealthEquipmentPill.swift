@@ -10,8 +10,6 @@ import Foundation
 class LoseArmorGainHealthEquipmentPill: EquipmentPill, OnCombatTurnEndSubscriber {
     
     private let restorationFraction: Double
-    private var startingPlayerArmorPoints: Int = 0
-    private var startingFoeArmorPoints: Int = 0
     
     init(restorationFraction: Double, sourceName: String) {
         self.restorationFraction = restorationFraction
@@ -32,6 +30,24 @@ class LoseArmorGainHealthEquipmentPill: EquipmentPill, OnCombatTurnEndSubscriber
         
         OnCombatTurnEndPublisher.subscribe(self)
     }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case restorationFraction
+    }
+
+    required init(dataObject: DataObject) {
+        self.restorationFraction = dataObject.get(Field.restorationFraction.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.restorationFraction.rawValue, value: self.restorationFraction)
+    }
+
+    // MARK: - Functions
     
     func onCombatTurnEnd(player: Player, playerUsed: Item, foe: Foe) {
         if player.hasEquipmentEffect(self) {

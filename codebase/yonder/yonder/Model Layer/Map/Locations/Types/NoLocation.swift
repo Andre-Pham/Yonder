@@ -7,9 +7,17 @@
 
 import Foundation
 
-// This is pretty much for testing
 class NoLocation: Location {
     
     public let type: LocationType = .none
+    
+    override init() {
+        super.init()
+        self.setContext(name: "placeholderName", description: "placeholderDescription", imageName: YonderImages.placeholderImage.name)
+    }
+    
+    required init(dataObject: DataObject) {
+        super.init(dataObject: dataObject)
+    }
     
 }

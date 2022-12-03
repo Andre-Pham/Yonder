@@ -8,23 +8,23 @@
 import Foundation
 import SwiftUI
 
-enum LocationBridgeAccessibility {
-    case leftBridge // A bridge can be formed from this node to an area to the left
-    case rightBridge // A bridge can be formed from this node to an area to the right
-    case noBridge
+enum LocationBridgeAccessibility: Int {
+    case leftBridge = 1 // A bridge can be formed from this node to an area to the left
+    case rightBridge = 2 // A bridge can be formed from this node to an area to the right
+    case noBridge = 0
 }
 
-enum LocationType {
-    case none
-    case hostile
-    case challengeHostile
-    case shop
-    case enhancer // For upgrades
-    case restorer // For health and armor restoration
-    case quest // TODO: Implement quests later
-    case friendly
-    case boss
-    case bridge
+enum LocationType: Int {
+    case none = 0
+    case hostile = 1
+    case challengeHostile = 2
+    case shop = 3
+    case enhancer = 4 // For upgrades
+    case restorer = 5 // For health and armor restoration
+    case quest = 6 // TODO: Implement quests later
+    case friendly = 7
+    case boss = 8
+    case bridge = 9
     
     var name: String {
         switch self {

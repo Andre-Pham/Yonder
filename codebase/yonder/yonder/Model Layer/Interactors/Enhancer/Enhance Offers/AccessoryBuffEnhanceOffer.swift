@@ -9,18 +9,34 @@ import Foundation
 
 class AccessoryBuffEnhanceOffer: EnhanceOffer {
     
-    public let id: UUID = UUID()
-    public let price: Int
-    public let name: String
-    public let description: String
     private let buff: Buff
     
     init(price: Int, buff: Buff) {
-        self.price = price
         self.buff = buff
-        self.name = Strings("enhanceOffer.accessoryBuff.name").local
-        self.description = Strings("enhanceOffer.accessoryBuff.name").localWithArgs(buff.getEffectsDescription()!)
+        super.init(
+            price: price,
+            name: Strings("enhanceOffer.accessoryBuff.name").local,
+            description: Strings("enhanceOffer.accessoryBuff.name").localWithArgs(buff.getEffectsDescription()!)
+        )
     }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case buff
+    }
+
+    required init(dataObject: DataObject) {
+        self.buff = dataObject.getObject(Field.buff.rawValue, type: BuffAbstract.self) as! any Buff
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.buff.rawValue, value: self.buff)
+    }
+
+    // MARK: - Functions
     
     func getEnhanceables(from player: Player) -> [Enhanceable] {
         return player.accessorySlots.allAccessories

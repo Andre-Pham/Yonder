@@ -289,19 +289,19 @@ enum PreviewObjects {
             ],
             name: "Glacier Rifts",
             description: "placeholderDescription",
-            image: YonderImages.placeholderImage
+            imageName: "MajorInn" // TODO: Re-implement presets into this
         )
     }
     
     private static var location: Location {
         let location = FriendlyLocation(friendly: Self.friendly)
-        location.setAreaContent(Self.area)
+        location.setAreaContext(Self.area)
         return location
     }
     
     private static var alternateLocation: Location {
         let location = HostileLocation(foe: Self.foe)
-        location.setAreaContent(Self.area)
+        location.setAreaContext(Self.area)
         return location
     }
     

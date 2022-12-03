@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AccessorySlots {
+class AccessorySlots: Storable {
     
     public let accessorySlotCount = 4
     private var cachedInsertLocation: Int? = nil
@@ -29,6 +29,31 @@ class AccessorySlots {
     var accessorySlotsFull: Bool {
         return self.accessories.count >= self.accessorySlotCount
     }
+    
+    init() { }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case cachedInsertLocation
+        case accessories
+        case peripheralAccessory
+    }
+
+    required init(dataObject: DataObject) {
+        self.cachedInsertLocation = dataObject.get(Field.cachedInsertLocation.rawValue)
+        self.accessories = dataObject.getObjectArray(Field.accessories.rawValue, type: Accessory.self)
+        self.peripheralAccessory = dataObject.getObject(Field.peripheralAccessory.rawValue, type: Accessory.self)
+    }
+
+    func toDataObject() -> DataObject {
+        return DataObject(self)
+            .add(key: Field.cachedInsertLocation.rawValue, value: self.cachedInsertLocation)
+            .add(key: Field.accessories.rawValue, value: self.accessories)
+            .add(key: Field.peripheralAccessory.rawValue, value: self.peripheralAccessory)
+    }
+
+    // MARK: - Functions
     
     func insert(_ accessory: Accessory, replacing: UUID?) -> Accessory? {
         switch accessory.type {

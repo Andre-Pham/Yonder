@@ -9,17 +9,33 @@ import Foundation
 
 class FreeWeaponOffer: Offer {
     
-    public let name: String
-    public let description: String
-    public let id: UUID = UUID()
-    
     public let weapon: Weapon
     
     init(weapon: Weapon) {
-        self.name = Strings("offer.freeWeapon.name").local
-        self.description = Strings("offer.freeWeapon.description1Param").localWithArgs(weapon.fullSummary)
         self.weapon = weapon
+        super.init(
+            name: Strings("offer.freeWeapon.name").local,
+            description: Strings("offer.freeWeapon.description1Param").localWithArgs(weapon.fullSummary)
+        )
     }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case weapon
+    }
+
+    required init(dataObject: DataObject) {
+        self.weapon = dataObject.getObject(Field.weapon.rawValue, type: Weapon.self)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.weapon.rawValue, value: self.weapon)
+    }
+
+    // MARK: - Functions
     
     func acceptOffer(player: Player) {
         player.addWeapon(self.weapon)

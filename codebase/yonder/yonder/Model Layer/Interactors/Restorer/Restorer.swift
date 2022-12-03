@@ -9,7 +9,7 @@ import Foundation
 
 class Restorer: InteractorAbstract {
     
-    enum RestoreOption {
+    enum RestoreOption: String {
         case health
         case armorPoints
         
@@ -33,6 +33,31 @@ class Restorer: InteractorAbstract {
         
         super.init(name: name, description: description)
     }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case options
+        case pricePerHealthBundle
+        case pricePerArmorPointBundle
+    }
+
+    required init(dataObject: DataObject) {
+        let options: [RestoreOption?] = dataObject.get(Field.options.rawValue).map { RestoreOption(rawValue: $0) }
+        self.options = options.compactMap({ $0 })
+        self.pricePerHealthBundle = dataObject.get(Field.pricePerHealthBundle.rawValue)
+        self.pricePerArmorPointBundle = dataObject.get(Field.pricePerArmorPointBundle.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.options.rawValue, value: self.options.map { $0.rawValue })
+            .add(key: Field.pricePerHealthBundle.rawValue, value: self.pricePerHealthBundle)
+            .add(key: Field.pricePerArmorPointBundle.rawValue, value: self.pricePerArmorPointBundle)
+    }
+
+    // MARK: - Functions
     
     private func getPricePerUnit(option: RestoreOption) -> Double {
         let bundlePrice = Double(self.getBundlePrice(option: option))

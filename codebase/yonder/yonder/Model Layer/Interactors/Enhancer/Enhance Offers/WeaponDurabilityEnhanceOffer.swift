@@ -9,18 +9,34 @@ import Foundation
 
 class WeaponDurabilityEnhanceOffer: EnhanceOffer {
     
-    public let id: UUID = UUID()
-    public let price: Int
-    public let name: String
-    public let description: String
     private let amount: Int
     
     init(price: Int, amount: Int) {
-        self.price = price
         self.amount = amount
-        self.name = Strings("enhanceOffer.weaponDurability.name").local
-        self.description = Strings("enhanceOffer.weaponDurability.description1Param").localWithArgs(amount)
+        super.init(
+            price: price,
+            name: Strings("enhanceOffer.weaponDurability.name").local,
+            description: Strings("enhanceOffer.weaponDurability.description1Param").localWithArgs(amount)
+        )
     }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case amount
+    }
+
+    required init(dataObject: DataObject) {
+        self.amount = dataObject.get(Field.amount.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.amount.rawValue, value: self.amount)
+    }
+
+    // MARK: - Functions
     
     func getEnhanceables(from player: Player) -> [Enhanceable] {
         return player.weapons

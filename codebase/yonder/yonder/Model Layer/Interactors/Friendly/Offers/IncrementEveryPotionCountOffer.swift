@@ -9,18 +9,34 @@ import Foundation
 
 class IncrementEveryPotionCountOffer: Offer {
     
-    public let name: String
-    public let description: String
-    public let id: UUID = UUID()
-    
     public let amount: Int
     
     init(increment: Int) {
-        self.name = Strings("offer.incrementEveryPotionCount.name").local
-        self.description = Strings("offer.incrementEveryPotionCount.description1Param").localWithArgs(increment)
         self.amount = increment
         assert(increment > 0, "Negative or 0 increment is not permitted")
+        super.init(
+            name: Strings("offer.incrementEveryPotionCount.name").local,
+            description: Strings("offer.incrementEveryPotionCount.description1Param").localWithArgs(increment)
+        )
     }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case amount
+    }
+
+    required init(dataObject: DataObject) {
+        self.amount = dataObject.get(Field.amount.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.amount.rawValue, value: self.amount)
+    }
+
+    // MARK: - Functions
     
     func acceptOffer(player: Player) {
         for potion in player.potions {

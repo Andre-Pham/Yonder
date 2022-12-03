@@ -9,17 +9,33 @@ import Foundation
 
 class FreeGoldOffer: Offer {
     
-    public let name: String
-    public let description: String
-    public let id: UUID = UUID()
-    
     public let goldAmount: Int
     
     init(goldAmount: Int) {
-        self.name = Strings("offer.freeGold.name").local
-        self.description = Strings("offer.freeGold.description1Param").localWithArgs(goldAmount)
         self.goldAmount = goldAmount
+        super.init(
+            name: Strings("offer.freeGold.name").local,
+            description: Strings("offer.freeGold.description1Param").localWithArgs(goldAmount)
+        )
     }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case goldAmount
+    }
+
+    required init(dataObject: DataObject) {
+        self.goldAmount = dataObject.get(Field.goldAmount.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.goldAmount.rawValue, value: self.goldAmount)
+    }
+
+    // MARK: - Functions
     
     func acceptOffer(player: Player) {
         player.modifyGoldAdjusted(by: self.goldAmount)

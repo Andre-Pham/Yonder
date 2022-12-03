@@ -9,19 +9,38 @@ import Foundation
 
 class PurchaseWeaponOffer: Offer {
     
-    public let name: String
-    public let description: String
-    public let id: UUID = UUID()
-    
     public let weapon: Weapon
     public let price: Int
     
     init(weapon: Weapon, price: Int) {
-        self.name = Strings("offer.weaponPurchase.name").local
-        self.description = Strings("offer.weaponPurchase.description2Param").localWithArgs(String(price), weapon.fullSummary)
         self.weapon = weapon
         self.price = price
+        super.init(
+            name: Strings("offer.weaponPurchase.name").local,
+            description: Strings("offer.weaponPurchase.description2Param").localWithArgs(String(price), weapon.fullSummary)
+        )
     }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case weapon
+        case price
+    }
+
+    required init(dataObject: DataObject) {
+        self.weapon = dataObject.getObject(Field.weapon.rawValue, type: Weapon.self)
+        self.price = dataObject.get(Field.price.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.weapon.rawValue, value: self.weapon)
+            .add(key: Field.price.rawValue, value: self.price)
+    }
+
+    // MARK: - Functions
     
     func acceptOffer(player: Player) {
         player.modifyGoldAdjusted(by: -self.price)

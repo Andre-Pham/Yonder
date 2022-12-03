@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LootOptions {
+class LootOptions: Storable {
     
     let option1: LootBag
     let option2: LootBag
@@ -29,6 +29,29 @@ class LootOptions {
             option3.reassignName(banned: [option2.name, option1.name])
         }
     }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case option1
+        case option2
+        case option3
+    }
+
+    required init(dataObject: DataObject) {
+        self.option1 = dataObject.getObject(Field.option1.rawValue, type: LootBag.self)
+        self.option2 = dataObject.getObject(Field.option2.rawValue, type: LootBag.self)
+        self.option3 = dataObject.getObject(Field.option3.rawValue, type: LootBag.self)
+    }
+
+    func toDataObject() -> DataObject {
+        return DataObject(self)
+            .add(key: Field.option1.rawValue, value: self.option1)
+            .add(key: Field.option2.rawValue, value: self.option2)
+            .add(key: Field.option3.rawValue, value: self.option3)
+    }
+
+    // MARK: - Functions
     
     func take(_ option: UUID, player: Player) {
         if let loot = self.lootBags.first(where: { $0.id == option }) {

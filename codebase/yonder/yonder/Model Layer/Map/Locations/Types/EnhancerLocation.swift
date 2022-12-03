@@ -14,6 +14,23 @@ class EnhancerLocation: Location {
     
     init(enhancer: Enhancer) {
         self.enhancer = enhancer
+        super.init()
+    }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case enhancer
+    }
+
+    required init(dataObject: DataObject) {
+        self.enhancer = dataObject.getObject(Field.enhancer.rawValue, type: Enhancer.self)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.enhancer.rawValue, value: self.enhancer)
     }
     
 }

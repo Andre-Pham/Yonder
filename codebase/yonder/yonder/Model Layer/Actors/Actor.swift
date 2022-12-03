@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscriber, OnNoConsumablesRemainingSubscriber {
+class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscriber, OnNoConsumablesRemainingSubscriber {
     
     @DidSetPublished private(set) var maxHealth: Int
     @DidSetPublished private(set) var health: Int
@@ -29,7 +29,7 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
     @DidSetPublished private(set) var headArmor: Armor = NoArmor(type: .head)
     @DidSetPublished private(set) var bodyArmor: Armor = NoArmor(type: .body)
     @DidSetPublished private(set) var legsArmor: Armor = NoArmor(type: .legs)
-    public let accessorySlots = AccessorySlots()
+    private(set) var accessorySlots = AccessorySlots()
     public var allArmorPieces: [Armor] {
         return [self.headArmor, self.bodyArmor, self.legsArmor]
     }
@@ -53,6 +53,68 @@ class ActorAbstract: OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscri
         OnNoWeaponDurabilityPublisher.subscribe(self)
         OnNoPotionsRemainingPublisher.subscribe(self)
         OnNoConsumablesRemainingPublisher.subscribe(self)
+    }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case maxHealth
+        case health
+        case armorPoints
+        case statusEffects
+        case timedEvents
+        case weapons
+        case buffs
+        case potions
+        case consumables
+        case headArmor
+        case bodyArmor
+        case legsArmor
+        case accessorySlots
+        // Delayed values (damage/restoration) are volatile - they should never be storages of data
+        // They act as an intermediate within a calculation, that is, they don't persist outside a calculation
+    }
+
+    required init(dataObject: DataObject) {
+        self.maxHealth = dataObject.get(Field.maxHealth.rawValue)
+        self.health = dataObject.get(Field.health.rawValue)
+        self.armorPoints = dataObject.get(Field.armorPoints.rawValue)
+        self.statusEffects = dataObject.getObjectArray(Field.statusEffects.rawValue, type: StatusEffectAbstract.self) as! [any StatusEffect]
+        self.timedEvents = dataObject.getObjectArray(Field.timedEvents.rawValue, type: TimedEventAbstract.self) as! [any TimedEvent]
+        self.weapons = dataObject.getObjectArray(Field.weapons.rawValue, type: Weapon.self)
+        self.buffs = dataObject.getObjectArray(Field.buffs.rawValue, type: BuffAbstract.self) as! [any Buff]
+        self.potions = dataObject.getObjectArray(Field.potions.rawValue, type: PotionAbstract.self) as! [any Potion]
+        self.consumables = dataObject.getObjectArray(Field.consumables.rawValue, type: ConsumableAbstract.self) as! [any Consumable]
+        self.headArmor = dataObject.getObject(Field.headArmor.rawValue, type: Armor.self)
+        self.bodyArmor = dataObject.getObject(Field.bodyArmor.rawValue, type: Armor.self)
+        self.legsArmor = dataObject.getObject(Field.legsArmor.rawValue, type: Armor.self)
+        self.accessorySlots = dataObject.getObject(Field.accessorySlots.rawValue, type: AccessorySlots.self)
+        
+        OnNoWeaponDurabilityPublisher.subscribe(self)
+        OnNoPotionsRemainingPublisher.subscribe(self)
+        OnNoConsumablesRemainingPublisher.subscribe(self)
+    }
+
+    func toDataObject() -> DataObject {
+        // These should never actually consume anything
+        // We call them anyways, just in case, for the sakes of "what if"
+        self.delayedDamageValues.consume(by: self)
+        self.delayedRestorationValues.consume(by: self)
+        
+        return DataObject(self)
+            .add(key: Field.maxHealth.rawValue, value: self.maxHealth)
+            .add(key: Field.health.rawValue, value: self.health)
+            .add(key: Field.armorPoints.rawValue, value: self.armorPoints)
+            .add(key: Field.statusEffects.rawValue, value: self.statusEffects as [StatusEffectAbstract])
+            .add(key: Field.timedEvents.rawValue, value: self.timedEvents as [TimedEventAbstract])
+            .add(key: Field.weapons.rawValue, value: self.weapons)
+            .add(key: Field.buffs.rawValue, value: self.buffs as [BuffAbstract])
+            .add(key: Field.potions.rawValue, value: self.potions as [PotionAbstract])
+            .add(key: Field.consumables.rawValue, value: self.consumables as [ConsumableAbstract])
+            .add(key: Field.headArmor.rawValue, value: self.headArmor)
+            .add(key: Field.bodyArmor.rawValue, value: self.bodyArmor)
+            .add(key: Field.legsArmor.rawValue, value: self.legsArmor)
+            .add(key: Field.accessorySlots.rawValue, value: self.accessorySlots)
     }
     
     // MARK: - Max Health Related

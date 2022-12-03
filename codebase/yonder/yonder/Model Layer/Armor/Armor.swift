@@ -74,8 +74,8 @@ class Armor: EffectsDescribed, Purchasable, Named, Described, Enhanceable, Clona
             .add(key: Field.description.rawValue, value: self.description)
             .add(key: Field.type.rawValue, value: self.type.rawValue)
             .add(key: Field.armorPoints.rawValue, value: self.armorPoints)
-            .add(key: Field.armorBuffs.rawValue, value: self.armorBuffs)
-            .add(key: Field.equipmentPills.rawValue, value: self.equipmentPills)
+            .add(key: Field.armorBuffs.rawValue, value: self.armorBuffs as [BuffAbstract])
+            .add(key: Field.equipmentPills.rawValue, value: self.equipmentPills as [EquipmentPillAbstract])
             .add(key: Field.armorAttributes.rawValue, value: self.armorAttributes.map { $0.rawValue })
     }
 

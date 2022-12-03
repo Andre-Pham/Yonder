@@ -23,6 +23,30 @@ class Friendly: InteractorAbstract {
         super.init(name: name, description: description)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case offers
+        case offersAccepted
+        case offerLimit
+    }
+
+    required init(dataObject: DataObject) {
+        self.offers = dataObject.getObjectArray(Field.offers.rawValue, type: OfferAbstract.self) as! [any Offer]
+        self.offersAccepted = dataObject.get(Field.offersAccepted.rawValue)
+        self.offerLimit = dataObject.get(Field.offerLimit.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.offers.rawValue, value: self.offers as [OfferAbstract])
+            .add(key: Field.offersAccepted.rawValue, value: self.offersAccepted)
+            .add(key: Field.offerLimit.rawValue, value: self.offerLimit)
+    }
+
+    // MARK: - Functions
+    
     func removeOffer(_ offer: Offer) {
         guard let index = (self.offers.firstIndex { $0.id == offer.id }) else {
             return

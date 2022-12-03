@@ -31,6 +31,24 @@ class ThornsEquipmentPill: EquipmentPill, OnTurnEndSubscriber {
         OnTurnEndPublisher.subscribe(self)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case thornsFraction
+    }
+
+    required init(dataObject: DataObject) {
+        self.thornsFraction = dataObject.get(Field.thornsFraction.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.thornsFraction.rawValue, value: self.thornsFraction)
+    }
+
+    // MARK: - Functions
+    
     func onTurnEnd(player: Player, playerUsed playerItem: Item?, foe: Foe?) {
         guard let playerItem = playerItem, let foe = foe else {
             return

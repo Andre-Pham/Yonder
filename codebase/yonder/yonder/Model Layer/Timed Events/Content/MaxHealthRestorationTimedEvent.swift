@@ -22,6 +22,24 @@ class MaxHealthRestorationTimedEvent: TimedEvent {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case timer
+    }
+
+    required init(dataObject: DataObject) {
+        self.timer = dataObject.getObject(Field.timer.rawValue, type: Timer.self)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.timer.rawValue, value: self.timer)
+    }
+
+    // MARK: - Functions
+    
     func triggerEvent(target: ActorAbstract) {
         target.restoreHealth(for: target.maxHealth)
     }

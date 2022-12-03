@@ -31,6 +31,24 @@ class WeaponLifestealEquipmentPill: EquipmentPill, OnActorAttackSubscriber {
         OnActorAttackPublisher.subscribe(self)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case lifestealFraction
+    }
+
+    required init(dataObject: DataObject) {
+        self.lifestealFraction = dataObject.get(Field.lifestealFraction.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.lifestealFraction.rawValue, value: self.lifestealFraction)
+    }
+
+    // MARK: - Functions
+    
     func onActorAttack(actor: ActorAbstract, weapon: Weapon, target: ActorAbstract) {
         guard actor.hasEquipmentEffect(self) else {
             return

@@ -9,18 +9,34 @@ import Foundation
 
 class EquipmentPillEnhanceOffer: EnhanceOffer {
     
-    public let id: UUID = UUID()
-    public let price: Int
-    public let name: String
-    public let description: String
     private let pill: EquipmentPill
     
     init(price: Int, pill: EquipmentPill) {
-        self.price = price
         self.pill = pill
-        self.name = Strings("enhanceOffer.equipmentPill.name").local
-        self.description = Strings("enhanceOffer.equipmentPill.description1Param").localWithArgs(pill.effectsDescription)
+        super.init(
+            price: price,
+            name: Strings("enhanceOffer.equipmentPill.name").local,
+            description: Strings("enhanceOffer.equipmentPill.description1Param").localWithArgs(pill.effectsDescription)
+        )
     }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case pill
+    }
+
+    required init(dataObject: DataObject) {
+        self.pill = dataObject.getObject(Field.pill.rawValue, type: EquipmentPillAbstract.self) as! any EquipmentPill
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.pill.rawValue, value: self.pill)
+    }
+
+    // MARK: - Functions
     
     func getEnhanceables(from player: Player) -> [Enhanceable] {
         return player.allUpgradableArmorPieces + player.accessorySlots.allAccessories

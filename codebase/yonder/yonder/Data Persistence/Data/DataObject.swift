@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftyJSON
+import SwiftUI
 
 /// Refer to DummyClasses.swift for usage example.
 class DataObject {
@@ -37,16 +38,101 @@ class DataObject {
     }
     
     // MARK: - Data addition methods
+    // While generics can be used here, being explicit with data types allows compiler checking before runtime
+    // Generics allows anything to be valid, causing crashes at runtime
     
     @discardableResult
-    func add<T>(key: String, value: T) -> Self {
-        assert(
-            value is String || value is Int || value is Double || value is Bool ||
-            value is String? || value is Int? || value is Double? || value is Bool? ||
-            value is [String] || value is [Int] || value is [Double] || value is [Bool] ||
-            value is [String?] || value is [Int?] || value is [Double?] || value is [Bool?],
-            "value must be an accepted primitive type"
-        )
+    func add(key: String, value: String) -> Self {
+        self.json[key] = JSON(value)
+        return self
+    }
+    
+    @discardableResult
+    func add(key: String, value: String?) -> Self {
+        self.json[key] = JSON(value ?? JSON.null)
+        return self
+    }
+    
+    @discardableResult
+    func add(key: String, value: [String]) -> Self {
+        self.json[key] = JSON(value)
+        return self
+    }
+    
+    @discardableResult
+    func add(key: String, value: [String?]) -> Self {
+        self.json[key] = JSON(value)
+        return self
+    }
+    
+    @discardableResult
+    func add(key: String, value: Int) -> Self {
+        self.json[key] = JSON(value)
+        return self
+    }
+    
+    @discardableResult
+    func add(key: String, value: Int?) -> Self {
+        self.json[key] = JSON(value ?? JSON.null)
+        return self
+    }
+    
+    @discardableResult
+    func add(key: String, value: [Int]) -> Self {
+        self.json[key] = JSON(value)
+        return self
+    }
+    
+    @discardableResult
+    func add(key: String, value: [Int?]) -> Self {
+        self.json[key] = JSON(value)
+        return self
+    }
+    
+    @discardableResult
+    func add(key: String, value: Double) -> Self {
+        self.json[key] = JSON(value)
+        return self
+    }
+    
+    @discardableResult
+    func add(key: String, value: Double?) -> Self {
+        self.json[key] = JSON(value ?? JSON.null)
+        return self
+    }
+    
+    @discardableResult
+    func add(key: String, value: [Double]) -> Self {
+        self.json[key] = JSON(value)
+        return self
+    }
+    
+    @discardableResult
+    func add(key: String, value: [Double?]) -> Self {
+        self.json[key] = JSON(value)
+        return self
+    }
+    
+    @discardableResult
+    func add(key: String, value: Bool) -> Self {
+        self.json[key] = JSON(value)
+        return self
+    }
+    
+    @discardableResult
+    func add(key: String, value: Bool?) -> Self {
+        self.json[key] = JSON(value ?? JSON.null)
+        return self
+    }
+    
+    @discardableResult
+    func add(key: String, value: [Bool]) -> Self {
+        self.json[key] = JSON(value)
+        return self
+    }
+    
+    @discardableResult
+    func add(key: String, value: [Bool?]) -> Self {
         self.json[key] = JSON(value)
         return self
     }
@@ -58,8 +144,20 @@ class DataObject {
     }
     
     @discardableResult
+    func add<T: Storable>(key: String, value: T?) -> Self {
+        self.json[key] = value?.toDataObject().json ?? JSON.null
+        return self
+    }
+    
+    @discardableResult
     func add<T: Storable>(key: String, value: [T]) -> Self {
         self.json[key] = JSON(value.map { $0.toDataObject().json })
+        return self
+    }
+    
+    @discardableResult
+    func add<T: Storable>(key: String, value: [T?]) -> Self {
+        self.json[key] = JSON(value.map { $0?.toDataObject().json ?? JSON.null })
         return self
     }
     
@@ -170,7 +268,9 @@ class DataObject {
     }
     
     func getObjectOptional<T>(_ key: String, type: T.Type) -> T? where T: Storable {
-        return DataObject(json: JSON(self.json[key].object)).restoreOptional(type)
+        let json = self.json[key]
+        if json == JSON.null { return nil }
+        return DataObject(json: JSON(json.object)).restoreOptional(type)
     }
     
     func getObjectArray<T>(_ key: String, type: T.Type) -> [T] where T: Storable {

@@ -12,7 +12,7 @@ class Area: Named, Described, Visualised {
     
     public let name: String
     public let description: String
-    public let image: Image
+    public let imageName: String
     public let rootLocation: Location
     public let tipLocation: Location
     private(set) var leftBridgeLocations = [Location]()
@@ -20,9 +20,12 @@ class Area: Named, Described, Visualised {
     public let arrangement: AreaArrangements
     public let locations: [Location]
     public let id = UUID()
+    var image: Image {
+        return Image(self.imageName)
+    }
     
     // locations are received from LocationsGenerator
-    init(arrangement: AreaArrangements, locations: [Location], name: String = "placeholderName", description: String = "placeholderDescription", image: Image = YonderImages.placeholderImage) {
+    init(arrangement: AreaArrangements, locations: [Location], name: String = "placeholderName", description: String = "placeholderDescription", imageName: String = YonderImages.placeholderImage.name) {
         assert(locations.count == arrangement.locationCount, "Number of locations provided to generate Area doesn't match expected number for the arrangement")
         self.arrangement = arrangement
         self.locations = locations
@@ -30,9 +33,9 @@ class Area: Named, Described, Visualised {
         self.tipLocation = locations.last!
         self.name = name
         self.description = description
-        self.image = image
+        self.imageName = imageName
         
-        self.locations.forEach { $0.setAreaContent(self) }
+        self.locations.forEach { $0.setAreaContext(self) }
         self.generateAreaArrangement()
     }
     

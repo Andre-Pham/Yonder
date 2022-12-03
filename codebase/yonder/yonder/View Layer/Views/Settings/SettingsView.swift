@@ -29,6 +29,7 @@ struct SettingsView: View {
                 Button("Weapon") {
                     GameManager.instance.playerVM.player.addWeapon(Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: DecrementDurabilityPill(durability: 5)))
                     GameManager.instance.playerVM.player.addWeapon(Weapon(basePill: ArmorPointsRestorationBasePill(armorPointsRestoration: 50), durabilityPill: DecrementDurabilityPill(durability: 3)))
+                    GameManager.instance.playerVM.player.addWeapon(Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: DecrementDurabilityPill(durability: 5), effectPills: [LifestealEffectPill(lifestealFraction: 0.5)]))
                 }
                 .padding()
                 .background(Color.red)
@@ -108,23 +109,10 @@ struct SettingsView: View {
                 .background(Color.red)
                 .foregroundColor(.white)
                 
-                Button("Print Weapons") {
-                    let weapons = GameManager.instance.playerVM.player.weapons
-                    for weapon in weapons {
-                        let dataObject = weapon.toDataObject()
-                        print(dataObject.toRawString())
-                    }
-                }
-                .padding()
-                .background(Color.red)
-                .foregroundColor(.white)
-                
-                Button("Print Consumables") {
-                    let consumables = GameManager.instance.playerVM.player.consumables
-                    for consumable in consumables {
-                        let dataObject = consumable.toDataObject()
-                        print(dataObject.toRawString())
-                    }
+                Button("Print Player") {
+                    let player = GameManager.instance.playerVM.player
+                    let dataObject = player.toDataObject()
+                    print(dataObject.toRawString())
                 }
                 .padding()
                 .background(Color.red)

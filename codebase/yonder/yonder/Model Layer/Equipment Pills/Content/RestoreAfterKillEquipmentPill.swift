@@ -44,6 +44,27 @@ class RestoreAfterKillEquipmentPill: EquipmentPill, AfterCombatTurnEndSubscriber
         AfterCombatTurnEndPublisher.subscribe(self)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case healthRestoration
+        case armorPointsRestoration
+    }
+
+    required init(dataObject: DataObject) {
+        self.healthRestoration = dataObject.get(Field.healthRestoration.rawValue)
+        self.armorPointsRestoration = dataObject.get(Field.armorPointsRestoration.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.healthRestoration.rawValue, value: self.healthRestoration)
+            .add(key: Field.armorPointsRestoration.rawValue, value: self.armorPointsRestoration)
+    }
+
+    // MARK: - Functions
+    
     func afterCombatTurnEnd(player: Player, playerUsed: Item, foe: Foe) {
         if player.hasEquipmentEffect(self) && foe.isDead {
             if self.healthRestoration > 0 {

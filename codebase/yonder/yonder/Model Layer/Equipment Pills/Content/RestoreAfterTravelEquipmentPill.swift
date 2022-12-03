@@ -31,6 +31,24 @@ class RestoreAfterTravelEquipmentPill: EquipmentPill, OnPlayerTravelSubscriber {
         OnPlayerTravelPublisher.subscribe(self)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case restoration
+    }
+
+    required init(dataObject: DataObject) {
+        self.restoration = dataObject.get(Field.restoration.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.restoration.rawValue, value: self.restoration)
+    }
+
+    // MARK: - Functions
+    
     func onPlayerTravel(player: Player, newLocation: Location) {
         if player.hasEquipmentEffect(self) {
             player.restoreAdjusted(sourceOwner: player, using: self, for: self.restoration)

@@ -9,18 +9,34 @@ import Foundation
 
 class ArmorPointsEnhanceOffer: EnhanceOffer {
     
-    public let id: UUID = UUID()
-    public let price: Int
-    public let name: String
-    public let description: String
     private let armorPoints: Int
     
     init(price: Int, armorPoints: Int) {
-        self.price = price
         self.armorPoints = armorPoints
-        self.name = Strings("enhanceOffer.armorPoints.name").local
-        self.description = Strings("enhanceOffer.armorPoints.description1Param").localWithArgs(armorPoints)
+        super.init(
+            price: price,
+            name: Strings("enhanceOffer.armorPoints.name").local,
+            description: Strings("enhanceOffer.armorPoints.description1Param").localWithArgs(armorPoints)
+        )
     }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case armorPoints
+    }
+
+    required init(dataObject: DataObject) {
+        self.armorPoints = dataObject.get(Field.armorPoints.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.armorPoints.rawValue, value: self.armorPoints)
+    }
+
+    // MARK: - Functions
     
     func getEnhanceables(from player: Player) -> [Enhanceable] {
         return player.allUpgradableArmorPieces

@@ -25,6 +25,34 @@ class Player: ActorAbstract {
         super.init(maxHealth: maxHealth)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case location
+        case gold
+        case attributes
+        case loot
+    }
+
+    required init(dataObject: DataObject) {
+        self.location = dataObject.getObject(Field.location.rawValue, type: LocationAbstract.self) as! any Location
+        self.gold = dataObject.get(Field.gold.rawValue)
+        let attributes: [PlayerAttribute?] = dataObject.get(Field.attributes.rawValue).map { PlayerAttribute(rawValue: $0) }
+        self.attributes = attributes.compactMap({ $0 })
+        self.loot = dataObject.getObjectOptional(Field.loot.rawValue, type: LootBag.self)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.location.rawValue, value: self.location)
+            .add(key: Field.gold.rawValue, value: self.gold)
+            .add(key: Field.attributes.rawValue, value: self.attributes.map { $0.rawValue })
+            .add(key: Field.loot.rawValue, value: self.loot)
+    }
+
+    // MARK: - Functions
+    
     func setGold(to amount: Int) {
         self.gold = max(amount, 0)
     }

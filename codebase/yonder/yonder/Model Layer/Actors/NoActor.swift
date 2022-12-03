@@ -13,4 +13,14 @@ class NoActor: ActorAbstract {
         super.init(maxHealth: 0)
     }
     
+    // MARK: - Serialisation
+
+    required init(dataObject: DataObject) {
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+    }
+    
 }

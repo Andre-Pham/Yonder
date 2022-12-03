@@ -30,6 +30,24 @@ class PermanentHealthAfterKillEquipmentPill: EquipmentPill, AfterCombatTurnEndSu
         AfterCombatTurnEndPublisher.subscribe(self)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case maxHealthFraction
+    }
+
+    required init(dataObject: DataObject) {
+        self.maxHealthFraction = dataObject.get(Field.maxHealthFraction.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.maxHealthFraction.rawValue, value: self.maxHealthFraction)
+    }
+
+    // MARK: - Functions
+    
     func afterCombatTurnEnd(player: Player, playerUsed: Item, foe: Foe) {
         if player.hasEquipmentEffect(self) && foe.isDead {
             let bonus = (Double(foe.maxHealth)*self.maxHealthFraction).toRoundedInt()

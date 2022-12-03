@@ -98,7 +98,7 @@ class MapGenerator {
             }
         }
         
-        return Area(arrangement: arrangement, locations: locations, name: areaPool.areaName, description: areaPool.areaDescription, image: areaPool.areaImage)
+        return Area(arrangement: arrangement, locations: locations, name: areaPool.areaName, description: areaPool.areaDescription, imageName: areaPool.areaImageName)
     }
     
     private class LocationIndexContainer {

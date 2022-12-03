@@ -9,16 +9,25 @@ import Foundation
 
 class DoubleWeaponHealthRestorationEnhanceOffer: EnhanceOffer {
     
-    public let id: UUID = UUID()
-    public let price: Int
-    public let name: String
-    public let description: String
-    
     init(price: Int) {
-        self.price = price
-        self.name = Strings("enhanceOffer.doubleWeaponHealthRestoration.name").local
-        self.description = Strings("enhanceOffer.doubleWeaponHealthRestoration.description").local
+        super.init(
+            price: price,
+            name: Strings("enhanceOffer.doubleWeaponHealthRestoration.name").local,
+            description: Strings("enhanceOffer.doubleWeaponHealthRestoration.description").local
+        )
     }
+    
+    // MARK: - Serialisation
+
+    required init(dataObject: DataObject) {
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+    }
+
+    // MARK: - Functions
     
     func getEnhanceables(from player: Player) -> [Enhanceable] {
         return player.weapons

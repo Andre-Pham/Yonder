@@ -17,4 +17,20 @@ class Enhancer: InteractorAbstract {
         super.init(name: name, description: description)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case enhanceOffers
+    }
+
+    required init(dataObject: DataObject) {
+        self.enhanceOffers = dataObject.getObjectArray(Field.enhanceOffers.rawValue, type: EnhanceOfferAbstract.self) as! [any EnhanceOffer]
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.enhanceOffers.rawValue, value: self.enhanceOffers as [EnhanceOfferAbstract])
+    }
+    
 }

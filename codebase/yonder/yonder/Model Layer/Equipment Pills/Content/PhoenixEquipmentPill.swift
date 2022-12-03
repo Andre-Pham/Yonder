@@ -35,6 +35,24 @@ class PhoenixEquipmentPill: EquipmentPill, AfterTurnEndSubscriber {
         AfterTurnEndPublisher.subscribe(self)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case healthSetTo
+    }
+
+    required init(dataObject: DataObject) {
+        self.healthSetTo = dataObject.get(Field.healthSetTo.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.healthSetTo.rawValue, value: self.healthSetTo)
+    }
+
+    // MARK: - Functions
+    
     func getValue(whenTargeting target: Target) -> Int {
         switch target {
         case .player:

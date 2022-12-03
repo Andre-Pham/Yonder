@@ -71,9 +71,9 @@ class LocationViewModel: ObservableObject {
         self.hasBeenVisited = self.location.hasBeenVisited
         self.locationIDsArrivedFrom = self.location.locationsArrivedFrom.map { $0.id }
         self.id = self.location.id
-        self.name = location.areaContent.name
-        self.description = location.areaContent.description
-        self.image = location.areaContent.image
+        self.name = location.context.name
+        self.description = location.context.description
+        self.image = location.context.image
         self.type = location.type
         self.nextLocationIDs = self.location.nextLocations.map { $0.id }
         if let bridgeLocation = self.location.bridgeLocation {
@@ -97,8 +97,8 @@ class LocationViewModel: ObservableObject {
         if !self.isBridge || self.location.nextLocations.count != 2 {
             return nil
         }
-        return (AreaViewModel(areaContent: self.location.nextLocations[0].areaContent),
-                AreaViewModel(areaContent: self.location.nextLocations[1].areaContent))
+        return (AreaViewModel(areaContent: self.location.nextLocations[0].context),
+                AreaViewModel(areaContent: self.location.nextLocations[1].context))
     }
     
     func getBridgeConnectedLocationViewModels() -> (LocationViewModel, LocationViewModel)? {

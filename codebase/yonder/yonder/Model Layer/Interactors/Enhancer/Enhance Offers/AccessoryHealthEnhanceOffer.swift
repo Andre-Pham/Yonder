@@ -9,18 +9,34 @@ import Foundation
 
 class AccessoryHealthEnhanceOffer: EnhanceOffer {
     
-    public let id: UUID = UUID()
-    public let price: Int
-    public let name: String
-    public let description: String
     private let health: Int
     
     init(price: Int, health: Int) {
-        self.price = price
         self.health = health
-        self.name = Strings("enhanceOffer.accessoryHealth.name").local
-        self.description = Strings("enhanceOffer.accessoryHealth.description1Param").localWithArgs(health)
+        super.init(
+            price: price,
+            name: Strings("enhanceOffer.accessoryHealth.name").local,
+            description: Strings("enhanceOffer.accessoryHealth.description1Param").localWithArgs(health)
+        )
     }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case health
+    }
+
+    required init(dataObject: DataObject) {
+        self.health = dataObject.get(Field.health.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.health.rawValue, value: self.health)
+    }
+
+    // MARK: - Functions
     
     func getEnhanceables(from player: Player) -> [Enhanceable] {
         return player.accessorySlots.allAccessories

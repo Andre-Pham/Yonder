@@ -9,14 +9,24 @@ import Foundation
 
 class SellPotionsOffer: Offer {
     
-    public let name: String
-    public let description: String
-    public let id: UUID = UUID()
-    
     init() {
-        self.name = Strings("offer.sellPotions.name").local
-        self.description = Strings("offer.sellPotions.description").local
+        super.init(
+            name: Strings("offer.sellPotions.name").local,
+            description: Strings("offer.sellPotions.description").local
+        )
     }
+    
+    // MARK: - Serialisation
+
+    required init(dataObject: DataObject) {
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+    }
+
+    // MARK: - Functions
     
     func acceptOffer(player: Player) {
         let fairValue = player.potions.map({ $0.getBasePurchasePrice() }).reduce(0, +)

@@ -13,7 +13,7 @@ class AreaProfileBucket {
         // TODO: Populate
         // Stage 0
         [
-            AreaProfile(areaName: "TempArea", areaDescription: "TempDesc", areaImage: YonderImages.missingIcon, tags: AreaProfileTagAllocation(tags: (.wood, 1)))
+            AreaProfile(areaName: "TempArea", areaDescription: "TempDesc", areaImage: YonderImages.placeholderImage, tags: AreaProfileTagAllocation(tags: (.wood, 1)))
         ],
         // Stage 1
         [

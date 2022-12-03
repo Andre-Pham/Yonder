@@ -22,6 +22,24 @@ class BurnStatusEffect: StatusEffect {
         super.init(original)
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case damage
+    }
+
+    required init(dataObject: DataObject) {
+        self.damage = dataObject.get(Field.damage.rawValue)
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+            .add(key: Field.damage.rawValue, value: self.damage)
+    }
+
+    // MARK: - Functions
+    
     func getEffectsDescription() -> String? {
         return Strings("statusEffect.burn.effectsDescription1Param").localWithArgs(self.damage)
     }

@@ -9,14 +9,24 @@ import Foundation
 
 class MaxHealthForArmorPointsOffer: Offer {
     
-    public let name: String
-    public let description: String
-    public let id: UUID = UUID()
-    
     init() {
-        self.name = Strings("offer.maxHealthForArmorPoints.name").local
-        self.description = Strings("offer.maxHealthForArmorPoints.description").local
+        super.init(
+            name: Strings("offer.maxHealthForArmorPoints.name").local,
+            description: Strings("offer.maxHealthForArmorPoints.description").local
+        )
     }
+    
+    // MARK: - Serialisation
+
+    required init(dataObject: DataObject) {
+        super.init(dataObject: dataObject)
+    }
+
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+    }
+
+    // MARK: - Functions
     
     func acceptOffer(player: Player) {
         for armorPiece in player.allArmorPieces {
