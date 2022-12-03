@@ -289,7 +289,7 @@ enum PreviewObjects {
             ],
             name: "Glacier Rifts",
             description: "placeholderDescription",
-            imageName: "MajorInn" // TODO: Re-implement presets into this
+            imageResource: YonderImages.placeholderImage
         )
     }
     

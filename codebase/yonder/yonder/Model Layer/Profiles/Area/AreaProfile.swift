@@ -12,13 +12,13 @@ class AreaProfile {
     
     public let areaName: String
     public let areaDescription: String
-    public let areaImage: ImageResource
+    public let areaImageResource: ImageResource
     public let tags: AreaProfileTagAllocation
     
     init(areaName: String, areaDescription: String, areaImage: ImageResource, tags: AreaProfileTagAllocation) {
         self.areaName = areaName
         self.areaDescription = areaDescription
-        self.areaImage = areaImage
+        self.areaImageResource = areaImage
         self.tags = tags
     }
     

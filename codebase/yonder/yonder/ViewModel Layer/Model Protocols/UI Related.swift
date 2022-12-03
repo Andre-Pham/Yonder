@@ -25,9 +25,3 @@ protocol Described {
     var description: String { get }
     
 }
-
-protocol Visualised {
-    
-    var image: Image { get }
-    
-}

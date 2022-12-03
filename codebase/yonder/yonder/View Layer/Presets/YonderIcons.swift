@@ -11,7 +11,6 @@ enum YonderIcons {
     
     // MARK: - Placeholders
     
-    static let placeholderImage = ImageResource("MajorInn")
     static let missingIcon = Image("MissingIcon")
     
     // MARK: - Tab Bar Icons

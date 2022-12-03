@@ -39,7 +39,7 @@ class AreaPoolFactory {
         return AreaPool(
             areaName: self.areaProfile.areaName,
             areaDescription: self.areaProfile.areaDescription,
-            areaImageName: self.areaProfile.areaImage.name,
+            areaImageResource: self.areaProfile.areaImageResource,
             hostileLocations: hostileLocations,
             challengeHostileLocations: challengeHostileLocations,
             shopLocations: shopLocations,

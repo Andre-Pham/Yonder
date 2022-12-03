@@ -114,11 +114,11 @@ class LocationAbstract: Storable {
     }
     
     func setAreaContext(_ area: Area) {
-        self.setContext(name: area.name, description: area.description, imageName: area.imageName)
+        self.setContext(name: area.name, description: area.description, imageResource: area.imageResource)
     }
     
-    func setContext(name: String, description: String, imageName: String) {
-        self.context.setContext(name: name, description: description, imageName: imageName)
+    func setContext(name: String, description: String, imageResource: ImageResource) {
+        self.context.setContext(name: name, description: description, imageResource: imageResource)
     }
     
 }

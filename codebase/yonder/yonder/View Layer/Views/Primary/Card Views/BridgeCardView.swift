@@ -46,13 +46,13 @@ struct BridgeCardView_Previews: PreviewProvider {
     
     static func getAreaContent1() -> LocationContext {
         let content = LocationContext()
-        content.setContext(name: "Australia", description: "Hot.", imageName: YonderIcons.placeholderImage.name)
+        content.setContext(name: "Australia", description: "Hot.", imageResource: YonderImages.placeholderImage)
         return content
     }
     
     static func getAreaContent2() -> LocationContext {
         let content = LocationContext()
-        content.setContext(name: "Canada", description: "Cold.", imageName: YonderIcons.placeholderImage.name)
+        content.setContext(name: "Canada", description: "Cold.", imageResource: YonderImages.placeholderImage)
         return content
     }
 }
