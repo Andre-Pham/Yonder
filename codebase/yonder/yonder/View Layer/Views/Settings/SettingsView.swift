@@ -117,6 +117,13 @@ struct SettingsView: View {
                 .padding()
                 .background(Color.red)
                 .foregroundColor(.white)
+                
+                Button("Save") {
+                    Session.instance.saveGame()
+                }
+                .padding()
+                .background(Color.red)
+                .foregroundColor(.white)
             }
         }
     }

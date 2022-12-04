@@ -25,7 +25,9 @@ class BossArea: Storable {
         self.bossLocation = bossLocation
         self.restorerLocation = restorerLocation
         
-        self.setupLocations()
+        self.bossLocation.addNextLocations([restorerLocation])
+        self.bossLocation.setHexagonCoordinate(5, 33)
+        self.restorerLocation.setHexagonCoordinate(5, 35)
     }
     
     // MARK: - Serialisation
@@ -38,22 +40,12 @@ class BossArea: Storable {
     required init(dataObject: DataObject) {
         self.bossLocation = dataObject.getObject(Field.bossLocation.rawValue, type: BossLocation.self)
         self.restorerLocation = dataObject.getObject(Field.restorerLocation.rawValue, type: RestorerLocation.self)
-        
-        self.setupLocations()
     }
 
     func toDataObject() -> DataObject {
         return DataObject(self)
             .add(key: Field.bossLocation.rawValue, value: self.bossLocation)
             .add(key: Field.restorerLocation.rawValue, value: self.restorerLocation)
-    }
-    
-    // MARK: - Functions
-    
-    func setupLocations() {
-        self.bossLocation.addNextLocations([restorerLocation])
-        self.bossLocation.setHexagonCoordinate(5, 33)
-        self.restorerLocation.setHexagonCoordinate(5, 35)
     }
     
 }

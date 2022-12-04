@@ -14,9 +14,9 @@ class GameContext: OnPlayerTravelSubscriber {
     }
     private let map: Map
     
-    init(map: Map) {
+    init(map: Map, stage: Int = 0) {
         self.map = map
-        self.stage = 0
+        self.stage = stage
         
         OnPlayerTravelPublisher.subscribe(self)
     }

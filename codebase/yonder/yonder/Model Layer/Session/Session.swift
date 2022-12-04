@@ -26,4 +26,14 @@ class Session {
         Pricing.instance.setGameContext(to: self.activeGame!.gameContext)
     }
     
+    func saveGame() {
+        if let game = self.activeGame {
+            LocalDatabaseSession.instance.write(game)
+        }
+    }
+    
+    func loadGame() {
+        self.activeGame = LocalDatabaseSession.instance.read()
+    }
+    
 }

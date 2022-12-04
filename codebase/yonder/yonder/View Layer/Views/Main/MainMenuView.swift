@@ -28,7 +28,7 @@ struct MainMenuView: View {
                     }
                     
                     YonderButton(text: Strings("mainMenu.resumeGame").local) {
-                        // Find the game saved and resume it
+                        Session.instance.loadGame()
                         self.showingMenu.toggle()
                     }
                 }

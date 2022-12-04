@@ -108,7 +108,7 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
         self.basePill = dataObject.getObject(Field.basePill.rawValue, type: WeaponBasePillAbstract.self) as! any WeaponBasePill
         self.durabilityPill = dataObject.getObject(Field.durabilityPill.rawValue, type: WeaponDurabilityPillAbstract.self) as! any WeaponDurabilityPill
         self.effectPills = dataObject.getObjectArray(Field.effectPills.rawValue, type: WeaponEffectPillAbstract.self) as! [any WeaponEffectPill]
-        self.buffPills = dataObject.getObjectArray(Field.effectPills.rawValue, type: WeaponBuffPillAbstract.self) as! [any WeaponBuffPill]
+        self.buffPills = dataObject.getObjectArray(Field.buffPills.rawValue, type: WeaponBuffPillAbstract.self) as! [any WeaponBuffPill]
         
         super.init(dataObject: dataObject)
         

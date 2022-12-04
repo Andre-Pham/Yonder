@@ -19,6 +19,13 @@ class DataObject {
     
     private var objectName = String() // For debugging
     private var json = JSON()
+    var rawData: Data {
+        do {
+            return try self.json.rawData()
+        } catch {
+            return Data()
+        }
+    }
     
     // MARK: - Initialisers
     
@@ -29,6 +36,15 @@ class DataObject {
     
     init(rawString: String) {
         self.json = JSON(parseJSON: rawString)
+        self.objectName = self.get(self.objectField)
+    }
+    
+    init(data: Data) {
+        do {
+            try self.json = JSON(data: data)
+        } catch {
+            print("JSON data could not be instantiated into a DataObject")
+        }
         self.objectName = self.get(self.objectField)
     }
     

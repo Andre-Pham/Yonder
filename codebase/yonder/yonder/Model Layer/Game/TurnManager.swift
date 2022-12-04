@@ -11,8 +11,6 @@ import Foundation
 /// Subscribes to certain events to detect when an end of turn should be triggered. If in the future other events trigger an end of turn, add this as a subscriber for those events.
 class TurnManager: AfterActorAttackSubscriber, AfterPlayerTravelSubscriber {
     
-    private(set) var turnsTaken = 0
-    
     init() {
         AfterPlayerTravelPublisher.subscribe(self)
         AfterActorAttackPublisher.subscribe(self)
@@ -47,7 +45,6 @@ class TurnManager: AfterActorAttackSubscriber, AfterPlayerTravelSubscriber {
         if foe.isDead {
             player.clearAttributes()
         }
-        self.turnsTaken += 1
         
         AfterCombatTurnEndPublisher.publish(player: player, playerUsed: playerItem, foe: foe)
         AfterTurnEndPublisher.publish(player: player, playerUsed: playerItem, foe: foe)
@@ -61,7 +58,6 @@ class TurnManager: AfterActorAttackSubscriber, AfterPlayerTravelSubscriber {
         OnTurnEndPublisher.publish(player: player, playerUsed: nil, foe: nil)
         
         self.triggerEndTurnActorEffects(on: player)
-        self.turnsTaken += 1
         
         AfterTurnEndPublisher.publish(player: player, playerUsed: nil, foe: nil)
     }
