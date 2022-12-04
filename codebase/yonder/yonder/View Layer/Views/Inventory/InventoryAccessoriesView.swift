@@ -14,8 +14,8 @@ struct InventoryAccessoriesView: View {
     
     var body: some View {
         if self.playerViewModel.accessoryViewModels.count == 0 {
-            SurroundingBrackets(bracket: "[", size: .title4) {
-                YonderText(text: Strings("inventory.accessories.headerZeroAccessories").local, size: .title4)
+            SurroundingBrackets(bracket: "[", size: .title5) {
+                YonderText(text: Strings("inventory.accessories.headerZeroAccessories").local, size: .title5)
             }
         }
         
@@ -41,8 +41,8 @@ struct InventoryAccessoriesView: View {
         }
         
         if !self.playerViewModel.accessorySlotsFull && playerViewModel.accessoryViewModels.count != 0 {
-            SurroundingBrackets(bracket: "[", size: .title4) {
-                YonderText(text: "+\(self.playerViewModel.emptyAccessorySlotsCount)".continuedBy(Strings("inventory.accessories.emptySlots").local), size: .title4)
+            SurroundingBrackets(bracket: "[", size: .title5) {
+                YonderText(text: "+\(self.playerViewModel.emptyAccessorySlotsCount)".continuedBy(Strings("inventory.accessories.emptySlots").local), size: .title5)
             }
         }
     }

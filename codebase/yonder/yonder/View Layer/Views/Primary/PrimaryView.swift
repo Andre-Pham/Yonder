@@ -46,7 +46,7 @@ struct PrimaryView: View {
                     .frame(maxWidth: .infinity)
                     .frame(height: geo.size.width/2 - YonderCoreGraphics.padding*1.5)
                     
-                    YonderText(text: self.optionsStateManager.optionHeader, size: .title4)
+                    YonderText(text: self.optionsStateManager.optionHeader, size: .title5)
                     
                     if self.optionsStateManager.showOptions {
                         OptionsView(

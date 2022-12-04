@@ -15,6 +15,7 @@
 "gameName" = "Yonder";
 "currencySymbol" = "$";
 "dotPoint" = "■";
+"loading" = "Loading";
 
 // Tiers
 "tier1" = "I";

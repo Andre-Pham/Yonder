@@ -49,8 +49,8 @@ struct ViewEnhanceablesButton: View {
                     
                     WidePriceTagView(price: self.enhanceOfferViewModel.price, indicativePrice: self.playerViewModel.getIndicativePrice(from: self.enhanceOfferViewModel.price), text: Strings("inspect.enhanceOffers.priceTagSuffix").local)
                     
-                    SurroundingBrackets(bracket: "[", size: .title4) {
-                        YonderText(text: Strings("inspect.enhanceOffers.header").local, size: .title4)
+                    SurroundingBrackets(bracket: "[", size: .title5) {
+                        YonderText(text: Strings("inspect.enhanceOffers.header").local, size: .title5)
                     }
                     
                     ForEach(Array(zip(enhanceOfferViewModel.getEnhanceableInfos(playerViewModel: self.playerViewModel).indices, enhanceOfferViewModel.getEnhanceableInfos(playerViewModel: self.playerViewModel))), id: \.1.id) { index, enhanceInfoViewModel in

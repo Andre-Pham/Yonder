@@ -18,21 +18,21 @@ struct InventoryView: View {
                 VStack(alignment: .leading, spacing: YonderCoreGraphics.padding) {
                     // Armor
                     Group {
-                        YonderText(text: Strings("inventory.title.armor").local, size: .title2)
+                        YonderText(text: Strings("inventory.title.armor").local, size: .title3)
                         
                         InventoryArmorView(sheetsStateManager: self.sheetsStateManager, playerViewModel: self.playerViewModel, pageGeometry: geo)
                     }
                     
                     // Accessories
                     Group {
-                        YonderText(text: Strings("inventory.title.accessories").local, size: .title2)
+                        YonderText(text: Strings("inventory.title.accessories").local, size: .title3)
                         
                         InventoryAccessoriesView(sheetsStateManager: self.sheetsStateManager, playerViewModel: self.playerViewModel, pageGeometry: geo)
                     }
                     
                     // Peripheral Accessory
                     Group {
-                        YonderText(text: Strings("inventory.title.peripheralAccessory").local, size: .title2)
+                        YonderText(text: Strings("inventory.title.peripheralAccessory").local, size: .title3)
                         
                         YonderWideButton(text: self.playerViewModel.peripheralAccessoryViewModel.name) {
                             self.sheetsStateManager.peripheralAccessorySheetBinding = true
@@ -47,7 +47,7 @@ struct InventoryView: View {
                     
                     // Items
                     Group {
-                        YonderText(text: Strings("inventory.title.items").local, size: .title2)
+                        YonderText(text: Strings("inventory.title.items").local, size: .title3)
                         
                         YonderOptionsGrid {
                             YonderGridOption(title: Strings("inventory.weapons.option").local, geometry: geo, image: YonderIcons.weaponOptionIcon) {
@@ -64,7 +64,7 @@ struct InventoryView: View {
                         }
                         
                         if let header = self.inventoryStateManager.optionHeader {
-                            YonderText(text: header, size: .title4)
+                            YonderText(text: header, size: .title5)
                                 .frame(maxWidth: .infinity)
                         }
                         

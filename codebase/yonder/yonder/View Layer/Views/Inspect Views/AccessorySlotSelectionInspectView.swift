@@ -21,8 +21,8 @@ struct AccessorySlotSelectionInspectView: View {
             InspectSectionSpacingView()
             
             VStack {
-                SurroundingBrackets(bracket: "[", size: .title4) {
-                    YonderText(text: Strings("inspect.accessorySlotSelection.header").local, size: .title4)
+                SurroundingBrackets(bracket: "[", size: .title5) {
+                    YonderText(text: Strings("inspect.accessorySlotSelection.header").local, size: .title5)
                 }
                 .frame(maxWidth: .infinity)
                 

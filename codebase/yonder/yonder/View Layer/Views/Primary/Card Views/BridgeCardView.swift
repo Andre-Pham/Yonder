@@ -16,13 +16,13 @@ struct BridgeCardView: View {
             YonderText(text: self.area1ViewModel.name, size: .cardSubscript, multilineTextAlignment: .center)
             
             HStack(alignment: .center) {
-                YonderText(text: "↑", size: .title2)
+                YonderText(text: "↑", size: .title3)
                     .padding(.top, 4)
                 
                 YonderIcon(image: YonderIcons.warpIcon)
                     .padding(.vertical, YonderCoreGraphics.padding)
                 
-                YonderText(text: "↑", size: .title2)
+                YonderText(text: "↑", size: .title3)
                     .padding(.top, 4)
                     .scaleEffect(CGSize(width: -1, height: -1))
             }

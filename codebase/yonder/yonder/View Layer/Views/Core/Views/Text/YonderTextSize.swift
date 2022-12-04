@@ -14,6 +14,7 @@ enum YonderTextSize {
     case title2
     case title3
     case title4
+    case title5
     
     case buttonBody
     case buttonBodySubscript
@@ -32,9 +33,10 @@ enum YonderTextSize {
     var value: CGFloat {
         switch self {
         case .title1: return 70
-        case .title2: return 35
-        case .title3: return 25 // TEMP choice
-        case .title4: return 20
+        case .title2: return 50
+        case .title3: return 35
+        case .title4: return 25 // TEMP choice
+        case .title5: return 20
             
         case .buttonBody: return 24
         case .buttonBodySubscript: return 18
