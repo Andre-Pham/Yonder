@@ -23,7 +23,7 @@ struct MainMenuView: View {
                 
                 VStack(spacing: 30) {
                     YonderButton(text: Strings("mainMenu.newGame").local) {
-                        // Game is already newly created every time app starts up
+                        Session.instance.startNewGame()
                         self.showingMenu.toggle()
                     }
                     

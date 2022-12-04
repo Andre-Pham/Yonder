@@ -7,39 +7,36 @@
 
 import Foundation
 
-/// This manages the current game instance and generates the player and player location view models (which in turn generate subsequent view models).
+/// This manages the current game used within the viewmodel layer and generates the player and player location view models (which in turn generate subsequent view models).
 /// Remember, view models are only to be used within the view layer and view model layer, not the model.
 class GameManager {
     
     static let instance = GameManager()
     
-    private var activeGame: Game
-    private(set) var playerVM: PlayerViewModel
-    private(set) var playerLocationVM: PlayerLocationViewModel
+    // These should only be accessed after an active game is set
+    private var activeGame: Game? = nil
+    private var internalPlayerVM: PlayerViewModel? = nil
+    private var internalPlayerLocationVM: PlayerLocationViewModel? = nil
+    var playerVM: PlayerViewModel {
+        self.internalPlayerVM!
+    }
+    var playerLocationVM: PlayerLocationViewModel {
+        self.internalPlayerLocationVM!
+    }
     var foeViewModel: FoeViewModel? {
         return self.playerLocationVM.locationViewModel.getFoeViewModel()
     }
     
-    private init() {
-        self.activeGame = Game()
-        self.playerVM = PlayerViewModel(self.activeGame.player)
-        self.playerLocationVM = PlayerLocationViewModel(player: self.activeGame.player)
-        Pricing.instance.setGameContext(to: self.activeGame.gameContext)
-    }
-    
-    func startNewGame() {
-        self.setActiveGame(to: Game())
-    }
+    private init() { }
     
     func setActiveGame(to game: Game) {
         self.activeGame = game
-        self.playerVM = PlayerViewModel(self.activeGame.player)
-        self.playerLocationVM = PlayerLocationViewModel(player: self.activeGame.player)
-        Pricing.instance.setGameContext(to: game.gameContext)
+        self.internalPlayerVM = PlayerViewModel(self.activeGame!.player)
+        self.internalPlayerLocationVM = PlayerLocationViewModel(player: self.activeGame!.player)
     }
     
     func getMapLocationConnections(gridDimensions: GridDimensions) -> [LocationConnection?] {
-        return LocationConnectionGenerator(map: self.activeGame.map, hexagonCount: gridDimensions.hexagonCount, columnsCount: gridDimensions.columnsCount).getAllLocationConnections()
+        return LocationConnectionGenerator(map: self.activeGame!.map, hexagonCount: gridDimensions.hexagonCount, columnsCount: gridDimensions.columnsCount).getAllLocationConnections()
     }
     
 }
