@@ -12,9 +12,9 @@ final class GameTests: XCTestCase {
 
     func testGameSerialisation() throws {
         Session.instance.startNewGame()
-        let game = Session.instance.activeGame!
-        Session.instance.saveGame()
-        Session.instance.loadGame()
+        XCTAssert(Session.instance.activeGame != nil)
+        XCTAssert(Session.instance.saveGame())
+        XCTAssert(Session.instance.loadGame())
     }
 
 }
