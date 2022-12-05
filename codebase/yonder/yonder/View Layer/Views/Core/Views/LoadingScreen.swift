@@ -9,6 +9,8 @@ import SwiftUI
 
 struct LoadingScreen: View {
     @State private var dotCount: Int = 0
+    // Other timer implementations repeat forever even after view destruction
+    let timer = SwiftUI.Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
     var dots: String {
         String(repeating: ".", count: self.dotCount)
     }
@@ -23,18 +25,11 @@ struct LoadingScreen: View {
                     YonderText(text: Strings("loading").local, size: .title2)
                     
                     YonderText(text: self.dots, size: .title2)
+                        .onReceive(self.timer) { _ in
+                            self.incrementDotCount()
+                        }
                 }
             }
-        }
-        .onAppear {
-            self.transition()
-        }
-    }
-    
-    func transition() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.incrementDotCount()
-            self.transition()
         }
     }
     
