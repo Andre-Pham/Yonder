@@ -11,6 +11,7 @@ import SwiftUI
 struct MainMenuView: View {
     @Binding var showingMenu: Bool
     @State private var isLoading = false
+    @State private var showingFailAlert = false
     
     var body: some View {
         ZStack {
@@ -37,10 +38,14 @@ struct MainMenuView: View {
                     YonderButton(text: Strings("mainMenu.resumeGame").local) {
                         self.isLoading = true
                         DispatchQueue.global().async {
-                            Session.instance.loadGame()
+                            let loadSuccessful = Session.instance.loadGame()
                             DispatchQueue.main.async {
                                 self.isLoading = false
-                                self.showingMenu.toggle()
+                                if loadSuccessful {
+                                    self.showingMenu.toggle()
+                                } else {
+                                    self.showingFailAlert = true
+                                }
                             }
                         }
                     }
@@ -55,6 +60,12 @@ struct MainMenuView: View {
             if self.isLoading {
                 DotsLoadingScreen()
             }
+        }
+        .alert(isPresented: self.$showingFailAlert) {
+            Alert(
+                title: Text(Strings("alert.title.failed").local),
+                dismissButton: .default(Text(Strings("alert.button.dismiss").local))
+            )
         }
     }
     

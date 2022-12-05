@@ -29,6 +29,11 @@
 "mainMenu.newGame" = "New Game";
 "mainMenu.resumeGame" = "Resume Game";
 
+// MARK: - Alerts
+
+"alert.title.failed" = "Failed";
+"alert.button.dismiss" = "Dismiss";
+
 // MARK: - Tab Bar
 
 "tabBar.game" = "Game";

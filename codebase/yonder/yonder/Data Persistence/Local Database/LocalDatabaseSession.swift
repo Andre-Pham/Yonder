@@ -18,17 +18,18 @@ class LocalDatabaseSession {
     
     private init() { }
     
-    func write(_ storable: Storable) {
+    func write(_ storable: Storable) -> Bool {
         let dataObject = storable.toDataObject()
-        self.write(dataObject)
+        return self.write(dataObject)
     }
     
-    func write(_ dataObject: DataObject) {
+    func write(_ dataObject: DataObject) -> Bool {
         do {
             let data = dataObject.rawData
             try data.write(to: self.url)
+            return true
         } catch {
-            print("Write operation failed")
+            return false
         }
     }
     
