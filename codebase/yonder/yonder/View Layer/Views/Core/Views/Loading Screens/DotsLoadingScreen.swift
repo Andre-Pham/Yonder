@@ -10,7 +10,7 @@ import SwiftUI
 struct DotsLoadingScreen: View {
     @State private var dotCount: Int = 0
     // Other timer implementations repeat forever even after view destruction
-    let timer = SwiftUI.Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
+    let timer = SwiftUI.Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
     var dots: String {
         String(repeating: ".", count: self.dotCount)
     }
