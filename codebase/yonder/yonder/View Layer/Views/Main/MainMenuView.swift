@@ -53,7 +53,7 @@ struct MainMenuView: View {
             .foregroundColor(YonderColors.textMaxContrast)
             
             if self.isLoading {
-                LoadingScreen()
+                FadeLoadingScreen()
             }
         }
     }

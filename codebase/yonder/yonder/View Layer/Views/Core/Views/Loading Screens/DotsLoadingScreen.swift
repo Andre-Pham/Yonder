@@ -1,5 +1,5 @@
 //
-//  LoadingScreen.swift
+//  DotsLoadingScreen.swift
 //  yonder
 //
 //  Created by Andre Pham on 5/12/2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoadingScreen: View {
+struct DotsLoadingScreen: View {
     @State private var dotCount: Int = 0
     // Other timer implementations repeat forever even after view destruction
     let timer = SwiftUI.Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
@@ -40,6 +40,6 @@ struct LoadingScreen: View {
 
 struct LoadingScreen_Previews: PreviewProvider {
     static var previews: some View {
-        LoadingScreen()
+        DotsLoadingScreen()
     }
 }
