@@ -14,6 +14,7 @@ class Session {
     private(set) var activeGame: Game? = nil {
         didSet {
             if let activeGame = self.activeGame {
+                Pricing.instance.setGameContext(to: activeGame.gameContext)
                 GameManager.instance.setActiveGame(to: activeGame)
             }
         }
@@ -23,7 +24,6 @@ class Session {
     
     func startNewGame() {
         self.activeGame = Game()
-        Pricing.instance.setGameContext(to: self.activeGame!.gameContext)
     }
     
     func saveGame() -> Bool {
