@@ -10,6 +10,7 @@ import SwiftUI
 
 struct MainMenuView: View {
     @Binding var showingMenu: Bool
+    @State private var isLoading = false
     
     var body: some View {
         ZStack {
@@ -23,13 +24,25 @@ struct MainMenuView: View {
                 
                 VStack(spacing: 30) {
                     YonderButton(text: Strings("mainMenu.newGame").local) {
-                        Session.instance.startNewGame()
-                        self.showingMenu.toggle()
+                        self.isLoading = true
+                        DispatchQueue.global().async {
+                            Session.instance.startNewGame()
+                            DispatchQueue.main.async {
+                                self.isLoading = false
+                                self.showingMenu.toggle()
+                            }
+                        }
                     }
                     
                     YonderButton(text: Strings("mainMenu.resumeGame").local) {
-                        Session.instance.loadGame()
-                        self.showingMenu.toggle()
+                        self.isLoading = true
+                        DispatchQueue.global().async {
+                            Session.instance.loadGame()
+                            DispatchQueue.main.async {
+                                self.isLoading = false
+                                self.showingMenu.toggle()
+                            }
+                        }
                     }
                 }
                 .padding(40)
@@ -38,6 +51,10 @@ struct MainMenuView: View {
                 Spacer()
             }
             .foregroundColor(YonderColors.textMaxContrast)
+            
+            if self.isLoading {
+                LoadingScreen()
+            }
         }
     }
     
