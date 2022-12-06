@@ -39,7 +39,8 @@ class ItemViewModel: ObservableObject {
          restorationImage: Image,
          healthRestorationImage: Image,
          armorPointsRestorationImage: Image,
-         remainingUsesImage: Image) {
+         remainingUsesImage: Image
+    ) {
         self.item = item
         self.remainingUsesDescription = remainingUsesDescription
         self.damageImage = damageImage

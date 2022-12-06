@@ -11,4 +11,9 @@ enum YonderImages {
     
     static let placeholderImage = ImageResource("MajorInn")
     
+    // MARK: - Foe Types
+    
+    static let goblinIcon = ImageResource("Goblin")
+    static let bruteIcon = ImageResource("BrokenShield")
+    
 }

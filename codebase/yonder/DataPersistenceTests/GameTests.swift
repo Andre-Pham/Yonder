@@ -11,7 +11,7 @@ import XCTest
 final class GameTests: XCTestCase {
 
     func testGameSerialisation() throws {
-        Session.instance.startNewGame()
+        Session.instance.startNewGame(playerClass: .none)
         XCTAssert(Session.instance.activeGame != nil)
         XCTAssert(Session.instance.saveGame())
         XCTAssert(Session.instance.loadGame())

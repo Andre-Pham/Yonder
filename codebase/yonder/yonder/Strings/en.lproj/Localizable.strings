@@ -753,3 +753,8 @@
 
 "restorer.postBoss.name" = "Travelling Maiden";
 "restorer.postBoss.description" = "Your familiar travelling maiden, always there to mend you after a boss fight. She's graceful in tending to your wounds.";
+
+// MARK: - Foe Types
+
+"foeType.goblin.name" = "Goblin";
+"foeType.brute.name" = "Brute";

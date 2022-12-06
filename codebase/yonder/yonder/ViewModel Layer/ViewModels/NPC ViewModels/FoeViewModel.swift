@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class FoeViewModel: ObservableObject {
     
@@ -17,12 +18,27 @@ class FoeViewModel: ObservableObject {
     private(set) var id: UUID
     private(set) var name: String
     private(set) var description: String
+    public let typeName: String?
+    public let typeImage: Image?
     @Published private(set) var health: Int
     @Published private(set) var maxHealth: Int
     @Published private(set) var isDead: Bool
+    /// Gold stolen by goblins
+    @Published private(set) var goldSteal: Int? = nil
     
     @Published private(set) var weaponViewModel: WeaponViewModel
     @Published private(set) var lootOptionsViewModel: LootOptionsViewModel
+    
+    public var damageStatIsVisible: Bool {
+        // Don't use indicative damage, if the damage is 0 because of buffs that should be visible
+        self.weaponViewModel.damage > 0
+    }
+    public var goldStealStatIsVisible: Bool {
+        if let goldSteal = self.goldSteal {
+            return goldSteal > 0
+        }
+        return false
+    }
     
     init(_ foe: Foe) {
         self.foe = foe
@@ -32,6 +48,8 @@ class FoeViewModel: ObservableObject {
         self.id = self.foe.id
         self.name = self.foe.name
         self.description = self.foe.description
+        self.typeName = self.foe.typeName
+        self.typeImage = self.foe.typeImageResource?.image
         self.health = self.foe.health
         self.maxHealth = self.foe.maxHealth
         self.isDead = self.foe.isDead
@@ -52,6 +70,15 @@ class FoeViewModel: ObservableObject {
             self.maxHealth = newValue
         }).store(in: &self.subscriptions)
         
+        // Setup goblin
+        
+        if let goblinEffectPill = self.foe.getWeapon().effectPills.first(where: { $0 is GoblinEffectPill }) {
+            let pill = (goblinEffectPill as! GoblinEffectPill)
+            self.goldSteal = pill.goldPerSteal
+            self.weaponViewModel.$damage.sink(receiveValue: { newValue in
+                self.goldSteal = newValue == 0 ? pill.goldPerSteal : 0
+            }).store(in: &self.subscriptions)
+        }
     }
     
     func getIndicativeDamage() -> Int {

@@ -13,6 +13,8 @@ class BruteFoe: Foe {
         super.init(
             name: name,
             description: description,
+            typeName: Strings("foeType.brute.name").local,
+            typeImageResource: YonderImages.bruteIcon,
             maxHealth: maxHealth,
             weapon: Weapon(
                 basePill: DamageBasePill(damage: damage),

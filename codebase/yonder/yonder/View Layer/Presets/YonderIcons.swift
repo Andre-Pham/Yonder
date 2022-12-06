@@ -29,9 +29,9 @@ enum YonderIcons {
     static let weaponDamageIcon = Image("StrikingBlade")
     static let potionDamageIcon = Image("Explosion")
     static let consumableDamageIcon = Image("Explosion")
-    static let weaponRestorationIcon = YonderIcons.missingIcon
-    static let potionRestorationIcon = YonderIcons.missingIcon
-    static let consumableRestorationIcon = YonderIcons.missingIcon
+    static let weaponRestorationIcon = Image("GemGlimmer")
+    static let potionRestorationIcon = Image("GemGlimmer")
+    static let consumableRestorationIcon = Image("GemGlimmer")
     static let weaponHealthRestorationIcon = Image("Healing")
     static let potionHealthRestorationIcon = Image("Healing")
     static let consumableHealthRestorationIcon = Image("Healing")
@@ -45,6 +45,7 @@ enum YonderIcons {
     static let consumableArmorPointsRestorationIcon = Image("MetalPlating")
     static let healthBonusIcon = YonderIcons.healthIcon
     static let armorPointsBonusIcon = YonderIcons.armorPointsIcon
+    static let goblinGoldStealIcon = Image("GoldBagLeak")
     
     // MARK: - Option Icons
     

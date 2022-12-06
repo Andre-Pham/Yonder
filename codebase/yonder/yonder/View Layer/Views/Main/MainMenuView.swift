@@ -27,7 +27,8 @@ struct MainMenuView: View {
                     YonderButton(text: Strings("mainMenu.newGame").local) {
                         self.isLoading = true
                         DispatchQueue.global().async {
-                            Session.instance.startNewGame()
+                            // TODO: Inject player class here
+                            Session.instance.startNewGame(playerClass: .none)
                             DispatchQueue.main.async {
                                 self.isLoading = false
                                 self.showingMenu.toggle()

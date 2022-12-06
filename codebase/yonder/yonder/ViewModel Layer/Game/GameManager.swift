@@ -27,7 +27,12 @@ class GameManager {
         return self.playerLocationVM.locationViewModel.getFoeViewModel()
     }
     
-    private init() { }
+    private init() {
+        // If a preview is being executed, generate a game to preview
+        if SessionEnvironment.executingSwiftUIPreview {
+            self.setActiveGame(to: Game(playerClass: .none))
+        }
+    }
     
     func setActiveGame(to game: Game) {
         self.activeGame = game

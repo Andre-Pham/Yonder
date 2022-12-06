@@ -22,8 +22,8 @@ class Session {
     
     private init() { }
     
-    func startNewGame() {
-        self.activeGame = Game()
+    func startNewGame(playerClass: PlayerClass) {
+        self.activeGame = Game(playerClass: playerClass)
     }
     
     func saveGame() -> Bool {

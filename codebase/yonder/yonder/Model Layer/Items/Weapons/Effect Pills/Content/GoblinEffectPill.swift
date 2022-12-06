@@ -7,9 +7,9 @@
 
 import Foundation
 
-class GoblinEffectPill: WeaponEffectPill, OnGoldChangeSubscriber {
+class GoblinEffectPill: WeaponEffectPill, OnGoldChangeSubscriber, OnPlayerTravelSubscriber {
     
-    private let goldPerSteal: Int
+    public let goldPerSteal: Int
     private let damage: Int
     public let effectsDescription: String
     
@@ -20,6 +20,7 @@ class GoblinEffectPill: WeaponEffectPill, OnGoldChangeSubscriber {
         super.init()
         
         OnGoldChangePublisher.subscribe(self)
+        OnPlayerTravelPublisher.subscribe(self) // For if the player has never received any gold
     }
     
     required init(_ original: WeaponEffectPillAbstract) {
@@ -30,6 +31,7 @@ class GoblinEffectPill: WeaponEffectPill, OnGoldChangeSubscriber {
         super.init(original)
         
         OnGoldChangePublisher.subscribe(self)
+        OnPlayerTravelPublisher.subscribe(self)
     }
     
     // MARK: - Serialisation
@@ -45,6 +47,9 @@ class GoblinEffectPill: WeaponEffectPill, OnGoldChangeSubscriber {
         self.damage = dataObject.get(Field.damage.rawValue)
         self.effectsDescription = dataObject.get(Field.effectsDescription.rawValue)
         super.init(dataObject: dataObject)
+        
+        OnGoldChangePublisher.subscribe(self)
+        OnPlayerTravelPublisher.subscribe(self)
     }
 
     override func toDataObject() -> DataObject {
@@ -74,6 +79,10 @@ class GoblinEffectPill: WeaponEffectPill, OnGoldChangeSubscriber {
                 weapon.setDamage(to: self.damage)
             }
         }
+    }
+    
+    func onPlayerTravel(player: Player, newLocation: Location) {
+        self.onGoldChange(player: player)
     }
     
     func calculateBasePurchasePrice() -> Int {

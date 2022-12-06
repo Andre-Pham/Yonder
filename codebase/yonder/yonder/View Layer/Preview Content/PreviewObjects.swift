@@ -128,6 +128,27 @@ enum PreviewObjects {
         )
     }
     
+    private static var goblin: GoblinFoe {
+        return GoblinFoe(
+            name: "Sneaky Goblin",
+            description: "He's so sneaky!.",
+            maxHealth: 24,
+            goldPerSteal: 50,
+            damage: 100,
+            loot: NoLootOptions()
+        )
+    }
+    
+    private static var brute: BruteFoe {
+        return BruteFoe(
+            name: "Massive Brute",
+            description: "He's brutally obese.",
+            maxHealth: 500,
+            damage: 40,
+            loot: NoLootOptions()
+        )
+    }
+    
     private static var shopKeeper: ShopKeeper {
         return ShopKeeper(
             name: "Andre",
@@ -169,6 +190,14 @@ enum PreviewObjects {
     
     static var foeViewModel: FoeViewModel {
         return FoeViewModel(Self.foe)
+    }
+    
+    static var goblinViewModel: FoeViewModel {
+        return FoeViewModel(Self.goblin)
+    }
+    
+    static var bruteViewModel: FoeViewModel {
+        return FoeViewModel(self.brute)
     }
     
     static var shopKeeperViewModel: ShopKeeperViewModel {
