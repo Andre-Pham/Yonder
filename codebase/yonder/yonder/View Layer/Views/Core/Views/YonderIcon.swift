@@ -20,9 +20,21 @@ struct YonderIcon: View {
     var sideLength: YonderIconSize = .standard
     
     var body: some View {
-        image
+        self.image
             .resizable()
             .scaledToFill()
             .frame(width: self.sideLength.rawValue, height: self.sideLength.rawValue)
+    }
+}
+
+struct YonderIcon_Previews: PreviewProvider {
+    static var previews: some View {
+        PreviewContentView {
+            HStack {
+                YonderIcon(image: YonderIcons.hostileIcon, sideLength: .large)
+                
+                YonderIcon(image: YonderIcons.healthIcon, sideLength: .large)
+            }
+        }
     }
 }

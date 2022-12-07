@@ -163,6 +163,7 @@
 "stat.armorPointsRestoration" = "Armor Repair";
 "stat.healthBonus" = "Health Bonus";
 "stat.armorPointsBonus" = "Shields Bonus";
+"stat.goldSteal" = "Gold Theft";
 
 // Weapon
 "stat.weapon.remainingUsesSingular" = "Durability";
@@ -757,4 +758,7 @@
 // MARK: - Foe Types
 
 "foeType.goblin.name" = "Goblin";
+"foeType.goblin.description" = "Goblin hostiles take gold instead of dealing damage. If you have no gold left, they become frenzied and attack you instead!";
+
 "foeType.brute.name" = "Brute";
+"foeType.brute.description1Param" = "Brute hostiles are heavy hitters. They deal %@x damage to shields.";

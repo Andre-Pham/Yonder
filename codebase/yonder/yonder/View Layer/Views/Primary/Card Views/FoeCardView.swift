@@ -44,8 +44,6 @@ struct FoeCardView: View {
             if let goldSteal = self.foeViewModel.goldSteal, self.showGoldStealStat {
                 CardRowView(
                     value: goldSteal,
-                    // Gold steal is always the same
-                    indicativeValue: goldSteal,
                     image: YonderIcons.goblinGoldStealIcon
                 )
                 .transition(self.statTransition)

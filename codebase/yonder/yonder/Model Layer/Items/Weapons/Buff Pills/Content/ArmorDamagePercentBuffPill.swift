@@ -10,7 +10,7 @@ import Foundation
 /// "Does X% more damage to armor"
 class ArmorDamagePercentBuffPill: WeaponBuffPill {
     
-    private let damageFraction: Double
+    public let damageFraction: Double
     public let effectsDescription: String
     
     init(damageFraction: Double) {

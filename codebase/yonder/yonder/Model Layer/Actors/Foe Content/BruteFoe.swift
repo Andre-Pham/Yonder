@@ -13,8 +13,6 @@ class BruteFoe: Foe {
         super.init(
             name: name,
             description: description,
-            typeName: Strings("foeType.brute.name").local,
-            typeImageResource: YonderImages.bruteIcon,
             maxHealth: maxHealth,
             weapon: Weapon(
                 basePill: DamageBasePill(damage: damage),
@@ -22,6 +20,15 @@ class BruteFoe: Foe {
                 buffPills: [ArmorDamagePercentBuffPill(damageFraction: 2.0)]
             ),
             loot: loot
+        )
+    }
+    
+    override func initFoeType() {
+        let damageFraction = (self.getWeapon().buffPills.first as! ArmorDamagePercentBuffPill).damageFraction
+        self.setType(
+            name: Strings("foeType.brute.name").local,
+            description: Strings("foeType.brute.description1Param").localWithArgs(damageFraction.toString(decimalPlaces: 0)),
+            imageResource: YonderImages.bruteIcon
         )
     }
     

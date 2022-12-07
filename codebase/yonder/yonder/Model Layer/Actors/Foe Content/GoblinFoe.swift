@@ -13,8 +13,6 @@ class GoblinFoe: Foe {
         super.init(
             name: name,
             description: description,
-            typeName: Strings("foeType.goblin.name").local,
-            typeImageResource: YonderImages.goblinIcon,
             maxHealth: maxHealth,
             weapon: Weapon(
                 basePill: EffectBasePill(),
@@ -22,6 +20,14 @@ class GoblinFoe: Foe {
                 effectPills: [GoblinEffectPill(goldPerSteal: goldPerSteal, damage: damage)]
             ),
             loot: loot
+        )
+    }
+    
+    override func initFoeType() {
+        self.setType(
+            name: Strings("foeType.goblin.name").local,
+            description: Strings("foeType.goblin.description").local,
+            imageResource: YonderImages.goblinIcon
         )
     }
     

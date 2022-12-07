@@ -19,6 +19,7 @@ class FoeViewModel: ObservableObject {
     private(set) var name: String
     private(set) var description: String
     public let typeName: String?
+    public let typeDescription: String?
     public let typeImage: Image?
     @Published private(set) var health: Int
     @Published private(set) var maxHealth: Int
@@ -49,6 +50,7 @@ class FoeViewModel: ObservableObject {
         self.name = self.foe.name
         self.description = self.foe.description
         self.typeName = self.foe.typeName
+        self.typeDescription = self.foe.typeDescription
         self.typeImage = self.foe.typeImageResource?.image
         self.health = self.foe.health
         self.maxHealth = self.foe.maxHealth

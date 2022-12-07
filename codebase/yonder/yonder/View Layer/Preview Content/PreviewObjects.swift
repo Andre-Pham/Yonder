@@ -131,7 +131,7 @@ enum PreviewObjects {
     private static var goblin: GoblinFoe {
         return GoblinFoe(
             name: "Sneaky Goblin",
-            description: "He's so sneaky!.",
+            description: "He's so sneaky!",
             maxHealth: 24,
             goldPerSteal: 50,
             damage: 100,

@@ -11,11 +11,23 @@ struct HostileInspectView: View {
     @ObservedObject var foeViewModel: FoeViewModel
     
     var body: some View {
-        InspectNPCBody(
-            name: self.foeViewModel.name,
-            description: self.foeViewModel.description,
-            locationType: LocationType.hostile
-        ) {
+        InspectBody {
+            YonderText(text: self.foeViewModel.name, size: .inspectSheetTitle)
+            
+            InspectNPCTypeView()
+            
+            if let typeName = foeViewModel.typeName, let typeImage = foeViewModel.typeImage {
+                YonderIconTextPair(
+                    image: typeImage,
+                    text: typeName,
+                    size: .inspectSheetBody,
+                    iconSize: .inspectSheet)
+            }
+            
+            YonderText(text: self.foeViewModel.description, size: .inspectSheetBody)
+            
+            InspectSectionSpacingView()
+            
             YonderText(text: Strings("inspect.title.stats").local, size: .inspectSheetTitle)
             
             InspectStatsBody {
@@ -25,11 +37,34 @@ struct HostileInspectView: View {
                     maxValue: self.foeViewModel.maxHealth,
                     image: YonderIcons.healthIcon)
                 
-                InspectStatView(
-                    title: Strings("stat.damage").local,
-                    value: self.foeViewModel.weaponViewModel.damage,
-                    indicativeValue: self.foeViewModel.getIndicativeDamage(),
-                    image: YonderIcons.foeDamageIcon)
+                if self.foeViewModel.damageStatIsVisible {
+                    InspectStatView(
+                        title: Strings("stat.damage").local,
+                        value: self.foeViewModel.weaponViewModel.damage,
+                        indicativeValue: self.foeViewModel.getIndicativeDamage(),
+                        image: YonderIcons.foeDamageIcon
+                    )
+                }
+                
+                if let goldSteal = self.foeViewModel.goldSteal, self.foeViewModel.goldStealStatIsVisible {
+                    InspectStatView(
+                        title: Strings("stat.goldSteal").local,
+                        value: goldSteal,
+                        image: YonderIcons.goblinGoldStealIcon
+                    )
+                }
+            }
+            
+            InspectSectionSpacingView()
+            
+            Group {
+                YonderText(text: Strings("inspect.title.info").local, size: .inspectSheetTitle)
+                
+                if let typeDescription = self.foeViewModel.typeDescription {
+                    YonderText(text: typeDescription, size: .inspectSheetBody)
+                }
+                
+                YonderText(text: LocationType.hostile.description, size: .inspectSheetBody)
             }
         }
     }
@@ -37,11 +72,12 @@ struct HostileInspectView: View {
 
 struct FoeInspectView_Previews: PreviewProvider {
     static var previews: some View {
-        ZStack {
-            YonderColors.backgroundMaxDepth
-                .ignoresSafeArea()
-            
+        PreviewContentView {
             HostileInspectView(foeViewModel: PreviewObjects.foeViewModel)
+        }
+        
+        PreviewContentView {
+            HostileInspectView(foeViewModel: PreviewObjects.goblinViewModel)
         }
     }
 }
