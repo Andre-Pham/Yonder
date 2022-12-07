@@ -387,7 +387,7 @@
 // Armor Damage Percent
 "weaponBuffPill.armorDamagePercent.increaseDescription1Param" = "Deals %@%% more damage to shields.";
 "weaponBuffPill.armorDamagePercent.decreaseDescription1Param" = "Deals %@%% less damage to shields.";
-"weaponBuffPill.armorDamagePercent.descriptionMultiplier1Param" = "Deals %@x more damage to shields.";
+"weaponBuffPill.armorDamagePercent.descriptionMultiplier1Param" = "Deals %@x damage to shields.";
 
 // MARK: - Status Effects
 
@@ -762,3 +762,4 @@
 
 "foeType.brute.name" = "Brute";
 "foeType.brute.description1Param" = "Brute hostiles are heavy hitters. They deal %@x damage to shields.";
+"foeType.brute.buffName" = "Brute Power";

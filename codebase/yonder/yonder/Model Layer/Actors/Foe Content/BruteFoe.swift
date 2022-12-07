@@ -9,6 +9,10 @@ import Foundation
 
 class BruteFoe: Foe {
     
+    private var buffPill: ArmorDamagePercentBuffPill {
+        self.getWeapon().buffPills.first as! ArmorDamagePercentBuffPill
+    }
+    
     init(name: String, description: String, maxHealth: Int, damage: Int, loot: LootOptions) {
         super.init(
             name: name,
@@ -21,10 +25,16 @@ class BruteFoe: Foe {
             ),
             loot: loot
         )
+        self.addBuff(BuffProxy(
+            sourceName: Strings("foeType.brute.buffName").local,
+            effectsDescription: self.buffPill.effectsDescription,
+            type: .damage,
+            direction: .outgoing
+        ))
     }
     
     override func initFoeType() {
-        let damageFraction = (self.getWeapon().buffPills.first as! ArmorDamagePercentBuffPill).damageFraction
+        let damageFraction = self.buffPill.damageFraction
         self.setType(
             name: Strings("foeType.brute.name").local,
             description: Strings("foeType.brute.description1Param").localWithArgs(damageFraction.toString(decimalPlaces: 0)),
