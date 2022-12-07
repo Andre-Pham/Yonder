@@ -41,20 +41,30 @@ final class PricingTests: XCTestCase {
         XCTAssertTrue(percentBuff.getValue(whenTargeting: .foe) > 0)
     }
     
-    func testGameplayBuffValues() throws {
-        // These are from gameplay testing where values are the wrong sign
-        var buff: Buff
-        buff = DamageBuff(sourceName: "", direction: .incoming, duration: nil, damageDifference: -7)
-        XCTAssertTrue(buff.getValue(whenTargeting: .player) > 0)
-        XCTAssertTrue(buff.getValue(whenTargeting: .foe) < 0)
-    }
-    
     func testStages() throws {
         let buff = HealthRestorationPercentBuff(sourceName: "", direction: .incoming, duration: nil, healthFraction: 2.0)
         let price1 = Pricing.usingStage(stage: 1) { buff.getValue(whenTargeting: .player) }
         let price2 = Pricing.usingStage(stage: 5) { buff.getValue(whenTargeting: .player) }
         XCTAssertTrue(price1 < price2)
     }
+    
+    // MARK: - Gameplay tests
+    // These are from gameplay testing where values are objectively wrong
+    
+    func testGameplayBuffValues() throws {
+        var buff: Buff
+        buff = DamageBuff(sourceName: "", direction: .incoming, duration: nil, damageDifference: -7)
+        XCTAssertTrue(buff.getValue(whenTargeting: .player) > 0)
+        XCTAssertTrue(buff.getValue(whenTargeting: .foe) < 0)
+    }
+    
+    func testGameplayConsumableValues() throws {
+        var consumable: Consumable
+        consumable = MaxRestoreAllConsumable(amount: 1)
+        XCTAssertTrue(consumable.getBasePurchasePrice() > 0)
+    }
+    
+    // MARK: - Report
     
     func testBalance() throws {
         var desc: String

@@ -50,9 +50,11 @@ class MaxRestoreAllConsumable: Consumable {
     }
     
     func calculateBasePurchasePrice() -> Int {
-        let playerBaseHitPoints = Pricing.playerHealthStat.baseStatAmount + Pricing.playerArmorPointsStat.baseStatAmount
-        let foeBaseHitPoints = Pricing.foeHealthStat.baseStatAmount + Pricing.foeArmorPointsStat.baseStatAmount
-        return Pricing.playerHealthRestorationStat.getValue(amount: playerBaseHitPoints, uses: self.remainingUses) - Pricing.playerDamageStat.getValue(amount: foeBaseHitPoints, uses: self.remainingUses)
+        // If you do a "fair" calculation, this has a symmetric effect so the price often comes out to 0 (or close)
+        // (The closer to stage 0, the closer to 0)
+        // Obviously this does have value - the player could start a fight on 1hp and use this and the foe would have no benefit
+        // As a compromise this will be worth half what a regular max restore is
+        return MaxHealthRestorationPotion(potionCount: self.remainingUses).getBasePurchasePrice()/2
     }
     
 }
