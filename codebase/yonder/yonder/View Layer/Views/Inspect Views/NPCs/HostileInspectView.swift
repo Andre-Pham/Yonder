@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HostileInspectView: View {
     @ObservedObject var foeViewModel: FoeViewModel
+    var locationType: LocationType = .hostile
     
     var body: some View {
         InspectBody {
@@ -64,7 +65,7 @@ struct HostileInspectView: View {
                     YonderText(text: typeDescription, size: .inspectSheetBody)
                 }
                 
-                YonderText(text: LocationType.hostile.description, size: .inspectSheetBody)
+                YonderText(text: self.locationType.description, size: .inspectSheetBody)
             }
         }
     }
