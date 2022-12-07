@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct InspectTimedEvents: View {
-    @ObservedObject var playerViewModel: PlayerViewModel
+    @ObservedObject var actorViewModel: ActorViewModel
     
     var body: some View {
-        ForEach(self.playerViewModel.timedEventsViewModels, id: \.id) { timedEventViewModel in
+        ForEach(self.actorViewModel.timedEventsViewModels, id: \.id) { timedEventViewModel in
             if let effectsDescription = timedEventViewModel.effectsDescription {
                 VStack(alignment: .leading, spacing: 0) {
                     HStack {
@@ -26,7 +26,7 @@ struct InspectTimedEvents: View {
                         }
                     }
                     
-                    if let indicative = timedEventViewModel.getIndicativeValue(playerViewModel: self.playerViewModel) {
+                    if let indicative = timedEventViewModel.getIndicativeValue(actorViewModel: self.actorViewModel) {
                         IndicativeEffectsDescriptionView(
                             effectsDescription: effectsDescription,
                             indicative: indicative,
@@ -47,7 +47,7 @@ struct InspectTimedEvents_Previews: PreviewProvider {
                 .ignoresSafeArea()
             
             VStack {
-                InspectTimedEvents(playerViewModel: PreviewObjects.playerViewModel)
+                InspectTimedEvents(actorViewModel: PreviewObjects.playerViewModel)
             }
         }
     }

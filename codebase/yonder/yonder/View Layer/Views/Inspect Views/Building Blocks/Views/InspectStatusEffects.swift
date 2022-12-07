@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct InspectStatusEffects: View {
-    @ObservedObject var playerViewModel: PlayerViewModel
+    @ObservedObject var actorViewModel: ActorViewModel
     
     var body: some View {
-        ForEach(self.playerViewModel.statusEffectViewModels, id: \.id) { statusEffectViewModel in
+        ForEach(self.actorViewModel.statusEffectViewModels, id: \.id) { statusEffectViewModel in
             if let effectsDescription = statusEffectViewModel.effectsDescription {
                 VStack(alignment: .leading, spacing: 0) {
                     HStack {
@@ -26,7 +26,7 @@ struct InspectStatusEffects: View {
                         }
                     }
                     
-                    if let indicative = statusEffectViewModel.getIndicativeValue(playerViewModel: self.playerViewModel) {
+                    if let indicative = statusEffectViewModel.getIndicativeValue(actorViewModel: self.actorViewModel) {
                         IndicativeEffectsDescriptionView(
                             effectsDescription: effectsDescription,
                             indicative: indicative,
@@ -47,7 +47,7 @@ struct InspectStatusEffects_Previews: PreviewProvider {
                 .ignoresSafeArea()
             
             VStack {
-                InspectStatusEffects(playerViewModel: PreviewObjects.playerViewModel)
+                InspectStatusEffects(actorViewModel: PreviewObjects.playerViewModel)
             }
         }
     }

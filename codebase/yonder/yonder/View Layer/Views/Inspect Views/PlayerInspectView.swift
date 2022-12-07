@@ -22,34 +22,7 @@ struct PlayerInspectView: View {
                 InspectStatView(title: Strings("stat.gold").local, prefix: Strings("currencySymbol").local, value: self.playerViewModel.gold, image: YonderIcons.goldIcon)
             }
             
-            // Ongoing Effects
-            Group {
-                InspectSectionSpacingView()
-                
-                YonderText(text: Strings("inspect.title.buffs").local, size: .inspectSheetTitle)
-                
-                InspectEquipmentEffects(playerViewModel: self.playerViewModel)
-                
-                InspectBuffs(playerViewModel: self.playerViewModel)
-            }
-            
-            // Status Effects
-            Group {
-                InspectSectionSpacingView()
-                
-                YonderText(text: Strings("inspect.title.statusEffects").local, size: .inspectSheetTitle)
-                
-                InspectStatusEffects(playerViewModel: self.playerViewModel)
-            }
-            
-            // Timed Events
-            Group {
-                InspectSectionSpacingView()
-                
-                YonderText(text: Strings("inspect.title.timedEvents").local, size: .inspectSheetTitle)
-                
-                InspectTimedEvents(playerViewModel: self.playerViewModel)
-            }
+            InspectPlayerStatus(playerViewModel: self.playerViewModel)
         }
     }
 }

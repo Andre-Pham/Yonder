@@ -33,8 +33,8 @@ class TimedEventViewModel: ObservableObject {
         }).store(in: &self.subscriptions)
     }
     
-    func getIndicativeValue(playerViewModel: PlayerViewModel) -> Int? {
-        return self.timedEvent.getIndicativeValue(target: playerViewModel.player)
+    func getIndicativeValue(actorViewModel: ActorViewModel) -> Int? {
+        return self.timedEvent.getIndicativeValue(target: actorViewModel.actor)
     }
     
 }

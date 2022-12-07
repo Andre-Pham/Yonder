@@ -56,6 +56,8 @@ struct HostileInspectView: View {
                 }
             }
             
+            InspectFoeStatus(foeViewModel: self.foeViewModel)
+            
             InspectSectionSpacingView()
             
             Group {

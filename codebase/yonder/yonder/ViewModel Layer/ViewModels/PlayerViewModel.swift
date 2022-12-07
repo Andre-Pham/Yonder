@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import SwiftUI
 
-class PlayerViewModel: ObservableObject {
+class PlayerViewModel: ActorViewModel {
     
     // player can be used within the ViewModel layer, but Views should only interact with ViewModels (not the Model layer)
     private(set) var player: Player
@@ -55,30 +55,6 @@ class PlayerViewModel: ObservableObject {
             }
         }
     }
-    @Published private(set) var buffViewModels: [BuffViewModel] {
-        didSet {
-            // Changes to any BuffViewModel will be published to the UI
-            for buff in self.buffViewModels {
-                buff.objectWillChange.sink(receiveValue: { _ in self.objectWillChange.send() }).store(in: &self.subscriptions)
-            }
-        }
-    }
-    @Published private(set) var statusEffectViewModels: [StatusEffectViewModel] {
-        didSet {
-            // Changes to any StatusEffectViewModel will be published to the UI
-            for statusEffect in self.statusEffectViewModels {
-                statusEffect.objectWillChange.sink(receiveValue: { _ in self.objectWillChange.send() }).store(in: &self.subscriptions)
-            }
-        }
-    }
-    @Published private(set) var timedEventsViewModels: [TimedEventViewModel] {
-        didSet {
-            // Changes to any TimedEventViewModel will be published to the UI
-            for timedEvent in self.timedEventsViewModels {
-                timedEvent.objectWillChange.sink(receiveValue: { _ in self.objectWillChange.send() }).store(in: &self.subscriptions)
-            }
-        }
-    }
     @Published private(set) var accessoryViewModels: [AccessoryViewModel] {
         didSet {
             // Changes to any AccessoryViewModel will be published to the UI
@@ -103,8 +79,8 @@ class PlayerViewModel: ObservableObject {
     var allArmorViewModels: [ArmorViewModel] {
         return [self.headArmorViewModel, self.bodyArmorViewModel, self.legsArmorViewModel]
     }
-    var allBuffs: [BuffViewModel] {
-        var allBuffs = Array(self.buffViewModels)
+    override var allBuffs: [BuffViewModel] {
+        var allBuffs = super.allBuffs
         for armorViewModel in self.allArmorViewModels {
             allBuffs.append(contentsOf: armorViewModel.buffViewModels)
         }
@@ -175,14 +151,13 @@ class PlayerViewModel: ObservableObject {
         self.applicableWeaponViewModels = self.player.getApplicableWeapons().map { WeaponViewModel($0) }
         self.potionViewModels = self.player.potions.map { PotionViewModel($0) }
         self.consumableViewModels = self.player.consumables.map { ConsumableViewModel($0) }
-        self.buffViewModels = self.player.buffs.map { BuffViewModel($0) }
-        self.statusEffectViewModels = self.player.statusEffects.map { StatusEffectViewModel($0) }
-        self.timedEventsViewModels = self.player.timedEvents.map { TimedEventViewModel($0) }
         self.accessoryViewModels = self.player.accessorySlots.accessories.map { AccessoryViewModel($0) }
         self.peripheralAccessoryViewModel = AccessoryViewModel(self.player.accessorySlots.peripheralAccessory)
         self.headArmorViewModel = ArmorViewModel(self.player.headArmor)
         self.bodyArmorViewModel = ArmorViewModel(self.player.bodyArmor)
         self.legsArmorViewModel = ArmorViewModel(self.player.legsArmor)
+        
+        super.init(self.player)
         
         // Add Subscribers
         
@@ -258,18 +233,6 @@ class PlayerViewModel: ObservableObject {
         
         self.player.$consumables.sink(receiveValue: { newValue in
             self.consumableViewModels = newValue.map { ConsumableViewModel($0) }
-        }).store(in: &self.subscriptions)
-        
-        self.player.$buffs.sink(receiveValue: { newValue in
-            self.buffViewModels = newValue.map { BuffViewModel($0) }
-        }).store(in: &self.subscriptions)
-        
-        self.player.$statusEffects.sink(receiveValue: { newValue in
-            self.statusEffectViewModels = newValue.map { StatusEffectViewModel($0) }
-        }).store(in: &self.subscriptions)
-        
-        self.player.$timedEvents.sink(receiveValue: { newValue in
-            self.timedEventsViewModels = newValue.map { TimedEventViewModel($0) }
         }).store(in: &self.subscriptions)
     }
     

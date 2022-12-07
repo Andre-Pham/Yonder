@@ -33,8 +33,8 @@ class StatusEffectViewModel: ObservableObject {
         }).store(in: &self.subscriptions)
     }
     
-    func getIndicativeValue(playerViewModel: PlayerViewModel) -> Int? {
-        return self.statusEffect.getIndicativeValue(target: playerViewModel.player)
+    func getIndicativeValue(actorViewModel: ActorViewModel) -> Int? {
+        return self.statusEffect.getIndicativeValue(target: actorViewModel.actor)
     }
     
 }

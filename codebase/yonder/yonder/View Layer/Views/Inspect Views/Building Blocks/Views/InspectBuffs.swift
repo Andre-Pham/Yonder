@@ -9,10 +9,10 @@ import Foundation
 import SwiftUI
 
 struct InspectBuffs: View {
-    @ObservedObject var playerViewModel: PlayerViewModel
+    @ObservedObject var actorViewModel: ActorViewModel
     
     var body: some View {
-        ForEach(self.playerViewModel.allBuffs, id: \.id) { buffViewModel in
+        ForEach(self.actorViewModel.allBuffs, id: \.id) { buffViewModel in
             if let effectsDescription = buffViewModel.effectsDescription {
                 VStack(alignment: .leading, spacing: 0) {
                     HStack {
@@ -43,7 +43,7 @@ struct InspectOngoingEffects_Previews: PreviewProvider {
                 .ignoresSafeArea()
             
             InspectBody {
-                InspectBuffs(playerViewModel: PreviewObjects.playerViewModel)
+                InspectBuffs(actorViewModel: PreviewObjects.playerViewModel)
             }
         }
     }

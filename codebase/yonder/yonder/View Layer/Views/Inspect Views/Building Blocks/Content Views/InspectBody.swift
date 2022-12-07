@@ -16,8 +16,12 @@ struct InspectBody<Content: View>: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: YonderCoreGraphics.paragraphSpacing) {
-            content()
+        HStack(spacing: 0) {
+            VStack(alignment: .leading, spacing: YonderCoreGraphics.paragraphSpacing) {
+                content()
+            }
+            
+            Spacer()
         }
     }
 }

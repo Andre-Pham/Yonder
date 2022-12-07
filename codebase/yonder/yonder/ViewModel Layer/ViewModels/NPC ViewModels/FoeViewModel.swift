@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import SwiftUI
 
-class FoeViewModel: ObservableObject {
+class FoeViewModel: ActorViewModel {
     
     // foe can be used within the ViewModel layer, but Views should only interact with ViewModels (not the Model layer)
     private(set) var foe: Foe
@@ -60,6 +60,8 @@ class FoeViewModel: ObservableObject {
         
         self.weaponViewModel = WeaponViewModel(self.foe.getWeapon())
         self.lootOptionsViewModel = LootOptionsViewModel(self.foe.loot)
+        
+        super.init(self.foe)
         
         // Add Subscribers
         
