@@ -12,7 +12,11 @@ class Armor: EffectsDescribed, Purchasable, Named, Described, Enhanceable, Clona
     public let name: String
     public let description: String
     public let type: ArmorType
-    @DidSetPublished private(set) var armorPoints: Int
+    @DidSetPublished private(set) var armorPoints: Int {
+        willSet {
+            OnArmorArmorPointsChangePublisher.publish(armor: self, change: newValue - self.armorPoints)
+        }
+    }
     @DidSetPublished private(set) var armorBuffs: [Buff]
     @DidSetPublished private(set) var equipmentPills: [EquipmentPill]
     @DidSetPublished private(set) var armorAttributes: [ArmorAttribute]

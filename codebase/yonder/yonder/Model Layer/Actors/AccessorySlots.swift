@@ -18,7 +18,9 @@ class AccessorySlots: Storable {
     /// Regular accessories and peripheral accessory
     var allAccessories: [Accessory] {
         var accessories = Array(self.accessories)
-        accessories.append(self.peripheralAccessory)
+        if !(self.peripheralAccessory is NoAccessory) {
+            accessories.append(self.peripheralAccessory)
+        }
         return accessories
     }
     /// Armor points provided by all accessories

@@ -12,13 +12,20 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
     public let name: String
     public let description: String
     public let type: AccessoryType
-    @DidSetPublished private(set) var healthBonus: Int
-    @DidSetPublished private(set) var armorPointsBonus: Int
+    @DidSetPublished private(set) var healthBonus: Int {
+        willSet {
+            OnAccessoryHealthChangePublisher.publish(accessory: self, change: newValue - self.healthBonus)
+        }
+    }
+    @DidSetPublished private(set) var armorPointsBonus: Int {
+        willSet {
+            OnAccessoryArmorPointsChangePublisher.publish(accessory: self, change: newValue - self.armorPointsBonus)
+        }
+    }
     @DidSetPublished private(set) var buffs: [Buff]
     @DidSetPublished private(set) var equipmentPills: [EquipmentPill]
     public let id = UUID()
     
-    /// To be called by subclasses only.
     /// - Parameters:
     ///   - type: The type of accessory which determines the slot in which it may be equipped
     ///   - healthBonus: The health this provides as a bonus

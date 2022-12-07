@@ -10,7 +10,6 @@ import Foundation
 /// A buff that has no effect. Inserted to show up as an ongoing effect, for instance if a specific foe type has a special effect triggered via its weapon.
 class BuffProxy: Buff {
     
-    /// Creates a BuffProxy.
     /// - Parameters:
     ///   - sourceName: The name of the source causing the buff
     ///   - effectsDescription: Description of the buff's "effects"

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscriber, OnNoConsumablesRemainingSubscriber {
+class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemainingSubscriber, OnNoConsumablesRemainingSubscriber, OnArmorArmorPointsChangeSubscriber, OnAccessoryArmorPointsChangeSubscriber, OnAccessoryHealthChangeSubscriber {
     
     @DidSetPublished private(set) var maxHealth: Int
     @DidSetPublished private(set) var health: Int
@@ -53,6 +53,9 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
         OnNoWeaponDurabilityPublisher.subscribe(self)
         OnNoPotionsRemainingPublisher.subscribe(self)
         OnNoConsumablesRemainingPublisher.subscribe(self)
+        OnArmorArmorPointsChangePublisher.subscribe(self)
+        OnAccessoryHealthChangePublisher.subscribe(self)
+        OnAccessoryArmorPointsChangePublisher.subscribe(self)
     }
     
     // MARK: - Serialisation
@@ -93,6 +96,9 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
         OnNoWeaponDurabilityPublisher.subscribe(self)
         OnNoPotionsRemainingPublisher.subscribe(self)
         OnNoConsumablesRemainingPublisher.subscribe(self)
+        OnArmorArmorPointsChangePublisher.subscribe(self)
+        OnAccessoryHealthChangePublisher.subscribe(self)
+        OnAccessoryArmorPointsChangePublisher.subscribe(self)
     }
 
     func toDataObject() -> DataObject {
@@ -451,6 +457,12 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
         }
     }
     
+    func onArmorArmorPointsChange(armor: Armor, change: Int) {
+        if self.hasArmorPieceEquipped(armor) {
+            self.armorPoints += change
+        }
+    }
+    
     // MARK: - Accessories
     
     func equipAccessory(_ accessory: Accessory, replacing: UUID?) {
@@ -480,6 +492,18 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
         self.accessorySlots.remove(accessory, cacheLocation: cacheLocation)
         self.adjustBonusHealth(by: -accessory.healthBonus)
         self.armorPoints = min(self.armorPoints, previousMaxArmorPoints - accessory.armorPointsBonus)
+    }
+    
+    func onAccessoryHealthChange(accessory: Accessory, change: Int) {
+        if self.accessorySlots.hasEquipped(accessory) {
+            self.adjustBonusHealth(by: change)
+        }
+    }
+    
+    func onAccessoryArmorPointsChange(accessory: Accessory, change: Int) {
+        if self.accessorySlots.hasEquipped(accessory) {
+            self.armorPoints += change
+        }
     }
     
     // MARK: - Equipment (Accessories/Armor)
