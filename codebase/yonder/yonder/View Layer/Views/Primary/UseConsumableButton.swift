@@ -12,7 +12,7 @@ struct UseConsumableButton: View {
     @ObservedObject var consumableViewModel: ConsumableViewModel
     @State private var useButtonActive = false
     private var isDisabled: Bool {
-        self.playerViewModel.locationViewModel.getFoeViewModel() == nil && self.consumableViewModel.requiresFoeForUsage
+        return !self.playerViewModel.locationViewModel.playerCanEngage && self.consumableViewModel.requiresFoeForUsage
     }
     
     var body: some View {
