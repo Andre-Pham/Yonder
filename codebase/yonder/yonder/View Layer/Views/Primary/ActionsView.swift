@@ -43,7 +43,7 @@ struct ActionsView: View {
             if self.optionsStateManager.offerActionsActive {
                 if let friendlyViewModel = self.playerViewModel.locationViewModel.getInteractorViewModel() as? FriendlyViewModel {
                     ForEach(friendlyViewModel.offers, id: \.id) { offer in
-                        YonderMultilineWideButton(text: [offer.name, offer.description]) {
+                        YonderMultilineWideButton(text: [offer.name, offer.description], alignment: .leading) {
                             friendlyViewModel.acceptOffer(offer, player: self.playerViewModel)
                         }
                         .disabledWhen(!offer.canBeAccepted(playerViewModel: self.playerViewModel))

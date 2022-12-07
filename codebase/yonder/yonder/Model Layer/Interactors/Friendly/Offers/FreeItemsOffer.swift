@@ -51,7 +51,7 @@ class FreeItemsOffer: Offer {
     }
     
     func meetsOfferRequirements(player: Player) -> Bool {
-        return !player.potions.isEmpty
+        return true
     }
     
 }

@@ -27,6 +27,7 @@ struct YonderMultilineWideButton: View {
                 case .center:
                     ForEach(Array(zip(self.text.indices, self.text)), id: \.0.self) { index, text in
                         YonderText(text: text, size: index == 0 ? .buttonBody : .buttonBodySubscript)
+                            .padding(.horizontal)
                             .padding(.bottom, index == 0 && self.isMultiline ? YonderCoreGraphics.buttonTitleSpacing : 0)
                     }
                 case .leading:
@@ -55,6 +56,20 @@ struct YonderMultilineWideButton: View {
             .padding(.vertical, self.verticalPadding)
             .background(YonderColors.backgroundMaxDepth) // Ensures entire button can be tapped
             .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
+        }
+    }
+}
+
+struct YonderMultilineWideButton_Previews: PreviewProvider {
+    static var previews: some View {
+        PreviewContentView {
+            VStack {
+                YonderMultilineWideButton(text: ["Hello", "World"]) { }
+                
+                YonderMultilineWideButton(text: ["Hello", "World"], alignment: .leading) { }
+                
+                YonderMultilineWideButton(text: ["Hello", "World"], verticalPadding: 50.0) { }
+            }
         }
     }
 }
