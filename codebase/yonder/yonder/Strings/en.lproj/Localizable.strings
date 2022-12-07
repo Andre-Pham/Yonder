@@ -181,6 +181,7 @@
 "stat.description.offersRemainingSingular" = "You may accept 1 more offer";
 "stat.description.offersRemaining1Param" = "You may accept %@ more offers";
 "stat.description.selling" = "Selling";
+"stat.description.noStock" = "Out of stock";
 
 // MARK: - Loot
 

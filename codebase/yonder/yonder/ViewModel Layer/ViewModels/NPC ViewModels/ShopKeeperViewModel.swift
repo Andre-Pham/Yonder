@@ -31,7 +31,7 @@ class ShopKeeperViewModel: InteractorViewModel {
             }
             description += type.categoryDescription
         }
-        return separator + description
+        return description.isEmpty ? "[\(Strings("stat.description.noStock").local)]" : separator + description
     }
     
     func getHighestPrice() -> Int {
