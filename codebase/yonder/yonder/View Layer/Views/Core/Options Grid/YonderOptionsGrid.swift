@@ -24,3 +24,24 @@ struct YonderOptionsGrid<Content: View>: View {
         }
     }
 }
+
+struct YonderOptionsGrid_Previews: PreviewProvider {
+    static var previews: some View {
+        PreviewContentView {
+            GeometryReader { geo in
+                YonderOptionsGrid {
+                    YonderGridOption(title: "Title1", geometry: geo, image: YonderIcons.missingIcon) { }
+                    
+                    YonderGridOption(title: "Title2", geometry: geo, image: YonderIcons.missingIcon) { }
+                    
+                    YonderGridOption(title: "Title3", geometry: geo, image: YonderIcons.missingIcon) { }
+                    
+                    YonderGridOption(title: "Title4", geometry: geo, image: YonderIcons.missingIcon) { }
+                    
+                    YonderGridOption(title: "Title5", geometry: geo, image: YonderIcons.missingIcon) { }
+                }
+                .padding(.horizontal)
+            }
+        }
+    }
+}

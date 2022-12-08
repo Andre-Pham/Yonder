@@ -10,6 +10,7 @@ import SwiftUI
 
 struct MainMenuView: View {
     @Binding var showingMenu: Bool
+    @State private var showingClassSelection = false
     @State private var isLoading = false
     @State private var showingFailAlert = false
     
@@ -25,30 +26,11 @@ struct MainMenuView: View {
                 
                 VStack(spacing: 30) {
                     YonderButton(text: Strings("mainMenu.newGame").local) {
-                        self.isLoading = true
-                        DispatchQueue.global().async {
-                            // TODO: Inject player class here
-                            Session.instance.startNewGame(playerClass: .none)
-                            DispatchQueue.main.async {
-                                self.isLoading = false
-                                self.showingMenu.toggle()
-                            }
-                        }
+                        self.showingClassSelection = true
                     }
                     
                     YonderButton(text: Strings("mainMenu.resumeGame").local) {
-                        self.isLoading = true
-                        DispatchQueue.global().async {
-                            let loadSuccessful = Session.instance.loadGame()
-                            DispatchQueue.main.async {
-                                self.isLoading = false
-                                if loadSuccessful {
-                                    self.showingMenu.toggle()
-                                } else {
-                                    self.showingFailAlert = true
-                                }
-                            }
-                        }
+                        self.resumeGame()
                     }
                 }
                 .padding(40)
@@ -57,6 +39,12 @@ struct MainMenuView: View {
                 Spacer()
             }
             .foregroundColor(YonderColors.textMaxContrast)
+            
+            if self.showingClassSelection {
+                ClassSelectView(isShowing: self.$showingClassSelection) { selection in
+                    self.startNewGame(for: selection)
+                }
+            }
             
             if self.isLoading {
                 DotsLoadingScreen()
@@ -67,6 +55,32 @@ struct MainMenuView: View {
                 title: Text(Strings("alert.title.failed").local),
                 dismissButton: .default(Text(Strings("alert.button.dismiss").local))
             )
+        }
+    }
+    
+    func startNewGame(for playerClass: PlayerClassOption) {
+        self.isLoading = true
+        DispatchQueue.global().async {
+            Session.instance.startNewGame(playerClass: playerClass)
+            DispatchQueue.main.async {
+                self.isLoading = false
+                self.showingMenu.toggle()
+            }
+        }
+    }
+    
+    func resumeGame() {
+        self.isLoading = true
+        DispatchQueue.global().async {
+            let loadSuccessful = Session.instance.loadGame()
+            DispatchQueue.main.async {
+                self.isLoading = false
+                if loadSuccessful {
+                    self.showingMenu.toggle()
+                } else {
+                    self.showingFailAlert = true
+                }
+            }
         }
     }
     

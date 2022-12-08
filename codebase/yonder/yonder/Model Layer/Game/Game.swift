@@ -14,7 +14,7 @@ class Game: Storable {
     public let gameContext: GameContext
     public let turnManager = TurnManager()
     
-    init(playerClass: PlayerClass) {
+    init(playerClass: PlayerClassOption) {
         self.map = MapFactory().deliver() // Testing: TestContent.newMap()
         self.player = playerClass.createPlayer(at: self.map.startingLocation)
         self.gameContext = GameContext(map: self.map)

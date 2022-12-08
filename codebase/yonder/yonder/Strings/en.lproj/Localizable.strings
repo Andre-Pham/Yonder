@@ -29,6 +29,10 @@
 "mainMenu.newGame" = "New Game";
 "mainMenu.resumeGame" = "Resume Game";
 
+// MARK: - Class Menu
+
+"classMenu.title" = "Class\nSelection";
+
 // MARK: - Alerts
 
 "alert.title.failed" = "Failed";
@@ -147,6 +151,7 @@
 "button.equip" = "Equip";
 "button.finished" = "Finished";
 "button.requiresCombat" = "Requires Combat";
+"button.cancel" = "Cancel";
 
 // MARK: - Stats
 
@@ -764,3 +769,14 @@
 "foeType.brute.name" = "Brute";
 "foeType.brute.description1Param" = "Brute hostiles are heavy hitters. They deal %@x damage to shields.";
 "foeType.brute.buffName" = "Brute Power";
+
+// MARK: - Classes
+
+"class.warrior.name" = "Warrior";
+"class.treasurer.name" = "Treasurer";
+"class.alchemist.name" = "Alchemist";
+"class.mage.name" = "Mage";
+"class.warlock.name" = "Warlock";
+"class.cleric.name" = "Cleric";
+"class.druid.name" = "Druid";
+"class.paladin.name" = "Paladin";

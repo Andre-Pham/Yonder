@@ -22,7 +22,7 @@ class Session {
     
     private init() { }
     
-    func startNewGame(playerClass: PlayerClass) {
+    func startNewGame(playerClass: PlayerClassOption) {
         self.activeGame = Game(playerClass: playerClass)
     }
     
