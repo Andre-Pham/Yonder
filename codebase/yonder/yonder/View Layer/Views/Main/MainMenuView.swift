@@ -26,7 +26,7 @@ struct MainMenuView: View {
                 
                 VStack(spacing: 30) {
                     YonderButton(text: Strings("mainMenu.newGame").local) {
-                        self.showingClassSelection = true
+                        self.toggleClassSelectionMenu()
                     }
                     
                     YonderButton(text: Strings("mainMenu.resumeGame").local) {
@@ -40,9 +40,14 @@ struct MainMenuView: View {
             }
             .foregroundColor(YonderColors.textMaxContrast)
             
-            if self.showingClassSelection {
-                ClassSelectView(isShowing: self.$showingClassSelection) { selection in
-                    self.startNewGame(for: selection)
+            ZStack { // Required to display exit animation
+                if self.showingClassSelection {
+                    ClassSelectView(isShowing: self.$showingClassSelection) { selection in
+                        self.startNewGame(for: selection)
+                    } onCancel: {
+                        self.toggleClassSelectionMenu()
+                    }
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
             }
             
@@ -81,6 +86,12 @@ struct MainMenuView: View {
                     self.showingFailAlert = true
                 }
             }
+        }
+    }
+    
+    func toggleClassSelectionMenu() {
+        withAnimation(.easeOut) {
+            self.showingClassSelection.toggle()
         }
     }
     

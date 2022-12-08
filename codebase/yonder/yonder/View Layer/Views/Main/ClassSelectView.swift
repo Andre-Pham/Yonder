@@ -10,6 +10,7 @@ import SwiftUI
 struct ClassSelectView: View {
     @Binding var isShowing: Bool
     let onSelection: (_ selection: PlayerClassOption) -> Void
+    let onCancel: () -> Void
     
     var body: some View {
         ZStack {
@@ -28,7 +29,7 @@ struct ClassSelectView: View {
                 }
                 
                 YonderButton(text: Strings("button.cancel").local) {
-                    self.isShowing = false
+                    self.onCancel()
                 }
                 .padding(.top, 64)
             }
@@ -40,6 +41,8 @@ struct ClassSelectView_Previews: PreviewProvider {
     static var previews: some View {
         ClassSelectView(isShowing: .constant(true)) { selection in
             // Use select class here
+        } onCancel: {
+            // Cancel code here
         }
     }
 }
