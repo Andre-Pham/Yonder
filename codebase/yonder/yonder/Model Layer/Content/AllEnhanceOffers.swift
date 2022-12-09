@@ -16,7 +16,7 @@ enum EnhanceOffers {
             Pricing.playerDamageStat.getValue(amount: damage, uses: 5)
         }
         let price = Random.selectFromNormalDistribution(mid: priceTarget, boundFraction: 0.3)
-        return WeaponDamageEnhanceOffer(price: damage, damage: price)
+        return WeaponDamageEnhanceOffer(price: price, damage: damage)
     }
     
     // 02
