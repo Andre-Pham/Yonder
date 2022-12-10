@@ -57,7 +57,7 @@ enum Friendlies {
     static func healthForGoldFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
         let health = 100
         let goldReward = Pricing.usingStage(stage: stage) {
-            let fairPrice = Pricing.foeDamageStat.getValue(amount: health)
+            let fairPrice = abs(Pricing.foeDamageStat.getValue(amount: health))
             return Random.selectFromNormalDistribution(min: fairPrice, max: (Double(fairPrice)*1.5).toRoundedInt())
         }
         return Friendly(
