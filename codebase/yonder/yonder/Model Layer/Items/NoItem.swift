@@ -9,6 +9,8 @@ import Foundation
 
 class NoItem: Item {
     
+    let triggersEndOfTurn = false
+    
     init() {
         super.init(name: "NO_ITEM", description: "NO_ITEM_DESCRIPTION")
     }

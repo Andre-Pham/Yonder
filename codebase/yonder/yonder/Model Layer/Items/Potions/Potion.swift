@@ -11,6 +11,7 @@ typealias Potion = PotionAbstract & Usable & HasPurchasablePrice
 
 class PotionAbstract: Item, Purchasable, Clonable {
     
+    let triggersEndOfTurn = false
     private let effectsDescription: String?
     var potionCount: Int {
         return self.remainingUses

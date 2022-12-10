@@ -54,13 +54,8 @@ class GameContext: OnPlayerTravelSubscriber, AfterTurnEndSubscriber, AfterActorU
     }
     
     func afterActorUseItem(actor: ActorAbstract, item: Item, opposition: ActorAbstract?) {
-        switch item {
-        case is Potion, is Consumable:
-            if let player = actor as? Player, let foe = opposition as? Foe {
-                self.stableStateReached(player: player, item: item, foe: foe)
-            }
-        default:
-            break
+        if !item.triggersEndOfTurn, let player = actor as? Player, let foe = opposition as? Foe {
+            self.stableStateReached(player: player, item: item, foe: foe)
         }
     }
     

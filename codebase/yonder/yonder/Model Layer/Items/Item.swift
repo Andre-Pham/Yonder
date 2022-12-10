@@ -7,7 +7,14 @@
 
 import Foundation
 
-typealias Item = ItemAbstract & EffectsDescribed
+typealias Item = ItemAbstract & ItemProtocol
+
+protocol ItemProtocol: EffectsDescribed {
+    
+    /// True if it triggers an end of turn, false if it is used instantly
+    var triggersEndOfTurn: Bool { get }
+    
+}
 
 class ItemAbstract: Named, Described, Storable {
     

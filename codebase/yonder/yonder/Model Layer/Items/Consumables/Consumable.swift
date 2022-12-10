@@ -11,6 +11,7 @@ typealias Consumable = ConsumableAbstract & AlwaysUsable & ConsumableIsStackable
 
 class ConsumableAbstract: Item, Clonable, Purchasable {
     
+    let triggersEndOfTurn = false
     @DidSetPublished private(set) var effectsDescription: String? = nil
     
     init(name: String, description: String, effectsDescription: String?, requiresFoeForUsage: Bool = false, remainingUses: Int, damage: Int = 0, restoration: Int = 0, healthRestoration: Int = 0, armorPointsRestoration: Int = 0) {

@@ -9,18 +9,18 @@ import Foundation
 
 /// Manages triggers that need to be activated at the end of each turn.
 /// Subscribes to certain events to detect when an end of turn should be triggered. If in the future other events trigger an end of turn, add this as a subscriber for those events.
-class TurnManager: AfterActorAttackSubscriber, AfterPlayerTravelSubscriber {
+class TurnManager: AfterActorUseItemSubscriber, AfterPlayerTravelSubscriber {
     
     init() {
         AfterPlayerTravelPublisher.subscribe(self)
-        AfterActorAttackPublisher.subscribe(self)
+        AfterActorUseItemPublisher.subscribe(self)
     }
     
-    func afterActorAttack(actor: ActorAbstract, weapon: Weapon, target: ActorAbstract) {
-        if let player = actor as? Player, let foe = target as? Foe {
+    func afterActorUseItem(actor: ActorAbstract, item: Item, opposition: ActorAbstract?) {
+        if item.triggersEndOfTurn, let player = actor as? Player, let foe = opposition as? Foe {
             foe.attack(player)
-            self.completeTurn(player: player, playerUsed: weapon, foe: foe)
-            self.startTurn(player: player, playerUsed: weapon, foe: foe)
+            self.completeTurn(player: player, playerUsed: item, foe: foe)
+            self.startTurn(player: player, playerUsed: item, foe: foe)
         }
     }
     

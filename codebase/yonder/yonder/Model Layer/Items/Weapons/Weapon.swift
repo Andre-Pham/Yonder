@@ -9,6 +9,7 @@ import Foundation
 
 class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
     
+    let triggersEndOfTurn = true
     private let basePill: WeaponBasePill
     @DidSetPublished private(set) var durabilityPill: WeaponDurabilityPill {
         didSet {
