@@ -24,14 +24,28 @@ class LootOptionsFactory {
         case weapon
         case accessory
         case consumable
+        
+        /// The relative weighting to be chosen to be added to a loot bag
+        var weight: Int {
+            switch self {
+            case .gold: return 2
+            case .armor: return 1
+            case .potion: return 2
+            case .weapon: return 1
+            case .accessory: return 2
+            case .consumable: return 2
+            }
+        }
     }
     
     private func buildLootBag() -> LootBag {
         let bag = LootBag()
-        let targetValue = 800.0.compound(multiply: 1.4, index: self.stage).toRoundedInt()
+        let targetValue = 600.0.compound(multiply: 1.4, index: self.stage).toRoundedInt()
         let minValue = Random.selectFromNormalDistribution(mid: targetValue, boundFraction: 0.25)
-        while bag.totalValue < minValue {
-            let toAdd = LootType.allCases.randomElement()!
+        while bag.totalValue < minValue && bag.optionCount < 3 {
+            let lootTypes = LootType.allCases
+            let lootTypeWeights: [Int] = lootTypes.map({ $0.weight })
+            let toAdd = lootTypes[FactoryUtil.randomWeightedIndex(lootTypeWeights)]
             switch toAdd {
             case .gold:
                 let targetGold = 200.0.compound(multiply: 1.4, index: self.stage).toRoundedInt()

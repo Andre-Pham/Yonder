@@ -18,6 +18,9 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
         return fromArmorPieces + fromAccessories
     }
     public var isDead: Bool {
+        // Note: the actor may be classified as dead without actually being permanently dead
+        // This means they can still be revived, or are waiting for delayed restoration values
+        // For permanent death, refer to GameContext's "stable game states"
         return self.health <= 0
     }
     @DidSetPublished private(set) var statusEffects = [StatusEffect]()
@@ -317,9 +320,11 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
     ///   - weapon: The weapon being used - not necessarily targeting the opposition
     func useWeaponWhere(opposition: ActorAbstract, weapon: Weapon) {
         OnActorAttackPublisher.publish(actor: self, weapon: weapon, target: opposition)
+        OnActorUseItemPublisher.publish(actor: self, item: weapon, opposition: opposition)
         
         weapon.use(owner: self, opposition: opposition)
         
+        AfterActorUseItemPublisher.publish(actor: self, item: weapon, opposition: opposition)
         AfterActorAttackPublisher.publish(actor: self, weapon: weapon, target: opposition)
     }
     
@@ -349,7 +354,11 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
     }
     
     func usePotionWhere(opposition: ActorAbstract, potion: Potion) {
+        OnActorUseItemPublisher.publish(actor: self, item: potion, opposition: opposition)
+        
         potion.use(owner: self, opposition: opposition)
+        
+        AfterActorUseItemPublisher.publish(actor: self, item: potion, opposition: opposition)
     }
     
     // MARK: - Consumables
@@ -378,7 +387,11 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
     }
     
     func useConsumableWhere(opposition: ActorAbstract?, consumable: Consumable) {
+        OnActorUseItemPublisher.publish(actor: self, item: consumable, opposition: opposition)
+        
         consumable.use(owner: self, opposition: opposition)
+        
+        AfterActorUseItemPublisher.publish(actor: self, item: consumable, opposition: opposition)
     }
     
     // MARK: - Buffs

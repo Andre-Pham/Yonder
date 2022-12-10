@@ -15,6 +15,7 @@ class EquipmentPillTests: XCTestCase {
     let foeZeroAttack = Foe(maxHealth: 500, weapon: BaseAttack(damage: 0), loot: NoLootOptions())
     let accessory = Accessory(name: "Test Accessory", description: "For testing.", type: .regular, healthBonus: 0, armorPointsBonus: 0, buffs: [], equipmentPills: [])
     let turnManager = TestsTurnManager.turnManager
+    var gameContext: GameContext? = nil
     
     // MARK: - Basic
     
@@ -48,6 +49,20 @@ class EquipmentPillTests: XCTestCase {
         self.turnManager.completeTurn(player: self.player)
         XCTAssertTrue(!self.player.isDead)
         XCTAssertTrue(self.player.bodyArmor is NoArmor)
+    }
+    
+    func testRestoreAfterKillEquipmentPill() throws {
+        // Game context required to detect permanent death of foe
+        self.gameContext = GameContext(map: NoMap())
+        self.accessory.addEquipmentPill(RestoreAfterKillEquipmentPill(healthRestoration: 50, armorPointsRestoration: 50, sourceName: ""))
+        self.player.equipAccessory(self.accessory, replacing: nil)
+        let armor = Armor(name: "", description: "", type: .body, armorPoints: 100, armorBuffs: [], equipmentPills: [])
+        self.player.equipArmor(armor)
+        self.player.damage(for: 200)
+        self.player.useWeaponWhere(opposition: self.foeZeroAttack, weapon: BaseAttack(damage: 500))
+        XCTAssertTrue(self.foeZeroAttack.isDead)
+        XCTAssertEqual(self.player.health, 450)
+        XCTAssertEqual(self.player.armorPoints, 50)
     }
     
     // MARK: - Interactions

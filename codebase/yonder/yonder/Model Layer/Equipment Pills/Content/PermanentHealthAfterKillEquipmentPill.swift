@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PermanentHealthAfterKillEquipmentPill: EquipmentPill, AfterCombatTurnEndSubscriber {
+class PermanentHealthAfterKillEquipmentPill: EquipmentPill, AfterPlayerKillFoeSubscriber {
     
     private let maxHealthFraction: Double
     
@@ -19,7 +19,7 @@ class PermanentHealthAfterKillEquipmentPill: EquipmentPill, AfterCombatTurnEndSu
             effectsDescription: Strings("equipmentPill.permanentHealthAfterKill.effectsDescription1Param").localWithArgs((maxHealthFraction*100.0).toString())
         )
         
-        AfterCombatTurnEndPublisher.subscribe(self)
+        AfterPlayerKillFoePublisher.subscribe(self)
     }
     
     required init(_ original: EquipmentPillAbstract) {
@@ -27,7 +27,7 @@ class PermanentHealthAfterKillEquipmentPill: EquipmentPill, AfterCombatTurnEndSu
         self.maxHealthFraction = original.maxHealthFraction
         super.init(original)
         
-        AfterCombatTurnEndPublisher.subscribe(self)
+        AfterPlayerKillFoePublisher.subscribe(self)
     }
     
     // MARK: - Serialisation
@@ -39,6 +39,8 @@ class PermanentHealthAfterKillEquipmentPill: EquipmentPill, AfterCombatTurnEndSu
     required init(dataObject: DataObject) {
         self.maxHealthFraction = dataObject.get(Field.maxHealthFraction.rawValue)
         super.init(dataObject: dataObject)
+        
+        AfterPlayerKillFoePublisher.subscribe(self)
     }
 
     override func toDataObject() -> DataObject {
@@ -48,8 +50,9 @@ class PermanentHealthAfterKillEquipmentPill: EquipmentPill, AfterCombatTurnEndSu
 
     // MARK: - Functions
     
-    func afterCombatTurnEnd(player: Player, playerUsed: Item, foe: Foe) {
-        if player.hasEquipmentEffect(self) && foe.isDead {
+    func afterPlayerKillFoe(player: Player, foe: Foe) {
+        assert(foe.isDead, "Event indicating that a foe died has failed - foe remains alive")
+        if player.hasEquipmentEffect(self) {
             let bonus = (Double(foe.maxHealth)*self.maxHealthFraction).toRoundedInt()
             player.adjustBonusHealth(by: bonus)
         }

@@ -40,6 +40,8 @@ class RestoreAfterTravelEquipmentPill: EquipmentPill, OnPlayerTravelSubscriber {
     required init(dataObject: DataObject) {
         self.restoration = dataObject.get(Field.restoration.rawValue)
         super.init(dataObject: dataObject)
+        
+        OnPlayerTravelPublisher.subscribe(self)
     }
 
     override func toDataObject() -> DataObject {

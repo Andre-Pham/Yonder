@@ -123,7 +123,7 @@ class Pricing {
     /// Foe armor points
     static let foeArmorPointsStat = Stat(value: 1.0, baseStat: 50.0, stageMultiplier: 1.2, playerWantsIncreased: false)
     /// Foe damage dealt to player
-    static let foeDamageStat = Stat(value: 0.5, baseStat: 75.0, stageMultiplier: 1.1, playerWantsIncreased: false)
+    static let foeDamageStat = Stat(value: 0.65, baseStat: 75.0, stageMultiplier: 1.1, playerWantsIncreased: false)
     /// Foe health restoration
     static let foeHealthRestorationStat = Stat(value: 1.0, baseStat: 15.0, stageMultiplier: 1.02, playerWantsIncreased: false)
     /// Foe health restoration

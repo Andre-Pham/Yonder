@@ -36,6 +36,8 @@ class CopyAttackEffectPill: WeaponEffectPill, AfterTurnEndSubscriber {
     required init(dataObject: DataObject) {
         self.effectsDescription = dataObject.get(Field.effectsDescription.rawValue)
         super.init(dataObject: dataObject)
+        
+        AfterTurnEndPublisher.subscribe(self)
     }
 
     override func toDataObject() -> DataObject {

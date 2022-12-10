@@ -15,6 +15,7 @@ class LootBag: Storable {
     @DidSetPublished private(set) var accessoryLoot = [Accessory]()
     @DidSetPublished private(set) var consumableLoot = [Consumable]()
     @DidSetPublished private(set) var goldLoot: Int = 0
+    /// The total value in gold of everything in the loot bag
     var totalValue: Int {
         var sum = 0
         self.armorLoot.forEach({ sum += $0.getBasePurchasePrice() })
@@ -23,6 +24,19 @@ class LootBag: Storable {
         self.accessoryLoot.forEach({ sum += $0.getBasePurchasePrice() })
         self.consumableLoot.forEach({ sum += $0.getBasePurchasePrice() })
         sum += self.goldLoot
+        return sum
+    }
+    /// The total number of entities in the loot bag that can be looted
+    var optionCount: Int {
+        var sum = 0
+        sum += self.armorLoot.count
+        sum += self.weaponLoot.count
+        sum += self.potionLoot.count
+        sum += self.accessoryLoot.count
+        sum += self.consumableLoot.count
+        if self.goldLoot > 0 {
+            sum += 1
+        }
         return sum
     }
     private(set) var name: String

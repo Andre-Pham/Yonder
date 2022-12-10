@@ -14,12 +14,12 @@ enum Foes {
     
     // 01
     static func newRegularFoe(profile: FoeProfile, stage: Int, loot: LootOptions) -> Foe {
-        let targetHealth = 200.0.compound(multiply: 1.2, index: stage).toRoundedInt()
+        let targetHealth = 225.0.compound(multiply: 1.2, index: stage).toRoundedInt()
         let targetDamage = 75.0.compound(multiply: 1.1, index: stage).toRoundedInt()
         let foeHealth = Random.selectFromNormalDistribution(mid: targetHealth, boundFraction: 0.25).nearest(10)
         let foeDamage = Random.selectFromNormalDistribution(mid: targetDamage, boundFraction: 0.33).nearest(5)
         return RegularFoe(
-            name: profile.foeName,
+            name: "Foe-01",//profile.foeName,
             description: profile.foeDescription,
             maxHealth: foeHealth,
             damage: foeDamage,
@@ -29,12 +29,12 @@ enum Foes {
     
     // 02
     static func newRegularObtuseFoe(profile: FoeProfile, stage: Int, loot: LootOptions) -> Foe {
-        let targetHealth = 400.0.compound(multiply: 1.2, index: stage).toRoundedInt()
+        let targetHealth = 450.0.compound(multiply: 1.2, index: stage).toRoundedInt()
         let targetDamage = 25.0.compound(multiply: 1.1, index: stage).toRoundedInt()
         let foeHealth = Random.selectFromNormalDistribution(mid: targetHealth, boundFraction: 0.2).nearest(10)
         let foeDamage = Random.selectFromNormalDistribution(mid: targetDamage, boundFraction: 0.35).nearest(5)
         return RegularFoe(
-            name: profile.foeName,
+            name: "Foe-02",//profile.foeName,
             description: profile.foeDescription,
             maxHealth: foeHealth,
             damage: foeDamage,
@@ -45,11 +45,11 @@ enum Foes {
     // 03
     static func newRegularAcuteFoe(profile: FoeProfile, stage: Int, loot: LootOptions) -> Foe {
         let targetHealth = 75.0.compound(multiply: 1.2, index: stage).toRoundedInt()
-        let targetDamage = 150.0.compound(multiply: 1.1, index: stage).toRoundedInt()
+        let targetDamage = 180.0.compound(multiply: 1.1, index: stage).toRoundedInt()
         let foeHealth = Random.selectFromNormalDistribution(mid: targetHealth, boundFraction: 0.33)
         let foeDamage = Random.selectFromNormalDistribution(mid: targetDamage, boundFraction: 0.33)
         return RegularFoe(
-            name: profile.foeName,
+            name: "Foe-03",//profile.foeName,
             description: profile.foeDescription,
             maxHealth: foeHealth,
             damage: foeDamage,
@@ -59,14 +59,14 @@ enum Foes {
     
     // 04
     static func newGoblinFoe(profile: FoeProfile, stage: Int, loot: LootOptions) -> Foe {
-        let targetHealth = 150.0.compound(multiply: 1.2, index: stage).toRoundedInt()
-        let targetDamage = 100.0.compound(multiply: 1.1, index: stage).toRoundedInt()
-        let targetGold = 85.0.compound(multiply: 1.2, index: stage).toRoundedInt()
+        let targetHealth = 180.0.compound(multiply: 1.2, index: stage).toRoundedInt()
+        let targetDamage = 140.0.compound(multiply: 1.1, index: stage).toRoundedInt()
+        let targetGold = 90.0.compound(multiply: 1.2, index: stage).toRoundedInt()
         let foeHealth = Random.selectFromNormalDistribution(mid: targetHealth, boundFraction: 0.2)
         let foeDamage = Random.selectFromNormalDistribution(mid: targetDamage, boundFraction: 0.35)
         let foeGold = Random.selectFromNormalDistribution(mid: targetGold, boundFraction: 0.35)
         return GoblinFoe(
-            name: profile.foeName,
+            name: "Foe-04",//profile.foeName,
             description: profile.foeDescription,
             maxHealth: foeHealth,
             goldPerSteal: foeGold,
@@ -77,14 +77,14 @@ enum Foes {
     
     // 05
     static func newGoblinObtuseFoe(profile: FoeProfile, stage: Int, loot: LootOptions) -> Foe {
-        let targetHealth = 300.0.compound(multiply: 1.2, index: stage).toRoundedInt()
-        let targetDamage = 50.0.compound(multiply: 1.1, index: stage).toRoundedInt()
-        let targetGold = 35.0.compound(multiply: 1.2, index: stage).toRoundedInt()
+        let targetHealth = 330.0.compound(multiply: 1.2, index: stage).toRoundedInt()
+        let targetDamage = 65.0.compound(multiply: 1.1, index: stage).toRoundedInt()
+        let targetGold = 45.0.compound(multiply: 1.2, index: stage).toRoundedInt()
         let foeHealth = Random.selectFromNormalDistribution(mid: targetHealth, boundFraction: 0.2)
         let foeDamage = Random.selectFromNormalDistribution(mid: targetDamage, boundFraction: 0.35)
         let foeGold = Random.selectFromNormalDistribution(mid: targetGold, boundFraction: 0.35)
         return GoblinFoe(
-            name: profile.foeName,
+            name: "Foe-05",//profile.foeName,
             description: profile.foeDescription,
             maxHealth: foeHealth,
             goldPerSteal: foeGold,
@@ -95,14 +95,14 @@ enum Foes {
     
     // 06
     static func newGoblinAcuteFoe(profile: FoeProfile, stage: Int, loot: LootOptions) -> Foe {
-        let targetHealth = 60.0.compound(multiply: 1.2, index: stage).toRoundedInt()
-        let targetDamage = 180.0.compound(multiply: 1.1, index: stage).toRoundedInt()
-        let targetGold = 120.0.compound(multiply: 1.2, index: stage).toRoundedInt()
+        let targetHealth = 80.0.compound(multiply: 1.2, index: stage).toRoundedInt()
+        let targetDamage = 200.0.compound(multiply: 1.1, index: stage).toRoundedInt()
+        let targetGold = 150.0.compound(multiply: 1.2, index: stage).toRoundedInt()
         let foeHealth = Random.selectFromNormalDistribution(mid: targetHealth, boundFraction: 0.2)
         let foeDamage = Random.selectFromNormalDistribution(mid: targetDamage, boundFraction: 0.35)
         let foeGold = Random.selectFromNormalDistribution(mid: targetGold, boundFraction: 0.35)
         return GoblinFoe(
-            name: profile.foeName,
+            name: "Foe-06",//profile.foeName,
             description: profile.foeDescription,
             maxHealth: foeHealth,
             goldPerSteal: foeGold,
@@ -113,12 +113,12 @@ enum Foes {
     
     // 07
     static func newBruteFoe(profile: FoeProfile, stage: Int, loot: LootOptions) -> Foe {
-        let targetHealth = 300.0.compound(multiply: 1.2, index: stage).toRoundedInt()
+        let targetHealth = 350.0.compound(multiply: 1.2, index: stage).toRoundedInt()
         let targetDamage = 50.0.compound(multiply: 1.1, index: stage).toRoundedInt()
         let foeHealth = Random.selectFromNormalDistribution(mid: targetHealth, boundFraction: 0.18)
         let foeDamage = Random.selectFromNormalDistribution(mid: targetDamage, boundFraction: 0.2)
         return BruteFoe(
-            name: profile.foeName,
+            name: "Foe-07",//profile.foeName,
             description: profile.foeDescription,
             maxHealth: foeHealth,
             damage: foeDamage,

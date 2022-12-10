@@ -40,6 +40,8 @@ class WeaponLifestealEquipmentPill: EquipmentPill, OnActorAttackSubscriber {
     required init(dataObject: DataObject) {
         self.lifestealFraction = dataObject.get(Field.lifestealFraction.rawValue)
         super.init(dataObject: dataObject)
+        
+        OnActorAttackPublisher.subscribe(self)
     }
 
     override func toDataObject() -> DataObject {

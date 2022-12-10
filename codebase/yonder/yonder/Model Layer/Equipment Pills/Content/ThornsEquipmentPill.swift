@@ -40,6 +40,8 @@ class ThornsEquipmentPill: EquipmentPill, OnTurnEndSubscriber {
     required init(dataObject: DataObject) {
         self.thornsFraction = dataObject.get(Field.thornsFraction.rawValue)
         super.init(dataObject: dataObject)
+        
+        OnTurnEndPublisher.subscribe(self)
     }
 
     override func toDataObject() -> DataObject {

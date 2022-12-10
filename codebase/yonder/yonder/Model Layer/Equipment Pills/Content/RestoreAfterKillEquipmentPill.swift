@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RestoreAfterKillEquipmentPill: EquipmentPill, AfterCombatTurnEndSubscriber {
+class RestoreAfterKillEquipmentPill: EquipmentPill, AfterPlayerKillFoeSubscriber {
     
     private let healthRestoration: Int
     private let armorPointsRestoration: Int
@@ -32,7 +32,7 @@ class RestoreAfterKillEquipmentPill: EquipmentPill, AfterCombatTurnEndSubscriber
             effectsDescription: effectsDescription
         )
         
-        AfterCombatTurnEndPublisher.subscribe(self)
+        AfterPlayerKillFoePublisher.subscribe(self)
     }
     
     required init(_ original: EquipmentPillAbstract) {
@@ -41,7 +41,7 @@ class RestoreAfterKillEquipmentPill: EquipmentPill, AfterCombatTurnEndSubscriber
         self.armorPointsRestoration = original.armorPointsRestoration
         super.init(original)
         
-        AfterCombatTurnEndPublisher.subscribe(self)
+        AfterPlayerKillFoePublisher.subscribe(self)
     }
     
     // MARK: - Serialisation
@@ -55,6 +55,8 @@ class RestoreAfterKillEquipmentPill: EquipmentPill, AfterCombatTurnEndSubscriber
         self.healthRestoration = dataObject.get(Field.healthRestoration.rawValue)
         self.armorPointsRestoration = dataObject.get(Field.armorPointsRestoration.rawValue)
         super.init(dataObject: dataObject)
+        
+        AfterPlayerKillFoePublisher.subscribe(self)
     }
 
     override func toDataObject() -> DataObject {
@@ -65,8 +67,9 @@ class RestoreAfterKillEquipmentPill: EquipmentPill, AfterCombatTurnEndSubscriber
 
     // MARK: - Functions
     
-    func afterCombatTurnEnd(player: Player, playerUsed: Item, foe: Foe) {
-        if player.hasEquipmentEffect(self) && foe.isDead {
+    func afterPlayerKillFoe(player: Player, foe: Foe) {
+        assert(foe.isDead, "Event indicating that a foe died has failed - foe remains alive")
+        if player.hasEquipmentEffect(self) {
             if self.healthRestoration > 0 {
                 player.restoreHealthAdjusted(sourceOwner: player, using: self, for: self.healthRestoration)
             }

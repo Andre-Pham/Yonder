@@ -44,6 +44,8 @@ class PhoenixEquipmentPill: EquipmentPill, AfterTurnEndSubscriber {
     required init(dataObject: DataObject) {
         self.healthSetTo = dataObject.get(Field.healthSetTo.rawValue)
         super.init(dataObject: dataObject)
+        
+        AfterTurnEndPublisher.subscribe(self)
     }
 
     override func toDataObject() -> DataObject {

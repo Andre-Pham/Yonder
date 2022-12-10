@@ -73,11 +73,11 @@ class TerritoryPoolFactory {
                 )
             )
             let challengeLootFactories = LootFactoryBundle(
-                weapons: WeaponFactory(stage: stage + 3, areaTags: areaProfile.tags, profileBucket: self.weaponProfileBucket),
-                potions: PotionFactory(stage: stage + 3),
-                armors: ArmorFactory(stage: stage + 3, areaTags: areaProfile.tags, profileBucket: self.armorProfileBucket),
-                accessories: AccessoryFactory(stage: stage + 3, areaTags: areaProfile.tags, profileBucket: self.accessoryProfileBucket),
-                consumables: ConsumableFactory(stage: stage + 3)
+                weapons: WeaponFactory(stage: stage + 2, areaTags: areaProfile.tags, profileBucket: self.weaponProfileBucket),
+                potions: PotionFactory(stage: stage + 2),
+                armors: ArmorFactory(stage: stage + 2, areaTags: areaProfile.tags, profileBucket: self.armorProfileBucket),
+                accessories: AccessoryFactory(stage: stage + 2, areaTags: areaProfile.tags, profileBucket: self.accessoryProfileBucket),
+                consumables: ConsumableFactory(stage: stage + 2)
             )
             let areaFactories = AreaFactoryBundle(
                 interactors: interactorFactories,
@@ -88,7 +88,7 @@ class TerritoryPoolFactory {
                     lootFactoryBundle: lootFactories
                 ),
                 challengeHostiles: FoeFactory(
-                    stage: stage + 2,
+                    stage: stage + 3,
                     areaTags: areaProfile.tags,
                     profileBucket: self.foeProfileBucket,
                     lootFactoryBundle: challengeLootFactories

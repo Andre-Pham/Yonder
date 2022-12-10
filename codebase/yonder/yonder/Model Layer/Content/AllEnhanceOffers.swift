@@ -30,7 +30,7 @@ enum EnhanceOffers {
     
     // 03
     static func burnForWeapon(stage: Int) -> EnhanceOffer {
-        let tickDamageRange = StatRange(target: 40, boundFraction: 0.5)
+        let tickDamageRange = StatRange(target: 30, boundFraction: 0.25)
         tickDamageRange.compound(multiply: 1.2, index: stage)
         let tickDamage: Int = tickDamageRange.selectFromNormalDistribution()
         let duration = Random.selectFromNormalDistribution(min: 3, max: 6)
@@ -67,7 +67,7 @@ enum EnhanceOffers {
 
     // 06
     static func resistanceForArmor(stage: Int) -> EnhanceOffer {
-        let resistance = Random.selectFromLinearDistribution(min: 0.6, max: 0.9, minY: 1, maxY: 10)
+        let resistance = Random.selectFromLinearDistribution(min: 0.6, max: 0.95, minY: 1, maxY: 10)
         let buff = DamagePercentBuff(sourceName: Strings("enhanceOffer.source").local, direction: .incoming, duration: nil, damageFraction: resistance)
         let price = Random.selectFromNormalDistribution(
             mid: buff.getValue(whenTargeting: .player),

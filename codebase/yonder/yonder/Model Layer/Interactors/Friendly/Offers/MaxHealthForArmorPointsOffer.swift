@@ -32,13 +32,12 @@ class MaxHealthForArmorPointsOffer: Offer {
         for armorPiece in player.allArmorPieces {
             let amount = armorPiece.armorPoints
             armorPiece.adjustArmorPoints(by: amount)
-            player.restoreArmorPoints(for: amount)
         }
         player.adjustMaxHealth(by: -(Double(player.maxHealth)/2.0).toRoundedInt())
     }
     
     func meetsOfferRequirements(player: Player) -> Bool {
-        return player.armorPoints > 0
+        return true
     }
     
 }

@@ -24,7 +24,7 @@ class WeaponFactory {
         var weapons = [Weapon]()
         
         // 01
-        weapons.populate(count: 25) {
+        weapons.populate(count: 18) {
             Weapons.damageWeapon(profile: self.getProfile(for: .damage), stage: self.stage)
         }
         // 02

@@ -40,6 +40,8 @@ class LoseArmorGainHealthEquipmentPill: EquipmentPill, OnCombatTurnEndSubscriber
     required init(dataObject: DataObject) {
         self.restorationFraction = dataObject.get(Field.restorationFraction.rawValue)
         super.init(dataObject: dataObject)
+        
+        OnCombatTurnEndPublisher.subscribe(self)
     }
 
     override func toDataObject() -> DataObject {

@@ -57,8 +57,7 @@ class BurnStatusEffectEffectPill: WeaponEffectPill {
     }
     
     func calculateBasePurchasePrice() -> Int {
-        // I'm giving a 30% discount because it's delayed
-        return (Double(Pricing.playerDamageStat.getValue(amount: self.tickDamage)*self.initialDuration)*0.7).toRoundedInt()
+        return (Double(Pricing.playerDamageStat.getValue(amount: self.tickDamage)*self.initialDuration)).toRoundedInt()
     }
     
 }
