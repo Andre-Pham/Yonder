@@ -60,7 +60,9 @@ class TravelImprovingRestorationConsumable: Consumable, OnPlayerTravelSubscriber
     }
     
     func onPlayerTravel(player: Player, newLocation: Location) {
-        self.adjustRestoration(by: self.restorationIncrease)
+        if player.hasConsumable(self) {
+            self.adjustRestoration(by: self.restorationIncrease)
+        }
     }
     
     override func restorationDidSet() {

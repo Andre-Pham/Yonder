@@ -394,6 +394,10 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
         AfterActorUseItemPublisher.publish(actor: self, item: consumable, opposition: opposition)
     }
     
+    func hasConsumable(_ consumable: Consumable) -> Bool {
+        return self.consumables.contains(where: { $0.id == consumable.id })
+    }
+    
     // MARK: - Buffs
     
     func addBuff(_ buff: Buff) {

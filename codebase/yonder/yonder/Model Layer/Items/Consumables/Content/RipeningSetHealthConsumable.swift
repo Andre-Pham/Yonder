@@ -134,7 +134,7 @@ class RipeningSetHealthConsumable: Consumable, OnPlayerTravelSubscriber {
     }
     
     func onPlayerTravel(player: Player, newLocation: Location) {
-        if player.consumables.contains(where: { $0.id == self.id }) {
+        if player.hasConsumable(self) {
             self.turnsPassed += 1
         }
     }

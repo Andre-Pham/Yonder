@@ -67,7 +67,7 @@ class ConsumableTests: XCTestCase {
         XCTAssertEqual(self.player.health, 1)
     }
     
-    func testTurnImprovingRestorationConsumable() throws {
+    func testTravelImprovingRestorationConsumable() throws {
         let startingRestoration = 10
         let restorationIncrease = 8
         self.player.addConsumable(TravelImprovingRestorationConsumable(amount: 1))
@@ -78,6 +78,13 @@ class ConsumableTests: XCTestCase {
         for _ in 0..<10 { self.player.travel(to: NoLocation()) }
         self.player.useConsumableWhere(opposition: nil, consumable: self.player.consumables.first!)
         XCTAssertEqual(self.player.health, 110 + startingRestoration + restorationIncrease*10)
+    }
+    
+    func testTravelImprovingRestorationConsumableOutsideInventory() throws {
+        let consumable = TravelImprovingRestorationConsumable(amount: 1)
+        let restoration = consumable.restoration
+        for _ in 0..<10 { self.player.travel(to: NoLocation()) }
+        XCTAssert(restoration == consumable.restoration)
     }
     
     func testRestoreArmorPointsConsumable() throws {
