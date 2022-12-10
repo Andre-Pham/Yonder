@@ -16,7 +16,7 @@ class AccessoryBuffEnhanceOffer: EnhanceOffer {
         super.init(
             price: price,
             name: Strings("enhanceOffer.accessoryBuff.name").local,
-            description: Strings("enhanceOffer.accessoryBuff.name").localWithArgs(buff.getEffectsDescription()!)
+            description: Strings("enhanceOffer.accessoryBuff.description1Param").localWithArgs(buff.getEffectsDescription()!)
         )
     }
     
