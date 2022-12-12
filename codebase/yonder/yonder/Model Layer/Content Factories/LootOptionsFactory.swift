@@ -28,11 +28,11 @@ class LootOptionsFactory {
         /// The relative weighting to be chosen to be added to a loot bag
         var weight: Int {
             switch self {
-            case .gold: return 2
-            case .armor: return 1
+            case .gold: return 3
+            case .armor: return 2
             case .potion: return 2
-            case .weapon: return 1
-            case .accessory: return 2
+            case .weapon: return 3
+            case .accessory: return 3
             case .consumable: return 2
             }
         }
@@ -48,7 +48,7 @@ class LootOptionsFactory {
             let toAdd = lootTypes[FactoryUtil.randomWeightedIndex(lootTypeWeights)]
             switch toAdd {
             case .gold:
-                let targetGold = 200.0.compound(multiply: 1.4, index: self.stage).toRoundedInt()
+                let targetGold = 250.0.compound(multiply: 1.4, index: self.stage).toRoundedInt()
                 let gold = Random.selectFromNormalDistribution(mid: targetGold, boundFraction: 0.5)
                 bag.addGoldLoot(gold)
             case .armor:

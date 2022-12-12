@@ -128,7 +128,7 @@ enum Friendlies {
     
     // 08
     static func weaponDamageOrPotionCountFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
-        let damage = (30.0.compound(multiply: 1.2, index: stage)).toRoundedInt()
+        let damage = (50.0.compound(multiply: 1.2, index: stage)).toRoundedInt()
         return Friendly(
             name: profile.friendlyName,
             description: profile.friendlyDescription,
@@ -142,8 +142,8 @@ enum Friendlies {
     
     // 09
     static func freeItemsFriendly(profile: FriendlyProfile, stage: Int, lootFactory: LootFactoryBundle) -> Friendly {
-        let potions = lootFactory.potionFactory.deliver(count: Int.random(in: 1...3))
-        let consumables = lootFactory.consumableFactory.deliver(count: Int.random(in: 1...3))
+        let potions = lootFactory.potionFactory.deliver(count: Int.random(in: 1...2))
+        let consumables = lootFactory.consumableFactory.deliver(count: Int.random(in: 0...2))
         return Friendly(
             name: profile.friendlyName,
             description: profile.friendlyDescription,

@@ -14,11 +14,11 @@ enum Restorers {
         let healthFairValue = Pricing.usingStage(stage: stage) {
             Pricing.playerHealthRestorationStat.getValue(amount: 10)
         }
-        let healthMinValue = (Double(healthFairValue)/2.0).toRoundedInt()
+        let healthMinValue = (Double(healthFairValue)/1.5).toRoundedInt()
         let armorPointsFairValue = Pricing.usingStage(stage: stage) {
             Pricing.playerArmorPointsRestorationStat.getValue(amount: 10)
         }
-        let armorPointsMinValue = (Double(armorPointsFairValue)/2.0).toRoundedInt()
+        let armorPointsMinValue = (Double(armorPointsFairValue)/1.5).toRoundedInt()
         let healthPrice = Int.random(in: healthMinValue...healthFairValue)
         let armorPointsPrice = Int.random(in: armorPointsMinValue...armorPointsFairValue)
         return Restorer(

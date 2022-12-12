@@ -61,7 +61,7 @@ class Pricing {
         ///
         fileprivate let playerWantsIncreased: Bool
         /// Value is multiplied by duration, but if an item's effect lasts forever (e.g. an accessory) it has a flat multipler
-        public static let infiniteDuration = 30
+        public static let infiniteDuration = 22
         
         fileprivate init(value: Double, baseStat: Double, stageMultiplier: Double, playerWantsIncreased: Bool) {
             self.value = value
@@ -104,7 +104,7 @@ class Pricing {
     // MARK: - Utility Implementation
     
     /// Damage dealt by the player
-    static let playerDamageStat = Stat(value: 1.0, baseStat: 100.0, stageMultiplier: 1.2, playerWantsIncreased: true)
+    static let playerDamageStat = Stat(value: 0.7, baseStat: 100.0, stageMultiplier: 1.2, playerWantsIncreased: true)
     /// Health restoration towards the player
     static let playerHealthRestorationStat = Stat(value: 0.5, baseStat: 200.0, stageMultiplier: 1.2, playerWantsIncreased: true)
     /// Armor points restoration towards the player

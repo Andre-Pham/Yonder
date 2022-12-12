@@ -24,7 +24,7 @@ class PotionFactory {
         weights = FactoryUtil.createLinearSequence(start: 50, end: 10, count: HealthRestorationPotion.Tier.allCases.count)
         FactoryUtil.shiftWeights(stage: self.stage, weights: &weights)
         potions.populate(count: 20) {
-            let potionCount = Random.selectFromNormalDistribution(min: 2, max: 5)
+            let potionCount = Random.selectFromNormalDistribution(min: 2, max: 3)
             let index = FactoryUtil.randomWeightedIndex(weights)
             let tier = HealthRestorationPotion.Tier.allCases[index]
             return HealthRestorationPotion(tier: tier, potionCount: potionCount)
@@ -40,7 +40,7 @@ class PotionFactory {
         weights = FactoryUtil.createLinearSequence(start: 50, end: 10, count: DamagePotion.Tier.allCases.count)
         FactoryUtil.shiftWeights(stage: self.stage, weights: &weights)
         potions.populate(count: 20) {
-            let potionCount = Random.selectFromNormalDistribution(min: 2, max: 5)
+            let potionCount = Random.selectFromNormalDistribution(min: 2, max: 3)
             let index = FactoryUtil.randomWeightedIndex(weights)
             let tier = DamagePotion.Tier.allCases[index]
             return DamagePotion(tier: tier, potionCount: potionCount)
@@ -48,7 +48,7 @@ class PotionFactory {
         
         // Max health restoration
         potions.populate(count: 6) {
-            let potionCount = Random.selectFromNormalDistribution(min: 2, max: 3)
+            let potionCount = Random.selectFromNormalDistribution(min: 1, max: 2)
             return MaxHealthRestorationPotion(potionCount: potionCount)
         }
         
@@ -56,7 +56,7 @@ class PotionFactory {
         weights = FactoryUtil.createLinearSequence(start: 50, end: 30, count: DamagePercentBuffPotion.Tier.allCases.count)
         // (Because percentage scales, no weight shifting is applied)
         potions.populate(count: 3) {
-            let potionCount = Random.selectFromNormalDistribution(min: 2, max: 3)
+            let potionCount = Random.selectFromNormalDistribution(min: 1, max: 2)
             let potionDuration = Random.selectFromNormalDistribution(min: 2, max: 3)
             let index = FactoryUtil.randomWeightedIndex(weights)
             let tier = DamagePercentBuffPotion.Tier.allCases[index]
@@ -78,7 +78,7 @@ class PotionFactory {
         weights = FactoryUtil.createLinearSequence(start: 50, end: 30, count: WeaknessPotion.Tier.allCases.count)
         // (Because percentage scales, no weight shifting is applied)
         potions.populate(count: 3) {
-            let potionCount = Random.selectFromNormalDistribution(min: 2, max: 3)
+            let potionCount = Random.selectFromNormalDistribution(min: 1, max: 2)
             let potionDuration = Random.selectFromNormalDistribution(min: 2, max: 3)
             let index = FactoryUtil.randomWeightedIndex(weights)
             let tier = WeaknessPotion.Tier.allCases[index]

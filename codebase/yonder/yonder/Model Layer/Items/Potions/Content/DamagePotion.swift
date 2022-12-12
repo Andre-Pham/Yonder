@@ -29,11 +29,11 @@ class DamagePotion: Potion {
         
         var damage: Int {
             switch self {
-            case .I: return 25
-            case .II: return 50
-            case .III: return 100
-            case .IV: return 200
-            case .V: return 400
+            case .I: return 20
+            case .II: return 30
+            case .III: return 50
+            case .IV: return 80
+            case .V: return 130
             }
         }
     }

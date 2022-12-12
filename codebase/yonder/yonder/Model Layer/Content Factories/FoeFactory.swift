@@ -32,13 +32,13 @@ class FoeFactory {
         // 03
         self.addFoe(to: &foes, method: Foes.newRegularAcuteFoe, count: 5, tag: .regularAcute)
         // 04
-        self.addFoe(to: &foes, method: Foes.newGoblinFoe, count: 5, tag: .goblin)
+        self.addFoe(to: &foes, method: Foes.newGoblinFoe, count: 4, tag: .goblin)
         // 05
-        self.addFoe(to: &foes, method: Foes.newGoblinObtuseFoe, count: 2, tag: .goblinObtuse)
+        self.addFoe(to: &foes, method: Foes.newGoblinObtuseFoe, count: 1, tag: .goblinObtuse)
         // 06
-        self.addFoe(to: &foes, method: Foes.newGoblinAcuteFoe, count: 2, tag: .goblinAcute)
+        self.addFoe(to: &foes, method: Foes.newGoblinAcuteFoe, count: 1, tag: .goblinAcute)
         // 07
-        self.addFoe(to: &foes, method: Foes.newBruteFoe, count: 5, tag: .brute)
+        self.addFoe(to: &foes, method: Foes.newBruteFoe, count: 6, tag: .brute)
         
         self.foeSupply.shuffle()
         self.foeSupply.appendToFront(contentsOf: foes)
