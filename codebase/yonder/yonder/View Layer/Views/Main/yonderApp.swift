@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct yonderApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @Environment(\.scenePhase) var scenePhase
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onChange(of: self.scenePhase, perform: Session.instance.onAppStateChange(to:))
         }
     }
 }

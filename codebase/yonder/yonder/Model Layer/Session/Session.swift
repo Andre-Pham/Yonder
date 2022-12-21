@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class Session {
     
@@ -26,6 +27,7 @@ class Session {
         self.activeGame = Game(playerClass: playerClass)
     }
     
+    @discardableResult
     func saveGame() -> Bool {
         if let game = self.activeGame {
             return LocalDatabaseSession.instance.write(game)
@@ -36,6 +38,14 @@ class Session {
     func loadGame() -> Bool {
         self.activeGame = LocalDatabaseSession.instance.read()
         return self.activeGame != nil
+    }
+    
+    func onAppStateChange(to state: ScenePhase) {
+        if state == .inactive {
+            DispatchQueue.global().async {
+                self.saveGame()
+            }
+        }
     }
     
 }
