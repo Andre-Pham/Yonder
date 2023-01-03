@@ -10,6 +10,7 @@ import XCTest
 
 final class AccessoryTests: XCTestCase {
 
+    let testSession = TestSession.instance // Begin test session
     let player = Player(maxHealth: 500, location: NoLocation())
     
     func testBonusHealth() throws {

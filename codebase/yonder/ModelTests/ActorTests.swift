@@ -10,6 +10,7 @@ import XCTest
 
 class ActorTests: XCTestCase {
 
+    let testSession = TestSession.instance // Begin test session
     let actor = ActorAbstract(maxHealth: 200)
     
     func testHealth() throws {

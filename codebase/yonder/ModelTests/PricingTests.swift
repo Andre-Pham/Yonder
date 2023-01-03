@@ -9,6 +9,8 @@ import XCTest
 @testable import yonder
 
 final class PricingTests: XCTestCase {
+    
+    let testSession = TestSession.instance // Begin test session
 
     func testBuffDuration() throws {
         let buff1 = DamageBuff(sourceName: "", direction: .outgoing, duration: 1, damageDifference: 20)

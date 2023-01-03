@@ -9,6 +9,8 @@ import XCTest
 @testable import yonder
 
 class WeaponPillBoxTests: XCTestCase {
+    
+    let testSession = TestSession.instance // Begin test session
 
     func testWeak() throws {
         let pill: WeaponDurabilityPill = InfiniteDurabilityPill()

@@ -10,6 +10,8 @@ import XCTest
 
 class WeaponDurabilityPillTests: XCTestCase {
     
+    let testSession = TestSession.instance // Begin test session
+    
     // MARK: - Basic
 
     func testDecrementDurabilityPill() throws {

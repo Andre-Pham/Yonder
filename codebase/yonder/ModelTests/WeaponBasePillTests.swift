@@ -10,9 +10,9 @@ import XCTest
 
 class WeaponBasePillTests: XCTestCase {
     
+    let testSession = TestSession.instance // Begin test session
     let player = Player(maxHealth: 500, location: NoLocation())
     let foe = Foe(maxHealth: 500, weapon: BaseAttack(damage: 0), loot: LootOptions(LootBag(), LootBag(), LootBag()))
-    let turnManager = TestsTurnManager.turnManager
     
     override func setUp() async throws {
         self.player.damage(for: 150)

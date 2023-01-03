@@ -13,16 +13,16 @@ class Pricing {
     // MARK: - Singleton
     
     private(set) static var instance: Pricing = Pricing()
-    private(set) var gameContext: GameContext? = nil
+    private(set) var stageManager: PlayerStageManager? = nil
     private(set) var injectedStage: Int? = nil
     var stage: Int {
-        return self.injectedStage ?? (self.gameContext?.stage ?? 0)
+        return self.injectedStage ?? (self.stageManager?.stage ?? 0)
     }
     
     private init() { }
     
-    func setGameContext(to gameContext: GameContext) {
-        self.gameContext = gameContext
+    func setStageManager(to stageManager: PlayerStageManager) {
+        self.stageManager = stageManager
     }
     
     private func injectStage(_ stage: Int?) {

@@ -30,7 +30,7 @@ class GameManager {
     private init() {
         // If a preview is being executed, generate a game to preview
         if SessionEnvironment.executingSwiftUIPreview {
-            self.setActiveGame(to: Game(playerClass: .none))
+            self.setActiveGame(to: TestContent.testGame())
         }
     }
     

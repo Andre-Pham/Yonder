@@ -47,13 +47,6 @@ class Map: Storable {
         }
     }
     
-    init() {
-        self.territoriesInOrder = [Territory]()
-        self.bossAreasInOrder = [BossArea]()
-        self.startingLocation = NoLocation()
-        assert(self is NoMap, "Empty map is being initialised - use NoMap for an empty map")
-    }
-    
     // MARK: - Serialisation
 
     private enum Field: String {

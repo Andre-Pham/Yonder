@@ -10,12 +10,11 @@ import XCTest
 
 class EquipmentPillTests: XCTestCase {
     
+    let testSession = TestSession.instance // Begin test session
     let player = Player(maxHealth: 500, location: NoLocation())
     let foe = Foe(maxHealth: 500, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
     let foeZeroAttack = Foe(maxHealth: 500, weapon: BaseAttack(damage: 0), loot: NoLootOptions())
     let accessory = Accessory(name: "Test Accessory", description: "For testing.", type: .regular, healthBonus: 0, armorPointsBonus: 0, buffs: [], equipmentPills: [])
-    let turnManager = TestsTurnManager.turnManager
-    var gameContext: GameContext? = nil
     
     // MARK: - Basic
     
@@ -39,21 +38,19 @@ class EquipmentPillTests: XCTestCase {
         self.accessory.addEquipmentPill(PhoenixEquipmentPill(healthSetTo: 50, sourceName: "Test Accessory"))
         self.player.equipAccessory(self.accessory, replacing: nil)
         self.player.damage(for: 500)
-        self.turnManager.completeTurn(player: self.player)
+        self.testSession.completeTurn(player: self.player)
         XCTAssertTrue(!self.player.isDead)
         XCTAssertTrue(self.player.accessorySlots.accessories.isEmpty)
         
         let armor = Armor(name: "", description: "", type: .body, armorPoints: 0, armorBuffs: [], equipmentPills: [PhoenixEquipmentPill(healthSetTo: 50, sourceName: "")])
         self.player.equipArmor(armor)
         self.player.damage(for: 1000)
-        self.turnManager.completeTurn(player: self.player)
+        self.testSession.completeTurn(player: self.player)
         XCTAssertTrue(!self.player.isDead)
         XCTAssertTrue(self.player.bodyArmor is NoArmor)
     }
     
     func testRestoreAfterKillEquipmentPill() throws {
-        // Game context required to detect permanent death of foe
-        self.gameContext = GameContext(map: NoMap())
         self.accessory.addEquipmentPill(RestoreAfterKillEquipmentPill(healthRestoration: 50, armorPointsRestoration: 50, sourceName: ""))
         self.player.equipAccessory(self.accessory, replacing: nil)
         let armor = Armor(name: "", description: "", type: .body, armorPoints: 100, armorBuffs: [], equipmentPills: [])

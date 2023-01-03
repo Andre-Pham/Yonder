@@ -10,6 +10,7 @@ import XCTest
 
 class ConsumableTests: XCTestCase {
 
+    let testSession = TestSession.instance // Begin test session
     let player = Player(maxHealth: 500, location: NoLocation())
     let foe = Foe(maxHealth: 500, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
     

@@ -10,10 +10,10 @@ import XCTest
 
 class WeaponEffectPillTests: XCTestCase {
 
+    let testSession = TestSession.instance // Begin test session
     let player = Player(maxHealth: 500, location: NoLocation())
     let foe = Foe(maxHealth: 500, weapon: BaseAttack(damage: 0), loot: NoLootOptions())
     let weapon = Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: InfiniteDurabilityPill())
-    let turnManager = TestsTurnManager.turnManager
     
     // MARK: - Basic
 
@@ -34,17 +34,17 @@ class WeaponEffectPillTests: XCTestCase {
         let foe = Foe(maxHealth: 200, weapon: self.weapon, loot: NoLootOptions())
         self.player.setGold(to: 150)
         foe.attack(self.player)
-        self.turnManager.completeTurn(player: self.player, playerUsed: NoItem(), foe: foe)
+        self.testSession.completeTurn(player: self.player, playerUsed: NoItem(), foe: foe)
         XCTAssertEqual(self.player.health, 500)
         XCTAssertEqual(self.player.gold, 50)
         XCTAssertEqual(foe.getWeapon().damage, 0)
         foe.attack(self.player)
-        self.turnManager.completeTurn(player: self.player, playerUsed: NoItem(), foe: foe)
+        self.testSession.completeTurn(player: self.player, playerUsed: NoItem(), foe: foe)
         XCTAssertEqual(self.player.health, 500)
         XCTAssertEqual(self.player.gold, 0)
         XCTAssertEqual(foe.getWeapon().damage, 200)
         foe.attack(self.player)
-        self.turnManager.completeTurn(player: self.player, playerUsed: NoItem(), foe: foe)
+        self.testSession.completeTurn(player: self.player, playerUsed: NoItem(), foe: foe)
         XCTAssertEqual(self.player.health, 300)
         XCTAssertEqual(self.player.gold, 0)
         self.player.modifyGold(by: 1)

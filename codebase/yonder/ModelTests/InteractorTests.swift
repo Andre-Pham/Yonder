@@ -10,6 +10,7 @@ import XCTest
 
 class InteractorTests: XCTestCase {
     
+    let testSession = TestSession.instance // Begin test session
     let player = Player(maxHealth: 200, location: NoLocation())
 
     func testPurchasing() throws {
@@ -29,7 +30,7 @@ class InteractorTests: XCTestCase {
     }
     
     func testRestoreAdjusted() throws {
-        self.player.equipArmor(TestContent.newTestBodyArmor()) // 200 armorPoints
+        self.player.equipArmor(Armor(name: "", description: "", type: .body, armorPoints: 200, armorBuffs: [], equipmentPills: [], armorAttributes: []))
         self.player.damage(for: 300)
         self.player.addBuff(HealthRestorationPercentBuff(sourceName: "testRestoreAdjusted", direction: .incoming, duration: 1, healthFraction: 2.0))
         self.player.addBuff(ArmorPointsRestorationPercentBuff(sourceName: "testRestoreAdjusted", direction: .incoming, duration: 1, armorPointsFraction: 0.5))

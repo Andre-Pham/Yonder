@@ -13,5 +13,3 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     // Currently empty
     
 }
-
-

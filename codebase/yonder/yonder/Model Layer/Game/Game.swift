@@ -9,13 +9,25 @@ import Foundation
 
 class Game: Storable {
     
+    // MARK: - Singleton
+    // This forces the fact that only one game instance can occur at once
+    // Multiple game instances would cause publishers to trigger for every game instance
+    
+    private static var instance: Game? = nil
+    
+    static func new(playerClass: PlayerClassOption, map: Map) -> Game {
+        Self.instance = Game(playerClass: playerClass, map: map)
+        return Self.instance!
+    }
+    
+    // MARK: - Instance
+    
     private(set) var map: Map
     private(set) var player: Player
     public let gameContext: GameContext
-    public let turnManager = TurnManager()
     
-    init(playerClass: PlayerClassOption) {
-        self.map = MapFactory().deliver() // Testing: TestContent.newMap()
+    private init(playerClass: PlayerClassOption, map: Map) {
+        self.map = map
         self.player = playerClass.createPlayer(at: self.map.startingLocation)
         self.gameContext = GameContext(map: self.map)
     }
@@ -38,7 +50,7 @@ class Game: Storable {
         return DataObject(self)
             .add(key: Field.map.rawValue, value: self.map)
             .add(key: Field.player.rawValue, value: self.player)
-            .add(key: Field.stage.rawValue, value: self.gameContext.stage)
+            .add(key: Field.stage.rawValue, value: self.gameContext.playerStageManager.stage)
     }
     
 }

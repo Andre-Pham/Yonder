@@ -15,7 +15,7 @@ class Session {
     private(set) var activeGame: Game? = nil {
         didSet {
             if let activeGame = self.activeGame {
-                Pricing.instance.setGameContext(to: activeGame.gameContext)
+                Pricing.instance.setStageManager(to: activeGame.gameContext.playerStageManager)
                 GameManager.instance.setActiveGame(to: activeGame)
             }
         }
@@ -24,7 +24,7 @@ class Session {
     private init() { }
     
     func startNewGame(playerClass: PlayerClassOption) {
-        self.activeGame = Game(playerClass: playerClass)
+        self.activeGame = Game.new(playerClass: playerClass, map: MapFactory().deliver())
     }
     
     @discardableResult

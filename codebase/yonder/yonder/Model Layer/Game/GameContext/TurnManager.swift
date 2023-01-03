@@ -80,11 +80,3 @@ class TurnManager: AfterActorUseItemSubscriber, AfterPlayerTravelSubscriber {
     }
     
 }
-
-/// A singleton instance of `TurnManager` used for testing.
-/// The scope at which instances are created and stored varies between testing scopes. This means that depending on the scope of tests run, multiple copies of `TurnManager` is created. The only simple approach to solving this is using a singleton specifically for testing.
-class TestsTurnManager {
-    
-    static let turnManager = TurnManager()
-    
-}
