@@ -30,7 +30,7 @@ class OptionsStateManager: ObservableObject {
     
     // Potion option
     var potionOptionActive: Bool {
-        return self.playerViewModel.canEngage
+        return self.playerViewModel.hasUsablePotions
     }
     @Published var potionActionsActive = false
     

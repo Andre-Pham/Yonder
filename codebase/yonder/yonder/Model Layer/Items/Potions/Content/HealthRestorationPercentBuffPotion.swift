@@ -47,7 +47,9 @@ class HealthRestorationPercentBuffPotion: Potion {
             name: name,
             description: Strings("potion.healthRestoration.description").local,
             effectsDescription: Strings("potion.applyToSelf").local.continuedBy(self.buff.getEffectsDescription() ?? ""),
-            remainingUses: potionCount)
+            remainingUses: potionCount,
+            requiresFoeForUsage: false
+        )
         assert(self.buff.getEffectsDescription() != nil, "Buff that should have an effects description doesn't have one")
     }
     
@@ -83,7 +85,7 @@ class HealthRestorationPercentBuffPotion: Potion {
     
     // MARK: - Functions
     
-    func use(owner: ActorAbstract, opposition: ActorAbstract) {
+    func use(owner: ActorAbstract, opposition: ActorAbstract?) {
         owner.addBuff(self.buff)
         self.adjustRemainingUses(by: -1)
     }

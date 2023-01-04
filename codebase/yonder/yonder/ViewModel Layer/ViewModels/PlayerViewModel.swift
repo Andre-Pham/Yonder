@@ -104,9 +104,15 @@ class PlayerViewModel: ActorViewModel {
     var canEngage: Bool {
         return self.locationViewModel.playerCanEngage
     }
+    var hasUsablePotions: Bool {
+        let potionsAvailableForDuringCombat = self.canEngage && !self.potionViewModels.isEmpty
+        let nonCombatPotionsAvailable = self.potionViewModels.contains(where: { !$0.requiresFoeForUsage })
+        return potionsAvailableForDuringCombat || nonCombatPotionsAvailable
+    }
     var canConsume: Bool {
-        // The player can use consumables at any time, assuming they have any
-        return !self.consumableViewModels.isEmpty
+        let consumablesAvailableForDuringCombat = self.canEngage && !self.consumableViewModels.isEmpty
+        let nonCombatConsumablesAvailable = self.consumableViewModels.contains(where: { !$0.requiresFoeForUsage })
+        return consumablesAvailableForDuringCombat || nonCombatConsumablesAvailable
     }
     var canTravel: Bool {
         let notInCombat = !self.canEngage
@@ -269,11 +275,11 @@ class PlayerViewModel: ActorViewModel {
     }
     
     func use(potionViewModel: PotionViewModel) {
-        guard self.locationViewModel.location is FoeLocation else {
+        guard self.locationViewModel.location is FoeLocation || !potionViewModel.requiresFoeForUsage else {
             assertionFailure("Potion was used whilst location has no foe - hence no target")
             return
         }
-        self.player.usePotionWhere(opposition: (self.locationViewModel.location as! FoeLocation).foe, potion: potionViewModel.item as! Potion)
+        self.player.usePotionWhere(opposition: (self.locationViewModel.location as? FoeLocation)?.foe, potion: potionViewModel.item as! Potion)
     }
     
     func use(consumableViewModel: ConsumableViewModel) {

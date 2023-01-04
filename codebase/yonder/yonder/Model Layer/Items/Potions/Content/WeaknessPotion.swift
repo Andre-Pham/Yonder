@@ -47,7 +47,9 @@ class WeaknessPotion: Potion {
             name: name,
             description: Strings("potion.weakness.description").local,
             effectsDescription: Strings("potion.applyToFoe").local.continuedBy(self.buff.getEffectsDescription() ?? ""),
-            remainingUses: potionCount)
+            remainingUses: potionCount,
+            requiresFoeForUsage: true
+        )
         assert(self.buff.getEffectsDescription() != nil, "Buff that should have an effects description doesn't have one")
     }
     
@@ -83,8 +85,9 @@ class WeaknessPotion: Potion {
     
     // MARK: - Functions
     
-    func use(owner: ActorAbstract, opposition: ActorAbstract) {
-        opposition.addBuff(self.buff)
+    func use(owner: ActorAbstract, opposition: ActorAbstract?) {
+        assert(opposition != nil, "Potion requires a foe but none was provided")
+        opposition?.addBuff(self.buff)
         self.adjustRemainingUses(by: -1)
     }
     

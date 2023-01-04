@@ -14,7 +14,9 @@ class MaxRestorationPotion: Potion {
             name: Strings("potion.maxRestoration.name").local,
             description: Strings("potion.maxRestoration.description").local,
             effectsDescription: Strings("potion.maxRestoration.effectsDescription").local,
-            remainingUses: potionCount)
+            remainingUses: potionCount,
+            requiresFoeForUsage: false
+        )
     }
     
     required init(_ original: PotionAbstract) {
@@ -33,7 +35,7 @@ class MaxRestorationPotion: Potion {
     
     // MARK: - Functions
     
-    func use(owner: ActorAbstract, opposition: ActorAbstract) {
+    func use(owner: ActorAbstract, opposition: ActorAbstract?) {
         owner.restore(for: owner.maxHealth + owner.maxArmorPoints) // Max stats - no buffs adjustment needed
         self.adjustRemainingUses(by: -1)
     }

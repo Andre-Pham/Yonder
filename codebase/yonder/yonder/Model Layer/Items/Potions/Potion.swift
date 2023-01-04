@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias Potion = PotionAbstract & Usable & HasPurchasablePrice
+typealias Potion = PotionAbstract & AlwaysUsable & HasPurchasablePrice
 
 class PotionAbstract: Item, Purchasable, Clonable {
     
@@ -17,16 +17,16 @@ class PotionAbstract: Item, Purchasable, Clonable {
         return self.remainingUses
     }
     
-    init(name: String, description: String, effectsDescription: String?, remainingUses: Int = 0, damage: Int = 0, restoration: Int = 0, healthRestoration: Int = 0, armorPointsRestoration: Int = 0) {
+    init(name: String, description: String, effectsDescription: String?, remainingUses: Int = 0, damage: Int = 0, restoration: Int = 0, healthRestoration: Int = 0, armorPointsRestoration: Int = 0, requiresFoeForUsage: Bool) {
         self.effectsDescription = effectsDescription
         
-        super.init(name: name, description: description, remainingUses: remainingUses, damage: damage, restoration: restoration, healthRestoration: healthRestoration, armorPointsRestoration: armorPointsRestoration)
+        super.init(name: name, description: description, remainingUses: remainingUses, damage: damage, restoration: restoration, healthRestoration: healthRestoration, armorPointsRestoration: armorPointsRestoration, requiresFoeForUsage: requiresFoeForUsage)
     }
     
     required init(_ original: PotionAbstract) {
         self.effectsDescription = original.effectsDescription
         
-        super.init(name: original.name, description: original.description, remainingUses: original.remainingUses, damage: original.damage, restoration: original.restoration, healthRestoration: original.healthRestoration, armorPointsRestoration: original.armorPointsRestoration, infiniteRemainingUses: original.infiniteRemainingUses)
+        super.init(name: original.name, description: original.description, remainingUses: original.remainingUses, damage: original.damage, restoration: original.restoration, healthRestoration: original.healthRestoration, armorPointsRestoration: original.armorPointsRestoration, infiniteRemainingUses: original.infiniteRemainingUses, requiresFoeForUsage: original.requiresFoeForUsage)
     }
     
     // MARK: - Serialisation

@@ -353,7 +353,7 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
         }
     }
     
-    func usePotionWhere(opposition: ActorAbstract, potion: Potion) {
+    func usePotionWhere(opposition: ActorAbstract?, potion: Potion) {
         OnActorUseItemPublisher.publish(actor: self, item: potion, opposition: opposition)
         
         potion.use(owner: self, opposition: opposition)

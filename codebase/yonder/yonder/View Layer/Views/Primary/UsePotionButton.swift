@@ -11,6 +11,9 @@ struct UsePotionButton: View {
     @ObservedObject var playerViewModel: PlayerViewModel
     @ObservedObject var potionViewModel: PotionViewModel
     @State private var useButtonActive = false
+    private var isDisabled: Bool {
+        return !self.playerViewModel.locationViewModel.playerCanEngage && self.potionViewModel.requiresFoeForUsage
+    }
     
     var body: some View {
         YonderExpandableWideButtonBody(isExpanded: self.$useButtonActive) {
@@ -53,6 +56,7 @@ struct UsePotionButton: View {
             YonderWideButton(text: Strings("button.instantUse").local) {
                 self.playerViewModel.use(potionViewModel: self.potionViewModel)
             }
+            .disabledWhen(self.isDisabled)
         }
     }
 }

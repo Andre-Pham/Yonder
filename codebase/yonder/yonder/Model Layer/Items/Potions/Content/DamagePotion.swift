@@ -44,7 +44,9 @@ class DamagePotion: Potion {
             description: Strings("potion.damage.description").local,
             effectsDescription: Strings("potion.damage.effectsDescription1Param").localWithArgs(tier.damage),
             remainingUses: potionCount,
-            damage: tier.damage)
+            damage: tier.damage,
+            requiresFoeForUsage: true
+        )
     }
     
     required init(_ original: PotionAbstract) {
@@ -63,8 +65,9 @@ class DamagePotion: Potion {
     
     // MARK: - Functions
     
-    func use(owner: ActorAbstract, opposition: ActorAbstract) {
-        opposition.damageAdjusted(sourceOwner: owner, using: self, for: self.damage)
+    func use(owner: ActorAbstract, opposition: ActorAbstract?) {
+        assert(opposition != nil, "Potion requires a foe but none was provided")
+        opposition?.damageAdjusted(sourceOwner: owner, using: self, for: self.damage)
         self.adjustRemainingUses(by: -1)
     }
     

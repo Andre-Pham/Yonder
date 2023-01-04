@@ -44,7 +44,9 @@ class HealthRestorationPotion: Potion {
             description: Strings("potion.healthRestoration.description").local,
             effectsDescription: Strings("potion.healthRestoration.effectsDescription1Param").localWithArgs(tier.healthRestoration),
             remainingUses: potionCount,
-            healthRestoration: tier.healthRestoration)
+            healthRestoration: tier.healthRestoration,
+            requiresFoeForUsage: false
+        )
     }
     
     required init(_ original: PotionAbstract) {
@@ -63,7 +65,7 @@ class HealthRestorationPotion: Potion {
     
     // MARK: - Functions
     
-    func use(owner: ActorAbstract, opposition: ActorAbstract) {
+    func use(owner: ActorAbstract, opposition: ActorAbstract?) {
         owner.restoreHealthAdjusted(sourceOwner: owner, using: self, for: self.healthRestoration)
         self.adjustRemainingUses(by: -1)
     }
