@@ -14,17 +14,29 @@ class DataObject {
     
     // MARK: - Properties
     
+    /// NOT IMPLEMENTED YET - A dictionary of class names that may be stored and have been since refactored to a new name
     private static let legacyClassNames: [String: String] = [:]
+    /// The JSON key that corresponds to the object name of the data object
     private let objectField = "object"
-    
-    private var objectName = String() // For debugging
+    /// The name of the object (class) this instance represents (the value to objectField)
+    private(set) var objectName = String()
+    /// The JSON this wrapper represents
     private var json = JSON()
+    /// The Data representation of this
     var rawData: Data {
         do {
             return try self.json.rawData()
         } catch {
             return Data()
         }
+    }
+    /// The date formatter used for adding and retrieving dates
+    private var dateFormatter: DateFormatter {
+        let result = DateFormatter()
+        result.locale = Locale(identifier: "en_US_POSIX")
+        result.timeZone = TimeZone(secondsFromGMT: 0)
+        result.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        return result
     }
     
     // MARK: - Initialisers
@@ -158,6 +170,39 @@ class DataObject {
     }
     
     @discardableResult
+    func add(key: String, value: Date) -> Self {
+        return self.add(key: key, value: self.dateFormatter.string(from: value))
+    }
+    
+    @discardableResult
+    func add(key: String, value: Date?) -> Self {
+        if let value {
+            self.add(key: key, value: value)
+        } else {
+            self.json[key] = JSON.null
+        }
+        return self
+    }
+    
+    @discardableResult
+    func add(key: String, value: [Date]) -> Self {
+        let dateStrings: [String] = value.map({ self.dateFormatter.string(from: $0) })
+        return self.add(key: key, value: dateStrings)
+    }
+    
+    @discardableResult
+    func add(key: String, value: [Date?]) -> Self {
+        let dateStrings: [String?] = value.map({
+            if let date = $0 {
+                return self.dateFormatter.string(from: date)
+            } else {
+                return nil
+            }
+        })
+        return self.add(key: key, value: dateStrings)
+    }
+    
+    @discardableResult
     func add<T: Storable>(key: String, value: T) -> Self {
         self.json[key] = value.toDataObject().json
         return self
@@ -283,6 +328,49 @@ class DataObject {
         return valueArray
     }
     
+    func get(_ key: String, onFail: Date = Date()) -> Date {
+        let dateString: String = self.get(key, onFail: "")
+        if dateString.isEmpty {
+            assertionFailure("Failed to restore attribute '\(key)' to object \(self.objectName)")
+            return onFail
+        }
+        let date = self.dateFormatter.date(from: dateString)
+        assert(date != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)'")
+        return date ?? onFail
+    }
+    
+    func get(_ key: String) -> Date? {
+        let dateString: String? = self.get(key)
+        guard dateString != nil else {
+            return nil
+        }
+        return self.dateFormatter.date(from: dateString!)
+    }
+    
+    func get(_ key: String) -> [Date] {
+        let array = self.json[key].array
+        assert(array != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)'")
+        let stringArray = (array ?? []).map { $0.stringValue }
+        assert(array?.count == stringArray.count, "JSON array came with \(array?.count ?? -1) elements, but only \(stringArray.count) could be restored")
+        let valueArray = stringArray.compactMap({ self.dateFormatter.date(from: $0) })
+        assert(valueArray.count == stringArray.count, "JSON array came with \(stringArray.count) elements, but only \(valueArray.count) could be restored as dates")
+        return valueArray
+    }
+    
+    func get(_ key: String) -> [Date?] {
+        let array = self.json[key].array
+        assert(array != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)'")
+        let stringArray = (array ?? []).map { $0.string }
+        let valueArray = stringArray.map({
+            if let stringDate = $0 {
+                return self.dateFormatter.date(from: stringDate)
+            } else {
+                return nil
+            }
+        })
+        return valueArray
+    }
+    
     func getObject<T>(_ key: String, type: T.Type) -> T where T: Storable {
         return DataObject(json: JSON(self.json[key].object)).restore(type)
     }
@@ -328,7 +416,11 @@ class DataObject {
                 activeClassName = Self.legacyClassNames[activeClassName]!
             }
             let nameSpace = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
-            return (NSClassFromString("\(nameSpace).\(activeClassName)") as! Storable.Type).init(dataObject: DataObject(json: self.json))
+            guard let type = NSClassFromString("\(nameSpace).\(activeClassName)") as? Storable.Type else {
+                assertionFailure("Class \(nameSpace).\(activeClassName) does not exist but is trying to be restored")
+                return nil
+            }
+            return type.init(dataObject: DataObject(json: self.json))
         }
         return nil
     }

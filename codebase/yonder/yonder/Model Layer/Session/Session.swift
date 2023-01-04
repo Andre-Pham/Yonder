@@ -30,13 +30,13 @@ class Session {
     @discardableResult
     func saveGame() -> Bool {
         if let game = self.activeGame {
-            return LocalDatabaseSession.instance.write(game)
+            return DatabaseSession.instance.writeGame(game)
         }
         return false
     }
     
     func loadGame() -> Bool {
-        self.activeGame = LocalDatabaseSession.instance.read()
+        self.activeGame = DatabaseSession.instance.readGame()
         return self.activeGame != nil
     }
     
