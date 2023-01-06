@@ -27,6 +27,27 @@ class MetadataDictionary: Storable {
         return result
     }
     
+    func removeIDs(_ ids: [String]) -> Int {
+        var count = 0
+        for id in ids {
+            if self.metadataDictionary.removeValue(forKey: id) != nil {
+                count += 1
+            }
+        }
+        return count
+    }
+    
+    func filterOut(_ condition: (_ value: Metadata) -> Bool) -> Int {
+        var count = 0
+        for (id, metadata) in self.metadataDictionary {
+            if condition(metadata) {
+                self.metadataDictionary.removeValue(forKey: id)
+                count += 1
+            }
+        }
+        return count
+    }
+    
     // MARK: - Serialisation
 
     private enum Field: String {

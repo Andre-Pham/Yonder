@@ -20,10 +20,8 @@ class FileDatabase: DatabaseTarget {
         return self.read(id: self.metadataFilePath) ?? MetadataDictionary()
     }
     
-    private func updateMetadataDictionary(with metadata: Metadata) -> Bool {
-        let metadataDictionary = self.readMetadataDictionary()
-        metadataDictionary.add(metadata)
-        return self.write(metadataDictionary, to: self.metadataFilePath)
+    private func writeMetadataDictionary(_ dict: MetadataDictionary) -> Bool {
+        return self.write(dict, to: self.metadataFilePath)
     }
     
     /// Write a record to the database. If the id already exists, replace it.
@@ -32,7 +30,9 @@ class FileDatabase: DatabaseTarget {
     /// - Returns: If the write was successful
     func write<T: Storable>(_ record: Record<T>) -> Bool {
         if self.write(record.data, to: record.metadata.id) {
-            return self.updateMetadataDictionary(with: record.metadata)
+            let metadataDictionary = self.readMetadataDictionary()
+            metadataDictionary.add(record.metadata)
+            return self.writeMetadataDictionary(metadataDictionary)
         }
         return false
     }
@@ -97,6 +97,13 @@ class FileDatabase: DatabaseTarget {
                 assertionFailure("File failed to be deleted")
             }
         }
+        let metadataDictionary = self.readMetadataDictionary()
+        let filterCount = metadataDictionary.filterOut({ $0.objectName == objectName })
+        assert(filterCount == count, "The number of records deleted between files and the metadata dictionary is inconsistent")
+        guard self.writeMetadataDictionary(metadataDictionary) else {
+            assertionFailure("Metadata dictionary failed to be updated")
+            return 0
+        }
         return count
     }
     
@@ -108,7 +115,9 @@ class FileDatabase: DatabaseTarget {
         let url = self.createURL(path: id)
         do {
             try FileManager.default.removeItem(at: url)
-            return true
+            let metadataDictionary = self.readMetadataDictionary()
+            let removedCount = metadataDictionary.removeIDs([id])
+            return removedCount == 1 && self.writeMetadataDictionary(metadataDictionary)
         } catch {
             assertionFailure("File failed to be deleted")
             return false
@@ -116,7 +125,7 @@ class FileDatabase: DatabaseTarget {
     }
     
     /// Clear the entire database.
-    /// - Returns: The number of records deleted (including the MetadataDictionary object)
+    /// - Returns: The number of records deleted (NOT including the MetadataDictionary object)
     func clearDatabase() -> Int {
         var count = 0
         do {
@@ -131,6 +140,28 @@ class FileDatabase: DatabaseTarget {
                 } catch {
                     assertionFailure("File failed to be deleted")
                 }
+            }
+            if directoryContents.count > 0 {
+                count -= 1 // Accounts for the MetadataDictionary which doesn't count as a record
+            }
+        } catch {
+            assertionFailure("File manager failed to read directory")
+        }
+        return count
+    }
+    
+    /// Count the number of records saved.
+    /// - Returns: The number of records
+    func count() -> Int {
+        var count = 0
+        do {
+            let directoryContents = try FileManager.default.contentsOfDirectory(
+                at: self.directoryURL,
+                includingPropertiesForKeys: nil
+            )
+            count += directoryContents.count
+            if directoryContents.count > 0 {
+                count -= 1 // Accounts for the MetadataDictionary which doesn't count as a record
             }
         } catch {
             assertionFailure("File manager failed to read directory")

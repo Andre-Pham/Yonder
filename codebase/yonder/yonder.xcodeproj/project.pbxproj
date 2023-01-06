@@ -377,8 +377,11 @@
 		659860202964C2BB0002AD0B /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6598601F2964C2BB0002AD0B /* Metadata.swift */; };
 		659860262964EAC40002AD0B /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659860252964EAC40002AD0B /* Record.swift */; };
 		659860292964FC9E0002AD0B /* MetadataDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659860282964FC9E0002AD0B /* MetadataDictionary.swift */; };
-		6598602B296504440002AD0B /* FileDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6598602A296504430002AD0B /* FileDatabaseTests.swift */; };
 		6598603829653FBE0002AD0B /* FileDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6598603729653FBE0002AD0B /* FileDatabase.swift */; };
+		6598603C296738100002AD0B /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6598603B296738100002AD0B /* SQLiteDatabase.swift */; };
+		6598603E296768820002AD0B /* TestPerformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6598603D296768820002AD0B /* TestPerformance.swift */; };
+		659860442968B8AF0002AD0B /* DatabaseTargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659860432968B8AF0002AD0B /* DatabaseTargetTests.swift */; };
+		659860462968BA790002AD0B /* DatabaseTargetPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659860452968BA790002AD0B /* DatabaseTargetPerformanceTests.swift */; };
 		6598739028D4352F00BDFB8F /* RestorationSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6598738F28D4352F00BDFB8F /* RestorationSubscriber.swift */; };
 		6598739228D5D44500BDFB8F /* Usable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6598739128D5D44500BDFB8F /* Usable.swift */; };
 		6598739628D5D59E00BDFB8F /* AppliesEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6598739528D5D59E00BDFB8F /* AppliesEffect.swift */; };
@@ -907,8 +910,11 @@
 		6598601F2964C2BB0002AD0B /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
 		659860252964EAC40002AD0B /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		659860282964FC9E0002AD0B /* MetadataDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataDictionary.swift; sourceTree = "<group>"; };
-		6598602A296504430002AD0B /* FileDatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDatabaseTests.swift; sourceTree = "<group>"; };
 		6598603729653FBE0002AD0B /* FileDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDatabase.swift; sourceTree = "<group>"; };
+		6598603B296738100002AD0B /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
+		6598603D296768820002AD0B /* TestPerformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPerformance.swift; sourceTree = "<group>"; };
+		659860432968B8AF0002AD0B /* DatabaseTargetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTargetTests.swift; sourceTree = "<group>"; };
+		659860452968BA790002AD0B /* DatabaseTargetPerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTargetPerformanceTests.swift; sourceTree = "<group>"; };
 		6598738F28D4352F00BDFB8F /* RestorationSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorationSubscriber.swift; sourceTree = "<group>"; };
 		6598739128D5D44500BDFB8F /* Usable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usable.swift; sourceTree = "<group>"; };
 		6598739528D5D59E00BDFB8F /* AppliesEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliesEffect.swift; sourceTree = "<group>"; };
@@ -1185,11 +1191,11 @@
 		651B7761293C261D00827CB5 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				659860272964FC860002AD0B /* Metadata */,
-				6598603729653FBE0002AD0B /* FileDatabase.swift */,
+				65986039296737EA0002AD0B /* Database Targets */,
 				651B7762293C262B00827CB5 /* DatabaseSession.swift */,
 				6598601D2964C2A90002AD0B /* DatabaseTarget.swift */,
 				659860252964EAC40002AD0B /* Record.swift */,
+				6598601F2964C2BB0002AD0B /* Metadata.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -1943,7 +1949,8 @@
 		656FD8A42916F04700F923E9 /* DataPersistenceTests */ = {
 			isa = PBXGroup;
 			children = (
-				6598602A296504430002AD0B /* FileDatabaseTests.swift */,
+				659860452968BA790002AD0B /* DatabaseTargetPerformanceTests.swift */,
+				659860432968B8AF0002AD0B /* DatabaseTargetTests.swift */,
 				651B7764293C2D2A00827CB5 /* GameTests.swift */,
 				656FD8AC2916F09600F923E9 /* DataObjectTests.swift */,
 			);
@@ -2150,17 +2157,35 @@
 			children = (
 				65C2CDE4293871D60028DC9C /* TestContent.swift */,
 				65986019296258FD0002AD0B /* TestSession.swift */,
+				6598603D296768820002AD0B /* TestPerformance.swift */,
 			);
 			path = Testing;
 			sourceTree = "<group>";
 		};
-		659860272964FC860002AD0B /* Metadata */ = {
+		65986039296737EA0002AD0B /* Database Targets */ = {
+			isa = PBXGroup;
+			children = (
+				659860402968B3470002AD0B /* SQLite */,
+				6598603F2968B32F0002AD0B /* File */,
+			);
+			path = "Database Targets";
+			sourceTree = "<group>";
+		};
+		6598603F2968B32F0002AD0B /* File */ = {
 			isa = PBXGroup;
 			children = (
 				659860282964FC9E0002AD0B /* MetadataDictionary.swift */,
-				6598601F2964C2BB0002AD0B /* Metadata.swift */,
+				6598603729653FBE0002AD0B /* FileDatabase.swift */,
 			);
-			path = Metadata;
+			path = File;
+			sourceTree = "<group>";
+		};
+		659860402968B3470002AD0B /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				6598603B296738100002AD0B /* SQLiteDatabase.swift */,
+			);
+			path = SQLite;
 			sourceTree = "<group>";
 		};
 		6598739328D5D58500BDFB8F /* Content */ = {
@@ -2883,8 +2908,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659860462968BA790002AD0B /* DatabaseTargetPerformanceTests.swift in Sources */,
 				656FD8AD2916F09600F923E9 /* DataObjectTests.swift in Sources */,
-				6598602B296504440002AD0B /* FileDatabaseTests.swift in Sources */,
+				659860442968B8AF0002AD0B /* DatabaseTargetTests.swift in Sources */,
 				651B7765293C2D2A00827CB5 /* GameTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2997,6 +3023,7 @@
 				653DD70B27F82DE3004A3B28 /* PurchasableInspectView.swift in Sources */,
 				6524D5122762701500982091 /* PrimaryView.swift in Sources */,
 				65CAC17C27F93AFD00A95D92 /* YonderOptionsGrid.swift in Sources */,
+				6598603E296768820002AD0B /* TestPerformance.swift in Sources */,
 				654494F72757FA5F0016FDCA /* Interactor.swift in Sources */,
 				65275DE2275954B90087B118 /* ChallengeHostileLocation.swift in Sources */,
 				6568F9B6287DF63700035865 /* LootOptions.swift in Sources */,
@@ -3265,6 +3292,7 @@
 				654D728E29416B8F00228643 /* ClassSelectView.swift in Sources */,
 				65DC5FC828DC495300E5F904 /* RestoreArmorPointsConsumable.swift in Sources */,
 				65A3887D288B6790006541FB /* OptionsView.swift in Sources */,
+				6598603C296738100002AD0B /* SQLiteDatabase.swift in Sources */,
 				656FD919291D6FF300F923E9 /* EnhancerFactory.swift in Sources */,
 				655C60B328040C19007B1E11 /* PurchasableItemInfo.swift in Sources */,
 				65DC5FC428DC3DF900E5F904 /* WeaponArmorPointsRestorationBuff.swift in Sources */,

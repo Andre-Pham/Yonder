@@ -38,7 +38,11 @@ protocol DatabaseTarget {
     func delete(id: String) -> Bool
     
     /// Clear the entire database.
-    /// - Returns: The number of records deleted (including the MetadataDictionary object)
+    /// - Returns: The number of records deleted
     func clearDatabase() -> Int
+    
+    /// Count the number of records saved.
+    /// - Returns: The number of records
+    func count() -> Int
     
 }
