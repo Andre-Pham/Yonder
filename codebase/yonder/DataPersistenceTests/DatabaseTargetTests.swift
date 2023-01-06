@@ -112,5 +112,19 @@ final class DatabaseTargetTests: XCTestCase {
             XCTAssert(database.count() == 0)
         }
     }
+    
+    func testReplace() throws {
+        for database in self.databaseTargets {
+            print("-- DATABASE \(database.self) --")
+            
+            let foe1 = Foe(name: "Foe1", description: "Foe1 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
+            let foe2 = Foe(name: "Foe2", description: "Foe2 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
+            XCTAssert(database.write(Record(id: "foe", data: foe1)))
+            XCTAssert(database.write(Record(id: "foe", data: foe2)))
+            let readFoe: Foe? = database.read(id: "foe")
+            XCTAssertEqual(readFoe?.name, foe2.name)
+            XCTAssert(database.count() == 1)
+        }
+    }
 
 }

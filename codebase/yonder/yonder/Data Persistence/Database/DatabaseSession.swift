@@ -12,7 +12,7 @@ class DatabaseSession {
     static let instance = DatabaseSession()
     
     /// The database target in use (can be swapped out with any database that conforms to DatabaseTarget)
-    private let database: DatabaseTarget = FileDatabase()
+    private let database: DatabaseTarget = SQLiteDatabase()
     /// The record ID for saving a game - currently only one game can be saved so it's retrieved
     /// If I wanted to let players to save multiple games, I would read all `read()` to retrieve all `Game` objects
     private let gameRecordID = "gamedata"

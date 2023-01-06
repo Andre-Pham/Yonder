@@ -10,14 +10,20 @@ import SQLite3
 
 class SQLiteDatabase: DatabaseTarget {
     
+    /// The directory the sqlite file is saved to
     private let url: URL
+    /// The database instance
     private var database: OpaquePointer? = nil
+    /// The date formatter used for adding and retrieving dates
+    private var dateFormatter: DateFormatter {
+        let result = DateFormatter()
+        result.locale = Locale(identifier: "en_US_POSIX")
+        result.timeZone = TimeZone(secondsFromGMT: 0)
+        result.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        return result
+    }
     
     init() {
-        //self.url = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-           //.appendingPathComponent("records.sqlite")
-        //let myPath = FileManager.default.urls(for: .libraryDirectory, in: .allDomainsMask)[0]
-        //self.url = myPath.appendingPathComponent("somedb.sqlite3")
         self.url = FileManager.default.urls(for: .libraryDirectory, in: .allDomainsMask)[0]
             .appendingPathComponent("records.sqlite")
         guard sqlite3_open(self.url.path, &self.database) == SQLITE_OK else {
@@ -49,12 +55,12 @@ class SQLiteDatabase: DatabaseTarget {
     ///   - record: The record to be written
     /// - Returns: If the write was successful
     func write<T: Storable>(_ record: Record<T>) -> Bool {
-        let statementString = "INSERT INTO record (id, objectName, createdAt, data) VALUES (?, ?, ?, ?);"
+        let statementString = "REPLACE INTO record (id, objectName, createdAt, data) VALUES (?, ?, ?, ?);"
         var statement: OpaquePointer? = nil
         if sqlite3_prepare_v2(self.database, statementString, -1, &statement, nil) == SQLITE_OK {
             sqlite3_bind_text(statement, 1, (record.metadata.id as NSString).utf8String, -1, nil)
             sqlite3_bind_text(statement, 2, (record.metadata.objectName as NSString).utf8String, -1, nil)
-            sqlite3_bind_text(statement, 3, ("TODO" as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(statement, 3, (self.dateFormatter.string(from: record.metadata.createdAt) as NSString).utf8String, -1, nil)
             sqlite3_bind_text(statement, 4, (String(decoding: record.data.toDataObject().rawData, as: UTF8.self) as NSString).utf8String, -1, nil)
             let outcome = sqlite3_step(statement) == SQLITE_DONE
             sqlite3_finalize(statement)
@@ -73,9 +79,10 @@ class SQLiteDatabase: DatabaseTarget {
         if sqlite3_prepare_v2(self.database, statementString, -1, &statement, nil) == SQLITE_OK {
             sqlite3_bind_text(statement, 1, (objectName as NSString).utf8String, -1, nil)
             while sqlite3_step(statement) == SQLITE_ROW {
-                let id = String(describing: String(cString: sqlite3_column_text(statement, 0)))
-                let objectName = String(describing: String(cString: sqlite3_column_text(statement, 1)))
-                let createdAt = String(describing: String(cString: sqlite3_column_text(statement, 2)))
+                // These may come in handy later:
+                //let id = String(describing: String(cString: sqlite3_column_text(statement, 0)))
+                //let objectName = String(describing: String(cString: sqlite3_column_text(statement, 1)))
+                //let createdAt = self.dateFormatter.date(from: String(describing: String(cString: sqlite3_column_text(statement, 2)))) ?? Date()
                 let dataString = String(describing: String(cString: sqlite3_column_text(statement, 3)))
                 guard let data = dataString.data(using: .utf8) else {
                     continue

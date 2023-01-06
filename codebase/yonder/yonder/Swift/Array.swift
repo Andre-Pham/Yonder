@@ -9,6 +9,14 @@ import Foundation
 
 extension Array {
     
+    /// Instantiate the array populating it by repeating a callback.
+    /// - Parameters:
+    ///   - count: The number of times to repeat the callback
+    ///   - callback: The callback which returns an element to be added to the array
+    public init(count: Int, populateWith: @autoclosure () -> Element) {
+        self = (0 ..< count).map { _ in populateWith() }
+    }
+    
     /// Populates this array by repeating a callback.
     /// Example:
     /// ``` var myArray = [Int]()
