@@ -9,18 +9,19 @@ import Foundation
 
 class TavernAreaFactory {
     
-    private let factoryBundle: AreaFactoryBundle
+    private let areaProfile: AreaProfile
     private let stage: Int
     
-    init(stage: Int, factoryBundle: AreaFactoryBundle) {
+    init(areaProfile: AreaProfile, stage: Int) {
+        self.areaProfile = areaProfile
         self.stage = stage
-        self.factoryBundle = factoryBundle
     }
     
     func deliver() -> TavernArea {
         let outcome = TavernAreaArrangements.allCases.randomElement()!
         let restorer = Restorers.newRestorer(
             profile: RestorerProfile(
+                id: 0,
                 restorerName: Strings("restorer.tavern.name").local,
                 restorerDescription: Strings("restorer.tavern.description").local,
                 areaTags: [],
@@ -36,38 +37,54 @@ class TavernAreaFactory {
                 PurchasableItem(item: HealthRestorationPotion(tier: .III, potionCount: 3), stock: 5, priceAdjustment: 1.0),
                 PurchasableItem(item: RestoreArmorPointsConsumable(tier: .III, amount: 3), stock: 5, priceAdjustment: 1.0),
                 PurchasableItem(item: DamagePotion(tier: .III, potionCount: 3), stock: 5, priceAdjustment: 1.0)
-            ])
-        let npcFactory = self.factoryBundle.interactorFactories
+            ]
+        )
         switch outcome {
         case .S:
             return TavernArea(
-                restorer: RestorerLocation(restorer: restorer),
-                potionShop: ShopLocation(shopKeeper: potionsShopKeeper),
-                enhancer: EnhancerLocation(enhancer: npcFactory.enhancerFactory.deliver())
+                name: self.areaProfile.areaName,
+                description: self.areaProfile.areaDescription,
+                tags: self.areaProfile.tags,
+                imageResource: self.areaProfile.areaImageResource,
+                RestorerLocation(restorer: restorer),
+                ShopLocation(shopKeeper: potionsShopKeeper),
+                EnhancerLocation()
             )
         case .M:
             return TavernArea(
-                restorer: RestorerLocation(restorer: restorer),
-                potionShop: ShopLocation(shopKeeper: potionsShopKeeper),
-                enhancer: EnhancerLocation(enhancer: npcFactory.enhancerFactory.deliver()),
-                otherShop: ShopLocation(shopKeeper: npcFactory.shopKeeperFactory.deliver())
+                name: self.areaProfile.areaName,
+                description: self.areaProfile.areaDescription,
+                tags: self.areaProfile.tags,
+                imageResource: self.areaProfile.areaImageResource,
+                RestorerLocation(restorer: restorer),
+                ShopLocation(shopKeeper: potionsShopKeeper),
+                EnhancerLocation(),
+                ShopLocation()
             )
         case .L:
             return TavernArea(
-                restorer: RestorerLocation(restorer: restorer),
-                potionShop: ShopLocation(shopKeeper: potionsShopKeeper),
-                enhancer: EnhancerLocation(enhancer: npcFactory.enhancerFactory.deliver()),
-                otherShop: ShopLocation(shopKeeper: npcFactory.shopKeeperFactory.deliver()),
-                friendly: FriendlyLocation(friendly: npcFactory.friendlyFactory.deliver())
+                name: self.areaProfile.areaName,
+                description: self.areaProfile.areaDescription,
+                tags: self.areaProfile.tags,
+                imageResource: self.areaProfile.areaImageResource,
+                RestorerLocation(restorer: restorer),
+                ShopLocation(shopKeeper: potionsShopKeeper),
+                EnhancerLocation(),
+                ShopLocation(),
+                FriendlyLocation()
             )
         case .XL:
             return TavernArea(
-                restorer: RestorerLocation(restorer: restorer),
-                potionShop: ShopLocation(shopKeeper: potionsShopKeeper),
-                enhancer: EnhancerLocation(enhancer: npcFactory.enhancerFactory.deliver()),
-                otherShop: ShopLocation(shopKeeper: npcFactory.shopKeeperFactory.deliver()),
-                friendly: FriendlyLocation(friendly: npcFactory.friendlyFactory.deliver()),
-                secondFriendly: FriendlyLocation(friendly: npcFactory.friendlyFactory.deliver())
+                name: self.areaProfile.areaName,
+                description: self.areaProfile.areaDescription,
+                tags: self.areaProfile.tags,
+                imageResource: self.areaProfile.areaImageResource,
+                RestorerLocation(restorer: restorer),
+                ShopLocation(shopKeeper: potionsShopKeeper),
+                EnhancerLocation(),
+                ShopLocation(),
+                FriendlyLocation(),
+                FriendlyLocation()
             )
         }
     }

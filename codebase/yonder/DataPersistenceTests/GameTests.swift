@@ -16,5 +16,19 @@ final class GameTests: XCTestCase {
         XCTAssert(Session.instance.saveGame())
         XCTAssert(Session.instance.loadGame())
     }
+    
+    func testGameFunctionality() throws {
+        Session.instance.startNewGame(playerClass: .none)
+        XCTAssert(Session.instance.saveGame())
+        XCTAssert(Session.instance.loadGame())
+        let player = Session.instance.activeGame!.player
+        // TODO: I don't have internet rn, but in the future this should catch the error and print it instead of crashing
+        for _ in 0..<50 {
+            player.travel(to: player.location.nextLocations.sorted(by: { $0.hexagonCoordinate!.y > $1.hexagonCoordinate!.y }).first!)
+            if let foe = (player.location as? FoeLocation)?.foe {
+                player.useWeaponWhere(opposition: foe, weapon: BaseAttack(damage: 50))
+            }
+        }
+    }
 
 }

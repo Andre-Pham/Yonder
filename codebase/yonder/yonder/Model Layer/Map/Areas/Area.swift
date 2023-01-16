@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class Area: Named, Described, Storable {
+class Area: AreaThemed, Storable {
     
     public let name: String
     public let description: String
@@ -19,14 +19,15 @@ class Area: Named, Described, Storable {
     private(set) var rightBridgeLocations = [Location]()
     public let arrangement: AreaArrangements
     public let locations: [Location]
-    public let id = UUID()
+    public let id: UUID
+    public let tags: AreaProfileTagAllocation
     
-    // locations are received from LocationsGenerator
     init(
         arrangement: AreaArrangements,
         locations: [Location],
         name: String = "placeholderName",
         description: String = "placeholderDescription",
+        tags: AreaProfileTagAllocation,
         imageResource: ImageResource = YonderImages.placeholderImage
     ) {
         assert(locations.count == arrangement.locationCount, "Number of locations provided to generate Area doesn't match expected number for the arrangement")
@@ -36,7 +37,9 @@ class Area: Named, Described, Storable {
         self.tipLocation = locations.last!
         self.name = name
         self.description = description
+        self.tags = tags
         self.imageResource = imageResource
+        self.id = UUID() // id must be persistent so location contexts can refer to them
         
         self.locations.forEach { $0.setAreaContext(self) }
         self.generateAreaArrangement()
@@ -49,11 +52,13 @@ class Area: Named, Described, Storable {
         case description
         case imageName
         case arrangement
+        case tags
         case locations
         case leftBridgeLocationIDs
         case rightBridgeLocationIDs
         case rootLocationID
         case tipLocationID
+        case id
     }
 
     required init(dataObject: DataObject) {
@@ -61,7 +66,9 @@ class Area: Named, Described, Storable {
         self.description = dataObject.get(Field.description.rawValue)
         self.imageResource = ImageResource(dataObject.get(Field.imageName.rawValue))
         self.arrangement = AreaArrangements(rawValue: dataObject.get(Field.arrangement.rawValue))!
+        self.tags = dataObject.getObject(Field.tags.rawValue, type: AreaProfileTagAllocation.self)
         self.locations = dataObject.getObjectArray(Field.locations.rawValue, type: LocationAbstract.self) as! [any Location]
+        self.id = UUID(uuidString: dataObject.get(Field.id.rawValue))!
         
         // Below - we could repeat the algorithms used to generate the relevant fields
         // These are safer because they're algorithm independent, so they'll adapt to any future changes
@@ -90,14 +97,20 @@ class Area: Named, Described, Storable {
             .add(key: Field.description.rawValue, value: self.description)
             .add(key: Field.imageName.rawValue, value: self.imageResource.name)
             .add(key: Field.arrangement.rawValue, value: self.arrangement.rawValue)
+            .add(key: Field.tags.rawValue, value: self.tags)
             .add(key: Field.locations.rawValue, value: self.locations as [LocationAbstract])
             .add(key: Field.rootLocationID.rawValue, value: self.rootLocation.id.uuidString)
             .add(key: Field.tipLocationID.rawValue, value: self.tipLocation.id.uuidString)
             .add(key: Field.leftBridgeLocationIDs.rawValue, value: self.leftBridgeLocations.map({ $0.id.uuidString }))
             .add(key: Field.rightBridgeLocationIDs.rawValue, value: self.rightBridgeLocations.map({ $0.id.uuidString }))
+            .add(key: Field.id.rawValue, value: self.id.uuidString)
     }
 
     // MARK: - Functions
+    
+    func getAreaKey() -> String {
+        return self.id.uuidString
+    }
     
     func addNextLocations(from location: Location, to nextLocations: [Location]) {
         location.addNextLocations(nextLocations)

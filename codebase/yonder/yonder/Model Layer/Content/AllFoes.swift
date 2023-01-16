@@ -19,7 +19,7 @@ enum Foes {
         let foeHealth = Random.selectFromNormalDistribution(mid: targetHealth, boundFraction: 0.25).nearest(10)
         let foeDamage = Random.selectFromNormalDistribution(mid: targetDamage, boundFraction: 0.33).nearest(5)
         return RegularFoe(
-            name: "Foe-01",//profile.foeName,
+            name: profile.foeName,
             description: profile.foeDescription,
             maxHealth: foeHealth,
             damage: foeDamage,
@@ -34,7 +34,7 @@ enum Foes {
         let foeHealth = Random.selectFromNormalDistribution(mid: targetHealth, boundFraction: 0.2).nearest(10)
         let foeDamage = Random.selectFromNormalDistribution(mid: targetDamage, boundFraction: 0.35).nearest(5)
         return RegularFoe(
-            name: "Foe-02",//profile.foeName,
+            name: profile.foeName,
             description: profile.foeDescription,
             maxHealth: foeHealth,
             damage: foeDamage,
@@ -49,7 +49,7 @@ enum Foes {
         let foeHealth = Random.selectFromNormalDistribution(mid: targetHealth, boundFraction: 0.33)
         let foeDamage = Random.selectFromNormalDistribution(mid: targetDamage, boundFraction: 0.33)
         return RegularFoe(
-            name: "Foe-03",//profile.foeName,
+            name: profile.foeName,
             description: profile.foeDescription,
             maxHealth: foeHealth,
             damage: foeDamage,
@@ -66,7 +66,7 @@ enum Foes {
         let foeDamage = Random.selectFromNormalDistribution(mid: targetDamage, boundFraction: 0.35)
         let foeGold = Random.selectFromNormalDistribution(mid: targetGold, boundFraction: 0.35)
         return GoblinFoe(
-            name: "Foe-04",//profile.foeName,
+            name: profile.foeName,
             description: profile.foeDescription,
             maxHealth: foeHealth,
             goldPerSteal: foeGold,
@@ -84,7 +84,7 @@ enum Foes {
         let foeDamage = Random.selectFromNormalDistribution(mid: targetDamage, boundFraction: 0.35)
         let foeGold = Random.selectFromNormalDistribution(mid: targetGold, boundFraction: 0.35)
         return GoblinFoe(
-            name: "Foe-05",//profile.foeName,
+            name: profile.foeName,
             description: profile.foeDescription,
             maxHealth: foeHealth,
             goldPerSteal: foeGold,
@@ -102,7 +102,7 @@ enum Foes {
         let foeDamage = Random.selectFromNormalDistribution(mid: targetDamage, boundFraction: 0.35)
         let foeGold = Random.selectFromNormalDistribution(mid: targetGold, boundFraction: 0.35)
         return GoblinFoe(
-            name: "Foe-06",//profile.foeName,
+            name: profile.foeName,
             description: profile.foeDescription,
             maxHealth: foeHealth,
             goldPerSteal: foeGold,
@@ -118,7 +118,7 @@ enum Foes {
         let foeHealth = Random.selectFromNormalDistribution(mid: targetHealth, boundFraction: 0.18)
         let foeDamage = Random.selectFromNormalDistribution(mid: targetDamage, boundFraction: 0.2)
         return BruteFoe(
-            name: "Foe-07",//profile.foeName,
+            name: profile.foeName,
             description: profile.foeDescription,
             maxHealth: foeHealth,
             damage: foeDamage,

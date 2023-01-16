@@ -382,6 +382,7 @@
 		6598603E296768820002AD0B /* TestPerformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6598603D296768820002AD0B /* TestPerformance.swift */; };
 		659860442968B8AF0002AD0B /* DatabaseTargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659860432968B8AF0002AD0B /* DatabaseTargetTests.swift */; };
 		659860462968BA790002AD0B /* DatabaseTargetPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659860452968BA790002AD0B /* DatabaseTargetPerformanceTests.swift */; };
+		659860482969047D0002AD0B /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659860472969047D0002AD0B /* ContentManager.swift */; };
 		6598739028D4352F00BDFB8F /* RestorationSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6598738F28D4352F00BDFB8F /* RestorationSubscriber.swift */; };
 		6598739228D5D44500BDFB8F /* Usable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6598739128D5D44500BDFB8F /* Usable.swift */; };
 		6598739628D5D59E00BDFB8F /* AppliesEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6598739528D5D59E00BDFB8F /* AppliesEffect.swift */; };
@@ -517,6 +518,8 @@
 		65EFC053293665A200B8E677 /* MapConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EFC052293665A200B8E677 /* MapConfig.swift */; };
 		65F91C9227DD14DC0095C3FD /* OfferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F91C9127DD14DC0095C3FD /* OfferViewModel.swift */; };
 		65F91C9A27E0FD130095C3FD /* PurchaseRestorationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F91C9927E0FD130095C3FD /* PurchaseRestorationButton.swift */; };
+		65FA30A52972308E0014403A /* AfterGameContextInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FA30A42972308E0014403A /* AfterGameContextInit.swift */; };
+		65FA30A72973323C0014403A /* AreaThemed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FA30A62973323C0014403A /* AreaThemed.swift */; };
 		65FDAFB8276E3EC0002FAEA4 /* LocationAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDAFB7276E3EC0002FAEA4 /* LocationAttributes.swift */; };
 /* End PBXBuildFile section */
 
@@ -915,6 +918,7 @@
 		6598603D296768820002AD0B /* TestPerformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPerformance.swift; sourceTree = "<group>"; };
 		659860432968B8AF0002AD0B /* DatabaseTargetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTargetTests.swift; sourceTree = "<group>"; };
 		659860452968BA790002AD0B /* DatabaseTargetPerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTargetPerformanceTests.swift; sourceTree = "<group>"; };
+		659860472969047D0002AD0B /* ContentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
 		6598738F28D4352F00BDFB8F /* RestorationSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorationSubscriber.swift; sourceTree = "<group>"; };
 		6598739128D5D44500BDFB8F /* Usable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usable.swift; sourceTree = "<group>"; };
 		6598739528D5D59E00BDFB8F /* AppliesEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliesEffect.swift; sourceTree = "<group>"; };
@@ -1051,6 +1055,8 @@
 		65EFC052293665A200B8E677 /* MapConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConfig.swift; sourceTree = "<group>"; };
 		65F91C9127DD14DC0095C3FD /* OfferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferViewModel.swift; sourceTree = "<group>"; };
 		65F91C9927E0FD130095C3FD /* PurchaseRestorationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseRestorationButton.swift; sourceTree = "<group>"; };
+		65FA30A42972308E0014403A /* AfterGameContextInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterGameContextInit.swift; sourceTree = "<group>"; };
+		65FA30A62973323C0014403A /* AreaThemed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaThemed.swift; sourceTree = "<group>"; };
 		65FDAFB7276E3EC0002FAEA4 /* LocationAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAttributes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1207,6 +1213,7 @@
 				6520DA3C2955792A00916147 /* GameContext.swift */,
 				6520DA4129558ABC00916147 /* StableGameStateManager.swift */,
 				6520DA4329558AD400916147 /* PlayerStageManager.swift */,
+				659860472969047D0002AD0B /* ContentManager.swift */,
 			);
 			path = GameContext;
 			sourceTree = "<group>";
@@ -1707,6 +1714,7 @@
 				653DD72227F83EBE004A3B28 /* MapGenerator.swift */,
 				655146952747F3DF00257181 /* Segment.swift */,
 				65514699274A25A700257181 /* Territory.swift */,
+				65FA30A62973323C0014403A /* AreaThemed.swift */,
 				651A955C276AB67A009C9A08 /* Areas */,
 				652EC1C02775949E00E81787 /* Boss Areas */,
 				654ADCEE2755765400373332 /* Locations */,
@@ -2123,6 +2131,7 @@
 				653277472925A9CB00E03FA7 /* AfterCombatTurnEnd.swift */,
 				656F3C482944136B00CB706A /* AfterPlayerKillFoe.swift */,
 				656F3C4A2944146A00CB706A /* AfterPlayerDeath.swift */,
+				65FA30A42972308E0014403A /* AfterGameContextInit.swift */,
 			);
 			path = Publishers;
 			sourceTree = "<group>";
@@ -2934,6 +2943,7 @@
 				654D72A229416EDE00228643 /* DruidClass.swift in Sources */,
 				656FD8FE291B190B00F923E9 /* AccessoryProfileBucket.swift in Sources */,
 				654D729629416E5D00228643 /* WarriorClass.swift in Sources */,
+				65FA30A72973323C0014403A /* AreaThemed.swift in Sources */,
 				6568F9A928788F3F00035865 /* AccessoryInspectView.swift in Sources */,
 				65275DFA2759C87A0087B118 /* ArmorPointsRestorationPercentBuff.swift in Sources */,
 				652EC1C2277594B100E81787 /* BossArea.swift in Sources */,
@@ -3176,6 +3186,7 @@
 				65DC5FC028DC3C3500E5F904 /* WeaponArmorPointsRestorationPercentBuff.swift in Sources */,
 				656BEEA028E2E729001CE591 /* Pricing.swift in Sources */,
 				654D72A429416EE600228643 /* PaladinClass.swift in Sources */,
+				659860482969047D0002AD0B /* ContentManager.swift in Sources */,
 				65CAC18A27F9481600A95D92 /* YonderMultilineWideButton.swift in Sources */,
 				656FD8D329183E8D00F923E9 /* Array.swift in Sources */,
 				65D88C662744494E002E3AC4 /* StatusEffect.swift in Sources */,
@@ -3208,6 +3219,7 @@
 				65275DF82759BF1B0087B118 /* PurchaseWeaponOffer.swift in Sources */,
 				6524D5292762D13800982091 /* YonderIcons.swift in Sources */,
 				653DD72527F84340004A3B28 /* ArmorInspectView.swift in Sources */,
+				65FA30A52972308E0014403A /* AfterGameContextInit.swift in Sources */,
 				654ADCF027557A3300373332 /* NoLocation.swift in Sources */,
 				65311CEC28842D420080A390 /* LootAccessoryButton.swift in Sources */,
 				655C60BD2804275E007B1E11 /* PurchaseEnhanceOfferStateManager.swift in Sources */,

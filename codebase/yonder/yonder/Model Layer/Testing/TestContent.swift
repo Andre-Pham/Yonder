@@ -51,6 +51,7 @@ enum TestContent {
             areaName: "Test Area \(number)",
             areaDescription: "Test area \(number) description.",
             areaImageResource: YonderImages.placeholderImage,
+            tags: AreaProfileTagAllocation(),
             hostileLocations: hostileLocations,
             challengeHostileLocations: challengeHostileLocations,
             shopLocations: shopLocations,
@@ -62,9 +63,13 @@ enum TestContent {
     
     static func testTavernArea() -> TavernArea {
         return TavernArea(
-            restorer: RestorerLocation(restorer: Self.testRestorer()),
-            potionShop: ShopLocation(shopKeeper: Self.testShopKeeper()),
-            enhancer: EnhancerLocation(enhancer: Self.testEnhancer())
+            name: "Test Tavern Area",
+            description: "Test tavern area.",
+            tags: AreaProfileTagAllocation(),
+            imageResource: YonderImages.placeholderImage,
+            RestorerLocation(restorer: Self.testRestorer()),
+            ShopLocation(shopKeeper: Self.testShopKeeper()),
+            EnhancerLocation(enhancer: Self.testEnhancer())
         )
     }
     

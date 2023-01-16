@@ -15,6 +15,7 @@ class Friendly: InteractorAbstract {
     var offersRemaining: Int {
         return self.offerLimit - self.offersAccepted
     }
+    public let id = UUID()
     
     init(name: String = "placeholderName", description: String = "placeholderDescription", offers: [Offer], offerLimit: Int) {
         self.offers = offers

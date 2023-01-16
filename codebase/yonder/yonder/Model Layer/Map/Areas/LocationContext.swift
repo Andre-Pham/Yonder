@@ -10,6 +10,7 @@ import SwiftUI
 
 class LocationContext: Storable {
     
+    private(set) var key: String = ""
     private(set) var name: String = ""
     private(set) var description: String = ""
     private(set) var imageResource: ImageResource = YonderImages.placeholderImage
@@ -17,7 +18,8 @@ class LocationContext: Storable {
         return self.imageResource.image
     }
     
-    func setContext(name: String, description: String, imageResource: ImageResource) {
+    func setContext(key: String, name: String, description: String, imageResource: ImageResource) {
+        self.key = key
         self.name = name
         self.description = description
         self.imageResource = imageResource
@@ -28,12 +30,14 @@ class LocationContext: Storable {
     // MARK: - Serialisation
 
     private enum Field: String {
+        case key
         case name
         case description
         case imageName
     }
 
     required init(dataObject: DataObject) {
+        self.key = dataObject.get(Field.key.rawValue)
         self.name = dataObject.get(Field.name.rawValue)
         self.description = dataObject.get(Field.description.rawValue)
         self.imageResource = ImageResource(dataObject.get(Field.imageName.rawValue))
@@ -41,6 +45,7 @@ class LocationContext: Storable {
 
     func toDataObject() -> DataObject {
         return DataObject(self)
+            .add(key: Field.key.rawValue, value: self.key)
             .add(key: Field.name.rawValue, value: self.name)
             .add(key: Field.description.rawValue, value: self.description)
             .add(key: Field.imageName.rawValue, value: self.imageResource.name)

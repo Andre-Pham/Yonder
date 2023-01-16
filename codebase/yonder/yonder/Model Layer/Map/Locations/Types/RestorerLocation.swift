@@ -9,12 +9,23 @@ import Foundation
 
 class RestorerLocation: Location {
     
-    private(set) var restorer: Restorer
+    private(set) var restorer: Restorer? = nil
     public let type: LocationType = .restorer
+    
+    override init() {
+        super.init()
+    }
     
     init(restorer: Restorer) {
         self.restorer = restorer
         super.init()
+    }
+    
+    func initContent(using contentManager: ContentManager) {
+        guard self.restorer == nil else {
+            return
+        }
+        self.restorer = contentManager.generateRestorer(using: self.context)
     }
     
     // MARK: - Serialisation
@@ -24,7 +35,7 @@ class RestorerLocation: Location {
     }
 
     required init(dataObject: DataObject) {
-        self.restorer = dataObject.getObject(Field.restorer.rawValue, type: Restorer.self)
+        self.restorer = dataObject.getObjectOptional(Field.restorer.rawValue, type: Restorer.self)
         super.init(dataObject: dataObject)
     }
 

@@ -7,16 +7,39 @@
 
 import Foundation
 
-class GameContext {
+class GameContext: Storable {
     
     public let turnManager: TurnManager
     public let stableGameStateManager: StableGameStateManager
     public let playerStageManager: PlayerStageManager
+    public let contentManager: ContentManager
     
-    init(map: Map, stage: Int = 0) {
+    init() {
         self.turnManager = TurnManager()
         self.stableGameStateManager = StableGameStateManager()
-        self.playerStageManager = PlayerStageManager(map: map, stage: stage)
+        self.playerStageManager = PlayerStageManager(stage: 0)
+        self.contentManager = ContentManager() // Must subscribe after playerStageManager so stage updates before content
+    }
+    
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        // TurnManager and StableGameStateManager aren't serialisable - they carry no state
+        case playerStageManager
+        case contentManager
+    }
+
+    required init(dataObject: DataObject) {
+        self.turnManager = TurnManager()
+        self.stableGameStateManager = StableGameStateManager()
+        self.playerStageManager = dataObject.getObject(Field.playerStageManager.rawValue, type: PlayerStageManager.self)
+        self.contentManager = dataObject.getObject(Field.contentManager.rawValue, type: ContentManager.self)
+    }
+
+    func toDataObject() -> DataObject {
+        return DataObject(self)
+            .add(key: Field.playerStageManager.rawValue, value: self.playerStageManager)
+            .add(key: Field.contentManager.rawValue, value: self.contentManager)
     }
     
 }

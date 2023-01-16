@@ -9,12 +9,23 @@ import Foundation
 
 class ShopLocation: Location {
     
-    private(set) var shopKeeper: ShopKeeper
+    private(set) var shopKeeper: ShopKeeper? = nil
     public let type: LocationType = .shop
+    
+    override init() {
+        super.init()
+    }
     
     init(shopKeeper: ShopKeeper) {
         self.shopKeeper = shopKeeper
         super.init()
+    }
+    
+    func initContent(using contentManager: ContentManager) {
+        guard self.shopKeeper == nil else {
+            return
+        }
+        self.shopKeeper = contentManager.generateShopKeeper(using: self.context)
     }
     
     // MARK: - Serialisation
@@ -24,7 +35,7 @@ class ShopLocation: Location {
     }
 
     required init(dataObject: DataObject) {
-        self.shopKeeper = dataObject.getObject(Field.shopKeeper.rawValue, type: ShopKeeper.self)
+        self.shopKeeper = dataObject.getObjectOptional(Field.shopKeeper.rawValue, type: ShopKeeper.self)
         super.init(dataObject: dataObject)
     }
 

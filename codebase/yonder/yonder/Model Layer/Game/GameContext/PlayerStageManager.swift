@@ -7,29 +7,43 @@
 
 import Foundation
 
-class PlayerStageManager: OnPlayerTravelSubscriber {
+class PlayerStageManager: OnPlayerTravelSubscriber, Storable {
     
     private(set) var stage: Int {
         didSet {
             AfterStageChangePublisher.publish(newStage: self.stage)
         }
     }
-    private let map: Map
     
-    init(map: Map, stage: Int) {
-        self.map = map
+    init(stage: Int) {
         self.stage = stage
         
         OnPlayerTravelPublisher.subscribe(self)
     }
     
     func onPlayerTravel(player: Player, newLocation: Location) {
-        let territory = self.map.territoriesInOrder[self.stage]
-        if territory.tavernArea.tipLocations.contains(where: { $0.id == player.location.id }) && !territory.tavernArea.locations.contains(where: { $0.id == newLocation.id }) {
-            // The player was at a tip location in the tavern area but now is no longer in the tavern area
-            // Hence the player has exited the tavern area
+        let map = Game.gameContextAccess.map
+        let territory = map.territoriesInOrder[self.stage + 1]
+        if territory.rootLocations.contains(where: { $0.id == newLocation.id }) {
             self.stage += 1
         }
+    }
+    
+    // MARK: - Serialisation
+    
+    private enum Field: String {
+        case stage
+    }
+
+    required init(dataObject: DataObject) {
+        self.stage = dataObject.get(Field.stage.rawValue)
+        
+        OnPlayerTravelPublisher.subscribe(self)
+    }
+
+    func toDataObject() -> DataObject {
+        return DataObject(self)
+            .add(key: Field.stage.rawValue, value: self.stage)
     }
     
 }

@@ -13,6 +13,7 @@ class RestorerFactory {
     private let areaTags: AreaProfileTagAllocation
     private let restorerProfileBucket: RestorerProfileBucket
     private var restorerSupply = [Restorer]()
+    private var profilesInUse = [UUID: RestorerProfile]()
     
     init(stage: Int, areaTags: AreaProfileTagAllocation, restorerProfileBucket: RestorerProfileBucket) {
         self.stage = stage
@@ -20,41 +21,43 @@ class RestorerFactory {
         self.restorerProfileBucket = restorerProfileBucket
     }
     
+    func recycleProfiles() {
+        for profile in self.profilesInUse.values {
+            self.restorerProfileBucket.restoreProfile(profile)
+        }
+    }
+    
     private func buildRestorers() {
         var restorers = [Restorer]()
-        var restoreOptions = [Restorer.RestoreOption]()
         
-        restoreOptions = [.health, .armorPoints]
-        restorers.populate(count: 2) {
-            let profile = self.getProfile(options: restoreOptions)
-            return Restorers.newRestorer(profile: profile, stage: self.stage, restoreOptions: restoreOptions)
-        }
-        
-        restoreOptions = [.health]
-        restorers.populate(count: 1) {
-            let profile = self.getProfile(options: restoreOptions)
-            return Restorers.newRestorer(profile: profile, stage: self.stage, restoreOptions: restoreOptions)
-        }
-        
-        restoreOptions = [.armorPoints]
-        restorers.populate(count: 1) {
-            let profile = self.getProfile(options: restoreOptions)
-            return Restorers.newRestorer(profile: profile, stage: self.stage, restoreOptions: restoreOptions)
-        }
+        self.addRestorer(to: &restorers, restoreOptions: [.health, .armorPoints], count: 2)
+        self.addRestorer(to: &restorers, restoreOptions: [.health], count: 1)
+        self.addRestorer(to: &restorers, restoreOptions: [.armorPoints], count: 1)
         
         restorers.shuffle()
         self.restorerSupply.appendToFront(contentsOf: restorers)
     }
     
-    private func getProfile(options: [Restorer.RestoreOption]) -> RestorerProfile {
-        return self.restorerProfileBucket.grabProfile(areaTag: self.areaTags.getTag(), restoreOptions: options)
+    private func addRestorer(
+        to restorers: inout [Restorer],
+        restoreOptions: [Restorer.RestoreOption],
+        count: Int
+    ) {
+        restorers.populate(count: count) {
+            let profile = self.restorerProfileBucket.grabProfile(areaTag: self.areaTags.getTag(), restoreOptions: restoreOptions)
+            let restorer = Restorers.newRestorer(profile: profile, stage: self.stage, restoreOptions: restoreOptions)
+            self.profilesInUse[restorer.id] = profile
+            return restorer
+        }
     }
     
     func deliver() -> Restorer {
         if self.restorerSupply.isEmpty {
             self.buildRestorers()
         }
-        return self.restorerSupply.popLast()!
+        let restorer = self.restorerSupply.popLast()!
+        self.profilesInUse.removeValue(forKey: restorer.id)
+        return restorer
     }
     
     func deliver(count: Int) -> [Restorer] {
@@ -63,7 +66,9 @@ class RestorerFactory {
             self.buildRestorers()
             assert(initialCount < self.restorerSupply.count, "No restorers being generated - infinite loop")
         }
-        return self.restorerSupply.takeLast(count)
+        let restorers = self.restorerSupply.takeLast(count)
+        restorers.forEach({ self.profilesInUse.removeValue(forKey: $0.id) })
+        return restorers
     }
     
 }

@@ -14,12 +14,19 @@ class FoeFactory {
     private let foeProfileBucket: FoeProfileBucket
     private let lootOptionsFactory: LootOptionsFactory
     private var foeSupply = [Foe]()
+    private var profilesInUse = [UUID: FoeProfile]()
     
     init(stage: Int, areaTags: AreaProfileTagAllocation, profileBucket: FoeProfileBucket, lootFactoryBundle: LootFactoryBundle) {
         self.stage = stage
         self.areaTags = areaTags
         self.foeProfileBucket = profileBucket
         self.lootOptionsFactory = LootOptionsFactory(stage: stage, lootFactories: lootFactoryBundle)
+    }
+    
+    func recycleProfiles() {
+        for profile in self.profilesInUse.values {
+            self.foeProfileBucket.restoreProfile(profile)
+        }
     }
     
     private func buildFoes() {
@@ -40,7 +47,7 @@ class FoeFactory {
         // 07
         self.addFoe(to: &foes, method: Foes.newBruteFoe, count: 6, tag: .brute)
         
-        self.foeSupply.shuffle()
+        foes.shuffle()
         self.foeSupply.appendToFront(contentsOf: foes)
     }
     
@@ -51,11 +58,10 @@ class FoeFactory {
         tag: FoeProfileTag
     ) {
         foes.populate(count: count) {
-            method(
-                self.foeProfileBucket.grabProfile(areaTag: self.areaTags.getTag(), foeTag: tag),
-                self.stage,
-                self.lootOptionsFactory.deliver()
-            )
+            let profile = self.foeProfileBucket.grabProfile(areaTag: self.areaTags.getTag(), foeTag: tag)
+            let foe = method(profile, self.stage, self.lootOptionsFactory.deliver())
+            self.profilesInUse[foe.id] = profile
+            return foe
         }
     }
     
@@ -63,7 +69,9 @@ class FoeFactory {
         if self.foeSupply.isEmpty {
             self.buildFoes()
         }
-        return self.foeSupply.popLast()!
+        let foe = self.foeSupply.popLast()!
+        self.profilesInUse.removeValue(forKey: foe.id)
+        return foe
     }
     
     func deliver(count: Int) -> [Foe] {
@@ -72,7 +80,9 @@ class FoeFactory {
             self.buildFoes()
             assert(initialCount < self.foeSupply.count, "No foes being generated - infinite loop")
         }
-        return self.foeSupply.takeLast(count)
+        let foes = self.foeSupply.takeLast(count)
+        foes.forEach({ self.profilesInUse.removeValue(forKey: $0.id) })
+        return foes
     }
     
 }

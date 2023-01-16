@@ -13,11 +13,13 @@ class NoLocation: Location {
     
     override init() {
         super.init()
-        self.setContext(name: "placeholderName", description: "placeholderDescription", imageResource: YonderImages.placeholderImage)
+        self.setContext(key: "", name: "placeholderName", description: "placeholderDescription", imageResource: YonderImages.placeholderImage)
     }
     
     required init(dataObject: DataObject) {
         super.init(dataObject: dataObject)
     }
+    
+    func initContent(using contentManager: ContentManager) { }
     
 }

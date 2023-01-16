@@ -9,12 +9,23 @@ import Foundation
 
 class EnhancerLocation: Location {
     
-    private(set) var enhancer: Enhancer
+    private(set) var enhancer: Enhancer? = nil
     public let type: LocationType = .enhancer
+    
+    override init() {
+        super.init()
+    }
     
     init(enhancer: Enhancer) {
         self.enhancer = enhancer
         super.init()
+    }
+    
+    func initContent(using contentManager: ContentManager) {
+        guard self.enhancer == nil else {
+            return
+        }
+        self.enhancer = contentManager.generateEnhancer(using: self.context)
     }
     
     // MARK: - Serialisation
@@ -24,7 +35,7 @@ class EnhancerLocation: Location {
     }
 
     required init(dataObject: DataObject) {
-        self.enhancer = dataObject.getObject(Field.enhancer.rawValue, type: Enhancer.self)
+        self.enhancer = dataObject.getObjectOptional(Field.enhancer.rawValue, type: Enhancer.self)
         super.init(dataObject: dataObject)
     }
 

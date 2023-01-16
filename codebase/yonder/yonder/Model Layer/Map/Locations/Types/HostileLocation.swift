@@ -9,12 +9,23 @@ import Foundation
 
 class HostileLocation: Location, FoeLocation {
     
-    private(set) var foe: Foe
+    private(set) var foe: Foe? = nil
     public let type: LocationType = .hostile
+    
+    override init() {
+        super.init()
+    }
     
     init(foe: Foe) {
         self.foe = foe
         super.init()
+    }
+    
+    func initContent(using contentManager: ContentManager) {
+        guard self.foe == nil else {
+            return
+        }
+        self.foe = contentManager.generateHostile(using: self.context)
     }
     
     // MARK: - Serialisation
@@ -24,7 +35,7 @@ class HostileLocation: Location, FoeLocation {
     }
 
     required init(dataObject: DataObject) {
-        self.foe = dataObject.getObject(Field.foe.rawValue, type: Foe.self)
+        self.foe = dataObject.getObjectOptional(Field.foe.rawValue, type: Foe.self)
         super.init(dataObject: dataObject)
     }
 

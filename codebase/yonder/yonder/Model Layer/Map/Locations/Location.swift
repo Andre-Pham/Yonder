@@ -7,11 +7,13 @@
 
 import Foundation
 
-typealias Location = LocationAbstract & LocationTyped
+typealias Location = LocationAbstract & LocationProtocol
 
-protocol LocationTyped {
+protocol LocationProtocol {
     
     var type: LocationType { get }
+    
+    func initContent(using contentManager: ContentManager)
     
 }
 
@@ -124,11 +126,11 @@ class LocationAbstract: Storable {
     }
     
     func setAreaContext(_ area: Area) {
-        self.setContext(name: area.name, description: area.description, imageResource: area.imageResource)
+        self.setContext(key: area.getAreaKey(), name: area.name, description: area.description, imageResource: area.imageResource)
     }
     
-    func setContext(name: String, description: String, imageResource: ImageResource) {
-        self.context.setContext(name: name, description: description, imageResource: imageResource)
+    func setContext(key: String, name: String, description: String, imageResource: ImageResource) {
+        self.context.setContext(key: key, name: name, description: description, imageResource: imageResource)
     }
     
 }

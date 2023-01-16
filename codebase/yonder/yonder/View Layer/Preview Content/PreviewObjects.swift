@@ -295,29 +295,10 @@ enum PreviewObjects {
     private static var area: Area {
         return Area(
             arrangement: .A,
-            locations: [
-                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions())),
-                HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions()))
-            ],
+            locations: Array(count: 19, populateWith: HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions()))),
             name: "Glacier Rifts",
             description: "placeholderDescription",
+            tags: AreaProfileTagAllocation(),
             imageResource: YonderImages.placeholderImage
         )
     }

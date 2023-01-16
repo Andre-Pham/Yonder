@@ -10,10 +10,23 @@ import Foundation
 class Game: Storable {
     
     // MARK: - Singleton
-    // This forces the fact that only one game instance can occur at once
-    // Multiple game instances would cause publishers to trigger for every game instance
     
-    private static var instance: Game? = nil
+    /// This forces the fact that only one game instance can occur at once
+    /// Multiple game instances would cause publishers to trigger for every game instance
+    private static var instance: Game? = nil {
+        didSet {
+            if let game = Self.instance {
+                AfterGameContextInitPublisher.publish(gameContext: game.gameContext)
+            }
+        }
+    }
+    
+    /// WARNING: This should only be accessed from within the GameContext directory
+    /// Content within the game (player, map, loot, etc.) shouldn't access this - it creates a circular dependency.
+    /// This is necessary for sharing information between contexts without merging them into one massive file. It also allows for the contexts to read the map without serialising it.
+    public static var gameContextAccess: Game {
+        return Self.instance!
+    }
     
     static func new(playerClass: PlayerClassOption, map: Map) -> Game {
         Self.instance = Game(playerClass: playerClass, map: map)
@@ -29,7 +42,7 @@ class Game: Storable {
     private init(playerClass: PlayerClassOption, map: Map) {
         self.map = map
         self.player = playerClass.createPlayer(at: self.map.startingLocation)
-        self.gameContext = GameContext(map: self.map)
+        self.gameContext = GameContext()
     }
     
     // MARK: - Serialisation
@@ -37,20 +50,20 @@ class Game: Storable {
     private enum Field: String {
         case map
         case player
-        case stage
+        case gameContext
     }
 
     required init(dataObject: DataObject) {
         self.map = dataObject.getObject(Field.map.rawValue, type: Map.self)
         self.player = dataObject.getObject(Field.player.rawValue, type: Player.self)
-        self.gameContext = GameContext(map: self.map, stage: dataObject.get(Field.stage.rawValue))
+        self.gameContext = dataObject.getObject(Field.gameContext.rawValue, type: GameContext.self)
     }
 
     func toDataObject() -> DataObject {
         return DataObject(self)
             .add(key: Field.map.rawValue, value: self.map)
             .add(key: Field.player.rawValue, value: self.player)
-            .add(key: Field.stage.rawValue, value: self.gameContext.playerStageManager.stage)
+            .add(key: Field.gameContext.rawValue, value: self.gameContext)
     }
     
 }

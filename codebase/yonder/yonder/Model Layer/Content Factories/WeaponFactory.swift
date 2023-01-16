@@ -13,6 +13,7 @@ class WeaponFactory {
     private let areaTags: AreaProfileTagAllocation
     private let weaponProfileBucket: WeaponProfileBucket
     private var weaponSupply = [Weapon]()
+    private var profilesInUse = [UUID: WeaponProfile]()
     
     init(stage: Int, areaTags: AreaProfileTagAllocation, profileBucket: WeaponProfileBucket) {
         self.stage = stage
@@ -20,95 +21,77 @@ class WeaponFactory {
         self.weaponProfileBucket = profileBucket
     }
     
+    func recycleProfiles() {
+        for profile in self.profilesInUse.values {
+            self.weaponProfileBucket.restoreProfile(profile)
+        }
+    }
+    
     private func buildWeapons() {
         var weapons = [Weapon]()
         
         // 01
-        weapons.populate(count: 18) {
-            Weapons.damageWeapon(profile: self.getProfile(for: .damage), stage: self.stage)
-        }
+        self.addWeapon(to: &weapons, method: Weapons.damageWeapon, count: 18, tag: .damage)
         // 02
-        weapons.populate(count: 10) {
-            Weapons.acuteDamageWeapon(profile: self.getProfile(for: .damage), stage: self.stage)
-        }
+        self.addWeapon(to: &weapons, method: Weapons.acuteDamageWeapon, count: 10, tag: .damage)
         // 03
-        weapons.populate(count: 5) {
-            Weapons.obtuseDamageWeapon(profile: self.getProfile(for: .damage), stage: self.stage)
-        }
+        self.addWeapon(to: &weapons, method: Weapons.obtuseDamageWeapon, count: 5, tag: .damage)
         // 04
-        weapons.populate(count: 10) {
-            Weapons.healthRestorationWeapon(profile: self.getProfile(for: .healthRestoration), stage: self.stage)
-        }
+        self.addWeapon(to: &weapons, method: Weapons.healthRestorationWeapon, count: 10, tag: .healthRestoration)
         // 05
-        weapons.populate(count: 5) {
-            Weapons.acuteHealthRestorationWeapon(profile: self.getProfile(for: .healthRestoration), stage: self.stage)
-        }
+        self.addWeapon(to: &weapons, method: Weapons.acuteHealthRestorationWeapon, count: 5, tag: .healthRestoration)
         // 06
-        weapons.populate(count: 10) {
-            Weapons.armorRestorationWeapon(profile: self.getProfile(for: .armorPointsRestoration), stage: self.stage)
-        }
+        self.addWeapon(to: &weapons, method: Weapons.armorRestorationWeapon, count: 10, tag: .armorPointsRestoration)
         // 07
-        weapons.populate(count: 5) {
-            Weapons.acuteArmorRestorationWeapon(profile: self.getProfile(for: .armorPointsRestoration), stage: self.stage)
-        }
+        self.addWeapon(to: &weapons, method: Weapons.acuteArmorRestorationWeapon, count: 5, tag: .armorPointsRestoration)
         // 08
-        weapons.populate(count: 10) {
-            Weapons.dullingDamageWeapon(profile: self.getProfile(for: .damage), stage: self.stage)
-        }
+        self.addWeapon(to: &weapons, method: Weapons.dullingDamageWeapon, count: 10, tag: .damage)
         // 09
-        weapons.populate(count: 2) {
-            Weapons.copyAttackWeapon(profile: self.getProfile(for: .consumesFoe), stage: self.stage)
-        }
+        self.addWeapon(to: &weapons, method: Weapons.copyAttackWeapon, count: 2, tag: .consumesFoe)
         // 10
-        weapons.populate(count: 10) {
-            Weapons.lifestealWeapon(profile: self.getProfile(for: .consumesFoe), stage: self.stage)
-        }
+        self.addWeapon(to: &weapons, method: Weapons.lifestealWeapon, count: 10, tag: .consumesFoe)
         // 11
-        weapons.populate(count: 5) {
-            Weapons.burnWeapon(profile: self.getProfile(for: .collateral), stage: self.stage)
-        }
+        self.addWeapon(to: &weapons, method: Weapons.burnWeapon, count: 5, tag: .collateral)
         // 12
-        weapons.populate(count: 5) {
-            Weapons.restorationAndDamageWeapon(profile: self.getProfile(for: .damageAndRestoration), stage: self.stage)
-        }
+        self.addWeapon(to: &weapons, method: Weapons.restorationAndDamageWeapon, count: 5, tag: .damageAndRestoration)
         // 13
-        weapons.populate(count: 5) {
-            Weapons.growingDamageWeapon(profile: self.getProfile(for: .damage), stage: self.stage)
-        }
+        self.addWeapon(to: &weapons, method: Weapons.growingDamageWeapon, count: 5, tag: .damage)
         // 14
-        weapons.populate(count: 2) {
-            Weapons.damageRestorationSwapWeapon(profile: self.getProfile(for: .damageAndRestoration), stage: self.stage)
-        }
+        self.addWeapon(to: &weapons, method: Weapons.damageRestorationSwapWeapon, count: 2, tag: .damageAndRestoration)
         // 15
-        weapons.populate(count: 2) {
-            Weapons.consumeAttackWeapon(profile: self.getProfile(for: .consumesFoe), stage: self.stage)
-        }
+        self.addWeapon(to: &weapons, method: Weapons.consumeAttackWeapon, count: 2, tag: .consumesFoe)
         // 16
-        weapons.populate(count: 2) {
-            Weapons.consumeAttackDullingWeapon(profile: self.getProfile(for: .consumesFoe), stage: self.stage)
-        }
+        self.addWeapon(to: &weapons, method: Weapons.consumeAttackDullingWeapon, count: 2, tag: .consumesFoe)
         // 17
-        weapons.populate(count: 3) {
-            Weapons.explosiveWeapon(profile: self.getProfile(for: .collateral), stage: self.stage)
-        }
+        self.addWeapon(to: &weapons, method: Weapons.explosiveWeapon, count: 3, tag: .collateral)
         // 18
-        weapons.populate(count: 2) {
-            Weapons.armorToDamageWeapon(profile: self.getProfile(for: .collateral), stage: self.stage)
-        }
+        self.addWeapon(to: &weapons, method: Weapons.armorToDamageWeapon, count: 2, tag: .collateral)
         
         weapons.shuffle()
         self.weaponSupply.appendToFront(contentsOf: weapons)
     }
     
-    private func getProfile(for tag: WeaponProfileTag) -> WeaponProfile {
-        return self.weaponProfileBucket.grabProfile(areaTag: self.areaTags.getTag(), weaponTag: tag)
+    private func addWeapon(
+        to weapons: inout [Weapon],
+        method: (_ profile: WeaponProfile, _ stage: Int) -> Weapon,
+        count: Int,
+        tag: WeaponProfileTag
+    ) {
+        weapons.populate(count: count) {
+            let profile = self.weaponProfileBucket.grabProfile(areaTag: self.areaTags.getTag(), weaponTag: tag)
+            let weapon = method(profile, self.stage)
+            self.profilesInUse[weapon.id] = profile
+            return weapon
+        }
     }
     
     func deliver() -> Weapon {
         if self.weaponSupply.isEmpty {
             self.buildWeapons()
         }
-        return self.weaponSupply.popLast()!
+        let weapon = self.weaponSupply.popLast()!
+        self.profilesInUse.removeValue(forKey: weapon.id)
+        return weapon
     }
     
     func deliver(count: Int) -> [Weapon] {
@@ -117,7 +100,9 @@ class WeaponFactory {
             self.buildWeapons()
             assert(initialCount < self.weaponSupply.count, "No weapons being generated - infinite loop")
         }
-        return self.weaponSupply.takeLast(count)
+        let weapons = self.weaponSupply.takeLast(count)
+        weapons.forEach({ self.profilesInUse.removeValue(forKey: $0.id) })
+        return weapons
     }
     
 }

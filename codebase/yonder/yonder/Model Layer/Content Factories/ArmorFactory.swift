@@ -13,11 +13,18 @@ class ArmorFactory {
     private let areaTags: AreaProfileTagAllocation
     private let armorProfileBucket: ArmorProfileBucket
     private var armorSupply = [Armor]()
+    private var profilesInUse = [UUID: ArmorProfile]()
     
     init(stage: Int, areaTags: AreaProfileTagAllocation, profileBucket: ArmorProfileBucket) {
         self.stage = stage
         self.areaTags = areaTags
         self.armorProfileBucket = profileBucket
+    }
+    
+    func recycleProfiles() {
+        for profile in self.profilesInUse.values {
+            self.armorProfileBucket.restoreProfile(profile)
+        }
     }
     
     private func buildArmors() {
@@ -71,11 +78,10 @@ class ArmorFactory {
         armors.populate(count: count) {
             let armorType = allTypes[typeIndex]
             typeIndex = (typeIndex + 1)%allTypes.count
-            return method(
-                self.armorProfileBucket.grabProfile(areaTag: self.areaTags.getTag(), armorTag: tag, armorType: armorType),
-                self.stage,
-                armorType
-            )
+            let profile = self.armorProfileBucket.grabProfile(areaTag: self.areaTags.getTag(), armorTag: tag, armorType: armorType)
+            let armor = method(profile, self.stage, armorType)
+            self.profilesInUse[armor.id] = profile
+            return armor
         }
     }
     
@@ -83,7 +89,9 @@ class ArmorFactory {
         if self.armorSupply.isEmpty {
             self.buildArmors()
         }
-        return self.armorSupply.popLast()!
+        let armor = self.armorSupply.popLast()!
+        self.profilesInUse.removeValue(forKey: armor.id)
+        return armor
     }
     
     func deliver(count: Int) -> [Armor] {
@@ -92,7 +100,9 @@ class ArmorFactory {
             self.buildArmors()
             assert(initialCount < self.armorSupply.count, "No armors being generated - infinite loop")
         }
-        return self.armorSupply.takeLast(count)
+        let armors = self.armorSupply.takeLast(count)
+        armors.forEach({ self.profilesInUse.removeValue(forKey: $0.id) })
+        return armors
     }
     
 }

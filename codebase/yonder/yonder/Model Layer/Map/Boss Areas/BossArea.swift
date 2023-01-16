@@ -28,6 +28,12 @@ class BossArea: Storable {
         self.bossLocation.addNextLocations([restorerLocation])
         self.bossLocation.setHexagonCoordinate(5, 33)
         self.restorerLocation.setHexagonCoordinate(5, 35)
+        
+        for location in self.locations {
+            let referenceLocation = self.rootLocations.first!
+            let context = referenceLocation.context
+            location.setContext(key: context.key, name: context.name, description: context.description, imageResource: context.imageResource)
+        }
     }
     
     // MARK: - Serialisation

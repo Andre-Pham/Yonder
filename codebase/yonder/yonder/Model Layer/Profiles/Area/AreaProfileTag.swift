@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AreaProfileTag {
+enum AreaProfileTag: String {
     
     case all // Not to be allocated to area profiles, only entities that can be allocated to any area
     case magic

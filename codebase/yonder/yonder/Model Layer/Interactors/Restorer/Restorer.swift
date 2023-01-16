@@ -25,6 +25,7 @@ class Restorer: InteractorAbstract {
     public let options: [RestoreOption]
     public let pricePerHealthBundle: Int
     public let pricePerArmorPointBundle: Int
+    public let id = UUID()
     
     init(name: String = "placeholderName", description: String = "placeholderDescription", options: [RestoreOption], pricePerHealthBundle: Int = 0, pricePerArmorPointBundle: Int = 0) {
         self.options = options

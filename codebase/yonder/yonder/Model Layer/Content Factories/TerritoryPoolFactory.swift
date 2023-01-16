@@ -25,80 +25,13 @@ class TerritoryPoolFactory {
         
         let areaProfiles = self.areaProfileBucket.grabProfiles(count: 2, stage: stage)
         for areaProfile in areaProfiles {
-            let lootFactories = LootFactoryBundle(
-                weapons: WeaponFactory(
-                    stage: stage,
-                    areaTags: areaProfile.tags,
-                    profileBucket: self.weaponProfileBucket
-                ),
-                potions: PotionFactory(
-                    stage: stage
-                ),
-                armors: ArmorFactory(
-                    stage: stage,
-                    areaTags: areaProfile.tags,
-                    profileBucket: self.armorProfileBucket
-                ),
-                accessories: AccessoryFactory(
-                    stage: stage,
-                    areaTags: areaProfile.tags,
-                    profileBucket: self.accessoryProfileBucket
-                ),
-                consumables: ConsumableFactory(
-                    stage: stage
-                )
-            )
-            let interactorFactories = InteractorFactoryBundle(
-                shopKeeperFactory: ShopKeeperFactory(
-                    stage: stage,
-                    areaTags: areaProfile.tags,
-                    shopKeeperBucket: self.shopKeeperProfileBucket,
-                    lootFactories: lootFactories
-                ),
-                enhancerFactory: EnhancerFactory(
-                    stage: stage,
-                    areaTags: areaProfile.tags,
-                    enhancerProfileBucket: self.enhancerProfileBucket
-                ),
-                restorerFactory: RestorerFactory(
-                    stage: stage,
-                    areaTags: areaProfile.tags,
-                    restorerProfileBucket: self.restorerProfileBucket
-                ),
-                friendlyFactory: FriendlyFactory(
-                    stage: stage,
-                    areaTags: areaProfile.tags,
-                    friendlyProfileBucket: self.friendlyProfileBucket,
-                    lootFactory: lootFactories
-                )
-            )
-            let challengeLootFactories = LootFactoryBundle(
-                weapons: WeaponFactory(stage: stage + 2, areaTags: areaProfile.tags, profileBucket: self.weaponProfileBucket),
-                potions: PotionFactory(stage: stage + 2),
-                armors: ArmorFactory(stage: stage + 2, areaTags: areaProfile.tags, profileBucket: self.armorProfileBucket),
-                accessories: AccessoryFactory(stage: stage + 2, areaTags: areaProfile.tags, profileBucket: self.accessoryProfileBucket),
-                consumables: ConsumableFactory(stage: stage + 2)
-            )
-            let areaFactories = AreaFactoryBundle(
-                interactors: interactorFactories,
-                foes: FoeFactory(
-                    stage: stage,
-                    areaTags: areaProfile.tags,
-                    profileBucket: self.foeProfileBucket,
-                    lootFactoryBundle: lootFactories
-                ),
-                challengeHostiles: FoeFactory(
-                    stage: stage + 3,
-                    areaTags: areaProfile.tags,
-                    profileBucket: self.foeProfileBucket,
-                    lootFactoryBundle: challengeLootFactories
-                )
-            )
-            let areaPoolFactory = AreaPoolFactory(areaProfile: areaProfile, factoryBundle: areaFactories)
-            let tavernAreaFactory = TavernAreaFactory(stage: stage, factoryBundle: areaFactories)
+            let areaPoolFactory = AreaPoolFactory(areaProfile: areaProfile)
             areaPools.append(areaPoolFactory.deliver())
-            tavernAreas.append(tavernAreaFactory.deliver())
         }
+        
+        let tavernAreaProfile = self.areaProfileBucket.grabProfile(stage: stage)
+        let tavernAreaFactory = TavernAreaFactory(areaProfile: tavernAreaProfile, stage: stage)
+        tavernAreas.append(tavernAreaFactory.deliver())
         
         return TerritoryPool(
             areaPools: areaPools,

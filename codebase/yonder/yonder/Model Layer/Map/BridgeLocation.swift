@@ -11,4 +11,6 @@ class BridgeLocation: Location {
     
     var type: LocationType = .bridge
     
+    func initContent(using contentManager: ContentManager) { }
+    
 }

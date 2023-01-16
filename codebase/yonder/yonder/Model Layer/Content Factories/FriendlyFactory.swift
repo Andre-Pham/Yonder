@@ -14,12 +14,19 @@ class FriendlyFactory {
     private let friendlyProfileBucket: FriendlyProfileBucket
     private let lootFactory: LootFactoryBundle
     private var friendlySupply = [Friendly]()
+    private var profilesInUse = [UUID: FriendlyProfile]()
     
     init(stage: Int, areaTags: AreaProfileTagAllocation, friendlyProfileBucket: FriendlyProfileBucket, lootFactory: LootFactoryBundle) {
         self.stage = stage
         self.areaTags = areaTags
         self.friendlyProfileBucket = friendlyProfileBucket
         self.lootFactory = lootFactory
+    }
+    
+    func recycleProfiles() {
+        for profile in self.profilesInUse.values {
+            self.friendlyProfileBucket.restoreProfile(profile)
+        }
     }
     
     private func buildFriendlies() {
@@ -66,7 +73,10 @@ class FriendlyFactory {
         tag: FriendlyProfileTag
     ) {
         friendlies.populate(count: count) {
-            method(self.friendlyProfileBucket.grabProfile(areaTag: self.areaTags.getTag(), friendlyTag: tag), self.stage, self.lootFactory)
+            let profile = self.friendlyProfileBucket.grabProfile(areaTag: self.areaTags.getTag(), friendlyTag: tag)
+            let friendly = method(profile, self.stage, self.lootFactory)
+            self.profilesInUse[friendly.id] = profile
+            return friendly
         }
     }
     
@@ -74,7 +84,9 @@ class FriendlyFactory {
         if self.friendlySupply.isEmpty {
             self.buildFriendlies()
         }
-        return self.friendlySupply.popLast()!
+        let friendly = self.friendlySupply.popLast()!
+        self.profilesInUse.removeValue(forKey: friendly.id)
+        return friendly
     }
     
     func deliver(count: Int) -> [Friendly] {
@@ -83,7 +95,9 @@ class FriendlyFactory {
             self.buildFriendlies()
             assert(initialCount < self.friendlySupply.count, "No friendlies being generated - infinite loop")
         }
-        return self.friendlySupply.takeLast(count)
+        let friendlies = self.friendlySupply.takeLast(count)
+        friendlies.forEach({ self.profilesInUse.removeValue(forKey: $0.id) })
+        return friendlies
     }
     
 }

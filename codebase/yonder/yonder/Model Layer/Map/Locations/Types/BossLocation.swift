@@ -9,8 +9,12 @@ import Foundation
 
 class BossLocation: Location, FoeLocation {
     
-    private(set) var foe: Foe
+    private(set) var foe: Foe?
     public let type: LocationType = .boss
+    
+    func initContent(using contentManager: ContentManager) {
+        // No content to initialise
+    }
     
     init(boss: Foe) {
         self.foe = boss

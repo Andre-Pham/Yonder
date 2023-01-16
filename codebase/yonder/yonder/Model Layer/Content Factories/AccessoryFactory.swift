@@ -13,11 +13,18 @@ class AccessoryFactory {
     private let areaTags: AreaProfileTagAllocation
     private let accessoryProfileBucket: AccessoryProfileBucket
     private var accessorySupply = [Accessory]()
+    private var profilesInUse = [UUID: AccessoryProfile]()
     
     init(stage: Int, areaTags: AreaProfileTagAllocation, profileBucket: AccessoryProfileBucket) {
         self.stage = stage
         self.areaTags = areaTags
         self.accessoryProfileBucket = profileBucket
+    }
+    
+    func recycleProfiles() {
+        for profile in self.profilesInUse.values {
+            self.accessoryProfileBucket.restoreProfile(profile)
+        }
     }
     
     private func buildAccessories() {
@@ -183,15 +190,14 @@ class AccessoryFactory {
     ) {
         accessories.populate(count: count) {
             let accessoryType: AccessoryType = (Random.roll(1, in: 5) ? .peripheral : .regular)
-            return method(
-                self.accessoryProfileBucket.grabProfile(
-                    areaTag: self.areaTags.getTag(),
-                    accessoryTag: tag,
-                    accessoryType: accessoryType
-                ),
-                self.stage,
-                accessoryType
+            let profile = self.accessoryProfileBucket.grabProfile(
+                areaTag: self.areaTags.getTag(),
+                accessoryTag: tag,
+                accessoryType: accessoryType
             )
+            let accessory = method(profile, self.stage, accessoryType)
+            self.profilesInUse[accessory.id] = profile
+            return accessory
         }
     }
     
@@ -199,7 +205,9 @@ class AccessoryFactory {
         if self.accessorySupply.isEmpty {
             self.buildAccessories()
         }
-        return self.accessorySupply.popLast()!
+        let accessory = self.accessorySupply.popLast()!
+        self.profilesInUse.removeValue(forKey: accessory.id)
+        return accessory
     }
     
     func deliver(count: Int) -> [Accessory] {
@@ -208,7 +216,9 @@ class AccessoryFactory {
             self.buildAccessories()
             assert(initialCount < self.accessorySupply.count, "No accessories being generated - infinite loop")
         }
-        return self.accessorySupply.takeLast(count)
+        let accessories = self.accessorySupply.takeLast(count)
+        accessories.forEach({ self.profilesInUse.removeValue(forKey: $0.id) })
+        return accessories
     }
     
 }

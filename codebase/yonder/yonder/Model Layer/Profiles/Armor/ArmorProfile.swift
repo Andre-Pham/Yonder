@@ -9,13 +9,15 @@ import Foundation
 
 class ArmorProfile: AreaThemedProfile {
     
+    public let id: Int
     public let armorName: String
     public let armorDescription: String
     public let areaTags: [AreaProfileTag]
     public let armorTag: ArmorProfileTag
     public let armorType: ArmorType
     
-    init(armorName: String, armorDescription: String, areaTags: [AreaProfileTag], armorTag: ArmorProfileTag, armorType: ArmorType) {
+    init(id: Int, armorName: String, armorDescription: String, areaTags: [AreaProfileTag], armorTag: ArmorProfileTag, armorType: ArmorType) {
+        self.id = id
         self.armorName = armorName
         self.armorDescription = armorDescription
         self.areaTags = areaTags

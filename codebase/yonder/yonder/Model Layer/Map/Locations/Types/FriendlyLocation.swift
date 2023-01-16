@@ -9,12 +9,23 @@ import Foundation
 
 class FriendlyLocation: Location {
     
-    private(set) var friendly: Friendly
+    private(set) var friendly: Friendly? = nil
     public let type: LocationType = .friendly
+    
+    override init() {
+        super.init()
+    }
     
     init(friendly: Friendly) {
         self.friendly = friendly
         super.init()
+    }
+    
+    func initContent(using contentManager: ContentManager) {
+        guard self.friendly == nil else {
+            return
+        }
+        self.friendly = contentManager.generateFriendly(using: self.context)
     }
     
     // MARK: - Serialisation
@@ -24,7 +35,7 @@ class FriendlyLocation: Location {
     }
 
     required init(dataObject: DataObject) {
-        self.friendly = dataObject.getObject(Field.friendly.rawValue, type: Friendly.self)
+        self.friendly = dataObject.getObjectOptional(Field.friendly.rawValue, type: Friendly.self)
         super.init(dataObject: dataObject)
     }
 
