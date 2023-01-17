@@ -323,7 +323,6 @@
 		656FD902291BDBD600F923E9 /* AccessoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD901291BDBD600F923E9 /* AccessoryFactory.swift */; };
 		656FD904291BE0EB00F923E9 /* ConsumableFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD903291BE0EB00F923E9 /* ConsumableFactory.swift */; };
 		656FD906291C63DB00F923E9 /* AreaPoolFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD905291C63DB00F923E9 /* AreaPoolFactory.swift */; };
-		656FD909291C6A9A00F923E9 /* AreaFactoryBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD908291C6A9A00F923E9 /* AreaFactoryBundle.swift */; };
 		656FD90B291C6B6600F923E9 /* TavernAreaFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD90A291C6B6600F923E9 /* TavernAreaFactory.swift */; };
 		656FD910291C6F3A00F923E9 /* LootFactoryBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD90F291C6F3A00F923E9 /* LootFactoryBundle.swift */; };
 		656FD912291CF56200F923E9 /* ShopKeeperFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD911291CF56200F923E9 /* ShopKeeperFactory.swift */; };
@@ -861,7 +860,6 @@
 		656FD901291BDBD600F923E9 /* AccessoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryFactory.swift; sourceTree = "<group>"; };
 		656FD903291BE0EB00F923E9 /* ConsumableFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumableFactory.swift; sourceTree = "<group>"; };
 		656FD905291C63DB00F923E9 /* AreaPoolFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaPoolFactory.swift; sourceTree = "<group>"; };
-		656FD908291C6A9A00F923E9 /* AreaFactoryBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaFactoryBundle.swift; sourceTree = "<group>"; };
 		656FD90A291C6B6600F923E9 /* TavernAreaFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TavernAreaFactory.swift; sourceTree = "<group>"; };
 		656FD90F291C6F3A00F923E9 /* LootFactoryBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootFactoryBundle.swift; sourceTree = "<group>"; };
 		656FD911291CF56200F923E9 /* ShopKeeperFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopKeeperFactory.swift; sourceTree = "<group>"; };
@@ -2077,7 +2075,6 @@
 		656FD90E291C6F2B00F923E9 /* Bundles */ = {
 			isa = PBXGroup;
 			children = (
-				656FD908291C6A9A00F923E9 /* AreaFactoryBundle.swift */,
 				656FD90F291C6F3A00F923E9 /* LootFactoryBundle.swift */,
 				656FD94A29206AC400F923E9 /* InteractorFactoryBundle.swift */,
 			);
@@ -3367,7 +3364,6 @@
 				6532773E292586C200E03FA7 /* LoseArmorGainHealthEquipmentPill.swift in Sources */,
 				65D88C6327444436002E3AC4 /* Foe.swift in Sources */,
 				652567C3279070A7001DC79B /* LocationConnection.swift in Sources */,
-				656FD909291C6A9A00F923E9 /* AreaFactoryBundle.swift in Sources */,
 				656BEE9E28E18586001CE591 /* WeaknessPotion.swift in Sources */,
 				65500E6328642C4F00A92CA2 /* EffectBasePill.swift in Sources */,
 				656F3C4529440C2A00CB706A /* AfterActorUseItem.swift in Sources */,
