@@ -28,37 +28,37 @@ class LocationViewModel: ObservableObject {
     }
     var playerCanEngage: Bool {
         if let foeLocation = self.location as? FoeLocation {
-            return !foeLocation.foe!.isDead
+            return !foeLocation.foe.isDead
         }
         return false
     }
     var playerHasOffers: Bool {
         if let offerLocation = self.location as? FriendlyLocation {
-            return !offerLocation.friendly!.offers.isEmpty
+            return !offerLocation.friendly.offers.isEmpty
         }
         return false
     }
     var playerCanPurchaseRestoration: Bool {
         if let restoreLocation = self.location as? RestorerLocation {
-            return !restoreLocation.restorer!.options.isEmpty
+            return !restoreLocation.restorer.options.isEmpty
         }
         return false
     }
     var playerCanShop: Bool {
         if let shopLocation = self.location as? ShopLocation {
-            return !shopLocation.shopKeeper!.purchasableItems.isEmpty
+            return !shopLocation.shopKeeper.purchasableItems.isEmpty
         }
         return false
     }
     var playerCanEnhance: Bool {
         if let enhanceLocation = self.location as? EnhancerLocation {
-            return !enhanceLocation.enhancer!.enhanceOffers.isEmpty
+            return !enhanceLocation.enhancer.enhanceOffers.isEmpty
         }
         return false
     }
     var playerCanChooseLootBag: Bool {
         if let foeViewModel = self.location as? FoeLocation {
-            return foeViewModel.foe!.canBeLooted
+            return foeViewModel.foe.canBeLooted
         }
         return false
     }
@@ -117,15 +117,15 @@ class LocationViewModel: ObservableObject {
         case .challengeHostile:
             return nil
         case .shop:
-            return ShopKeeperViewModel((self.location as! ShopLocation).shopKeeper!)
+            return ShopKeeperViewModel((self.location as! ShopLocation).shopKeeper)
         case .enhancer:
-            return EnhancerViewModel((self.location as! EnhancerLocation).enhancer!)
+            return EnhancerViewModel((self.location as! EnhancerLocation).enhancer)
         case .restorer:
-            return RestorerViewModel((self.location as! RestorerLocation).restorer!)
+            return RestorerViewModel((self.location as! RestorerLocation).restorer)
         case .quest:
             return nil
         case .friendly:
-            return FriendlyViewModel((self.location as! FriendlyLocation).friendly!)
+            return FriendlyViewModel((self.location as! FriendlyLocation).friendly)
         case .boss:
             return nil
         case .bridge:
@@ -138,9 +138,9 @@ class LocationViewModel: ObservableObject {
         case .none:
             return nil
         case .hostile:
-            return FoeViewModel((self.location as! HostileLocation).foe!)
+            return FoeViewModel((self.location as! HostileLocation).foe)
         case .challengeHostile:
-            return FoeViewModel((self.location as! ChallengeHostileLocation).foe!)
+            return FoeViewModel((self.location as! ChallengeHostileLocation).foe)
         case .shop:
             return nil
         case .enhancer:
@@ -152,7 +152,7 @@ class LocationViewModel: ObservableObject {
         case .friendly:
             return nil
         case .boss:
-            return FoeViewModel((self.location as! BossLocation).foe!)
+            return FoeViewModel((self.location as! BossLocation).foe)
         case .bridge:
             return nil
         }

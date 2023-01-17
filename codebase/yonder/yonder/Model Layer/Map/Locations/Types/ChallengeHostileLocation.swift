@@ -9,23 +9,27 @@ import Foundation
 
 class ChallengeHostileLocation: Location, FoeLocation {
     
-    private(set) var foe: Foe? = nil
+    /// The foe of the location - only generated when the player visits this location
+    private var generatedFoe: Foe? = nil
+    /// An accessor for the generated foe - external classes should always assume any content it requires is already generated otherwise something has gone seriously wrong
+    public var foe: Foe {
+        assert(self.generatedFoe != nil, "Content is being retrieved from a location before initContent method called")
+        return self.generatedFoe!
+    }
+    /// The location type - corresponds to class type but allows exhaustive switch cases and associated data
     public let type: LocationType = .challengeHostile
     
+    /// Initialises without any content - content will be generated during gameplay if the player travels here.
     override init() {
         super.init()
     }
     
+    /// Initialises with content (content won't be generated and injected during gameplay).
+    /// - Parameters:
+    ///   - foe: This location's foe
     init(foe: Foe) {
-        self.foe = foe
+        self.generatedFoe = foe
         super.init()
-    }
-    
-    func initContent(using contentManager: ContentManager) {
-        guard self.foe == nil else {
-            return
-        }
-        self.foe = contentManager.generateChallengeHostile(using: self.context)
     }
     
     // MARK: - Serialisation
@@ -35,13 +39,25 @@ class ChallengeHostileLocation: Location, FoeLocation {
     }
 
     required init(dataObject: DataObject) {
-        self.foe = dataObject.getObjectOptional(Field.foe.rawValue, type: Foe.self)
+        self.generatedFoe = dataObject.getObjectOptional(Field.foe.rawValue, type: Foe.self)
         super.init(dataObject: dataObject)
     }
 
     override func toDataObject() -> DataObject {
         return super.toDataObject()
-            .add(key: Field.foe.rawValue, value: self.foe)
+            .add(key: Field.foe.rawValue, value: self.generatedFoe)
+    }
+    
+    // MARK: - Functions
+    
+    /// Initialises any required content for the player to interact with. Only called if the player is travelling here.
+    /// - Parameters:
+    ///   - contentManager: The content manager to generate any required content for this location
+    func initContent(using contentManager: ContentManager) {
+        guard self.generatedFoe == nil else {
+            return
+        }
+        self.generatedFoe = contentManager.generateChallengeHostile(using: self.context)
     }
     
 }

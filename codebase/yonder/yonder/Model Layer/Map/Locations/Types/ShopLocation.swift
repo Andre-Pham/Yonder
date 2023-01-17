@@ -9,23 +9,27 @@ import Foundation
 
 class ShopLocation: Location {
     
-    private(set) var shopKeeper: ShopKeeper? = nil
+    /// The shop keeper of the location - only generated when the player visits this location
+    private var generatedShopKeeper: ShopKeeper? = nil
+    /// An accessor for the generated shop keeper - external classes should always assume any content it requires is already generated otherwise something has gone seriously wrong
+    public var shopKeeper: ShopKeeper {
+        assert(self.generatedShopKeeper != nil, "Content is being retrieved from a location before initContent method called")
+        return self.generatedShopKeeper!
+    }
+    /// The location type - corresponds to class type but allows exhaustive switch cases and associated data
     public let type: LocationType = .shop
     
+    /// Initialises without any content - content will be generated during gameplay if the player travels here.
     override init() {
         super.init()
     }
     
+    /// Initialises with content (content won't be generated and injected during gameplay).
+    /// - Parameters:
+    ///   - shopKeeper: This location's shop keeper
     init(shopKeeper: ShopKeeper) {
-        self.shopKeeper = shopKeeper
+        self.generatedShopKeeper = shopKeeper
         super.init()
-    }
-    
-    func initContent(using contentManager: ContentManager) {
-        guard self.shopKeeper == nil else {
-            return
-        }
-        self.shopKeeper = contentManager.generateShopKeeper(using: self.context)
     }
     
     // MARK: - Serialisation
@@ -35,13 +39,25 @@ class ShopLocation: Location {
     }
 
     required init(dataObject: DataObject) {
-        self.shopKeeper = dataObject.getObjectOptional(Field.shopKeeper.rawValue, type: ShopKeeper.self)
+        self.generatedShopKeeper = dataObject.getObjectOptional(Field.shopKeeper.rawValue, type: ShopKeeper.self)
         super.init(dataObject: dataObject)
     }
 
     override func toDataObject() -> DataObject {
         return super.toDataObject()
-            .add(key: Field.shopKeeper.rawValue, value: self.shopKeeper)
+            .add(key: Field.shopKeeper.rawValue, value: self.generatedShopKeeper)
+    }
+    
+    // MARK: - Functions
+    
+    /// Initialises any required content for the player to interact with. Only called if the player is travelling here.
+    /// - Parameters:
+    ///   - contentManager: The content manager to generate any required content for this location
+    func initContent(using contentManager: ContentManager) {
+        guard self.generatedShopKeeper == nil else {
+            return
+        }
+        self.generatedShopKeeper = contentManager.generateShopKeeper(using: self.context)
     }
     
 }

@@ -104,6 +104,6 @@ enum LocationType: Int {
 
 protocol FoeLocation {
     
-    var foe: Foe? { get }
+    var foe: Foe { get }
     
 }

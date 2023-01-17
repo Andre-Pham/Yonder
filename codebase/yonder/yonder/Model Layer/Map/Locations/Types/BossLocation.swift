@@ -9,13 +9,14 @@ import Foundation
 
 class BossLocation: Location, FoeLocation {
     
-    private(set) var foe: Foe?
+    /// The boss of this location
+    private(set) var foe: Foe
+    /// The location type - corresponds to class type but allows exhaustive switch cases and associated data
     public let type: LocationType = .boss
     
-    func initContent(using contentManager: ContentManager) {
-        // No content to initialise
-    }
-    
+    /// Initialises with content (content won't be generated and injected during gameplay).
+    /// - Parameters:
+    ///   - boss: This location's boss
     init(boss: Foe) {
         self.foe = boss
         super.init()
@@ -35,6 +36,15 @@ class BossLocation: Location, FoeLocation {
     override func toDataObject() -> DataObject {
         return super.toDataObject()
             .add(key: Field.foe.rawValue, value: self.foe)
+    }
+    
+    // MARK: - Functions
+    
+    /// Initialises any required content for the player to interact with. Only called if the player is travelling here.
+    /// - Parameters:
+    ///   - contentManager: The content manager to generate any required content for this location
+    func initContent(using contentManager: ContentManager) {
+        // No content to initialise - bosses are generated during the game's creation
     }
     
 }

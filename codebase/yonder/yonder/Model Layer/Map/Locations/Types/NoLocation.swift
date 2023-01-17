@@ -16,10 +16,23 @@ class NoLocation: Location {
         self.setContext(key: "", name: "placeholderName", description: "placeholderDescription", imageResource: YonderImages.placeholderImage)
     }
     
+    // MARK: - Serialisation
+    
     required init(dataObject: DataObject) {
         super.init(dataObject: dataObject)
     }
     
-    func initContent(using contentManager: ContentManager) { }
+    override func toDataObject() -> DataObject {
+        return super.toDataObject()
+    }
+    
+    // MARK: - Functions
+    
+    /// Initialises any required content for the player to interact with. Only called if the player is travelling here.
+    /// - Parameters:
+    ///   - contentManager: The content manager to generate any required content for this location
+    func initContent(using contentManager: ContentManager) {
+        // No content to initialise
+    }
     
 }
