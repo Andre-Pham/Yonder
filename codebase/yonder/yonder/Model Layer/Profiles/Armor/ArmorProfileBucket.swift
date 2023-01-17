@@ -15,13 +15,13 @@ class ArmorProfileBucket: Storable {
         self.profiles = ProfileRepository.profiles
     }
     
-    func grabProfile(areaTag: AreaProfileTag, armorTag: ArmorProfileTag, armorType: ArmorType) -> ArmorProfile {
+    func grabProfile(areaTag: RegionProfileTag, armorTag: ArmorProfileTag, armorType: ArmorType) -> ArmorProfile {
         let randomProfile = RandomProfile(prefix: "Armor")
         return ArmorProfile(
             id: 0,
             armorName: randomProfile.name,
             armorDescription: randomProfile.description,
-            areaTags: [],
+            regionTags: [],
             armorTag: .heavyweight,
             armorType: .body
         )

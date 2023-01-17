@@ -10,14 +10,14 @@ import Foundation
 class ArmorFactory {
     
     private let stage: Int
-    private let areaTags: AreaProfileTagAllocation
+    private let regionTags: RegionTagAllocation
     private let armorProfileBucket: ArmorProfileBucket
     private var armorSupply = [Armor]()
     private var profilesInUse = [UUID: ArmorProfile]()
     
-    init(stage: Int, areaTags: AreaProfileTagAllocation, profileBucket: ArmorProfileBucket) {
+    init(stage: Int, regionTags: RegionTagAllocation, profileBucket: ArmorProfileBucket) {
         self.stage = stage
-        self.areaTags = areaTags
+        self.regionTags = regionTags
         self.armorProfileBucket = profileBucket
     }
     
@@ -78,7 +78,7 @@ class ArmorFactory {
         armors.populate(count: count) {
             let armorType = allTypes[typeIndex]
             typeIndex = (typeIndex + 1)%allTypes.count
-            let profile = self.armorProfileBucket.grabProfile(areaTag: self.areaTags.getTag(), armorTag: tag, armorType: armorType)
+            let profile = self.armorProfileBucket.grabProfile(areaTag: self.regionTags.getTag(), armorTag: tag, armorType: armorType)
             let armor = method(profile, self.stage, armorType)
             self.profilesInUse[armor.id] = profile
             return armor

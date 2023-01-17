@@ -15,14 +15,14 @@ class FoeProfileBucket: Storable {
         self.profiles = ProfileRepository.profiles
     }
     
-    func grabProfile(areaTag: AreaProfileTag, foeTag: FoeProfileTag) -> FoeProfile {
+    func grabProfile(areaTag: RegionProfileTag, foeTag: FoeProfileTag) -> FoeProfile {
         let randomProfile = RandomProfile(prefix: "Foe")
         return FoeProfile(
             id: 0,
             foeName: randomProfile.name,
             foeDescription: randomProfile.description,
             foeTags: [],
-            areaTags: []
+            regionTags: []
         )
         
         var matchingIndices = [Int]()

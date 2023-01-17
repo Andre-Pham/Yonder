@@ -288,12 +288,12 @@
 		656FD89C2916EF1C00F923E9 /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD89B2916EF1C00F923E9 /* Storable.swift */; };
 		656FD8AD2916F09600F923E9 /* DataObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8AC2916F09600F923E9 /* DataObjectTests.swift */; };
 		656FD8AF2916F45100F923E9 /* DummyClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8AE2916F45100F923E9 /* DummyClasses.swift */; };
-		656FD8B229171E2F00F923E9 /* AreaProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8B129171E2F00F923E9 /* AreaProfile.swift */; };
-		656FD8B529171F0200F923E9 /* AreaProfileBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8B429171F0200F923E9 /* AreaProfileBucket.swift */; };
+		656FD8B229171E2F00F923E9 /* RegionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8B129171E2F00F923E9 /* RegionProfile.swift */; };
+		656FD8B529171F0200F923E9 /* RegionProfileBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8B429171F0200F923E9 /* RegionProfileBucket.swift */; };
 		656FD8B82917223100F923E9 /* MapPoolFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8B72917223100F923E9 /* MapPoolFactory.swift */; };
 		656FD8BA2917230B00F923E9 /* TerritoryPoolFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8B92917230B00F923E9 /* TerritoryPoolFactory.swift */; };
 		656FD8BC2917238D00F923E9 /* FoeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8BB2917238D00F923E9 /* FoeFactory.swift */; };
-		656FD8BE291724D000F923E9 /* AreaProfileTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8BD291724D000F923E9 /* AreaProfileTag.swift */; };
+		656FD8BE291724D000F923E9 /* RegionProfileTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8BD291724D000F923E9 /* RegionProfileTag.swift */; };
 		656FD8C02917CBD900F923E9 /* FoeProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8BF2917CBD900F923E9 /* FoeProfile.swift */; };
 		656FD8C22917CC3800F923E9 /* FoeProfileTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8C12917CC3800F923E9 /* FoeProfileTag.swift */; };
 		656FD8C42917CC7B00F923E9 /* FoeProfileBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8C32917CC7B00F923E9 /* FoeProfileBucket.swift */; };
@@ -302,7 +302,7 @@
 		656FD8CF291836F400F923E9 /* GoblinFoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8CE291836F400F923E9 /* GoblinFoe.swift */; };
 		656FD8D1291836FC00F923E9 /* BruteFoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8D0291836FC00F923E9 /* BruteFoe.swift */; };
 		656FD8D329183E8D00F923E9 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8D229183E8D00F923E9 /* Array.swift */; };
-		656FD8D529195E9800F923E9 /* AreaProfileTagAllocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8D429195E9800F923E9 /* AreaProfileTagAllocation.swift */; };
+		656FD8D529195E9800F923E9 /* RegionTagAllocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8D429195E9800F923E9 /* RegionTagAllocation.swift */; };
 		656FD8D72919673200F923E9 /* LootOptionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8D62919673200F923E9 /* LootOptionsFactory.swift */; };
 		656FD8DC2919B0D700F923E9 /* WeaponProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8DB2919B0D700F923E9 /* WeaponProfile.swift */; };
 		656FD8DE2919B15700F923E9 /* WeaponProfileTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD8DD2919B15700F923E9 /* WeaponProfileTag.swift */; };
@@ -430,6 +430,9 @@
 		65B13B0727C3440A00C012BE /* UseWeaponButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B13B0627C3440A00C012BE /* UseWeaponButton.swift */; };
 		65BD0E9C27A4EFC00054D345 /* TravelStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD0E9B27A4EFC00054D345 /* TravelStateManager.swift */; };
 		65BD0E9E27A4F1690054D345 /* OptionsStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD0E9D27A4F1680054D345 /* OptionsStateManager.swift */; };
+		65BD97E72976228100B1F63A /* Named.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD97E62976228100B1F63A /* Named.swift */; };
+		65BD97E92976228A00B1F63A /* Described.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD97E82976228A00B1F63A /* Described.swift */; };
+		65BD97EB297622A500B1F63A /* EffectsDescribed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD97EA297622A500B1F63A /* EffectsDescribed.swift */; };
 		65BF4BCB292DF67500199B05 /* DamageAndRestorationBasePill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BF4BCA292DF67500199B05 /* DamageAndRestorationBasePill.swift */; };
 		65BF4BCD292DF89800199B05 /* GrowDamageEffectPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BF4BCC292DF89800199B05 /* GrowDamageEffectPill.swift */; };
 		65BF4BD1292E212C00199B05 /* DamageRestorationSwapEffectPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BF4BD0292E212C00199B05 /* DamageRestorationSwapEffectPill.swift */; };
@@ -470,7 +473,6 @@
 		65D56C44280AC56200C6DF0D /* YonderTextSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D56C43280AC56200C6DF0D /* YonderTextSize.swift */; };
 		65D56C46280AC58600C6DF0D /* YonderText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D56C45280AC58600C6DF0D /* YonderText.swift */; };
 		65D56C48280AC61C00C6DF0D /* YonderNumeral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D56C47280AC61C00C6DF0D /* YonderNumeral.swift */; };
-		65D7A44B2779CB0800075542 /* UI Related.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D7A44A2779CB0800075542 /* UI Related.swift */; };
 		65D7A44D2779D64100075542 /* NoArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D7A44C2779D64100075542 /* NoArea.swift */; };
 		65D88C33274436E7002E3AC4 /* yonderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D88C32274436E7002E3AC4 /* yonderApp.swift */; };
 		65D88C35274436E7002E3AC4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D88C34274436E7002E3AC4 /* ContentView.swift */; };
@@ -519,7 +521,7 @@
 		65F91C9227DD14DC0095C3FD /* OfferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F91C9127DD14DC0095C3FD /* OfferViewModel.swift */; };
 		65F91C9A27E0FD130095C3FD /* PurchaseRestorationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F91C9927E0FD130095C3FD /* PurchaseRestorationButton.swift */; };
 		65FA30A52972308E0014403A /* AfterGameContextInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FA30A42972308E0014403A /* AfterGameContextInit.swift */; };
-		65FA30A72973323C0014403A /* AreaThemed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FA30A62973323C0014403A /* AreaThemed.swift */; };
+		65FA30A72973323C0014403A /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FA30A62973323C0014403A /* Region.swift */; };
 		65FDAFB8276E3EC0002FAEA4 /* LocationAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDAFB7276E3EC0002FAEA4 /* LocationAttributes.swift */; };
 /* End PBXBuildFile section */
 
@@ -824,12 +826,12 @@
 		656FD8A32916F04700F923E9 /* DataPersistenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataPersistenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		656FD8AC2916F09600F923E9 /* DataObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObjectTests.swift; sourceTree = "<group>"; };
 		656FD8AE2916F45100F923E9 /* DummyClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyClasses.swift; sourceTree = "<group>"; };
-		656FD8B129171E2F00F923E9 /* AreaProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfile.swift; sourceTree = "<group>"; };
-		656FD8B429171F0200F923E9 /* AreaProfileBucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfileBucket.swift; sourceTree = "<group>"; };
+		656FD8B129171E2F00F923E9 /* RegionProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionProfile.swift; sourceTree = "<group>"; };
+		656FD8B429171F0200F923E9 /* RegionProfileBucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionProfileBucket.swift; sourceTree = "<group>"; };
 		656FD8B72917223100F923E9 /* MapPoolFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPoolFactory.swift; sourceTree = "<group>"; };
 		656FD8B92917230B00F923E9 /* TerritoryPoolFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerritoryPoolFactory.swift; sourceTree = "<group>"; };
 		656FD8BB2917238D00F923E9 /* FoeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoeFactory.swift; sourceTree = "<group>"; };
-		656FD8BD291724D000F923E9 /* AreaProfileTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfileTag.swift; sourceTree = "<group>"; };
+		656FD8BD291724D000F923E9 /* RegionProfileTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionProfileTag.swift; sourceTree = "<group>"; };
 		656FD8BF2917CBD900F923E9 /* FoeProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoeProfile.swift; sourceTree = "<group>"; };
 		656FD8C12917CC3800F923E9 /* FoeProfileTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoeProfileTag.swift; sourceTree = "<group>"; };
 		656FD8C32917CC7B00F923E9 /* FoeProfileBucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoeProfileBucket.swift; sourceTree = "<group>"; };
@@ -838,7 +840,7 @@
 		656FD8CE291836F400F923E9 /* GoblinFoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoblinFoe.swift; sourceTree = "<group>"; };
 		656FD8D0291836FC00F923E9 /* BruteFoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BruteFoe.swift; sourceTree = "<group>"; };
 		656FD8D229183E8D00F923E9 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
-		656FD8D429195E9800F923E9 /* AreaProfileTagAllocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfileTagAllocation.swift; sourceTree = "<group>"; };
+		656FD8D429195E9800F923E9 /* RegionTagAllocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionTagAllocation.swift; sourceTree = "<group>"; };
 		656FD8D62919673200F923E9 /* LootOptionsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootOptionsFactory.swift; sourceTree = "<group>"; };
 		656FD8DB2919B0D700F923E9 /* WeaponProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponProfile.swift; sourceTree = "<group>"; };
 		656FD8DD2919B15700F923E9 /* WeaponProfileTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponProfileTag.swift; sourceTree = "<group>"; };
@@ -966,6 +968,9 @@
 		65B13B0627C3440A00C012BE /* UseWeaponButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseWeaponButton.swift; sourceTree = "<group>"; };
 		65BD0E9B27A4EFC00054D345 /* TravelStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelStateManager.swift; sourceTree = "<group>"; };
 		65BD0E9D27A4F1680054D345 /* OptionsStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsStateManager.swift; sourceTree = "<group>"; };
+		65BD97E62976228100B1F63A /* Named.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Named.swift; sourceTree = "<group>"; };
+		65BD97E82976228A00B1F63A /* Described.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Described.swift; sourceTree = "<group>"; };
+		65BD97EA297622A500B1F63A /* EffectsDescribed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsDescribed.swift; sourceTree = "<group>"; };
 		65BF4BCA292DF67500199B05 /* DamageAndRestorationBasePill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageAndRestorationBasePill.swift; sourceTree = "<group>"; };
 		65BF4BCC292DF89800199B05 /* GrowDamageEffectPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowDamageEffectPill.swift; sourceTree = "<group>"; };
 		65BF4BD0292E212C00199B05 /* DamageRestorationSwapEffectPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageRestorationSwapEffectPill.swift; sourceTree = "<group>"; };
@@ -1006,7 +1011,6 @@
 		65D56C43280AC56200C6DF0D /* YonderTextSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderTextSize.swift; sourceTree = "<group>"; };
 		65D56C45280AC58600C6DF0D /* YonderText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderText.swift; sourceTree = "<group>"; };
 		65D56C47280AC61C00C6DF0D /* YonderNumeral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderNumeral.swift; sourceTree = "<group>"; };
-		65D7A44A2779CB0800075542 /* UI Related.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI Related.swift"; sourceTree = "<group>"; };
 		65D7A44C2779D64100075542 /* NoArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoArea.swift; sourceTree = "<group>"; };
 		65D88C2F274436E7002E3AC4 /* yonder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yonder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D88C32274436E7002E3AC4 /* yonderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yonderApp.swift; sourceTree = "<group>"; };
@@ -1056,7 +1060,7 @@
 		65F91C9127DD14DC0095C3FD /* OfferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferViewModel.swift; sourceTree = "<group>"; };
 		65F91C9927E0FD130095C3FD /* PurchaseRestorationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseRestorationButton.swift; sourceTree = "<group>"; };
 		65FA30A42972308E0014403A /* AfterGameContextInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterGameContextInit.swift; sourceTree = "<group>"; };
-		65FA30A62973323C0014403A /* AreaThemed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaThemed.swift; sourceTree = "<group>"; };
+		65FA30A62973323C0014403A /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		65FDAFB7276E3EC0002FAEA4 /* LocationAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAttributes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1155,7 +1159,6 @@
 			children = (
 				65ADE147279F7EB90070C736 /* ObservableArray.swift */,
 				650AB49A2779C2350060617A /* DidSetPublished.swift */,
-				65D7A44A2779CB0800075542 /* UI Related.swift */,
 			);
 			path = "Model Protocols";
 			sourceTree = "<group>";
@@ -1714,7 +1717,7 @@
 				653DD72227F83EBE004A3B28 /* MapGenerator.swift */,
 				655146952747F3DF00257181 /* Segment.swift */,
 				65514699274A25A700257181 /* Territory.swift */,
-				65FA30A62973323C0014403A /* AreaThemed.swift */,
+				65FA30A62973323C0014403A /* Region.swift */,
 				651A955C276AB67A009C9A08 /* Areas */,
 				652EC1C02775949E00E81787 /* Boss Areas */,
 				654ADCEE2755765400373332 /* Locations */,
@@ -2023,10 +2026,10 @@
 		656FD8D82919B0AF00F923E9 /* Area */ = {
 			isa = PBXGroup;
 			children = (
-				656FD8B129171E2F00F923E9 /* AreaProfile.swift */,
-				656FD8B429171F0200F923E9 /* AreaProfileBucket.swift */,
-				656FD8BD291724D000F923E9 /* AreaProfileTag.swift */,
-				656FD8D429195E9800F923E9 /* AreaProfileTagAllocation.swift */,
+				656FD8B129171E2F00F923E9 /* RegionProfile.swift */,
+				656FD8B429171F0200F923E9 /* RegionProfileBucket.swift */,
+				656FD8BD291724D000F923E9 /* RegionProfileTag.swift */,
+				656FD8D429195E9800F923E9 /* RegionTagAllocation.swift */,
 			);
 			path = Area;
 			sourceTree = "<group>";
@@ -2287,6 +2290,7 @@
 		659BD2CD27E5F1820033C9E0 /* Model Layer */ = {
 			isa = PBXGroup;
 			children = (
+				65BD97E52976224A00B1F63A /* Non-functional */,
 				65986018296257EE0002AD0B /* Testing */,
 				654D728F29416C7000228643 /* Player Classes */,
 				651B7742293C1E3D00827CB5 /* Session */,
@@ -2508,6 +2512,16 @@
 				658EDF6428089EF300D398C0 /* PopupStateManager.swift */,
 			);
 			path = "State Managers";
+			sourceTree = "<group>";
+		};
+		65BD97E52976224A00B1F63A /* Non-functional */ = {
+			isa = PBXGroup;
+			children = (
+				65BD97E62976228100B1F63A /* Named.swift */,
+				65BD97E82976228A00B1F63A /* Described.swift */,
+				65BD97EA297622A500B1F63A /* EffectsDescribed.swift */,
+			);
+			path = "Non-functional";
 			sourceTree = "<group>";
 		};
 		65C2CDE12937B6EF0028DC9C /* Core */ = {
@@ -2943,7 +2957,7 @@
 				654D72A229416EDE00228643 /* DruidClass.swift in Sources */,
 				656FD8FE291B190B00F923E9 /* AccessoryProfileBucket.swift in Sources */,
 				654D729629416E5D00228643 /* WarriorClass.swift in Sources */,
-				65FA30A72973323C0014403A /* AreaThemed.swift in Sources */,
+				65FA30A72973323C0014403A /* Region.swift in Sources */,
 				6568F9A928788F3F00035865 /* AccessoryInspectView.swift in Sources */,
 				65275DFA2759C87A0087B118 /* ArmorPointsRestorationPercentBuff.swift in Sources */,
 				652EC1C2277594B100E81787 /* BossArea.swift in Sources */,
@@ -2998,6 +3012,7 @@
 				65C2CDE7293B57FF0028DC9C /* ImageResource.swift in Sources */,
 				65AAFE3A28CAF6A9004A8230 /* OnPlayerTravel.swift in Sources */,
 				65500E5D28642B3900A92CA2 /* WeaponBasePill.swift in Sources */,
+				65BD97E72976228100B1F63A /* Named.swift in Sources */,
 				656BEE9A28E0CE29001CE591 /* GoldBuff.swift in Sources */,
 				656FD927291DCDA800F923E9 /* RestoreOptionsAllocation.swift in Sources */,
 				65A3887F288B6799006541FB /* ActionsView.swift in Sources */,
@@ -3038,6 +3053,7 @@
 				65275DE2275954B90087B118 /* ChallengeHostileLocation.swift in Sources */,
 				6568F9B6287DF63700035865 /* LootOptions.swift in Sources */,
 				656FD910291C6F3A00F923E9 /* LootFactoryBundle.swift in Sources */,
+				65BD97E92976228A00B1F63A /* Described.swift in Sources */,
 				655146922747EF4900257181 /* Location.swift in Sources */,
 				6502C50C285986EE00029A22 /* NoItem.swift in Sources */,
 				65BF4BD5292E654800199B05 /* SelfDamageEffectPill.swift in Sources */,
@@ -3138,7 +3154,7 @@
 				65AAFE2B28C863A2004A8230 /* MultiplyGoldConsumable.swift in Sources */,
 				6595036927ED7AF100A24B7F /* PlayerInspectView.swift in Sources */,
 				6524D5252762D0BB00982091 /* LocationView.swift in Sources */,
-				656FD8B229171E2F00F923E9 /* AreaProfile.swift in Sources */,
+				656FD8B229171E2F00F923E9 /* RegionProfile.swift in Sources */,
 				65500E5F28642C2700A92CA2 /* DamageBasePill.swift in Sources */,
 				656F3C4B2944146A00CB706A /* AfterPlayerDeath.swift in Sources */,
 				656FD8EF291A4EC200F923E9 /* ArmorProfile.swift in Sources */,
@@ -3318,7 +3334,7 @@
 				65D499DE2931F1D50087DBA6 /* EquipmentPillEnhanceOffer.swift in Sources */,
 				6559BE9F27A17FDB004D520B /* RepeatColorAnimation.swift in Sources */,
 				653AD3B3277086860001A249 /* TerritoryPool.swift in Sources */,
-				656FD8BE291724D000F923E9 /* AreaProfileTag.swift in Sources */,
+				656FD8BE291724D000F923E9 /* RegionProfileTag.swift in Sources */,
 				650F5D3A2876E45900F84A17 /* InspectTimedEvents.swift in Sources */,
 				656FD90B291C6B6600F923E9 /* TavernAreaFactory.swift in Sources */,
 				6568F9C1287F392500035865 /* ArmorPointsRestorationSubscriber.swift in Sources */,
@@ -3330,7 +3346,6 @@
 				655C60AF28040BE3007B1E11 /* Purchasable.swift in Sources */,
 				65275DE6275955F10087B118 /* Enhancer.swift in Sources */,
 				6568F99728770F5500035865 /* ArmorType.swift in Sources */,
-				65D7A44B2779CB0800075542 /* UI Related.swift in Sources */,
 				655F98392869646A00A60806 /* IndicativeEffectsDescriptionView.swift in Sources */,
 				65814CEE27AABA0D0063B118 /* ItemViewModel.swift in Sources */,
 				653277462925A98500E03FA7 /* OnTurnStart.swift in Sources */,
@@ -3339,8 +3354,9 @@
 				6598739828D5D5B300BDFB8F /* PossibleIndicativeValue.swift in Sources */,
 				6553A0922781D5D100BC672F /* Line.swift in Sources */,
 				65D499DC2931EE6A0087DBA6 /* AccessoryHealthEnhanceOffer.swift in Sources */,
-				656FD8B529171F0200F923E9 /* AreaProfileBucket.swift in Sources */,
-				656FD8D529195E9800F923E9 /* AreaProfileTagAllocation.swift in Sources */,
+				65BD97EB297622A500B1F63A /* EffectsDescribed.swift in Sources */,
+				656FD8B529171F0200F923E9 /* RegionProfileBucket.swift in Sources */,
+				656FD8D529195E9800F923E9 /* RegionTagAllocation.swift in Sources */,
 				653277442925A97300E03FA7 /* OnCombatTurnEnd.swift in Sources */,
 				65DC5FBA28DC245700E5F904 /* WeaponHealthRestorationPercentBuff.swift in Sources */,
 				656FD93D292009F800F923E9 /* MaxHealthForArmorPointsOffer.swift in Sources */,

@@ -10,14 +10,14 @@ import Foundation
 class AccessoryFactory {
     
     private let stage: Int
-    private let areaTags: AreaProfileTagAllocation
+    private let regionTags: RegionTagAllocation
     private let accessoryProfileBucket: AccessoryProfileBucket
     private var accessorySupply = [Accessory]()
     private var profilesInUse = [UUID: AccessoryProfile]()
     
-    init(stage: Int, areaTags: AreaProfileTagAllocation, profileBucket: AccessoryProfileBucket) {
+    init(stage: Int, regionTags: RegionTagAllocation, profileBucket: AccessoryProfileBucket) {
         self.stage = stage
-        self.areaTags = areaTags
+        self.regionTags = regionTags
         self.accessoryProfileBucket = profileBucket
     }
     
@@ -191,7 +191,7 @@ class AccessoryFactory {
         accessories.populate(count: count) {
             let accessoryType: AccessoryType = (Random.roll(1, in: 5) ? .peripheral : .regular)
             let profile = self.accessoryProfileBucket.grabProfile(
-                areaTag: self.areaTags.getTag(),
+                areaTag: self.regionTags.getTag(),
                 accessoryTag: tag,
                 accessoryType: accessoryType
             )

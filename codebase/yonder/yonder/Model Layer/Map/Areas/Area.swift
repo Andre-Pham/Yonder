@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class Area: AreaThemed, Storable {
+class Area: Region, Storable {
     
     public let name: String
     public let description: String
@@ -20,14 +20,14 @@ class Area: AreaThemed, Storable {
     public let arrangement: AreaArrangements
     public let locations: [Location]
     public let id: UUID
-    public let tags: AreaProfileTagAllocation
+    public let tags: RegionTagAllocation
     
     init(
         arrangement: AreaArrangements,
         locations: [Location],
         name: String = "placeholderName",
         description: String = "placeholderDescription",
-        tags: AreaProfileTagAllocation,
+        tags: RegionTagAllocation,
         imageResource: ImageResource = YonderImages.placeholderImage
     ) {
         assert(locations.count == arrangement.locationCount, "Number of locations provided to generate Area doesn't match expected number for the arrangement")
@@ -66,7 +66,7 @@ class Area: AreaThemed, Storable {
         self.description = dataObject.get(Field.description.rawValue)
         self.imageResource = ImageResource(dataObject.get(Field.imageName.rawValue))
         self.arrangement = AreaArrangements(rawValue: dataObject.get(Field.arrangement.rawValue))!
-        self.tags = dataObject.getObject(Field.tags.rawValue, type: AreaProfileTagAllocation.self)
+        self.tags = dataObject.getObject(Field.tags.rawValue, type: RegionTagAllocation.self)
         self.locations = dataObject.getObjectArray(Field.locations.rawValue, type: LocationAbstract.self) as! [any Location]
         self.id = UUID(uuidString: dataObject.get(Field.id.rawValue))!
         
@@ -108,7 +108,7 @@ class Area: AreaThemed, Storable {
 
     // MARK: - Functions
     
-    func getAreaKey() -> String {
+    func getRegionKey() -> String {
         return self.id.uuidString
     }
     

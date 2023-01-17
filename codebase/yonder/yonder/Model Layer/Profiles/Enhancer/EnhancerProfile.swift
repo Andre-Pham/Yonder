@@ -12,13 +12,13 @@ class EnhancerProfile: AreaThemedProfile {
     public let id: Int
     public let enhancerName: String
     public let enhancerDescription: String
-    public let areaTags: [AreaProfileTag]
+    public let regionTags: [RegionProfileTag]
     
-    init(id: Int, enhancerName: String, enhancerDescription: String, areaTags: [AreaProfileTag]) {
+    init(id: Int, enhancerName: String, enhancerDescription: String, regionTags: [RegionProfileTag]) {
         self.id = id
         self.enhancerName = enhancerName
         self.enhancerDescription = enhancerDescription
-        self.areaTags = areaTags
+        self.regionTags = regionTags
     }
     
 }

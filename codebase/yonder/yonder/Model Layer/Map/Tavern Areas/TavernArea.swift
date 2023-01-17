@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TavernArea: AreaThemed, Storable {
+class TavernArea: Region, Storable {
     
     public let name: String
     public let description: String
@@ -17,12 +17,12 @@ class TavernArea: AreaThemed, Storable {
     private(set) var tipLocations = [Location]()
     public let arrangement: TavernAreaArrangements
     public let locations: [Location]
-    public let tags: AreaProfileTagAllocation
+    public let tags: RegionTagAllocation
     
     init(
         name: String,
         description: String,
-        tags: AreaProfileTagAllocation,
+        tags: RegionTagAllocation,
         imageResource: ImageResource,
         _ locations: Location...
     ) {
@@ -47,7 +47,7 @@ class TavernArea: AreaThemed, Storable {
         self.addRootAndTipLocations()
         self.generateAreaArrangement()
         for location in self.locations {
-            location.setContext(key: self.getAreaKey(), name: self.name, description: self.description, imageResource: self.imageResource)
+            location.setContext(key: self.getRegionKey(), name: self.name, description: self.description, imageResource: self.imageResource)
         }
     }
     
@@ -66,7 +66,7 @@ class TavernArea: AreaThemed, Storable {
     required init(dataObject: DataObject) {
         self.name = dataObject.get(Field.name.rawValue)
         self.description = dataObject.get(Field.description.rawValue)
-        self.tags = dataObject.getObject(Field.tags.rawValue, type: AreaProfileTagAllocation.self)
+        self.tags = dataObject.getObject(Field.tags.rawValue, type: RegionTagAllocation.self)
         self.imageResource = ImageResource(dataObject.get(Field.imageName.rawValue))
         self.arrangement = TavernAreaArrangements(rawValue: dataObject.get(Field.arrangement.rawValue)) ?? .S
         self.locations = dataObject.getObjectArray(Field.locations.rawValue, type: LocationAbstract.self) as! [any Location]
@@ -89,7 +89,7 @@ class TavernArea: AreaThemed, Storable {
 
     // MARK: - Functions
     
-    func getAreaKey() -> String {
+    func getRegionKey() -> String {
         return self.id.uuidString
     }
     

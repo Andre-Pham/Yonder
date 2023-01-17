@@ -12,15 +12,15 @@ class AccessoryProfile: AreaThemedProfile {
     public let id: Int
     public let accessoryName: String
     public let accessoryDescription: String
-    public let areaTags: [AreaProfileTag]
+    public let regionTags: [RegionProfileTag]
     public let accessoryTag: AccessoryProfileTag
     public let accessoryType: AccessoryType
     
-    init(id: Int, accessoryName: String, accessoryDescription: String, areaTags: [AreaProfileTag], accessoryTag: AccessoryProfileTag, accessoryType: AccessoryType) {
+    init(id: Int, accessoryName: String, accessoryDescription: String, regionTags: [RegionProfileTag], accessoryTag: AccessoryProfileTag, accessoryType: AccessoryType) {
         self.id = id
         self.accessoryName = accessoryName
         self.accessoryDescription = accessoryDescription
-        self.areaTags = areaTags
+        self.regionTags = regionTags
         self.accessoryTag = accessoryTag
         self.accessoryType = accessoryType
     }

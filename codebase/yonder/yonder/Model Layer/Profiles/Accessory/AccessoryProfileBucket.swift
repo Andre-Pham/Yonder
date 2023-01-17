@@ -15,13 +15,13 @@ class AccessoryProfileBucket: Storable {
         self.profiles = ProfileRepository.profiles
     }
     
-    func grabProfile(areaTag: AreaProfileTag, accessoryTag: AccessoryProfileTag, accessoryType: AccessoryType) -> AccessoryProfile {
+    func grabProfile(areaTag: RegionProfileTag, accessoryTag: AccessoryProfileTag, accessoryType: AccessoryType) -> AccessoryProfile {
         let randomProfile = RandomProfile(prefix: "Accessory")
         return AccessoryProfile(
             id: 0,
             accessoryName: randomProfile.name,
             accessoryDescription: randomProfile.description,
-            areaTags: [],
+            regionTags: [],
             accessoryTag: .everything,
             accessoryType: .regular
         )
@@ -73,7 +73,7 @@ fileprivate class ProfileRepository {
             
             // Note to self:
             // accessoryType should play a role in the profile, e.g. a shield would be a peripheral accessory, a ring would be a regular accessory
-            // areaTags are the areas that you could find this accessory in, e.g. "snow ring" would be odd to find in the firelands
+            // regionTags are the areas that you could find this accessory in, e.g. "snow ring" would be odd to find in the firelands
             // (I need to add an "all" option for area profile tags)
         ]
     }

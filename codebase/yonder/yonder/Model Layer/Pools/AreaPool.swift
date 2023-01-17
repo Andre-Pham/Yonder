@@ -23,7 +23,7 @@ class AreaPool {
     public let areaName: String
     public let areaDescription: String
     public let areaImageResource: ImageResource
-    public let tags: AreaProfileTagAllocation
+    public let tags: RegionTagAllocation
     public let id = UUID()
     private var hostileLocations: LocationCollection
     private var challengeHostileLocations: LocationCollection
@@ -32,7 +32,7 @@ class AreaPool {
     private var restorerLocations: LocationCollection
     private var friendlyLocations: LocationCollection
     
-    init(areaName: String, areaDescription: String, areaImageResource: ImageResource, tags: AreaProfileTagAllocation, hostileLocations: [HostileLocation], challengeHostileLocations: [ChallengeHostileLocation], shopLocations: [ShopLocation], enhancerLocations: [EnhancerLocation], restorerLocations: [RestorerLocation], friendlyLocations: [FriendlyLocation]) {
+    init(areaName: String, areaDescription: String, areaImageResource: ImageResource, tags: RegionTagAllocation, hostileLocations: [HostileLocation], challengeHostileLocations: [ChallengeHostileLocation], shopLocations: [ShopLocation], enhancerLocations: [EnhancerLocation], restorerLocations: [RestorerLocation], friendlyLocations: [FriendlyLocation]) {
         self.areaName = areaName
         self.areaDescription = areaDescription
         self.areaImageResource = areaImageResource

@@ -10,15 +10,15 @@ import Foundation
 class FoeFactory {
     
     private let stage: Int
-    private let areaTags: AreaProfileTagAllocation
+    private let regionTags: RegionTagAllocation
     private let foeProfileBucket: FoeProfileBucket
     private let lootOptionsFactory: LootOptionsFactory
     private var foeSupply = [Foe]()
     private var profilesInUse = [UUID: FoeProfile]()
     
-    init(stage: Int, areaTags: AreaProfileTagAllocation, profileBucket: FoeProfileBucket, lootFactoryBundle: LootFactoryBundle) {
+    init(stage: Int, regionTags: RegionTagAllocation, profileBucket: FoeProfileBucket, lootFactoryBundle: LootFactoryBundle) {
         self.stage = stage
-        self.areaTags = areaTags
+        self.regionTags = regionTags
         self.foeProfileBucket = profileBucket
         self.lootOptionsFactory = LootOptionsFactory(stage: stage, lootFactories: lootFactoryBundle)
     }
@@ -58,7 +58,7 @@ class FoeFactory {
         tag: FoeProfileTag
     ) {
         foes.populate(count: count) {
-            let profile = self.foeProfileBucket.grabProfile(areaTag: self.areaTags.getTag(), foeTag: tag)
+            let profile = self.foeProfileBucket.grabProfile(areaTag: self.regionTags.getTag(), foeTag: tag)
             let foe = method(profile, self.stage, self.lootOptionsFactory.deliver())
             self.profilesInUse[foe.id] = profile
             return foe

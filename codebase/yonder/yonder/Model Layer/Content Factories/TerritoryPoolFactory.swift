@@ -17,7 +17,7 @@ class TerritoryPoolFactory {
     private let enhancerProfileBucket = EnhancerProfileBucket()
     private let restorerProfileBucket = RestorerProfileBucket()
     private let friendlyProfileBucket = FriendlyProfileBucket()
-    private let areaProfileBucket = AreaProfileBucket()
+    private let areaProfileBucket = RegionProfileBucket()
     
     func deliver(stage: Int) -> TerritoryPool {
         var areaPools = [AreaPool]()

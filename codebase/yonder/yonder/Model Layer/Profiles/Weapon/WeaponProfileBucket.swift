@@ -15,13 +15,13 @@ class WeaponProfileBucket: Storable {
         self.profiles = ProfileRepository.profiles
     }
     
-    func grabProfile(areaTag: AreaProfileTag, weaponTag: WeaponProfileTag) -> WeaponProfile {
+    func grabProfile(areaTag: RegionProfileTag, weaponTag: WeaponProfileTag) -> WeaponProfile {
         let randomProfile = RandomProfile(prefix: "Weapon")
         return WeaponProfile(
             id: 0,
             weaponName: randomProfile.name,
             weaponDescription: randomProfile.description,
-            areaTags: [],
+            regionTags: [],
             weaponTags: []
         )
         

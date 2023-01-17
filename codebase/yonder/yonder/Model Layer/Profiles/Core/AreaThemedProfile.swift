@@ -9,13 +9,13 @@ import Foundation
 
 protocol AreaThemedProfile {
     
-    var areaTags: [AreaProfileTag] { get }
+    var regionTags: [RegionProfileTag] { get }
     
 }
 extension AreaThemedProfile {
     
-    func matchesAreaTag(_ areaTag: AreaProfileTag) -> Bool {
-        return self.areaTags.contains(where: { $0 == areaTag }) || self.areaTags.contains(where: { $0 == .all })
+    func matchesAreaTag(_ areaTag: RegionProfileTag) -> Bool {
+        return self.regionTags.contains(where: { $0 == areaTag }) || self.regionTags.contains(where: { $0 == .all })
     }
     
 }

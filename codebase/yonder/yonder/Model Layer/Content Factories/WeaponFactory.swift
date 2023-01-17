@@ -10,14 +10,14 @@ import Foundation
 class WeaponFactory {
     
     private let stage: Int
-    private let areaTags: AreaProfileTagAllocation
+    private let regionTags: RegionTagAllocation
     private let weaponProfileBucket: WeaponProfileBucket
     private var weaponSupply = [Weapon]()
     private var profilesInUse = [UUID: WeaponProfile]()
     
-    init(stage: Int, areaTags: AreaProfileTagAllocation, profileBucket: WeaponProfileBucket) {
+    init(stage: Int, regionTags: RegionTagAllocation, profileBucket: WeaponProfileBucket) {
         self.stage = stage
-        self.areaTags = areaTags
+        self.regionTags = regionTags
         self.weaponProfileBucket = profileBucket
     }
     
@@ -78,7 +78,7 @@ class WeaponFactory {
         tag: WeaponProfileTag
     ) {
         weapons.populate(count: count) {
-            let profile = self.weaponProfileBucket.grabProfile(areaTag: self.areaTags.getTag(), weaponTag: tag)
+            let profile = self.weaponProfileBucket.grabProfile(areaTag: self.regionTags.getTag(), weaponTag: tag)
             let weapon = method(profile, self.stage)
             self.profilesInUse[weapon.id] = profile
             return weapon

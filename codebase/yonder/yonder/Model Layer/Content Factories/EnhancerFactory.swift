@@ -10,16 +10,16 @@ import Foundation
 class EnhancerFactory {
     
     private let stage: Int
-    private let areaTags: AreaProfileTagAllocation
+    private let regionTags: RegionTagAllocation
     private let enhancerProfileBucket: EnhancerProfileBucket
     
-    init(stage: Int, areaTags: AreaProfileTagAllocation, enhancerProfileBucket: EnhancerProfileBucket) {
+    init(stage: Int, regionTags: RegionTagAllocation, enhancerProfileBucket: EnhancerProfileBucket) {
         self.stage = stage
-        self.areaTags = areaTags
+        self.regionTags = regionTags
         self.enhancerProfileBucket = enhancerProfileBucket
     }
     
-    private func buildEnhancer(stage: Int, tags: AreaProfileTagAllocation) -> Enhancer {
+    private func buildEnhancer(stage: Int, tags: RegionTagAllocation) -> Enhancer {
         let profile = self.enhancerProfileBucket.grabProfile(areaTag: tags.getTag())
         var offers = [EnhanceOffer]()
         let offerCount = Int.random(in: 2...4)
@@ -100,13 +100,13 @@ class EnhancerFactory {
     }
     
     func deliver() -> Enhancer {
-        return self.buildEnhancer(stage: self.stage, tags: self.areaTags)
+        return self.buildEnhancer(stage: self.stage, tags: self.regionTags)
     }
     
     func deliver(count: Int) -> [Enhancer] {
         var enhancers = [Enhancer]()
         enhancers.populate(count: count) {
-            self.buildEnhancer(stage: self.stage, tags: self.areaTags)
+            self.buildEnhancer(stage: self.stage, tags: self.regionTags)
         }
         return enhancers
     }

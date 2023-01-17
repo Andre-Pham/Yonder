@@ -10,15 +10,15 @@ import Foundation
 class FriendlyFactory {
     
     private let stage: Int
-    private let areaTags: AreaProfileTagAllocation
+    private let regionTags: RegionTagAllocation
     private let friendlyProfileBucket: FriendlyProfileBucket
     private let lootFactory: LootFactoryBundle
     private var friendlySupply = [Friendly]()
     private var profilesInUse = [UUID: FriendlyProfile]()
     
-    init(stage: Int, areaTags: AreaProfileTagAllocation, friendlyProfileBucket: FriendlyProfileBucket, lootFactory: LootFactoryBundle) {
+    init(stage: Int, regionTags: RegionTagAllocation, friendlyProfileBucket: FriendlyProfileBucket, lootFactory: LootFactoryBundle) {
         self.stage = stage
-        self.areaTags = areaTags
+        self.regionTags = regionTags
         self.friendlyProfileBucket = friendlyProfileBucket
         self.lootFactory = lootFactory
     }
@@ -62,7 +62,7 @@ class FriendlyFactory {
         tag: FriendlyProfileTag
     ) {
         friendlies.populate(count: count) {
-            method(self.friendlyProfileBucket.grabProfile(areaTag: self.areaTags.getTag(), friendlyTag: tag), self.stage)
+            method(self.friendlyProfileBucket.grabProfile(areaTag: self.regionTags.getTag(), friendlyTag: tag), self.stage)
         }
     }
     
@@ -73,7 +73,7 @@ class FriendlyFactory {
         tag: FriendlyProfileTag
     ) {
         friendlies.populate(count: count) {
-            let profile = self.friendlyProfileBucket.grabProfile(areaTag: self.areaTags.getTag(), friendlyTag: tag)
+            let profile = self.friendlyProfileBucket.grabProfile(areaTag: self.regionTags.getTag(), friendlyTag: tag)
             let friendly = method(profile, self.stage, self.lootFactory)
             self.profilesInUse[friendly.id] = profile
             return friendly

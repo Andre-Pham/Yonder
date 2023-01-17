@@ -13,14 +13,14 @@ class FoeProfile: AreaThemedProfile {
     public let foeName: String
     public let foeDescription: String
     public let foeTags: [FoeProfileTag]
-    public let areaTags: [AreaProfileTag]
+    public let regionTags: [RegionProfileTag]
     
-    init(id: Int, foeName: String, foeDescription: String, foeTags: [FoeProfileTag], areaTags: [AreaProfileTag]) {
+    init(id: Int, foeName: String, foeDescription: String, foeTags: [FoeProfileTag], regionTags: [RegionProfileTag]) {
         self.id = id
         self.foeName = foeName
         self.foeDescription = foeDescription
         self.foeTags = foeTags
-        self.areaTags = areaTags
+        self.regionTags = regionTags
     }
     
 }

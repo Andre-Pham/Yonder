@@ -11,17 +11,17 @@ class ShopKeeperFactory {
     
     private let lootFactories: LootFactoryBundle
     private let stage: Int
-    private let areaTags: AreaProfileTagAllocation
+    private let regionTags: RegionTagAllocation
     private let shopKeeperProfileBucket: ShopKeeperProfileBucket
     
-    init(stage: Int, areaTags: AreaProfileTagAllocation, shopKeeperBucket: ShopKeeperProfileBucket, lootFactories: LootFactoryBundle) {
+    init(stage: Int, regionTags: RegionTagAllocation, shopKeeperBucket: ShopKeeperProfileBucket, lootFactories: LootFactoryBundle) {
         self.stage = stage
-        self.areaTags = areaTags
+        self.regionTags = regionTags
         self.shopKeeperProfileBucket = shopKeeperBucket
         self.lootFactories = lootFactories
     }
     
-    private func buildShopKeeper(stage: Int, tags: AreaProfileTagAllocation) -> ShopKeeper {
+    private func buildShopKeeper(stage: Int, tags: RegionTagAllocation) -> ShopKeeper {
         let profile = self.shopKeeperProfileBucket.grabProfile(areaTag: tags.getTag())
         var purchasableItems = [PurchasableItem]()
         let purchasableItemCount = Int.random(in: 2...5)
@@ -51,13 +51,13 @@ class ShopKeeperFactory {
     }
     
     func deliver() -> ShopKeeper {
-        return self.buildShopKeeper(stage: self.stage, tags: self.areaTags)
+        return self.buildShopKeeper(stage: self.stage, tags: self.regionTags)
     }
     
     func deliver(count: Int) -> [ShopKeeper] {
         var shopKeepers = [ShopKeeper]()
         shopKeepers.populate(count: count) {
-            self.buildShopKeeper(stage: self.stage, tags: self.areaTags)
+            self.buildShopKeeper(stage: self.stage, tags: self.regionTags)
         }
         return shopKeepers
     }

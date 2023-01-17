@@ -9,17 +9,17 @@ import Foundation
 
 class AreaPoolFactory {
     
-    private let areaProfile: AreaProfile
+    private let areaProfile: RegionProfile
     
-    init(areaProfile: AreaProfile) {
+    init(areaProfile: RegionProfile) {
         self.areaProfile = areaProfile
     }
     
     func deliver() -> AreaPool {
         return AreaPool(
-            areaName: self.areaProfile.areaName,
-            areaDescription: self.areaProfile.areaDescription,
-            areaImageResource: self.areaProfile.areaImageResource,
+            areaName: self.areaProfile.regionName,
+            areaDescription: self.areaProfile.regionDescription,
+            areaImageResource: self.areaProfile.regionImageResource,
             tags: self.areaProfile.tags,
             hostileLocations: Array(count: 20, populateWith: HostileLocation()),
             challengeHostileLocations: Array(count: 20, populateWith: ChallengeHostileLocation()),

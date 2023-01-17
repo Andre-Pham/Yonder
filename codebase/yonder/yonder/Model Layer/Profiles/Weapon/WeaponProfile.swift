@@ -12,14 +12,14 @@ class WeaponProfile: AreaThemedProfile {
     public let id: Int
     public let weaponName: String
     public let weaponDescription: String
-    public let areaTags: [AreaProfileTag]
+    public let regionTags: [RegionProfileTag]
     public let weaponTags: [WeaponProfileTag]
     
-    init(id: Int, weaponName: String, weaponDescription: String, areaTags: [AreaProfileTag], weaponTags: [WeaponProfileTag]) {
+    init(id: Int, weaponName: String, weaponDescription: String, regionTags: [RegionProfileTag], weaponTags: [WeaponProfileTag]) {
         self.id = id
         self.weaponName = weaponName
         self.weaponDescription = weaponDescription
-        self.areaTags = areaTags
+        self.regionTags = regionTags
         self.weaponTags = weaponTags
     }
     

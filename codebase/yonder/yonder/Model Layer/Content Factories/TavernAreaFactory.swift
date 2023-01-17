@@ -9,10 +9,10 @@ import Foundation
 
 class TavernAreaFactory {
     
-    private let areaProfile: AreaProfile
+    private let areaProfile: RegionProfile
     private let stage: Int
     
-    init(areaProfile: AreaProfile, stage: Int) {
+    init(areaProfile: RegionProfile, stage: Int) {
         self.areaProfile = areaProfile
         self.stage = stage
     }
@@ -24,7 +24,7 @@ class TavernAreaFactory {
                 id: 0,
                 restorerName: Strings("restorer.tavern.name").local,
                 restorerDescription: Strings("restorer.tavern.description").local,
-                areaTags: [],
+                regionTags: [],
                 restoreOptions: []
             ),
             stage: self.stage,
@@ -42,20 +42,20 @@ class TavernAreaFactory {
         switch outcome {
         case .S:
             return TavernArea(
-                name: self.areaProfile.areaName,
-                description: self.areaProfile.areaDescription,
+                name: self.areaProfile.regionName,
+                description: self.areaProfile.regionDescription,
                 tags: self.areaProfile.tags,
-                imageResource: self.areaProfile.areaImageResource,
+                imageResource: self.areaProfile.regionImageResource,
                 RestorerLocation(restorer: restorer),
                 ShopLocation(shopKeeper: potionsShopKeeper),
                 EnhancerLocation()
             )
         case .M:
             return TavernArea(
-                name: self.areaProfile.areaName,
-                description: self.areaProfile.areaDescription,
+                name: self.areaProfile.regionName,
+                description: self.areaProfile.regionDescription,
                 tags: self.areaProfile.tags,
-                imageResource: self.areaProfile.areaImageResource,
+                imageResource: self.areaProfile.regionImageResource,
                 RestorerLocation(restorer: restorer),
                 ShopLocation(shopKeeper: potionsShopKeeper),
                 EnhancerLocation(),
@@ -63,10 +63,10 @@ class TavernAreaFactory {
             )
         case .L:
             return TavernArea(
-                name: self.areaProfile.areaName,
-                description: self.areaProfile.areaDescription,
+                name: self.areaProfile.regionName,
+                description: self.areaProfile.regionDescription,
                 tags: self.areaProfile.tags,
-                imageResource: self.areaProfile.areaImageResource,
+                imageResource: self.areaProfile.regionImageResource,
                 RestorerLocation(restorer: restorer),
                 ShopLocation(shopKeeper: potionsShopKeeper),
                 EnhancerLocation(),
@@ -75,10 +75,10 @@ class TavernAreaFactory {
             )
         case .XL:
             return TavernArea(
-                name: self.areaProfile.areaName,
-                description: self.areaProfile.areaDescription,
+                name: self.areaProfile.regionName,
+                description: self.areaProfile.regionDescription,
                 tags: self.areaProfile.tags,
-                imageResource: self.areaProfile.areaImageResource,
+                imageResource: self.areaProfile.regionImageResource,
                 RestorerLocation(restorer: restorer),
                 ShopLocation(shopKeeper: potionsShopKeeper),
                 EnhancerLocation(),

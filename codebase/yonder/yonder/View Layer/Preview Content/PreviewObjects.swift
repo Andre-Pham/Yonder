@@ -298,7 +298,7 @@ enum PreviewObjects {
             locations: Array(count: 19, populateWith: HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions()))),
             name: "Glacier Rifts",
             description: "placeholderDescription",
-            tags: AreaProfileTagAllocation(),
+            tags: RegionTagAllocation(),
             imageResource: YonderImages.placeholderImage
         )
     }

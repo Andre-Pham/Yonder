@@ -15,13 +15,13 @@ class ShopKeeperProfileBucket: Storable {
         self.profiles = ProfileRepository.profiles
     }
     
-    func grabProfile(areaTag: AreaProfileTag) -> ShopKeeperProfile {
+    func grabProfile(areaTag: RegionProfileTag) -> ShopKeeperProfile {
         let randomProfile = RandomProfile(prefix: "Shop Keeper")
         return ShopKeeperProfile(
             id: 0,
             shopKeeperName: randomProfile.name,
             shopKeeperDescription: randomProfile.description,
-            areaTags: []
+            regionTags: []
         )
         
         var matchingIndices = [Int]()

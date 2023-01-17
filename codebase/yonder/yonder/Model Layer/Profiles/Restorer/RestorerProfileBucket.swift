@@ -15,13 +15,13 @@ class RestorerProfileBucket: Storable {
         self.profiles = ProfileRepository.profiles
     }
     
-    func grabProfile(areaTag: AreaProfileTag, restoreOptions: [Restorer.RestoreOption]) -> RestorerProfile {
+    func grabProfile(areaTag: RegionProfileTag, restoreOptions: [Restorer.RestoreOption]) -> RestorerProfile {
         let randomProfile = RandomProfile(prefix: "Restorer")
         return RestorerProfile(
             id: 0,
             restorerName: randomProfile.name,
             restorerDescription: randomProfile.description,
-            areaTags: [],
+            regionTags: [],
             restoreOptions: []
         )
         

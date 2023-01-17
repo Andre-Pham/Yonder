@@ -15,13 +15,13 @@ class FriendlyProfileBucket: Storable {
         self.profiles = ProfileRepository.profiles
     }
     
-    func grabProfile(areaTag: AreaProfileTag, friendlyTag: FriendlyProfileTag) -> FriendlyProfile {
+    func grabProfile(areaTag: RegionProfileTag, friendlyTag: FriendlyProfileTag) -> FriendlyProfile {
         let randomProfile = RandomProfile(prefix: "Friendly")
         return FriendlyProfile(
             id: 0,
             friendlyName: randomProfile.name,
             friendlyDescription: randomProfile.description,
-            areaTags: [],
+            regionTags: [],
             friendlyTag: .sacrifice
         )
         

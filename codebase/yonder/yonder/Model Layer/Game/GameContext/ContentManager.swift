@@ -161,98 +161,98 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         self.resetFactories()
         let map = Game.gameContextAccess.map
         let territory = map.territoriesInOrder[newStage]
-        var areaThemed = [AreaThemed]()
-        areaThemed.append(contentsOf: territory.segment.allAreas)
-        areaThemed.append(territory.tavernArea)
-        for area in areaThemed {
+        var regions = [Region]()
+        regions.append(contentsOf: territory.segment.allAreas)
+        regions.append(territory.tavernArea)
+        for region in regions {
             // Regular
-            self.activeWeaponFactories[area.getAreaKey()] = WeaponFactory(
+            self.activeWeaponFactories[region.getRegionKey()] = WeaponFactory(
                 stage: newStage,
-                areaTags: area.tags,
+                regionTags: region.tags,
                 profileBucket: self.weaponProfileBucket
             )
             // Challenge
-            self.activeWeaponFactories[self.convertToChallengeKey(area.getAreaKey())] = WeaponFactory(
+            self.activeWeaponFactories[self.convertToChallengeKey(region.getRegionKey())] = WeaponFactory(
                 stage: newStage + 2,
-                areaTags: area.tags,
+                regionTags: region.tags,
                 profileBucket: self.weaponProfileBucket
             )
             // Regular
-            self.activePotionFactories[area.getAreaKey()] = PotionFactory(
+            self.activePotionFactories[region.getRegionKey()] = PotionFactory(
                 stage: newStage
             )
             // Challenge
-            self.activePotionFactories[self.convertToChallengeKey(area.getAreaKey())] = PotionFactory(
+            self.activePotionFactories[self.convertToChallengeKey(region.getRegionKey())] = PotionFactory(
                 stage: newStage + 2
             )
             // Regular
-            self.activeArmorFactories[area.getAreaKey()] = ArmorFactory(
+            self.activeArmorFactories[region.getRegionKey()] = ArmorFactory(
                 stage: newStage,
-                areaTags: area.tags,
+                regionTags: region.tags,
                 profileBucket: self.armorProfileBucket
             )
             // Challenge
-            self.activeArmorFactories[self.convertToChallengeKey(area.getAreaKey())] = ArmorFactory(
+            self.activeArmorFactories[self.convertToChallengeKey(region.getRegionKey())] = ArmorFactory(
                 stage: newStage + 2,
-                areaTags: area.tags,
+                regionTags: region.tags,
                 profileBucket: self.armorProfileBucket
             )
             // Regular
-            self.activeAccessoryFactories[area.getAreaKey()] = AccessoryFactory(
+            self.activeAccessoryFactories[region.getRegionKey()] = AccessoryFactory(
                 stage: newStage,
-                areaTags: area.tags,
+                regionTags: region.tags,
                 profileBucket: self.accessoryProfileBucket
             )
             // Challenge
-            self.activeAccessoryFactories[self.convertToChallengeKey(area.getAreaKey())] = AccessoryFactory(
+            self.activeAccessoryFactories[self.convertToChallengeKey(region.getRegionKey())] = AccessoryFactory(
                 stage: newStage + 2,
-                areaTags: area.tags,
+                regionTags: region.tags,
                 profileBucket: self.accessoryProfileBucket
             )
             // Regular
-            self.activeConsumableFactories[area.getAreaKey()] = ConsumableFactory(
+            self.activeConsumableFactories[region.getRegionKey()] = ConsumableFactory(
                 stage: newStage
             )
             // Challenge
-            self.activeConsumableFactories[self.convertToChallengeKey(area.getAreaKey())] = ConsumableFactory(
+            self.activeConsumableFactories[self.convertToChallengeKey(region.getRegionKey())] = ConsumableFactory(
                 stage: newStage + 2
             )
             // Regular
-            self.activeHostileFactories[area.getAreaKey()] = FoeFactory(
+            self.activeHostileFactories[region.getRegionKey()] = FoeFactory(
                 stage: newStage,
-                areaTags: area.tags,
+                regionTags: region.tags,
                 profileBucket: self.foeProfileBucket,
-                lootFactoryBundle: self.lootFactoryBundle(area.getAreaKey())
+                lootFactoryBundle: self.lootFactoryBundle(region.getRegionKey())
             )
             // Challenge
-            self.activeHostileFactories[self.convertToChallengeKey(area.getAreaKey())] = FoeFactory(
+            self.activeHostileFactories[self.convertToChallengeKey(region.getRegionKey())] = FoeFactory(
                 stage: newStage + 3,
-                areaTags: area.tags,
+                regionTags: region.tags,
                 profileBucket: self.foeProfileBucket,
-                lootFactoryBundle: self.lootFactoryBundle(self.convertToChallengeKey(area.getAreaKey()))
+                lootFactoryBundle: self.lootFactoryBundle(self.convertToChallengeKey(region.getRegionKey()))
             )
             // Interactors
-            self.activeShopKeeperFactories[area.getAreaKey()] = ShopKeeperFactory(
+            self.activeShopKeeperFactories[region.getRegionKey()] = ShopKeeperFactory(
                 stage: newStage,
-                areaTags: area.tags,
+                regionTags: region.tags,
                 shopKeeperBucket: self.shopKeeperProfileBucket,
-                lootFactories: self.lootFactoryBundle(area.getAreaKey())
+                lootFactories: self.lootFactoryBundle(region.getRegionKey())
             )
-            self.activeEnhancerFactories[area.getAreaKey()] = EnhancerFactory(
+            self.activeEnhancerFactories[region.getRegionKey()] = EnhancerFactory(
                 stage: newStage,
-                areaTags: area.tags,
+                regionTags: region.tags,
                 enhancerProfileBucket: self.enhancerProfileBucket
             )
-            self.activeRestorerFactories[area.getAreaKey()] = RestorerFactory(
+            self.activeRestorerFactories[region.getRegionKey()] = RestorerFactory(
                 stage: newStage,
-                areaTags: area.tags,
+                regionTags: region.tags,
                 restorerProfileBucket: self.restorerProfileBucket
             )
-            self.activeFriendlyFactories[area.getAreaKey()] = FriendlyFactory(
+            self.activeFriendlyFactories[region.getRegionKey()] = FriendlyFactory(
                 stage: newStage,
-                areaTags: area.tags,
+                regionTags: region.tags,
                 friendlyProfileBucket: self.friendlyProfileBucket,
-                lootFactory: self.lootFactoryBundle(area.getAreaKey())
+                lootFactory: self.lootFactoryBundle(region.getRegionKey())
             )
         }
     }

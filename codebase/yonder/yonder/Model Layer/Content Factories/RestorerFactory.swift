@@ -10,14 +10,14 @@ import Foundation
 class RestorerFactory {
     
     private let stage: Int
-    private let areaTags: AreaProfileTagAllocation
+    private let regionTags: RegionTagAllocation
     private let restorerProfileBucket: RestorerProfileBucket
     private var restorerSupply = [Restorer]()
     private var profilesInUse = [UUID: RestorerProfile]()
     
-    init(stage: Int, areaTags: AreaProfileTagAllocation, restorerProfileBucket: RestorerProfileBucket) {
+    init(stage: Int, regionTags: RegionTagAllocation, restorerProfileBucket: RestorerProfileBucket) {
         self.stage = stage
-        self.areaTags = areaTags
+        self.regionTags = regionTags
         self.restorerProfileBucket = restorerProfileBucket
     }
     
@@ -44,7 +44,7 @@ class RestorerFactory {
         count: Int
     ) {
         restorers.populate(count: count) {
-            let profile = self.restorerProfileBucket.grabProfile(areaTag: self.areaTags.getTag(), restoreOptions: restoreOptions)
+            let profile = self.restorerProfileBucket.grabProfile(areaTag: self.regionTags.getTag(), restoreOptions: restoreOptions)
             let restorer = Restorers.newRestorer(profile: profile, stage: self.stage, restoreOptions: restoreOptions)
             self.profilesInUse[restorer.id] = profile
             return restorer

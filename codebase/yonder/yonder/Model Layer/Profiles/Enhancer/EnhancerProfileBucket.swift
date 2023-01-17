@@ -15,13 +15,13 @@ class EnhancerProfileBucket: Storable {
         self.profiles = ProfileRepository.profiles
     }
     
-    func grabProfile(areaTag: AreaProfileTag) -> EnhancerProfile {
+    func grabProfile(areaTag: RegionProfileTag) -> EnhancerProfile {
         let randomProfile = RandomProfile(prefix: "Enhancer")
         return EnhancerProfile(
             id: 0,
             enhancerName: randomProfile.name,
             enhancerDescription: randomProfile.description,
-            areaTags: []
+            regionTags: []
         )
         
         var matchingIndices = [Int]()
