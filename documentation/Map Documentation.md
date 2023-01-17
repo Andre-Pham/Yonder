@@ -22,6 +22,8 @@ Bosses are found after every two Territories, and are followed by a Restorer to 
 
 The Map is a sequence of Territories (and bosses).
 
+Regions are any grouping of locations that presents a particular setting. This includes a background image, related enemies, related bosses, and related interators. Each area and tavern area are their own unique region.
+
 <img src="Assets/mapBreakdown.jpg" alt="mapBreakdown" width="40%" /> 
 
 #### Presentation
