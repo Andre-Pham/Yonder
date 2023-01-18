@@ -29,8 +29,7 @@ class Game: Storable {
     }
     
     static func new(playerClass: PlayerClassOption, map: Map) -> Game {
-        Self.instance = Game(playerClass: playerClass, map: map)
-        return Self.instance!
+        return Game(playerClass: playerClass, map: map)
     }
     
     // MARK: - Instance
@@ -43,6 +42,8 @@ class Game: Storable {
         self.map = map
         self.player = playerClass.createPlayer(at: self.map.startingLocation)
         self.gameContext = GameContext()
+        
+        Self.instance = self
     }
     
     // MARK: - Serialisation
@@ -57,6 +58,8 @@ class Game: Storable {
         self.map = dataObject.getObject(Field.map.rawValue, type: Map.self)
         self.player = dataObject.getObject(Field.player.rawValue, type: Player.self)
         self.gameContext = dataObject.getObject(Field.gameContext.rawValue, type: GameContext.self)
+        
+        Self.instance = self
     }
 
     func toDataObject() -> DataObject {
