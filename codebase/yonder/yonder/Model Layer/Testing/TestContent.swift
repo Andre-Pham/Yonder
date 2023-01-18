@@ -20,13 +20,13 @@ enum TestContent {
     static func testMap() -> Map {
         var territoryPools = [TerritoryPool]()
         var areaNumber = 0
-        territoryPools.populate(count: 6) {
+        territoryPools.populate(count: MapConfig.territoryCount) {
             let areaPools = [Self.testAreaPool(areaNumber + 1), Self.testAreaPool(areaNumber + 2)]
             areaNumber += 2
             return TerritoryPool(areaPools: areaPools, tavernAreas: [Self.testTavernArea()])
         }
         var bossAreaPools = [BossAreaPool]()
-        bossAreaPools.populate(count: 3) {
+        bossAreaPools.populate(count: MapConfig.bossCount) {
             let bossLocations = [BossLocation(boss: Self.testBoss()), BossLocation(boss: Self.testBoss())]
             return BossAreaPool(bossLocations: bossLocations, restorerLocations: [RestorerLocation(restorer: Self.testRestorer())])
         }
