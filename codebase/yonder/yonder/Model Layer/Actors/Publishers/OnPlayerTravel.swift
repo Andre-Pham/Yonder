@@ -16,8 +16,11 @@ class OnPlayerTravelPublisher {
     }
     
     static func publish(player: Player, newLocation: Location) {
-        for sub in Self.subscribers {
-            sub.value?.onPlayerTravel(player: player, newLocation: newLocation)
+        // We don't use a for loop because if new subscribers are added while this is being run they should also trigger
+        var subIndex = 0
+        while subIndex < Self.subscribers.count {
+            Self.subscribers[subIndex].value?.onPlayerTravel(player: player, newLocation: newLocation)
+            subIndex += 1
         }
     }
     
