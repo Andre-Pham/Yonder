@@ -13,9 +13,10 @@ class Segment: Storable {
     private(set) var rightArea: Area
     private(set) var bridgeLocation: BridgeLocation
     public var allAreas: [Area] {
-        get {
-            return [self.leftArea, self.rightArea]
-        }
+        return [self.leftArea, self.rightArea]
+    }
+    public var allLocations: [Location] {
+        return self.leftArea.locations + self.rightArea.locations + [self.bridgeLocation]
     }
     
     init(leftArea: Area, rightArea: Area) {

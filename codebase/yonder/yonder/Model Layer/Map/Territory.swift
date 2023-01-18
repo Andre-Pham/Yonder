@@ -13,6 +13,9 @@ class Territory: Storable {
     private(set) var tavernArea: TavernArea
     public let rootLocations: [Location]
     public let tipLocations: [Location]
+    var allLocations: [Location] {
+        return self.segment.allLocations + self.tavernArea.locations
+    }
     
     init(segment: Segment, followingTavernArea: TavernArea) {
         self.segment = segment
