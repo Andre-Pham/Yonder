@@ -37,6 +37,7 @@ class PlayerStageManager: OnPlayerTravelSubscriber, Storable {
         // - Stage changes only occur specifically when crossing into the next territory via its root location
         // - Doesn't allow for skipping territories, making testing more difficult
         // - If the player is ever able to "jump" locations, this becomes very problematic
+        // - Can't go backwards in stage
         /*let map = Game.gameContextAccess.map
         let territory = map.territoriesInOrder[self.stage + 1]
         if territory.rootLocations.contains(where: { $0.id == newLocation.id }) {
