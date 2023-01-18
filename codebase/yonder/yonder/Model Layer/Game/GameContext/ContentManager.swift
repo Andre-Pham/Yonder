@@ -9,23 +9,6 @@ import Foundation
 
 class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscriber, AfterGameContextInitSubscriber {
     
-    // TODO:
-    // 1. Add recycleProfiles to the remaining factories/buckets (refer to what i've done with WeaponFactory)
-    // 2. Make all context classes storable and then finish making GameContext storable
-    // 3. I need to update all the locations to implement their initContent methods and make them start with nil content
-    // 4. I'll need to implement tavern areas and boss area locations and warp locations receiving a LocationContext
-    // 5. I need to update how the MapPoolFactory and its dependencies generate the map now that factories aren't needed during this process
-        // UP TO:
-    // 6. When everything is working, go through every edited file and make sure it is serialising correctly
-    // 7. Go through all files and start serialising the id of objects - this should be the new standard
-    // (Things get too messy if we don't serialise the id and then later we need it to remain persistent)
-    // NOTE: when saving/restoring this, don't serialise all the content factories. just call self.resetFactories then serialise the buckets. this also has the added bonus of not requiring stuff like weapons to serialise their id.
-    // 8. Go through the content bundles and such and see which aren't being used
-    // 9. Refactor everything and clean up. AreaThemed and AreaProfileTagAllocation are misleading names
-    // (Also add documentation)
-    // (Also draw a diagram of the flow of everything and add it to the documentation)
-    // (AreaProfiles aren't just used for Areas for they should be given a new name)
-    
     private let accessoryProfileBucket: AccessoryProfileBucket
     private let armorProfileBucket: ArmorProfileBucket
     private let weaponProfileBucket: WeaponProfileBucket

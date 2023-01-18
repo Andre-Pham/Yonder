@@ -432,6 +432,7 @@
 		65BD97E72976228100B1F63A /* Named.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD97E62976228100B1F63A /* Named.swift */; };
 		65BD97E92976228A00B1F63A /* Described.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD97E82976228A00B1F63A /* Described.swift */; };
 		65BD97EB297622A500B1F63A /* EffectsDescribed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD97EA297622A500B1F63A /* EffectsDescribed.swift */; };
+		65BD97ED297629C000B1F63A /* LocationConnectionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD97EC297629C000B1F63A /* LocationConnectionGenerator.swift */; };
 		65BF4BCB292DF67500199B05 /* DamageAndRestorationBasePill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BF4BCA292DF67500199B05 /* DamageAndRestorationBasePill.swift */; };
 		65BF4BCD292DF89800199B05 /* GrowDamageEffectPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BF4BCC292DF89800199B05 /* GrowDamageEffectPill.swift */; };
 		65BF4BD1292E212C00199B05 /* DamageRestorationSwapEffectPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BF4BD0292E212C00199B05 /* DamageRestorationSwapEffectPill.swift */; };
@@ -969,6 +970,7 @@
 		65BD97E62976228100B1F63A /* Named.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Named.swift; sourceTree = "<group>"; };
 		65BD97E82976228A00B1F63A /* Described.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Described.swift; sourceTree = "<group>"; };
 		65BD97EA297622A500B1F63A /* EffectsDescribed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsDescribed.swift; sourceTree = "<group>"; };
+		65BD97EC297629C000B1F63A /* LocationConnectionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationConnectionGenerator.swift; sourceTree = "<group>"; };
 		65BF4BCA292DF67500199B05 /* DamageAndRestorationBasePill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageAndRestorationBasePill.swift; sourceTree = "<group>"; };
 		65BF4BCC292DF89800199B05 /* GrowDamageEffectPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowDamageEffectPill.swift; sourceTree = "<group>"; };
 		65BF4BD0292E212C00199B05 /* DamageRestorationSwapEffectPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageRestorationSwapEffectPill.swift; sourceTree = "<group>"; };
@@ -1249,6 +1251,7 @@
 			children = (
 				652567C2279070A7001DC79B /* LocationConnection.swift */,
 				65D14FA827936F54005C67A2 /* GridDimensions.swift */,
+				65BD97EC297629C000B1F63A /* LocationConnectionGenerator.swift */,
 			);
 			path = "Map Data";
 			sourceTree = "<group>";
@@ -3351,6 +3354,7 @@
 				6598739828D5D5B300BDFB8F /* PossibleIndicativeValue.swift in Sources */,
 				6553A0922781D5D100BC672F /* Line.swift in Sources */,
 				65D499DC2931EE6A0087DBA6 /* AccessoryHealthEnhanceOffer.swift in Sources */,
+				65BD97ED297629C000B1F63A /* LocationConnectionGenerator.swift in Sources */,
 				65BD97EB297622A500B1F63A /* EffectsDescribed.swift in Sources */,
 				656FD8B529171F0200F923E9 /* RegionProfileBucket.swift in Sources */,
 				656FD8D529195E9800F923E9 /* RegionTagAllocation.swift in Sources */,
