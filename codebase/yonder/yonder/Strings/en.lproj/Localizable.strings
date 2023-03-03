@@ -120,6 +120,11 @@
 "inspect.accessorySlotSelection.description" = "Select which accessory slot to insert the accessory.";
 "inspect.accessorySlotSelection.header" = "Accessory Slot Options";
 
+// Confirm Armor Equip
+"inspect.armorEquip.title" = "Confirm Armor Equip";
+"inspect.armorEquip.currentlyEquipped" = "Currently equipped:";
+"inspect.armorEquip.replacingWith" = "Replacing with:";
+
 // Restorer
 "inspect.restorer.for" = "for";
 

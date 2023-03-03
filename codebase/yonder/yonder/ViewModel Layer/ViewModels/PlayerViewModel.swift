@@ -319,4 +319,15 @@ class PlayerViewModel: ActorViewModel {
         self.player.setLoot(to: nil)
     }
     
+    func getArmorViewModel(matching type: ArmorType) -> ArmorViewModel {
+        switch type {
+        case .head:
+            return self.headArmorViewModel
+        case .body:
+            return self.bodyArmorViewModel
+        case .legs:
+            return self.legsArmorViewModel
+        }
+    }
+    
 }

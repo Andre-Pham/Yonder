@@ -13,6 +13,7 @@ struct LootArmorButton: View {
     @ObservedObject var lootBagViewModel: LootBagViewModel
     var pageGeometry: GeometryProxy
     @State private var inspectActive = false
+    @State private var equipArmorSheetActive = false
     
     var body: some View {
         LootButton(
@@ -20,7 +21,7 @@ struct LootArmorButton: View {
             collectText: Strings("button.equip").local,
             infoButton: true
         ) {
-            self.lootBagViewModel.collectArmor(armorViewModel: self.armorViewModel, playerViewModel: self.playerViewModel)
+            self.equipArmorSheetActive = true
         } onInfo: {
             self.inspectActive = true
         }
@@ -29,6 +30,25 @@ struct LootArmorButton: View {
             pageGeometry: self.pageGeometry,
             content: AnyView(
                 ArmorInspectView(armorViewModel: self.armorViewModel)
+            )
+        )
+        .withInspectSheet(
+            isPresented: self.$equipArmorSheetActive,
+            pageGeometry: self.pageGeometry,
+            content: AnyView(
+                EquipArmorView(
+                    playerViewModel: self.playerViewModel,
+                    armorViewModel: self.armorViewModel
+                ) { confirmEquip in
+                    if confirmEquip {
+                        self.lootBagViewModel.collectArmor(
+                            armorViewModel: self.armorViewModel,
+                            playerViewModel: self.playerViewModel
+                        )
+                    } else {
+                        self.equipArmorSheetActive = false
+                    }
+                }
             )
         )
     }
