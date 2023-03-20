@@ -22,12 +22,14 @@ struct MainView: View {
                     .environmentObject(self.viewRouter)
                     .environmentObject(self.travelStateManager)
                 
+                // Top black bar so content isn't shown around the notch
                 VStack {
                     YonderColors.backgroundMaxDepth
                         .frame(
                             width: geo.size.width,
                             height: geo.safeAreaInsets.top,
-                            alignment: .top)
+                            alignment: .top
+                        )
                         .ignoresSafeArea()
                     
                     Spacer()

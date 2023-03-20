@@ -14,6 +14,7 @@ struct LootAccessoryButton: View {
     var pageGeometry: GeometryProxy
     @State private var inspectActive = false
     @State private var accessorySelectionSheetActive = false
+    @State private var equipPeripheralAccessorySheetActive = false
     
     var body: some View {
         LootButton(
@@ -22,7 +23,7 @@ struct LootAccessoryButton: View {
             infoButton: true
         ) {
             if self.accessoryViewModel.isPeripheral {
-                self.lootBagViewModel.collectAccessory(accessoryViewModel: self.accessoryViewModel, replacing: nil, playerViewModel: self.playerViewModel)
+                self.equipPeripheralAccessorySheetActive = true
             } else {
                 self.accessorySelectionSheetActive = true
             }
@@ -44,6 +45,24 @@ struct LootAccessoryButton: View {
                     self.lootBagViewModel.collectAccessory(accessoryViewModel: self.accessoryViewModel, replacing: selection, playerViewModel: self.playerViewModel)
                 }
         ))
+        .withInspectSheet(
+            isPresented: self.$equipPeripheralAccessorySheetActive,
+            pageGeometry: self.pageGeometry,
+            content: AnyView(
+                EquipPeripheralAccessoryView(
+                    playerViewModel: self.playerViewModel,
+                    accessoryViewModel: self.accessoryViewModel) { confirmEquip in
+                        if confirmEquip {
+                            self.lootBagViewModel.collectAccessory(
+                                accessoryViewModel: self.accessoryViewModel,
+                                replacing: nil,
+                                playerViewModel: self.playerViewModel
+                            )
+                        }
+                        self.equipPeripheralAccessorySheetActive = false
+                    }
+            )
+        )
     }
 }
 

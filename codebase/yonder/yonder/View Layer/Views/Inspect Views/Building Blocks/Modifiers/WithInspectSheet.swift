@@ -50,8 +50,7 @@ struct InspectSheet<Content: View>: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 content()
-                    .padding(.top)
-                    .padding(.horizontal)
+                    .padding()
             }
             .frame(
                 width: self.pageGeometry.size.width-YonderCoreGraphics.padding*4,

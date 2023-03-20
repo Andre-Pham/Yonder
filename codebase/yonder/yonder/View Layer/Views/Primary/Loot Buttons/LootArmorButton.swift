@@ -45,9 +45,8 @@ struct LootArmorButton: View {
                             armorViewModel: self.armorViewModel,
                             playerViewModel: self.playerViewModel
                         )
-                    } else {
-                        self.equipArmorSheetActive = false
                     }
+                    self.equipArmorSheetActive = false
                 }
             )
         )

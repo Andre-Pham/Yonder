@@ -1,5 +1,5 @@
 //
-//  EquipArmorView.swift
+//  EquipPeripheralAccessoryView.swift
 //  yonder
 //
 //  Created by Andre Pham on 3/3/2023.
@@ -7,28 +7,28 @@
 
 import SwiftUI
 
-struct EquipArmorView: View {
+struct EquipPeripheralAccessoryView: View {
     @ObservedObject var playerViewModel: PlayerViewModel
-    @ObservedObject var armorViewModel: ArmorViewModel
+    @ObservedObject var accessoryViewModel: AccessoryViewModel
     @Environment(\.dismiss) private var dismiss
     let onConfirm: (_ equip: Bool) -> Void
     
     var body: some View {
         InspectBody {
-            YonderText(text: Strings("inspect.equip.armor.title").local, size: .inspectSheetTitle)
+            YonderText(text: Strings("inspect.equip.peripheralAccessory.title").local, size: .inspectSheetTitle)
             
             InspectSectionSpacingView()
             
             YonderText(text: Strings("inspect.equip.currentlyEquipped").local, size: .inspectSheetBody)
             
-            ArmorInspectView(armorViewModel: self.playerViewModel.getArmorViewModel(matching: self.armorViewModel.type))
+            AccessoryInspectView(accessoryViewModel: self.playerViewModel.peripheralAccessoryViewModel)
                 .embeddedInspectBorder()
     
             InspectSectionSpacingView()
             
             YonderText(text: Strings("inspect.equip.replacingWith").local, size: .inspectSheetBody)
             
-            ArmorInspectView(armorViewModel: self.armorViewModel)
+            AccessoryInspectView(accessoryViewModel: self.accessoryViewModel)
                 .embeddedInspectBorder()
             
             InspectSectionSpacingView()
@@ -44,14 +44,14 @@ struct EquipArmorView: View {
     }
 }
 
-struct EquipArmorView_Previews: PreviewProvider {
+struct EquipPeripheralAccessoryView_Previews: PreviewProvider {
     static var previews: some View {
         PreviewContentView {
-            EquipArmorView(
+            EquipPeripheralAccessoryView(
                 playerViewModel: PreviewObjects.playerViewModel,
-                armorViewModel: PreviewObjects.armorViewModel
-            ) { equipArmor in
-                print("Player wants to equip: \(equipArmor)")
+                accessoryViewModel: PreviewObjects.peripheralAccessoryViewModel
+            ) { equipAccessory in
+                print("Player wants to equip: \(equipAccessory)")
             }
         }
     }
