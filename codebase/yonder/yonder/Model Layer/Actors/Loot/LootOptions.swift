@@ -36,12 +36,14 @@ class LootOptions: Storable {
         case option1
         case option2
         case option3
+        case isLooted
     }
 
     required init(dataObject: DataObject) {
         self.option1 = dataObject.getObject(Field.option1.rawValue, type: LootBag.self)
         self.option2 = dataObject.getObject(Field.option2.rawValue, type: LootBag.self)
         self.option3 = dataObject.getObject(Field.option3.rawValue, type: LootBag.self)
+        self.isLooted = dataObject.get(Field.isLooted.rawValue, onFail: false)
     }
 
     func toDataObject() -> DataObject {
@@ -49,6 +51,7 @@ class LootOptions: Storable {
             .add(key: Field.option1.rawValue, value: self.option1)
             .add(key: Field.option2.rawValue, value: self.option2)
             .add(key: Field.option3.rawValue, value: self.option3)
+            .add(key: Field.isLooted.rawValue, value: self.isLooted)
     }
 
     // MARK: - Functions
