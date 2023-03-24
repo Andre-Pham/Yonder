@@ -1,0 +1,8 @@
+{
+    "name": "Tribal Venom Brew",
+    "description": "",
+    "faction": null,
+    "type": "forest",
+    "brute": false,
+    "thief": true
+}

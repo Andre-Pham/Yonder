@@ -1,0 +1,8 @@
+{
+    "name": "Shadow Snatcher",
+    "description": "",
+    "faction": 4,
+    "type": "",
+    "brute": false,
+    "thief": true
+}

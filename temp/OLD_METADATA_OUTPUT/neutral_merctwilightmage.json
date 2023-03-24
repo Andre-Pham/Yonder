@@ -1,0 +1,8 @@
+{
+    "name": "Dune Scavenger",
+    "description": "",
+    "faction": null,
+    "type": "desert",
+    "brute": false,
+    "thief": false
+}

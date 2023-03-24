@@ -1,0 +1,8 @@
+{
+    "name": "Redshift Killer",
+    "description": "",
+    "faction": null,
+    "type": "assassin",
+    "brute": false,
+    "thief": false
+}

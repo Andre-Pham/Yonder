@@ -1,0 +1,8 @@
+{
+    "name": "Flamebound",
+    "description": "",
+    "faction": null,
+    "type": "nether",
+    "brute": false,
+    "thief": true
+}

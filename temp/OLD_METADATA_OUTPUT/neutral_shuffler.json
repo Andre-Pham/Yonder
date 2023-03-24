@@ -1,0 +1,8 @@
+{
+    "name": "Arcane Shuffler",
+    "description": "",
+    "faction": null,
+    "type": "dungeon",
+    "brute": false,
+    "thief": false
+}

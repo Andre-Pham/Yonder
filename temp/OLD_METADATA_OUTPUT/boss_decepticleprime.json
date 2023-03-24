@@ -1,0 +1,8 @@
+{
+    "name": "Decepticle Prime",
+    "description": "",
+    "faction": null,
+    "type": "mech",
+    "brute": false,
+    "thief": false
+}

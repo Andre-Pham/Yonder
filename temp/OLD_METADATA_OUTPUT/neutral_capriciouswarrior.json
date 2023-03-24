@@ -1,0 +1,8 @@
+{
+    "name": "Capricious Warrior",
+    "description": "",
+    "faction": null,
+    "type": "dungeon",
+    "brute": false,
+    "thief": false
+}

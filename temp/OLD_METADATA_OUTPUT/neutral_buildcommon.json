@@ -1,0 +1,8 @@
+{
+    "name": "Nightwatch",
+    "description": "",
+    "faction": null,
+    "type": "none",
+    "brute": false,
+    "thief": true
+}

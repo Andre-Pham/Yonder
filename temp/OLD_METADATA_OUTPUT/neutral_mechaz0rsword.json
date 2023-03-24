@@ -1,0 +1,8 @@
+{
+    "name": "Sword Slash",
+    "description": "",
+    "faction": null,
+    "type": "mech",
+    "brute": false,
+    "thief": true
+}

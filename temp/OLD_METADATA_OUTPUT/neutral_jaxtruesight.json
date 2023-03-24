@@ -1,0 +1,8 @@
+{
+    "name": "Jaxi Shadowmaster",
+    "description": "",
+    "faction": null,
+    "type": "shadow",
+    "brute": false,
+    "thief": true
+}

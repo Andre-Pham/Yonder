@@ -1,0 +1,8 @@
+{
+    "name": "Dancing Blades",
+    "description": "",
+    "faction": null,
+    "type": "dungeon",
+    "brute": false,
+    "thief": false
+}

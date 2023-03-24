@@ -1,0 +1,8 @@
+{
+    "name": "Brutehorn Basher",
+    "description": "",
+    "faction": null,
+    "type": "dungeon",
+    "brute": true,
+    "thief": null
+}

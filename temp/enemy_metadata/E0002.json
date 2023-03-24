@@ -1,0 +1,11 @@
+{
+    "id": "E0002",
+    "code": "boss_antiswarm",
+    "name": "Antiswarm",
+    "description": "",
+    "type": "frost",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

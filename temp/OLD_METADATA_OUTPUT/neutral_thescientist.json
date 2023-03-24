@@ -1,0 +1,8 @@
+{
+    "name": "Prisim Master",
+    "description": "",
+    "faction": null,
+    "type": "dungeon",
+    "brute": false,
+    "thief": false
+}

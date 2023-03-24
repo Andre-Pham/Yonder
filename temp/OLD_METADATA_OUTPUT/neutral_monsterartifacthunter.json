@@ -1,0 +1,8 @@
+{
+    "name": "Flamegrinch",
+    "description": "",
+    "faction": null,
+    "type": "nether",
+    "brute": false,
+    "thief": true
+}

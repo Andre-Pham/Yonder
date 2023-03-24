@@ -1,0 +1,8 @@
+{
+    "name": "Quickmetal",
+    "description": "",
+    "faction": null,
+    "type": "mech",
+    "brute": false,
+    "thief": true
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Dex Cub",
+    "description": "",
+    "faction": null,
+    "type": "forest",
+    "brute": false,
+    "thief": true
+}

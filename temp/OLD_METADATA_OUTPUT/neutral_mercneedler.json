@@ -1,0 +1,8 @@
+{
+    "name": "Needlespine Hunter",
+    "description": "",
+    "faction": null,
+    "type": "forest",
+    "brute": false,
+    "thief": true
+}

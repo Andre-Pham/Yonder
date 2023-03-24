@@ -1,0 +1,8 @@
+{
+    "name": "Whitewidow",
+    "description": "",
+    "faction": null,
+    "type": "assassin",
+    "brute": false,
+    "thief": true
+}

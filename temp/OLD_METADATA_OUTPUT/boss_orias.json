@@ -1,0 +1,8 @@
+{
+    "name": "Orias",
+    "description": "",
+    "faction": null,
+    "type": "dungeon",
+    "brute": false,
+    "thief": false
+}

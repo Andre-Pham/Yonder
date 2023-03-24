@@ -1,0 +1,8 @@
+{
+    "name": "Arcane Guardian",
+    "description": "",
+    "faction": null,
+    "type": "arcane",
+    "brute": true,
+    "thief": null
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Dark Nemesis",
+    "description": "",
+    "faction": null,
+    "type": "dungeon",
+    "brute": true,
+    "thief": null
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Shadowspawn",
+    "description": "",
+    "faction": null,
+    "type": "shadow",
+    "brute": false,
+    "thief": true
+}

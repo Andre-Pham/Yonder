@@ -1,0 +1,8 @@
+{
+    "name": "Shadow-Wing",
+    "description": "",
+    "faction": null,
+    "type": "shadow",
+    "brute": false,
+    "thief": true
+}

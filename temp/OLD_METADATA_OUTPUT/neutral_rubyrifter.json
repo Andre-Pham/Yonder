@@ -1,0 +1,8 @@
+{
+    "name": "Rubyrift",
+    "description": "",
+    "faction": null,
+    "type": "assassin",
+    "brute": false,
+    "thief": false
+}

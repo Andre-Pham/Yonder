@@ -1,0 +1,11 @@
+{
+    "id": "E0001",
+    "code": "boss_andromeda",
+    "name": "Andromeda",
+    "description": "",
+    "type": "shadow",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Shadowflame Skullmage",
+    "description": "",
+    "faction": null,
+    "type": "dungeon",
+    "brute": false,
+    "thief": true
+}
