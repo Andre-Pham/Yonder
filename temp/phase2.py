@@ -41,7 +41,7 @@ class NPCMetadata:
         self.brute = None
         self.thief = None
 
-absolute = os.getcwd()
+absolute = os.path.dirname(os.path.realpath(__file__))
 all_completed_codes = []
 all_completed_id_nums = []
 
@@ -100,7 +100,9 @@ def get_enemy_id():
 
 calibrate()
 directory = os.path.join(absolute, "OLD_METADATA_OUTPUT")
-for filename in os.listdir(directory):
+all_filenames = os.listdir(directory)
+all_filenames.sort() # Just for consistency between different Mac/Win
+for filename in all_filenames:
     file_dir = os.path.join(directory, filename)
     if os.path.isfile(file_dir):
         period_index = filename.rfind(".")
@@ -123,8 +125,8 @@ for filename in os.listdir(directory):
                 metadata.thief = False
             else:
                 metadata.thief = metadata_json["thief"]
-            image = Image.open("OLD_PNG_OUTPUT\\" + card_name + ".png")
-            with open("OLD_JSON_OUTPUT\\" + card_name + ".json", "r") as json_file:
+            image = Image.open(os.path.join(absolute, "OLD_PNG_OUTPUT", card_name + ".png"))
+            with open(os.path.join(absolute, "OLD_JSON_OUTPUT", card_name + ".json"), "r") as json_file:
                 json_object = json.load(json_file)
                 width = json_object["frame_width"]
                 height = json_object["frame_height"]
@@ -208,7 +210,7 @@ for filename in os.listdir(directory):
                     "thief": npc_metadata.thief
                 }
                 json_object = json.dumps(json_text, indent=4)
-                with open("npc_metadata\\" + npc_metadata.id + ".json", "w") as outfile:
+                with open(os.path.join(absolute, "npc_metadata", npc_metadata.id + ".json"), "w") as outfile:
                     outfile.write(json_object)
             # CREATE ENEMY
             else:
@@ -238,7 +240,7 @@ for filename in os.listdir(directory):
                     "obtuse": enemy_metadata.obtuse
                 }
                 json_object = json.dumps(json_text, indent=4)
-                with open("enemy_metadata\\" + enemy_metadata.id + ".json", "w") as outfile:
+                with open(os.path.join(absolute, "enemy_metadata", enemy_metadata.id + ".json"), "w") as outfile:
                     outfile.write(json_object)
 
 

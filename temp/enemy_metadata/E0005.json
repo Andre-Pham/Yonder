@@ -1,0 +1,11 @@
+{
+    "id": "E0005",
+    "code": "boss_chaosknight",
+    "name": "Chaosknight",
+    "description": "",
+    "type": "dungeon",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}
