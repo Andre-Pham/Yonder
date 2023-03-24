@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 import SwiftUI
 
+/// Wraps an OverlayViewController, which is used to modally present a UIHostingController which wraps a SwiftUI view.
+/// For more information, refer to https://github.com/Andre-Pham/yonder/issues/2.
 struct OverlayView: UIViewControllerRepresentable {
     
     typealias UIViewControllerType = OverlayViewController
@@ -26,10 +28,4 @@ struct OverlayView: UIViewControllerRepresentable {
         // Do nothing
     }
     
-}
-
-class OverlayViewController: UIViewController {
-    // This class has been intentionally left blank
-    // Its only job is to present a UIHostingController using a modal presentation style
-    // Custom attributes can also be inserted, such as a view background color, etc.
 }

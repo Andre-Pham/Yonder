@@ -527,6 +527,9 @@
 		B635B05C29B19C9300A45F43 /* EquipPeripheralAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B635B05B29B19C9300A45F43 /* EquipPeripheralAccessoryView.swift */; };
 		B635B05E29B19E6500A45F43 /* EmbeddedInspectBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B635B05D29B19E6500A45F43 /* EmbeddedInspectBorder.swift */; };
 		B63E16A629C871310083616A /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E16A529C871310083616A /* OverlayView.swift */; };
+		B63E171B29CD8F060083616A /* InspectSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E171A29CD8F060083616A /* InspectSheet.swift */; };
+		B63E171D29CD8F310083616A /* InspectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E171C29CD8F310083616A /* InspectViewController.swift */; };
+		B63E171F29CD8F830083616A /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E171E29CD8F830083616A /* OverlayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1070,6 +1073,9 @@
 		B635B05B29B19C9300A45F43 /* EquipPeripheralAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipPeripheralAccessoryView.swift; sourceTree = "<group>"; };
 		B635B05D29B19E6500A45F43 /* EmbeddedInspectBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedInspectBorder.swift; sourceTree = "<group>"; };
 		B63E16A529C871310083616A /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		B63E171A29CD8F060083616A /* InspectSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectSheet.swift; sourceTree = "<group>"; };
+		B63E171C29CD8F310083616A /* InspectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectViewController.swift; sourceTree = "<group>"; };
+		B63E171E29CD8F830083616A /* OverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1433,9 +1439,8 @@
 		653DD71827F836F2004A3B28 /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
-				65A8D97B27B84B5400EB820F /* WithInspectSheet.swift */,
+				B63E171929CD8EF50083616A /* WithInspectSheet */,
 				B635B05D29B19E6500A45F43 /* EmbeddedInspectBorder.swift */,
-				B63E16A529C871310083616A /* OverlayView.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -2779,6 +2784,18 @@
 			path = Types;
 			sourceTree = "<group>";
 		};
+		B63E171929CD8EF50083616A /* WithInspectSheet */ = {
+			isa = PBXGroup;
+			children = (
+				65A8D97B27B84B5400EB820F /* WithInspectSheet.swift */,
+				B63E171A29CD8F060083616A /* InspectSheet.swift */,
+				B63E16A529C871310083616A /* OverlayView.swift */,
+				B63E171C29CD8F310083616A /* InspectViewController.swift */,
+				B63E171E29CD8F830083616A /* OverlayViewController.swift */,
+			);
+			path = WithInspectSheet;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -3148,6 +3165,7 @@
 				65BF4BD1292E212C00199B05 /* DamageRestorationSwapEffectPill.swift in Sources */,
 				65DC5FBE28DC24D800E5F904 /* WeaponHealthRestorationBuff.swift in Sources */,
 				65326271282F57D100A37340 /* YonderOutlinedText.swift in Sources */,
+				B63E171B29CD8F060083616A /* InspectSheet.swift in Sources */,
 				655C609F28001C26007B1E11 /* ArmorBuffEnhanceOffer.swift in Sources */,
 				6503293C28D71EA300FC999C /* WeaponPillBox.swift in Sources */,
 				655C60AD280407BE007B1E11 /* EnhanceOfferViewModel.swift in Sources */,
@@ -3235,6 +3253,7 @@
 				655146722747949D00257181 /* HealthRestorationPercentBuff.swift in Sources */,
 				655F983D286993E300A60806 /* InventoryWeaponsView.swift in Sources */,
 				65B13B0527C32A3600C012BE /* GameManager.swift in Sources */,
+				B63E171F29CD8F830083616A /* OverlayViewController.swift in Sources */,
 				65ADE146279F7D990070C736 /* LocationViewModel.swift in Sources */,
 				65ED80D028293156009940A2 /* HostileInspectView.swift in Sources */,
 				656FD8F3291A4FA200F923E9 /* ArmorProfileTag.swift in Sources */,
@@ -3382,6 +3401,7 @@
 				656FD8D1291836FC00F923E9 /* BruteFoe.swift in Sources */,
 				6532773E292586C200E03FA7 /* LoseArmorGainHealthEquipmentPill.swift in Sources */,
 				B635B05E29B19E6500A45F43 /* EmbeddedInspectBorder.swift in Sources */,
+				B63E171D29CD8F310083616A /* InspectViewController.swift in Sources */,
 				65D88C6327444436002E3AC4 /* Foe.swift in Sources */,
 				652567C3279070A7001DC79B /* LocationConnection.swift in Sources */,
 				656BEE9E28E18586001CE591 /* WeaknessPotion.swift in Sources */,

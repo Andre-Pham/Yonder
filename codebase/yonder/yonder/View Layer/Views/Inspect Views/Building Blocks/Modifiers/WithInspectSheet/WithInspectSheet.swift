@@ -29,7 +29,7 @@ struct WithInspectSheet: ViewModifier {
             }
             .onChange(of: self.isPresented) { isPresented in
                 if isPresented {
-                    let viewController = UIHostingController(
+                    let viewController = InspectViewController(
                         rootView: InspectSheet(isPresented: self.$isPresentedState, pageGeometry: self.pageGeometry) {
                             self.viewContent
                         }
@@ -38,6 +38,7 @@ struct WithInspectSheet: ViewModifier {
                         }
                     )
                     viewController.modalPresentationStyle = .formSheet
+                    viewController.modalPresentationCapturesStatusBarAppearance = true
                     self.overlayViewController.present(viewController, animated: true)
                 }
             }
@@ -50,44 +51,3 @@ extension View {
     }
 }
 
-struct InspectSheet<Content: View>: View {
-    @Environment(\.dismiss) var dismiss
-    private let content: () -> Content
-    @Binding var isPresented: Bool
-    let pageGeometry: GeometryProxy
-    
-    init(isPresented: Binding<Bool>, pageGeometry: GeometryProxy, @ViewBuilder builder: @escaping () -> Content) {
-        self._isPresented = isPresented
-        self.pageGeometry = pageGeometry
-        self.content = builder
-    }
-    
-    var body: some View {
-        ZStack {
-            YonderColors.backgroundMaxDepth
-                .ignoresSafeArea()
-            
-            ScrollView(.vertical, showsIndicators: false) {
-                content()
-                    .padding()
-            }
-            .frame(
-                width: self.pageGeometry.size.width-YonderCoreGraphics.padding*4,
-                height: self.pageGeometry.size.height)
-            
-            Rectangle()
-                .stroke(YonderColors.border, lineWidth: YonderCoreGraphics.borderWidth)
-                .frame(
-                    width: self.pageGeometry.size.width-YonderCoreGraphics.padding*4,
-                    height: self.pageGeometry.size.height)
-        }
-        .onChange(of: self.isPresented) { isPresented in
-            if !isPresented {
-                dismiss()
-            }
-        }
-        .onTapGesture {
-            dismiss()
-        }
-    }
-}
