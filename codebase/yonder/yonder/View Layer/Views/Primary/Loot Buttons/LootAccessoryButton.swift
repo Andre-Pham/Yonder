@@ -51,7 +51,13 @@ struct LootAccessoryButton: View {
             content: AnyView(
                 EquipPeripheralAccessoryView(
                     playerViewModel: self.playerViewModel,
-                    accessoryViewModel: self.accessoryViewModel) { confirmEquip in
+                    accessoryViewModel: self.accessoryViewModel
+                ) { confirmEquip in
+                    self.equipPeripheralAccessorySheetActive = false
+                    // This is a buffer added - otherwise the sheet doesn't dismiss
+                    // I presume because this function changes the content in the sheet, its dismissal doesn't trigger properly
+                    // The delay isn't noticeable
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
                         if confirmEquip {
                             self.lootBagViewModel.collectAccessory(
                                 accessoryViewModel: self.accessoryViewModel,
@@ -59,8 +65,8 @@ struct LootAccessoryButton: View {
                                 playerViewModel: self.playerViewModel
                             )
                         }
-                        self.equipPeripheralAccessorySheetActive = false
                     }
+                }
             )
         )
     }

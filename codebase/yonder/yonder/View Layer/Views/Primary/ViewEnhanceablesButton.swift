@@ -43,7 +43,7 @@ struct ViewEnhanceablesButton: View {
         }
         .yonderWideBorder()
         .sheet(isPresented: self.$optionsSheetActive) {
-            InspectSheet(pageGeometry: self.pageGeometry) {
+            InspectSheet(isPresented: self.$optionsSheetActive, pageGeometry: self.pageGeometry) {
                 VStack {
                     PlayerCardView(playerViewModel: self.playerViewModel, resizeToFit: false)
                     

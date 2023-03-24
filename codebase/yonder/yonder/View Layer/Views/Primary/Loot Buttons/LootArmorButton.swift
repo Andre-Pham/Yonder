@@ -40,13 +40,18 @@ struct LootArmorButton: View {
                     playerViewModel: self.playerViewModel,
                     armorViewModel: self.armorViewModel
                 ) { confirmEquip in
-                    if confirmEquip {
-                        self.lootBagViewModel.collectArmor(
-                            armorViewModel: self.armorViewModel,
-                            playerViewModel: self.playerViewModel
-                        )
-                    }
                     self.equipArmorSheetActive = false
+                    // This is a buffer added - otherwise the sheet doesn't dismiss
+                    // I presume because this function changes the content in the sheet, its dismissal doesn't trigger properly
+                    // The delay isn't noticeable
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                        if confirmEquip {
+                            self.lootBagViewModel.collectArmor(
+                                armorViewModel: self.armorViewModel,
+                                playerViewModel: self.playerViewModel
+                            )
+                        }
+                    }
                 }
             )
         )

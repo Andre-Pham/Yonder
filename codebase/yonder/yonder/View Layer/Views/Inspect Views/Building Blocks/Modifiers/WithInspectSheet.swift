@@ -30,7 +30,7 @@ struct WithInspectSheet: ViewModifier {
             .onChange(of: self.isPresented) { isPresented in
                 if isPresented {
                     let viewController = UIHostingController(
-                        rootView: InspectSheet(pageGeometry: self.pageGeometry) {
+                        rootView: InspectSheet(isPresented: self.$isPresentedState, pageGeometry: self.pageGeometry) {
                             self.viewContent
                         }
                         .onDisappear {
@@ -53,10 +53,11 @@ extension View {
 struct InspectSheet<Content: View>: View {
     @Environment(\.dismiss) var dismiss
     private let content: () -> Content
-    
+    @Binding var isPresented: Bool
     let pageGeometry: GeometryProxy
     
-    init(pageGeometry: GeometryProxy, @ViewBuilder builder: @escaping () -> Content) {
+    init(isPresented: Binding<Bool>, pageGeometry: GeometryProxy, @ViewBuilder builder: @escaping () -> Content) {
+        self._isPresented = isPresented
         self.pageGeometry = pageGeometry
         self.content = builder
     }
@@ -79,6 +80,11 @@ struct InspectSheet<Content: View>: View {
                 .frame(
                     width: self.pageGeometry.size.width-YonderCoreGraphics.padding*4,
                     height: self.pageGeometry.size.height)
+        }
+        .onChange(of: self.isPresented) { isPresented in
+            if !isPresented {
+                dismiss()
+            }
         }
         .onTapGesture {
             dismiss()
