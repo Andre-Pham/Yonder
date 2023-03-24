@@ -19,10 +19,14 @@ import SwiftUI
 ///     }
 /// ```
 struct YonderWideButtonBody<Content: View>: View {
+    /// The animations permitted to be applied to the content
+    private let permittedAnimations = [OptionsStateManager.animation]
+    
+    /// The button view
     private let content: () -> Content
-    
+    /// The vertical internal padding between the content and button frame
     var verticalPadding: CGFloat
-    
+    /// Code block called on button press
     let action: () -> Void
     
     init(verticalPadding: CGFloat = YonderCoreGraphics.textVerticalPadding, action: @escaping () -> Void, @ViewBuilder label: @escaping () -> Content) {
@@ -40,6 +44,23 @@ struct YonderWideButtonBody<Content: View>: View {
                 .padding(.vertical, self.verticalPadding)
                 .background(YonderColors.backgroundMaxDepth) // Ensures entire button can be tapped
                 .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
+                .transaction { transaction in
+                    if !self.permittedAnimations.contains(where: { $0 == transaction.animation }) {
+                        transaction.animation = nil
+                    }
+                }
+        }
+    }
+}
+
+struct YonderWideButtonBody_Previews: PreviewProvider {
+    static var previews: some View {
+        PreviewContentView {
+            YonderWideButtonBody(verticalPadding: 10) {
+                // Do something
+            } label: {
+                YonderText(text: "Button", size: .buttonBody)
+            }
         }
     }
 }
