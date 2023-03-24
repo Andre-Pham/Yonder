@@ -17,18 +17,8 @@ struct TabBarView: View {
                 PrimaryView()
                     .opacity(self.viewRouter.currentPage == .primary ? 1 : 0)
                 
-                if self.viewRouter.currentPage == .inventory {
-                    // Other views we adjust the opacity to hide the view while maintaining state
-                    // We want to reload the inventory view every time we open it
-                    // Inventory view has to manage dynamic inspect sheets, for example, player weapons
-                    // Adding (for example) weapons in other tabs will modify the state of the inventory view's sheets
-                    // This is fine, except (for some reason) it breaks the animation for all sheets until inventory view is loaded in as the currently active view
-                    // To demonstrate this:
-                    // 1. Maintain inventory view's state using opacity to dismiss it (like other views)
-                    // 2. Purchase/obtain a weapon in option view
-                    // 3. Open any inspect sheet in option view
-                    InventoryView()
-                }
+                InventoryView()
+                    .opacity(self.viewRouter.currentPage == .inventory ? 1 : 0)
                 
                 MapView()
                     .opacity(self.viewRouter.currentPage == .map ? 1 : 0)
