@@ -1,0 +1,8 @@
+{
+    "name": "Searblade Assassin",
+    "description": "",
+    "faction": null,
+    "type": "assassin",
+    "brute": false,
+    "thief": true
+}

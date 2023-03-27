@@ -1,0 +1,8 @@
+{
+    "name": "Nimble Wraith",
+    "description": "",
+    "faction": null,
+    "type": "shadow",
+    "brute": false,
+    "thief": true
+}

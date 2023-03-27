@@ -1,0 +1,8 @@
+{
+    "name": "Azure Caster",
+    "description": "",
+    "faction": null,
+    "type": "arcane",
+    "brute": false,
+    "thief": false
+}

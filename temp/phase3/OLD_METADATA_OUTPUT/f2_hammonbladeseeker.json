@@ -1,0 +1,8 @@
+{
+    "name": "Rooftop Theif",
+    "description": "",
+    "faction": 2,
+    "type": "",
+    "brute": false,
+    "thief": true
+}

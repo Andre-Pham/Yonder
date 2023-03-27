@@ -1,0 +1,8 @@
+{
+    "name": "Sin Blade",
+    "description": "",
+    "faction": null,
+    "type": "assassin",
+    "brute": false,
+    "thief": false
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Decepticle Runner",
+    "description": "",
+    "faction": null,
+    "type": "mech",
+    "brute": false,
+    "thief": true
+}

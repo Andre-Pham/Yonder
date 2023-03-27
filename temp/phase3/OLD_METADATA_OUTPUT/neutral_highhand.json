@@ -1,0 +1,8 @@
+{
+    "name": "Goldtrim Demon",
+    "description": "",
+    "faction": null,
+    "type": "shadow",
+    "brute": false,
+    "thief": true
+}

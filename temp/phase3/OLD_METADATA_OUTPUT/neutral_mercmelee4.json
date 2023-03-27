@@ -1,0 +1,8 @@
+{
+    "name": "Masked Raider",
+    "description": "",
+    "faction": null,
+    "type": "desert",
+    "brute": false,
+    "thief": true
+}

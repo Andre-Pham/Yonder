@@ -1,0 +1,8 @@
+{
+    "name": "Frostwield",
+    "description": "",
+    "faction": null,
+    "type": "frost",
+    "brute": false,
+    "thief": false
+}

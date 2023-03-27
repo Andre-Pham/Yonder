@@ -1,0 +1,8 @@
+{
+    "name": "Emp",
+    "description": "",
+    "faction": null,
+    "type": "mech",
+    "brute": true,
+    "thief": null
+}

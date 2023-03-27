@@ -1,0 +1,8 @@
+{
+    "name": "Sandseeker",
+    "description": "",
+    "faction": null,
+    "type": "desert",
+    "brute": false,
+    "thief": true
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Syvrel The Exile",
+    "description": "",
+    "faction": null,
+    "type": "assassin",
+    "brute": false,
+    "thief": true
+}

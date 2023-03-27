@@ -1,0 +1,8 @@
+{
+    "name": "Invader",
+    "description": "",
+    "faction": null,
+    "type": "assassin",
+    "brute": false,
+    "thief": false
+}

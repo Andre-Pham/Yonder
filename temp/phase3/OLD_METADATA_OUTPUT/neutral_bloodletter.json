@@ -1,0 +1,8 @@
+{
+    "name": "Bloodlet Crusher",
+    "description": "",
+    "faction": null,
+    "type": "dungeon",
+    "brute": true,
+    "thief": null
+}

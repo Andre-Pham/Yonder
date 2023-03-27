@@ -1,0 +1,8 @@
+{
+    "name": "Daywatcher",
+    "description": "",
+    "faction": null,
+    "type": "desert",
+    "brute": false,
+    "thief": true
+}

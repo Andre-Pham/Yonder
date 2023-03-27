@@ -1,0 +1,8 @@
+{
+    "name": "Lil Blob",
+    "description": "",
+    "faction": null,
+    "type": "dungeon",
+    "brute": false,
+    "thief": true
+}

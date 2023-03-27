@@ -1,0 +1,8 @@
+{
+    "name": "Sharpshield Dweller",
+    "description": "",
+    "faction": null,
+    "type": "cavern",
+    "brute": false,
+    "thief": true
+}
