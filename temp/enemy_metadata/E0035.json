@@ -1,0 +1,11 @@
+{
+    "id": "E0035",
+    "code": "boss_skurge",
+    "name": "Skurge",
+    "description": "",
+    "type": "assassin",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0029",
+    "code": "boss_paragon",
+    "name": "Paragon",
+    "description": "",
+    "type": "desert",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

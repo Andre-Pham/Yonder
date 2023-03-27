@@ -1,0 +1,11 @@
+{
+    "id": "E0045",
+    "code": "boss_unhallowed",
+    "name": "The Unhallowed",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

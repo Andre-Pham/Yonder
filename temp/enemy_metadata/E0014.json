@@ -1,0 +1,11 @@
+{
+    "id": "E0014",
+    "code": "boss_decepticlesword",
+    "name": "Blade Decepticle",
+    "description": "",
+    "type": "mech",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

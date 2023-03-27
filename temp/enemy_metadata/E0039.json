@@ -1,0 +1,11 @@
+{
+    "id": "E0039",
+    "code": "boss_spelleater",
+    "name": "Arcane Spellcaster",
+    "description": "",
+    "type": "arcane",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

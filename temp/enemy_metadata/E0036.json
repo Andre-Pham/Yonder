@@ -1,0 +1,11 @@
+{
+    "id": "E0036",
+    "code": "boss_skyfalltyrant",
+    "name": "Skyfall Tyrant",
+    "description": "",
+    "type": "frost",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

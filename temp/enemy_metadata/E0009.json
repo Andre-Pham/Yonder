@@ -1,0 +1,11 @@
+{
+    "id": "E0009",
+    "code": "boss_crystal",
+    "name": "Crystal",
+    "description": "",
+    "type": "frost",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

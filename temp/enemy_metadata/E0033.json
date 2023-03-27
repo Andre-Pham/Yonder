@@ -1,0 +1,11 @@
+{
+    "id": "E0033",
+    "code": "boss_shadowlord",
+    "name": "Sin Blade",
+    "description": "",
+    "type": "assassin",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

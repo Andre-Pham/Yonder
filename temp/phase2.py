@@ -46,6 +46,7 @@ all_completed_codes = []
 all_completed_id_nums = []
 
 def calibrate():
+    codes = all_completed_codes
     for directory in [os.path.join(absolute, "enemy_metadata"), os.path.join(absolute, "npc_metadata")]:
         for filename in os.listdir(directory):
             file_dir = os.path.join(directory, filename)
@@ -57,7 +58,9 @@ def calibrate():
                 with open(file_dir, "r") as json_file:
                     json_object = json.load(json_file)
                     code = json_object["code"]
-                    all_completed_codes.append(code)
+                    codes.append(code)
+    removed = read_removed()
+    codes += removed
     if len(all_completed_id_nums) == 0:
         set_global_id(0)
     else:
@@ -98,6 +101,22 @@ def get_enemy_id():
         global_id = "0" + global_id
     return "E" + global_id
 
+def read_removed():
+    dir = os.path.join(absolute, "removed.txt")
+    file = open(dir, "r")
+    content = file.read()
+    return content.split('\n')
+
+def add_removed(card_name):
+    dir = os.path.join(absolute, "removed.txt")
+    file = open(dir, "r")
+    content = file.read()
+    content += card_name + "\n"
+    file.close()
+    file = open(dir, "w")
+    file.write(content)
+    file.close()
+
 calibrate()
 directory = os.path.join(absolute, "OLD_METADATA_OUTPUT")
 all_filenames = os.listdir(directory)
@@ -125,6 +144,11 @@ for filename in all_filenames:
                 metadata.thief = False
             else:
                 metadata.thief = metadata_json["thief"]
+            print("==========  " + metadata.name + " (" + metadata.type + ") " + "  ==========")
+            if metadata.name.lower() == "removed":
+                print("SKIPPING " + card_name + " - REMOVED")
+                add_removed(card_name)
+                continue
             image = Image.open(os.path.join(absolute, "OLD_PNG_OUTPUT", card_name + ".png"))
             with open(os.path.join(absolute, "OLD_JSON_OUTPUT", card_name + ".json"), "r") as json_file:
                 json_object = json.load(json_file)
@@ -134,11 +158,17 @@ for filename in all_filenames:
                 y = json_object["breathing_coords"][0]["y"]
                 cropped = image.crop((x, y, x+width, y+width))
                 cropped = cropped.resize((width*50, height*50), Image.NEAREST)
-                cropped.show()
-            print("==========  " + metadata.name + "  ==========")
+                try:
+                    cropped.show()
+                except:
+                    print(">>> Error showing image for: " + card_name)
             is_npc = None
-            while is_npc not in ["y", "n"]:
+            while is_npc not in ["y", "n", "removed"]:
                 is_npc = input("NPC?\n")
+            if is_npc == "removed":
+                print("SKIPPING " + card_name + " - REMOVED")
+                add_removed(card_name)
+                continue
             # CREATE NPC
             if is_npc == "y":
                 npc_metadata = NPCMetadata()
@@ -156,6 +186,7 @@ for filename in all_filenames:
                 else:
                     npc_metadata.type = metadata.type
                 possible_roles = ["shop", "friendly", "restorer", "enhancer"]
+                print("Available roles: " + str(possible_roles))
                 for role in possible_roles:
                     is_role = None
                     while is_role not in ["y", "n"]:
@@ -174,6 +205,7 @@ for filename in all_filenames:
                             npc_metadata.restorerTags.append(tag)
                 if "friendly" in npc_metadata.roles:
                     possible_friendly_tags = ["sacrifice", "curse", "shop", "trade", "generous"]
+                    print("Available tags: " + str(possible_friendly_tags))
                     friendly_tag_descriptions = {
                         "sacrifice": "Requires the player to sacrifice something, for example health, permanent health",
                         "curse": "Requires the player to get cursed, for example a permanent 5% damage decrease buff",
@@ -215,9 +247,15 @@ for filename in all_filenames:
             # CREATE ENEMY
             else:
                 enemy_metadata = NPCMetadata()
+                if metadata.type == "divine" or metadata.type == "faction1" or metadata.type == "faction3":
+                    new_type = None
+                    while new_type not in ["dungeon", "cavern", "forest", "frost", "mech", "nether", "assassin", "shadow", "desert", "arcane", "none"]:
+                        new_type = input("New type (dungeon, cavern, forest, frost, mech, nether, divine, assassin, shadow, desert, arcane, none):\n")
+                    enemy_metadata.type = new_type
+                else:
+                    enemy_metadata.type = metadata.type
                 enemy_metadata.id = get_enemy_id()
                 enemy_metadata.name = metadata.name
-                enemy_metadata.type = metadata.type
                 enemy_metadata.brute = metadata.brute
                 enemy_metadata.thief = metadata.thief
                 is_acute = None
@@ -225,8 +263,11 @@ for filename in all_filenames:
                     is_acute = input("Acute?\n")
                 enemy_metadata.acute = is_acute == "y"
                 is_obtuse = None
-                while is_obtuse not in ["y", "n"]:
-                    is_obtuse = input("Obtuse?\n")
+                if is_acute == "y":
+                    is_obtuse = "n"
+                else:
+                    while is_obtuse not in ["y", "n"]:
+                        is_obtuse = input("Obtuse?\n")
                 enemy_metadata.obtuse = is_obtuse == "y"
                 json_text = {
                     "id": enemy_metadata.id,

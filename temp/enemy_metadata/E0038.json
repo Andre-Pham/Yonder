@@ -1,0 +1,11 @@
+{
+    "id": "E0038",
+    "code": "boss_soulstealer",
+    "name": "Soulstealer",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

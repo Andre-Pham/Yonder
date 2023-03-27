@@ -1,0 +1,22 @@
+{
+    "id": "N0059",
+    "code": "f1_backlinearcher",
+    "name": "Hooded Brightstalker",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "shop",
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Hooded Brightstalker",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": true
+}

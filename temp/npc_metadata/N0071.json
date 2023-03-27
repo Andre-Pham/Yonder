@@ -1,0 +1,18 @@
+{
+    "id": "N0071",
+    "code": "f1_invincibuddy",
+    "name": "Silverguard Brute",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Silverguard Brute",
+    "enemyType": "faction1",
+    "brute": true,
+    "thief": false
+}

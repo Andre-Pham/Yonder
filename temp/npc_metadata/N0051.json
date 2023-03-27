@@ -1,0 +1,21 @@
+{
+    "id": "N0051",
+    "code": "critter_1",
+    "name": "Lil Blob",
+    "description": "",
+    "type": "dungeon",
+    "roles": [
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Lil Blob",
+    "enemyType": "dungeon",
+    "brute": false,
+    "thief": true
+}

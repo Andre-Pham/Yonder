@@ -1,0 +1,18 @@
+{
+    "id": "N0065",
+    "code": "f1_excelsious",
+    "name": "Champion Excelsious",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Champion Excelsious",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": false
+}

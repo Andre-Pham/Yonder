@@ -1,0 +1,18 @@
+{
+    "id": "N0062",
+    "code": "f1_caliber-o",
+    "name": "Caliber-O",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Caliber-O",
+    "enemyType": "faction1",
+    "brute": true,
+    "thief": false
+}

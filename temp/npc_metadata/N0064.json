@@ -1,0 +1,22 @@
+{
+    "id": "N0064",
+    "code": "f1_elyxstormblademk2",
+    "name": "Puremetal Warrior",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Puremetal Warrior",
+    "enemyType": "none",
+    "brute": false,
+    "thief": false
+}

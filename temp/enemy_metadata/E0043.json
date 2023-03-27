@@ -1,0 +1,11 @@
+{
+    "id": "E0043",
+    "code": "boss_treatoni",
+    "name": "Tribal Venom Brew",
+    "description": "",
+    "type": "forest",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

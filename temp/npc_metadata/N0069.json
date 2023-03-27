@@ -1,0 +1,22 @@
+{
+    "id": "N0069",
+    "code": "f1_grandmasterzir",
+    "name": "Grandmaster Zir",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "shop",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Grandmaster Zir",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": false
+}

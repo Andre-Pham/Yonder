@@ -1,0 +1,11 @@
+{
+    "id": "E0023",
+    "code": "boss_kron",
+    "name": "Kane",
+    "description": "",
+    "type": "desert",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

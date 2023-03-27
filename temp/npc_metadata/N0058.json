@@ -1,0 +1,18 @@
+{
+    "id": "N0058",
+    "code": "f1_baastchampion",
+    "name": "Swiftstrike Duelyst",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Swiftstrike Duelyst",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": true
+}

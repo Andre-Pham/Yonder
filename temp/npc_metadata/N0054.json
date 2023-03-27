@@ -1,0 +1,23 @@
+{
+    "id": "N0054",
+    "code": "f1_altgeneraltier2",
+    "name": "Sym Warcrest",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "shop",
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Sym Warcrest",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": false
+}

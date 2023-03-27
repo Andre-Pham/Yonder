@@ -1,0 +1,11 @@
+{
+    "id": "E0028",
+    "code": "boss_oriasidol",
+    "name": "Oriasidol",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

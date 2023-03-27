@@ -1,0 +1,11 @@
+{
+    "id": "E0015",
+    "code": "boss_decepticlewings",
+    "name": "Flamethrust",
+    "description": "",
+    "type": "mech",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

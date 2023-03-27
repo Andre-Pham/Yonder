@@ -1,0 +1,11 @@
+{
+    "id": "E0049",
+    "code": "boss_wraith",
+    "name": "Nimble Wraith",
+    "description": "",
+    "type": "shadow",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

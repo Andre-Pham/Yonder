@@ -1,0 +1,21 @@
+{
+    "id": "N0066",
+    "code": "f1_friendsguard",
+    "name": "Tempest Guardian",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "trade"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Tempest Guardian",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": false
+}

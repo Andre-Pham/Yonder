@@ -1,0 +1,11 @@
+{
+    "id": "E0016",
+    "code": "boss_dissonance",
+    "name": "Dissonance",
+    "description": "",
+    "type": "shadow",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}
