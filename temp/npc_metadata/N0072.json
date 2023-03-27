@@ -1,0 +1,18 @@
+{
+    "id": "N0072",
+    "code": "f1_ironcliffeguardian",
+    "name": "Sunstone Guardian",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Sunstone Guardian",
+    "enemyType": "faction1",
+    "brute": true,
+    "thief": false
+}

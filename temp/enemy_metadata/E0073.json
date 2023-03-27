@@ -1,0 +1,11 @@
+{
+    "id": "E0073",
+    "code": "f1_kaisergladiator",
+    "name": "Gladiator Coldblood",
+    "description": "",
+    "type": "frost",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}
