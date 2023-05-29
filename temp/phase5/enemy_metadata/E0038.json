@@ -1,9 +1,9 @@
 {
-    "id": "E0021",
-    "code": "boss_invader",
-    "name": "Forest Assassin",
+    "id": "E0038",
+    "code": "boss_soulstealer",
+    "name": "Soulstealer",
     "description": "",
-    "type": "forest",
+    "type": "dungeon",
     "brute": false,
     "thief": false,
     "acute": true,

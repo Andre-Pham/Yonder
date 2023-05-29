@@ -1,0 +1,11 @@
+{
+    "id": "E0032",
+    "code": "boss_serpenti",
+    "name": "Serpenti",
+    "description": "",
+    "type": "cavern",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

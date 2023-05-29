@@ -1,0 +1,11 @@
+{
+    "id": "E0026",
+    "code": "boss_manaman",
+    "name": "Frostwield",
+    "description": "",
+    "type": "frost",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

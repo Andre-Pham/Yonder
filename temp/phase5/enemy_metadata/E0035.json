@@ -1,11 +1,11 @@
 {
-    "id": "E0021",
-    "code": "boss_invader",
-    "name": "Forest Assassin",
+    "id": "E0035",
+    "code": "boss_skurge",
+    "name": "Skurge",
     "description": "",
     "type": "forest",
     "brute": false,
     "thief": false,
-    "acute": true,
+    "acute": false,
     "obtuse": false
 }

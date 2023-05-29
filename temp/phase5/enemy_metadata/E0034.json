@@ -1,9 +1,9 @@
 {
-    "id": "E0021",
-    "code": "boss_invader",
-    "name": "Forest Assassin",
+    "id": "E0034",
+    "code": "boss_shinkagezendo",
+    "name": "Shinkagezendo",
     "description": "",
-    "type": "forest",
+    "type": "shadow",
     "brute": false,
     "thief": false,
     "acute": true,

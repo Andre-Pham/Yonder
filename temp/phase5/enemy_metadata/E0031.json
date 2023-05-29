@@ -1,0 +1,11 @@
+{
+    "id": "E0031",
+    "code": "boss_sandpanther",
+    "name": "Sandpanther",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

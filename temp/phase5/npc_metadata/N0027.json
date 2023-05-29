@@ -1,0 +1,26 @@
+{
+    "id": "N0027",
+    "code": "boss_orias",
+    "name": "Orias",
+    "description": "",
+    "type": "dungeon",
+    "roles": [
+        "friendly",
+        "restorer",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "health",
+        "armor"
+    ],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Orias",
+    "enemyType": "dungeon",
+    "brute": false,
+    "thief": false
+}

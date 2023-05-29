@@ -192,7 +192,7 @@ for filename in all_filenames:
                 npc_metadata.description = ""
                 new_type = None
                 while new_type not in ["y", "n"]:
-                    if metadata.type == "divine" or metadata.type == "faction1" or metadata.type == "faction3":
+                    if metadata.type == "divine" or metadata.type == "faction1" or metadata.type == "faction3" or metadata.type == "assassin" or metadata.type == "arcane":
                         new_type = "y"
                         print("TYPE AUTOMATICALLY SET TO: ALL")
                     else:
@@ -230,7 +230,7 @@ for filename in all_filenames:
                         "generous": "The player just gets something for free"
                     }
                     tag_setting = None
-                    while tag_setting not in ["kind, mean, all"]:
+                    while tag_setting not in ["kind", "mean", "all"]:
                         tag_setting = input("Is the npc kind, mean or all?\n")
                     if tag_setting == "mean" or tag_setting == "all":
                         npc_metadata.friendlyTags.append("sacrifice")
@@ -275,10 +275,10 @@ for filename in all_filenames:
             # CREATE ENEMY
             else:
                 enemy_metadata = NPCMetadata()
-                if metadata.type == "divine" or metadata.type == "faction1" or metadata.type == "faction3":
+                if metadata.type == "divine" or metadata.type == "faction1" or metadata.type == "faction3" or metadata.type == "assassin" or metadata.type == "arcane":
                     new_type = None
-                    while new_type not in ["dungeon", "cavern", "forest", "frost", "mech", "nether", "assassin", "shadow", "desert", "arcane", "none"]:
-                        new_type = input("New type (dungeon, cavern, forest, frost, mech, nether, divine, assassin, shadow, desert, arcane, none):\n")
+                    while new_type not in ["dungeon", "cavern", "forest", "frost", "mech", "nether", "shadow", "desert", "none"]:
+                        new_type = input("New type (dungeon, cavern, forest, frost, mech, nether, shadow, desert, none):\n")
                     enemy_metadata.type = new_type
                 else:
                     enemy_metadata.type = metadata.type
