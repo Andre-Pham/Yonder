@@ -1,0 +1,11 @@
+{
+    "id": "E0012",
+    "code": "boss_decepticlehelm",
+    "name": "Decepticle Runner",
+    "description": "",
+    "type": "mech",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

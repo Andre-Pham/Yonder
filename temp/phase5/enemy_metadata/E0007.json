@@ -1,0 +1,11 @@
+{
+    "id": "E0007",
+    "code": "boss_cindera",
+    "name": "Cindera",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

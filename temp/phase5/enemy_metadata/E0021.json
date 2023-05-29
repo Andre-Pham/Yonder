@@ -1,0 +1,11 @@
+{
+    "id": "E0021",
+    "code": "boss_invader",
+    "name": "Invader",
+    "description": "",
+    "type": "assassin",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

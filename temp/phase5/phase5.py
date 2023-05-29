@@ -5,6 +5,21 @@ from PIL import Image
 import psutil
 import shutil
 
+absolute = os.path.dirname(os.path.realpath(__file__))
+
+PREVIEW_DIR = os.path.join(absolute, "..", "src_filtered", "previews")
+METADATA_SRC_DIR = os.path.join(absolute, "..", "src_filtered", "metadata")
+PNG_SRC_DIR = os.path.join(absolute, "..", "src_filtered", "pngs")
+PNGDATA_SRC_DIR = os.path.join(absolute, "..", "src_filtered", "pngdata")
+
+ENEMY_METADATA_DIR = os.path.join(absolute, "enemy_metadata")
+ENEMY_PNGDATA_DIR = os.path.join(absolute, "enemy_pngdata")
+ENEMY_PNGS_DIR = os.path.join(absolute, "enemy_pngs")
+
+NPC_METADATA_DIR = os.path.join(absolute, "npc_metadata")
+NPC_PNGDATA_DIR = os.path.join(absolute, "npc_pngdata")
+NPC_PNGS_DIR = os.path.join(absolute, "npc_pngs")
+
 class Metadata:
     def __init__(self):
         self.id = ""
@@ -41,13 +56,12 @@ class NPCMetadata:
         self.brute = None
         self.thief = None
 
-absolute = os.path.dirname(os.path.realpath(__file__))
 all_completed_codes = []
 all_completed_id_nums = []
 
 def calibrate():
     codes = all_completed_codes
-    for directory in [os.path.join(absolute, "enemy_metadata"), os.path.join(absolute, "npc_metadata")]:
+    for directory in [ENEMY_METADATA_DIR, NPC_METADATA_DIR]:
         for filename in os.listdir(directory):
             file_dir = os.path.join(directory, filename)
             if os.path.isfile(file_dir):
@@ -117,12 +131,21 @@ def add_removed(card_name):
     file.write(content)
     file.close()
 
+def add_boss_candidate(id, card_name, type):
+    dir = os.path.join(absolute, "boss_candidates.txt")
+    file = open(dir, "r")
+    content = file.read()
+    content += id + " | " + card_name + " (" + type + ")" + "\n"
+    file.close()
+    file = open(dir, "w")
+    file.write(content)
+    file.close()
+
 calibrate()
-directory = os.path.join(absolute, "OLD_METADATA_OUTPUT")
-all_filenames = os.listdir(directory)
+all_filenames = os.listdir(METADATA_SRC_DIR)
 all_filenames.sort() # Just for consistency between different Mac/Win
 for filename in all_filenames:
-    file_dir = os.path.join(directory, filename)
+    file_dir = os.path.join(METADATA_SRC_DIR, filename)
     if os.path.isfile(file_dir):
         period_index = filename.rfind(".")
         card_name = filename[0:period_index]
@@ -149,22 +172,11 @@ for filename in all_filenames:
                 print("SKIPPING " + card_name + " - REMOVED")
                 add_removed(card_name)
                 continue
-            image = Image.open(os.path.join(absolute, "OLD_PNG_OUTPUT", card_name + ".png"))
-            with open(os.path.join(absolute, "OLD_JSON_OUTPUT", card_name + ".json"), "r") as json_file:
-                json_object = json.load(json_file)
-                width = json_object["frame_width"]
-                height = json_object["frame_height"]
-                x = json_object["breathing_coords"][0]["x"]
-                y = json_object["breathing_coords"][0]["y"]
-                cropped = image.crop((x, y, x+width, y+width))
-                cropped = cropped.resize((width*50, height*50), Image.NEAREST)
-                try:
-                    cropped.show()
-                except:
-                    print(">>> Error showing image for: " + card_name)
+            image = Image.open(os.path.join(PREVIEW_DIR, card_name + ".png"))
+            image.show()
             is_npc = None
-            while is_npc not in ["y", "n", "removed"]:
-                is_npc = input("NPC?\n")
+            while is_npc not in ["y", "n", "removed", "boss"]:
+                is_npc = input("NPC? (y/n) (or type 'boss') (or type 'removed')\n")
             if is_npc == "removed":
                 print("SKIPPING " + card_name + " - REMOVED")
                 add_removed(card_name)
@@ -180,7 +192,11 @@ for filename in all_filenames:
                 npc_metadata.description = ""
                 new_type = None
                 while new_type not in ["y", "n"]:
-                    new_type = input("Is type 'all'? (n to keep " + metadata.type + ")\n")
+                    if metadata.type == "divine" or metadata.type == "faction1" or metadata.type == "faction3":
+                        new_type = "y"
+                        print("TYPE AUTOMATICALLY SET TO: ALL")
+                    else:
+                        new_type = input("Is type 'all'? (n to keep " + metadata.type + ")\n")
                 if new_type == "y":
                     npc_metadata.type = "all"
                 else:
@@ -205,7 +221,7 @@ for filename in all_filenames:
                             npc_metadata.restorerTags.append(tag)
                 if "friendly" in npc_metadata.roles:
                     possible_friendly_tags = ["sacrifice", "curse", "shop", "trade", "generous"]
-                    print("Available tags: " + str(possible_friendly_tags))
+                    # print("Available tags: " + str(possible_friendly_tags))
                     friendly_tag_descriptions = {
                         "sacrifice": "Requires the player to sacrifice something, for example health, permanent health",
                         "curse": "Requires the player to get cursed, for example a permanent 5% damage decrease buff",
@@ -213,12 +229,22 @@ for filename in all_filenames:
                         "trade": "Anything that requires the player to give up items",
                         "generous": "The player just gets something for free"
                     }
-                    for tag in possible_friendly_tags:
-                        has_tag = None
-                        while has_tag not in ["y", "n"]:
-                            has_tag = input("friendly tag: " + tag + "?\n(" + friendly_tag_descriptions[tag] + ")\n")
-                        if has_tag == "y":
-                            npc_metadata.friendlyTags.append(tag)
+                    tag_setting = None
+                    while tag_setting not in ["kind, mean, all"]:
+                        tag_setting = input("Is the npc kind, mean or all?\n")
+                    if tag_setting == "mean" or tag_setting == "all":
+                        npc_metadata.friendlyTags.append("sacrifice")
+                        npc_metadata.friendlyTags.append("curse")
+                    elif tag_setting == "kind" or tag_setting == "all":
+                        npc_metadata.friendlyTags.append("shop")
+                        npc_metadata.friendlyTags.append("trade")
+                        npc_metadata.friendlyTags.append("generous")
+                    # for tag in possible_friendly_tags:
+                    #     has_tag = None
+                    #     while has_tag not in ["y", "n"]:
+                    #         has_tag = input("friendly tag: " + tag + "?\n(" + friendly_tag_descriptions[tag] + ")\n")
+                    #     if has_tag == "y":
+                    #         npc_metadata.friendlyTags.append(tag)
                 print("=========================================")
                 npc_metadata.id = get_npc_id()
                 npc_metadata.enemyName = metadata.name
@@ -242,8 +268,10 @@ for filename in all_filenames:
                     "thief": npc_metadata.thief
                 }
                 json_object = json.dumps(json_text, indent=4)
-                with open(os.path.join(absolute, "npc_metadata", npc_metadata.id + ".json"), "w") as outfile:
+                with open(os.path.join(NPC_METADATA_DIR, npc_metadata.id + ".json"), "w") as outfile:
                     outfile.write(json_object)
+                    shutil.copy2(os.path.join(PNG_SRC_DIR, card_name + ".png"), os.path.join(NPC_PNGS_DIR, "IMG-" + npc_metadata.id + ".png"))
+                    shutil.copy2(os.path.join(PNGDATA_SRC_DIR, card_name + ".json"), os.path.join(NPC_PNGDATA_DIR, "FRAMES-" + npc_metadata.id + ".json"))
             # CREATE ENEMY
             else:
                 enemy_metadata = NPCMetadata()
@@ -255,6 +283,8 @@ for filename in all_filenames:
                 else:
                     enemy_metadata.type = metadata.type
                 enemy_metadata.id = get_enemy_id()
+                if is_npc == "boss":
+                    add_boss_candidate(enemy_metadata.id, card_name, enemy_metadata.type)
                 enemy_metadata.name = metadata.name
                 enemy_metadata.brute = metadata.brute
                 enemy_metadata.thief = metadata.thief
@@ -281,85 +311,7 @@ for filename in all_filenames:
                     "obtuse": enemy_metadata.obtuse
                 }
                 json_object = json.dumps(json_text, indent=4)
-                with open(os.path.join(absolute, "enemy_metadata", enemy_metadata.id + ".json"), "w") as outfile:
+                with open(os.path.join(ENEMY_METADATA_DIR, enemy_metadata.id + ".json"), "w") as outfile:
                     outfile.write(json_object)
-
-
-
-# for filename in os.listdir(directory):
-#     f = os.path.join(directory, filename)
-#     if os.path.isfile(f):
-#         period_index = filename.rfind(".")
-#         if filename[period_index+1:period_index+4] == "png":
-#             card_name = filename[0:period_index]
-#             metadata = Metadata()
-#             image = Image.open('PNG_OUTPUT\\' + card_name + '.png')
-#             cropped = image
-#             if "_tier2" in card_name:
-#                 old_card_name = card_name.replace("tier2", "")
-#                 shutil.copyfile(os.path.join("D:\\Yonder\\Assets\\Enemies\\METADATA_OUTPUT\\" + old_card_name + ".json"), os.path.join("D:\\Yonder\\Assets\\Enemies\\METADATA_OUTPUT\\" + card_name + ".json"))
-#                 print("copied " + old_card_name + " into " + card_name)
-#                 continue
-#             elif os.path.isfile(os.path.join("D:\\Yonder\\Assets\\Enemies\\METADATA_OUTPUT\\" + card_name + ".json")):
-#                 print("skipping " + card_name)
-#                 continue
-#             with open('JSON_OUTPUT\\' + card_name + '.json', 'r') as openfile:
-#                 json_object = json.load(openfile)
-#                 width = json_object["frame_width"]
-#                 height = json_object["frame_height"]
-#                 x = json_object["breathing_coords"][0]["x"]
-#                 y = json_object["breathing_coords"][0]["y"]
-#                 cropped = image.crop((x, y, x+width, y+width))
-#                 cropped = cropped.resize((width*50, height*50), Image.NEAREST)
-#                 cropped.show()
-#             print("==========  " + card_name + "  ==========")
-#             if card_name in names:
-#                 print("Real Name:")
-#                 print(names[card_name])
-#             metadata.name = input("NAME:\n").title()
-#             if metadata.name == "Removed":
-#                 metadata.type = "removed"
-#                 print("> type automatically set to 'removed'")
-#             if card_name[0] == "f" and metadata.name != "Faction":
-#                 metadata.faction = int(card_name[1])
-#             if metadata.name == "Faction":
-#                 print("> removed faction")
-#                 metadata.name = input("NAME:\n").title()
-#             if metadata.faction == None:
-#                 metadata.type = input("TYPE: (dungeon, cavern, forest, frost, mech, nether, divine, assassin, shadow, desert, arcane, removed, none)\n").lower()
-#                 while not (metadata.type in ["dungeon", "cavern", "forest", "frost", "mech", "nether", "divine", "assassin", "shadow", "desert", "arcane", "removed", "none"]):
-#                     print("Invalid type")
-#                     metadata.type = input("TYPE: (dungeon, cavern, forest, frost, mech, nether, divine, assassin, shadow, desert, arcane, removed, none)\n").lower()
-#             while metadata.brute == None:
-#                 set = input("BRUTE?\n").title()
-#                 if set == "True":
-#                     metadata.brute = True
-#                 if set == "False":
-#                     metadata.brute = False
-#             if (metadata.brute == False):
-#                 while metadata.thief == None:
-#                     set = input("THIEF?\n").title()
-#                     if set == "True":
-#                         metadata.thief = True
-#                     if set == "False":
-#                         metadata.thief = False
-#                 else:
-#                     metadata.theif = False
-#             # while metadata.boss == None:
-#             #     set = input("BOSS?\n").title()
-#             #     if set == "True":
-#             #         metadata.boss = True
-#             #     if set == "False":
-#             #         metadata.boss = False
-#             print("=========================================")
-#             json_text = {
-#                 "name": metadata.name,
-#                 "description": metadata.description,
-#                 "faction": metadata.faction,
-#                 "type": metadata.type,
-#                 "brute": metadata.brute,
-#                 "thief": metadata.thief
-#             }
-#             json_object = json.dumps(json_text, indent=4)
-#             with open("METADATA_OUTPUT\\" + card_name + ".json", "w") as outfile:
-#                 outfile.write(json_object)
+                    shutil.copy2(os.path.join(PNG_SRC_DIR, card_name + ".png"), os.path.join(ENEMY_PNGS_DIR, "IMG-" + enemy_metadata.id + ".png"))
+                    shutil.copy2(os.path.join(PNGDATA_SRC_DIR, card_name + ".json"), os.path.join(ENEMY_PNGDATA_DIR, "FRAMES-" + enemy_metadata.id + ".json"))

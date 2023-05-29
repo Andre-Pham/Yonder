@@ -1,0 +1,21 @@
+{
+    "id": "N0016",
+    "code": "boss_dissonance",
+    "name": "Dissonance",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "shop",
+        "restorer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "armor"
+    ],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Dissonance",
+    "enemyType": "shadow",
+    "brute": false,
+    "thief": false
+}

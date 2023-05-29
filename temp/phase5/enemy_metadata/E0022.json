@@ -1,0 +1,11 @@
+{
+    "id": "E0022",
+    "code": "boss_kane",
+    "name": "Kane",
+    "description": "",
+    "type": "shadow",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

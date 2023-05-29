@@ -1,0 +1,2 @@
+E0006 | boss_christmas (forest)
+E0017 | boss_emp (mech)
