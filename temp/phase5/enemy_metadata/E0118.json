@@ -1,0 +1,11 @@
+{
+    "id": "E0118",
+    "code": "f2_flareslinger",
+    "name": "Clare Slinger",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0131",
+    "code": "f2_masteroftaikwai",
+    "name": "Demonwing",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

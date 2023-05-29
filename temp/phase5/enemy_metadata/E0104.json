@@ -1,0 +1,11 @@
+{
+    "id": "E0104",
+    "code": "f1_xylestormblade",
+    "name": "Young Windblade",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

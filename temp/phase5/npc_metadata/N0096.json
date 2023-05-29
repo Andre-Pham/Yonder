@@ -1,0 +1,21 @@
+{
+    "id": "N0096",
+    "code": "f1_sunriser",
+    "name": "Sunforge Duelyst",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Sunforge Duelyst",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0115",
+    "code": "f2_eclipseasura",
+    "name": "Eclipse Asura",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

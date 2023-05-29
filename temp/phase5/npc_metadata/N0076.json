@@ -1,0 +1,21 @@
+{
+    "id": "N0076",
+    "code": "f1_leovoyant",
+    "name": "Leovoyant",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "restorer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "health",
+        "armor"
+    ],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Leovoyant",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": false
+}

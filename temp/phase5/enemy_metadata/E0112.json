@@ -1,0 +1,11 @@
+{
+    "id": "E0112",
+    "code": "f2_chakriavatar",
+    "name": "Chakri Avatar",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

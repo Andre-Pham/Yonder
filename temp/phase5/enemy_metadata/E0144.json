@@ -1,0 +1,11 @@
+{
+    "id": "E0144",
+    "code": "f2_shidaimk2",
+    "name": "Whirlwind Stormblossom",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,21 @@
+{
+    "id": "N0080",
+    "code": "f1_peacekeeper2",
+    "name": "Aliah Flamesend",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Aliah Flamesend",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": false
+}

@@ -1,0 +1,23 @@
+{
+    "id": "N0122",
+    "code": "f2_grandmasterzendo",
+    "name": "Kaido Master",
+    "description": "",
+    "type": "faction2",
+    "roles": [
+        "shop",
+        "friendly",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Kaido Master",
+    "enemyType": "faction2",
+    "brute": false,
+    "thief": false
+}

@@ -1,0 +1,24 @@
+{
+    "id": "N0101",
+    "code": "f1_tier2general",
+    "name": "Argeon Highmayne",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "shop",
+        "friendly",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Argeon Highmayne",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0105",
+    "code": "f2_3rdgeneral",
+    "name": "Shidai Stormblossom",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

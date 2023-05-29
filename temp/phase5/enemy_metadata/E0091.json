@@ -1,0 +1,11 @@
+{
+    "id": "E0091",
+    "code": "f1_special",
+    "name": "Arclyte Sentinel",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

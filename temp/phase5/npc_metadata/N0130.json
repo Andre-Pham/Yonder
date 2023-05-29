@@ -1,0 +1,21 @@
+{
+    "id": "N0130",
+    "code": "f2_mage4winds",
+    "name": "Four Winds Magus",
+    "description": "",
+    "type": "faction2",
+    "roles": [
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Four Winds Magus",
+    "enemyType": "faction2",
+    "brute": false,
+    "thief": false
+}

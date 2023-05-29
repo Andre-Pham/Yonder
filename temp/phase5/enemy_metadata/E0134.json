@@ -1,0 +1,11 @@
+{
+    "id": "E0134",
+    "code": "f2_ogremonk02",
+    "name": "Ogremonk",
+    "description": "",
+    "type": "faction2",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

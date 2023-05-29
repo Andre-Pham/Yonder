@@ -1,0 +1,21 @@
+{
+    "id": "N0084",
+    "code": "f1_scintilla",
+    "name": "Sunstone Caster",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Sunstone Caster",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": false
+}

@@ -178,8 +178,8 @@ for filename in all_filenames:
             except:
                 print(">>> [ERROR] Could not automatically open:\n> " + os.path.join(PREVIEW_DIR, card_name + ".png"))
             is_npc = None
-            while is_npc not in ["y", "n", "removed", "boss"]:
-                is_npc = input("NPC? (y/n) (or type 'boss') (or type 'removed')\n")
+            while is_npc not in ["y", "n", "removed", "boss", "skip"]:
+                is_npc = input("NPC? (y/n) (or type 'boss') (or type 'removed') (or type 'skip' for auto n,n,n)\n")
             if is_npc == "removed":
                 print("SKIPPING " + card_name + " - REMOVED")
                 add_removed(card_name)
@@ -292,6 +292,8 @@ for filename in all_filenames:
                 enemy_metadata.brute = metadata.brute
                 enemy_metadata.thief = metadata.thief
                 is_acute = None
+                if is_npc == "skip":
+                    is_acute = "n"
                 while is_acute not in ["y", "n"]:
                     is_acute = input("Acute?\n")
                 enemy_metadata.acute = is_acute == "y"
@@ -299,6 +301,8 @@ for filename in all_filenames:
                 if is_acute == "y":
                     is_obtuse = "n"
                 else:
+                    if is_npc == "skip":
+                        is_obtuse = "n"
                     while is_obtuse not in ["y", "n"]:
                         is_obtuse = input("Obtuse?\n")
                 enemy_metadata.obtuse = is_obtuse == "y"

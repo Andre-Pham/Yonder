@@ -1,0 +1,11 @@
+{
+    "id": "E0093",
+    "code": "f1_sunbreaker",
+    "name": "Silverguard Chief",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

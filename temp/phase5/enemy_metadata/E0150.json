@@ -1,0 +1,11 @@
+{
+    "id": "E0150",
+    "code": "f2_supekuta",
+    "name": "Oni Bladeslinger",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0075",
+    "code": "f1_kingsguard",
+    "name": "Kingsguard",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

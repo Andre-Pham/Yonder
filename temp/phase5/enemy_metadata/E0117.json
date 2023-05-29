@@ -1,0 +1,11 @@
+{
+    "id": "E0117",
+    "code": "f2_firewyrm",
+    "name": "Fire Wyrm",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

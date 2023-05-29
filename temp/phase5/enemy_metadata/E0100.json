@@ -1,0 +1,11 @@
+{
+    "id": "E0100",
+    "code": "f1_tank",
+    "name": "Silverguard Brawler",
+    "description": "",
+    "type": "desert",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

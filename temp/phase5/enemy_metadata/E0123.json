@@ -1,0 +1,11 @@
+{
+    "id": "E0123",
+    "code": "f2_hammonbladeseeker",
+    "name": "Rooftop Theif",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

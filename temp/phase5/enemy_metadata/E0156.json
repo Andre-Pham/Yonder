@@ -1,0 +1,11 @@
+{
+    "id": "E0156",
+    "code": "f2_xho",
+    "name": "Xho",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

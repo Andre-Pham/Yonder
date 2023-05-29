@@ -1,0 +1,11 @@
+{
+    "id": "E0113",
+    "code": "f2_deathphantom",
+    "name": "Celestial Phantom",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

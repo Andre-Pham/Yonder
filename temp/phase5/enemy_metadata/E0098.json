@@ -1,0 +1,11 @@
+{
+    "id": "E0098",
+    "code": "f1_sunstonetemplar",
+    "name": "Sunstone Templar",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0078",
+    "code": "f1_melee",
+    "name": "Windblade Adept",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

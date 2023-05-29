@@ -1,0 +1,11 @@
+{
+    "id": "E0155",
+    "code": "f2_twilightfox",
+    "name": "Twilight Fox",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

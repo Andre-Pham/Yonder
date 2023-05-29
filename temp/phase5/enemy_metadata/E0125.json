@@ -1,0 +1,11 @@
+{
+    "id": "E0125",
+    "code": "f2_katara",
+    "name": "Katara",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

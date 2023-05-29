@@ -1,0 +1,11 @@
+{
+    "id": "E0102",
+    "code": "f1_warblade",
+    "name": "Sunforge Mech",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}
