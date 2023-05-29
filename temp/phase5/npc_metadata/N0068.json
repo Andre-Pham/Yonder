@@ -1,0 +1,18 @@
+{
+    "id": "N0068",
+    "code": "f1_general_skinroguelegacy",
+    "name": "Puremetal Knight",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Puremetal Knight",
+    "enemyType": "none",
+    "brute": false,
+    "thief": false
+}

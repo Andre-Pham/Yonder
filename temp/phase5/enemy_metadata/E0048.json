@@ -1,0 +1,11 @@
+{
+    "id": "E0048",
+    "code": "boss_wolfpunch",
+    "name": "Wolfpunch",
+    "description": "",
+    "type": "frost",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

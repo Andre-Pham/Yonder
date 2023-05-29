@@ -1,0 +1,11 @@
+{
+    "id": "E0041",
+    "code": "boss_treatdemon",
+    "name": "Demonic Ghoul",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

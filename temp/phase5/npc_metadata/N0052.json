@@ -1,0 +1,28 @@
+{
+    "id": "N0052",
+    "code": "f1_3rdgeneral",
+    "name": "Brome Warcrest",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "shop",
+        "friendly",
+        "restorer",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "health",
+        "armor"
+    ],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Brome Warcrest",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": false
+}

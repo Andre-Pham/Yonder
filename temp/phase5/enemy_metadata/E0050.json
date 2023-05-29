@@ -1,0 +1,11 @@
+{
+    "id": "E0050",
+    "code": "boss_wujin",
+    "name": "Sandseeker",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

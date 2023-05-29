@@ -1,0 +1,11 @@
+{
+    "id": "E0044",
+    "code": "boss_umbra",
+    "name": "Umbra",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

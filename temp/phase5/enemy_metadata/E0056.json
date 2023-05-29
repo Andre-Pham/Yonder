@@ -1,0 +1,11 @@
+{
+    "id": "E0056",
+    "code": "f1_auroralioness",
+    "name": "Aurora Lioness",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

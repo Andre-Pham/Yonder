@@ -1,0 +1,24 @@
+{
+    "id": "N0070",
+    "code": "f1_groundbreaker",
+    "name": "Tempest Knight",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "shop",
+        "friendly",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Tempest Knight",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": false
+}

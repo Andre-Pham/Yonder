@@ -20,6 +20,12 @@ def print_dictionary(dictionary, by_key=False, reverse=True):
     for key, value in sorted_items:
         print(f'{key}: {value}')
 
+def sum_ints_in_dict(dictionary):
+    total_sum = 0
+    for value in dictionary.values():
+        total_sum += value
+    return total_sum
+
 print("========== ENEMIES ==========")
 enemy_types = {}
 for filename in os.listdir(ENEMY_METADATA_DIR):
@@ -34,7 +40,7 @@ for filename in os.listdir(ENEMY_METADATA_DIR):
         else:
             enemy_types[type] = 1
 print_dictionary(enemy_types)
-print(">>> NUMBER OF ENEMIES: " + str(len(enemy_types)))
+print(">>> NUMBER OF ENEMIES: " + str(sum_ints_in_dict(enemy_types)))
 
 print("========== NPCS ==========")
 npc_types = {}
@@ -50,4 +56,4 @@ for filename in os.listdir(NPC_METADATA_DIR):
         else:
             npc_types[type] = 1
 print_dictionary(npc_types)
-print(">>> NUMBER OF NPCS: " + str(len(npc_types)))
+print(">>> NUMBER OF NPCS: " + str(sum_ints_in_dict(npc_types)))

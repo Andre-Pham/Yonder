@@ -167,13 +167,16 @@ for filename in all_filenames:
                 metadata.thief = False
             else:
                 metadata.thief = metadata_json["thief"]
-            print("==========  " + metadata.name + " (" + metadata.type + ") " + "  ==========")
+            print("==========  " + metadata.name + " (" + metadata.type + ") " + "(" + card_name + ".png) " + "  ==========")
             if metadata.name.lower() == "removed":
                 print("SKIPPING " + card_name + " - REMOVED")
                 add_removed(card_name)
                 continue
             image = Image.open(os.path.join(PREVIEW_DIR, card_name + ".png"))
-            image.show()
+            try:
+                image.show()
+            except:
+                print(">>> [ERROR] Could not automatically open:\n> " + os.path.join(PREVIEW_DIR, card_name + ".png"))
             is_npc = None
             while is_npc not in ["y", "n", "removed", "boss"]:
                 is_npc = input("NPC? (y/n) (or type 'boss') (or type 'removed')\n")

@@ -1,0 +1,11 @@
+{
+    "id": "E0071",
+    "code": "f1_gryphinox",
+    "name": "Gryphinox",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0069",
+    "code": "f1_grandmasterzir",
+    "name": "Grandmaster Zir",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

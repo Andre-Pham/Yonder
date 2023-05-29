@@ -1,0 +1,11 @@
+{
+    "id": "E0051",
+    "code": "critter_1",
+    "name": "Lil Blob",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}
