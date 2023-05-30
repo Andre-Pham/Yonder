@@ -1,0 +1,11 @@
+{
+    "id": "E0215",
+    "code": "f4_bloodmoon",
+    "name": "Vorpal Ringcaster",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

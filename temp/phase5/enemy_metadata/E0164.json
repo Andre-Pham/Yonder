@@ -1,0 +1,11 @@
+{
+    "id": "E0164",
+    "code": "f3_bobble",
+    "name": "Divine Caster",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

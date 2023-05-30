@@ -1,0 +1,11 @@
+{
+    "id": "E0225",
+    "code": "f4_demonofeternity",
+    "name": "Eternal Demonkin",
+    "description": "",
+    "type": "faction4",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0160",
+    "code": "f3_altgeneraltier2",
+    "name": "Sister Sajj",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

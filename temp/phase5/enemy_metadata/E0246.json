@@ -1,0 +1,11 @@
+{
+    "id": "E0246",
+    "code": "f4_phantasm",
+    "name": "Phantasm",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

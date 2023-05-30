@@ -1,0 +1,11 @@
+{
+    "id": "E0205",
+    "code": "f3_zodiac02",
+    "name": "Dune Zodiac",
+    "description": "",
+    "type": "cavern",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

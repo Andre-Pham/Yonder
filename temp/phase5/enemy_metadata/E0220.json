@@ -1,0 +1,11 @@
+{
+    "id": "E0220",
+    "code": "f4_daemondeep",
+    "name": "Aphotic Devourer",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

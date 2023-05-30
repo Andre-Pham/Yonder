@@ -1,0 +1,11 @@
+{
+    "id": "E0240",
+    "code": "f4_mech",
+    "name": "Abyss Splitstrike",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

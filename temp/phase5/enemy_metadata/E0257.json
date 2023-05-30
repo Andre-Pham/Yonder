@@ -1,0 +1,11 @@
+{
+    "id": "E0257",
+    "code": "f4_underworldbrute",
+    "name": "Voidclaw Snatcher",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

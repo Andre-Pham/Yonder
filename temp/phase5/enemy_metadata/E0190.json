@@ -1,0 +1,11 @@
+{
+    "id": "E0190",
+    "code": "f3_rae",
+    "name": "Flamespit",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

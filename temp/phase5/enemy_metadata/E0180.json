@@ -1,0 +1,11 @@
+{
+    "id": "E0180",
+    "code": "f3_irondervish",
+    "name": "Mudscrape Outcast",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

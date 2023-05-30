@@ -1,0 +1,11 @@
+{
+    "id": "E0241",
+    "code": "f4_megafiend",
+    "name": "Vorpal Fiend",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

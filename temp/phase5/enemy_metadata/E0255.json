@@ -1,0 +1,11 @@
+{
+    "id": "E0255",
+    "code": "f4_skullcaster",
+    "name": "Skull Caster",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

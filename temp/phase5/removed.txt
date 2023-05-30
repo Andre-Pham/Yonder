@@ -1,1 +1,5 @@
 f1_caster
+f3_deathobelysk
+f3_lavastormobelysk
+f3_obelyskduskwind
+f3_obelyskgoldenflame

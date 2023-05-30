@@ -1,0 +1,11 @@
+{
+    "id": "E0228",
+    "code": "f4_fallenaspect",
+    "name": "Wretched Aspect",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

@@ -1,0 +1,21 @@
+{
+    "id": "N0172",
+    "code": "f3_duskweaver",
+    "name": "Duskweaver",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Duskweaver",
+    "enemyType": "faction3",
+    "brute": false,
+    "thief": false
+}

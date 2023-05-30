@@ -1,0 +1,11 @@
+{
+    "id": "E0194",
+    "code": "f3_scarabtera",
+    "name": "Scarab Terahound",
+    "description": "",
+    "type": "cavern",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

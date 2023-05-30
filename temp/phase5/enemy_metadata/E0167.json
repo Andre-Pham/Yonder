@@ -1,0 +1,11 @@
+{
+    "id": "E0167",
+    "code": "f3_curseddervish",
+    "name": "Curse Whisperer",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0188",
+    "code": "f3_palacetrinketeer",
+    "name": "Dunerider",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

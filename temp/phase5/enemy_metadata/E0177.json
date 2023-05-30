@@ -1,0 +1,11 @@
+{
+    "id": "E0177",
+    "code": "f3_grandmasternoshrak",
+    "name": "Divine Assassin",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

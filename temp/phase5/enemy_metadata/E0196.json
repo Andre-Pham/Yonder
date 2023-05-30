@@ -1,0 +1,11 @@
+{
+    "id": "E0196",
+    "code": "f3_sirocco",
+    "name": "Sirocco",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

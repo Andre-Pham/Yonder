@@ -1,0 +1,11 @@
+{
+    "id": "E0247",
+    "code": "f4_pitstrider",
+    "name": "Pitstrider",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

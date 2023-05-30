@@ -1,0 +1,11 @@
+{
+    "id": "E0184",
+    "code": "f3_miniscarab",
+    "name": "Scarab Troop",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

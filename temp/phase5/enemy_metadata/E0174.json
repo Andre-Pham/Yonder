@@ -1,0 +1,11 @@
+{
+    "id": "E0174",
+    "code": "f3_falcius",
+    "name": "Divine Brawler",
+    "description": "",
+    "type": "cavern",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0216",
+    "code": "f4_buildcommon",
+    "name": "Abyss Assassin",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

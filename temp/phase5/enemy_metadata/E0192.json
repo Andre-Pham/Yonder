@@ -1,0 +1,11 @@
+{
+    "id": "E0192",
+    "code": "f3_sakkak",
+    "name": "Sakkak Mage",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

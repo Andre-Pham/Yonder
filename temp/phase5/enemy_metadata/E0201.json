@@ -1,0 +1,11 @@
+{
+    "id": "E0201",
+    "code": "f3_windshriek",
+    "name": "Windshriek",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

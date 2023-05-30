@@ -1,0 +1,11 @@
+{
+    "id": "E0191",
+    "code": "f3_rehorah",
+    "name": "Rehoran",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0221",
+    "code": "f4_daemongate",
+    "name": "Demongate Brute",
+    "description": "",
+    "type": "faction4",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0207",
+    "code": "f4_abomination",
+    "name": "Abyss Abomination",
+    "description": "",
+    "type": "faction4",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

@@ -1,0 +1,24 @@
+{
+    "id": "N0182",
+    "code": "f3_keeperofages",
+    "name": "Mistspeaker",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly",
+        "restorer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "health"
+    ],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Mistspeaker",
+    "enemyType": "faction3",
+    "brute": false,
+    "thief": false
+}

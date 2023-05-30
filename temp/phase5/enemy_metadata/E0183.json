@@ -1,0 +1,11 @@
+{
+    "id": "E0183",
+    "code": "f3_mech",
+    "name": "Spark",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

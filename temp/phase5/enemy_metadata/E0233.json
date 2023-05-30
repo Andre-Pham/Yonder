@@ -1,0 +1,11 @@
+{
+    "id": "E0233",
+    "code": "f4_horror",
+    "name": "Crest Horror",
+    "description": "",
+    "type": "faction4",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

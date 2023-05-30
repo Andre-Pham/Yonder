@@ -1,0 +1,11 @@
+{
+    "id": "E0157",
+    "code": "f3_3rdgeneral",
+    "name": "Ciphyron Ascendant",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

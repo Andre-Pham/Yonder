@@ -1,0 +1,11 @@
+{
+    "id": "E0253",
+    "code": "f4_siren",
+    "name": "Rock Vorpal",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,25 @@
+{
+    "id": "N0242",
+    "code": "f4_mistressofcommands",
+    "name": "Dark Mistress",
+    "description": "",
+    "type": "faction4",
+    "roles": [
+        "friendly",
+        "restorer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "health",
+        "armor"
+    ],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Dark Mistress",
+    "enemyType": "faction4",
+    "brute": false,
+    "thief": false
+}

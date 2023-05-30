@@ -1,0 +1,11 @@
+{
+    "id": "E0166",
+    "code": "f3_ciphyronmk2",
+    "name": "Ciphyron Enraged",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

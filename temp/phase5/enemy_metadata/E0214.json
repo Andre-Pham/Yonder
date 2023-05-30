@@ -1,0 +1,11 @@
+{
+    "id": "E0214",
+    "code": "f4_bloodbaronette",
+    "name": "Blood Baronette",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

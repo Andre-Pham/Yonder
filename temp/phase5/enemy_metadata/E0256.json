@@ -1,0 +1,11 @@
+{
+    "id": "E0256",
+    "code": "f4_tier2general",
+    "name": "Lilithe Blightchaser",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

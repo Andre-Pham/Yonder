@@ -1,0 +1,11 @@
+{
+    "id": "E0199",
+    "code": "f3_tier2general",
+    "name": "Zirix Starstrider",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

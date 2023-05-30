@@ -1,0 +1,11 @@
+{
+    "id": "E0217",
+    "code": "f4_crawler",
+    "name": "Abyss Crawler",
+    "description": "",
+    "type": "shadow",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

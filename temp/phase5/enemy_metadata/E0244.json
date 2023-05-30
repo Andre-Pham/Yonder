@@ -1,0 +1,11 @@
+{
+    "id": "E0244",
+    "code": "f4_nightsorrow",
+    "name": "Nightsorrow",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

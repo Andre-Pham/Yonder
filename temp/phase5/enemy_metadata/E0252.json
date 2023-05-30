@@ -1,0 +1,11 @@
+{
+    "id": "E0252",
+    "code": "f4_sinergyunit",
+    "name": "Sister Flameflail",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

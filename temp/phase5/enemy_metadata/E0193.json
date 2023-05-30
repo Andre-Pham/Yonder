@@ -1,0 +1,11 @@
+{
+    "id": "E0193",
+    "code": "f3_sandhowler",
+    "name": "Sand Howler",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

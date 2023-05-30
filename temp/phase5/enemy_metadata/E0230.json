@@ -1,0 +1,11 @@
+{
+    "id": "E0230",
+    "code": "f4_general",
+    "name": "Lilithe Blightchaser",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0208",
+    "code": "f4_abyssiansentinel",
+    "name": "Shadow Snatcher",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

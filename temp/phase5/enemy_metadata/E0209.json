@@ -1,0 +1,11 @@
+{
+    "id": "E0209",
+    "code": "f4_altgeneral",
+    "name": "Cassyva Soulreaper",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

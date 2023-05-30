@@ -1,0 +1,22 @@
+{
+    "id": "N0248",
+    "code": "f4_plaguedr",
+    "name": "Plague Doctor",
+    "description": "",
+    "type": "faction4",
+    "roles": [
+        "shop",
+        "restorer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "health",
+        "armor"
+    ],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Plague Doctor",
+    "enemyType": "faction4",
+    "brute": false,
+    "thief": false
+}
