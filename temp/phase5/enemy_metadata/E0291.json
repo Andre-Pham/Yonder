@@ -1,0 +1,11 @@
+{
+    "id": "E0291",
+    "code": "f5_primordialgazer",
+    "name": "Primorial Gazer",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

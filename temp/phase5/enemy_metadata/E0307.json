@@ -1,0 +1,11 @@
+{
+    "id": "E0307",
+    "code": "f5_unstableleviathan",
+    "name": "Mythril Leviathan",
+    "description": "",
+    "type": "faction5",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

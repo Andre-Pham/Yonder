@@ -1,0 +1,11 @@
+{
+    "id": "E0271",
+    "code": "f5_general",
+    "name": "Slithar Brute",
+    "description": "",
+    "type": "faction5",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

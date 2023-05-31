@@ -1,0 +1,11 @@
+{
+    "id": "E0269",
+    "code": "f5_firebreather",
+    "name": "Flamebreath Mythcrawler",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0287",
+    "code": "f5_mythronquest",
+    "name": "Mythcrawler Inferno",
+    "description": "",
+    "type": "faction5",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

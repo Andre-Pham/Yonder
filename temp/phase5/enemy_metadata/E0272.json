@@ -1,0 +1,11 @@
+{
+    "id": "E0272",
+    "code": "f5_genesis",
+    "name": "Bejewelled Slithar",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

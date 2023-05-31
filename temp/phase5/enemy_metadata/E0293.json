@@ -1,0 +1,11 @@
+{
+    "id": "E0293",
+    "code": "f5_ragebinder",
+    "name": "Ragebinder",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

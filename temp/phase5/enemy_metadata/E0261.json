@@ -1,0 +1,11 @@
+{
+    "id": "E0261",
+    "code": "f5_ankylos",
+    "name": "Ankylos",
+    "description": "",
+    "type": "faction5",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

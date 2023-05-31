@@ -1,0 +1,11 @@
+{
+    "id": "E0265",
+    "code": "f5_catalystquillbeast",
+    "name": "Catalyst Quillbeast",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

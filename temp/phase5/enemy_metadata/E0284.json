@@ -1,0 +1,11 @@
+{
+    "id": "E0284",
+    "code": "f5_mech",
+    "name": "Mythril Knight",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

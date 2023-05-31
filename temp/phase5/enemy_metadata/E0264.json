@@ -1,0 +1,11 @@
+{
+    "id": "E0264",
+    "code": "f5_buildcommon",
+    "name": "Mythril Guardian",
+    "description": "",
+    "type": "faction5",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

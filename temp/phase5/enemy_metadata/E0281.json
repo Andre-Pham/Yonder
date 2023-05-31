@@ -1,0 +1,11 @@
+{
+    "id": "E0281",
+    "code": "f5_magma",
+    "name": "Mythflame Grunt",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

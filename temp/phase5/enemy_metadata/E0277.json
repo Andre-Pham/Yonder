@@ -1,0 +1,11 @@
+{
+    "id": "E0277",
+    "code": "f5_juggernaut",
+    "name": "Lumbering Mythcrawler",
+    "description": "",
+    "type": "faction5",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

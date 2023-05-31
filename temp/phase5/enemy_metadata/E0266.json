@@ -1,0 +1,11 @@
+{
+    "id": "E0266",
+    "code": "f5_dreadnaught",
+    "name": "Dreadnaught Slithar",
+    "description": "",
+    "type": "faction5",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

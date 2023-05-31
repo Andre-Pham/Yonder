@@ -1,0 +1,11 @@
+{
+    "id": "E0263",
+    "code": "f5_brundlbeast",
+    "name": "Brundlbeast",
+    "description": "",
+    "type": "faction5",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

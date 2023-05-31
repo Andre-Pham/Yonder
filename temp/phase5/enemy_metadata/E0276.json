@@ -1,0 +1,11 @@
+{
+    "id": "E0276",
+    "code": "f5_gro",
+    "name": "Mythril Critter",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

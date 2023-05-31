@@ -1,0 +1,11 @@
+{
+    "id": "E0302",
+    "code": "f5_support",
+    "name": "Elucidator",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

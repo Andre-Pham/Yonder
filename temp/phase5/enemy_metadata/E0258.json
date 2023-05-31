@@ -1,0 +1,11 @@
+{
+    "id": "E0258",
+    "code": "f5_3rdgeneral",
+    "name": "Ragnora The Relentless",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

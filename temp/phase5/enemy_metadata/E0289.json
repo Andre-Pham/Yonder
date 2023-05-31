@@ -1,0 +1,11 @@
+{
+    "id": "E0289",
+    "code": "f5_orphanoftheaspect",
+    "name": "Armored Combatant",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

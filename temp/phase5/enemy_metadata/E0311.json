@@ -1,0 +1,11 @@
+{
+    "id": "E0311",
+    "code": "f5_wildinceptor",
+    "name": "Absorbant Elemental",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

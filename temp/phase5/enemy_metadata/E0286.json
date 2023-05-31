@@ -1,0 +1,11 @@
+{
+    "id": "E0286",
+    "code": "f5_molokihuntress",
+    "name": "Moloki Huntress",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}
