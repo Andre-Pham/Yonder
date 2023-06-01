@@ -1,0 +1,11 @@
+{
+    "id": "E0333",
+    "code": "f6_grandmasterembla",
+    "name": "Frostblade Outcast",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

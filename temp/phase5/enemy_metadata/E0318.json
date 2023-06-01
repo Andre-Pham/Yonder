@@ -1,0 +1,11 @@
+{
+    "id": "E0318",
+    "code": "f6_buildcommon",
+    "name": "Glacial Axeweilder",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

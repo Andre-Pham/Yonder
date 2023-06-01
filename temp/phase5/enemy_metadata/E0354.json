@@ -1,0 +1,11 @@
+{
+    "id": "E0354",
+    "code": "f6_snowman",
+    "name": "Glacial Abomination",
+    "description": "",
+    "type": "faction6",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

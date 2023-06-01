@@ -1,0 +1,26 @@
+{
+    "id": "N0346",
+    "code": "f6_perfectreflection",
+    "name": "Icewhisp Caster",
+    "description": "",
+    "type": "faction6",
+    "roles": [
+        "friendly",
+        "restorer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "health",
+        "armor"
+    ],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Icewhisp Caster",
+    "enemyType": "faction6",
+    "brute": false,
+    "thief": false
+}

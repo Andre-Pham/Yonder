@@ -1,0 +1,11 @@
+{
+    "id": "E0322",
+    "code": "f6_eldersaberspine",
+    "name": "Twintail Saber",
+    "description": "",
+    "type": "forest",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

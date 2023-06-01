@@ -1,0 +1,11 @@
+{
+    "id": "E0347",
+    "code": "f6_ravager",
+    "name": "Borean Hound",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

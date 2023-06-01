@@ -1,0 +1,11 @@
+{
+    "id": "E0335",
+    "code": "f6_huldra",
+    "name": "Wily Frostcast",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

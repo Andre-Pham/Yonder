@@ -1,0 +1,11 @@
+{
+    "id": "E0360",
+    "code": "f6_vanarsentinel",
+    "name": "Cryo Sentinal",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

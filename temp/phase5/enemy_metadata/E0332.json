@@ -1,0 +1,11 @@
+{
+    "id": "E0332",
+    "code": "f6_ghostseraphim",
+    "name": "Northern Valkyrie",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0362",
+    "code": "f6_waterbear",
+    "name": "Borean Bear",
+    "description": "",
+    "type": "faction6",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

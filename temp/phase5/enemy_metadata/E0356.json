@@ -1,0 +1,11 @@
+{
+    "id": "E0356",
+    "code": "f6_spiritwolf",
+    "name": "Cryowolf",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,25 @@
+{
+    "id": "N0324",
+    "code": "f6_evilcrystalwisp",
+    "name": "Crystalwhisp",
+    "description": "",
+    "type": "faction6",
+    "roles": [
+        "friendly",
+        "restorer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "health",
+        "armor"
+    ],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Crystalwhisp",
+    "enemyType": "faction6",
+    "brute": false,
+    "thief": false
+}

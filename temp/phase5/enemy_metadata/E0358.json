@@ -1,0 +1,11 @@
+{
+    "id": "E0358",
+    "code": "f6_treant",
+    "name": "Snowtree Grove",
+    "description": "",
+    "type": "faction6",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

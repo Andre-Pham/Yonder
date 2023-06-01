@@ -1,0 +1,23 @@
+{
+    "id": "N0343",
+    "code": "f6_motherofdrakes",
+    "name": "Frost Caster",
+    "description": "",
+    "type": "faction6",
+    "roles": [
+        "friendly",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Frost Caster",
+    "enemyType": "faction6",
+    "brute": false,
+    "thief": true
+}

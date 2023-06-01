@@ -1,0 +1,11 @@
+{
+    "id": "E0326",
+    "code": "f6_fenrirwerewolf",
+    "name": "Glacial Savage",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0341",
+    "code": "f6_mech",
+    "name": "Cryomech",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

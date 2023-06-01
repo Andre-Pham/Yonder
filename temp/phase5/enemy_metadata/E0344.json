@@ -1,0 +1,11 @@
+{
+    "id": "E0344",
+    "code": "f6_myriad",
+    "name": "Cryocrawler",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

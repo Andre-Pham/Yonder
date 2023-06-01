@@ -1,0 +1,11 @@
+{
+    "id": "E0328",
+    "code": "f6_frostbitehawker",
+    "name": "Werehawk",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

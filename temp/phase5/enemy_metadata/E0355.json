@@ -1,0 +1,11 @@
+{
+    "id": "E0355",
+    "code": "f6_snowwyvern",
+    "name": "Glacial Tailwhip",
+    "description": "",
+    "type": "faction6",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

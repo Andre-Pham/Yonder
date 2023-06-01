@@ -1,0 +1,11 @@
+{
+    "id": "E0330",
+    "code": "f6_frostiva",
+    "name": "Glacial Scout",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

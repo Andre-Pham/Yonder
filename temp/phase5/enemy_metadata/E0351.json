@@ -1,0 +1,11 @@
+{
+    "id": "E0351",
+    "code": "f6_sinergyunit",
+    "name": "Frostburn Blademaster",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0323",
+    "code": "f6_elklodon",
+    "name": "Borean Elk",
+    "description": "",
+    "type": "faction6",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}
