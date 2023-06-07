@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    let imageManager = ImageManager(imageName: "IMG-E0001")
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        VStack(spacing: 0) {
+            self.imageManager.croppedImage2
+                .resizable()
+                .interpolation(.none)
+                .frame(width: 5000, height: 5000)
+            
+//            self.imageManager.croppedImage2
+//                .resizable()
+//                .interpolation(.none)
+//                .frame(width: 1000, height: 1000)
         }
         .padding()
     }
