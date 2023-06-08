@@ -19,6 +19,9 @@
 		B6C37DE62A3143A6004D18A8 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DE52A3143A6004D18A8 /* ImageManager.swift */; };
 		B6C37DE92A3144C6004D18A8 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = B6C37DE82A3144C6004D18A8 /* SwiftyJSON */; };
 		B6C37DEB2A314AC9004D18A8 /* Performance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DEA2A314AC9004D18A8 /* Performance.swift */; };
+		B6C37DED2A3258DA004D18A8 /* AnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DEC2A3258DA004D18A8 /* AnimationManager.swift */; };
+		B6C37DEF2A325925004D18A8 /* AnimationSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DEE2A325925004D18A8 /* AnimationSequence.swift */; };
+		B6C37DF12A326B65004D18A8 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DF02A326B65004D18A8 /* Timer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		B6C37DE32A31435E004D18A8 /* IMG-E0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "IMG-E0001.png"; path = "../../phase5/enemy_pngs/IMG-E0001.png"; sourceTree = "<group>"; };
 		B6C37DE52A3143A6004D18A8 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		B6C37DEA2A314AC9004D18A8 /* Performance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Performance.swift; sourceTree = "<group>"; };
+		B6C37DEC2A3258DA004D18A8 /* AnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
+		B6C37DEE2A325925004D18A8 /* AnimationSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSequence.swift; sourceTree = "<group>"; };
+		B6C37DF02A326B65004D18A8 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,9 @@
 				B6C37DBD2A314106004D18A8 /* Preview Content */,
 				B6C37DE52A3143A6004D18A8 /* ImageManager.swift */,
 				B6C37DEA2A314AC9004D18A8 /* Performance.swift */,
+				B6C37DEC2A3258DA004D18A8 /* AnimationManager.swift */,
+				B6C37DEE2A325925004D18A8 /* AnimationSequence.swift */,
+				B6C37DF02A326B65004D18A8 /* Timer.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -281,8 +290,11 @@
 			files = (
 				B6C37DE62A3143A6004D18A8 /* ImageManager.swift in Sources */,
 				B6C37DBA2A314106004D18A8 /* ContentView.swift in Sources */,
+				B6C37DF12A326B65004D18A8 /* Timer.swift in Sources */,
 				B6C37DEB2A314AC9004D18A8 /* Performance.swift in Sources */,
+				B6C37DEF2A325925004D18A8 /* AnimationSequence.swift in Sources */,
 				B6C37DB82A314106004D18A8 /* AnimationApp.swift in Sources */,
+				B6C37DED2A3258DA004D18A8 /* AnimationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
