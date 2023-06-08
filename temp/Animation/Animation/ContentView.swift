@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            self.imageManager.croppedImage2
+            self.imageManager.croppedImage
                 .resizable()
                 .interpolation(.none)
                 .frame(width: 5000, height: 5000)

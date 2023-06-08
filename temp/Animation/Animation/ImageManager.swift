@@ -28,11 +28,6 @@ class ImageManager {
         let image = self.cropImage(self.fullImage, toRect: CGRect(x: origin.x, y: origin.y, width: self.imageSize.x, height: self.imageSize.y))
         return Image(uiImage: image!)
     }
-    public var croppedImage2: Image {
-        let origin = self.breathingCoords[0]
-        let image = self.cropImage2(self.fullImage, toRect: CGRect(x: origin.x, y: origin.y, width: self.imageSize.x, height: self.imageSize.y))
-        return Image(uiImage: image!)
-    }
     
     init(imageName: String) {
         self.fullImage = UIImage(named: imageName)!
@@ -43,25 +38,9 @@ class ImageManager {
             self.breathingCoords.append(ImageCoords(x: coord["x"].intValue, y: coord["y"].intValue))
         }
         self.imageSize = ImageCoords(x: self.json["frame_width"].intValue, y: self.json["frame_height"].intValue)
-        
-        print("Hello?")
-        
-        TestPerformance.executionDuration(printedTaskName: "cropImage") {
-            for _ in 0..<100000 {
-                let origin = self.breathingCoords[0]
-                let image = self.cropImage(self.fullImage, toRect: CGRect(x: origin.x, y: origin.y, width: self.imageSize.x, height: self.imageSize.y))
-            }
-        }
-        
-        TestPerformance.executionDuration(printedTaskName: "cropImage2") {
-            for _ in 0..<100000 {
-                let origin = self.breathingCoords[0]
-                let image = self.cropImage2(self.fullImage, toRect: CGRect(x: origin.x, y: origin.y, width: self.imageSize.x, height: self.imageSize.y))
-            }
-        }
     }
     
-    func cropImage2(_ sourceImage: UIImage, toRect cropRect: CGRect) -> UIImage? {
+    func cropImage(_ sourceImage: UIImage, toRect cropRect: CGRect) -> UIImage? {
         // MARK: Note: This is much MUCH faster compared to UIGraphicsBeginImageContextWithOptions
         // The shortest side
         let sideLength = min(
@@ -69,13 +48,6 @@ class ImageManager {
             sourceImage.size.height
         )
 
-        // Determines the x,y coordinate of a centered
-        // sideLength by sideLength square
-        let sourceSize = sourceImage.size
-        let xOffset = (sourceSize.width - sideLength) / 2.0
-        let yOffset = (sourceSize.height - sideLength) / 2.0
-
-        // Center crop the image
         let sourceCGImage = sourceImage.cgImage!
         let croppedCGImage = sourceCGImage.cropping(
             to: cropRect
@@ -88,31 +60,6 @@ class ImageManager {
             scale: sourceImage.imageRendererFormat.scale,
             orientation: sourceImage.imageOrientation
         )
-        return croppedImage
-    }
-    
-    func cropImage(_ originalImage: UIImage, toRect cropRect: CGRect) -> UIImage? {
-        // Calculate the scale factor based on the image's orientation
-        let scale = originalImage.scale
-        
-        // Calculate the crop rectangle in image coordinates
-        let cropRectInImage = CGRect(x: cropRect.origin.x * scale,
-                                     y: cropRect.origin.y * scale,
-                                     width: cropRect.size.width * scale,
-                                     height: cropRect.size.height * scale)
-        
-        // Create a graphics context using the cropped size
-        UIGraphicsBeginImageContextWithOptions(cropRectInImage.size, false, scale)
-        
-        // Draw the cropped portion of the image in the graphics context
-        originalImage.draw(at: CGPoint(x: -cropRectInImage.origin.x, y: -cropRectInImage.origin.y))
-        
-        // Get the cropped image from the graphics context
-        let croppedImage = UIGraphicsGetImageFromCurrentImageContext()
-        
-        // End the graphics context
-        UIGraphicsEndImageContext()
-        
         return croppedImage
     }
     
