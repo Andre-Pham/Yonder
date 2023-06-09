@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
 //    let imageManager = ImageManager(imageName: "IMG-E0001")
     @StateObject private var manager = AnimationManager(id: "E0001", initialSequence: .idle)!
-    @StateObject private var queue = AnimationQueue(id: "E0001", defaultAnimation: .idle)!
+    @StateObject private var queue = AnimationQueue(id: "E0001", defaultAnimation: .breathing)!
     
     var body: some View {
         VStack(spacing: 0) {
@@ -57,6 +57,10 @@ struct ContentView: View {
                     self.queue.clearQueue()
                     self.queue.addToQueue(sequence: .death)
                     self.queue.endQueue()
+                }
+                
+                Button("Reinit") {
+                    self.queue.reinitialiseQueue()
                 }
             }
             
