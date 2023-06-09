@@ -13,9 +13,10 @@ class NPCAnimation: AnimationQueue, AfterPlayerKillFoeSubscriber, OnActorAttackS
     private var subscriptions: Set<AnyCancellable> = []
     private let optionsStateManager: OptionsStateManager
     
-    init?(optionsStateManager: OptionsStateManager) {
+    init(optionsStateManager: OptionsStateManager) {
         self.optionsStateManager = optionsStateManager
-        super.init(fileID: "E0001", defaultAnimation: .breathing)
+        let location = GameManager.instance.playerVM.player.location
+        super.init(fileID: Self.getFileID(location: location), defaultAnimation: .breathing)
         
         if let foeIsDead = GameManager.instance.foeViewModel?.isDead, foeIsDead {
             // If we start the game and the foe is already dead, skip straight to the end of the death sequence
@@ -50,18 +51,23 @@ class NPCAnimation: AnimationQueue, AfterPlayerKillFoeSubscriber, OnActorAttackS
     }
     
     func afterPlayerTravel(player: Player) {
-        // TODO: Change default animation and file ID and stuff here
-        switch player.location.type {
-        case .shop, .enhancer, .restorer, .friendly:
-            break
-        case .none, .quest, .bridge:
-            // Set animation to none here
-            break
-        case .hostile, .challengeHostile, .boss:
-            break
-        }
+        self.setFileID(to: Self.getFileID(location: player.location))
         
+        // If the queue was ended due to a foe dying, this reinitialises it
+        // It also clears the queue (always)
         self.reinitialiseQueue()
+    }
+    
+    private static func getFileID(location: Location) -> String? {
+        // TODO: Read the actual npc/foe here and update accordingly
+        switch location.type {
+        case .shop, .enhancer, .restorer, .friendly:
+            return "E0001"
+        case .none, .quest, .bridge:
+            return nil
+        case .hostile, .challengeHostile, .boss:
+            return "E0003"
+        }
     }
     
 }

@@ -13,7 +13,7 @@ class AnimationQueue: AnimationManager {
     private var queue = [SequenceCode]()
     private var isEnded = false
     
-    init?(fileID: String, defaultAnimation: SequenceCode) {
+    init(fileID: String?, defaultAnimation: SequenceCode) {
         self.defaultSequence = defaultAnimation
         super.init(fileID: fileID, initialSequence: defaultAnimation)
         self.play()

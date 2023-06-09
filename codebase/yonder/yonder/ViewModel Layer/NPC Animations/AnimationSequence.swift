@@ -54,7 +54,7 @@ class AnimationSequence {
         self.frameSize = frameSize
     }
     
-    func setDelegate(to delegate: SequenceDelegate) {
+    func setDelegate(to delegate: SequenceDelegate?) {
         self.delegate = delegate
     }
     

@@ -15,7 +15,7 @@ struct LocationView: View {
     init(locationViewModel: LocationViewModel, optionsStateManager: OptionsStateManager) {
         self.locationViewModel = locationViewModel
         // Maintain as @StateObject to not re-create every view redraw
-        self._animationQueue = StateObject(wrappedValue: NPCAnimation(optionsStateManager: optionsStateManager)!)
+        self._animationQueue = StateObject(wrappedValue: NPCAnimation(optionsStateManager: optionsStateManager))
     }
     
     var body: some View {

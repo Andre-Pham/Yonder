@@ -25,25 +25,32 @@ class AnimationManager: ObservableObject, SequenceDelegate {
         return self.activeSequence.isPlaying
     }
     
-    init?(fileID: String, initialSequence: SequenceCode) {
+    init(fileID: String?, initialSequence: SequenceCode) {
+        self.activeSequenceCode = initialSequence
+        // Set blank frame assuming no fileID was provided
+        self.frame = Image(uiImage: UIImage())
+        guard let fileID else {
+            // No fileID provided - empty animation (completely valid)
+            return
+        }
         guard let spriteSheet = UIImage(named: Self.SPRITE_SHEET_PREFIX + fileID) else {
             assertionFailure("Animation ID provided doesn't have corresponding sprite sheet")
-            return nil
+            return
         }
         guard let framesURL = Bundle.main.url(forResource: Self.FRAMES_DATA_PREFIX + fileID, withExtension: "json"),
               let framesData = try? Data(contentsOf: framesURL) else {
             assertionFailure("Frames data could not be loaded")
-            return nil
+            return
         }
         guard let framesDataJSON = try? JSON(data: framesData) else {
             assertionFailure("JSON could not be retrieved from frames data")
-            return nil
+            return
         }
         let builder = AnimationSequenceBuilder(spriteSheet: spriteSheet, framesDataJSON: framesDataJSON)
         for code in SequenceCode.allCases {
             guard let sequence = builder.build(prefix: code.rawValue) else {
                 assertionFailure("Sequence(s) couldn't be built")
-                return nil
+                return
             }
             self.sequences[code.rawValue] = sequence
         }
@@ -60,8 +67,52 @@ class AnimationManager: ObservableObject, SequenceDelegate {
         self.getSequence(.attack).setLoopBehaviour(to: false)
     }
     
+    func setFileID(to fileID: String?) {
+        let wasPlaying = self.isPlaying
+        for sequence in self.sequences.values {
+            sequence.setDelegate(to: nil)
+        }
+        self.sequences.removeAll()
+        // Set blank frame assuming no fileID was provided
+        self.frame = Image(uiImage: UIImage())
+        guard let fileID else {
+            // No fileID provided - empty animation (completely valid)
+            return
+        }
+        guard let spriteSheet = UIImage(named: Self.SPRITE_SHEET_PREFIX + fileID) else {
+            assertionFailure("Animation ID provided doesn't have corresponding sprite sheet")
+            return
+        }
+        guard let framesURL = Bundle.main.url(forResource: Self.FRAMES_DATA_PREFIX + fileID, withExtension: "json"),
+              let framesData = try? Data(contentsOf: framesURL) else {
+            assertionFailure("Frames data could not be loaded")
+            return
+        }
+        guard let framesDataJSON = try? JSON(data: framesData) else {
+            assertionFailure("JSON could not be retrieved from frames data")
+            return
+        }
+        let builder = AnimationSequenceBuilder(spriteSheet: spriteSheet, framesDataJSON: framesDataJSON)
+        for code in SequenceCode.allCases {
+            guard let sequence = builder.build(prefix: code.rawValue) else {
+                assertionFailure("Sequence(s) couldn't be built")
+                return
+            }
+            self.sequences[code.rawValue] = sequence
+        }
+        self.frame = self.sequences[self.activeSequenceCode.rawValue]!.frame
+        for code in SequenceCode.allCases {
+            self.getSequence(code).setDelegate(to: self)
+        }
+        self.setupSequences()
+        if wasPlaying {
+            // Restore state
+            self.play()
+        }
+    }
+    
     private func getSequence(_ code: SequenceCode) -> AnimationSequence {
-        return self.sequences[code.rawValue]!
+        return self.sequences[code.rawValue] ?? NoAnimationSequence()
     }
     
     func setPlaybackSpeed(to speed: Double) {
