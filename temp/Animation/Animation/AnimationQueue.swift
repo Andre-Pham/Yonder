@@ -30,6 +30,9 @@ class AnimationQueue: AnimationManager {
     }
     
     func addToQueue(sequence: SequenceKey) {
+        if self.isEnded {
+            self.reinitialiseQueue()
+        }
         if self.queue.isEmpty && self.activeSequenceKey == self.defaultAnimation {
             self.setSequence(to: sequence)
         } else {
