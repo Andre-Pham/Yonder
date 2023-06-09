@@ -44,6 +44,7 @@ class AnimationSequence {
     private var frameDelegate: ManagesSequences? = nil
     private var timer = CustomTimer()
     private(set) var isPlaying = false
+    private var playbackSpeed = 1.0
     
     init(
         spriteSheet: UIImage,
@@ -55,6 +56,14 @@ class AnimationSequence {
         self.frameDuration = frameDuration
         self.frameOrigins = frameOrigins
         self.frameSize = frameSize
+    }
+    
+    func setPlaybackSpeed(to speed: Double) {
+        self.playbackSpeed = speed
+        if self.isPlaying {
+            self.pause()
+            self.start()
+        }
     }
     
     func setLoopBehaviour(to shouldLoop: Bool) {
@@ -70,7 +79,7 @@ class AnimationSequence {
             return
         }
         self.isPlaying = true
-        self.timer.start(withTimeInterval: self.frameDuration) {
+        self.timer.start(withTimeInterval: self.frameDuration/self.playbackSpeed) {
             self.incrementFrame()
             if self.frameIndex == self.lastFrameIndex {
                 if !self.loop {

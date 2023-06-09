@@ -51,19 +51,26 @@ class AnimationSequenceBuilder {
     
 }
 
+enum SequenceKey: String, CaseIterable {
+    case hit = "hit"
+    case death = "death"
+    case breathing = "breathing"
+    case idle = "idle"
+    case attack = "attack"
+    case run = "run"
+}
+
 class AnimationManager: ObservableObject, ManagesSequences {
     
-    enum SequenceKey: String, CaseIterable {
-        case hit = "hit"
-        case death = "death"
-        case breathing = "breathing"
-        case idle = "idle"
-        case attack = "attack"
-        case run = "run"
-    }
-    
     private var sequences = [String: AnimationSequence]()
-    private var activeSequence: AnimationSequence
+    private(set) var activeSequenceKey: SequenceKey
+    private var activeSequence: AnimationSequence {
+        return self.getSequence(self.activeSequenceKey)
+    }
+    public var isPlaying: Bool {
+        return self.activeSequence.isPlaying
+    }
+    private var playbackSpeed = 1.0
     
     @Published private(set) var frame: Image
 
@@ -90,8 +97,8 @@ class AnimationManager: ObservableObject, ManagesSequences {
             }
             self.sequences[key.rawValue] = sequence
         }
-        self.activeSequence = self.sequences[initialSequence.rawValue]!
-        self.frame = self.activeSequence.frame
+        self.activeSequenceKey = initialSequence
+        self.frame = self.sequences[initialSequence.rawValue]!.frame
         for key in SequenceKey.allCases {
             self.getSequence(key).setDelegate(to: self)
         }
@@ -103,9 +110,15 @@ class AnimationManager: ObservableObject, ManagesSequences {
         self.getSequence(.attack).setLoopBehaviour(to: false)
     }
     
+    func setPlaybackSpeed(to speed: Double) {
+        self.playbackSpeed = speed
+        self.activeSequence.setPlaybackSpeed(to: self.playbackSpeed)
+    }
+    
     func setSequence(to sequence: SequenceKey) {
         self.activeSequence.stop()
-        self.activeSequence = self.sequences[sequence.rawValue]!
+        self.activeSequenceKey = sequence
+        self.activeSequence.setPlaybackSpeed(to: self.playbackSpeed)
         self.frame = self.activeSequence.frame
         self.activeSequence.start()
     }

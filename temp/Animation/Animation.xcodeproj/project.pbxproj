@@ -22,6 +22,7 @@
 		B6C37DED2A3258DA004D18A8 /* AnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DEC2A3258DA004D18A8 /* AnimationManager.swift */; };
 		B6C37DEF2A325925004D18A8 /* AnimationSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DEE2A325925004D18A8 /* AnimationSequence.swift */; };
 		B6C37DF12A326B65004D18A8 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DF02A326B65004D18A8 /* Timer.swift */; };
+		B6C37DF32A32A389004D18A8 /* AnimationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DF22A32A389004D18A8 /* AnimationQueue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		B6C37DEC2A3258DA004D18A8 /* AnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
 		B6C37DEE2A325925004D18A8 /* AnimationSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSequence.swift; sourceTree = "<group>"; };
 		B6C37DF02A326B65004D18A8 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		B6C37DF22A32A389004D18A8 /* AnimationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationQueue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				B6C37DEC2A3258DA004D18A8 /* AnimationManager.swift */,
 				B6C37DEE2A325925004D18A8 /* AnimationSequence.swift */,
 				B6C37DF02A326B65004D18A8 /* Timer.swift */,
+				B6C37DF22A32A389004D18A8 /* AnimationQueue.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				B6C37DBA2A314106004D18A8 /* ContentView.swift in Sources */,
 				B6C37DF12A326B65004D18A8 /* Timer.swift in Sources */,
 				B6C37DEB2A314AC9004D18A8 /* Performance.swift in Sources */,
+				B6C37DF32A32A389004D18A8 /* AnimationQueue.swift in Sources */,
 				B6C37DEF2A325925004D18A8 /* AnimationSequence.swift in Sources */,
 				B6C37DB82A314106004D18A8 /* AnimationApp.swift in Sources */,
 				B6C37DED2A3258DA004D18A8 /* AnimationManager.swift in Sources */,
