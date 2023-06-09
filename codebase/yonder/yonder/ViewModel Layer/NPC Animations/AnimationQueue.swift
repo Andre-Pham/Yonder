@@ -29,6 +29,9 @@ class AnimationQueue: AnimationManager {
     
     /// Set the default animation sequence
     func changeDefaultSequence(to code: SequenceCode) {
+        if self.activeSequenceCode == self.defaultSequence && self.queue.isEmpty {
+            self.setSequence(to: code)
+        }
         self.defaultSequence = code
     }
     
@@ -67,9 +70,8 @@ class AnimationQueue: AnimationManager {
         self.isEnded = true
     }
     
-    /// Assumes the queue has ended. Clear the queue and start serving any new sequences.
+    /// Clear the queue and start serving any new sequences.
     func reinitialiseQueue() {
-        assert(self.isEnded, "Queue is being reinitialised but it hasn't ended - use clearQueue() instead")
         self.isEnded = false
         self.clearQueue()
     }

@@ -39,7 +39,7 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
     public var allUpgradableArmorPieces: [Armor] {
         return self.allArmorPieces.filter { !$0.hasAttribute(.upgradesDisallowed) }
     }
-    public let id = UUID()
+    public let id: UUID
     public var isFullHealth: Bool {
         return !(self.health < self.maxHealth)
     }
@@ -52,6 +52,7 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
     init(maxHealth: Int) {
         self.maxHealth = maxHealth
         self.health = maxHealth
+        self.id = UUID()
         
         OnNoWeaponDurabilityPublisher.subscribe(self)
         OnNoPotionsRemainingPublisher.subscribe(self)
@@ -77,6 +78,7 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
         case bodyArmor
         case legsArmor
         case accessorySlots
+        case id
         // Delayed values (damage/restoration) are volatile - they should never be storages of data
         // They act as an intermediate within a calculation, that is, they don't persist outside a calculation
     }
@@ -95,6 +97,7 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
         self.bodyArmor = dataObject.getObject(Field.bodyArmor.rawValue, type: Armor.self)
         self.legsArmor = dataObject.getObject(Field.legsArmor.rawValue, type: Armor.self)
         self.accessorySlots = dataObject.getObject(Field.accessorySlots.rawValue, type: AccessorySlots.self)
+        self.id = UUID(uuidString: dataObject.get(Field.id.rawValue))!
         
         OnNoWeaponDurabilityPublisher.subscribe(self)
         OnNoPotionsRemainingPublisher.subscribe(self)
@@ -124,6 +127,7 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
             .add(key: Field.bodyArmor.rawValue, value: self.bodyArmor)
             .add(key: Field.legsArmor.rawValue, value: self.legsArmor)
             .add(key: Field.accessorySlots.rawValue, value: self.accessorySlots)
+            .add(key: Field.id.rawValue, value: self.id.uuidString)
     }
     
     // MARK: - Max Health Related

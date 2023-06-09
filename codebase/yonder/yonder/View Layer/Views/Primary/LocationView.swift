@@ -9,7 +9,14 @@ import SwiftUI
 
 struct LocationView: View {
     @ObservedObject var locationViewModel: LocationViewModel
+    @StateObject var animationQueue: NPCAnimation
     let cardHeight: CGFloat = 200
+    
+    init(locationViewModel: LocationViewModel, optionsStateManager: OptionsStateManager) {
+        self.locationViewModel = locationViewModel
+        // Maintain as @StateObject to not re-create every view redraw
+        self._animationQueue = StateObject(wrappedValue: NPCAnimation(optionsStateManager: optionsStateManager)!)
+    }
     
     var body: some View {
         GeometryReader { geo in
@@ -30,6 +37,12 @@ struct LocationView: View {
                 .frame(width: geo.size.width - YonderCoreGraphics.borderWidth*2)
                 .background(YonderColors.backgroundMaxDepth)
                 .frame(width: geo.size.width - YonderCoreGraphics.borderWidth*2, height: self.cardHeight - YonderCoreGraphics.borderWidth*2, alignment: .bottomLeading)
+                
+                self.animationQueue.frame
+                    .resizable()
+                    .interpolation(.none)
+                    .scaledToFit()
+                    .frame(width: geo.size.width, height: self.cardHeight)
             }
         }
         .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
@@ -45,7 +58,10 @@ struct LocationView_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            LocationView(locationViewModel: PreviewObjects.locationViewModel)
+            LocationView(
+                locationViewModel: PreviewObjects.locationViewModel,
+                optionsStateManager: OptionsStateManager(playerViewModel: PreviewObjects.playerViewModel)
+            )
         }
     }
 }

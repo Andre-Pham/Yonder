@@ -90,6 +90,12 @@ class AnimationSequence {
         self.play()
     }
     
+    func skipToEnd() {
+        self.isPlaying = false
+        self.timer.stop()
+        self.frameIndex = self.lastFrameIndex
+    }
+    
     func setPlaybackSpeed(to speed: Double) {
         self.playbackSpeed = speed
         if self.isPlaying {

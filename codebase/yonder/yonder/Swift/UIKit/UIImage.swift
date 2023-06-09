@@ -17,8 +17,8 @@ extension UIImage {
     /// - Returns: A new cropped image
     func cropped(toRect cropRect: CGRect) -> UIImage? {
         assert(isGreaterZero(cropRect.width*cropRect.height), "Attempting to crop an image to 0x0")
-        assert(isGreaterZero(cropRect.origin.x), "Attempting to crop out of bounds")
-        assert(isGreaterZero(cropRect.origin.y), "Attempting to crop out of bounds")
+        assert(isGreaterOrEqualZero(cropRect.origin.x), "Attempting to crop out of bounds")
+        assert(isGreaterOrEqualZero(cropRect.origin.y), "Attempting to crop out of bounds")
         guard let croppedCGImage = self.cgImage?.cropping(to: cropRect) else {
             return nil
         }

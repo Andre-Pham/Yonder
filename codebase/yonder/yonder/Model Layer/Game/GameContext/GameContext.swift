@@ -24,20 +24,22 @@ class GameContext: Storable {
     // MARK: - Serialisation
 
     private enum Field: String {
-        // TurnManager and StableGameStateManager aren't serialisable - they carry no state
+        // TurnManager isn't serialisable - it carries no state
+        case stableGameStateManager
         case playerStageManager
         case contentManager
     }
 
     required init(dataObject: DataObject) {
         self.turnManager = TurnManager()
-        self.stableGameStateManager = StableGameStateManager()
+        self.stableGameStateManager = dataObject.getObject(Field.stableGameStateManager.rawValue, type: StableGameStateManager.self)
         self.playerStageManager = dataObject.getObject(Field.playerStageManager.rawValue, type: PlayerStageManager.self)
         self.contentManager = dataObject.getObject(Field.contentManager.rawValue, type: ContentManager.self)
     }
 
     func toDataObject() -> DataObject {
         return DataObject(self)
+            .add(key: Field.stableGameStateManager.rawValue, value: self.stableGameStateManager)
             .add(key: Field.playerStageManager.rawValue, value: self.playerStageManager)
             .add(key: Field.contentManager.rawValue, value: self.contentManager)
     }

@@ -73,12 +73,12 @@ class AnimationManager: ObservableObject, SequenceDelegate {
         self.activeSequence.reset()
         self.activeSequenceCode = code
         self.activeSequence.setPlaybackSpeed(to: self.playbackSpeed)
-        self.frame = self.activeSequence.frame
+        self.setFrame(to: self.activeSequence.frame)
         self.activeSequence.play()
     }
     
     func onNewFrame(_ frame: Image) {
-        self.frame = frame
+        self.setFrame(to: frame)
     }
     
     func onSequenceEnd() {
@@ -99,6 +99,16 @@ class AnimationManager: ObservableObject, SequenceDelegate {
     
     func restart() {
         self.activeSequence.restart()
+    }
+    
+    func skipToEnd() {
+        self.activeSequence.skipToEnd()
+    }
+    
+    private func setFrame(to frame: Image) {
+        withAnimation(.none) {
+            self.frame = frame
+        }
     }
     
 }

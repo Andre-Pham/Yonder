@@ -10,22 +10,24 @@ import SwiftUI
 struct PrimaryView: View {
     @EnvironmentObject private var viewRouter: ViewRouter
     @EnvironmentObject private var travelStateManager: TravelStateManager
-    @ObservedObject private var playerViewModel: PlayerViewModel
-    @ObservedObject private var optionsStateManager: OptionsStateManager
-    @StateObject private var optionsSheetsStateManager = OptionsSheetsStateManager()
     
-    init() {
-        let playerViewModel = GameManager.instance.playerVM
-        
-        self.playerViewModel = playerViewModel
-        self.optionsStateManager = OptionsStateManager(playerViewModel: playerViewModel)
-    }
+    // Important:
+    // The following properties need to be maintained as @StateObjects (not @ObservableObjects)
+    // @StateObjects are NOT reinstantiated every time the view is redrawn (UNLIKE @ObservableObjects)
+    // If these become @ObservableObjects, not only are they needlessly recreated every draw, every subview that points to their instance to create a new object ends up pointing to the wrong object upon this being redrawn (see LocationView)
+    
+    @StateObject private var playerViewModel: PlayerViewModel = GameManager.instance.playerVM
+    @StateObject private var optionsStateManager: OptionsStateManager = OptionsStateManager(playerViewModel: GameManager.instance.playerVM)
+    @StateObject private var optionsSheetsStateManager = OptionsSheetsStateManager()
     
     var body: some View {
         GeometryReader { geo in
             ScrollView {
                 VStack(spacing: YonderCoreGraphics.padding) {
-                    LocationView(locationViewModel: self.playerViewModel.locationViewModel)
+                    LocationView(
+                        locationViewModel: self.playerViewModel.locationViewModel,
+                        optionsStateManager: self.optionsStateManager
+                    )
                     
                     HStack(spacing: YonderCoreGraphics.padding) {
                         PlayerCardButton(

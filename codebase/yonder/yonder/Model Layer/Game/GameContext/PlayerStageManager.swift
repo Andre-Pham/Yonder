@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PlayerStageManager: OnPlayerTravelSubscriber, Storable {
+class PlayerStageManager: Storable, OnPlayerTravelSubscriber {
     
     private(set) var stage: Int {
         didSet {
@@ -20,6 +20,25 @@ class PlayerStageManager: OnPlayerTravelSubscriber, Storable {
         
         OnPlayerTravelPublisher.subscribe(self)
     }
+    
+    // MARK: - Serialisation
+    
+    private enum Field: String {
+        case stage
+    }
+
+    required init(dataObject: DataObject) {
+        self.stage = dataObject.get(Field.stage.rawValue)
+        
+        OnPlayerTravelPublisher.subscribe(self)
+    }
+
+    func toDataObject() -> DataObject {
+        return DataObject(self)
+            .add(key: Field.stage.rawValue, value: self.stage)
+    }
+    
+    // MARK: - Functions
     
     func onPlayerTravel(player: Player, newLocation: Location) {
         let map = Game.gameContextAccess.map
@@ -43,23 +62,6 @@ class PlayerStageManager: OnPlayerTravelSubscriber, Storable {
         if territory.rootLocations.contains(where: { $0.id == newLocation.id }) {
             self.stage += 1
         }*/
-    }
-    
-    // MARK: - Serialisation
-    
-    private enum Field: String {
-        case stage
-    }
-
-    required init(dataObject: DataObject) {
-        self.stage = dataObject.get(Field.stage.rawValue)
-        
-        OnPlayerTravelPublisher.subscribe(self)
-    }
-
-    func toDataObject() -> DataObject {
-        return DataObject(self)
-            .add(key: Field.stage.rawValue, value: self.stage)
     }
     
 }
