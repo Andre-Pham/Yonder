@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
 //    let imageManager = ImageManager(imageName: "IMG-E0001")
-    @StateObject private var manager = AnimationManager(id: "E0001")!
+    @StateObject private var manager = AnimationManager(id: "E0001", initialSequence: .idle)!
     
     var body: some View {
         VStack(spacing: 0) {
@@ -37,6 +37,22 @@ struct ContentView: View {
             
             Button("Restart") {
                 self.manager.restart()
+            }
+            
+            Button("Idle") {
+                self.manager.setSequence(to: .idle)
+            }
+            
+            Button("Breathing") {
+                self.manager.setSequence(to: .breathing)
+            }
+            
+            Button("Attack") {
+                self.manager.setSequence(to: .attack)
+            }
+            
+            Button("Die") {
+                self.manager.setSequence(to: .death)
             }
             
 //            self.imageManager.croppedImage2

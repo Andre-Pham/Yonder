@@ -52,20 +52,23 @@ class AnimationSequenceBuilder {
 }
 
 class AnimationManager: ObservableObject, ManagesSequences {
-
-    private let hitSequence: AnimationSequence
-    private let deathSequence: AnimationSequence
-    private let breathingSequence: AnimationSequence
-    private let idleSequence: AnimationSequence
-    private let attackSequence: AnimationSequence
-    private let runSequence: AnimationSequence
     
+    enum SequenceKey: String, CaseIterable {
+        case hit = "hit"
+        case death = "death"
+        case breathing = "breathing"
+        case idle = "idle"
+        case attack = "attack"
+        case run = "run"
+    }
+    
+    private var sequences = [String: AnimationSequence]()
     private var activeSequence: AnimationSequence
     
     @Published private(set) var frame: Image
 
     /// id, e.g. E0001
-    init?(id: String) {
+    init?(id: String, initialSequence: SequenceKey) {
         guard let spriteSheet = UIImage(named: "IMG-\(id)") else {
             assertionFailure("Animation ID provided doesn't have corresponding sprite sheet")
             return nil
@@ -80,32 +83,43 @@ class AnimationManager: ObservableObject, ManagesSequences {
             return nil
         }
         let builder = AnimationSequenceBuilder(spriteSheet: spriteSheet, framesDataJSON: framesDataJSON)
-        guard let hit = builder.build(prefix: "hit"),
-              let death = builder.build(prefix: "death"),
-              let breath = builder.build(prefix: "breathing"),
-              let idle = builder.build(prefix: "idle"),
-              let attack = builder.build(prefix: "attack"),
-              let run = builder.build(prefix: "run") else {
-            assertionFailure("Sequence(s) couldn't be built")
-            return nil
+        for key in SequenceKey.allCases {
+            guard let sequence = builder.build(prefix: key.rawValue) else {
+                assertionFailure("Sequence(s) couldn't be built")
+                return nil
+            }
+            self.sequences[key.rawValue] = sequence
         }
-        self.hitSequence = hit
-        self.deathSequence = death
-        self.breathingSequence = breath
-        self.idleSequence = idle
-        self.attackSequence = attack
-        self.runSequence = run
-        
-        self.activeSequence = self.idleSequence
+        self.activeSequence = self.sequences[initialSequence.rawValue]!
         self.frame = self.activeSequence.frame
-        
-        [self.hitSequence, self.deathSequence, self.breathingSequence, self.idleSequence, self.attackSequence, self.runSequence].forEach({
-            $0.setDelegate(to: self)
-        })
+        for key in SequenceKey.allCases {
+            self.getSequence(key).setDelegate(to: self)
+        }
+        self.setup()
+    }
+    
+    func setup() {
+        self.getSequence(.death).setLoopBehaviour(to: false)
+        self.getSequence(.attack).setLoopBehaviour(to: false)
+    }
+    
+    func setSequence(to sequence: SequenceKey) {
+        self.activeSequence.stop()
+        self.activeSequence = self.sequences[sequence.rawValue]!
+        self.frame = self.activeSequence.frame
+        self.activeSequence.start()
+    }
+    
+    private func getSequence(_ key: SequenceKey) -> AnimationSequence {
+        return self.sequences[key.rawValue]!
     }
     
     func onNewFrame(_ frame: Image) {
         self.frame = frame
+    }
+    
+    func onSequenceEnd() {
+        
     }
     
     func play() {

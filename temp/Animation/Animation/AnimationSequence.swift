@@ -11,6 +11,7 @@ import SwiftUI
 protocol ManagesSequences {
     
     func onNewFrame(_ frame: Image)
+    func onSequenceEnd()
     
 }
 
@@ -28,6 +29,9 @@ class AnimationSequence {
     private var frameCount: Int {
         return self.frameOrigins.count
     }
+    private var lastFrameIndex: Int {
+        return self.frameCount - 1
+    }
     private var frameRect: CGRect {
         let origin = self.frameOrigins[self.frameIndex]
         return CGRect(x: origin.x, y: origin.y, width: self.frameSize.width, height: self.frameSize.height)
@@ -36,9 +40,10 @@ class AnimationSequence {
         let cropped = self.cropImage(self.spriteSheet, toRect: self.frameRect)
         return Image(uiImage: cropped!)
     }
+    private var loop: Bool = true
     private var frameDelegate: ManagesSequences? = nil
-    
     private var timer = CustomTimer()
+    private(set) var isPlaying = false
     
     init(
         spriteSheet: UIImage,
@@ -52,23 +57,45 @@ class AnimationSequence {
         self.frameSize = frameSize
     }
     
+    func setLoopBehaviour(to shouldLoop: Bool) {
+        self.loop = shouldLoop
+    }
+    
     func setDelegate(to frameDelegate: ManagesSequences) {
         self.frameDelegate = frameDelegate
     }
     
     func start() {
+        guard !self.isPlaying else {
+            return
+        }
+        self.isPlaying = true
         self.timer.start(withTimeInterval: self.frameDuration) {
             self.incrementFrame()
+            if self.frameIndex == self.lastFrameIndex {
+                if !self.loop {
+                    self.end()
+                }
+                self.frameDelegate?.onSequenceEnd()
+            }
         }
     }
     
     func pause() {
+        self.isPlaying = false
         self.timer.stop()
     }
     
     func stop() {
+        self.isPlaying = false
         self.timer.stop()
         self.frameIndex = 0
+    }
+    
+    func end() {
+        self.isPlaying = false
+        self.timer.stop()
+        self.frameIndex = self.lastFrameIndex
     }
     
     func restart() {
