@@ -22,7 +22,7 @@
 		6503500F2866F99000565567 /* SurroundingBrackets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6503500E2866F99000565567 /* SurroundingBrackets.swift */; };
 		650A3A2E2786086B0060F692 /* ScaleStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A3A2D2786086B0060F692 /* ScaleStateManager.swift */; };
 		650AB49B2779C2350060617A /* DidSetPublished.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650AB49A2779C2350060617A /* DidSetPublished.swift */; };
-		650F5D342876CB2000F84A17 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F5D332876CB2000F84A17 /* Timer.swift */; };
+		650F5D342876CB2000F84A17 /* TurnTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F5D332876CB2000F84A17 /* TurnTimer.swift */; };
 		650F5D362876D13400F84A17 /* TimedEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F5D352876D13400F84A17 /* TimedEventViewModel.swift */; };
 		650F5D3A2876E45900F84A17 /* InspectTimedEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F5D392876E45900F84A17 /* InspectTimedEvents.swift */; };
 		65109B33280C667900F2D949 /* YonderIconTextPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65109B32280C667900F2D949 /* YonderIconTextPair.swift */; };
@@ -536,6 +536,10 @@
 		B6C37DFD2A32B4C6004D18A8 /* AnimationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DFC2A32B4C6004D18A8 /* AnimationQueue.swift */; };
 		B6C37DFF2A32B4DD004D18A8 /* AnimationSequenceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DFE2A32B4DD004D18A8 /* AnimationSequenceBuilder.swift */; };
 		B6C37E012A32B517004D18A8 /* SequenceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37E002A32B517004D18A8 /* SequenceDelegate.swift */; };
+		B6C37E032A32B5CB004D18A8 /* SpriteSheetCoord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37E022A32B5CB004D18A8 /* SpriteSheetCoord.swift */; };
+		B6C37E052A32B6EA004D18A8 /* SequenceTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37E042A32B6EA004D18A8 /* SequenceTimer.swift */; };
+		B6C37E092A32B953004D18A8 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37E082A32B953004D18A8 /* UIImage.swift */; };
+		B6C37E0B2A32BAAA004D18A8 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37E0A2A32BAAA004D18A8 /* Math.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -571,7 +575,7 @@
 		6503500E2866F99000565567 /* SurroundingBrackets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurroundingBrackets.swift; sourceTree = "<group>"; };
 		650A3A2D2786086B0060F692 /* ScaleStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleStateManager.swift; sourceTree = "<group>"; };
 		650AB49A2779C2350060617A /* DidSetPublished.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidSetPublished.swift; sourceTree = "<group>"; };
-		650F5D332876CB2000F84A17 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		650F5D332876CB2000F84A17 /* TurnTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnTimer.swift; sourceTree = "<group>"; };
 		650F5D352876D13400F84A17 /* TimedEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedEventViewModel.swift; sourceTree = "<group>"; };
 		650F5D392876E45900F84A17 /* InspectTimedEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectTimedEvents.swift; sourceTree = "<group>"; };
 		65109B32280C667900F2D949 /* YonderIconTextPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderIconTextPair.swift; sourceTree = "<group>"; };
@@ -1088,6 +1092,10 @@
 		B6C37DFC2A32B4C6004D18A8 /* AnimationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationQueue.swift; sourceTree = "<group>"; };
 		B6C37DFE2A32B4DD004D18A8 /* AnimationSequenceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSequenceBuilder.swift; sourceTree = "<group>"; };
 		B6C37E002A32B517004D18A8 /* SequenceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceDelegate.swift; sourceTree = "<group>"; };
+		B6C37E022A32B5CB004D18A8 /* SpriteSheetCoord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteSheetCoord.swift; sourceTree = "<group>"; };
+		B6C37E042A32B6EA004D18A8 /* SequenceTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceTimer.swift; sourceTree = "<group>"; };
+		B6C37E082A32B953004D18A8 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		B6C37E0A2A32BAAA004D18A8 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1192,12 +1200,13 @@
 		6516067428400E9A00074144 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
-				6516067728400EDD00074144 /* Color.swift */,
+				B6C37E072A32B91C004D18A8 /* SwiftUI */,
+				B6C37E062A32B90E004D18A8 /* UIKit */,
 				65C37A88285D62A1006997EE /* Double.swift */,
 				65500E7A28656DCF00A92CA2 /* Int.swift */,
 				65C37A7C285A36B9006997EE /* String.swift */,
-				6516067528400EAA00074144 /* UIColor.swift */,
 				656FD8D229183E8D00F923E9 /* Array.swift */,
+				B6C37E0A2A32BAAA004D18A8 /* Math.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -2247,7 +2256,7 @@
 		6598739928D5D5CE00BDFB8F /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				650F5D332876CB2000F84A17 /* Timer.swift */,
+				650F5D332876CB2000F84A17 /* TurnTimer.swift */,
 				6598739A28D5D5D800BDFB8F /* TracksTimer.swift */,
 			);
 			path = Core;
@@ -2360,7 +2369,6 @@
 			isa = PBXGroup;
 			children = (
 				6551466927468FD100257181 /* Constants.swift */,
-				65D5093F28DB8F7E007A6C1A /* SwiftUI */,
 				6559BE9927A12E27004D520B /* Animations */,
 				657C80D0277BF07C00B7987D /* Views */,
 				6569E16027630EAE007C472E /* Presets */,
@@ -2596,14 +2604,6 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
-		65D5093F28DB8F7E007A6C1A /* SwiftUI */ = {
-			isa = PBXGroup;
-			children = (
-				65D5094028DB8F8E007A6C1A /* View.swift */,
-			);
-			path = SwiftUI;
-			sourceTree = "<group>";
-		};
 		65D56C42280AC55100C6DF0D /* Text */ = {
 			isa = PBXGroup;
 			children = (
@@ -2818,8 +2818,28 @@
 				B6C37DFC2A32B4C6004D18A8 /* AnimationQueue.swift */,
 				B6C37DFE2A32B4DD004D18A8 /* AnimationSequenceBuilder.swift */,
 				B6C37E002A32B517004D18A8 /* SequenceDelegate.swift */,
+				B6C37E022A32B5CB004D18A8 /* SpriteSheetCoord.swift */,
+				B6C37E042A32B6EA004D18A8 /* SequenceTimer.swift */,
 			);
 			path = "NPC Animations";
+			sourceTree = "<group>";
+		};
+		B6C37E062A32B90E004D18A8 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				6516067528400EAA00074144 /* UIColor.swift */,
+				B6C37E082A32B953004D18A8 /* UIImage.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		B6C37E072A32B91C004D18A8 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				6516067728400EDD00074144 /* Color.swift */,
+				65D5094028DB8F8E007A6C1A /* View.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3016,6 +3036,7 @@
 				6568F9A928788F3F00035865 /* AccessoryInspectView.swift in Sources */,
 				65275DFA2759C87A0087B118 /* ArmorPointsRestorationPercentBuff.swift in Sources */,
 				652EC1C2277594B100E81787 /* BossArea.swift in Sources */,
+				B6C37E0B2A32BAAA004D18A8 /* Math.swift in Sources */,
 				65C2CDE02937B6DE0028DC9C /* AreaThemedProfile.swift in Sources */,
 				656FD912291CF56200F923E9 /* ShopKeeperFactory.swift in Sources */,
 				65EFC0512936639D00B8E677 /* BossProfile.swift in Sources */,
@@ -3189,7 +3210,7 @@
 				65275DF12759BA350087B118 /* Friendly.swift in Sources */,
 				65F91C9227DD14DC0095C3FD /* OfferViewModel.swift in Sources */,
 				65AAFE2F28C869C2004A8230 /* ConsumableIsStackable.swift in Sources */,
-				650F5D342876CB2000F84A17 /* Timer.swift in Sources */,
+				650F5D342876CB2000F84A17 /* TurnTimer.swift in Sources */,
 				6532626F282EB5B000A37340 /* AreaViewModel.swift in Sources */,
 				65BF4BD1292E212C00199B05 /* DamageRestorationSwapEffectPill.swift in Sources */,
 				65DC5FBE28DC24D800E5F904 /* WeaponHealthRestorationBuff.swift in Sources */,
@@ -3282,6 +3303,7 @@
 				650AB49B2779C2350060617A /* DidSetPublished.swift in Sources */,
 				655C60BB280422E0007B1E11 /* EnhanceInfoViewModel.swift in Sources */,
 				655146722747949D00257181 /* HealthRestorationPercentBuff.swift in Sources */,
+				B6C37E052A32B6EA004D18A8 /* SequenceTimer.swift in Sources */,
 				655F983D286993E300A60806 /* InventoryWeaponsView.swift in Sources */,
 				65B13B0527C32A3600C012BE /* GameManager.swift in Sources */,
 				B63E171F29CD8F830083616A /* OverlayViewController.swift in Sources */,
@@ -3317,6 +3339,7 @@
 				654D72A029416ED800228643 /* ClericClass.swift in Sources */,
 				65D88C33274436E7002E3AC4 /* yonderApp.swift in Sources */,
 				65DC5FB628DC227500E5F904 /* WeaponDamageBuff.swift in Sources */,
+				B6C37E092A32B953004D18A8 /* UIImage.swift in Sources */,
 				65293CB228BA907100B2354A /* AfterTurnEnd.swift in Sources */,
 				6532D66127AFA21C0080B58B /* ArmorViewModel.swift in Sources */,
 				6520DA4429558AD400916147 /* PlayerStageManager.swift in Sources */,
@@ -3487,6 +3510,7 @@
 				6553A0902781D5C000BC672F /* Hexagon.swift in Sources */,
 				656FD8DC2919B0D700F923E9 /* WeaponProfile.swift in Sources */,
 				65AAFE4B28D1A4FB004A8230 /* UseConsumableButton.swift in Sources */,
+				B6C37E032A32B5CB004D18A8 /* SpriteSheetCoord.swift in Sources */,
 				65D499DA2931EC300087DBA6 /* ArmorEquipmentPillEnhanceOffer.swift in Sources */,
 				655146802747E2FA00257181 /* Item.swift in Sources */,
 				656FD8E82919BFEE00F923E9 /* PotionFactory.swift in Sources */,

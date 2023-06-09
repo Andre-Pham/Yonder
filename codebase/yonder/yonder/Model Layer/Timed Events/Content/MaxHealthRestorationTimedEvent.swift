@@ -9,10 +9,10 @@ import Foundation
 
 class MaxHealthRestorationTimedEvent: TimedEvent {
     
-    public let timer: Timer
+    public let timer: TurnTimer
     
     init(timeToTrigger: Int) {
-        self.timer = Timer(startTime: timeToTrigger)
+        self.timer = TurnTimer(startTime: timeToTrigger)
         super.init(name: Strings("timedEvent.maxHealthRestoration.name").local)
     }
     
@@ -29,7 +29,7 @@ class MaxHealthRestorationTimedEvent: TimedEvent {
     }
 
     required init(dataObject: DataObject) {
-        self.timer = dataObject.getObject(Field.timer.rawValue, type: Timer.self)
+        self.timer = dataObject.getObject(Field.timer.rawValue, type: TurnTimer.self)
         super.init(dataObject: dataObject)
     }
 

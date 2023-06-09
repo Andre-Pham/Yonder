@@ -10,7 +10,7 @@ import Foundation
 protocol TracksTimer {
     
     // Being an object instead of a primitive type allows this to be referenced in this protocol's extension
-    var timer: Timer { get }
+    var timer: TurnTimer { get }
     
     func triggerEvent(target: ActorAbstract)
     

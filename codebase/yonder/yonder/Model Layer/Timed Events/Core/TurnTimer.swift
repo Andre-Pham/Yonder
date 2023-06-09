@@ -1,5 +1,5 @@
 //
-//  Timer.swift
+//  TurnTimer.swift
 //  yonder
 //
 //  Created by Andre Pham on 7/7/2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Timer: Clonable, Storable {
+class TurnTimer: Clonable, Storable {
     
     @DidSetPublished private(set) var timeLeft: Int
     public let initialTime: Int
@@ -20,7 +20,7 @@ class Timer: Clonable, Storable {
         self.initialTime = startTime
     }
     
-    required init(_ original: Timer) {
+    required init(_ original: TurnTimer) {
         self.timeLeft = original.timeLeft
         self.initialTime = original.initialTime
     }

@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
+
+protocol SequenceDelegate {
+    
+    func onNewFrame(_ frame: Image)
+    func onSequenceEnd()
+    
+}
