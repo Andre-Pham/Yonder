@@ -530,6 +530,12 @@
 		B63E171B29CD8F060083616A /* InspectSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E171A29CD8F060083616A /* InspectSheet.swift */; };
 		B63E171D29CD8F310083616A /* InspectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E171C29CD8F310083616A /* InspectViewController.swift */; };
 		B63E171F29CD8F830083616A /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E171E29CD8F830083616A /* OverlayViewController.swift */; };
+		B6C37DF72A32B48F004D18A8 /* SequenceCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DF62A32B48F004D18A8 /* SequenceCode.swift */; };
+		B6C37DF92A32B4B1004D18A8 /* AnimationSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DF82A32B4B1004D18A8 /* AnimationSequence.swift */; };
+		B6C37DFB2A32B4BC004D18A8 /* AnimationComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DFA2A32B4BC004D18A8 /* AnimationComposite.swift */; };
+		B6C37DFD2A32B4C6004D18A8 /* AnimationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DFC2A32B4C6004D18A8 /* AnimationQueue.swift */; };
+		B6C37DFF2A32B4DD004D18A8 /* AnimationSequenceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DFE2A32B4DD004D18A8 /* AnimationSequenceBuilder.swift */; };
+		B6C37E012A32B517004D18A8 /* SequenceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37E002A32B517004D18A8 /* SequenceDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1076,6 +1082,12 @@
 		B63E171A29CD8F060083616A /* InspectSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectSheet.swift; sourceTree = "<group>"; };
 		B63E171C29CD8F310083616A /* InspectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectViewController.swift; sourceTree = "<group>"; };
 		B63E171E29CD8F830083616A /* OverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
+		B6C37DF62A32B48F004D18A8 /* SequenceCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceCode.swift; sourceTree = "<group>"; };
+		B6C37DF82A32B4B1004D18A8 /* AnimationSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSequence.swift; sourceTree = "<group>"; };
+		B6C37DFA2A32B4BC004D18A8 /* AnimationComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationComposite.swift; sourceTree = "<group>"; };
+		B6C37DFC2A32B4C6004D18A8 /* AnimationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationQueue.swift; sourceTree = "<group>"; };
+		B6C37DFE2A32B4DD004D18A8 /* AnimationSequenceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSequenceBuilder.swift; sourceTree = "<group>"; };
+		B6C37E002A32B517004D18A8 /* SequenceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2334,6 +2346,7 @@
 		659BD2CE27E5F18A0033C9E0 /* ViewModel Layer */ = {
 			isa = PBXGroup;
 			children = (
+				B6C37DF52A32B460004D18A8 /* NPC Animations */,
 				65D88C5D2744426F002E3AC4 /* Game */,
 				6569E16527643AF7007C472E /* ViewModels */,
 				65BD0E9A27A4E7250054D345 /* State Managers */,
@@ -2796,6 +2809,19 @@
 			path = WithInspectSheet;
 			sourceTree = "<group>";
 		};
+		B6C37DF52A32B460004D18A8 /* NPC Animations */ = {
+			isa = PBXGroup;
+			children = (
+				B6C37DF62A32B48F004D18A8 /* SequenceCode.swift */,
+				B6C37DF82A32B4B1004D18A8 /* AnimationSequence.swift */,
+				B6C37DFA2A32B4BC004D18A8 /* AnimationComposite.swift */,
+				B6C37DFC2A32B4C6004D18A8 /* AnimationQueue.swift */,
+				B6C37DFE2A32B4DD004D18A8 /* AnimationSequenceBuilder.swift */,
+				B6C37E002A32B517004D18A8 /* SequenceDelegate.swift */,
+			);
+			path = "NPC Animations";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -3032,6 +3058,7 @@
 				65D7A44D2779D64100075542 /* NoArea.swift in Sources */,
 				65CAC18027F942F400A95D92 /* YonderButtonAlignment.swift in Sources */,
 				65DC5FB428DC20DC00E5F904 /* PotionDamageBuff.swift in Sources */,
+				B6C37DF92A32B4B1004D18A8 /* AnimationSequence.swift in Sources */,
 				656FD8E42919B5B100F923E9 /* AllWeapons.swift in Sources */,
 				651B7769293D487500827CB5 /* DotsLoadingScreen.swift in Sources */,
 				656FD8952916EEB500F923E9 /* DataObject.swift in Sources */,
@@ -3047,6 +3074,7 @@
 				65A3887F288B6799006541FB /* ActionsView.swift in Sources */,
 				65CAC18627F947D200A95D92 /* YonderWideButtonBody.swift in Sources */,
 				657AA5A22778C50F00B16E0C /* AllFriendlies.swift in Sources */,
+				B6C37DFD2A32B4C6004D18A8 /* AnimationQueue.swift in Sources */,
 				6503500F2866F99000565567 /* SurroundingBrackets.swift in Sources */,
 				65D14FA727936EA1005C67A2 /* GridConnectionsView.swift in Sources */,
 				658D1E7C2940DB33006F1CC0 /* InspectFoeStatus.swift in Sources */,
@@ -3148,6 +3176,7 @@
 				65D88C41274438CF002E3AC4 /* Actor.swift in Sources */,
 				65FDAFB8276E3EC0002FAEA4 /* LocationAttributes.swift in Sources */,
 				65311CE8288428960080A390 /* LootButton.swift in Sources */,
+				B6C37DF72A32B48F004D18A8 /* SequenceCode.swift in Sources */,
 				6516067628400EAA00074144 /* UIColor.swift in Sources */,
 				65CAC18827F947F700A95D92 /* YonderWideButton.swift in Sources */,
 				654FB89528D9A779008F5C60 /* ArmorPointsRestorationBuff.swift in Sources */,
@@ -3201,7 +3230,9 @@
 				65ED80D628293192009940A2 /* RestorerInspectView.swift in Sources */,
 				656FD8E22919B3F700F923E9 /* WeaponProfileBucket.swift in Sources */,
 				656BEEA328EA2B9D001CE591 /* HasPriceValue.swift in Sources */,
+				B6C37DFF2A32B4DD004D18A8 /* AnimationSequenceBuilder.swift in Sources */,
 				656FD900291B19D800F923E9 /* AllAccessories.swift in Sources */,
+				B6C37E012A32B517004D18A8 /* SequenceDelegate.swift in Sources */,
 				65109B35280C66CA00F2D949 /* YonderIconNumeralPair.swift in Sources */,
 				65EFC04A29365A5600B8E677 /* BossAreaPool.swift in Sources */,
 				655C60B528041006007B1E11 /* ViewEnhanceablesButton.swift in Sources */,
@@ -3307,6 +3338,7 @@
 				6568F99B28770FBD00035865 /* Accessory.swift in Sources */,
 				65D5094128DB8F8E007A6C1A /* View.swift in Sources */,
 				656FD9412920620000F923E9 /* BuffEveryWeaponDamageOffer.swift in Sources */,
+				B6C37DFB2A32B4BC004D18A8 /* AnimationComposite.swift in Sources */,
 				656FD94B29206AC400F923E9 /* InteractorFactoryBundle.swift in Sources */,
 				65DC896227908668001826A2 /* YonderIcon.swift in Sources */,
 				65A8D97C27B84B5400EB820F /* WithInspectSheet.swift in Sources */,
