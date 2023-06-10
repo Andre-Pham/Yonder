@@ -1,0 +1,11 @@
+{
+    "id": "E0369",
+    "code": "neutral_abjudicator",
+    "name": "Glacial Mage",
+    "description": "",
+    "type": "frost",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

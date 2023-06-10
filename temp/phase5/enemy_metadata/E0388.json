@@ -1,0 +1,11 @@
+{
+    "id": "E0388",
+    "code": "neutral_blacklocust",
+    "name": "Black Locust",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

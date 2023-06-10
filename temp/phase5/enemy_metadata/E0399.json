@@ -1,0 +1,11 @@
+{
+    "id": "E0399",
+    "code": "neutral_capriciouswarrior",
+    "name": "Capricious Warrior",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

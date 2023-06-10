@@ -1,0 +1,11 @@
+{
+    "id": "E0380",
+    "code": "neutral_azureherald",
+    "name": "Azure Caster",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

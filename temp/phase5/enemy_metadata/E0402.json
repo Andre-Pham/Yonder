@@ -1,0 +1,11 @@
+{
+    "id": "E0402",
+    "code": "neutral_chaoselemental",
+    "name": "Chaos Elemental",
+    "description": "",
+    "type": "nether",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

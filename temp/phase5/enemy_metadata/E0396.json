@@ -1,0 +1,11 @@
+{
+    "id": "E0396",
+    "code": "neutral_buildcommon",
+    "name": "Nightwatch",
+    "description": "",
+    "type": "none",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

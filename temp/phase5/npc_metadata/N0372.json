@@ -1,0 +1,21 @@
+{
+    "id": "N0372",
+    "code": "neutral_amu",
+    "name": "Portal Mage",
+    "description": "",
+    "type": "dungeon",
+    "roles": [
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Portal Mage",
+    "enemyType": "dungeon",
+    "brute": false,
+    "thief": false
+}

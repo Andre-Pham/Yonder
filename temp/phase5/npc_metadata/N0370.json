@@ -1,0 +1,26 @@
+{
+    "id": "N0370",
+    "code": "neutral_aethermaster",
+    "name": "Gradmaster Zen",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly",
+        "restorer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "health",
+        "armor"
+    ],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Gradmaster Zen",
+    "enemyType": "none",
+    "brute": false,
+    "thief": false
+}

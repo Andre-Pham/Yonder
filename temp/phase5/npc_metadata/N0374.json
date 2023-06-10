@@ -1,0 +1,18 @@
+{
+    "id": "N0374",
+    "code": "neutral_arrowwhistler",
+    "name": "Flameborn Archer",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Flameborn Archer",
+    "enemyType": "divine",
+    "brute": false,
+    "thief": false
+}

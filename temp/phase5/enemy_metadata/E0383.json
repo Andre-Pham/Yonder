@@ -1,0 +1,11 @@
+{
+    "id": "E0383",
+    "code": "neutral_beastmaster",
+    "name": "Eastbound Savage",
+    "description": "",
+    "type": "none",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

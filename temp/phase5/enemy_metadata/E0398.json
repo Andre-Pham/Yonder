@@ -1,0 +1,11 @@
+{
+    "id": "E0398",
+    "code": "neutral_calculator",
+    "name": "Alculator",
+    "description": "",
+    "type": "none",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

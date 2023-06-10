@@ -1,0 +1,21 @@
+{
+    "id": "N0376",
+    "code": "neutral_artificereshaper",
+    "name": "Hurle Phantomwhisper",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Hurle Phantomwhisper",
+    "enemyType": "none",
+    "brute": false,
+    "thief": false
+}
