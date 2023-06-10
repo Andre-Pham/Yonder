@@ -540,14 +540,14 @@
 		B6C37E052A32B6EA004D18A8 /* SequenceTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37E042A32B6EA004D18A8 /* SequenceTimer.swift */; };
 		B6C37E092A32B953004D18A8 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37E082A32B953004D18A8 /* UIImage.swift */; };
 		B6C37E0B2A32BAAA004D18A8 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37E0A2A32BAAA004D18A8 /* Math.swift */; };
-		B6C37E122A32DF0D004D18A8 /* IMG-E0001.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C37E112A32DF0D004D18A8 /* IMG-E0001.png */; };
-		B6C37E142A32DF1F004D18A8 /* FRAMES-E0001.json in Resources */ = {isa = PBXBuildFile; fileRef = B6C37E132A32DF1F004D18A8 /* FRAMES-E0001.json */; };
 		B6C37E162A32E3D0004D18A8 /* NPCAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37E152A32E3D0004D18A8 /* NPCAnimation.swift */; };
-		B6C37E192A3372C1004D18A8 /* IMG-E0002.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C37E172A3372C1004D18A8 /* IMG-E0002.png */; };
-		B6C37E1A2A3372C1004D18A8 /* IMG-E0003.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C37E182A3372C1004D18A8 /* IMG-E0003.png */; };
-		B6C37E1D2A3372D5004D18A8 /* FRAMES-E0002.json in Resources */ = {isa = PBXBuildFile; fileRef = B6C37E1B2A3372D5004D18A8 /* FRAMES-E0002.json */; };
-		B6C37E1E2A3372D5004D18A8 /* FRAMES-E0003.json in Resources */ = {isa = PBXBuildFile; fileRef = B6C37E1C2A3372D5004D18A8 /* FRAMES-E0003.json */; };
 		B6C37E202A3374BD004D18A8 /* NoAnimationSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37E1F2A3374BD004D18A8 /* NoAnimationSequence.swift */; };
+		B6C37E2A2A341312004D18A8 /* FRAMES-E0001.json in Resources */ = {isa = PBXBuildFile; fileRef = B6C37E272A341312004D18A8 /* FRAMES-E0001.json */; };
+		B6C37E2B2A341312004D18A8 /* FRAMES-E0003.json in Resources */ = {isa = PBXBuildFile; fileRef = B6C37E282A341312004D18A8 /* FRAMES-E0003.json */; };
+		B6C37E2C2A341312004D18A8 /* FRAMES-E0002.json in Resources */ = {isa = PBXBuildFile; fileRef = B6C37E292A341312004D18A8 /* FRAMES-E0002.json */; };
+		B6C37E302A34133E004D18A8 /* IMG-E0002.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C37E2D2A34133E004D18A8 /* IMG-E0002.png */; };
+		B6C37E312A34133E004D18A8 /* IMG-E0003.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C37E2E2A34133E004D18A8 /* IMG-E0003.png */; };
+		B6C37E322A34133E004D18A8 /* IMG-E0001.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C37E2F2A34133E004D18A8 /* IMG-E0001.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1104,14 +1104,14 @@
 		B6C37E042A32B6EA004D18A8 /* SequenceTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceTimer.swift; sourceTree = "<group>"; };
 		B6C37E082A32B953004D18A8 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		B6C37E0A2A32BAAA004D18A8 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
-		B6C37E112A32DF0D004D18A8 /* IMG-E0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "IMG-E0001.png"; path = "../../../../../temp/phase5/enemy_pngs/IMG-E0001.png"; sourceTree = "<group>"; };
-		B6C37E132A32DF1F004D18A8 /* FRAMES-E0001.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "FRAMES-E0001.json"; path = "../../../../../temp/phase5/enemy_pngdata/FRAMES-E0001.json"; sourceTree = "<group>"; };
 		B6C37E152A32E3D0004D18A8 /* NPCAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPCAnimation.swift; sourceTree = "<group>"; };
-		B6C37E172A3372C1004D18A8 /* IMG-E0002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "IMG-E0002.png"; path = "../../../../../temp/phase5/enemy_pngs/IMG-E0002.png"; sourceTree = "<group>"; };
-		B6C37E182A3372C1004D18A8 /* IMG-E0003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "IMG-E0003.png"; path = "../../../../../temp/phase5/enemy_pngs/IMG-E0003.png"; sourceTree = "<group>"; };
-		B6C37E1B2A3372D5004D18A8 /* FRAMES-E0002.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "FRAMES-E0002.json"; path = "../../../../../temp/phase5/enemy_pngdata/FRAMES-E0002.json"; sourceTree = "<group>"; };
-		B6C37E1C2A3372D5004D18A8 /* FRAMES-E0003.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "FRAMES-E0003.json"; path = "../../../../../temp/phase5/enemy_pngdata/FRAMES-E0003.json"; sourceTree = "<group>"; };
 		B6C37E1F2A3374BD004D18A8 /* NoAnimationSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoAnimationSequence.swift; sourceTree = "<group>"; };
+		B6C37E272A341312004D18A8 /* FRAMES-E0001.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FRAMES-E0001.json"; sourceTree = "<group>"; };
+		B6C37E282A341312004D18A8 /* FRAMES-E0003.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FRAMES-E0003.json"; sourceTree = "<group>"; };
+		B6C37E292A341312004D18A8 /* FRAMES-E0002.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FRAMES-E0002.json"; sourceTree = "<group>"; };
+		B6C37E2D2A34133E004D18A8 /* IMG-E0002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IMG-E0002.png"; sourceTree = "<group>"; };
+		B6C37E2E2A34133E004D18A8 /* IMG-E0003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IMG-E0003.png"; sourceTree = "<group>"; };
+		B6C37E2F2A34133E004D18A8 /* IMG-E0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IMG-E0001.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2874,9 +2874,9 @@
 		B6C37E0E2A32DE9A004D18A8 /* Sprite Sheets */ = {
 			isa = PBXGroup;
 			children = (
-				B6C37E112A32DF0D004D18A8 /* IMG-E0001.png */,
-				B6C37E172A3372C1004D18A8 /* IMG-E0002.png */,
-				B6C37E182A3372C1004D18A8 /* IMG-E0003.png */,
+				B6C37E2F2A34133E004D18A8 /* IMG-E0001.png */,
+				B6C37E2D2A34133E004D18A8 /* IMG-E0002.png */,
+				B6C37E2E2A34133E004D18A8 /* IMG-E0003.png */,
 			);
 			path = "Sprite Sheets";
 			sourceTree = "<group>";
@@ -2891,9 +2891,9 @@
 		B6C37E102A32DEB3004D18A8 /* Frame Data */ = {
 			isa = PBXGroup;
 			children = (
-				B6C37E132A32DF1F004D18A8 /* FRAMES-E0001.json */,
-				B6C37E1B2A3372D5004D18A8 /* FRAMES-E0002.json */,
-				B6C37E1C2A3372D5004D18A8 /* FRAMES-E0003.json */,
+				B6C37E272A341312004D18A8 /* FRAMES-E0001.json */,
+				B6C37E292A341312004D18A8 /* FRAMES-E0002.json */,
+				B6C37E282A341312004D18A8 /* FRAMES-E0003.json */,
 			);
 			path = "Frame Data";
 			sourceTree = "<group>";
@@ -3022,16 +3022,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6C37E142A32DF1F004D18A8 /* FRAMES-E0001.json in Resources */,
 				65D88C3A274436E9002E3AC4 /* Preview Assets.xcassets in Resources */,
-				B6C37E1A2A3372C1004D18A8 /* IMG-E0003.png in Resources */,
-				B6C37E1D2A3372D5004D18A8 /* FRAMES-E0002.json in Resources */,
+				B6C37E312A34133E004D18A8 /* IMG-E0003.png in Resources */,
+				B6C37E302A34133E004D18A8 /* IMG-E0002.png in Resources */,
+				B6C37E2C2A341312004D18A8 /* FRAMES-E0002.json in Resources */,
+				B6C37E2A2A341312004D18A8 /* FRAMES-E0001.json in Resources */,
+				B6C37E2B2A341312004D18A8 /* FRAMES-E0003.json in Resources */,
 				65C37A77285A2F9A006997EE /* Localizable.strings in Resources */,
 				65D88C37274436E9002E3AC4 /* Assets.xcassets in Resources */,
-				B6C37E1E2A3372D5004D18A8 /* FRAMES-E0003.json in Resources */,
-				B6C37E122A32DF0D004D18A8 /* IMG-E0001.png in Resources */,
+				B6C37E322A34133E004D18A8 /* IMG-E0001.png in Resources */,
 				6569E15C276305D1007C472E /* Mx437_DOS-V_TWN16.ttf in Resources */,
-				B6C37E192A3372C1004D18A8 /* IMG-E0002.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
