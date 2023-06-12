@@ -16,4 +16,9 @@ enum YonderImages {
     static let goblinIcon = ImageResource("Goblin")
     static let bruteIcon = ImageResource("BrokenShield")
     
+    // MARK: - Background Art
+    
+    static let forestForegroundImage = ImageResource("ForestForeground")
+    static let forestBackgroundImage = ImageResource("ForestBackground")
+    
 }

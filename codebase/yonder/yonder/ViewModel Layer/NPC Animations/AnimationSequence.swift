@@ -18,7 +18,7 @@ class AnimationSequence {
     private var playbackSpeed = 1.0
     private let frameDuration: Double
     private let frameOrigins: [SpriteSheetCoord]
-    private let frameSize: (width: Int, height: Int)
+    public let frameSize: (width: Int, height: Int)
     private var frameIndex = 0 {
         didSet {
             self.delegate?.onNewFrame(self.frame)

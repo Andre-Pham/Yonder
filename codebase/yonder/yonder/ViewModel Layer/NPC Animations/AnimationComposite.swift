@@ -24,6 +24,12 @@ class AnimationManager: ObservableObject, SequenceDelegate {
     public var isPlaying: Bool {
         return self.activeSequence.isPlaying
     }
+    public var frameSize: CGSize {
+        return CGSize(
+            width: self.activeSequence.frameSize.width,
+            height: self.activeSequence.frameSize.height
+        )
+    }
     
     init(fileID: String?, initialSequence: SequenceCode) {
         self.activeSequenceCode = initialSequence

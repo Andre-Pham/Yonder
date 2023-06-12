@@ -548,6 +548,8 @@
 		B6C37E302A34133E004D18A8 /* IMG-E0002.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C37E2D2A34133E004D18A8 /* IMG-E0002.png */; };
 		B6C37E312A34133E004D18A8 /* IMG-E0003.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C37E2E2A34133E004D18A8 /* IMG-E0003.png */; };
 		B6C37E322A34133E004D18A8 /* IMG-E0001.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C37E2F2A34133E004D18A8 /* IMG-E0001.png */; };
+		B6C37E8C2A362E34004D18A8 /* FRAMES-E0006.json in Resources */ = {isa = PBXBuildFile; fileRef = B6C37E8B2A362E34004D18A8 /* FRAMES-E0006.json */; };
+		B6C37E902A362E4D004D18A8 /* IMG-E0006.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C37E8F2A362E4D004D18A8 /* IMG-E0006.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1112,6 +1114,8 @@
 		B6C37E2D2A34133E004D18A8 /* IMG-E0002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IMG-E0002.png"; sourceTree = "<group>"; };
 		B6C37E2E2A34133E004D18A8 /* IMG-E0003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IMG-E0003.png"; sourceTree = "<group>"; };
 		B6C37E2F2A34133E004D18A8 /* IMG-E0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IMG-E0001.png"; sourceTree = "<group>"; };
+		B6C37E8B2A362E34004D18A8 /* FRAMES-E0006.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FRAMES-E0006.json"; sourceTree = "<group>"; };
+		B6C37E8F2A362E4D004D18A8 /* IMG-E0006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IMG-E0006.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2877,6 +2881,7 @@
 				B6C37E2F2A34133E004D18A8 /* IMG-E0001.png */,
 				B6C37E2D2A34133E004D18A8 /* IMG-E0002.png */,
 				B6C37E2E2A34133E004D18A8 /* IMG-E0003.png */,
+				B6C37E8F2A362E4D004D18A8 /* IMG-E0006.png */,
 			);
 			path = "Sprite Sheets";
 			sourceTree = "<group>";
@@ -2894,6 +2899,7 @@
 				B6C37E272A341312004D18A8 /* FRAMES-E0001.json */,
 				B6C37E292A341312004D18A8 /* FRAMES-E0002.json */,
 				B6C37E282A341312004D18A8 /* FRAMES-E0003.json */,
+				B6C37E8B2A362E34004D18A8 /* FRAMES-E0006.json */,
 			);
 			path = "Frame Data";
 			sourceTree = "<group>";
@@ -3023,11 +3029,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				65D88C3A274436E9002E3AC4 /* Preview Assets.xcassets in Resources */,
+				B6C37E902A362E4D004D18A8 /* IMG-E0006.png in Resources */,
 				B6C37E312A34133E004D18A8 /* IMG-E0003.png in Resources */,
 				B6C37E302A34133E004D18A8 /* IMG-E0002.png in Resources */,
 				B6C37E2C2A341312004D18A8 /* FRAMES-E0002.json in Resources */,
 				B6C37E2A2A341312004D18A8 /* FRAMES-E0001.json in Resources */,
 				B6C37E2B2A341312004D18A8 /* FRAMES-E0003.json in Resources */,
+				B6C37E8C2A362E34004D18A8 /* FRAMES-E0006.json in Resources */,
 				65C37A77285A2F9A006997EE /* Localizable.strings in Resources */,
 				65D88C37274436E9002E3AC4 /* Assets.xcassets in Resources */,
 				B6C37E322A34133E004D18A8 /* IMG-E0001.png in Resources */,
