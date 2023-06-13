@@ -22,8 +22,9 @@ class Armor: EffectsDescribed, Purchasable, Named, Described, Enhanceable, Clona
     @DidSetPublished private(set) var armorAttributes: [ArmorAttribute]
     public let id = UUID()
     
-    /// To be called by subclasses only.
     /// - Parameters:
+    ///   - name: The name of the armor (flavor)
+    ///   - description: Flavor text description of the armor
     ///   - type: Where the armor is worn
     ///   - armorPoints: The 'health' of the armor
     ///   - armorBuffs: The buffs/debuffs the armor gives when worn

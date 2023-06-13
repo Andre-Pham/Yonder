@@ -10,34 +10,40 @@ import Foundation
 class SequenceTimer {
     
     private var timer: Timer?
-    private var timeIntervalCallback: (() -> Void)?
     
     deinit {
-        // TODO: I don't know if this is necessary
-        // I just added it because timers (in general) have a tendency to continue calling even after the object gone
-        self.timer?.invalidate()
+        // Timers are retained in memory even without reference
+        // (That's a waste of resources because if this is deallocated, the timer goes unused)
+        // Clean up dependency be invalidating the timer before deallocating this
+        self.stop()
     }
     
+    /// Start a timer and define a callback that is triggered on every time interval.
+    /// IMPORTANT: Use a weak reference to self when defining the closure. Otherwise the closure, parent class, and this instance is retained in memory despite not being stored nor referenced anywhere.
+    /// Example:
+    /// ```
+    /// mySequenceTimer.start(withTimeInterval: 1.0) { [weak self] in
+    ///     guard let self = self else { return }
+    ///     // Do stuff here
+    /// }
+    /// ```
+    /// - Parameters:
+    ///   - timeInterval: The amount of time to pass between every callback trigger
+    ///   - callback: The callback to trigger at every time interval
     func start(withTimeInterval timeInterval: TimeInterval, callback: @escaping () -> Void) {
         self.stop()
-        self.timeIntervalCallback = callback
-        self.timer = Timer.scheduledTimer(
-            timeInterval: timeInterval,
-            target: self,
-            selector: #selector(self.onTimeInterval),
-            userInfo: nil,
-            repeats: true
-        )
+        self.timer = Timer(timeInterval: timeInterval, repeats: true) { _ in
+            callback()
+        }
+        // Keep the timer running outside of the view lifecycle
+        // (If the view "pauses", e.g. while scrolling, the timer keeps ticking)
+        // Without this, scrolling pauses the animation
+        RunLoop.current.add(self.timer!, forMode: .common)
     }
     
     func stop() {
         self.timer?.invalidate()
         self.timer = nil
-        self.timeIntervalCallback = nil
-    }
-    
-    @objc private func onTimeInterval() {
-        self.timeIntervalCallback?()
     }
     
 }

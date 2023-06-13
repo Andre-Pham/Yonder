@@ -75,9 +75,6 @@ class AnimationManager: ObservableObject, SequenceDelegate {
     
     func setFileID(to fileID: String?) {
         let wasPlaying = self.isPlaying
-        for sequence in self.sequences.values {
-            sequence.setDelegate(to: nil)
-        }
         self.sequences.removeAll()
         // Set blank frame assuming no fileID was provided
         self.frame = Image(uiImage: UIImage())

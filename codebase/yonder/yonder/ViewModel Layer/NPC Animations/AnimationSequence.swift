@@ -54,6 +54,11 @@ class AnimationSequence {
         self.frameSize = frameSize
     }
     
+    deinit {
+        // Clean up dependencies
+        self.setDelegate(to: nil)
+    }
+    
     func setDelegate(to delegate: SequenceDelegate?) {
         self.delegate = delegate
     }
@@ -63,7 +68,10 @@ class AnimationSequence {
             return
         }
         self.isPlaying = true
-        self.timer.start(withTimeInterval: self.frameDuration/self.playbackSpeed) {
+        self.timer.start(withTimeInterval: self.frameDuration/self.playbackSpeed) { [weak self] in
+            // Ensure this is a weak referenced closure
+            // Otherwise the timer, this AnimationSequence, and this closure is retained in memory, even if not stored or referenced anywhere
+            guard let self = self else { return }
             self.incrementFrame()
             if self.frameIndex == self.lastFrameIndex {
                 if !self.loop {

@@ -27,6 +27,8 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
     public let id = UUID()
     
     /// - Parameters:
+    ///   - name: The name of the accessory (flavor)
+    ///   - description: Flavor text description of the accessory
     ///   - type: The type of accessory which determines the slot in which it may be equipped
     ///   - healthBonus: The health this provides as a bonus
     ///   - armorPointsBonus: The armor points this provides as a bonus
