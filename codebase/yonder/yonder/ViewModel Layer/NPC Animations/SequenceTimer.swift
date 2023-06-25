@@ -32,7 +32,7 @@ class SequenceTimer {
     ///   - callback: The callback to trigger at every time interval
     func start(withTimeInterval timeInterval: TimeInterval, callback: @escaping () -> Void) {
         self.stop()
-        self.timer = Timer(timeInterval: timeInterval, repeats: true) { _ in
+        self.timer = Timer(timeInterval: timeInterval, repeats: true) { [weak self] _ in
             callback()
         }
         // Keep the timer running outside of the view lifecycle
