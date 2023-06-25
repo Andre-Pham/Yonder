@@ -18,7 +18,7 @@ enum YonderImages {
     
     // MARK: - Background Art
     
-    static let forestForegroundImage = ImageResource("ForestForeground")
-    static let forestBackgroundImage = ImageResource("ForestBackground")
+    static let darkForestForegroundImage = ImageResource("DarkForestForeground")
+    static let darkForestBackgroundImage = ImageResource("DarkForestBackground")
     
 }

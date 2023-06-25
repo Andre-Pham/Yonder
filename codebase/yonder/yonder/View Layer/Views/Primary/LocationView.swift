@@ -10,9 +10,13 @@ import SwiftUI
 struct LocationView: View {
     @ObservedObject var locationViewModel: LocationViewModel
     @StateObject var animationQueue: NPCAnimation
-//    let cardHeight: CGFloat = 250
-    // Placeholder until assigned on appear
-    @State private var viewHeight = 250.0
+    // Assigned on onAppear
+    @State private var viewHeight = 0.0
+    // Magic number for scaling down size, smaller number -> larger image
+    private let sizeDial = 178.0
+    // TODO: Replace with location's image
+    private let background = YonderImages.darkForestBackgroundImage
+    private let foreground = YonderImages.darkForestForegroundImage
     
     init(locationViewModel: LocationViewModel, optionsStateManager: OptionsStateManager) {
         self.locationViewModel = locationViewModel
@@ -22,60 +26,44 @@ struct LocationView: View {
     
     var body: some View {
         GeometryReader { geo in
-            let cardHeight = geo.size.width/1.624
+            let viewWidth = geo.size.width
+            let cardWidth = viewWidth - YonderCoreGraphics.borderWidth*2
+            let cardHeight = cardWidth/(self.background.width/self.background.height)
+            let viewHeight = cardHeight + YonderCoreGraphics.borderWidth*2
             ZStack(alignment: .bottom) {
-                YonderImages.forestBackgroundImage.image
+                self.background.image
                     .resizable()
                     .interpolation(.none)
                     .scaledToFill()
-                    .frame(width: geo.size.width - YonderCoreGraphics.borderWidth*2, height: cardHeight - YonderCoreGraphics.borderWidth*2)
-                    .clipped()
-                    .offset(x: YonderCoreGraphics.borderWidth, y: YonderCoreGraphics.borderWidth)
                     .overlay(alignment: .bottom) {
                         self.animationQueue.frame
                             .resizable()
                             .interpolation(.none)
                             .scaledToFit()
-                        // The frame is relative to a size of 80.0 because that's the size of image I originally used to position everything - then we scale different frame sizes relative to their actual frame size
-                            .frame(width: geo.size.width*self.animationQueue.frameSize.width/80.0, height: geo.size.width/2.538*self.animationQueue.frameSize.height/80.0)
-                            .offset(x: YonderCoreGraphics.borderWidth, y: YonderCoreGraphics.borderWidth)
-//                            .offset(y: geo.size.width/8.458)
-                        // These offsets need to be relative to the geometry size because these change from device to device so aspect ratios need to be maintained for consistent viewing
-                            .offset(y: geo.size.width/60.0)
-                        // For some reason sprites tend to be right-leaning and centre better when adjusted
-                            .offset(x: -geo.size.width/65.0)
-//                            .border(.blue, width: 2)
+                            .frame(
+                                width: viewWidth*self.animationQueue.frameSize.width/self.sizeDial,
+                                height: viewWidth*self.animationQueue.frameSize.height/self.sizeDial
+                            )
+                            // These offsets need to be relative to the geometry size because these change from device to device so aspect ratios need to be maintained for consistent viewing
+                            .offset(y: viewWidth/35.0) // Magic
+                            // Sprites tend to be slightly right-leaning and centre better when adjusted
+                            .offset(x: -viewWidth/80.0) // Magic
                     }
-                
-                YonderImages.forestForegroundImage.image
-                    .resizable()
-                    .interpolation(.none)
-                    .scaledToFill()
-                    .frame(width: geo.size.width - YonderCoreGraphics.borderWidth*2, height: cardHeight - YonderCoreGraphics.borderWidth*2)
+                    // Set frame after overlay - any animations that extend outside the card's frame are clipped
+                    .frame(width: cardWidth, height: cardHeight)
                     .clipped()
                     .offset(x: YonderCoreGraphics.borderWidth, y: YonderCoreGraphics.borderWidth)
                 
-                
-//                HStack {
-//                    YonderIconTextPair(image: self.locationViewModel.getTypeImage(), text: self.locationViewModel.name, size: .cardBody)
-//
-//                    Spacer()
-//                }
-//                .padding(YonderCoreGraphics.padding)
-//                .frame(width: geo.size.width - YonderCoreGraphics.borderWidth*2)
-//                .background(YonderColors.backgroundMaxDepth)
-//                .frame(width: geo.size.width - YonderCoreGraphics.borderWidth*2, height: self.cardHeight - YonderCoreGraphics.borderWidth*2, alignment: .bottomLeading)
-                
-                // TODO: Scale the animation to be proportional to the frame size of the animation sequence
-                // TODO: Also figure out how to make these bigger in general, without shifting the entire layout of this view
-//                self.animationQueue.frame
-//                    .resizable()
-//                    .interpolation(.none)
-//                    .scaledToFit()
-//                    .frame(width: geo.size.width, height: self.cardHeight)
+                self.foreground.image
+                    .resizable()
+                    .interpolation(.none)
+                    .scaledToFill()
+                    .frame(width: cardWidth, height: cardHeight)
+                    .clipped()
+                    .offset(x: YonderCoreGraphics.borderWidth, y: YonderCoreGraphics.borderWidth)
             }
             .onAppear {
-                self.viewHeight = cardHeight
+                self.viewHeight = viewHeight
             }
         }
         .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
