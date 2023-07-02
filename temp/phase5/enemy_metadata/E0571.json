@@ -1,0 +1,11 @@
+{
+    "id": "E0571",
+    "code": "neutral_tribalmelee1",
+    "name": "Blademaster Som",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

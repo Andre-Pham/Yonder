@@ -1,0 +1,11 @@
+{
+    "id": "E0574",
+    "code": "neutral_tribalmelee4",
+    "name": "Sharpshield Dweller",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

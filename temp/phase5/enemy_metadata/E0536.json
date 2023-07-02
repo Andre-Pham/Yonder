@@ -1,0 +1,11 @@
+{
+    "id": "E0536",
+    "code": "neutral_sapphireseer",
+    "name": "Gemlight Conjurer",
+    "description": "",
+    "type": "none",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

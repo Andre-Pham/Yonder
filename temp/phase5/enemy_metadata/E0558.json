@@ -1,0 +1,11 @@
+{
+    "id": "E0558",
+    "code": "neutral_sunsteeldefender",
+    "name": "Sunsteel Defender",
+    "description": "",
+    "type": "desert",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

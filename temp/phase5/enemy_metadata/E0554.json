@@ -1,0 +1,11 @@
+{
+    "id": "E0554",
+    "code": "neutral_spellspark",
+    "name": "Blaze Skull",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

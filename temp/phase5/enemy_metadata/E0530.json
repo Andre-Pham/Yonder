@@ -1,0 +1,11 @@
+{
+    "id": "E0530",
+    "code": "neutral_rejuvenator",
+    "name": "Temple Warrior",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

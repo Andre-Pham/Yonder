@@ -1,0 +1,11 @@
+{
+    "id": "E0512",
+    "code": "neutral_monstershreddingmantis",
+    "name": "Twinewood Shredder",
+    "description": "",
+    "type": "forest",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

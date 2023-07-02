@@ -1,0 +1,11 @@
+{
+    "id": "E0541",
+    "code": "neutral_shadow3",
+    "name": "Shadowseer",
+    "description": "",
+    "type": "shadow",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

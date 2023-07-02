@@ -1,0 +1,18 @@
+{
+    "id": "N0570",
+    "code": "neutral_tribalcaster",
+    "name": "Skull Collector",
+    "description": "",
+    "type": "dungeon",
+    "roles": [
+        "shop"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Skull Collector",
+    "enemyType": "dungeon",
+    "brute": false,
+    "thief": false
+}

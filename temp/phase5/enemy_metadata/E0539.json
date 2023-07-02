@@ -1,0 +1,11 @@
+{
+    "id": "E0539",
+    "code": "neutral_shadow1",
+    "name": "Shadow-Wing",
+    "description": "",
+    "type": "shadow",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

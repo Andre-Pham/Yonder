@@ -1,0 +1,11 @@
+{
+    "id": "E0534",
+    "code": "neutral_rubyrifter",
+    "name": "Rubyrift",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0510",
+    "code": "neutral_monsterputridmindflayer",
+    "name": "Putrid Mindflayer",
+    "description": "",
+    "type": "shadow",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

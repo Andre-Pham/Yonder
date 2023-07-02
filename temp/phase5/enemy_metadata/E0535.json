@@ -1,0 +1,11 @@
+{
+    "id": "E0535",
+    "code": "neutral_saberspinemk2",
+    "name": "Saberback Tiger",
+    "description": "",
+    "type": "frost",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

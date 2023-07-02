@@ -1,0 +1,11 @@
+{
+    "id": "E0523",
+    "code": "neutral_prismaticillusionist",
+    "name": "Prismatic Illusionist",
+    "description": "",
+    "type": "none",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0564",
+    "code": "neutral_tethermancer",
+    "name": "Tethermancer",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,23 @@
+{
+    "id": "N0552",
+    "code": "neutral_spelljammer",
+    "name": "Spellwarp",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Spellwarp",
+    "enemyType": "none",
+    "brute": false,
+    "thief": false
+}

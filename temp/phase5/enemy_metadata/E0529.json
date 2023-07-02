@@ -1,0 +1,11 @@
+{
+    "id": "E0529",
+    "code": "neutral_razorcraggolem",
+    "name": "Razorclaw",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

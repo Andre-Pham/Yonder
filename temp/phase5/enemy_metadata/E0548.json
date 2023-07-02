@@ -1,0 +1,11 @@
+{
+    "id": "E0548",
+    "code": "neutral_singletonmythron",
+    "name": "Shadowcast Priest",
+    "description": "",
+    "type": "shadow",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

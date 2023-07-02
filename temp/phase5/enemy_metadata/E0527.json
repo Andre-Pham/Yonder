@@ -1,0 +1,11 @@
+{
+    "id": "E0527",
+    "code": "neutral_quartermastergauj",
+    "name": "Quartermaster",
+    "description": "",
+    "type": "forest",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

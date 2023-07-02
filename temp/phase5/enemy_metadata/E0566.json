@@ -1,0 +1,11 @@
+{
+    "id": "E0566",
+    "code": "neutral_thegreatprotector",
+    "name": "Wideblade Bunker",
+    "description": "",
+    "type": "dungeon",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

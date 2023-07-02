@@ -1,0 +1,11 @@
+{
+    "id": "E0526",
+    "code": "neutral_quahog",
+    "name": "Drakon Brute",
+    "description": "",
+    "type": "dungeon",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

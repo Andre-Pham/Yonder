@@ -1,0 +1,22 @@
+{
+    "id": "N0520",
+    "code": "neutral_partyelf",
+    "name": "Flower Nymph",
+    "description": "",
+    "type": "forest",
+    "roles": [
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Lil Element",
+    "enemyType": "forest",
+    "brute": false,
+    "thief": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0561",
+    "code": "neutral_swordofakrane",
+    "name": "Sword Of Alkibur",
+    "description": "",
+    "type": "dungeon",
+    "brute": true,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

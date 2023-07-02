@@ -1,0 +1,11 @@
+{
+    "id": "E0562",
+    "code": "neutral_syvrel",
+    "name": "Syvrel The Exile",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

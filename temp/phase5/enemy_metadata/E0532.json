@@ -1,0 +1,11 @@
+{
+    "id": "E0532",
+    "code": "neutral_rok",
+    "name": "Icerock",
+    "description": "",
+    "type": "frost",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

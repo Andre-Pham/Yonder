@@ -1,0 +1,11 @@
+{
+    "id": "E0579",
+    "code": "neutral_unseven",
+    "name": "Saberblades",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0509",
+    "code": "neutral_monsteronyxscorpion",
+    "name": "Glowsting Scorpion",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

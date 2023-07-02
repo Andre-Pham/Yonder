@@ -1,0 +1,11 @@
+{
+    "id": "E0551",
+    "code": "neutral_soboro",
+    "name": "Soboro",
+    "description": "",
+    "type": "none",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

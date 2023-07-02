@@ -1,0 +1,22 @@
+{
+    "id": "N0569",
+    "code": "neutral_timekeeper",
+    "name": "Timekeeper",
+    "description": "",
+    "type": "desert",
+    "roles": [
+        "shop",
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Timekeeper",
+    "enemyType": "desert",
+    "brute": false,
+    "thief": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0550",
+    "code": "neutral_skywing",
+    "name": "Skywing Divinity",
+    "description": "",
+    "type": "frost",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

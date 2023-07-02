@@ -1,0 +1,11 @@
+{
+    "id": "E0506",
+    "code": "neutral_monsterflamewing",
+    "name": "Flamewing Drake",
+    "description": "",
+    "type": "nether",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

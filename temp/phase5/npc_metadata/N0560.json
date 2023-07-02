@@ -1,0 +1,23 @@
+{
+    "id": "N0560",
+    "code": "neutral_superscarzig",
+    "name": "Noble Knight",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Noble Knight",
+    "enemyType": "none",
+    "brute": false,
+    "thief": false
+}

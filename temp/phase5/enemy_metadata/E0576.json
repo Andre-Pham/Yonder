@@ -1,0 +1,11 @@
+{
+    "id": "E0576",
+    "code": "neutral_tribalranged2",
+    "name": "Quickshot Dweller",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

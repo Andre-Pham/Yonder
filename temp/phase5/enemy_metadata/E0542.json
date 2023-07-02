@@ -1,0 +1,11 @@
+{
+    "id": "E0542",
+    "code": "neutral_shadowcaster",
+    "name": "NA-Flame Hunter",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

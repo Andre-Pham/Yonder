@@ -1,0 +1,11 @@
+{
+    "id": "E0518",
+    "code": "neutral_paddo",
+    "name": "Redshift Killer",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}
