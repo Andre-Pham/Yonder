@@ -1,0 +1,11 @@
+{
+    "id": "E0431",
+    "code": "neutral_golem_crossbones",
+    "name": "Crossbones",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

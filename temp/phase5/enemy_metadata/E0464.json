@@ -1,0 +1,11 @@
+{
+    "id": "E0464",
+    "code": "neutral_mechaz0rcannon",
+    "name": "Heat Seeker",
+    "description": "",
+    "type": "mech",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

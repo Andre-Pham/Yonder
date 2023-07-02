@@ -1,0 +1,11 @@
+{
+    "id": "E0473",
+    "code": "neutral_mercazurehorn",
+    "name": "Corrupt Satyr",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0429",
+    "code": "neutral_goldenjusticar",
+    "name": "Kobold Justicar",
+    "description": "",
+    "type": "dungeon",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

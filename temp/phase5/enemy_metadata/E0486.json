@@ -1,0 +1,11 @@
+{
+    "id": "E0486",
+    "code": "neutral_mercranged1",
+    "name": "Masked Scout",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

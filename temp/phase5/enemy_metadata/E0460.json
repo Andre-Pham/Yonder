@@ -1,0 +1,11 @@
+{
+    "id": "E0460",
+    "code": "neutral_luxignis",
+    "name": "Luxi Sandborn",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

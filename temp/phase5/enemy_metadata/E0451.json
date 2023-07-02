@@ -1,0 +1,11 @@
+{
+    "id": "E0451",
+    "code": "neutral_jaxtruesight",
+    "name": "Jaxi Shadowmaster",
+    "description": "",
+    "type": "shadow",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0420",
+    "code": "neutral_firestarter",
+    "name": "Flamebound",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

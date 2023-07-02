@@ -1,0 +1,11 @@
+{
+    "id": "E0449",
+    "code": "neutral_ion",
+    "name": "Cavernglow",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

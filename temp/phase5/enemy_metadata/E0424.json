@@ -1,0 +1,11 @@
+{
+    "id": "E0424",
+    "code": "neutral_ghostlynx",
+    "name": "Spectreshroom Lynx",
+    "description": "",
+    "type": "forest",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

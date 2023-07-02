@@ -1,0 +1,24 @@
+{
+    "id": "N0471",
+    "code": "neutral_mercarcanelimiter",
+    "name": "Heirloom",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "shop",
+        "friendly",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Heirloom",
+    "enemyType": "none",
+    "brute": false,
+    "thief": false
+}

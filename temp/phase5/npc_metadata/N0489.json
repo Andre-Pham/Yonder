@@ -1,0 +1,25 @@
+{
+    "id": "N0489",
+    "code": "neutral_mercsunseer",
+    "name": "Sun Worshiper",
+    "description": "",
+    "type": "desert",
+    "roles": [
+        "friendly",
+        "restorer",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "armor"
+    ],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Sun Worshiper",
+    "enemyType": "desert",
+    "brute": false,
+    "thief": false
+}

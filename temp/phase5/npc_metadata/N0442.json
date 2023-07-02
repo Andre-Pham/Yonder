@@ -1,0 +1,18 @@
+{
+    "id": "N0442",
+    "code": "neutral_grincher",
+    "name": "Skamp",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Loot Theif",
+    "enemyType": "forest",
+    "brute": false,
+    "thief": true
+}

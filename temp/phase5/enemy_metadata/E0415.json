@@ -1,0 +1,11 @@
+{
+    "id": "E0415",
+    "code": "neutral_dustwailer",
+    "name": "Dustwailer",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

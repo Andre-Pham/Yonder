@@ -1,0 +1,11 @@
+{
+    "id": "E0490",
+    "code": "neutral_mercswornavanger",
+    "name": "Ironbull",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

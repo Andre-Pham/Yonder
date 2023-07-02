@@ -1,0 +1,11 @@
+{
+    "id": "E0475",
+    "code": "neutral_mercflamebloodwarlock",
+    "name": "Flameblood Warlock",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

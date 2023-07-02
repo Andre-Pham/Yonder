@@ -1,0 +1,11 @@
+{
+    "id": "E0493",
+    "code": "neutral_merctwinbladewarmonger",
+    "name": "Twinblade Assassin",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

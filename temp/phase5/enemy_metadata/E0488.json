@@ -1,0 +1,11 @@
+{
+    "id": "E0488",
+    "code": "neutral_mercsongweaver",
+    "name": "Scrollweaver",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0419",
+    "code": "neutral_feralu",
+    "name": "Demonflame Wretched",
+    "description": "",
+    "type": "nether",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

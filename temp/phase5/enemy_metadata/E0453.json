@@ -1,0 +1,11 @@
+{
+    "id": "E0453",
+    "code": "neutral_keeperofthevalue",
+    "name": "Moondust Keep",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

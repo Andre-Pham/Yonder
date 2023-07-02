@@ -1,0 +1,11 @@
+{
+    "id": "E0421",
+    "code": "neutral_gambler",
+    "name": "Goldgazed Mage",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

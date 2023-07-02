@@ -1,0 +1,11 @@
+{
+    "id": "E0503",
+    "code": "neutral_monsterdragonhawk",
+    "name": "Dragonhawk",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

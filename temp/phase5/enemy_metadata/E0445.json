@@ -1,0 +1,11 @@
+{
+    "id": "E0445",
+    "code": "neutral_highhand",
+    "name": "Goldtrim Demon",
+    "description": "",
+    "type": "shadow",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

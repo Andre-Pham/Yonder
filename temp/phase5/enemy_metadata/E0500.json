@@ -1,0 +1,11 @@
+{
+    "id": "E0500",
+    "code": "neutral_monstercoiledcrawler",
+    "name": "Coiled Crawler",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

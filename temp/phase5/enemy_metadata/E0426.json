@@ -1,0 +1,11 @@
+{
+    "id": "E0426",
+    "code": "neutral_giantcrab",
+    "name": "Boreal Crab",
+    "description": "",
+    "type": "forest",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

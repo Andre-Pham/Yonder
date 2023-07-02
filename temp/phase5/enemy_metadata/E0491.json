@@ -1,0 +1,11 @@
+{
+    "id": "E0491",
+    "code": "neutral_mercsworndefender",
+    "name": "Sworn Defender",
+    "description": "",
+    "type": "none",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

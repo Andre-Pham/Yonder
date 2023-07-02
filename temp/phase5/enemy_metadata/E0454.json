@@ -1,0 +1,11 @@
+{
+    "id": "E0454",
+    "code": "neutral_khymera",
+    "name": "Enraged Khymera",
+    "description": "",
+    "type": "forest",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

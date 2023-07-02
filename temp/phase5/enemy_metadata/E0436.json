@@ -1,0 +1,11 @@
+{
+    "id": "E0436",
+    "code": "neutral_golemrunesand",
+    "name": "Hardrock Golem",
+    "description": "",
+    "type": "cavern",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

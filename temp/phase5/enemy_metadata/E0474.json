@@ -1,0 +1,11 @@
+{
+    "id": "E0474",
+    "code": "neutral_mercdaggerkiri",
+    "name": "Bonemeld",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

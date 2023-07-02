@@ -1,0 +1,11 @@
+{
+    "id": "E0422",
+    "code": "neutral_gauntletmaster",
+    "name": "Arcane Guardian",
+    "description": "",
+    "type": "dungeon",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

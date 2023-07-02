@@ -1,0 +1,11 @@
+{
+    "id": "E0496",
+    "code": "neutral_mogwai",
+    "name": "Mogwai",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

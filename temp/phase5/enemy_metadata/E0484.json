@@ -1,0 +1,11 @@
+{
+    "id": "E0484",
+    "code": "neutral_mercneedler",
+    "name": "Needlespine Hunter",
+    "description": "",
+    "type": "forest",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

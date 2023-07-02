@@ -1,0 +1,11 @@
+{
+    "id": "E0469",
+    "code": "neutral_mechaz0rwing",
+    "name": "Air Shot",
+    "description": "",
+    "type": "mech",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

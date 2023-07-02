@@ -1,0 +1,19 @@
+{
+    "id": "N0441",
+    "code": "neutral_grimes",
+    "name": "Bloodflame Traveller",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "shop",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Bloodflame Traveller",
+    "enemyType": "none",
+    "brute": false,
+    "thief": false
+}

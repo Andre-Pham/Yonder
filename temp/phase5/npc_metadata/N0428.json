@@ -1,0 +1,18 @@
+{
+    "id": "N0428",
+    "code": "neutral_goldenhammer",
+    "name": "Goldhammer Defender",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Goldhammer Defender",
+    "enemyType": "divine",
+    "brute": false,
+    "thief": false
+}

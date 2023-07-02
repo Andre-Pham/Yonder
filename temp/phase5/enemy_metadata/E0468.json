@@ -1,0 +1,11 @@
+{
+    "id": "E0468",
+    "code": "neutral_mechaz0rsword",
+    "name": "Sword Slash",
+    "description": "",
+    "type": "mech",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

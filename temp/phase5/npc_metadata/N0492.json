@@ -1,0 +1,18 @@
+{
+    "id": "N0492",
+    "code": "neutral_merctwilightmage",
+    "name": "Dune Scavenger",
+    "description": "",
+    "type": "desert",
+    "roles": [
+        "shop"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Dune Scavenger",
+    "enemyType": "desert",
+    "brute": false,
+    "thief": false
+}

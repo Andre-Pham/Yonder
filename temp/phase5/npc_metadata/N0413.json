@@ -1,0 +1,21 @@
+{
+    "id": "N0413",
+    "code": "neutral_dilotas",
+    "name": "Bloodmage Dilotas",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Bloodmage Dilotas",
+    "enemyType": "none",
+    "brute": false,
+    "thief": false
+}
