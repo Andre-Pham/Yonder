@@ -1,0 +1,11 @@
+{
+    "id": "E0584",
+    "code": "neutral_wildtahr",
+    "name": "Wildtahr",
+    "description": "",
+    "type": "desert",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

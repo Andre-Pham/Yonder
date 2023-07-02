@@ -1,0 +1,18 @@
+{
+    "id": "N0591",
+    "code": "neutral_zukong",
+    "name": "Zukong",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Zukong",
+    "enemyType": "none",
+    "brute": false,
+    "thief": false
+}

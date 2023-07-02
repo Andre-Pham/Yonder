@@ -1,0 +1,11 @@
+{
+    "id": "E0581",
+    "code": "neutral_voidhunter",
+    "name": "Voidwhip Hunter",
+    "description": "",
+    "type": "shadow",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

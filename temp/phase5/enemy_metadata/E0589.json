@@ -1,0 +1,11 @@
+{
+    "id": "E0589",
+    "code": "neutral_yun",
+    "name": "Demon Yun",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

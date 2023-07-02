@@ -1,0 +1,11 @@
+{
+    "id": "E0585",
+    "code": "neutral_windstopper",
+    "name": "Windstop",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

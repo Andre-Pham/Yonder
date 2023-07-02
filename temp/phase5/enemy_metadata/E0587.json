@@ -1,0 +1,11 @@
+{
+    "id": "E0587",
+    "code": "neutral_xyle01",
+    "name": "Searblade Assassin",
+    "description": "",
+    "type": "none",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0588",
+    "code": "neutral_xyle02",
+    "name": "Searblade Bountyhunter",
+    "description": "",
+    "type": "none",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

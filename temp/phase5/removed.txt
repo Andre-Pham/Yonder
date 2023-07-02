@@ -4,3 +4,4 @@ f3_lavastormobelysk
 f3_obelyskduskwind
 f3_obelyskgoldenflame
 neutral_moebius
+neutral_windrunner
