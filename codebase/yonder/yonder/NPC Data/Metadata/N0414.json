@@ -1,0 +1,21 @@
+{
+    "id": "N0414",
+    "code": "neutral_dreamgazer",
+    "name": "Dreamgazer",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "restorer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "health",
+        "armor"
+    ],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Dreamgazer",
+    "enemyType": "none",
+    "brute": false,
+    "thief": false
+}

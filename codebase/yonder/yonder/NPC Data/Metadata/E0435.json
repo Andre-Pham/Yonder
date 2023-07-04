@@ -1,0 +1,11 @@
+{
+    "id": "E0435",
+    "code": "neutral_golemnature",
+    "name": "Boscage Golem",
+    "description": "",
+    "type": "forest",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

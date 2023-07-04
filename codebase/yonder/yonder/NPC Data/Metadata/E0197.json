@@ -1,0 +1,11 @@
+{
+    "id": "E0197",
+    "code": "f3_sister",
+    "name": "Shadowfuel Blaster",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

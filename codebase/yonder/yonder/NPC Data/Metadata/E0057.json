@@ -1,0 +1,11 @@
+{
+    "id": "E0057",
+    "code": "f1_azuritelion",
+    "name": "Azurite Lion",
+    "description": "",
+    "type": "frost",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

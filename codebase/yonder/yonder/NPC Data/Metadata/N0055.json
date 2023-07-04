@@ -1,0 +1,25 @@
+{
+    "id": "N0055",
+    "code": "f1_archdeacon",
+    "name": "Arch Deacon",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly",
+        "restorer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "health"
+    ],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Arch Deacon",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": false
+}

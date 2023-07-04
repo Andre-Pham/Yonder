@@ -1,0 +1,11 @@
+{
+    "id": "E0472",
+    "code": "neutral_mercarchonspellbinder",
+    "name": "Dark Spellbinder",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0348",
+    "code": "f6_seismicelemental",
+    "name": "Crystal Golem",
+    "description": "",
+    "type": "faction6",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

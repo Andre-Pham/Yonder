@@ -1,0 +1,11 @@
+{
+    "id": "E0238",
+    "code": "f4_limbodweller",
+    "name": "Greedwing",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

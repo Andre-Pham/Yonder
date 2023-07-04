@@ -1,0 +1,11 @@
+{
+    "id": "E0204",
+    "code": "f3_zephyr",
+    "name": "Zephyr",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0538",
+    "code": "neutral_serpenti",
+    "name": "Bonespine Serpent",
+    "description": "",
+    "type": "cavern",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

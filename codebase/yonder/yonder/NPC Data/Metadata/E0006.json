@@ -1,0 +1,11 @@
+{
+    "id": "E0006",
+    "code": "boss_christmas",
+    "name": "Wronkthek",
+    "description": "",
+    "type": "forest",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

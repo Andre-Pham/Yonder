@@ -1,0 +1,11 @@
+{
+    "id": "E0411",
+    "code": "neutral_dex",
+    "name": "Dex Cub",
+    "description": "",
+    "type": "forest",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

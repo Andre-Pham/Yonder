@@ -1,0 +1,11 @@
+{
+    "id": "E0306",
+    "code": "f5_unstableflump",
+    "name": "Moloki Raptor",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

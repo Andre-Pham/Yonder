@@ -1,0 +1,11 @@
+{
+    "id": "E0143",
+    "code": "f2_sepukku",
+    "name": "Obsidian Caster",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -9,8 +9,9 @@ import Foundation
 
 class GoblinFoe: Foe {
     
-    init(name: String, description: String, maxHealth: Int, goldPerSteal: Int, damage: Int, loot: LootOptions) {
+    init(contentID: String?, name: String, description: String, maxHealth: Int, goldPerSteal: Int, damage: Int, loot: LootOptions) {
         super.init(
+            contentID: contentID,
             name: name,
             description: description,
             maxHealth: maxHealth,

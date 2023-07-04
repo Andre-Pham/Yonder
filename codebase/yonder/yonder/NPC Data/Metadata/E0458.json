@@ -1,0 +1,11 @@
+{
+    "id": "E0458",
+    "code": "neutral_letigress",
+    "name": "Pantherspirit Hunter",
+    "description": "",
+    "type": "forest",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

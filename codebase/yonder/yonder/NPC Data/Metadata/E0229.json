@@ -1,0 +1,11 @@
+{
+    "id": "E0229",
+    "code": "f4_furosa",
+    "name": "Priestess Furosa",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

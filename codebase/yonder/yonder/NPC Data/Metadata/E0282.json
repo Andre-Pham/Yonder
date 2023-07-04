@@ -1,0 +1,11 @@
+{
+    "id": "E0282",
+    "code": "f5_mandrake",
+    "name": "Mandrake Slithar",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

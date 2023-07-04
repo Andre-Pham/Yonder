@@ -1,0 +1,11 @@
+{
+    "id": "E0394",
+    "code": "neutral_boulderbreach",
+    "name": "Boulder Breach",
+    "description": "",
+    "type": "cavern",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

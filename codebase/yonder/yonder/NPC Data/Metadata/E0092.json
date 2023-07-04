@@ -1,0 +1,11 @@
+{
+    "id": "E0092",
+    "code": "f1_spellbladeadept",
+    "name": "Tempest Blademaster",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

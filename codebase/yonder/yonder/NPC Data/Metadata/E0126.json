@@ -1,0 +1,11 @@
+{
+    "id": "E0126",
+    "code": "f2_keshraifanblade",
+    "name": "Blademaster Keshrai",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

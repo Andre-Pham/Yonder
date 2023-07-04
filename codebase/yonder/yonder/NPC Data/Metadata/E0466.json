@@ -1,0 +1,11 @@
+{
+    "id": "E0466",
+    "code": "neutral_mechaz0rhelm",
+    "name": "Ruby",
+    "description": "",
+    "type": "mech",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

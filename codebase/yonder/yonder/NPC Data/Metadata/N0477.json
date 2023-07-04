@@ -1,0 +1,23 @@
+{
+    "id": "N0477",
+    "code": "neutral_mercgambitgirl",
+    "name": "Gambit",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "shop",
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Gambit",
+    "enemyType": "none",
+    "brute": false,
+    "thief": false
+}

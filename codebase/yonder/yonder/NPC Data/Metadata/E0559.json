@@ -1,0 +1,11 @@
+{
+    "id": "E0559",
+    "code": "neutral_superdoxx",
+    "name": "Superdoxx",
+    "description": "",
+    "type": "forest",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

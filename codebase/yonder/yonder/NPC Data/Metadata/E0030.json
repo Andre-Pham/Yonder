@@ -1,0 +1,11 @@
+{
+    "id": "E0030",
+    "code": "boss_protector",
+    "name": "Cobalt Protector",
+    "description": "",
+    "type": "mech",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

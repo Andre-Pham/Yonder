@@ -1,0 +1,11 @@
+{
+    "id": "E0109",
+    "code": "f2_buildlegendary",
+    "name": "Prowler",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

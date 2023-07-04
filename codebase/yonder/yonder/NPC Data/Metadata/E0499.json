@@ -1,0 +1,11 @@
+{
+    "id": "E0499",
+    "code": "neutral_monsterblacksandburrower",
+    "name": "Marsh Burrower",
+    "description": "",
+    "type": "forest",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -66,7 +66,8 @@ class NPCAnimation: AnimationQueue, AfterPlayerKillFoeSubscriber, OnActorAttackS
         case .none, .quest, .bridge:
             return nil
         case .hostile, .challengeHostile, .boss:
-            return "E0003"
+            let contentID = (location as? FoeLocation)?.foe.contentID
+            return contentID
         }
     }
     

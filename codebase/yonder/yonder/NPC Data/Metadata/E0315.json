@@ -1,0 +1,11 @@
+{
+    "id": "E0315",
+    "code": "f6_arcticrhyno",
+    "name": "Arctic Rhyno",
+    "description": "",
+    "type": "faction6",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

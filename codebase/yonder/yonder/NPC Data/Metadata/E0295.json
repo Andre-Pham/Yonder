@@ -1,0 +1,11 @@
+{
+    "id": "E0295",
+    "code": "f5_rancour",
+    "name": "Mythflame Sensei",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

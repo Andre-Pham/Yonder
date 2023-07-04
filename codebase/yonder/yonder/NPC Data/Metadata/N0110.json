@@ -1,0 +1,22 @@
+{
+    "id": "N0110",
+    "code": "f2_caligrapher",
+    "name": "Caligrapher",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "shop",
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Caligrapher",
+    "enemyType": "faction2",
+    "brute": false,
+    "thief": false
+}

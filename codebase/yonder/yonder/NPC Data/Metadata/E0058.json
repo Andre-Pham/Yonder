@@ -1,0 +1,11 @@
+{
+    "id": "E0058",
+    "code": "f1_baastchampion",
+    "name": "Swiftstrike Duelyst",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

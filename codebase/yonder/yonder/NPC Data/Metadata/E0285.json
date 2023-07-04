@@ -1,0 +1,11 @@
+{
+    "id": "E0285",
+    "code": "f5_megabrontodon",
+    "name": "Megabrontodon",
+    "description": "",
+    "type": "faction5",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

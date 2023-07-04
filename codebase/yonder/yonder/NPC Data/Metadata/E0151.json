@@ -1,0 +1,11 @@
+{
+    "id": "E0151",
+    "code": "f2_support",
+    "name": "Tailwhip",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

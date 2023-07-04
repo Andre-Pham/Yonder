@@ -1,0 +1,22 @@
+{
+    "id": "N0039",
+    "code": "boss_spelleater",
+    "name": "Arcane Spellcaster",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Arcane Spellcaster",
+    "enemyType": "arcane",
+    "brute": false,
+    "thief": false
+}

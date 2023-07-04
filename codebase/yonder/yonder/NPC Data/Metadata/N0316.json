@@ -1,0 +1,26 @@
+{
+    "id": "N0316",
+    "code": "f6_auroraguardian",
+    "name": "Glacial Guardian",
+    "description": "",
+    "type": "faction6",
+    "roles": [
+        "friendly",
+        "restorer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "health",
+        "armor"
+    ],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Glacial Guardian",
+    "enemyType": "faction6",
+    "brute": false,
+    "thief": false
+}

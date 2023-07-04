@@ -1,0 +1,11 @@
+{
+    "id": "E0572",
+    "code": "neutral_tribalmelee2",
+    "name": "Boneblade Dweller",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

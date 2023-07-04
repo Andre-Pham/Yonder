@@ -1,0 +1,11 @@
+{
+    "id": "E0212",
+    "code": "f4_arcanedevourer",
+    "name": "Vorpal Caster",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

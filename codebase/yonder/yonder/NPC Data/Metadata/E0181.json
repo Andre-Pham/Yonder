@@ -1,0 +1,11 @@
+{
+    "id": "E0181",
+    "code": "f3_ishtarhunter",
+    "name": "Triscope Combatant",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

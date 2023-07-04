@@ -1,0 +1,11 @@
+{
+    "id": "E0260",
+    "code": "f5_altgeneraltier2",
+    "name": "Roksworn The Energized",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0090",
+    "code": "f1_solpontiff",
+    "name": "Tempest Soldier",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

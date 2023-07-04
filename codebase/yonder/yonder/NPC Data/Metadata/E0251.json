@@ -1,0 +1,11 @@
+{
+    "id": "E0251",
+    "code": "f4_shadowdancer",
+    "name": "Shadow Dancer",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

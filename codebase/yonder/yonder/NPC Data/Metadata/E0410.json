@@ -1,0 +1,11 @@
+{
+    "id": "E0410",
+    "code": "neutral_deceptib0t",
+    "name": "Offbound",
+    "description": "",
+    "type": "mech",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

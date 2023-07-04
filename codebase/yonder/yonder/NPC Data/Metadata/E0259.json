@@ -1,0 +1,11 @@
+{
+    "id": "E0259",
+    "code": "f5_altgeneral",
+    "name": "Seeker Starhorn",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

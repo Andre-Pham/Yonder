@@ -1,0 +1,11 @@
+{
+    "id": "E0522",
+    "code": "neutral_primusshieldmaster",
+    "name": "Spartan Resurrect",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

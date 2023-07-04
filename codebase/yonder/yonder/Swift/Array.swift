@@ -17,6 +17,20 @@ extension Array {
         self = (0 ..< count).map { _ in populateWith() }
     }
     
+    /// Count how many elements meet a condition.
+    /// - Parameters:
+    ///   - condition: The condition to test
+    /// - Returns: The number of elements that meet the provided condition
+    func count(where condition: (_ element: Element) -> Bool) -> Int {
+        var tally = 0
+        for element in self {
+            if (condition(element)) {
+                tally += 1
+            }
+        }
+        return tally
+    }
+    
     /// Populates this array by repeating a callback.
     /// Example:
     /// ``` var myArray = [Int]()

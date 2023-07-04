@@ -1,0 +1,21 @@
+{
+    "id": "N0400",
+    "code": "neutral_celebrant",
+    "name": "Elebrant Enlightened",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "restorer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "health",
+        "armor"
+    ],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Elebrant Enlightened",
+    "enemyType": "arcane",
+    "brute": false,
+    "thief": false
+}

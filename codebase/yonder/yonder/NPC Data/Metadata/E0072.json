@@ -1,0 +1,11 @@
+{
+    "id": "E0072",
+    "code": "f1_invincibuddy",
+    "name": "Silverguard Brute",
+    "description": "",
+    "type": "desert",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

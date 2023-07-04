@@ -1,0 +1,11 @@
+{
+    "id": "E0103",
+    "code": "f1_windbladecommander",
+    "name": "Windblade",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

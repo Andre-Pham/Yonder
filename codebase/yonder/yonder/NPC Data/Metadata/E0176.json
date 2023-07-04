@@ -1,0 +1,11 @@
+{
+    "id": "E0176",
+    "code": "f3_glassmirage",
+    "name": "Iceghoul Hound",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

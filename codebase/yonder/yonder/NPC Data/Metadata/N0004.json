@@ -1,0 +1,23 @@
+{
+    "id": "N0004",
+    "code": "boss_candypanda",
+    "name": "Candy Panda",
+    "description": "",
+    "type": "forest",
+    "roles": [
+        "shop",
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Candy Panda",
+    "enemyType": "forest",
+    "brute": false,
+    "thief": true
+}

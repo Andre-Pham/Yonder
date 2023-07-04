@@ -1,0 +1,11 @@
+{
+    "id": "E0142",
+    "code": "f2_sekitori",
+    "name": "Sekitori",
+    "description": "",
+    "type": "faction2",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

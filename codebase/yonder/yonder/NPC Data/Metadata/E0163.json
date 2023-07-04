@@ -1,0 +1,11 @@
+{
+    "id": "E0163",
+    "code": "f3_badlandsscout",
+    "name": "Flametail Hound",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

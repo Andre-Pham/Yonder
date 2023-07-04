@@ -1,0 +1,11 @@
+{
+    "id": "E0021",
+    "code": "boss_invader",
+    "name": "Forest Assassin",
+    "description": "",
+    "type": "forest",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

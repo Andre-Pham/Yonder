@@ -1,0 +1,11 @@
+{
+    "id": "E0544",
+    "code": "neutral_shuffler",
+    "name": "Arcane Shuffler",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

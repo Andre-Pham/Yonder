@@ -1,0 +1,11 @@
+{
+    "id": "E0325",
+    "code": "f6_fenrirwarmaster",
+    "name": "Glacial Warmaster",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

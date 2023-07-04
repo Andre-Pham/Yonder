@@ -1,0 +1,11 @@
+{
+    "id": "E0487",
+    "code": "neutral_mercsightlessfarseer",
+    "name": "Chained Farseer",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

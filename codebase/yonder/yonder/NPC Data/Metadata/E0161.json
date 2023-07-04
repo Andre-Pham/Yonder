@@ -1,0 +1,11 @@
+{
+    "id": "E0161",
+    "code": "f3_anubis",
+    "name": "Anubis",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

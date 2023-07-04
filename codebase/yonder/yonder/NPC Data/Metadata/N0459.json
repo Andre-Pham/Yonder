@@ -1,0 +1,23 @@
+{
+    "id": "N0459",
+    "code": "neutral_loreweaver",
+    "name": "Loreweaver",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Loreweaver",
+    "enemyType": "none",
+    "brute": false,
+    "thief": false
+}

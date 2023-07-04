@@ -13,7 +13,7 @@ class RegionProfileBucket {
         // TODO: Populate
         // Stage 0
         [
-            RegionProfile(regionName: "TempArea", regionDescription: "TempDesc", regionImage: YonderImages.placeholderImage, tags: RegionTagAllocation(tags: (.wood, 1)))
+            RegionProfile(regionName: "TempArea", regionDescription: "TempDesc", regionImage: YonderImages.placeholderImage, tags: RegionTagAllocation(tags: (.forest, 1)))
         ],
         // Stage 1
         [
@@ -44,7 +44,7 @@ class RegionProfileBucket {
             regionName: randomProfile.name,
             regionDescription: randomProfile.description,
             regionImage: YonderImages.placeholderImage,
-            tags: RegionTagAllocation(tags: (.wood, 1))
+            tags: RegionTagAllocation(tags: (.forest, 1))
         )
         
         assert(self.profiles.count > stage, "Requesting profile from non-existent stage")

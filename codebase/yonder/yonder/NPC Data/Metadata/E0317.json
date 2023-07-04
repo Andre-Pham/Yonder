@@ -1,0 +1,11 @@
+{
+    "id": "E0317",
+    "code": "f6_bloodsurge",
+    "name": "Frosthorn Gallop",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

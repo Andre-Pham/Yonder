@@ -1,0 +1,11 @@
+{
+    "id": "E0331",
+    "code": "f6_general",
+    "name": "Faie Frostblade",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

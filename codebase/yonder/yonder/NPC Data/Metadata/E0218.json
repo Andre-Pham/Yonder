@@ -1,0 +1,11 @@
+{
+    "id": "E0218",
+    "code": "f4_creepmangler",
+    "name": "Creep Mangler",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

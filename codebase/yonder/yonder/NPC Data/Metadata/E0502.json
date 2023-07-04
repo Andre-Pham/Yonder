@@ -1,0 +1,11 @@
+{
+    "id": "E0502",
+    "code": "neutral_monsterdarkharbinger",
+    "name": "Molten Harbringer",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

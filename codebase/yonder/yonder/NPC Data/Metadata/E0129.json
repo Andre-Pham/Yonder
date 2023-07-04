@@ -1,0 +1,11 @@
+{
+    "id": "E0129",
+    "code": "f2_lanternfox",
+    "name": "Lantern Hound",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

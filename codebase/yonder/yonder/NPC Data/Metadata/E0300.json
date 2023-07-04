@@ -1,0 +1,11 @@
+{
+    "id": "E0300",
+    "code": "f5_sister",
+    "name": "Mythril Engineer",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

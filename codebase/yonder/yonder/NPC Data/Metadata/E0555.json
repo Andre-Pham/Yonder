@@ -1,0 +1,11 @@
+{
+    "id": "E0555",
+    "code": "neutral_spiritscribe",
+    "name": "Burnmage Sheila",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0189",
+    "code": "f3_pyromancer",
+    "name": "Crazed Pyromancer",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

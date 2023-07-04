@@ -1,0 +1,11 @@
+{
+    "id": "E0583",
+    "code": "neutral_whitewidow",
+    "name": "Whitewidow",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

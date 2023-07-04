@@ -1,0 +1,21 @@
+{
+    "id": "N0099",
+    "code": "f1_support",
+    "name": "Tempest Angel",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "restorer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "health",
+        "armor"
+    ],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Tempest Angel",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": false
+}

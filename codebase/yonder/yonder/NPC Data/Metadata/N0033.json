@@ -1,0 +1,18 @@
+{
+    "id": "N0033",
+    "code": "boss_shadowlord",
+    "name": "Sin Blade",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "shop"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Sin Blade",
+    "enemyType": "none",
+    "brute": false,
+    "thief": false
+}

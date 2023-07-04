@@ -1,0 +1,11 @@
+{
+    "id": "E0482",
+    "code": "neutral_mercmelee4",
+    "name": "Masked Raider",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

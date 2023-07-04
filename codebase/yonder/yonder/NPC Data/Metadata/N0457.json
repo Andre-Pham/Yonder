@@ -1,0 +1,19 @@
+{
+    "id": "N0457",
+    "code": "neutral_ladylocke",
+    "name": "Goldplate Assassin",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "shop",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Goldplate Assassin",
+    "enemyType": "assassin",
+    "brute": false,
+    "thief": true
+}

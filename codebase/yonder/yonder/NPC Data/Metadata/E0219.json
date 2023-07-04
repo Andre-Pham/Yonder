@@ -1,0 +1,11 @@
+{
+    "id": "E0219",
+    "code": "f4_creepydemon",
+    "name": "Demonwrath",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

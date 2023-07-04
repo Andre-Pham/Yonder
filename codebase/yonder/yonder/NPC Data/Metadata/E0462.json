@@ -1,0 +1,11 @@
+{
+    "id": "E0462",
+    "code": "neutral_masteroftheseven",
+    "name": "Obsidian Skin",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -44,6 +44,7 @@ enum Bosses {
     private static func testBoss() -> Foe {
         let randomProfile = RandomProfile(prefix: "Boss")
         return Foe(
+            contentID: nil,
             name: randomProfile.name,
             description: randomProfile.description,
             maxHealth: 1000,

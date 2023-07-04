@@ -1,0 +1,11 @@
+{
+    "id": "E0371",
+    "code": "neutral_alterrexx",
+    "name": "Decepticle Supreme",
+    "description": "",
+    "type": "mech",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

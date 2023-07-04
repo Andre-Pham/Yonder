@@ -1,0 +1,11 @@
+{
+    "id": "E0508",
+    "code": "neutral_monsteroculus",
+    "name": "Defiler",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

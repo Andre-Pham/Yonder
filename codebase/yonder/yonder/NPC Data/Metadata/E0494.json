@@ -1,0 +1,11 @@
+{
+    "id": "E0494",
+    "code": "neutral_metaltooth",
+    "name": "Quickmetal",
+    "description": "",
+    "type": "mech",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0116",
+    "code": "f2_eternitypainter",
+    "name": "Eternity Asura",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

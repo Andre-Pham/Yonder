@@ -1,0 +1,11 @@
+{
+    "id": "E0329",
+    "code": "f6_frostdrake",
+    "name": "Frost Drake",
+    "description": "",
+    "type": "faction6",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

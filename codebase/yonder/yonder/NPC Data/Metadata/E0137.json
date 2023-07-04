@@ -1,0 +1,11 @@
+{
+    "id": "E0137",
+    "code": "f2_orizuru",
+    "name": "Orizuru",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

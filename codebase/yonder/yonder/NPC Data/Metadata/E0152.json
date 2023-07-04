@@ -1,0 +1,11 @@
+{
+    "id": "E0152",
+    "code": "f2_synergyunit",
+    "name": "Synergy",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

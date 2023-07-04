@@ -1,0 +1,11 @@
+{
+    "id": "E0479",
+    "code": "neutral_mercmelee1",
+    "name": "Masked Mercenary",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

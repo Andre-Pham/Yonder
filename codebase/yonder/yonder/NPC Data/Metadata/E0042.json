@@ -1,0 +1,11 @@
+{
+    "id": "E0042",
+    "code": "boss_treatdrake",
+    "name": "Demonic Drake",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

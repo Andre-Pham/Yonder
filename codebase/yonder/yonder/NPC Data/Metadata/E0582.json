@@ -1,0 +1,11 @@
+{
+    "id": "E0582",
+    "code": "neutral_wartalon",
+    "name": "Glacier Wartalon",
+    "description": "",
+    "type": "frost",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

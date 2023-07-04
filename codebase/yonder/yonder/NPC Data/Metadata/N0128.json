@@ -1,0 +1,22 @@
+{
+    "id": "N0128",
+    "code": "f2_kindling",
+    "name": "Asura Flamewielder",
+    "description": "",
+    "type": "faction2",
+    "roles": [
+        "shop",
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Asura Flamewielder",
+    "enemyType": "faction2",
+    "brute": false,
+    "thief": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0476",
+    "code": "neutral_mercfrostbonenaga",
+    "name": "Frostbone Naga",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

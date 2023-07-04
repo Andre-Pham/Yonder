@@ -1,0 +1,11 @@
+{
+    "id": "E0514",
+    "code": "neutral_moonlitsorcerer",
+    "name": "Dungeon Sorcerer",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

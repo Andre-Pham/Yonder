@@ -1,0 +1,23 @@
+{
+    "id": "N0195",
+    "code": "f3_sinergyunit",
+    "name": "Sythestring",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "shop",
+        "friendly",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Sythestring",
+    "enemyType": "faction3",
+    "brute": false,
+    "thief": false
+}

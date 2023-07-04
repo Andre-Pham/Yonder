@@ -1,0 +1,11 @@
+{
+    "id": "E0568",
+    "code": "neutral_thunderhorn",
+    "name": "Thunderhorn",
+    "description": "",
+    "type": "none",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

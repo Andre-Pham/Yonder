@@ -1,0 +1,18 @@
+{
+    "id": "N0517",
+    "code": "neutral_owlshadescholar",
+    "name": "Charcowl",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Charcowl",
+    "enemyType": "none",
+    "brute": false,
+    "thief": false
+}

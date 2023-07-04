@@ -1,0 +1,11 @@
+{
+    "id": "E0533",
+    "code": "neutral_rook",
+    "name": "Flameskull Madman",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

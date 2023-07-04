@@ -1,0 +1,11 @@
+{
+    "id": "E0179",
+    "code": "f3_insightcaster",
+    "name": "Divine Zen",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

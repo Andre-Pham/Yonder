@@ -1,0 +1,11 @@
+{
+    "id": "E0013",
+    "code": "boss_decepticleprime",
+    "name": "Decepticle Prime",
+    "description": "",
+    "type": "mech",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

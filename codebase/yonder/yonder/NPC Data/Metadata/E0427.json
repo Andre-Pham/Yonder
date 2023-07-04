@@ -1,0 +1,11 @@
+{
+    "id": "E0427",
+    "code": "neutral_gnasher",
+    "name": "Shadowflame Skullmage",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

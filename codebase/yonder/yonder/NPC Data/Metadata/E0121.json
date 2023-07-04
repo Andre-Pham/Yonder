@@ -1,0 +1,11 @@
+{
+    "id": "E0121",
+    "code": "f2_godpalmblacktiger",
+    "name": "Tigerpalm Combatant",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

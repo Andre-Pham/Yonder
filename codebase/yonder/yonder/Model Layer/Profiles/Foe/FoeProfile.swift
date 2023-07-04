@@ -9,13 +9,13 @@ import Foundation
 
 class FoeProfile: AreaThemedProfile {
     
-    public let id: Int
+    public let id: String
     public let foeName: String
     public let foeDescription: String
     public let foeTags: [FoeProfileTag]
     public let regionTags: [RegionProfileTag]
     
-    init(id: Int, foeName: String, foeDescription: String, foeTags: [FoeProfileTag], regionTags: [RegionProfileTag]) {
+    init(id: String, foeName: String, foeDescription: String, foeTags: [FoeProfileTag], regionTags: [RegionProfileTag]) {
         self.id = id
         self.foeName = foeName
         self.foeDescription = foeDescription

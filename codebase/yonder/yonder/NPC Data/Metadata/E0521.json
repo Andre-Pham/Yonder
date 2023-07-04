@@ -1,0 +1,11 @@
+{
+    "id": "E0521",
+    "code": "neutral_pennyarcade03",
+    "name": "Treegrow Beast",
+    "description": "",
+    "type": "forest",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

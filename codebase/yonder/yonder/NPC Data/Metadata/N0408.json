@@ -1,0 +1,23 @@
+{
+    "id": "N0408",
+    "code": "neutral_daywatcher",
+    "name": "Daywatcher",
+    "description": "",
+    "type": "desert",
+    "roles": [
+        "shop",
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Daywatcher",
+    "enemyType": "desert",
+    "brute": false,
+    "thief": true
+}

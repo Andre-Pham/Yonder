@@ -1,0 +1,11 @@
+{
+    "id": "E0250",
+    "code": "f4_remora",
+    "name": "Crusher Remora",
+    "description": "",
+    "type": "faction4",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

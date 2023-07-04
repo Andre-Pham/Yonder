@@ -1,0 +1,11 @@
+{
+    "id": "E0119",
+    "code": "f2_general",
+    "name": "Kaleos Xaan",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

@@ -1,0 +1,22 @@
+{
+    "id": "N0200",
+    "code": "f3_windgiver",
+    "name": "Eyeorb Zen",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Eyeorb Zen",
+    "enemyType": "faction3",
+    "brute": false,
+    "thief": false
+}

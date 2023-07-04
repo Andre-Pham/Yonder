@@ -1,0 +1,11 @@
+{
+    "id": "E0224",
+    "code": "f4_deathknell",
+    "name": "Flamewrist Vorpal",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

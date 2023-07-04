@@ -1,0 +1,23 @@
+{
+    "id": "N0546",
+    "code": "neutral_silverbeak",
+    "name": "Silverbeak",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Silverbeak",
+    "enemyType": "none",
+    "brute": false,
+    "thief": false
+}

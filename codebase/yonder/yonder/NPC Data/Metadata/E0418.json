@@ -1,0 +1,11 @@
+{
+    "id": "E0418",
+    "code": "neutral_exun",
+    "name": "Shadehunt",
+    "description": "",
+    "type": "shadow",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

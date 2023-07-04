@@ -1,0 +1,11 @@
+{
+    "id": "E0416",
+    "code": "neutral_emp",
+    "name": "Energy Source",
+    "description": "",
+    "type": "mech",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

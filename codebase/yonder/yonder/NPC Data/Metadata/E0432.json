@@ -1,0 +1,11 @@
+{
+    "id": "E0432",
+    "code": "neutral_golembloodshard",
+    "name": "Bloodshard Golem",
+    "description": "",
+    "type": "cavern",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

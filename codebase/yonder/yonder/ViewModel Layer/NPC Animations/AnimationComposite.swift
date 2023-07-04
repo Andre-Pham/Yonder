@@ -52,7 +52,7 @@ class AnimationManager: ObservableObject, SequenceDelegate {
             assertionFailure("JSON could not be retrieved from frames data")
             return
         }
-        let builder = AnimationSequenceBuilder(spriteSheet: spriteSheet, framesDataJSON: framesDataJSON)
+        let builder = AnimationSequenceBuilder(fileID: fileID, spriteSheet: spriteSheet, framesDataJSON: framesDataJSON)
         for code in SequenceCode.allCases {
             guard let sequence = builder.build(prefix: code.rawValue) else {
                 assertionFailure("Sequence(s) couldn't be built")
@@ -95,7 +95,7 @@ class AnimationManager: ObservableObject, SequenceDelegate {
             assertionFailure("JSON could not be retrieved from frames data")
             return
         }
-        let builder = AnimationSequenceBuilder(spriteSheet: spriteSheet, framesDataJSON: framesDataJSON)
+        let builder = AnimationSequenceBuilder(fileID: fileID, spriteSheet: spriteSheet, framesDataJSON: framesDataJSON)
         for code in SequenceCode.allCases {
             guard let sequence = builder.build(prefix: code.rawValue) else {
                 assertionFailure("Sequence(s) couldn't be built")

@@ -1,0 +1,11 @@
+{
+    "id": "E0440",
+    "code": "neutral_grablackhole",
+    "name": "Blackhole Conjurer",
+    "description": "",
+    "type": "shadow",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

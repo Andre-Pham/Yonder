@@ -1,0 +1,11 @@
+{
+    "id": "E0019",
+    "code": "boss_grym",
+    "name": "Grym",
+    "description": "",
+    "type": "dungeon",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

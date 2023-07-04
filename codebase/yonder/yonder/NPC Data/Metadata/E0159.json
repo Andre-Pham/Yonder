@@ -1,0 +1,11 @@
+{
+    "id": "E0159",
+    "code": "f3_altgeneral",
+    "name": "Scioness Sajj",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0590",
+    "code": "neutral_zenrui",
+    "name": "Zen'Rui Blightspawn",
+    "description": "",
+    "type": "forest",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

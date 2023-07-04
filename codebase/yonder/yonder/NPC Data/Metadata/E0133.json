@@ -1,0 +1,11 @@
+{
+    "id": "E0133",
+    "code": "f2_melee",
+    "name": "Kaido Assassin",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

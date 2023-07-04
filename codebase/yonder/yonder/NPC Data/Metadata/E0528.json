@@ -1,0 +1,11 @@
+{
+    "id": "E0528",
+    "code": "neutral_rawr",
+    "name": "Metaltooth",
+    "description": "",
+    "type": "mech",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

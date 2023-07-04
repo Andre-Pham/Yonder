@@ -1,0 +1,11 @@
+{
+    "id": "E0364",
+    "code": "f6_whitewyvern",
+    "name": "Arctic Wyvern",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

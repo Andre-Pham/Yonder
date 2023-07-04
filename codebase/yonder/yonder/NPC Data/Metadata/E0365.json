@@ -1,0 +1,11 @@
+{
+    "id": "E0365",
+    "code": "f6_wolfraven",
+    "name": "Wolfraven",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

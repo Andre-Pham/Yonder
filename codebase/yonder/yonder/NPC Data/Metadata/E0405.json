@@ -1,0 +1,11 @@
+{
+    "id": "E0405",
+    "code": "neutral_cryptographer",
+    "name": "The Necromancer",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

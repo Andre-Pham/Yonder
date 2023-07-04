@@ -1,0 +1,11 @@
+{
+    "id": "E0478",
+    "code": "neutral_mercgrenadier",
+    "name": "Flamebow Assassin",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

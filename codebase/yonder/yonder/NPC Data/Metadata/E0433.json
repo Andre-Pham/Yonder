@@ -1,0 +1,11 @@
+{
+    "id": "E0433",
+    "code": "neutral_golemdragonbone",
+    "name": "Dragonbone Golem",
+    "description": "",
+    "type": "dungeon",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

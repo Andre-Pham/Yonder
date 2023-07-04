@@ -1,0 +1,11 @@
+{
+    "id": "E0349",
+    "code": "f6_sentinel",
+    "name": "Arctic Sentinel",
+    "description": "",
+    "type": "faction6",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

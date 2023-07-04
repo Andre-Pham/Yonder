@@ -1,0 +1,20 @@
+{
+    "id": "N0361",
+    "code": "f6_voiceofthewind",
+    "name": "Frosthorn Deer",
+    "description": "",
+    "type": "faction6",
+    "roles": [
+        "restorer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "health"
+    ],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Frosthorn Deer",
+    "enemyType": "faction6",
+    "brute": false,
+    "thief": false
+}

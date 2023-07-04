@@ -13,5 +13,7 @@ enum SequenceCode: String, CaseIterable {
     case breathing = "breathing"
     case idle = "idle"
     case attack = "attack"
-    case run = "run"
+    
+    // We don't ever use the "run" animation sequence, but if we ever want to, it's here (just uncomment)
+    //case run = "run"
 }

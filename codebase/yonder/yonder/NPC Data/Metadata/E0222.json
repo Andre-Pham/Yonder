@@ -1,0 +1,11 @@
+{
+    "id": "E0222",
+    "code": "f4_daemonvoid",
+    "name": "Spectral Revenant",
+    "description": "",
+    "type": "faction4",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

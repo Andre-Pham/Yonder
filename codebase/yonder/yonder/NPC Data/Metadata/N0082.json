@@ -1,0 +1,22 @@
+{
+    "id": "N0082",
+    "code": "f1_ranged",
+    "name": "Tempest Archer",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "shop",
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Tempest Archer",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": false
+}

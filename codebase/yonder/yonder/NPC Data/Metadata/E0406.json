@@ -1,0 +1,11 @@
+{
+    "id": "E0406",
+    "code": "neutral_dagonafish",
+    "name": "Colorwarp Gulp",
+    "description": "",
+    "type": "none",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

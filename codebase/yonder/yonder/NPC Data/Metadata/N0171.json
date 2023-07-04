@@ -1,0 +1,21 @@
+{
+    "id": "N0171",
+    "code": "f3_dunecaster",
+    "name": "Dunecaster",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Dunecaster",
+    "enemyType": "faction3",
+    "brute": false,
+    "thief": false
+}

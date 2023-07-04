@@ -1,0 +1,18 @@
+{
+    "id": "N0378",
+    "code": "neutral_astralcrusader",
+    "name": "Astral Crusader",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Astral Crusader",
+    "enemyType": "divine",
+    "brute": false,
+    "thief": false
+}

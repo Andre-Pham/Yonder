@@ -1,0 +1,11 @@
+{
+    "id": "E0381",
+    "code": "neutral_beastcavern",
+    "name": "Crystalrock Beast",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

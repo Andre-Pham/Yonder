@@ -1,0 +1,11 @@
+{
+    "id": "E0430",
+    "code": "neutral_goldenmantella",
+    "name": "Golden Mentella",
+    "description": "",
+    "type": "forest",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": true
+}

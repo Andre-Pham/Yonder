@@ -1,0 +1,11 @@
+{
+    "id": "E0448",
+    "code": "neutral_inquisitorkron",
+    "name": "Inquisitor Kron",
+    "description": "",
+    "type": "dungeon",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

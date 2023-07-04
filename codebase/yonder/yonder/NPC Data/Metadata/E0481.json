@@ -1,0 +1,11 @@
+{
+    "id": "E0481",
+    "code": "neutral_mercmelee3",
+    "name": "Masked Scavenger",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

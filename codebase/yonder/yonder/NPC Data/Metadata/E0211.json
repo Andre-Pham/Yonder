@@ -1,0 +1,11 @@
+{
+    "id": "E0211",
+    "code": "f4_arachne",
+    "name": "Vorpal Dasher",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

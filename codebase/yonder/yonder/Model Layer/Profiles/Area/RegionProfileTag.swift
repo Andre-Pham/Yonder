@@ -9,11 +9,19 @@ import Foundation
 
 enum RegionProfileTag: String {
     
-    case all // Not to be allocated to area profiles, only entities that can be allocated to any area
-    case magic
-    case wood
-    case rock
-    case divine
-    // TODO: Add remaining
+    case all
+    case desert
+    case cavern
+    case faction5
+    case faction6
+    case dungeon
+    case faction2
+    case faction4
+    case nether
+    case shadow
+    case mech
+    case forest
+    case none
+    case frost
     
 }

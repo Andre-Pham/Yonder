@@ -1,0 +1,11 @@
+{
+    "id": "E0368",
+    "code": "f6_ynuytwarlock",
+    "name": "Bonecast Mage",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

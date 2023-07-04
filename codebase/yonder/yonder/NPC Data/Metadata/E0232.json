@@ -1,0 +1,11 @@
+{
+    "id": "E0232",
+    "code": "f4_grandmastervariax",
+    "name": "Grandmaster Variax",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

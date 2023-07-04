@@ -1,0 +1,11 @@
+{
+    "id": "E0310",
+    "code": "f5_visionar",
+    "name": "Mythcrawler Elder",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

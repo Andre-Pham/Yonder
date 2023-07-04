@@ -1,0 +1,22 @@
+{
+    "id": "N0578",
+    "code": "neutral_ubo",
+    "name": "Ubo",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Ubo",
+    "enemyType": "none",
+    "brute": false,
+    "thief": false
+}

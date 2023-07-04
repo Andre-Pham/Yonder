@@ -1,0 +1,11 @@
+{
+    "id": "E0011",
+    "code": "boss_decepticlechassis",
+    "name": "Decepticle Chassis",
+    "description": "",
+    "type": "mech",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

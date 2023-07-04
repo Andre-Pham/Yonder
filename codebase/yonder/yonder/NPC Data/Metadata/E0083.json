@@ -1,0 +1,11 @@
+{
+    "id": "E0083",
+    "code": "f1_rightfulheir",
+    "name": "Sunstone Warrior",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0359",
+    "code": "f6_tundraguardian",
+    "name": "Grove Guardian",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

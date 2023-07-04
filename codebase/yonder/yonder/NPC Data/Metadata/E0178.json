@@ -1,0 +1,11 @@
+{
+    "id": "E0178",
+    "code": "f3_incinera",
+    "name": "Incinerate",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

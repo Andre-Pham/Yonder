@@ -29,6 +29,17 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
     private var activeRestorerFactories = [String: RestorerFactory]()
     private var activeFriendlyFactories = [String: FriendlyFactory]()
     
+    // TODO: Weapon build token cache
+    // TODO: Potion build token cache
+    // TODO: Armor build token cache
+    // TODO: Accessory build token cache
+    // TODO: Consumable build token cache
+    private var hostileBuildTokenCache: [BuildTokenCache]
+    // TODO: ShopKeeper build token cache
+    // TODO: Enhancer build token cache
+    // TODO: Restorer build token cache
+    // TODO: Friendly build token cache
+    
     init() {
         self.accessoryProfileBucket = AccessoryProfileBucket()
         self.armorProfileBucket = ArmorProfileBucket()
@@ -38,6 +49,9 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         self.enhancerProfileBucket = EnhancerProfileBucket()
         self.restorerProfileBucket = RestorerProfileBucket()
         self.friendlyProfileBucket = FriendlyProfileBucket()
+        
+        self.hostileBuildTokenCache = [BuildTokenCache]()
+        // TODO: Other build token caches
         
         OnPlayerTravelPublisher.subscribe(self)
         AfterStageChangePublisher.subscribe(self)
@@ -55,6 +69,8 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         case enhancerProfileBucket
         case restorerProfileBucket
         case friendlyProfileBucket
+        case hostileBuildTokens
+        // TODO: Other build token caches
     }
 
     required init(dataObject: DataObject) {
@@ -67,14 +83,17 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         self.restorerProfileBucket = dataObject.getObject(Field.restorerProfileBucket.rawValue, type: RestorerProfileBucket.self)
         self.friendlyProfileBucket = dataObject.getObject(Field.friendlyProfileBucket.rawValue, type: FriendlyProfileBucket.self)
         
+        self.hostileBuildTokenCache = dataObject.getObjectArray(Field.hostileBuildTokens.rawValue, type: BuildTokenCache.self)
+        // TODO: Other build token caches
+        
         OnPlayerTravelPublisher.subscribe(self)
         AfterStageChangePublisher.subscribe(self)
         AfterGameContextInitPublisher.subscribe(self)
     }
 
     func toDataObject() -> DataObject {
-        self.resetFactories()
         return DataObject(self)
+            // Profile buckets
             .add(key: Field.accessoryProfileBucket.rawValue, value: self.accessoryProfileBucket)
             .add(key: Field.armorProfileBucket.rawValue, value: self.armorProfileBucket)
             .add(key: Field.weaponProfileBucket.rawValue, value: self.weaponProfileBucket)
@@ -83,6 +102,12 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
             .add(key: Field.enhancerProfileBucket.rawValue, value: self.enhancerProfileBucket)
             .add(key: Field.restorerProfileBucket.rawValue, value: self.restorerProfileBucket)
             .add(key: Field.friendlyProfileBucket.rawValue, value: self.friendlyProfileBucket)
+            // Build token caches
+            .add(
+                key: Field.hostileBuildTokens.rawValue,
+                value: self.activeHostileFactories.map({ $0.value.exportBuildTokenCache(regionKey: $0.key) }) + self.hostileBuildTokenCache
+            )
+            // TODO: Other build token caches
     }
     
     // MARK: - Functions
@@ -102,13 +127,13 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
     }
     
     private func resetFactories() {
+        // TODO: Remove the concept of recycling profiles
         // Recycle profiles (restore unused profiles to their respective profile bucket)
         self.activeWeaponFactories.forEach({ $0.value.recycleProfiles() })
             // (Potion factory doesn't use profiles)
         self.activeArmorFactories.forEach({ $0.value.recycleProfiles() })
         self.activeAccessoryFactories.forEach({ $0.value.recycleProfiles() })
             // (Consumable factory doesn't use profiles)
-        self.activeHostileFactories.forEach({ $0.value.recycleProfiles() })
             // (ShopKeeper factory doesn't maintain a supply)
             // (Enhancer factory doesn't maintain a supply)
         self.activeRestorerFactories.forEach({ $0.value.recycleProfiles() })
@@ -238,6 +263,20 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
                 lootFactory: self.lootFactoryBundle(region.getRegionKey())
             )
         }
+        self.restoreAvailableBuildTokenCaches()
+    }
+    
+    private func restoreAvailableBuildTokenCaches() {
+        for cache in self.hostileBuildTokenCache {
+            if let factory = self.activeHostileFactories[cache.regionKey] {
+                factory.importSerialisedTokens(cache)
+                self.hostileBuildTokenCache.removeAll(where: { $0.regionKey == cache.regionKey })
+            }
+        }
+        assert(self.hostileBuildTokenCache.isEmpty, "Cache couldn't be restored")
+        self.hostileBuildTokenCache.removeAll() // After recreating the factories, if any couldn't be restored, they never will
+        
+        // TODO: Other build token caches
     }
     
     func generateHostile(using locationContext: LocationContext) -> Foe {

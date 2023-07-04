@@ -1,0 +1,11 @@
+{
+    "id": "E0165",
+    "code": "f3_buildcommon",
+    "name": "Divine Troop",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

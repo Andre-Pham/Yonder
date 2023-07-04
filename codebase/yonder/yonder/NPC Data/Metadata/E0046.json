@@ -1,0 +1,11 @@
+{
+    "id": "E0046",
+    "code": "boss_valiant",
+    "name": "Valiant",
+    "description": "",
+    "type": "shadow",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

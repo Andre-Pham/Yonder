@@ -1,0 +1,11 @@
+{
+    "id": "E0262",
+    "code": "f5_armada",
+    "name": "Slithar Blaster",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

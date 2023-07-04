@@ -47,8 +47,9 @@ class WeaponProfileBucket: Storable {
 
     required init(dataObject: DataObject) {
         let ids: [Int] = dataObject.get(Field.profileIDs.rawValue)
+        let allProfiles = ProfileRepository.profiles
         for id in ids {
-            if let profile = ProfileRepository.profiles.first(where: { $0.id == id }) {
+            if let profile = allProfiles.first(where: { $0.id == id }) {
                 self.profiles.append(profile)
             }
         }

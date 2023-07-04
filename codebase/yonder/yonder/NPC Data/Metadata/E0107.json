@@ -1,0 +1,11 @@
+{
+    "id": "E0107",
+    "code": "f2_altgeneraltier2",
+    "name": "Nova Eventide",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

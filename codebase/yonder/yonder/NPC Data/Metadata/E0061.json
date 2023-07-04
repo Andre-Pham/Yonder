@@ -1,0 +1,11 @@
+{
+    "id": "E0061",
+    "code": "f1_buildcommon",
+    "name": "Prismatic Striker",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

@@ -1,0 +1,22 @@
+{
+    "id": "N0020",
+    "code": "boss_harmony",
+    "name": "Harmony",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "restorer",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "health",
+        "armor"
+    ],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Harmony",
+    "enemyType": "divine",
+    "brute": false,
+    "thief": false
+}

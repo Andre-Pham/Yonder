@@ -1,0 +1,11 @@
+{
+    "id": "E0412",
+    "code": "neutral_diamondgolem",
+    "name": "Quartz Golem",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

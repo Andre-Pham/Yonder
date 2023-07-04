@@ -1,0 +1,11 @@
+{
+    "id": "E0461",
+    "code": "neutral_mageswarm",
+    "name": "Rubystaff Mage",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

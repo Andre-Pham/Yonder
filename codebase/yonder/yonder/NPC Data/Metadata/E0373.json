@@ -1,0 +1,11 @@
+{
+    "id": "E0373",
+    "code": "neutral_arakiheadhunter",
+    "name": "Araki Tyrant",
+    "description": "",
+    "type": "none",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

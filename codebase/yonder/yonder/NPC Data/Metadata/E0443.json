@@ -1,0 +1,11 @@
+{
+    "id": "E0443",
+    "code": "neutral_gro",
+    "name": "Magma Crawler",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

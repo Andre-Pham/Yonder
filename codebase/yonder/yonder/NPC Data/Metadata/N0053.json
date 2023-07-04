@@ -1,0 +1,28 @@
+{
+    "id": "N0053",
+    "code": "f1_altgeneral",
+    "name": "Zir'an Sunforge",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "shop",
+        "friendly",
+        "restorer",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "health",
+        "armor"
+    ],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Zir'an Sunforge",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": false
+}

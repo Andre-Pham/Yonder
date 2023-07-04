@@ -1,0 +1,11 @@
+{
+    "id": "E0363",
+    "code": "f6_waterelemental",
+    "name": "Arctic Elemental",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

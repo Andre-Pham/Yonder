@@ -1,0 +1,23 @@
+{
+    "id": "N0088",
+    "code": "f1_sinergyunit",
+    "name": "Tempest Scout",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Tempest Scout",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": false
+}

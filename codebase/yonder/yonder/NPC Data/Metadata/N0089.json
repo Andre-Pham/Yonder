@@ -1,0 +1,25 @@
+{
+    "id": "N0089",
+    "code": "f1_solarius",
+    "name": "Solarius",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "friendly",
+        "restorer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "health",
+        "armor"
+    ],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Solarius",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0353",
+    "code": "f6_sleetdasher",
+    "name": "Cryojaw",
+    "description": "",
+    "type": "faction6",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

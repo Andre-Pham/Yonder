@@ -1,0 +1,11 @@
+{
+    "id": "E0268",
+    "code": "f5_earthwalker",
+    "name": "Earthwalker",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

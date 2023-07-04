@@ -1,0 +1,11 @@
+{
+    "id": "E0077",
+    "code": "f1_mech",
+    "name": "Tempest Mech",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

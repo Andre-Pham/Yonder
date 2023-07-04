@@ -1,0 +1,11 @@
+{
+    "id": "E0169",
+    "code": "f3_desertspirit",
+    "name": "Flamespike Hound",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

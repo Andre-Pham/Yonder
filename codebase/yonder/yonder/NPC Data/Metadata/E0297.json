@@ -1,0 +1,11 @@
+{
+    "id": "E0297",
+    "code": "f5_silitharveteran",
+    "name": "Slithar Hound",
+    "description": "",
+    "type": "faction5",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

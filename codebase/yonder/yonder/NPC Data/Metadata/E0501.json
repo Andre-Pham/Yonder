@@ -1,0 +1,11 @@
+{
+    "id": "E0501",
+    "code": "neutral_monsterdancingblades",
+    "name": "Dancing Blades",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

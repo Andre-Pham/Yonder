@@ -1,0 +1,24 @@
+{
+    "id": "N0010",
+    "code": "boss_decepticle",
+    "name": "Reform",
+    "description": "",
+    "type": "mech",
+    "roles": [
+        "shop",
+        "friendly",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Decepticle",
+    "enemyType": "mech",
+    "brute": false,
+    "thief": true
+}

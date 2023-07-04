@@ -9,6 +9,8 @@ import Foundation
 
 class Foe: ActorAbstract, Named, Described {
     
+    /// The ID that indicates what content (sprite sheet and metadata) to use to represent this foe, e.g. E0001
+    public let contentID: String?
     public let name: String
     public let description: String
     private(set) var typeName: String? = nil
@@ -20,12 +22,14 @@ class Foe: ActorAbstract, Named, Described {
     }
     
     init(
+        contentID: String?,
         name: String = "placeholderName",
         description: String = "placeholderDescription",
         maxHealth: Int,
         weapon: Weapon,
         loot: LootOptions
     ) {
+        self.contentID = contentID
         self.name = name
         self.description = description
         self.loot = loot
@@ -42,12 +46,14 @@ class Foe: ActorAbstract, Named, Described {
     // MARK: - Serialisation
 
     private enum Field: String {
+        case contentID
         case name
         case description
         case loot
     }
 
     required init(dataObject: DataObject) {
+        self.contentID = dataObject.get(Field.contentID.rawValue)
         self.name = dataObject.get(Field.name.rawValue)
         self.description = dataObject.get(Field.description.rawValue)
         self.loot = dataObject.getObject(Field.loot.rawValue, type: LootOptions.self)
@@ -59,6 +65,7 @@ class Foe: ActorAbstract, Named, Described {
 
     override func toDataObject() -> DataObject {
         return super.toDataObject()
+            .add(key: Field.contentID.rawValue, value: self.contentID)
             .add(key: Field.name.rawValue, value: self.name)
             .add(key: Field.description.rawValue, value: self.description)
             .add(key: Field.loot.rawValue, value: self.loot)

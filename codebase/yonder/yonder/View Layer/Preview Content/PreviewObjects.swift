@@ -123,6 +123,7 @@ enum PreviewObjects {
     
     private static var foe: Foe {
         return Foe(
+            contentID: nil,
             maxHealth: 500,
             weapon: Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: DecrementDurabilityPill(durability: 5)), loot: NoLootOptions()
         )
@@ -130,6 +131,7 @@ enum PreviewObjects {
     
     private static var goblin: GoblinFoe {
         return GoblinFoe(
+            contentID: nil,
             name: "Sneaky Goblin",
             description: "He's so sneaky!",
             maxHealth: 24,
@@ -141,6 +143,7 @@ enum PreviewObjects {
     
     private static var brute: BruteFoe {
         return BruteFoe(
+            contentID: nil,
             name: "Massive Brute",
             description: "He's brutally obese.",
             maxHealth: 500,
@@ -295,7 +298,7 @@ enum PreviewObjects {
     private static var area: Area {
         return Area(
             arrangement: .A,
-            locations: Array(count: 19, populateWith: HostileLocation(foe: Foe(maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions()))),
+            locations: Array(count: 19, populateWith: HostileLocation(foe: Foe(contentID: nil, maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions()))),
             name: "Glacier Rifts",
             description: "placeholderDescription",
             tags: RegionTagAllocation(),

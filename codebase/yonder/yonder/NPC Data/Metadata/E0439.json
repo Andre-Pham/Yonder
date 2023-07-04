@@ -1,0 +1,11 @@
+{
+    "id": "E0439",
+    "code": "neutral_golemstormmetal",
+    "name": "Infernohead Golem",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

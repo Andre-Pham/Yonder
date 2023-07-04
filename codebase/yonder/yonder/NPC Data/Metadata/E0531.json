@@ -1,0 +1,11 @@
+{
+    "id": "E0531",
+    "code": "neutral_replicator",
+    "name": "Replicator",
+    "description": "",
+    "type": "mech",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

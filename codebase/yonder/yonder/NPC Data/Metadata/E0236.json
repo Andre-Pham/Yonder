@@ -1,0 +1,11 @@
+{
+    "id": "E0236",
+    "code": "f4_juggernaut",
+    "name": "Abyssal Juggernaut",
+    "description": "",
+    "type": "faction4",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

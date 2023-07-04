@@ -1,0 +1,11 @@
+{
+    "id": "E0386",
+    "code": "neutral_beastsaberspinetiger",
+    "name": "Darkspine Saber",
+    "description": "",
+    "type": "forest",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

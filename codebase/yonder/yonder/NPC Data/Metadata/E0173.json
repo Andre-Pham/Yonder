@@ -1,0 +1,11 @@
+{
+    "id": "E0173",
+    "code": "f3_eurus",
+    "name": "Eurus",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

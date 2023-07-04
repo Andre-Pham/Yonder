@@ -1,0 +1,11 @@
+{
+    "id": "E0186",
+    "code": "f3_onyxpantheran",
+    "name": "Onyx Pantheran",
+    "description": "",
+    "type": "desert",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

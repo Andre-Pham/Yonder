@@ -1,0 +1,11 @@
+{
+    "id": "E0234",
+    "code": "f4_horrorburster",
+    "name": "Shadowflame Arachnid",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

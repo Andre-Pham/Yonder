@@ -1,0 +1,11 @@
+{
+    "id": "E0507",
+    "code": "neutral_monsterlightningbeetle",
+    "name": "Infused Darkbeetle",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

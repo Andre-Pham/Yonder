@@ -1,0 +1,11 @@
+{
+    "id": "E0187",
+    "code": "f3_orbweaver",
+    "name": "Orb Weaver",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

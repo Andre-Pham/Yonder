@@ -1,0 +1,11 @@
+{
+    "id": "E0106",
+    "code": "f2_altgeneral",
+    "name": "Reva Eventide",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

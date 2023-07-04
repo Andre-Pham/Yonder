@@ -1,0 +1,11 @@
+{
+    "id": "E0198",
+    "code": "f3_starfirescarab",
+    "name": "Scarab Mawhound",
+    "description": "",
+    "type": "cavern",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

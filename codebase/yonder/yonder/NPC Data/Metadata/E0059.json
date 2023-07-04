@@ -1,0 +1,11 @@
+{
+    "id": "E0059",
+    "code": "f1_backlinearcher",
+    "name": "Hooded Brightstalker",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

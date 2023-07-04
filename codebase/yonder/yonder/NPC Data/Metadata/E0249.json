@@ -1,0 +1,11 @@
+{
+    "id": "E0249",
+    "code": "f4_reaperninemoons",
+    "name": "Outcast Bloodreaper",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

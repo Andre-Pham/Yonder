@@ -1,0 +1,11 @@
+{
+    "id": "E0565",
+    "code": "neutral_thecollective",
+    "name": "Buzzknuckle",
+    "description": "",
+    "type": "mech",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

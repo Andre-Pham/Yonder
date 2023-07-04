@@ -1,0 +1,18 @@
+{
+    "id": "N0060",
+    "code": "f1_bromemk2",
+    "name": "Heavyweight Defender",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Heavyweight Defender",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": false
+}

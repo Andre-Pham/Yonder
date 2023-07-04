@@ -1,0 +1,11 @@
+{
+    "id": "E0170",
+    "code": "f3_dreamshaper",
+    "name": "Dreamshaper",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

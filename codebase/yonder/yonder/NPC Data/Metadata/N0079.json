@@ -1,0 +1,21 @@
+{
+    "id": "N0079",
+    "code": "f1_peacekeeper",
+    "name": "Peacekeeper",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "restorer",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "armor"
+    ],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Peacekeeper Mech",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": false
+}

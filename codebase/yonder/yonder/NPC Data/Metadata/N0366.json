@@ -1,0 +1,23 @@
+{
+    "id": "N0366",
+    "code": "f6_ynuyttracker",
+    "name": "Frostfist Scout",
+    "description": "",
+    "type": "frost",
+    "roles": [
+        "shop",
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Arctic Duelyst",
+    "enemyType": "faction6",
+    "brute": false,
+    "thief": false
+}

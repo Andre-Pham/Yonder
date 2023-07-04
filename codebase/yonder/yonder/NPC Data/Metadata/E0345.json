@@ -1,0 +1,11 @@
+{
+    "id": "E0345",
+    "code": "f6_mythronquest",
+    "name": "Cryowarrior",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

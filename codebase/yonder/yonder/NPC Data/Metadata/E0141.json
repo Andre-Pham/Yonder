@@ -1,0 +1,11 @@
+{
+    "id": "E0141",
+    "code": "f2_seenoevil",
+    "name": "Blueblade Assassin",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

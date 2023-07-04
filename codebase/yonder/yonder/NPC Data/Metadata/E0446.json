@@ -1,0 +1,11 @@
+{
+    "id": "E0446",
+    "code": "neutral_hollowgrovekeeper",
+    "name": "Glowmane Dweller",
+    "description": "",
+    "type": "cavern",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

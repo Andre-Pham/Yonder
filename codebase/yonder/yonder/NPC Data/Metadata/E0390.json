@@ -1,0 +1,11 @@
+{
+    "id": "E0390",
+    "code": "neutral_bloodletter",
+    "name": "Bloodlet Crusher",
+    "description": "",
+    "type": "dungeon",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

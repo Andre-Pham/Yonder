@@ -1,0 +1,11 @@
+{
+    "id": "E0498",
+    "code": "neutral_monsterartifacthunter",
+    "name": "Flamegrinch",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

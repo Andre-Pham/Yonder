@@ -1,0 +1,11 @@
+{
+    "id": "E0384",
+    "code": "neutral_beastmirkwooddevourer",
+    "name": "Duelhead Devourer",
+    "description": "",
+    "type": "shadow",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

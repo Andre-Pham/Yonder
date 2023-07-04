@@ -1,0 +1,11 @@
+{
+    "id": "E0447",
+    "code": "neutral_hydrax",
+    "name": "Hydrax",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

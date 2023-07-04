@@ -1,0 +1,11 @@
+{
+    "id": "E0146",
+    "code": "f2_sparrowhawk",
+    "name": "Sparrow",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0243",
+    "code": "f4_nightfiend",
+    "name": "Abyssal Jawfiend",
+    "description": "",
+    "type": "faction4",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

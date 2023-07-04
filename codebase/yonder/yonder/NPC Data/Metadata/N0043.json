@@ -1,0 +1,22 @@
+{
+    "id": "N0043",
+    "code": "boss_treatoni",
+    "name": "Tribal Venom Brew",
+    "description": "",
+    "type": "forest",
+    "roles": [
+        "shop",
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Tribal Venom Brew",
+    "enemyType": "forest",
+    "brute": false,
+    "thief": true
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0298",
+    "code": "f5_silitharyoung",
+    "name": "Young Slithar",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

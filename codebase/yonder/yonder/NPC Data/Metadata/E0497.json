@@ -1,0 +1,11 @@
+{
+    "id": "E0497",
+    "code": "neutral_moltengolem",
+    "name": "Obsidiansand Golem",
+    "description": "",
+    "type": "desert",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

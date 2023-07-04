@@ -1,0 +1,11 @@
+{
+    "id": "E0203",
+    "code": "f3_windstriker",
+    "name": "Divine Brutefist",
+    "description": "",
+    "type": "cavern",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

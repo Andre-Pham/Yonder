@@ -1,0 +1,11 @@
+{
+    "id": "E0140",
+    "code": "f2_ranged",
+    "name": "Deadly Infiltrator",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

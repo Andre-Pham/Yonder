@@ -1,0 +1,22 @@
+{
+    "id": "N0495",
+    "code": "neutral_mirrormancer",
+    "name": "Mirrormancer",
+    "description": "",
+    "type": "desert",
+    "roles": [
+        "friendly",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Mirrormancer",
+    "enemyType": "desert",
+    "brute": false,
+    "thief": false
+}

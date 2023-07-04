@@ -1,0 +1,11 @@
+{
+    "id": "E0095",
+    "code": "f1_sunforgelancer",
+    "name": "Sunforge Lancer",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

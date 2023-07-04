@@ -1,0 +1,11 @@
+{
+    "id": "E0065",
+    "code": "f1_excelsious",
+    "name": "Champion Excelsious",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

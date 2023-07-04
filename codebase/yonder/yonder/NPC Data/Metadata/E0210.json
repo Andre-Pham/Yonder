@@ -1,0 +1,11 @@
+{
+    "id": "E0210",
+    "code": "f4_altgeneraltier2",
+    "name": "Fein Sinswing",
+    "description": "",
+    "type": "faction4",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

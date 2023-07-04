@@ -1,0 +1,11 @@
+{
+    "id": "E0483",
+    "code": "neutral_mercmindwarper",
+    "name": "Blazehead Deviant",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

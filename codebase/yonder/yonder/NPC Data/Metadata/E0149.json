@@ -1,0 +1,11 @@
+{
+    "id": "E0149",
+    "code": "f2_stormkage",
+    "name": "Storm Kage",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0511",
+    "code": "neutral_monsterredsynja",
+    "name": "Crabfused Crawler",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

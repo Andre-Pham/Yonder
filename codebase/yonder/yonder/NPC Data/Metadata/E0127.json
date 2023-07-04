@@ -1,0 +1,11 @@
+{
+    "id": "E0127",
+    "code": "f2_kibeholder",
+    "name": "Kaido Caster",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

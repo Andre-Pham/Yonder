@@ -1,0 +1,22 @@
+{
+    "id": "N0074",
+    "code": "f1_kaisergladiator",
+    "name": "Gladiator Coldblood",
+    "description": "",
+    "type": "frost",
+    "roles": [
+        "shop",
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Gladiator Coldblood",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0575",
+    "code": "neutral_tribalranged1",
+    "name": "Arcane Dweller",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

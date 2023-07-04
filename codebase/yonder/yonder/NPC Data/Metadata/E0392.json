@@ -1,0 +1,11 @@
+{
+    "id": "E0392",
+    "code": "neutral_blueconjurer",
+    "name": "Cerulean Conjurer",
+    "description": "",
+    "type": "none",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

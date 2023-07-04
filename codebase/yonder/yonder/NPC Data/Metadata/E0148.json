@@ -1,0 +1,11 @@
+{
+    "id": "E0148",
+    "code": "f2_spellthief",
+    "name": "Spell Thief",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

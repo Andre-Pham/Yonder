@@ -1,0 +1,11 @@
+{
+    "id": "E0352",
+    "code": "f6_sister",
+    "name": "Frostlauncher",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

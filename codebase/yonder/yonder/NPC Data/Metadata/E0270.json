@@ -1,0 +1,11 @@
+{
+    "id": "E0270",
+    "code": "f5_flumposaur",
+    "name": "Flumposaur",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

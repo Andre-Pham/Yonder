@@ -1,0 +1,11 @@
+{
+    "id": "E0525",
+    "code": "neutral_purgatos",
+    "name": "Purgatos Realmkeeper",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

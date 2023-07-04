@@ -1,0 +1,11 @@
+{
+    "id": "E0387",
+    "code": "neutral_beastswamp",
+    "name": "Swamp Hound",
+    "description": "",
+    "type": "forest",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

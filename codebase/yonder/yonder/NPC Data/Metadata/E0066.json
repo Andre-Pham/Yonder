@@ -1,0 +1,11 @@
+{
+    "id": "E0066",
+    "code": "f1_friendsguard",
+    "name": "Tempest Guardian",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

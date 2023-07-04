@@ -1,0 +1,11 @@
+{
+    "id": "E0444",
+    "code": "neutral_hatred",
+    "name": "Atomfist",
+    "description": "",
+    "type": "mech",
+    "brute": true,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

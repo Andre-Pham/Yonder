@@ -1,0 +1,11 @@
+{
+    "id": "E0008",
+    "code": "boss_city",
+    "name": "Shatterquartz",
+    "description": "",
+    "type": "mech",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

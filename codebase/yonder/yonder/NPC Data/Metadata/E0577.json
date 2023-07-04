@@ -1,0 +1,11 @@
+{
+    "id": "E0577",
+    "code": "neutral_trinitywing",
+    "name": "Trinitywing",
+    "description": "",
+    "type": "shadow",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

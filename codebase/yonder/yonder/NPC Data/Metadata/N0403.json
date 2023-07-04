@@ -1,0 +1,21 @@
+{
+    "id": "N0403",
+    "code": "neutral_chloroara",
+    "name": "Chloroara",
+    "description": "",
+    "type": "forest",
+    "roles": [
+        "shop",
+        "restorer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "armor"
+    ],
+    "friendlyTags": [],
+    "enhancerTags": [],
+    "enemyName": "Chloroara",
+    "enemyType": "none",
+    "brute": false,
+    "thief": true
+}

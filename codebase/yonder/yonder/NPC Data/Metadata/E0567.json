@@ -1,0 +1,11 @@
+{
+    "id": "E0567",
+    "code": "neutral_thescientist",
+    "name": "Prisim Master",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

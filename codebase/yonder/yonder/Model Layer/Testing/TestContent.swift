@@ -77,6 +77,7 @@ enum TestContent {
     
     static func testFoe() -> Foe {
         return Foe(
+            contentID: nil,
             name: "Test Foe",
             description: "Test foe description.",
             maxHealth: 200,
@@ -87,6 +88,7 @@ enum TestContent {
     
     static func testBoss() -> Foe {
         return Foe(
+            contentID: nil,
             name: "Test Boss",
             description: "Test boss description.",
             maxHealth: 10000,

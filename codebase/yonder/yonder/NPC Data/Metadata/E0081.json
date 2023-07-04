@@ -1,0 +1,11 @@
+{
+    "id": "E0081",
+    "code": "f1_radiantdragoon",
+    "name": "Tempest Dragoon",
+    "description": "",
+    "type": "desert",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

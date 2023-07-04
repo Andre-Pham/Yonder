@@ -1,0 +1,22 @@
+{
+    "id": "N0339",
+    "code": "f6_justice",
+    "name": "Arctic Fate",
+    "description": "",
+    "type": "faction6",
+    "roles": [
+        "shop",
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Arctic Fate",
+    "enemyType": "faction6",
+    "brute": false,
+    "thief": false
+}

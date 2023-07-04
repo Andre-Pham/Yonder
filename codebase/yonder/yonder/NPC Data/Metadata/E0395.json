@@ -1,0 +1,11 @@
+{
+    "id": "E0395",
+    "code": "neutral_boulderhurler",
+    "name": "Boulder Hurl",
+    "description": "",
+    "type": "cavern",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

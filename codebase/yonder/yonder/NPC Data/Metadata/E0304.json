@@ -1,0 +1,11 @@
+{
+    "id": "E0304",
+    "code": "f5_thraex",
+    "name": "Thraex",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

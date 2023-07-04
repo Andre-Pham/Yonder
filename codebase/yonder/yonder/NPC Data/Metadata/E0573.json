@@ -1,0 +1,11 @@
+{
+    "id": "E0573",
+    "code": "neutral_tribalmelee3",
+    "name": "Dagger Dweller",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": true,
+    "acute": false,
+    "obtuse": false
+}

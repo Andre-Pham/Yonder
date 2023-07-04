@@ -1,0 +1,28 @@
+{
+    "id": "N0063",
+    "code": "f1_elyxstormblade",
+    "name": "Elyx Stormblade",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "shop",
+        "friendly",
+        "restorer",
+        "enhancer"
+    ],
+    "shopTags": [],
+    "restorerTags": [
+        "health",
+        "armor"
+    ],
+    "friendlyTags": [
+        "shop",
+        "trade",
+        "generous"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Elyx Stormblade",
+    "enemyType": "faction1",
+    "brute": false,
+    "thief": false
+}

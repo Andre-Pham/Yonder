@@ -11,10 +11,15 @@ import SwiftyJSON
 
 class AnimationSequenceBuilder {
     
+    /// The file name (and content ID) to be reading from - here purely for debugging purposes
+    private let fileID: String
+    /// The image that contains every frame of every animation
     private let spriteSheet: UIImage
+    /// The JSON data that has the frame durations, positions and sizes of every frame of every animation
     private let framesDataJSON: JSON
     
-    init(spriteSheet: UIImage, framesDataJSON: JSON) {
+    init(fileID: String, spriteSheet: UIImage, framesDataJSON: JSON) {
+        self.fileID = fileID
         self.spriteSheet = spriteSheet
         self.framesDataJSON = framesDataJSON
     }

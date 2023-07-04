@@ -1,0 +1,11 @@
+{
+    "id": "E0389",
+    "code": "neutral_blisteringscorn",
+    "name": "Blistering Scorn",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

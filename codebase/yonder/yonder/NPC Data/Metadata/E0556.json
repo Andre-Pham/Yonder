@@ -1,0 +1,11 @@
+{
+    "id": "E0556",
+    "code": "neutral_sunelemental",
+    "name": "Solar Elemental",
+    "description": "",
+    "type": "nether",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

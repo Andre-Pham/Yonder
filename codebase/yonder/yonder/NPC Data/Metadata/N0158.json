@@ -1,0 +1,22 @@
+{
+    "id": "N0158",
+    "code": "f3_allomancer",
+    "name": "Shadow Whisperer",
+    "description": "",
+    "type": "all",
+    "roles": [
+        "shop",
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Shadow Whisperer",
+    "enemyType": "faction3",
+    "brute": false,
+    "thief": true
+}

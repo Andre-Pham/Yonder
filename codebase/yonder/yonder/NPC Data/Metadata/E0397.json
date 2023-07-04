@@ -1,0 +1,11 @@
+{
+    "id": "E0397",
+    "code": "neutral_buildepic",
+    "name": "Mooncast",
+    "description": "",
+    "type": "none",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0278",
+    "code": "f5_kolossus",
+    "name": "Kolossus",
+    "description": "",
+    "type": "faction5",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

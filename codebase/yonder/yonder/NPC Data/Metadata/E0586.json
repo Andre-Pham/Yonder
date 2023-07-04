@@ -1,0 +1,11 @@
+{
+    "id": "E0586",
+    "code": "neutral_wingsofparadise",
+    "name": "Parawings",
+    "description": "",
+    "type": "none",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

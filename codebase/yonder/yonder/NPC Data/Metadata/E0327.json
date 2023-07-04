@@ -1,0 +1,11 @@
+{
+    "id": "E0327",
+    "code": "f6_freeblade",
+    "name": "Frostblade Wielder",
+    "description": "",
+    "type": "faction6",
+    "brute": false,
+    "thief": true,
+    "acute": true,
+    "obtuse": false
+}

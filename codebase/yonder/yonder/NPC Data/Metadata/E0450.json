@@ -1,0 +1,11 @@
+{
+    "id": "E0450",
+    "code": "neutral_ironclad",
+    "name": "Goldtrim Ironclad",
+    "description": "",
+    "type": "dungeon",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

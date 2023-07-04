@@ -1,0 +1,11 @@
+{
+    "id": "E0423",
+    "code": "neutral_geargrinder",
+    "name": "Spindle Gleam",
+    "description": "",
+    "type": "dungeon",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

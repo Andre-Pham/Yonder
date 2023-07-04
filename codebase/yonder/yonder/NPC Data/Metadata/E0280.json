@@ -1,0 +1,11 @@
+{
+    "id": "E0280",
+    "code": "f5_lavalasher",
+    "name": "Mythflame Lasher",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

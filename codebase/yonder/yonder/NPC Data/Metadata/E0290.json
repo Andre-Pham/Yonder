@@ -1,0 +1,11 @@
+{
+    "id": "E0290",
+    "code": "f5_oxalaia",
+    "name": "Oxalaia",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

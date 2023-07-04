@@ -1,0 +1,21 @@
+{
+    "id": "N0237",
+    "code": "f4_klaxon",
+    "name": "Dark Whisperer",
+    "description": "",
+    "type": "faction4",
+    "roles": [
+        "friendly"
+    ],
+    "shopTags": [],
+    "restorerTags": [],
+    "friendlyTags": [
+        "sacrifice",
+        "curse"
+    ],
+    "enhancerTags": [],
+    "enemyName": "Dark Whisperer",
+    "enemyType": "faction4",
+    "brute": false,
+    "thief": false
+}

@@ -1,0 +1,11 @@
+{
+    "id": "E0313",
+    "code": "f6_altgeneral",
+    "name": "Kara Winterblade",
+    "description": "",
+    "type": "faction6",
+    "brute": true,
+    "thief": false,
+    "acute": false,
+    "obtuse": true
+}

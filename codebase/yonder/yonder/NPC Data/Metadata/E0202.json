@@ -1,0 +1,11 @@
+{
+    "id": "E0202",
+    "code": "f3_windslicer",
+    "name": "Divine Striker",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

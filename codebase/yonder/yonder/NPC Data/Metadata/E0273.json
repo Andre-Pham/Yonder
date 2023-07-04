@@ -1,0 +1,11 @@
+{
+    "id": "E0273",
+    "code": "f5_gibblegup",
+    "name": "Mythril Raptor",
+    "description": "",
+    "type": "faction5",
+    "brute": false,
+    "thief": false,
+    "acute": true,
+    "obtuse": false
+}

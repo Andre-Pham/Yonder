@@ -1,0 +1,11 @@
+{
+    "id": "E0135",
+    "code": "f2_onnabugeisha",
+    "name": "Flamespear Dancer",
+    "description": "",
+    "type": "faction2",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}

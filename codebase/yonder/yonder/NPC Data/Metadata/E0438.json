@@ -1,0 +1,11 @@
+{
+    "id": "E0438",
+    "code": "neutral_golemstone",
+    "name": "Stonecast Golem",
+    "description": "",
+    "type": "cavern",
+    "brute": false,
+    "thief": false,
+    "acute": false,
+    "obtuse": false
+}
