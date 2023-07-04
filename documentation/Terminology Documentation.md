@@ -135,11 +135,11 @@
 | `enhancer`         | Enhancer    |
 | `friendly`         | Trader      |
 | `restorer`         | Mender      |
-| `shopkeeper`       | Shopkeeper  |
+| `shopkeeper`       | Merchant    |
 
 #### Locations
 
-All location names match their NPC's name, e.g. a location with a Hostile would be called "Hostile", or "Hostile Location", a location with a Shopkeeper would be called "Shopkeeper" or "Shopkeeper Location".
+All location names match their NPC's name, e.g. a location with a Hostile would be called "Hostile", or "Hostile Location", a location with a Merchant would be called "Merchant" or "Merchant Location".
 
 Bridge locations (location type `bridge`) have no NPC and are referred to as "Warp", or "Warp Location".
 

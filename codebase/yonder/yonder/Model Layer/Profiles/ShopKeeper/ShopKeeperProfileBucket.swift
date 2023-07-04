@@ -16,7 +16,7 @@ class ShopKeeperProfileBucket: Storable {
     }
     
     func grabProfile(areaTag: RegionProfileTag) -> ShopKeeperProfile {
-        let randomProfile = RandomProfile(prefix: "Shop Keeper")
+        let randomProfile = RandomProfile(prefix: "Merchant")
         return ShopKeeperProfile(
             id: 0,
             shopKeeperName: randomProfile.name,

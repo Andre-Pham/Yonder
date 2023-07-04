@@ -690,8 +690,8 @@
 "map.locationType.challengeHostile.name" = "Mini Boss";
 "map.locationType.challengeHostile.description" = "Mini bosses are tougher than regular hostiles. They also reward better loot. You may not travel whilst in combat.";
     // Shop
-"map.locationType.shop.name" = "Shopkeeper";
-"map.locationType.shop.description" = "Shopkeepers sell to you in exchange for gold. Browse their shop to see what they have to offer - each item is limited in how much you can buy.";
+"map.locationType.shop.name" = "Merchant";
+"map.locationType.shop.description" = "Merchants sell to you in exchange for gold. Browse their shop to see what they have to offer - each item is limited in how much you can buy.";
     // Enhancer
 "map.locationType.enhancer.name" = "Enhancer";
 "map.locationType.enhancer.description" = "Enhancers have offers on certain gear they can upgrade. So long as you have the gold, you may upgrade a piece of gear however many times you desire.";
