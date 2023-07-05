@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FriendlyLocation: Location {
+class FriendlyLocation: Location, InteractorLocation {
     
     /// The friendly of the location - only generated when the player visits this location
     private var generatedFriendly: Friendly? = nil
@@ -58,6 +58,10 @@ class FriendlyLocation: Location {
             return
         }
         self.generatedFriendly = contentManager.generateFriendly(using: self.context)
+    }
+    
+    func getInteractor() -> InteractorAbstract? {
+        return self.generatedFriendly
     }
     
 }

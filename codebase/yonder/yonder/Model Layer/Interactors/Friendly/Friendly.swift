@@ -17,11 +17,11 @@ class Friendly: InteractorAbstract {
     }
     public let id = UUID()
     
-    init(name: String = "placeholderName", description: String = "placeholderDescription", offers: [Offer], offerLimit: Int) {
+    init(contentID: String?, name: String = "placeholderName", description: String = "placeholderDescription", offers: [Offer], offerLimit: Int) {
         self.offers = offers
         self.offerLimit = offerLimit
         
-        super.init(name: name, description: description)
+        super.init(contentID: contentID, name: name, description: description)
     }
     
     // MARK: - Serialisation

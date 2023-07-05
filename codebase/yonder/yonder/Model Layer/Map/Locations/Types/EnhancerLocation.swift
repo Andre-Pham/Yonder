@@ -7,7 +7,7 @@
 
 import Foundation
 
-class EnhancerLocation: Location {
+class EnhancerLocation: Location, InteractorLocation {
     
     /// The enhancer of the location - only generated when the player visits this location
     private var generatedEnhancer: Enhancer? = nil
@@ -58,6 +58,10 @@ class EnhancerLocation: Location {
             return
         }
         self.generatedEnhancer = contentManager.generateEnhancer(using: self.context)
+    }
+    
+    func getInteractor() -> InteractorAbstract? {
+        return self.generatedEnhancer
     }
     
 }

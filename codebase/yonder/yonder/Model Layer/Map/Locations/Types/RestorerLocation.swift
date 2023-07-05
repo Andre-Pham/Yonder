@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RestorerLocation: Location {
+class RestorerLocation: Location, InteractorLocation {
     
     /// The restorer of the location - only generated when the player visits this location
     private var generatedRestorer: Restorer? = nil
@@ -58,6 +58,10 @@ class RestorerLocation: Location {
             return
         }
         self.generatedRestorer = contentManager.generateRestorer(using: self.context)
+    }
+    
+    func getInteractor() -> InteractorAbstract? {
+        return self.generatedRestorer
     }
     
 }

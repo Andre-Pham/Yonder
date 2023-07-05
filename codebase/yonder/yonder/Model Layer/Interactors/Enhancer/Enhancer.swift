@@ -11,10 +11,10 @@ class Enhancer: InteractorAbstract {
     
     public let enhanceOffers: [EnhanceOffer]
     
-    init(name: String = "placeholderName", description: String = "placeholderDescription", offers: [EnhanceOffer]) {
+    init(contentID: String?, name: String = "placeholderName", description: String = "placeholderDescription", offers: [EnhanceOffer]) {
         self.enhanceOffers = offers
         
-        super.init(name: name, description: description)
+        super.init(contentID: contentID, name: name, description: description)
     }
     
     // MARK: - Serialisation

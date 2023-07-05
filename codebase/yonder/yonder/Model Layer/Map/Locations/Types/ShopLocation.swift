@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ShopLocation: Location {
+class ShopLocation: Location, InteractorLocation {
     
     /// The shop keeper of the location - only generated when the player visits this location
     private var generatedShopKeeper: ShopKeeper? = nil
@@ -58,6 +58,10 @@ class ShopLocation: Location {
             return
         }
         self.generatedShopKeeper = contentManager.generateShopKeeper(using: self.context)
+    }
+    
+    func getInteractor() -> InteractorAbstract? {
+        return self.generatedShopKeeper
     }
     
 }

@@ -9,10 +9,13 @@ import Foundation
 
 class InteractorAbstract: Named, Described, Storable {
     
+    /// The ID that indicates what content (sprite sheet and metadata) to use to represent this foe, e.g. E0001
+    public let contentID: String?
     public let name: String
     public let description: String
     
-    init(name: String, description: String) {
+    init(contentID: String?, name: String, description: String) {
+        self.contentID = contentID
         self.name = name
         self.description = description
     }
@@ -20,17 +23,20 @@ class InteractorAbstract: Named, Described, Storable {
     // MARK: - Serialisation
 
     private enum Field: String {
+        case contentID
         case name
         case description
     }
 
     required init(dataObject: DataObject) {
+        self.contentID = dataObject.get(Field.contentID.rawValue)
         self.name = dataObject.get(Field.name.rawValue)
         self.description = dataObject.get(Field.description.rawValue)
     }
 
     func toDataObject() -> DataObject {
         return DataObject(self)
+            .add(key: Field.contentID.rawValue, value: self.contentID)
             .add(key: Field.name.rawValue, value: self.name)
             .add(key: Field.description.rawValue, value: self.description)
     }

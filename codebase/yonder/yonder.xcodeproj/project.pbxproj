@@ -334,7 +334,6 @@
 		656FD920291D761000F923E9 /* EnhancerProfileBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD91F291D761000F923E9 /* EnhancerProfileBucket.swift */; };
 		656FD923291DCD8C00F923E9 /* RestorerProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD922291DCD8C00F923E9 /* RestorerProfile.swift */; };
 		656FD925291DCD9E00F923E9 /* RestorerProfileBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD924291DCD9E00F923E9 /* RestorerProfileBucket.swift */; };
-		656FD927291DCDA800F923E9 /* RestoreOptionsAllocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD926291DCDA800F923E9 /* RestoreOptionsAllocation.swift */; };
 		656FD929291ED32A00F923E9 /* RestorerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD928291ED32A00F923E9 /* RestorerFactory.swift */; };
 		656FD92C291EDAD900F923E9 /* FriendlyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD92B291EDAD900F923E9 /* FriendlyProfile.swift */; };
 		656FD92E291EDB1D00F923E9 /* FriendlyProfileTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656FD92D291EDB1D00F923E9 /* FriendlyProfileTag.swift */; };
@@ -2320,6 +2319,7 @@
 		B6D4723D2A51E0230002CEEC /* FRAMES-E0247.json in Resources */ = {isa = PBXBuildFile; fileRef = B6D46B4D2A51E0200002CEEC /* FRAMES-E0247.json */; };
 		B6D4723E2A51E0230002CEEC /* FRAMES-E0302.json in Resources */ = {isa = PBXBuildFile; fileRef = B6D46B4E2A51E0200002CEEC /* FRAMES-E0302.json */; };
 		B6D472402A530DCC0002CEEC /* BuildTokenCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4723F2A530DCC0002CEEC /* BuildTokenCache.swift */; };
+		B6D472452A5582AF0002CEEC /* InteractorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D472442A5582AF0002CEEC /* InteractorProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2669,7 +2669,6 @@
 		656FD91F291D761000F923E9 /* EnhancerProfileBucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancerProfileBucket.swift; sourceTree = "<group>"; };
 		656FD922291DCD8C00F923E9 /* RestorerProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorerProfile.swift; sourceTree = "<group>"; };
 		656FD924291DCD9E00F923E9 /* RestorerProfileBucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorerProfileBucket.swift; sourceTree = "<group>"; };
-		656FD926291DCDA800F923E9 /* RestoreOptionsAllocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreOptionsAllocation.swift; sourceTree = "<group>"; };
 		656FD928291ED32A00F923E9 /* RestorerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorerFactory.swift; sourceTree = "<group>"; };
 		656FD92B291EDAD900F923E9 /* FriendlyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendlyProfile.swift; sourceTree = "<group>"; };
 		656FD92D291EDB1D00F923E9 /* FriendlyProfileTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendlyProfileTag.swift; sourceTree = "<group>"; };
@@ -4656,6 +4655,7 @@
 		B6D46B4D2A51E0200002CEEC /* FRAMES-E0247.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FRAMES-E0247.json"; sourceTree = "<group>"; };
 		B6D46B4E2A51E0200002CEEC /* FRAMES-E0302.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FRAMES-E0302.json"; sourceTree = "<group>"; };
 		B6D4723F2A530DCC0002CEEC /* BuildTokenCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildTokenCache.swift; sourceTree = "<group>"; };
+		B6D472442A5582AF0002CEEC /* InteractorProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -5704,7 +5704,6 @@
 			children = (
 				656FD922291DCD8C00F923E9 /* RestorerProfile.swift */,
 				656FD924291DCD9E00F923E9 /* RestorerProfileBucket.swift */,
-				656FD926291DCDA800F923E9 /* RestoreOptionsAllocation.swift */,
 			);
 			path = Restorer;
 			sourceTree = "<group>";
@@ -6127,6 +6126,7 @@
 			isa = PBXGroup;
 			children = (
 				65C2CDDF2937B6DE0028DC9C /* AreaThemedProfile.swift */,
+				B6D472442A5582AF0002CEEC /* InteractorProfile.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -10240,7 +10240,6 @@
 				65500E5D28642B3900A92CA2 /* WeaponBasePill.swift in Sources */,
 				65BD97E72976228100B1F63A /* Named.swift in Sources */,
 				656BEE9A28E0CE29001CE591 /* GoldBuff.swift in Sources */,
-				656FD927291DCDA800F923E9 /* RestoreOptionsAllocation.swift in Sources */,
 				65A3887F288B6799006541FB /* ActionsView.swift in Sources */,
 				65CAC18627F947D200A95D92 /* YonderWideButtonBody.swift in Sources */,
 				657AA5A22778C50F00B16E0C /* AllFriendlies.swift in Sources */,
@@ -10595,6 +10594,7 @@
 				6553A0922781D5D100BC672F /* Line.swift in Sources */,
 				65D499DC2931EE6A0087DBA6 /* AccessoryHealthEnhanceOffer.swift in Sources */,
 				65BD97ED297629C000B1F63A /* LocationConnectionGenerator.swift in Sources */,
+				B6D472452A5582AF0002CEEC /* InteractorProfile.swift in Sources */,
 				65BD97EB297622A500B1F63A /* EffectsDescribed.swift in Sources */,
 				656FD8B529171F0200F923E9 /* RegionProfileBucket.swift in Sources */,
 				656FD8D529195E9800F923E9 /* RegionTagAllocation.swift in Sources */,

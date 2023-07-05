@@ -62,7 +62,8 @@ class NPCAnimation: AnimationQueue, AfterPlayerKillFoeSubscriber, OnActorAttackS
         // TODO: Read the actual npc/foe here and update accordingly
         switch location.type {
         case .shop, .enhancer, .restorer, .friendly:
-            return "E0001"
+            let contentID = (location as? InteractorLocation)?.getInteractor()?.contentID
+            return contentID
         case .none, .quest, .bridge:
             return nil
         case .hostile, .challengeHostile, .boss:

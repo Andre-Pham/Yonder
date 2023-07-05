@@ -9,11 +9,16 @@ import Foundation
 
 class RestorerFactory {
     
+    private enum BuildToken: String {
+        case health
+        case armorPoints
+        case healthAndArmorPoints
+    }
+    
     private let stage: Int
     private let regionTags: RegionTagAllocation
     private let restorerProfileBucket: RestorerProfileBucket
-    private var restorerSupply = [Restorer]()
-    private var profilesInUse = [UUID: RestorerProfile]()
+    private var buildTokenQueue = [BuildToken]()
     
     init(stage: Int, regionTags: RegionTagAllocation, restorerProfileBucket: RestorerProfileBucket) {
         self.stage = stage
@@ -21,54 +26,55 @@ class RestorerFactory {
         self.restorerProfileBucket = restorerProfileBucket
     }
     
-    func recycleProfiles() {
-        for profile in self.profilesInUse.values {
-            self.restorerProfileBucket.restoreProfile(profile)
+    func exportBuildTokenCache(regionKey: String) -> BuildTokenCache {
+        return BuildTokenCache(regionKey: regionKey, serialisedTokens: self.buildTokenQueue.map({ $0.rawValue }))
+    }
+    
+    func importSerialisedTokens(_ buildTokenCache: BuildTokenCache) {
+        let tokenStrings = buildTokenCache.serialisedTokens
+        for tokenString in tokenStrings {
+            if let restoredToken = BuildToken(rawValue: tokenString) {
+                self.buildTokenQueue.append(restoredToken)
+            }
         }
     }
     
-    private func buildRestorers() {
-        var restorers = [Restorer]()
-        
-        self.addRestorer(to: &restorers, restoreOptions: [.health, .armorPoints], count: 2)
-        self.addRestorer(to: &restorers, restoreOptions: [.health], count: 1)
-        self.addRestorer(to: &restorers, restoreOptions: [.armorPoints], count: 1)
-        
-        restorers.shuffle()
-        self.restorerSupply.appendToFront(contentsOf: restorers)
+    private func replenishTokens() {
+        var newTokens = [BuildToken]()
+        newTokens.populate(count: 4, { .healthAndArmorPoints })
+        newTokens.populate(count: 1, { .health })
+        newTokens.populate(count: 1, { .armorPoints })
+        newTokens.shuffle()
+        self.buildTokenQueue.appendToFront(contentsOf: newTokens)
     }
     
-    private func addRestorer(
-        to restorers: inout [Restorer],
-        restoreOptions: [Restorer.RestoreOption],
-        count: Int
-    ) {
-        restorers.populate(count: count) {
-            let profile = self.restorerProfileBucket.grabProfile(areaTag: self.regionTags.getTag(), restoreOptions: restoreOptions)
-            let restorer = Restorers.newRestorer(profile: profile, stage: self.stage, restoreOptions: restoreOptions)
-            self.profilesInUse[restorer.id] = profile
-            return restorer
+    private func createRestorer() -> Restorer {
+        if self.buildTokenQueue.isEmpty {
+            self.replenishTokens()
         }
+        let token = self.buildTokenQueue.popLast()!
+        let restoreOptions: [Restorer.RestoreOption]
+        switch token {
+        case .health:
+            restoreOptions = [.health]
+        case .armorPoints:
+            restoreOptions = [.armorPoints]
+        case .healthAndArmorPoints:
+            restoreOptions = [.health, .armorPoints]
+        }
+        return Restorers.newRestorer(
+            profile: self.restorerProfileBucket.grabProfile(areaTag: self.regionTags.getTag(), restoreOptions: restoreOptions),
+            stage: self.stage,
+            restoreOptions: restoreOptions
+        )
     }
     
     func deliver() -> Restorer {
-        if self.restorerSupply.isEmpty {
-            self.buildRestorers()
-        }
-        let restorer = self.restorerSupply.popLast()!
-        self.profilesInUse.removeValue(forKey: restorer.id)
-        return restorer
+        return self.createRestorer()
     }
     
     func deliver(count: Int) -> [Restorer] {
-        let initialCount = self.restorerSupply.count
-        while self.restorerSupply.count < count {
-            self.buildRestorers()
-            assert(initialCount < self.restorerSupply.count, "No restorers being generated - infinite loop")
-        }
-        let restorers = self.restorerSupply.takeLast(count)
-        restorers.forEach({ self.profilesInUse.removeValue(forKey: $0.id) })
-        return restorers
+        return Array(count: count, populateWith: self.createRestorer())
     }
     
 }

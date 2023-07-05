@@ -18,6 +18,7 @@ enum Friendlies {
                 .toRoundedInt()
         }
         return Friendly(
+            contentID: nil, // TODO: Add content id
             name: profile.friendlyName,
             description: profile.friendlyDescription,
             offers: [
@@ -44,6 +45,7 @@ enum Friendlies {
             (Double(dragonSlayer.getBasePurchasePrice())*0.8).toRoundedInt()
         }
         return Friendly(
+            contentID: nil, // TODO: Add content id
             name: profile.friendlyName,
             description: profile.friendlyDescription,
             offers: [
@@ -61,6 +63,7 @@ enum Friendlies {
             return Random.selectFromNormalDistribution(min: fairPrice, max: (Double(fairPrice)*1.5).toRoundedInt())
         }
         return Friendly(
+            contentID: nil, // TODO: Add content id
             name: profile.friendlyName,
             description: profile.friendlyDescription,
             offers: [
@@ -81,6 +84,7 @@ enum Friendlies {
             buffPills: []
         )
         return Friendly(
+            contentID: nil, // TODO: Add content id
             name: profile.friendlyName,
             description: profile.friendlyDescription,
             offers: [
@@ -93,6 +97,7 @@ enum Friendlies {
     // 05
     static func sellPotionsFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
         return Friendly(
+            contentID: nil, // TODO: Add content id
             name: profile.friendlyName,
             description: profile.friendlyDescription,
             offers: [SellPotionsOffer()],
@@ -103,6 +108,7 @@ enum Friendlies {
     // 06
     static func maxPointsForArmorPointsFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
         return Friendly(
+            contentID: nil, // TODO: Add content id
             name: profile.friendlyName,
             description: profile.friendlyDescription,
             offers: [MaxHealthForArmorPointsOffer()],
@@ -116,6 +122,7 @@ enum Friendlies {
         let blessingPriceFraction = 0.9
         let gold = (1000 + (sqrt(Double(stage)*10_000_000)*0.5).toRoundedInt()).nearest(100)
         return Friendly(
+            contentID: nil, // TODO: Add content id
             name: profile.friendlyName,
             description: profile.friendlyDescription,
             offers: [
@@ -130,6 +137,7 @@ enum Friendlies {
     static func weaponDamageOrPotionCountFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
         let damage = (50.0.compound(multiply: 1.2, index: stage)).toRoundedInt()
         return Friendly(
+            contentID: nil, // TODO: Add content id
             name: profile.friendlyName,
             description: profile.friendlyDescription,
             offers: [
@@ -145,6 +153,7 @@ enum Friendlies {
         let potions = lootFactory.potionFactory.deliver(count: Int.random(in: 1...2))
         let consumables = lootFactory.consumableFactory.deliver(count: Int.random(in: 0...2))
         return Friendly(
+            contentID: nil, // TODO: Add content id
             name: profile.friendlyName,
             description: profile.friendlyDescription,
             offers: [FreeItemsOffer(potions: potions, consumables: consumables)],

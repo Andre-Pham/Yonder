@@ -17,6 +17,29 @@ class FoeProfileBucket: Storable {
         self.profiles.shuffle()
     }
     
+    // MARK: - Serialisation
+
+    private enum Field: String {
+        case profileIDs
+    }
+
+    required init(dataObject: DataObject) {
+        let ids: [String] = dataObject.get(Field.profileIDs.rawValue)
+        let allProfiles = ProfileRepository.profiles
+        for id in ids {
+            if let profile = allProfiles.first(where: { $0.id == id }) {
+                self.profiles.append(profile)
+            }
+        }
+    }
+
+    func toDataObject() -> DataObject {
+        return DataObject(self)
+            .add(key: Field.profileIDs.rawValue, value: self.profiles.map({ $0.id }))
+    }
+    
+    // MARK: - Functions
+    
     func grabProfile(areaTag: RegionProfileTag, foeTag: FoeProfileTag) -> FoeProfile {
         switch foeTag {
         case .brute:
@@ -82,27 +105,6 @@ class FoeProfileBucket: Storable {
             }
         }
         fatalError("If we reach this point it's not even worth trying to recover")
-    }
-    
-    // MARK: - Serialisation
-
-    private enum Field: String {
-        case profileIDs
-    }
-
-    required init(dataObject: DataObject) {
-        let ids: [String] = dataObject.get(Field.profileIDs.rawValue)
-        let allProfiles = ProfileRepository.profiles
-        for id in ids {
-            if let profile = allProfiles.first(where: { $0.id == id }) {
-                self.profiles.append(profile)
-            }
-        }
-    }
-
-    func toDataObject() -> DataObject {
-        return DataObject(self)
-            .add(key: Field.profileIDs.rawValue, value: self.profiles.map({ $0.id }))
     }
     
 }

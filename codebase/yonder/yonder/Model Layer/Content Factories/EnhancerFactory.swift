@@ -93,6 +93,7 @@ class EnhancerFactory {
             offers = Array(offers.prefix(offerCount))
         }
         return Enhancer(
+            contentID: nil, // TODO: Add content id
             name: profile.enhancerName,
             description: profile.enhancerDescription,
             offers: offers

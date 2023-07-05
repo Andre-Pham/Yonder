@@ -124,6 +124,7 @@ enum TestContent {
     
     static func testEnhancer() -> Enhancer {
         return Enhancer(
+            contentID: nil,
             offers: [
                 ArmorPointsEnhanceOffer(price: 10, armorPoints: 50),
                 EnhanceOffers.lifestealForWeapon(stage: 0)
@@ -133,6 +134,7 @@ enum TestContent {
     
     static func testFriendly() -> Friendly {
         return Friendly(
+            contentID: nil,
             offers: [
                 FreeGoldOffer(goldAmount: 500),
                 PurchaseWeaponOffer(weapon: Weapon(basePill: DamageBasePill(damage: 500), durabilityPill: InfiniteDurabilityPill()), price: 400)
@@ -142,11 +144,11 @@ enum TestContent {
     }
     
     static func testRestorer() -> Restorer {
-        return Restorer(options: [.armorPoints, .health], pricePerHealthBundle: 10, pricePerArmorPointBundle: 15)
+        return Restorer(contentID: nil, options: [.armorPoints, .health], pricePerHealthBundle: 10, pricePerArmorPointBundle: 15)
     }
     
     static func testShopKeeper() -> ShopKeeper {
-        return ShopKeeper(purchasableItems: [
+        return ShopKeeper(contentID: nil, purchasableItems: [
             PurchasableItem(item: Accessory(name: "Damage/Health Accessory", description: "Very sharp, be careful while holding!", type: .regular, healthBonus: 50, armorPointsBonus: 0, buffs: [DamagePercentBuff(sourceName: "Damage/Health Accessory", direction: .outgoing, duration: nil, damageFraction: 1.5)], equipmentPills: []), stock: 5),
             PurchasableItem(item: Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: DecrementDurabilityPill(durability: 5)), stock: 5),
             PurchasableItem(item: Armor(name: "Strong Armor", description: "The toughest armor out there.", type: .body, armorPoints: 200, armorBuffs: [], equipmentPills: []), stock: 1),

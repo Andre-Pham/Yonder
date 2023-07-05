@@ -11,10 +11,10 @@ class ShopKeeper: InteractorAbstract {
     
     @DidSetPublished private(set) var purchasableItems: [PurchasableItem]
     
-    init(name: String = "placeholderName", description: String = "placeholderDescription", purchasableItems: [PurchasableItem]) {
+    init(contentID: String?, name: String = "placeholderName", description: String = "placeholderDescription", purchasableItems: [PurchasableItem]) {
         self.purchasableItems = purchasableItems
         
-        super.init(name: name, description: description)
+        super.init(contentID: contentID, name: name, description: description)
     }
     
     // MARK: - Serialisation

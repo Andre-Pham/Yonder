@@ -107,3 +107,9 @@ protocol FoeLocation {
     var foe: Foe { get }
     
 }
+
+protocol InteractorLocation {
+    
+    func getInteractor() -> InteractorAbstract?
+    
+}

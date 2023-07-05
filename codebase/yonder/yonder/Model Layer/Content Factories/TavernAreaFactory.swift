@@ -21,7 +21,7 @@ class TavernAreaFactory {
         let outcome = TavernAreaArrangements.allCases.randomElement()!
         let restorer = Restorers.newRestorer(
             profile: RestorerProfile(
-                id: 0,
+                id: "", // TODO: Fix this (otherwise visiting a tavern area will throw an error because the file won't be found)
                 restorerName: Strings("restorer.tavern.name").local,
                 restorerDescription: Strings("restorer.tavern.description").local,
                 regionTags: [],
@@ -31,6 +31,7 @@ class TavernAreaFactory {
             restoreOptions: [.health, .armorPoints]
         )
         let potionsShopKeeper = ShopKeeper(
+            contentID: nil, // TODO: Add content id
             name: Strings("shopKeeper.tavern.name").local,
             description: Strings("shopKeeper.tavern.description").local,
             purchasableItems: [

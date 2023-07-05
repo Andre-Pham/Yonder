@@ -44,6 +44,7 @@ class ShopKeeperFactory {
             }
         }
         return ShopKeeper(
+            contentID: nil, // TODO: Add content id
             name: profile.shopKeeperName,
             description: profile.shopKeeperDescription,
             purchasableItems: purchasableItems

@@ -154,6 +154,7 @@ enum PreviewObjects {
     
     private static var shopKeeper: ShopKeeper {
         return ShopKeeper(
+            contentID: nil,
             name: "Andre",
             description: "I sell pancakes and maple syrup!!",
             purchasableItems: [
@@ -164,6 +165,7 @@ enum PreviewObjects {
     
     private static var enhancer: Enhancer {
         return Enhancer(
+            contentID: nil,
             name: "Ana",
             description: "You're powered up, get in there!",
             offers: [WeaponDamageEnhanceOffer(price: 100, damage: 200)]
@@ -172,6 +174,7 @@ enum PreviewObjects {
     
     private static var restorer: Restorer {
         return Restorer(
+            contentID: nil,
             name: "Mercy",
             description: "Heroes never die!",
             options: [.health, .armorPoints],
@@ -182,6 +185,7 @@ enum PreviewObjects {
     
     private static var friendly: Friendly {
         return Friendly(
+            contentID: nil,
             name: "Winston",
             description: "With a Y",
             offers: [FreeGoldOffer(goldAmount: 200)],
@@ -241,6 +245,7 @@ enum PreviewObjects {
         return PurchasableViewModel(
             purchasable: Self.purchasableItem,
             shopKeeperViewModel: ShopKeeperViewModel(ShopKeeper(
+                contentID: nil,
                 name: "Billy",
                 description: "Sells things.",
                 purchasableItems: [Self.purchasableItem])

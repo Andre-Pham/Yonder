@@ -52,7 +52,6 @@ class FoeFactory {
         newTokens.populate(count: 3, { .goblinFoe })
         newTokens.populate(count: 3, { .bruteFoe })
         newTokens.shuffle()
-        // We take from the back so we append to the front (relevant when you're taking more than 1 token at once)
         self.buildTokenQueue.appendToFront(contentsOf: newTokens)
     }
     

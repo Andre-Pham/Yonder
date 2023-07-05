@@ -27,12 +27,12 @@ class Restorer: InteractorAbstract {
     public let pricePerArmorPointBundle: Int
     public let id = UUID()
     
-    init(name: String = "placeholderName", description: String = "placeholderDescription", options: [RestoreOption], pricePerHealthBundle: Int = 0, pricePerArmorPointBundle: Int = 0) {
+    init(contentID: String?, name: String = "placeholderName", description: String = "placeholderDescription", options: [RestoreOption], pricePerHealthBundle: Int = 0, pricePerArmorPointBundle: Int = 0) {
         self.options = options
         self.pricePerHealthBundle = pricePerHealthBundle
         self.pricePerArmorPointBundle = pricePerArmorPointBundle
         
-        super.init(name: name, description: description)
+        super.init(contentID: contentID, name: name, description: description)
     }
     
     // MARK: - Serialisation

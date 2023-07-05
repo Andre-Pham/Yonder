@@ -22,6 +22,7 @@ enum Restorers {
         let healthPrice = Int.random(in: healthMinValue...healthFairValue)
         let armorPointsPrice = Int.random(in: armorPointsMinValue...armorPointsFairValue)
         return Restorer(
+            contentID: profile.id,
             name: profile.restorerName,
             description: profile.restorerDescription,
             options: restoreOptions,

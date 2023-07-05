@@ -18,6 +18,13 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
     private let restorerProfileBucket: RestorerProfileBucket
     private let friendlyProfileBucket: FriendlyProfileBucket
     
+    private var interactorProfileBuckets: [InteractorProfileBucket] {
+        return [
+            // TODO: ShopKeeper, Enhancer, Friendly
+            self.restorerProfileBucket
+        ]
+    }
+    
     private var activeWeaponFactories = [String: WeaponFactory]()
     private var activePotionFactories = [String: PotionFactory]()
     private var activeArmorFactories = [String: ArmorFactory]()
@@ -37,7 +44,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
     private var hostileBuildTokenCache: [BuildTokenCache]
     // TODO: ShopKeeper build token cache
     // TODO: Enhancer build token cache
-    // TODO: Restorer build token cache
+    private var restorerBuildTokenCache: [BuildTokenCache]
     // TODO: Friendly build token cache
     
     init() {
@@ -51,6 +58,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         self.friendlyProfileBucket = FriendlyProfileBucket()
         
         self.hostileBuildTokenCache = [BuildTokenCache]()
+        self.restorerBuildTokenCache = [BuildTokenCache]()
         // TODO: Other build token caches
         
         OnPlayerTravelPublisher.subscribe(self)
@@ -70,6 +78,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         case restorerProfileBucket
         case friendlyProfileBucket
         case hostileBuildTokens
+        case restorerBuildTokens
         // TODO: Other build token caches
     }
 
@@ -84,6 +93,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         self.friendlyProfileBucket = dataObject.getObject(Field.friendlyProfileBucket.rawValue, type: FriendlyProfileBucket.self)
         
         self.hostileBuildTokenCache = dataObject.getObjectArray(Field.hostileBuildTokens.rawValue, type: BuildTokenCache.self)
+        self.restorerBuildTokenCache = dataObject.getObjectArray(Field.restorerBuildTokens.rawValue, type: BuildTokenCache.self)
         // TODO: Other build token caches
         
         OnPlayerTravelPublisher.subscribe(self)
@@ -106,6 +116,10 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
             .add(
                 key: Field.hostileBuildTokens.rawValue,
                 value: self.activeHostileFactories.map({ $0.value.exportBuildTokenCache(regionKey: $0.key) }) + self.hostileBuildTokenCache
+            )
+            .add(
+                key: Field.restorerBuildTokens.rawValue,
+                value: self.activeRestorerFactories.map({ $0.value.exportBuildTokenCache(regionKey: $0.key) }) + self.restorerBuildTokenCache
             )
             // TODO: Other build token caches
     }
@@ -136,7 +150,6 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
             // (Consumable factory doesn't use profiles)
             // (ShopKeeper factory doesn't maintain a supply)
             // (Enhancer factory doesn't maintain a supply)
-        self.activeRestorerFactories.forEach({ $0.value.recycleProfiles() })
         self.activeFriendlyFactories.forEach({ $0.value.recycleProfiles() })
         
         // Remove all active factories
@@ -157,6 +170,20 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
             return
         }
         newLocation.initContent(using: self)
+        
+        // After the player has travelled to a new location and its content has loaded
+        // If it's an interactor location, ensure no future interactors have the same profile
+        if let interactor = (newLocation as? InteractorLocation)?.getInteractor(),
+           let contentID = interactor.contentID {
+            self.purgeInteractorContentID(contentID)
+        }
+    }
+    
+    /// Purges the content id of a particular profile in all interactor profile buckets (because they share profiles).
+    /// - Parameters:
+    ///   - id: The content id (profile id) to be removed in all interactor profile buckets
+    private func purgeInteractorContentID(_ id: String) {
+        self.interactorProfileBuckets.forEach({ $0.markProfileIDUsed(id: id) })
     }
     
     func afterGameContextInit(gameContext: GameContext) {
@@ -276,7 +303,18 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         assert(self.hostileBuildTokenCache.isEmpty, "Cache couldn't be restored")
         self.hostileBuildTokenCache.removeAll() // After recreating the factories, if any couldn't be restored, they never will
         
+        for cache in self.restorerBuildTokenCache {
+            if let factory = self.activeRestorerFactories[cache.regionKey] {
+                factory.importSerialisedTokens(cache)
+                self.restorerBuildTokenCache.removeAll(where: { $0.regionKey == cache.regionKey })
+            }
+        }
+        assert(self.restorerBuildTokenCache.isEmpty, "Cache couldn't be restored")
+        self.restorerBuildTokenCache.removeAll() // After recreating the factories, if any couldn't be restored, they never will
+        
         // TODO: Other build token caches
+        
+        // TODO: Create a BuildTokenFactory protocol to automate the above into a loop
     }
     
     func generateHostile(using locationContext: LocationContext) -> Foe {
