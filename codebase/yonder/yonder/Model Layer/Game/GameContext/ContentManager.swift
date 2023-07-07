@@ -297,40 +297,25 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
                 lootFactory: self.lootFactoryBundle(region.getRegionKey())
             )
         }
-        self.restoreAvailableBuildTokenCaches()
+        self.restoreAllAvailableBuildTokenCaches()
     }
     
-    private func restoreAvailableBuildTokenCaches() {
-        for cache in self.hostileBuildTokenCache {
-            if let factory = self.activeHostileFactories[cache.regionKey] {
-                factory.importSerialisedTokens(cache)
-                self.hostileBuildTokenCache.removeAll(where: { $0.regionKey == cache.regionKey })
-            }
-        }
-        assert(self.hostileBuildTokenCache.isEmpty, "Cache couldn't be restored")
-        self.hostileBuildTokenCache.removeAll() // After recreating the factories, if any couldn't be restored, they never will
-        
-        for cache in self.restorerBuildTokenCache {
-            if let factory = self.activeRestorerFactories[cache.regionKey] {
-                factory.importSerialisedTokens(cache)
-                self.restorerBuildTokenCache.removeAll(where: { $0.regionKey == cache.regionKey })
-            }
-        }
-        assert(self.restorerBuildTokenCache.isEmpty, "Cache couldn't be restored")
-        self.restorerBuildTokenCache.removeAll() // After recreating the factories, if any couldn't be restored, they never will
-        
-        for cache in self.friendlyBuildTokenCache {
-            if let factory = self.activeFriendlyFactories[cache.regionKey] {
-                factory.importSerialisedTokens(cache)
-                self.friendlyBuildTokenCache.removeAll(where: { $0.regionKey == cache.regionKey })
-            }
-        }
-        assert(self.friendlyBuildTokenCache.isEmpty, "Cache couldn't be restored")
-        self.friendlyBuildTokenCache.removeAll() // After recreating the factories, if any couldn't be restored, they never will
-        
+    private func restoreAllAvailableBuildTokenCaches() {
+        self.restoreBuildTokenCaches(for: self.activeHostileFactories, caches: &self.hostileBuildTokenCache)
+        self.restoreBuildTokenCaches(for: self.activeRestorerFactories, caches: &self.restorerBuildTokenCache)
+        self.restoreBuildTokenCaches(for: self.activeFriendlyFactories, caches: &self.friendlyBuildTokenCache)
         // TODO: Other build token caches
-        
-        // TODO: Create a BuildTokenFactory protocol to automate the above into a loop
+    }
+    
+    private func restoreBuildTokenCaches(for factories: [String: any BuildTokenFactory], caches: inout [BuildTokenCache]) {
+        for cache in caches {
+            if let factory = factories[cache.regionKey] {
+                factory.importSerialisedTokens(cache)
+                caches.removeAll(where: { $0.regionKey == cache.regionKey })
+            }
+        }
+        assert(caches.isEmpty, "Cache couldn't be restored")
+        caches.removeAll() // After recreating the factories, if any couldn't be restored, they never will
     }
     
     func generateHostile(using locationContext: LocationContext) -> Foe {

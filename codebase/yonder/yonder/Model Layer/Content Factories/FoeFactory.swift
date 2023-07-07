@@ -7,9 +7,9 @@
 
 import Foundation
 
-class FoeFactory {
+class FoeFactory: BuildTokenFactory {
     
-    private enum BuildToken: String {
+    enum BuildToken: String {
         case regularFoe
         case regularObtuseFoe
         case regularAcuteFoe
@@ -21,26 +21,13 @@ class FoeFactory {
     private let regionTags: RegionTagAllocation
     private let foeProfileBucket: FoeProfileBucket
     private let lootOptionsFactory: LootOptionsFactory
-    private var buildTokenQueue = [BuildToken]()
+    public var buildTokenQueue = [BuildToken]()
     
     init(stage: Int, regionTags: RegionTagAllocation, profileBucket: FoeProfileBucket, lootFactoryBundle: LootFactoryBundle) {
         self.stage = stage
         self.regionTags = regionTags
         self.foeProfileBucket = profileBucket
         self.lootOptionsFactory = LootOptionsFactory(stage: stage, lootFactories: lootFactoryBundle)
-    }
-    
-    func exportBuildTokenCache(regionKey: String) -> BuildTokenCache {
-        return BuildTokenCache(regionKey: regionKey, serialisedTokens: self.buildTokenQueue.map({ $0.rawValue }))
-    }
-    
-    func importSerialisedTokens(_ buildTokenCache: BuildTokenCache) {
-        let tokenStrings = buildTokenCache.serialisedTokens
-        for tokenString in tokenStrings {
-            if let restoredToken = BuildToken(rawValue: tokenString) {
-                self.buildTokenQueue.append(restoredToken)
-            }
-        }
     }
     
     private func replenishTokens() {

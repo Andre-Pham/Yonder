@@ -2320,6 +2320,7 @@
 		B6D4723E2A51E0230002CEEC /* FRAMES-E0302.json in Resources */ = {isa = PBXBuildFile; fileRef = B6D46B4E2A51E0200002CEEC /* FRAMES-E0302.json */; };
 		B6D472402A530DCC0002CEEC /* BuildTokenCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4723F2A530DCC0002CEEC /* BuildTokenCache.swift */; };
 		B6D472452A5582AF0002CEEC /* InteractorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D472442A5582AF0002CEEC /* InteractorProfile.swift */; };
+		B6D4726B2A5898540002CEEC /* BuildTokenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4726A2A5898540002CEEC /* BuildTokenFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -4656,6 +4657,7 @@
 		B6D46B4E2A51E0200002CEEC /* FRAMES-E0302.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FRAMES-E0302.json"; sourceTree = "<group>"; };
 		B6D4723F2A530DCC0002CEEC /* BuildTokenCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildTokenCache.swift; sourceTree = "<group>"; };
 		B6D472442A5582AF0002CEEC /* InteractorProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorProfile.swift; sourceTree = "<group>"; };
+		B6D4726A2A5898540002CEEC /* BuildTokenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildTokenFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -5588,6 +5590,7 @@
 		656FD8B62917222500F923E9 /* Content Factories */ = {
 			isa = PBXGroup;
 			children = (
+				B6D472692A5898440002CEEC /* Core */,
 				656FD90E291C6F2B00F923E9 /* Bundles */,
 				656FD8B72917223100F923E9 /* MapPoolFactory.swift */,
 				65EFC04B29365E6900B8E677 /* BossAreaPoolFactory.swift */,
@@ -8214,6 +8217,14 @@
 			path = "Frame Data";
 			sourceTree = "<group>";
 		};
+		B6D472692A5898440002CEEC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B6D4726A2A5898540002CEEC /* BuildTokenFactory.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -10209,6 +10220,7 @@
 				651A955E276AB69E009C9A08 /* AreaArrangements.swift in Sources */,
 				656FD915291CF6AE00F923E9 /* ShopKeeperProfile.swift in Sources */,
 				656FD917291CF77100F923E9 /* ShopKeeperProfileBucket.swift in Sources */,
+				B6D4726B2A5898540002CEEC /* BuildTokenFactory.swift in Sources */,
 				656FD8EC2919F54A00F923E9 /* ArmorFactory.swift in Sources */,
 				65311CEE28842DCE0080A390 /* LootWeaponButton.swift in Sources */,
 				657AA5A02778C4B500B16E0C /* AllRestorers.swift in Sources */,

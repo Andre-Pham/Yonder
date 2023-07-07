@@ -7,9 +7,9 @@
 
 import Foundation
 
-class RestorerFactory {
+class RestorerFactory: BuildTokenFactory {
     
-    private enum BuildToken: String {
+    enum BuildToken: String {
         case health
         case armorPoints
         case healthAndArmorPoints
@@ -18,25 +18,12 @@ class RestorerFactory {
     private let stage: Int
     private let regionTags: RegionTagAllocation
     private let restorerProfileBucket: RestorerProfileBucket
-    private var buildTokenQueue = [BuildToken]()
+    public var buildTokenQueue = [BuildToken]()
     
     init(stage: Int, regionTags: RegionTagAllocation, restorerProfileBucket: RestorerProfileBucket) {
         self.stage = stage
         self.regionTags = regionTags
         self.restorerProfileBucket = restorerProfileBucket
-    }
-    
-    func exportBuildTokenCache(regionKey: String) -> BuildTokenCache {
-        return BuildTokenCache(regionKey: regionKey, serialisedTokens: self.buildTokenQueue.map({ $0.rawValue }))
-    }
-    
-    func importSerialisedTokens(_ buildTokenCache: BuildTokenCache) {
-        let tokenStrings = buildTokenCache.serialisedTokens
-        for tokenString in tokenStrings {
-            if let restoredToken = BuildToken(rawValue: tokenString) {
-                self.buildTokenQueue.append(restoredToken)
-            }
-        }
     }
     
     private func replenishTokens() {

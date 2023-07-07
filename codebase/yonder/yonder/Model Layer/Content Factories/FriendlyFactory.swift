@@ -7,9 +7,9 @@
 
 import Foundation
 
-class FriendlyFactory {
+class FriendlyFactory: BuildTokenFactory {
     
-    private enum BuildToken: String {
+    enum BuildToken: String {
         case goldOrRestorationFriendly          // 01
         case dragonSlayerFriendly               // 02
         case healthForGoldFriendly              // 03
@@ -25,26 +25,13 @@ class FriendlyFactory {
     private let regionTags: RegionTagAllocation
     private let friendlyProfileBucket: FriendlyProfileBucket
     private let lootFactory: LootFactoryBundle
-    private var buildTokenQueue = [BuildToken]()
+    public var buildTokenQueue = [BuildToken]()
     
     init(stage: Int, regionTags: RegionTagAllocation, friendlyProfileBucket: FriendlyProfileBucket, lootFactory: LootFactoryBundle) {
         self.stage = stage
         self.regionTags = regionTags
         self.friendlyProfileBucket = friendlyProfileBucket
         self.lootFactory = lootFactory
-    }
-    
-    func exportBuildTokenCache(regionKey: String) -> BuildTokenCache {
-        return BuildTokenCache(regionKey: regionKey, serialisedTokens: self.buildTokenQueue.map({ $0.rawValue }))
-    }
-    
-    func importSerialisedTokens(_ buildTokenCache: BuildTokenCache) {
-        let tokenStrings = buildTokenCache.serialisedTokens
-        for tokenString in tokenStrings {
-            if let restoredToken = BuildToken(rawValue: tokenString) {
-                self.buildTokenQueue.append(restoredToken)
-            }
-        }
     }
     
     private func replenishTokens() {
