@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum FriendlyProfileTag {
+enum FriendlyProfileTag: String {
     
     /// Requires the player to sacrifice something, for example health, permanent health
     case sacrifice

@@ -20,8 +20,9 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
     
     private var interactorProfileBuckets: [InteractorProfileBucket] {
         return [
-            // TODO: ShopKeeper, Enhancer, Friendly
-            self.restorerProfileBucket
+            // TODO: ShopKeeper, Enhancer
+            self.restorerProfileBucket,
+            self.friendlyProfileBucket,
         ]
     }
     
@@ -45,7 +46,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
     // TODO: ShopKeeper build token cache
     // TODO: Enhancer build token cache
     private var restorerBuildTokenCache: [BuildTokenCache]
-    // TODO: Friendly build token cache
+    private var friendlyBuildTokenCache: [BuildTokenCache]
     
     init() {
         self.accessoryProfileBucket = AccessoryProfileBucket()
@@ -59,6 +60,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         
         self.hostileBuildTokenCache = [BuildTokenCache]()
         self.restorerBuildTokenCache = [BuildTokenCache]()
+        self.friendlyBuildTokenCache = [BuildTokenCache]()
         // TODO: Other build token caches
         
         OnPlayerTravelPublisher.subscribe(self)
@@ -79,6 +81,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         case friendlyProfileBucket
         case hostileBuildTokens
         case restorerBuildTokens
+        case friendlyBuildTokens
         // TODO: Other build token caches
     }
 
@@ -94,6 +97,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         
         self.hostileBuildTokenCache = dataObject.getObjectArray(Field.hostileBuildTokens.rawValue, type: BuildTokenCache.self)
         self.restorerBuildTokenCache = dataObject.getObjectArray(Field.restorerBuildTokens.rawValue, type: BuildTokenCache.self)
+        self.friendlyBuildTokenCache = dataObject.getObjectArray(Field.friendlyBuildTokens.rawValue, type: BuildTokenCache.self)
         // TODO: Other build token caches
         
         OnPlayerTravelPublisher.subscribe(self)
@@ -120,6 +124,10 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
             .add(
                 key: Field.restorerBuildTokens.rawValue,
                 value: self.activeRestorerFactories.map({ $0.value.exportBuildTokenCache(regionKey: $0.key) }) + self.restorerBuildTokenCache
+            )
+            .add(
+                key: Field.friendlyBuildTokens.rawValue,
+                value: self.activeFriendlyFactories.map({ $0.value.exportBuildTokenCache(regionKey: $0.key) }) + self.friendlyBuildTokenCache
             )
             // TODO: Other build token caches
     }
@@ -150,7 +158,6 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
             // (Consumable factory doesn't use profiles)
             // (ShopKeeper factory doesn't maintain a supply)
             // (Enhancer factory doesn't maintain a supply)
-        self.activeFriendlyFactories.forEach({ $0.value.recycleProfiles() })
         
         // Remove all active factories
         self.activeWeaponFactories.removeAll()
@@ -311,6 +318,15 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         }
         assert(self.restorerBuildTokenCache.isEmpty, "Cache couldn't be restored")
         self.restorerBuildTokenCache.removeAll() // After recreating the factories, if any couldn't be restored, they never will
+        
+        for cache in self.friendlyBuildTokenCache {
+            if let factory = self.activeFriendlyFactories[cache.regionKey] {
+                factory.importSerialisedTokens(cache)
+                self.friendlyBuildTokenCache.removeAll(where: { $0.regionKey == cache.regionKey })
+            }
+        }
+        assert(self.friendlyBuildTokenCache.isEmpty, "Cache couldn't be restored")
+        self.friendlyBuildTokenCache.removeAll() // After recreating the factories, if any couldn't be restored, they never will
         
         // TODO: Other build token caches
         

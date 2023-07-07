@@ -9,3 +9,4 @@
     * Foe: a regular hostile
     * Interactor: a "friendly" npc
     * NPC: A foe or an interactor (a non-playable character)
+* Merge all json files into one mega file - makes no sense to keep it as seperate files

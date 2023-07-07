@@ -9,12 +9,23 @@ import Foundation
 
 class FriendlyFactory {
     
+    private enum BuildToken: String {
+        case goldOrRestorationFriendly          // 01
+        case dragonSlayerFriendly               // 02
+        case healthForGoldFriendly              // 03
+        case shivFriendly                       // 04
+        case sellPotionsFriendly                // 05
+        case maxPointsForArmorPointsFriendly    // 06
+        case goldBlessingOrCurseFriendly        // 07
+        case weaponDamageOrPotionCountFriendly  // 08
+        case freeItemsFriendly                  // 09
+    }
+    
     private let stage: Int
     private let regionTags: RegionTagAllocation
     private let friendlyProfileBucket: FriendlyProfileBucket
     private let lootFactory: LootFactoryBundle
-    private var friendlySupply = [Friendly]()
-    private var profilesInUse = [UUID: FriendlyProfile]()
+    private var buildTokenQueue = [BuildToken]()
     
     init(stage: Int, regionTags: RegionTagAllocation, friendlyProfileBucket: FriendlyProfileBucket, lootFactory: LootFactoryBundle) {
         self.stage = stage
@@ -23,81 +34,114 @@ class FriendlyFactory {
         self.lootFactory = lootFactory
     }
     
-    func recycleProfiles() {
-        for profile in self.profilesInUse.values {
-            self.friendlyProfileBucket.restoreProfile(profile)
+    func exportBuildTokenCache(regionKey: String) -> BuildTokenCache {
+        return BuildTokenCache(regionKey: regionKey, serialisedTokens: self.buildTokenQueue.map({ $0.rawValue }))
+    }
+    
+    func importSerialisedTokens(_ buildTokenCache: BuildTokenCache) {
+        let tokenStrings = buildTokenCache.serialisedTokens
+        for tokenString in tokenStrings {
+            if let restoredToken = BuildToken(rawValue: tokenString) {
+                self.buildTokenQueue.append(restoredToken)
+            }
         }
     }
     
-    private func buildFriendlies() {
-        var friendlies = [Friendly]()
-        
+    private func replenishTokens() {
+        var newTokens = [BuildToken]()
         // 01
-        self.addFriendly(to: &friendlies, method: Friendlies.goldOrRestorationFriendly, count: 3, tag: .generous)
+        newTokens.populate(count: 3, { .goldOrRestorationFriendly })
         // 02
-        self.addFriendly(to: &friendlies, method: Friendlies.dragonSlayerFriendly, count: 1, tag: .shop)
+        newTokens.populate(count: 1, { .dragonSlayerFriendly })
         // 03
-        self.addFriendly(to: &friendlies, method: Friendlies.healthForGoldFriendly, count: 3, tag: .sacrifice)
+        newTokens.populate(count: 3, { .healthForGoldFriendly })
         // 04
-        self.addFriendly(to: &friendlies, method: Friendlies.shivFriendly, count: 1, tag: .generous)
+        newTokens.populate(count: 1, { .shivFriendly })
         // 05
-        self.addFriendly(to: &friendlies, method: Friendlies.sellPotionsFriendly, count: 2, tag: .trade)
+        newTokens.populate(count: 2, { .sellPotionsFriendly })
         // 06
-        self.addFriendly(to: &friendlies, method: Friendlies.maxPointsForArmorPointsFriendly, count: 2, tag: .sacrifice)
+        newTokens.populate(count: 2, { .maxPointsForArmorPointsFriendly })
         // 07
-        self.addFriendly(to: &friendlies, method: Friendlies.goldBlessingOrCurseFriendly, count: 2, tag: .curse)
+        newTokens.populate(count: 2, { .goldBlessingOrCurseFriendly })
         // 08
-        self.addFriendly(to: &friendlies, method: Friendlies.weaponDamageOrPotionCountFriendly, count: 2, tag: .generous)
+        newTokens.populate(count: 2, { .weaponDamageOrPotionCountFriendly })
         // 09
-        self.addFriendly(to: &friendlies, method: Friendlies.freeItemsFriendly, count: 5, tag: .generous)
-        
-        friendlies.shuffle()
-        self.friendlySupply.appendToFront(contentsOf: friendlies)
+        newTokens.populate(count: 5, { .freeItemsFriendly })
+        newTokens.shuffle()
+        self.buildTokenQueue.appendToFront(contentsOf: newTokens)
     }
     
-    private func addFriendly(
-        to friendlies: inout [Friendly],
+    private func createFriendly() -> Friendly {
+        if self.buildTokenQueue.isEmpty {
+            self.replenishTokens()
+        }
+        let token = self.buildTokenQueue.popLast()!
+        switch token {
+        case .goldOrRestorationFriendly:
+            return self.buildFriendly(
+                method: Friendlies.goldOrRestorationFriendly,
+                tag: .generous
+            )
+        case .dragonSlayerFriendly:
+            return self.buildFriendly(
+                method: Friendlies.dragonSlayerFriendly,
+                tag: .shop
+            )
+        case .healthForGoldFriendly:
+            return self.buildFriendly(
+                method: Friendlies.healthForGoldFriendly,
+                tag: .sacrifice
+            )
+        case .shivFriendly:
+            return self.buildFriendly(
+                method: Friendlies.shivFriendly,
+                tag: .generous
+            )
+        case .sellPotionsFriendly:
+            return self.buildFriendly(
+                method: Friendlies.sellPotionsFriendly,
+                tag: .trade
+            )
+        case .maxPointsForArmorPointsFriendly:
+            return self.buildFriendly(
+                method: Friendlies.maxPointsForArmorPointsFriendly,
+                tag: .sacrifice
+            )
+        case .goldBlessingOrCurseFriendly:
+            return self.buildFriendly(
+                method: Friendlies.goldBlessingOrCurseFriendly,
+                tag: .curse
+            )
+        case .weaponDamageOrPotionCountFriendly:
+            return self.buildFriendly(
+                method: Friendlies.weaponDamageOrPotionCountFriendly,
+                tag: .generous
+            )
+        case .freeItemsFriendly:
+            return Friendlies.freeItemsFriendly(
+                profile: self.friendlyProfileBucket.grabProfile(
+                    areaTag: self.regionTags.getTag(),
+                    friendlyTag: .generous
+                ),
+                stage: self.stage,
+                lootFactory: self.lootFactory
+            )
+        }
+    }
+    
+    private func buildFriendly(
         method: (_ profile: FriendlyProfile, _ stage: Int) -> Friendly,
-        count: Int,
         tag: FriendlyProfileTag
-    ) {
-        friendlies.populate(count: count) {
-            method(self.friendlyProfileBucket.grabProfile(areaTag: self.regionTags.getTag(), friendlyTag: tag), self.stage)
-        }
-    }
-    
-    private func addFriendly(
-        to friendlies: inout [Friendly],
-        method: (_ profile: FriendlyProfile, _ stage: Int, _ lootFactory: LootFactoryBundle) -> Friendly,
-        count: Int,
-        tag: FriendlyProfileTag
-    ) {
-        friendlies.populate(count: count) {
-            let profile = self.friendlyProfileBucket.grabProfile(areaTag: self.regionTags.getTag(), friendlyTag: tag)
-            let friendly = method(profile, self.stage, self.lootFactory)
-            self.profilesInUse[friendly.id] = profile
-            return friendly
-        }
+    ) -> Friendly {
+        return method(self.friendlyProfileBucket.grabProfile(areaTag: self.regionTags.getTag(), friendlyTag: tag), self.stage)
     }
     
     func deliver() -> Friendly {
-        if self.friendlySupply.isEmpty {
-            self.buildFriendlies()
-        }
-        let friendly = self.friendlySupply.popLast()!
-        self.profilesInUse.removeValue(forKey: friendly.id)
-        return friendly
+        return self.createFriendly()
     }
     
     func deliver(count: Int) -> [Friendly] {
-        let initialCount = self.friendlySupply.count
-        while self.friendlySupply.count < count {
-            self.buildFriendlies()
-            assert(initialCount < self.friendlySupply.count, "No friendlies being generated - infinite loop")
-        }
-        let friendlies = self.friendlySupply.takeLast(count)
-        friendlies.forEach({ self.profilesInUse.removeValue(forKey: $0.id) })
-        return friendlies
+        return Array(count: count, populateWith: self.createFriendly())
     }
     
 }

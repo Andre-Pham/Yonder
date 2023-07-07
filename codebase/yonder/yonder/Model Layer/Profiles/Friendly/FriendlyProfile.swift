@@ -9,18 +9,18 @@ import Foundation
 
 class FriendlyProfile: AreaThemedProfile {
     
-    public let id: Int
+    public let id: String
     public let friendlyName: String
     public let friendlyDescription: String
     public let regionTags: [RegionProfileTag]
-    public let friendlyTag: FriendlyProfileTag
+    public let friendlyTags: [FriendlyProfileTag]
     
-    init(id: Int, friendlyName: String, friendlyDescription: String, regionTags: [RegionProfileTag], friendlyTag: FriendlyProfileTag) {
+    init(id: String, friendlyName: String, friendlyDescription: String, regionTags: [RegionProfileTag], friendlyTags: [FriendlyProfileTag]) {
         self.id = id
         self.friendlyName = friendlyName
         self.friendlyDescription = friendlyDescription
         self.regionTags = regionTags
-        self.friendlyTag = friendlyTag
+        self.friendlyTags = friendlyTags
     }
     
 }
