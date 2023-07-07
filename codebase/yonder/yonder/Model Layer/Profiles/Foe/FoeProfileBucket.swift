@@ -111,68 +111,41 @@ class FoeProfileBucket: Storable {
 
 fileprivate class ProfileRepository {
     
-    private static let INDEX_FILENAME = "NPC-DATA-INDEX"
-    
     public static var profiles: [FoeProfile] {
-        guard let indexURL = Bundle.main.url(forResource: Self.INDEX_FILENAME, withExtension: "json"),
-              let indexData = try? Data(contentsOf: indexURL) else {
-            fatalError("Index file could not be loaded")
-        }
-        guard let indexJSON = try? JSON(data: indexData) else {
-            fatalError("JSON could not be retrieved from index file")
-        }
-        guard let foeIDs: [String] = indexJSON["foe_ids"].arrayObject as? [String] else {
-            fatalError("Foe IDs couldn't be read from index file")
-        }
+        let util = ProfileRepoUtil()
+        let foeIDs = util.getFoeContentIDs()
         var result = [FoeProfile]()
         for id in foeIDs {
-            guard let foeMetadataURL = Bundle.main.url(forResource: id, withExtension: "json"),
-                  let foeMetadataData = try? Data(contentsOf: foeMetadataURL) else {
-                assertionFailure("Metadata file for foe \(id) could not be loaded")
+            guard let foeMetadata = util.getFoeMetadata(contentID: id) else {
+                assertionFailure("Couldn't retrieve foe \(id) metadata")
                 continue
             }
-            guard let foeMetadataJSON = try? JSON(data: foeMetadataData) else {
-                assertionFailure("JSON could not be retrieved from foe \(id) metadata file")
-                continue
-            }
-            guard let name = foeMetadataJSON["name"].string,
-                  let description = foeMetadataJSON["description"].string,
-                  let type = foeMetadataJSON["type"].string,
-                  let brute = foeMetadataJSON["brute"].bool,
-                  let thief = foeMetadataJSON["thief"].bool,
-                  let acute = foeMetadataJSON["acute"].bool,
-                  let obtuse = foeMetadataJSON["obtuse"].bool,
-                  let checkID = foeMetadataJSON["id"].string else {
-                assertionFailure("Data from foe \(id) could not be read")
-                continue
-            }
-            assert(id == checkID, "IDs should match between filename and file json for foe \(id)")
-            guard let regionTag = RegionProfileTag(rawValue: type) else {
-                assertionFailure("Foe metadata has type \(type) with no corresponding RegionProfileTag")
+            guard let regionTag = RegionProfileTag(rawValue: foeMetadata.type) else {
+                assertionFailure("Foe metadata has type \(foeMetadata.type) with no corresponding RegionProfileTag")
                 continue
             }
             var foeTags = [FoeProfileTag]()
-            assert(!(acute && obtuse), "A foe cannot be both acute and obtuse at once (see foe \(id))")
-            assert(!(brute && thief), "A foe cannot be both a brute and a thief at once (see foe \(id))")
-            if brute {
+            assert(!(foeMetadata.acute && foeMetadata.obtuse), "A foe cannot be both acute and obtuse at once (see foe \(id))")
+            assert(!(foeMetadata.brute && foeMetadata.thief), "A foe cannot be both a brute and a thief at once (see foe \(id))")
+            if foeMetadata.brute {
                 foeTags.append(.brute)
             }
-            if thief {
+            if foeMetadata.thief {
                 foeTags.append(.goblin)
             }
-            if acute {
+            if foeMetadata.acute {
                 foeTags.append(.acute)
             }
-            if obtuse {
+            if foeMetadata.obtuse {
                 foeTags.append(.obtuse)
             }
             if foeTags.isEmpty {
                 foeTags.append(.none)
             }
             result.append(FoeProfile(
-                id: id,
-                foeName: name,
-                foeDescription: description,
+                id: foeMetadata.id,
+                foeName: foeMetadata.name,
+                foeDescription: foeMetadata.description,
                 foeTags: foeTags,
                 regionTags: [regionTag]
             ))

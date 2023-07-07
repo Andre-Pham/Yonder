@@ -2321,6 +2321,7 @@
 		B6D472402A530DCC0002CEEC /* BuildTokenCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4723F2A530DCC0002CEEC /* BuildTokenCache.swift */; };
 		B6D472452A5582AF0002CEEC /* InteractorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D472442A5582AF0002CEEC /* InteractorProfile.swift */; };
 		B6D4726B2A5898540002CEEC /* BuildTokenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4726A2A5898540002CEEC /* BuildTokenFactory.swift */; };
+		B6D4726D2A589E980002CEEC /* ProfileRepoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4726C2A589E980002CEEC /* ProfileRepoUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -4658,6 +4659,7 @@
 		B6D4723F2A530DCC0002CEEC /* BuildTokenCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildTokenCache.swift; sourceTree = "<group>"; };
 		B6D472442A5582AF0002CEEC /* InteractorProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorProfile.swift; sourceTree = "<group>"; };
 		B6D4726A2A5898540002CEEC /* BuildTokenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildTokenFactory.swift; sourceTree = "<group>"; };
+		B6D4726C2A589E980002CEEC /* ProfileRepoUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepoUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -6130,6 +6132,7 @@
 			children = (
 				65C2CDDF2937B6DE0028DC9C /* AreaThemedProfile.swift */,
 				B6D472442A5582AF0002CEEC /* InteractorProfile.swift */,
+				B6D4726C2A589E980002CEEC /* ProfileRepoUtil.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -10240,6 +10243,7 @@
 				65D7A44D2779D64100075542 /* NoArea.swift in Sources */,
 				65CAC18027F942F400A95D92 /* YonderButtonAlignment.swift in Sources */,
 				65DC5FB428DC20DC00E5F904 /* PotionDamageBuff.swift in Sources */,
+				B6D4726D2A589E980002CEEC /* ProfileRepoUtil.swift in Sources */,
 				B6C37DF92A32B4B1004D18A8 /* AnimationSequence.swift in Sources */,
 				656FD8E42919B5B100F923E9 /* AllWeapons.swift in Sources */,
 				651B7769293D487500827CB5 /* DotsLoadingScreen.swift in Sources */,

@@ -86,50 +86,25 @@ class RestorerProfileBucket: Storable, InteractorProfileBucket {
 
 fileprivate class ProfileRepository {
     
-    private static let INDEX_FILENAME = "NPC-DATA-INDEX"
-    
     public static var profiles: [RestorerProfile] {
-        guard let indexURL = Bundle.main.url(forResource: Self.INDEX_FILENAME, withExtension: "json"),
-              let indexData = try? Data(contentsOf: indexURL) else {
-            fatalError("Index file could not be loaded")
-        }
-        guard let indexJSON = try? JSON(data: indexData) else {
-            fatalError("JSON could not be retrieved from index file")
-        }
-        guard let interactorIDs: [String] = indexJSON["interactor_ids"].arrayObject as? [String] else {
-            fatalError("Interactor IDs couldn't be read from index file")
-        }
+        let util = ProfileRepoUtil()
+        let interactorIDs = util.getInteractorContentIDs()
         var result = [RestorerProfile]()
         for id in interactorIDs {
-            guard let interactorMetadataURL = Bundle.main.url(forResource: id, withExtension: "json"),
-                  let interactorMetadataData = try? Data(contentsOf: interactorMetadataURL) else {
-                assertionFailure("Metadata file for interactor \(id) could not be loaded")
+            guard let interactorMetadata = util.getInteractorMetadata(contentID: id) else {
+                assertionFailure("Couldn't retrieve interactor \(id) metadata")
                 continue
             }
-            guard let interactorMetadataJSON = try? JSON(data: interactorMetadataData) else {
-                assertionFailure("JSON could not be retrieved from foe \(id) metadata file")
-                continue
-            }
-            guard let name = interactorMetadataJSON["name"].string,
-                  let description = interactorMetadataJSON["description"].string,
-                  let type = interactorMetadataJSON["type"].string,
-                  let roles: [String] = interactorMetadataJSON["roles"].arrayObject as? [String],
-                  let restorerTags: [String] = interactorMetadataJSON["restorerTags"].arrayObject as? [String],
-                  let checkID = interactorMetadataJSON["id"].string else {
-                assertionFailure("Data from foe \(id) could not be read")
-                continue
-            }
-            assert(id == checkID, "IDs should match between filename and file json for interactor \(id)")
-            guard let regionTag = RegionProfileTag(rawValue: type) else {
-                assertionFailure("Interactor metadata has type \(type) with no corresponding RegionProfileTag")
-                continue
-            }
-            guard roles.contains("restorer") else {
+            guard interactorMetadata.roles.contains("restorer") else {
                 // We're only interested in restorers
                 continue
             }
+            guard let regionTag = RegionProfileTag(rawValue: interactorMetadata.type) else {
+                assertionFailure("Interactor metadata has type \(interactorMetadata.type) with no corresponding RegionProfileTag")
+                continue
+            }
             var restoreOptions = [Restorer.RestoreOption]()
-            for tag in restorerTags {
+            for tag in interactorMetadata.restorerTags {
                 if tag == "armor" {
                     restoreOptions.append(.armorPoints)
                 } else if tag == "health" {
@@ -140,8 +115,8 @@ fileprivate class ProfileRepository {
             }
             result.append(RestorerProfile(
                 id: id,
-                restorerName: name,
-                restorerDescription: description,
+                restorerName: interactorMetadata.name,
+                restorerDescription: interactorMetadata.description,
                 regionTags: [regionTag],
                 restoreOptions: restoreOptions
             ))
