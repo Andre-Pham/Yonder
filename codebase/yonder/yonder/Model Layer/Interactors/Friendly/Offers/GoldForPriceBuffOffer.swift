@@ -9,7 +9,9 @@ import Foundation
 
 class GoldForPriceBuffOffer: Offer {
     
+    /// Gold the player receives
     public let gold: Int
+    /// What price the player pays from now on (e.g. 0.5 means from now on prices are 50% lower)
     public let priceFraction: Double
     
     init(gold: Int, priceFraction: Double) {
@@ -56,7 +58,7 @@ class GoldForPriceBuffOffer: Offer {
     }
     
     func meetsOfferRequirements(player: Player) -> Bool {
-        return player.canAfford(price: self.gold)
+        return player.canAfford(price: -self.gold)
     }
     
 }
