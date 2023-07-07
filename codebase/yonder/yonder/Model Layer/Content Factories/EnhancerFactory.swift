@@ -93,7 +93,7 @@ class EnhancerFactory {
             offers = Array(offers.prefix(offerCount))
         }
         return Enhancer(
-            contentID: nil, // TODO: Add content id
+            contentID: profile.id,
             name: profile.enhancerName,
             description: profile.enhancerDescription,
             offers: offers
@@ -105,11 +105,10 @@ class EnhancerFactory {
     }
     
     func deliver(count: Int) -> [Enhancer] {
-        var enhancers = [Enhancer]()
-        enhancers.populate(count: count) {
-            self.buildEnhancer(stage: self.stage, tags: self.regionTags)
-        }
-        return enhancers
+        return Array(
+            count: count,
+            populateWith: self.buildEnhancer(stage: self.stage, tags: self.regionTags)
+        )
     }
     
 }

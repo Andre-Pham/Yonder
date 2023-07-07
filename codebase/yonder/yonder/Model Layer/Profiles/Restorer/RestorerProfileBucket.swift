@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 
 class RestorerProfileBucket: Storable, InteractorProfileBucket {
     

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 
 class FriendlyProfileBucket: Storable, InteractorProfileBucket {
     

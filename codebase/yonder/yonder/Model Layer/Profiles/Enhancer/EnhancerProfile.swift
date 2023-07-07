@@ -9,12 +9,12 @@ import Foundation
 
 class EnhancerProfile: AreaThemedProfile {
     
-    public let id: Int
+    public let id: String
     public let enhancerName: String
     public let enhancerDescription: String
     public let regionTags: [RegionProfileTag]
     
-    init(id: Int, enhancerName: String, enhancerDescription: String, regionTags: [RegionProfileTag]) {
+    init(id: String, enhancerName: String, enhancerDescription: String, regionTags: [RegionProfileTag]) {
         self.id = id
         self.enhancerName = enhancerName
         self.enhancerDescription = enhancerDescription
