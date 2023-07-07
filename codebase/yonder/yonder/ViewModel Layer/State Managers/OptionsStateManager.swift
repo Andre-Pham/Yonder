@@ -86,8 +86,11 @@ class OptionsStateManager: ObservableObject {
         
         // Add Subscribers
         
-        // If there is a foe, and the foe dies, return to options view
+        // Subscribe to location changes
         self.playerViewModel.$locationViewModel.sink(receiveValue: { newValue in
+            // Upon location change, close actions
+            self.closeActions()
+            // If there is a foe, and the foe dies, return to options view
             if let foeViewModel = newValue.getFoeViewModel() {
                 foeViewModel.$isDead.sink(receiveValue: { newValue in
                     if newValue {
