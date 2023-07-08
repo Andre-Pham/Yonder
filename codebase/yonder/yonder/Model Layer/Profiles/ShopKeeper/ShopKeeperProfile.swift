@@ -9,12 +9,12 @@ import Foundation
 
 class ShopKeeperProfile: AreaThemedProfile {
     
-    public let id: Int
+    public let id: String
     public let shopKeeperName: String
     public let shopKeeperDescription: String
     public let regionTags: [RegionProfileTag]
     
-    init(id: Int, shopKeeperName: String, shopKeeperDescription: String, regionTags: [RegionProfileTag]) {
+    init(id: String, shopKeeperName: String, shopKeeperDescription: String, regionTags: [RegionProfileTag]) {
         self.id = id
         self.shopKeeperName = shopKeeperName
         self.shopKeeperDescription = shopKeeperDescription

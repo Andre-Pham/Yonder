@@ -44,7 +44,7 @@ class ShopKeeperFactory {
             }
         }
         return ShopKeeper(
-            contentID: nil, // TODO: Add content id
+            contentID: profile.id,
             name: profile.shopKeeperName,
             description: profile.shopKeeperDescription,
             purchasableItems: purchasableItems
@@ -56,11 +56,10 @@ class ShopKeeperFactory {
     }
     
     func deliver(count: Int) -> [ShopKeeper] {
-        var shopKeepers = [ShopKeeper]()
-        shopKeepers.populate(count: count) {
-            self.buildShopKeeper(stage: self.stage, tags: self.regionTags)
-        }
-        return shopKeepers
+        return Array(
+            count: count,
+            populateWith: self.buildShopKeeper(stage: self.stage, tags: self.regionTags)
+        )
     }
     
 }

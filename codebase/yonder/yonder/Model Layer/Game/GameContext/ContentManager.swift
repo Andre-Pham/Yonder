@@ -20,7 +20,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
     
     private var interactorProfileBuckets: [InteractorProfileBucket] {
         return [
-            // TODO: ShopKeeper
+            self.shopKeeperProfileBucket,
             self.enhancerProfileBucket,
             self.restorerProfileBucket,
             self.friendlyProfileBucket,
@@ -44,7 +44,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
     // TODO: Accessory build token cache
     // TODO: Consumable build token cache
     private var hostileBuildTokenCache: [BuildTokenCache]
-    // TODO: ShopKeeper build token cache
+    // > ShopKeepers don't have build tokens
     // > Enhancers don't have build tokens
     private var restorerBuildTokenCache: [BuildTokenCache]
     private var friendlyBuildTokenCache: [BuildTokenCache]
@@ -60,6 +60,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         self.friendlyProfileBucket = FriendlyProfileBucket()
         
         self.hostileBuildTokenCache = [BuildTokenCache]()
+        // > ShopKeepers don't have build tokens
         // > Enhancers don't have build tokens
         self.restorerBuildTokenCache = [BuildTokenCache]()
         self.friendlyBuildTokenCache = [BuildTokenCache]()
@@ -98,6 +99,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         self.friendlyProfileBucket = dataObject.getObject(Field.friendlyProfileBucket.rawValue, type: FriendlyProfileBucket.self)
         
         self.hostileBuildTokenCache = dataObject.getObjectArray(Field.hostileBuildTokens.rawValue, type: BuildTokenCache.self)
+        // > ShopKeepers don't have build tokens
         // > Enhancers don't have build tokens
         self.restorerBuildTokenCache = dataObject.getObjectArray(Field.restorerBuildTokens.rawValue, type: BuildTokenCache.self)
         self.friendlyBuildTokenCache = dataObject.getObjectArray(Field.friendlyBuildTokens.rawValue, type: BuildTokenCache.self)
@@ -124,6 +126,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
                 key: Field.hostileBuildTokens.rawValue,
                 value: self.activeHostileFactories.map({ $0.value.exportBuildTokenCache(regionKey: $0.key) }) + self.hostileBuildTokenCache
             )
+            // > ShopKeepers don't have build tokens
             // > Enhancers don't have build tokens
             .add(
                 key: Field.restorerBuildTokens.rawValue,
@@ -160,7 +163,6 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         self.activeArmorFactories.forEach({ $0.value.recycleProfiles() })
         self.activeAccessoryFactories.forEach({ $0.value.recycleProfiles() })
             // (Consumable factory doesn't use profiles)
-            // (ShopKeeper factory doesn't maintain a supply)
         
         // Remove all active factories
         self.activeWeaponFactories.removeAll()
@@ -305,6 +307,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
     
     private func restoreAllAvailableBuildTokenCaches() {
         self.restoreBuildTokenCaches(for: self.activeHostileFactories, caches: &self.hostileBuildTokenCache)
+        // > ShopKeepers don't have build tokens
         // > Enhancers don't have build tokens
         self.restoreBuildTokenCaches(for: self.activeRestorerFactories, caches: &self.restorerBuildTokenCache)
         self.restoreBuildTokenCaches(for: self.activeFriendlyFactories, caches: &self.friendlyBuildTokenCache)
