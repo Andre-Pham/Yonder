@@ -26,7 +26,9 @@ struct InspectNPCBody<Content: View>: View {
             
             InspectNPCTypeView()
             
-            YonderText(text: self.description, size: .inspectSheetBody)
+            if !self.description.isEmpty {
+                YonderText(text: self.description, size: .inspectSheetBody)
+            }
             
             InspectSectionSpacingView()
             

@@ -25,7 +25,9 @@ struct HostileInspectView: View {
                     iconSize: .inspectSheet)
             }
             
-            YonderText(text: self.foeViewModel.description, size: .inspectSheetBody)
+            if !self.foeViewModel.description.isEmpty {
+                YonderText(text: self.foeViewModel.description, size: .inspectSheetBody)
+            }
             
             InspectSectionSpacingView()
             

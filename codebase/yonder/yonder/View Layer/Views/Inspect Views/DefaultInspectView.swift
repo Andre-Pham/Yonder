@@ -15,7 +15,9 @@ struct DefaultInspectView: View {
         InspectBody {
             YonderText(text: self.name, size: .inspectSheetTitle)
             
-            YonderText(text: self.description, size: .inspectSheetBody)
+            if !self.description.isEmpty {
+                YonderText(text: self.description, size: .inspectSheetBody)
+            }
         }
     }
 }

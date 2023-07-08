@@ -36,7 +36,9 @@ struct AccessoryInspectView: View {
                 InspectSectionSpacingView()
             }
             
-            YonderText(text: self.accessoryViewModel.description, size: .inspectSheetBody)
+            if !self.accessoryViewModel.description.isEmpty {
+                YonderText(text: self.accessoryViewModel.description, size: .inspectSheetBody)
+            }
         }
     }
 }

@@ -26,7 +26,9 @@ struct ArmorInspectView: View {
             
             InspectSectionSpacingView()
             
-            YonderText(text: self.armorViewModel.description, size: .inspectSheetBody)
+            if !self.armorViewModel.description.isEmpty {
+                YonderText(text: self.armorViewModel.description, size: .inspectSheetBody)
+            }
         }
     }
 }
