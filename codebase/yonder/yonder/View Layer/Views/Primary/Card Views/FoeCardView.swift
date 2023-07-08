@@ -21,7 +21,7 @@ struct FoeCardView: View {
     
     var body: some View {
         CardBody(name: foeViewModel.name) {
-            CardInteractorTypeView()
+            CardNPCTypeView()
             
             if let typeName = self.foeViewModel.typeName, let typeImage = self.foeViewModel.typeImage {
                 YonderIconTextPair(

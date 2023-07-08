@@ -1,5 +1,5 @@
 //
-//  CardInteractorTypeView.swift
+//  CardNPCTypeView.swift
 //  yonder
 //
 //  Created by Andre Pham on 15/4/2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CardInteractorTypeView: View {
+struct CardNPCTypeView: View {
     @StateObject private var playerViewModel = GameManager.instance.playerVM
     private var location: LocationViewModel {
         return self.playerViewModel.locationViewModel
@@ -23,13 +23,13 @@ struct CardInteractorTypeView: View {
     }
 }
 
-struct CardInteractorSubheading_Previews: PreviewProvider {
+struct CardNPCTypeView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            CardInteractorTypeView()
+            CardNPCTypeView()
         }
     }
 }

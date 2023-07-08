@@ -13,7 +13,7 @@ struct RestorerCardView: View {
     
     var body: some View {
         CardBody(name: self.restorerViewModel.name) {
-            CardInteractorTypeView()
+            CardNPCTypeView()
             
             ForEach(self.restorerViewModel.options, id: \.id) { option in
                 YonderTextNumeralHStack {

@@ -365,7 +365,7 @@
 		658D1E822940DFED006F1CC0 /* BuffProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658D1E812940DFED006F1CC0 /* BuffProxy.swift */; };
 		658EDF6328086D9900D398C0 /* YonderFeedbackPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658EDF6228086D9900D398C0 /* YonderFeedbackPopup.swift */; };
 		658EDF6528089EF300D398C0 /* PopupStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658EDF6428089EF300D398C0 /* PopupStateManager.swift */; };
-		658EDF692809A89D00D398C0 /* CardInteractorTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658EDF682809A89D00D398C0 /* CardInteractorTypeView.swift */; };
+		658EDF692809A89D00D398C0 /* CardNPCTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658EDF682809A89D00D398C0 /* CardNPCTypeView.swift */; };
 		658EDF6B2809B2CB00D398C0 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658EDF6A2809B2CB00D398C0 /* ViewRouter.swift */; };
 		6595036927ED7AF100A24B7F /* PlayerInspectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6595036827ED7AF100A24B7F /* PlayerInspectView.swift */; };
 		6595036B27ED7CDF00A24B7F /* InspectBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6595036A27ED7CDF00A24B7F /* InspectBody.swift */; };
@@ -2702,7 +2702,7 @@
 		658D1E812940DFED006F1CC0 /* BuffProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuffProxy.swift; sourceTree = "<group>"; };
 		658EDF6228086D9900D398C0 /* YonderFeedbackPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderFeedbackPopup.swift; sourceTree = "<group>"; };
 		658EDF6428089EF300D398C0 /* PopupStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupStateManager.swift; sourceTree = "<group>"; };
-		658EDF682809A89D00D398C0 /* CardInteractorTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInteractorTypeView.swift; sourceTree = "<group>"; };
+		658EDF682809A89D00D398C0 /* CardNPCTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNPCTypeView.swift; sourceTree = "<group>"; };
 		658EDF6A2809B2CB00D398C0 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		6595036827ED7AF100A24B7F /* PlayerInspectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInspectView.swift; sourceTree = "<group>"; };
 		6595036A27ED7CDF00A24B7F /* InspectBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectBody.swift; sourceTree = "<group>"; };
@@ -5062,7 +5062,7 @@
 		653DD71B27F8375D004A3B28 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				658EDF682809A89D00D398C0 /* CardInteractorTypeView.swift */,
+				658EDF682809A89D00D398C0 /* CardNPCTypeView.swift */,
 				653DD70F27F835B5004A3B28 /* CardRowView.swift */,
 				653397642827D62D00EE874D /* CardPriceRangeView.swift */,
 				653397662828CAD600EE874D /* CardOfferCountView.swift */,
@@ -10656,7 +10656,7 @@
 				65CAC17A27F935EB00A95D92 /* InventoryStateManager.swift in Sources */,
 				6598739228D5D44500BDFB8F /* Usable.swift in Sources */,
 				65EFC04C29365E6900B8E677 /* BossAreaPoolFactory.swift in Sources */,
-				658EDF692809A89D00D398C0 /* CardInteractorTypeView.swift in Sources */,
+				658EDF692809A89D00D398C0 /* CardNPCTypeView.swift in Sources */,
 				65C37A7F285A3871006997EE /* Strings.swift in Sources */,
 				B6C37E202A3374BD004D18A8 /* NoAnimationSequence.swift in Sources */,
 				655146892747E73300257181 /* Potion.swift in Sources */,
