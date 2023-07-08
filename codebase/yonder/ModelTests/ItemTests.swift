@@ -12,7 +12,7 @@ final class ItemTests: XCTestCase {
 
     let testSession = TestSession.instance // Begin test session
     let player = Player(maxHealth: 500, location: NoLocation())
-    let foe = Foe(maxHealth: 500, weapon: BaseAttack(damage: 0), loot: LootOptions(LootBag(), LootBag(), LootBag()))
+    let foe = Foe(contentID: nil, maxHealth: 500, weapon: BaseAttack(damage: 0), loot: LootOptions(LootBag(), LootBag(), LootBag()))
     
     func testIndicativeDamage() throws {
         let weapon = Weapon(basePill: DamageBasePill(damage: 70), durabilityPill: InfiniteDurabilityPill(), buffPills: [ArmorDamagePercentBuffPill(damageFraction: 2.0)])

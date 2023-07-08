@@ -12,7 +12,7 @@ class PotionTests: XCTestCase {
 
     let testSession = TestSession.instance // Begin test session
     let player = Player(maxHealth: 500, location: NoLocation())
-    let foeZeroAttack = Foe(maxHealth: 500, weapon: BaseAttack(damage: 0), loot: NoLootOptions())
+    let foeZeroAttack = Foe(contentID: nil, maxHealth: 500, weapon: BaseAttack(damage: 0), loot: NoLootOptions())
     
     // MARK: - Basic
     

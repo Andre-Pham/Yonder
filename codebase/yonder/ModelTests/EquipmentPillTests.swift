@@ -12,8 +12,8 @@ class EquipmentPillTests: XCTestCase {
     
     let testSession = TestSession.instance // Begin test session
     let player = Player(maxHealth: 500, location: NoLocation())
-    let foe = Foe(maxHealth: 500, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
-    let foeZeroAttack = Foe(maxHealth: 500, weapon: BaseAttack(damage: 0), loot: NoLootOptions())
+    let foe = Foe(contentID: nil, maxHealth: 500, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
+    let foeZeroAttack = Foe(contentID: nil, maxHealth: 500, weapon: BaseAttack(damage: 0), loot: NoLootOptions())
     let accessory = Accessory(name: "Test Accessory", description: "For testing.", type: .regular, healthBonus: 0, armorPointsBonus: 0, buffs: [], equipmentPills: [])
     
     // MARK: - Basic

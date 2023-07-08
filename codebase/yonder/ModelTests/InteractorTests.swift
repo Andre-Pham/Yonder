@@ -14,7 +14,7 @@ class InteractorTests: XCTestCase {
     let player = Player(maxHealth: 200, location: NoLocation())
 
     func testPurchasing() throws {
-        let shopKeeper = ShopKeeper(purchasableItems: [
+        let shopKeeper = ShopKeeper(contentID: nil, purchasableItems: [
             PurchasableItem(item: HealthRestorationPotion(tier: .IV, potionCount: 1), stock: 1),
             PurchasableItem(item: Armor(name: "Cool Armor", description: "Cool.", type: .body, armorPoints: 200, armorBuffs: [], equipmentPills: []), stock: 1)
         ])
@@ -43,7 +43,7 @@ class InteractorTests: XCTestCase {
     
     func testShopKeeper() throws {
         self.player.modifyGold(by: 10000)
-        let shopKeeper = ShopKeeper(purchasableItems: [
+        let shopKeeper = ShopKeeper(contentID: nil, purchasableItems: [
             PurchasableItem(item: DamagePotion(tier: .III, potionCount: 2), stock: 2)
         ])
         let price = shopKeeper.purchasableItems[0].price
@@ -61,7 +61,7 @@ class InteractorTests: XCTestCase {
         self.player.modifyGold(by: 201)
         let weapon = Weapon(basePill: DamageBasePill(damage: 100), durabilityPill: DecrementDurabilityPill(durability: 5))
         self.player.addWeapon(weapon)
-        let enhancer = Enhancer(offers: [WeaponDamageEnhanceOffer(price: 200, damage: 50)])
+        let enhancer = Enhancer(contentID: nil, offers: [WeaponDamageEnhanceOffer(price: 200, damage: 50)])
         enhancer.enhanceOffers.first?.acceptOffer(player: self.player, enhanceableID: self.player.weapons.first!.id)
         XCTAssertEqual(self.player.gold, 1)
         XCTAssertEqual(self.player.weapons.first!.damage, 150)
@@ -70,7 +70,7 @@ class InteractorTests: XCTestCase {
     func testRestorer() throws {
         self.player.modifyGold(by: 200)
         self.player.damage(for: 150)
-        let restorer = Restorer(options: [.health], pricePerHealthBundle: 5)
+        let restorer = Restorer(contentID: nil, options: [.health], pricePerHealthBundle: 5)
         restorer.restoreHealth(to: self.player, amount: 20)
         XCTAssertEqual(self.player.health, 70)
         XCTAssertEqual(self.player.gold, 200 - 5*20/Restorer.bundleSize)
@@ -78,6 +78,7 @@ class InteractorTests: XCTestCase {
     
     func testFriendly() throws {
         let friendly = Friendly(
+            contentID: nil,
             offers: [FreeGoldOffer(goldAmount: 500), FreeGoldOffer(goldAmount: 100), FreeGoldOffer(goldAmount: 1)],
             offerLimit: 2)
         friendly.acceptOffer(friendly.offers[0], for: self.player)

@@ -315,14 +315,18 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
     }
     
     private func restoreBuildTokenCaches(for factories: [String: any BuildTokenFactory], caches: inout [BuildTokenCache]) {
+        var failedCaches = 0
         for cache in caches {
             if let factory = factories[cache.regionKey] {
                 factory.importSerialisedTokens(cache)
-                caches.removeAll(where: { $0.regionKey == cache.regionKey })
+            } else {
+                failedCaches += 1
             }
         }
-        assert(caches.isEmpty, "Cache couldn't be restored")
-        caches.removeAll() // After recreating the factories, if any couldn't be restored, they never will
+        assert(failedCaches == 0, "Cache couldn't be restored")
+        // Caches have been restored - they can be discarded
+        // After recreating the factories, if any couldn't be restored, they never will be anyways
+        caches.removeAll()
     }
     
     func generateHostile(using locationContext: LocationContext) -> Foe {

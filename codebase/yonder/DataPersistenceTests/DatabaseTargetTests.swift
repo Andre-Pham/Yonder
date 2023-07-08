@@ -35,8 +35,8 @@ final class DatabaseTargetTests: XCTestCase {
         for database in self.databaseTargets {
             print("-- DATABASE \(database.self) --")
             
-            let foe1 = Foe(name: "Foe1", description: "Foe1 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
-            let foe2 = Foe(name: "Foe2", description: "Foe2 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
+            let foe1 = Foe(contentID: nil, name: "Foe1", description: "Foe1 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
+            let foe2 = Foe(contentID: nil, name: "Foe2", description: "Foe2 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
             XCTAssert(database.write(Record(data: foe1)))
             XCTAssert(database.write(Record(data: foe2)))
             let readFoes: [Foe] = database.read()
@@ -51,7 +51,7 @@ final class DatabaseTargetTests: XCTestCase {
         for database in self.databaseTargets {
             print("-- DATABASE \(database.self) --")
             
-            let foe = Foe(name: "Foe", description: "Foe description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
+            let foe = Foe(contentID: nil, name: "Foe", description: "Foe description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
             let record = Record(id: "testID", data: foe)
             XCTAssert(database.write(record))
             let readFoe: Foe? = database.read(id: "testID")
@@ -64,8 +64,8 @@ final class DatabaseTargetTests: XCTestCase {
         for database in self.databaseTargets {
             print("-- DATABASE \(database.self) --")
             
-            let foe1 = Foe(name: "Foe1", description: "Foe1 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
-            let foe2 = Foe(name: "Foe2", description: "Foe2 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
+            let foe1 = Foe(contentID: nil, name: "Foe1", description: "Foe1 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
+            let foe2 = Foe(contentID: nil, name: "Foe2", description: "Foe2 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
             let game = TestContent.testGame()
             XCTAssert(database.write(Record(data: game)))
             XCTAssert(database.write(Record(data: foe1)))
@@ -84,8 +84,8 @@ final class DatabaseTargetTests: XCTestCase {
         for database in self.databaseTargets {
             print("-- DATABASE \(database.self) --")
             
-            let foe1 = Foe(name: "Foe1", description: "Foe1 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
-            let foe2 = Foe(name: "Foe2", description: "Foe2 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
+            let foe1 = Foe(contentID: nil, name: "Foe1", description: "Foe1 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
+            let foe2 = Foe(contentID: nil, name: "Foe2", description: "Foe2 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
             XCTAssert(database.write(Record(id: "foe1", data: foe1)))
             XCTAssert(database.write(Record(id: "foe2", data: foe2)))
             XCTAssert(database.delete(id: "foe1"))
@@ -101,8 +101,8 @@ final class DatabaseTargetTests: XCTestCase {
         for database in self.databaseTargets {
             print("-- DATABASE \(database.self) --")
             
-            let foe1 = Foe(name: "Foe1", description: "Foe1 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
-            let foe2 = Foe(name: "Foe2", description: "Foe2 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
+            let foe1 = Foe(contentID: nil, name: "Foe1", description: "Foe1 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
+            let foe2 = Foe(contentID: nil, name: "Foe2", description: "Foe2 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
             XCTAssert(database.write(Record(id: "foe1", data: foe1)))
             XCTAssert(database.write(Record(id: "foe2", data: foe2)))
             // 2 foes and 1 metadata object
@@ -117,8 +117,8 @@ final class DatabaseTargetTests: XCTestCase {
         for database in self.databaseTargets {
             print("-- DATABASE \(database.self) --")
             
-            let foe1 = Foe(name: "Foe1", description: "Foe1 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
-            let foe2 = Foe(name: "Foe2", description: "Foe2 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
+            let foe1 = Foe(contentID: nil, name: "Foe1", description: "Foe1 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
+            let foe2 = Foe(contentID: nil, name: "Foe2", description: "Foe2 description.", maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
             XCTAssert(database.write(Record(id: "foe", data: foe1)))
             XCTAssert(database.write(Record(id: "foe", data: foe2)))
             let readFoe: Foe? = database.read(id: "foe")

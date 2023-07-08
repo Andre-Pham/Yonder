@@ -12,7 +12,7 @@ class WeaponEffectPillTests: XCTestCase {
 
     let testSession = TestSession.instance // Begin test session
     let player = Player(maxHealth: 500, location: NoLocation())
-    let foe = Foe(maxHealth: 500, weapon: BaseAttack(damage: 0), loot: NoLootOptions())
+    let foe = Foe(contentID: nil, maxHealth: 500, weapon: BaseAttack(damage: 0), loot: NoLootOptions())
     let weapon = Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: InfiniteDurabilityPill())
     
     // MARK: - Basic
@@ -31,7 +31,7 @@ class WeaponEffectPillTests: XCTestCase {
     func testGoblinEffectPill() throws {
         self.weapon.setDamage(to: 0)
         self.weapon.addEffect(GoblinEffectPill(goldPerSteal: 100, damage: 200))
-        let foe = Foe(maxHealth: 200, weapon: self.weapon, loot: NoLootOptions())
+        let foe = Foe(contentID: nil, maxHealth: 200, weapon: self.weapon, loot: NoLootOptions())
         self.player.setGold(to: 150)
         foe.attack(self.player)
         self.testSession.completeTurn(player: self.player, playerUsed: NoItem(), foe: foe)

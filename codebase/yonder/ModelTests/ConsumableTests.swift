@@ -12,7 +12,7 @@ class ConsumableTests: XCTestCase {
 
     let testSession = TestSession.instance // Begin test session
     let player = Player(maxHealth: 500, location: NoLocation())
-    let foe = Foe(maxHealth: 500, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
+    let foe = Foe(contentID: nil, maxHealth: 500, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
     
     func testConsumableRemoval() throws {
         self.player.addConsumable(MultiplyGoldConsumable(goldFraction: 2.0, amount: 1))

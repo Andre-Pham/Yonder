@@ -29,7 +29,7 @@ final class GameContextTests: XCTestCase {
     func testTurnManager() throws {
         // To test the turn manager, we check if the foe attacks back when the player attacks
         let player = Player(maxHealth: 100, location: NoLocation())
-        let foe = Foe(maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
+        let foe = Foe(contentID: nil, maxHealth: 100, weapon: BaseAttack(damage: 100), loot: NoLootOptions())
         player.useWeaponWhere(opposition: foe, weapon: BaseAttack(damage: 0))
         XCTAssert(player.isDead)
     }
