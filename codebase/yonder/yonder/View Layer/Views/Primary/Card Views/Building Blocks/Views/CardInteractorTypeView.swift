@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct CardInteractorTypeView: View {
+    @StateObject private var playerViewModel = GameManager.instance.playerVM
     private var location: LocationViewModel {
-        return GameManager.instance.playerLocationVM.locationViewModel
+        return self.playerViewModel.locationViewModel
     }
     
     var body: some View {
-        YonderIconTextPair(image: self.location.getTypeImage(), text: self.location.getTypeName(), size: .cardSubscript, iconSize: .cardSubscript)
+        YonderIconTextPair(
+            image: self.location.getTypeImage(),
+            text: self.location.getTypeName(),
+            size: .cardSubscript,
+            iconSize: .cardSubscript
+        )
     }
 }
 
