@@ -14,7 +14,7 @@ class Foe: ActorAbstract, Named, Described {
     public let name: String
     public let description: String
     private(set) var typeName: String? = nil
-    private(set) var typeImageResource: ImageResource? = nil
+    private(set) var typeImageResource: YonderImage? = nil
     private(set) var typeDescription: String? = nil
     public let loot: LootOptions
     var canBeLooted: Bool {
@@ -82,7 +82,7 @@ class Foe: ActorAbstract, Named, Described {
         self.useWeaponWhere(opposition: player, weapon: self.getWeapon())
     }
     
-    func setType(name: String, description: String, imageResource: ImageResource) {
+    func setType(name: String, description: String, imageResource: YonderImage) {
         self.typeName = name
         self.typeDescription = description
         self.typeImageResource = imageResource

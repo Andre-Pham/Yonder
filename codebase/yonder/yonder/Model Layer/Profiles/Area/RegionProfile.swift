@@ -12,10 +12,10 @@ class RegionProfile {
     
     public let regionName: String
     public let regionDescription: String
-    public let regionImageResource: ImageResource
+    public let regionImageResource: YonderImage
     public let tags: RegionTagAllocation
     
-    init(regionName: String, regionDescription: String, regionImage: ImageResource, tags: RegionTagAllocation) {
+    init(regionName: String, regionDescription: String, regionImage: YonderImage, tags: RegionTagAllocation) {
         self.regionName = regionName
         self.regionDescription = regionDescription
         self.regionImageResource = regionImage

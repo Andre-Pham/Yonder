@@ -442,7 +442,7 @@
 		65C2CDE02937B6DE0028DC9C /* AreaThemedProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C2CDDF2937B6DE0028DC9C /* AreaThemedProfile.swift */; };
 		65C2CDE32937BA970028DC9C /* RandomProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C2CDE22937BA970028DC9C /* RandomProfile.swift */; };
 		65C2CDE5293871D60028DC9C /* TestContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C2CDE4293871D60028DC9C /* TestContent.swift */; };
-		65C2CDE7293B57FF0028DC9C /* ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C2CDE6293B57FF0028DC9C /* ImageResource.swift */; };
+		65C2CDE7293B57FF0028DC9C /* YonderImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C2CDE6293B57FF0028DC9C /* YonderImage.swift */; };
 		65C37A77285A2F9A006997EE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65C37A79285A2F9A006997EE /* Localizable.strings */; };
 		65C37A7D285A36B9006997EE /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C37A7C285A36B9006997EE /* String.swift */; };
 		65C37A7F285A3871006997EE /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C37A7E285A3871006997EE /* Strings.swift */; };
@@ -2779,7 +2779,7 @@
 		65C2CDDF2937B6DE0028DC9C /* AreaThemedProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaThemedProfile.swift; sourceTree = "<group>"; };
 		65C2CDE22937BA970028DC9C /* RandomProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomProfile.swift; sourceTree = "<group>"; };
 		65C2CDE4293871D60028DC9C /* TestContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestContent.swift; sourceTree = "<group>"; };
-		65C2CDE6293B57FF0028DC9C /* ImageResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResource.swift; sourceTree = "<group>"; };
+		65C2CDE6293B57FF0028DC9C /* YonderImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderImage.swift; sourceTree = "<group>"; };
 		65C37A78285A2F9A006997EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		65C37A7C285A36B9006997EE /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		65C37A7E285A3871006997EE /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
@@ -5498,7 +5498,7 @@
 				6524D5222762CBC300982091 /* YonderColors.swift */,
 				6524D5282762D13800982091 /* YonderIcons.swift */,
 				6569E16127630EBE007C472E /* YonderFonts.swift */,
-				65C2CDE6293B57FF0028DC9C /* ImageResource.swift */,
+				65C2CDE6293B57FF0028DC9C /* YonderImage.swift */,
 				651B7740293BED1F00827CB5 /* YonderImages.swift */,
 			);
 			path = Presets;
@@ -8295,7 +8295,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					65293C9328B92FE200B2354A = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -10251,7 +10251,7 @@
 				65500E6128642C3900A92CA2 /* HealthRestorationBasePill.swift in Sources */,
 				655C60B928041B1B007B1E11 /* YonderExpandableWideButtonBody.swift in Sources */,
 				658D1E5C293E32BB006F1CC0 /* AllPlayerClasses.swift in Sources */,
-				65C2CDE7293B57FF0028DC9C /* ImageResource.swift in Sources */,
+				65C2CDE7293B57FF0028DC9C /* YonderImage.swift in Sources */,
 				65AAFE3A28CAF6A9004A8230 /* OnPlayerTravel.swift in Sources */,
 				65500E5D28642B3900A92CA2 /* WeaponBasePill.swift in Sources */,
 				65BD97E72976228100B1F63A /* Named.swift in Sources */,
@@ -10843,6 +10843,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -10906,6 +10907,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -10943,6 +10945,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -10973,6 +10976,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

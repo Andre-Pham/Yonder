@@ -9,16 +9,16 @@ import Foundation
 
 enum YonderImages {
     
-    static let placeholderImage = ImageResource("MajorInn")
+    static let placeholderImage = YonderImage("MajorInn")
     
     // MARK: - Foe Types
     
-    static let goblinIcon = ImageResource("Goblin")
-    static let bruteIcon = ImageResource("BrokenShield")
+    static let goblinIcon = YonderImage("Goblin")
+    static let bruteIcon = YonderImage("BrokenShield")
     
     // MARK: - Background Art
     
-    static let darkForestForegroundImage = ImageResource("DarkForestForeground")
-    static let darkForestBackgroundImage = ImageResource("DarkForestBackground")
+    static let darkForestForegroundImage = YonderImage("DarkForestForeground")
+    static let darkForestBackgroundImage = YonderImage("DarkForestBackground")
     
 }

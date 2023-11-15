@@ -12,7 +12,7 @@ class Area: Region, Storable {
     
     public let name: String
     public let description: String
-    public let imageResource: ImageResource
+    public let imageResource: YonderImage
     public let rootLocation: Location
     public let tipLocation: Location
     private(set) var leftBridgeLocations = [Location]()
@@ -28,7 +28,7 @@ class Area: Region, Storable {
         name: String = "placeholderName",
         description: String = "placeholderDescription",
         tags: RegionTagAllocation,
-        imageResource: ImageResource = YonderImages.placeholderImage
+        imageResource: YonderImage = YonderImages.placeholderImage
     ) {
         assert(locations.count == arrangement.locationCount, "Number of locations provided to generate Area doesn't match expected number for the arrangement")
         self.arrangement = arrangement
@@ -64,7 +64,7 @@ class Area: Region, Storable {
     required init(dataObject: DataObject) {
         self.name = dataObject.get(Field.name.rawValue)
         self.description = dataObject.get(Field.description.rawValue)
-        self.imageResource = ImageResource(dataObject.get(Field.imageName.rawValue))
+        self.imageResource = YonderImage(dataObject.get(Field.imageName.rawValue))
         self.arrangement = AreaArrangements(rawValue: dataObject.get(Field.arrangement.rawValue))!
         self.tags = dataObject.getObject(Field.tags.rawValue, type: RegionTagAllocation.self)
         self.locations = dataObject.getObjectArray(Field.locations.rawValue, type: LocationAbstract.self) as! [any Location]

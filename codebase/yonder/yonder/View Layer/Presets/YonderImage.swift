@@ -1,5 +1,5 @@
 //
-//  ImageResource.swift
+//  YonderImage.swift
 //  yonder
 //
 //  Created by Andre Pham on 3/12/2022.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class ImageResource {
+class YonderImage {
     
     let name: String
     let width: CGFloat

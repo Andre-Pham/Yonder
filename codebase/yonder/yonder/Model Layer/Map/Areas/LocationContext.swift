@@ -13,12 +13,12 @@ class LocationContext: Storable {
     private(set) var key: String = ""
     private(set) var name: String = ""
     private(set) var description: String = ""
-    private(set) var imageResource: ImageResource = YonderImages.placeholderImage
+    private(set) var imageResource: YonderImage = YonderImages.placeholderImage
     var image: Image {
         return self.imageResource.image
     }
     
-    func setContext(key: String, name: String, description: String, imageResource: ImageResource) {
+    func setContext(key: String, name: String, description: String, imageResource: YonderImage) {
         self.key = key
         self.name = name
         self.description = description
@@ -40,7 +40,7 @@ class LocationContext: Storable {
         self.key = dataObject.get(Field.key.rawValue)
         self.name = dataObject.get(Field.name.rawValue)
         self.description = dataObject.get(Field.description.rawValue)
-        self.imageResource = ImageResource(dataObject.get(Field.imageName.rawValue))
+        self.imageResource = YonderImage(dataObject.get(Field.imageName.rawValue))
     }
 
     func toDataObject() -> DataObject {

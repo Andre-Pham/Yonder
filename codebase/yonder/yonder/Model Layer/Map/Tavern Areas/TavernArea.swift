@@ -11,7 +11,7 @@ class TavernArea: Region, Storable {
     
     public let name: String
     public let description: String
-    public let imageResource: ImageResource
+    public let imageResource: YonderImage
     public let id: UUID
     private(set) var rootLocations = [Location]()
     private(set) var tipLocations = [Location]()
@@ -23,7 +23,7 @@ class TavernArea: Region, Storable {
         name: String,
         description: String,
         tags: RegionTagAllocation,
-        imageResource: ImageResource,
+        imageResource: YonderImage,
         _ locations: Location...
     ) {
         self.name = name
@@ -67,7 +67,7 @@ class TavernArea: Region, Storable {
         self.name = dataObject.get(Field.name.rawValue)
         self.description = dataObject.get(Field.description.rawValue)
         self.tags = dataObject.getObject(Field.tags.rawValue, type: RegionTagAllocation.self)
-        self.imageResource = ImageResource(dataObject.get(Field.imageName.rawValue))
+        self.imageResource = YonderImage(dataObject.get(Field.imageName.rawValue))
         self.arrangement = TavernAreaArrangements(rawValue: dataObject.get(Field.arrangement.rawValue)) ?? .S
         self.locations = dataObject.getObjectArray(Field.locations.rawValue, type: LocationAbstract.self) as! [any Location]
         self.id = UUID(uuidString: dataObject.get(Field.id.rawValue))!
