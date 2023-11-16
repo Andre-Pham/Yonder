@@ -75,14 +75,20 @@ struct LocationView: View {
 
 struct LocationView_Previews: PreviewProvider {
     static var previews: some View {
-        ZStack {
+        let player = PreviewObjects.playerViewModel
+        let location = PreviewObjects.locationViewModel
+        
+        return ZStack {
             Color.red
                 .ignoresSafeArea()
             
             LocationView(
-                locationViewModel: PreviewObjects.locationViewModel,
-                optionsStateManager: OptionsStateManager(playerViewModel: PreviewObjects.playerViewModel)
+                locationViewModel: location,
+                optionsStateManager: OptionsStateManager(playerViewModel: player)
             )
+            .onAppear {
+                player.travel(to: location)
+            }
         }
     }
 }

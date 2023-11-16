@@ -185,7 +185,7 @@ enum PreviewObjects {
     
     private static var friendly: Friendly {
         return Friendly(
-            contentID: nil,
+            contentID: "N0004",
             name: "Winston",
             description: "With a Y",
             offers: [FreeGoldOffer(goldAmount: 200)],
