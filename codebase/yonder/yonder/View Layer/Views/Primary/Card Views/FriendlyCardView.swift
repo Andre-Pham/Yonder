@@ -12,7 +12,7 @@ struct FriendlyCardView: View {
     @ObservedObject var friendlyViewModel: FriendlyViewModel
     
     var body: some View {
-        CardBody(name: self.friendlyViewModel.name) {
+        CardBody {
             CardNPCTypeView()
             
             CardRowView(value: friendlyViewModel.offersRemaining, image: YonderIcons.offerIcon)

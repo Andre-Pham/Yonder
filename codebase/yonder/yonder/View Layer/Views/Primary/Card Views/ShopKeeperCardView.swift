@@ -12,7 +12,7 @@ struct ShopKeeperCardView: View {
     @ObservedObject var shopKeeperViewModel: ShopKeeperViewModel
     
     var body: some View {
-        CardBody(name: self.shopKeeperViewModel.name) {
+        CardBody {
             CardNPCTypeView()
             
             CardPriceRangeView(

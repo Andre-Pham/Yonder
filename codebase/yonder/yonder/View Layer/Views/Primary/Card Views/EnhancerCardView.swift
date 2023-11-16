@@ -12,7 +12,7 @@ struct EnhancerCardView: View {
     @ObservedObject var enhancerViewModel: EnhancerViewModel
     
     var body: some View {
-        CardBody(name: self.enhancerViewModel.name) {
+        CardBody {
             CardNPCTypeView()
             
             CardPriceRangeView(

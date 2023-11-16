@@ -35,6 +35,20 @@ struct LocationView: View {
                     .resizable()
                     .interpolation(.none)
                     .scaledToFill()
+                    .overlay {
+                        if let name = self.locationViewModel.getNPCName() {
+                            VStack {
+                                YonderText(text: name, size: .cardSubscript)
+                                    .padding(.horizontal, 9)
+                                    .padding(.vertical, 4)
+                                    .background(.black.opacity(0.5))
+                                    .padding()
+                                
+                                Spacer()
+                            }
+                            .frame(width: cardWidth, height: cardHeight)
+                        }
+                    }
                     .overlay(alignment: .bottom) {
                         self.animationQueue.frame
                             .resizable()

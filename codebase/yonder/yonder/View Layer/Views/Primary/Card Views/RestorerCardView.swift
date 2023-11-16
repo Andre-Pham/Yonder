@@ -12,7 +12,7 @@ struct RestorerCardView: View {
     @ObservedObject var restorerViewModel: RestorerViewModel
     
     var body: some View {
-        CardBody(name: self.restorerViewModel.name) {
+        CardBody {
             CardNPCTypeView()
             
             ForEach(self.restorerViewModel.options, id: \.id) { option in

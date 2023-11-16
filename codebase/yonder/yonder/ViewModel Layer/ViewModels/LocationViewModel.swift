@@ -158,6 +158,16 @@ class LocationViewModel: ObservableObject {
         }
     }
     
+    func getNPCName() -> String? {
+        if let name = self.getFoeViewModel()?.name {
+            return name
+        }
+        if let name = self.getInteractorViewModel()?.name {
+            return name
+        }
+        return nil
+    }
+    
     func canBeTravelledTo(from locationViewModel: LocationViewModel) -> Bool {
         for id in locationViewModel.nextLocationIDs {
             if id == self.id {
