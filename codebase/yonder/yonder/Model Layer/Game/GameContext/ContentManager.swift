@@ -323,7 +323,15 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
                 failedCaches += 1
             }
         }
-        assert(failedCaches == 0, "Cache couldn't be restored")
+        
+        assert(failedCaches == 0, "Cache couldn't be restored - see comment attached")
+        // The most likely cause of this is multiple Game instances occurring at once. 
+        // This means multiple ContentManager instances, which all subscribe to AfterGameContextInitPublisher.
+        // Because Game is a singleton, there only exists one map.
+        // When multiple instances of ContentManager exist, each have their AfterGameContextInitPublisher triggered.
+        // However they all access the same Map, because it's a singleton. This means they try to match region keys that don't exist in the game they belong to.
+        // Be cautious in unit tests which can run in parallel, which can cause multiple Game instances to exist at once.
+        
         // Caches have been restored - they can be discarded
         // After recreating the factories, if any couldn't be restored, they never will be anyways
         caches.removeAll()
