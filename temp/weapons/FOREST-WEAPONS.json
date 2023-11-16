@@ -1,0 +1,110 @@
+[
+    {
+        "weaponName": "Vineblade",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "forest",
+        "description": "A slender sword adorned with intricate vines that seem to pulse with the essence of the forest. Its blade, sharp as thorns, slices through the air with remarkable agility."
+    },
+    {
+        "weaponName": "Thornwhip",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "forest",
+        "description": "A whip woven from resilient vines, its thorny tendrils lash out at foes, inflicting both pain and offering a restorative touch. It harnesses the life force of the forest, mending wounds with each strike."
+    },
+    {
+        "weaponName": "Sylvan Bow",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "forest",
+        "description": "Crafted from ancient wood and infused with nature's power, this bow resonates with the harmony of the forest. Its arrows, guided by unseen forces, find their mark with uncanny precision."
+    },
+    {
+        "weaponName": "Fernweaver Staff",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "forest",
+        "description": "A staff crowned with delicate fern leaves that shimmer with soothing energy. When wielded, it channels the vitality of the forest, mending wounds and replenishing the essence of life."
+    },
+    {
+        "weaponName": "Oakheart Shield",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "forest",
+        "description": "A sturdy shield carved from the mighty heartwood of an ancient oak. It grants unparalleled protection, reinforcing armor and restoring its durability with an unyielding bond to the forest's strength."
+    },
+    {
+        "weaponName": "Thundersap Hammer",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "forest",
+        "description": "This formidable hammer crackles with electrical energy, harnessed from the heart of a lightning-struck tree. Each strike resonates with thunderous power, dealing damage while offering rejuvenating bursts of vitality."
+    },
+    {
+        "weaponName": "Brambleblade",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "forest",
+        "description": "A jagged blade crafted from twisted brambles, its edges honed to lethal perfection. It draws upon the forest's wild essence, delivering swift and precise strikes that leave foes entangled in nature's embrace."
+    },
+    {
+        "weaponName": "Whisperwind Dagger",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "forest",
+        "description": "A slender dagger that glimmers like moonlit mist. It dances through the shadows, guided by the whispers of the wind. Each swift strike carries a whisper of the forest's secrets, cutting through defenses with ethereal grace."
+    },
+    {
+        "weaponName": "Druidic Staff",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "forest",
+        "description": "An ancient staff carved with symbols of nature's wisdom. It channels the nurturing magic of druids, mending wounds and nurturing life. The staff resonates with the ancient spirits of the forest, granting solace to those who wield it."
+    },
+    {
+        "weaponName": "Moonshadow Scythe",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "forest",
+        "description": "A crescent-shaped scythe crafted from shimmering moonstone. It harnesses the shadows cast by the forest's moonlit canopy, slicing through darkness with eerie precision. Each swing cuts deep, leaving foes bewildered in the moon's embrace."
+    },
+    {
+        "weaponName": "Mossbloom Bow",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "forest",
+        "description": "A bow adorned with vibrant moss and adorned with delicate flowers that bloom with each arrow loosed. It draws power from the verdant heart of the forest, empowering arrows to strike true, carrying the essence of nature itself."
+    },
+    {
+        "weaponName": "Rootmender Staff",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "forest",
+        "description": "A staff entwined with living roots that throb with vitality. It possesses the power to mend broken bodies and rejuvenate the spirit. With each touch, it imparts the strength and resilience of the ancient forest."
+    },
+    {
+        "weaponName": "Acorn Scepter",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "forest",
+        "description": "A scepter carved from a magical acorn, it emanates warmth and whispers of the forest's harmony. It nurtures the wounded, restoring health and imbuing them with the resilience of the mighty oaks."
+    },
+    {
+        "weaponName": "Falconstrike Bow",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "forest",
+        "description": "A bow crafted with exquisite precision, adorned with feathers that shimmer like the wings of a falcon. It carries the speed and grace of its namesake, allowing arrows to soar through the air with incredible swiftness and accuracy."
+    },
+    {
+        "weaponName": "Elmguard Shield",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "forest",
+        "description": "A shield hewn from the mighty trunk of an ancient elm. It radiates an aura of resilience, reinforcing armor and mending its integrity. Bound to the forest's essence, it grants protection as steadfast as the ancient trees."
+    },
+    {
+        "weaponName": "Barkskin Blade",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "forest",
+        "description": "A blade forged from the hardened bark of ancient trees. Its jagged edges, infused with nature's might, rend through foes with a relentless fury. As it drinks in the essence of the forest, it grows stronger, matching the untamed spirit of the wilderness."
+    },
+    {
+        "weaponName": "Sylvan Whisperblade",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "forest",
+        "description": "A slender and lightweight sword that seems to shimmer with an ethereal glow. Its whisper-soft movements make it nearly imperceptible in battle, allowing swift strikes to find their mark before the enemy even realizes they are under attack."
+    },
+    {
+        "weaponName": "Verdantbane Dagger",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "forest",
+        "description": "A wickedly sharp dagger, its blade forged from enchanted leaves. It carries the essence of the forest within, allowing the wielder to deliver precise strikes that seep poison into the veins of their foes, weakening them with every wound."
+    }
+]
