@@ -73,7 +73,7 @@ Continuing on, now let's do restoration. We'll do 5 of these.
 
 
 
-Continuing on, now let's do armorPointsRestoration. We'll do 5 of these.
+Continuing on, now let's do armorPointsRestoration. We'll do 5 of these. Don't include any protective armor or clothing in these.
 
 
 
