@@ -184,5 +184,35 @@
         "weaponProfileTag": "consumesFoe",
         "regionProfileTag": "dungeon",
         "description": "A swirling potion that, when shattered, devours a fragment of the enemy's soul to restore the user's health."
+    },
+    {
+        "weaponName": "Dungeon Delver's Lantern",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "dungeon",
+        "description": "An iron lantern with a flame that burns a spectral blue, casting a healing light that mends the flesh of those who brave the dark corridors."
+    },
+    {
+        "weaponName": "Ectoplasmic Essence Vial",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "dungeon",
+        "description": "A vial containing a swirling ghostly essence, which, when consumed, knits together wounds with otherworldly efficiency."
+    },
+    {
+        "weaponName": "Runestone of the Healer",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "dungeon",
+        "description": "A dark runestone etched with ancient glyphs, pulsating with an inner light that seals gashes and soothes pain upon the bearer's touch."
+    },
+    {
+        "weaponName": "Chained Heart Amulet",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "dungeon",
+        "description": "An amulet with a heart-shaped gem, bound by ornate chains, that absorbs the ambient mana of the dungeon to replenish the wearer's life force."
+    },
+    {
+        "weaponName": "Arcane Mender's Tome",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "dungeon",
+        "description": "A tome bound in shadowskin leather, each page a portal to healing energies that cascade over the reader, closing wounds with whispered incantations."
     }
 ]

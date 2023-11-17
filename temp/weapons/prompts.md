@@ -77,4 +77,12 @@ Continuing on, now let's do armorPointsRestoration. We'll do 5 of these.
 
 
 
-Finally, let's finish off with collateral and consumesFoe. We'll do 3 of each. Be creative with these ones.
+
+
+Let's do both collateral and consumesFoe. We'll do 3 of each. Be creative with these ones.
+
+
+
+
+
+Finally, let's finish off with healthRestoration. We'll do 5 of these. These can have a divine holy theme if appropriate. Make sure to not base any of them off traditionally damaging weapons. These should be comprised solely of amulets, staffs, tomes, sceptres, charms, runes, and unique ideas like pixie dust, "emerald grace", and stuff like that.

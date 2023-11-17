@@ -202,5 +202,35 @@
         "weaponProfileTag": "consumesFoe",
         "regionProfileTag": "cavern",
         "description": "A gauntlet that clings to the life force of defeated foes, granting a sliver of their energy to the bearer."
+    },
+    {
+        "weaponName": "Crystal Droplet Charm",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "cavern",
+        "description": "A luminescent charm that accumulates healing droplets from the cavern's ceiling, each one capable of closing cuts and soothing bruises."
+    },
+    {
+        "weaponName": "Echoing Flute",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "cavern",
+        "description": "An obsidian flute whose notes reverberate off the walls, with harmonies that weave through the air to knit together flesh and bone."
+    },
+    {
+        "weaponName": "Grotto's Heart Lantern",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "cavern",
+        "description": "An ancient lantern with a flame that flickers in hues of deep emerald, its light casting a healing glow over ragged injuries."
+    },
+    {
+        "weaponName": "Spelunker's Respite Sceptre",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "cavern",
+        "description": "A smooth sceptre adorned with reflective minerals that absorb ambient light, providing a soothing aura to heal the bearer."
+    },
+    {
+        "weaponName": "Cavernous Codex",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "cavern",
+        "description": "A tome bound in deep cave leather, its pages imbued with echolocation runes that guide the reader's body towards natural recovery."
     }
 ]
