@@ -2,217 +2,217 @@
     {
         "weaponName": "Shadowrend Dagger",
         "weaponProfileTag": "damage",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A sleek dagger that seems to absorb light, its edge a sliver of darkness capable of slicing through the fabric of reality."
     },
     {
         "weaponName": "Eclipse Scythe",
         "weaponProfileTag": "damage",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A scythe with a blade dark as a moonless night, sweeping through enemies like an unstoppable force of dusk."
     },
     {
         "weaponName": "Nightmare Blade",
         "weaponProfileTag": "damage",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A sword forged from the essence of nightmares, its blackened blade whispers terror into the hearts of its foes."
     },
     {
         "weaponName": "Duskwraith Bow",
         "weaponProfileTag": "damage",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A longbow crafted from shadows, its arrows glide silently, leaving trails of gloom in their wake."
     },
     {
         "weaponName": "Abyssal Spike",
         "weaponProfileTag": "damage",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A sinister spike that emerges from the shadows, piercing armor and hope with equal ease."
     },
     {
         "weaponName": "Gloomshard Axe",
         "weaponProfileTag": "damage",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "An axe with a shard of pure darkness for a blade, cleaving despair into the souls of its victims."
     },
     {
         "weaponName": "Voidtouched Rapier",
         "weaponProfileTag": "damage",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A rapier with a hilt of shadow essence, its thrusts puncture the veil between realms."
     },
     {
         "weaponName": "Phantom Glaive",
         "weaponProfileTag": "damage",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A glaive that phases in and out of sight, its blade a mere wisp of darkness that rends flesh and spirit alike."
     },
     {
         "weaponName": "Oblivion Mace",
         "weaponProfileTag": "damage",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A mace that seems to swallow the light around it, pulverizing enemies with the weight of darkness."
     },
     {
         "weaponName": "Netherchain Whip",
         "weaponProfileTag": "damage",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A whip composed of ethereal chains, crackling with the energy of the void as it lashes out."
     },
     {
         "weaponName": "Twilight Shroud",
         "weaponProfileTag": "damageAndRestoration",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A mystical cape that wraps the wearer in darkness, draining life from foes while mending the wearer's own wounds."
     },
     {
         "weaponName": "Umbramancer's Codex",
         "weaponProfileTag": "damageAndRestoration",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "An ancient tome bound in shadows, scribing pain upon enemies as its incantations heal the reader."
     },
     {
         "weaponName": "Eclipsing Orb",
         "weaponProfileTag": "damageAndRestoration",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A pulsating sphere that oscillates between light and dark, siphoning vitality from adversaries to rejuvenate its holder."
     },
     {
         "weaponName": "Shadowbloom Essence",
         "weaponProfileTag": "damageAndRestoration",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A vial of dark liquid that, when splashed, wilts life from foes while blossoming health in allies."
     },
     {
         "weaponName": "Penumbral Prism",
         "weaponProfileTag": "damageAndRestoration",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A crystal prism that fractures light into darkness, leeching energy from one soul to mend another."
     },
     {
         "weaponName": "Nocturne's Whisper",
         "weaponProfileTag": "restoration",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A delicate amulet that hums with a soft lullaby, enveloping the bearer in shadows that soothe and mend."
     },
     {
         "weaponName": "Duskpetal Elixir",
         "weaponProfileTag": "restoration",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A flask of shimmering potion made from twilight petals, rejuvenating the spirit with each sip."
     },
     {
         "weaponName": "Veilshroud Scepter",
         "weaponProfileTag": "restoration",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A scepter crowned with a swirling shadow orb, casting a protective aura that restores vitality to its wielder."
     },
     {
         "weaponName": "Moonmist Lantern",
         "weaponProfileTag": "restoration",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "An ethereal lantern that glows with a healing moonlight, banishing wounds with its serene luminescence."
     },
     {
         "weaponName": "Shadecloth Bandages",
         "weaponProfileTag": "restoration",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "Bandages woven from healing darkness, wrapping wounds in comfort and accelerating recovery."
     },
     {
         "weaponName": "Gloaming Guard Totem",
         "weaponProfileTag": "armorPointsRestoration",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A dark totem that radiates a restorative aura, knitting together the armor of those who stand within its shadow."
     },
     {
         "weaponName": "Nightshade Salve",
         "weaponProfileTag": "armorPointsRestoration",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "An ointment imbued with the essence of twilight, seeping into armor to repair and reinforce its structure."
     },
     {
         "weaponName": "Shadowmeld Oil",
         "weaponProfileTag": "armorPointsRestoration",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A viscous liquid that, when applied, melds into armor, sealing cracks with a resilience born from darkness."
     },
     {
         "weaponName": "Wraithweave Thread",
         "weaponProfileTag": "armorPointsRestoration",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A spool of ethereal thread that stitches the essence of shadows into armor, bolstering its protective might."
     },
     {
         "weaponName": "Umbral Alloy",
         "weaponProfileTag": "armorPointsRestoration",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A malleable paste of condensed shadows, used to fuse and fortify the integrity of damaged armor."
     },
     {
         "weaponName": "Echospike Grenade",
         "weaponProfileTag": "collateral",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A volatile orb that detonates in a chorus of shadowy echoes, buffeting friend and foe alike with waves of dark energy."
     },
     {
         "weaponName": "Pandemonium Prism",
         "weaponProfileTag": "collateral",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A chaotic crystal that fractures reality, randomly distorting the battlefield with harmful and helpful shadow surges."
     },
     {
         "weaponName": "Riftmaker Stone",
         "weaponProfileTag": "collateral",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "An obsidian stone that bleeds darkness, opening rifts that can consume or empower depending on their capricious whims."
     },
     {
         "weaponName": "Soul Siphon Amulet",
         "weaponProfileTag": "consumesFoe",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A sinister amulet that drains the essence of defeated enemies, converting their strength into healing energy for the wearer."
     },
     {
         "weaponName": "Voracity Vortex Rod",
         "weaponProfileTag": "consumesFoe",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A spiraled rod that summons a devouring vortex, absorbing the life force of those it engulfs to replenish its master."
     },
     {
         "weaponName": "Grasp of the Gloomthief",
         "weaponProfileTag": "consumesFoe",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A shadowy gauntlet that clings to the power of vanquished adversaries, seizing a portion of their vitality with every defeat."
     },
     {
         "weaponName": "Seraphic Sigil",
         "weaponProfileTag": "healthRestoration",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A radiant emblem that glows with a soft celestial light, blessing the bearer with waves of purifying energy."
     },
     {
         "weaponName": "Mender's Mantra Beads",
         "weaponProfileTag": "healthRestoration",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A string of beads inscribed with ancient healing prayers, each chant restoring the vitality of those who utter them."
     },
     {
         "weaponName": "Benediction Branch",
         "weaponProfileTag": "healthRestoration",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A golden bough from a sacred grove, its leaves shimmering with a restorative aura that mends the wounds of the pure-hearted."
     },
     {
         "weaponName": "Divine Decree Scroll",
         "weaponProfileTag": "healthRestoration",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A scroll that bears a holy proclamation, its words capable of sealing injuries with a warm, glowing script."
     },
     {
         "weaponName": "Cherub's Charm",
         "weaponProfileTag": "healthRestoration",
-        "regionProfileTag": "shadowRealm",
+        "regionProfileTag": "shadow",
         "description": "A delicate charm imbued with the laughter of cherubs, its joyous resonance knitting together flesh and spirit."
     }
 ]
