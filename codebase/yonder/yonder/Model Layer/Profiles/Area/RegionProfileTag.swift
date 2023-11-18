@@ -12,11 +12,11 @@ enum RegionProfileTag: String {
     case all
     case desert
     case cavern
-    case faction5
-    case faction6
+    case faction5 // Magmar Aspects
+    case faction6 // Vanar Kindred
     case dungeon
-    case faction2
-    case faction4
+    case faction2 // Songhai Empire
+    case faction4 // Abyssian Host
     case nether
     case shadow
     case mech

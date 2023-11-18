@@ -57,6 +57,8 @@ Great. Before we start, I have some rules I want you to follow. First, each desc
 
 Let's start with cavern weapons. These are weapons that exist in both shallow and deep underground caverns. We're going to do each weaponProfileTag. Let's start with damage. Please create 10 of these in the provided JSON format I previously gave.
 
+> Let's start with Songhai Empire weapons. These are based off the Songhai Empire faction from the Duelyst game. We're going to do each weaponProfileTag. Let's start with damage. Please create 10 of these in the provided JSON format I previously gave.
+
 
 
 
