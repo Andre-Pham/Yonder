@@ -3,217 +3,252 @@
         "weaponName": "Duneslicer Scimitar",
         "weaponProfileTag": "damage",
         "regionProfileTag": "desert",
-        "description": "A curved blade with an edge as sharp as the desert winds, designed to slice through the arid air."
+        "description": "A curved blade with an edge as sharp as the desert winds, designed to slice through the arid air.",
+        "id": "W0040"
     },
     {
         "weaponName": "Sandfang Dagger",
         "weaponProfileTag": "damage",
         "regionProfileTag": "desert",
-        "description": "A small, vicious blade, its hilt encrusted with sandstone, as lethal as the desert's hidden predators."
+        "description": "A small, vicious blade, its hilt encrusted with sandstone, as lethal as the desert's hidden predators.",
+        "id": "W0041"
     },
     {
         "weaponName": "Scorchsteel Sabre",
         "weaponProfileTag": "damage",
         "regionProfileTag": "desert",
-        "description": "A sabre forged in desert flames, its heat-treated blade glows faintly under the scorching sun."
+        "description": "A sabre forged in desert flames, its heat-treated blade glows faintly under the scorching sun.",
+        "id": "W0042"
     },
     {
         "weaponName": "Sirocco Spear",
         "weaponProfileTag": "damage",
         "regionProfileTag": "desert",
-        "description": "A long spear that whistles with a sandstorm's fury when thrust, crafted from sunbaked ironwood."
+        "description": "A long spear that whistles with a sandstorm's fury when thrust, crafted from sunbaked ironwood.",
+        "id": "W0043"
     },
     {
         "weaponName": "Cragthorn Bow",
         "weaponProfileTag": "damage",
         "regionProfileTag": "desert",
-        "description": "A recurve bow with limbs resembling the twisted, thorny branches of desert flora, strong enough to launch arrows over dunes."
+        "description": "A recurve bow with limbs resembling the twisted, thorny branches of desert flora, strong enough to launch arrows over dunes.",
+        "id": "W0044"
     },
     {
         "weaponName": "Boulder Breaker Mace",
         "weaponProfileTag": "damage",
         "regionProfileTag": "desert",
-        "description": "A hefty mace with a head shaped like a desert rock, capable of smashing through armor as if it were sandstone."
+        "description": "A hefty mace with a head shaped like a desert rock, capable of smashing through armor as if it were sandstone.",
+        "id": "W0045"
     },
     {
         "weaponName": "Serpent's Fang Rapier",
         "weaponProfileTag": "damage",
         "regionProfileTag": "desert",
-        "description": "A slender rapier with a blade as deadly as a viper's bite, echoing the serpents of the sandy plains."
+        "description": "A slender rapier with a blade as deadly as a viper's bite, echoing the serpents of the sandy plains.",
+        "id": "W0046"
     },
     {
         "weaponName": "Mirageflame Wand",
         "weaponProfileTag": "damage",
         "regionProfileTag": "desert",
-        "description": "A twisted wand that conjures illusions of flame, disorienting foes in the shimmering desert heat."
+        "description": "A twisted wand that conjures illusions of flame, disorienting foes in the shimmering desert heat.",
+        "id": "W0047"
     },
     {
         "weaponName": "Dustdevil Axe",
         "weaponProfileTag": "damage",
         "regionProfileTag": "desert",
-        "description": "An axe with a wind-worn blade, its strikes kick up clouds of sand to blind and disorient."
+        "description": "An axe with a wind-worn blade, its strikes kick up clouds of sand to blind and disorient.",
+        "id": "W0048"
     },
     {
         "weaponName": "Sunburst Warhammer",
         "weaponProfileTag": "damage",
         "regionProfileTag": "desert",
-        "description": "A massive hammer with a sun-shaped head, its impact is as unforgiving as the desert noon."
+        "description": "A massive hammer with a sun-shaped head, its impact is as unforgiving as the desert noon.",
+        "id": "W0049"
     },
     {
         "weaponName": "Sandsurge Scepter",
         "weaponProfileTag": "damageAndRestoration",
         "regionProfileTag": "desert",
-        "description": "A scepter that releases a burst of sand particles to exfoliate wounds clean while sealing them shut."
+        "description": "A scepter that releases a burst of sand particles to exfoliate wounds clean while sealing them shut.",
+        "id": "W0050"
     },
     {
         "weaponName": "Oasis Orb",
         "weaponProfileTag": "damageAndRestoration",
         "regionProfileTag": "desert",
-        "description": "A crystalline orb pulsing with water's essence, capable of unleashing a maelstrom or mending flesh."
+        "description": "A crystalline orb pulsing with water's essence, capable of unleashing a maelstrom or mending flesh.",
+        "id": "W0051"
     },
     {
         "weaponName": "Cactusbloom Staff",
         "weaponProfileTag": "damageAndRestoration",
         "regionProfileTag": "desert",
-        "description": "A staff topped with a flowering cactus, its thorns lash out in defense while its blossoms soothe injuries."
+        "description": "A staff topped with a flowering cactus, its thorns lash out in defense while its blossoms soothe injuries.",
+        "id": "W0052"
     },
     {
         "weaponName": "Solarflare Disk",
         "weaponProfileTag": "damageAndRestoration",
         "regionProfileTag": "desert",
-        "description": "A throwing disk that scorches foes with a radiant edge but heals allies with its warming glow."
+        "description": "A throwing disk that scorches foes with a radiant edge but heals allies with its warming glow.",
+        "id": "W0053"
     },
     {
         "weaponName": "Zephyr Chime",
         "weaponProfileTag": "damageAndRestoration",
         "regionProfileTag": "desert",
-        "description": "A set of wind chimes that resonate with cutting frequencies, yet their harmonies knit together the wounds of allies."
+        "description": "A set of wind chimes that resonate with cutting frequencies, yet their harmonies knit together the wounds of allies.",
+        "id": "W0054"
     },
     {
         "weaponName": "Dunehealer's Flute",
         "weaponProfileTag": "restoration",
         "regionProfileTag": "desert",
-        "description": "A flute carved from bone, its melodies weave through the air, closing wounds and lifting spirits."
+        "description": "A flute carved from bone, its melodies weave through the air, closing wounds and lifting spirits.",
+        "id": "W0055"
     },
     {
         "weaponName": "Monsoon Amulet",
         "weaponProfileTag": "restoration",
         "regionProfileTag": "desert",
-        "description": "An amulet holding a drop of everlasting rain, rejuvenating those who bask in its soft, cool aura."
+        "description": "An amulet holding a drop of everlasting rain, rejuvenating those who bask in its soft, cool aura.",
+        "id": "W0056"
     },
     {
         "weaponName": "Mirage Mirror",
         "weaponProfileTag": "restoration",
         "regionProfileTag": "desert",
-        "description": "A reflective surface that not only shows an oasis but also provides its healing tranquility to the holder."
+        "description": "A reflective surface that not only shows an oasis but also provides its healing tranquility to the holder.",
+        "id": "W0057"
     },
     {
         "weaponName": "Sandwhisperer's Beads",
         "weaponProfileTag": "restoration",
         "regionProfileTag": "desert",
-        "description": "A string of beads that hum with the desert’s breath, mending the injured with each sandy note."
+        "description": "A string of beads that hum with the desert\u2019s breath, mending the injured with each sandy note.",
+        "id": "W0058"
     },
     {
         "weaponName": "Aurora Censer",
         "weaponProfileTag": "restoration",
         "regionProfileTag": "desert",
-        "description": "A golden censer emitting incense that soothes the pain and regenerates the flesh like early dawn's light."
+        "description": "A golden censer emitting incense that soothes the pain and regenerates the flesh like early dawn's light.",
+        "id": "W0059"
     },
     {
         "weaponName": "Sandstone Sigil",
         "weaponProfileTag": "armorPointsRestoration",
         "regionProfileTag": "desert",
-        "description": "An ancient stone sigil that hardens the wearer's defenses, as enduring as the desert bedrock."
+        "description": "An ancient stone sigil that hardens the wearer's defenses, as enduring as the desert bedrock.",
+        "id": "W0060"
     },
     {
         "weaponName": "Tempest Talisman",
         "weaponProfileTag": "armorPointsRestoration",
         "regionProfileTag": "desert",
-        "description": "A talisman that summons a protective whirlwind, buffering armor with each turn and twist of the desert zephyr."
+        "description": "A talisman that summons a protective whirlwind, buffering armor with each turn and twist of the desert zephyr.",
+        "id": "W0061"
     },
     {
         "weaponName": "Sunshield Pendant",
         "weaponProfileTag": "armorPointsRestoration",
         "regionProfileTag": "desert",
-        "description": "A pendant that radiates a heat haze, forming a barrier that reinforces armor with the mirage of a desert shield."
+        "description": "A pendant that radiates a heat haze, forming a barrier that reinforces armor with the mirage of a desert shield.",
+        "id": "W0062"
     },
     {
         "weaponName": "Dustguard Charm",
         "weaponProfileTag": "armorPointsRestoration",
         "regionProfileTag": "desert",
-        "description": "A charm that cloaks the bearer in a veil of desert dust, mending cracks and dents in armor with a whisper of sand."
+        "description": "A charm that cloaks the bearer in a veil of desert dust, mending cracks and dents in armor with a whisper of sand.",
+        "id": "W0063"
     },
     {
         "weaponName": "Rune of the Carapace",
         "weaponProfileTag": "armorPointsRestoration",
         "regionProfileTag": "desert",
-        "description": "A rune inscribed with a scorpion's silhouette, infusing armor with a carapace-like resilience."
+        "description": "A rune inscribed with a scorpion's silhouette, infusing armor with a carapace-like resilience.",
+        "id": "W0064"
     },
     {
         "weaponName": "Tempest's Bargain",
         "weaponProfileTag": "collateral",
         "regionProfileTag": "desert",
-        "description": "A dual-headed staff that unleashes savage sandstorms, which may erode both foe and wielder's defenses."
+        "description": "A dual-headed staff that unleashes savage sandstorms, which may erode both foe and wielder's defenses.",
+        "id": "W0065"
     },
     {
         "weaponName": "Vortex Vial",
         "weaponProfileTag": "collateral",
         "regionProfileTag": "desert",
-        "description": "A glass container swirling with sand, bursts to blind enemies and allies alike, with the risk of getting lost in its storm."
+        "description": "A glass container swirling with sand, bursts to blind enemies and allies alike, with the risk of getting lost in its storm.",
+        "id": "W0066"
     },
     {
         "weaponName": "Scorpion's Gaze",
         "weaponProfileTag": "collateral",
         "regionProfileTag": "desert",
-        "description": "An amulet that reflects a scorching beam, searing both target and user with the unforgiving desert sun."
+        "description": "An amulet that reflects a scorching beam, searing both target and user with the unforgiving desert sun.",
+        "id": "W0067"
     },
     {
         "weaponName": "Siphonstone Blade",
         "weaponProfileTag": "consumesFoe",
         "regionProfileTag": "desert",
-        "description": "A sleek, sandstone blade that absorbs the vigor of those it cuts, replenishing the wielder's strength."
+        "description": "A sleek, sandstone blade that absorbs the vigor of those it cuts, replenishing the wielder's strength.",
+        "id": "W0068"
     },
     {
         "weaponName": "Phantom Quiver",
         "weaponProfileTag": "consumesFoe",
         "regionProfileTag": "desert",
-        "description": "A quiver of arrows that borrow the essence of struck enemies, converting their vitality into healing energy."
+        "description": "A quiver of arrows that borrow the essence of struck enemies, converting their vitality into healing energy.",
+        "id": "W0069"
     },
     {
         "weaponName": "Echoes of the Mirage",
         "weaponProfileTag": "consumesFoe",
         "regionProfileTag": "desert",
-        "description": "A charm that echoes the last spell cast by an enemy, turning their own magic against them while restoring the user."
+        "description": "A charm that echoes the last spell cast by an enemy, turning their own magic against them while restoring the user.",
+        "id": "W0070"
     },
     {
         "weaponName": "Seraphic Sceptre",
         "weaponProfileTag": "healthRestoration",
         "regionProfileTag": "desert",
-        "description": "A golden sceptre topped with a radiant sapphire that channels the desert sun's warmth into healing energy."
+        "description": "A golden sceptre topped with a radiant sapphire that channels the desert sun's warmth into healing energy.",
+        "id": "W0071"
     },
     {
         "weaponName": "Oasis Rune",
         "weaponProfileTag": "healthRestoration",
         "regionProfileTag": "desert",
-        "description": "A palm-sized rune that, once activated, summons a burst of life-giving water to heal and refresh."
+        "description": "A palm-sized rune that, once activated, summons a burst of life-giving water to heal and refresh.",
+        "id": "W0072"
     },
     {
         "weaponName": "Ankh of Resurgence",
         "weaponProfileTag": "healthRestoration",
         "regionProfileTag": "desert",
-        "description": "An ankh amulet that pulses with a soft glow, mending wounds with the promise of rebirth and renewal."
+        "description": "An ankh amulet that pulses with a soft glow, mending wounds with the promise of rebirth and renewal.",
+        "id": "W0073"
     },
     {
         "weaponName": "Charm of the Sandhealer",
         "weaponProfileTag": "healthRestoration",
         "regionProfileTag": "desert",
-        "description": "A charm engraved with ancient hieroglyphs, it soothes the bearer's injuries with the whispers of desert spirits."
+        "description": "A charm engraved with ancient hieroglyphs, it soothes the bearer's injuries with the whispers of desert spirits.",
+        "id": "W0074"
     },
     {
         "weaponName": "Tome of the Sun's Mercy",
         "weaponProfileTag": "healthRestoration",
         "regionProfileTag": "desert",
-        "description": "A tome bound in light-reflecting hide, its pages offer regenerative spells as gentle as dawn's first light."
+        "description": "A tome bound in light-reflecting hide, its pages offer regenerative spells as gentle as dawn's first light.",
+        "id": "W0075"
     }
 ]
-

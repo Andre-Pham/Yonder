@@ -3,216 +3,252 @@
         "weaponName": "Inferno Edge",
         "weaponProfileTag": "damage",
         "regionProfileTag": "nether",
-        "description": "A sword ablaze with eternal flames, scorching anything in its path."
+        "description": "A sword ablaze with eternal flames, scorching anything in its path.",
+        "id": "W0328"
     },
     {
         "weaponName": "Soulreaper Scythe",
         "weaponProfileTag": "damage",
         "regionProfileTag": "nether",
-        "description": "A dark scythe that gleams with a spectral light, thirsty for the souls of the fallen."
+        "description": "A dark scythe that gleams with a spectral light, thirsty for the souls of the fallen.",
+        "id": "W0329"
     },
     {
         "weaponName": "Demonfang Dagger",
         "weaponProfileTag": "damage",
         "regionProfileTag": "nether",
-        "description": "A curved dagger with a serrated edge that drips with venomous hellfire."
+        "description": "A curved dagger with a serrated edge that drips with venomous hellfire.",
+        "id": "W0330"
     },
     {
         "weaponName": "Lavaborn Maul",
         "weaponProfileTag": "damage",
         "regionProfileTag": "nether",
-        "description": "A massive hammer forged from volcanic rock, emanating a fiery aura."
+        "description": "A massive hammer forged from volcanic rock, emanating a fiery aura.",
+        "id": "W0331"
     },
     {
         "weaponName": "Hellwhisper Bow",
         "weaponProfileTag": "damage",
         "regionProfileTag": "nether",
-        "description": "A bow carved from charred bone, its strings hum with the wails of the damned."
+        "description": "A bow carved from charred bone, its strings hum with the wails of the damned.",
+        "id": "W0332"
     },
     {
         "weaponName": "Abyssal Trident",
         "weaponProfileTag": "damage",
         "regionProfileTag": "nether",
-        "description": "A three-pronged trident that shimmers with a malevolent dark fire."
+        "description": "A three-pronged trident that shimmers with a malevolent dark fire.",
+        "id": "W0333"
     },
     {
         "weaponName": "Cinderchain Flail",
         "weaponProfileTag": "damage",
         "regionProfileTag": "nether",
-        "description": "A flail with a head of smoldering embers, leaving a trail of ashes as it swings."
+        "description": "A flail with a head of smoldering embers, leaving a trail of ashes as it swings.",
+        "id": "W0334"
     },
     {
         "weaponName": "Pyreblade Katana",
         "weaponProfileTag": "damage",
         "regionProfileTag": "nether",
-        "description": "A slender katana with a blade that burns as bright as the sun, incinerating all in its arc."
+        "description": "A slender katana with a blade that burns as bright as the sun, incinerating all in its arc.",
+        "id": "W0335"
     },
     {
         "weaponName": "Brimstone Pike",
         "weaponProfileTag": "damage",
         "regionProfileTag": "nether",
-        "description": "A long spear with a tip that crackles with sparks of sulfurous lightning."
+        "description": "A long spear with a tip that crackles with sparks of sulfurous lightning.",
+        "id": "W0336"
     },
     {
         "weaponName": "Shadowflame Wand",
         "weaponProfileTag": "damage",
         "regionProfileTag": "nether",
-        "description": "A twisted wand that casts orbs of dark fire, engulfing targets in a shadowy inferno."
+        "description": "A twisted wand that casts orbs of dark fire, engulfing targets in a shadowy inferno.",
+        "id": "W0337"
     },
     {
         "weaponName": "Emberheart Staff",
         "weaponProfileTag": "damageAndRestoration",
         "regionProfileTag": "nether",
-        "description": "A charred staff that cauterizes wounds with its touch, melding pain with healing."
+        "description": "A charred staff that cauterizes wounds with its touch, melding pain with healing.",
+        "id": "W0338"
     },
     {
         "weaponName": "Phoenix Plume Fan",
         "weaponProfileTag": "damageAndRestoration",
         "regionProfileTag": "nether",
-        "description": "A fan of fiery feathers that singes foes while enveloping allies in rejuvenating warmth."
+        "description": "A fan of fiery feathers that singes foes while enveloping allies in rejuvenating warmth.",
+        "id": "W0339"
     },
     {
         "weaponName": "Sanguine Cinder Stone",
         "weaponProfileTag": "damageAndRestoration",
         "regionProfileTag": "nether",
-        "description": "A glowing magma orb that siphons life force from adversaries to mend the wielder's flesh."
+        "description": "A glowing magma orb that siphons life force from adversaries to mend the wielder's flesh.",
+        "id": "W0340"
     },
     {
         "weaponName": "Blazebloom Scepter",
         "weaponProfileTag": "damageAndRestoration",
         "regionProfileTag": "nether",
-        "description": "A scepter topped with a fiery blossom whose searing petals restore as they scorch."
+        "description": "A scepter topped with a fiery blossom whose searing petals restore as they scorch.",
+        "id": "W0341"
     },
     {
         "weaponName": "Infernal Pulse Amulet",
         "weaponProfileTag": "damageAndRestoration",
         "regionProfileTag": "nether",
-        "description": "An amulet pulsing with dark fire that lashes enemies and bathes the bearer in life-giving flames."
+        "description": "An amulet pulsing with dark fire that lashes enemies and bathes the bearer in life-giving flames.",
+        "id": "W0342"
     },
     {
         "weaponName": "Ashen Rebirth Tome",
         "weaponProfileTag": "restoration",
         "regionProfileTag": "nether",
-        "description": "A tome bound in charred leather that inscribes wounds with whispers of renewal."
+        "description": "A tome bound in charred leather that inscribes wounds with whispers of renewal.",
+        "id": "W0343"
     },
     {
         "weaponName": "Phoenix Tear Vial",
         "weaponProfileTag": "restoration",
         "regionProfileTag": "nether",
-        "description": "A delicate vial containing a single drop of phoenix tear, capable of mending the gravest of injuries."
+        "description": "A delicate vial containing a single drop of phoenix tear, capable of mending the gravest of injuries.",
+        "id": "W0344"
     },
     {
         "weaponName": "Hellbloom Extract",
         "weaponProfileTag": "restoration",
         "regionProfileTag": "nether",
-        "description": "A concentrated essence drawn from flowers thriving in brimstone, reviving the fallen."
+        "description": "A concentrated essence drawn from flowers thriving in brimstone, reviving the fallen.",
+        "id": "W0345"
     },
     {
         "weaponName": "Infernal Essence Rod",
         "weaponProfileTag": "restoration",
         "regionProfileTag": "nether",
-        "description": "A rod pulsating with hellfire's core energy that seals flesh and spirit alike."
+        "description": "A rod pulsating with hellfire's core energy that seals flesh and spirit alike.",
+        "id": "W0346"
     },
     {
         "weaponName": "Djinn's Whisper Lantern",
         "weaponProfileTag": "restoration",
         "regionProfileTag": "nether",
-        "description": "An enchanted lantern whose light breathes life into the withered and the weary."
+        "description": "An enchanted lantern whose light breathes life into the withered and the weary.",
+        "id": "W0347"
     },
     {
         "weaponName": "Demonhide Buckler",
         "weaponProfileTag": "armorPointsRestoration",
         "regionProfileTag": "nether",
-        "description": "A small shield crafted from resilient demon hide that regenerates its bearer's defenses."
+        "description": "A small shield crafted from resilient demon hide that regenerates its bearer's defenses.",
+        "id": "W0348"
     },
     {
         "weaponName": "Infernal Aegis Charm",
         "weaponProfileTag": "armorPointsRestoration",
         "regionProfileTag": "nether",
-        "description": "An amulet imbued with netherfire that reinforces and restores the armor it adorns."
+        "description": "An amulet imbued with netherfire that reinforces and restores the armor it adorns.",
+        "id": "W0349"
     },
     {
         "weaponName": "Obsidian Guard Bracer",
         "weaponProfileTag": "armorPointsRestoration",
         "regionProfileTag": "nether",
-        "description": "A forearm bracer made of layered obsidian that absorbs blows, bolstering the wearer's armor."
+        "description": "A forearm bracer made of layered obsidian that absorbs blows, bolstering the wearer's armor.",
+        "id": "W0350"
     },
     {
         "weaponName": "Flameforged Barrier Ring",
         "weaponProfileTag": "armorPointsRestoration",
         "regionProfileTag": "nether",
-        "description": "A ring that summons a protective fire shield, healing the cracks in its wearer's armor."
+        "description": "A ring that summons a protective fire shield, healing the cracks in its wearer's armor.",
+        "id": "W0351"
     },
     {
         "weaponName": "Inferno Ward Glyph",
         "weaponProfileTag": "armorPointsRestoration",
         "regionProfileTag": "nether",
-        "description": "A glyph that radiates with hellish energy, reinforcing protective enchantments upon touch."
+        "description": "A glyph that radiates with hellish energy, reinforcing protective enchantments upon touch.",
+        "id": "W0352"
     },
     {
         "weaponName": "Chaos Ember Chakram",
         "weaponProfileTag": "collateral",
         "regionProfileTag": "nether",
-        "description": "A fiery chakram that rebounds erratically, igniting wielder and foe alike."
+        "description": "A fiery chakram that rebounds erratically, igniting wielder and foe alike.",
+        "id": "W0353"
     },
     {
         "weaponName": "Pandemonium Pulse Orb",
         "weaponProfileTag": "collateral",
         "regionProfileTag": "nether",
-        "description": "An orb pulsating with unpredictable energies, capable of random boons and banes."
+        "description": "An orb pulsating with unpredictable energies, capable of random boons and banes.",
+        "id": "W0354"
     },
     {
         "weaponName": "Infernal Bargain Grimoire",
         "weaponProfileTag": "collateral",
         "regionProfileTag": "nether",
-        "description": "A tome offering powerful spells that may backfire, binding the caster's fate to chaos."
+        "description": "A tome offering powerful spells that may backfire, binding the caster's fate to chaos.",
+        "id": "W0355"
     },
     {
         "weaponName": "Soul Devourer Kris",
         "weaponProfileTag": "consumesFoe",
         "regionProfileTag": "nether",
-        "description": "A serpentine dagger that drains the essence of those it cuts, transferring their vigor."
+        "description": "A serpentine dagger that drains the essence of those it cuts, transferring their vigor.",
+        "id": "W0356"
     },
     {
         "weaponName": "Vortex Drain Scepter",
         "weaponProfileTag": "consumesFoe",
         "regionProfileTag": "nether",
-        "description": "A scepter that creates a vortex to siphon the enemy's life force, healing its master."
+        "description": "A scepter that creates a vortex to siphon the enemy's life force, healing its master.",
+        "id": "W0357"
     },
     {
         "weaponName": "Abyssal Echo Conch",
         "weaponProfileTag": "consumesFoe",
         "regionProfileTag": "nether",
-        "description": "A mystical conch that echoes the last scream of a foe, harnessing their strength."
+        "description": "A mystical conch that echoes the last scream of a foe, harnessing their strength.",
+        "id": "W0358"
     },
     {
         "weaponName": "Seraphic Light Amulet",
         "weaponProfileTag": "healthRestoration",
         "regionProfileTag": "nether",
-        "description": "An amulet radiating a warm, divine glow that bathes wounds in celestial light for healing."
+        "description": "An amulet radiating a warm, divine glow that bathes wounds in celestial light for healing.",
+        "id": "W0359"
     },
     {
         "weaponName": "Pixie Dust Phial",
         "weaponProfileTag": "healthRestoration",
         "regionProfileTag": "nether",
-        "description": "A vial of shimmering dust granting bursts of healing with each sprinkle over the injured."
+        "description": "A vial of shimmering dust granting bursts of healing with each sprinkle over the injured.",
+        "id": "W0360"
     },
     {
         "weaponName": "Emerald Grace Charm",
         "weaponProfileTag": "healthRestoration",
         "regionProfileTag": "nether",
-        "description": "A charm carved from a verdant gem that pulses with life, knitting together the flesh of the wounded."
+        "description": "A charm carved from a verdant gem that pulses with life, knitting together the flesh of the wounded.",
+        "id": "W0361"
     },
     {
         "weaponName": "Elixir of Vitality",
         "weaponProfileTag": "healthRestoration",
         "regionProfileTag": "nether",
-        "description": "A bubbling concoction that invigorates the drinker's spirit, mending their ailments."
+        "description": "A bubbling concoction that invigorates the drinker's spirit, mending their ailments.",
+        "id": "W0362"
     },
     {
         "weaponName": "Runestone of Regeneration",
         "weaponProfileTag": "healthRestoration",
         "regionProfileTag": "nether",
-        "description": "An ancient rune that glows with a soft luminescence, soothing pain and restoring the bearer's health."
+        "description": "An ancient rune that glows with a soft luminescence, soothing pain and restoring the bearer's health.",
+        "id": "W0363"
     }
 ]

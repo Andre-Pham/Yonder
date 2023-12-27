@@ -3,217 +3,252 @@
         "weaponName": "Shadowrend Dagger",
         "weaponProfileTag": "damage",
         "regionProfileTag": "shadow",
-        "description": "A sleek dagger that seems to absorb light, its edge a sliver of darkness capable of slicing through the fabric of reality."
+        "description": "A sleek dagger that seems to absorb light, its edge a sliver of darkness capable of slicing through the fabric of reality.",
+        "id": "W0364"
     },
     {
         "weaponName": "Eclipse Scythe",
         "weaponProfileTag": "damage",
         "regionProfileTag": "shadow",
-        "description": "A scythe with a blade dark as a moonless night, sweeping through enemies like an unstoppable force of dusk."
+        "description": "A scythe with a blade dark as a moonless night, sweeping through enemies like an unstoppable force of dusk.",
+        "id": "W0365"
     },
     {
         "weaponName": "Nightmare Blade",
         "weaponProfileTag": "damage",
         "regionProfileTag": "shadow",
-        "description": "A sword forged from the essence of nightmares, its blackened blade whispers terror into the hearts of its foes."
+        "description": "A sword forged from the essence of nightmares, its blackened blade whispers terror into the hearts of its foes.",
+        "id": "W0366"
     },
     {
         "weaponName": "Duskwraith Bow",
         "weaponProfileTag": "damage",
         "regionProfileTag": "shadow",
-        "description": "A longbow crafted from shadows, its arrows glide silently, leaving trails of gloom in their wake."
+        "description": "A longbow crafted from shadows, its arrows glide silently, leaving trails of gloom in their wake.",
+        "id": "W0367"
     },
     {
         "weaponName": "Abyssal Spike",
         "weaponProfileTag": "damage",
         "regionProfileTag": "shadow",
-        "description": "A sinister spike that emerges from the shadows, piercing armor and hope with equal ease."
+        "description": "A sinister spike that emerges from the shadows, piercing armor and hope with equal ease.",
+        "id": "W0368"
     },
     {
         "weaponName": "Gloomshard Axe",
         "weaponProfileTag": "damage",
         "regionProfileTag": "shadow",
-        "description": "An axe with a shard of pure darkness for a blade, cleaving despair into the souls of its victims."
+        "description": "An axe with a shard of pure darkness for a blade, cleaving despair into the souls of its victims.",
+        "id": "W0369"
     },
     {
         "weaponName": "Voidtouched Rapier",
         "weaponProfileTag": "damage",
         "regionProfileTag": "shadow",
-        "description": "A rapier with a hilt of shadow essence, its thrusts puncture the veil between realms."
+        "description": "A rapier with a hilt of shadow essence, its thrusts puncture the veil between realms.",
+        "id": "W0370"
     },
     {
         "weaponName": "Phantom Glaive",
         "weaponProfileTag": "damage",
         "regionProfileTag": "shadow",
-        "description": "A glaive that phases in and out of sight, its blade a mere wisp of darkness that rends flesh and spirit alike."
+        "description": "A glaive that phases in and out of sight, its blade a mere wisp of darkness that rends flesh and spirit alike.",
+        "id": "W0371"
     },
     {
         "weaponName": "Oblivion Mace",
         "weaponProfileTag": "damage",
         "regionProfileTag": "shadow",
-        "description": "A mace that seems to swallow the light around it, pulverizing enemies with the weight of darkness."
+        "description": "A mace that seems to swallow the light around it, pulverizing enemies with the weight of darkness.",
+        "id": "W0372"
     },
     {
         "weaponName": "Netherchain Whip",
         "weaponProfileTag": "damage",
         "regionProfileTag": "shadow",
-        "description": "A whip composed of ethereal chains, crackling with the energy of the void as it lashes out."
+        "description": "A whip composed of ethereal chains, crackling with the energy of the void as it lashes out.",
+        "id": "W0373"
     },
     {
         "weaponName": "Twilight Shroud",
         "weaponProfileTag": "damageAndRestoration",
         "regionProfileTag": "shadow",
-        "description": "A mystical cape that wraps the wearer in darkness, draining life from foes while mending the wearer's own wounds."
+        "description": "A mystical cape that wraps the wearer in darkness, draining life from foes while mending the wearer's own wounds.",
+        "id": "W0374"
     },
     {
         "weaponName": "Umbramancer's Codex",
         "weaponProfileTag": "damageAndRestoration",
         "regionProfileTag": "shadow",
-        "description": "An ancient tome bound in shadows, scribing pain upon enemies as its incantations heal the reader."
+        "description": "An ancient tome bound in shadows, scribing pain upon enemies as its incantations heal the reader.",
+        "id": "W0375"
     },
     {
         "weaponName": "Eclipsing Orb",
         "weaponProfileTag": "damageAndRestoration",
         "regionProfileTag": "shadow",
-        "description": "A pulsating sphere that oscillates between light and dark, siphoning vitality from adversaries to rejuvenate its holder."
+        "description": "A pulsating sphere that oscillates between light and dark, siphoning vitality from adversaries to rejuvenate its holder.",
+        "id": "W0376"
     },
     {
         "weaponName": "Shadowbloom Essence",
         "weaponProfileTag": "damageAndRestoration",
         "regionProfileTag": "shadow",
-        "description": "A vial of dark liquid that, when splashed, wilts life from foes while blossoming health in allies."
+        "description": "A vial of dark liquid that, when splashed, wilts life from foes while blossoming health in allies.",
+        "id": "W0377"
     },
     {
         "weaponName": "Penumbral Prism",
         "weaponProfileTag": "damageAndRestoration",
         "regionProfileTag": "shadow",
-        "description": "A crystal prism that fractures light into darkness, leeching energy from one soul to mend another."
+        "description": "A crystal prism that fractures light into darkness, leeching energy from one soul to mend another.",
+        "id": "W0378"
     },
     {
         "weaponName": "Nocturne's Whisper",
         "weaponProfileTag": "restoration",
         "regionProfileTag": "shadow",
-        "description": "A delicate amulet that hums with a soft lullaby, enveloping the bearer in shadows that soothe and mend."
+        "description": "A delicate amulet that hums with a soft lullaby, enveloping the bearer in shadows that soothe and mend.",
+        "id": "W0379"
     },
     {
         "weaponName": "Duskpetal Elixir",
         "weaponProfileTag": "restoration",
         "regionProfileTag": "shadow",
-        "description": "A flask of shimmering potion made from twilight petals, rejuvenating the spirit with each sip."
+        "description": "A flask of shimmering potion made from twilight petals, rejuvenating the spirit with each sip.",
+        "id": "W0380"
     },
     {
         "weaponName": "Veilshroud Scepter",
         "weaponProfileTag": "restoration",
         "regionProfileTag": "shadow",
-        "description": "A scepter crowned with a swirling shadow orb, casting a protective aura that restores vitality to its wielder."
+        "description": "A scepter crowned with a swirling shadow orb, casting a protective aura that restores vitality to its wielder.",
+        "id": "W0381"
     },
     {
         "weaponName": "Moonmist Lantern",
         "weaponProfileTag": "restoration",
         "regionProfileTag": "shadow",
-        "description": "An ethereal lantern that glows with a healing moonlight, banishing wounds with its serene luminescence."
+        "description": "An ethereal lantern that glows with a healing moonlight, banishing wounds with its serene luminescence.",
+        "id": "W0382"
     },
     {
         "weaponName": "Shadecloth Bandages",
         "weaponProfileTag": "restoration",
         "regionProfileTag": "shadow",
-        "description": "Bandages woven from healing darkness, wrapping wounds in comfort and accelerating recovery."
+        "description": "Bandages woven from healing darkness, wrapping wounds in comfort and accelerating recovery.",
+        "id": "W0383"
     },
     {
         "weaponName": "Gloaming Guard Totem",
         "weaponProfileTag": "armorPointsRestoration",
         "regionProfileTag": "shadow",
-        "description": "A dark totem that radiates a restorative aura, knitting together the armor of those who stand within its shadow."
+        "description": "A dark totem that radiates a restorative aura, knitting together the armor of those who stand within its shadow.",
+        "id": "W0384"
     },
     {
         "weaponName": "Nightshade Salve",
         "weaponProfileTag": "armorPointsRestoration",
         "regionProfileTag": "shadow",
-        "description": "An ointment imbued with the essence of twilight, seeping into armor to repair and reinforce its structure."
+        "description": "An ointment imbued with the essence of twilight, seeping into armor to repair and reinforce its structure.",
+        "id": "W0385"
     },
     {
         "weaponName": "Shadowmeld Oil",
         "weaponProfileTag": "armorPointsRestoration",
         "regionProfileTag": "shadow",
-        "description": "A viscous liquid that, when applied, melds into armor, sealing cracks with a resilience born from darkness."
+        "description": "A viscous liquid that, when applied, melds into armor, sealing cracks with a resilience born from darkness.",
+        "id": "W0386"
     },
     {
         "weaponName": "Wraithweave Thread",
         "weaponProfileTag": "armorPointsRestoration",
         "regionProfileTag": "shadow",
-        "description": "A spool of ethereal thread that stitches the essence of shadows into armor, bolstering its protective might."
+        "description": "A spool of ethereal thread that stitches the essence of shadows into armor, bolstering its protective might.",
+        "id": "W0387"
     },
     {
         "weaponName": "Umbral Alloy",
         "weaponProfileTag": "armorPointsRestoration",
         "regionProfileTag": "shadow",
-        "description": "A malleable paste of condensed shadows, used to fuse and fortify the integrity of damaged armor."
+        "description": "A malleable paste of condensed shadows, used to fuse and fortify the integrity of damaged armor.",
+        "id": "W0388"
     },
     {
         "weaponName": "Echospike Grenade",
         "weaponProfileTag": "collateral",
         "regionProfileTag": "shadow",
-        "description": "A volatile orb that detonates in a chorus of shadowy echoes, buffeting friend and foe alike with waves of dark energy."
+        "description": "A volatile orb that detonates in a chorus of shadowy echoes, buffeting friend and foe alike with waves of dark energy.",
+        "id": "W0389"
     },
     {
         "weaponName": "Pandemonium Prism",
         "weaponProfileTag": "collateral",
         "regionProfileTag": "shadow",
-        "description": "A chaotic crystal that fractures reality, randomly distorting the battlefield with harmful and helpful shadow surges."
+        "description": "A chaotic crystal that fractures reality, randomly distorting the battlefield with harmful and helpful shadow surges.",
+        "id": "W0390"
     },
     {
         "weaponName": "Riftmaker Stone",
         "weaponProfileTag": "collateral",
         "regionProfileTag": "shadow",
-        "description": "An obsidian stone that bleeds darkness, opening rifts that can consume or empower depending on their capricious whims."
+        "description": "An obsidian stone that bleeds darkness, opening rifts that can consume or empower depending on their capricious whims.",
+        "id": "W0391"
     },
     {
         "weaponName": "Soul Siphon Amulet",
         "weaponProfileTag": "consumesFoe",
         "regionProfileTag": "shadow",
-        "description": "A sinister amulet that drains the essence of defeated enemies, converting their strength into healing energy for the wearer."
+        "description": "A sinister amulet that drains the essence of defeated enemies, converting their strength into healing energy for the wearer.",
+        "id": "W0392"
     },
     {
         "weaponName": "Voracity Vortex Rod",
         "weaponProfileTag": "consumesFoe",
         "regionProfileTag": "shadow",
-        "description": "A spiraled rod that summons a devouring vortex, absorbing the life force of those it engulfs to replenish its master."
+        "description": "A spiraled rod that summons a devouring vortex, absorbing the life force of those it engulfs to replenish its master.",
+        "id": "W0393"
     },
     {
         "weaponName": "Grasp of the Gloomthief",
         "weaponProfileTag": "consumesFoe",
         "regionProfileTag": "shadow",
-        "description": "A shadowy gauntlet that clings to the power of vanquished adversaries, seizing a portion of their vitality with every defeat."
+        "description": "A shadowy gauntlet that clings to the power of vanquished adversaries, seizing a portion of their vitality with every defeat.",
+        "id": "W0394"
     },
     {
         "weaponName": "Seraphic Sigil",
         "weaponProfileTag": "healthRestoration",
         "regionProfileTag": "shadow",
-        "description": "A radiant emblem that glows with a soft celestial light, blessing the bearer with waves of purifying energy."
+        "description": "A radiant emblem that glows with a soft celestial light, blessing the bearer with waves of purifying energy.",
+        "id": "W0395"
     },
     {
         "weaponName": "Mender's Mantra Beads",
         "weaponProfileTag": "healthRestoration",
         "regionProfileTag": "shadow",
-        "description": "A string of beads inscribed with ancient healing prayers, each chant restoring the vitality of those who utter them."
+        "description": "A string of beads inscribed with ancient healing prayers, each chant restoring the vitality of those who utter them.",
+        "id": "W0396"
     },
     {
         "weaponName": "Benediction Branch",
         "weaponProfileTag": "healthRestoration",
         "regionProfileTag": "shadow",
-        "description": "A golden bough from a sacred grove, its leaves shimmering with a restorative aura that mends the wounds of the pure-hearted."
+        "description": "A golden bough from a sacred grove, its leaves shimmering with a restorative aura that mends the wounds of the pure-hearted.",
+        "id": "W0397"
     },
     {
         "weaponName": "Divine Decree Scroll",
         "weaponProfileTag": "healthRestoration",
         "regionProfileTag": "shadow",
-        "description": "A scroll that bears a holy proclamation, its words capable of sealing injuries with a warm, glowing script."
+        "description": "A scroll that bears a holy proclamation, its words capable of sealing injuries with a warm, glowing script.",
+        "id": "W0398"
     },
     {
         "weaponName": "Cherub's Charm",
         "weaponProfileTag": "healthRestoration",
         "regionProfileTag": "shadow",
-        "description": "A delicate charm imbued with the laughter of cherubs, its joyous resonance knitting together flesh and spirit."
+        "description": "A delicate charm imbued with the laughter of cherubs, its joyous resonance knitting together flesh and spirit.",
+        "id": "W0399"
     }
 ]
-
