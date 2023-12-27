@@ -6380,9 +6380,25 @@
 		B678C1282B3C3ADE00CD6354 /* Game Data */ = {
 			isa = PBXGroup;
 			children = (
+				B678C1292B3C3BEF00CD6354 /* Weapon Data */,
 				B6C37E0D2A32DE88004D18A8 /* NPC Data */,
 			);
 			path = "Game Data";
+			sourceTree = "<group>";
+		};
+		B678C1292B3C3BEF00CD6354 /* Weapon Data */ = {
+			isa = PBXGroup;
+			children = (
+				B678C12A2B3C3BFC00CD6354 /* Metadata */,
+			);
+			path = "Weapon Data";
+			sourceTree = "<group>";
+		};
+		B678C12A2B3C3BFC00CD6354 /* Metadata */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Metadata;
 			sourceTree = "<group>";
 		};
 		B6C37DF52A32B460004D18A8 /* NPC Animations */ = {
