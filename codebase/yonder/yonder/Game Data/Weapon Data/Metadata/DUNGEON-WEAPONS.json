@@ -1,0 +1,254 @@
+[
+    {
+        "weaponName": "Gloomblade",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "dungeon",
+        "description": "A dark, sleek dagger that seems to swallow the light around it, perfect for silent takedowns.",
+        "id": "W0076"
+    },
+    {
+        "weaponName": "Abyssal Mace",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "dungeon",
+        "description": "A heavy mace with a head shaped like a grotesque face, its mouth agape, ready to crush bones.",
+        "id": "W0077"
+    },
+    {
+        "weaponName": "Shadowspike",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "dungeon",
+        "description": "A pitch-black spear with a tip that gleams with a venomous shine, promising swift impalement.",
+        "id": "W0078"
+    },
+    {
+        "weaponName": "Crypt Hammer",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "dungeon",
+        "description": "A sledgehammer adorned with skull motifs, resonating with the echoes of the crypts.",
+        "id": "W0079"
+    },
+    {
+        "weaponName": "Banshee Sickle",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "dungeon",
+        "description": "A curved sickle that hums with a spectral wail as it slices through the air.",
+        "id": "W0080"
+    },
+    {
+        "weaponName": "Dreadwhip",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "dungeon",
+        "description": "A lash made from the desiccated tendons of a fell beast, crackling with malevolent energy.",
+        "id": "W0081"
+    },
+    {
+        "weaponName": "Catacomb Claw",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "dungeon",
+        "description": "A set of gauntlets with elongated, razor-sharp fingernails resembling skeletal claws.",
+        "id": "W0082"
+    },
+    {
+        "weaponName": "Necrotic Chakram",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "dungeon",
+        "description": "A circular throwing weapon that whispers of decay, its edge etched with deathly runes.",
+        "id": "W0083"
+    },
+    {
+        "weaponName": "Lichblade",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "dungeon",
+        "description": "A sword with a crystalline blade that seems to pulse with the trapped souls of the foes slain.",
+        "id": "W0084"
+    },
+    {
+        "weaponName": "Gloomfang Dagger",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "dungeon",
+        "description": "A sinister dagger with a blade as dark as the dungeon's shadows, edged with a venomous gleam that promises swift lethality.",
+        "id": "W0085"
+    },
+    {
+        "weaponName": "Sanguine Orb",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "dungeon",
+        "description": "A crimson sphere that pulsates with a life force, absorbing vitality from foes while bolstering the wielder's own.",
+        "id": "W0086"
+    },
+    {
+        "weaponName": "Chalice of Retribution",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "dungeon",
+        "description": "An ancient goblet that spills corrosive liquid upon adversaries while emitting a restorative mist to the bearer.",
+        "id": "W0087"
+    },
+    {
+        "weaponName": "Umbral Thorn",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "dungeon",
+        "description": "A shadowy plant's root that leeches essence from its quarry, transferring energy back to its master.",
+        "id": "W0088"
+    },
+    {
+        "weaponName": "Cinderchain Talisman",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "dungeon",
+        "description": "A looping chain of smoldering charms that sears aggressors while knitting the user's wounds with warmth.",
+        "id": "W0089"
+    },
+    {
+        "weaponName": "Echoing Bell",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "dungeon",
+        "description": "A bell that tolls a resonating note, disorienting foes with its sound waves and harmonizing the user's life force.",
+        "id": "W0090"
+    },
+    {
+        "weaponName": "Whispering Amulet",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "dungeon",
+        "description": "An amulet that murmurs ancient incantations, knitting together the very essence of life around it.",
+        "id": "W0091"
+    },
+    {
+        "weaponName": "Mender's Mosaic",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "dungeon",
+        "description": "A fragmented relic whose pieces glow with a soothing light, mending the bearer's injuries with each pulse.",
+        "id": "W0092"
+    },
+    {
+        "weaponName": "Abyssal Bloom",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "dungeon",
+        "description": "A flower plucked from the depths, its petals shimmer with a healing aura that rejuvenates any who hold it.",
+        "id": "W0093"
+    },
+    {
+        "weaponName": "Reverie Crystal",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "dungeon",
+        "description": "A crystal that vibrates with dreamlike energy, enveloping allies in a restorative resonance.",
+        "id": "W0094"
+    },
+    {
+        "weaponName": "Eclipse Elixir",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "dungeon",
+        "description": "A vial filled with a swirling concoction, where each sip restores more than the last under the dungeon's gloom.",
+        "id": "W0095"
+    },
+    {
+        "weaponName": "Gargoyle Gauntlet",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "dungeon",
+        "description": "A gauntlet that encases the owner with a stone-like barrier that regenerates over time.",
+        "id": "W0096"
+    },
+    {
+        "weaponName": "Wardweaver's Sigil",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "dungeon",
+        "description": "An inscribed token that spins slowly, weaving a protective barrier that continually restores its integrity.",
+        "id": "W0097"
+    },
+    {
+        "weaponName": "Mystic Mantle",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "dungeon",
+        "description": "A cloak imbued with arcane threads that mend and fortify the wearer's armor with every magical thread.",
+        "id": "W0098"
+    },
+    {
+        "weaponName": "Bastion Bloom",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "dungeon",
+        "description": "A resilient blossom whose petals harden to replenish and reinforce the bearer's protective gear.",
+        "id": "W0099"
+    },
+    {
+        "weaponName": "Aegis Ash",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "dungeon",
+        "description": "A pinch of this ash, when thrown into the air, forms a circling shield of particles that repairs and strengthens armor.",
+        "id": "W0100"
+    },
+    {
+        "weaponName": "Chaos Ember",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "dungeon",
+        "description": "A smoldering shard that erupts in unpredictable flames, scorching both bearer and enemy with wild abandon.",
+        "id": "W0101"
+    },
+    {
+        "weaponName": "Pandemonium Pulsar",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "dungeon",
+        "description": "An enigmatic orb pulsing erratically, distorting reality to unleash havoc on friend and foe alike.",
+        "id": "W0102"
+    },
+    {
+        "weaponName": "Rune of Ruin",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "dungeon",
+        "description": "An ancient rune that once activated, unleashes a burst of energy that decimates all in its vicinity, without prejudice.",
+        "id": "W0103"
+    },
+    {
+        "weaponName": "Grimoire of Greed",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "dungeon",
+        "description": "A tome that absorbs the essence of defeated enemies, converting their strength into vitality for the reader.",
+        "id": "W0104"
+    },
+    {
+        "weaponName": "Siphon Specter",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "dungeon",
+        "description": "A phantom companion that drains the life force from foes to mend its master's wounds.",
+        "id": "W0105"
+    },
+    {
+        "weaponName": "Vortex Vial",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "dungeon",
+        "description": "A swirling potion that, when shattered, devours a fragment of the enemy's soul to restore the user's health.",
+        "id": "W0106"
+    },
+    {
+        "weaponName": "Dungeon Delver's Lantern",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "dungeon",
+        "description": "An iron lantern with a flame that burns a spectral blue, casting a healing light that mends the flesh of those who brave the dark corridors.",
+        "id": "W0107"
+    },
+    {
+        "weaponName": "Ectoplasmic Essence Vial",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "dungeon",
+        "description": "A vial containing a swirling ghostly essence, which, when consumed, knits together wounds with otherworldly efficiency.",
+        "id": "W0108"
+    },
+    {
+        "weaponName": "Runestone of the Healer",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "dungeon",
+        "description": "A dark runestone etched with ancient glyphs, pulsating with an inner light that seals gashes and soothes pain upon the bearer's touch.",
+        "id": "W0109"
+    },
+    {
+        "weaponName": "Chained Heart Amulet",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "dungeon",
+        "description": "An amulet with a heart-shaped gem, bound by ornate chains, that absorbs the ambient mana of the dungeon to replenish the wearer's life force.",
+        "id": "W0110"
+    },
+    {
+        "weaponName": "Arcane Mender's Tome",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "dungeon",
+        "description": "A tome bound in shadowskin leather, each page a portal to healing energies that cascade over the reader, closing wounds with whispered incantations.",
+        "id": "W0111"
+    }
+]

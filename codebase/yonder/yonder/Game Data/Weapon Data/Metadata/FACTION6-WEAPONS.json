@@ -1,0 +1,254 @@
+[
+    {
+        "weaponName": "Frostfang Scimitar",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction6",
+        "description": "A curving blade that glistens with perpetual frost, sharp enough to slice through the coldest winds.",
+        "id": "W0292"
+    },
+    {
+        "weaponName": "Glacial Hammer",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction6",
+        "description": "A heavy, ice-encrusted hammer capable of shattering boulders with a single, chilling blow.",
+        "id": "W0293"
+    },
+    {
+        "weaponName": "Snowstorm Scepter",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction6",
+        "description": "A slender staff topped with a crystal that swirls with a perpetual, fierce snowstorm.",
+        "id": "W0294"
+    },
+    {
+        "weaponName": "Icicle Lance",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction6",
+        "description": "A long, pointed spear made from a massive, razor-sharp icicle, embodying the piercing cold.",
+        "id": "W0295"
+    },
+    {
+        "weaponName": "Permafrost Axe",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction6",
+        "description": "A broad axe with a blade encased in ice, freezing the air with each swing.",
+        "id": "W0296"
+    },
+    {
+        "weaponName": "Blizzard Bow",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction6",
+        "description": "A recurve bow with strings that hum like the howling winds of a fierce blizzard.",
+        "id": "W0297"
+    },
+    {
+        "weaponName": "Crystal Shard Dagger",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction6",
+        "description": "A dagger forged from translucent ice crystals, sharp and brittle, yet deadly in silence.",
+        "id": "W0298"
+    },
+    {
+        "weaponName": "Frostbite Flail",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction6",
+        "description": "A chain flail with a head encased in ice, causing numbing cold upon impact.",
+        "id": "W0299"
+    },
+    {
+        "weaponName": "Hailstone Halberd",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction6",
+        "description": "A polearm with a head shaped like frozen hailstones, able to cleave through armor as if it were cloth.",
+        "id": "W0300"
+    },
+    {
+        "weaponName": "Winter's Edge Rapier",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction6",
+        "description": "A slender rapier with a blade as clear and sharp as the iciest winter morning.",
+        "id": "W0301"
+    },
+    {
+        "weaponName": "Frostbloom Staff",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "faction6",
+        "description": "A staff topped with an ever-blooming frost flower, whose petals can both freeze foes and mend wounds with icy grace.",
+        "id": "W0302"
+    },
+    {
+        "weaponName": "Glacial Heart Orb",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "faction6",
+        "description": "A mystical orb pulsating with a frozen core, radiating cold energy that can weaken enemies or rejuvenate allies.",
+        "id": "W0303"
+    },
+    {
+        "weaponName": "Icestorm Chime",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "faction6",
+        "description": "A set of chimes encased in ice, whose harmonious tones can both summon chilling winds and soothe injuries.",
+        "id": "W0304"
+    },
+    {
+        "weaponName": "Wintermist Cloak",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "faction6",
+        "description": "A cloak woven from ethereal ice threads, capable of enveloping foes in frost while fortifying the wearer's vitality.",
+        "id": "W0305"
+    },
+    {
+        "weaponName": "Rimebound Tome",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "faction6",
+        "description": "An ancient book bound in ice, scribing spells that can both sap warmth from adversaries and bestow invigorating cold.",
+        "id": "W0306"
+    },
+    {
+        "weaponName": "Aurora Pendant",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "faction6",
+        "description": "A luminous pendant that radiates the healing light of the aurora, rejuvenating those it envelops.",
+        "id": "W0307"
+    },
+    {
+        "weaponName": "Boreal Wand",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "faction6",
+        "description": "A slender wand emitting a gentle frost aura, capable of mending wounds with a soothing chill.",
+        "id": "W0308"
+    },
+    {
+        "weaponName": "Crystal Bloom Scepter",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "faction6",
+        "description": "A scepter crowned with a blooming crystal flower, its petals shimmering with restorative ice magic.",
+        "id": "W0309"
+    },
+    {
+        "weaponName": "Frostvine Ring",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "faction6",
+        "description": "A ring entwined with frostbitten vines, channeling the life-giving essence of winter to heal and invigorate.",
+        "id": "W0310"
+    },
+    {
+        "weaponName": "Glacier Grail",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "faction6",
+        "description": "An ancient chalice carved from glacial ice, filled with an elixir that restores vitality with the purity of snow.",
+        "id": "W0311"
+    },
+    {
+        "weaponName": "Permafrost Amulet",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "faction6",
+        "description": "An amulet encased in a layer of ever-regenerating ice, bolstering the wearer's defenses with each frosty layer.",
+        "id": "W0312"
+    },
+    {
+        "weaponName": "Icicle Mantle",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "faction6",
+        "description": "A shimmering mantle adorned with hanging icicles, each one reinforcing the bearer's shield with a cold embrace.",
+        "id": "W0313"
+    },
+    {
+        "weaponName": "Glacier Orb",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "faction6",
+        "description": "A smooth, icy orb that radiates a protective chill, fortifying the user's armor with a glacial shield.",
+        "id": "W0314"
+    },
+    {
+        "weaponName": "Frost Echo Conch",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "faction6",
+        "description": "A mystical conch that echoes with the whispers of ancient frost, mending and reinforcing armor with each sound wave.",
+        "id": "W0315"
+    },
+    {
+        "weaponName": "Winter's Breath Flute",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "faction6",
+        "description": "A flute that plays melodies as crisp as winter air, weaving a protective aura that restores and strengthens armor.",
+        "id": "W0316"
+    },
+    {
+        "weaponName": "Blizzard Bind Rune",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "faction6",
+        "description": "A mystical rune that unleashes a savage blizzard, ensnaring both foe and wielder in a frosty tempest.",
+        "id": "W0317"
+    },
+    {
+        "weaponName": "Frostfire Lantern",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "faction6",
+        "description": "An enigmatic lantern radiating a paradoxical flame that burns with ice, risking harm to both user and enemy.",
+        "id": "W0318"
+    },
+    {
+        "weaponName": "Avalanche Charm",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "faction6",
+        "description": "A charm that summons a relentless avalanche, engulfing everything in its path with indomitable force.",
+        "id": "W0319"
+    },
+    {
+        "weaponName": "Vorpal Frostblade",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "faction6",
+        "description": "A spectral blade that absorbs the essence of its victims, turning their strength into icy power for the wielder.",
+        "id": "W0320"
+    },
+    {
+        "weaponName": "Siphon Snowglobe",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "faction6",
+        "description": "A magical snowglobe that traps foes in a miniature blizzard, draining their energy to heal its master.",
+        "id": "W0321"
+    },
+    {
+        "weaponName": "Glacial Parasite Staff",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "faction6",
+        "description": "A staff infested with a sentient ice parasite, leeching life from adversaries to invigorate its bearer.",
+        "id": "W0322"
+    },
+    {
+        "weaponName": "Celestial Harmony Amulet",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "faction6",
+        "description": "A radiant amulet that hums with the harmony of the heavens, bathing the wearer in a rejuvenating celestial light.",
+        "id": "W0323"
+    },
+    {
+        "weaponName": "Serenity Scepter",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "faction6",
+        "description": "A scepter crowned with a tranquil crystal, channeling the essence of peace to mend the deepest of wounds.",
+        "id": "W0324"
+    },
+    {
+        "weaponName": "Divine Whisper Tome",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "faction6",
+        "description": "An ancient tome inscribed with sacred chants, each word a breath of life restoring vitality with divine whispers.",
+        "id": "W0325"
+    },
+    {
+        "weaponName": "Eternal Light Rune",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "faction6",
+        "description": "A rune etched with symbols of everlasting light, offering a gentle but powerful restoration of health.",
+        "id": "W0326"
+    },
+    {
+        "weaponName": "Blessing of the Verdant Charm",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "faction6",
+        "description": "A charm imbued with the essence of lush greenery, its vibrant energy rejuvenates life forces with every pulse.",
+        "id": "W0327"
+    }
+]

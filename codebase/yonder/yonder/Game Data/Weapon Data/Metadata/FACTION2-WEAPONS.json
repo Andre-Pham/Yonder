@@ -1,0 +1,254 @@
+[
+    {
+        "weaponName": "Flamefang Katana",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction2",
+        "description": "A sleek katana with a blade that dances with the mirage of flames.",
+        "id": "W0184"
+    },
+    {
+        "weaponName": "Onyx Scimitar",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction2",
+        "description": "A dark scimitar with a blade as black as night, edged with a crimson line.",
+        "id": "W0185"
+    },
+    {
+        "weaponName": "Dragonclaw Nunchaku",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction2",
+        "description": "Twin nunchaku with grips carved to resemble dragon scales, tipped with claw-like metal.",
+        "id": "W0186"
+    },
+    {
+        "weaponName": "Sapphire Sabre",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction2",
+        "description": "A curved sabre with a gleaming blue jewel-encrusted hilt.",
+        "id": "W0187"
+    },
+    {
+        "weaponName": "Crimson Kunai",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction2",
+        "description": "A set of sharp kunai with a subtle red tint that promises swift end.",
+        "id": "W0188"
+    },
+    {
+        "weaponName": "Shadow Shuriken",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction2",
+        "description": "Mysterious throwing stars that seem to absorb the light around them.",
+        "id": "W0189"
+    },
+    {
+        "weaponName": "Silkstring Bow",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction2",
+        "description": "A longbow with strings as fine as silk, yet unyielding as steel.",
+        "id": "W0190"
+    },
+    {
+        "weaponName": "Jade-Bladed Glaive",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction2",
+        "description": "A polearm with a sharp jade blade, symbolizing both beauty and lethality.",
+        "id": "W0191"
+    },
+    {
+        "weaponName": "Whisper Edge Wakizashi",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction2",
+        "description": "A short sword that makes no sound as it slices through the air.",
+        "id": "W0192"
+    },
+    {
+        "weaponName": "Sunfire Whip",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction2",
+        "description": "A whip that crackles with the heat of a sun, searing whatever it touches.",
+        "id": "W0193"
+    },
+    {
+        "weaponName": "Emberbloom Wand",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "faction2",
+        "description": "A delicate wand tipped with a fiery flower that cauterizes wounds as it scorches foes.",
+        "id": "W0194"
+    },
+    {
+        "weaponName": "Serenity Fan",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "faction2",
+        "description": "A folding fan with razor-sharp edges, fluttering to heal with each graceful arc.",
+        "id": "W0195"
+    },
+    {
+        "weaponName": "Harmony Flute",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "faction2",
+        "description": "A bamboo flute whose haunting melodies soothe allies while disarming enemies.",
+        "id": "W0196"
+    },
+    {
+        "weaponName": "Yin-Yang Scepter",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "faction2",
+        "description": "A balanced scepter that channels dual energies to mend and maim in equal measure.",
+        "id": "W0197"
+    },
+    {
+        "weaponName": "Twin Lotus Chakram",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "faction2",
+        "description": "A pair of chakrams inscribed with lotus motifs, revolving to restore peace or slice through discord.",
+        "id": "W0198"
+    },
+    {
+        "weaponName": "Mistweaver's Orb",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "faction2",
+        "description": "An orb encased in swirling mists that weave through allies, sealing their wounds.",
+        "id": "W0199"
+    },
+    {
+        "weaponName": "Blossom Sceptre",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "faction2",
+        "description": "A sceptre crowned with a perpetual bloom, its petals fall to kiss and cure injuries.",
+        "id": "W0200"
+    },
+    {
+        "weaponName": "Dawnlight Lantern",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "faction2",
+        "description": "A lantern whose dawn-colored light gently bathes the battlefield, knitting flesh and spirit together.",
+        "id": "W0201"
+    },
+    {
+        "weaponName": "Soulbinder Scroll",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "faction2",
+        "description": "An ancient scroll inscribed with runes that pulse with life, binding the soul to the body anew.",
+        "id": "W0202"
+    },
+    {
+        "weaponName": "Zenith Pendant",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "faction2",
+        "description": "A pendant radiating zenith light that restores vitality with its warm embrace.",
+        "id": "W0203"
+    },
+    {
+        "weaponName": "Aegis Ash Wand",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "faction2",
+        "description": "A wand that emits a fine ash, settling on allies to harden their defenses.",
+        "id": "W0204"
+    },
+    {
+        "weaponName": "Guardian's Grimoire",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "faction2",
+        "description": "A tome whose incantations bolster the armor of those inscribed within its pages.",
+        "id": "W0205"
+    },
+    {
+        "weaponName": "Barrier Beads",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "faction2",
+        "description": "A string of beads that shimmer with a protective aura, reinforcing the bearer's shields.",
+        "id": "W0206"
+    },
+    {
+        "weaponName": "Crest of Vigor",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "faction2",
+        "description": "An emblem that pulses with a vigorous energy, invigorating the armor of nearby allies.",
+        "id": "W0207"
+    },
+    {
+        "weaponName": "Mantlestone Amulet",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "faction2",
+        "description": "An amulet that radiates a regenerative force, mending the cracks in any armor it shadows.",
+        "id": "W0208"
+    },
+    {
+        "weaponName": "Chaos Ember Sceptre",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "faction2",
+        "description": "A sceptre that crackles with unstable embers, randomly fortifying or fracturing the wielder's aura.",
+        "id": "W0209"
+    },
+    {
+        "weaponName": "Pandemonium Prism",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "faction2",
+        "description": "A prism that refracts chaotic energies, wildly oscillating between harm and healing.",
+        "id": "W0210"
+    },
+    {
+        "weaponName": "Vortex Cube",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "faction2",
+        "description": "A cube that spirals with vortex energy, unpredictably warping friend and foe's vitality.",
+        "id": "W0211"
+    },
+    {
+        "weaponName": "Siphon Blade",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "faction2",
+        "description": "A blade that leeches the essence of its target, channeling a fraction of their strength to the wielder.",
+        "id": "W0212"
+    },
+    {
+        "weaponName": "Predator's Talisman",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "faction2",
+        "description": "A talisman that ensnares a foe's shadow, siphoning their power with each strike landed.",
+        "id": "W0213"
+    },
+    {
+        "weaponName": "Echo Staff",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "faction2",
+        "description": "A staff that reverberates with the last spell cast by an adversary, mirroring their abilities.",
+        "id": "W0214"
+    },
+    {
+        "weaponName": "Seraphic Sigil",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "faction2",
+        "description": "A glowing sigil that hovers gently, its celestial light knitting together the very essence of life.",
+        "id": "W0215"
+    },
+    {
+        "weaponName": "Elixir Chalice",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "faction2",
+        "description": "A chalice brimming with a sparkling elixir that flows into wounds, sealing them with golden bubbles.",
+        "id": "W0216"
+    },
+    {
+        "weaponName": "Rune of Vitality",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "faction2",
+        "description": "An ancient rune that pulses with a hearty energy, enveloping the bearer in a restorative aura.",
+        "id": "W0217"
+    },
+    {
+        "weaponName": "Charm of Renewal",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "faction2",
+        "description": "A charm that radiates with the dewy freshness of dawn, rejuvenating those who bask in its glow.",
+        "id": "W0218"
+    },
+    {
+        "weaponName": "Mystic's Sceptre",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "faction2",
+        "description": "A sceptre crowned with a radiant crystal, channeling the purity of sacred springs to mend the weary.",
+        "id": "W0219"
+    }
+]

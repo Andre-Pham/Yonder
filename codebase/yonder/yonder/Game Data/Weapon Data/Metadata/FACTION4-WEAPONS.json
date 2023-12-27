@@ -1,0 +1,254 @@
+[
+    {
+        "weaponName": "Voidtouched Scythe",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction4",
+        "description": "A sinister scythe that appears to swallow light, honed with an edge that rends the soul.",
+        "id": "W0220"
+    },
+    {
+        "weaponName": "Nether Claw",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction4",
+        "description": "A set of gauntlets with elongated obsidian talons that feast on the life force of foes.",
+        "id": "W0221"
+    },
+    {
+        "weaponName": "Shadowspine Whip",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction4",
+        "description": "A whip made from twisted shadows, stinging with the pain of the netherworld.",
+        "id": "W0222"
+    },
+    {
+        "weaponName": "Soulrend Dagger",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction4",
+        "description": "A dagger with a blade that flickers between realms, slicing through flesh and spirit alike.",
+        "id": "W0223"
+    },
+    {
+        "weaponName": "Eclipse Mace",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction4",
+        "description": "A mace that embodies darkness, eclipsing light with each devastating blow.",
+        "id": "W0224"
+    },
+    {
+        "weaponName": "Dread Lance",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction4",
+        "description": "A lance that leaks a malevolent aura, piercing through defenses with a touch of dread.",
+        "id": "W0225"
+    },
+    {
+        "weaponName": "Nightmare Flail",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction4",
+        "description": "A flail that causes wounds seeping with the essence of nightmares, ensuring unrest.",
+        "id": "W0226"
+    },
+    {
+        "weaponName": "Crypt Hammer",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction4",
+        "description": "A hammer forged from cursed stones of ancient tombs, bringing desolation with each swing.",
+        "id": "W0227"
+    },
+    {
+        "weaponName": "Banshee Blade",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction4",
+        "description": "A blade that wails with the torment of trapped souls, cutting deeper than flesh.",
+        "id": "W0228"
+    },
+    {
+        "weaponName": "Inferno Fang",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction4",
+        "description": "A fiery fang extracted from a demonic beast, scalding foes with infernal heat.",
+        "id": "W0229"
+    },
+    {
+        "weaponName": "Painweaver's Crystal",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "faction4",
+        "description": "A dark crystal that leeches vitality from foes while imbuing allies with stolen life force.",
+        "id": "W0230"
+    },
+    {
+        "weaponName": "Blighted Censer",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "faction4",
+        "description": "A censer oozing with noxious fumes that wilt enemies and rejuvenate allies with each swing.",
+        "id": "W0231"
+    },
+    {
+        "weaponName": "Hexbinder Staff",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "faction4",
+        "description": "A staff that curses foes with weakening hexes while reinforcing the caster's vitality.",
+        "id": "W0232"
+    },
+    {
+        "weaponName": "Soul Syphon Sceptre",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "faction4",
+        "description": "A sceptre that saps the essence of one's enemy to mend the wielder's wounds.",
+        "id": "W0233"
+    },
+    {
+        "weaponName": "Umbral Lantern",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "faction4",
+        "description": "A lantern that shines with a ghastly light, draining life to restore it elsewhere.",
+        "id": "W0234"
+    },
+    {
+        "weaponName": "Whispering Grimoire",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "faction4",
+        "description": "An ancient tome from which soft whispers emanate, wrapping the reader in a cocoon of healing words.",
+        "id": "W0235"
+    },
+    {
+        "weaponName": "Soulspark Amulet",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "faction4",
+        "description": "A luminescent amulet pulsating with a gentle cadence, knitting together soul and flesh.",
+        "id": "W0236"
+    },
+    {
+        "weaponName": "Mendmender's Wand",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "faction4",
+        "description": "A wand that radiates with the glow of a heartbeat, synchronizing with the life force to regenerate wounds.",
+        "id": "W0237"
+    },
+    {
+        "weaponName": "Lifebloom Orb",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "faction4",
+        "description": "An orb enveloped in a halo of dark blossoms, each petal's fall bestows rejuvenation.",
+        "id": "W0238"
+    },
+    {
+        "weaponName": "Essence Vortex Rod",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "faction4",
+        "description": "A rod that channels a vortex of souls, siphoning their essence to restore the living.",
+        "id": "W0239"
+    },
+    {
+        "weaponName": "Wardweave Sigil",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "faction4",
+        "description": "An inscribed sigil that hums with a shield-reinforcing resonance, mending metal and magic alike.",
+        "id": "W0240"
+    },
+    {
+        "weaponName": "Barrier Breath Incense",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "faction4",
+        "description": "A smoldering incense whose smoke weaves into armor, solidifying into an invisible, restorative layer.",
+        "id": "W0241"
+    },
+    {
+        "weaponName": "Guardian's Glyph Stone",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "faction4",
+        "description": "A runestone that emits a spectral shield, caressing worn armor with a restorative glow.",
+        "id": "W0242"
+    },
+    {
+        "weaponName": "Echo Crystal",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "faction4",
+        "description": "A crystal that resonates with the echo of ancient chants, its vibrations knitting together cracked shields.",
+        "id": "W0243"
+    },
+    {
+        "weaponName": "Aegis Pulse Conduit",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "faction4",
+        "description": "A conduit that pulses with a rhythmical aura, synchronizing with and mending the bearer's armor points.",
+        "id": "W0244"
+    },
+    {
+        "weaponName": "Reaper's Roulette",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "faction4",
+        "description": "A sinister scepter that unleashes unpredictable surges of dark energy, as likely to harm as to hinder.",
+        "id": "W0245"
+    },
+    {
+        "weaponName": "Abyssal Echoes",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "faction4",
+        "description": "A pair of dark orbs that resonate with each other, amplifying both healing and harm in their vicinity.",
+        "id": "W0246"
+    },
+    {
+        "weaponName": "Dreadhowl Totem",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "faction4",
+        "description": "A totem that emits a fearsome wail, strengthening allies at the cost of unpredictable backlash.",
+        "id": "W0247"
+    },
+    {
+        "weaponName": "Leechseed Staff",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "faction4",
+        "description": "A gnarled staff that sprouts vampiric seeds, draining a foe to rejuvenate its wielder.",
+        "id": "W0248"
+    },
+    {
+        "weaponName": "Parasite Prism",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "faction4",
+        "description": "A prism that binds to an adversary's shadow, sapping their essence with each pulse.",
+        "id": "W0249"
+    },
+    {
+        "weaponName": "Soulthief Sigil",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "faction4",
+        "description": "An engraved sigil that absorbs the life force of defeated enemies, converting it into healing energy.",
+        "id": "W0250"
+    },
+    {
+        "weaponName": "Divine Mender Sceptre",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "faction4",
+        "description": "A golden sceptre topped with a benevolent crystal, radiating waves of healing sanctity.",
+        "id": "W0251"
+    },
+    {
+        "weaponName": "Chalice of Purity",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "faction4",
+        "description": "A silver goblet encrusted with sapphires, overflowing with water that cleanses wounds with a touch.",
+        "id": "W0252"
+    },
+    {
+        "weaponName": "Rune of the Healer",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "faction4",
+        "description": "A rune that glows with a soft luminescence, enveloping the injured in a restorative embrace.",
+        "id": "W0253"
+    },
+    {
+        "weaponName": "Serenity Charm",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "faction4",
+        "description": "A charm that pulsates with a tranquil aura, its calmness mending the bearer's ailments.",
+        "id": "W0254"
+    },
+    {
+        "weaponName": "Lifebinder Tome",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "faction4",
+        "description": "A tome bound in white leather, its pages fluttering to the rhythm of the heart, sealing cuts and curing poisons.",
+        "id": "W0255"
+    }
+]

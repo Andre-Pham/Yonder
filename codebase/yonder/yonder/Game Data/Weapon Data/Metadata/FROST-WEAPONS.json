@@ -1,0 +1,254 @@
+[
+    {
+        "weaponName": "Glacier Edge",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "frost",
+        "description": "A sword with a blade as clear and sharp as ice, crystalline and gleaming like a frozen river.",
+        "id": "W0148"
+    },
+    {
+        "weaponName": "Frostbite Dagger",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "frost",
+        "description": "A jagged dagger with a hilt encrusted in hoarfrost, emanating a piercing chill.",
+        "id": "W0149"
+    },
+    {
+        "weaponName": "Icicle Pike",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "frost",
+        "description": "A towering pike topped with a massive, needle-like icicle capable of impaling with frosty precision.",
+        "id": "W0150"
+    },
+    {
+        "weaponName": "Snowdrift Maul",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "frost",
+        "description": "A heavy hammer enveloped in a sheath of ever-frost, leaving a trail of snowflakes with each swing.",
+        "id": "W0151"
+    },
+    {
+        "weaponName": "Blizzard Blade",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "frost",
+        "description": "A broadsword that swirls with a biting blizzard, its edge frosted over and hungering for warmth.",
+        "id": "W0152"
+    },
+    {
+        "weaponName": "Avalanche Axe",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "frost",
+        "description": "An axe with a bit carved from a block of ancient ice, capable of cleaving with the force of a tumbling avalanche.",
+        "id": "W0153"
+    },
+    {
+        "weaponName": "Permafrost Spear",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "frost",
+        "description": "A long spear with a tip that exudes the deep chill of the permafrost, freezing the air around its point.",
+        "id": "W0154"
+    },
+    {
+        "weaponName": "Hailstorm Hatchet",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "frost",
+        "description": "A hatchet with a blade that crackles with the fury of a hailstorm, its strikes as relentless as winter's wrath.",
+        "id": "W0155"
+    },
+    {
+        "weaponName": "Crevasse Cleaver",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "frost",
+        "description": "A hefty cleaver with edges like wind-sculpted ice, sharp enough to slice the cold mountain air.",
+        "id": "W0156"
+    },
+    {
+        "weaponName": "Frigid Flail",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "frost",
+        "description": "A flail with icy spikes that shatter upon impact, causing splinters of frost to explode with each hit.",
+        "id": "W0157"
+    },
+    {
+        "weaponName": "Chillheart Scepter",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "frost",
+        "description": "A scepter encased in ice, striking foes with a frosty blast while mending allies with a soothing aura.",
+        "id": "W0158"
+    },
+    {
+        "weaponName": "Frostbind Tome",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "frost",
+        "description": "An enchanted book whose icy incantations ensnare enemies and weave restorative spells for comrades.",
+        "id": "W0159"
+    },
+    {
+        "weaponName": "Glacial Gauntlet",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "frost",
+        "description": "A glove that freezes adversaries upon touch and radiates a healing cold to mend the wearer's wounds.",
+        "id": "W0160"
+    },
+    {
+        "weaponName": "Boreal Breath Flute",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "frost",
+        "description": "A wooden flute that summons a piercing wind to harm foes and a melodious tune to rejuvenate allies.",
+        "id": "W0161"
+    },
+    {
+        "weaponName": "Crystalline Bloom Staff",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "frost",
+        "description": "A staff topped with a radiant ice flower, its petals sharp enough to cut yet able to close wounds with their glow.",
+        "id": "W0162"
+    },
+    {
+        "weaponName": "Mistveil Chalice",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "frost",
+        "description": "An ornate chalice whose contents emit a healing mist, enveloping allies in a warm, rejuvenating fog.",
+        "id": "W0163"
+    },
+    {
+        "weaponName": "Aurora Medallion",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "frost",
+        "description": "A shimmering pendant that bathes the wearer in the aurora's light, knitting together flesh and spirit.",
+        "id": "W0164"
+    },
+    {
+        "weaponName": "Seraphic Snowbell",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "frost",
+        "description": "A delicate bell that, when rung, releases a cascade of snowflakes that heal those they touch.",
+        "id": "W0165"
+    },
+    {
+        "weaponName": "Frostfeather Plume",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "frost",
+        "description": "A quill that scribes in frost, each glyph it inscribes on the ground blooms into a patch of healing ice.",
+        "id": "W0166"
+    },
+    {
+        "weaponName": "Everfrost Essence Vial",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "frost",
+        "description": "A vial filled with a liquid essence of pure frost that closes wounds and restores vitality when applied.",
+        "id": "W0167"
+    },
+    {
+        "weaponName": "Cobalt Carapace Shard",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "frost",
+        "description": "A fragment of azure ice that adheres to armor, reinforcing its structure with a layer of unmelting frost.",
+        "id": "W0168"
+    },
+    {
+        "weaponName": "Rimeguard Relic",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "frost",
+        "description": "An ancient totem encased in ice, pulsing with a power that mends the cracks and dents in any armor it touches.",
+        "id": "W0169"
+    },
+    {
+        "weaponName": "Frostweave Filament",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "frost",
+        "description": "A spool of enchanted thread that, when woven into armor, knits together breaches with a cold caress.",
+        "id": "W0170"
+    },
+    {
+        "weaponName": "Glacial Aegis Amulet",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "frost",
+        "description": "A pendant that radiates a chill to solidify armor, encasing it in a protective layer of sparkling rime.",
+        "id": "W0171"
+    },
+    {
+        "weaponName": "Permafrost Polish",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "frost",
+        "description": "A jar of luminescent paste that, when applied to armor, fortifies it with a sheen of durable ice.",
+        "id": "W0172"
+    },
+    {
+        "weaponName": "Frostfire Concoction",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "frost",
+        "description": "A volatile potion that chills the drinker's foe while also leeching their own warmth, blurring the line between harm and self-sacrifice.",
+        "id": "W0173"
+    },
+    {
+        "weaponName": "Icebound Atlas",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "frost",
+        "description": "An enchanted book whose maps freeze the landscape indiscriminately, ensnaring friend and foe alike in crystal ice.",
+        "id": "W0174"
+    },
+    {
+        "weaponName": "Glaciate Grimoire",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "frost",
+        "description": "A tome of forbidden spells that encases the caster in ice to unleash a devastating avalanche upon the enemy, risking self-imprisonment.",
+        "id": "W0175"
+    },
+    {
+        "weaponName": "Siphonfrost Blade",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "frost",
+        "description": "A sleek scimitar that absorbs the cold from its victims' blood, using it to fill the wielder's veins with icy vigor.",
+        "id": "W0176"
+    },
+    {
+        "weaponName": "Wraithwinter Wand",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "frost",
+        "description": "A wand that casts a ghostly chill, draining the enemy's heat to mend the user's frostbitten flesh.",
+        "id": "W0177"
+    },
+    {
+        "weaponName": "Perilous Permafrost Prism",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "frost",
+        "description": "A crystal prism that refracts the life force of foes into a beam that heals the bearer with each act of aggression.",
+        "id": "W0178"
+    },
+    {
+        "weaponName": "Seraphic Sigil Staff",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "frost",
+        "description": "A staff topped with a radiant sigil, channeling celestial energies to seal wounds and cure ailments.",
+        "id": "W0179"
+    },
+    {
+        "weaponName": "Divine Mercy Amulet",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "frost",
+        "description": "A golden amulet inscribed with blessings, it washes the wearer in a gentle light that mends the flesh.",
+        "id": "W0180"
+    },
+    {
+        "weaponName": "Benediction Beads",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "frost",
+        "description": "A string of beads that glows with a soft luminescence, each prayer whispered through them knits together life's fabric.",
+        "id": "W0181"
+    },
+    {
+        "weaponName": "Sacred Sceptre of Solace",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "frost",
+        "description": "A sceptre crowned with a pure crystal orb, its gentle pulse soothes the spirit and restores the vitality of those it graces.",
+        "id": "W0182"
+    },
+    {
+        "weaponName": "Rune of the Redeemer",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "frost",
+        "description": "An ancient rune etched onto a silver charm, it hums with a restorative harmony that heals the bearer's deepest wounds.",
+        "id": "W0183"
+    }
+]

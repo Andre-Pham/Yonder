@@ -1,0 +1,254 @@
+[
+    {
+        "weaponName": "Vineblade",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "forest",
+        "description": "A slender sword adorned with intricate vines that seem to pulse with the essence of the forest.",
+        "id": "W0112"
+    },
+    {
+        "weaponName": "Thornwhip",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "forest",
+        "description": "A whip woven from resilient vines, its thorny tendrils lash out at foes.",
+        "id": "W0113"
+    },
+    {
+        "weaponName": "Thundersap Hammer",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "forest",
+        "description": "This formidable hammer crackles with electrical energy, harnessed from the heart of a lightning-struck tree.",
+        "id": "W0114"
+    },
+    {
+        "weaponName": "Brambleblade",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "forest",
+        "description": "A jagged blade crafted from twisted brambles, its edges honed to lethal perfection.",
+        "id": "W0115"
+    },
+    {
+        "weaponName": "Whisperwind Dagger",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "forest",
+        "description": "A slender dagger that glimmers like moonlit mist.",
+        "id": "W0116"
+    },
+    {
+        "weaponName": "Mossbloom Bow",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "forest",
+        "description": "A bow adorned with vibrant moss and adorned with delicate flowers that bloom with each arrow loosed.",
+        "id": "W0117"
+    },
+    {
+        "weaponName": "Barkskin Blade",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "forest",
+        "description": "A blade forged from the hardened bark of ancient trees.",
+        "id": "W0118"
+    },
+    {
+        "weaponName": "Verdantbane Dagger",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "forest",
+        "description": "A wickedly sharp dagger, its blade forged from enchanted leaves.",
+        "id": "W0119"
+    },
+    {
+        "weaponName": "Briar Fang Dagger",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "forest",
+        "description": "A dagger with a serrated edge that mimics the vicious teeth of forest brambles, perfect for quick, piercing strikes.",
+        "id": "W0120"
+    },
+    {
+        "weaponName": "Rootrend Bow",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "forest",
+        "description": "A recurve bow crafted from twisted tree roots, its taut string capable of launching arrows with lethal velocity.",
+        "id": "W0121"
+    },
+    {
+        "weaponName": "Thistlethorn Scepter",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "forest",
+        "description": "A scepter tipped with a radiant thistle bloom that pricks foes with its thorns while releasing healing pollen to the wielder.",
+        "id": "W0122"
+    },
+    {
+        "weaponName": "Mossbind Stone",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "forest",
+        "description": "A smooth river stone encased in luminous moss that leeches vitality from enemies and converts it to rejuvenating energy.",
+        "id": "W0123"
+    },
+    {
+        "weaponName": "Honeycomb Mace",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "forest",
+        "description": "A mace with a honeycomb structure that oozes sticky honey when striking, sapping enemies' strength while invigorating the user.",
+        "id": "W0124"
+    },
+    {
+        "weaponName": "Brambleheart Tome",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "forest",
+        "description": "An ancient tome bound in bramble vines, its spells inflict nature's wrath while mending the caster's wounds with every verse read.",
+        "id": "W0125"
+    },
+    {
+        "weaponName": "Sapling Staff",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "forest",
+        "description": "A living staff sprouting young leaves that whip at adversaries, drawing life force to mend the bearer's injuries.",
+        "id": "W0126"
+    },
+    {
+        "weaponName": "Fernweaver Staff",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "forest",
+        "description": "A staff crowned with delicate fern leaves that shimmer with soothing energy. When wielded, it channels the vitality of the forest, mending wounds and replenishing the essence of life.",
+        "id": "W0127"
+    },
+    {
+        "weaponName": "Acorn Scepter",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "forest",
+        "description": "A scepter carved from a magical acorn, it emanates warmth and whispers of the forest's harmony.",
+        "id": "W0128"
+    },
+    {
+        "weaponName": "Druidic Staff",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "forest",
+        "description": "An ancient staff carved with symbols of nature's wisdom.",
+        "id": "W0129"
+    },
+    {
+        "weaponName": "Dewdrop Wand",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "forest",
+        "description": "A slender wand capped with an emerald leaf that drips with morning dew, each droplet capable of mending the slightest scratch.",
+        "id": "W0130"
+    },
+    {
+        "weaponName": "Verdant Pulse Orb",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "forest",
+        "description": "An orb pulsating with the green glow of photosynthesis, its energy suffuses the bearer with life, knitting together flesh and spirit.",
+        "id": "W0131"
+    },
+    {
+        "weaponName": "Oakheart Shield",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "forest",
+        "description": "A sturdy shield carved from the mighty heartwood of an ancient oak.",
+        "id": "W0132"
+    },
+    {
+        "weaponName": "Elmguard Shield",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "forest",
+        "description": "A shield hewn from the mighty trunk of an ancient elm.",
+        "id": "W0133"
+    },
+    {
+        "weaponName": "Barkbound Buckler",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "forest",
+        "description": "A compact shield made from interlocking pieces of ironbark that absorb impact, fortifying the user's armor with each blow.",
+        "id": "W0134"
+    },
+    {
+        "weaponName": "Leafweave",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "forest",
+        "description": "An enchanted leaf that shimmers with protective energy.",
+        "id": "W0135"
+    },
+    {
+        "weaponName": "Mycelium Mesh",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "forest",
+        "description": "A network of fungal fibers that envelops armor, distributing a symbiotic restoration to damaged areas over time.",
+        "id": "W0136"
+    },
+    {
+        "weaponName": "Thornbloom Grenade",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "forest",
+        "description": "A volatile seed pod that, when thrown, bursts into a maelstrom of thorns, indiscriminately piercing friend and foe alike.",
+        "id": "W0137"
+    },
+    {
+        "weaponName": "Wildfire Brazier",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "forest",
+        "description": "A smoldering censer that scatters embers which ignite into rampant flames, threatening to consume all nearby, including the bearer.",
+        "id": "W0138"
+    },
+    {
+        "weaponName": "Sporecloud Bomb",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "forest",
+        "description": "An orb filled with aggressive spores that explode into a cloud, disorienting and damaging all within its reach as it seeks new hosts.",
+        "id": "W0139"
+    },
+    {
+        "weaponName": "Parasite Prism",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "forest",
+        "description": "A crystalline shard that latches onto the life essence of foes, siphoning their vitality to replenish the user's health.",
+        "id": "W0140"
+    },
+    {
+        "weaponName": "Mimicvine Vines",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "forest",
+        "description": "A lasso made from adaptive vines that entangles an opponent, learning and duplicating their abilities for the wielder's use.",
+        "id": "W0141"
+    },
+    {
+        "weaponName": "Soulwood Staff",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "forest",
+        "description": "A staff of ancient wood that absorbs a fragment of the foe's spirit with each strike, converting their essence into restorative energy.",
+        "id": "W0142"
+    },
+    {
+        "weaponName": "Rootmender Staff",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "forest",
+        "description": "A staff entwined with living roots that throb with vitality.",
+        "id": "W0143"
+    },
+    {
+        "weaponName": "Seraphic Bloom Rod",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "forest",
+        "description": "A slender rod topped with a blossom radiating a gentle, divine light, sealing wounds with each touch.",
+        "id": "W0144"
+    },
+    {
+        "weaponName": "Elysian Spring Vial",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "forest",
+        "description": "A crystal vial filled with sparkling water, where each sip bestows the drinker with celestial vigor and mends flesh.",
+        "id": "W0145"
+    },
+    {
+        "weaponName": "Divine Whisper Conch",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "forest",
+        "description": "A shell that, when held to the ear, emits sacred hymns that soothe the soul and restore the body's vitality.",
+        "id": "W0146"
+    },
+    {
+        "weaponName": "Radiant Ashwood Cane",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "forest",
+        "description": "A cane carved from blessed ashwood that glows with a warm aura, rejuvenating the health of those who lean on its strength.",
+        "id": "W0147"
+    }
+]

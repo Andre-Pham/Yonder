@@ -1,0 +1,275 @@
+[
+    {
+        "weaponName": "Stalactite Lance",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "cavern",
+        "description": "A long, pointed spear fashioned from a razor-sharp stalactite.",
+        "id": "W0001"
+    },
+    {
+        "weaponName": "Gloomshard Dagger",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "cavern",
+        "description": "A sleek dagger with a blade as dark as the caverns it hails from.",
+        "id": "W0002"
+    },
+    {
+        "weaponName": "Subterra Axe",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "cavern",
+        "description": "An axe with a head shaped like a geode, sharp crystalline formations line its edge.",
+        "id": "W0003"
+    },
+    {
+        "weaponName": "Crystal Edge",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "cavern",
+        "description": "A jagged sword with a blade of pure crystal, shimmering with a thousand reflected lights.",
+        "id": "W0004"
+    },
+    {
+        "weaponName": "Grotto Piercer",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "cavern",
+        "description": "A slender, needle-like rapier whose hilt mimics the stalagmites of a silent grotto.",
+        "id": "W0005"
+    },
+    {
+        "weaponName": "Spelunker's Shiv",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "cavern",
+        "description": "A small, sharp dagger, its handle wrapped in bat leather, perfect for close-quarters combat.",
+        "id": "W0006"
+    },
+    {
+        "weaponName": "Chasm Cleaver",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "cavern",
+        "description": "A hefty axe with a head shaped from a boulder cleaved from the heart of a deep chasm.",
+        "id": "W0007"
+    },
+    {
+        "weaponName": "Obsidian Scythe",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "cavern",
+        "description": "A sinister scythe with a dark obsidian blade that curves like the wing of a cave-dwelling creature.",
+        "id": "W0008"
+    },
+    {
+        "weaponName": "Cavernous Maul",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "cavern",
+        "description": "A massive hammer with a head forged from the densest rocks found in the deepest caverns.",
+        "id": "W0009"
+    },
+    {
+        "weaponName": "Subterranean Slicer",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "cavern",
+        "description": "A sleek, serrated short sword that looks like it was chiseled from underground slate.",
+        "id": "W0010"
+    },
+    {
+        "weaponName": "Echoing Flail",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "cavern",
+        "description": "A chain-bound flail whose strikes resound through the caverns like a crumbling echo.",
+        "id": "W0011"
+    },
+    {
+        "weaponName": "Abyssal Fang",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "cavern",
+        "description": "A viciously pointed dagger with a grip encrusted in gemstones from the abyss.",
+        "id": "W0012"
+    },
+    {
+        "weaponName": "Lurker's Lance",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "cavern",
+        "description": "A long spear with a tip as sharp as the stalactites adorning ancient cave ceilings.",
+        "id": "W0013"
+    },
+    {
+        "weaponName": "Geode Mender",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "cavern",
+        "description": "A mace encrusted with sharp amethyst crystals that fracture on impact, releasing healing energies.",
+        "id": "W0014"
+    },
+    {
+        "weaponName": "Siphonstone Dagger",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "cavern",
+        "description": "A sleek dagger with a vampiric gemstone hilt that absorbs vitality from foes to heal its wielder.",
+        "id": "W0015"
+    },
+    {
+        "weaponName": "Pulseblade Pick",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "cavern",
+        "description": "A dual-purpose mining pick that resonates with life force, striking veins of ore and vitality alike.",
+        "id": "W0016"
+    },
+    {
+        "weaponName": "Chitin Carver",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "cavern",
+        "description": "A serrated blade made from the chitin of cave creatures, it leeches health with each slice.",
+        "id": "W0017"
+    },
+    {
+        "weaponName": "Calcite Caduceus",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "cavern",
+        "description": "A staff topped with a spiraled calcite, channeling restorative frequencies through offensive waves.",
+        "id": "W0018"
+    },
+    {
+        "weaponName": "Stalagmite Scepter",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "cavern",
+        "description": "A regal scepter tipped with a glowing stalagmite that radiates healing waves through the caverns.",
+        "id": "W0019"
+    },
+    {
+        "weaponName": "Limestone Lantern",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "cavern",
+        "description": "An ancient lantern whose radiant limestone light soothes wounds and calms restless spirits.",
+        "id": "W0020"
+    },
+    {
+        "weaponName": "Dripstone Dewdrop",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "cavern",
+        "description": "A delicate vial filled with healing waters collected from pristine cavern dripstones.",
+        "id": "W0021"
+    },
+    {
+        "weaponName": "Mycelium Mantle",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "cavern",
+        "description": "A cloak interwoven with living mycelium that mends flesh as it embraces the wounded.",
+        "id": "W0022"
+    },
+    {
+        "weaponName": "Sporecaster's Wand",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "cavern",
+        "description": "A wand that releases spores which bloom into healing fungi upon contact with the air.",
+        "id": "W0023"
+    },
+    {
+        "weaponName": "Gypsum Grasp",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "cavern",
+        "description": "A pair of gloves that channel the restorative essence of gypsum, mending the wear of battle upon contact.",
+        "id": "W0024"
+    },
+    {
+        "weaponName": "Silicate Staff",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "cavern",
+        "description": "A staff topped with a silicate crystal cluster that resonates with energy to reinforce protective gear.",
+        "id": "W0025"
+    },
+    {
+        "weaponName": "Calcite Cadence Rod",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "cavern",
+        "description": "A rod that hums with a rhythmic pulse, strengthening the structure of armor with every note.",
+        "id": "W0026"
+    },
+    {
+        "weaponName": "Marble Mender Mallet",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "cavern",
+        "description": "A small hammer imbued with marble's resilience, capable of knitting together the fissures in any shield.",
+        "id": "W0027"
+    },
+    {
+        "weaponName": "Onyx Oathstone",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "cavern",
+        "description": "A palm-sized onyx stone that, when clasped, forms a bond with the bearer's armor, slowly restoring its integrity.",
+        "id": "W0028"
+    },
+    {
+        "weaponName": "Fissure Flare",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "cavern",
+        "description": "A volatile staff that creates seismic cracks, damaging both the target and the wielder's footing.",
+        "id": "W0029"
+    },
+    {
+        "weaponName": "Rubble Rouser",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "cavern",
+        "description": "A bludgeon that causes a cascade of sharp rocks to fall, threatening friend and foe alike.",
+        "id": "W0030"
+    },
+    {
+        "weaponName": "Sporeburst Scepter",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "cavern",
+        "description": "A scepter that releases a burst of toxic spores, healing the user but harming all in close proximity.",
+        "id": "W0031"
+    },
+    {
+        "weaponName": "Leechstone Lance",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "cavern",
+        "description": "A spear that siphons strength from foes upon impact, converting their vigor into the wielder's health.",
+        "id": "W0032"
+    },
+    {
+        "weaponName": "Vorpal Vortex Vial",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "cavern",
+        "description": "A throwable vial that absorbs a fragment of the enemy's essence to replenish the user's vitality.",
+        "id": "W0033"
+    },
+    {
+        "weaponName": "Grotto Grasp Gauntlet",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "cavern",
+        "description": "A gauntlet that clings to the life force of defeated foes, granting a sliver of their energy to the bearer.",
+        "id": "W0034"
+    },
+    {
+        "weaponName": "Crystal Droplet Charm",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "cavern",
+        "description": "A luminescent charm that accumulates healing droplets from the cavern's ceiling, each one capable of closing cuts and soothing bruises.",
+        "id": "W0035"
+    },
+    {
+        "weaponName": "Echoing Flute",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "cavern",
+        "description": "An obsidian flute whose notes reverberate off the walls, with harmonies that weave through the air to knit together flesh and bone.",
+        "id": "W0036"
+    },
+    {
+        "weaponName": "Grotto's Heart Lantern",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "cavern",
+        "description": "An ancient lantern with a flame that flickers in hues of deep emerald, its light casting a healing glow over ragged injuries.",
+        "id": "W0037"
+    },
+    {
+        "weaponName": "Spelunker's Respite Sceptre",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "cavern",
+        "description": "A smooth sceptre adorned with reflective minerals that absorb ambient light, providing a soothing aura to heal the bearer.",
+        "id": "W0038"
+    },
+    {
+        "weaponName": "Cavernous Codex",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "cavern",
+        "description": "A tome bound in deep cave leather, its pages imbued with echolocation runes that guide the reader's body towards natural recovery.",
+        "id": "W0039"
+    }
+]

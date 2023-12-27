@@ -1,0 +1,254 @@
+[
+    {
+        "weaponName": "Gearblade",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "mech",
+        "description": "A sleek sword with interlocking gears along its spine, whirring and shifting with every swing.",
+        "id": "W0400"
+    },
+    {
+        "weaponName": "Circuit Saber",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "mech",
+        "description": "A lightweight blade that hums with electric energy, its edge lined with glowing circuitry.",
+        "id": "W0401"
+    },
+    {
+        "weaponName": "Piston Hammer",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "mech",
+        "description": "A massive hammer powered by hydraulic pistons, capable of delivering crushing blows.",
+        "id": "W0402"
+    },
+    {
+        "weaponName": "Sprocket Axe",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "mech",
+        "description": "A hefty axe with sprocket-shaped blades, each rotation enhancing its cutting power.",
+        "id": "W0403"
+    },
+    {
+        "weaponName": "Bolt Thrower",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "mech",
+        "description": "A crossbow-like device that rapidly fires high-tensile bolts with mechanical precision.",
+        "id": "W0404"
+    },
+    {
+        "weaponName": "Turbo Dagger",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "mech",
+        "description": "A compact dagger with a turbine in its hilt, increasing stabbing speed with a whirring buzz.",
+        "id": "W0405"
+    },
+    {
+        "weaponName": "Coil Rapier",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "mech",
+        "description": "A slender, flexible rapier with a coiled, spring-loaded core for swift, piercing strikes.",
+        "id": "W0406"
+    },
+    {
+        "weaponName": "Rotor Mace",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "mech",
+        "description": "A mace with rotating heads, each spin amplifying its bone-crushing impact.",
+        "id": "W0407"
+    },
+    {
+        "weaponName": "Steamblade",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "mech",
+        "description": "A broadsword with steam-powered gears, its blade steaming hot and ready to sear through armor.",
+        "id": "W0408"
+    },
+    {
+        "weaponName": "Cable Whip",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "mech",
+        "description": "A flexible whip made of woven metal cables, capable of delivering electrifying lashes.",
+        "id": "W0409"
+    },
+    {
+        "weaponName": "Pulse Emitter",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "mech",
+        "description": "A device that emits pulsing waves, capable of disorienting foes while rejuvenating allies.",
+        "id": "W0410"
+    },
+    {
+        "weaponName": "Surge Staff",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "mech",
+        "description": "A staff that channels electrical surges to shock enemies and stimulate healing energy.",
+        "id": "W0411"
+    },
+    {
+        "weaponName": "Vitality Drone",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "mech",
+        "description": "A hovering drone that emits targeted laser bursts to harm adversaries and deploy nanobots for rapid healing.",
+        "id": "W0412"
+    },
+    {
+        "weaponName": "Harmony Cannon",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "mech",
+        "description": "A cannon that alternates between firing concussive blasts and regenerative energy orbs.",
+        "id": "W0413"
+    },
+    {
+        "weaponName": "Reactor Mender",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "mech",
+        "description": "A portable reactor that releases energy bursts to weaken foes and radiates a healing aura.",
+        "id": "W0414"
+    },
+    {
+        "weaponName": "Nano-Repair Module",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "mech",
+        "description": "A compact device that deploys nanobots to swiftly mend wounds and repair damage at a molecular level.",
+        "id": "W0415"
+    },
+    {
+        "weaponName": "Regen Field Generator",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "mech",
+        "description": "A generator that creates a field of restorative energy, accelerating natural healing processes.",
+        "id": "W0416"
+    },
+    {
+        "weaponName": "Biotech Scepter",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "mech",
+        "description": "A scepter embedded with advanced biotech, capable of stimulating rapid cellular regeneration.",
+        "id": "W0417"
+    },
+    {
+        "weaponName": "CryoMedic Pistol",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "mech",
+        "description": "A specialized pistol that shoots healing cryogenic capsules, instantly treating injuries and alleviating pain.",
+        "id": "W0418"
+    },
+    {
+        "weaponName": "Rejuvenation Array",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "mech",
+        "description": "An array of fine-tuned lasers that meticulously restore tissue and bone, promoting swift recovery.",
+        "id": "W0419"
+    },
+    {
+        "weaponName": "Shield Recharger",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "mech",
+        "description": "A handheld device emitting a field that rapidly recharges and fortifies personal armor shields.",
+        "id": "W0420"
+    },
+    {
+        "weaponName": "Armor Synthesizer",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "mech",
+        "description": "A portable synthesizer that repairs and strengthens armor using advanced material synthesis technology.",
+        "id": "W0421"
+    },
+    {
+        "weaponName": "Plating Regenerator",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "mech",
+        "description": "A tool that emits micro-fibers to seamlessly mend and enhance the resilience of damaged armor plating.",
+        "id": "W0422"
+    },
+    {
+        "weaponName": "Exoskeleton Energizer",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "mech",
+        "description": "An energy module that attaches to exoskeletons, rejuvenating their defensive capabilities and structural integrity.",
+        "id": "W0423"
+    },
+    {
+        "weaponName": "Barrier Infuser",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "mech",
+        "description": "A sophisticated device that infuses armor with a protective energy barrier, restoring its defensive properties.",
+        "id": "W0424"
+    },
+    {
+        "weaponName": "Entropy Orbiter",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "mech",
+        "description": "A device that launches unstable energy orbs, creating random bursts of destructive and self-damaging energy.",
+        "id": "W0425"
+    },
+    {
+        "weaponName": "Chaos Reactor",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "mech",
+        "description": "A reactor that occasionally overloads, dealing massive area damage but also draining the user's vital energy.",
+        "id": "W0426"
+    },
+    {
+        "weaponName": "Feedback Conduit",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "mech",
+        "description": "A conduit that amplifies energy attacks, reflecting damage to both the target and the wielder in unpredictable ways.",
+        "id": "W0427"
+    },
+    {
+        "weaponName": "Siphon Spear",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "mech",
+        "description": "A high-tech spear that absorbs a fraction of the enemy's energy, converting it into health for the wielder.",
+        "id": "W0428"
+    },
+    {
+        "weaponName": "Mimic Matrix",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "mech",
+        "description": "A sophisticated gadget capable of copying an enemy's last attack and using it against them.",
+        "id": "W0429"
+    },
+    {
+        "weaponName": "Vortex Leech",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "mech",
+        "description": "A vortex device that drains energy from foes, replenishing the user's health proportional to the damage dealt.",
+        "id": "W0430"
+    },
+    {
+        "weaponName": "Seraph's Amulet",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "mech",
+        "description": "A luminous amulet engraved with celestial symbols, radiating a gentle aura that steadily restores health.",
+        "id": "W0431"
+    },
+    {
+        "weaponName": "Rune of Renewal",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "mech",
+        "description": "An ancient rune that glows with a soft light, slowly mending wounds and rejuvenating the bearer.",
+        "id": "W0432"
+    },
+    {
+        "weaponName": "Mystic Scepter",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "mech",
+        "description": "A scepter crowned with a radiant crystal, channeling ethereal energies to heal and invigorate.",
+        "id": "W0433"
+    },
+    {
+        "weaponName": "Sage's Tome",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "mech",
+        "description": "An ornate tome filled with healing incantations, each page offering words that mend flesh and spirit alike.",
+        "id": "W0434"
+    },
+    {
+        "weaponName": "Charm of Vitality",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "mech",
+        "description": "A small charm emitting a warm, nurturing glow, gradually restoring vitality to those nearby.",
+        "id": "W0435"
+    }
+]

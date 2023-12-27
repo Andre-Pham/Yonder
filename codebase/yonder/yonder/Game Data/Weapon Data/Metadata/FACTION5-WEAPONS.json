@@ -1,0 +1,254 @@
+[
+    {
+        "weaponName": "Lavafang Saber",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction5",
+        "description": "A sleek blade that glows with molten fury, its edges resembling the jagged teeth of a lava beast.",
+        "id": "W0256"
+    },
+    {
+        "weaponName": "Volcanic Maul",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction5",
+        "description": "A heavy, obsidian hammer that simmers with volcanic heat, capable of shattering ground with each strike.",
+        "id": "W0257"
+    },
+    {
+        "weaponName": "Cinderblade",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction5",
+        "description": "A slender, flame-etched sword that flickers with fiery patterns, igniting the air as it slices.",
+        "id": "W0258"
+    },
+    {
+        "weaponName": "Magma Spear",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction5",
+        "description": "A long spear with a tip shaped like a molten rock, radiating intense heat.",
+        "id": "W0259"
+    },
+    {
+        "weaponName": "Pyroclast Axe",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction5",
+        "description": "A hefty axe with a blade that resembles a solidified lava flow, glowing red at its core.",
+        "id": "W0260"
+    },
+    {
+        "weaponName": "Emberedge Rapier",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction5",
+        "description": "A nimble rapier with a blazing edge, leaving trails of sparks with every thrust.",
+        "id": "W0261"
+    },
+    {
+        "weaponName": "Searing Scimitar",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction5",
+        "description": "A curved sword with an edge like flowing lava, its heat capable of singing the air.",
+        "id": "W0262"
+    },
+    {
+        "weaponName": "Inferno Flail",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction5",
+        "description": "A chain-linked flail with a smoldering, fiery ball, crackling with every swing.",
+        "id": "W0263"
+    },
+    {
+        "weaponName": "Blazebound Bow",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction5",
+        "description": "A bow crafted from charred wood, its string glowing like molten strands, ready to shoot flaming arrows.",
+        "id": "W0264"
+    },
+    {
+        "weaponName": "Cratermaker Dagger",
+        "weaponProfileTag": "damage",
+        "regionProfileTag": "faction5",
+        "description": "A short, sharp dagger with a blackened, igneous blade that seems to absorb light and heat.",
+        "id": "W0265"
+    },
+    {
+        "weaponName": "Flarebloom Wand",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "faction5",
+        "description": "A radiant wand that releases explosive bursts of healing fire, scorching foes while rejuvenating allies.",
+        "id": "W0266"
+    },
+    {
+        "weaponName": "Embersong Lyre",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "faction5",
+        "description": "A mystical lyre that emits searing soundwaves capable of both harming enemies and mending wounds with its harmonies.",
+        "id": "W0267"
+    },
+    {
+        "weaponName": "Phoenix Feather Fan",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "faction5",
+        "description": "An elegant fan of fiery feathers, sweeping flames that simultaneously burn adversaries and revitalize companions.",
+        "id": "W0268"
+    },
+    {
+        "weaponName": "Lavaflow Chalice",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "faction5",
+        "description": "A mystical goblet, swirling with molten liquid that both scorches enemies upon contact and heals those who drink from it.",
+        "id": "W0269"
+    },
+    {
+        "weaponName": "Blazeheart Medallion",
+        "weaponProfileTag": "damageAndRestoration",
+        "regionProfileTag": "faction5",
+        "description": "A glowing medallion that pulsates with fiery energy, incinerating foes in proximity while bolstering the vitality of the bearer.",
+        "id": "W0270"
+    },
+    {
+        "weaponName": "Vitalflare Staff",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "faction5",
+        "description": "A staff topped with a glowing ember crystal, radiating waves of warm, healing energy.",
+        "id": "W0271"
+    },
+    {
+        "weaponName": "Lifespark Lantern",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "faction5",
+        "description": "A gently glowing lantern, its firelight soothing wounds and restoring the spirit of those it illuminates.",
+        "id": "W0272"
+    },
+    {
+        "weaponName": "Bloomheart Vase",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "faction5",
+        "description": "An ornate vase emanating a rejuvenating fragrance, reviving vitality with its mystical blossoms.",
+        "id": "W0273"
+    },
+    {
+        "weaponName": "Renewal Rune Stone",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "faction5",
+        "description": "A polished stone inscribed with ancient runes, pulsing with life-giving force.",
+        "id": "W0274"
+    },
+    {
+        "weaponName": "Serenity Flame Orb",
+        "weaponProfileTag": "restoration",
+        "regionProfileTag": "faction5",
+        "description": "A delicate orb containing a tranquil flame, its light mends and soothes the weary.",
+        "id": "W0275"
+    },
+    {
+        "weaponName": "Aegisflame Totem",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "faction5",
+        "description": "A fiery totem that emits a protective aura, fortifying the armor of those within its warm embrace.",
+        "id": "W0276"
+    },
+    {
+        "weaponName": "Molten Heart Amulet",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "faction5",
+        "description": "A pulsating amulet with a core of liquid magma, continuously reinforcing and mending the armor of its bearer.",
+        "id": "W0277"
+    },
+    {
+        "weaponName": "Forgefire Crystal",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "faction5",
+        "description": "A radiant crystal that bathes nearby allies in a restorative glow, steadily repairing their armor.",
+        "id": "W0278"
+    },
+    {
+        "weaponName": "Inferno Ward Orb",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "faction5",
+        "description": "An orb encasing a miniature inferno, its heat resonates with nearby armor, reinforcing its structure.",
+        "id": "W0279"
+    },
+    {
+        "weaponName": "Emberbond Sigil",
+        "weaponProfileTag": "armorPointsRestoration",
+        "regionProfileTag": "faction5",
+        "description": "A sigil engraved with fiery runes, linking with the wearer's armor to regenerate and strengthen it.",
+        "id": "W0280"
+    },
+    {
+        "weaponName": "Chaos Ember Grenade",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "faction5",
+        "description": "An unstable grenade that unleashes a fiery explosion, indiscriminately engulfing both foe and wielder in its blaze.",
+        "id": "W0281"
+    },
+    {
+        "weaponName": "Pandemonium Prism",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "faction5",
+        "description": "A mystical prism radiating chaotic energy, randomly altering the health and armor of all nearby entities.",
+        "id": "W0282"
+    },
+    {
+        "weaponName": "Wildfire Conduit Rod",
+        "weaponProfileTag": "collateral",
+        "regionProfileTag": "faction5",
+        "description": "A rod that channels untamed fire magic, boosting the user's power at the cost of self-inflicted burns.",
+        "id": "W0283"
+    },
+    {
+        "weaponName": "Soulflame Syphon",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "faction5",
+        "description": "A spectral lantern that absorbs the life force of defeated enemies, converting it into healing energy.",
+        "id": "W0284"
+    },
+    {
+        "weaponName": "Vortex Fang Dagger",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "faction5",
+        "description": "A dagger with a swirling blade that drains the vitality of foes to replenish the user's strength.",
+        "id": "W0285"
+    },
+    {
+        "weaponName": "Predator's Echo Orb",
+        "weaponProfileTag": "consumesFoe",
+        "regionProfileTag": "faction5",
+        "description": "An orb that mimics the abilities of a defeated foe, granting the wielder temporary access to their powers.",
+        "id": "W0286"
+    },
+    {
+        "weaponName": "Blessing of Dawn Amulet",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "faction5",
+        "description": "A radiant amulet imbued with the first light of dawn, gently restoring health with its calming glow.",
+        "id": "W0287"
+    },
+    {
+        "weaponName": "Seraphim's Whisper Sceptre",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "faction5",
+        "description": "A delicate sceptre that murmurs divine incantations, each word a breath of life and healing.",
+        "id": "W0288"
+    },
+    {
+        "weaponName": "Mantra of Mercy Tome",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "faction5",
+        "description": "An ancient tome containing sacred mantras that, when recited, envelop the reader in restorative energy.",
+        "id": "W0289"
+    },
+    {
+        "weaponName": "Celestial Grace Rune",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "faction5",
+        "description": "A rune etched with heavenly symbols, emanating a pure aura that soothes injuries and restores vitality.",
+        "id": "W0290"
+    },
+    {
+        "weaponName": "Harmony Charm",
+        "weaponProfileTag": "healthRestoration",
+        "regionProfileTag": "faction5",
+        "description": "A charm that sings in harmonious tones, each note weaving a tapestry of healing and rejuvenation.",
+        "id": "W0291"
+    }
+]
