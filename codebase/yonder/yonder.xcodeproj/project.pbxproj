@@ -6209,7 +6209,7 @@
 		65D88C31274436E7002E3AC4 /* yonder */ = {
 			isa = PBXGroup;
 			children = (
-				B6C37E0D2A32DE88004D18A8 /* NPC Data */,
+				B678C1282B3C3ADE00CD6354 /* Game Data */,
 				656FD8922916EE6900F923E9 /* Data Persistence */,
 				65C37A70285A2E27006997EE /* Strings */,
 				6516067428400E9A00074144 /* Swift */,
@@ -6375,6 +6375,14 @@
 				B63E171E29CD8F830083616A /* OverlayViewController.swift */,
 			);
 			path = WithInspectSheet;
+			sourceTree = "<group>";
+		};
+		B678C1282B3C3ADE00CD6354 /* Game Data */ = {
+			isa = PBXGroup;
+			children = (
+				B6C37E0D2A32DE88004D18A8 /* NPC Data */,
+			);
+			path = "Game Data";
 			sourceTree = "<group>";
 		};
 		B6C37DF52A32B460004D18A8 /* NPC Animations */ = {
