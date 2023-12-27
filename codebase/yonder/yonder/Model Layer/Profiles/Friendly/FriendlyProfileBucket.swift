@@ -79,7 +79,7 @@ class FriendlyProfileBucket: Storable, InteractorProfileBucket {
 fileprivate class ProfileRepository {
     
     public static var profiles: [FriendlyProfile] {
-        let util = ProfileRepoUtil()
+        let util = NPCProfileRepoUtil()
         let interactorIDs = util.getInteractorContentIDs()
         var result = [FriendlyProfile]()
         for id in interactorIDs {

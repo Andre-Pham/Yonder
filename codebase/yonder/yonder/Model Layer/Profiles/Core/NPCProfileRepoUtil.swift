@@ -1,5 +1,5 @@
 //
-//  ProfileRepoUtil.swift
+//  NPCProfileRepoUtil.swift
 //  yonder
 //
 //  Created by Andre Pham on 8/7/2023.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftyJSON
 
-class ProfileRepoUtil {
+class NPCProfileRepoUtil {
     
     private static let INDEX_FILENAME = "NPC-DATA-INDEX"
     
@@ -142,10 +142,10 @@ class ProfileRepoUtil {
     func getIndexJSON() -> JSON {
         guard let indexURL = Bundle.main.url(forResource: Self.INDEX_FILENAME, withExtension: "json"),
               let indexData = try? Data(contentsOf: indexURL) else {
-            fatalError("Index file could not be loaded")
+            fatalError("NPC index file could not be loaded")
         }
         guard let indexJSON = try? JSON(data: indexData) else {
-            fatalError("JSON could not be retrieved from index file")
+            fatalError("JSON could not be retrieved from NPC index file")
         }
         return indexJSON
     }

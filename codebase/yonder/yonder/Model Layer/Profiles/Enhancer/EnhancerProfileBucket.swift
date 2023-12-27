@@ -66,7 +66,7 @@ class EnhancerProfileBucket: Storable, InteractorProfileBucket {
 fileprivate class ProfileRepository {
     
     public static var profiles: [EnhancerProfile] {
-        let util = ProfileRepoUtil()
+        let util = NPCProfileRepoUtil()
         let interactorIDs = util.getInteractorContentIDs()
         var result = [EnhancerProfile]()
         for id in interactorIDs {

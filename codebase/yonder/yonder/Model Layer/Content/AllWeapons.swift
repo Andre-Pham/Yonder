@@ -18,13 +18,12 @@ enum Weapons {
         let durability: Int = StatRange(min: 7, max: 11).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
-            description: profile.weaponDescription,
+            description: "",
             basePill: DamageBasePill(damage: damage),
             durabilityPill: DecrementDurabilityPill(durability: durability),
             effectPills: [],
             buffPills: []
         )
-        weapon.setName(to: "Weapon-01")
         return weapon
     }
     
@@ -34,13 +33,12 @@ enum Weapons {
         let durability: Int = StatRange(min: 3, max: 5).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
-            description: profile.weaponDescription,
+            description: "",
             basePill: DamageBasePill(damage: damage),
             durabilityPill: DecrementDurabilityPill(durability: durability),
             effectPills: [],
             buffPills: []
         )
-        weapon.setName(to: "Weapon-02")
         return weapon
     }
     
@@ -50,13 +48,12 @@ enum Weapons {
         let durability: Int = StatRange(min: 8, max: 12).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
-            description: profile.weaponDescription,
+            description: "",
             basePill: DamageBasePill(damage: damage),
             durabilityPill: DecrementDurabilityPill(durability: durability),
             effectPills: [],
             buffPills: []
         )
-        weapon.setName(to: "Weapon-03")
         return weapon
     }
     
@@ -66,13 +63,12 @@ enum Weapons {
         let durability: Int = StatRange(min: 5, max: 9).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
-            description: profile.weaponDescription,
+            description: "",
             basePill: HealthRestorationBasePill(healthRestoration: health),
             durabilityPill: DecrementDurabilityPill(durability: durability),
             effectPills: [],
             buffPills: []
         )
-        weapon.setName(to: "Weapon-04")
         return weapon
     }
     
@@ -82,13 +78,12 @@ enum Weapons {
         let durability: Int = StatRange(min: 2, max: 4).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
-            description: profile.weaponDescription,
+            description: "",
             basePill: HealthRestorationBasePill(healthRestoration: health),
             durabilityPill: DecrementDurabilityPill(durability: durability),
             effectPills: [],
             buffPills: []
         )
-        weapon.setName(to: "Weapon-05")
         return weapon
     }
     
@@ -98,13 +93,12 @@ enum Weapons {
         let durability: Int = StatRange(min: 4, max: 8).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
-            description: profile.weaponDescription,
+            description: "",
             basePill: ArmorPointsRestorationBasePill(armorPointsRestoration: armorPoints),
             durabilityPill: DecrementDurabilityPill(durability: durability),
             effectPills: [],
             buffPills: []
         )
-        weapon.setName(to: "Weapon-06")
         return weapon
     }
     
@@ -114,13 +108,12 @@ enum Weapons {
         let durability: Int = StatRange(min: 2, max: 4).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
-            description: profile.weaponDescription,
+            description: "",
             basePill: ArmorPointsRestorationBasePill(armorPointsRestoration: armorPoints),
             durabilityPill: DecrementDurabilityPill(durability: durability),
             effectPills: [],
             buffPills: []
         )
-        weapon.setName(to: "Weapon-07")
         return weapon
     }
     
@@ -130,13 +123,12 @@ enum Weapons {
         let damageDulling = WeaponStatRange(target: 15, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
         let weapon = Weapon(
             name: profile.weaponName,
-            description: profile.weaponDescription,
+            description: "",
             basePill: DamageBasePill(damage: damage),
             durabilityPill: DullingDurabilityPill(damageLostPerUse: damageDulling),
             effectPills: [],
             buffPills: []
         )
-        weapon.setName(to: "Weapon-08")
         return weapon
     }
     
@@ -146,7 +138,7 @@ enum Weapons {
         let durability: Int = StatRange(min: 5, max: 8).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
-            description: profile.weaponDescription,
+            description: "",
             basePill: DamageBasePill(damage: damage),
             durabilityPill: DecrementDurabilityPill(durability: durability),
             effectPills: [
@@ -154,7 +146,6 @@ enum Weapons {
             ],
             buffPills: []
         )
-        weapon.setName(to: "Weapon-09")
         return weapon
     }
     
@@ -165,7 +156,7 @@ enum Weapons {
         let lifestealFraction: Double = StatRange(min: 0.25, max: 1.0).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
-            description: profile.weaponDescription,
+            description: "",
             basePill: DamageBasePill(damage: damage),
             durabilityPill: DecrementDurabilityPill(durability: durability),
             effectPills: [
@@ -173,7 +164,6 @@ enum Weapons {
             ],
             buffPills: []
         )
-        weapon.setName(to: "Weapon-10")
         return weapon
     }
     
@@ -185,7 +175,7 @@ enum Weapons {
         let duration: Int = StatRange(min: 2, max: 4).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
-            description: profile.weaponDescription,
+            description: "",
             basePill: DamageBasePill(damage: damage),
             durabilityPill: DecrementDurabilityPill(durability: durability),
             effectPills: [
@@ -193,7 +183,6 @@ enum Weapons {
             ],
             buffPills: []
         )
-        weapon.setName(to: "Weapon-11")
         return weapon
     }
     
@@ -204,13 +193,12 @@ enum Weapons {
         let durability: Int = StatRange(min: 5, max: 9).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
-            description: profile.weaponDescription,
+            description: "",
             basePill: DamageAndRestorationBasePill(damage: damage, restoration: restoration),
             durabilityPill: DecrementDurabilityPill(durability: durability),
             effectPills: [],
             buffPills: []
         )
-        weapon.setName(to: "Weapon-12")
         return weapon
     }
     
@@ -221,7 +209,7 @@ enum Weapons {
         let damageIncrease = WeaponStatRange(target: 20, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage).nearest(5)
         let weapon = Weapon(
             name: profile.weaponName,
-            description: profile.weaponDescription,
+            description: "",
             basePill: DamageBasePill(damage: damage),
             durabilityPill: DecrementDurabilityPill(durability: durability),
             effectPills: [
@@ -229,7 +217,6 @@ enum Weapons {
             ],
             buffPills: []
         )
-        weapon.setName(to: "Weapon-13")
         return weapon
     }
     
@@ -239,7 +226,7 @@ enum Weapons {
         let durability: Int = StatRange(min: 7, max: 10).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
-            description: profile.weaponDescription,
+            description: "",
             basePill: DamageBasePill(damage: damage),
             durabilityPill: DecrementDurabilityPill(durability: durability),
             effectPills: [
@@ -247,7 +234,6 @@ enum Weapons {
             ],
             buffPills: []
         )
-        weapon.setName(to: "Weapon-14")
         return weapon
     }
     
@@ -257,7 +243,7 @@ enum Weapons {
         let durability: Int = StatRange(min: 5, max: 8).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
-            description: profile.weaponDescription,
+            description: "",
             basePill: DamageBasePill(damage: damage),
             durabilityPill: DecrementDurabilityPill(durability: durability),
             effectPills: [
@@ -265,7 +251,6 @@ enum Weapons {
             ],
             buffPills: []
         )
-        weapon.setName(to: "Weapon-15")
         return weapon
     }
     
@@ -275,7 +260,7 @@ enum Weapons {
         let damageDulling = WeaponStatRange(target: 35, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
         let weapon = Weapon(
             name: profile.weaponName,
-            description: profile.weaponDescription,
+            description: "",
             basePill: DamageBasePill(damage: damage),
             durabilityPill: DullingDurabilityPill(damageLostPerUse: damageDulling),
             effectPills: [
@@ -283,7 +268,6 @@ enum Weapons {
             ],
             buffPills: []
         )
-        weapon.setName(to: "Weapon-16")
         return weapon
     }
     
@@ -294,7 +278,7 @@ enum Weapons {
         let selfDamage = WeaponStatRange(target: 60, boundFraction: 0.5).select(compoundMultiplier: 1.2, stage: stage)
         let weapon = Weapon(
             name: profile.weaponName,
-            description: profile.weaponDescription,
+            description: "",
             basePill: DamageBasePill(damage: damage),
             durabilityPill: DecrementDurabilityPill(durability: durability),
             effectPills: [
@@ -302,7 +286,6 @@ enum Weapons {
             ],
             buffPills: []
         )
-        weapon.setName(to: "Weapon-17")
         return weapon
     }
     
@@ -311,7 +294,7 @@ enum Weapons {
         let durability = Int.random(in: 3...4)
         let weapon = Weapon(
             name: profile.weaponName,
-            description: profile.weaponDescription,
+            description: "",
             basePill: EffectBasePill(),
             durabilityPill: DecrementDurabilityPill(durability: durability),
             effectPills: [
@@ -319,7 +302,6 @@ enum Weapons {
             ],
             buffPills: []
         )
-        weapon.setName(to: "Weapon-18")
         return weapon
     }
     

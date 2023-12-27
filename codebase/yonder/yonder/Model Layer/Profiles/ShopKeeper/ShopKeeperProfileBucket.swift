@@ -66,7 +66,7 @@ class ShopKeeperProfileBucket: Storable, InteractorProfileBucket {
 fileprivate class ProfileRepository {
     
     public static var profiles: [ShopKeeperProfile] {
-        let util = ProfileRepoUtil()
+        let util = NPCProfileRepoUtil()
         let interactorIDs = util.getInteractorContentIDs()
         var result = [ShopKeeperProfile]()
         for id in interactorIDs {

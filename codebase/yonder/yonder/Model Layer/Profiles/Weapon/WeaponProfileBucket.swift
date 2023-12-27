@@ -16,22 +16,16 @@ class WeaponProfileBucket: Storable {
     }
     
     func grabProfile(areaTag: RegionProfileTag, weaponTag: WeaponProfileTag) -> WeaponProfile {
-        let randomProfile = RandomProfile(prefix: "Weapon")
-        return WeaponProfile(
-            id: 0,
-            weaponName: randomProfile.name,
-            weaponDescription: randomProfile.description,
-            regionTags: [],
-            weaponTags: []
-        )
-        
         var matchingIndices = [Int]()
         for (index, profile) in self.profiles.enumerated() {
             if (profile.matchesAreaTag(areaTag) && profile.weaponTags.contains(where: { $0 == weaponTag })) {
                 matchingIndices.append(index)
             }
         }
-        let selectedIndex = Int.random(in: 0..<matchingIndices.count)
+        guard let selectedIndex = matchingIndices.randomElement() else {
+            assertionFailure("Ran out of weapon profiles with the desired area tag and weapon tag")
+            return self.profiles.randomElement() ?? WeaponProfile(id: "W0000", weaponName: "ERROR - NO MORE WEAPONS", regionTags: [], weaponTags: [])
+        }
         return self.profiles.remove(at: selectedIndex)
     }
     
@@ -46,7 +40,7 @@ class WeaponProfileBucket: Storable {
     }
 
     required init(dataObject: DataObject) {
-        let ids: [Int] = dataObject.get(Field.profileIDs.rawValue)
+        let ids: [String] = dataObject.get(Field.profileIDs.rawValue)
         let allProfiles = ProfileRepository.profiles
         for id in ids {
             if let profile = allProfiles.first(where: { $0.id == id }) {
@@ -65,9 +59,9 @@ class WeaponProfileBucket: Storable {
 fileprivate class ProfileRepository {
     
     public static var profiles: [WeaponProfile] {
-        return [
-            // TODO: Populate
-        ]
+        let util = WeaponProfileRepoUtil()
+        let result = util.getAllWeaponProfiles()
+        return result
     }
     
 }

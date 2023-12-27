@@ -22,8 +22,20 @@ Possible values:
 
 ```
 "type": [
-	"all", "desert", "cavern", "faction5", "faction6", "dungeon", "faction2", 
-	"faction4", "nether", "shadow", "mech", "forest", "none", "frost"
+	"all", 
+	"desert", 
+	"cavern", 
+	"faction5", 
+	"faction6", 
+	"dungeon", 
+	"faction2", 
+	"faction4", 
+	"nether", 
+	"shadow", 
+	"mech", 
+	"forest", 
+	"none", 
+	"frost"
 ]
 ```
 
@@ -58,8 +70,20 @@ Possible values:
 
 ```
 "type": [
-	"all", "desert", "cavern", "faction5", "faction6", "dungeon", "faction2", 
-	"faction4", "nether", "shadow", "mech", "forest", "none", "frost"
+	"all", 
+	"desert", 
+	"cavern", 
+	"faction5", 
+	"faction6", 
+	"dungeon", 
+	"faction2", 
+	"faction4", 
+	"nether", 
+	"shadow", 
+	"mech", 
+	"forest", 
+	"none", 
+	"frost"
 ]
 "roles": ["shop", "friendly", "restorer", "enhancer"]
 "shopTags": [] (ALWAYS EMPTY)

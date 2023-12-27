@@ -1,0 +1,16 @@
+{
+    "weapon_metadata_files": [
+        "CAVERN-WEAPONS",
+        "DESERT-WEAPONS",
+        "DUNGEON-WEAPONS",
+        "FACTION2-WEAPONS",
+        "FACTION4-WEAPONS",
+        "FACTION5-WEAPONS",
+        "FACTION6-WEAPONS",
+        "FOREST-WEAPONS",
+        "FROST-WEAPONS",
+        "MECH-WEAPONS",
+        "NETHER-WEAPONS",
+        "SHADOW-WEAPONS"
+    ]
+}

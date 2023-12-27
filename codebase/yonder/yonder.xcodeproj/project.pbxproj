@@ -541,6 +541,8 @@
 		B678C1882B3C424C00CD6354 /* FOREST-WEAPONS.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C17C2B3C424C00CD6354 /* FOREST-WEAPONS.json */; };
 		B678C1892B3C424C00CD6354 /* CAVERN-WEAPONS.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C17D2B3C424C00CD6354 /* CAVERN-WEAPONS.json */; };
 		B678C18A2B3C424C00CD6354 /* FACTION4-WEAPONS.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C17E2B3C424C00CD6354 /* FACTION4-WEAPONS.json */; };
+		B678C18C2B3C441000CD6354 /* WeaponProfileRepoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C18B2B3C441000CD6354 /* WeaponProfileRepoUtil.swift */; };
+		B678C18E2B3C484300CD6354 /* WEAPON-DATA-INDEX.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C18D2B3C484300CD6354 /* WEAPON-DATA-INDEX.json */; };
 		B6C37DF72A32B48F004D18A8 /* SequenceCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DF62A32B48F004D18A8 /* SequenceCode.swift */; };
 		B6C37DF92A32B4B1004D18A8 /* AnimationSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DF82A32B4B1004D18A8 /* AnimationSequence.swift */; };
 		B6C37DFB2A32B4BC004D18A8 /* AnimationComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DFA2A32B4BC004D18A8 /* AnimationComposite.swift */; };
@@ -2333,7 +2335,7 @@
 		B6D472402A530DCC0002CEEC /* BuildTokenCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4723F2A530DCC0002CEEC /* BuildTokenCache.swift */; };
 		B6D472452A5582AF0002CEEC /* InteractorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D472442A5582AF0002CEEC /* InteractorProfile.swift */; };
 		B6D4726B2A5898540002CEEC /* BuildTokenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4726A2A5898540002CEEC /* BuildTokenFactory.swift */; };
-		B6D4726D2A589E980002CEEC /* ProfileRepoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4726C2A589E980002CEEC /* ProfileRepoUtil.swift */; };
+		B6D4726D2A589E980002CEEC /* NPCProfileRepoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4726C2A589E980002CEEC /* NPCProfileRepoUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2891,6 +2893,8 @@
 		B678C17C2B3C424C00CD6354 /* FOREST-WEAPONS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FOREST-WEAPONS.json"; sourceTree = "<group>"; };
 		B678C17D2B3C424C00CD6354 /* CAVERN-WEAPONS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "CAVERN-WEAPONS.json"; sourceTree = "<group>"; };
 		B678C17E2B3C424C00CD6354 /* FACTION4-WEAPONS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FACTION4-WEAPONS.json"; sourceTree = "<group>"; };
+		B678C18B2B3C441000CD6354 /* WeaponProfileRepoUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponProfileRepoUtil.swift; sourceTree = "<group>"; };
+		B678C18D2B3C484300CD6354 /* WEAPON-DATA-INDEX.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "WEAPON-DATA-INDEX.json"; sourceTree = "<group>"; };
 		B6C37DF62A32B48F004D18A8 /* SequenceCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceCode.swift; sourceTree = "<group>"; };
 		B6C37DF82A32B4B1004D18A8 /* AnimationSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSequence.swift; sourceTree = "<group>"; };
 		B6C37DFA2A32B4BC004D18A8 /* AnimationComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationComposite.swift; sourceTree = "<group>"; };
@@ -4683,7 +4687,7 @@
 		B6D4723F2A530DCC0002CEEC /* BuildTokenCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildTokenCache.swift; sourceTree = "<group>"; };
 		B6D472442A5582AF0002CEEC /* InteractorProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorProfile.swift; sourceTree = "<group>"; };
 		B6D4726A2A5898540002CEEC /* BuildTokenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildTokenFactory.swift; sourceTree = "<group>"; };
-		B6D4726C2A589E980002CEEC /* ProfileRepoUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepoUtil.swift; sourceTree = "<group>"; };
+		B6D4726C2A589E980002CEEC /* NPCProfileRepoUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPCProfileRepoUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -6156,7 +6160,8 @@
 			children = (
 				65C2CDDF2937B6DE0028DC9C /* AreaThemedProfile.swift */,
 				B6D472442A5582AF0002CEEC /* InteractorProfile.swift */,
-				B6D4726C2A589E980002CEEC /* ProfileRepoUtil.swift */,
+				B6D4726C2A589E980002CEEC /* NPCProfileRepoUtil.swift */,
+				B678C18B2B3C441000CD6354 /* WeaponProfileRepoUtil.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -6414,6 +6419,7 @@
 			isa = PBXGroup;
 			children = (
 				B678C12A2B3C3BFC00CD6354 /* Metadata */,
+				B678C18D2B3C484300CD6354 /* WEAPON-DATA-INDEX.json */,
 			);
 			path = "Weapon Data";
 			sourceTree = "<group>";
@@ -9772,6 +9778,7 @@
 				B6D471FF2A51E0230002CEEC /* FRAMES-E0363.json in Resources */,
 				B6D46EAA2A51E0210002CEEC /* E0291.json in Resources */,
 				B6D472242A51E0230002CEEC /* FRAMES-E0103.json in Resources */,
+				B678C18E2B3C484300CD6354 /* WEAPON-DATA-INDEX.json in Resources */,
 				B6D4703A2A51E0220002CEEC /* FRAMES-E0160.json in Resources */,
 				B6D46C9B2A51E0210002CEEC /* IMG-E0146.png in Resources */,
 				B6D46C202A51E0200002CEEC /* IMG-E0349.png in Resources */,
@@ -10315,7 +10322,7 @@
 				65D7A44D2779D64100075542 /* NoArea.swift in Sources */,
 				65CAC18027F942F400A95D92 /* YonderButtonAlignment.swift in Sources */,
 				65DC5FB428DC20DC00E5F904 /* PotionDamageBuff.swift in Sources */,
-				B6D4726D2A589E980002CEEC /* ProfileRepoUtil.swift in Sources */,
+				B6D4726D2A589E980002CEEC /* NPCProfileRepoUtil.swift in Sources */,
 				B6C37DF92A32B4B1004D18A8 /* AnimationSequence.swift in Sources */,
 				656FD8E42919B5B100F923E9 /* AllWeapons.swift in Sources */,
 				651B7769293D487500827CB5 /* DotsLoadingScreen.swift in Sources */,
@@ -10379,6 +10386,7 @@
 				65275DDE275910910087B118 /* PotionDamagePercentBuff.swift in Sources */,
 				6532D66D27B26C0A0080B58B /* NPCCardButton.swift in Sources */,
 				656FD947292068DF00F923E9 /* FriendlyProfileBucket.swift in Sources */,
+				B678C18C2B3C441000CD6354 /* WeaponProfileRepoUtil.swift in Sources */,
 				B635B05C29B19C9300A45F43 /* EquipPeripheralAccessoryView.swift in Sources */,
 				6532D67627B27A930080B58B /* ShopKeeperViewModel.swift in Sources */,
 				656FD932291FFF0800F923E9 /* FreeWeaponOffer.swift in Sources */,

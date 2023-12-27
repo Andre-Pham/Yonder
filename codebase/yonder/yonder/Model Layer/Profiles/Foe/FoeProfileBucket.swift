@@ -111,7 +111,7 @@ class FoeProfileBucket: Storable {
 fileprivate class ProfileRepository {
     
     public static var profiles: [FoeProfile] {
-        let util = ProfileRepoUtil()
+        let util = NPCProfileRepoUtil()
         let foeIDs = util.getFoeContentIDs()
         var result = [FoeProfile]()
         for id in foeIDs {

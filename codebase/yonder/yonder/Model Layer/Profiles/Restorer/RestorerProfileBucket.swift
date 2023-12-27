@@ -86,7 +86,7 @@ class RestorerProfileBucket: Storable, InteractorProfileBucket {
 fileprivate class ProfileRepository {
     
     public static var profiles: [RestorerProfile] {
-        let util = ProfileRepoUtil()
+        let util = NPCProfileRepoUtil()
         let interactorIDs = util.getInteractorContentIDs()
         var result = [RestorerProfile]()
         for id in interactorIDs {
