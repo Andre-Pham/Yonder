@@ -38,7 +38,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
     private var activeRestorerFactories = [String: RestorerFactory]()
     private var activeFriendlyFactories = [String: FriendlyFactory]()
     
-    // TODO: Weapon build token cache
+    private var weaponBuildTokenCache: [BuildTokenCache]
     // TODO: Potion build token cache
     // TODO: Armor build token cache
     // TODO: Accessory build token cache
@@ -59,12 +59,16 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         self.restorerProfileBucket = RestorerProfileBucket()
         self.friendlyProfileBucket = FriendlyProfileBucket()
         
+        self.weaponBuildTokenCache = [BuildTokenCache]()
+        // TODO: Potion build token cache
+        // TODO: Armor build token cache
+        // TODO: Accessory build token cache
+        // TODO: Consumable build token cache
         self.hostileBuildTokenCache = [BuildTokenCache]()
         // > ShopKeepers don't have build tokens
         // > Enhancers don't have build tokens
         self.restorerBuildTokenCache = [BuildTokenCache]()
         self.friendlyBuildTokenCache = [BuildTokenCache]()
-        // TODO: Other build token caches
         
         OnPlayerTravelPublisher.subscribe(self)
         AfterStageChangePublisher.subscribe(self)
@@ -82,10 +86,14 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         case enhancerProfileBucket
         case restorerProfileBucket
         case friendlyProfileBucket
+        case weaponBuildTokens
+        // TODO: Potion build token cache
+        // TODO: Armor build token cache
+        // TODO: Accessory build token cache
+        // TODO: Consumable build token cache
         case hostileBuildTokens
         case restorerBuildTokens
         case friendlyBuildTokens
-        // TODO: Other build token caches
     }
 
     required init(dataObject: DataObject) {
@@ -98,12 +106,16 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         self.restorerProfileBucket = dataObject.getObject(Field.restorerProfileBucket.rawValue, type: RestorerProfileBucket.self)
         self.friendlyProfileBucket = dataObject.getObject(Field.friendlyProfileBucket.rawValue, type: FriendlyProfileBucket.self)
         
+        self.weaponBuildTokenCache = dataObject.getObjectArray(Field.weaponBuildTokens.rawValue, type: BuildTokenCache.self)
+        // TODO: Potion build token cache
+        // TODO: Armor build token cache
+        // TODO: Accessory build token cache
+        // TODO: Consumable build token cache
         self.hostileBuildTokenCache = dataObject.getObjectArray(Field.hostileBuildTokens.rawValue, type: BuildTokenCache.self)
         // > ShopKeepers don't have build tokens
         // > Enhancers don't have build tokens
         self.restorerBuildTokenCache = dataObject.getObjectArray(Field.restorerBuildTokens.rawValue, type: BuildTokenCache.self)
         self.friendlyBuildTokenCache = dataObject.getObjectArray(Field.friendlyBuildTokens.rawValue, type: BuildTokenCache.self)
-        // TODO: Other build token caches
         
         OnPlayerTravelPublisher.subscribe(self)
         AfterStageChangePublisher.subscribe(self)
@@ -123,6 +135,14 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
             .add(key: Field.friendlyProfileBucket.rawValue, value: self.friendlyProfileBucket)
             // Build token caches
             .add(
+                key: Field.weaponBuildTokens.rawValue,
+                value: self.activeWeaponFactories.map({ $0.value.exportBuildTokenCache(regionKey: $0.key) }) + self.weaponBuildTokenCache
+            )
+            // TODO: Potion build token cache
+            // TODO: Armor build token cache
+            // TODO: Accessory build token cache
+            // TODO: Consumable build token cache
+            .add(
                 key: Field.hostileBuildTokens.rawValue,
                 value: self.activeHostileFactories.map({ $0.value.exportBuildTokenCache(regionKey: $0.key) }) + self.hostileBuildTokenCache
             )
@@ -136,7 +156,6 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
                 key: Field.friendlyBuildTokens.rawValue,
                 value: self.activeFriendlyFactories.map({ $0.value.exportBuildTokenCache(regionKey: $0.key) }) + self.friendlyBuildTokenCache
             )
-            // TODO: Other build token caches
     }
     
     // MARK: - Functions
@@ -158,7 +177,6 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
     private func resetFactories() {
         // TODO: Remove the concept of recycling profiles
         // Recycle profiles (restore unused profiles to their respective profile bucket)
-        self.activeWeaponFactories.forEach({ $0.value.recycleProfiles() })
             // (Potion factory doesn't use profiles)
         self.activeArmorFactories.forEach({ $0.value.recycleProfiles() })
         self.activeAccessoryFactories.forEach({ $0.value.recycleProfiles() })
@@ -306,12 +324,16 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
     }
     
     private func restoreAllAvailableBuildTokenCaches() {
+        self.restoreBuildTokenCaches(for: self.activeWeaponFactories, caches: &self.weaponBuildTokenCache)
+        // TODO: Potion build token cache
+        // TODO: Armor build token cache
+        // TODO: Accessory build token cache
+        // TODO: Consumable build token cache
         self.restoreBuildTokenCaches(for: self.activeHostileFactories, caches: &self.hostileBuildTokenCache)
         // > ShopKeepers don't have build tokens
         // > Enhancers don't have build tokens
         self.restoreBuildTokenCaches(for: self.activeRestorerFactories, caches: &self.restorerBuildTokenCache)
         self.restoreBuildTokenCaches(for: self.activeFriendlyFactories, caches: &self.friendlyBuildTokenCache)
-        // TODO: Other build token caches
     }
     
     private func restoreBuildTokenCaches(for factories: [String: any BuildTokenFactory], caches: inout [BuildTokenCache]) {
