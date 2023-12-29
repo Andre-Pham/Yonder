@@ -1,0 +1,422 @@
+[
+    {
+        "armorName": "Grotto Guardian Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "A heavy steel helm with a visor shaped like a bat's face, adorned with glowing crystal fragments."
+    },
+    {
+        "armorName": "Subterranean Bulwark",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "A solid granite helmet, encrusted with stalagmites, offering formidable protection."
+    },
+    {
+        "armorName": "Molten Core Helmet",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "A black iron helmet with lava-like grooves that emit a faint, warm glow."
+    },
+    {
+        "armorName": "Echoing Cavern Cap",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "A dense silver helm, with intricate carvings that resonate with the sounds of the caverns."
+    },
+    {
+        "armorName": "Fossilized Skullcap",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "A helmet formed from ancient fossils, offering an eerie, ancient protection."
+    },
+    {
+        "armorName": "Crystal Shard Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "A robust helm, embedded with sharp, luminescent crystal shards."
+    },
+    {
+        "armorName": "Abyssal Miner's Helmet",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "A reinforced steel helmet with a bright, unbreakable lantern mounted on top."
+    },
+    {
+        "armorName": "Cave Serpent Coif",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "A helmet fashioned to resemble a serpent, with scales and two small, ruby eyes."
+    },
+    {
+        "armorName": "Dwarven Stone Hood",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "A heavy, stone helmet engraved with ancient dwarven runes, offering mystical defense."
+    },
+    {
+        "armorName": "Obsidian Shell Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "A sleek, dark helmet made of polished obsidian, virtually indestructible."
+    },
+    {
+        "armorName": "Luminous Spelunker Hood",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "A soft hood woven with luminescent threads, lighting the wearer's path."
+    },
+    {
+        "armorName": "Shade Whisperer Veil",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "A translucent veil that shimmers with faint colors, enhancing perception in darkness."
+    },
+    {
+        "armorName": "Echo Bat Band",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "A lightweight headband with bat-like ears, granting heightened auditory senses."
+    },
+    {
+        "armorName": "Cave Fisher Cap",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "A cap made from the silk of cave fishers, offering agility and stealth."
+    },
+    {
+        "armorName": "Glimmering Mushroom Hat",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "A hat adorned with bioluminescent mushrooms, providing a soft, magical light."
+    },
+    {
+        "armorName": "Miner's Whisper Helm",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "A feather-light helmet with a crystal lens, magnifying distant views."
+    },
+    {
+        "armorName": "Stalactite Crown",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "A crown shaped from delicate stalactites, radiating a mysterious energy."
+    },
+    {
+        "armorName": "Subterranean Wind Cap",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "A breezy, fabric cap that hums with the echoes of subterranean winds."
+    },
+    {
+        "armorName": "Crystal Whisper Circlet",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "A delicate circlet embedded with tiny, sound-amplifying crystals."
+    },
+    {
+        "armorName": "Rogue's Shadow Hood",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "A sleek, dark hood that blends seamlessly into the shadows of the caverns."
+    },
+    {
+        "armorName": "Boulderplate Armor",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "A chestplate made of interlocking stone plates, as durable as mountain rock."
+    },
+    {
+        "armorName": "Cavern Titan's Cuirass",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "A massive iron cuirass, etched with glyphs that glow in the dark depths."
+    },
+    {
+        "armorName": "Stalagmite Plate Mail",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "A heavy armor adorned with sharp stalagmites, imposing and protective."
+    },
+    {
+        "armorName": "Subterranean Guardian Armor",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "A robust armor set with a built-in lantern, illuminating a wide radius around the wearer."
+    },
+    {
+        "armorName": "Crystal Fortress Breastplate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "A steel breastplate inlaid with protective crystal formations, shimmering in low light."
+    },
+    {
+        "armorName": "Molten Rock Plate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "A blackened chestplate with veins of lava flowing through its crevices."
+    },
+    {
+        "armorName": "Echoing Depths Carapace",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "A solid, sound-absorbing armor, perfect for moving silently through echoing caverns."
+    },
+    {
+        "armorName": "Grotto Shell Armor",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "A rounded, shell-like armor, naturally camouflaging within the cavernous environment."
+    },
+    {
+        "armorName": "Dwarven Forged Harness",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "A heavy, rune-etched harness, forged in ancient dwarven forges deep underground."
+    },
+    {
+        "armorName": "Obsidian Barrier Plate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "A chest armor crafted from smooth obsidian, offering unmatched toughness."
+    },
+    {
+        "armorName": "Spelunker's Silk Tunic",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "A supple tunic woven from the silk of cavern-dwelling creatures, enhancing agility."
+    },
+    {
+        "armorName": "Shadow Weaver's Vest",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "A dark vest that blends into the shadows, perfect for stealthy movements."
+    },
+    {
+        "armorName": "Glowing Fungi Robe",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "A robe dotted with bioluminescent fungi, providing a mystical aura and light."
+    },
+    {
+        "armorName": "Crystal Cascade Cloak",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "A flowing cloak adorned with small, light-reflecting crystals, shimmering beautifully."
+    },
+    {
+        "armorName": "Whispering Wind Garment",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "A light garment that amplifies the faintest sounds, aiding in detecting hidden dangers."
+    },
+    {
+        "armorName": "Cavern Lurker's Wrap",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "A flexible body wrap that enhances the wearer's natural camouflage in rocky terrain."
+    },
+    {
+        "armorName": "Mystic Miner's Jacket",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "A rugged jacket embedded with tiny gemstones, granting a subtle magical protection."
+    },
+    {
+        "armorName": "Stalactite Vestment",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "A vestment made from soft, stalactite fibers, offering a blend of comfort and mystique."
+    },
+    {
+        "armorName": "Echoing Chasm Shroud",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "A shroud that resonates with the deep echoes of the cavern, subtly enhancing magic."
+    },
+    {
+        "armorName": "Luminous Miner's Harness",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "A lightweight harness with glowing lines, illuminating the wearer while ensuring mobility."
+    },
+    {
+        "armorName": "Granite Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "Thick leg armor made from carved granite, offering immense protection."
+    },
+    {
+        "armorName": "Molten Lava Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "Heavy iron leggings with veins of glowing lava, providing warmth and defense."
+    },
+    {
+        "armorName": "Cavern Guardian's Chausses",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "Solid steel leg armor, reinforced with layers to withstand the harshest of impacts."
+    },
+    {
+        "armorName": "Stalagmite Shin Guards",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "Heavy shin guards with jagged stalagmite protrusions, intimidating and protective."
+    },
+    {
+        "armorName": "Subterranean Steel Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "Durable steel leggings, forged deep within the earth, virtually indestructible."
+    },
+    {
+        "armorName": "Crystalized Cuisses",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "Leg armor inlaid with hardened crystal, offering a balance of mobility and defense."
+    },
+    {
+        "armorName": "Obsidian Plate Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "Black, polished obsidian leggings, combining extreme toughness with style."
+    },
+    {
+        "armorName": "Grotto Walker's Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "Rugged leg armor with embedded stones and minerals, mimicking the cavern floors."
+    },
+    {
+        "armorName": "Dwarven Forged Leg Plates",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "Heavily armored leg plates, etched with ancient runes and forged in dwarven kilns."
+    },
+    {
+        "armorName": "Echoing Depths Tassets",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "cavern",
+        "description": "Thick, sound-dampening leg armor, ideal for moving silently in echoing caverns."
+    },
+    {
+        "armorName": "Whisper Step Trousers",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "Soft, noise-reducing trousers, ideal for silent movement through the caverns."
+    },
+    {
+        "armorName": "Glowing Mushroom Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "Flexible leggings embedded with bioluminescent mushroom caps, softly illuminating the path."
+    },
+    {
+        "armorName": "Spelunker's Silk Pants",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "Lightweight pants made from the silk of cavern spiders, enhancing agility."
+    },
+    {
+        "armorName": "Crystal Vein Tights",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "Elastic tights with crystal patterns, offering flexibility and a magical sheen."
+    },
+    {
+        "armorName": "Cavern Explorer's Chaps",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "Durable chaps designed for traversing rough terrain, providing both comfort and protection."
+    },
+    {
+        "armorName": "Shimmering Shade Leg Wraps",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "Thin leg wraps that shimmer in the darkness, aiding in stealth and evasion."
+    },
+    {
+        "armorName": "Mystic Miner's Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "Comfortable leggings embedded with small gemstones, offering subtle magical resistances."
+    },
+    {
+        "armorName": "Stalactite Fiber Trousers",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "Pants woven from stalactite fibers, providing a unique blend of flexibility and resilience."
+    },
+    {
+        "armorName": "Subterranean Scout's Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "Light leggings designed for quick and agile movements through tight cavern spaces."
+    },
+    {
+        "armorName": "Luminous Pathfinders",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "cavern",
+        "description": "Leggings with built-in luminescence, guiding the wearer through the darkest paths."
+    }
+]
