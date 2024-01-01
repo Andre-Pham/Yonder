@@ -4,420 +4,479 @@
         "armorType": "head",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "A regal, ice-encrusted crown with sharp, crystalline spikes."
+        "description": "A regal, ice-encrusted crown with sharp, crystalline spikes.",
+        "id": "A0121"
     },
     {
         "armorName": "Glacial Helm",
         "armorType": "head",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "A helmet entirely forged from dense, translucent ice, shimmering with a cold light."
+        "description": "A helmet entirely forged from dense, translucent ice, shimmering with a cold light.",
+        "id": "A0122"
     },
     {
         "armorName": "Winter's Guard Visor",
         "armorType": "head",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "A steel helmet covered with a layer of frost, featuring a visor etched with snowflake patterns."
+        "description": "A steel helmet covered with a layer of frost, featuring a visor etched with snowflake patterns.",
+        "id": "A0123"
     },
     {
         "armorName": "Permafrost Protector",
         "armorType": "head",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "A bulky helm adorned with frozen stalagmites and glowing blue runes."
+        "description": "A bulky helm adorned with frozen stalagmites and glowing blue runes.",
+        "id": "A0124"
     },
     {
         "armorName": "Icebound Barbute",
         "armorType": "head",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "A heavy steel barbute, encased in a layer of unmelting ice."
+        "description": "A heavy steel barbute, encased in a layer of unmelting ice.",
+        "id": "A0125"
     },
     {
         "armorName": "Snowdrift Warhelm",
         "armorType": "head",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "A warhelm with a snowy crest, resembling the rugged peaks of a mountain range."
+        "description": "A warhelm with a snowy crest, resembling the rugged peaks of a mountain range.",
+        "id": "A0126"
     },
     {
         "armorName": "Aurora Fullhelm",
         "armorType": "head",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "A solid helmet with an aurora-like glow, reflecting the northern lights."
+        "description": "A solid helmet with an aurora-like glow, reflecting the northern lights.",
+        "id": "A0127"
     },
     {
         "armorName": "Frostforged Faceguard",
         "armorType": "head",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "A faceguard crafted from cold iron, rimmed with hoarfrost edges."
+        "description": "A faceguard crafted from cold iron, rimmed with hoarfrost edges.",
+        "id": "A0128"
     },
     {
         "armorName": "Blizzard Knight Helm",
         "armorType": "head",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "A helm designed like a blizzard, with swirling patterns and ice shards."
+        "description": "A helm designed like a blizzard, with swirling patterns and ice shards.",
+        "id": "A0129"
     },
     {
         "armorName": "Cryogenic Casque",
         "armorType": "head",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "A casque made from cryo-treated metal, exuding a mist of extreme cold."
+        "description": "A casque made from cryo-treated metal, exuding a mist of extreme cold.",
+        "id": "A0130"
     },
     {
         "armorName": "Whispering Veil",
         "armorType": "head",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "A translucent veil that murmurs with the voices of the forest."
+        "description": "A translucent veil that murmurs with the voices of the forest.",
+        "id": "A0131"
     },
     {
         "armorName": "Moonlit Diadem",
         "armorType": "head",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "A silver circlet that glows softly under the moonlight, enhancing nocturnal senses."
+        "description": "A silver circlet that glows softly under the moonlight, enhancing nocturnal senses.",
+        "id": "A0132"
     },
     {
         "armorName": "Sylvan Hood",
         "armorType": "head",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "A hood woven from living vines and leaves, constantly shifting in color and form."
+        "description": "A hood woven from living vines and leaves, constantly shifting in color and form.",
+        "id": "A0133"
     },
     {
         "armorName": "Mystic's Crest",
         "armorType": "head",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "A feathered crest that augments the wearer's magical affinity."
+        "description": "A feathered crest that augments the wearer's magical affinity.",
+        "id": "A0134"
     },
     {
         "armorName": "Druidic Headdress",
         "armorType": "head",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "A headdress adorned with enchanted herbs and woodland creature feathers."
+        "description": "A headdress adorned with enchanted herbs and woodland creature feathers.",
+        "id": "A0135"
     },
     {
         "armorName": "Fae Antlers",
         "armorType": "head",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "Ethereal antlers that resonate with the magic of the ancient woods."
+        "description": "Ethereal antlers that resonate with the magic of the ancient woods.",
+        "id": "A0136"
     },
     {
         "armorName": "Bramble Crown",
         "armorType": "head",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "A crown made from intertwining brambles, blooming with small, luminescent flowers."
+        "description": "A crown made from intertwining brambles, blooming with small, luminescent flowers.",
+        "id": "A0137"
     },
     {
         "armorName": "Spirit Whisper Cap",
         "armorType": "head",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "A cap that allows the wearer to hear the whispers of forest spirits."
+        "description": "A cap that allows the wearer to hear the whispers of forest spirits.",
+        "id": "A0138"
     },
     {
         "armorName": "Elder's Coif",
         "armorType": "head",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "A coif crafted from ancient bark and leaves, offering wisdom of the forest."
+        "description": "A coif crafted from ancient bark and leaves, offering wisdom of the forest.",
+        "id": "A0139"
     },
     {
         "armorName": "Enchanter's Mask",
         "armorType": "head",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "A mask that shifts its appearance with the phases of the moon, enhancing illusion magic."
+        "description": "A mask that shifts its appearance with the phases of the moon, enhancing illusion magic.",
+        "id": "A0140"
     },
     {
         "armorName": "Glacier Plate Armor",
         "armorType": "body",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "A full-body armor crafted from solid glacier ice, inscribed with ancient runes."
+        "description": "A full-body armor crafted from solid glacier ice, inscribed with ancient runes.",
+        "id": "A0141"
     },
     {
         "armorName": "Mountain Fortress Cuirass",
         "armorType": "body",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "A heavily armored cuirass resembling a fortified mountain, unyielding and towering."
+        "description": "A heavily armored cuirass resembling a fortified mountain, unyielding and towering.",
+        "id": "A0142"
     },
     {
         "armorName": "Tundra Warplate",
         "armorType": "body",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "A steel warplate covered in a thick layer of frost, emanating an aura of cold."
+        "description": "A steel warplate covered in a thick layer of frost, emanating an aura of cold.",
+        "id": "A0143"
     },
     {
         "armorName": "Frost Giant's Harness",
         "armorType": "body",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "A massive harness made from the hide and bones of a frost giant, imbued with their strength."
+        "description": "A massive harness made from the hide and bones of a frost giant, imbued with their strength.",
+        "id": "A0144"
     },
     {
         "armorName": "Polar Knight Breastplate",
         "armorType": "body",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "A breastplate etched with polar scenes, offering formidable protection against the cold."
+        "description": "A breastplate etched with polar scenes, offering formidable protection against the cold.",
+        "id": "A0145"
     },
     {
         "armorName": "Icicle Shell Armor",
         "armorType": "body",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "Armor made from sharp, durable icicles, forming an almost impenetrable shell."
+        "description": "Armor made from sharp, durable icicles, forming an almost impenetrable shell.",
+        "id": "A0146"
     },
     {
         "armorName": "Avalanche Bulwark",
         "armorType": "body",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "A body armor that mimics an avalanche, with overlapping plates resembling snow and rock."
+        "description": "A body armor that mimics an avalanche, with overlapping plates resembling snow and rock.",
+        "id": "A0147"
     },
     {
         "armorName": "Frostbound Battlevest",
         "armorType": "body",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "A sturdy battlevest encrusted with frost, capable of withstanding severe impacts."
+        "description": "A sturdy battlevest encrusted with frost, capable of withstanding severe impacts.",
+        "id": "A0148"
     },
     {
         "armorName": "Winterforge Mail",
         "armorType": "body",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "A chainmail forged in the heart of a winter storm, resilient to all elements."
+        "description": "A chainmail forged in the heart of a winter storm, resilient to all elements.",
+        "id": "A0149"
     },
     {
         "armorName": "Permafrost Carapace",
         "armorType": "body",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "A carapace armor that resembles frozen earth, unbreakable and cold to the touch."
+        "description": "A carapace armor that resembles frozen earth, unbreakable and cold to the touch.",
+        "id": "A0150"
     },
     {
         "armorName": "Mystic's Breeze Robe",
         "armorType": "body",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "An airy robe that flows like a gentle breeze, shimmering with faint magical runes."
+        "description": "An airy robe that flows like a gentle breeze, shimmering with faint magical runes.",
+        "id": "A0151"
     },
     {
         "armorName": "Forest Whisperer's Garb",
         "armorType": "body",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "A garment interwoven with leaves and vines, pulsing with the life force of the forest."
+        "description": "A garment interwoven with leaves and vines, pulsing with the life force of the forest.",
+        "id": "A0152"
     },
     {
         "armorName": "Starlight Tunic",
         "armorType": "body",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "A tunic infused with the essence of starlight, offering protection through celestial magic."
+        "description": "A tunic infused with the essence of starlight, offering protection through celestial magic.",
+        "id": "A0153"
     },
     {
         "armorName": "Moonshadow Vest",
         "armorType": "body",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "A vest that reflects the phases of the moon, granting stealth and agility in darkness."
+        "description": "A vest that reflects the phases of the moon, granting stealth and agility in darkness.",
+        "id": "A0154"
     },
     {
         "armorName": "Elven Silk Doublet",
         "armorType": "body",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "A doublet crafted from the finest elven silk, enchanted for resilience and flexibility."
+        "description": "A doublet crafted from the finest elven silk, enchanted for resilience and flexibility.",
+        "id": "A0155"
     },
     {
         "armorName": "Fae-Woven Jacket",
         "armorType": "body",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "A jacket created from ethereal fabrics by fae artisans, blending with the forest shadows."
+        "description": "A jacket created from ethereal fabrics by fae artisans, blending with the forest shadows.",
+        "id": "A0156"
     },
     {
         "armorName": "Grovekeeper's Mantle",
         "armorType": "body",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "A mantle that bears the essence of ancient trees, offering wisdom and protection."
+        "description": "A mantle that bears the essence of ancient trees, offering wisdom and protection.",
+        "id": "A0157"
     },
     {
         "armorName": "Lunar Priestess Cloak",
         "armorType": "body",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "A cloak adorned with lunar symbols, enhancing the wearer's magical abilities under the night sky."
+        "description": "A cloak adorned with lunar symbols, enhancing the wearer's magical abilities under the night sky.",
+        "id": "A0158"
     },
     {
         "armorName": "Spirit Dancer's Wrap",
         "armorType": "body",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "A wrap that vibrates with the energy of the forest spirits, aiding in evasive maneuvers."
+        "description": "A wrap that vibrates with the energy of the forest spirits, aiding in evasive maneuvers.",
+        "id": "A0159"
     },
     {
         "armorName": "Druidic Vestments",
         "armorType": "body",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "Vestments blessed by druidic rituals, harmonizing the wearer with the natural world."
+        "description": "Vestments blessed by druidic rituals, harmonizing the wearer with the natural world.",
+        "id": "A0160"
     },
     {
         "armorName": "Glacial Legguards",
         "armorType": "legs",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "Legguards crafted from solid ice, reinforced with layers of frost-etched steel."
+        "description": "Legguards crafted from solid ice, reinforced with layers of frost-etched steel.",
+        "id": "A0161"
     },
     {
         "armorName": "Frostwalker Greaves",
         "armorType": "legs",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "Heavy greaves with a frosted exterior, leaving a trail of ice with every step."
+        "description": "Heavy greaves with a frosted exterior, leaving a trail of ice with every step.",
+        "id": "A0162"
     },
     {
         "armorName": "Winter Titan's Chausses",
         "armorType": "legs",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "Chausses made from the hide of a Winter Titan, offering unmatched protection against the cold."
+        "description": "Chausses made from the hide of a Winter Titan, offering unmatched protection against the cold.",
+        "id": "A0163"
     },
     {
         "armorName": "Icebound War Skirt",
         "armorType": "legs",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "A war skirt adorned with heavy icicles and frozen chains, intimidating and protective."
+        "description": "A war skirt adorned with heavy icicles and frozen chains, intimidating and protective.",
+        "id": "A0164"
     },
     {
         "armorName": "Polar Vanguard Tassets",
         "armorType": "legs",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "Steel tassets that bear the resilience of polar extremes, tough and unyielding."
+        "description": "Steel tassets that bear the resilience of polar extremes, tough and unyielding.",
+        "id": "A0165"
     },
     {
         "armorName": "Blizzard Forged Cuisses",
         "armorType": "legs",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "Cuisses forged in a blizzard, imbued with the raw fury of a winter storm."
+        "description": "Cuisses forged in a blizzard, imbued with the raw fury of a winter storm.",
+        "id": "A0166"
     },
     {
         "armorName": "Frost Giant's Kneeguards",
         "armorType": "legs",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "Kneeguards crafted from the bones of a Frost Giant, offering colossal strength and protection."
+        "description": "Kneeguards crafted from the bones of a Frost Giant, offering colossal strength and protection.",
+        "id": "A0167"
     },
     {
         "armorName": "Subzero Plate Leggings",
         "armorType": "legs",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "Leggings made from a subzero metal alloy, resistant to any physical force."
+        "description": "Leggings made from a subzero metal alloy, resistant to any physical force.",
+        "id": "A0168"
     },
     {
         "armorName": "Avalanche Stompers",
         "armorType": "legs",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "Heavy boots designed to mimic the unstoppable force of an avalanche."
+        "description": "Heavy boots designed to mimic the unstoppable force of an avalanche.",
+        "id": "A0169"
     },
     {
         "armorName": "Permafrost Chainmail Leggings",
         "armorType": "legs",
         "armorProfileTag": "heavyweight",
         "regionProfileTag": "faction6",
-        "description": "Chainmail leggings with links frozen solid, providing exceptional defense."
+        "description": "Chainmail leggings with links frozen solid, providing exceptional defense.",
+        "id": "A0170"
     },
     {
         "armorName": "Galestep Trousers",
         "armorType": "legs",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "Soft, whispering trousers that allow movement as swift and silent as a passing breeze."
+        "description": "Soft, whispering trousers that allow movement as swift and silent as a passing breeze.",
+        "id": "A0171"
     },
     {
         "armorName": "Moonlit Dance Leggings",
         "armorType": "legs",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "Ethereal leggings that glow faintly in the moonlight, enhancing fluidity and grace."
+        "description": "Ethereal leggings that glow faintly in the moonlight, enhancing fluidity and grace.",
+        "id": "A0172"
     },
     {
         "armorName": "Forest Spirit's Step",
         "armorType": "legs",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "Leggings imbued with the essence of the forest, granting agility and stealth among trees."
+        "description": "Leggings imbued with the essence of the forest, granting agility and stealth among trees.",
+        "id": "A0173"
     },
     {
         "armorName": "Elvenweave Legwraps",
         "armorType": "legs",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "Legwraps made from magical elven fabric, shifting colors to match the woodland surroundings."
+        "description": "Legwraps made from magical elven fabric, shifting colors to match the woodland surroundings.",
+        "id": "A0174"
     },
     {
         "armorName": "Mystic's Pathfinders",
         "armorType": "legs",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "Light, enchanted leggings that guide the wearer through mystical terrains unscathed."
+        "description": "Light, enchanted leggings that guide the wearer through mystical terrains unscathed.",
+        "id": "A0175"
     },
     {
         "armorName": "Sylvan Stalkers",
         "armorType": "legs",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "Leggings crafted from living vines and leaves, adapting to the wearer's movements in nature."
+        "description": "Leggings crafted from living vines and leaves, adapting to the wearer's movements in nature.",
+        "id": "A0176"
     },
     {
         "armorName": "Fae-Touched Skirt",
         "armorType": "legs",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "A skirt spun from the finest faerie silk, offering magical protection and lightness."
+        "description": "A skirt spun from the finest faerie silk, offering magical protection and lightness.",
+        "id": "A0177"
     },
     {
         "armorName": "Druidic Leggings",
         "armorType": "legs",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "Leggings adorned with sacred runes and forest symbols, channeling the power of ancient druids."
+        "description": "Leggings adorned with sacred runes and forest symbols, channeling the power of ancient druids.",
+        "id": "A0178"
     },
     {
         "armorName": "Lunar Wanderer's Boots",
         "armorType": "legs",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "Boots that absorb the energy of the lunar cycle, enhancing the wearer's agility during night."
+        "description": "Boots that absorb the energy of the lunar cycle, enhancing the wearer's agility during night.",
+        "id": "A0179"
     },
     {
         "armorName": "Nature's Whisper Leggings",
         "armorType": "legs",
         "armorProfileTag": "lightweight",
         "regionProfileTag": "faction6",
-        "description": "Leggings that rustle with the sound of leaves, harmonizing the wearer with the natural world."
+        "description": "Leggings that rustle with the sound of leaves, harmonizing the wearer with the natural world.",
+        "id": "A0180"
     }
 ]
-

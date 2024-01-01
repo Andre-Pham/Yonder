@@ -1,422 +1,482 @@
 [
-	{
-		"armorName": "Lavascale Helm",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "A helm forged from volcanic rock, with jagged scales that resemble flowing lava."
-	},
-	{
-		"armorName": "Magma Crest Helmet",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "A heavy helmet with a crest shaped like a spewing volcano, glowing red from within."
-	},
-	{
-		"armorName": "Obsidian Guard",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "A dense, obsidian helmet with sharp edges and a visor that glows like magma."
-	},
-	{
-		"armorName": "Crater Helm",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "A bulky helmet with a surface texture mimicking a meteorite's cratered facade."
-	},
-	{
-		"armorName": "Eruption Cap",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "A thick, dome-shaped helmet with vents that release steam, resembling a volcanic eruption."
-	},
-	{
-		"armorName": "Inferno Visor",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "A dark, heat-resistant helm with a fiery visor that shines like an inferno."
-	},
-	{
-		"armorName": "Volcanic Crown",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "A regal, stone crown encrusted with glowing lava gems, radiating heat."
-	},
-	{
-		"armorName": "Pyroclast Cap",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "A solid helmet with a rough, igneous texture, resembling hardened lava flows."
-	},
-	{
-		"armorName": "Blaze Barrier Helm",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "A heavy, fireproof helmet with a face guard designed like a blazing fire."
-	},
-	{
-		"armorName": "Cinder Helm",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "A charcoal black helmet with red-hot cinder designs etched across its surface."
-	},
-	{
-		"armorName": "Flame Whisper Circlet",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "A delicate circlet emitting a soft, fiery glow, pulsing with arcane energy."
-	},
-	{
-		"armorName": "Ember Veil Hood",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "A lightweight hood woven from fire-resistant fibers, with ember-like sparkles."
-	},
-	{
-		"armorName": "Sootfeather Mask",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "A thin, feathered mask that offers smoke-like camouflage and enhanced perception."
-	},
-	{
-		"armorName": "Molten Glass Goggles",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "Transparent, heat-proof goggles that provide clear vision in extreme temperatures."
-	},
-	{
-		"armorName": "Vapor Crest Cap",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "A cap made from heat-dissipating materials, crowned with a misty, vapor-like aura."
-	},
-	{
-		"armorName": "Lava Flow Bandana",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "A light, flexible bandana with a pattern mimicking flowing lava, enhancing agility."
-	},
-	{
-		"armorName": "Pyre Wisp Hat",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "A wide-brimmed hat that flickers with ethereal flames, boosting magical affinity."
-	},
-	{
-		"armorName": "Fumarole Turban",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "A spiraling, smoke-patterned turban that enhances mental clarity and focus."
-	},
-	{
-		"armorName": "Scoria Headwrap",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "A lightweight, porous fabric headwrap, offering breathability and heat resistance."
-	},
-	{
-		"armorName": "Cinder Shade Beret",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "A stylish beret with a cinder-shaded hue, enchanted to enhance stealth capabilities."
-	},
-	{
-		"armorName": "Molten Plate Cuirass",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "A formidable cuirass forged from molten lava, solidified into an impenetrable shell."
-	},
-	{
-		"armorName": "Volcano's Heart Breastplate",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "A heavy breastplate with a glowing core, resembling the heart of a volcano."
-	},
-	{
-		"armorName": "Basalt Barrier Armor",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "An armor made from dense basalt, offering unmatched protection and heat resistance."
-	},
-	{
-		"armorName": "Crater Shell Harness",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "A bulky, crater-textured harness that absorbs impacts like a meteorite."
-	},
-	{
-		"armorName": "Inferno Forge Plate",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "A chest plate heated in an inferno forge, radiating intense heat and durability."
-	},
-	{
-		"armorName": "Eruption Mail",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "A heavy mail armor with patterns mimicking volcanic eruptions, formidable in battle."
-	},
-	{
-		"armorName": "Obsidian Chestguard",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "A solid obsidian guard, nearly indestructible, offering superior chest protection."
-	},
-	{
-		"armorName": "Pyroclast Plate",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "A rugged plate armor with a pyroclastic surface, ideal for withstanding high temperatures."
-	},
-	{
-		"armorName": "Lava Carapace",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "A carapace-style armor that looks like cooled lava, tough and intimidating."
-	},
-	{
-		"armorName": "Emberstone Hauberk",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "A hauberk embedded with emberstones, providing warmth and resilience in battle."
-	},
-	{
-		"armorName": "Ashen Shroud Vest",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "A vest woven from ashen threads, lightweight and enhancing agility with a mystical aura."
-	},
-	{
-		"armorName": "Flareweave Tunic",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "A tunic crafted from flareweave fabric, glowing faintly and offering magical protection."
-	},
-	{
-		"armorName": "Blaze Dancer's Robe",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "A robe that billows like flames, imbued with enchantments to enhance spellcasting."
-	},
-	{
-		"armorName": "Searing Wind Cloak",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "A cloak that flickers like a mirage, offering resistance to heat and boosting speed."
-	},
-	{
-		"armorName": "Ember Silk Garment",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "A garment made from ember silk, light and cool, with a pattern that shifts like flames."
-	},
-	{
-		"armorName": "Magmatic Mesh Jerkin",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "A flexible jerkin made from magmatic mesh, enhancing evasion and elemental affinity."
-	},
-	{
-		"armorName": "Fumarole Fiber Vestment",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "A vestment made from fumarole fibers, breathable and enhancing mystical senses."
-	},
-	{
-		"armorName": "Cinderweave Robe",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "A robe woven from cinderweave, light as air, with an enchantment for flame resistance."
-	},
-	{
-		"armorName": "Lava Runner's Jacket",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "A sleek jacket with lava runner motifs, enhancing mobility and heat endurance."
-	},
-	{
-		"armorName": "Pyrofiber Vest",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "A vest made of heat-dissipating pyrofiber, offering cool comfort and fire resistance."
-	},
-	{
-		"armorName": "Lavaforged Greaves",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "Sturdy greaves forged in lava, providing exceptional heat resistance and durability."
-	},
-	{
-		"armorName": "Volcanic Shard Leggings",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "Heavy leggings embedded with volcanic shards, offering robust protection."
-	},
-	{
-		"armorName": "Obsidian Scale Tassets",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "Tassets made of overlapping obsidian scales, impenetrable and intimidating."
-	},
-	{
-		"armorName": "Magma Plated Leg Guards",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "Leg guards plated with magma-like material, solid and protective against harsh impacts."
-	},
-	{
-		"armorName": "Crater Chain Leggings",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "Chainmail leggings with a cratered surface design, tough and battle-ready."
-	},
-	{
-		"armorName": "Inferno Bind Greaves",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "Greaves bound with inferno-forged metal, radiating a daunting presence."
-	},
-	{
-		"armorName": "Pyroclastic Leg Armor",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "Dense leg armor featuring a pyroclastic texture, offering extreme heat protection."
-	},
-	{
-		"armorName": "Lava Walker Boots",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "Heavy boots designed to walk on lava, with soles that resist melting and burning."
-	},
-	{
-		"armorName": "Emberstone Shin Guards",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "Shin guards embedded with emberstones, providing warmth and strong defense."
-	},
-	{
-		"armorName": "Cinderclad Chaps",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction5",
-		"description": "Chaps clad in cinder-like materials, rugged and resistant to extreme temperatures."
-	},
-	{
-		"armorName": "Flamestride Leggings",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "Soft, fire-resistant leggings that enhance speed and agility with a flame-like trail."
-	},
-	{
-		"armorName": "Sootstep Trousers",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "Lightweight trousers with a sooty texture, offering silent movement and flexibility."
-	},
-	{
-		"armorName": "Magma Flow Boots",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "Boots designed like flowing magma, enhancing footwork with heat-resistant soles."
-	},
-	{
-		"armorName": "Vapor Trail Tights",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "Ethereal tights that leave a misty vapor trail, boosting evasion and stealth."
-	},
-	{
-		"armorName": "Ash Whisper Sandals",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "Feather-light sandals that make footsteps as silent as a whisper, ideal for stealth."
-	},
-	{
-		"armorName": "Emberweave Kilt",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "A kilt made from emberweave cloth, providing comfort and minor flame resistance."
-	},
-	{
-		"armorName": "Fumarole Footwraps",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "Breathable footwraps infused with fumarole minerals, enhancing agility and balance."
-	},
-	{
-		"armorName": "Cinderbreeze Leg Wraps",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "Airy leg wraps that feel cool against the skin, with a cinder-like appearance."
-	},
-	{
-		"armorName": "Pyrokinetic Slacks",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "Slacks imbued with pyrokinetic fibers, enhancing fire magic and heat endurance."
-	},
-	{
-		"armorName": "Lavaspinner Greaves",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction5",
-		"description": "Supple greaves woven from lavaspinner silk, lightweight and heat-dissipating."
-	}
+    {
+        "armorName": "Lavascale Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "A helm forged from volcanic rock, with jagged scales that resemble flowing lava.",
+        "id": "A0541"
+    },
+    {
+        "armorName": "Magma Crest Helmet",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "A heavy helmet with a crest shaped like a spewing volcano, glowing red from within.",
+        "id": "A0542"
+    },
+    {
+        "armorName": "Obsidian Guard",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "A dense, obsidian helmet with sharp edges and a visor that glows like magma.",
+        "id": "A0543"
+    },
+    {
+        "armorName": "Crater Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "A bulky helmet with a surface texture mimicking a meteorite's cratered facade.",
+        "id": "A0544"
+    },
+    {
+        "armorName": "Eruption Cap",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "A thick, dome-shaped helmet with vents that release steam, resembling a volcanic eruption.",
+        "id": "A0545"
+    },
+    {
+        "armorName": "Inferno Visor",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "A dark, heat-resistant helm with a fiery visor that shines like an inferno.",
+        "id": "A0546"
+    },
+    {
+        "armorName": "Volcanic Crown",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "A regal, stone crown encrusted with glowing lava gems, radiating heat.",
+        "id": "A0547"
+    },
+    {
+        "armorName": "Pyroclast Cap",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "A solid helmet with a rough, igneous texture, resembling hardened lava flows.",
+        "id": "A0548"
+    },
+    {
+        "armorName": "Blaze Barrier Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "A heavy, fireproof helmet with a face guard designed like a blazing fire.",
+        "id": "A0549"
+    },
+    {
+        "armorName": "Cinder Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "A charcoal black helmet with red-hot cinder designs etched across its surface.",
+        "id": "A0550"
+    },
+    {
+        "armorName": "Flame Whisper Circlet",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "A delicate circlet emitting a soft, fiery glow, pulsing with arcane energy.",
+        "id": "A0551"
+    },
+    {
+        "armorName": "Ember Veil Hood",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "A lightweight hood woven from fire-resistant fibers, with ember-like sparkles.",
+        "id": "A0552"
+    },
+    {
+        "armorName": "Sootfeather Mask",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "A thin, feathered mask that offers smoke-like camouflage and enhanced perception.",
+        "id": "A0553"
+    },
+    {
+        "armorName": "Molten Glass Goggles",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "Transparent, heat-proof goggles that provide clear vision in extreme temperatures.",
+        "id": "A0554"
+    },
+    {
+        "armorName": "Vapor Crest Cap",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "A cap made from heat-dissipating materials, crowned with a misty, vapor-like aura.",
+        "id": "A0555"
+    },
+    {
+        "armorName": "Lava Flow Bandana",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "A light, flexible bandana with a pattern mimicking flowing lava, enhancing agility.",
+        "id": "A0556"
+    },
+    {
+        "armorName": "Pyre Wisp Hat",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "A wide-brimmed hat that flickers with ethereal flames, boosting magical affinity.",
+        "id": "A0557"
+    },
+    {
+        "armorName": "Fumarole Turban",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "A spiraling, smoke-patterned turban that enhances mental clarity and focus.",
+        "id": "A0558"
+    },
+    {
+        "armorName": "Scoria Headwrap",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "A lightweight, porous fabric headwrap, offering breathability and heat resistance.",
+        "id": "A0559"
+    },
+    {
+        "armorName": "Cinder Shade Beret",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "A stylish beret with a cinder-shaded hue, enchanted to enhance stealth capabilities.",
+        "id": "A0560"
+    },
+    {
+        "armorName": "Molten Plate Cuirass",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "A formidable cuirass forged from molten lava, solidified into an impenetrable shell.",
+        "id": "A0561"
+    },
+    {
+        "armorName": "Volcano's Heart Breastplate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "A heavy breastplate with a glowing core, resembling the heart of a volcano.",
+        "id": "A0562"
+    },
+    {
+        "armorName": "Basalt Barrier Armor",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "An armor made from dense basalt, offering unmatched protection and heat resistance.",
+        "id": "A0563"
+    },
+    {
+        "armorName": "Crater Shell Harness",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "A bulky, crater-textured harness that absorbs impacts like a meteorite.",
+        "id": "A0564"
+    },
+    {
+        "armorName": "Inferno Forge Plate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "A chest plate heated in an inferno forge, radiating intense heat and durability.",
+        "id": "A0565"
+    },
+    {
+        "armorName": "Eruption Mail",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "A heavy mail armor with patterns mimicking volcanic eruptions, formidable in battle.",
+        "id": "A0566"
+    },
+    {
+        "armorName": "Obsidian Chestguard",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "A solid obsidian guard, nearly indestructible, offering superior chest protection.",
+        "id": "A0567"
+    },
+    {
+        "armorName": "Pyroclast Plate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "A rugged plate armor with a pyroclastic surface, ideal for withstanding high temperatures.",
+        "id": "A0568"
+    },
+    {
+        "armorName": "Lava Carapace",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "A carapace-style armor that looks like cooled lava, tough and intimidating.",
+        "id": "A0569"
+    },
+    {
+        "armorName": "Emberstone Hauberk",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "A hauberk embedded with emberstones, providing warmth and resilience in battle.",
+        "id": "A0570"
+    },
+    {
+        "armorName": "Ashen Shroud Vest",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "A vest woven from ashen threads, lightweight and enhancing agility with a mystical aura.",
+        "id": "A0571"
+    },
+    {
+        "armorName": "Flareweave Tunic",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "A tunic crafted from flareweave fabric, glowing faintly and offering magical protection.",
+        "id": "A0572"
+    },
+    {
+        "armorName": "Blaze Dancer's Robe",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "A robe that billows like flames, imbued with enchantments to enhance spellcasting.",
+        "id": "A0573"
+    },
+    {
+        "armorName": "Searing Wind Cloak",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "A cloak that flickers like a mirage, offering resistance to heat and boosting speed.",
+        "id": "A0574"
+    },
+    {
+        "armorName": "Ember Silk Garment",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "A garment made from ember silk, light and cool, with a pattern that shifts like flames.",
+        "id": "A0575"
+    },
+    {
+        "armorName": "Magmatic Mesh Jerkin",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "A flexible jerkin made from magmatic mesh, enhancing evasion and elemental affinity.",
+        "id": "A0576"
+    },
+    {
+        "armorName": "Fumarole Fiber Vestment",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "A vestment made from fumarole fibers, breathable and enhancing mystical senses.",
+        "id": "A0577"
+    },
+    {
+        "armorName": "Cinderweave Robe",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "A robe woven from cinderweave, light as air, with an enchantment for flame resistance.",
+        "id": "A0578"
+    },
+    {
+        "armorName": "Lava Runner's Jacket",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "A sleek jacket with lava runner motifs, enhancing mobility and heat endurance.",
+        "id": "A0579"
+    },
+    {
+        "armorName": "Pyrofiber Vest",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "A vest made of heat-dissipating pyrofiber, offering cool comfort and fire resistance.",
+        "id": "A0580"
+    },
+    {
+        "armorName": "Lavaforged Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "Sturdy greaves forged in lava, providing exceptional heat resistance and durability.",
+        "id": "A0581"
+    },
+    {
+        "armorName": "Volcanic Shard Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "Heavy leggings embedded with volcanic shards, offering robust protection.",
+        "id": "A0582"
+    },
+    {
+        "armorName": "Obsidian Scale Tassets",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "Tassets made of overlapping obsidian scales, impenetrable and intimidating.",
+        "id": "A0583"
+    },
+    {
+        "armorName": "Magma Plated Leg Guards",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "Leg guards plated with magma-like material, solid and protective against harsh impacts.",
+        "id": "A0584"
+    },
+    {
+        "armorName": "Crater Chain Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "Chainmail leggings with a cratered surface design, tough and battle-ready.",
+        "id": "A0585"
+    },
+    {
+        "armorName": "Inferno Bind Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "Greaves bound with inferno-forged metal, radiating a daunting presence.",
+        "id": "A0586"
+    },
+    {
+        "armorName": "Pyroclastic Leg Armor",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "Dense leg armor featuring a pyroclastic texture, offering extreme heat protection.",
+        "id": "A0587"
+    },
+    {
+        "armorName": "Lava Walker Boots",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "Heavy boots designed to walk on lava, with soles that resist melting and burning.",
+        "id": "A0588"
+    },
+    {
+        "armorName": "Emberstone Shin Guards",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "Shin guards embedded with emberstones, providing warmth and strong defense.",
+        "id": "A0589"
+    },
+    {
+        "armorName": "Cinderclad Chaps",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction5",
+        "description": "Chaps clad in cinder-like materials, rugged and resistant to extreme temperatures.",
+        "id": "A0590"
+    },
+    {
+        "armorName": "Flamestride Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "Soft, fire-resistant leggings that enhance speed and agility with a flame-like trail.",
+        "id": "A0591"
+    },
+    {
+        "armorName": "Sootstep Trousers",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "Lightweight trousers with a sooty texture, offering silent movement and flexibility.",
+        "id": "A0592"
+    },
+    {
+        "armorName": "Magma Flow Boots",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "Boots designed like flowing magma, enhancing footwork with heat-resistant soles.",
+        "id": "A0593"
+    },
+    {
+        "armorName": "Vapor Trail Tights",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "Ethereal tights that leave a misty vapor trail, boosting evasion and stealth.",
+        "id": "A0594"
+    },
+    {
+        "armorName": "Ash Whisper Sandals",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "Feather-light sandals that make footsteps as silent as a whisper, ideal for stealth.",
+        "id": "A0595"
+    },
+    {
+        "armorName": "Emberweave Kilt",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "A kilt made from emberweave cloth, providing comfort and minor flame resistance.",
+        "id": "A0596"
+    },
+    {
+        "armorName": "Fumarole Footwraps",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "Breathable footwraps infused with fumarole minerals, enhancing agility and balance.",
+        "id": "A0597"
+    },
+    {
+        "armorName": "Cinderbreeze Leg Wraps",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "Airy leg wraps that feel cool against the skin, with a cinder-like appearance.",
+        "id": "A0598"
+    },
+    {
+        "armorName": "Pyrokinetic Slacks",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "Slacks imbued with pyrokinetic fibers, enhancing fire magic and heat endurance.",
+        "id": "A0599"
+    },
+    {
+        "armorName": "Lavaspinner Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction5",
+        "description": "Supple greaves woven from lavaspinner silk, lightweight and heat-dissipating.",
+        "id": "A0600"
+    }
 ]

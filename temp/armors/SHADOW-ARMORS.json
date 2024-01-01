@@ -1,422 +1,482 @@
 [
-	{
-		"armorName": "Eclipse Helm",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "A daunting helmet with a visor that mimics a solar eclipse, casting an ominous shadow."
-	},
-	{
-		"armorName": "Nightshade Crown",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "A regal, dark metal crown encrusted with black gems that absorb light."
-	},
-	{
-		"armorName": "Duskwarden Casque",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "A sturdy helmet with twilight-hued metal and a shadowy veil."
-	},
-	{
-		"armorName": "Twilight Guardian Helm",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "A heavy helm adorned with motifs of the setting sun and rising moon."
-	},
-	{
-		"armorName": "Shadowforged Greathelm",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "A massive helmet forged from darkened steel, radiating a faint, eerie glow."
-	},
-	{
-		"armorName": "Gloomcrest Warhelm",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "A battle-worn helm with a crest resembling dark, twisted branches."
-	},
-	{
-		"armorName": "Obsidian Night Helm",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "A sleek, obsidian helmet that seems to blend seamlessly with the darkness."
-	},
-	{
-		"armorName": "Mistveil Headdress",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "An enigmatic headdress that shrouds the wearer's face in a mysterious fog."
-	},
-	{
-		"armorName": "Dark Sentinel's Hood",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "A hooded helmet with a gazeless mask, giving an aura of impenetrable darkness."
-	},
-	{
-		"armorName": "Ebonwatcher's Mask",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "A mask made from darkened metal, with slits that gleam with a ghostly light."
-	},
-	{
-		"armorName": "Whisper Hood",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A soft, shadowy hood that muffles sound and blends with the darkness."
-	},
-	{
-		"armorName": "Shade Veil",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A delicate veil that obscures the face, woven with threads of darkness."
-	},
-	{
-		"armorName": "Phantom Cap",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A lightweight cap that shifts its appearance to match the shadows around it."
-	},
-	{
-		"armorName": "Glimmercrest Diadem",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A slender diadem that glows faintly in the absence of light."
-	},
-	{
-		"armorName": "Moonshadow Hood",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A hood infused with moonlight, offering clarity in the deepest darkness."
-	},
-	{
-		"armorName": "Ethereal Bandana",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A bandana that seems almost translucent, blending with the air and shadows."
-	},
-	{
-		"armorName": "Nightwalker's Cowl",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A cowl that enhances the wearer's vision in low light conditions."
-	},
-	{
-		"armorName": "Starweave Circlet",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A circlet crafted from a fabric that mimics the night sky's twinkling stars."
-	},
-	{
-		"armorName": "Mistborn Hood",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A hood that releases a thin mist, cloaking the wearer in a veil of shadow."
-	},
-	{
-		"armorName": "Duskfeather Headdress",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A headdress made of dark feathers, granting agility and stealth."
-	},
-	{
-		"armorName": "Nocturne Plate",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "A formidable chestplate that absorbs light, cloaking the wearer in darkness."
-	},
-	{
-		"armorName": "Twilight Guardian Armor",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "A heavy suit of armor, its surface shifting between shades of dusk and dawn."
-	},
-	{
-		"armorName": "Dreadnought Carapace",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "A bulky, intimidating armor with spikes that resemble shadowy tendrils."
-	},
-	{
-		"armorName": "Eclipse Breastplate",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "A solid breastplate that projects a subtle, dark aura, like an eclipse's corona."
-	},
-	{
-		"armorName": "Dark Warden's Mail",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "A densely layered mail with a dark sheen, impervious to shadowy elements."
-	},
-	{
-		"armorName": "Gloomforge Cuirass",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "A heavy cuirass forged in shadow flames, emanating a menacing presence."
-	},
-	{
-		"armorName": "Nightfall Plate",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "A sturdy chestplate that shimmers with a night-sky pattern under moonlight."
-	},
-	{
-		"armorName": "Obsidian Shell",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "A solid body armor made of obsidian, absorbing light and sound alike."
-	},
-	{
-		"armorName": "Shadow Sentinel's Armor",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "A massive armor set that seems to absorb the surrounding light, enhancing its bearer's presence."
-	},
-	{
-		"armorName": "Abyssal Vest",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "A dark, heavy vest that appears to draw in the very essence of the shadows."
-	},
-	{
-		"armorName": "Shadowweave Tunic",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A tunic crafted from a material that shifts color with the surrounding shadows."
-	},
-	{
-		"armorName": "Mistcloak",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A flowing cloak that emits a faint mist, blurring the wearer's form."
-	},
-	{
-		"armorName": "Ethereal Vestment",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A robe that appears translucent, shimmering with an otherworldly aura."
-	},
-	{
-		"armorName": "Nightshade Robe",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A lightweight robe adorned with patterns that glow softly in darkness."
-	},
-	{
-		"armorName": "Phantom Jerkin",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A sleek body armor that helps the wearer blend seamlessly into shadows."
-	},
-	{
-		"armorName": "Wraithcoat",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A coat that seems to flicker and warp, confusing the eye."
-	},
-	{
-		"armorName": "Gloomshroud Vest",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A vest that absorbs ambient light, enhancing stealth in darkness."
-	},
-	{
-		"armorName": "Duskweaver's Garb",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A garment that changes hues from twilight blue to deep black."
-	},
-	{
-		"armorName": "Moonlit Shroud",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A shroud that reflects moonlight, creating a mesmerizing, protective aura."
-	},
-	{
-		"armorName": "Starless Cloak",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A cloak as dark as a starless night, providing near-invisibility in shadows."
-	},
-	{
-		"armorName": "Nightfall Greaves",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "Sturdy leg armor that shimmers with a dark, night-sky pattern, enhancing stability."
-	},
-	{
-		"armorName": "Duskplate Leggings",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "Heavy metal leggings that shift in hue from twilight purple to deep black."
-	},
-	{
-		"armorName": "Shadowforge Tassets",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "Dark, weighty leg armor, emanating a subtle, ominous energy."
-	},
-	{
-		"armorName": "Eclipse Greaves",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "Solid leg armor that casts a shadowy aura, reminiscent of an eclipse's corona."
-	},
-	{
-		"armorName": "Obsidian Cuisses",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "Leg armor crafted from obsidian, robust and impenetrable to light."
-	},
-	{
-		"armorName": "Gloomwalker's Chausses",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "Thick, dark chausses designed for silent movement in the shadows."
-	},
-	{
-		"armorName": "Abyssal Legguards",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "Heavy leg armor that seems to draw in the surrounding darkness, obscuring the wearer's movement."
-	},
-	{
-		"armorName": "Twilight Sentinel's Greaves",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "Greaves adorned with motifs of the setting sun, offering unwavering protection."
-	},
-	{
-		"armorName": "Darkness Enshrouded Legplates",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "Legplates that seem to blur the line between armor and the enveloping shadows."
-	},
-	{
-		"armorName": "Nocturnal Sabatons",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "shadow",
-		"description": "Heavy boots that absorb sound, perfect for moving unseen in the night."
-	},
-	{
-		"armorName": "Shadowstep Trousers",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "Light, flexible trousers that meld with shadows, aiding in silent movement."
-	},
-	{
-		"armorName": "Mistwalker Leggings",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "Soft leggings that emit a faint mist, obscuring the wearer's lower body."
-	},
-	{
-		"armorName": "Ethereal Legwraps",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "Translucent wraps that seem to disappear at certain angles in the shadows."
-	},
-	{
-		"armorName": "Nightbreeze Skirt",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A flowing skirt that reacts to the slightest breeze, perfect for quick movements."
-	},
-	{
-		"armorName": "Gloomstrider's Pants",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "Pants interwoven with dark fibers, enhancing agility in low light."
-	},
-	{
-		"armorName": "Moonlit Gaiters",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "Slim gaiters that catch moonbeams, illuminating intricate patterns."
-	},
-	{
-		"armorName": "Phantom Shin Guards",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "Nearly weightless shin guards that blend with the surrounding darkness."
-	},
-	{
-		"armorName": "Dusk Dancer's Legwear",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "Elegantly crafted legwear that shifts color in dim light, aiding in stealth."
-	},
-	{
-		"armorName": "Starweave Slacks",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "A pair of slacks made from a fabric that mimics a starless night sky."
-	},
-	{
-		"armorName": "Wraith's Treads",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "shadow",
-		"description": "Light boots that leave no trace, as if the wearer is walking on air."
-	}
+    {
+        "armorName": "Eclipse Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "A daunting helmet with a visor that mimics a solar eclipse, casting an ominous shadow.",
+        "id": "A0301"
+    },
+    {
+        "armorName": "Nightshade Crown",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "A regal, dark metal crown encrusted with black gems that absorb light.",
+        "id": "A0302"
+    },
+    {
+        "armorName": "Duskwarden Casque",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "A sturdy helmet with twilight-hued metal and a shadowy veil.",
+        "id": "A0303"
+    },
+    {
+        "armorName": "Twilight Guardian Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "A heavy helm adorned with motifs of the setting sun and rising moon.",
+        "id": "A0304"
+    },
+    {
+        "armorName": "Shadowforged Greathelm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "A massive helmet forged from darkened steel, radiating a faint, eerie glow.",
+        "id": "A0305"
+    },
+    {
+        "armorName": "Gloomcrest Warhelm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "A battle-worn helm with a crest resembling dark, twisted branches.",
+        "id": "A0306"
+    },
+    {
+        "armorName": "Obsidian Night Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "A sleek, obsidian helmet that seems to blend seamlessly with the darkness.",
+        "id": "A0307"
+    },
+    {
+        "armorName": "Mistveil Headdress",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "An enigmatic headdress that shrouds the wearer's face in a mysterious fog.",
+        "id": "A0308"
+    },
+    {
+        "armorName": "Dark Sentinel's Hood",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "A hooded helmet with a gazeless mask, giving an aura of impenetrable darkness.",
+        "id": "A0309"
+    },
+    {
+        "armorName": "Ebonwatcher's Mask",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "A mask made from darkened metal, with slits that gleam with a ghostly light.",
+        "id": "A0310"
+    },
+    {
+        "armorName": "Whisper Hood",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A soft, shadowy hood that muffles sound and blends with the darkness.",
+        "id": "A0311"
+    },
+    {
+        "armorName": "Shade Veil",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A delicate veil that obscures the face, woven with threads of darkness.",
+        "id": "A0312"
+    },
+    {
+        "armorName": "Phantom Cap",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A lightweight cap that shifts its appearance to match the shadows around it.",
+        "id": "A0313"
+    },
+    {
+        "armorName": "Glimmercrest Diadem",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A slender diadem that glows faintly in the absence of light.",
+        "id": "A0314"
+    },
+    {
+        "armorName": "Moonshadow Hood",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A hood infused with moonlight, offering clarity in the deepest darkness.",
+        "id": "A0315"
+    },
+    {
+        "armorName": "Ethereal Bandana",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A bandana that seems almost translucent, blending with the air and shadows.",
+        "id": "A0316"
+    },
+    {
+        "armorName": "Nightwalker's Cowl",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A cowl that enhances the wearer's vision in low light conditions.",
+        "id": "A0317"
+    },
+    {
+        "armorName": "Starweave Circlet",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A circlet crafted from a fabric that mimics the night sky's twinkling stars.",
+        "id": "A0318"
+    },
+    {
+        "armorName": "Mistborn Hood",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A hood that releases a thin mist, cloaking the wearer in a veil of shadow.",
+        "id": "A0319"
+    },
+    {
+        "armorName": "Duskfeather Headdress",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A headdress made of dark feathers, granting agility and stealth.",
+        "id": "A0320"
+    },
+    {
+        "armorName": "Nocturne Plate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "A formidable chestplate that absorbs light, cloaking the wearer in darkness.",
+        "id": "A0321"
+    },
+    {
+        "armorName": "Twilight Guardian Armor",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "A heavy suit of armor, its surface shifting between shades of dusk and dawn.",
+        "id": "A0322"
+    },
+    {
+        "armorName": "Dreadnought Carapace",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "A bulky, intimidating armor with spikes that resemble shadowy tendrils.",
+        "id": "A0323"
+    },
+    {
+        "armorName": "Eclipse Breastplate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "A solid breastplate that projects a subtle, dark aura, like an eclipse's corona.",
+        "id": "A0324"
+    },
+    {
+        "armorName": "Dark Warden's Mail",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "A densely layered mail with a dark sheen, impervious to shadowy elements.",
+        "id": "A0325"
+    },
+    {
+        "armorName": "Gloomforge Cuirass",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "A heavy cuirass forged in shadow flames, emanating a menacing presence.",
+        "id": "A0326"
+    },
+    {
+        "armorName": "Nightfall Plate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "A sturdy chestplate that shimmers with a night-sky pattern under moonlight.",
+        "id": "A0327"
+    },
+    {
+        "armorName": "Obsidian Shell",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "A solid body armor made of obsidian, absorbing light and sound alike.",
+        "id": "A0328"
+    },
+    {
+        "armorName": "Shadow Sentinel's Armor",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "A massive armor set that seems to absorb the surrounding light, enhancing its bearer's presence.",
+        "id": "A0329"
+    },
+    {
+        "armorName": "Abyssal Vest",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "A dark, heavy vest that appears to draw in the very essence of the shadows.",
+        "id": "A0330"
+    },
+    {
+        "armorName": "Shadowweave Tunic",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A tunic crafted from a material that shifts color with the surrounding shadows.",
+        "id": "A0331"
+    },
+    {
+        "armorName": "Mistcloak",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A flowing cloak that emits a faint mist, blurring the wearer's form.",
+        "id": "A0332"
+    },
+    {
+        "armorName": "Ethereal Vestment",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A robe that appears translucent, shimmering with an otherworldly aura.",
+        "id": "A0333"
+    },
+    {
+        "armorName": "Nightshade Robe",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A lightweight robe adorned with patterns that glow softly in darkness.",
+        "id": "A0334"
+    },
+    {
+        "armorName": "Phantom Jerkin",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A sleek body armor that helps the wearer blend seamlessly into shadows.",
+        "id": "A0335"
+    },
+    {
+        "armorName": "Wraithcoat",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A coat that seems to flicker and warp, confusing the eye.",
+        "id": "A0336"
+    },
+    {
+        "armorName": "Gloomshroud Vest",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A vest that absorbs ambient light, enhancing stealth in darkness.",
+        "id": "A0337"
+    },
+    {
+        "armorName": "Duskweaver's Garb",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A garment that changes hues from twilight blue to deep black.",
+        "id": "A0338"
+    },
+    {
+        "armorName": "Moonlit Shroud",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A shroud that reflects moonlight, creating a mesmerizing, protective aura.",
+        "id": "A0339"
+    },
+    {
+        "armorName": "Starless Cloak",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A cloak as dark as a starless night, providing near-invisibility in shadows.",
+        "id": "A0340"
+    },
+    {
+        "armorName": "Nightfall Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "Sturdy leg armor that shimmers with a dark, night-sky pattern, enhancing stability.",
+        "id": "A0341"
+    },
+    {
+        "armorName": "Duskplate Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "Heavy metal leggings that shift in hue from twilight purple to deep black.",
+        "id": "A0342"
+    },
+    {
+        "armorName": "Shadowforge Tassets",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "Dark, weighty leg armor, emanating a subtle, ominous energy.",
+        "id": "A0343"
+    },
+    {
+        "armorName": "Eclipse Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "Solid leg armor that casts a shadowy aura, reminiscent of an eclipse's corona.",
+        "id": "A0344"
+    },
+    {
+        "armorName": "Obsidian Cuisses",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "Leg armor crafted from obsidian, robust and impenetrable to light.",
+        "id": "A0345"
+    },
+    {
+        "armorName": "Gloomwalker's Chausses",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "Thick, dark chausses designed for silent movement in the shadows.",
+        "id": "A0346"
+    },
+    {
+        "armorName": "Abyssal Legguards",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "Heavy leg armor that seems to draw in the surrounding darkness, obscuring the wearer's movement.",
+        "id": "A0347"
+    },
+    {
+        "armorName": "Twilight Sentinel's Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "Greaves adorned with motifs of the setting sun, offering unwavering protection.",
+        "id": "A0348"
+    },
+    {
+        "armorName": "Darkness Enshrouded Legplates",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "Legplates that seem to blur the line between armor and the enveloping shadows.",
+        "id": "A0349"
+    },
+    {
+        "armorName": "Nocturnal Sabatons",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "shadow",
+        "description": "Heavy boots that absorb sound, perfect for moving unseen in the night.",
+        "id": "A0350"
+    },
+    {
+        "armorName": "Shadowstep Trousers",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "Light, flexible trousers that meld with shadows, aiding in silent movement.",
+        "id": "A0351"
+    },
+    {
+        "armorName": "Mistwalker Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "Soft leggings that emit a faint mist, obscuring the wearer's lower body.",
+        "id": "A0352"
+    },
+    {
+        "armorName": "Ethereal Legwraps",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "Translucent wraps that seem to disappear at certain angles in the shadows.",
+        "id": "A0353"
+    },
+    {
+        "armorName": "Nightbreeze Skirt",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A flowing skirt that reacts to the slightest breeze, perfect for quick movements.",
+        "id": "A0354"
+    },
+    {
+        "armorName": "Gloomstrider's Pants",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "Pants interwoven with dark fibers, enhancing agility in low light.",
+        "id": "A0355"
+    },
+    {
+        "armorName": "Moonlit Gaiters",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "Slim gaiters that catch moonbeams, illuminating intricate patterns.",
+        "id": "A0356"
+    },
+    {
+        "armorName": "Phantom Shin Guards",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "Nearly weightless shin guards that blend with the surrounding darkness.",
+        "id": "A0357"
+    },
+    {
+        "armorName": "Dusk Dancer's Legwear",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "Elegantly crafted legwear that shifts color in dim light, aiding in stealth.",
+        "id": "A0358"
+    },
+    {
+        "armorName": "Starweave Slacks",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "A pair of slacks made from a fabric that mimics a starless night sky.",
+        "id": "A0359"
+    },
+    {
+        "armorName": "Wraith's Treads",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "shadow",
+        "description": "Light boots that leave no trace, as if the wearer is walking on air.",
+        "id": "A0360"
+    }
 ]

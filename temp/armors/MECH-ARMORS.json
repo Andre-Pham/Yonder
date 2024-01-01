@@ -1,422 +1,482 @@
 [
-	{
-		"armorName": "Gearguard Helm",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "A sturdy helmet with interlocking metal gears and a visor with glowing red lenses."
-	},
-	{
-		"armorName": "Steamvault Helmet",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "A heavy brass helmet releasing steam puffs, equipped with a reinforced glass eyepiece."
-	},
-	{
-		"armorName": "Cogsman Cap",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "A solid iron helmet adorned with spinning cogs and a mono-ocular scope."
-	},
-	{
-		"armorName": "Titanforge Faceplate",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "A face-covering plate of titanium with an integrated air filtration system."
-	},
-	{
-		"armorName": "Circuit Helm",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "A helm embedded with electronic circuits and LED lights, offering enhanced vision."
-	},
-	{
-		"armorName": "Ironcast Protector",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "A bulky iron helmet with a retractable metal grill and shock absorbers."
-	},
-	{
-		"armorName": "Voltshield Visor",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "A visor with an electrically charged surface, crackling with blue energy."
-	},
-	{
-		"armorName": "Automech Helmet",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "A self-adjusting helmet with mechanical arms for tool manipulation."
-	},
-	{
-		"armorName": "Rivet Crown",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "A crown-like helmet reinforced with steel rivets and hydraulic buffers."
-	},
-	{
-		"armorName": "Piston Headdress",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "A headgear with active pistons and a metallic mesh, providing dynamic protection."
-	},
-	{
-		"armorName": "Ether Circlet",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "A sleek circlet with holographic projections, enhancing sensory inputs."
-	},
-	{
-		"armorName": "Nanoweave Hood",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "A hood woven from microfiber nanomaterials, adapting to environmental stimuli."
-	},
-	{
-		"armorName": "Bytecap Helmet",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "A lightweight helmet with integrated data streams and augmented reality display."
-	},
-	{
-		"armorName": "Invisi-Beanie",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "A beanie equipped with cloaking technology, rendering the wearer nearly invisible."
-	},
-	{
-		"armorName": "Signal Scanner Cap",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "A cap with an advanced communication array and signal detection capabilities."
-	},
-	{
-		"armorName": "Flux Hood",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "A flexible hood that diffuses energy blasts and dissipates heat efficiently."
-	},
-	{
-		"armorName": "Quantum Visor",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "A slim visor utilizing quantum computing for predictive environmental analysis."
-	},
-	{
-		"armorName": "Synth Bandana",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "A bandana with embedded synthetic intelligence, offering tactical advice."
-	},
-	{
-		"armorName": "Holo Helm",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "A helmet projecting holographic interfaces for advanced field control."
-	},
-	{
-		"armorName": "Photon Cap",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "A cap emitting a protective photon field that deflects minor projectiles."
-	},
-	{
-		"armorName": "Ironclad Chestplate",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "A robust chestplate with reinforced steel layers and shock-absorbing padding."
-	},
-	{
-		"armorName": "Hydroshield Vest",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "A water-cooled armored vest, designed to withstand extreme thermal variations."
-	},
-	{
-		"armorName": "Gearplate Armor",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "A full-body armor with interlocking metal gears and piston-powered joints."
-	},
-	{
-		"armorName": "Cable Carapace",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "A reinforced body armor with a network of power cables and energy capacitors."
-	},
-	{
-		"armorName": "Mechanist's Mail",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "A craftsman's armor with built-in tool compartments and durable metal plating."
-	},
-	{
-		"armorName": "Volt Armor",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "A suit of armor with electrically charged plates, providing energy blast resistance."
-	},
-	{
-		"armorName": "Turbine Torso",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "A bulky chest armor with active turbines, enhancing strength and stability."
-	},
-	{
-		"armorName": "Servo Suit",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "A suit equipped with servo-motors, enhancing physical power and precision."
-	},
-	{
-		"armorName": "Plasma Plate",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "A heat-resistant plate harnessing plasma energy for enhanced protection."
-	},
-	{
-		"armorName": "Reactor Rig",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "A heavy-duty rig with a built-in reactor core, offering immense power reserves."
-	},
-	{
-		"armorName": "Circuit Weaver Tunic",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "A flexible tunic with embedded circuitry, enhancing electronic interaction."
-	},
-	{
-		"armorName": "Nano-Mesh Vest",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "A vest made of nanofibers, capable of self-repair and environmental adaptation."
-	},
-	{
-		"armorName": "Photon Jacket",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "A lightweight jacket emitting a photon barrier, diffusing energy attacks."
-	},
-	{
-		"armorName": "Holographic Hauberk",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "A body armor projecting deceptive holograms, confusing opponents."
-	},
-	{
-		"armorName": "Silent Runner Coat",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "A sleek coat designed for stealth, absorbing sound and reducing visibility."
-	},
-	{
-		"armorName": "Electro-Weave Robe",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "A robe interlaced with conductive fibers, channeling and nullifying electrical currents."
-	},
-	{
-		"armorName": "Glider Suit",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "A suit with retractable gliding membranes, allowing for controlled aerial maneuvers."
-	},
-	{
-		"armorName": "Flexi-Vest",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "A vest with adaptable material, conforming to the user's movements for agility."
-	},
-	{
-		"armorName": "Thermal Threads Cloak",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "A cloak with thermal regulating threads, maintaining optimal body temperature."
-	},
-	{
-		"armorName": "Vortex Harness",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "A harness creating a vortex field, capable of deflecting small projectiles."
-	},
-	{
-		"armorName": "Steelstride Greaves",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "Heavy greaves made of layered steel, providing exceptional protection and stability."
-	},
-	{
-		"armorName": "Piston-Leg Plates",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "Leg armor with hydraulic pistons, enhancing strength and jump capacity."
-	},
-	{
-		"armorName": "Titanium Tread Guards",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "Durable titanium guards for lower limbs, offering extreme impact resistance."
-	},
-	{
-		"armorName": "Shock Absorb Leggings",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "Leggings with built-in shock absorbers, mitigating fall damage and vibrations."
-	},
-	{
-		"armorName": "Ironclad Shinplates",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "Shinplates of heavy iron, designed to withstand severe blows and debris."
-	},
-	{
-		"armorName": "Gear-Lock Trousers",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "Reinforced trousers with interlocking gears, providing enhanced movement control."
-	},
-	{
-		"armorName": "Forge-Fired Cuisses",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "Cuisses heated in a forge for extra hardness, radiating a faint, warm glow."
-	},
-	{
-		"armorName": "Cable Coil Legwraps",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "Thick leg wraps with coiled cables, distributing electrical power to other armor parts."
-	},
-	{
-		"armorName": "Rivet Reinforced Greaves",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "Greaves reinforced with steel rivets, offering protection against piercing attacks."
-	},
-	{
-		"armorName": "Auto-Balanced Stilts",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "mech",
-		"description": "Heavy-duty stilts with auto-balancing technology for navigating uneven terrains."
-	},
-	{
-		"armorName": "Silent Step Slacks",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "Slim trousers designed to muffle sound, enhancing stealth in urban environments."
-	},
-	{
-		"armorName": "Nano-Fiber Leggings",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "Leggings made from adaptive nano-fibers, offering flexibility and self-repairing capabilities."
-	},
-	{
-		"armorName": "Circuit Runner Boots",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "Light boots with integrated circuits, boosting speed and agility."
-	},
-	{
-		"armorName": "Holo-Pants",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "Pants projecting holographic illusions, allowing for deceptive movement."
-	},
-	{
-		"armorName": "Photon Thread Trousers",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "Trousers woven with photon threads, illuminating the wearer's path and deflecting light beams."
-	},
-	{
-		"armorName": "Electrostatic Leg Wraps",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "Leg wraps that generate a static field, repelling dust and minor projectiles."
-	},
-	{
-		"armorName": "Glide Chaps",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "Chaps with retractable gliding membranes, aiding in aerial navigation."
-	},
-	{
-		"armorName": "Flexi-Fiber Cargos",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "Cargo pants made from flexible fibers, adjusting to the wearer's movements."
-	},
-	{
-		"armorName": "Quantum Quilted Shorts",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "Shorts with quantum cushioning, providing comfort and minor energy absorption."
-	},
-	{
-		"armorName": "Vortex Vent Leggings",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "mech",
-		"description": "Leggings with integrated air vents, creating a vortex to cool and propel the wearer."
-	}
+    {
+        "armorName": "Gearguard Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "A sturdy helmet with interlocking metal gears and a visor with glowing red lenses.",
+        "id": "A0601"
+    },
+    {
+        "armorName": "Steamvault Helmet",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "A heavy brass helmet releasing steam puffs, equipped with a reinforced glass eyepiece.",
+        "id": "A0602"
+    },
+    {
+        "armorName": "Cogsman Cap",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "A solid iron helmet adorned with spinning cogs and a mono-ocular scope.",
+        "id": "A0603"
+    },
+    {
+        "armorName": "Titanforge Faceplate",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "A face-covering plate of titanium with an integrated air filtration system.",
+        "id": "A0604"
+    },
+    {
+        "armorName": "Circuit Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "A helm embedded with electronic circuits and LED lights, offering enhanced vision.",
+        "id": "A0605"
+    },
+    {
+        "armorName": "Ironcast Protector",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "A bulky iron helmet with a retractable metal grill and shock absorbers.",
+        "id": "A0606"
+    },
+    {
+        "armorName": "Voltshield Visor",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "A visor with an electrically charged surface, crackling with blue energy.",
+        "id": "A0607"
+    },
+    {
+        "armorName": "Automech Helmet",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "A self-adjusting helmet with mechanical arms for tool manipulation.",
+        "id": "A0608"
+    },
+    {
+        "armorName": "Rivet Crown",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "A crown-like helmet reinforced with steel rivets and hydraulic buffers.",
+        "id": "A0609"
+    },
+    {
+        "armorName": "Piston Headdress",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "A headgear with active pistons and a metallic mesh, providing dynamic protection.",
+        "id": "A0610"
+    },
+    {
+        "armorName": "Ether Circlet",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "A sleek circlet with holographic projections, enhancing sensory inputs.",
+        "id": "A0611"
+    },
+    {
+        "armorName": "Nanoweave Hood",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "A hood woven from microfiber nanomaterials, adapting to environmental stimuli.",
+        "id": "A0612"
+    },
+    {
+        "armorName": "Bytecap Helmet",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "A lightweight helmet with integrated data streams and augmented reality display.",
+        "id": "A0613"
+    },
+    {
+        "armorName": "Invisi-Beanie",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "A beanie equipped with cloaking technology, rendering the wearer nearly invisible.",
+        "id": "A0614"
+    },
+    {
+        "armorName": "Signal Scanner Cap",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "A cap with an advanced communication array and signal detection capabilities.",
+        "id": "A0615"
+    },
+    {
+        "armorName": "Flux Hood",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "A flexible hood that diffuses energy blasts and dissipates heat efficiently.",
+        "id": "A0616"
+    },
+    {
+        "armorName": "Quantum Visor",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "A slim visor utilizing quantum computing for predictive environmental analysis.",
+        "id": "A0617"
+    },
+    {
+        "armorName": "Synth Bandana",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "A bandana with embedded synthetic intelligence, offering tactical advice.",
+        "id": "A0618"
+    },
+    {
+        "armorName": "Holo Helm",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "A helmet projecting holographic interfaces for advanced field control.",
+        "id": "A0619"
+    },
+    {
+        "armorName": "Photon Cap",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "A cap emitting a protective photon field that deflects minor projectiles.",
+        "id": "A0620"
+    },
+    {
+        "armorName": "Ironclad Chestplate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "A robust chestplate with reinforced steel layers and shock-absorbing padding.",
+        "id": "A0621"
+    },
+    {
+        "armorName": "Hydroshield Vest",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "A water-cooled armored vest, designed to withstand extreme thermal variations.",
+        "id": "A0622"
+    },
+    {
+        "armorName": "Gearplate Armor",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "A full-body armor with interlocking metal gears and piston-powered joints.",
+        "id": "A0623"
+    },
+    {
+        "armorName": "Cable Carapace",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "A reinforced body armor with a network of power cables and energy capacitors.",
+        "id": "A0624"
+    },
+    {
+        "armorName": "Mechanist's Mail",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "A craftsman's armor with built-in tool compartments and durable metal plating.",
+        "id": "A0625"
+    },
+    {
+        "armorName": "Volt Armor",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "A suit of armor with electrically charged plates, providing energy blast resistance.",
+        "id": "A0626"
+    },
+    {
+        "armorName": "Turbine Torso",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "A bulky chest armor with active turbines, enhancing strength and stability.",
+        "id": "A0627"
+    },
+    {
+        "armorName": "Servo Suit",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "A suit equipped with servo-motors, enhancing physical power and precision.",
+        "id": "A0628"
+    },
+    {
+        "armorName": "Plasma Plate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "A heat-resistant plate harnessing plasma energy for enhanced protection.",
+        "id": "A0629"
+    },
+    {
+        "armorName": "Reactor Rig",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "A heavy-duty rig with a built-in reactor core, offering immense power reserves.",
+        "id": "A0630"
+    },
+    {
+        "armorName": "Circuit Weaver Tunic",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "A flexible tunic with embedded circuitry, enhancing electronic interaction.",
+        "id": "A0631"
+    },
+    {
+        "armorName": "Nano-Mesh Vest",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "A vest made of nanofibers, capable of self-repair and environmental adaptation.",
+        "id": "A0632"
+    },
+    {
+        "armorName": "Photon Jacket",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "A lightweight jacket emitting a photon barrier, diffusing energy attacks.",
+        "id": "A0633"
+    },
+    {
+        "armorName": "Holographic Hauberk",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "A body armor projecting deceptive holograms, confusing opponents.",
+        "id": "A0634"
+    },
+    {
+        "armorName": "Silent Runner Coat",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "A sleek coat designed for stealth, absorbing sound and reducing visibility.",
+        "id": "A0635"
+    },
+    {
+        "armorName": "Electro-Weave Robe",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "A robe interlaced with conductive fibers, channeling and nullifying electrical currents.",
+        "id": "A0636"
+    },
+    {
+        "armorName": "Glider Suit",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "A suit with retractable gliding membranes, allowing for controlled aerial maneuvers.",
+        "id": "A0637"
+    },
+    {
+        "armorName": "Flexi-Vest",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "A vest with adaptable material, conforming to the user's movements for agility.",
+        "id": "A0638"
+    },
+    {
+        "armorName": "Thermal Threads Cloak",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "A cloak with thermal regulating threads, maintaining optimal body temperature.",
+        "id": "A0639"
+    },
+    {
+        "armorName": "Vortex Harness",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "A harness creating a vortex field, capable of deflecting small projectiles.",
+        "id": "A0640"
+    },
+    {
+        "armorName": "Steelstride Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "Heavy greaves made of layered steel, providing exceptional protection and stability.",
+        "id": "A0641"
+    },
+    {
+        "armorName": "Piston-Leg Plates",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "Leg armor with hydraulic pistons, enhancing strength and jump capacity.",
+        "id": "A0642"
+    },
+    {
+        "armorName": "Titanium Tread Guards",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "Durable titanium guards for lower limbs, offering extreme impact resistance.",
+        "id": "A0643"
+    },
+    {
+        "armorName": "Shock Absorb Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "Leggings with built-in shock absorbers, mitigating fall damage and vibrations.",
+        "id": "A0644"
+    },
+    {
+        "armorName": "Ironclad Shinplates",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "Shinplates of heavy iron, designed to withstand severe blows and debris.",
+        "id": "A0645"
+    },
+    {
+        "armorName": "Gear-Lock Trousers",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "Reinforced trousers with interlocking gears, providing enhanced movement control.",
+        "id": "A0646"
+    },
+    {
+        "armorName": "Forge-Fired Cuisses",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "Cuisses heated in a forge for extra hardness, radiating a faint, warm glow.",
+        "id": "A0647"
+    },
+    {
+        "armorName": "Cable Coil Legwraps",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "Thick leg wraps with coiled cables, distributing electrical power to other armor parts.",
+        "id": "A0648"
+    },
+    {
+        "armorName": "Rivet Reinforced Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "Greaves reinforced with steel rivets, offering protection against piercing attacks.",
+        "id": "A0649"
+    },
+    {
+        "armorName": "Auto-Balanced Stilts",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "mech",
+        "description": "Heavy-duty stilts with auto-balancing technology for navigating uneven terrains.",
+        "id": "A0650"
+    },
+    {
+        "armorName": "Silent Step Slacks",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "Slim trousers designed to muffle sound, enhancing stealth in urban environments.",
+        "id": "A0651"
+    },
+    {
+        "armorName": "Nano-Fiber Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "Leggings made from adaptive nano-fibers, offering flexibility and self-repairing capabilities.",
+        "id": "A0652"
+    },
+    {
+        "armorName": "Circuit Runner Boots",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "Light boots with integrated circuits, boosting speed and agility.",
+        "id": "A0653"
+    },
+    {
+        "armorName": "Holo-Pants",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "Pants projecting holographic illusions, allowing for deceptive movement.",
+        "id": "A0654"
+    },
+    {
+        "armorName": "Photon Thread Trousers",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "Trousers woven with photon threads, illuminating the wearer's path and deflecting light beams.",
+        "id": "A0655"
+    },
+    {
+        "armorName": "Electrostatic Leg Wraps",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "Leg wraps that generate a static field, repelling dust and minor projectiles.",
+        "id": "A0656"
+    },
+    {
+        "armorName": "Glide Chaps",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "Chaps with retractable gliding membranes, aiding in aerial navigation.",
+        "id": "A0657"
+    },
+    {
+        "armorName": "Flexi-Fiber Cargos",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "Cargo pants made from flexible fibers, adjusting to the wearer's movements.",
+        "id": "A0658"
+    },
+    {
+        "armorName": "Quantum Quilted Shorts",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "Shorts with quantum cushioning, providing comfort and minor energy absorption.",
+        "id": "A0659"
+    },
+    {
+        "armorName": "Vortex Vent Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "mech",
+        "description": "Leggings with integrated air vents, creating a vortex to cool and propel the wearer.",
+        "id": "A0660"
+    }
 ]

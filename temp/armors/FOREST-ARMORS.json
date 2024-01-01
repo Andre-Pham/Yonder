@@ -1,422 +1,482 @@
 [
-	{
-		"armorName": "Oakheart Helm",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "A sturdy helmet carved from ancient oak, with moss detailing and acorn accents."
-	},
-	{
-		"armorName": "Groveguard Visor",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "A visor with interlocking leaves, providing a strong yet flexible defense."
-	},
-	{
-		"armorName": "Bramblecrest Coif",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "A protective coif made of tightly woven brambles and reinforced bark."
-	},
-	{
-		"armorName": "Mossforge Cowl",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "A cowl infused with hardened moss, offering cushioning and resilience."
-	},
-	{
-		"armorName": "Ironwood Crown",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "A crown forged from ironwood, interwoven with ivy and enduring as the ancient trees."
-	},
-	{
-		"armorName": "Fernhelm Crest",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "A crested helm with fern-like plumes, combining elegance and solid protection."
-	},
-	{
-		"armorName": "Thicket Guard Mask",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "A mask with a thicket pattern, offering mysterious allure and sturdy defense."
-	},
-	{
-		"armorName": "Canopy Helm",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "A helm designed to mimic the forest canopy, blending protection with camouflage."
-	},
-	{
-		"armorName": "Sylvan Knight Helm",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "A knight's helmet adorned with leafy motifs, symbolizing the strength of the forest."
-	},
-	{
-		"armorName": "Rootwarden Helmet",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "A helmet intertwined with tree roots, offering an unyielding defense."
-	},
-	{
-		"armorName": "Whisperwind Hood",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "A hood woven from spider silk, almost weightless, blending seamlessly with the forest shadows."
-	},
-	{
-		"armorName": "Dewleaf Cap",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "A cap made from shimmering dew-covered leaves, offering enhanced perception."
-	},
-	{
-		"armorName": "Sprite's Veil",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "A translucent veil with an ethereal glow, granting heightened awareness."
-	},
-	{
-		"armorName": "Moonbeam Circlet",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "A circlet that glows under moonlight, enhancing magical abilities."
-	},
-	{
-		"armorName": "Foliage Bandana",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "A bandana with living leaves, adapting its color to the surroundings for camouflage."
-	},
-	{
-		"armorName": "Glimmerbark Diadem",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "A diadem made from reflective bark, confusing enemies with its dazzling effects."
-	},
-	{
-		"armorName": "Feywild Crown",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "A crown of woven vines and twinkling forest gems, boosting mystical energy."
-	},
-	{
-		"armorName": "Sylph Shroud",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "A shroud that whispers forest secrets, enhancing intuition and stealth."
-	},
-	{
-		"armorName": "Druidic Coif",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "A coif imbued with druidic runes, offering protection against magical forces."
-	},
-	{
-		"armorName": "Zephyr Headdress",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "A headdress with feathers and leaves, granting agility and a connection with nature."
-	},
-	{
-		"armorName": "Timberplate Cuirass",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "A cuirass made from layered tree bark, providing robust protection."
-	},
-	{
-		"armorName": "Forest Knight's Breastplate",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "A steel breastplate engraved with intricate woodland scenes, offering formidable defense."
-	},
-	{
-		"armorName": "Barkskin Tunic",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "A hardened tunic made of interlaced bark strips, tough yet flexible."
-	},
-	{
-		"armorName": "Ironleaf Hauberk",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "A chainmail hauberk reinforced with iron-treated leaves, balancing durability and mobility."
-	},
-	{
-		"armorName": "Entwood Plate",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "A full body plate crafted from ancient Entwood, as enduring as the oldest trees."
-	},
-	{
-		"armorName": "Verdant Vanguard Mail",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "A mail armor infused with living vines, constantly regenerating from damage."
-	},
-	{
-		"armorName": "Rootbound Brigandine",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "A brigandine with root-like reinforcements, offering steadfast protection."
-	},
-	{
-		"armorName": "Thornhide Jerkin",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "A leather jerkin covered in protective thorns, deterring close-range attackers."
-	},
-	{
-		"armorName": "Grove Guardian's Vest",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "A vest that embodies the strength of the forest guardian, with bark and stone elements."
-	},
-	{
-		"armorName": "Wildwood Carapace",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "A carapace made from the toughest wildwood, impenetrable to conventional weapons."
-	},
-	{
-		"armorName": "Mistweave Robe",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "A robe woven from gossamer and morning mist, enhancing stealth and agility."
-	},
-	{
-		"armorName": "Vinebound Vestment",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "A vestment interwoven with living vines, responding to the wearer's magical energies."
-	},
-	{
-		"armorName": "Feytouched Tunic",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "A tunic imbued with fey magic, offering protection against enchantments."
-	},
-	{
-		"armorName": "Sylvan Silk Gambeson",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "A gambeson made from sylvan silk, lightweight yet surprisingly resilient."
-	},
-	{
-		"armorName": "Chameleon Cloak",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "A cloak that changes hues with the environment, perfect for camouflage."
-	},
-	{
-		"armorName": "Gossamer Harness",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "A harness crafted from forest gossamer, enhancing speed and evasion."
-	},
-	{
-		"armorName": "Willow Wisp Wrap",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "A wrap that glows faintly in the dark, guiding the wearer through shadows."
-	},
-	{
-		"armorName": "Nymph's Embrace",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "A body armor that bonds with the wearer's skin, providing natural healing properties."
-	},
-	{
-		"armorName": "Whisperleaf Shroud",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "A shroud made of whispering leaves, alerting the wearer of unseen dangers."
-	},
-	{
-		"armorName": "Breeze-Kissed Hauberk",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "A hauberk as light as a forest breeze, granting freedom of movement and breathability."
-	},
-	{
-		"armorName": "Rootbound Greaves",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "Greaves reinforced with sturdy tree roots, offering unmatched stability."
-	},
-	{
-		"armorName": "Barkshield Leggings",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "Leggings made of overlapping bark plates, providing excellent physical protection."
-	},
-	{
-		"armorName": "Thornspike Cuisses",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "Cuisses adorned with sharp thorns, deterring foes from close engagement."
-	},
-	{
-		"armorName": "Ironwood Tassets",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "Tassets crafted from ironwood, combining toughness with flexibility."
-	},
-	{
-		"armorName": "Stonebark Chausses",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "Chausses with a stone and bark fusion, nearly impervious to damage."
-	},
-	{
-		"armorName": "Ent's Stride Boots",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "Boots made from ancient entwood, enduring and grounding."
-	},
-	{
-		"armorName": "Grove Guardian's Greaves",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "Greaves symbolizing the guardian of the grove, sturdy and adorned with leaf motifs."
-	},
-	{
-		"armorName": "Mossclad Sabatons",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "Sabatons covered in a thick layer of cushioning moss, blending defense with comfort."
-	},
-	{
-		"armorName": "Vigilant Sentinel Cuisses",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "Cuisses designed for the vigilant forest sentinel, robust and camouflaged."
-	},
-	{
-		"armorName": "Wildbark Leg Guards",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "forest",
-		"description": "Leg guards made from wild forest bark, offering natural resilience."
-	},
-	{
-		"armorName": "Leafstep Trousers",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "Trousers made of woven leaves, silent and light, perfect for stealth."
-	},
-	{
-		"armorName": "Wispweave Leggings",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "Leggings crafted from ethereal material, enhancing movement speed and grace."
-	},
-	{
-		"armorName": "Feydancer's Greaves",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "Greaves imbued with fey energy, allowing for nimble and enchanting movements."
-	},
-	{
-		"armorName": "Mistwalker Boots",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "Boots that tread as lightly as mist, leaving no trace behind."
-	},
-	{
-		"armorName": "Sylph's Breeches",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "Breeches that sway with the breeze, granting agility and comfort."
-	},
-	{
-		"armorName": "Nimblewood Cuisses",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "Cuisses made from flexible young wood, offering ease of movement."
-	},
-	{
-		"armorName": "Vine Lattice Gaiters",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "Gaiters with a lattice of living vines, adapting to the wearer's movements."
-	},
-	{
-		"armorName": "Glowshroom Tights",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "Tights interspersed with bioluminescent fungus, illuminating paths in darkness."
-	},
-	{
-		"armorName": "Druid's Step Leggings",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "Leggings with embedded druidic runes, harmonizing with nature's rhythm."
-	},
-	{
-		"armorName": "Bramble Skirt",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "forest",
-		"description": "A skirt made of soft brambles, providing defense while enhancing mobility."
-	}
+    {
+        "armorName": "Oakheart Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "A sturdy helmet carved from ancient oak, with moss detailing and acorn accents.",
+        "id": "A0181"
+    },
+    {
+        "armorName": "Groveguard Visor",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "A visor with interlocking leaves, providing a strong yet flexible defense.",
+        "id": "A0182"
+    },
+    {
+        "armorName": "Bramblecrest Coif",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "A protective coif made of tightly woven brambles and reinforced bark.",
+        "id": "A0183"
+    },
+    {
+        "armorName": "Mossforge Cowl",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "A cowl infused with hardened moss, offering cushioning and resilience.",
+        "id": "A0184"
+    },
+    {
+        "armorName": "Ironwood Crown",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "A crown forged from ironwood, interwoven with ivy and enduring as the ancient trees.",
+        "id": "A0185"
+    },
+    {
+        "armorName": "Fernhelm Crest",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "A crested helm with fern-like plumes, combining elegance and solid protection.",
+        "id": "A0186"
+    },
+    {
+        "armorName": "Thicket Guard Mask",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "A mask with a thicket pattern, offering mysterious allure and sturdy defense.",
+        "id": "A0187"
+    },
+    {
+        "armorName": "Canopy Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "A helm designed to mimic the forest canopy, blending protection with camouflage.",
+        "id": "A0188"
+    },
+    {
+        "armorName": "Sylvan Knight Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "A knight's helmet adorned with leafy motifs, symbolizing the strength of the forest.",
+        "id": "A0189"
+    },
+    {
+        "armorName": "Rootwarden Helmet",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "A helmet intertwined with tree roots, offering an unyielding defense.",
+        "id": "A0190"
+    },
+    {
+        "armorName": "Whisperwind Hood",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "A hood woven from spider silk, almost weightless, blending seamlessly with the forest shadows.",
+        "id": "A0191"
+    },
+    {
+        "armorName": "Dewleaf Cap",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "A cap made from shimmering dew-covered leaves, offering enhanced perception.",
+        "id": "A0192"
+    },
+    {
+        "armorName": "Sprite's Veil",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "A translucent veil with an ethereal glow, granting heightened awareness.",
+        "id": "A0193"
+    },
+    {
+        "armorName": "Moonbeam Circlet",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "A circlet that glows under moonlight, enhancing magical abilities.",
+        "id": "A0194"
+    },
+    {
+        "armorName": "Foliage Bandana",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "A bandana with living leaves, adapting its color to the surroundings for camouflage.",
+        "id": "A0195"
+    },
+    {
+        "armorName": "Glimmerbark Diadem",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "A diadem made from reflective bark, confusing enemies with its dazzling effects.",
+        "id": "A0196"
+    },
+    {
+        "armorName": "Feywild Crown",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "A crown of woven vines and twinkling forest gems, boosting mystical energy.",
+        "id": "A0197"
+    },
+    {
+        "armorName": "Sylph Shroud",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "A shroud that whispers forest secrets, enhancing intuition and stealth.",
+        "id": "A0198"
+    },
+    {
+        "armorName": "Druidic Coif",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "A coif imbued with druidic runes, offering protection against magical forces.",
+        "id": "A0199"
+    },
+    {
+        "armorName": "Zephyr Headdress",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "A headdress with feathers and leaves, granting agility and a connection with nature.",
+        "id": "A0200"
+    },
+    {
+        "armorName": "Timberplate Cuirass",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "A cuirass made from layered tree bark, providing robust protection.",
+        "id": "A0201"
+    },
+    {
+        "armorName": "Forest Knight's Breastplate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "A steel breastplate engraved with intricate woodland scenes, offering formidable defense.",
+        "id": "A0202"
+    },
+    {
+        "armorName": "Barkskin Tunic",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "A hardened tunic made of interlaced bark strips, tough yet flexible.",
+        "id": "A0203"
+    },
+    {
+        "armorName": "Ironleaf Hauberk",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "A chainmail hauberk reinforced with iron-treated leaves, balancing durability and mobility.",
+        "id": "A0204"
+    },
+    {
+        "armorName": "Entwood Plate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "A full body plate crafted from ancient Entwood, as enduring as the oldest trees.",
+        "id": "A0205"
+    },
+    {
+        "armorName": "Verdant Vanguard Mail",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "A mail armor infused with living vines, constantly regenerating from damage.",
+        "id": "A0206"
+    },
+    {
+        "armorName": "Rootbound Brigandine",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "A brigandine with root-like reinforcements, offering steadfast protection.",
+        "id": "A0207"
+    },
+    {
+        "armorName": "Thornhide Jerkin",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "A leather jerkin covered in protective thorns, deterring close-range attackers.",
+        "id": "A0208"
+    },
+    {
+        "armorName": "Grove Guardian's Vest",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "A vest that embodies the strength of the forest guardian, with bark and stone elements.",
+        "id": "A0209"
+    },
+    {
+        "armorName": "Wildwood Carapace",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "A carapace made from the toughest wildwood, impenetrable to conventional weapons.",
+        "id": "A0210"
+    },
+    {
+        "armorName": "Mistweave Robe",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "A robe woven from gossamer and morning mist, enhancing stealth and agility.",
+        "id": "A0211"
+    },
+    {
+        "armorName": "Vinebound Vestment",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "A vestment interwoven with living vines, responding to the wearer's magical energies.",
+        "id": "A0212"
+    },
+    {
+        "armorName": "Feytouched Tunic",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "A tunic imbued with fey magic, offering protection against enchantments.",
+        "id": "A0213"
+    },
+    {
+        "armorName": "Sylvan Silk Gambeson",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "A gambeson made from sylvan silk, lightweight yet surprisingly resilient.",
+        "id": "A0214"
+    },
+    {
+        "armorName": "Chameleon Cloak",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "A cloak that changes hues with the environment, perfect for camouflage.",
+        "id": "A0215"
+    },
+    {
+        "armorName": "Gossamer Harness",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "A harness crafted from forest gossamer, enhancing speed and evasion.",
+        "id": "A0216"
+    },
+    {
+        "armorName": "Willow Wisp Wrap",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "A wrap that glows faintly in the dark, guiding the wearer through shadows.",
+        "id": "A0217"
+    },
+    {
+        "armorName": "Nymph's Embrace",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "A body armor that bonds with the wearer's skin, providing natural healing properties.",
+        "id": "A0218"
+    },
+    {
+        "armorName": "Whisperleaf Shroud",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "A shroud made of whispering leaves, alerting the wearer of unseen dangers.",
+        "id": "A0219"
+    },
+    {
+        "armorName": "Breeze-Kissed Hauberk",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "A hauberk as light as a forest breeze, granting freedom of movement and breathability.",
+        "id": "A0220"
+    },
+    {
+        "armorName": "Rootbound Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "Greaves reinforced with sturdy tree roots, offering unmatched stability.",
+        "id": "A0221"
+    },
+    {
+        "armorName": "Barkshield Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "Leggings made of overlapping bark plates, providing excellent physical protection.",
+        "id": "A0222"
+    },
+    {
+        "armorName": "Thornspike Cuisses",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "Cuisses adorned with sharp thorns, deterring foes from close engagement.",
+        "id": "A0223"
+    },
+    {
+        "armorName": "Ironwood Tassets",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "Tassets crafted from ironwood, combining toughness with flexibility.",
+        "id": "A0224"
+    },
+    {
+        "armorName": "Stonebark Chausses",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "Chausses with a stone and bark fusion, nearly impervious to damage.",
+        "id": "A0225"
+    },
+    {
+        "armorName": "Ent's Stride Boots",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "Boots made from ancient entwood, enduring and grounding.",
+        "id": "A0226"
+    },
+    {
+        "armorName": "Grove Guardian's Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "Greaves symbolizing the guardian of the grove, sturdy and adorned with leaf motifs.",
+        "id": "A0227"
+    },
+    {
+        "armorName": "Mossclad Sabatons",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "Sabatons covered in a thick layer of cushioning moss, blending defense with comfort.",
+        "id": "A0228"
+    },
+    {
+        "armorName": "Vigilant Sentinel Cuisses",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "Cuisses designed for the vigilant forest sentinel, robust and camouflaged.",
+        "id": "A0229"
+    },
+    {
+        "armorName": "Wildbark Leg Guards",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "forest",
+        "description": "Leg guards made from wild forest bark, offering natural resilience.",
+        "id": "A0230"
+    },
+    {
+        "armorName": "Leafstep Trousers",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "Trousers made of woven leaves, silent and light, perfect for stealth.",
+        "id": "A0231"
+    },
+    {
+        "armorName": "Wispweave Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "Leggings crafted from ethereal material, enhancing movement speed and grace.",
+        "id": "A0232"
+    },
+    {
+        "armorName": "Feydancer's Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "Greaves imbued with fey energy, allowing for nimble and enchanting movements.",
+        "id": "A0233"
+    },
+    {
+        "armorName": "Mistwalker Boots",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "Boots that tread as lightly as mist, leaving no trace behind.",
+        "id": "A0234"
+    },
+    {
+        "armorName": "Sylph's Breeches",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "Breeches that sway with the breeze, granting agility and comfort.",
+        "id": "A0235"
+    },
+    {
+        "armorName": "Nimblewood Cuisses",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "Cuisses made from flexible young wood, offering ease of movement.",
+        "id": "A0236"
+    },
+    {
+        "armorName": "Vine Lattice Gaiters",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "Gaiters with a lattice of living vines, adapting to the wearer's movements.",
+        "id": "A0237"
+    },
+    {
+        "armorName": "Glowshroom Tights",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "Tights interspersed with bioluminescent fungus, illuminating paths in darkness.",
+        "id": "A0238"
+    },
+    {
+        "armorName": "Druid's Step Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "Leggings with embedded druidic runes, harmonizing with nature's rhythm.",
+        "id": "A0239"
+    },
+    {
+        "armorName": "Bramble Skirt",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "forest",
+        "description": "A skirt made of soft brambles, providing defense while enhancing mobility.",
+        "id": "A0240"
+    }
 ]

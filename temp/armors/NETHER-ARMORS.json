@@ -1,425 +1,482 @@
 [
-	{
-		"armorName": "Inferno Warhelm",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "A heavy helmet with horns and a visor that resembles a snarling demon."
-	},
-	{
-		"armorName": "Blaze Guardian Helm",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "A fiery red helmet with a crown of jagged, flame-like spikes."
-	},
-	{
-		"armorName": "Demon's Gaze Helmet",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "A black iron helmet with glowing red eyes and twisted horns."
-	},
-	{
-		"armorName": "Abyssal Skullcap",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "A dark helmet shaped like a demonic skull with piercing red eye sockets."
-	},
-	{
-		"armorName": "Molten Crest Helm",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "A sturdy helmet with a crest resembling flowing lava."
-	},
-	{
-		"armorName": "Ashen Overlord Crown",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "An imposing crown made of blackened steel, adorned with fiery gemstones."
-	},
-	{
-		"armorName": "Emberlord's Visage",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "A helmet with a mask that mimics the fierce expression of a fire demon."
-	},
-	{
-		"armorName": "Hellforge Greathelm",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "A bulky, heat-resistant helmet forged in the fires of the nether."
-	},
-	{
-		"armorName": "Soulfire Casque",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "A dark helmet with a blue flame motif, radiating a ghostly aura."
-	},
-	{
-		"armorName": "Charred Bone Helm",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "A helmet crafted from the charred bones of nether creatures, with a menacing look."
-	},
-	{
-		"armorName": "Phantom Veil Hood",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "A shadowy hood that shimmers with ethereal flames, obscuring the wearer's face."
-	},
-	{
-		"armorName": "Spectral Whisper Cap",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "A lightweight cap that echoes with faint, otherworldly whispers."
-	},
-	{
-		"armorName": "Cinder Shade Hood",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "A hood woven from ashen threads, giving off a faint, smoky aura."
-	},
-	{
-		"armorName": "Infernal Illusion Mask",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "A mask that changes its appearance with the wearer's emotions, like flickering flames."
-	},
-	{
-		"armorName": "Flame Wisp Circlet",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "A delicate circlet with a gem that pulses like a living ember."
-	},
-	{
-		"armorName": "Demon Whisperer Hood",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "A hood adorned with runes, vibrating softly with demonic energy."
-	},
-	{
-		"armorName": "Netherwind Bandana",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "A light bandana that flutters as if caught in an otherworldly breeze."
-	},
-	{
-		"armorName": "Shadow Dancer's Cap",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "A sleek, dark cap that blends seamlessly into the shadows."
-	},
-	{
-		"armorName": "Ethereal Ember Headdress",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "A headdress with softly glowing embers, giving the illusion of a floating crown of fire."
-	},
-	{
-		"armorName": "Soulfire Diadem",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "A mystical diadem that radiates a gentle, soul-like light, ever-changing in color."
-	},
-	{
-		"armorName": "Infernal Plate Mail",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "A thick, blackened steel armor etched with fiery runes, radiating intense heat."
-	},
-	{
-		"armorName": "Demon King's Cuirass",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "A formidable chestplate adorned with demonic faces and red gems that glow in darkness."
-	},
-	{
-		"armorName": "Hellforge Breastplate",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "A heavy breastplate made from molten lava rock, cooled into an unbreakable form."
-	},
-	{
-		"armorName": "Abyssal Guard Armor",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "A dark, solid armor with spikes that resemble the jagged edges of the netherworld."
-	},
-	{
-		"armorName": "Emberstone Plate",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "A bulky armor with plates that shimmer like embers, offering scorching protection."
-	},
-	{
-		"armorName": "Blazing Bulwark",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "A fiery red armor, its surface constantly shifting and crackling with contained flames."
-	},
-	{
-		"armorName": "Soulburner Carapace",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "A sinister black armor that absorbs light, rumored to be forged from tormented souls."
-	},
-	{
-		"armorName": "Flameheart Armor",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "A robust armor with a core that glows like the heart of a volcano."
-	},
-	{
-		"armorName": "Charred Bone Mail",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "An armor crafted from the charred remains of nether beasts, tough and intimidating."
-	},
-	{
-		"armorName": "Obsidian Fortress Plate",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "An impenetrable obsidian armor, its surface reflecting twisted images of the nether."
-	},
-	{
-		"armorName": "Shadowflame Tunic",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "A sleek tunic that flickers with dark flames, offering agility and concealment."
-	},
-	{
-		"armorName": "Ethereal Fire Vest",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "A lightweight vest that glows with a soft, otherworldly fire, enhancing magical defense."
-	},
-	{
-		"armorName": "Inferno Mystic Robe",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "A flowing robe with patterns of dancing flames, boosting the wearer's fire magic."
-	},
-	{
-		"armorName": "Nether Wisp Cloak",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "A gossamer cloak that shimmers with faint, ghostly lights, enhancing stealth."
-	},
-	{
-		"armorName": "Demon Whisper Garb",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "A soft, dark garment that whispers ancient secrets, heightening spell potency."
-	},
-	{
-		"armorName": "Soulfire Mantle",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "A mantle that radiates a mystical light, offering protection against dark forces."
-	},
-	{
-		"armorName": "Phantom Silk Vestment",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "A garment made from translucent silk, giving the wearer an ethereal presence."
-	},
-	{
-		"armorName": "Blaze Dancer's Wrap",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "A flexible wrap that moves like liquid fire, aiding in evasive maneuvers."
-	},
-	{
-		"armorName": "Ember Spirit Shroud",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "A shroud imbued with ember spirits, offering warmth and protection from cold spells."
-	},
-	{
-		"armorName": "Infernal Illusionist's Robe",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "A robe that alters its color with the environment, aiding in deception and camouflage."
-	},
-	{
-		"armorName": "Infernal Greaves",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "Sturdy leg armor with a fiery glow, resembling flowing lava."
-	},
-	{
-		"armorName": "Demon Marchers",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "Heavy boots with clawed toes and a smoldering aura, echoing each step."
-	},
-	{
-		"armorName": "Hellbound Legplates",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "Thick, dark metal leg armor, etched with screaming faces and burning coals."
-	},
-	{
-		"armorName": "Abyss Walker's Cuisses",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "Robust leg armor made from abyssal stone, granting unyielding protection."
-	},
-	{
-		"armorName": "Molten Iron Legguards",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "Legguards forged from molten iron, giving off a constant heat haze."
-	},
-	{
-		"armorName": "Flame Warden's Chainmail",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "A dense chainmail skirt with interwoven links of flame-hardened steel."
-	},
-	{
-		"armorName": "Soulforged Shin Plates",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "Solid shin plates rumored to be forged with the souls of the damned."
-	},
-	{
-		"armorName": "Emberstone Tassets",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "Heavy side armor for the legs, glowing with the intensity of burning embers."
-	},
-	{
-		"armorName": "Blazing Battle Kilt",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "A rugged kilt made from fire-resistant materials, adorned with volcanic stones."
-	},
-	{
-		"armorName": "Charred Bone Greaves",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "nether",
-		"description": "Greaves crafted from the bones of nether beasts, blackened and tough."
-	},
-	{
-		"armorName": "Shadowstep Trousers",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "Slim, dark trousers that blend into shadows, aiding in silent movement."
-	},
-	{
-		"armorName": "Flame Dancer's Leggings",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "Light, fire-resistant leggings that enhance agility and speed."
-	},
-	{
-		"armorName": "Inferno Strider's Pants",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "Soft pants with a fiery trim, leaving faint trails of embers with each step."
-	},
-	{
-		"armorName": "Nethermist Shin Wraps",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "Ethereal wraps that emit a ghostly mist, enhancing evasion."
-	},
-	{
-		"armorName": "Demon Whisperer's Chaps",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "Flexible chaps imbued with demonic energy, boosting stealth and speed."
-	},
-	{
-		"armorName": "Soulfire Leg Wraps",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "Enchanted wraps that glow softly, offering protection from dark magic."
-	},
-	{
-		"armorName": "Phantom Walker's Tights",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "Tights that shift colors in the nether light, confusing enemies."
-	},
-	{
-		"armorName": "Blaze Wisp Skirt",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "A lightweight skirt that moves like liquid, with a pattern like soft flames."
-	},
-	{
-		"armorName": "Ember Spirit Leg Cuffs",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "Cuffs that emit a warm glow, warding off cold and enhancing movement."
-	},
-	{
-		"armorName": "Infernal Mirage Trousers",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "nether",
-		"description": "Silken trousers that change hue with the angle of light, aiding in deception."
-	}
+    {
+        "armorName": "Inferno Warhelm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "A heavy helmet with horns and a visor that resembles a snarling demon.",
+        "id": "A0661"
+    },
+    {
+        "armorName": "Blaze Guardian Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "A fiery red helmet with a crown of jagged, flame-like spikes.",
+        "id": "A0662"
+    },
+    {
+        "armorName": "Demon's Gaze Helmet",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "A black iron helmet with glowing red eyes and twisted horns.",
+        "id": "A0663"
+    },
+    {
+        "armorName": "Abyssal Skullcap",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "A dark helmet shaped like a demonic skull with piercing red eye sockets.",
+        "id": "A0664"
+    },
+    {
+        "armorName": "Molten Crest Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "A sturdy helmet with a crest resembling flowing lava.",
+        "id": "A0665"
+    },
+    {
+        "armorName": "Ashen Overlord Crown",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "An imposing crown made of blackened steel, adorned with fiery gemstones.",
+        "id": "A0666"
+    },
+    {
+        "armorName": "Emberlord's Visage",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "A helmet with a mask that mimics the fierce expression of a fire demon.",
+        "id": "A0667"
+    },
+    {
+        "armorName": "Hellforge Greathelm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "A bulky, heat-resistant helmet forged in the fires of the nether.",
+        "id": "A0668"
+    },
+    {
+        "armorName": "Soulfire Casque",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "A dark helmet with a blue flame motif, radiating a ghostly aura.",
+        "id": "A0669"
+    },
+    {
+        "armorName": "Charred Bone Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "A helmet crafted from the charred bones of nether creatures, with a menacing look.",
+        "id": "A0670"
+    },
+    {
+        "armorName": "Phantom Veil Hood",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "A shadowy hood that shimmers with ethereal flames, obscuring the wearer's face.",
+        "id": "A0671"
+    },
+    {
+        "armorName": "Spectral Whisper Cap",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "A lightweight cap that echoes with faint, otherworldly whispers.",
+        "id": "A0672"
+    },
+    {
+        "armorName": "Cinder Shade Hood",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "A hood woven from ashen threads, giving off a faint, smoky aura.",
+        "id": "A0673"
+    },
+    {
+        "armorName": "Infernal Illusion Mask",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "A mask that changes its appearance with the wearer's emotions, like flickering flames.",
+        "id": "A0674"
+    },
+    {
+        "armorName": "Flame Wisp Circlet",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "A delicate circlet with a gem that pulses like a living ember.",
+        "id": "A0675"
+    },
+    {
+        "armorName": "Demon Whisperer Hood",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "A hood adorned with runes, vibrating softly with demonic energy.",
+        "id": "A0676"
+    },
+    {
+        "armorName": "Netherwind Bandana",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "A light bandana that flutters as if caught in an otherworldly breeze.",
+        "id": "A0677"
+    },
+    {
+        "armorName": "Shadow Dancer's Cap",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "A sleek, dark cap that blends seamlessly into the shadows.",
+        "id": "A0678"
+    },
+    {
+        "armorName": "Ethereal Ember Headdress",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "A headdress with softly glowing embers, giving the illusion of a floating crown of fire.",
+        "id": "A0679"
+    },
+    {
+        "armorName": "Soulfire Diadem",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "A mystical diadem that radiates a gentle, soul-like light, ever-changing in color.",
+        "id": "A0680"
+    },
+    {
+        "armorName": "Infernal Plate Mail",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "A thick, blackened steel armor etched with fiery runes, radiating intense heat.",
+        "id": "A0681"
+    },
+    {
+        "armorName": "Demon King's Cuirass",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "A formidable chestplate adorned with demonic faces and red gems that glow in darkness.",
+        "id": "A0682"
+    },
+    {
+        "armorName": "Hellforge Breastplate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "A heavy breastplate made from molten lava rock, cooled into an unbreakable form.",
+        "id": "A0683"
+    },
+    {
+        "armorName": "Abyssal Guard Armor",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "A dark, solid armor with spikes that resemble the jagged edges of the netherworld.",
+        "id": "A0684"
+    },
+    {
+        "armorName": "Emberstone Plate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "A bulky armor with plates that shimmer like embers, offering scorching protection.",
+        "id": "A0685"
+    },
+    {
+        "armorName": "Blazing Bulwark",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "A fiery red armor, its surface constantly shifting and crackling with contained flames.",
+        "id": "A0686"
+    },
+    {
+        "armorName": "Soulburner Carapace",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "A sinister black armor that absorbs light, rumored to be forged from tormented souls.",
+        "id": "A0687"
+    },
+    {
+        "armorName": "Flameheart Armor",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "A robust armor with a core that glows like the heart of a volcano.",
+        "id": "A0688"
+    },
+    {
+        "armorName": "Charred Bone Mail",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "An armor crafted from the charred remains of nether beasts, tough and intimidating.",
+        "id": "A0689"
+    },
+    {
+        "armorName": "Obsidian Fortress Plate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "An impenetrable obsidian armor, its surface reflecting twisted images of the nether.",
+        "id": "A0690"
+    },
+    {
+        "armorName": "Shadowflame Tunic",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "A sleek tunic that flickers with dark flames, offering agility and concealment.",
+        "id": "A0691"
+    },
+    {
+        "armorName": "Ethereal Fire Vest",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "A lightweight vest that glows with a soft, otherworldly fire, enhancing magical defense.",
+        "id": "A0692"
+    },
+    {
+        "armorName": "Inferno Mystic Robe",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "A flowing robe with patterns of dancing flames, boosting the wearer's fire magic.",
+        "id": "A0693"
+    },
+    {
+        "armorName": "Nether Wisp Cloak",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "A gossamer cloak that shimmers with faint, ghostly lights, enhancing stealth.",
+        "id": "A0694"
+    },
+    {
+        "armorName": "Demon Whisper Garb",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "A soft, dark garment that whispers ancient secrets, heightening spell potency.",
+        "id": "A0695"
+    },
+    {
+        "armorName": "Soulfire Mantle",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "A mantle that radiates a mystical light, offering protection against dark forces.",
+        "id": "A0696"
+    },
+    {
+        "armorName": "Phantom Silk Vestment",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "A garment made from translucent silk, giving the wearer an ethereal presence.",
+        "id": "A0697"
+    },
+    {
+        "armorName": "Blaze Dancer's Wrap",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "A flexible wrap that moves like liquid fire, aiding in evasive maneuvers.",
+        "id": "A0698"
+    },
+    {
+        "armorName": "Ember Spirit Shroud",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "A shroud imbued with ember spirits, offering warmth and protection from cold spells.",
+        "id": "A0699"
+    },
+    {
+        "armorName": "Infernal Illusionist's Robe",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "A robe that alters its color with the environment, aiding in deception and camouflage.",
+        "id": "A0700"
+    },
+    {
+        "armorName": "Infernal Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "Sturdy leg armor with a fiery glow, resembling flowing lava.",
+        "id": "A0701"
+    },
+    {
+        "armorName": "Demon Marchers",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "Heavy boots with clawed toes and a smoldering aura, echoing each step.",
+        "id": "A0702"
+    },
+    {
+        "armorName": "Hellbound Legplates",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "Thick, dark metal leg armor, etched with screaming faces and burning coals.",
+        "id": "A0703"
+    },
+    {
+        "armorName": "Abyss Walker's Cuisses",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "Robust leg armor made from abyssal stone, granting unyielding protection.",
+        "id": "A0704"
+    },
+    {
+        "armorName": "Molten Iron Legguards",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "Legguards forged from molten iron, giving off a constant heat haze.",
+        "id": "A0705"
+    },
+    {
+        "armorName": "Flame Warden's Chainmail",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "A dense chainmail skirt with interwoven links of flame-hardened steel.",
+        "id": "A0706"
+    },
+    {
+        "armorName": "Soulforged Shin Plates",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "Solid shin plates rumored to be forged with the souls of the damned.",
+        "id": "A0707"
+    },
+    {
+        "armorName": "Emberstone Tassets",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "Heavy side armor for the legs, glowing with the intensity of burning embers.",
+        "id": "A0708"
+    },
+    {
+        "armorName": "Blazing Battle Kilt",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "A rugged kilt made from fire-resistant materials, adorned with volcanic stones.",
+        "id": "A0709"
+    },
+    {
+        "armorName": "Charred Bone Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "nether",
+        "description": "Greaves crafted from the bones of nether beasts, blackened and tough.",
+        "id": "A0710"
+    },
+    {
+        "armorName": "Shadowstep Trousers",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "Slim, dark trousers that blend into shadows, aiding in silent movement.",
+        "id": "A0711"
+    },
+    {
+        "armorName": "Flame Dancer's Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "Light, fire-resistant leggings that enhance agility and speed.",
+        "id": "A0712"
+    },
+    {
+        "armorName": "Inferno Strider's Pants",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "Soft pants with a fiery trim, leaving faint trails of embers with each step.",
+        "id": "A0713"
+    },
+    {
+        "armorName": "Nethermist Shin Wraps",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "Ethereal wraps that emit a ghostly mist, enhancing evasion.",
+        "id": "A0714"
+    },
+    {
+        "armorName": "Demon Whisperer's Chaps",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "Flexible chaps imbued with demonic energy, boosting stealth and speed.",
+        "id": "A0715"
+    },
+    {
+        "armorName": "Soulfire Leg Wraps",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "Enchanted wraps that glow softly, offering protection from dark magic.",
+        "id": "A0716"
+    },
+    {
+        "armorName": "Phantom Walker's Tights",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "Tights that shift colors in the nether light, confusing enemies.",
+        "id": "A0717"
+    },
+    {
+        "armorName": "Blaze Wisp Skirt",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "A lightweight skirt that moves like liquid, with a pattern like soft flames.",
+        "id": "A0718"
+    },
+    {
+        "armorName": "Ember Spirit Leg Cuffs",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "Cuffs that emit a warm glow, warding off cold and enhancing movement.",
+        "id": "A0719"
+    },
+    {
+        "armorName": "Infernal Mirage Trousers",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "nether",
+        "description": "Silken trousers that change hue with the angle of light, aiding in deception.",
+        "id": "A0720"
+    }
 ]
-
-
-

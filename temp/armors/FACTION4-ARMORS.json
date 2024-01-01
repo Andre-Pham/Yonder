@@ -1,426 +1,482 @@
 [
-	{
-		"armorName": "Shadowcrest Helm",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "A dark helm with a visor shaped like a demon's maw, adorned with crimson runes."
-	},
-	{
-		"armorName": "Nightmare Visage",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "An obsidian helmet with glowing purple eyes and twisted horn-like protrusions."
-	},
-	{
-		"armorName": "Abyssal Skullguard",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "A helmet forged from blackened bones, featuring a skull-like facade with hollow eye sockets."
-	},
-	{
-		"armorName": "Eclipse Barbute",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "A steel helm with a shadowy aura, its surface etched with eldritch symbols."
-	},
-	{
-		"armorName": "Dread Sovereign Helm",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "A menacing helmet with jagged edges and a crown of iron spikes."
-	},
-	{
-		"armorName": "Nether Warden Cap",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "A heavy, angular helmet with a dark mirror visor reflecting a void-like essence."
-	},
-	{
-		"armorName": "Voidborn Sallet",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "A deep purple helmet with swirling black mist emanating from its edges."
-	},
-	{
-		"armorName": "Gloomforged Cowl",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "A dark metal helm with a faceplate resembling a brooding specter."
-	},
-	{
-		"armorName": "Phantom Crown",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "An iron helmet with ethereal blue flames flickering from its top."
-	},
-	{
-		"armorName": "Abyssal Overseer's Hood",
-		"armorType": "head",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "A reinforced hood infused with dark energy, featuring a menacing eye motif."
-	},
-	{
-		"armorName": "Whispering Veil",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "A translucent hood that shimmers with shadowy whispers, enhancing stealth."
-	},
-	{
-		"armorName": "Ethereal Diadem",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "A delicate crown radiating a soft, otherworldly glow, heightening magical affinity."
-	},
-	{
-		"armorName": "Mystic Shade Hood",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "A dark hood that flickers like a mirage, granting elusive movements."
-	},
-	{
-		"armorName": "Voidstar Circlet",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "A thin circlet with a void-black gem, focusing dark energy."
-	},
-	{
-		"armorName": "Spectral Cowl",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "A gossamer hood that phases slightly out of reality, offering ethereal protection."
-	},
-	{
-		"armorName": "Nightshroud Cap",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "A soft cap that blends with the darkness, perfect for nocturnal stealth."
-	},
-	{
-		"armorName": "Wraithbind Bandana",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "A silk bandana that whispers secrets of the void, enhancing intuition."
-	},
-	{
-		"armorName": "Illusionist's Headdress",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "A feather-light headdress that distorts the wearer's image, confusing foes."
-	},
-	{
-		"armorName": "Nether Veil Mask",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "A mask woven from abyssal silk, camouflaging the wearer in shadows."
-	},
-	{
-		"armorName": "Shadowdance Hood",
-		"armorType": "head",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "An elegant hood that enhances agility with a wispy, shadowy aura."
-	},
-	{
-		"armorName": "Voidplate Cuirass",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "A heavy chestplate with swirling black and purple patterns, radiating a dark aura."
-	},
-	{
-		"armorName": "Ebon Scalemail",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "A suit of scale armor made from dark, hardened scales, offering formidable protection."
-	},
-	{
-		"armorName": "Abyssal Knight Breastplate",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "A blackened steel breastplate adorned with demonic engravings and red jewels."
-	},
-	{
-		"armorName": "Obsidian Guard Armor",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "A suit of armor crafted from glossy obsidian, almost impenetrable to physical attacks."
-	},
-	{
-		"armorName": "Duskforged Plate",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "A twilight-colored full plate, absorbing light around it, ideal for night battles."
-	},
-	{
-		"armorName": "Nightmare Carapace",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "A chitinous body armor with eerie, glowing patterns, unsettling to enemies."
-	},
-	{
-		"armorName": "Dark Sovereign's Mail",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "A regal, heavy mail with dark metallic hues and a cape of shadows."
-	},
-	{
-		"armorName": "Gloomsteel Hauberk",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "A dense, dark metal hauberk, offering protection against both physical and dark magic attacks."
-	},
-	{
-		"armorName": "Netherheart Plate",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "A mystical armor with a heart-shaped gem, pulsating with dark energy."
-	},
-	{
-		"armorName": "Wraithbone Breastplate",
-		"armorType": "body",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "A sturdy breastplate crafted from the bones of spectral creatures, gleaming with a ghostly light."
-	},
-	{
-		"armorName": "Shadowweave Tunic",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "A sleek tunic woven from shadows, shifting and adapting to the wearer's movements."
-	},
-	{
-		"armorName": "Mystic Shroud Vest",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "An enchanted vest that shimmers with a spectral glow, enhancing magical defenses."
-	},
-	{
-		"armorName": "Ethereal Robe",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "A flowing robe that seems to hover slightly above the ground, granting a sense of weightlessness."
-	},
-	{
-		"armorName": "Nether Silk Doublet",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "A doublet made of abyssal silk, cool to the touch and surprisingly resilient."
-	},
-	{
-		"armorName": "Void Dancer's Garb",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "A form-fitting garment that enhances agility and blends into the darkness."
-	},
-	{
-		"armorName": "Abyss Whisperer's Coat",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "A long, flowing coat that whispers secrets of the abyss, offering insight and protection."
-	},
-	{
-		"armorName": "Wraith's Embrace Jacket",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "A lightweight jacket that seems to absorb light, granting a ghost-like stealth."
-	},
-	{
-		"armorName": "Nightshade Cloak",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "A dark cloak that melds with the shadows, perfect for concealment and quick escapes."
-	},
-	{
-		"armorName": "Illusionist's Wrap",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "A wrap that distorts the wearer's figure, creating illusions to deceive foes."
-	},
-	{
-		"armorName": "Gossamer Mantle",
-		"armorType": "body",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "A thin, almost transparent mantle that shrouds the wearer in a protective mist."
-	},
-	{
-		"armorName": "Abyssal Greaves",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "Thick, dark metal greaves with jagged edges and glowing purple accents."
-	},
-	{
-		"armorName": "Shadowguard Legplates",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "Heavy leg armor with a shadowy finish that absorbs light, ideal for moving unseen."
-	},
-	{
-		"armorName": "Dreadnought Cuisses",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "Reinforced leg plates with a spiked design, radiating an aura of fear."
-	},
-	{
-		"armorName": "Nightmare Chain Leggings",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "Dark chainmail leggings, tough and flexible, adorned with sinister runes."
-	},
-	{
-		"armorName": "Eclipse Sabatons",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "Sturdy boots with a metallic, twilight hue and enigmatic energy pulses."
-	},
-	{
-		"armorName": "Voidwalker Tassets",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "Dark, bulky tassets imbued with the power to traverse through shadows."
-	},
-	{
-		"armorName": "Gloomsteel Leg Guards",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "Dense leg guards made from dark, enchanted steel, resistant to both physical and magical harm."
-	},
-	{
-		"armorName": "Netherworld Chausses",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "Abyssal fabric chausses with a protective layer of ethereal bone, merging strength with agility."
-	},
-	{
-		"armorName": "Phantom Knight Greaves",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "Heavy greaves that shimmer with a ghostly light, granting imposing presence."
-	},
-	{
-		"armorName": "Wraithbone Shinplates",
-		"armorType": "legs",
-		"armorProfileTag": "heavyweight",
-		"regionProfileTag": "faction4",
-		"description": "Armored shinplates crafted from spectral bones, providing eerie resilience."
-	},
-	{
-		"armorName": "Shadowstep Trousers",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "Soft, dark trousers that allow silent movement, as if walking through shadows."
-	},
-	{
-		"armorName": "Ethereal Leg Wraps",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "Wispy leg wraps that seem to blur with movement, enhancing evasion."
-	},
-	{
-		"armorName": "Nether Silk Leggings",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "Light, abyssal silk leggings, cool and comfortable, with a faint, mystical sheen."
-	},
-	{
-		"armorName": "Void Dancer's Pants",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "Flexible pants that adapt to the wearer's movements, ideal for quick, fluid motion."
-	},
-	{
-		"armorName": "Mystic Breeze Kilt",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "A lightweight kilt that flows like air, granting freedom of movement and a touch of magic."
-	},
-	{
-		"armorName": "Phantom Stride Boots",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "Soft, ankle-high boots that leave no trace, perfect for stealth and quick escapes."
-	},
-	{
-		"armorName": "Wraith's Whisper Leggings",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "Ethereal leggings that seem to fade in and out of sight, confounding foes."
-	},
-	{
-		"armorName": "Nightshade Tights",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "Tight-fitting tights that blend with the darkness, aiding in concealment."
-	},
-	{
-		"armorName": "Illusionist's Greaves",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "Light greaves that create illusionary afterimages, disorienting opponents."
-	},
-	{
-		"armorName": "Gossamer Step Shinguards",
-		"armorType": "legs",
-		"armorProfileTag": "lightweight",
-		"regionProfileTag": "faction4",
-		"description": "Thin, almost invisible shinguards that provide protection without hindering mobility."
-	}
+    {
+        "armorName": "Shadowcrest Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "A dark helm with a visor shaped like a demon's maw, adorned with crimson runes.",
+        "id": "A0481"
+    },
+    {
+        "armorName": "Nightmare Visage",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "An obsidian helmet with glowing purple eyes and twisted horn-like protrusions.",
+        "id": "A0482"
+    },
+    {
+        "armorName": "Abyssal Skullguard",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "A helmet forged from blackened bones, featuring a skull-like facade with hollow eye sockets.",
+        "id": "A0483"
+    },
+    {
+        "armorName": "Eclipse Barbute",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "A steel helm with a shadowy aura, its surface etched with eldritch symbols.",
+        "id": "A0484"
+    },
+    {
+        "armorName": "Dread Sovereign Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "A menacing helmet with jagged edges and a crown of iron spikes.",
+        "id": "A0485"
+    },
+    {
+        "armorName": "Nether Warden Cap",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "A heavy, angular helmet with a dark mirror visor reflecting a void-like essence.",
+        "id": "A0486"
+    },
+    {
+        "armorName": "Voidborn Sallet",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "A deep purple helmet with swirling black mist emanating from its edges.",
+        "id": "A0487"
+    },
+    {
+        "armorName": "Gloomforged Cowl",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "A dark metal helm with a faceplate resembling a brooding specter.",
+        "id": "A0488"
+    },
+    {
+        "armorName": "Phantom Crown",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "An iron helmet with ethereal blue flames flickering from its top.",
+        "id": "A0489"
+    },
+    {
+        "armorName": "Abyssal Overseer's Hood",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "A reinforced hood infused with dark energy, featuring a menacing eye motif.",
+        "id": "A0490"
+    },
+    {
+        "armorName": "Whispering Veil",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "A translucent hood that shimmers with shadowy whispers, enhancing stealth.",
+        "id": "A0491"
+    },
+    {
+        "armorName": "Ethereal Diadem",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "A delicate crown radiating a soft, otherworldly glow, heightening magical affinity.",
+        "id": "A0492"
+    },
+    {
+        "armorName": "Mystic Shade Hood",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "A dark hood that flickers like a mirage, granting elusive movements.",
+        "id": "A0493"
+    },
+    {
+        "armorName": "Voidstar Circlet",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "A thin circlet with a void-black gem, focusing dark energy.",
+        "id": "A0494"
+    },
+    {
+        "armorName": "Spectral Cowl",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "A gossamer hood that phases slightly out of reality, offering ethereal protection.",
+        "id": "A0495"
+    },
+    {
+        "armorName": "Nightshroud Cap",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "A soft cap that blends with the darkness, perfect for nocturnal stealth.",
+        "id": "A0496"
+    },
+    {
+        "armorName": "Wraithbind Bandana",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "A silk bandana that whispers secrets of the void, enhancing intuition.",
+        "id": "A0497"
+    },
+    {
+        "armorName": "Illusionist's Headdress",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "A feather-light headdress that distorts the wearer's image, confusing foes.",
+        "id": "A0498"
+    },
+    {
+        "armorName": "Nether Veil Mask",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "A mask woven from abyssal silk, camouflaging the wearer in shadows.",
+        "id": "A0499"
+    },
+    {
+        "armorName": "Shadowdance Hood",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "An elegant hood that enhances agility with a wispy, shadowy aura.",
+        "id": "A0500"
+    },
+    {
+        "armorName": "Voidplate Cuirass",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "A heavy chestplate with swirling black and purple patterns, radiating a dark aura.",
+        "id": "A0501"
+    },
+    {
+        "armorName": "Ebon Scalemail",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "A suit of scale armor made from dark, hardened scales, offering formidable protection.",
+        "id": "A0502"
+    },
+    {
+        "armorName": "Abyssal Knight Breastplate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "A blackened steel breastplate adorned with demonic engravings and red jewels.",
+        "id": "A0503"
+    },
+    {
+        "armorName": "Obsidian Guard Armor",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "A suit of armor crafted from glossy obsidian, almost impenetrable to physical attacks.",
+        "id": "A0504"
+    },
+    {
+        "armorName": "Duskforged Plate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "A twilight-colored full plate, absorbing light around it, ideal for night battles.",
+        "id": "A0505"
+    },
+    {
+        "armorName": "Nightmare Carapace",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "A chitinous body armor with eerie, glowing patterns, unsettling to enemies.",
+        "id": "A0506"
+    },
+    {
+        "armorName": "Dark Sovereign's Mail",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "A regal, heavy mail with dark metallic hues and a cape of shadows.",
+        "id": "A0507"
+    },
+    {
+        "armorName": "Gloomsteel Hauberk",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "A dense, dark metal hauberk, offering protection against both physical and dark magic attacks.",
+        "id": "A0508"
+    },
+    {
+        "armorName": "Netherheart Plate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "A mystical armor with a heart-shaped gem, pulsating with dark energy.",
+        "id": "A0509"
+    },
+    {
+        "armorName": "Wraithbone Breastplate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "A sturdy breastplate crafted from the bones of spectral creatures, gleaming with a ghostly light.",
+        "id": "A0510"
+    },
+    {
+        "armorName": "Shadowweave Tunic",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "A sleek tunic woven from shadows, shifting and adapting to the wearer's movements.",
+        "id": "A0511"
+    },
+    {
+        "armorName": "Mystic Shroud Vest",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "An enchanted vest that shimmers with a spectral glow, enhancing magical defenses.",
+        "id": "A0512"
+    },
+    {
+        "armorName": "Ethereal Robe",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "A flowing robe that seems to hover slightly above the ground, granting a sense of weightlessness.",
+        "id": "A0513"
+    },
+    {
+        "armorName": "Nether Silk Doublet",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "A doublet made of abyssal silk, cool to the touch and surprisingly resilient.",
+        "id": "A0514"
+    },
+    {
+        "armorName": "Void Dancer's Garb",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "A form-fitting garment that enhances agility and blends into the darkness.",
+        "id": "A0515"
+    },
+    {
+        "armorName": "Abyss Whisperer's Coat",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "A long, flowing coat that whispers secrets of the abyss, offering insight and protection.",
+        "id": "A0516"
+    },
+    {
+        "armorName": "Wraith's Embrace Jacket",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "A lightweight jacket that seems to absorb light, granting a ghost-like stealth.",
+        "id": "A0517"
+    },
+    {
+        "armorName": "Nightshade Cloak",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "A dark cloak that melds with the shadows, perfect for concealment and quick escapes.",
+        "id": "A0518"
+    },
+    {
+        "armorName": "Illusionist's Wrap",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "A wrap that distorts the wearer's figure, creating illusions to deceive foes.",
+        "id": "A0519"
+    },
+    {
+        "armorName": "Gossamer Mantle",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "A thin, almost transparent mantle that shrouds the wearer in a protective mist.",
+        "id": "A0520"
+    },
+    {
+        "armorName": "Abyssal Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "Thick, dark metal greaves with jagged edges and glowing purple accents.",
+        "id": "A0521"
+    },
+    {
+        "armorName": "Shadowguard Legplates",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "Heavy leg armor with a shadowy finish that absorbs light, ideal for moving unseen.",
+        "id": "A0522"
+    },
+    {
+        "armorName": "Dreadnought Cuisses",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "Reinforced leg plates with a spiked design, radiating an aura of fear.",
+        "id": "A0523"
+    },
+    {
+        "armorName": "Nightmare Chain Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "Dark chainmail leggings, tough and flexible, adorned with sinister runes.",
+        "id": "A0524"
+    },
+    {
+        "armorName": "Eclipse Sabatons",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "Sturdy boots with a metallic, twilight hue and enigmatic energy pulses.",
+        "id": "A0525"
+    },
+    {
+        "armorName": "Voidwalker Tassets",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "Dark, bulky tassets imbued with the power to traverse through shadows.",
+        "id": "A0526"
+    },
+    {
+        "armorName": "Gloomsteel Leg Guards",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "Dense leg guards made from dark, enchanted steel, resistant to both physical and magical harm.",
+        "id": "A0527"
+    },
+    {
+        "armorName": "Netherworld Chausses",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "Abyssal fabric chausses with a protective layer of ethereal bone, merging strength with agility.",
+        "id": "A0528"
+    },
+    {
+        "armorName": "Phantom Knight Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "Heavy greaves that shimmer with a ghostly light, granting imposing presence.",
+        "id": "A0529"
+    },
+    {
+        "armorName": "Wraithbone Shinplates",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction4",
+        "description": "Armored shinplates crafted from spectral bones, providing eerie resilience.",
+        "id": "A0530"
+    },
+    {
+        "armorName": "Shadowstep Trousers",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "Soft, dark trousers that allow silent movement, as if walking through shadows.",
+        "id": "A0531"
+    },
+    {
+        "armorName": "Ethereal Leg Wraps",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "Wispy leg wraps that seem to blur with movement, enhancing evasion.",
+        "id": "A0532"
+    },
+    {
+        "armorName": "Nether Silk Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "Light, abyssal silk leggings, cool and comfortable, with a faint, mystical sheen.",
+        "id": "A0533"
+    },
+    {
+        "armorName": "Void Dancer's Pants",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "Flexible pants that adapt to the wearer's movements, ideal for quick, fluid motion.",
+        "id": "A0534"
+    },
+    {
+        "armorName": "Mystic Breeze Kilt",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "A lightweight kilt that flows like air, granting freedom of movement and a touch of magic.",
+        "id": "A0535"
+    },
+    {
+        "armorName": "Phantom Stride Boots",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "Soft, ankle-high boots that leave no trace, perfect for stealth and quick escapes.",
+        "id": "A0536"
+    },
+    {
+        "armorName": "Wraith's Whisper Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "Ethereal leggings that seem to fade in and out of sight, confounding foes.",
+        "id": "A0537"
+    },
+    {
+        "armorName": "Nightshade Tights",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "Tight-fitting tights that blend with the darkness, aiding in concealment.",
+        "id": "A0538"
+    },
+    {
+        "armorName": "Illusionist's Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "Light greaves that create illusionary afterimages, disorienting opponents.",
+        "id": "A0539"
+    },
+    {
+        "armorName": "Gossamer Step Shinguards",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction4",
+        "description": "Thin, almost invisible shinguards that provide protection without hindering mobility.",
+        "id": "A0540"
+    }
 ]
-
-
-
-
