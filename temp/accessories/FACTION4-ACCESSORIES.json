@@ -1,0 +1,842 @@
+[
+    {
+        "accessoryName": "Shadowguard Cape",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction4",
+        "description": "A flowing cape woven from dark, ethereal fabrics that shimmer with a ghostly aura."
+    },
+    {
+        "accessoryName": "Nightmare Bracers",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction4",
+        "description": "Arm bracers crafted from blackened bone, etched with sinister, glowing runes."
+    },
+    {
+        "accessoryName": "Abyssal Barrier",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction4",
+        "description": "A large, obsidian shield that absorbs light, emanating a dark mist."
+    },
+    {
+        "accessoryName": "Spectral Greaves",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction4",
+        "description": "Ethereal boots that leave faint, smoky trails with each step."
+    },
+    {
+        "accessoryName": "Demon's Veil",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction4",
+        "description": "A delicate, semi-transparent face veil that flickers with shadowy flames."
+    },
+    {
+        "accessoryName": "Cryptkeeper Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction4",
+        "description": "Heavy gauntlets adorned with intricate silver filigree and dark gemstones."
+    },
+    {
+        "accessoryName": "Wraith's Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction4",
+        "description": "A shadowy shoulder covering that seems to blend into the surrounding darkness."
+    },
+    {
+        "accessoryName": "Banshee Cuffs",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction4",
+        "description": "Thin, silver cuffs that emit a faint, haunting melody when light hits them."
+    },
+    {
+        "accessoryName": "Gloom Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction4",
+        "description": "A belt made of interwoven strands of darkness, pulsing with a deep purple glow."
+    },
+    {
+        "accessoryName": "Shadowstep Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction4",
+        "description": "Soft, leather boots that seem to absorb sound, making footsteps eerily silent."
+    },
+    {
+        "accessoryName": "Eclipse Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction4",
+        "description": "A dark crystal amulet that glows faintly under the moonlight."
+    },
+    {
+        "accessoryName": "Voidstone Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction4",
+        "description": "A black ring that seems to swallow light, etched with mysterious symbols."
+    },
+    {
+        "accessoryName": "Nether Chain",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction4",
+        "description": "A lightweight chain with links that shimmer between shades of black and purple."
+    },
+    {
+        "accessoryName": "Soulbound Locket",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction4",
+        "description": "An intricate locket that hums softly, resonating with the wearer's heartbeat."
+    },
+    {
+        "accessoryName": "Mystic Brooch",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction4",
+        "description": "A brooch with a deep blue gem that seems to pulsate with a life of its own."
+    },
+    {
+        "accessoryName": "Phantom Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction4",
+        "description": "A small charm that emits a soft, eerie glow, casting twisted shadows."
+    },
+    {
+        "accessoryName": "Darkness Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction4",
+        "description": "A sleek, black band that feels unusually cold to the touch."
+    },
+    {
+        "accessoryName": "Abyssian Sigil",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction4",
+        "description": "A sigil engraved with ancient runes, pulsating with a dark energy."
+    },
+    {
+        "accessoryName": "Gloomstone Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction4",
+        "description": "A pendant with a core of swirling shadows, encased in a glass sphere."
+    },
+    {
+        "accessoryName": "Whispering Beads",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction4",
+        "description": "Beads that emit faint whispers when the wind blows, strung on a dark thread."
+    },
+    {
+        "accessoryName": "Dreadfire Sabatons",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction4",
+        "description": "Heavy boots with soles that leave smoldering footprints, crackling with dark fire."
+    },
+    {
+        "accessoryName": "Soulreaper's Gauntlet",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction4",
+        "description": "A gauntlet that radiates a chilling aura, with claws sharp as a reaper's scythe."
+    },
+    {
+        "accessoryName": "Blightborn Spaulders",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction4",
+        "description": "Shoulder guards that emit a toxic miasma, corroding anything that comes near."
+    },
+    {
+        "accessoryName": "Crown of Thorns",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction4",
+        "description": "A twisted crown with sharp thorns that feed on the wearer's fury."
+    },
+    {
+        "accessoryName": "Infernal Warbanner",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction4",
+        "description": "A banner that blazes with hellfire, rallying dark forces."
+    },
+    {
+        "accessoryName": "Necrotic Greaves",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction4",
+        "description": "Leg armor that seeps dark energy, weakening nearby foes."
+    },
+    {
+        "accessoryName": "Rune-Etched Vambraces",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction4",
+        "description": "Forearm guards inscribed with runes that flare up in battle, enhancing aggression."
+    },
+    {
+        "accessoryName": "Demon's Heart Locket",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction4",
+        "description": "A locket pulsating with dark power, increasing the wearer's bloodlust."
+    },
+    {
+        "accessoryName": "Wrathful Chainmail",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction4",
+        "description": "A chainmail that vibrates with raw, uncontrolled rage, amplifying physical strength."
+    },
+    {
+        "accessoryName": "Abyssian Warhelm",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction4",
+        "description": "A menacing helmet that enhances the wearer's focus and aggression in combat."
+    },
+    {
+        "accessoryName": "Bloodstone Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction4",
+        "description": "A deep red pendant that throbs in rhythm with the wearer's pulse, sharpening their ferocity."
+    },
+    {
+        "accessoryName": "Crimson Edge Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction4",
+        "description": "A ring with a jagged, blood-red gem that seems to cut through the air."
+    },
+    {
+        "accessoryName": "Shadowstrike Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction4",
+        "description": "A bracelet that emits dark whispers, urging the wearer to strike swiftly and silently."
+    },
+    {
+        "accessoryName": "Warlock's Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction4",
+        "description": "A charm imbued with ancient spells, heightening the wearer's destructive capabilities."
+    },
+    {
+        "accessoryName": "Inferno Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction4",
+        "description": "An amulet that burns with an inner fire, igniting the wearer's aggression."
+    },
+    {
+        "accessoryName": "Serpent's Eye Brooch",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction4",
+        "description": "A brooch with a hypnotic gemstone, enhancing the wearer's focus and precision."
+    },
+    {
+        "accessoryName": "Rune of Fury",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction4",
+        "description": "A small rune that pulses with energy, increasing the wearer's attack speed."
+    },
+    {
+        "accessoryName": "Vengeance Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction4",
+        "description": "A band that grows warmer during battle, fueling the wearer's desire for retribution."
+    },
+    {
+        "accessoryName": "Necromancer's Token",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction4",
+        "description": "A token that whispers dark secrets, empowering the wearer with forbidden knowledge."
+    },
+    {
+        "accessoryName": "Ghoul Fang Necklace",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction4",
+        "description": "A necklace of sharpened fangs that heighten the wearer's killer instincts."
+    },
+    {
+        "accessoryName": "Merchant's Monocle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction4",
+        "description": "An ornate golden monocle that reveals the true value of items, shimmering with clarity."
+    },
+    {
+        "accessoryName": "Gilded Greaves",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction4",
+        "description": "Boots adorned with gold filigree, leaving a trail of sparkling dust."
+    },
+    {
+        "accessoryName": "Opulent Sash",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction4",
+        "description": "A richly embroidered sash with intricate patterns, glowing with a soft golden hue."
+    },
+    {
+        "accessoryName": "Wealthbringer Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction4",
+        "description": "A lavish shoulder mantle that glitters with embedded gems, signifying prosperity."
+    },
+    {
+        "accessoryName": "Midas Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction4",
+        "description": "Gauntlets with gold plating, rumored to increase the wealth of its bearer."
+    },
+    {
+        "accessoryName": "Trader's Bracers",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction4",
+        "description": "Arm bracers that gleam with polished gold, enhancing bartering skills."
+    },
+    {
+        "accessoryName": "Golden Chainmail",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction4",
+        "description": "A chainmail interwoven with gold threads, radiating wealth and grandeur."
+    },
+    {
+        "accessoryName": "Baron's Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction4",
+        "description": "A belt with a lavish gold buckle, signifying nobility and affluence."
+    },
+    {
+        "accessoryName": "Crown of Fortune",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction4",
+        "description": "A crown encrusted with precious stones, said to bring luck in financial endeavors."
+    },
+    {
+        "accessoryName": "Prosperity Cloak",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction4",
+        "description": "A cloak sewn with golden threads, each fold hiding secrets of wealth."
+    },
+    {
+        "accessoryName": "Lucky Charm Necklace",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction4",
+        "description": "A delicate necklace with a charm shaped like a coin, always warm to the touch."
+    },
+    {
+        "accessoryName": "Fortune's Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction4",
+        "description": "A simple gold band that subtly glows when fortunes are favorable."
+    },
+    {
+        "accessoryName": "Greed's Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction4",
+        "description": "An amulet with a golden glint, seemingly drawing coins from thin air."
+    },
+    {
+        "accessoryName": "Bargainer's Brooch",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction4",
+        "description": "A brooch that twinkles with a persuasive allure, easing trade and negotiation."
+    },
+    {
+        "accessoryName": "Merchant's Beads",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction4",
+        "description": "Beads that clink like coins, rumored to attract wealth wherever they go."
+    },
+    {
+        "accessoryName": "Golden Hoop Earrings",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction4",
+        "description": "Earrings that dazzle with pure gold, catching the light and many envious glances."
+    },
+    {
+        "accessoryName": "Wealthfinder's Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction4",
+        "description": "A bracelet that vibrates near hidden treasures, encrusted with tiny gems."
+    },
+    {
+        "accessoryName": "Prospector's Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction4",
+        "description": "A pendant that shines brighter in the presence of gold and jewels."
+    },
+    {
+        "accessoryName": "Avarice Anklet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction4",
+        "description": "An anklet crafted from gold links, jingling with the promise of wealth."
+    },
+    {
+        "accessoryName": "Midas' Token",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction4",
+        "description": "A small token that feels unusually heavy, as if laden with unseen gold."
+    },
+    {
+        "accessoryName": "Vitality Cloak",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction4",
+        "description": "A cloak that breathes slowly, its fabric pulsating with a soothing rhythm."
+    },
+    {
+        "accessoryName": "Heartstone Greaves",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction4",
+        "description": "Leg armor embedded with heart-shaped gems that glow with a warm, comforting light."
+    },
+    {
+        "accessoryName": "Serenity Sash",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction4",
+        "description": "A sash that flows like water, imbued with calming energies to soothe wounds."
+    },
+    {
+        "accessoryName": "Mender's Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction4",
+        "description": "A shoulder covering that emits a gentle aura, knitting together injuries over time."
+    },
+    {
+        "accessoryName": "Lifegiver Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction4",
+        "description": "Gauntlets that tingle with life energy, accelerating natural healing processes."
+    },
+    {
+        "accessoryName": "Regrowth Bracers",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction4",
+        "description": "Arm bracers with a leafy motif, their touch rejuvenating the weary."
+    },
+    {
+        "accessoryName": "Revival Chainmail",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction4",
+        "description": "A chainmail that gently vibrates, mending the wearer's injuries with every movement."
+    },
+    {
+        "accessoryName": "Spirit's Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction4",
+        "description": "A belt that radiates a subtle warmth, bolstering the wearer's life force."
+    },
+    {
+        "accessoryName": "Rejuvenating Crown",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction4",
+        "description": "A crown that seems to hum with vitality, invigorating the mind and body."
+    },
+    {
+        "accessoryName": "Elixir Cape",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction4",
+        "description": "A cape imbued with healing essences, its threads shimmering with restorative energy."
+    },
+    {
+        "accessoryName": "Lifeforce Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction4",
+        "description": "A pendant with a heartbeat-like pulse, infusing the wearer with vigor."
+    },
+    {
+        "accessoryName": "Renewal Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction4",
+        "description": "A ring that glows softly, slowly repairing minor wounds and fatigue."
+    },
+    {
+        "accessoryName": "Energizing Brooch",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction4",
+        "description": "A brooch that radiates a gentle warmth, revitalizing the spirit with each breath."
+    },
+    {
+        "accessoryName": "Vitality Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction4",
+        "description": "A small charm that hums with life, bolstering the wearer's endurance."
+    },
+    {
+        "accessoryName": "Healer's Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction4",
+        "description": "An amulet that emits a healing aura, soothing pains and aches."
+    },
+    {
+        "accessoryName": "Restoration Beads",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction4",
+        "description": "Beads that glow with a soft light, quickening recovery from injuries."
+    },
+    {
+        "accessoryName": "Soothing Earrings",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction4",
+        "description": "Earrings that resonate with a calming frequency, easing mental stress."
+    },
+    {
+        "accessoryName": "Recovery Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction4",
+        "description": "A bracelet that feels cool to the touch, alleviating fatigue and restoring balance."
+    },
+    {
+        "accessoryName": "Harmony Anklet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction4",
+        "description": "An anklet that emits a harmonious tone, aligning the body's natural rhythms."
+    },
+    {
+        "accessoryName": "Serenade Locket",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction4",
+        "description": "A locket that whispers a soothing lullaby, promoting healing and tranquility."
+    },
+    {
+        "accessoryName": "Cosmoscape Cloak",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction4",
+        "description": "A cloak woven from starlight, shifting colors and enhancing the wearer's presence in all aspects."
+    },
+    {
+        "accessoryName": "Chrono Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction4",
+        "description": "Boots with soles that phase through time, offering speed, stealth, and stability."
+    },
+    {
+        "accessoryName": "Elemental Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction4",
+        "description": "A shoulder garment that channels the elements, providing defense and attack versatility."
+    },
+    {
+        "accessoryName": "Mystic Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction4",
+        "description": "Gauntlets that adapt to the wearer's needs, offering strength, dexterity, and magical power."
+    },
+    {
+        "accessoryName": "Spectrum Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction4",
+        "description": "A belt that radiates diverse energies, balancing health, wealth, and power."
+    },
+    {
+        "accessoryName": "Aurora Bracers",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction4",
+        "description": "Bracers that glow with the aurora, enhancing the wearer's abilities in unpredictable ways."
+    },
+    {
+        "accessoryName": "Prism Chainmail",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction4",
+        "description": "A chainmail that refracts light, offering camouflage, radiance, and protection."
+    },
+    {
+        "accessoryName": "Enigma Crown",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction4",
+        "description": "A crown that enhances the wearer's mental faculties, bestowing clarity, wisdom, and foresight."
+    },
+    {
+        "accessoryName": "Harmonizer Sash",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction4",
+        "description": "A sash that synchronizes with the wearer's energy, amplifying strength, health, and charisma."
+    },
+    {
+        "accessoryName": "Vortex Cape",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction4",
+        "description": "A cape that swirls with a vortex of energies, offering a blend of defense, attack, and mystic abilities."
+    },
+    {
+        "accessoryName": "Quantum Loop Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction4",
+        "description": "A ring that seems to exist simultaneously in multiple realities, augmenting various abilities."
+    },
+    {
+        "accessoryName": "Ethereal Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction4",
+        "description": "An amulet that phases in and out of visibility, offering protection, stealth, and mystical power."
+    },
+    {
+        "accessoryName": "Dimensional Brooch",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction4",
+        "description": "A brooch that warps space around it, granting boosts in speed, strength, and defense."
+    },
+    {
+        "accessoryName": "Chameleon Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction4",
+        "description": "A charm that changes color and properties, adapting to the wearer's current needs."
+    },
+    {
+        "accessoryName": "Kaleidoscope Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction4",
+        "description": "A pendant with a gem that shifts through countless colors, each hue bestowing a different boon."
+    },
+    {
+        "accessoryName": "Mirage Beads",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction4",
+        "description": "Beads that create illusory duplicates of the wearer, enhancing offense, defense, and deception."
+    },
+    {
+        "accessoryName": "Runic Earrings",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction4",
+        "description": "Earrings inscribed with ancient runes, each one activating different magical and physical enhancements."
+    },
+    {
+        "accessoryName": "Orbital Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction4",
+        "description": "A bracelet with orbiting spheres that grant balanced enhancements in combat, strategy, and recovery."
+    },
+    {
+        "accessoryName": "Metamorph Anklet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction4",
+        "description": "An anklet that subtly morphs its shape, providing varied boosts to agility, resilience, and fortune."
+    },
+    {
+        "accessoryName": "Arcane Locket",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction4",
+        "description": "A locket containing a swirling magical essence, enhancing health, power, and wealth in equal measure."
+    },
+    {
+        "accessoryName": "Eclipse Aegis",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction4",
+        "description": "A shield that eclipses light, creating a protective darkness and revealing hidden truths."
+    },
+    {
+        "accessoryName": "Phoenix-Wing Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction4",
+        "description": "A fiery shoulder garment that resurrects the wearer in a blaze of glory upon defeat."
+    },
+    {
+        "accessoryName": "Timebender's Cloak",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction4",
+        "description": "A cloak woven from the fabric of time, allowing brief glimpses into past and future events."
+    },
+    {
+        "accessoryName": "Gravity Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction4",
+        "description": "Boots that defy gravity, enabling the wearer to walk on walls and ceilings."
+    },
+    {
+        "accessoryName": "Astral Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction4",
+        "description": "Gauntlets that channel cosmic energy, allowing manipulation of celestial objects."
+    },
+    {
+        "accessoryName": "Voidwalker's Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction4",
+        "description": "A belt that tears open rifts in space, enabling teleportation over short distances."
+    },
+    {
+        "accessoryName": "Spirit Whisperer Cuffs",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction4",
+        "description": "Cuffs that allow communication with ethereal beings, unlocking ancient wisdom and secrets."
+    },
+    {
+        "accessoryName": "Shapeshifter's Chainmail",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction4",
+        "description": "A chainmail that morphs its appearance and properties to mimic any creature or element."
+    },
+    {
+        "accessoryName": "Dreamcatcher Amulet",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction4",
+        "description": "An amulet that traps nightmares, converting them into power and clarity for the wearer."
+    },
+    {
+        "accessoryName": "Miracle Sash",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction4",
+        "description": "A sash that radiates a miraculous aura, occasionally bending reality to the wearer's favor."
+    },
+    {
+        "accessoryName": "Whisper of the Wind Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction4",
+        "description": "A ring that carries the voices of the wind, granting the wearer guidance and foresight."
+    },
+    {
+        "accessoryName": "Lunar Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction4",
+        "description": "An amulet that changes with the moon phases, offering varying mystical powers."
+    },
+    {
+        "accessoryName": "Sunstone Brooch",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction4",
+        "description": "A brooch that harnesses the power of the sun, bestowing energy and vitality during daylight."
+    },
+    {
+        "accessoryName": "Ocean's Heart Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction4",
+        "description": "A pendant imbued with the essence of the ocean, providing tranquility and control over water."
+    },
+    {
+        "accessoryName": "Earth's Core Locket",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction4",
+        "description": "A locket containing a fragment of the earth's core, granting stability and strength."
+    },
+    {
+        "accessoryName": "Flame Dancer Earrings",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction4",
+        "description": "Earrings that flicker with real flames, igniting the wearer's passion and power."
+    },
+    {
+        "accessoryName": "Star Seeker Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction4",
+        "description": "A charm that glows brighter under the night sky, guiding the wearer to their destiny."
+    },
+    {
+        "accessoryName": "Nature's Whisper Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction4",
+        "description": "A bracelet that rustles with the voice of nature, revealing secrets of the wild."
+    },
+    {
+        "accessoryName": "Mystic's Eye Anklet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction4",
+        "description": "An anklet that allows glimpses into other realms, unveiling mysteries and truths."
+    },
+    {
+        "accessoryName": "Celestial Alignment Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction4",
+        "description": "A ring that aligns with celestial bodies, granting powers based on their current constellation."
+    }
+]

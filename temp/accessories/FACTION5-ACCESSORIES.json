@@ -1,0 +1,842 @@
+[
+    {
+        "accessoryName": "Volcanic Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction5",
+        "description": "A flowing cape imbued with magma, radiating intense heat that repels attacks."
+    },
+    {
+        "accessoryName": "Crystalline Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction5",
+        "description": "Gleaming gloves made of hardened lava crystals, providing exceptional protection."
+    },
+    {
+        "accessoryName": "Inferno Greaves",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction5",
+        "description": "Sturdy boots forged from volcanic rock, granting extraordinary stability and defense."
+    },
+    {
+        "accessoryName": "Ember Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction5",
+        "description": "A shield carved from a solidified lava flow, glowing with an inner fire."
+    },
+    {
+        "accessoryName": "Molten Pauldrons",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction5",
+        "description": "Shoulder armor that simmers with heat, hardening against incoming blows."
+    },
+    {
+        "accessoryName": "Obsidian Bracers",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction5",
+        "description": "Dark, glossy arm guards made from volcanic glass, absorbing and deflecting damage."
+    },
+    {
+        "accessoryName": "Lava-Link Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction5",
+        "description": "A belt with interlocking segments of cooled lava, offering flexible protection."
+    },
+    {
+        "accessoryName": "Pyroclast Cape",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction5",
+        "description": "A cape that shimmers with fiery particles, shielding the wearer from harm."
+    },
+    {
+        "accessoryName": "Flamebound Aegis",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction5",
+        "description": "A mystical barrier that surrounds the user, forged from the essence of a volcano."
+    },
+    {
+        "accessoryName": "Basalt Vambraces",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction5",
+        "description": "Forearm guards sculpted from dense basalt, providing unyielding defense."
+    },
+    {
+        "accessoryName": "Lavastone Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction5",
+        "description": "A ring carved from solidified lava, offering resistance to physical harm."
+    },
+    {
+        "accessoryName": "Ember Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction5",
+        "description": "A small pendant that glows with a soft fire, warding off attacks."
+    },
+    {
+        "accessoryName": "Magma Medallion",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction5",
+        "description": "A heat-radiating charm that hardens the skin like volcanic rock."
+    },
+    {
+        "accessoryName": "Fiery Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction5",
+        "description": "A slender bracelet that flickers with tiny flames, enhancing the wearer's defenses."
+    },
+    {
+        "accessoryName": "Volcanic Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction5",
+        "description": "A charm emanating intense heat, forming a protective barrier around the bearer."
+    },
+    {
+        "accessoryName": "Pyre Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction5",
+        "description": "A necklace with a burning gemstone, shielding the wearer from harm."
+    },
+    {
+        "accessoryName": "Blaze Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction5",
+        "description": "A wristband that pulses with a fiery aura, toughening the skin."
+    },
+    {
+        "accessoryName": "Cinder Chain",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction5",
+        "description": "A lightweight chain that smolders softly, absorbing incoming damage."
+    },
+    {
+        "accessoryName": "Flamekeeper's Locket",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction5",
+        "description": "A locket containing an ever-burning flame, granting protection against physical strikes."
+    },
+    {
+        "accessoryName": "Infernal Beads",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "faction5",
+        "description": "Beads that emit a warm glow, reinforcing the wearer's endurance."
+    },
+    {
+        "accessoryName": "Flame Fury Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction5",
+        "description": "Gauntlets that ignite upon striking, enhancing melee damage with fiery blasts."
+    },
+    {
+        "accessoryName": "Blazing War Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction5",
+        "description": "Heavy boots that leave a trail of fire, boosting kick strength and speed."
+    },
+    {
+        "accessoryName": "Inferno Plume Cape",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction5",
+        "description": "A cape that flares up dramatically, intimidating foes and boosting attack power."
+    },
+    {
+        "accessoryName": "Volcanic Spaulders",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction5",
+        "description": "Shoulder armor that erupts in small volcanic bursts, enhancing offensive capabilities."
+    },
+    {
+        "accessoryName": "Lava Surge Vambraces",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction5",
+        "description": "Armguards that release a surge of lava, increasing damage dealt in close combat."
+    },
+    {
+        "accessoryName": "Pyroclastic Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction5",
+        "description": "A belt that harnesses volcanic energy, boosting strength and power."
+    },
+    {
+        "accessoryName": "Magma Mauler Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction5",
+        "description": "A shield that can unleash a torrent of molten rock, enhancing offensive strikes."
+    },
+    {
+        "accessoryName": "Emberstrike Pauldrons",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction5",
+        "description": "Fiery shoulder pads that supercharge the wearer's attacks with explosive force."
+    },
+    {
+        "accessoryName": "Scorching Greaves",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction5",
+        "description": "Leg armor that boosts agility and attack speed with fiery energy."
+    },
+    {
+        "accessoryName": "Blaze Fury Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction5",
+        "description": "A mantle that radiates intense heat, increasing damage output significantly."
+    },
+    {
+        "accessoryName": "Cinder Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction5",
+        "description": "A small, smoldering charm that enhances magical attack potency."
+    },
+    {
+        "accessoryName": "Infernal Signet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction5",
+        "description": "A signet ring that burns fiercely, increasing the damage of fire-based spells."
+    },
+    {
+        "accessoryName": "Blaze Orb",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction5",
+        "description": "An orb pulsing with fiery energy, boosting the wearer's offensive capabilities."
+    },
+    {
+        "accessoryName": "Magma Medallion",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction5",
+        "description": "A glowing medallion that augments physical strength with volcanic force."
+    },
+    {
+        "accessoryName": "Flame Tongue Talisman",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction5",
+        "description": "A talisman that whispers ancient fire spells, enhancing magical attacks."
+    },
+    {
+        "accessoryName": "Pyre Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction5",
+        "description": "A ring that flares up in battle, increasing attack speed and ferocity."
+    },
+    {
+        "accessoryName": "Lava Stone Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction5",
+        "description": "A bracelet that radiates heat, amplifying physical attack damage."
+    },
+    {
+        "accessoryName": "Volcanic Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction5",
+        "description": "A band imbued with the essence of a volcano, enhancing critical strike chances."
+    },
+    {
+        "accessoryName": "Ember Beads",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction5",
+        "description": "Beads that glow with a fiery intensity, boosting the wearer's offensive magic."
+    },
+    {
+        "accessoryName": "Blazing Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "faction5",
+        "description": "An amulet that burns with an eternal flame, increasing the power of fire attacks."
+    },
+    {
+        "accessoryName": "Golden Gilded Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction5",
+        "description": "A luxurious mantle adorned with gold filigree, attracting wealth and fortune."
+    },
+    {
+        "accessoryName": "Riches Bracers",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction5",
+        "description": "Arm guards embedded with precious gems, increasing gold acquisition from foes."
+    },
+    {
+        "accessoryName": "Prosperity Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction5",
+        "description": "Boots with gold soles that leave trails of coins, boosting gold found in battle."
+    },
+    {
+        "accessoryName": "Tycoon's Cape",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction5",
+        "description": "An opulent cape that increases gold drops from enemies and treasure chests."
+    },
+    {
+        "accessoryName": "Magnate's Pauldrons",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction5",
+        "description": "Shoulder armor that shines with golden aura, enhancing bartering skills."
+    },
+    {
+        "accessoryName": "Auric Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction5",
+        "description": "A shield crafted from pure gold, reflecting wealth and increasing gold earned."
+    },
+    {
+        "accessoryName": "Treasure Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction5",
+        "description": "A belt with coin pouches that mysteriously never empty, increasing gold gain."
+    },
+    {
+        "accessoryName": "Golden Greaves",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction5",
+        "description": "Leg armor inlaid with gold, granting bonus gold for each step taken in battle."
+    },
+    {
+        "accessoryName": "Wealthy Warlord's Greaves",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction5",
+        "description": "Greaves adorned with gold, increasing the wearer's wealth with each enemy defeated."
+    },
+    {
+        "accessoryName": "Opulent Aegis",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction5",
+        "description": "A majestic aegis that grants a chance of gold nuggets dropping with each block."
+    },
+    {
+        "accessoryName": "Wealth Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction5",
+        "description": "A ring that subtly glints with gold, increasing monetary gains from battles."
+    },
+    {
+        "accessoryName": "Merchant's Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction5",
+        "description": "A sleek amulet that enhances negotiating skills for better prices at shops."
+    },
+    {
+        "accessoryName": "Gilded Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction5",
+        "description": "A charm with a golden sheen, attracting more gold from loot and chests."
+    },
+    {
+        "accessoryName": "Bounty Medallion",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction5",
+        "description": "A medallion that increases gold rewards for completing quests and bounties."
+    },
+    {
+        "accessoryName": "Coin Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction5",
+        "description": "A band that resonates with the sound of clinking coins, boosting gold drop rate."
+    },
+    {
+        "accessoryName": "Goldseeker's Locket",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction5",
+        "description": "A locket that guides its wearer to hidden treasures and increased gold finds."
+    },
+    {
+        "accessoryName": "Prosperous Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction5",
+        "description": "A pendant that glows when near large sums of gold, enhancing loot discovery."
+    },
+    {
+        "accessoryName": "Riches Beads",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction5",
+        "description": "Beads that jingle with the promise of wealth, increasing gold found on enemies."
+    },
+    {
+        "accessoryName": "Fortune's Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction5",
+        "description": "A ring that radiates luck, significantly boosting gold acquired in all forms."
+    },
+    {
+        "accessoryName": "Tycoon's Token",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "faction5",
+        "description": "A token that ensures a higher yield of gold from all sources, imbued with luck."
+    },
+    {
+        "accessoryName": "Vitality Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction5",
+        "description": "A mantle that radiates a healing aura, steadily restoring the wearer's health."
+    },
+    {
+        "accessoryName": "Regeneration Greaves",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction5",
+        "description": "Boots imbued with life force, accelerating natural health regeneration."
+    },
+    {
+        "accessoryName": "Life Force Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction5",
+        "description": "Gauntlets that absorb life energy from foes, converting it into health for the wearer."
+    },
+    {
+        "accessoryName": "Healer's Cape",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction5",
+        "description": "A cape that enhances healing received and gradually mends wounds over time."
+    },
+    {
+        "accessoryName": "Energizing Pauldrons",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction5",
+        "description": "Shoulder armor that boosts vitality and stamina recovery speed."
+    },
+    {
+        "accessoryName": "Renewal Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction5",
+        "description": "A shield that not only protects but also heals minor injuries during battle."
+    },
+    {
+        "accessoryName": "Restorative Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction5",
+        "description": "A belt that gradually restores health, harnessing the power of life energy."
+    },
+    {
+        "accessoryName": "Soothing Bracers",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction5",
+        "description": "Arm bracers that calm the spirit, promoting faster health regeneration."
+    },
+    {
+        "accessoryName": "Vigor Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction5",
+        "description": "Boots that invigorate the wearer, enhancing overall health and resilience."
+    },
+    {
+        "accessoryName": "Rejuvenation Cape",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction5",
+        "description": "A cape infused with restorative magic, greatly enhancing health recovery."
+    },
+    {
+        "accessoryName": "Recovery Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction5",
+        "description": "A ring that slowly mends wounds, boosting the wearer's natural healing rate."
+    },
+    {
+        "accessoryName": "Lifeforce Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction5",
+        "description": "An amulet that pulses with vitality, increasing maximum health capacity."
+    },
+    {
+        "accessoryName": "Healing Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction5",
+        "description": "A charm that enhances the effectiveness of healing spells and potions."
+    },
+    {
+        "accessoryName": "Vitality Medallion",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction5",
+        "description": "A medallion that fortifies the wearer's constitution, providing extra health."
+    },
+    {
+        "accessoryName": "Elixir Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction5",
+        "description": "A band that increases the efficiency of health potions and restorative magic."
+    },
+    {
+        "accessoryName": "Regen Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction5",
+        "description": "A pendant that emits a soothing light, accelerating health regeneration."
+    },
+    {
+        "accessoryName": "Life Beads",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction5",
+        "description": "Beads that resonate with the heartbeat, enhancing overall vitality."
+    },
+    {
+        "accessoryName": "Serenity Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction5",
+        "description": "A ring that calms the soul, promoting faster recovery from injuries."
+    },
+    {
+        "accessoryName": "Vigor Talisman",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction5",
+        "description": "A talisman that invigorates the body, improving overall health and wellness."
+    },
+    {
+        "accessoryName": "Restoration Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "faction5",
+        "description": "A bracelet that emits a healing aura, slightly increasing health recovery over time."
+    },
+    {
+        "accessoryName": "Mystic All-Seeing Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction5",
+        "description": "A mystical cape that grants enhanced perception, revealing hidden treasures and enemy weaknesses."
+    },
+    {
+        "accessoryName": "Eternal Cycle Greaves",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction5",
+        "description": "Boots that adapt to the wearer's needs, boosting speed, defense, or attack based on the situation."
+    },
+    {
+        "accessoryName": "Gauntlets of Boundless Potential",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction5",
+        "description": "Gauntlets that morph to enhance various abilities, from strength to magic, as needed in battle."
+    },
+    {
+        "accessoryName": "Shifting Aegis",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction5",
+        "description": "A shield that changes its properties to counteract enemy attacks, offering versatile defense."
+    },
+    {
+        "accessoryName": "Chameleon Cloak",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction5",
+        "description": "A cloak that adapts its color and texture to the environment, providing camouflage and protection."
+    },
+    {
+        "accessoryName": "Infinity Band",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction5",
+        "description": "A belt with an ever-changing buckle, bestowing random buffs and bonuses each day."
+    },
+    {
+        "accessoryName": "Elemental Harmony Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction5",
+        "description": "Boots that resonate with elemental forces, offering various offensive and defensive enhancements."
+    },
+    {
+        "accessoryName": "Dynamic Pauldrons",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction5",
+        "description": "Shoulder armor that dynamically adjusts to boost the most needed attribute in any given scenario."
+    },
+    {
+        "accessoryName": "Phantom Cape",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction5",
+        "description": "A cape that occasionally makes the wearer ethereal, dodging attacks and passing through obstacles."
+    },
+    {
+        "accessoryName": "Orb of Infinite Possibilities",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction5",
+        "description": "An orb that randomly casts beneficial spells, from healing to attack buffs, during combat."
+    },
+    {
+        "accessoryName": "Amulet of the Shapechanger",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction5",
+        "description": "An amulet that grants the wearer random animal abilities, from stealth to strength, each day."
+    },
+    {
+        "accessoryName": "Whispering Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction5",
+        "description": "A ring that murmurs secrets of the land, revealing hidden paths and lore."
+    },
+    {
+        "accessoryName": "Spectrum Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction5",
+        "description": "A charm that cycles through a spectrum of effects, from light emission to sound dampening."
+    },
+    {
+        "accessoryName": "Band of the Elements",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction5",
+        "description": "A band that grants mastery over an element each hour, from fire to wind."
+    },
+    {
+        "accessoryName": "Cosmic Medallion",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction5",
+        "description": "A medallion that aligns with celestial bodies, providing benefits based on planetary positions."
+    },
+    {
+        "accessoryName": "Charm of Myriad Truths",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction5",
+        "description": "A charm that unveils hidden truths, from enemy weaknesses to unseen treasures."
+    },
+    {
+        "accessoryName": "Ring of Many Faces",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction5",
+        "description": "A ring that allows the wearer to adopt different appearances at will."
+    },
+    {
+        "accessoryName": "Beads of the Oracle",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction5",
+        "description": "Beads that provide cryptic insights, aiding in decision making and predicting dangers."
+    },
+    {
+        "accessoryName": "Talisman of the Arcane",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction5",
+        "description": "A talisman that bestows random arcane knowledge, from spellcasting to potion-making."
+    },
+    {
+        "accessoryName": "Enigma Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "faction5",
+        "description": "A bracelet that unpredictably alters its effects, ranging from agility boosts to magical barriers."
+    },
+    {
+        "accessoryName": "Cloak of the Astral Walker",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction5",
+        "description": "A cloak that allows brief travel through astral planes, evading attacks and bypassing obstacles."
+    },
+    {
+        "accessoryName": "Timebender's Greaves",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction5",
+        "description": "Boots that can manipulate time, granting the wearer short bursts of accelerated movement."
+    },
+    {
+        "accessoryName": "Gauntlets of the Void",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction5",
+        "description": "Gauntlets that can tear open temporary voids, absorbing incoming projectiles."
+    },
+    {
+        "accessoryName": "Eclipse Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction5",
+        "description": "A shield that casts an area of darkness during combat, disorienting enemies."
+    },
+    {
+        "accessoryName": "Mantle of the Phoenix",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction5",
+        "description": "A fiery mantle that resurrects the wearer once per battle upon fatal damage."
+    },
+    {
+        "accessoryName": "Gravity-Defying Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction5",
+        "description": "A belt that allows the wearer to temporarily defy gravity and float or walk on walls."
+    },
+    {
+        "accessoryName": "Dimensional Pauldrons",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction5",
+        "description": "Shoulder armor that can warp space, creating small pockets of altered reality during combat."
+    },
+    {
+        "accessoryName": "Shadowstep Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction5",
+        "description": "Boots that enable the wearer to step through shadows, appearing instantly in different locations."
+    },
+    {
+        "accessoryName": "Soulbound Aegis",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction5",
+        "description": "A mystical shield bound to the wearer's soul, capable of manifesting their inner strength as a barrier."
+    },
+    {
+        "accessoryName": "Cape of Endless Realms",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction5",
+        "description": "A cape that flickers with images of distant realms, offering glimpses into other worlds and possibilities."
+    },
+    {
+        "accessoryName": "Ring of Mirrored Fates",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction5",
+        "description": "A ring that allows the wearer to glimpse alternate outcomes of their actions, aiding in decision making."
+    },
+    {
+        "accessoryName": "Amulet of Elemental Fusion",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction5",
+        "description": "An amulet that can merge two elemental powers, creating unique spell combinations."
+    },
+    {
+        "accessoryName": "Charm of the Dreamweaver",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction5",
+        "description": "A charm that grants the ability to enter and manipulate enemies' dreams, affecting their reality."
+    },
+    {
+        "accessoryName": "Medallion of the Mind's Eye",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction5",
+        "description": "A medallion that enhances mental clarity, granting telepathic communication with allies."
+    },
+    {
+        "accessoryName": "Band of Illusions",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction5",
+        "description": "A band that creates realistic illusions, distracting and deceiving foes in battle."
+    },
+    {
+        "accessoryName": "Oracle's Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction5",
+        "description": "A pendant that reveals fleeting visions of the future, warning of impending dangers."
+    },
+    {
+        "accessoryName": "Beads of Eternal Balance",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction5",
+        "description": "Beads that maintain equilibrium, preventing the wearer from being affected by extreme conditions."
+    },
+    {
+        "accessoryName": "Talisman of Shifting Realities",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction5",
+        "description": "A talisman that subtly alters the wearer's reality, providing unexpected advantages in various situations."
+    },
+    {
+        "accessoryName": "Ring of the Ethereal Voyager",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction5",
+        "description": "A ring that grants brief etherealness, allowing passage through solid objects."
+    },
+    {
+        "accessoryName": "Enigma Locket",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "faction5",
+        "description": "A locket that holds a miniature, ever-changing labyrinth, sharpening the wearer's problem-solving skills."
+    }
+]

@@ -1,0 +1,842 @@
+[
+    {
+        "accessoryName": "Vineguard Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "forest",
+        "description": "Thick gauntlets woven from resilient forest vines, offering flexibility and protection."
+    },
+    {
+        "accessoryName": "Thorned Bracers",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "forest",
+        "description": "Rugged bracers adorned with sharp thorns, capable of warding off direct blows."
+    },
+    {
+        "accessoryName": "Moss-Covered Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "forest",
+        "description": "A sturdy shield blanketed in a thick layer of cushioning moss."
+    },
+    {
+        "accessoryName": "Barkskin Cloak",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "forest",
+        "description": "A cloak made from interwoven bark strips, offering natural resilience against attacks."
+    },
+    {
+        "accessoryName": "Rootstep Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "forest",
+        "description": "Durable boots with soles made of intertwined roots, enhancing stability and defense."
+    },
+    {
+        "accessoryName": "Sylvan Guard",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "forest",
+        "description": "A mystical barrier of condensed forest energy, enveloping the wearer in a protective aura."
+    },
+    {
+        "accessoryName": "Fernweave Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "forest",
+        "description": "A shoulder mantle crafted from layered fern leaves, providing a natural armor."
+    },
+    {
+        "accessoryName": "Canopy Helm",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "forest",
+        "description": "A helm shaped like a forest canopy, offering shade and protection from overhead strikes."
+    },
+    {
+        "accessoryName": "Underbrush Greaves",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "forest",
+        "description": "Leg guards made from tightly bound underbrush, providing camouflage and defense."
+    },
+    {
+        "accessoryName": "Wildgrowth Aegis",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "forest",
+        "description": "An organic shield that grows stronger over time, entwined with living forest flora."
+    },
+    {
+        "accessoryName": "Leafweave Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "forest",
+        "description": "An amulet encased in woven leaves, pulsating with a subtle defensive aura."
+    },
+    {
+        "accessoryName": "Sapling Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "forest",
+        "description": "A ring crafted from a young sapling's wood, strengthening the wearer's resilience."
+    },
+    {
+        "accessoryName": "Mystic Fern Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "forest",
+        "description": "A charm made of dried, enchanted ferns, offering protective enchantments."
+    },
+    {
+        "accessoryName": "Bramble Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "forest",
+        "description": "A pendant adorned with bramble thorns, imbued with defensive magic."
+    },
+    {
+        "accessoryName": "Grovekeeper's Seal",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "forest",
+        "description": "A seal representing the guardians of the grove, offering increased defense."
+    },
+    {
+        "accessoryName": "Barkbound Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "forest",
+        "description": "A ring encrusted with hardened tree bark, enhancing physical protection."
+    },
+    {
+        "accessoryName": "Vitality Locket",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "forest",
+        "description": "A small locket containing a vibrant green leaf, bolstering the wearer's vitality."
+    },
+    {
+        "accessoryName": "Wildberry Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "forest",
+        "description": "A bracelet made of dried wildberries, offering minor protective charms."
+    },
+    {
+        "accessoryName": "Entwined Root Anklet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "forest",
+        "description": "An anklet fashioned from entwined roots, providing grounding and defense."
+    },
+    {
+        "accessoryName": "Canopy Crystal",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "forest",
+        "description": "A crystal that mirrors the forest canopy, diffusing attacks with its energy."
+    },
+    {
+        "accessoryName": "Thornstrike Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "forest",
+        "description": "Gauntlets with protruding thorns, empowering strikes with piercing damage."
+    },
+    {
+        "accessoryName": "Razorleaf Cloak",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "forest",
+        "description": "A cloak lined with razor-sharp leaves, capable of slicing through air and flesh."
+    },
+    {
+        "accessoryName": "Feral Helm",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "forest",
+        "description": "A beast-themed helm that imbues the wearer with increased aggression and power."
+    },
+    {
+        "accessoryName": "Viperstrike Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "forest",
+        "description": "Boots with a concealed blade in the toe, unleashing unexpected attacks."
+    },
+    {
+        "accessoryName": "Predator's Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "forest",
+        "description": "A mantle that endows the wearer with the ferocity and stealth of a forest predator."
+    },
+    {
+        "accessoryName": "Crimson Bark Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "forest",
+        "description": "A shield made from blood-red bark, intimidating foes and bolstering attacks."
+    },
+    {
+        "accessoryName": "Lunar Ivy Whip",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "forest",
+        "description": "A whip made from luminous ivy, dealing damage with each venomous strike."
+    },
+    {
+        "accessoryName": "Savage Bracers",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "forest",
+        "description": "Bracers that enhance the wearer's strength, enabling devastating blows."
+    },
+    {
+        "accessoryName": "Wildfire Greaves",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "forest",
+        "description": "Greaves imbued with the essence of wildfire, increasing speed and aggression."
+    },
+    {
+        "accessoryName": "Beastclaw Gauntlet",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "forest",
+        "description": "A gauntlet with beast-like claws, enhancing melee combat capabilities."
+    },
+    {
+        "accessoryName": "Serpent Fang Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "forest",
+        "description": "A ring shaped like a serpent's fang, injecting venomous power into strikes."
+    },
+    {
+        "accessoryName": "Hawk Eye Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "forest",
+        "description": "An amulet granting the sharp focus and precision of a hawk."
+    },
+    {
+        "accessoryName": "Panther Claw Necklace",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "forest",
+        "description": "A necklace with claws that imbue the wearer with feline agility and power."
+    },
+    {
+        "accessoryName": "Briar Thorn Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "forest",
+        "description": "A charm crafted from hardened thorns, enhancing offensive capabilities."
+    },
+    {
+        "accessoryName": "Moonlit Moss Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "forest",
+        "description": "A pendant holding luminescent moss, increasing the wearer's night-time attack prowess."
+    },
+    {
+        "accessoryName": "Wildroot Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "forest",
+        "description": "A band entwined with vigorous roots, boosting the wearer's offensive power."
+    },
+    {
+        "accessoryName": "Forest Fury Brooch",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "forest",
+        "description": "A brooch that channels the unrestrained fury of the forest, heightening aggression."
+    },
+    {
+        "accessoryName": "Spirit of the Glade Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "forest",
+        "description": "A bracelet that calls upon the spirits of the glade, enhancing attack magic."
+    },
+    {
+        "accessoryName": "Venomdrop Earring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "forest",
+        "description": "An earring with a drop of potent venom, granting lethal potency to attacks."
+    },
+    {
+        "accessoryName": "Galeforce Feather",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "forest",
+        "description": "A feather that harnesses the force of forest gales, amplifying the wearer's speed and strike force."
+    },
+    {
+        "accessoryName": "Opulence Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "forest",
+        "description": "A lavishly decorated shield, inlaid with gold and precious stones, dazzling foes."
+    },
+    {
+        "accessoryName": "Golden Vine Wraps",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "forest",
+        "description": "Wraps made from golden vines, shimmering and valuable, enhancing bartering skills."
+    },
+    {
+        "accessoryName": "Jeweled Ranger Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "forest",
+        "description": "Boots studded with jewels, increasing the wearer's financial gains from exploration."
+    },
+    {
+        "accessoryName": "Midas Touch Gloves",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "forest",
+        "description": "Gloves that seem to turn everything they touch into gold, enhancing wealth acquisition."
+    },
+    {
+        "accessoryName": "Gilded Leaf Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "forest",
+        "description": "A mantle made of leaves dipped in gold, attracting wealth and admiration."
+    },
+    {
+        "accessoryName": "Emerald Infused Cape",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "forest",
+        "description": "A cape interwoven with emerald threads, increasing the value of loot found."
+    },
+    {
+        "accessoryName": "Treasure Hunter's Sash",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "forest",
+        "description": "A sash filled with pockets for storing and hiding valuables, enhancing gold acquisition."
+    },
+    {
+        "accessoryName": "Ruby Studded Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "forest",
+        "description": "A belt studded with rubies, symbolizing wealth and assisting in trade."
+    },
+    {
+        "accessoryName": "Wealthy Wanderer's Bracers",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "forest",
+        "description": "Bracers that magically fill with coins, the more ground the wearer covers."
+    },
+    {
+        "accessoryName": "Prosperity Pauldrons",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "forest",
+        "description": "Pauldrons that gleam with an aura of prosperity, increasing the chance of finding rare treasures."
+    },
+    {
+        "accessoryName": "Coin Charm Necklace",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "forest",
+        "description": "A necklace adorned with ancient coins, attracting more wealth with each adventure."
+    },
+    {
+        "accessoryName": "Merchant's Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "forest",
+        "description": "A ring engraved with symbols of trade, granting better deals in marketplaces."
+    },
+    {
+        "accessoryName": "Gemstone Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "forest",
+        "description": "A bracelet laden with sparkling gemstones, enhancing financial gains."
+    },
+    {
+        "accessoryName": "Golden Berry Brooch",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "forest",
+        "description": "A brooch in the shape of a golden berry, subtly influencing wealth accumulation."
+    },
+    {
+        "accessoryName": "Trader's Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "forest",
+        "description": "An amulet imbued with the essence of prosperity, increasing income from sales."
+    },
+    {
+        "accessoryName": "Lucky Leaf Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "forest",
+        "description": "A pendant shaped like a leaf, rumored to bring good fortune and wealth."
+    },
+    {
+        "accessoryName": "Emerald Earrings",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "forest",
+        "description": "Earrings adorned with forest emeralds, magnifying the wearer's wealth."
+    },
+    {
+        "accessoryName": "Bounty Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "forest",
+        "description": "A band that increases the bounty received for completing quests and challenges."
+    },
+    {
+        "accessoryName": "Wealth Whisperer's Locket",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "forest",
+        "description": "A locket that whispers secrets of hidden treasures and opportunities for wealth."
+    },
+    {
+        "accessoryName": "Prospector's Pin",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "forest",
+        "description": "A pin that points the wearer towards hidden caches of gold and valuable items."
+    },
+    {
+        "accessoryName": "Lifebloom Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "forest",
+        "description": "A mantle imbued with life-giving energies, steadily restoring the wearer's health."
+    },
+    {
+        "accessoryName": "Heartwood Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "forest",
+        "description": "A shield carved from ancient heartwood, providing regenerative health benefits."
+    },
+    {
+        "accessoryName": "Vitality Vine Bracelets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "forest",
+        "description": "Bracelets made of vitality vines, enhancing the wearer's natural healing."
+    },
+    {
+        "accessoryName": "Rejuvenation Cloak",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "forest",
+        "description": "A cloak that radiates a healing aura, slowly mending wounds over time."
+    },
+    {
+        "accessoryName": "Elder Tree Greaves",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "forest",
+        "description": "Greaves embedded with elder tree bark, offering increased health regeneration."
+    },
+    {
+        "accessoryName": "Spirit of the Grove Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "forest",
+        "description": "Boots that tap into the life essence of the grove, boosting vitality and endurance."
+    },
+    {
+        "accessoryName": "Sylvan Heart Helm",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "forest",
+        "description": "A helm that harnesses the heart of the sylvan forest, enhancing life force."
+    },
+    {
+        "accessoryName": "Regrowth Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "forest",
+        "description": "Gauntlets that accelerate natural healing, mending injuries rapidly."
+    },
+    {
+        "accessoryName": "Forest Essence Pauldrons",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "forest",
+        "description": "Pauldrons that exude the essence of the forest, invigorating the wearer's health."
+    },
+    {
+        "accessoryName": "Bloomguard Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "forest",
+        "description": "A shield with a blooming flower emblem, empowering the wearer with life force."
+    },
+    {
+        "accessoryName": "Healer's Stone Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "forest",
+        "description": "A ring with a stone known for its healing properties, boosting health recovery."
+    },
+    {
+        "accessoryName": "Grove Spirit Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "forest",
+        "description": "A pendant imbued with the spirit of the grove, enhancing the wearer's vitality."
+    },
+    {
+        "accessoryName": "Lifeforce Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "forest",
+        "description": "A bracelet that radiates lifeforce, gradually restoring health over time."
+    },
+    {
+        "accessoryName": "Blossom Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "forest",
+        "description": "An amulet with a blooming blossom, symbolizing rejuvenation and healing."
+    },
+    {
+        "accessoryName": "Sap Synergy Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "forest",
+        "description": "A charm filled with tree sap, promoting rapid health regeneration."
+    },
+    {
+        "accessoryName": "Herbalist's Locket",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "forest",
+        "description": "A locket containing rare healing herbs, providing a constant health boost."
+    },
+    {
+        "accessoryName": "Vital Bloom Earrings",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "forest",
+        "description": "Earrings with petals from the Vital Bloom, significantly increasing health."
+    },
+    {
+        "accessoryName": "Renewal Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "forest",
+        "description": "A band that emits a gentle glow, symbolizing renewal and health restoration."
+    },
+    {
+        "accessoryName": "Forest Whisper Necklace",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "forest",
+        "description": "A necklace that whispers forest secrets, soothing the wearer and restoring health."
+    },
+    {
+        "accessoryName": "Nature's Grace Brooch",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "forest",
+        "description": "A brooch blessed with Nature's Grace, providing a gentle, continuous healing effect."
+    },
+    {
+        "accessoryName": "Mystic Wanderer's Cape",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "forest",
+        "description": "A cape that adapts to its surroundings, providing defense, stealth, and elemental resistance."
+    },
+    {
+        "accessoryName": "Chameleon Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "forest",
+        "description": "Boots that change hue and texture, offering camouflage, speed boosts, and agility."
+    },
+    {
+        "accessoryName": "Harmony Helm",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "forest",
+        "description": "A helm that resonates with forest sounds, enhancing perception, health, and attack."
+    },
+    {
+        "accessoryName": "Elemental Guard Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "forest",
+        "description": "A shield that shifts elements, offering protection against fire, ice, and lightning."
+    },
+    {
+        "accessoryName": "Nature's Bounty Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "forest",
+        "description": "Gauntlets that bear fruits and herbs, providing sustenance, healing, and strength."
+    },
+    {
+        "accessoryName": "Forest's Whisper Cloak",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "forest",
+        "description": "A cloak that whispers wisdom, granting strategic insights, stealth, and weather resistance."
+    },
+    {
+        "accessoryName": "Druid's Legacy Bracers",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "forest",
+        "description": "Bracers that channel the power of ancient druids, enhancing magic, defense, and agility."
+    },
+    {
+        "accessoryName": "Enchanted Grove Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "forest",
+        "description": "Boots that grow stronger in the forest, offering speed, jumping power, and grounding."
+    },
+    {
+        "accessoryName": "Universal Balance Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "forest",
+        "description": "A mantle that maintains balance, equally boosting offense, defense, and health regeneration."
+    },
+    {
+        "accessoryName": "Shapeshifter's Veil",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "forest",
+        "description": "A veil that allows the wearer to mimic forest creatures, gaining various abilities and traits."
+    },
+    {
+        "accessoryName": "All-Seeing Eye Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "forest",
+        "description": "A charm that grants enhanced perception, revealing hidden paths and treasures."
+    },
+    {
+        "accessoryName": "Elemental Harmony Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "forest",
+        "description": "A ring that balances elemental forces, providing resistance and elemental attack boosts."
+    },
+    {
+        "accessoryName": "Nature's Embrace Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "forest",
+        "description": "An amulet that embraces the wearer, offering protection, healing, and tranquility."
+    },
+    {
+        "accessoryName": "Eclipse Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "forest",
+        "description": "A pendant that harnesses solar and lunar power, enhancing various abilities based on time."
+    },
+    {
+        "accessoryName": "Forest Symphony Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "forest",
+        "description": "A bracelet that plays melodies of the forest, calming foes and boosting the wearer's morale."
+    },
+    {
+        "accessoryName": "Mystic Dewdrop Earrings",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "forest",
+        "description": "Earrings with dewdrops that reflect the forest's essence, aiding in magic and vitality."
+    },
+    {
+        "accessoryName": "Windwhisper Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "forest",
+        "description": "A band that whispers the secrets of the wind, enhancing speed, stealth, and evasion."
+    },
+    {
+        "accessoryName": "Starlight Locket",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "forest",
+        "description": "A locket that captures starlight, offering guidance, wisdom, and a night-time advantage."
+    },
+    {
+        "accessoryName": "Grove Guardian's Seal",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "forest",
+        "description": "A seal that embodies the forest's protection, granting a balance of offensive and defensive powers."
+    },
+    {
+        "accessoryName": "Raindrop Crystal",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "forest",
+        "description": "A crystal formed from a magical raindrop, offering hydration, healing, and clarity."
+    },
+    {
+        "accessoryName": "Phoenix Feather Cloak",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "forest",
+        "description": "A cloak made from phoenix feathers, granting the wearer revival from near-defeat once per battle."
+    },
+    {
+        "accessoryName": "Timebender's Watch",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "forest",
+        "description": "A mystical watch that can briefly reverse or accelerate time, altering the course of events."
+    },
+    {
+        "accessoryName": "Astral Projection Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "forest",
+        "description": "A mantle allowing the wearer to project their astral form, exploring areas untouchable by the physical body."
+    },
+    {
+        "accessoryName": "Gravity Defyer Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "forest",
+        "description": "Boots that defy gravity, allowing the wearer to walk on walls and ceilings."
+    },
+    {
+        "accessoryName": "Shadowmeld Cloak",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "forest",
+        "description": "A cloak that blends the wearer into shadows, becoming nearly invisible in darkness."
+    },
+    {
+        "accessoryName": "Dimensional Rift Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "forest",
+        "description": "A shield capable of opening small rifts in space, deflecting attacks to unknown dimensions."
+    },
+    {
+        "accessoryName": "Mindlink Helm",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "forest",
+        "description": "A helm that enables telepathic communication, allowing for silent coordination and strategy sharing."
+    },
+    {
+        "accessoryName": "Elemental Fusion Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "forest",
+        "description": "Gauntlets that can absorb and combine different elemental energies for powerful attacks."
+    },
+    {
+        "accessoryName": "Wraithwalk Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "forest",
+        "description": "Boots that grant the ability to phase through solid objects for a brief period."
+    },
+    {
+        "accessoryName": "Oracle's Visionary Scarf",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "forest",
+        "description": "A scarf that reveals glimpses of future events, aiding in decision-making and avoiding danger."
+    },
+    {
+        "accessoryName": "Ethereal Chain Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "forest",
+        "description": "A bracelet that phases in and out of existence, granting brief periods of invulnerability."
+    },
+    {
+        "accessoryName": "Dreamweaver's Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "forest",
+        "description": "A ring that allows the wearer to enter the dreams of others, revealing secrets and hidden truths."
+    },
+    {
+        "accessoryName": "Luminous Moss Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "forest",
+        "description": "An amulet covered in luminous moss that lights the way in darkness and reveals hidden paths."
+    },
+    {
+        "accessoryName": "Whispering Wind Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "forest",
+        "description": "A pendant that captures the whispers of the wind, conveying messages and warnings."
+    },
+    {
+        "accessoryName": "Soulbinder Locket",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "forest",
+        "description": "A locket that binds a piece of the wearer's soul, allowing for resurrection at a safe location."
+    },
+    {
+        "accessoryName": "Nature's Resonance Crystal",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "forest",
+        "description": "A crystal that resonates with nature, enabling communication with forest creatures."
+    },
+    {
+        "accessoryName": "Illusionist's Gemstone",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "forest",
+        "description": "A gemstone that creates illusions, distracting and confusing enemies during encounters."
+    },
+    {
+        "accessoryName": "Time Fragment Earrings",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "forest",
+        "description": "Earrings containing fragments of time, allowing brief glimpses into past or future events."
+    },
+    {
+        "accessoryName": "Enigma Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "forest",
+        "description": "A band that changes its effects daily, providing a random but powerful advantage each day."
+    },
+    {
+        "accessoryName": "Celestial Compass",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "forest",
+        "description": "A compass that points towards cosmic anomalies, leading to rare and unique encounters."
+    }
+]

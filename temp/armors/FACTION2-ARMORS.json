@@ -1,0 +1,423 @@
+[
+    {
+        "armorName": "Dragoncrest Warhelm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "A formidable helmet adorned with a dragon crest, symbolizing power and fearlessness."
+    },
+    {
+        "armorName": "Shadowblade Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "A dark, visored helmet that conceals the face, emanating an aura of mystery and danger."
+    },
+    {
+        "armorName": "Firelord's Casque",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "A fiery-red helmet imbued with the essence of a firelord, offering both protection and intimidation."
+    },
+    {
+        "armorName": "Imperial Guardian Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "A regal, gold-trimmed helmet, representing the might and dignity of the Songhai Empire."
+    },
+    {
+        "armorName": "Onyx Warlord Mask",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "A blackened steel mask, forged to strike fear into the hearts of enemies."
+    },
+    {
+        "armorName": "Crimson Samurai Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "A sleek, crimson helmet with ornate decorations, echoing the honor of ancient samurai."
+    },
+    {
+        "armorName": "Celestial Warcap",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "A helmet with celestial motifs, offering divine protection and wisdom."
+    },
+    {
+        "armorName": "Thunderstrike Diadem",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "A helmet charged with the power of thunder, crackling with raw energy."
+    },
+    {
+        "armorName": "Bladebound Visor",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "A visor integrated with sharp blades, designed for both defense and offense."
+    },
+    {
+        "armorName": "Soulkeeper Headdress",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "An ancient headdress that is said to bind the wearer's soul with the strength of ancestors."
+    },
+    {
+        "armorName": "Windwalker Cap",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "A feather-light cap that enhances agility, crafted to resonate with the swiftness of the wind."
+    },
+    {
+        "armorName": "Mistshroud Hood",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "A hood woven from ethereal fabrics, offering invisibility in mist and fog."
+    },
+    {
+        "armorName": "Flame Whisper Coif",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "A lightweight hood that flickers with tiny flames, providing warmth and protection against fire."
+    },
+    {
+        "armorName": "Eclipse Veil",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "A mystical veil that darkens during daylight, empowering the wearer with the energies of the eclipse."
+    },
+    {
+        "armorName": "Serpent's Whisper Circlet",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "A slender, serpent-shaped circlet that heightens senses and reflexes."
+    },
+    {
+        "armorName": "Nightblade Band",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "A sleek headband that melds with the shadows, perfect for stealthy maneuvers."
+    },
+    {
+        "armorName": "Monk's Wisdom Wrap",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "A simple, elegant wrap that focuses the mind and enhances spiritual awareness."
+    },
+    {
+        "armorName": "Dragonfire Tiara",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "A tiara adorned with dragon scales, granting resistance to magic and enhancing mental clarity."
+    },
+    {
+        "armorName": "Shadowsilk Turban",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "A turban made from a silk that absorbs light, perfect for moving unseen in the dark."
+    },
+    {
+        "armorName": "Skydancer Headdress",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "A colorful headdress that resonates with the sky, granting the wearer heightened intuition and agility."
+    },
+    {
+        "armorName": "Dragonscale Chestplate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "A chestplate forged from interlocking dragon scales, offering unmatched defense and fiery resilience."
+    },
+    {
+        "armorName": "Warlord's Battle Armor",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "A heavy, ornate armor engraved with battle scenes, symbolizing strength and valor."
+    },
+    {
+        "armorName": "Imperial Guard Plate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "A regal, gold-inlaid plate armor, reflecting the prestige and power of the Songhai imperial guard."
+    },
+    {
+        "armorName": "Obsidian Fortress Mail",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "A body armor made from obsidian, nearly impenetrable and daunting in its appearance."
+    },
+    {
+        "armorName": "Blazebound War Vest",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "A vest that glows with internal fire, providing both protection and a fearsome presence."
+    },
+    {
+        "armorName": "Shadowsteel Cuirass",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "A dark, sleek cuirass, as hard as steel yet as elusive as a shadow."
+    },
+    {
+        "armorName": "Celestial Knight's Harness",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "A harness adorned with celestial symbols, offering divine protection and a majestic aura."
+    },
+    {
+        "armorName": "Thunderlord's Hauberk",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "A reinforced hauberk that crackles with static energy, intimidating all who approach."
+    },
+    {
+        "armorName": "Inferno Plate Vest",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "A vest imbued with the essence of fire, offering protection against the most intense flames."
+    },
+    {
+        "armorName": "Samurai Warplate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "A meticulously crafted warplate, echoing the discipline and strength of the Songhai samurai."
+    },
+    {
+        "armorName": "Wind Dancer's Tunic",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "A flowing tunic that bends with the wind, enhancing the wearer's speed and evasiveness."
+    },
+    {
+        "armorName": "Silent Shadow Robe",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "A robe as quiet as the night, perfect for stealth and concealment in darkness."
+    },
+    {
+        "armorName": "Flame Spirit Vest",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "A vest imbued with living flames, offering protection against cold and enhancing fire-based magic."
+    },
+    {
+        "armorName": "Moonlight Silk Garb",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "A garment made from silk that glows under moonlight, aiding in night vision and lunar magic."
+    },
+    {
+        "armorName": "Serpentine Chain Armor",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "Lightweight chain armor that moves like a serpent, providing flexibility and protection."
+    },
+    {
+        "armorName": "Mystic Sage's Cloak",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "A cloak that shimmers with arcane energy, amplifying the wearer's magical abilities."
+    },
+    {
+        "armorName": "Sky Whisperer's Vestment",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "A vestment that whispers the secrets of the sky, granting the wearer insight into the weather and elements."
+    },
+    {
+        "armorName": "Sunset Warrior's Kimono",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "A beautifully dyed kimono that changes colors with the sunset, offering camouflage and elegance."
+    },
+    {
+        "armorName": "Dragonbreath Woven Jerkin",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "A jerkin woven with dragonbreath fibers, providing resistance to heat and enhancing agility."
+    },
+    {
+        "armorName": "Nighthawk Feathered Vest",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "A vest adorned with nighthawk feathers, aiding in silent movement and night-time camouflage."
+    },
+    {
+        "armorName": "Ironscale Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "Sturdy leg armor crafted from overlapping iron scales, offering formidable defense and resilience."
+    },
+    {
+        "armorName": "Firewalker Legplates",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "Heat-resistant legplates that radiate warmth, ideal for traversing fiery terrains."
+    },
+    {
+        "armorName": "Twilight Samurai Legguards",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "Darkened steel legguards with intricate engravings, echoing the discipline of a Songhai samurai."
+    },
+    {
+        "armorName": "Mountain Fortress Shin Guards",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "Thick, stone-like shin guards that provide unyielding protection against physical blows."
+    },
+    {
+        "armorName": "Stormbringer Tassets",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "Robust tassets that thrum with the power of storms, empowering the wearer with elemental fury."
+    },
+    {
+        "armorName": "Golden Dynasty Cuisses",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "Opulent, gold-trimmed leg armor, symbolizing wealth and power of the Songhai dynasty."
+    },
+    {
+        "armorName": "Obsidian Blade Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "Jet-black greaves with razor-sharp edges, as protective as they are lethal."
+    },
+    {
+        "armorName": "Warrior's Honor Legplates",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "Battle-hardened legplates bearing marks of honor and bravery from countless battles."
+    },
+    {
+        "armorName": "Dragon's Fury Chausses",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "Chausses adorned with dragon motifs, channeling the beast's ferocity and strength."
+    },
+    {
+        "armorName": "Eclipse Sentinel Boots",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "faction2",
+        "description": "Heavy boots that darken in bright light, providing steadfast stability and protection."
+    },
+    {
+        "armorName": "Silent Step Trousers",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "Soft fabric trousers that dampen sound, perfect for stealthy movements and quiet approaches."
+    },
+    {
+        "armorName": "Mystic Wind Legwraps",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "Light legwraps infused with air elementals, granting the wearer increased speed and agility."
+    },
+    {
+        "armorName": "Flame Dancer's Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "Thin, fire-resistant leggings that allow for fluid movement and protection against heat."
+    },
+    {
+        "armorName": "Moonshadow Tights",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "Leggings that blend into the moonlit night, aiding in camouflage and nocturnal activities."
+    },
+    {
+        "armorName": "Serpent Scale Skirt",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "A flexible skirt made from shimmering serpent scales, offering mobility and subtle defense."
+    },
+    {
+        "armorName": "Arcane Scholar's Culottes",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "Elegantly designed culottes that enhance concentration and magical prowess."
+    },
+    {
+        "armorName": "Skyrunner's Kilt",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "A kilt woven from clouds, granting the sensation of weightlessness and freedom of movement."
+    },
+    {
+        "armorName": "Twilight Seeker's Leg Guards",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "Streamlined leg guards that adapt to the darkness, perfect for evening escapades."
+    },
+    {
+        "armorName": "Dragon Whisperer's Chaps",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "Chaps embedded with dragon runes, offering agility and a mystical connection to dragon spirits."
+    },
+    {
+        "armorName": "Sunset Duelist's Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "faction2",
+        "description": "Leggings that change hues with the setting sun, providing flexibility and an enigmatic presence."
+    }
+]
+

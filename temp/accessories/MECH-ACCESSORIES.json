@@ -1,0 +1,842 @@
+[
+    {
+        "accessoryName": "Titanium Guard Bracers",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "mech",
+        "description": "Sleek, metallic bracers with energy-absorbing padding and flexible joint design."
+    },
+    {
+        "accessoryName": "Plasma Shield Generator",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "mech",
+        "description": "A compact device emitting a sturdy plasma barrier when activated."
+    },
+    {
+        "accessoryName": "Reactive Nano-Armor Cape",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "mech",
+        "description": "A flowing cape made of nanofibers that harden upon impact."
+    },
+    {
+        "accessoryName": "Magnetic Repulsion Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "mech",
+        "description": "Heavy-duty boots utilizing magnetic fields to deflect metallic projectiles."
+    },
+    {
+        "accessoryName": "Cybernetic Armor Gloves",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "mech",
+        "description": "Advanced gloves with integrated circuits enhancing defensive capabilities."
+    },
+    {
+        "accessoryName": "Hardlight Barrier Buckler",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "mech",
+        "description": "A small, round shield projecting a durable hardlight barrier."
+    },
+    {
+        "accessoryName": "Electrostatic Field Emitter",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "mech",
+        "description": "An arm-mounted device that creates a protective electrostatic field."
+    },
+    {
+        "accessoryName": "Kinetic Dampening Shoulder Pads",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "mech",
+        "description": "Broad shoulder pads that absorb and redistribute kinetic energy."
+    },
+    {
+        "accessoryName": "Vibro-Resistant Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "mech",
+        "description": "Sturdy gauntlets that nullify vibrational damage."
+    },
+    {
+        "accessoryName": "Neural Sync Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "mech",
+        "description": "A high-tech shield that syncs with the user's neural patterns for enhanced defense."
+    },
+    {
+        "accessoryName": "Micro-Shield Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "mech",
+        "description": "A pendant that deploys a miniature energy shield for quick defense."
+    },
+    {
+        "accessoryName": "Nanite Repair Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "mech",
+        "description": "A slim wristband housing nanites for automatic armor repair."
+    },
+    {
+        "accessoryName": "Thermoptic Camo Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "mech",
+        "description": "A ring that grants temporary invisibility through thermoptic camouflage."
+    },
+    {
+        "accessoryName": "Ballistic Fiber Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "mech",
+        "description": "A woven bracelet made from high-tensile ballistic fibers."
+    },
+    {
+        "accessoryName": "Energy Dispersal Anklet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "mech",
+        "description": "An anklet that diffuses energy impacts across its surface."
+    },
+    {
+        "accessoryName": "EMP Resistant Choker",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "mech",
+        "description": "A neck accessory designed to resist electromagnetic pulses."
+    },
+    {
+        "accessoryName": "Holographic Distraction Badge",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "mech",
+        "description": "A badge that projects confusing holographic images."
+    },
+    {
+        "accessoryName": "Ionic Balance Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "mech",
+        "description": "A ring that maintains ionic balance, reducing electrical damage."
+    },
+    {
+        "accessoryName": "Graviton Stabilizer Medallion",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "mech",
+        "description": "A medallion that adjusts body weight for better balance."
+    },
+    {
+        "accessoryName": "Vortex Field Generator Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "mech",
+        "description": "A charm that creates a small vortex field deflecting incoming projectiles."
+    },
+    {
+        "accessoryName": "Laser Blade Gauntlet",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "mech",
+        "description": "A gauntlet that projects a sharp, high-intensity laser blade."
+    },
+    {
+        "accessoryName": "Pulse Cannon Armguard",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "mech",
+        "description": "An arm-mounted cannon that fires concentrated energy pulses."
+    },
+    {
+        "accessoryName": "Electro-Whip Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "mech",
+        "description": "A belt that unfurls into a highly conductive, electrified whip."
+    },
+    {
+        "accessoryName": "Sonic Boom Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "mech",
+        "description": "Boots that generate devastating sonic booms with each stomp."
+    },
+    {
+        "accessoryName": "Plasma Grenade Pouch",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "mech",
+        "description": "A pouch containing small, yet powerful plasma grenades."
+    },
+    {
+        "accessoryName": "Magnetic Mine Deployer",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "mech",
+        "description": "A device that deploys hovering magnetic mines."
+    },
+    {
+        "accessoryName": "Thermal Lance Shoulder Mount",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "mech",
+        "description": "A shoulder-mounted lance that emits extreme thermal energy."
+    },
+    {
+        "accessoryName": "Nebula Smoke Generator",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "mech",
+        "description": "A generator that releases a dense, disorienting nebula smoke."
+    },
+    {
+        "accessoryName": "Photon Blaster Bracer",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "mech",
+        "description": "A bracer that shoots rapid photon blasts."
+    },
+    {
+        "accessoryName": "Quantum Distortion Field",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "mech",
+        "description": "A field generator that distorts space-time, causing disarray in enemy ranks."
+    },
+    {
+        "accessoryName": "Micro-Missile Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "mech",
+        "description": "A ring equipped with tiny, yet powerful, heat-seeking missiles."
+    },
+    {
+        "accessoryName": "Arc Spark Necklace",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "mech",
+        "description": "A necklace that discharges high-voltage arcs to nearby threats."
+    },
+    {
+        "accessoryName": "Nano-Blade Earrings",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "mech",
+        "description": "Earrings that transform into razor-sharp nano-blades on command."
+    },
+    {
+        "accessoryName": "Kinetic Blast Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "mech",
+        "description": "A bracelet that unleashes a powerful kinetic blast when activated."
+    },
+    {
+        "accessoryName": "Graviton Disruptor Anklet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "mech",
+        "description": "An anklet that creates localized gravity disruptions, destabilizing enemies."
+    },
+    {
+        "accessoryName": "Inferno Igniter Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "mech",
+        "description": "A band that produces intense flames, igniting surrounding air."
+    },
+    {
+        "accessoryName": "Cryo-Beam Wristband",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "mech",
+        "description": "A wristband that shoots a concentrated beam of extreme cold."
+    },
+    {
+        "accessoryName": "Particle Disruptor Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "mech",
+        "description": "A charm that emits a wave of subatomic particles, disrupting enemy tech."
+    },
+    {
+        "accessoryName": "Sonic Disruptor Clip",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "mech",
+        "description": "A hair clip that can emit a disorienting, high-frequency sonic burst."
+    },
+    {
+        "accessoryName": "Electromagnetic Pulse Generator Pin",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "mech",
+        "description": "A decorative pin that can unleash a devastating electromagnetic pulse."
+    },
+    {
+        "accessoryName": "Treasure Scanner Goggles",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "mech",
+        "description": "Advanced goggles that highlight and appraise valuable items in the vicinity."
+    },
+    {
+        "accessoryName": "Aurum Magnet Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "mech",
+        "description": "A belt that attracts and stores small gold items using a magnetic field."
+    },
+    {
+        "accessoryName": "Gold-Detecting Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "mech",
+        "description": "Boots with sensors that beep when near significant gold deposits."
+    },
+    {
+        "accessoryName": "Coin Replicator Gauntlet",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "mech",
+        "description": "A gauntlet that can temporarily duplicate gold coins upon touch."
+    },
+    {
+        "accessoryName": "Wealth Accumulator Backpack",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "mech",
+        "description": "A backpack that automatically sorts and compacts collected coins and jewels."
+    },
+    {
+        "accessoryName": "Golden Aura Cape",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "mech",
+        "description": "A cape that shimmers with a golden aura, increasing the wearer's luck in finding gold."
+    },
+    {
+        "accessoryName": "Price Negotiator Visor",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "mech",
+        "description": "A visor that analyzes vendor psychology for better deal negotiations."
+    },
+    {
+        "accessoryName": "Bargain Finder Bracers",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "mech",
+        "description": "Bracers embedded with tech that alerts the wearer to nearby sales and bargains."
+    },
+    {
+        "accessoryName": "Valuables Tracker Shoulder Pad",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "mech",
+        "description": "Shoulder pads with a built-in tracking system for locating high-value items."
+    },
+    {
+        "accessoryName": "Gold Conversion Gloves",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "mech",
+        "description": "Gloves that convert gathered scraps into small amounts of gold over time."
+    },
+    {
+        "accessoryName": "Coin Attracting Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "mech",
+        "description": "A ring that subtly draws coins towards the wearer."
+    },
+    {
+        "accessoryName": "Discount Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "mech",
+        "description": "An amulet that magically grants discounts when purchasing items."
+    },
+    {
+        "accessoryName": "Gold Glint Glasses",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "mech",
+        "description": "Spectacles that glint when focused on valuable gold items."
+    },
+    {
+        "accessoryName": "Bargain Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "mech",
+        "description": "A bracelet that increases the chances of finding items on sale."
+    },
+    {
+        "accessoryName": "Lucky Charm Necklace",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "mech",
+        "description": "A necklace that boosts the wearer's luck in acquiring more gold."
+    },
+    {
+        "accessoryName": "Wealth Whisper Earrings",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "mech",
+        "description": "Earrings that whisper when near hidden or buried treasure."
+    },
+    {
+        "accessoryName": "Trade Wind Anklet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "mech",
+        "description": "An anklet that seems to lead the wearer towards profitable trades."
+    },
+    {
+        "accessoryName": "Prosperity Pin",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "mech",
+        "description": "A pin that subtly influences people to offer better deals and rewards."
+    },
+    {
+        "accessoryName": "Midas Touch Gloves",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "mech",
+        "description": "Gloves that occasionally turn small objects into gold."
+    },
+    {
+        "accessoryName": "Fortune Finder's Wristband",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "mech",
+        "description": "A wristband that vibrates when pointed towards valuable items."
+    },
+    {
+        "accessoryName": "Vitality Boosting Harness",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "mech",
+        "description": "A harness that enhances the wearer's natural healing processes."
+    },
+    {
+        "accessoryName": "Regeneration Field Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "mech",
+        "description": "A belt that generates a field to accelerate wound healing."
+    },
+    {
+        "accessoryName": "Health Monitor Bracers",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "mech",
+        "description": "Bracers equipped with sensors to constantly monitor and optimize health."
+    },
+    {
+        "accessoryName": "Bio-Energy Converter Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "mech",
+        "description": "Boots that convert kinetic energy into healing energy."
+    },
+    {
+        "accessoryName": "Nanite Injection Gloves",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "mech",
+        "description": "Gloves that inject healing nanites with a touch."
+    },
+    {
+        "accessoryName": "Adaptive Immunity Cape",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "mech",
+        "description": "A cape that adapts to environmental threats, boosting the wearer's immunity."
+    },
+    {
+        "accessoryName": "Oxygen Optimization Mask",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "mech",
+        "description": "A mask that ensures optimal oxygen levels for enhanced endurance."
+    },
+    {
+        "accessoryName": "Pulse Stabilizer Necklace",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "mech",
+        "description": "A necklace that stabilizes the wearer's heart rate and blood pressure."
+    },
+    {
+        "accessoryName": "Metabolic Enhancer Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "mech",
+        "description": "A belt that boosts metabolism, aiding in quick recovery."
+    },
+    {
+        "accessoryName": "Cellular Repair Backpack",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "mech",
+        "description": "A backpack that emits micro-waves for accelerated cellular repair."
+    },
+    {
+        "accessoryName": "Bio-Rhythmic Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "mech",
+        "description": "A ring that harmonizes with the wearer's bio-rhythms to promote healing."
+    },
+    {
+        "accessoryName": "Pain Nullifier Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "mech",
+        "description": "An amulet that emits a field to reduce pain and discomfort."
+    },
+    {
+        "accessoryName": "Vitality Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "mech",
+        "description": "A bracelet that boosts the wearer's overall vitality and energy levels."
+    },
+    {
+        "accessoryName": "Nanomedicine Earrings",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "mech",
+        "description": "Earrings that release healing nanomedicine in response to injuries."
+    },
+    {
+        "accessoryName": "Adrenal Optimizer Wristband",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "mech",
+        "description": "A wristband that optimizes adrenal responses for better stress management."
+    },
+    {
+        "accessoryName": "Detoxifying Anklet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "mech",
+        "description": "An anklet that helps in detoxifying the body from harmful substances."
+    },
+    {
+        "accessoryName": "Heartbeat Regulator Pin",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "mech",
+        "description": "A pin that maintains a steady heartbeat, even under extreme stress."
+    },
+    {
+        "accessoryName": "Oxygen Enhancer Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "mech",
+        "description": "A charm that subtly increases the oxygen efficiency of the wearer."
+    },
+    {
+        "accessoryName": "Neural Harmony Necklace",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "mech",
+        "description": "A necklace that aids in synchronizing neural pathways for better health."
+    },
+    {
+        "accessoryName": "Immunity Booster Badge",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "mech",
+        "description": "A badge that emits a low-level field to strengthen the wearer's immune system."
+    },
+    {
+        "accessoryName": "Quantum Multitool Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "mech",
+        "description": "A belt equipped with an array of quantum tools that adapt to any situation."
+    },
+    {
+        "accessoryName": "Chrono-Morphic Cape",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "mech",
+        "description": "A cape that subtly alters time, enhancing speed, defense, and recovery."
+    },
+    {
+        "accessoryName": "Holographic Utility Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "mech",
+        "description": "Gauntlets that project various holographic tools and weapons as needed."
+    },
+    {
+        "accessoryName": "Elemental Fusion Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "mech",
+        "description": "Boots that can channel elemental energies for attack, defense, or traversal."
+    },
+    {
+        "accessoryName": "Neuro-Linked Backpack",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "mech",
+        "description": "A backpack that connects to the wearer's nervous system to enhance all abilities."
+    },
+    {
+        "accessoryName": "Morphing Field Bracers",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "mech",
+        "description": "Bracers that can morph into shields, blades, or healing devices on command."
+    },
+    {
+        "accessoryName": "Adaptive Camo Cloak",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "mech",
+        "description": "A cloak that adapts its appearance and properties to any environment or need."
+    },
+    {
+        "accessoryName": "Gravity Manipulator Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "mech",
+        "description": "A belt that can alter gravitational forces for various offensive and defensive uses."
+    },
+    {
+        "accessoryName": "Spectral Phase Shifters",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "mech",
+        "description": "Devices that allow the wearer to phase through obstacles and avoid damage."
+    },
+    {
+        "accessoryName": "Multi-Function Emitter Harness",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "mech",
+        "description": "A harness that emits various types of energy fields for offense, defense, and utility."
+    },
+    {
+        "accessoryName": "Miniature Drone Companion Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "mech",
+        "description": "A ring that houses a tiny drone capable of scouting, attacking, and defending."
+    },
+    {
+        "accessoryName": "Universal Translator Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "mech",
+        "description": "A pendant that translates and deciphers any language or code encountered."
+    },
+    {
+        "accessoryName": "Ethereal Projection Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "mech",
+        "description": "A bracelet enabling the wearer to project ethereal copies of themselves."
+    },
+    {
+        "accessoryName": "Pocket Dimension Earrings",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "mech",
+        "description": "Earrings that can store a surprising amount of items in a pocket dimension."
+    },
+    {
+        "accessoryName": "Adaptive Nano-Fiber Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "mech",
+        "description": "An amulet made of nano-fibers that adapt to enhance various wearer needs."
+    },
+    {
+        "accessoryName": "Reality Anchor Wristband",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "mech",
+        "description": "A wristband that stabilizes the wearer's presence in fluctuating realities."
+    },
+    {
+        "accessoryName": "Molecular Reshaper Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "mech",
+        "description": "A ring that can alter the molecular structure of small objects."
+    },
+    {
+        "accessoryName": "Dimensional Phase Shift Anklet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "mech",
+        "description": "An anklet allowing short bursts of phase shifting for evasion or traversal."
+    },
+    {
+        "accessoryName": "Cosmic Energy Infuser Pin",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "mech",
+        "description": "A pin that infuses the wearer with cosmic energy for varied effects."
+    },
+    {
+        "accessoryName": "Environmental Synchronizer Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "mech",
+        "description": "A charm that synchronizes the wearer's abilities with the surrounding environment."
+    },
+    {
+        "accessoryName": "Time Dilation Field Generator",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "mech",
+        "description": "A device that slows down time within a small radius, creating a tactical advantage."
+    },
+    {
+        "accessoryName": "Reality Warping Backpack",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "mech",
+        "description": "A backpack that can momentarily warp reality to alter outcomes in the wearer's favor."
+    },
+    {
+        "accessoryName": "Black Hole Grenade Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "mech",
+        "description": "A belt carrying grenades that create temporary black holes, trapping enemies."
+    },
+    {
+        "accessoryName": "Quantum Entanglement Communicator",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "mech",
+        "description": "A device enabling communication across any distance, even across dimensions."
+    },
+    {
+        "accessoryName": "Invisibility Field Cloak",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "mech",
+        "description": "A cloak that can render the wearer completely invisible to the naked eye."
+    },
+    {
+        "accessoryName": "Teleportation Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "mech",
+        "description": "Boots that allow the wearer to teleport short distances instantly."
+    },
+    {
+        "accessoryName": "Anti-Gravity Jump Pack",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "mech",
+        "description": "A jump pack that defies gravity, enabling incredible leaps and aerial maneuvers."
+    },
+    {
+        "accessoryName": "Dimensional Rift Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "mech",
+        "description": "Gauntlets capable of tearing small rifts in the fabric of space for quick escapes."
+    },
+    {
+        "accessoryName": "Psychic Amplifier Helmet",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "mech",
+        "description": "A helmet that greatly amplifies psychic abilities, allowing mind control and telekinesis."
+    },
+    {
+        "accessoryName": "Elemental Control Bracers",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "mech",
+        "description": "Bracers that give the wearer control over elemental forces like fire, ice, and lightning."
+    },
+    {
+        "accessoryName": "Miniaturized Wormhole Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "mech",
+        "description": "A ring capable of creating miniature wormholes for instant item retrieval."
+    },
+    {
+        "accessoryName": "Gravity Distortion Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "mech",
+        "description": "An amulet that can distort gravity around the wearer for various effects."
+    },
+    {
+        "accessoryName": "Molecular Reconstruction Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "mech",
+        "description": "A bracelet that can alter and reconstruct molecular structures of small objects."
+    },
+    {
+        "accessoryName": "Chronal Stability Earrings",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "mech",
+        "description": "Earrings that protect the wearer from temporal anomalies and time distortions."
+    },
+    {
+        "accessoryName": "Astral Projection Locket",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "mech",
+        "description": "A locket allowing the wearer to project their consciousness astrally."
+    },
+    {
+        "accessoryName": "Phasing Anklet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "mech",
+        "description": "An anklet that allows the wearer to phase through solid objects momentarily."
+    },
+    {
+        "accessoryName": "Interdimensional Communication Badge",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "mech",
+        "description": "A badge enabling communication with alternate dimensions."
+    },
+    {
+        "accessoryName": "Bionic Enhancement Chip",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "mech",
+        "description": "A chip that enhances human capabilities to superhuman levels when implanted."
+    },
+    {
+        "accessoryName": "Nano-Repair Medallion",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "mech",
+        "description": "A medallion containing nanobots for instant repair of electronic devices."
+    },
+    {
+        "accessoryName": "Telepathic Enhancer Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "mech",
+        "description": "A ring that boosts telepathic abilities, enabling mind-to-mind communication."
+    }
+]
