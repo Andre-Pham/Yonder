@@ -1,0 +1,482 @@
+[
+    {
+        "armorName": "Glacier Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "A sturdy helm encased in a layer of reflective ice, adorned with sharp icicle spikes.",
+        "id": "A0241"
+    },
+    {
+        "armorName": "Snowdrift Guard",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "A heavy iron helmet with fur lining, resembling a snow-covered boulder.",
+        "id": "A0242"
+    },
+    {
+        "armorName": "Avalanche Visor",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "A solid steel helm with a frosted visor that mimics the blinding whiteness of an avalanche.",
+        "id": "A0243"
+    },
+    {
+        "armorName": "Frostbite Casque",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "A dark metal helmet with blue frost patterns, giving off a chilling aura.",
+        "id": "A0244"
+    },
+    {
+        "armorName": "Blizzard Barbute",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "A helm crafted from icy steel, surrounded by a swirling mist of snowflakes.",
+        "id": "A0245"
+    },
+    {
+        "armorName": "Icefang Coif",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "A reinforced helm with sharp, wolf-like ice fangs protruding from the sides.",
+        "id": "A0246"
+    },
+    {
+        "armorName": "Permafrost Plate",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "A heavy helmet encrusted with layers of permafrost, emanating a deep cold.",
+        "id": "A0247"
+    },
+    {
+        "armorName": "Frostrune Helmet",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "A mystical steel helmet engraved with ancient runes, frosted over by eternal winter.",
+        "id": "A0248"
+    },
+    {
+        "armorName": "Glacial Guardian",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "A robust helm with a crown of crystalline ice shards, symbolizing unyielding endurance.",
+        "id": "A0249"
+    },
+    {
+        "armorName": "Winter's Bulwark",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "A full-face helmet resembling a frozen fortress, complete with icy ramparts.",
+        "id": "A0250"
+    },
+    {
+        "armorName": "Frostwhisper Hood",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "A lightweight hood that shimmers with a frosty sheen, whispering secrets of the mountain.",
+        "id": "A0251"
+    },
+    {
+        "armorName": "Snowspirit Cowl",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "A soft, ethereal cowl adorned with intricate snowflake patterns, radiating a faint glow.",
+        "id": "A0252"
+    },
+    {
+        "armorName": "Icicle Veil",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "A delicate veil made of interwoven ice strands, offering mystical protection.",
+        "id": "A0253"
+    },
+    {
+        "armorName": "Glacial Mirage Cap",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "An elusive cap that refracts light, creating mirages in the icy air.",
+        "id": "A0254"
+    },
+    {
+        "armorName": "Winterwisp Circlet",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "A slender circlet emitting a soft, winter breeze, entwined with frozen wisteria.",
+        "id": "A0255"
+    },
+    {
+        "armorName": "Frostfeather Headdress",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "A light headdress made from white feathers and frost, giving an aura of weightlessness.",
+        "id": "A0256"
+    },
+    {
+        "armorName": "Chillwind Band",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "A thin band that cools the mind, decorated with beads of frozen dew.",
+        "id": "A0257"
+    },
+    {
+        "armorName": "Iceflow Diadem",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "A translucent diadem, resembling flowing water frozen in time.",
+        "id": "A0258"
+    },
+    {
+        "armorName": "Snowdancer's Veil",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "A gossamer veil that dances with every breeze, as light as falling snowflakes.",
+        "id": "A0259"
+    },
+    {
+        "armorName": "Crystalfrost Bandana",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "A sleek bandana with crystal embroidery, offering clarity in the coldest climes.",
+        "id": "A0260"
+    },
+    {
+        "armorName": "Glaciertide Plate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "A heavy chestplate embedded with ice crystals, offering formidable protection against the cold.",
+        "id": "A0261"
+    },
+    {
+        "armorName": "Aurora Borealis Mail",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "A shimmering suit of armor reflecting the northern lights, tough yet mesmerizing.",
+        "id": "A0262"
+    },
+    {
+        "armorName": "Everfrost Carapace",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "A sturdy exoskeleton armor coated in a layer of everlasting frost.",
+        "id": "A0263"
+    },
+    {
+        "armorName": "Blizzardborn Cuirass",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "A dense steel cuirass, layered with fur and ice, as resilient as a winter storm.",
+        "id": "A0264"
+    },
+    {
+        "armorName": "Frostforge Breastplate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "A solid iron breastplate, forged in the heart of a frozen volcano, radiating icy resilience.",
+        "id": "A0265"
+    },
+    {
+        "armorName": "Permafrost Aegis",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "A full-body armor encased in a thick layer of permafrost, unyielding to any force.",
+        "id": "A0266"
+    },
+    {
+        "armorName": "Winter's Bulwark Vest",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "A robust vestment resembling a fortress wall, lined with icicles that act as natural armor.",
+        "id": "A0267"
+    },
+    {
+        "armorName": "Iceshield Hauberk",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "A chainmail hauberk reinforced with solid ice plates, balancing mobility and defense.",
+        "id": "A0268"
+    },
+    {
+        "armorName": "Glacial Fortress Tunic",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "A heavy tunic reinforced with glacial stone, providing both warmth and protection.",
+        "id": "A0269"
+    },
+    {
+        "armorName": "Snowmantle Armor",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "A dense armor covered in white fur and snow-like padding, absorbing impact like a snowdrift.",
+        "id": "A0270"
+    },
+    {
+        "armorName": "Frostweave Robe",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "An elegant robe woven from icy threads, shimmering with a magical aura that wards off cold.",
+        "id": "A0271"
+    },
+    {
+        "armorName": "Iceflow Tunic",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "A fluid, light garment that moves like water, with crystal beads resembling droplets of ice.",
+        "id": "A0272"
+    },
+    {
+        "armorName": "Snowshroud Vest",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "A vest made from soft, white fur, granting invisibility in snowy terrains.",
+        "id": "A0273"
+    },
+    {
+        "armorName": "Chillbreeze Cloak",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "A thin, airy cloak that radiates a cool breeze, keeping the wearer comfortable in harsh frost.",
+        "id": "A0274"
+    },
+    {
+        "armorName": "Glacial Sylph Garb",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "A mystical garment adorned with frosty gemstones, enhancing agility and frost resistance.",
+        "id": "A0275"
+    },
+    {
+        "armorName": "Frostdancer's Attire",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "A lightweight outfit that sparkles with ice crystals, ideal for quick, graceful movements.",
+        "id": "A0276"
+    },
+    {
+        "armorName": "Wintermist Shroud",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "A gossamer shroud that glimmers with a soft, misty light, providing magical protection.",
+        "id": "A0277"
+    },
+    {
+        "armorName": "Frostfeather Harness",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "A harness crafted from light, frost-tipped feathers, offering enhanced speed and stealth.",
+        "id": "A0278"
+    },
+    {
+        "armorName": "Icicleweaver's Vestment",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "A magical vestment that constantly weaves new icicles, providing dynamic defense.",
+        "id": "A0279"
+    },
+    {
+        "armorName": "Auroral Silk Doublet",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "A sleek doublet woven from silk that changes color with the sky, offering mystical allure.",
+        "id": "A0280"
+    },
+    {
+        "armorName": "Glacial Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "Thick steel greaves encased in a layer of solid ice, providing unyielding protection against the cold.",
+        "id": "A0281"
+    },
+    {
+        "armorName": "Frostbound Legplates",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "Heavy leg armor embedded with frost gems, fortifying the wearer against harsh winds.",
+        "id": "A0282"
+    },
+    {
+        "armorName": "Icetread Cuisses",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "Solid iron cuisses with spiked boots, ensuring stable footing on icy terrain.",
+        "id": "A0283"
+    },
+    {
+        "armorName": "Permafrost Legguards",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "Dense leg armor covered in a thick layer of permafrost, chilling any who dare approach.",
+        "id": "A0284"
+    },
+    {
+        "armorName": "Snowdrift Tassets",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "Bulky tassets with fur lining, resembling the undisturbed snow of high mountain peaks.",
+        "id": "A0285"
+    },
+    {
+        "armorName": "Avalanche Chausses",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "Reinforced leg armor designed to withstand the force of an avalanche, layered with frost-resistant padding.",
+        "id": "A0286"
+    },
+    {
+        "armorName": "Winterforge Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "Forge-hardened leggings with ice patterns, offering warmth and resilience in extreme conditions.",
+        "id": "A0287"
+    },
+    {
+        "armorName": "Blizzard Chain Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "Heavy chainmail leggings with a layer of blizzard fur, blending protection and insulation.",
+        "id": "A0288"
+    },
+    {
+        "armorName": "Frostwarden Kneeguards",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "Sturdy kneeguards adorned with frost runes, providing both defense and ice elemental resistance.",
+        "id": "A0289"
+    },
+    {
+        "armorName": "Glacial Sentinel Shin Guards",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "frost",
+        "description": "Solid shin guards with a glacial sheen, reflecting the harsh, frozen landscape.",
+        "id": "A0290"
+    },
+    {
+        "armorName": "Froststep Trousers",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "Light, insulated trousers that leave no footprints in snow, ideal for silent movement.",
+        "id": "A0291"
+    },
+    {
+        "armorName": "Iceshimmer Legwraps",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "Ethereal legwraps that glisten like morning frost, enhancing the wearer's agility.",
+        "id": "A0292"
+    },
+    {
+        "armorName": "Snowdancer Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "Soft fabric leggings adorned with delicate snowflake patterns, offering grace and flexibility.",
+        "id": "A0293"
+    },
+    {
+        "armorName": "Glacial Silk Pants",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "Silken pants woven from glacial threads, cool to the touch and surprisingly durable.",
+        "id": "A0294"
+    },
+    {
+        "armorName": "Frostweaver's Kilt",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "A mystical kilt that continuously weaves icy threads, providing magical frost resistance.",
+        "id": "A0295"
+    },
+    {
+        "armorName": "Chillwind Chaps",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "Light chaps that emit a constant chill, keeping the wearer comfortable in warm battles.",
+        "id": "A0296"
+    },
+    {
+        "armorName": "Winter Whisper Tights",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "Enchanted tights that whisper the secrets of the frost, aiding in evasion and stealth.",
+        "id": "A0297"
+    },
+    {
+        "armorName": "Icewalker's Slacks",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "Flexible slacks that adjust to icy surfaces, providing enhanced balance and mobility.",
+        "id": "A0298"
+    },
+    {
+        "armorName": "Frostflame Culottes",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "Magical culottes that offer protection against both extreme cold and fire.",
+        "id": "A0299"
+    },
+    {
+        "armorName": "Glacial Drifter's Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "frost",
+        "description": "Sleek greaves that leave a faint trail of frost, aiding in rapid, untraceable movement.",
+        "id": "A0300"
+    }
+]

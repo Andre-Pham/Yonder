@@ -1,0 +1,482 @@
+[
+    {
+        "armorName": "Gargoyle Visor",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "A heavy helmet shaped like a menacing gargoyle's face, with glowing red eyes.",
+        "id": "A0361"
+    },
+    {
+        "armorName": "Iron Warden Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "A sturdy iron helmet with a narrow visor, designed for maximum protection.",
+        "id": "A0362"
+    },
+    {
+        "armorName": "Crypt Guardian Mask",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "A dark steel mask engraved with cryptic runes, offering mystical defense.",
+        "id": "A0363"
+    },
+    {
+        "armorName": "Dungeon Overlord Crown",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "A heavy crown adorned with sharp, black spikes and dark gems.",
+        "id": "A0364"
+    },
+    {
+        "armorName": "Shadow Sentinel Hood",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "A hood forged from dark metal, creating an aura of intimidating shadows.",
+        "id": "A0365"
+    },
+    {
+        "armorName": "Tomb Raider's Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "A rugged, metal helm with a built-in lantern for piercing through darkness.",
+        "id": "A0366"
+    },
+    {
+        "armorName": "Obsidian Knight Cap",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "A sleek helmet crafted from polished obsidian, absorbing light around it.",
+        "id": "A0367"
+    },
+    {
+        "armorName": "Dreadknight Faceplate",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "A terrifying faceplate with a jaw design, instilling fear in enemies.",
+        "id": "A0368"
+    },
+    {
+        "armorName": "Labyrinth Guardian Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "A bulky helmet with a maze-like engraving, confusing foes.",
+        "id": "A0369"
+    },
+    {
+        "armorName": "Underworld Visage",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "A helmet with a skeletal design, glowing with a faint, eerie light.",
+        "id": "A0370"
+    },
+    {
+        "armorName": "Whisper Hood",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "A soft, shadowy hood that dampens sound, perfect for stealth.",
+        "id": "A0371"
+    },
+    {
+        "armorName": "Echolocation Circlet",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "A delicate silver circlet that enhances the wearer's hearing in darkness.",
+        "id": "A0372"
+    },
+    {
+        "armorName": "Illusionist's Mask",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "A mask that shifts appearance, blending the wearer with the surroundings.",
+        "id": "A0373"
+    },
+    {
+        "armorName": "Phantom Veil",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "A translucent veil that flickers in and out of visibility.",
+        "id": "A0374"
+    },
+    {
+        "armorName": "Mindbender's Tiara",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "A slender tiara that amplifies telepathic abilities.",
+        "id": "A0375"
+    },
+    {
+        "armorName": "Shade Cap",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "A cap that merges with shadows, making the wearer nearly invisible.",
+        "id": "A0376"
+    },
+    {
+        "armorName": "Echo Beret",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "A beret that resonates with ambient sounds, alerting to unseen dangers.",
+        "id": "A0377"
+    },
+    {
+        "armorName": "Wraith Band",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "A headband that blurs the wearer, leaving ghostly afterimages.",
+        "id": "A0378"
+    },
+    {
+        "armorName": "Sorcerer's Hood",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "An enchanted hood that enhances spellcasting focus.",
+        "id": "A0379"
+    },
+    {
+        "armorName": "Visionary's Cowl",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "A cowl embedded with crystals, granting foresight in dark realms.",
+        "id": "A0380"
+    },
+    {
+        "armorName": "Boulderplate Cuirass",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "A cuirass made from thick, rock-like plates offering immense protection.",
+        "id": "A0381"
+    },
+    {
+        "armorName": "Ironscale Hauberk",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "A dense hauberk composed of overlapping iron scales, deflecting attacks easily.",
+        "id": "A0382"
+    },
+    {
+        "armorName": "Dungeon Forged Breastplate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "A robust breastplate, forged in dungeon fires, resistant to dark magic.",
+        "id": "A0383"
+    },
+    {
+        "armorName": "Obsidian Shell Armor",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "A body armor crafted from solid obsidian, offering high resistance to physical blows.",
+        "id": "A0384"
+    },
+    {
+        "armorName": "Golem's Guard",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "A sturdy armor with golem-like features, enhancing physical strength.",
+        "id": "A0385"
+    },
+    {
+        "armorName": "Cryptkeeper's Plate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "A dark, enchanted plate armor that radiates an aura of fear.",
+        "id": "A0386"
+    },
+    {
+        "armorName": "Labyrinth Mail",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "A mail armor with a complex, maze-like design, confusing enemies.",
+        "id": "A0387"
+    },
+    {
+        "armorName": "Warlock's Carapace",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "A mystical armor imbued with dark energies, boosting defense against spells.",
+        "id": "A0388"
+    },
+    {
+        "armorName": "Stoneheart Vest",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "A heavy vest made from enchanted stone, increasing resilience.",
+        "id": "A0389"
+    },
+    {
+        "armorName": "Shadowforge Chainmail",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "A chainmail forged in shadows, tough yet surprisingly light.",
+        "id": "A0390"
+    },
+    {
+        "armorName": "Mysticweave Tunic",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "A tunic woven with magical threads, shimmering with protective runes.",
+        "id": "A0391"
+    },
+    {
+        "armorName": "Shadow Dancer's Cloak",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "A flowing cloak that blends with the darkness, aiding in stealth.",
+        "id": "A0392"
+    },
+    {
+        "armorName": "Spiritbinder Vest",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "A vest that radiates a ghostly aura, confusing enemies.",
+        "id": "A0393"
+    },
+    {
+        "armorName": "Rogue's Leather Jerkin",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "A supple leather jerkin with hidden pockets and silent movement.",
+        "id": "A0394"
+    },
+    {
+        "armorName": "Illusionist's Robe",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "A robe that alters its appearance, making the wearer hard to pinpoint.",
+        "id": "A0395"
+    },
+    {
+        "armorName": "Ethereal Chain Shirt",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "A shirt made of chains that seem to phase through physical attacks.",
+        "id": "A0396"
+    },
+    {
+        "armorName": "Silent Sentinel Armor",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "An armor that muffles sound, perfect for silent ambushes.",
+        "id": "A0397"
+    },
+    {
+        "armorName": "Moonlight Vestment",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "A vestment that glows faintly in the moonlight, enhancing night vision.",
+        "id": "A0398"
+    },
+    {
+        "armorName": "Banshee Wail Coat",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "A coat that emits a disorienting wail when the wearer is in danger.",
+        "id": "A0399"
+    },
+    {
+        "armorName": "Phantomweave Robe",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "A robe that allows the wearer to move through shadows as if intangible.",
+        "id": "A0400"
+    },
+    {
+        "armorName": "Granite Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "Heavy leg armor crafted from solid granite, nearly impenetrable.",
+        "id": "A0401"
+    },
+    {
+        "armorName": "Iron Sentinel Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "Thick iron leggings with reinforced knee guards for enhanced protection.",
+        "id": "A0402"
+    },
+    {
+        "armorName": "Darksteel Shin Guards",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "Shin guards made from a rare dark steel, absorbing impact with ease.",
+        "id": "A0403"
+    },
+    {
+        "armorName": "Warden's Chain Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "Leggings with heavy chains for robust defense against physical attacks.",
+        "id": "A0404"
+    },
+    {
+        "armorName": "Obsidian Cuisses",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "Cuisses carved from pure obsidian, offering superior slash resistance.",
+        "id": "A0405"
+    },
+    {
+        "armorName": "Goliath Stompers",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "Massive leg armor that enhances the wearer's stomping power.",
+        "id": "A0406"
+    },
+    {
+        "armorName": "Crypt Dweller's Tassets",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "Tassets imbued with a dark essence, chilling those who dare approach.",
+        "id": "A0407"
+    },
+    {
+        "armorName": "Labyrinth Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "Greaves with a labyrinthine pattern, confusing foes with their design.",
+        "id": "A0408"
+    },
+    {
+        "armorName": "Underworld Sabatons",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "Sabatons that emit a ghostly aura, grounding the wearer in battle.",
+        "id": "A0409"
+    },
+    {
+        "armorName": "Forgeborn Leg Plates",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "dungeon",
+        "description": "Heavily forged leg plates that withstand extreme temperatures.",
+        "id": "A0410"
+    },
+    {
+        "armorName": "Shadowstep Trousers",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "Light, flexible trousers that allow silent movement in the shadows.",
+        "id": "A0411"
+    },
+    {
+        "armorName": "Spectral Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "Ethereal leggings that enable the wearer to move unhindered through tight spaces.",
+        "id": "A0412"
+    },
+    {
+        "armorName": "Mistwalker Boots",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "Boots that emit a fine mist, obscuring the wearer's footsteps.",
+        "id": "A0413"
+    },
+    {
+        "armorName": "Wispweave Slacks",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "Slacks crafted from a material as light as air, enhancing agility.",
+        "id": "A0414"
+    },
+    {
+        "armorName": "Phantom Shin Covers",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "Shin covers that blend in with the environment, making the wearer's movements hard to track.",
+        "id": "A0415"
+    },
+    {
+        "armorName": "Silent Strider Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "Greaves designed for stealth, reducing the sound of footsteps to a whisper.",
+        "id": "A0416"
+    },
+    {
+        "armorName": "Moonlit Dancer's Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "Leggings that glow faintly under the moon, aiding in nocturnal maneuvers.",
+        "id": "A0417"
+    },
+    {
+        "armorName": "Blinkstep Gaiters",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "Gaiters that momentarily allow the wearer to teleport short distances.",
+        "id": "A0418"
+    },
+    {
+        "armorName": "Enchanter's Pantalettes",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "Pantalettes that boost the wearer's magical abilities, particularly in spell agility.",
+        "id": "A0419"
+    },
+    {
+        "armorName": "Gossamer Knee Guards",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "dungeon",
+        "description": "Knee guards as light as spider silk, providing flexibility and ease of movement.",
+        "id": "A0420"
+    }
+]

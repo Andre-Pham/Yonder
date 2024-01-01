@@ -1,0 +1,482 @@
+[
+    {
+        "armorName": "Sandstone Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "A robust helmet carved from solid sandstone with intricate sun motifs.",
+        "id": "A0061"
+    },
+    {
+        "armorName": "Dune Defender Cap",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "A heavy iron helmet with a visor shaped like rolling dunes.",
+        "id": "A0062"
+    },
+    {
+        "armorName": "Scorched Skullguard",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "A skull-shaped helmet made from blackened steel, radiating heat.",
+        "id": "A0063"
+    },
+    {
+        "armorName": "Mirage Mask",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "A shimmering gold mask that reflects the desert sun, disorienting foes.",
+        "id": "A0064"
+    },
+    {
+        "armorName": "Cacti Crest Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "A spiky helmet adorned with hardened cactus spikes and a tough leather base.",
+        "id": "A0065"
+    },
+    {
+        "armorName": "Desert Fortress Casque",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "A fortified steel helmet resembling the walls of a desert fortress.",
+        "id": "A0066"
+    },
+    {
+        "armorName": "Sirocco Shroud",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "A full-face helm that guards against desert winds, crafted from sand-blasted metal.",
+        "id": "A0067"
+    },
+    {
+        "armorName": "Oasis Guardian Coif",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "A turquoise-embedded helmet that mimics the rare oasis waters.",
+        "id": "A0068"
+    },
+    {
+        "armorName": "Sunscorcher Visor",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "A visor with a reflective surface, designed to blind enemies in bright light.",
+        "id": "A0069"
+    },
+    {
+        "armorName": "Sand Serpent Helm",
+        "armorType": "head",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "A serpentine-themed bronze helmet, with a crest resembling a coiled snake.",
+        "id": "A0070"
+    },
+    {
+        "armorName": "Whisper Veil",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "A light, translucent veil that shifts color with the desert sky.",
+        "id": "A0071"
+    },
+    {
+        "armorName": "Dust Wanderer Hood",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "A hood made of breathable fabric, offering protection from sandstorms.",
+        "id": "A0072"
+    },
+    {
+        "armorName": "Mirage Crown",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "A delicate circlet that creates illusionary copies of the wearer.",
+        "id": "A0073"
+    },
+    {
+        "armorName": "Sunseer Circlet",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "A thin band imbued with crystals that glow at sunset.",
+        "id": "A0074"
+    },
+    {
+        "armorName": "Zephyr Coif",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "A feather-light headgear that enhances the wearer's agility in the wind.",
+        "id": "A0075"
+    },
+    {
+        "armorName": "Scorpion Barb Cap",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "A cap with retractable scorpion barbs for defense.",
+        "id": "A0076"
+    },
+    {
+        "armorName": "Desert Nomad Bandana",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "A lightweight bandana offering resilience against desert heat.",
+        "id": "A0077"
+    },
+    {
+        "armorName": "Eclipse Hood",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "A mystical hood that darkens during daylight, providing coolness.",
+        "id": "A0078"
+    },
+    {
+        "armorName": "Sandsifter Turban",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "A magical turban that filters breathable air from the sandiest gales.",
+        "id": "A0079"
+    },
+    {
+        "armorName": "Moonlit Veil",
+        "armorType": "head",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "A silver-threaded veil that shimmers under the desert moon.",
+        "id": "A0080"
+    },
+    {
+        "armorName": "Dune Knight's Plate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "A sun-reflective steel chestplate with etchings of desert landscapes.",
+        "id": "A0081"
+    },
+    {
+        "armorName": "Sand Guardian's Armor",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "A rugged, sandstone armor imbued with the resilience of the desert.",
+        "id": "A0082"
+    },
+    {
+        "armorName": "Oasis Defender's Breastplate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "A water-cooled breastplate adorned with oasis blue gemstones.",
+        "id": "A0083"
+    },
+    {
+        "armorName": "Scorchscale Mail",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "A heavy mail made from the scales of a desert fire drake.",
+        "id": "A0084"
+    },
+    {
+        "armorName": "Mirage Warplate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "A shimmering plate armor that distorts the wearer's location in heat haze.",
+        "id": "A0085"
+    },
+    {
+        "armorName": "Cacti Carapace",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "A thick, spiny armor crafted from hardened cactus hide.",
+        "id": "A0086"
+    },
+    {
+        "armorName": "Desert Colossus Shell",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "A massive, stone-like armor evoking the image of a desert colossus.",
+        "id": "A0087"
+    },
+    {
+        "armorName": "Sunbaked Brigandine",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "A heat-resistant brigandine, baked under the desert sun for toughness.",
+        "id": "A0088"
+    },
+    {
+        "armorName": "Sandstorm Plate",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "A dense armor designed to withstand the harsh desert sandstorms.",
+        "id": "A0089"
+    },
+    {
+        "armorName": "Pyramid Guard's Vest",
+        "armorType": "body",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "An ornate, gold-trimmed vestment of an ancient desert pyramid guard.",
+        "id": "A0090"
+    },
+    {
+        "armorName": "Desert Wind Robe",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "A flowing robe that billows like the desert wind, enhancing movement.",
+        "id": "A0091"
+    },
+    {
+        "armorName": "Sun Dancer's Garb",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "A lightweight outfit adorned with sun-reflective crystals.",
+        "id": "A0092"
+    },
+    {
+        "armorName": "Sand Whisperer's Tunic",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "A sand-colored tunic that blends seamlessly with the desert surroundings.",
+        "id": "A0093"
+    },
+    {
+        "armorName": "Mirage Shroud",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "A shimmering cloak that distorts the wearer's figure in the heat.",
+        "id": "A0094"
+    },
+    {
+        "armorName": "Moonlit Nomad Cloak",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "A silvery cloak that cools under the desert moon, providing stealth.",
+        "id": "A0095"
+    },
+    {
+        "armorName": "Sandsilk Vestment",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "A garment woven from fine sandsilk, light yet surprisingly resilient.",
+        "id": "A0096"
+    },
+    {
+        "armorName": "Oasis Spirit Wrap",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "A mystical wrap that holds a faint essence of oasis water, keeping the wearer cool.",
+        "id": "A0097"
+    },
+    {
+        "armorName": "Zephyr Chainmail",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "Light chainmail that allows for swift movement, like a desert zephyr.",
+        "id": "A0098"
+    },
+    {
+        "armorName": "Dust Walker's Harness",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "A harness designed for long treks through the desert, balancing weight and protection.",
+        "id": "A0099"
+    },
+    {
+        "armorName": "Scorching Sun Vest",
+        "armorType": "body",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "A vest that absorbs sunlight, powering protective enchantments.",
+        "id": "A0100"
+    },
+    {
+        "armorName": "Dune Marcher Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "Sturdy leg armor designed for enduring long marches across sandy terrain.",
+        "id": "A0101"
+    },
+    {
+        "armorName": "Desert Fortress Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "Heavy steel leggings, reinforced for protection against desert hazards.",
+        "id": "A0102"
+    },
+    {
+        "armorName": "Sandstorm Sabatons",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "Robust sabatons that shield the feet from fierce desert sandstorms.",
+        "id": "A0103"
+    },
+    {
+        "armorName": "Scorched Earth Cuisses",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "Burnished leg plates that reflect the harsh desert sun and heat.",
+        "id": "A0104"
+    },
+    {
+        "armorName": "Mirage Leg Guards",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "Illusion-infused leg armor that creates deceptive afterimages in the heat.",
+        "id": "A0105"
+    },
+    {
+        "armorName": "Oasis Knight's Chausses",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "Chausses with cooling gel linings, ideal for long battles in the heat.",
+        "id": "A0106"
+    },
+    {
+        "armorName": "Sunbaked Shin Guards",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "Hardened shin guards, sunbaked for extra resilience.",
+        "id": "A0107"
+    },
+    {
+        "armorName": "Cacti Leg Plates",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "Thick leg armor adorned with sharp cacti spines for defense.",
+        "id": "A0108"
+    },
+    {
+        "armorName": "Desert Colossus Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "Massive, stone-like greaves inspired by mythical desert giants.",
+        "id": "A0109"
+    },
+    {
+        "armorName": "Eclipse Treads",
+        "armorType": "legs",
+        "armorProfileTag": "heavyweight",
+        "regionProfileTag": "desert",
+        "description": "Darkened steel boots that absorb sunlight, providing stability and heat resistance.",
+        "id": "A0110"
+    },
+    {
+        "armorName": "Sand Dancer's Slippers",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "Soft, supple slippers that leave no trace on sandy surfaces.",
+        "id": "A0111"
+    },
+    {
+        "armorName": "Desert Shade Leg Wraps",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "Light cloth wraps that keep the legs cool and shielded from the sun.",
+        "id": "A0112"
+    },
+    {
+        "armorName": "Wind Whisperer's Boots",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "Feather-light boots that enhance the wearer's speed in desert winds.",
+        "id": "A0113"
+    },
+    {
+        "armorName": "Mirage Treaders",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "Enchanted shoes that create illusory footprints leading in false directions.",
+        "id": "A0114"
+    },
+    {
+        "armorName": "Moonlit Wanderer's Greaves",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "Greaves with a reflective surface that cools under the night sky.",
+        "id": "A0115"
+    },
+    {
+        "armorName": "Sandsilk Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "Leggings made from a lightweight, sand-resistant fabric, ideal for agility.",
+        "id": "A0116"
+    },
+    {
+        "armorName": "Oasis Drifter's Chaps",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "Chaps imbued with a faint, cooling moisture reminiscent of an oasis.",
+        "id": "A0117"
+    },
+    {
+        "armorName": "Zephyr Kilt",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "A kilt that flows like the desert breeze, granting freedom of movement.",
+        "id": "A0118"
+    },
+    {
+        "armorName": "Dust Nomad's Trousers",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "Breathable trousers designed for long travels across arid landscapes.",
+        "id": "A0119"
+    },
+    {
+        "armorName": "Sunseeker's Leggings",
+        "armorType": "legs",
+        "armorProfileTag": "lightweight",
+        "regionProfileTag": "desert",
+        "description": "Leggings that absorb and redistribute heat, keeping the wearer cool.",
+        "id": "A0120"
+    }
+]
