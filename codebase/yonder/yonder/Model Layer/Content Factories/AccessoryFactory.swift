@@ -7,13 +7,36 @@
 
 import Foundation
 
-class AccessoryFactory {
+class AccessoryFactory: BuildTokenFactory {
+    
+    enum BuildToken: String {
+        case resistanceAccessory
+        case reduceDamageAccessory
+        case weaponLifestealAccessory
+        case bonusHitPointsAccessory
+        case phoenixAccessory
+        case tankAccessory
+        case damageBuffAccessory
+        case bonusDamageAccessory
+        case healthRestorationBuffAccessory
+        case bonusHealthRestorationAccessory
+        case armorPointsRestorationBuffAccessory
+        case bonusArmorPointsRestorationAccessory
+        case thornsAccessory
+        case priceBuffAccessory
+        case reducedPriceAccessory
+        case goldBuffAccessory
+        case bonusGoldAccessory
+        case loseArmorGainHealthAccessory
+        case restoreAfterKillEquipmentPill
+        case restoreAfterTravelEquipmentPill
+        case stealPermanentHealthAfterKillEquipmentPill
+    }
     
     private let stage: Int
     private let regionTags: RegionTagAllocation
     private let accessoryProfileBucket: AccessoryProfileBucket
-    private var accessorySupply = [Accessory]()
-    private var profilesInUse = [UUID: AccessoryProfile]()
+    public var buildTokenQueue = [BuildToken]()
     
     init(stage: Int, regionTags: RegionTagAllocation, profileBucket: AccessoryProfileBucket) {
         self.stage = stage
@@ -21,204 +44,105 @@ class AccessoryFactory {
         self.accessoryProfileBucket = profileBucket
     }
     
-    func recycleProfiles() {
-        for profile in self.profilesInUse.values {
-            self.accessoryProfileBucket.restoreProfile(profile)
+    private func replenishTokens() {
+        var newTokens = [BuildToken]()
+        // This means you can only get max of 3 weapon lifesteal accessories, etc., in a row
+        newTokens.populate(count: 10, { .resistanceAccessory })
+        newTokens.populate(count: 10, { .reduceDamageAccessory })
+        newTokens.populate(count: 3, { .weaponLifestealAccessory })
+        newTokens.populate(count: 8, { .bonusHitPointsAccessory })
+        newTokens.populate(count: 3, { .phoenixAccessory })
+        newTokens.populate(count: 5, { .tankAccessory })
+        newTokens.populate(count: 8, { .damageBuffAccessory })
+        newTokens.populate(count: 8, { .bonusDamageAccessory })
+        newTokens.populate(count: 8, { .healthRestorationBuffAccessory })
+        newTokens.populate(count: 8, { .bonusHealthRestorationAccessory })
+        newTokens.populate(count: 8, { .armorPointsRestorationBuffAccessory })
+        newTokens.populate(count: 8, { .bonusArmorPointsRestorationAccessory })
+        newTokens.populate(count: 5, { .thornsAccessory })
+        newTokens.populate(count: 5, { .priceBuffAccessory })
+        newTokens.populate(count: 5, { .reducedPriceAccessory })
+        newTokens.populate(count: 5, { .goldBuffAccessory })
+        newTokens.populate(count: 5, { .bonusGoldAccessory })
+        newTokens.populate(count: 3, { .loseArmorGainHealthAccessory })
+        newTokens.populate(count: 3, { .restoreAfterKillEquipmentPill })
+        newTokens.populate(count: 5, { .restoreAfterTravelEquipmentPill })
+        newTokens.populate(count: 3, { .stealPermanentHealthAfterKillEquipmentPill })
+        newTokens.shuffle()
+        self.buildTokenQueue.appendToFront(contentsOf: newTokens)
+    }
+    
+    private func createAccessory() -> Accessory {
+        if self.buildTokenQueue.isEmpty {
+            self.replenishTokens()
+        }
+        let token = self.buildTokenQueue.popLast()!
+        switch token {
+        case .resistanceAccessory:
+            return self.createAccessoryWithSpecs(method: Accessories.resistanceAccessory, tag: .defensive)
+        case .reduceDamageAccessory:
+            return self.createAccessoryWithSpecs(method: Accessories.reduceDamageAccessory, tag: .defensive)
+        case .weaponLifestealAccessory:
+            return self.createAccessoryWithSpecs(method: Accessories.weaponLifestealAccessory, tag: .health)
+        case .bonusHitPointsAccessory:
+            return self.createAccessoryWithSpecs(method: Accessories.bonusHitPointsAccessory, tag: .defensive)
+        case .phoenixAccessory:
+            return self.createAccessoryWithSpecs(method: Accessories.phoenixAccessory, tag: .special)
+        case .tankAccessory:
+            return self.createAccessoryWithSpecs(method: Accessories.tankAccessory, tag: .defensive)
+        case .damageBuffAccessory:
+            return self.createAccessoryWithSpecs(method: Accessories.damageBuffAccessory, tag: .offensive)
+        case .bonusDamageAccessory:
+            return self.createAccessoryWithSpecs(method: Accessories.bonusDamageAccessory, tag: .offensive)
+        case .healthRestorationBuffAccessory:
+            return self.createAccessoryWithSpecs(method: Accessories.healthRestorationBuffAccessory, tag: .health)
+        case .bonusHealthRestorationAccessory:
+            return self.createAccessoryWithSpecs(method: Accessories.bonusHealthRestorationAccessory, tag: .health)
+        case .armorPointsRestorationBuffAccessory:
+            return self.createAccessoryWithSpecs(method: Accessories.armorPointsRestorationBuffAccessory, tag: .defensive)
+        case .bonusArmorPointsRestorationAccessory:
+            return self.createAccessoryWithSpecs(method: Accessories.bonusArmorPointsRestorationAccessory, tag: .defensive)
+        case .thornsAccessory:
+            return self.createAccessoryWithSpecs(method: Accessories.thornsAccessory, tag: .offensive)
+        case .priceBuffAccessory:
+            return self.createAccessoryWithSpecs(method: Accessories.priceBuffAccessory, tag: .gold)
+        case .reducedPriceAccessory:
+            return self.createAccessoryWithSpecs(method: Accessories.reducedPriceAccessory, tag: .gold)
+        case .goldBuffAccessory:
+            return self.createAccessoryWithSpecs(method: Accessories.goldBuffAccessory, tag: .gold)
+        case .bonusGoldAccessory:
+            return self.createAccessoryWithSpecs(method: Accessories.bonusGoldAccessory, tag: .gold)
+        case .loseArmorGainHealthAccessory:
+            return self.createAccessoryWithSpecs(method: Accessories.loseArmorGainHealthAccessory, tag: .special)
+        case .restoreAfterKillEquipmentPill:
+            return self.createAccessoryWithSpecs(method: Accessories.restoreAfterKillEquipmentPill, tag: .special)
+        case .restoreAfterTravelEquipmentPill:
+            return self.createAccessoryWithSpecs(method: Accessories.restoreAfterTravelEquipmentPill, tag: .health)
+        case .stealPermanentHealthAfterKillEquipmentPill:
+            return self.createAccessoryWithSpecs(method: Accessories.stealPermanentHealthAfterKillEquipmentPill, tag: .health)
         }
     }
     
-    private func buildAccessories() {
-        var accessories = [Accessory]()
-        
-        // 01
-        self.addAccessory(
-            to: &accessories,
-            method: Accessories.resistanceAccessory,
-            count: 10,
-            tag: .defensive
-        )
-        // 02
-        self.addAccessory(
-            to: &accessories,
-            method: Accessories.reduceDamageAccessory,
-            count: 10,
-            tag: .defensive
-        )
-        // 03
-        self.addAccessory(
-            to: &accessories,
-            method: Accessories.weaponLifestealAccessory,
-            count: 3,
-            tag: .health
-        )
-        // 04
-        self.addAccessory(
-            to: &accessories,
-            method: Accessories.bonusHitPointsAccessory,
-            count: 8,
-            tag: .defensive
-        )
-        // 05
-        self.addAccessory(
-            to: &accessories,
-            method: Accessories.phoenixAccessory,
-            count: 3,
-            tag: .special
-        )
-        // 06
-        self.addAccessory(
-            to: &accessories,
-            method: Accessories.tankAccessory,
-            count: 5,
-            tag: .defensive
-        )
-        // 07
-        self.addAccessory(
-            to: &accessories,
-            method: Accessories.damageBuffAccessory,
-            count: 8,
-            tag: .offensive
-        )
-        // 08
-        self.addAccessory(
-            to: &accessories,
-            method: Accessories.bonusDamageAccessory,
-            count: 8,
-            tag: .offensive
-        )
-        // 09
-        self.addAccessory(
-            to: &accessories,
-            method: Accessories.healthRestorationBuffAccessory,
-            count: 8,
-            tag: .health
-        )
-        // 10
-        self.addAccessory(
-            to: &accessories,
-            method: Accessories.bonusHealthRestorationAccessory,
-            count: 8,
-            tag: .health
-        )
-        // 11
-        self.addAccessory(
-            to: &accessories,
-            method: Accessories.armorPointsRestorationBuffAccessory,
-            count: 8,
-            tag: .defensive
-        )
-        // 12
-        self.addAccessory(
-            to: &accessories,
-            method: Accessories.bonusArmorPointsRestorationAccessory,
-            count: 8,
-            tag: .defensive
-        )
-        // 13
-        self.addAccessory(
-            to: &accessories,
-            method: Accessories.thornsAccessory,
-            count: 5,
-            tag: .offensive
-        )
-        // 14
-        self.addAccessory(
-            to: &accessories,
-            method: Accessories.priceBuffAccessory,
-            count: 5,
-            tag: .gold
-        )
-        // 15
-        self.addAccessory(
-            to: &accessories,
-            method: Accessories.reducedPriceAccessory,
-            count: 5,
-            tag: .gold
-        )
-        // 16
-        self.addAccessory(
-            to: &accessories,
-            method: Accessories.goldBuffAccessory,
-            count: 5,
-            tag: .gold
-        )
-        // 17
-        self.addAccessory(
-            to: &accessories,
-            method: Accessories.bonusGoldAccessory,
-            count: 5,
-            tag: .gold
-        )
-        // 18
-        self.addAccessory(
-            to: &accessories,
-            method: Accessories.loseArmorGainHealthAccessory,
-            count: 3,
-            tag: .special
-        )
-        // 19
-        self.addAccessory(
-            to: &accessories,
-            method: Accessories.restoreAfterKillEquipmentPill,
-            count: 3,
-            tag: .special
-        )
-        // 20
-        self.addAccessory(
-            to: &accessories,
-            method: Accessories.restoreAfterTravelEquipmentPill,
-            count: 5,
-            tag: .health
-        )
-        // 21
-        self.addAccessory(
-            to: &accessories,
-            method: Accessories.stealPermanentHealthAfterKillEquipmentPill,
-            count: 3,
-            tag: .health
-        )
-        
-        accessories.shuffle()
-        self.accessorySupply.appendToFront(contentsOf: accessories)
-    }
-    
-    private func addAccessory(
-        to accessories: inout [Accessory],
+    private func createAccessoryWithSpecs(
         method: (_ profile: AccessoryProfile, _ stage: Int, _ type: AccessoryType) -> Accessory,
-        count: Int,
         tag: AccessoryProfileTag
-    ) {
-        accessories.populate(count: count) {
-            let accessoryType: AccessoryType = (Random.roll(1, in: 5) ? .peripheral : .regular)
-            let profile = self.accessoryProfileBucket.grabProfile(
-                areaTag: self.regionTags.getTag(),
-                accessoryTag: tag,
-                accessoryType: accessoryType
-            )
-            let accessory = method(profile, self.stage, accessoryType)
-            self.profilesInUse[accessory.id] = profile
-            return accessory
-        }
+    ) -> Accessory {
+        // Make it a 1 in 5 to get a peripheral accessory, which matches with the accessory slot ratios
+        let accessoryType: AccessoryType = (Random.roll(1, in: 5) ? .peripheral : .regular)
+        let profile = self.accessoryProfileBucket.grabProfile(
+            areaTag: self.regionTags.getTag(),
+            accessoryTag: tag,
+            accessoryType: accessoryType
+        )
+        return method(profile, self.stage, accessoryType)
     }
     
     func deliver() -> Accessory {
-        if self.accessorySupply.isEmpty {
-            self.buildAccessories()
-        }
-        let accessory = self.accessorySupply.popLast()!
-        self.profilesInUse.removeValue(forKey: accessory.id)
-        return accessory
+        return self.createAccessory()
     }
     
     func deliver(count: Int) -> [Accessory] {
-        let initialCount = self.accessorySupply.count
-        while self.accessorySupply.count < count {
-            self.buildAccessories()
-            assert(initialCount < self.accessorySupply.count, "No accessories being generated - infinite loop")
-        }
-        let accessories = self.accessorySupply.takeLast(count)
-        accessories.forEach({ self.profilesInUse.removeValue(forKey: $0.id) })
-        return accessories
+        return Array(count: count, populateWith: self.createAccessory())
     }
     
 }

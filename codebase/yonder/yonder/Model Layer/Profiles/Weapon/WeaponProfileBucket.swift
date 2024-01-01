@@ -24,13 +24,13 @@ class WeaponProfileBucket: Storable {
         }
         guard let selectedIndex = matchingIndices.randomElement() else {
             assertionFailure("Ran out of weapon profiles with the desired area tag and weapon tag")
-            return self.profiles.randomElement() ?? WeaponProfile(id: "W0000", weaponName: "ERROR - NO MORE WEAPONS", regionTags: [], weaponTags: [])
+            guard !self.profiles.isEmpty else {
+                // If there are no weapon profiles something is seriously (seriously) wrong - bail
+                fatalError("Ran out of weapon profiles")
+            }
+            return self.profiles.randomElement()!
         }
         return self.profiles.remove(at: selectedIndex)
-    }
-    
-    func restoreProfile(_ profile: WeaponProfile) {
-        self.profiles.append(profile)
     }
     
     // MARK: - Serialisation

@@ -16,16 +16,6 @@ class ArmorProfileBucket: Storable {
     }
     
     func grabProfile(areaTag: RegionProfileTag, armorTag: ArmorProfileTag, armorType: ArmorType) -> ArmorProfile {
-        let randomProfile = RandomProfile(prefix: "Armor")
-        return ArmorProfile(
-            id: 0,
-            armorName: randomProfile.name,
-            armorDescription: randomProfile.description,
-            regionTags: [],
-            armorTag: .heavyweight,
-            armorType: .body
-        )
-        
         var matchingIndices = [Int]()
         for (index, profile) in self.profiles.enumerated() {
             if (profile.matchesAreaTag(areaTag) &&
@@ -35,12 +25,15 @@ class ArmorProfileBucket: Storable {
                 matchingIndices.append(index)
             }
         }
-        let selectedIndex = Int.random(in: 0..<matchingIndices.count)
+        guard let selectedIndex = matchingIndices.randomElement() else {
+            assertionFailure("Ran out of armor profiles with the desired area tag and weapon tag")
+            guard !self.profiles.isEmpty else {
+                // If there are no armor profiles something is seriously (seriously) wrong - bail
+                fatalError("Ran out of armor profiles")
+            }
+            return self.profiles.randomElement()!
+        }
         return self.profiles.remove(at: selectedIndex)
-    }
-    
-    func restoreProfile(_ profile: ArmorProfile) {
-        self.profiles.append(profile)
     }
     
     // MARK: - Serialisation
@@ -50,7 +43,7 @@ class ArmorProfileBucket: Storable {
     }
 
     required init(dataObject: DataObject) {
-        let ids: [Int] = dataObject.get(Field.profileIDs.rawValue)
+        let ids: [String] = dataObject.get(Field.profileIDs.rawValue)
         let allProfiles = ProfileRepository.profiles
         for id in ids {
             if let profile = allProfiles.first(where: { $0.id == id }) {
@@ -69,9 +62,9 @@ class ArmorProfileBucket: Storable {
 fileprivate class ProfileRepository {
     
     public static var profiles: [ArmorProfile] {
-        return [
-            // TODO: Populate
-        ]
+        let util = ArmorProfileRepoUtil()
+        let result = util.getAllArmorProfiles()
+        return result
     }
     
 }

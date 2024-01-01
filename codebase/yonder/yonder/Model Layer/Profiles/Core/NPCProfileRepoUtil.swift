@@ -13,7 +13,7 @@ class NPCProfileRepoUtil {
     private static let INDEX_FILENAME = "NPC-DATA-INDEX"
     
     /// Dataclass for foe metadata.
-    /// Doesn't represent all available data - refer to /documentation/NPC Metadata Format.md
+    /// Doesn't represent all available data - refer to /documentation/Metadata Formats.md
     struct FoeMetadata {
         let id: String
         let name: String
@@ -26,7 +26,7 @@ class NPCProfileRepoUtil {
     }
     
     /// Dataclass for interactor metadata.
-    /// Doesn't represent all available data - refer to /documentation/NPC Metadata Format.md
+    /// Doesn't represent all available data - refer to /documentation/Metadata Formats.md
     struct InteractorMetadata {
         let id: String
         let name: String

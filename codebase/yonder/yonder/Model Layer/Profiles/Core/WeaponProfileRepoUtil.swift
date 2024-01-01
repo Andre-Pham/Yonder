@@ -13,7 +13,7 @@ class WeaponProfileRepoUtil {
     private static let INDEX_FILENAME = "WEAPON-DATA-INDEX"
     
     /// Dataclass for weapon metadata.
-    /// Doesn't represent all available data - refer to /documentation/Weapon Metadata Format.md
+    /// Doesn't represent all available data - refer to /documentation/Metadata Formats.md
     struct WeaponMetadata {
         let id: String
         let weaponName: String

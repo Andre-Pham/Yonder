@@ -15,7 +15,7 @@ enum Armors {
         let armorPoints = armorPointsRange.select(stage: stage)
         return Armor(
             name: profile.armorName,
-            description: profile.armorDescription,
+            description: "",
             type: type,
             armorPoints: armorPoints,
             armorBuffs: [],
@@ -31,7 +31,7 @@ enum Armors {
         let damageFraction = Random.selectFromLinearDistribution(min: 1.05, max: 1.2, minY: 10, maxY: 1)
         return Armor(
             name: profile.armorName,
-            description: profile.armorDescription,
+            description: "",
             type: type,
             armorPoints: armorPoints,
             armorBuffs: [
@@ -53,7 +53,7 @@ enum Armors {
         let damageFraction = Random.selectFromLinearDistribution(min: 1.15, max: 1.5, minY: 10, maxY: 1)
         return Armor(
             name: profile.armorName,
-            description: profile.armorDescription,
+            description: "",
             type: type,
             armorPoints: armorPoints,
             armorBuffs: [
@@ -77,7 +77,7 @@ enum Armors {
         let damageBonus = damageBonusRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Armor(
             name: profile.armorName,
-            description: profile.armorDescription,
+            description: "",
             type: type,
             armorPoints: armorPoints,
             armorBuffs: [
@@ -101,7 +101,7 @@ enum Armors {
         let damageBonus = damageBonusRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Armor(
             name: profile.armorName,
-            description: profile.armorDescription,
+            description: "",
             type: type,
             armorPoints: armorPoints,
             armorBuffs: [
@@ -123,7 +123,7 @@ enum Armors {
         let resistance = Random.selectFromLinearDistribution(min: 0.7, max: 0.95, minY: 1, maxY: 10)
         return Armor(
             name: profile.armorName,
-            description: profile.armorDescription,
+            description: "",
             type: type,
             armorPoints: armorPoints,
             armorBuffs: [
@@ -145,7 +145,7 @@ enum Armors {
         let resistance = Random.selectFromLinearDistribution(min: 0.6, max: 0.8, minY: 1, maxY: 10)
         return Armor(
             name: profile.armorName,
-            description: profile.armorDescription,
+            description: "",
             type: type,
             armorPoints: armorPoints,
             armorBuffs: [
@@ -169,7 +169,7 @@ enum Armors {
         let damageNegation = damageNegationRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Armor(
             name: profile.armorName,
-            description: profile.armorDescription,
+            description: "",
             type: type,
             armorPoints: armorPoints,
             armorBuffs: [
@@ -193,7 +193,7 @@ enum Armors {
         let damageNegation = damageNegationRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Armor(
             name: profile.armorName,
-            description: profile.armorDescription,
+            description: "",
             type: type,
             armorPoints: armorPoints,
             armorBuffs: [
@@ -215,7 +215,7 @@ enum Armors {
         let thornsFraction = Random.selectFromLinearDistribution(min: 0.05, max: 0.3, minY: 10, maxY: 1)
         return Armor(
             name: profile.armorName,
-            description: profile.armorDescription,
+            description: "",
             type: type,
             armorPoints: armorPoints,
             armorBuffs: [],
@@ -232,7 +232,7 @@ enum Armors {
         let restorationPercent = Random.selectFromLinearDistribution(min: 1.1, max: 1.5, minY: 10, maxY: 1)
         return Armor(
             name: profile.armorName,
-            description: profile.armorDescription,
+            description: "",
             type: type,
             armorPoints: armorPoints,
             armorBuffs: [
@@ -261,7 +261,7 @@ enum Armors {
         let thornsFraction = Random.selectFromLinearDistribution(min: 0.05, max: 0.2, minY: 10, maxY: 1)
         return Armor(
             name: profile.armorName,
-            description: profile.armorDescription,
+            description: "",
             type: type,
             armorPoints: armorPoints,
             armorBuffs: [
@@ -288,7 +288,7 @@ enum Armors {
         let armorRestorationFraction = Random.selectFromLinearDistribution(min: 1.05, max: 1.15, minY: 20, maxY: 1)
         return Armor(
             name: profile.armorName,
-            description: profile.armorDescription,
+            description: "",
             type: type,
             armorPoints: armorPoints,
             armorBuffs: [
@@ -327,7 +327,7 @@ enum Armors {
         }
         return Armor(
             name: profile.armorName,
-            description: profile.armorDescription,
+            description: "",
             type: type,
             armorPoints: armorPoints,
             armorBuffs: [],
@@ -346,7 +346,7 @@ enum Armors {
         let consumableArmorPointsRestorationFraction = Random.selectFromLinearDistribution(min: 1.2, max: 1.8, minY: 10, maxY: 1)
         return Armor(
             name: profile.armorName,
-            description: profile.armorDescription,
+            description: "",
             type: type,
             armorPoints: armorPoints,
             armorBuffs: [
@@ -385,7 +385,7 @@ enum Armors {
         let potionHealthRestorationFraction = Random.selectFromLinearDistribution(min: 0.4, max: 0.8, minY: 10, maxY: 1)
         return Armor(
             name: profile.armorName,
-            description: profile.armorDescription,
+            description: "",
             type: type,
             armorPoints: armorPoints,
             armorBuffs: [

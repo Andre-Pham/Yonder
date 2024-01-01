@@ -40,8 +40,8 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
     
     private var weaponBuildTokenCache: [BuildTokenCache]
     // TODO: Potion build token cache
-    // TODO: Armor build token cache
-    // TODO: Accessory build token cache
+    private var armorBuildTokenCache: [BuildTokenCache]
+    private var accessoryBuildTokenCache: [BuildTokenCache]
     // TODO: Consumable build token cache
     private var hostileBuildTokenCache: [BuildTokenCache]
     // > ShopKeepers don't have build tokens
@@ -61,8 +61,8 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         
         self.weaponBuildTokenCache = [BuildTokenCache]()
         // TODO: Potion build token cache
-        // TODO: Armor build token cache
-        // TODO: Accessory build token cache
+        self.armorBuildTokenCache = [BuildTokenCache]()
+        self.accessoryBuildTokenCache = [BuildTokenCache]()
         // TODO: Consumable build token cache
         self.hostileBuildTokenCache = [BuildTokenCache]()
         // > ShopKeepers don't have build tokens
@@ -88,8 +88,8 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         case friendlyProfileBucket
         case weaponBuildTokens
         // TODO: Potion build token cache
-        // TODO: Armor build token cache
-        // TODO: Accessory build token cache
+        case armorBuildTokens
+        case accessoryBuildTokens
         // TODO: Consumable build token cache
         case hostileBuildTokens
         case restorerBuildTokens
@@ -108,8 +108,8 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         
         self.weaponBuildTokenCache = dataObject.getObjectArray(Field.weaponBuildTokens.rawValue, type: BuildTokenCache.self)
         // TODO: Potion build token cache
-        // TODO: Armor build token cache
-        // TODO: Accessory build token cache
+        self.armorBuildTokenCache = dataObject.getObjectArray(Field.armorBuildTokens.rawValue, type: BuildTokenCache.self)
+        self.accessoryBuildTokenCache = dataObject.getObjectArray(Field.accessoryBuildTokens.rawValue, type: BuildTokenCache.self)
         // TODO: Consumable build token cache
         self.hostileBuildTokenCache = dataObject.getObjectArray(Field.hostileBuildTokens.rawValue, type: BuildTokenCache.self)
         // > ShopKeepers don't have build tokens
@@ -139,8 +139,14 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
                 value: self.activeWeaponFactories.map({ $0.value.exportBuildTokenCache(regionKey: $0.key) }) + self.weaponBuildTokenCache
             )
             // TODO: Potion build token cache
-            // TODO: Armor build token cache
-            // TODO: Accessory build token cache
+            .add(
+                key: Field.armorBuildTokens.rawValue,
+                value: self.activeArmorFactories.map({ $0.value.exportBuildTokenCache(regionKey: $0.key) }) + self.armorBuildTokenCache
+            )
+            .add(
+                key: Field.accessoryBuildTokens.rawValue,
+                value: self.activeAccessoryFactories.map({ $0.value.exportBuildTokenCache(regionKey: $0.key) }) + self.accessoryBuildTokenCache
+            )
             // TODO: Consumable build token cache
             .add(
                 key: Field.hostileBuildTokens.rawValue,
@@ -175,13 +181,6 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
     }
     
     private func resetFactories() {
-        // TODO: Remove the concept of recycling profiles
-        // Recycle profiles (restore unused profiles to their respective profile bucket)
-            // (Potion factory doesn't use profiles)
-        self.activeArmorFactories.forEach({ $0.value.recycleProfiles() })
-        self.activeAccessoryFactories.forEach({ $0.value.recycleProfiles() })
-            // (Consumable factory doesn't use profiles)
-        
         // Remove all active factories
         self.activeWeaponFactories.removeAll()
         self.activePotionFactories.removeAll()
@@ -326,8 +325,8 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
     private func restoreAllAvailableBuildTokenCaches() {
         self.restoreBuildTokenCaches(for: self.activeWeaponFactories, caches: &self.weaponBuildTokenCache)
         // TODO: Potion build token cache
-        // TODO: Armor build token cache
-        // TODO: Accessory build token cache
+        self.restoreBuildTokenCaches(for: self.activeArmorFactories, caches: &self.armorBuildTokenCache)
+        self.restoreBuildTokenCaches(for: self.activeAccessoryFactories, caches: &self.accessoryBuildTokenCache)
         // TODO: Consumable build token cache
         self.restoreBuildTokenCaches(for: self.activeHostileFactories, caches: &self.hostileBuildTokenCache)
         // > ShopKeepers don't have build tokens

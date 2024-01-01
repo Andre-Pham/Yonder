@@ -15,7 +15,7 @@ enum Accessories {
         let damageFractionPercent = resistanceRange.selectFromLinearDistribution(minY: 1, maxY: 10)
         return Accessory(
             name: profile.accessoryName,
-            description: profile.accessoryDescription,
+            description: "",
             type: type,
             healthBonus: 0,
             armorPointsBonus: 0,
@@ -37,7 +37,7 @@ enum Accessories {
         let damage = damageRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Accessory(
             name: profile.accessoryName,
-            description: profile.accessoryDescription,
+            description: "",
             type: type,
             healthBonus: 0,
             armorPointsBonus: 0,
@@ -55,7 +55,7 @@ enum Accessories {
         let pill = WeaponLifestealEquipmentPill(lifestealFraction: lifestealFraction, sourceName: profile.accessoryName)
         return Accessory(
             name: profile.accessoryName,
-            description: profile.accessoryDescription,
+            description: "",
             type: type,
             healthBonus: 0,
             armorPointsBonus: 0,
@@ -74,7 +74,7 @@ enum Accessories {
         let armorPoints = armorPointsRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt().nearest(10)
         return Accessory(
             name: profile.accessoryName,
-            description: profile.accessoryDescription,
+            description: "",
             type: type,
             healthBonus: health,
             armorPointsBonus: armorPoints,
@@ -90,7 +90,7 @@ enum Accessories {
         let healthBonus = Int.random(in: 0...150).nearest(50)
         return Accessory(
             name: profile.accessoryName,
-            description: profile.accessoryDescription,
+            description: "",
             type: type,
             healthBonus: healthBonus,
             armorPointsBonus: 0,
@@ -111,7 +111,7 @@ enum Accessories {
         let damageFractionPercent = resistanceRange.selectFromLinearDistribution(minY: 1, maxY: 10)
         return Accessory(
             name: profile.accessoryName,
-            description: profile.accessoryDescription,
+            description: "",
             type: type,
             healthBonus: health,
             armorPointsBonus: armorPoints,
@@ -133,7 +133,7 @@ enum Accessories {
         let damagePercent = damageRange.selectFromLinearDistribution(minY: 10, maxY: 1)
         return Accessory(
             name: profile.accessoryName,
-            description: profile.accessoryDescription,
+            description: "",
             type: type,
             healthBonus: 0,
             armorPointsBonus: 0,
@@ -155,7 +155,7 @@ enum Accessories {
         let damage = damageRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Accessory(
             name: profile.accessoryName,
-            description: profile.accessoryDescription,
+            description: "",
             type: type,
             healthBonus: 0,
             armorPointsBonus: 0,
@@ -172,7 +172,7 @@ enum Accessories {
         let healthRestorationPercent = healthRestorationRange.selectFromLinearDistribution(minY: 10, maxY: 1)
         return Accessory(
             name: profile.accessoryName,
-            description: profile.accessoryDescription,
+            description: "",
             type: type,
             healthBonus: 0,
             armorPointsBonus: 0,
@@ -194,7 +194,7 @@ enum Accessories {
         let health = healthRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Accessory(
             name: profile.accessoryName,
-            description: profile.accessoryDescription,
+            description: "",
             type: type,
             healthBonus: 0,
             armorPointsBonus: 0,
@@ -216,7 +216,7 @@ enum Accessories {
         let armorPointsPercent = armorPointsRange.selectFromLinearDistribution(minY: 10, maxY: 1)
         return Accessory(
             name: profile.accessoryName,
-            description: profile.accessoryDescription,
+            description: "",
             type: type,
             healthBonus: 0,
             armorPointsBonus: 0,
@@ -238,7 +238,7 @@ enum Accessories {
         let armorPoints = armorPointsRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Accessory(
             name: profile.accessoryName,
-            description: profile.accessoryDescription,
+            description: "",
             type: type,
             healthBonus: 0,
             armorPointsBonus: 0,
@@ -261,7 +261,7 @@ enum Accessories {
         let pill = ThornsEquipmentPill(thornsFraction: thorns, sourceName: profile.accessoryName)
         return Accessory(
             name: profile.accessoryName,
-            description: profile.accessoryDescription,
+            description: "",
             type: type,
             healthBonus: 0,
             armorPointsBonus: 0,
@@ -276,7 +276,7 @@ enum Accessories {
         let pricePercent = priceRange.selectFromLinearDistribution(minY: 1, maxY: 10)
         return Accessory(
             name: profile.accessoryName,
-            description: profile.accessoryDescription,
+            description: "",
             type: type,
             healthBonus: 0,
             armorPointsBonus: 0,
@@ -293,7 +293,7 @@ enum Accessories {
         let price = priceRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Accessory(
             name: profile.accessoryName,
-            description: profile.accessoryDescription,
+            description: "",
             type: type,
             healthBonus: 0,
             armorPointsBonus: 0,
@@ -310,7 +310,7 @@ enum Accessories {
         let goldPercent = goldRange.selectFromLinearDistribution(minY: 10, maxY: 1)
         return Accessory(
             name: profile.accessoryName,
-            description: profile.accessoryDescription,
+            description: "",
             type: type,
             healthBonus: 0,
             armorPointsBonus: 0,
@@ -327,7 +327,7 @@ enum Accessories {
         let gold = goldRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Accessory(
             name: profile.accessoryName,
-            description: profile.accessoryDescription,
+            description: "",
             type: type,
             healthBonus: 0,
             armorPointsBonus: 0,
@@ -345,7 +345,7 @@ enum Accessories {
         let pill = LoseArmorGainHealthEquipmentPill(restorationFraction: fraction, sourceName: profile.accessoryName)
         return Accessory(
             name: profile.accessoryName,
-            description: profile.accessoryDescription,
+            description: "",
             type: type,
             healthBonus: 0,
             armorPointsBonus: 0,
@@ -369,7 +369,7 @@ enum Accessories {
         )
         return Accessory(
             name: profile.accessoryName,
-            description: profile.accessoryDescription,
+            description: "",
             type: type,
             healthBonus: 0,
             armorPointsBonus: 0,
@@ -386,7 +386,7 @@ enum Accessories {
         let pill = RestoreAfterTravelEquipmentPill(restoration: restoration, sourceName: profile.accessoryName)
         return Accessory(
             name: profile.accessoryName,
-            description: profile.accessoryDescription,
+            description: "",
             type: type,
             healthBonus: 0,
             armorPointsBonus: 0,
@@ -402,7 +402,7 @@ enum Accessories {
         let pill = PermanentHealthAfterKillEquipmentPill(maxHealthFraction: maxHealthFraction, sourceName: profile.accessoryName)
         return Accessory(
             name: profile.accessoryName,
-            description: profile.accessoryDescription,
+            description: "",
             type: type,
             healthBonus: 0,
             armorPointsBonus: 0,

@@ -16,16 +16,6 @@ class AccessoryProfileBucket: Storable {
     }
     
     func grabProfile(areaTag: RegionProfileTag, accessoryTag: AccessoryProfileTag, accessoryType: AccessoryType) -> AccessoryProfile {
-        let randomProfile = RandomProfile(prefix: "Accessory")
-        return AccessoryProfile(
-            id: 0,
-            accessoryName: randomProfile.name,
-            accessoryDescription: randomProfile.description,
-            regionTags: [],
-            accessoryTag: .everything,
-            accessoryType: .regular
-        )
-        
         var matchingIndices = [Int]()
         for (index, profile) in self.profiles.enumerated() {
             if (profile.matchesAreaTag(areaTag) &&
@@ -35,12 +25,15 @@ class AccessoryProfileBucket: Storable {
                 matchingIndices.append(index)
             }
         }
-        let selectedIndex = Int.random(in: 0..<matchingIndices.count)
+        guard let selectedIndex = matchingIndices.randomElement() else {
+            assertionFailure("Ran out of accessory profiles with the desired area tag and weapon tag")
+            guard !self.profiles.isEmpty else {
+                // If there are no accessory profiles something is seriously (seriously) wrong - bail
+                fatalError("Ran out of accessory profiles")
+            }
+            return self.profiles.randomElement()!
+        }
         return self.profiles.remove(at: selectedIndex)
-    }
-    
-    func restoreProfile(_ profile: AccessoryProfile) {
-        self.profiles.append(profile)
     }
     
     // MARK: - Serialisation
@@ -50,7 +43,7 @@ class AccessoryProfileBucket: Storable {
     }
 
     required init(dataObject: DataObject) {
-        let ids: [Int] = dataObject.get(Field.profileIDs.rawValue)
+        let ids: [String] = dataObject.get(Field.profileIDs.rawValue)
         let allProfiles = ProfileRepository.profiles
         for id in ids {
             if let profile = allProfiles.first(where: { $0.id == id }) {
@@ -69,14 +62,9 @@ class AccessoryProfileBucket: Storable {
 fileprivate class ProfileRepository {
     
     public static var profiles: [AccessoryProfile] {
-        return [
-            // TODO: Populate
-            
-            // Note to self:
-            // accessoryType should play a role in the profile, e.g. a shield would be a peripheral accessory, a ring would be a regular accessory
-            // regionTags are the areas that you could find this accessory in, e.g. "snow ring" would be odd to find in the firelands
-            // (I need to add an "all" option for area profile tags)
-        ]
+        let util = AccessoryProfileRepoUtil()
+        let result = util.getAllAccessoryProfiles()
+        return result
     }
     
 }

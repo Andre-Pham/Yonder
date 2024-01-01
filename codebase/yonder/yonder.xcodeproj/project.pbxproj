@@ -569,6 +569,8 @@
 		B678C1C32B427E9C00CD6354 /* SHADOW-ARMORS.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1B72B427E9C00CD6354 /* SHADOW-ARMORS.json */; };
 		B678C1C42B427E9C00CD6354 /* FACTION2-ARMORS.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1B82B427E9C00CD6354 /* FACTION2-ARMORS.json */; };
 		B678C1C62B427EAD00CD6354 /* ARMOR-DATA-INDEX.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1C52B427EAD00CD6354 /* ARMOR-DATA-INDEX.json */; };
+		B678C1C82B42809500CD6354 /* ArmorProfileRepoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C1C72B42809500CD6354 /* ArmorProfileRepoUtil.swift */; };
+		B678C1CA2B429CE300CD6354 /* AccessoryProfileRepoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C1C92B429CE300CD6354 /* AccessoryProfileRepoUtil.swift */; };
 		B6C37DF72A32B48F004D18A8 /* SequenceCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DF62A32B48F004D18A8 /* SequenceCode.swift */; };
 		B6C37DF92A32B4B1004D18A8 /* AnimationSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DF82A32B4B1004D18A8 /* AnimationSequence.swift */; };
 		B6C37DFB2A32B4BC004D18A8 /* AnimationComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DFA2A32B4BC004D18A8 /* AnimationComposite.swift */; };
@@ -2947,6 +2949,8 @@
 		B678C1B72B427E9C00CD6354 /* SHADOW-ARMORS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "SHADOW-ARMORS.json"; sourceTree = "<group>"; };
 		B678C1B82B427E9C00CD6354 /* FACTION2-ARMORS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FACTION2-ARMORS.json"; sourceTree = "<group>"; };
 		B678C1C52B427EAD00CD6354 /* ARMOR-DATA-INDEX.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "ARMOR-DATA-INDEX.json"; sourceTree = "<group>"; };
+		B678C1C72B42809500CD6354 /* ArmorProfileRepoUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmorProfileRepoUtil.swift; sourceTree = "<group>"; };
+		B678C1C92B429CE300CD6354 /* AccessoryProfileRepoUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryProfileRepoUtil.swift; sourceTree = "<group>"; };
 		B6C37DF62A32B48F004D18A8 /* SequenceCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceCode.swift; sourceTree = "<group>"; };
 		B6C37DF82A32B4B1004D18A8 /* AnimationSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSequence.swift; sourceTree = "<group>"; };
 		B6C37DFA2A32B4BC004D18A8 /* AnimationComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationComposite.swift; sourceTree = "<group>"; };
@@ -6214,6 +6218,8 @@
 				B6D472442A5582AF0002CEEC /* InteractorProfile.swift */,
 				B6D4726C2A589E980002CEEC /* NPCProfileRepoUtil.swift */,
 				B678C18B2B3C441000CD6354 /* WeaponProfileRepoUtil.swift */,
+				B678C1C72B42809500CD6354 /* ArmorProfileRepoUtil.swift */,
+				B678C1C92B429CE300CD6354 /* AccessoryProfileRepoUtil.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -10774,6 +10780,7 @@
 				65C37A83285CD18C006997EE /* MaxHealthRestorationPotion.swift in Sources */,
 				6520DA3D2955792A00916147 /* GameContext.swift in Sources */,
 				65500E7D28659BFC00A92CA2 /* DamagePercentBuffPotion.swift in Sources */,
+				B678C1C82B42809500CD6354 /* ArmorProfileRepoUtil.swift in Sources */,
 				6503294228D76B4E00FC999C /* WeaponBuffPill.swift in Sources */,
 				6569E16227630EBE007C472E /* YonderFonts.swift in Sources */,
 				65F91C9A27E0FD130095C3FD /* PurchaseRestorationButton.swift in Sources */,
@@ -10837,6 +10844,7 @@
 				65C37A7D285A36B9006997EE /* String.swift in Sources */,
 				65D499E4293247590087DBA6 /* AccessoryBuffEnhanceOffer.swift in Sources */,
 				656FD8D1291836FC00F923E9 /* BruteFoe.swift in Sources */,
+				B678C1CA2B429CE300CD6354 /* AccessoryProfileRepoUtil.swift in Sources */,
 				6532773E292586C200E03FA7 /* LoseArmorGainHealthEquipmentPill.swift in Sources */,
 				B635B05E29B19E6500A45F43 /* EmbeddedInspectBorder.swift in Sources */,
 				B63E171D29CD8F310083616A /* InspectViewController.swift in Sources */,

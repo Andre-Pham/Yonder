@@ -9,7 +9,10 @@ import Foundation
 
 class AccessorySlots: Storable {
     
+    /// The number of accessory slots (the number of accessories that can be equipped)
+    /// IMPORTANT: If this needs to be changed in the future, it may be in your interest to also update the drop rate of the accessory types - refer to AccessoryFactory
     public let accessorySlotCount = 4
+    /// A cache for the position the next accessory should be saved to (typically removing an accessory precedes adding one in its place)
     private var cachedInsertLocation: Int? = nil
     /// Regular accessories
     @DidSetPublished private(set) var accessories = [Accessory]()
