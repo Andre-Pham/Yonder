@@ -15,8 +15,8 @@ struct LocationView: View {
     // Magic number for scaling down size, smaller number -> larger image
     private let sizeDial = 178.0
     // TODO: Replace with location's image
-    private let background = YonderImages.darkForestBackgroundImage
-    private let foreground = YonderImages.darkForestForegroundImage
+    private let background = YonderImages.forestBackgroundImage
+    private let foreground = YonderImages.forestForegroundImage
     
     init(locationViewModel: LocationViewModel, optionsStateManager: OptionsStateManager) {
         self.locationViewModel = locationViewModel
