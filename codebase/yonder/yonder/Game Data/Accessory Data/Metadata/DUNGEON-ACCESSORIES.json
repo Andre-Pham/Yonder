@@ -1,0 +1,962 @@
+[
+    {
+        "accessoryName": "Obsidian Aegis",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "dungeon",
+        "description": "A large, angular shield forged from volcanic glass, radiating a dark aura.",
+        "id": "G0241"
+    },
+    {
+        "accessoryName": "Shadow Cloak",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "dungeon",
+        "description": "A flowing cape that shimmers with ethereal darkness, obscuring the wearer.",
+        "id": "G0242"
+    },
+    {
+        "accessoryName": "Golem Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "dungeon",
+        "description": "Heavy stone gauntlets carved with ancient runes, pulsing with protective energy.",
+        "id": "G0243"
+    },
+    {
+        "accessoryName": "Basilisk Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "dungeon",
+        "description": "Sturdy boots made from basilisk hide, granting enhanced stability and defense.",
+        "id": "G0244"
+    },
+    {
+        "accessoryName": "Wraith's Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "dungeon",
+        "description": "A spectral, translucent shawl that vibrates softly, deflecting harm.",
+        "id": "G0245"
+    },
+    {
+        "accessoryName": "Guardian Bracers",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "dungeon",
+        "description": "Ornate metal bracers engraved with protective charms, glowing faintly.",
+        "id": "G0246"
+    },
+    {
+        "accessoryName": "Echo Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "dungeon",
+        "description": "A mystical shield that resonates with echoing sounds, absorbing impacts.",
+        "id": "G0247"
+    },
+    {
+        "accessoryName": "Dread Greaves",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "dungeon",
+        "description": "Menacing leg armor crafted from dark steel, etched with fearsome patterns.",
+        "id": "G0248"
+    },
+    {
+        "accessoryName": "Phantom Pauldrons",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "dungeon",
+        "description": "Ghostly shoulder armor that shifts and phases, providing elusive defense.",
+        "id": "G0249"
+    },
+    {
+        "accessoryName": "Cursed Barrier",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "dungeon",
+        "description": "A dark, foreboding orb that orbits the user, absorbing hostile spells.",
+        "id": "G0250"
+    },
+    {
+        "accessoryName": "Cryptic Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "dungeon",
+        "description": "An ancient amulet bearing a cryptic symbol, pulsating with a protective glow.",
+        "id": "G0251"
+    },
+    {
+        "accessoryName": "Labyrinth Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "dungeon",
+        "description": "A twisted silver ring inscribed with a maze-like pattern, warding off danger.",
+        "id": "G0252"
+    },
+    {
+        "accessoryName": "Spectral Locket",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "dungeon",
+        "description": "A ghostly locket that shimmers faintly, offering ethereal protection.",
+        "id": "G0253"
+    },
+    {
+        "accessoryName": "Stone Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "dungeon",
+        "description": "A small, rugged charm carved from dungeon stone, emanating resilience.",
+        "id": "G0254"
+    },
+    {
+        "accessoryName": "Forbidden Seal",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "dungeon",
+        "description": "A mysterious seal of unknown origin, encasing the wearer in a defensive aura.",
+        "id": "G0255"
+    },
+    {
+        "accessoryName": "Goblin's Token",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "dungeon",
+        "description": "A lucky token once belonging to a cunning goblin, offering subtle protection.",
+        "id": "G0256"
+    },
+    {
+        "accessoryName": "Runestone Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "dungeon",
+        "description": "A pendant with a glowing runestone at its center, providing magical defense.",
+        "id": "G0257"
+    },
+    {
+        "accessoryName": "Shadow Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "dungeon",
+        "description": "A ring that absorbs light, cloaking the wearer in protective shadows.",
+        "id": "G0258"
+    },
+    {
+        "accessoryName": "Ethereal Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "dungeon",
+        "description": "A bracelet that flickers with otherworldly energy, buffering against harm.",
+        "id": "G0259"
+    },
+    {
+        "accessoryName": "Guardian Talisman",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "dungeon",
+        "description": "An ancient talisman bearing guardian symbols, enhancing physical resilience.",
+        "id": "G0260"
+    },
+    {
+        "accessoryName": "Inferno Blade",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "dungeon",
+        "description": "A sword wreathed in flames, its blade glowing red-hot with every strike.",
+        "id": "G0261"
+    },
+    {
+        "accessoryName": "Thunder Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "dungeon",
+        "description": "Gauntlets crackling with electric energy, enhancing the wearer's strikes with thunder.",
+        "id": "G0262"
+    },
+    {
+        "accessoryName": "Venomous Whip",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "dungeon",
+        "description": "A lethal whip dripping with potent venom, capable of debilitating foes.",
+        "id": "G0263"
+    },
+    {
+        "accessoryName": "Warlock's Staff",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "dungeon",
+        "description": "A mystical staff imbued with dark energies, amplifying offensive spells.",
+        "id": "G0264"
+    },
+    {
+        "accessoryName": "Berserker Axe",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "dungeon",
+        "description": "A massive axe that fuels the wearer's rage, increasing attack power dramatically.",
+        "id": "G0265"
+    },
+    {
+        "accessoryName": "Spectral Bow",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "dungeon",
+        "description": "An ethereal bow that shoots arrows of pure energy, piercing through defenses.",
+        "id": "G0266"
+    },
+    {
+        "accessoryName": "Runeblade Dagger",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "dungeon",
+        "description": "A dagger etched with ancient runes, each strike unleashing arcane power.",
+        "id": "G0267"
+    },
+    {
+        "accessoryName": "Dragonfire Cannon",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "dungeon",
+        "description": "A handheld cannon that spews forth dragon flames, scorching all in its path.",
+        "id": "G0268"
+    },
+    {
+        "accessoryName": "Necromancer's Grimoire",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "dungeon",
+        "description": "An ancient book filled with forbidden spells, enhancing dark offensive magic.",
+        "id": "G0269"
+    },
+    {
+        "accessoryName": "Gorgon Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "dungeon",
+        "description": "A shield with a petrifying gaze, turning aggressors to stone upon contact.",
+        "id": "G0270"
+    },
+    {
+        "accessoryName": "Assassin's Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "dungeon",
+        "description": "A sleek, black ring that sharpens the wearer's reflexes and attack precision.",
+        "id": "G0271"
+    },
+    {
+        "accessoryName": "Sorcerer's Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "dungeon",
+        "description": "An amulet pulsing with arcane energy, boosting the power of offensive spells.",
+        "id": "G0272"
+    },
+    {
+        "accessoryName": "Viper Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "dungeon",
+        "description": "A bracelet with a snake motif, increasing the potency of poisons used by the wearer.",
+        "id": "G0273"
+    },
+    {
+        "accessoryName": "Bloodstone Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "dungeon",
+        "description": "A deep red pendant that vibrates with each enemy defeat, enhancing aggression.",
+        "id": "G0274"
+    },
+    {
+        "accessoryName": "Warrior's Badge",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "dungeon",
+        "description": "A medal that resonates with battle fury, increasing melee damage.",
+        "id": "G0275"
+    },
+    {
+        "accessoryName": "Rune-etched Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "dungeon",
+        "description": "A band inscribed with fiery runes, augmenting the wearer's attack speed.",
+        "id": "G0276"
+    },
+    {
+        "accessoryName": "Elemental Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "dungeon",
+        "description": "A charm that cycles through elemental powers, adding elemental damage to attacks.",
+        "id": "G0277"
+    },
+    {
+        "accessoryName": "Berserker's Token",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "dungeon",
+        "description": "A token that throbs with a wild energy, boosting critical strike chances.",
+        "id": "G0278"
+    },
+    {
+        "accessoryName": "Duelist's Glove",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "dungeon",
+        "description": "An elegant glove that enhances dexterity and precision in combat.",
+        "id": "G0279"
+    },
+    {
+        "accessoryName": "Phoenix Feather",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "dungeon",
+        "description": "A radiant feather that ignites the wearer's attacks with fiery bursts.",
+        "id": "G0280"
+    },
+    {
+        "accessoryName": "Merchant's Satchel",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "dungeon",
+        "description": "A lavish leather satchel that magically expands to store extra gold and treasures.",
+        "id": "G0281"
+    },
+    {
+        "accessoryName": "Opulent Cape",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "dungeon",
+        "description": "A magnificent cape adorned with gold threads, inspiring lucrative deals.",
+        "id": "G0282"
+    },
+    {
+        "accessoryName": "Tycoon's Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "dungeon",
+        "description": "Fancy boots crafted from the finest materials, attracting wealth with each step.",
+        "id": "G0283"
+    },
+    {
+        "accessoryName": "Golden Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "dungeon",
+        "description": "Shining gauntlets inlaid with gold, increasing the value of items found.",
+        "id": "G0284"
+    },
+    {
+        "accessoryName": "Baron's Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "dungeon",
+        "description": "A studded belt with a golden buckle, magically enhancing bartering skills.",
+        "id": "G0285"
+    },
+    {
+        "accessoryName": "Aristocrat's Shawl",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "dungeon",
+        "description": "An elegant shawl that glistens with wealth, increasing gold drop rates.",
+        "id": "G0286"
+    },
+    {
+        "accessoryName": "Wealthy Bracers",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "dungeon",
+        "description": "Bracers encrusted with precious gems, magnifying the allure of gold.",
+        "id": "G0287"
+    },
+    {
+        "accessoryName": "Gilded Mask",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "dungeon",
+        "description": "A mysterious mask with golden filigree, reputed to reveal hidden treasures.",
+        "id": "G0288"
+    },
+    {
+        "accessoryName": "Monarch's Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "dungeon",
+        "description": "A regal mantle that exudes a sense of prosperity, enhancing loot rarity.",
+        "id": "G0289"
+    },
+    {
+        "accessoryName": "Goldspinner's Gloves",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "dungeon",
+        "description": "Enchanted gloves that spin gold threads, increasing rewards from enemies.",
+        "id": "G0290"
+    },
+    {
+        "accessoryName": "Coinbearer's Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "dungeon",
+        "description": "A ring that glimmers with a golden sheen, subtly increasing gold found.",
+        "id": "G0291"
+    },
+    {
+        "accessoryName": "Trader's Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "dungeon",
+        "description": "A shiny amulet that sways with each step, charming vendors for better prices.",
+        "id": "G0292"
+    },
+    {
+        "accessoryName": "Bargainer's Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "dungeon",
+        "description": "A bracelet with coin-like charms, granting luck in financial dealings.",
+        "id": "G0293"
+    },
+    {
+        "accessoryName": "Golden Locket",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "dungeon",
+        "description": "A locket holding a tiny golden heart, drawing wealth to the wearer.",
+        "id": "G0294"
+    },
+    {
+        "accessoryName": "Prosperity Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "dungeon",
+        "description": "A small charm that resonates with the sound of clinking coins, attracting wealth.",
+        "id": "G0295"
+    },
+    {
+        "accessoryName": "Midas Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "dungeon",
+        "description": "A band that shines like pure gold, magically enhancing loot value.",
+        "id": "G0296"
+    },
+    {
+        "accessoryName": "Wealth Whisperer",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "dungeon",
+        "description": "A subtle earpiece that whispers financial advice, boosting gold acquisition.",
+        "id": "G0297"
+    },
+    {
+        "accessoryName": "Riches' Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "dungeon",
+        "description": "A sparkling ring that increases the chances of finding rare coins and gems.",
+        "id": "G0298"
+    },
+    {
+        "accessoryName": "Merchant's Medallion",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "dungeon",
+        "description": "A polished medallion that shines in the presence of valuable items.",
+        "id": "G0299"
+    },
+    {
+        "accessoryName": "Economist's Emblem",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "dungeon",
+        "description": "An emblem that grants insight into the value of items, maximizing selling prices.",
+        "id": "G0300"
+    },
+    {
+        "accessoryName": "Lifebinder's Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "dungeon",
+        "description": "A mystical shawl that glows softly, gradually restoring the wearer's health.",
+        "id": "G0301"
+    },
+    {
+        "accessoryName": "Vitality Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "dungeon",
+        "description": "Boots imbued with life energy, enhancing the wearer's natural regeneration.",
+        "id": "G0302"
+    },
+    {
+        "accessoryName": "Heartguard Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "dungeon",
+        "description": "A shield with a heart emblem, providing additional health to its bearer.",
+        "id": "G0303"
+    },
+    {
+        "accessoryName": "Regeneration Cloak",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "dungeon",
+        "description": "A cloak that weaves healing energies, slowly mending wounds over time.",
+        "id": "G0304"
+    },
+    {
+        "accessoryName": "Spirit Bracers",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "dungeon",
+        "description": "Enchanted bracers that boost the wearer's life force and healing abilities.",
+        "id": "G0305"
+    },
+    {
+        "accessoryName": "Survivor's Greaves",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "dungeon",
+        "description": "Leg armor that increases resilience and helps recover from injuries faster.",
+        "id": "G0306"
+    },
+    {
+        "accessoryName": "Healer's Satchel",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "dungeon",
+        "description": "A satchel filled with healing herbs, slowly restoring health over time.",
+        "id": "G0307"
+    },
+    {
+        "accessoryName": "Phoenix Cape",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "dungeon",
+        "description": "A fiery red cape that imbues the wearer with rejuvenating powers.",
+        "id": "G0308"
+    },
+    {
+        "accessoryName": "Champion's Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "dungeon",
+        "description": "A belt that symbolizes strength and endurance, enhancing vitality.",
+        "id": "G0309"
+    },
+    {
+        "accessoryName": "Guardian Angel",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "dungeon",
+        "description": "A protective figurine that grants a second chance at life upon fatal damage.",
+        "id": "G0310"
+    },
+    {
+        "accessoryName": "Rejuvenation Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "dungeon",
+        "description": "A delicate ring that radiates a warm light, enhancing the wearer's healing.",
+        "id": "G0311"
+    },
+    {
+        "accessoryName": "Lifeforce Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "dungeon",
+        "description": "An amulet pulsing with a vibrant energy, boosting the wearer's maximum health.",
+        "id": "G0312"
+    },
+    {
+        "accessoryName": "Healing Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "dungeon",
+        "description": "A small charm that emits a soft glow, slightly increasing health regeneration.",
+        "id": "G0313"
+    },
+    {
+        "accessoryName": "Vitality Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "dungeon",
+        "description": "A bracelet woven with life-giving threads, enhancing overall vitality.",
+        "id": "G0314"
+    },
+    {
+        "accessoryName": "Serenity Locket",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "dungeon",
+        "description": "A locket that calms the soul, stabilizing health during critical moments.",
+        "id": "G0315"
+    },
+    {
+        "accessoryName": "Resilience Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "dungeon",
+        "description": "A band that stiffens against attacks, reducing damage taken.",
+        "id": "G0316"
+    },
+    {
+        "accessoryName": "Mender's Token",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "dungeon",
+        "description": "A token that accelerates wound healing, reducing recovery time.",
+        "id": "G0317"
+    },
+    {
+        "accessoryName": "Guardian's Medallion",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "dungeon",
+        "description": "A medallion that hums with protective magic, absorbing a portion of incoming damage.",
+        "id": "G0318"
+    },
+    {
+        "accessoryName": "Life's Whisper",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "dungeon",
+        "description": "An earpiece that whispers life-affirming mantras, subtly enhancing health.",
+        "id": "G0319"
+    },
+    {
+        "accessoryName": "Survivalist's Pin",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "dungeon",
+        "description": "A pin that adapts to the wearer's condition, providing health boosts when most needed.",
+        "id": "G0320"
+    },
+    {
+        "accessoryName": "Cosmic Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "dungeon",
+        "description": "A celestial cloak that shifts colors, granting random buffs at unexpected times.",
+        "id": "G0321"
+    },
+    {
+        "accessoryName": "Chameleon Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "dungeon",
+        "description": "Boots that change their properties based on the terrain, adapting to various environments.",
+        "id": "G0322"
+    },
+    {
+        "accessoryName": "Elemental Aegis",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "dungeon",
+        "description": "A shield that cycles through elemental defenses, offering versatile protection.",
+        "id": "G0323"
+    },
+    {
+        "accessoryName": "Alchemist's Bandolier",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "dungeon",
+        "description": "A bandolier holding a variety of enchanted vials, each with a unique, unpredictable effect.",
+        "id": "G0324"
+    },
+    {
+        "accessoryName": "Mystic's Cape",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "dungeon",
+        "description": "A cape imbued with arcane runes, randomly enhancing different abilities.",
+        "id": "G0325"
+    },
+    {
+        "accessoryName": "Harmonizer Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "dungeon",
+        "description": "Gauntlets that resonate with the wearer's actions, providing varied combat enhancements.",
+        "id": "G0326"
+    },
+    {
+        "accessoryName": "Prism Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "dungeon",
+        "description": "A crystalline shield that refracts light, casting random protective spells.",
+        "id": "G0327"
+    },
+    {
+        "accessoryName": "Rogue's Utility Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "dungeon",
+        "description": "A belt with multiple pouches containing tools for every situation, from combat to stealth.",
+        "id": "G0328"
+    },
+    {
+        "accessoryName": "Sorcerer's Sash",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "dungeon",
+        "description": "A sash that stores and randomly unleashes bursts of magical energy, aiding in various ways.",
+        "id": "G0329"
+    },
+    {
+        "accessoryName": "Adventurer's Amulet",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "dungeon",
+        "description": "An amulet that adapts to the wearer's needs, providing a mix of offense, defense, and utility.",
+        "id": "G0330"
+    },
+    {
+        "accessoryName": "Wanderer's Compass",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "dungeon",
+        "description": "A mystical compass that not only guides the path but also offers random boons.",
+        "id": "G0331"
+    },
+    {
+        "accessoryName": "Arcanist's Cube",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "dungeon",
+        "description": "A small cube that randomly shifts between different magical effects.",
+        "id": "G0332"
+    },
+    {
+        "accessoryName": "Shapeshifter's Brooch",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "dungeon",
+        "description": "A brooch that morphs its shape, providing unexpected advantages.",
+        "id": "G0333"
+    },
+    {
+        "accessoryName": "Ethereal Stone",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "dungeon",
+        "description": "A stone that phases between realms, granting various defensive and offensive buffs.",
+        "id": "G0334"
+    },
+    {
+        "accessoryName": "Mimic's Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "dungeon",
+        "description": "A charm that imitates nearby magical effects, providing diverse abilities.",
+        "id": "G0335"
+    },
+    {
+        "accessoryName": "Trickster's Dice",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "dungeon",
+        "description": "A pair of dice that grant random combat, stealth, or economic bonuses when rolled.",
+        "id": "G0336"
+    },
+    {
+        "accessoryName": "Chaos Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "dungeon",
+        "description": "A pendant that thrives in chaos, randomly enhancing various stats.",
+        "id": "G0337"
+    },
+    {
+        "accessoryName": "Oracle's Beads",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "dungeon",
+        "description": "Beads that reveal glimpses of the future, offering tactical advantages.",
+        "id": "G0338"
+    },
+    {
+        "accessoryName": "Enigma Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "dungeon",
+        "description": "A ring that cloaks the wearer in mystery, randomly activating hidden powers.",
+        "id": "G0339"
+    },
+    {
+        "accessoryName": "Fortune's Token",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "dungeon",
+        "description": "A token that flips between luck and fortune, bestowing various unexpected benefits.",
+        "id": "G0340"
+    },
+    {
+        "accessoryName": "Voidwalker's Cloak",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "dungeon",
+        "description": "A cloak woven from the fabric of the void, granting the ability to teleport short distances.",
+        "id": "G0341"
+    },
+    {
+        "accessoryName": "Timekeeper's Hourglass",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "dungeon",
+        "description": "An hourglass that can briefly reverse or hasten time, altering the course of events.",
+        "id": "G0342"
+    },
+    {
+        "accessoryName": "Gravity Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "dungeon",
+        "description": "Gauntlets that manipulate gravity, allowing the wearer to leap great heights or anchor firmly.",
+        "id": "G0343"
+    },
+    {
+        "accessoryName": "Dimensional Satchel",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "dungeon",
+        "description": "A satchel with its own pocket dimension, able to store an improbable amount of items.",
+        "id": "G0344"
+    },
+    {
+        "accessoryName": "Mirage Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "dungeon",
+        "description": "A shield that casts illusions, making the wearer appear in multiple places at once.",
+        "id": "G0345"
+    },
+    {
+        "accessoryName": "Riftmaker's Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "dungeon",
+        "description": "Boots that can tear open temporary rifts in space, allowing for swift traversal.",
+        "id": "G0346"
+    },
+    {
+        "accessoryName": "Stormcaller's Horn",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "dungeon",
+        "description": "A horn that can summon storms, wielding the weather as a weapon.",
+        "id": "G0347"
+    },
+    {
+        "accessoryName": "Lich's Phylactery",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "dungeon",
+        "description": "A mysterious container that traps a part of the soul, granting immortality at a cost.",
+        "id": "G0348"
+    },
+    {
+        "accessoryName": "Dreamweaver's Circlet",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "dungeon",
+        "description": "A circlet that allows entry into others' dreams, revealing secrets or planting ideas.",
+        "id": "G0349"
+    },
+    {
+        "accessoryName": "Astral Projector",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "dungeon",
+        "description": "A device that enables the wearer's spirit to leave the body, exploring unseen realms.",
+        "id": "G0350"
+    },
+    {
+        "accessoryName": "Eclipse Medallion",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "dungeon",
+        "description": "A medallion that eclipses light, enveloping the wearer in an aura of darkness at will.",
+        "id": "G0351"
+    },
+    {
+        "accessoryName": "Whispering Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "dungeon",
+        "description": "A ring that whispers ancient secrets, granting knowledge of hidden passages and traps.",
+        "id": "G0352"
+    },
+    {
+        "accessoryName": "Flame Dancer's Gem",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "dungeon",
+        "description": "A gem that dances with internal flames, allowing control over fire in nearby vicinity.",
+        "id": "G0353"
+    },
+    {
+        "accessoryName": "Siren's Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "dungeon",
+        "description": "An amulet that emits a mesmerizing melody, captivating those who hear its tune.",
+        "id": "G0354"
+    },
+    {
+        "accessoryName": "Illusionist's Marble",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "dungeon",
+        "description": "A marble that casts realistic illusions, deceiving enemies with ease.",
+        "id": "G0355"
+    },
+    {
+        "accessoryName": "Shifting Sands",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "dungeon",
+        "description": "Sands that alter the flow of time around the wearer, speeding up or slowing down movements.",
+        "id": "G0356"
+    },
+    {
+        "accessoryName": "Invisibility Stone",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "dungeon",
+        "description": "A stone that can render the wearer invisible for a short duration.",
+        "id": "G0357"
+    },
+    {
+        "accessoryName": "Polaris Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "dungeon",
+        "description": "A pendant that aligns with celestial bodies, granting guidance and enlightenment.",
+        "id": "G0358"
+    },
+    {
+        "accessoryName": "Fate Spinner",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "dungeon",
+        "description": "A device that twists fate, offering a chance to alter the outcome of certain events.",
+        "id": "G0359"
+    },
+    {
+        "accessoryName": "Soulbound Locket",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "dungeon",
+        "description": "A locket that forges a bond with another soul, sharing health and experiences.",
+        "id": "G0360"
+    }
+]

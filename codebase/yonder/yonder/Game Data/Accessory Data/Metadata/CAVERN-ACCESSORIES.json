@@ -1,0 +1,962 @@
+[
+    {
+        "accessoryName": "Obsidian Aegis",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "cavern",
+        "description": "A glossy black shield, forged from volcanic glass, cool to the touch and unyielding.",
+        "id": "G0001"
+    },
+    {
+        "accessoryName": "Crystal Barrier Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "cavern",
+        "description": "Translucent gloves embedded with sharp, resilient crystal shards that shimmer in the dim light.",
+        "id": "G0002"
+    },
+    {
+        "accessoryName": "Echo Ward Cloak",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "cavern",
+        "description": "A deep navy cloak that absorbs sound, woven with threads of silver and cave silk.",
+        "id": "G0003"
+    },
+    {
+        "accessoryName": "Stalagmite Pauldrons",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "cavern",
+        "description": "Jagged shoulder armor resembling natural stalagmites, rugged and imposing.",
+        "id": "G0004"
+    },
+    {
+        "accessoryName": "Grotto Guard Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "cavern",
+        "description": "Heavy, stone-soled boots, encrusted with glowing minerals and offering steadfast footing.",
+        "id": "G0005"
+    },
+    {
+        "accessoryName": "Luminous Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "cavern",
+        "description": "A cape that glows faintly, woven from luminescent fungi and spider silk, offering eerie protection.",
+        "id": "G0006"
+    },
+    {
+        "accessoryName": "Boulder Buckler",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "cavern",
+        "description": "A round, robust shield resembling a cross-section of a cavern wall, complete with mineral layers.",
+        "id": "G0007"
+    },
+    {
+        "accessoryName": "Cave Drake Vambraces",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "cavern",
+        "description": "Scaled arm guards, crafted from the hide of a subterranean drake, tough and heat-resistant.",
+        "id": "G0008"
+    },
+    {
+        "accessoryName": "Subterranean Spaulders",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "cavern",
+        "description": "Shoulder guards made from compacted cave earth, sturdy and adorned with fossil imprints.",
+        "id": "G0009"
+    },
+    {
+        "accessoryName": "Miner's Heritage Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "cavern",
+        "description": "A broad shield, engraved with ancient mining runes, offering resilience and history.",
+        "id": "G0010"
+    },
+    {
+        "accessoryName": "Geode Heart Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "cavern",
+        "description": "A polished amulet enclosing a vibrant geode, pulsating with protective energies.",
+        "id": "G0011"
+    },
+    {
+        "accessoryName": "Cavernous Resonance Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "cavern",
+        "description": "A narrow silver ring that vibrates softly, echoing the ancient whispers of the deep caverns.",
+        "id": "G0012"
+    },
+    {
+        "accessoryName": "Fossilized Shell Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "cavern",
+        "description": "An ancient shell, turned to stone over eons, offering age-old resilience.",
+        "id": "G0013"
+    },
+    {
+        "accessoryName": "Mystic Quartz Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "cavern",
+        "description": "A luminescent quartz pendant, shimmering with a spectral light, warding off harm.",
+        "id": "G0014"
+    },
+    {
+        "accessoryName": "Subterranean Rune Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "cavern",
+        "description": "A series of rune-etched stones linked together, offering mystical defense.",
+        "id": "G0015"
+    },
+    {
+        "accessoryName": "Lava Forged Signet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "cavern",
+        "description": "A signet ring crafted from cooled lava, exuding an aura of endurance.",
+        "id": "G0016"
+    },
+    {
+        "accessoryName": "Grotto Guardian Medallion",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "cavern",
+        "description": "A hefty medallion depicting a mythical cave guardian, symbolizing protection.",
+        "id": "G0017"
+    },
+    {
+        "accessoryName": "Crystal Shard Earrings",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "cavern",
+        "description": "Delicate earrings made from sharp, clear crystal shards, reflecting deflective light.",
+        "id": "G0018"
+    },
+    {
+        "accessoryName": "Underground Spirit Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "cavern",
+        "description": "A ring infused with the spirit of the underground, providing unseen barriers.",
+        "id": "G0019"
+    },
+    {
+        "accessoryName": "Mineral Infused Wristband",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "defensive",
+        "regionProfileTag": "cavern",
+        "description": "A woven wristband, interlaced with tough minerals, offering solid defense.",
+        "id": "G0020"
+    },
+    {
+        "accessoryName": "Ravager's Obsidian Blade",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "cavern",
+        "description": "A sleek, razor-sharp sword made from pure obsidian, glinting with a deadly edge.",
+        "id": "G0021"
+    },
+    {
+        "accessoryName": "Lurker's Spike Gauntlet",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "cavern",
+        "description": "A formidable gauntlet lined with venomous spikes, emerging from shadowy depths.",
+        "id": "G0022"
+    },
+    {
+        "accessoryName": "Stalactite Warhammer",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "cavern",
+        "description": "A massive hammer, its head resembling a sharp stalactite, capable of crushing foes.",
+        "id": "G0023"
+    },
+    {
+        "accessoryName": "Chasm Edge Scythe",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "cavern",
+        "description": "A curved, sinister scythe, echoing the abyss of cavernous chasms in its design.",
+        "id": "G0024"
+    },
+    {
+        "accessoryName": "Grotto's Grasp Claws",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "cavern",
+        "description": "Long, sharp claws designed for rapid strikes, as if reaching from the grotto's heart.",
+        "id": "G0025"
+    },
+    {
+        "accessoryName": "Cave Fang Dagger",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "cavern",
+        "description": "A sleek dagger with a blade mimicking the fangs of a cavern-dwelling predator.",
+        "id": "G0026"
+    },
+    {
+        "accessoryName": "Subterranean Flail",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "cavern",
+        "description": "A heavy flail with a spiked ball, echoing the relentless force of underground quakes.",
+        "id": "G0027"
+    },
+    {
+        "accessoryName": "Crystal Shard Lance",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "cavern",
+        "description": "A long lance tipped with a razor-sharp crystal, capable of piercing the hardest armors.",
+        "id": "G0028"
+    },
+    {
+        "accessoryName": "Echoing Cavern Bow",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "cavern",
+        "description": "A bow that vibrates with subterranean echoes, strengthening each arrow's impact.",
+        "id": "G0029"
+    },
+    {
+        "accessoryName": "Miner's Revenge Pickaxe",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "cavern",
+        "description": "A rugged pickaxe, forged for battle, embodying the wrath of betrayed miners.",
+        "id": "G0030"
+    },
+    {
+        "accessoryName": "Viper's Venom Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "cavern",
+        "description": "A sleek ring imbued with the essence of venom, enhancing the wearer's lethal strikes.",
+        "id": "G0031"
+    },
+    {
+        "accessoryName": "Shard Storm Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "cavern",
+        "description": "A pendant that harnesses the fury of a crystal storm, amplifying magical attacks.",
+        "id": "G0032"
+    },
+    {
+        "accessoryName": "Abyssal Echo Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "cavern",
+        "description": "A bracelet that whispers cavernous secrets, boosting the power of sonic abilities.",
+        "id": "G0033"
+    },
+    {
+        "accessoryName": "Chasm Bane Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "cavern",
+        "description": "An amulet radiating dark energy, drawing strength from the depths of chasms.",
+        "id": "G0034"
+    },
+    {
+        "accessoryName": "Lava Core Signet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "cavern",
+        "description": "A signet ring containing a molten core, igniting the wearer's attacks with fire.",
+        "id": "G0035"
+    },
+    {
+        "accessoryName": "Grotto's Whisper Earrings",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "cavern",
+        "description": "Earrings that echo the faint, ominous whispers of the grotto, unsettling foes.",
+        "id": "G0036"
+    },
+    {
+        "accessoryName": "Cave Stalker's Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "cavern",
+        "description": "A charm embodying the stealth and agility of a cave stalker, enhancing surprise attacks.",
+        "id": "G0037"
+    },
+    {
+        "accessoryName": "Fungal Spore Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "cavern",
+        "description": "A band that releases a cloud of toxic spores, weakening enemies upon contact.",
+        "id": "G0038"
+    },
+    {
+        "accessoryName": "Miner's Fury Medallion",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "cavern",
+        "description": "A medallion seething with the raw fury of oppressed miners, enhancing physical power.",
+        "id": "G0039"
+    },
+    {
+        "accessoryName": "Subterranean Wrath Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "offensive",
+        "regionProfileTag": "cavern",
+        "description": "A ring pulsating with the wrath of the earth's depths, bolstering destructive capabilities.",
+        "id": "G0040"
+    },
+    {
+        "accessoryName": "Treasure Seeker's Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "cavern",
+        "description": "An ornate cape adorned with golden threads, shimmering with the promise of fortune.",
+        "id": "G0041"
+    },
+    {
+        "accessoryName": "Midas Touch Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "cavern",
+        "description": "Gleaming golden gauntlets that increase the wealth gained from vanquished foes.",
+        "id": "G0042"
+    },
+    {
+        "accessoryName": "Gilded Pathfinder Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "cavern",
+        "description": "Boots with intricate gold filigree, leaving trails of wealth in every step.",
+        "id": "G0043"
+    },
+    {
+        "accessoryName": "Auric Scout's Quiver",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "cavern",
+        "description": "A quiver that magically fills with golden arrows, multiplying the loot from targets.",
+        "id": "G0044"
+    },
+    {
+        "accessoryName": "Opulent Spell Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "cavern",
+        "description": "A shield engraved with runes of prosperity, deflecting harm and attracting wealth.",
+        "id": "G0045"
+    },
+    {
+        "accessoryName": "Luminous Miner's Lantern",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "cavern",
+        "description": "A lantern that casts a golden glow, revealing hidden treasures in the darkest corners.",
+        "id": "G0046"
+    },
+    {
+        "accessoryName": "Prospector's Pickaxe",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "cavern",
+        "description": "A pickaxe with a golden blade, capable of unearthing riches from the rock.",
+        "id": "G0047"
+    },
+    {
+        "accessoryName": "Fortune's Favor Sash",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "cavern",
+        "description": "A sash woven with golden threads, magically increasing the wearer's wealth.",
+        "id": "G0048"
+    },
+    {
+        "accessoryName": "Golden Geode Staff",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "cavern",
+        "description": "A staff crowned with a radiant geode, channeling spells that yield gold.",
+        "id": "G0049"
+    },
+    {
+        "accessoryName": "Wealth Whisperer's Cloak",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "cavern",
+        "description": "A cloak that whispers the location of unseen riches, guiding its wearer to wealth.",
+        "id": "G0050"
+    },
+    {
+        "accessoryName": "Coin Conjurer's Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "cavern",
+        "description": "A small ring that occasionally spawns coins, seemingly out of thin air.",
+        "id": "G0051"
+    },
+    {
+        "accessoryName": "Gilded Miner's Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "cavern",
+        "description": "An amulet with a gold nugget center, increasing gold drops from mining activities.",
+        "id": "G0052"
+    },
+    {
+        "accessoryName": "Wealth Seeker's Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "cavern",
+        "description": "A charm that subtly glows when near hidden treasures, leading to unexpected riches.",
+        "id": "G0053"
+    },
+    {
+        "accessoryName": "Prosperity's Loop Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "cavern",
+        "description": "A bracelet that increases the value of gold found, as if by magic.",
+        "id": "G0054"
+    },
+    {
+        "accessoryName": "Auric Insight Earrings",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "cavern",
+        "description": "Earrings that grant the wearer a keen sense for detecting hidden gold deposits.",
+        "id": "G0055"
+    },
+    {
+        "accessoryName": "Golden Tongue Medallion",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "cavern",
+        "description": "A medallion that grants its wearer exceptional bartering skills, reducing prices.",
+        "id": "G0056"
+    },
+    {
+        "accessoryName": "Bountiful Bounty Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "cavern",
+        "description": "A band that ensures bounties and quests yield extra gold upon completion.",
+        "id": "G0057"
+    },
+    {
+        "accessoryName": "Midas' Whisper Necklace",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "cavern",
+        "description": "A necklace that occasionally whispers lucrative opportunities to its wearer.",
+        "id": "G0058"
+    },
+    {
+        "accessoryName": "Opulent Oracle Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "cavern",
+        "description": "A pendant that predicts the most profitable paths, leading to hidden wealth.",
+        "id": "G0059"
+    },
+    {
+        "accessoryName": "Lucky Looter's Signet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "gold",
+        "regionProfileTag": "cavern",
+        "description": "A signet ring that seems to make every loot chest contain a little extra gold.",
+        "id": "G0060"
+    },
+    {
+        "accessoryName": "Vitality Stone Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "cavern",
+        "description": "A sturdy shield embedded with vitality stones, enhancing the bearer's life force.",
+        "id": "G0061"
+    },
+    {
+        "accessoryName": "Lifeforce Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "cavern",
+        "description": "A protective cloak woven with regenerative fibers, slowly restoring health over time.",
+        "id": "G0062"
+    },
+    {
+        "accessoryName": "Elixir Brewer's Satchel",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "cavern",
+        "description": "A satchel containing rare herbs, automatically brewing health elixirs during travel.",
+        "id": "G0063"
+    },
+    {
+        "accessoryName": "Heartbeat Drum",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "cavern",
+        "description": "A small drum that syncs with the wearer's heartbeat, accelerating healing when in rhythm.",
+        "id": "G0064"
+    },
+    {
+        "accessoryName": "Healer's Crystal Gauntlet",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "cavern",
+        "description": "A gauntlet inset with healing crystals, channeling restorative energy to the wearer.",
+        "id": "G0065"
+    },
+    {
+        "accessoryName": "Regrowth Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "cavern",
+        "description": "Boots that leave a trail of revitalizing energy, slowly regenerating health.",
+        "id": "G0066"
+    },
+    {
+        "accessoryName": "Soothing Echo Horn",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "cavern",
+        "description": "A horn that emits a soothing echo, bolstering the wearer's health recovery.",
+        "id": "G0067"
+    },
+    {
+        "accessoryName": "Rejuvenating Miner's Helmet",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "cavern",
+        "description": "A helmet that emits a soft glow, rejuvenating the wearer's spirit and body.",
+        "id": "G0068"
+    },
+    {
+        "accessoryName": "Cavern Guardian Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "cavern",
+        "description": "A shield that absorbs harmful energies, converting them into healing pulses.",
+        "id": "G0069"
+    },
+    {
+        "accessoryName": "Life Pulse Staff",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "cavern",
+        "description": "A staff that emits life pulses, gradually restoring the vitality of its wielder.",
+        "id": "G0070"
+    },
+    {
+        "accessoryName": "Healing Crystal Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "cavern",
+        "description": "A ring with a small healing crystal, gradually restoring health over time.",
+        "id": "G0071"
+    },
+    {
+        "accessoryName": "Restorative Gem Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "cavern",
+        "description": "A pendant with a luminous gem, enhancing natural health regeneration.",
+        "id": "G0072"
+    },
+    {
+        "accessoryName": "Vitality Charm Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "cavern",
+        "description": "A bracelet with charms that increase the wearer's maximum health.",
+        "id": "G0073"
+    },
+    {
+        "accessoryName": "Revitalizing Herb Locket",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "cavern",
+        "description": "A locket containing revitalizing herbs, slowly releasing healing aromas.",
+        "id": "G0074"
+    },
+    {
+        "accessoryName": "Recovery Bead Necklace",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "cavern",
+        "description": "A necklace made of beads that speed up recovery from ailments and injuries.",
+        "id": "G0075"
+    },
+    {
+        "accessoryName": "Energetic Quartz Earrings",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "cavern",
+        "description": "Earrings that store healing energy, releasing it in times of need.",
+        "id": "G0076"
+    },
+    {
+        "accessoryName": "Life Force Signet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "cavern",
+        "description": "A signet ring that subtly enhances the wearer's life force and vitality.",
+        "id": "G0077"
+    },
+    {
+        "accessoryName": "Soothing Spirit Medallion",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "cavern",
+        "description": "A medallion that radiates a calming aura, aiding in faster health recovery.",
+        "id": "G0078"
+    },
+    {
+        "accessoryName": "Guardian's Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "cavern",
+        "description": "An amulet that guards the wearer, providing a small health boost in critical moments.",
+        "id": "G0079"
+    },
+    {
+        "accessoryName": "Mender's Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "health",
+        "regionProfileTag": "cavern",
+        "description": "A simple band that mends minor wounds over time, woven from healing fibers.",
+        "id": "G0080"
+    },
+    {
+        "accessoryName": "Mystic Wanderer's Cloak",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "cavern",
+        "description": "A multifaceted cloak that adapts its enchantments to the bearer's needs, from shielding to enhancing spells.",
+        "id": "G0081"
+    },
+    {
+        "accessoryName": "Chameleon Gait Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "cavern",
+        "description": "Boots that change their properties based on the terrain, offering stealth, speed, or stability.",
+        "id": "G0082"
+    },
+    {
+        "accessoryName": "Elemental Harmony Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "cavern",
+        "description": "Gauntlets that harmonize with elemental forces, providing offense, defense, or utility based on the environment.",
+        "id": "G0083"
+    },
+    {
+        "accessoryName": "Shapeshifter's Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "cavern",
+        "description": "A mantle that allows the wearer to briefly take on various forms, gaining unique abilities with each transformation.",
+        "id": "G0084"
+    },
+    {
+        "accessoryName": "All-Seeing Orb Scepter",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "cavern",
+        "description": "A scepter topped with an orb that grants foresight, reveals hidden paths, and enhances magical attacks.",
+        "id": "G0085"
+    },
+    {
+        "accessoryName": "Eternal Cycle Amulet",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "cavern",
+        "description": "An amulet that cycles through phases of the moon, bestowing different bonuses at each phase.",
+        "id": "G0086"
+    },
+    {
+        "accessoryName": "Nature's Whisper Bow",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "cavern",
+        "description": "A bow that communicates with nature, its arrows adapting to either heal allies, harm enemies, or manipulate the environment.",
+        "id": "G0087"
+    },
+    {
+        "accessoryName": "Alchemist's Dream Flask",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "cavern",
+        "description": "A flask containing a mysterious liquid that unpredictably bestows various enhancements or conjures magical effects.",
+        "id": "G0088"
+    },
+    {
+        "accessoryName": "Cosmic Balance Staff",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "cavern",
+        "description": "A staff that maintains a balance between offensive and defensive magic, amplifying the wielder's adaptability in battle.",
+        "id": "G0089"
+    },
+    {
+        "accessoryName": "Rune-Weaver's Belt",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "cavern",
+        "description": "A belt imbued with ancient runes, dynamically weaving spells to aid in combat, exploration, or healing.",
+        "id": "G0090"
+    },
+    {
+        "accessoryName": "Enigma Stone Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "cavern",
+        "description": "A ring that subtly changes its gem color, granting random buffs or revealing secrets.",
+        "id": "G0091"
+    },
+    {
+        "accessoryName": "Prismatic Compass Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "cavern",
+        "description": "A pendant that not only guides the way but also adapts to provide various elemental resistances.",
+        "id": "G0092"
+    },
+    {
+        "accessoryName": "Aetherial Dust Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "cavern",
+        "description": "An amulet filled with aetherial dust, granting random boosts in magic, strength, or speed.",
+        "id": "G0093"
+    },
+    {
+        "accessoryName": "Chaos Bead Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "cavern",
+        "description": "A bracelet with beads that randomly alter the wearer's abilities, sometimes with unpredictable effects.",
+        "id": "G0094"
+    },
+    {
+        "accessoryName": "Harmonizer's Loop Earrings",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "cavern",
+        "description": "Earrings that harmonize with the wearer's state, providing balance in offense, defense, or utility as needed.",
+        "id": "G0095"
+    },
+    {
+        "accessoryName": "Elemental Thread Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "cavern",
+        "description": "A ring that weaves together elemental threads, offering varied elemental buffs and protections.",
+        "id": "G0096"
+    },
+    {
+        "accessoryName": "Wanderer's Luck Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "cavern",
+        "description": "A charm that increases luck in finding rare items, escaping danger, or encountering beneficial events.",
+        "id": "G0097"
+    },
+    {
+        "accessoryName": "Mystic's Cube Necklace",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "cavern",
+        "description": "A necklace with a cube that rotates to display different mystical symbols, each with its own effect.",
+        "id": "G0098"
+    },
+    {
+        "accessoryName": "Allegory Medallion",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "cavern",
+        "description": "A medallion that tells ever-changing allegorical tales, bestowing wisdom and various insights.",
+        "id": "G0099"
+    },
+    {
+        "accessoryName": "Riddlemaster's Band",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "everything",
+        "regionProfileTag": "cavern",
+        "description": "A band that poses riddles to the wearer, offering rewards of strength, speed, or intelligence for correct answers.",
+        "id": "G0100"
+    },
+    {
+        "accessoryName": "Timebender's Hourglass",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "cavern",
+        "description": "An ancient hourglass that can briefly slow down or hasten time around the wearer.",
+        "id": "G0101"
+    },
+    {
+        "accessoryName": "Astral Projection Mantle",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "cavern",
+        "description": "A mystical cloak that allows the wearer to project an astral form, exploring areas without physical presence.",
+        "id": "G0102"
+    },
+    {
+        "accessoryName": "Gravity Defier Boots",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "cavern",
+        "description": "Boots that enable the wearer to temporarily defy gravity, walking on walls or ceilings.",
+        "id": "G0103"
+    },
+    {
+        "accessoryName": "Dimensional Rift Gauntlets",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "cavern",
+        "description": "Gauntlets capable of tearing small rifts in space, allowing instant travel to nearby locations.",
+        "id": "G0104"
+    },
+    {
+        "accessoryName": "Eclipse Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "cavern",
+        "description": "A shield that can cast an area into total darkness, disorienting enemies and hiding the wielder.",
+        "id": "G0105"
+    },
+    {
+        "accessoryName": "Phoenix Rebirth Cloak",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "cavern",
+        "description": "A cloak that can resurrect the wearer once per day, engulfing them in protective flames.",
+        "id": "G0106"
+    },
+    {
+        "accessoryName": "Void Walker's Staff",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "cavern",
+        "description": "A staff that can temporarily open voids to absorb incoming attacks or unleash void energy.",
+        "id": "G0107"
+    },
+    {
+        "accessoryName": "Mirage Mirror Shield",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "cavern",
+        "description": "A shield that creates mirror images of the wielder, confusing foes with illusory duplicates.",
+        "id": "G0108"
+    },
+    {
+        "accessoryName": "Spectral Whisper Horn",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "cavern",
+        "description": "A horn that can summon spectral entities, offering guidance or aid in battles.",
+        "id": "G0109"
+    },
+    {
+        "accessoryName": "Celestial Convergence Lantern",
+        "accessoryType": "peripheral",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "cavern",
+        "description": "A lantern that aligns with celestial bodies, granting diverse mystical effects based on stellar alignments.",
+        "id": "G0110"
+    },
+    {
+        "accessoryName": "Whisper of the Ancients Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "cavern",
+        "description": "A ring that whispers ancient secrets, granting knowledge and insight in critical moments.",
+        "id": "G0111"
+    },
+    {
+        "accessoryName": "Infinite Reflection Amulet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "cavern",
+        "description": "An amulet that reflects spells cast against the wearer, turning their energy back upon the caster.",
+        "id": "G0112"
+    },
+    {
+        "accessoryName": "Gleam of the Firefly Pendant",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "cavern",
+        "description": "A pendant that emits a mesmerizing light, capable of charming or disarming adversaries.",
+        "id": "G0113"
+    },
+    {
+        "accessoryName": "Shard of the Starfall Bracelet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "cavern",
+        "description": "A bracelet containing a fragment of a fallen star, bestowing celestial powers upon its bearer.",
+        "id": "G0114"
+    },
+    {
+        "accessoryName": "Veil of the Phantom Earrings",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "cavern",
+        "description": "Earrings that allow the wearer to briefly become intangible, evading physical harm.",
+        "id": "G0115"
+    },
+    {
+        "accessoryName": "Pulse of the Earth Core Ring",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "cavern",
+        "description": "A ring that syncs with the earth's core, granting bursts of strength during seismic events.",
+        "id": "G0116"
+    },
+    {
+        "accessoryName": "Dreamcatcher's Charm",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "cavern",
+        "description": "A charm that captures dreams, occasionally manifesting them into reality for brief moments.",
+        "id": "G0117"
+    },
+    {
+        "accessoryName": "Soulbond Signet",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "cavern",
+        "description": "A signet that forges a bond with a chosen ally, sharing health and strength between them.",
+        "id": "G0118"
+    },
+    {
+        "accessoryName": "Mimic's Mimicry Medallion",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "cavern",
+        "description": "A medallion that can mimic the effect of another accessory in close proximity.",
+        "id": "G0119"
+    },
+    {
+        "accessoryName": "Wisp of the Will-o'-Wisp Necklace",
+        "accessoryType": "regular",
+        "accessoryProfileTag": "special",
+        "regionProfileTag": "cavern",
+        "description": "A necklace containing a will-o'-wisp, guiding the wearer through illusions and revealing hidden truths.",
+        "id": "G0120"
+    }
+]

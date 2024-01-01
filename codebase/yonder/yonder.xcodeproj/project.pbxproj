@@ -543,6 +543,19 @@
 		B678C18A2B3C424C00CD6354 /* FACTION4-WEAPONS.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C17E2B3C424C00CD6354 /* FACTION4-WEAPONS.json */; };
 		B678C18C2B3C441000CD6354 /* WeaponProfileRepoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C18B2B3C441000CD6354 /* WeaponProfileRepoUtil.swift */; };
 		B678C18E2B3C484300CD6354 /* WEAPON-DATA-INDEX.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C18D2B3C484300CD6354 /* WEAPON-DATA-INDEX.json */; };
+		B678C19E2B427DFB00CD6354 /* FACTION4-ACCESSORIES.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1922B427DFA00CD6354 /* FACTION4-ACCESSORIES.json */; };
+		B678C19F2B427DFB00CD6354 /* FOREST-ACCESSORIES.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1932B427DFA00CD6354 /* FOREST-ACCESSORIES.json */; };
+		B678C1A02B427DFB00CD6354 /* FACTION6-ACCESSORIES.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1942B427DFA00CD6354 /* FACTION6-ACCESSORIES.json */; };
+		B678C1A12B427DFB00CD6354 /* NETHER-ACCESSORIES.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1952B427DFB00CD6354 /* NETHER-ACCESSORIES.json */; };
+		B678C1A22B427DFB00CD6354 /* MECH-ACCESSORIES.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1962B427DFB00CD6354 /* MECH-ACCESSORIES.json */; };
+		B678C1A32B427DFB00CD6354 /* CAVERN-ACCESSORIES.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1972B427DFB00CD6354 /* CAVERN-ACCESSORIES.json */; };
+		B678C1A42B427DFB00CD6354 /* SHADOW-ACCESSORIES.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1982B427DFB00CD6354 /* SHADOW-ACCESSORIES.json */; };
+		B678C1A52B427DFB00CD6354 /* FROST-ACCESSORIES.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1992B427DFB00CD6354 /* FROST-ACCESSORIES.json */; };
+		B678C1A62B427DFB00CD6354 /* FACTION2-ACCESSORIES.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C19A2B427DFB00CD6354 /* FACTION2-ACCESSORIES.json */; };
+		B678C1A72B427DFB00CD6354 /* FACTION5-ACCESSORIES.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C19B2B427DFB00CD6354 /* FACTION5-ACCESSORIES.json */; };
+		B678C1A82B427DFB00CD6354 /* DESERT-ACCESSORIES.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C19C2B427DFB00CD6354 /* DESERT-ACCESSORIES.json */; };
+		B678C1A92B427DFB00CD6354 /* DUNGEON-ACCESSORIES.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C19D2B427DFB00CD6354 /* DUNGEON-ACCESSORIES.json */; };
+		B678C1AB2B427E3400CD6354 /* ACCESSORY-DATA-INDEX.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1AA2B427E3400CD6354 /* ACCESSORY-DATA-INDEX.json */; };
 		B6C37DF72A32B48F004D18A8 /* SequenceCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DF62A32B48F004D18A8 /* SequenceCode.swift */; };
 		B6C37DF92A32B4B1004D18A8 /* AnimationSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DF82A32B4B1004D18A8 /* AnimationSequence.swift */; };
 		B6C37DFB2A32B4BC004D18A8 /* AnimationComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DFA2A32B4BC004D18A8 /* AnimationComposite.swift */; };
@@ -2895,6 +2908,19 @@
 		B678C17E2B3C424C00CD6354 /* FACTION4-WEAPONS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FACTION4-WEAPONS.json"; sourceTree = "<group>"; };
 		B678C18B2B3C441000CD6354 /* WeaponProfileRepoUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponProfileRepoUtil.swift; sourceTree = "<group>"; };
 		B678C18D2B3C484300CD6354 /* WEAPON-DATA-INDEX.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "WEAPON-DATA-INDEX.json"; sourceTree = "<group>"; };
+		B678C1922B427DFA00CD6354 /* FACTION4-ACCESSORIES.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FACTION4-ACCESSORIES.json"; sourceTree = "<group>"; };
+		B678C1932B427DFA00CD6354 /* FOREST-ACCESSORIES.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FOREST-ACCESSORIES.json"; sourceTree = "<group>"; };
+		B678C1942B427DFA00CD6354 /* FACTION6-ACCESSORIES.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FACTION6-ACCESSORIES.json"; sourceTree = "<group>"; };
+		B678C1952B427DFB00CD6354 /* NETHER-ACCESSORIES.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "NETHER-ACCESSORIES.json"; sourceTree = "<group>"; };
+		B678C1962B427DFB00CD6354 /* MECH-ACCESSORIES.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "MECH-ACCESSORIES.json"; sourceTree = "<group>"; };
+		B678C1972B427DFB00CD6354 /* CAVERN-ACCESSORIES.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "CAVERN-ACCESSORIES.json"; sourceTree = "<group>"; };
+		B678C1982B427DFB00CD6354 /* SHADOW-ACCESSORIES.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "SHADOW-ACCESSORIES.json"; sourceTree = "<group>"; };
+		B678C1992B427DFB00CD6354 /* FROST-ACCESSORIES.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FROST-ACCESSORIES.json"; sourceTree = "<group>"; };
+		B678C19A2B427DFB00CD6354 /* FACTION2-ACCESSORIES.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FACTION2-ACCESSORIES.json"; sourceTree = "<group>"; };
+		B678C19B2B427DFB00CD6354 /* FACTION5-ACCESSORIES.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FACTION5-ACCESSORIES.json"; sourceTree = "<group>"; };
+		B678C19C2B427DFB00CD6354 /* DESERT-ACCESSORIES.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "DESERT-ACCESSORIES.json"; sourceTree = "<group>"; };
+		B678C19D2B427DFB00CD6354 /* DUNGEON-ACCESSORIES.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "DUNGEON-ACCESSORIES.json"; sourceTree = "<group>"; };
+		B678C1AA2B427E3400CD6354 /* ACCESSORY-DATA-INDEX.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "ACCESSORY-DATA-INDEX.json"; sourceTree = "<group>"; };
 		B6C37DF62A32B48F004D18A8 /* SequenceCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceCode.swift; sourceTree = "<group>"; };
 		B6C37DF82A32B4B1004D18A8 /* AnimationSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSequence.swift; sourceTree = "<group>"; };
 		B6C37DFA2A32B4BC004D18A8 /* AnimationComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationComposite.swift; sourceTree = "<group>"; };
@@ -6409,6 +6435,8 @@
 		B678C1282B3C3ADE00CD6354 /* Game Data */ = {
 			isa = PBXGroup;
 			children = (
+				B678C1902B427DAC00CD6354 /* Armor Data */,
+				B678C18F2B427DA300CD6354 /* Accessory Data */,
 				B678C1292B3C3BEF00CD6354 /* Weapon Data */,
 				B6C37E0D2A32DE88004D18A8 /* NPC Data */,
 			);
@@ -6439,6 +6467,41 @@
 				B678C1762B3C424B00CD6354 /* MECH-WEAPONS.json */,
 				B678C1772B3C424B00CD6354 /* NETHER-WEAPONS.json */,
 				B678C1792B3C424C00CD6354 /* SHADOW-WEAPONS.json */,
+			);
+			path = Metadata;
+			sourceTree = "<group>";
+		};
+		B678C18F2B427DA300CD6354 /* Accessory Data */ = {
+			isa = PBXGroup;
+			children = (
+				B678C1912B427DC400CD6354 /* Metadata */,
+				B678C1AA2B427E3400CD6354 /* ACCESSORY-DATA-INDEX.json */,
+			);
+			path = "Accessory Data";
+			sourceTree = "<group>";
+		};
+		B678C1902B427DAC00CD6354 /* Armor Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Armor Data";
+			sourceTree = "<group>";
+		};
+		B678C1912B427DC400CD6354 /* Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				B678C1972B427DFB00CD6354 /* CAVERN-ACCESSORIES.json */,
+				B678C19C2B427DFB00CD6354 /* DESERT-ACCESSORIES.json */,
+				B678C19D2B427DFB00CD6354 /* DUNGEON-ACCESSORIES.json */,
+				B678C19A2B427DFB00CD6354 /* FACTION2-ACCESSORIES.json */,
+				B678C1922B427DFA00CD6354 /* FACTION4-ACCESSORIES.json */,
+				B678C19B2B427DFB00CD6354 /* FACTION5-ACCESSORIES.json */,
+				B678C1942B427DFA00CD6354 /* FACTION6-ACCESSORIES.json */,
+				B678C1932B427DFA00CD6354 /* FOREST-ACCESSORIES.json */,
+				B678C1992B427DFB00CD6354 /* FROST-ACCESSORIES.json */,
+				B678C1962B427DFB00CD6354 /* MECH-ACCESSORIES.json */,
+				B678C1952B427DFB00CD6354 /* NETHER-ACCESSORIES.json */,
+				B678C1982B427DFB00CD6354 /* SHADOW-ACCESSORIES.json */,
 			);
 			path = Metadata;
 			sourceTree = "<group>";
@@ -8655,6 +8718,7 @@
 				B6D46D012A51E0210002CEEC /* IMG-E0523.png in Resources */,
 				B6D4710C2A51E0220002CEEC /* FRAMES-E0367.json in Resources */,
 				B6D471BF2A51E0230002CEEC /* FRAMES-E0102.json in Resources */,
+				B678C1A52B427DFB00CD6354 /* FROST-ACCESSORIES.json in Resources */,
 				B6D46EF72A51E0210002CEEC /* N0441.json in Resources */,
 				B6D46BD42A51E0200002CEEC /* IMG-E0213.png in Resources */,
 				B6D46BA12A51E0200002CEEC /* IMG-E0303.png in Resources */,
@@ -8786,6 +8850,7 @@
 				B6D46F6F2A51E0220002CEEC /* E0125.json in Resources */,
 				B6D46FFB2A51E0220002CEEC /* FRAMES-E0045.json in Resources */,
 				B6D46E932A51E0210002CEEC /* E0209.json in Resources */,
+				B678C1A82B427DFB00CD6354 /* DESERT-ACCESSORIES.json in Resources */,
 				B6D46E9B2A51E0210002CEEC /* E0566.json in Resources */,
 				B6D46E562A51E0210002CEEC /* E0402.json in Resources */,
 				B6D471192A51E0220002CEEC /* FRAMES-E0309.json in Resources */,
@@ -8923,6 +8988,7 @@
 				B6D471E22A51E0230002CEEC /* FRAMES-E0525.json in Resources */,
 				B6D471DA2A51E0230002CEEC /* FRAMES-E0564.json in Resources */,
 				B6D46C1F2A51E0200002CEEC /* IMG-E0407.png in Resources */,
+				B678C1A02B427DFB00CD6354 /* FACTION6-ACCESSORIES.json in Resources */,
 				B6D46FAF2A51E0220002CEEC /* E0094.json in Resources */,
 				B6D46BC92A51E0200002CEEC /* IMG-N0158.png in Resources */,
 				B6D46DF72A51E0210002CEEC /* E0106.json in Resources */,
@@ -8949,6 +9015,7 @@
 				B6D470982A51E0220002CEEC /* FRAMES-E0034.json in Resources */,
 				B6D472202A51E0230002CEEC /* FRAMES-E0011.json in Resources */,
 				B6D46B672A51E0200002CEEC /* IMG-E0265.png in Resources */,
+				B678C1A42B427DFB00CD6354 /* SHADOW-ACCESSORIES.json in Resources */,
 				B6D46EF62A51E0210002CEEC /* E0322.json in Resources */,
 				B6D46EE32A51E0210002CEEC /* E0251.json in Resources */,
 				B6D46EBB2A51E0210002CEEC /* E0340.json in Resources */,
@@ -9267,6 +9334,7 @@
 				B6D470262A51E0220002CEEC /* FRAMES-E0177.json in Resources */,
 				B6D46CE82A51E0210002CEEC /* IMG-E0381.png in Resources */,
 				B6D46BF42A51E0200002CEEC /* IMG-E0210.png in Resources */,
+				B678C1AB2B427E3400CD6354 /* ACCESSORY-DATA-INDEX.json in Resources */,
 				B6D470F82A51E0220002CEEC /* FRAMES-N0039.json in Resources */,
 				B6D46EE62A51E0210002CEEC /* N0070.json in Resources */,
 				B6D46CAD2A51E0210002CEEC /* IMG-E0022.png in Resources */,
@@ -9450,6 +9518,7 @@
 				B6D46EDA2A51E0210002CEEC /* N0375.json in Resources */,
 				B6D46E502A51E0210002CEEC /* E0510.json in Resources */,
 				B6D46BDA2A51E0200002CEEC /* IMG-E0005.png in Resources */,
+				B678C1A72B427DFB00CD6354 /* FACTION5-ACCESSORIES.json in Resources */,
 				B6D46D0A2A51E0210002CEEC /* IMG-E0319.png in Resources */,
 				B6D46BEA2A51E0200002CEEC /* IMG-N0089.png in Resources */,
 				B6D46F602A51E0220002CEEC /* E0518.json in Resources */,
@@ -9559,6 +9628,7 @@
 				B6D472352A51E0230002CEEC /* FRAMES-E0206.json in Resources */,
 				B6D46B532A51E0200002CEEC /* IMG-E0502.png in Resources */,
 				B6D4700A2A51E0220002CEEC /* FRAMES-E0205.json in Resources */,
+				B678C1A22B427DFB00CD6354 /* MECH-ACCESSORIES.json in Resources */,
 				B6D46E302A51E0210002CEEC /* E0167.json in Resources */,
 				B678C1862B3C424C00CD6354 /* DUNGEON-WEAPONS.json in Resources */,
 				B6D46E262A51E0210002CEEC /* N0096.json in Resources */,
@@ -9815,6 +9885,7 @@
 				B6D46DB02A51E0210002CEEC /* E0170.json in Resources */,
 				B6D470FD2A51E0220002CEEC /* FRAMES-E0561.json in Resources */,
 				B6D46FD02A51E0220002CEEC /* E0470.json in Resources */,
+				B678C1A32B427DFB00CD6354 /* CAVERN-ACCESSORIES.json in Resources */,
 				B6D472132A51E0230002CEEC /* FRAMES-E0498.json in Resources */,
 				B6D46EFB2A51E0210002CEEC /* E0508.json in Resources */,
 				B6D46E5F2A51E0210002CEEC /* E0072.json in Resources */,
@@ -9832,6 +9903,7 @@
 				B6D46D442A51E0210002CEEC /* IMG-E0086.png in Resources */,
 				B6D46F2C2A51E0220002CEEC /* N0010.json in Resources */,
 				B6D471432A51E0230002CEEC /* FRAMES-E0344.json in Resources */,
+				B678C19E2B427DFB00CD6354 /* FACTION4-ACCESSORIES.json in Resources */,
 				B6D4700F2A51E0220002CEEC /* FRAMES-E0213.json in Resources */,
 				B6D470872A51E0220002CEEC /* FRAMES-E0409.json in Resources */,
 				B6D46BB82A51E0200002CEEC /* IMG-E0301.png in Resources */,
@@ -10037,6 +10109,7 @@
 				B6D46E5B2A51E0210002CEEC /* E0160.json in Resources */,
 				B6D46D922A51E0210002CEEC /* IMG-E0447.png in Resources */,
 				B6D472222A51E0230002CEEC /* FRAMES-E0338.json in Resources */,
+				B678C1A62B427DFB00CD6354 /* FACTION2-ACCESSORIES.json in Resources */,
 				B6D46D472A51E0210002CEEC /* IMG-E0290.png in Resources */,
 				B6D46DA72A51E0210002CEEC /* E0561.json in Resources */,
 				B6D4703B2A51E0220002CEEC /* FRAMES-E0475.json in Resources */,
@@ -10072,6 +10145,7 @@
 				B6D46B852A51E0200002CEEC /* IMG-E0104.png in Resources */,
 				B6D46CDF2A51E0210002CEEC /* IMG-E0425.png in Resources */,
 				B6D46FD92A51E0220002CEEC /* E0427.json in Resources */,
+				B678C1A12B427DFB00CD6354 /* NETHER-ACCESSORIES.json in Resources */,
 				B6D46FB72A51E0220002CEEC /* N0020.json in Resources */,
 				B6D470C02A51E0220002CEEC /* FRAMES-E0254.json in Resources */,
 				B6D46D372A51E0210002CEEC /* IMG-E0326.png in Resources */,
@@ -10184,6 +10258,7 @@
 				B6D46CFA2A51E0210002CEEC /* IMG-E0544.png in Resources */,
 				B6D46CCC2A51E0210002CEEC /* IMG-E0209.png in Resources */,
 				B6D46FF12A51E0220002CEEC /* FRAMES-E0454.json in Resources */,
+				B678C19F2B427DFB00CD6354 /* FOREST-ACCESSORIES.json in Resources */,
 				B6D46ED92A51E0210002CEEC /* E0380.json in Resources */,
 				B6D4717B2A51E0230002CEEC /* FRAMES-N0076.json in Resources */,
 				B6D46EB52A51E0210002CEEC /* E0252.json in Resources */,
@@ -10198,6 +10273,7 @@
 				B6D471422A51E0230002CEEC /* FRAMES-E0201.json in Resources */,
 				B6D46DDF2A51E0210002CEEC /* E0516.json in Resources */,
 				B6D472182A51E0230002CEEC /* FRAMES-E0396.json in Resources */,
+				B678C1A92B427DFB00CD6354 /* DUNGEON-ACCESSORIES.json in Resources */,
 				B6D46DE12A51E0210002CEEC /* E0453.json in Resources */,
 				B6D46BF52A51E0200002CEEC /* IMG-E0589.png in Resources */,
 				B6D46B562A51E0200002CEEC /* IMG-E0066.png in Resources */,
