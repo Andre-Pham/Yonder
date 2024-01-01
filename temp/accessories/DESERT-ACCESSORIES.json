@@ -4,839 +4,959 @@
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "desert",
-        "description": "A massive shield carved from a single piece of sandstone, adorned with ancient hieroglyphs."
+        "description": "A massive shield carved from a single piece of sandstone, adorned with ancient hieroglyphs.",
+        "id": "G0121"
     },
     {
         "accessoryName": "Dune Defender's Cape",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "desert",
-        "description": "A flowing cape woven from resilient desert fibers, shimmering with heat-resistant properties."
+        "description": "A flowing cape woven from resilient desert fibers, shimmering with heat-resistant properties.",
+        "id": "G0122"
     },
     {
         "accessoryName": "Cacti Guard Gauntlets",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "desert",
-        "description": "Thick leather gloves with cactus spine reinforcements, offering both protection and intimidation."
+        "description": "Thick leather gloves with cactus spine reinforcements, offering both protection and intimidation.",
+        "id": "G0123"
     },
     {
         "accessoryName": "Scorpion Shell Shield",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "desert",
-        "description": "A sturdy shield fashioned from the hardened carapace of a giant desert scorpion."
+        "description": "A sturdy shield fashioned from the hardened carapace of a giant desert scorpion.",
+        "id": "G0124"
     },
     {
         "accessoryName": "Oasis Defender's Boots",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "desert",
-        "description": "Boots crafted from tough, water-retentive materials, ideal for traversing harsh desert sands."
+        "description": "Boots crafted from tough, water-retentive materials, ideal for traversing harsh desert sands.",
+        "id": "G0125"
     },
     {
         "accessoryName": "Mirage Mantle",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "desert",
-        "description": "A mystical cloak that blurs the wearer's form, resembling a heat mirage to confuse foes."
+        "description": "A mystical cloak that blurs the wearer's form, resembling a heat mirage to confuse foes.",
+        "id": "G0126"
     },
     {
         "accessoryName": "Desert Nomad's Vambraces",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "desert",
-        "description": "Sturdy arm guards, sun-bleached and sand-worn, telling tales of many desert travels."
+        "description": "Sturdy arm guards, sun-bleached and sand-worn, telling tales of many desert travels.",
+        "id": "G0127"
     },
     {
         "accessoryName": "Sirocco Shield",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "desert",
-        "description": "A lightweight, aerodynamic shield that cuts through desert winds with ease."
+        "description": "A lightweight, aerodynamic shield that cuts through desert winds with ease.",
+        "id": "G0128"
     },
     {
         "accessoryName": "Sunwarden's Cloak",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "desert",
-        "description": "A radiant cloak that reflects the harsh desert sun, providing cooling shade to the wearer."
+        "description": "A radiant cloak that reflects the harsh desert sun, providing cooling shade to the wearer.",
+        "id": "G0129"
     },
     {
         "accessoryName": "Sand Whisperer's Shawl",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "desert",
-        "description": "A delicate shawl that hardens upon impact, woven from the silk of desert-dwelling spiders."
+        "description": "A delicate shawl that hardens upon impact, woven from the silk of desert-dwelling spiders.",
+        "id": "G0130"
     },
     {
         "accessoryName": "Sand Drifter's Amulet",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "desert",
-        "description": "A small, sand-colored amulet that vibrates slightly, absorbing kinetic energy."
+        "description": "A small, sand-colored amulet that vibrates slightly, absorbing kinetic energy.",
+        "id": "G0131"
     },
     {
         "accessoryName": "Dust Dancer's Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "desert",
-        "description": "A ring encrusted with tiny desert crystals, shimmering with a protective aura."
+        "description": "A ring encrusted with tiny desert crystals, shimmering with a protective aura.",
+        "id": "G0132"
     },
     {
         "accessoryName": "Oasis Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "desert",
-        "description": "A charm imbued with essence of an oasis, granting minor health regeneration."
+        "description": "A charm imbued with essence of an oasis, granting minor health regeneration.",
+        "id": "G0133"
     },
     {
         "accessoryName": "Sands of Time Pendant",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "desert",
-        "description": "An ancient pendant with a miniature hourglass, slightly slowing incoming attacks."
+        "description": "An ancient pendant with a miniature hourglass, slightly slowing incoming attacks.",
+        "id": "G0134"
     },
     {
         "accessoryName": "Nomad's Knuckle Band",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "desert",
-        "description": "A rugged band worn on the knuckle, made from tough desert animal hide."
+        "description": "A rugged band worn on the knuckle, made from tough desert animal hide.",
+        "id": "G0135"
     },
     {
         "accessoryName": "Sirocco's Breath Brooch",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "desert",
-        "description": "A brooch that emits a gentle, cooling breeze, reducing heat-based damage."
+        "description": "A brooch that emits a gentle, cooling breeze, reducing heat-based damage.",
+        "id": "G0136"
     },
     {
         "accessoryName": "Desert Shroud Pin",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "desert",
-        "description": "A pin that, when attached, adds a layer of invisible protection against physical blows."
+        "description": "A pin that, when attached, adds a layer of invisible protection against physical blows.",
+        "id": "G0137"
     },
     {
         "accessoryName": "Scorched Earth Signet",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "desert",
-        "description": "A signet ring that, upon contact, scorches the assailant with a burst of heat."
+        "description": "A signet ring that, upon contact, scorches the assailant with a burst of heat.",
+        "id": "G0138"
     },
     {
         "accessoryName": "Mirage Medallion",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "desert",
-        "description": "A medallion that projects a deceptive image, making the wearer harder to hit."
+        "description": "A medallion that projects a deceptive image, making the wearer harder to hit.",
+        "id": "G0139"
     },
     {
         "accessoryName": "Sunstone Bracelet",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "desert",
-        "description": "A bracelet with a glowing sunstone, strengthening resistance to sun exposure."
+        "description": "A bracelet with a glowing sunstone, strengthening resistance to sun exposure.",
+        "id": "G0140"
     },
     {
         "accessoryName": "Blaze Lancer Gauntlets",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "desert",
-        "description": "Fiery red gauntlets that ignite the bearer's weapons with blazing flames."
+        "description": "Fiery red gauntlets that ignite the bearer's weapons with blazing flames.",
+        "id": "G0141"
     },
     {
         "accessoryName": "Sandstorm Sabatons",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "desert",
-        "description": "Heavy boots that stir up mini sandstorms with each step, disorienting enemies."
+        "description": "Heavy boots that stir up mini sandstorms with each step, disorienting enemies.",
+        "id": "G0142"
     },
     {
         "accessoryName": "Dervish's Dueling Cape",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "desert",
-        "description": "A cape that amplifies the wearer's agility, enabling swift and deadly strikes."
+        "description": "A cape that amplifies the wearer's agility, enabling swift and deadly strikes.",
+        "id": "G0143"
     },
     {
         "accessoryName": "Scorched Blade Bracers",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "desert",
-        "description": "Bracers that superheat the wearer's blades, allowing them to slice through armor."
+        "description": "Bracers that superheat the wearer's blades, allowing them to slice through armor.",
+        "id": "G0144"
     },
     {
         "accessoryName": "Viper's Strike Gloves",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "desert",
-        "description": "Gloves imbued with venomous magic, adding a poisonous effect to each touch."
+        "description": "Gloves imbued with venomous magic, adding a poisonous effect to each touch.",
+        "id": "G0145"
     },
     {
         "accessoryName": "Sandslasher's Shoulder Guard",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "desert",
-        "description": "A spiky shoulder guard that enhances physical attacks with sand-blade slashes."
+        "description": "A spiky shoulder guard that enhances physical attacks with sand-blade slashes.",
+        "id": "G0146"
     },
     {
         "accessoryName": "Mirage Maker Mantle",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "desert",
-        "description": "A mantle that creates illusory duplicates, confusing enemies in combat."
+        "description": "A mantle that creates illusory duplicates, confusing enemies in combat.",
+        "id": "G0147"
     },
     {
         "accessoryName": "Sun Fury Spaulders",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "desert",
-        "description": "Radiant shoulder armor that harnesses the sun's fury, blasting enemies with heat rays."
+        "description": "Radiant shoulder armor that harnesses the sun's fury, blasting enemies with heat rays.",
+        "id": "G0148"
     },
     {
         "accessoryName": "Desert Marauder's Hood",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "desert",
-        "description": "A hood that heightens the wearer's senses, granting precision in ranged attacks."
+        "description": "A hood that heightens the wearer's senses, granting precision in ranged attacks.",
+        "id": "G0149"
     },
     {
         "accessoryName": "Zephyr's Wind Anklets",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "desert",
-        "description": "Anklets that channel the desert winds, boosting speed and mobility in battle."
+        "description": "Anklets that channel the desert winds, boosting speed and mobility in battle.",
+        "id": "G0150"
     },
     {
         "accessoryName": "Crimson Dune Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "desert",
-        "description": "A ring carved from red desert stone, enhancing the power of fire-based spells."
+        "description": "A ring carved from red desert stone, enhancing the power of fire-based spells.",
+        "id": "G0151"
     },
     {
         "accessoryName": "Scorpion Sting Earring",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "desert",
-        "description": "An earring shaped like a scorpion's tail, injecting a paralyzing venom into foes."
+        "description": "An earring shaped like a scorpion's tail, injecting a paralyzing venom into foes.",
+        "id": "G0152"
     },
     {
         "accessoryName": "Sand Whisper Necklace",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "desert",
-        "description": "A necklace that whispers ancient incantations, boosting the wearer's magical attack."
+        "description": "A necklace that whispers ancient incantations, boosting the wearer's magical attack.",
+        "id": "G0153"
     },
     {
         "accessoryName": "Desert Fury Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "desert",
-        "description": "A charm pulsing with the relentless fury of the desert, increasing attack speed."
+        "description": "A charm pulsing with the relentless fury of the desert, increasing attack speed.",
+        "id": "G0154"
     },
     {
         "accessoryName": "Blazing Sun Pendant",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "desert",
-        "description": "A sun-shaped pendant that radiates intense heat, scorching nearby enemies."
+        "description": "A sun-shaped pendant that radiates intense heat, scorching nearby enemies.",
+        "id": "G0155"
     },
     {
         "accessoryName": "Rattlesnake Coil Bracelet",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "desert",
-        "description": "A coiled bracelet that strikes like a rattlesnake, delivering swift, sharp blows."
+        "description": "A coiled bracelet that strikes like a rattlesnake, delivering swift, sharp blows.",
+        "id": "G0156"
     },
     {
         "accessoryName": "Tempest's Eye Brooch",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "desert",
-        "description": "A brooch that summons gusts of wind, enhancing ranged weapon accuracy."
+        "description": "A brooch that summons gusts of wind, enhancing ranged weapon accuracy.",
+        "id": "G0157"
     },
     {
         "accessoryName": "Pyroclast Amulet",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "desert",
-        "description": "An amulet that occasionally erupts in a small volcanic burst, damaging nearby foes."
+        "description": "An amulet that occasionally erupts in a small volcanic burst, damaging nearby foes.",
+        "id": "G0158"
     },
     {
         "accessoryName": "Desert Reaver's Badge",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "desert",
-        "description": "A badge that imbues the wearer's attacks with the relentless force of desert storms."
+        "description": "A badge that imbues the wearer's attacks with the relentless force of desert storms.",
+        "id": "G0159"
     },
     {
         "accessoryName": "Sand Viper Medallion",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "desert",
-        "description": "A medallion that enhances agility, allowing for rapid, viper-like strikes."
+        "description": "A medallion that enhances agility, allowing for rapid, viper-like strikes.",
+        "id": "G0160"
     },
     {
         "accessoryName": "Merchant's Grand Cape",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "desert",
-        "description": "An opulent cape adorned with gold coins, granting better deals in trade."
+        "description": "An opulent cape adorned with gold coins, granting better deals in trade.",
+        "id": "G0161"
     },
     {
         "accessoryName": "Treasure Hunter's Boots",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "desert",
-        "description": "Rugged boots that leave a trail of shimmering dust, leading to hidden treasures."
+        "description": "Rugged boots that leave a trail of shimmering dust, leading to hidden treasures.",
+        "id": "G0162"
     },
     {
         "accessoryName": "Golden Mirage Mantle",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "desert",
-        "description": "A mantle that creates illusory gold, distracting enemies and lowering their guard."
+        "description": "A mantle that creates illusory gold, distracting enemies and lowering their guard.",
+        "id": "G0163"
     },
     {
         "accessoryName": "Barterer's Bracers",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "desert",
-        "description": "Bracers embedded with small gems, enhancing the wearer's bargaining skills."
+        "description": "Bracers embedded with small gems, enhancing the wearer's bargaining skills.",
+        "id": "G0164"
     },
     {
         "accessoryName": "Wealth Seeker's Gauntlets",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "desert",
-        "description": "Gauntlets that glow when near valuable items, aiding in the search for riches."
+        "description": "Gauntlets that glow when near valuable items, aiding in the search for riches.",
+        "id": "G0165"
     },
     {
         "accessoryName": "Gilded Nomad's Vambraces",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "desert",
-        "description": "Vambraces with gold inlay, increasing the value of goods found on enemies."
+        "description": "Vambraces with gold inlay, increasing the value of goods found on enemies.",
+        "id": "G0166"
     },
     {
         "accessoryName": "Prospector's Shoulder Pads",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "desert",
-        "description": "Shoulder pads embedded with rare minerals, magnetically attracting coins."
+        "description": "Shoulder pads embedded with rare minerals, magnetically attracting coins.",
+        "id": "G0167"
     },
     {
         "accessoryName": "Aura of Affluence Cloak",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "desert",
-        "description": "A cloak that subtly influences others to offer better prices and rewards."
+        "description": "A cloak that subtly influences others to offer better prices and rewards.",
+        "id": "G0168"
     },
     {
         "accessoryName": "Midas Touch Gloves",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "desert",
-        "description": "Gloves that occasionally turn defeated enemies' weapons into gold."
+        "description": "Gloves that occasionally turn defeated enemies' weapons into gold.",
+        "id": "G0169"
     },
     {
         "accessoryName": "Bazaar Baron's Belt",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "desert",
-        "description": "A belt with multiple ornate pouches, mysteriously finding extra gold in loots."
+        "description": "A belt with multiple ornate pouches, mysteriously finding extra gold in loots.",
+        "id": "G0170"
     },
     {
         "accessoryName": "Golden Oasis Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "desert",
-        "description": "A ring with a miniature oasis engraving, magically increasing gold earnings."
+        "description": "A ring with a miniature oasis engraving, magically increasing gold earnings.",
+        "id": "G0171"
     },
     {
         "accessoryName": "Desert Trader's Amulet",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "desert",
-        "description": "An amulet with a carved bazaar scene, granting discounts at all merchants."
+        "description": "An amulet with a carved bazaar scene, granting discounts at all merchants.",
+        "id": "G0172"
     },
     {
         "accessoryName": "Scorching Sun Pendant",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "desert",
-        "description": "A sun-shaped pendant that occasionally turns sand grains into gold nuggets."
+        "description": "A sun-shaped pendant that occasionally turns sand grains into gold nuggets.",
+        "id": "G0173"
     },
     {
         "accessoryName": "Dune Walker's Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "desert",
-        "description": "A charm that reveals hidden caches of treasure beneath the desert sands."
+        "description": "A charm that reveals hidden caches of treasure beneath the desert sands.",
+        "id": "G0174"
     },
     {
         "accessoryName": "Sandstorm Spiral Bracelet",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "desert",
-        "description": "A swirling bracelet that attracts lost coins and gems within its vortex."
+        "description": "A swirling bracelet that attracts lost coins and gems within its vortex.",
+        "id": "G0175"
     },
     {
         "accessoryName": "Nomad's Luck Brooch",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "desert",
-        "description": "A brooch that increases the chances of finding rare and valuable items."
+        "description": "A brooch that increases the chances of finding rare and valuable items.",
+        "id": "G0176"
     },
     {
         "accessoryName": "Mirage Medallion",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "desert",
-        "description": "A medallion that creates illusions of wealth, occasionally turning them real."
+        "description": "A medallion that creates illusions of wealth, occasionally turning them real.",
+        "id": "G0177"
     },
     {
         "accessoryName": "Desert King's Signet",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "desert",
-        "description": "A signet ring that commands respect and better prices from all merchants."
+        "description": "A signet ring that commands respect and better prices from all merchants.",
+        "id": "G0178"
     },
     {
         "accessoryName": "Golden Scarab Pin",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "desert",
-        "description": "A beetle-shaped pin that occasionally digs up gold while traveling in the desert."
+        "description": "A beetle-shaped pin that occasionally digs up gold while traveling in the desert.",
+        "id": "G0179"
     },
     {
         "accessoryName": "Fabled Fortune Earring",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "desert",
-        "description": "An earring said to belong to an ancient desert king, blessing the wearer with wealth."
+        "description": "An earring said to belong to an ancient desert king, blessing the wearer with wealth.",
+        "id": "G0180"
     },
     {
         "accessoryName": "Oasis Guardian's Cloak",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "desert",
-        "description": "A vibrant cloak that gradually restores health in the scorching desert sun."
+        "description": "A vibrant cloak that gradually restores health in the scorching desert sun.",
+        "id": "G0181"
     },
     {
         "accessoryName": "Healer's Desert Robe",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "desert",
-        "description": "A lightweight robe imbued with healing magic, mending wounds over time."
+        "description": "A lightweight robe imbued with healing magic, mending wounds over time.",
+        "id": "G0182"
     },
     {
         "accessoryName": "Sand Serpent's Boots",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "desert",
-        "description": "Boots with scales that shimmer and pulse, slowly regenerating the wearer's health."
+        "description": "Boots with scales that shimmer and pulse, slowly regenerating the wearer's health.",
+        "id": "G0183"
     },
     {
         "accessoryName": "Dune Walker's Shawl",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "desert",
-        "description": "A shawl that protects from harsh winds and sand, while providing soothing comfort."
+        "description": "A shawl that protects from harsh winds and sand, while providing soothing comfort.",
+        "id": "G0184"
     },
     {
         "accessoryName": "Sunblessed Gauntlets",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "desert",
-        "description": "Gauntlets that absorb sunlight, converting it into healing energy for the bearer."
+        "description": "Gauntlets that absorb sunlight, converting it into healing energy for the bearer.",
+        "id": "G0185"
     },
     {
         "accessoryName": "Desert Bloom Mantle",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "desert",
-        "description": "A mantle adorned with desert flowers, blooming to release healing scents."
+        "description": "A mantle adorned with desert flowers, blooming to release healing scents.",
+        "id": "G0186"
     },
     {
         "accessoryName": "Cacti Spine Bracers",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "desert",
-        "description": "Bracers lined with cacti spines that release healing salves when the wearer is injured."
+        "description": "Bracers lined with cacti spines that release healing salves when the wearer is injured.",
+        "id": "G0187"
     },
     {
         "accessoryName": "Mirage Veil Cape",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "desert",
-        "description": "A cape that refracts light to cool the body, steadily restoring the wearer's vitality."
+        "description": "A cape that refracts light to cool the body, steadily restoring the wearer's vitality.",
+        "id": "G0188"
     },
     {
         "accessoryName": "Sandstorm Survivor's Hood",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "desert",
-        "description": "A hood that filters and cools air, providing life-sustaining comfort in harsh conditions."
+        "description": "A hood that filters and cools air, providing life-sustaining comfort in harsh conditions.",
+        "id": "G0189"
     },
     {
         "accessoryName": "Nomad's Lifebelt",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "desert",
-        "description": "A belt with life-preserving herbs and essences, boosting health regeneration."
+        "description": "A belt with life-preserving herbs and essences, boosting health regeneration.",
+        "id": "G0190"
     },
     {
         "accessoryName": "Soothing Sands Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "desert",
-        "description": "A ring that emits a calming aura, slightly accelerating natural healing processes."
+        "description": "A ring that emits a calming aura, slightly accelerating natural healing processes.",
+        "id": "G0191"
     },
     {
         "accessoryName": "Desert Heart Amulet",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "desert",
-        "description": "An amulet shaped like a desert rose, enhancing the wearer's vitality."
+        "description": "An amulet shaped like a desert rose, enhancing the wearer's vitality.",
+        "id": "G0192"
     },
     {
         "accessoryName": "Oasis Waterdrop Pendant",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "desert",
-        "description": "A pendant with a crystallized water droplet, providing constant hydration."
+        "description": "A pendant with a crystallized water droplet, providing constant hydration.",
+        "id": "G0193"
     },
     {
         "accessoryName": "Sun Resilience Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "desert",
-        "description": "A charm that protects against sunstroke, keeping the wearer cool and composed."
+        "description": "A charm that protects against sunstroke, keeping the wearer cool and composed.",
+        "id": "G0194"
     },
     {
         "accessoryName": "Nomad's Vigor Bracelet",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "desert",
-        "description": "A woven bracelet infused with herbs, slowly releasing revitalizing energies."
+        "description": "A woven bracelet infused with herbs, slowly releasing revitalizing energies.",
+        "id": "G0195"
     },
     {
         "accessoryName": "Dune Vitality Brooch",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "desert",
-        "description": "A brooch that enhances the body's endurance, particularly in extreme climates."
+        "description": "A brooch that enhances the body's endurance, particularly in extreme climates.",
+        "id": "G0196"
     },
     {
         "accessoryName": "Mirage Lifeforce Medallion",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "desert",
-        "description": "A medallion that glows faintly, granting small bursts of health during combat."
+        "description": "A medallion that glows faintly, granting small bursts of health during combat.",
+        "id": "G0197"
     },
     {
         "accessoryName": "Sand Whisperer's Signet",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "desert",
-        "description": "A signet ring that whispers secrets of longevity, slightly extending the wearer's life."
+        "description": "A signet ring that whispers secrets of longevity, slightly extending the wearer's life.",
+        "id": "G0198"
     },
     {
         "accessoryName": "Desert Bloom Earring",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "desert",
-        "description": "An earring adorned with a small desert flower, blooming occasionally to restore health."
+        "description": "An earring adorned with a small desert flower, blooming occasionally to restore health.",
+        "id": "G0199"
     },
     {
         "accessoryName": "Scorching Heat Resistor Pin",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "desert",
-        "description": "A pin that adapts to extreme temperatures, providing resistance to heat-related ailments."
+        "description": "A pin that adapts to extreme temperatures, providing resistance to heat-related ailments.",
+        "id": "G0200"
     },
     {
         "accessoryName": "Eternal Dunes Cape",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "desert",
-        "description": "A cape that shifts colors with the sands, offering a blend of protection, agility, and stealth."
+        "description": "A cape that shifts colors with the sands, offering a blend of protection, agility, and stealth.",
+        "id": "G0201"
     },
     {
         "accessoryName": "Desert Spirit's Hood",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "desert",
-        "description": "A mystical hood that whispers desert secrets, enhancing various combat and survival skills."
+        "description": "A mystical hood that whispers desert secrets, enhancing various combat and survival skills.",
+        "id": "G0202"
     },
     {
         "accessoryName": "Mirage Master's Cloak",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "desert",
-        "description": "A cloak that refracts light to become nearly invisible, while also cooling the body."
+        "description": "A cloak that refracts light to become nearly invisible, while also cooling the body.",
+        "id": "G0203"
     },
     {
         "accessoryName": "Sandstorm Wrangler's Boots",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "desert",
-        "description": "Boots that harness the power of sandstorms for defense, offense, and swift travel."
+        "description": "Boots that harness the power of sandstorms for defense, offense, and swift travel.",
+        "id": "G0204"
     },
     {
         "accessoryName": "Desert Oracle's Mantle",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "desert",
-        "description": "A mantle that reveals cryptic visions, enhancing wisdom and various magical abilities."
+        "description": "A mantle that reveals cryptic visions, enhancing wisdom and various magical abilities.",
+        "id": "G0205"
     },
     {
         "accessoryName": "Wanderer's All-Seeing Shawl",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "desert",
-        "description": "A shawl that grants heightened awareness, aiding in defense, detection, and negotiation."
+        "description": "A shawl that grants heightened awareness, aiding in defense, detection, and negotiation.",
+        "id": "G0206"
     },
     {
         "accessoryName": "Nomad's Multi-Tool Belt",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "desert",
-        "description": "A belt equipped with various tools and gadgets, useful for a multitude of situations."
+        "description": "A belt equipped with various tools and gadgets, useful for a multitude of situations.",
+        "id": "G0207"
     },
     {
         "accessoryName": "Sands of Time Sash",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "desert",
-        "description": "A sash containing ancient sands that manipulate time slightly, aiding in all aspects of survival."
+        "description": "A sash containing ancient sands that manipulate time slightly, aiding in all aspects of survival.",
+        "id": "G0208"
     },
     {
         "accessoryName": "Elemental Dervish Gauntlets",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "desert",
-        "description": "Gauntlets that channel elemental forces, offering diverse offensive and defensive capabilities."
+        "description": "Gauntlets that channel elemental forces, offering diverse offensive and defensive capabilities.",
+        "id": "G0209"
     },
     {
         "accessoryName": "Oasis Guardian's Girdle",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "desert",
-        "description": "A girdle that stores the essence of an oasis, providing nourishment, healing, and resilience."
+        "description": "A girdle that stores the essence of an oasis, providing nourishment, healing, and resilience.",
+        "id": "G0210"
     },
     {
         "accessoryName": "Mystic Dunes Amulet",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "desert",
-        "description": "An amulet that glows under the moon, offering a mix of magical and physical enhancements."
+        "description": "An amulet that glows under the moon, offering a mix of magical and physical enhancements.",
+        "id": "G0211"
     },
     {
         "accessoryName": "Sand Sage's Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "desert",
-        "description": "A ring that changes color with the wearer's mood, boosting various abilities accordingly."
+        "description": "A ring that changes color with the wearer's mood, boosting various abilities accordingly.",
+        "id": "G0212"
     },
     {
         "accessoryName": "Desert Whisper Earring",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "desert",
-        "description": "An earring that hums softly, improving perception, communication, and bartering skills."
+        "description": "An earring that hums softly, improving perception, communication, and bartering skills.",
+        "id": "G0213"
     },
     {
         "accessoryName": "Oasis Dreamer's Pendant",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "desert",
-        "description": "A pendant that shifts between shades of blue and green, enhancing vitality and luck."
+        "description": "A pendant that shifts between shades of blue and green, enhancing vitality and luck.",
+        "id": "G0214"
     },
     {
         "accessoryName": "Sun and Moon Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "desert",
-        "description": "A charm representing balance, granting boosts in various attributes based on time of day."
+        "description": "A charm representing balance, granting boosts in various attributes based on time of day.",
+        "id": "G0215"
     },
     {
         "accessoryName": "Desert Mirage Locket",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "desert",
-        "description": "A locket that shows ever-changing scenes, subtly enhancing mental and physical skills."
+        "description": "A locket that shows ever-changing scenes, subtly enhancing mental and physical skills.",
+        "id": "G0216"
     },
     {
         "accessoryName": "Nomad's Compass Bracelet",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "desert",
-        "description": "A bracelet with a built-in compass, aiding navigation and various survival skills."
+        "description": "A bracelet with a built-in compass, aiding navigation and various survival skills.",
+        "id": "G0217"
     },
     {
         "accessoryName": "Elemental Balance Brooch",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "desert",
-        "description": "A brooch that harmonizes with natural elements, offering diverse adaptative advantages."
+        "description": "A brooch that harmonizes with natural elements, offering diverse adaptative advantages.",
+        "id": "G0218"
     },
     {
         "accessoryName": "Dune Reader's Medallion",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "desert",
-        "description": "A medallion that reveals subtle desert patterns, enhancing intuition and decision-making."
+        "description": "A medallion that reveals subtle desert patterns, enhancing intuition and decision-making.",
+        "id": "G0219"
     },
     {
         "accessoryName": "Mirage Weaver's Signet",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "desert",
-        "description": "A signet ring that creates small illusions, useful in various strategic and social interactions."
+        "description": "A signet ring that creates small illusions, useful in various strategic and social interactions.",
+        "id": "G0220"
     },
     {
         "accessoryName": "Aurora of the Ancients Cape",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "desert",
-        "description": "A cape that glows with ancient runes, granting the wearer rare and forgotten powers."
+        "description": "A cape that glows with ancient runes, granting the wearer rare and forgotten powers.",
+        "id": "G0221"
     },
     {
         "accessoryName": "Infinite Mirage Boots",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "desert",
-        "description": "Boots that leave no tracks and enable walking on sand as if it were solid ground."
+        "description": "Boots that leave no tracks and enable walking on sand as if it were solid ground.",
+        "id": "G0222"
     },
     {
         "accessoryName": "Sands of Eternity Shawl",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "desert",
-        "description": "A shawl woven with sands that control time, allowing brief moments of time manipulation."
+        "description": "A shawl woven with sands that control time, allowing brief moments of time manipulation.",
+        "id": "G0223"
     },
     {
         "accessoryName": "Pharaoh's Resurrection Mask",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "desert",
-        "description": "A mask that grants a second chance at life, resurrecting the wearer once upon fatal injury."
+        "description": "A mask that grants a second chance at life, resurrecting the wearer once upon fatal injury.",
+        "id": "G0224"
     },
     {
         "accessoryName": "Starfaller's Cloak",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "desert",
-        "description": "A cloak adorned with star fragments, enabling brief episodes of flight or levitation."
+        "description": "A cloak adorned with star fragments, enabling brief episodes of flight or levitation.",
+        "id": "G0225"
     },
     {
         "accessoryName": "Desert Genie's Lamp Belt",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "desert",
-        "description": "A belt with a miniature lamp, occasionally granting small wishes or boons."
+        "description": "A belt with a miniature lamp, occasionally granting small wishes or boons.",
+        "id": "G0226"
     },
     {
         "accessoryName": "Eclipse Guardian Gauntlets",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "desert",
-        "description": "Gauntlets that channel solar and lunar energy, offering powers based on celestial events."
+        "description": "Gauntlets that channel solar and lunar energy, offering powers based on celestial events.",
+        "id": "G0227"
     },
     {
         "accessoryName": "Shifting Dunes Girdle",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "desert",
-        "description": "A girdle that morphs its shape, adapting to any situation with a unique defensive mechanism."
+        "description": "A girdle that morphs its shape, adapting to any situation with a unique defensive mechanism.",
+        "id": "G0228"
     },
     {
         "accessoryName": "Mirage Conjuror's Mantle",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "desert",
-        "description": "A mantle that creates vivid, interactive mirages, capable of deceiving even the keenest eyes."
+        "description": "A mantle that creates vivid, interactive mirages, capable of deceiving even the keenest eyes.",
+        "id": "G0229"
     },
     {
         "accessoryName": "Timeless Nomad's Hood",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "desert",
-        "description": "A hood that exists simultaneously in the past, present, and future, revealing glimpses of each."
+        "description": "A hood that exists simultaneously in the past, present, and future, revealing glimpses of each.",
+        "id": "G0230"
     },
     {
         "accessoryName": "Whispering Wind Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "desert",
-        "description": "A ring that carries the voices of the desert, revealing secrets and hidden paths."
+        "description": "A ring that carries the voices of the desert, revealing secrets and hidden paths.",
+        "id": "G0231"
     },
     {
         "accessoryName": "Sand Sculptor's Amulet",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "desert",
-        "description": "An amulet that molds sand into various forms, acting as a tool or weapon as needed."
+        "description": "An amulet that molds sand into various forms, acting as a tool or weapon as needed.",
+        "id": "G0232"
     },
     {
         "accessoryName": "Moon Mirage Pendant",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "desert",
-        "description": "A pendant that glows under moonlight, revealing hidden messages and trails."
+        "description": "A pendant that glows under moonlight, revealing hidden messages and trails.",
+        "id": "G0233"
     },
     {
         "accessoryName": "Desert Dreamer's Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "desert",
-        "description": "A charm that induces vivid dreams, offering guidance and insight in slumber."
+        "description": "A charm that induces vivid dreams, offering guidance and insight in slumber.",
+        "id": "G0234"
     },
     {
         "accessoryName": "Sandspeaker's Bracelet",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "desert",
-        "description": "A bracelet that allows communication with the spirits of the desert, seeking their wisdom."
+        "description": "A bracelet that allows communication with the spirits of the desert, seeking their wisdom.",
+        "id": "G0235"
     },
     {
         "accessoryName": "Sirocco Spirit Brooch",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "desert",
-        "description": "A brooch that summons a protective desert spirit, aiding in battles and journeys."
+        "description": "A brooch that summons a protective desert spirit, aiding in battles and journeys.",
+        "id": "G0236"
     },
     {
         "accessoryName": "Ancient Astronomer's Medallion",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "desert",
-        "description": "A medallion that aligns with stars, granting celestial navigation and astrological insights."
+        "description": "A medallion that aligns with stars, granting celestial navigation and astrological insights.",
+        "id": "G0237"
     },
     {
         "accessoryName": "Enchanted Oasis Signet",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "desert",
-        "description": "A signet ring that can summon a mirage of an oasis, providing temporary refuge."
+        "description": "A signet ring that can summon a mirage of an oasis, providing temporary refuge.",
+        "id": "G0238"
     },
     {
         "accessoryName": "Desert Wraith's Earring",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "desert",
-        "description": "An earring that grants brief phases of intangibility, allowing one to pass through obstacles."
+        "description": "An earring that grants brief phases of intangibility, allowing one to pass through obstacles.",
+        "id": "G0239"
     },
     {
         "accessoryName": "Phantom Caravan Pin",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "desert",
-        "description": "A pin that occasionally reveals spectral caravans, leading to mysterious and rare finds."
+        "description": "A pin that occasionally reveals spectral caravans, leading to mysterious and rare finds.",
+        "id": "G0240"
     }
 ]

@@ -4,839 +4,959 @@
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "frost",
-        "description": "A large, ice-encrusted shield radiating a cold aura, etched with ancient runes."
+        "description": "A large, ice-encrusted shield radiating a cold aura, etched with ancient runes.",
+        "id": "G0601"
     },
     {
         "accessoryName": "Snowbound Mantle",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "frost",
-        "description": "A heavy, fur-lined cape that shimmers with frost, offering warmth and protection."
+        "description": "A heavy, fur-lined cape that shimmers with frost, offering warmth and protection.",
+        "id": "G0602"
     },
     {
         "accessoryName": "Frostguard Bracers",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "frost",
-        "description": "Thick, silvered armguards with sapphire inlays, chilling to the touch."
+        "description": "Thick, silvered armguards with sapphire inlays, chilling to the touch.",
+        "id": "G0603"
     },
     {
         "accessoryName": "Icicle Gauntlets",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "frost",
-        "description": "Crystalized ice gloves, sparkling and unyielding, as hard as steel."
+        "description": "Crystalized ice gloves, sparkling and unyielding, as hard as steel.",
+        "id": "G0604"
     },
     {
         "accessoryName": "Blizzard Boots",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "frost",
-        "description": "Sturdy boots wrapped in white wolf fur, leaving a trail of snowflakes."
+        "description": "Sturdy boots wrapped in white wolf fur, leaving a trail of snowflakes.",
+        "id": "G0605"
     },
     {
         "accessoryName": "Winter's Guard",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "frost",
-        "description": "A circular shield encased in a layer of ever-frozen ice, unmelting."
+        "description": "A circular shield encased in a layer of ever-frozen ice, unmelting.",
+        "id": "G0606"
     },
     {
         "accessoryName": "Permafrost Pauldrons",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "frost",
-        "description": "Broad shoulder armor with icy spikes, glistening under the moonlight."
+        "description": "Broad shoulder armor with icy spikes, glistening under the moonlight.",
+        "id": "G0607"
     },
     {
         "accessoryName": "Avalanche Averters",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "frost",
-        "description": "Leg guards adorned with frost patterns, providing agility in deep snow."
+        "description": "Leg guards adorned with frost patterns, providing agility in deep snow.",
+        "id": "G0608"
     },
     {
         "accessoryName": "Frostbite Shield",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "frost",
-        "description": "A small, round shield, its surface a frozen mirror reflecting the icy landscape."
+        "description": "A small, round shield, its surface a frozen mirror reflecting the icy landscape.",
+        "id": "G0609"
     },
     {
         "accessoryName": "Glacier Greaves",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "frost",
-        "description": "Leg armor made from solid ice, enchanted to never crack or melt."
+        "description": "Leg armor made from solid ice, enchanted to never crack or melt.",
+        "id": "G0610"
     },
     {
         "accessoryName": "Icebound Pendant",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "frost",
-        "description": "A delicate necklace with a pendant of pure ice, shimmering with a protective glow."
+        "description": "A delicate necklace with a pendant of pure ice, shimmering with a protective glow.",
+        "id": "G0611"
     },
     {
         "accessoryName": "Frostweave Band",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "frost",
-        "description": "A woven ring of frost fibers, cool to the touch and hard as iron."
+        "description": "A woven ring of frost fibers, cool to the touch and hard as iron.",
+        "id": "G0612"
     },
     {
         "accessoryName": "Chill Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "frost",
-        "description": "A small, icy charm that emanates a cold aura, warding off heat and harm."
+        "description": "A small, icy charm that emanates a cold aura, warding off heat and harm.",
+        "id": "G0613"
     },
     {
         "accessoryName": "Glacial Beads",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "frost",
-        "description": "A string of frozen beads, each encapsulating a tiny snowflake, offering frost resistance."
+        "description": "A string of frozen beads, each encapsulating a tiny snowflake, offering frost resistance.",
+        "id": "G0614"
     },
     {
         "accessoryName": "Snowflake Locket",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "frost",
-        "description": "An intricately designed locket, its snowflake design provides a barrier against cold."
+        "description": "An intricately designed locket, its snowflake design provides a barrier against cold.",
+        "id": "G0615"
     },
     {
         "accessoryName": "Winter's Whisper Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "frost",
-        "description": "A sleek silver ring, whispering winter's tales, fortifying the wearer against frostbite."
+        "description": "A sleek silver ring, whispering winter's tales, fortifying the wearer against frostbite.",
+        "id": "G0616"
     },
     {
         "accessoryName": "Frostward Brooch",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "frost",
-        "description": "A brooch with a crystalline center, its aura shields against icy winds."
+        "description": "A brooch with a crystalline center, its aura shields against icy winds.",
+        "id": "G0617"
     },
     {
         "accessoryName": "Icethorn Bracelet",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "frost",
-        "description": "A bracelet of thorny ice, hard and sharp, providing defense against physical attacks."
+        "description": "A bracelet of thorny ice, hard and sharp, providing defense against physical attacks.",
+        "id": "G0618"
     },
     {
         "accessoryName": "Frostguard Medallion",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "frost",
-        "description": "A medallion encased in ice, its core glowing faintly with defensive magic."
+        "description": "A medallion encased in ice, its core glowing faintly with defensive magic.",
+        "id": "G0619"
     },
     {
         "accessoryName": "Snowdrift Anklet",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "frost",
-        "description": "An anklet crafted from frozen twigs, granting stability on slippery surfaces."
+        "description": "An anklet crafted from frozen twigs, granting stability on slippery surfaces.",
+        "id": "G0620"
     },
     {
         "accessoryName": "Blizzard Blade",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "frost",
-        "description": "A sword with a blade as clear as ice, leaving a trail of frost with every swing."
+        "description": "A sword with a blade as clear as ice, leaving a trail of frost with every swing.",
+        "id": "G0621"
     },
     {
         "accessoryName": "Frostbite Axe",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "frost",
-        "description": "A heavy axe with a frozen edge, capable of cleaving through armor and ice alike."
+        "description": "A heavy axe with a frozen edge, capable of cleaving through armor and ice alike.",
+        "id": "G0622"
     },
     {
         "accessoryName": "Ice Shards Quiver",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "frost",
-        "description": "A quiver filled with arrowheads made of enchanted ice, piercing with cold precision."
+        "description": "A quiver filled with arrowheads made of enchanted ice, piercing with cold precision.",
+        "id": "G0623"
     },
     {
         "accessoryName": "Glacial Hammer",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "frost",
-        "description": "A massive hammer with a head of solid ice, shattering upon impact and reforming."
+        "description": "A massive hammer with a head of solid ice, shattering upon impact and reforming.",
+        "id": "G0624"
     },
     {
         "accessoryName": "Winter's Fury",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "frost",
-        "description": "A pair of gauntlets that emit a chilling blast, freezing foes in their tracks."
+        "description": "A pair of gauntlets that emit a chilling blast, freezing foes in their tracks.",
+        "id": "G0625"
     },
     {
         "accessoryName": "Snowstorm Scepter",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "frost",
-        "description": "A scepter topped with a swirling snow globe, casting frost spells with a wave."
+        "description": "A scepter topped with a swirling snow globe, casting frost spells with a wave.",
+        "id": "G0626"
     },
     {
         "accessoryName": "Frostflare Bow",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "frost",
-        "description": "A bow crafted from ice, its arrows alight with blue flames, burning cold."
+        "description": "A bow crafted from ice, its arrows alight with blue flames, burning cold.",
+        "id": "G0627"
     },
     {
         "accessoryName": "Icicle Lance",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "frost",
-        "description": "A long, slender lance with a tip of razor-sharp ice, piercing with frosty lethality."
+        "description": "A long, slender lance with a tip of razor-sharp ice, piercing with frosty lethality.",
+        "id": "G0628"
     },
     {
         "accessoryName": "Glacial Pike",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "frost",
-        "description": "A pike with a frozen blade, its touch causing a creeping frost to spread."
+        "description": "A pike with a frozen blade, its touch causing a creeping frost to spread.",
+        "id": "G0629"
     },
     {
         "accessoryName": "Winter's Edge",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "frost",
-        "description": "A sleek, icy dagger that can freeze the blood of its target upon a deep cut."
+        "description": "A sleek, icy dagger that can freeze the blood of its target upon a deep cut.",
+        "id": "G0630"
     },
     {
         "accessoryName": "Frostspark Amulet",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "frost",
-        "description": "A glowing amulet encased in ice, enhancing the wearer's magical frost attacks."
+        "description": "A glowing amulet encased in ice, enhancing the wearer's magical frost attacks.",
+        "id": "G0631"
     },
     {
         "accessoryName": "Icefang Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "frost",
-        "description": "A silver ring with a sharp, ice-shaped gem, boosting critical hit chances in cold climates."
+        "description": "A silver ring with a sharp, ice-shaped gem, boosting critical hit chances in cold climates.",
+        "id": "G0632"
     },
     {
         "accessoryName": "Glacial Spike Earrings",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "frost",
-        "description": "Earrings shaped like icicles, sharpening the senses and reflexes in frosty terrains."
+        "description": "Earrings shaped like icicles, sharpening the senses and reflexes in frosty terrains.",
+        "id": "G0633"
     },
     {
         "accessoryName": "Blizzard Band",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "frost",
-        "description": "A band that radiates a subtle cold, increasing attack speed in snowy conditions."
+        "description": "A band that radiates a subtle cold, increasing attack speed in snowy conditions.",
+        "id": "G0634"
     },
     {
         "accessoryName": "Winter's Grasp Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "frost",
-        "description": "A charm that causes the bearer's attacks to occasionally encase foes in ice."
+        "description": "A charm that causes the bearer's attacks to occasionally encase foes in ice.",
+        "id": "G0635"
     },
     {
         "accessoryName": "Frost Echo Medallion",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "frost",
-        "description": "A medallion that echoes with a frosty resonance, amplifying spell damage."
+        "description": "A medallion that echoes with a frosty resonance, amplifying spell damage.",
+        "id": "G0636"
     },
     {
         "accessoryName": "Snowdrift Orb",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "frost",
-        "description": "An orb swirling with snowflakes, enhancing the power of frost magic."
+        "description": "An orb swirling with snowflakes, enhancing the power of frost magic.",
+        "id": "G0637"
     },
     {
         "accessoryName": "Icicle Talisman",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "frost",
-        "description": "A talisman with an icicle core, increasing the wearer's physical attack power in cold areas."
+        "description": "A talisman with an icicle core, increasing the wearer's physical attack power in cold areas.",
+        "id": "G0638"
     },
     {
         "accessoryName": "Glacier Shard Pendant",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "frost",
-        "description": "A shard of glacier ice set in a pendant, boosting the potency of ice elemental attacks."
+        "description": "A shard of glacier ice set in a pendant, boosting the potency of ice elemental attacks.",
+        "id": "G0639"
     },
     {
         "accessoryName": "Permafrost Sigil",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "frost",
-        "description": "A sigil etched with frost patterns, imbuing attacks with a freezing effect."
+        "description": "A sigil etched with frost patterns, imbuing attacks with a freezing effect.",
+        "id": "G0640"
     },
     {
         "accessoryName": "Aurora Coinpurse",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "frost",
-        "description": "A shimmering purse that seems to slightly increase the gold it holds overnight."
+        "description": "A shimmering purse that seems to slightly increase the gold it holds overnight.",
+        "id": "G0641"
     },
     {
         "accessoryName": "Glittering Satchel",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "frost",
-        "description": "A satchel with a frosty sheen, mysteriously lightening the weight of carried coins."
+        "description": "A satchel with a frosty sheen, mysteriously lightening the weight of carried coins.",
+        "id": "G0642"
     },
     {
         "accessoryName": "Frost Merchant's Cape",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "frost",
-        "description": "A cape worn by ancient frost traders, rumored to grant better deals in trade."
+        "description": "A cape worn by ancient frost traders, rumored to grant better deals in trade.",
+        "id": "G0643"
     },
     {
         "accessoryName": "Silver Snowdrift Bag",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "frost",
-        "description": "A bag woven from silver threads, it seems to attract more gold with its unique charm."
+        "description": "A bag woven from silver threads, it seems to attract more gold with its unique charm.",
+        "id": "G0644"
     },
     {
         "accessoryName": "Frostweaver's Basket",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "frost",
-        "description": "A basket crafted by frost weavers, enhancing the value of goods stored within."
+        "description": "A basket crafted by frost weavers, enhancing the value of goods stored within.",
+        "id": "G0645"
     },
     {
         "accessoryName": "Glacial Trader's Gloves",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "frost",
-        "description": "Gloves that cool the touch, said to bring fortune in negotiations and trades."
+        "description": "Gloves that cool the touch, said to bring fortune in negotiations and trades.",
+        "id": "G0646"
     },
     {
         "accessoryName": "Crystalized Wealth Belt",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "frost",
-        "description": "A belt with a crystal buckle, mysteriously improving the wearer's financial luck."
+        "description": "A belt with a crystal buckle, mysteriously improving the wearer's financial luck.",
+        "id": "G0647"
     },
     {
         "accessoryName": "Snowbound Treasure Chest",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "frost",
-        "description": "A small chest that keeps contents cold, rumored to multiply small amounts of gold inside."
+        "description": "A small chest that keeps contents cold, rumored to multiply small amounts of gold inside.",
+        "id": "G0648"
     },
     {
         "accessoryName": "Icicle Crown",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "frost",
-        "description": "A crown of pure ice, enhancing the wearer's charisma and influence in financial matters."
+        "description": "A crown of pure ice, enhancing the wearer's charisma and influence in financial matters.",
+        "id": "G0649"
     },
     {
         "accessoryName": "Frosty Coin Amulet",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "frost",
-        "description": "An amulet with a frozen coin center, said to bring wealth to those who adventure."
+        "description": "An amulet with a frozen coin center, said to bring wealth to those who adventure.",
+        "id": "G0650"
     },
     {
         "accessoryName": "Glinting Ice Bracelet",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "frost",
-        "description": "A bracelet with ice crystals that seem to attract gold coins when worn."
+        "description": "A bracelet with ice crystals that seem to attract gold coins when worn.",
+        "id": "G0651"
     },
     {
         "accessoryName": "Frost Coin Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "frost",
-        "description": "A ring forged from a rare frost coin, increasing gold found in treasure chests."
+        "description": "A ring forged from a rare frost coin, increasing gold found in treasure chests.",
+        "id": "G0652"
     },
     {
         "accessoryName": "Shivering Silver Pin",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "frost",
-        "description": "A pin that shivers in cold, mysteriously leading its wearer to hidden wealth."
+        "description": "A pin that shivers in cold, mysteriously leading its wearer to hidden wealth.",
+        "id": "G0653"
     },
     {
         "accessoryName": "Icy Luck Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "frost",
-        "description": "A charm that seems to cool when near treasure, increasing gold drop rates."
+        "description": "A charm that seems to cool when near treasure, increasing gold drop rates.",
+        "id": "G0654"
     },
     {
         "accessoryName": "Frost Merchant's Medallion",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "frost",
-        "description": "A medallion that was once worn by frost merchants, known to give better bartering power."
+        "description": "A medallion that was once worn by frost merchants, known to give better bartering power.",
+        "id": "G0655"
     },
     {
         "accessoryName": "Glacial Gemstone",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "frost",
-        "description": "A gemstone that sparkles like ice, slightly increasing the value of sold items."
+        "description": "A gemstone that sparkles like ice, slightly increasing the value of sold items.",
+        "id": "G0656"
     },
     {
         "accessoryName": "Cold Cash Necklace",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "frost",
-        "description": "A necklace with coins frozen in ice, rumored to multiply the wearer's gold in battle."
+        "description": "A necklace with coins frozen in ice, rumored to multiply the wearer's gold in battle.",
+        "id": "G0657"
     },
     {
         "accessoryName": "Snowdrift Coin",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "frost",
-        "description": "A unique coin always cold to the touch, subtly increasing gold pickups."
+        "description": "A unique coin always cold to the touch, subtly increasing gold pickups.",
+        "id": "G0658"
     },
     {
         "accessoryName": "Frostbitten Wallet",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "frost",
-        "description": "A wallet that chills the fingers, magically holding more gold than it should."
+        "description": "A wallet that chills the fingers, magically holding more gold than it should.",
+        "id": "G0659"
     },
     {
         "accessoryName": "Icy Bargain Beads",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "frost",
-        "description": "Beads that feel cold as ice, granting the wearer better deals in marketplaces."
+        "description": "Beads that feel cold as ice, granting the wearer better deals in marketplaces.",
+        "id": "G0660"
     },
     {
         "accessoryName": "Vitality Frost Cloak",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "frost",
-        "description": "A cloak lined with frostwolf fur, steadily restoring health in icy environments."
+        "description": "A cloak lined with frostwolf fur, steadily restoring health in icy environments.",
+        "id": "G0661"
     },
     {
         "accessoryName": "Icicle Heart Armor",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "frost",
-        "description": "A chest armor with a heart-shaped icicle, enhancing the wearer's life force."
+        "description": "A chest armor with a heart-shaped icicle, enhancing the wearer's life force.",
+        "id": "G0662"
     },
     {
         "accessoryName": "Frostborne Sash",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "frost",
-        "description": "A sash imbued with frost magic, gradually healing wounds over time."
+        "description": "A sash imbued with frost magic, gradually healing wounds over time.",
+        "id": "G0663"
     },
     {
         "accessoryName": "Glacial Life Bracers",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "frost",
-        "description": "Arm bracers that glow with a soft blue light, slowly regenerating health."
+        "description": "Arm bracers that glow with a soft blue light, slowly regenerating health.",
+        "id": "G0664"
     },
     {
         "accessoryName": "Snowflower Mantle",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "frost",
-        "description": "A mantle adorned with snowflowers, known to have restorative properties."
+        "description": "A mantle adorned with snowflowers, known to have restorative properties.",
+        "id": "G0665"
     },
     {
         "accessoryName": "Everfrost Bandages",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "frost",
-        "description": "Bandages that remain cold, reducing inflammation and speeding up healing."
+        "description": "Bandages that remain cold, reducing inflammation and speeding up healing.",
+        "id": "G0666"
     },
     {
         "accessoryName": "Winterheal Boots",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "frost",
-        "description": "Boots imbued with a frosty aura, invigorating the wearer with each step."
+        "description": "Boots imbued with a frosty aura, invigorating the wearer with each step.",
+        "id": "G0667"
     },
     {
         "accessoryName": "Frost Essence Vial",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "frost",
-        "description": "A vial containing a swirling frost essence, significantly boosting health regeneration."
+        "description": "A vial containing a swirling frost essence, significantly boosting health regeneration.",
+        "id": "G0668"
     },
     {
         "accessoryName": "Chillrend Shield",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "frost",
-        "description": "A shield that radiates a healing cold, fortifying the bearer's vitality."
+        "description": "A shield that radiates a healing cold, fortifying the bearer's vitality.",
+        "id": "G0669"
     },
     {
         "accessoryName": "Glacier Heart Pendant",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "frost",
-        "description": "A pendant with a piece of glacier heart, enhancing the wearer's overall health."
+        "description": "A pendant with a piece of glacier heart, enhancing the wearer's overall health.",
+        "id": "G0670"
     },
     {
         "accessoryName": "Frostweave Bandage",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "frost",
-        "description": "A small bandage made from frostweave, known for its quick healing properties."
+        "description": "A small bandage made from frostweave, known for its quick healing properties.",
+        "id": "G0671"
     },
     {
         "accessoryName": "Icicle Amulet",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "frost",
-        "description": "An amulet with a tiny icicle, slowly releasing healing energy to the wearer."
+        "description": "An amulet with a tiny icicle, slowly releasing healing energy to the wearer.",
+        "id": "G0672"
     },
     {
         "accessoryName": "Glacial Healing Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "frost",
-        "description": "A ring encrusted with glacial fragments, subtly enhancing the wearer's regeneration."
+        "description": "A ring encrusted with glacial fragments, subtly enhancing the wearer's regeneration.",
+        "id": "G0673"
     },
     {
         "accessoryName": "Snowdrop Elixir Flask",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "frost",
-        "description": "A flask containing snowdrop elixir, known for its restorative effects."
+        "description": "A flask containing snowdrop elixir, known for its restorative effects.",
+        "id": "G0674"
     },
     {
         "accessoryName": "Frostguard Medallion",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "frost",
-        "description": "A medallion that exudes a gentle warmth, aiding in recovery from frostbite."
+        "description": "A medallion that exudes a gentle warmth, aiding in recovery from frostbite.",
+        "id": "G0675"
     },
     {
         "accessoryName": "Winterbloom Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "frost",
-        "description": "A charm made from winterbloom, known to soothe and heal minor wounds quickly."
+        "description": "A charm made from winterbloom, known to soothe and heal minor wounds quickly.",
+        "id": "G0676"
     },
     {
         "accessoryName": "Iceheart Crystal",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "frost",
-        "description": "A small crystal pulsing with a cold energy, revitalizing the wearer during combat."
+        "description": "A small crystal pulsing with a cold energy, revitalizing the wearer during combat.",
+        "id": "G0677"
     },
     {
         "accessoryName": "Frostbite Salve Jar",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "frost",
-        "description": "A jar of salve effective against frostbite, providing relief and gradual healing."
+        "description": "A jar of salve effective against frostbite, providing relief and gradual healing.",
+        "id": "G0678"
     },
     {
         "accessoryName": "Glacier's Breath Pendant",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "frost",
-        "description": "A pendant that emits a mist resembling a glacier's breath, enhancing vitality."
+        "description": "A pendant that emits a mist resembling a glacier's breath, enhancing vitality.",
+        "id": "G0679"
     },
     {
         "accessoryName": "Snowflake Locket",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "frost",
-        "description": "A locket with a unique snowflake inside, providing a constant, gentle healing."
+        "description": "A locket with a unique snowflake inside, providing a constant, gentle healing.",
+        "id": "G0680"
     },
     {
         "accessoryName": "Mystic Snow Orb",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "frost",
-        "description": "An orb encasing a perpetual snowstorm, granting varied magical abilities in battle."
+        "description": "An orb encasing a perpetual snowstorm, granting varied magical abilities in battle.",
+        "id": "G0681"
     },
     {
         "accessoryName": "Aurora Prism Cloak",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "frost",
-        "description": "A cloak shimmering with aurora colors, enhancing defense, attack, and gold acquisition."
+        "description": "A cloak shimmering with aurora colors, enhancing defense, attack, and gold acquisition.",
+        "id": "G0682"
     },
     {
         "accessoryName": "Glacier's Whisper",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "frost",
-        "description": "A mystical staff that hums softly, boosting health, magic, and critical hit rate."
+        "description": "A mystical staff that hums softly, boosting health, magic, and critical hit rate.",
+        "id": "G0683"
     },
     {
         "accessoryName": "Frostfire Mantle",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "frost",
-        "description": "A mantle that wavers between frost and fire, offering a balance of offense and defense."
+        "description": "A mantle that wavers between frost and fire, offering a balance of offense and defense.",
+        "id": "G0684"
     },
     {
         "accessoryName": "Eternal Ice Crown",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "frost",
-        "description": "A crown made of unmelting ice, imbuing the wearer with comprehensive enhancements."
+        "description": "A crown made of unmelting ice, imbuing the wearer with comprehensive enhancements.",
+        "id": "G0685"
     },
     {
         "accessoryName": "Blizzard Heart Shield",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "frost",
-        "description": "A shield that pulses with the heart of a blizzard, providing all-around combat boosts."
+        "description": "A shield that pulses with the heart of a blizzard, providing all-around combat boosts.",
+        "id": "G0686"
     },
     {
         "accessoryName": "Frostwalker's Boots",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "frost",
-        "description": "Boots that leave glowing footprints, enhancing speed, stability, and gold discovery."
+        "description": "Boots that leave glowing footprints, enhancing speed, stability, and gold discovery.",
+        "id": "G0687"
     },
     {
         "accessoryName": "Icicle Scepter",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "frost",
-        "description": "A scepter with a radiant icicle, empowering attack, defense, and magical abilities."
+        "description": "A scepter with a radiant icicle, empowering attack, defense, and magical abilities.",
+        "id": "G0688"
     },
     {
         "accessoryName": "Winter Solstice Robe",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "frost",
-        "description": "A robe that shifts with the phases of the moon, providing multifaceted enhancements."
+        "description": "A robe that shifts with the phases of the moon, providing multifaceted enhancements.",
+        "id": "G0689"
     },
     {
         "accessoryName": "Glacial Harmony Ring",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "frost",
-        "description": "A ring that resonates with glacial harmony, harmonizing health, gold, and attack power."
+        "description": "A ring that resonates with glacial harmony, harmonizing health, gold, and attack power.",
+        "id": "G0690"
     },
     {
         "accessoryName": "Moonlit Snowflake Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "frost",
-        "description": "A charm shaped like a snowflake under moonlight, subtly boosting all stats."
+        "description": "A charm shaped like a snowflake under moonlight, subtly boosting all stats.",
+        "id": "G0691"
     },
     {
         "accessoryName": "Polar Star Pendant",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "frost",
-        "description": "A pendant with a radiant polar star, enhancing luck, health, and damage."
+        "description": "A pendant with a radiant polar star, enhancing luck, health, and damage.",
+        "id": "G0692"
     },
     {
         "accessoryName": "Frost Essence Beads",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "frost",
-        "description": "Beads containing condensed frost essence, offering a range of protective benefits."
+        "description": "Beads containing condensed frost essence, offering a range of protective benefits.",
+        "id": "G0693"
     },
     {
         "accessoryName": "Glacial Harmony Bracelet",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "frost",
-        "description": "A bracelet that balances the energies of frost and fire, enhancing various attributes."
+        "description": "A bracelet that balances the energies of frost and fire, enhancing various attributes.",
+        "id": "G0694"
     },
     {
         "accessoryName": "Aurora Borealis Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "frost",
-        "description": "A ring reflecting the aurora borealis, mystically boosting offense, defense, and recovery."
+        "description": "A ring reflecting the aurora borealis, mystically boosting offense, defense, and recovery.",
+        "id": "G0695"
     },
     {
         "accessoryName": "Eternal Blizzard Locket",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "frost",
-        "description": "A locket with an ever-swirling blizzard, granting a variety of combat and healing perks."
+        "description": "A locket with an ever-swirling blizzard, granting a variety of combat and healing perks.",
+        "id": "G0696"
     },
     {
         "accessoryName": "Winter's Embrace Brooch",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "frost",
-        "description": "A brooch that holds the essence of winter, offering a balance of health and power."
+        "description": "A brooch that holds the essence of winter, offering a balance of health and power.",
+        "id": "G0697"
     },
     {
         "accessoryName": "Frostfire Crystal",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "frost",
-        "description": "A crystal flickering with frost and fire, boosting both offensive and defensive capabilities."
+        "description": "A crystal flickering with frost and fire, boosting both offensive and defensive capabilities.",
+        "id": "G0698"
     },
     {
         "accessoryName": "Glacial Wind Talisman",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "frost",
-        "description": "A talisman that harnesses the glacial wind, enhancing speed, strength, and endurance."
+        "description": "A talisman that harnesses the glacial wind, enhancing speed, strength, and endurance.",
+        "id": "G0699"
     },
     {
         "accessoryName": "Frostbloom Necklace",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "frost",
-        "description": "A necklace with a rare frostbloom, providing a well-rounded boost in various aspects."
+        "description": "A necklace with a rare frostbloom, providing a well-rounded boost in various aspects.",
+        "id": "G0700"
     },
     {
         "accessoryName": "Eclipse Ice Staff",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "frost",
-        "description": "A staff that can summon a lunar eclipse, briefly turning day into night during battles."
+        "description": "A staff that can summon a lunar eclipse, briefly turning day into night during battles.",
+        "id": "G0701"
     },
     {
         "accessoryName": "Frost Phoenix Wings",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "frost",
-        "description": "Magical wings that allow brief flight and unleash a frost phoenix's cry when activated."
+        "description": "Magical wings that allow brief flight and unleash a frost phoenix's cry when activated.",
+        "id": "G0702"
     },
     {
         "accessoryName": "Auroral Light Shield",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "frost",
-        "description": "A shield that projects auroral lights, disorienting enemies and providing cover."
+        "description": "A shield that projects auroral lights, disorienting enemies and providing cover.",
+        "id": "G0703"
     },
     {
         "accessoryName": "Timefreeze Cloak",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "frost",
-        "description": "A cloak that can momentarily freeze time, allowing strategic repositioning in combat."
+        "description": "A cloak that can momentarily freeze time, allowing strategic repositioning in combat.",
+        "id": "G0704"
     },
     {
         "accessoryName": "Whispering Blizzard Horn",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "frost",
-        "description": "A horn whose call summons a blizzard, veiling the area in a strategic snowstorm."
+        "description": "A horn whose call summons a blizzard, veiling the area in a strategic snowstorm.",
+        "id": "G0705"
     },
     {
         "accessoryName": "Glacial Mirror",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "frost",
-        "description": "A mirror that reflects enemy attacks, turning their power back against them."
+        "description": "A mirror that reflects enemy attacks, turning their power back against them.",
+        "id": "G0706"
     },
     {
         "accessoryName": "Frostwalker's Compass",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "frost",
-        "description": "A compass that points to hidden treasures and secret passages in frosty realms."
+        "description": "A compass that points to hidden treasures and secret passages in frosty realms.",
+        "id": "G0707"
     },
     {
         "accessoryName": "Icebound Tome",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "frost",
-        "description": "A book that grants the ability to cast unique, ancient frost spells."
+        "description": "A book that grants the ability to cast unique, ancient frost spells.",
+        "id": "G0708"
     },
     {
         "accessoryName": "Eternal Frostflower",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "frost",
-        "description": "A flower that never wilts, reviving the wearer once from a mortal blow."
+        "description": "A flower that never wilts, reviving the wearer once from a mortal blow.",
+        "id": "G0709"
     },
     {
         "accessoryName": "Polar Vortex Gauntlets",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "frost",
-        "description": "Gauntlets that can create a mini polar vortex, dramatically altering the battlefield's terrain."
+        "description": "Gauntlets that can create a mini polar vortex, dramatically altering the battlefield's terrain.",
+        "id": "G0710"
     },
     {
         "accessoryName": "Enchanted Snowglobe",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "frost",
-        "description": "A snowglobe that, when shaken, can predict and reveal nearby dangers."
+        "description": "A snowglobe that, when shaken, can predict and reveal nearby dangers.",
+        "id": "G0711"
     },
     {
         "accessoryName": "Frost Echo Stone",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "frost",
-        "description": "A stone that whispers secrets of the land, guiding the bearer to hidden locations."
+        "description": "A stone that whispers secrets of the land, guiding the bearer to hidden locations.",
+        "id": "G0712"
     },
     {
         "accessoryName": "Glacial Resonance Crystal",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "frost",
-        "description": "A crystal that resonates with glacial energy, revealing hidden ice paths."
+        "description": "A crystal that resonates with glacial energy, revealing hidden ice paths.",
+        "id": "G0713"
     },
     {
         "accessoryName": "Icebound Relic",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "frost",
-        "description": "A relic that occasionally emits a frost aura, briefly turning nearby water to ice."
+        "description": "A relic that occasionally emits a frost aura, briefly turning nearby water to ice.",
+        "id": "G0714"
     },
     {
         "accessoryName": "Polar Night Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "frost",
-        "description": "A ring that can engulf the wearer in darkness, enabling stealth in moonlit nights."
+        "description": "A ring that can engulf the wearer in darkness, enabling stealth in moonlit nights.",
+        "id": "G0715"
     },
     {
         "accessoryName": "Frostfire Bead",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "frost",
-        "description": "A bead that alternates between burning heat and freezing cold, disorienting foes."
+        "description": "A bead that alternates between burning heat and freezing cold, disorienting foes.",
+        "id": "G0716"
     },
     {
         "accessoryName": "Blizzard Whisperer's Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "frost",
-        "description": "A charm that allows communication with the spirits of the frost, seeking their guidance."
+        "description": "A charm that allows communication with the spirits of the frost, seeking their guidance.",
+        "id": "G0717"
     },
     {
         "accessoryName": "Frozen Timepiece",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "frost",
-        "description": "A timepiece that can slow down time for everyone but the wearer for a few seconds."
+        "description": "A timepiece that can slow down time for everyone but the wearer for a few seconds.",
+        "id": "G0718"
     },
     {
         "accessoryName": "Icicle Music Box",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "frost",
-        "description": "A music box that plays a melody which can soothe even the most ferocious beasts."
+        "description": "A music box that plays a melody which can soothe even the most ferocious beasts.",
+        "id": "G0719"
     },
     {
         "accessoryName": "Glacial Vision Goggles",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "frost",
-        "description": "Goggles that grant the ability to see through blizzards and detect heat signatures."
+        "description": "Goggles that grant the ability to see through blizzards and detect heat signatures.",
+        "id": "G0720"
     }
 ]

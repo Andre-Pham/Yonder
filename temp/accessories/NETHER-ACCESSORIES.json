@@ -4,839 +4,959 @@
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "nether",
-        "description": "A large, fiery shield with infernal runes, pulsing with a dark, heat-resistant aura."
+        "description": "A large, fiery shield with infernal runes, pulsing with a dark, heat-resistant aura.",
+        "id": "G1201"
     },
     {
         "accessoryName": "Hellfire Mantle",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "nether",
-        "description": "A cloak woven from smoldering embers, offering protection against intense flames."
+        "description": "A cloak woven from smoldering embers, offering protection against intense flames.",
+        "id": "G1202"
     },
     {
         "accessoryName": "Infernal Gauntlets",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "nether",
-        "description": "Sturdy, lava-etched gloves that absorb and dissipate extreme heat."
+        "description": "Sturdy, lava-etched gloves that absorb and dissipate extreme heat.",
+        "id": "G1203"
     },
     {
         "accessoryName": "Brimestone Boots",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "nether",
-        "description": "Heavy boots with soles of hardened magma, unyielding to the nether's terrain."
+        "description": "Heavy boots with soles of hardened magma, unyielding to the nether's terrain.",
+        "id": "G1204"
     },
     {
         "accessoryName": "Abyssal Barrier",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "nether",
-        "description": "A dark, ethereal shield that absorbs and nullifies hellish energies."
+        "description": "A dark, ethereal shield that absorbs and nullifies hellish energies.",
+        "id": "G1205"
     },
     {
         "accessoryName": "Phoenix Wing Cloak",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "nether",
-        "description": "A fiery red cape that flares up, deflecting fire and demonic attacks."
+        "description": "A fiery red cape that flares up, deflecting fire and demonic attacks.",
+        "id": "G1206"
     },
     {
         "accessoryName": "Soulfire Aegis",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "nether",
-        "description": "A spectral shield glowing with blue flames, warding off the nether's heat."
+        "description": "A spectral shield glowing with blue flames, warding off the nether's heat.",
+        "id": "G1207"
     },
     {
         "accessoryName": "Demonbane Greaves",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "nether",
-        "description": "Enchanted leg armor, ablaze with runes, offering protection from demonic claws."
+        "description": "Enchanted leg armor, ablaze with runes, offering protection from demonic claws.",
+        "id": "G1208"
     },
     {
         "accessoryName": "Inferno Wrap",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "nether",
-        "description": "A chainmail shawl that shimmers with heat, turning away fiery assaults."
+        "description": "A chainmail shawl that shimmers with heat, turning away fiery assaults.",
+        "id": "G1209"
     },
     {
         "accessoryName": "Charred Shield",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "nether",
-        "description": "A blackened, fireproof shield, bearing the scars of many hellish battles."
+        "description": "A blackened, fireproof shield, bearing the scars of many hellish battles.",
+        "id": "G1210"
     },
     {
         "accessoryName": "Ember Amulet",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "nether",
-        "description": "A small pendant glowing with a warm, fire-resistant light."
+        "description": "A small pendant glowing with a warm, fire-resistant light.",
+        "id": "G1211"
     },
     {
         "accessoryName": "Fiery Band",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "nether",
-        "description": "A ring encrusted with a ruby that pulses with heat-absorbing properties."
+        "description": "A ring encrusted with a ruby that pulses with heat-absorbing properties.",
+        "id": "G1212"
     },
     {
         "accessoryName": "Infernal Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "nether",
-        "description": "A small, horn-shaped charm, offering protection against demonic magic."
+        "description": "A small, horn-shaped charm, offering protection against demonic magic.",
+        "id": "G1213"
     },
     {
         "accessoryName": "Lava Bead Bracelet",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "nether",
-        "description": "Beads forged from cooled magma, providing resistance to extreme heat."
+        "description": "Beads forged from cooled magma, providing resistance to extreme heat.",
+        "id": "G1214"
     },
     {
         "accessoryName": "Blaze Resistor Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "nether",
-        "description": "A sleek, silver ring that cools the skin, warding off burns and blisters."
+        "description": "A sleek, silver ring that cools the skin, warding off burns and blisters.",
+        "id": "G1215"
     },
     {
         "accessoryName": "Hell's Heart Locket",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "nether",
-        "description": "A heart-shaped locket that vibrates softly, negating hellfire damage."
+        "description": "A heart-shaped locket that vibrates softly, negating hellfire damage.",
+        "id": "G1216"
     },
     {
         "accessoryName": "Demon Ward Brooch",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "nether",
-        "description": "An intricate brooch that repels lesser demons and their fiery attacks."
+        "description": "An intricate brooch that repels lesser demons and their fiery attacks.",
+        "id": "G1217"
     },
     {
         "accessoryName": "Searing Talisman",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "nether",
-        "description": "A talisman emitting a cool aura, soothing the burns from nether flames."
+        "description": "A talisman emitting a cool aura, soothing the burns from nether flames.",
+        "id": "G1218"
     },
     {
         "accessoryName": "Flameproof Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "nether",
-        "description": "A charm that turns fiery red when near, but protects against, intense heat."
+        "description": "A charm that turns fiery red when near, but protects against, intense heat.",
+        "id": "G1219"
     },
     {
         "accessoryName": "Ashen Pendant",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "nether",
-        "description": "A pendant made from nether ashes, offering resilience in fiery environments."
+        "description": "A pendant made from nether ashes, offering resilience in fiery environments.",
+        "id": "G1220"
     },
     {
         "accessoryName": "Blazing Fury Bracers",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "nether",
-        "description": "Armguards that glow with fiery energy, enhancing the wearer's attack power."
+        "description": "Armguards that glow with fiery energy, enhancing the wearer's attack power.",
+        "id": "G1221"
     },
     {
         "accessoryName": "Inferno War Cape",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "nether",
-        "description": "A cape that billows with hellfire, boosting the user's aggression in battle."
+        "description": "A cape that billows with hellfire, boosting the user's aggression in battle.",
+        "id": "G1222"
     },
     {
         "accessoryName": "Demon's Grasp Gauntlets",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "nether",
-        "description": "Gauntlets that channel demonic strength, increasing physical damage dealt."
+        "description": "Gauntlets that channel demonic strength, increasing physical damage dealt.",
+        "id": "G1223"
     },
     {
         "accessoryName": "Soulburner Boots",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "nether",
-        "description": "Boots that ignite the ground, leaving a trail of fire to harm foes."
+        "description": "Boots that ignite the ground, leaving a trail of fire to harm foes.",
+        "id": "G1224"
     },
     {
         "accessoryName": "Hellborn Shoulder Pads",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "nether",
-        "description": "Spiked pads that radiate a menacing aura, terrifying and weakening enemies."
+        "description": "Spiked pads that radiate a menacing aura, terrifying and weakening enemies.",
+        "id": "G1225"
     },
     {
         "accessoryName": "Infernal Quiver",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "nether",
-        "description": "A quiver that magically ignites arrows, causing additional fire damage."
+        "description": "A quiver that magically ignites arrows, causing additional fire damage.",
+        "id": "G1226"
     },
     {
         "accessoryName": "Abyssal Whip Belt",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "nether",
-        "description": "A belt with a whip that lashes out with hellish energy, striking multiple enemies."
+        "description": "A belt with a whip that lashes out with hellish energy, striking multiple enemies.",
+        "id": "G1227"
     },
     {
         "accessoryName": "Flame Fury Sash",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "nether",
-        "description": "A sash that enhances speed and agility, allowing for rapid, fiery strikes."
+        "description": "A sash that enhances speed and agility, allowing for rapid, fiery strikes.",
+        "id": "G1228"
     },
     {
         "accessoryName": "Cinderblade Greaves",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "nether",
-        "description": "Greaves with blade-like extensions, augmenting kick attacks with fire damage."
+        "description": "Greaves with blade-like extensions, augmenting kick attacks with fire damage.",
+        "id": "G1229"
     },
     {
         "accessoryName": "Demonic Chain Collar",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "nether",
-        "description": "A collar that imbues the wearer with demonic might, increasing critical damage."
+        "description": "A collar that imbues the wearer with demonic might, increasing critical damage.",
+        "id": "G1230"
     },
     {
         "accessoryName": "Flame Tongue Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "nether",
-        "description": "A ring that whispers ancient curses, boosting spell damage."
+        "description": "A ring that whispers ancient curses, boosting spell damage.",
+        "id": "G1231"
     },
     {
         "accessoryName": "Infernal Spike Stud",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "nether",
-        "description": "A sharp earring that intensifies aggression and physical attack power."
+        "description": "A sharp earring that intensifies aggression and physical attack power.",
+        "id": "G1232"
     },
     {
         "accessoryName": "Demon Eye Amulet",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "nether",
-        "description": "A glowing amulet that enhances perception, increasing critical strike chance."
+        "description": "A glowing amulet that enhances perception, increasing critical strike chance.",
+        "id": "G1233"
     },
     {
         "accessoryName": "Hellspark Pendant",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "nether",
-        "description": "A pendant that crackles with dark energy, amplifying magic attacks."
+        "description": "A pendant that crackles with dark energy, amplifying magic attacks.",
+        "id": "G1234"
     },
     {
         "accessoryName": "Abyssal Fire Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "nether",
-        "description": "A charm that burns with an otherworldly flame, enhancing fire-based spells."
+        "description": "A charm that burns with an otherworldly flame, enhancing fire-based spells.",
+        "id": "G1235"
     },
     {
         "accessoryName": "Searing Blade Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "nether",
-        "description": "A ring that sharpens the wearer's melee attacks with a fiery edge."
+        "description": "A ring that sharpens the wearer's melee attacks with a fiery edge.",
+        "id": "G1236"
     },
     {
         "accessoryName": "Blazing Heart Brooch",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "nether",
-        "description": "A brooch that imbues the wearer with fiery wrath, enhancing attack speed."
+        "description": "A brooch that imbues the wearer with fiery wrath, enhancing attack speed.",
+        "id": "G1237"
     },
     {
         "accessoryName": "Inferno Orb Necklace",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "nether",
-        "description": "A necklace with a glowing orb that pulsates with destructive power."
+        "description": "A necklace with a glowing orb that pulsates with destructive power.",
+        "id": "G1238"
     },
     {
         "accessoryName": "Demon Fang Bracelet",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "nether",
-        "description": "A bracelet adorned with sharp fangs, increasing the wearer's physical damage."
+        "description": "A bracelet adorned with sharp fangs, increasing the wearer's physical damage.",
+        "id": "G1239"
     },
     {
         "accessoryName": "Soulfire Beads",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "nether",
-        "description": "Beads that emit a sinister aura, boosting the power of dark spells."
+        "description": "Beads that emit a sinister aura, boosting the power of dark spells.",
+        "id": "G1240"
     },
     {
         "accessoryName": "Avarice Mantle",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "nether",
-        "description": "A golden cloak that shimmers mysteriously, attracting wealth and reducing costs."
+        "description": "A golden cloak that shimmers mysteriously, attracting wealth and reducing costs.",
+        "id": "G1241"
     },
     {
         "accessoryName": "Midas Gauntlets",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "nether",
-        "description": "Gold-plated gloves that increase the value of loot dropped by enemies."
+        "description": "Gold-plated gloves that increase the value of loot dropped by enemies.",
+        "id": "G1242"
     },
     {
         "accessoryName": "Greed's Greaves",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "nether",
-        "description": "Boots that leave a trail of coins, granting gold bonuses for distance traveled."
+        "description": "Boots that leave a trail of coins, granting gold bonuses for distance traveled.",
+        "id": "G1243"
     },
     {
         "accessoryName": "Prosperity Belt",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "nether",
-        "description": "A belt that increases gold acquisition from all sources."
+        "description": "A belt that increases gold acquisition from all sources.",
+        "id": "G1244"
     },
     {
         "accessoryName": "Fortune's Scarf",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "nether",
-        "description": "A scarf imbued with luck, enhancing the chances of finding rare items."
+        "description": "A scarf imbued with luck, enhancing the chances of finding rare items.",
+        "id": "G1245"
     },
     {
         "accessoryName": "Golden Quiver",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "nether",
-        "description": "A quiver that occasionally produces golden arrows, selling for high prices."
+        "description": "A quiver that occasionally produces golden arrows, selling for high prices.",
+        "id": "G1246"
     },
     {
         "accessoryName": "Wealth Wing Cape",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "nether",
-        "description": "A cape that magically fills its pockets with gold during combat."
+        "description": "A cape that magically fills its pockets with gold during combat.",
+        "id": "G1247"
     },
     {
         "accessoryName": "Lucky Lava Boots",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "nether",
-        "description": "Boots with a charm that randomly spawns small treasures while exploring."
+        "description": "Boots with a charm that randomly spawns small treasures while exploring.",
+        "id": "G1248"
     },
     {
         "accessoryName": "Opulence Overcoat",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "nether",
-        "description": "An extravagant coat that grants discounts at all shops and vendors."
+        "description": "An extravagant coat that grants discounts at all shops and vendors.",
+        "id": "G1249"
     },
     {
         "accessoryName": "Bounty Bracers",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "nether",
-        "description": "Bracers that increase the bounty rewards for defeating enemies."
+        "description": "Bracers that increase the bounty rewards for defeating enemies.",
+        "id": "G1250"
     },
     {
         "accessoryName": "Coin Collector's Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "nether",
-        "description": "A ring that magically attracts loose coins and small treasures."
+        "description": "A ring that magically attracts loose coins and small treasures.",
+        "id": "G1251"
     },
     {
         "accessoryName": "Golden Eye Amulet",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "nether",
-        "description": "An amulet that highlights valuable items and resources in the vicinity."
+        "description": "An amulet that highlights valuable items and resources in the vicinity.",
+        "id": "G1252"
     },
     {
         "accessoryName": "Bargainer's Bracelet",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "nether",
-        "description": "A bracelet that grants better deals and discounts with merchants."
+        "description": "A bracelet that grants better deals and discounts with merchants.",
+        "id": "G1253"
     },
     {
         "accessoryName": "Treasure Hunter's Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "nether",
-        "description": "A charm that increases the chance of finding rare and valuable loot."
+        "description": "A charm that increases the chance of finding rare and valuable loot.",
+        "id": "G1254"
     },
     {
         "accessoryName": "Midas Touchstone",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "nether",
-        "description": "A small stone that occasionally turns ordinary objects into gold."
+        "description": "A small stone that occasionally turns ordinary objects into gold.",
+        "id": "G1255"
     },
     {
         "accessoryName": "Prosperity Pendant",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "nether",
-        "description": "A pendant that increases gold drop rates from enemies and chests."
+        "description": "A pendant that increases gold drop rates from enemies and chests.",
+        "id": "G1256"
     },
     {
         "accessoryName": "Wealth Whisper Earrings",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "nether",
-        "description": "Earrings that guide the wearer to hidden caches of wealth."
+        "description": "Earrings that guide the wearer to hidden caches of wealth.",
+        "id": "G1257"
     },
     {
         "accessoryName": "Golden Grasp Necklace",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "nether",
-        "description": "A necklace that extends the reach of the wearer, snagging distant treasures."
+        "description": "A necklace that extends the reach of the wearer, snagging distant treasures.",
+        "id": "G1258"
     },
     {
         "accessoryName": "Fortune's Favor Brooch",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "nether",
-        "description": "A brooch that occasionally blesses the wearer with a small fortune."
+        "description": "A brooch that occasionally blesses the wearer with a small fortune.",
+        "id": "G1259"
     },
     {
         "accessoryName": "Lucky Locket",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "nether",
-        "description": "A locket that increases the luck of the wearer in finding gold and gems."
+        "description": "A locket that increases the luck of the wearer in finding gold and gems.",
+        "id": "G1260"
     },
     {
         "accessoryName": "Vitality Cloak",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "nether",
-        "description": "A cloak that radiates warmth, slowly restoring the wearer's health over time."
+        "description": "A cloak that radiates warmth, slowly restoring the wearer's health over time.",
+        "id": "G1261"
     },
     {
         "accessoryName": "Lifebinder Gauntlets",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "nether",
-        "description": "Gauntlets that boost the wearer's vitality, increasing maximum health."
+        "description": "Gauntlets that boost the wearer's vitality, increasing maximum health.",
+        "id": "G1262"
     },
     {
         "accessoryName": "Regeneration Greaves",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "nether",
-        "description": "Boots that enhance natural healing, speeding up health recovery."
+        "description": "Boots that enhance natural healing, speeding up health recovery.",
+        "id": "G1263"
     },
     {
         "accessoryName": "Healer's Belt",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "nether",
-        "description": "A belt imbued with healing energies, amplifying health potions' effects."
+        "description": "A belt imbued with healing energies, amplifying health potions' effects.",
+        "id": "G1264"
     },
     {
         "accessoryName": "Soul Shelter Cape",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "nether",
-        "description": "A cape that guards the wearer's soul, reducing life drain effects."
+        "description": "A cape that guards the wearer's soul, reducing life drain effects.",
+        "id": "G1265"
     },
     {
         "accessoryName": "Phoenix Plume Quiver",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "nether",
-        "description": "A quiver with feathers that have a chance to restore health on a successful hit."
+        "description": "A quiver with feathers that have a chance to restore health on a successful hit.",
+        "id": "G1266"
     },
     {
         "accessoryName": "Eternal Vitality Sash",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "nether",
-        "description": "A sash that continuously emits a faint healing aura, gradually restoring health."
+        "description": "A sash that continuously emits a faint healing aura, gradually restoring health.",
+        "id": "G1267"
     },
     {
         "accessoryName": "Heartguard Boots",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "nether",
-        "description": "Boots that absorb a portion of incoming damage, converting it into health."
+        "description": "Boots that absorb a portion of incoming damage, converting it into health.",
+        "id": "G1268"
     },
     {
         "accessoryName": "Life Ward Mantle",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "nether",
-        "description": "A protective mantle that reduces the severity of critical hits taken."
+        "description": "A protective mantle that reduces the severity of critical hits taken.",
+        "id": "G1269"
     },
     {
         "accessoryName": "Rejuvenation Wrap",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "nether",
-        "description": "A wrap that soothes wounds, accelerating injury recovery and health regeneration."
+        "description": "A wrap that soothes wounds, accelerating injury recovery and health regeneration.",
+        "id": "G1270"
     },
     {
         "accessoryName": "Heartstone Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "nether",
-        "description": "A ring that pulses with life energy, slowly restoring health."
+        "description": "A ring that pulses with life energy, slowly restoring health.",
+        "id": "G1271"
     },
     {
         "accessoryName": "Spirit Bond Amulet",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "nether",
-        "description": "An amulet that strengthens the wearer's life force, increasing health regeneration."
+        "description": "An amulet that strengthens the wearer's life force, increasing health regeneration.",
+        "id": "G1272"
     },
     {
         "accessoryName": "Vigor Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "nether",
-        "description": "A charm that boosts the wearer's stamina, allowing quicker recovery from fatigue."
+        "description": "A charm that boosts the wearer's stamina, allowing quicker recovery from fatigue.",
+        "id": "G1273"
     },
     {
         "accessoryName": "Lifeline Bracelet",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "nether",
-        "description": "A bracelet that grants a burst of health when the wearer is critically wounded."
+        "description": "A bracelet that grants a burst of health when the wearer is critically wounded.",
+        "id": "G1274"
     },
     {
         "accessoryName": "Essence of Life Pendant",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "nether",
-        "description": "A pendant that enhances the wearer's life essence, increasing maximum health."
+        "description": "A pendant that enhances the wearer's life essence, increasing maximum health.",
+        "id": "G1275"
     },
     {
         "accessoryName": "Phoenix Tear Locket",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "nether",
-        "description": "A locket containing a mythical tear that provides a chance to revive upon death."
+        "description": "A locket containing a mythical tear that provides a chance to revive upon death.",
+        "id": "G1276"
     },
     {
         "accessoryName": "Healing Halo Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "nether",
-        "description": "A ring emanating a gentle glow, mildly increasing health recovery."
+        "description": "A ring emanating a gentle glow, mildly increasing health recovery.",
+        "id": "G1277"
     },
     {
         "accessoryName": "Soul Saver Brooch",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "nether",
-        "description": "A brooch that reduces the rate of health decay in perilous situations."
+        "description": "A brooch that reduces the rate of health decay in perilous situations.",
+        "id": "G1278"
     },
     {
         "accessoryName": "Revitalizing Beads",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "nether",
-        "description": "Beads that radiate calming energy, aiding in quicker wound healing."
+        "description": "Beads that radiate calming energy, aiding in quicker wound healing.",
+        "id": "G1279"
     },
     {
         "accessoryName": "Eternal Vigor Necklace",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "nether",
-        "description": "A necklace that bestows enduring vitality, reducing the impact of health-sapping effects."
+        "description": "A necklace that bestows enduring vitality, reducing the impact of health-sapping effects.",
+        "id": "G1280"
     },
     {
         "accessoryName": "Chaos Mantle",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "nether",
-        "description": "A swirling cloak that randomly boosts attack, defense, or speed in combat."
+        "description": "A swirling cloak that randomly boosts attack, defense, or speed in combat.",
+        "id": "G1281"
     },
     {
         "accessoryName": "Arcane Aether Boots",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "nether",
-        "description": "Mystical boots that adapt to terrain, enhancing mobility, stealth, or endurance."
+        "description": "Mystical boots that adapt to terrain, enhancing mobility, stealth, or endurance.",
+        "id": "G1282"
     },
     {
         "accessoryName": "Elemental Bracers",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "nether",
-        "description": "Bracers that change their elemental affinity, providing various offensive and defensive benefits."
+        "description": "Bracers that change their elemental affinity, providing various offensive and defensive benefits.",
+        "id": "G1283"
     },
     {
         "accessoryName": "Sorcerer's Sash",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "nether",
-        "description": "A sash that augments spellcasting, offering boosts in magic power, defense, or mana regeneration."
+        "description": "A sash that augments spellcasting, offering boosts in magic power, defense, or mana regeneration.",
+        "id": "G1284"
     },
     {
         "accessoryName": "Prismatic Gauntlets",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "nether",
-        "description": "Gauntlets that refract light, granting invisibility, illusions, or blinding attacks."
+        "description": "Gauntlets that refract light, granting invisibility, illusions, or blinding attacks.",
+        "id": "G1285"
     },
     {
         "accessoryName": "Dimensional Quiver",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "nether",
-        "description": "A quiver with arrows from different realms, each with unique, unpredictable effects."
+        "description": "A quiver with arrows from different realms, each with unique, unpredictable effects.",
+        "id": "G1286"
     },
     {
         "accessoryName": "Shifting Greaves",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "nether",
-        "description": "Greaves that alter their form, enhancing agility, strength, or resilience as needed."
+        "description": "Greaves that alter their form, enhancing agility, strength, or resilience as needed.",
+        "id": "G1287"
     },
     {
         "accessoryName": "Mystic Aegis",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "nether",
-        "description": "A shield that morphs to counter incoming threats, offering versatile defense and counterattacks."
+        "description": "A shield that morphs to counter incoming threats, offering versatile defense and counterattacks.",
+        "id": "G1288"
     },
     {
         "accessoryName": "Ethereal Cloak",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "nether",
-        "description": "A cloak that phases through reality, providing escape, defense, or surprise attacks."
+        "description": "A cloak that phases through reality, providing escape, defense, or surprise attacks.",
+        "id": "G1289"
     },
     {
         "accessoryName": "Harmonic Vortex Belt",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "nether",
-        "description": "A belt that generates a vortex, absorbing damage, restoring health, or amplifying attacks."
+        "description": "A belt that generates a vortex, absorbing damage, restoring health, or amplifying attacks.",
+        "id": "G1290"
     },
     {
         "accessoryName": "Rune of Boundless Potential",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "nether",
-        "description": "A rune that unpredictably boosts magic, strength, or agility each day."
+        "description": "A rune that unpredictably boosts magic, strength, or agility each day.",
+        "id": "G1291"
     },
     {
         "accessoryName": "Gem of Morphing Tides",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "nether",
-        "description": "A gem that changes its powers with the phases of the moon, offering various buffs."
+        "description": "A gem that changes its powers with the phases of the moon, offering various buffs.",
+        "id": "G1292"
     },
     {
         "accessoryName": "Pendant of the Shifting Stars",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "nether",
-        "description": "A pendant that aligns with different constellations, granting diverse celestial powers."
+        "description": "A pendant that aligns with different constellations, granting diverse celestial powers.",
+        "id": "G1293"
     },
     {
         "accessoryName": "Whispering Wind Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "nether",
-        "description": "A charm that carries the voices of the wind, conveying secrets, warnings, or enhancing speed."
+        "description": "A charm that carries the voices of the wind, conveying secrets, warnings, or enhancing speed.",
+        "id": "G1294"
     },
     {
         "accessoryName": "Amulet of Unseen Forces",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "nether",
-        "description": "An amulet that manipulates unseen energies, offering defense, illusion, or teleportation."
+        "description": "An amulet that manipulates unseen energies, offering defense, illusion, or teleportation.",
+        "id": "G1295"
     },
     {
         "accessoryName": "Ring of Elemental Balance",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "nether",
-        "description": "A ring that harmonizes with the elements, providing fire, water, air, or earth powers."
+        "description": "A ring that harmonizes with the elements, providing fire, water, air, or earth powers.",
+        "id": "G1296"
     },
     {
         "accessoryName": "Mystic Tide Bracelet",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "nether",
-        "description": "A bracelet that ebbs and flows with magical energy, enhancing various abilities."
+        "description": "A bracelet that ebbs and flows with magical energy, enhancing various abilities.",
+        "id": "G1297"
     },
     {
         "accessoryName": "Locket of Endless Facets",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "nether",
-        "description": "A locket with countless facets, each reflecting a different power or boon."
+        "description": "A locket with countless facets, each reflecting a different power or boon.",
+        "id": "G1298"
     },
     {
         "accessoryName": "Orb of Infinite Echoes",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "nether",
-        "description": "An orb that echoes past battles, granting insights, strategies, or forewarnings."
+        "description": "An orb that echoes past battles, granting insights, strategies, or forewarnings.",
+        "id": "G1299"
     },
     {
         "accessoryName": "Beads of the Mystic Cycle",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "nether",
-        "description": "Beads that cycle through mystical energies, offering a spectrum of powers and protections."
+        "description": "Beads that cycle through mystical energies, offering a spectrum of powers and protections.",
+        "id": "G1300"
     },
     {
         "accessoryName": "Cloak of the Phoenix",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "nether",
-        "description": "A majestic cloak that grants the wearer a single resurrection upon fatal damage."
+        "description": "A majestic cloak that grants the wearer a single resurrection upon fatal damage.",
+        "id": "G1301"
     },
     {
         "accessoryName": "Voidwalker Boots",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "nether",
-        "description": "Boots that allow the wearer to step into the void, teleporting short distances."
+        "description": "Boots that allow the wearer to step into the void, teleporting short distances.",
+        "id": "G1302"
     },
     {
         "accessoryName": "Gauntlets of Time Manipulation",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "nether",
-        "description": "Mystical gauntlets that can briefly slow down or speed up time around the wearer."
+        "description": "Mystical gauntlets that can briefly slow down or speed up time around the wearer.",
+        "id": "G1303"
     },
     {
         "accessoryName": "Eclipse Shield",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "nether",
-        "description": "A shield that can cast a temporary shadow realm, hiding the user from sight."
+        "description": "A shield that can cast a temporary shadow realm, hiding the user from sight.",
+        "id": "G1304"
     },
     {
         "accessoryName": "Spectral Mantle",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "nether",
-        "description": "A ghostly cape that allows the wearer to phase through solid objects briefly."
+        "description": "A ghostly cape that allows the wearer to phase through solid objects briefly.",
+        "id": "G1305"
     },
     {
         "accessoryName": "Dimensional Quiver",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "nether",
-        "description": "A quiver connecting to other dimensions, providing arrows with unpredictable effects."
+        "description": "A quiver connecting to other dimensions, providing arrows with unpredictable effects.",
+        "id": "G1306"
     },
     {
         "accessoryName": "Greaves of Gravity Defiance",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "nether",
-        "description": "Greaves that grant the ability to walk on walls and ceilings, defying gravity."
+        "description": "Greaves that grant the ability to walk on walls and ceilings, defying gravity.",
+        "id": "G1307"
     },
     {
         "accessoryName": "Aura of the Ancients",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "nether",
-        "description": "A mystical aura that randomly bestows ancient powers or protections."
+        "description": "A mystical aura that randomly bestows ancient powers or protections.",
+        "id": "G1308"
     },
     {
         "accessoryName": "Labyrinthian Sash",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "nether",
-        "description": "A sash that can create a maze around the wearer, confusing and trapping enemies."
+        "description": "A sash that can create a maze around the wearer, confusing and trapping enemies.",
+        "id": "G1309"
     },
     {
         "accessoryName": "Blink Band",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "nether",
-        "description": "A band that allows the wearer to 'blink' a short distance instantly."
+        "description": "A band that allows the wearer to 'blink' a short distance instantly.",
+        "id": "G1310"
     },
     {
         "accessoryName": "Ring of the Inferno",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "nether",
-        "description": "A ring that occasionally engulfs the wearer in protective flames, scorching nearby foes."
+        "description": "A ring that occasionally engulfs the wearer in protective flames, scorching nearby foes.",
+        "id": "G1311"
     },
     {
         "accessoryName": "Amulet of the Abyss",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "nether",
-        "description": "An amulet that can summon a dark vortex, pulling enemies into a temporary void."
+        "description": "An amulet that can summon a dark vortex, pulling enemies into a temporary void.",
+        "id": "G1312"
     },
     {
         "accessoryName": "Mirage Pendant",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "nether",
-        "description": "A pendant that casts illusory doubles of the wearer, confusing attackers."
+        "description": "A pendant that casts illusory doubles of the wearer, confusing attackers.",
+        "id": "G1313"
     },
     {
         "accessoryName": "Charm of the Wraith",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "nether",
-        "description": "A charm that grants brief invisibility when the wearer is in imminent danger."
+        "description": "A charm that grants brief invisibility when the wearer is in imminent danger.",
+        "id": "G1314"
     },
     {
         "accessoryName": "Ring of Eldritch Power",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "nether",
-        "description": "A powerful ring that can unleash a random ancient spell with unpredictable outcomes."
+        "description": "A powerful ring that can unleash a random ancient spell with unpredictable outcomes.",
+        "id": "G1315"
     },
     {
         "accessoryName": "Oracle's Eye Brooch",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "nether",
-        "description": "A mystical brooch that occasionally reveals hidden paths or secrets in the environment."
+        "description": "A mystical brooch that occasionally reveals hidden paths or secrets in the environment.",
+        "id": "G1316"
     },
     {
         "accessoryName": "Soul Whisperer Locket",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "nether",
-        "description": "A locket that whispers guidance from the spirits, aiding in critical decisions."
+        "description": "A locket that whispers guidance from the spirits, aiding in critical decisions.",
+        "id": "G1317"
     },
     {
         "accessoryName": "Harbinger's Talisman",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "nether",
-        "description": "A talisman that foretells imminent danger, allowing the wearer to prepare or evade."
+        "description": "A talisman that foretells imminent danger, allowing the wearer to prepare or evade.",
+        "id": "G1318"
     },
     {
         "accessoryName": "Eclipse Medallion",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "nether",
-        "description": "A medallion that can turn the day into night or vice versa for a brief moment."
+        "description": "A medallion that can turn the day into night or vice versa for a brief moment.",
+        "id": "G1319"
     },
     {
         "accessoryName": "Temporal Shift Bracelet",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "nether",
-        "description": "A bracelet that can rewind time by a few seconds, once per day."
+        "description": "A bracelet that can rewind time by a few seconds, once per day.",
+        "id": "G1320"
     }
 ]

@@ -4,839 +4,959 @@
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "shadow",
-        "description": "A flowing cape that absorbs light, shimmering with faint, ethereal darkness."
+        "description": "A flowing cape that absorbs light, shimmering with faint, ethereal darkness.",
+        "id": "G1321"
     },
     {
         "accessoryName": "Umbral Aegis",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "shadow",
-        "description": "A round shield radiating a dark aura, with a surface like a starless night sky."
+        "description": "A round shield radiating a dark aura, with a surface like a starless night sky.",
+        "id": "G1322"
     },
     {
         "accessoryName": "Nocturne Gauntlets",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "shadow",
-        "description": "Sleek gloves woven from shadows, pulsing with a mysterious, dark energy."
+        "description": "Sleek gloves woven from shadows, pulsing with a mysterious, dark energy.",
+        "id": "G1323"
     },
     {
         "accessoryName": "Shade Greaves",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "shadow",
-        "description": "Boots crafted from darkness, leaving no trace or sound as the wearer moves."
+        "description": "Boots crafted from darkness, leaving no trace or sound as the wearer moves.",
+        "id": "G1324"
     },
     {
         "accessoryName": "Dusk Cloak",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "shadow",
-        "description": "A dark cloak that blends seamlessly with the shadows, providing invisibility at dusk."
+        "description": "A dark cloak that blends seamlessly with the shadows, providing invisibility at dusk.",
+        "id": "G1325"
     },
     {
         "accessoryName": "Twilight Bracers",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "shadow",
-        "description": "Armguards that flicker between reality and shadow, distorting the wearer's form."
+        "description": "Armguards that flicker between reality and shadow, distorting the wearer's form.",
+        "id": "G1326"
     },
     {
         "accessoryName": "Gloom Buckler",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "shadow",
-        "description": "A small, nimble shield that casts a protective shadow over the bearer."
+        "description": "A small, nimble shield that casts a protective shadow over the bearer.",
+        "id": "G1327"
     },
     {
         "accessoryName": "Nightfall Vambraces",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "shadow",
-        "description": "Forearm guards that darken and strengthen under the moonlight, absorbing impacts."
+        "description": "Forearm guards that darken and strengthen under the moonlight, absorbing impacts.",
+        "id": "G1328"
     },
     {
         "accessoryName": "Phantom Pauldrons",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "shadow",
-        "description": "Shoulder armor that phases in and out of the shadow realm, deflecting attacks."
+        "description": "Shoulder armor that phases in and out of the shadow realm, deflecting attacks.",
+        "id": "G1329"
     },
     {
         "accessoryName": "Veil of Midnight",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "shadow",
-        "description": "A mystical veil that cloaks the wearer in darkness, absorbing hostile magic."
+        "description": "A mystical veil that cloaks the wearer in darkness, absorbing hostile magic.",
+        "id": "G1330"
     },
     {
         "accessoryName": "Obsidian Band",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "shadow",
-        "description": "A sleek, black ring that hardens the skin against physical attacks."
+        "description": "A sleek, black ring that hardens the skin against physical attacks.",
+        "id": "G1331"
     },
     {
         "accessoryName": "Wraith Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "shadow",
-        "description": "A small pendant that whispers shadowy secrets, cloaking the wearer in darkness."
+        "description": "A small pendant that whispers shadowy secrets, cloaking the wearer in darkness.",
+        "id": "G1332"
     },
     {
         "accessoryName": "Nightshade Locket",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "shadow",
-        "description": "A locket that emits a faint, protective aura, absorbing weak curses."
+        "description": "A locket that emits a faint, protective aura, absorbing weak curses.",
+        "id": "G1333"
     },
     {
         "accessoryName": "Eclipse Amulet",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "shadow",
-        "description": "An amulet that shrouds the wearer in a brief moment of darkness when in danger."
+        "description": "An amulet that shrouds the wearer in a brief moment of darkness when in danger.",
+        "id": "G1334"
     },
     {
         "accessoryName": "Mist Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "shadow",
-        "description": "A ring that turns the wearer's skin mist-like, enabling them to evade physical blows."
+        "description": "A ring that turns the wearer's skin mist-like, enabling them to evade physical blows.",
+        "id": "G1335"
     },
     {
         "accessoryName": "Shadowthread Bracelet",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "shadow",
-        "description": "A bracelet woven from ethereal shadow threads, strengthening the wearer's resilience."
+        "description": "A bracelet woven from ethereal shadow threads, strengthening the wearer's resilience.",
+        "id": "G1336"
     },
     {
         "accessoryName": "Gloomstone Brooch",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "shadow",
-        "description": "A brooch that dulls incoming magic, shrouded in a subtle shadowy glow."
+        "description": "A brooch that dulls incoming magic, shrouded in a subtle shadowy glow.",
+        "id": "G1337"
     },
     {
         "accessoryName": "Dusk Beads",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "shadow",
-        "description": "Beads that radiate a soft, protective shadow, cushioning the wearer from harm."
+        "description": "Beads that radiate a soft, protective shadow, cushioning the wearer from harm.",
+        "id": "G1338"
     },
     {
         "accessoryName": "Phantom Pendant",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "shadow",
-        "description": "A pendant that occasionally phases the wearer's body, avoiding certain attacks."
+        "description": "A pendant that occasionally phases the wearer's body, avoiding certain attacks.",
+        "id": "G1339"
     },
     {
         "accessoryName": "Twilight Talisman",
         "accessoryType": "regular",
         "accessoryProfileTag": "defensive",
         "regionProfileTag": "shadow",
-        "description": "A talisman that strengthens the wearer's defenses as the surrounding light dims."
+        "description": "A talisman that strengthens the wearer's defenses as the surrounding light dims.",
+        "id": "G1340"
     },
     {
         "accessoryName": "Blade of Night",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "shadow",
-        "description": "A sleek, dark sword that seems to swallow light, sharpening its edge in darkness."
+        "description": "A sleek, dark sword that seems to swallow light, sharpening its edge in darkness.",
+        "id": "G1341"
     },
     {
         "accessoryName": "Eclipse Flail",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "shadow",
-        "description": "A heavy flail with a head like a darkened sun, unleashing devastating shadow energy."
+        "description": "A heavy flail with a head like a darkened sun, unleashing devastating shadow energy.",
+        "id": "G1342"
     },
     {
         "accessoryName": "Umbral Bow",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "shadow",
-        "description": "A recurve bow crafted from shadows, firing arrows that fade in and out of existence."
+        "description": "A recurve bow crafted from shadows, firing arrows that fade in and out of existence.",
+        "id": "G1343"
     },
     {
         "accessoryName": "Shadowstrike Spear",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "shadow",
-        "description": "A long spear that casts illusions, confusing enemies with false strikes."
+        "description": "A long spear that casts illusions, confusing enemies with false strikes.",
+        "id": "G1344"
     },
     {
         "accessoryName": "Gloom Axe",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "shadow",
-        "description": "A battle axe that emanates a dark fog, weakening nearby foes."
+        "description": "A battle axe that emanates a dark fog, weakening nearby foes.",
+        "id": "G1345"
     },
     {
         "accessoryName": "Phantom Whip",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "shadow",
-        "description": "A whip made of ethereal shadows, passing through armor and leaving chilling wounds."
+        "description": "A whip made of ethereal shadows, passing through armor and leaving chilling wounds.",
+        "id": "G1346"
     },
     {
         "accessoryName": "Dusk Dagger",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "shadow",
-        "description": "A pair of daggers that become more lethal as the light fades, striking with deadly precision."
+        "description": "A pair of daggers that become more lethal as the light fades, striking with deadly precision.",
+        "id": "G1347"
     },
     {
         "accessoryName": "Nightmare Mace",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "shadow",
-        "description": "A mace that induces fear in its victims, echoing with the screams of the shadow realm."
+        "description": "A mace that induces fear in its victims, echoing with the screams of the shadow realm.",
+        "id": "G1348"
     },
     {
         "accessoryName": "Twilight Scythe",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "shadow",
-        "description": "A scythe that reaps shadows, growing stronger in the cloak of night."
+        "description": "A scythe that reaps shadows, growing stronger in the cloak of night.",
+        "id": "G1349"
     },
     {
         "accessoryName": "Veilblade",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "shadow",
-        "description": "A thin, almost invisible blade that slices through both light and flesh effortlessly."
+        "description": "A thin, almost invisible blade that slices through both light and flesh effortlessly.",
+        "id": "G1350"
     },
     {
         "accessoryName": "Shadowgem Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "shadow",
-        "description": "A ring with a dark gem that enhances the wearer's attack power under low light."
+        "description": "A ring with a dark gem that enhances the wearer's attack power under low light.",
+        "id": "G1351"
     },
     {
         "accessoryName": "Eclipse Pendant",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "shadow",
-        "description": "A pendant that radiates dark energy, increasing the wearer's aggression."
+        "description": "A pendant that radiates dark energy, increasing the wearer's aggression.",
+        "id": "G1352"
     },
     {
         "accessoryName": "Umbral Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "shadow",
-        "description": "A charm that grants the wearer shadowy whispers, boosting magical attacks."
+        "description": "A charm that grants the wearer shadowy whispers, boosting magical attacks.",
+        "id": "G1353"
     },
     {
         "accessoryName": "Nocturne Amulet",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "shadow",
-        "description": "An amulet that pulses with dark energy, enhancing critical hit chances in the dark."
+        "description": "An amulet that pulses with dark energy, enhancing critical hit chances in the dark.",
+        "id": "G1354"
     },
     {
         "accessoryName": "Gloomstone Brooch",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "shadow",
-        "description": "A brooch that emits a sinister aura, slightly weakening enemies in close proximity."
+        "description": "A brooch that emits a sinister aura, slightly weakening enemies in close proximity.",
+        "id": "G1355"
     },
     {
         "accessoryName": "Phantom Beads",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "shadow",
-        "description": "Beads that shimmer with a ghostly light, increasing the wearer's speed and agility."
+        "description": "Beads that shimmer with a ghostly light, increasing the wearer's speed and agility.",
+        "id": "G1356"
     },
     {
         "accessoryName": "Twilight Talisman",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "shadow",
-        "description": "A talisman that harnesses the power of dusk, boosting the wearer's attack at twilight."
+        "description": "A talisman that harnesses the power of dusk, boosting the wearer's attack at twilight.",
+        "id": "G1357"
     },
     {
         "accessoryName": "Nightshade Locket",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "shadow",
-        "description": "A locket that imbues the wearer's attacks with a toxic essence in the dark."
+        "description": "A locket that imbues the wearer's attacks with a toxic essence in the dark.",
+        "id": "G1358"
     },
     {
         "accessoryName": "Dusk Bracelet",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "shadow",
-        "description": "A bracelet that empowers the wearer's physical strikes as the light fades."
+        "description": "A bracelet that empowers the wearer's physical strikes as the light fades.",
+        "id": "G1359"
     },
     {
         "accessoryName": "Veilstone Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "offensive",
         "regionProfileTag": "shadow",
-        "description": "A ring that grants the wearer the ability to momentarily phase through shadows, enhancing sneak attacks."
+        "description": "A ring that grants the wearer the ability to momentarily phase through shadows, enhancing sneak attacks.",
+        "id": "G1360"
     },
     {
         "accessoryName": "Auric Shield",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "shadow",
-        "description": "A shimmering golden shield that occasionally drops coins when blocking attacks."
+        "description": "A shimmering golden shield that occasionally drops coins when blocking attacks.",
+        "id": "G1361"
     },
     {
         "accessoryName": "Fortune's Cape",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "shadow",
-        "description": "A luxurious cape lined with gold thread, increasing gold earned from enemies."
+        "description": "A luxurious cape lined with gold thread, increasing gold earned from enemies.",
+        "id": "G1362"
     },
     {
         "accessoryName": "Wealthy Gauntlets",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "shadow",
-        "description": "Ornate gauntlets adorned with jewels, granting bonus gold for each enemy defeated."
+        "description": "Ornate gauntlets adorned with jewels, granting bonus gold for each enemy defeated.",
+        "id": "G1363"
     },
     {
         "accessoryName": "Opulent Greaves",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "shadow",
-        "description": "Golden boots that leave a trail of coins, increasing gold found in chests."
+        "description": "Golden boots that leave a trail of coins, increasing gold found in chests.",
+        "id": "G1364"
     },
     {
         "accessoryName": "Midas' Cloak",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "shadow",
-        "description": "A cloak that turns small objects into gold upon touch, boosting gold acquisition."
+        "description": "A cloak that turns small objects into gold upon touch, boosting gold acquisition.",
+        "id": "G1365"
     },
     {
         "accessoryName": "Prosperity Bracers",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "shadow",
-        "description": "Bracers that glint with gold, slightly increasing the value of all gold found."
+        "description": "Bracers that glint with gold, slightly increasing the value of all gold found.",
+        "id": "G1366"
     },
     {
         "accessoryName": "Golden Buckler",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "shadow",
-        "description": "A buckler that reflects light brilliantly, occasionally stunning enemies with its glare."
+        "description": "A buckler that reflects light brilliantly, occasionally stunning enemies with its glare.",
+        "id": "G1367"
     },
     {
         "accessoryName": "Treasure Vambraces",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "shadow",
-        "description": "Vambraces that rattle with coins, attracting more gold with each enemy encounter."
+        "description": "Vambraces that rattle with coins, attracting more gold with each enemy encounter.",
+        "id": "G1368"
     },
     {
         "accessoryName": "Gilded Pauldrons",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "shadow",
-        "description": "Shoulder armor embedded with gold, increasing rewards for completing quests."
+        "description": "Shoulder armor embedded with gold, increasing rewards for completing quests.",
+        "id": "G1369"
     },
     {
         "accessoryName": "Affluent Veil",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "shadow",
-        "description": "A fine veil decorated with gold, enhancing bartering skills with merchants."
+        "description": "A fine veil decorated with gold, enhancing bartering skills with merchants.",
+        "id": "G1370"
     },
     {
         "accessoryName": "Lustrous Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "shadow",
-        "description": "A ring that glimmers with a golden aura, slightly increasing gold dropped by enemies."
+        "description": "A ring that glimmers with a golden aura, slightly increasing gold dropped by enemies.",
+        "id": "G1371"
     },
     {
         "accessoryName": "Gilded Amulet",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "shadow",
-        "description": "An amulet that grants better deals when trading items, adorned with small gold nuggets."
+        "description": "An amulet that grants better deals when trading items, adorned with small gold nuggets.",
+        "id": "G1372"
     },
     {
         "accessoryName": "Riches Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "shadow",
-        "description": "A charm that radiates wealth, making gold chests more likely to appear."
+        "description": "A charm that radiates wealth, making gold chests more likely to appear.",
+        "id": "G1373"
     },
     {
         "accessoryName": "Fortune's Locket",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "shadow",
-        "description": "A locket that occasionally doubles the gold found in treasure chests."
+        "description": "A locket that occasionally doubles the gold found in treasure chests.",
+        "id": "G1374"
     },
     {
         "accessoryName": "Prosperity Beads",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "shadow",
-        "description": "Beads that jingle with the sound of coins, attracting additional gold from fallen foes."
+        "description": "Beads that jingle with the sound of coins, attracting additional gold from fallen foes.",
+        "id": "G1375"
     },
     {
         "accessoryName": "Midas Bracelet",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "shadow",
-        "description": "A bracelet that sparkles with gold dust, enhancing gold gained from selling items."
+        "description": "A bracelet that sparkles with gold dust, enhancing gold gained from selling items.",
+        "id": "G1376"
     },
     {
         "accessoryName": "Golden Brooch",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "shadow",
-        "description": "A brooch that glints enticingly, occasionally convincing enemies to drop more gold."
+        "description": "A brooch that glints enticingly, occasionally convincing enemies to drop more gold.",
+        "id": "G1377"
     },
     {
         "accessoryName": "Wealthy Talisman",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "shadow",
-        "description": "A talisman that vibrates near hidden gold, revealing secret treasures."
+        "description": "A talisman that vibrates near hidden gold, revealing secret treasures.",
+        "id": "G1378"
     },
     {
         "accessoryName": "Greed Stone",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "shadow",
-        "description": "A stone that pulsates with a golden glow, increasing gold gained from magical sources."
+        "description": "A stone that pulsates with a golden glow, increasing gold gained from magical sources.",
+        "id": "G1379"
     },
     {
         "accessoryName": "Auric Pendant",
         "accessoryType": "regular",
         "accessoryProfileTag": "gold",
         "regionProfileTag": "shadow",
-        "description": "A pendant that shines like pure gold, providing discounts at all shops."
+        "description": "A pendant that shines like pure gold, providing discounts at all shops.",
+        "id": "G1380"
     },
     {
         "accessoryName": "Vitality Mantle",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "shadow",
-        "description": "A robust cape that regenerates the wearer's health slowly over time."
+        "description": "A robust cape that regenerates the wearer's health slowly over time.",
+        "id": "G1381"
     },
     {
         "accessoryName": "Life Aegis",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "shadow",
-        "description": "A shield that boosts the wearer's maximum health with every successful block."
+        "description": "A shield that boosts the wearer's maximum health with every successful block.",
+        "id": "G1382"
     },
     {
         "accessoryName": "Healing Gauntlets",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "shadow",
-        "description": "Gloves that emit a healing aura, slightly increasing health regeneration."
+        "description": "Gloves that emit a healing aura, slightly increasing health regeneration.",
+        "id": "G1383"
     },
     {
         "accessoryName": "Rejuvenating Greaves",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "shadow",
-        "description": "Boots that restore a small amount of health with each step taken."
+        "description": "Boots that restore a small amount of health with each step taken.",
+        "id": "G1384"
     },
     {
         "accessoryName": "Renewal Cloak",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "shadow",
-        "description": "A cloak that mends minor wounds over time, glowing softly as it heals."
+        "description": "A cloak that mends minor wounds over time, glowing softly as it heals.",
+        "id": "G1385"
     },
     {
         "accessoryName": "Restorative Bracers",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "shadow",
-        "description": "Bracers that enhance the wearer's natural healing abilities, especially in combat."
+        "description": "Bracers that enhance the wearer's natural healing abilities, especially in combat.",
+        "id": "G1386"
     },
     {
         "accessoryName": "Buckler of Recovery",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "shadow",
-        "description": "A small shield that grants a burst of health recovery after taking a hit."
+        "description": "A small shield that grants a burst of health recovery after taking a hit.",
+        "id": "G1387"
     },
     {
         "accessoryName": "Soothing Vambraces",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "shadow",
-        "description": "Vambraces that radiate a calming energy, accelerating wound healing."
+        "description": "Vambraces that radiate a calming energy, accelerating wound healing.",
+        "id": "G1388"
     },
     {
         "accessoryName": "Curative Pauldrons",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "shadow",
-        "description": "Shoulder armor that releases a healing mist when the wearer is critically injured."
+        "description": "Shoulder armor that releases a healing mist when the wearer is critically injured.",
+        "id": "G1389"
     },
     {
         "accessoryName": "Veil of Life",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "health",
         "regionProfileTag": "shadow",
-        "description": "A veil that enhances vitality, granting temporary health boosts during battles."
+        "description": "A veil that enhances vitality, granting temporary health boosts during battles.",
+        "id": "G1390"
     },
     {
         "accessoryName": "Regeneration Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "shadow",
-        "description": "A simple ring that gradually restores health over time."
+        "description": "A simple ring that gradually restores health over time.",
+        "id": "G1391"
     },
     {
         "accessoryName": "Healer's Amulet",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "shadow",
-        "description": "An amulet that increases the effectiveness of health potions and spells."
+        "description": "An amulet that increases the effectiveness of health potions and spells.",
+        "id": "G1392"
     },
     {
         "accessoryName": "Revival Charm",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "shadow",
-        "description": "A charm that gives a chance to recover a small amount of health on taking damage."
+        "description": "A charm that gives a chance to recover a small amount of health on taking damage.",
+        "id": "G1393"
     },
     {
         "accessoryName": "Lifeforce Locket",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "shadow",
-        "description": "A locket that slightly increases maximum health when equipped."
+        "description": "A locket that slightly increases maximum health when equipped.",
+        "id": "G1394"
     },
     {
         "accessoryName": "Vitality Beads",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "shadow",
-        "description": "Beads that pulse with a warm light, boosting the wearer's life force."
+        "description": "Beads that pulse with a warm light, boosting the wearer's life force.",
+        "id": "G1395"
     },
     {
         "accessoryName": "Heartstone Bracelet",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "shadow",
-        "description": "A bracelet embedded with a stone that throbs in rhythm with the wearer's heart, enhancing health recovery."
+        "description": "A bracelet embedded with a stone that throbs in rhythm with the wearer's heart, enhancing health recovery.",
+        "id": "G1396"
     },
     {
         "accessoryName": "Life-giving Brooch",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "shadow",
-        "description": "A brooch that blossoms with a healing aura when the wearer is wounded."
+        "description": "A brooch that blossoms with a healing aura when the wearer is wounded.",
+        "id": "G1397"
     },
     {
         "accessoryName": "Survivor's Talisman",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "shadow",
-        "description": "A talisman that grants a surge of health when the wearer's health falls below a critical threshold."
+        "description": "A talisman that grants a surge of health when the wearer's health falls below a critical threshold.",
+        "id": "G1398"
     },
     {
         "accessoryName": "Elixir Stone",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "shadow",
-        "description": "A stone that enhances the wearer's natural healing rate, glowing faintly with life energy."
+        "description": "A stone that enhances the wearer's natural healing rate, glowing faintly with life energy.",
+        "id": "G1399"
     },
     {
         "accessoryName": "Vigor Pendant",
         "accessoryType": "regular",
         "accessoryProfileTag": "health",
         "regionProfileTag": "shadow",
-        "description": "A pendant that boosts the wearer's stamina and overall health resilience."
+        "description": "A pendant that boosts the wearer's stamina and overall health resilience.",
+        "id": "G1400"
     },
     {
         "accessoryName": "Chameleon Cloak",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "shadow",
-        "description": "A cloak that changes color to blend into any environment, providing stealth and defense."
+        "description": "A cloak that changes color to blend into any environment, providing stealth and defense.",
+        "id": "G1401"
     },
     {
         "accessoryName": "Spectrum Shield",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "shadow",
-        "description": "A shield that adapts its resistance to different types of attacks, be it physical or magical."
+        "description": "A shield that adapts its resistance to different types of attacks, be it physical or magical.",
+        "id": "G1402"
     },
     {
         "accessoryName": "Morphing Gauntlets",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "shadow",
-        "description": "Gauntlets that change shape to enhance grip, strength, or agility as needed."
+        "description": "Gauntlets that change shape to enhance grip, strength, or agility as needed.",
+        "id": "G1403"
     },
     {
         "accessoryName": "Enigma Boots",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "shadow",
-        "description": "Boots that mysteriously increase speed, stealth, and stability on varied terrains."
+        "description": "Boots that mysteriously increase speed, stealth, and stability on varied terrains.",
+        "id": "G1404"
     },
     {
         "accessoryName": "Harmonic Mantle",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "shadow",
-        "description": "A mantle that resonates with the wearer's state, boosting defense, health, or attack as needed."
+        "description": "A mantle that resonates with the wearer's state, boosting defense, health, or attack as needed.",
+        "id": "G1405"
     },
     {
         "accessoryName": "Arcane Bracers",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "shadow",
-        "description": "Bracers that empower both physical strikes and magical abilities, adapting to combat style."
+        "description": "Bracers that empower both physical strikes and magical abilities, adapting to combat style.",
+        "id": "G1406"
     },
     {
         "accessoryName": "Elemental Buckler",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "shadow",
-        "description": "A buckler that shifts its elemental resistance based on the most recent attack received."
+        "description": "A buckler that shifts its elemental resistance based on the most recent attack received.",
+        "id": "G1407"
     },
     {
         "accessoryName": "All-seeing Vambraces",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "shadow",
-        "description": "Vambraces that grant heightened awareness, increasing evasion and critical hit chances."
+        "description": "Vambraces that grant heightened awareness, increasing evasion and critical hit chances.",
+        "id": "G1408"
     },
     {
         "accessoryName": "Multifaceted Pauldrons",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "shadow",
-        "description": "Shoulder armor that enhances various attributes like strength, speed, or defense, based on the situation."
+        "description": "Shoulder armor that enhances various attributes like strength, speed, or defense, based on the situation.",
+        "id": "G1409"
     },
     {
         "accessoryName": "Infinity Veil",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "shadow",
-        "description": "A mystical veil that occasionally grants random buffs in defense, attack, or health regeneration."
+        "description": "A mystical veil that occasionally grants random buffs in defense, attack, or health regeneration.",
+        "id": "G1410"
     },
     {
         "accessoryName": "Prismatic Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "shadow",
-        "description": "A ring that refracts light, granting random elemental resistance or attack enhancements."
+        "description": "A ring that refracts light, granting random elemental resistance or attack enhancements.",
+        "id": "G1411"
     },
     {
         "accessoryName": "Mystic Amulet",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "shadow",
-        "description": "An amulet that subtly alters its magic to aid in health, mana recovery, or damage reduction."
+        "description": "An amulet that subtly alters its magic to aid in health, mana recovery, or damage reduction.",
+        "id": "G1412"
     },
     {
         "accessoryName": "Jack-of-all Charms",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "shadow",
-        "description": "A charm that randomly boosts one of several stats like speed, strength, or luck for short durations."
+        "description": "A charm that randomly boosts one of several stats like speed, strength, or luck for short durations.",
+        "id": "G1413"
     },
     {
         "accessoryName": "Alchemist's Locket",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "shadow",
-        "description": "A locket that occasionally transmutes small amounts of one resource into another during battles."
+        "description": "A locket that occasionally transmutes small amounts of one resource into another during battles.",
+        "id": "G1414"
     },
     {
         "accessoryName": "Ethereal Beads",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "shadow",
-        "description": "Beads that cycle through granting minor bonuses to health, mana, or stamina regeneration."
+        "description": "Beads that cycle through granting minor bonuses to health, mana, or stamina regeneration.",
+        "id": "G1415"
     },
     {
         "accessoryName": "Adaptive Bracelet",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "shadow",
-        "description": "A bracelet that adjusts its properties to provide small boosts in offense, defense, or utility."
+        "description": "A bracelet that adjusts its properties to provide small boosts in offense, defense, or utility.",
+        "id": "G1416"
     },
     {
         "accessoryName": "Everchanging Brooch",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "shadow",
-        "description": "A brooch that cycles through different enhancements, from elemental defense to attack speed."
+        "description": "A brooch that cycles through different enhancements, from elemental defense to attack speed.",
+        "id": "G1417"
     },
     {
         "accessoryName": "Dynamic Talisman",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "shadow",
-        "description": "A talisman that resonates with the bearer\u2019s needs, providing various situational boosts."
+        "description": "A talisman that resonates with the bearer\u2019s needs, providing various situational boosts.",
+        "id": "G1418"
     },
     {
         "accessoryName": "Chaos Stone",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "shadow",
-        "description": "A stone that unpredictably augments either the wearer\u2019s offensive or defensive capabilities."
+        "description": "A stone that unpredictably augments either the wearer\u2019s offensive or defensive capabilities.",
+        "id": "G1419"
     },
     {
         "accessoryName": "Rune of Balance",
         "accessoryType": "regular",
         "accessoryProfileTag": "everything",
         "regionProfileTag": "shadow",
-        "description": "A rune that harmonizes with the wearer, balancing stats and occasionally correcting weaknesses."
+        "description": "A rune that harmonizes with the wearer, balancing stats and occasionally correcting weaknesses.",
+        "id": "G1420"
     },
     {
         "accessoryName": "Timebender's Mantle",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "shadow",
-        "description": "A mystical cape that can briefly reverse time, undoing recent events or damage."
+        "description": "A mystical cape that can briefly reverse time, undoing recent events or damage.",
+        "id": "G1421"
     },
     {
         "accessoryName": "Dimensional Aegis",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "shadow",
-        "description": "A shield that opens rifts to deflect incoming attacks to another dimension."
+        "description": "A shield that opens rifts to deflect incoming attacks to another dimension.",
+        "id": "G1422"
     },
     {
         "accessoryName": "Gravity Gauntlets",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "shadow",
-        "description": "Gauntlets that manipulate gravitational forces, enabling superhuman leaps or grounding foes."
+        "description": "Gauntlets that manipulate gravitational forces, enabling superhuman leaps or grounding foes.",
+        "id": "G1423"
     },
     {
         "accessoryName": "Phantom Steppers",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "shadow",
-        "description": "Boots that allow the wearer to walk on walls or ceilings, defying the laws of physics."
+        "description": "Boots that allow the wearer to walk on walls or ceilings, defying the laws of physics.",
+        "id": "G1424"
     },
     {
         "accessoryName": "Cloak of Invisibility",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "shadow",
-        "description": "A cloak that renders the wearer completely invisible when standing still."
+        "description": "A cloak that renders the wearer completely invisible when standing still.",
+        "id": "G1425"
     },
     {
         "accessoryName": "Telekinetic Bracers",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "shadow",
-        "description": "Bracers that grant the wearer limited telekinetic abilities to move objects at a distance."
+        "description": "Bracers that grant the wearer limited telekinetic abilities to move objects at a distance.",
+        "id": "G1426"
     },
     {
         "accessoryName": "Portal Buckler",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "shadow",
-        "description": "A small shield capable of creating short-range portals for quick travel or misdirection."
+        "description": "A small shield capable of creating short-range portals for quick travel or misdirection.",
+        "id": "G1427"
     },
     {
         "accessoryName": "Ethereal Vambraces",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "shadow",
-        "description": "Vambraces that allow the wearer's arms to phase through solid objects temporarily."
+        "description": "Vambraces that allow the wearer's arms to phase through solid objects temporarily.",
+        "id": "G1428"
     },
     {
         "accessoryName": "Cosmic Pauldrons",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "shadow",
-        "description": "Shoulder armor that absorbs cosmic energy, occasionally unleashing it in a powerful burst."
+        "description": "Shoulder armor that absorbs cosmic energy, occasionally unleashing it in a powerful burst.",
+        "id": "G1429"
     },
     {
         "accessoryName": "Shroud of Elements",
         "accessoryType": "peripheral",
         "accessoryProfileTag": "special",
         "regionProfileTag": "shadow",
-        "description": "A shroud that dynamically reacts to elemental magic, providing immunity to the last element encountered."
+        "description": "A shroud that dynamically reacts to elemental magic, providing immunity to the last element encountered.",
+        "id": "G1430"
     },
     {
         "accessoryName": "Rune of Echoes",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "shadow",
-        "description": "A rune that echoes the last spell cast, giving it a chance to activate twice."
+        "description": "A rune that echoes the last spell cast, giving it a chance to activate twice.",
+        "id": "G1431"
     },
     {
         "accessoryName": "Pendant of Souls",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "shadow",
-        "description": "A pendant that stores a fragment of the wearer's soul, allowing them to revive once after defeat."
+        "description": "A pendant that stores a fragment of the wearer's soul, allowing them to revive once after defeat.",
+        "id": "G1432"
     },
     {
         "accessoryName": "Charm of the Mystic",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "shadow",
-        "description": "A charm that randomly enchants the wearer's weapon with a different elemental power each battle."
+        "description": "A charm that randomly enchants the wearer's weapon with a different elemental power each battle.",
+        "id": "G1433"
     },
     {
         "accessoryName": "Oracle's Amulet",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "shadow",
-        "description": "An amulet that provides brief glimpses of the future, warning of potential dangers."
+        "description": "An amulet that provides brief glimpses of the future, warning of potential dangers.",
+        "id": "G1434"
     },
     {
         "accessoryName": "Wisp Ring",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "shadow",
-        "description": "A ring that summons a wisp to guide the wearer in dark places or reveal hidden paths."
+        "description": "A ring that summons a wisp to guide the wearer in dark places or reveal hidden paths.",
+        "id": "G1435"
     },
     {
         "accessoryName": "Stone of Shape",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "shadow",
-        "description": "A stone that grants the wearer the ability to change form, mimicking small animals or objects."
+        "description": "A stone that grants the wearer the ability to change form, mimicking small animals or objects.",
+        "id": "G1436"
     },
     {
         "accessoryName": "Brooch of Binding",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "shadow",
-        "description": "A brooch that can bind a distant enemy in place for a brief moment, immobilizing them."
+        "description": "A brooch that can bind a distant enemy in place for a brief moment, immobilizing them.",
+        "id": "G1437"
     },
     {
         "accessoryName": "Talisman of the Void",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "shadow",
-        "description": "A talisman that occasionally absorbs a harmful spell, nullifying its effects."
+        "description": "A talisman that occasionally absorbs a harmful spell, nullifying its effects.",
+        "id": "G1438"
     },
     {
         "accessoryName": "Locket of Illusions",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "shadow",
-        "description": "A locket that can create a temporary illusionary double of the wearer to confuse enemies."
+        "description": "A locket that can create a temporary illusionary double of the wearer to confuse enemies.",
+        "id": "G1439"
     },
     {
         "accessoryName": "Ring of Whispers",
         "accessoryType": "regular",
         "accessoryProfileTag": "special",
         "regionProfileTag": "shadow",
-        "description": "A ring that whispers secrets of the environment, revealing hidden traps and treasures."
+        "description": "A ring that whispers secrets of the environment, revealing hidden traps and treasures.",
+        "id": "G1440"
     }
 ]

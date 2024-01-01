@@ -1,0 +1,3 @@
+We're going to provide each armor object with an ID. It will have the field name "id". It will start at "A0001", then "A0002", and so on (incrementing by one each time), so that every armor across every single file has a unique id. Then you will let me download all the files in a zip file.
+
+Now check to see that object in every file has a unique ID. Also print out the range they take place in. The start of the range should be A0001.
