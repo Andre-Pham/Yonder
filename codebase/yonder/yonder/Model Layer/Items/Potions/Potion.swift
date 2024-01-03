@@ -11,7 +11,8 @@ typealias Potion = PotionAbstract & AlwaysUsable & HasPurchasablePrice
 
 class PotionAbstract: Item, Purchasable, Clonable {
     
-    let triggersEndOfTurn = false
+    /// Protocol property indicating whether this triggers an end of turn, or is used instantly
+    public let triggersEndOfTurn = false
     private let effectsDescription: String?
     var potionCount: Int {
         return self.remainingUses

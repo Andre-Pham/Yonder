@@ -9,7 +9,8 @@ import Foundation
 
 class NoItem: Item {
     
-    let triggersEndOfTurn = false
+    /// Protocol property indicating whether this triggers an end of turn, or is used instantly
+    public let triggersEndOfTurn = false
     
     init() {
         super.init(name: "NO_ITEM", description: "NO_ITEM_DESCRIPTION")

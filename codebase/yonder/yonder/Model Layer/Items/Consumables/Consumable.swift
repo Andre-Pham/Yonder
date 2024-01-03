@@ -11,7 +11,8 @@ typealias Consumable = ConsumableAbstract & AlwaysUsable & ConsumableIsStackable
 
 class ConsumableAbstract: Item, Clonable, Purchasable {
     
-    let triggersEndOfTurn = false
+    /// Protocol property indicating whether this triggers an end of turn, or is used instantly
+    public let triggersEndOfTurn = false
     @DidSetPublished private(set) var effectsDescription: String? = nil
     
     init(
