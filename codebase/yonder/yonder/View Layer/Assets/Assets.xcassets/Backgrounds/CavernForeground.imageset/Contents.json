@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "CavernForeground.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
