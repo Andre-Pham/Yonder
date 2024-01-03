@@ -11,7 +11,8 @@ class TavernArea: Region, Storable {
     
     public let name: String
     public let description: String
-    public let imageResource: YonderImage
+    public let background: YonderImage
+    public let foreground: YonderImage
     public let id: UUID
     private(set) var rootLocations = [Location]()
     private(set) var tipLocations = [Location]()
@@ -23,13 +24,15 @@ class TavernArea: Region, Storable {
         name: String,
         description: String,
         tags: RegionTagAllocation,
-        imageResource: YonderImage,
+        background: YonderImage,
+        foreground: YonderImage,
         _ locations: Location...
     ) {
         self.name = name
         self.description = description
         self.tags = tags
-        self.imageResource = imageResource
+        self.background = background
+        self.foreground = foreground
         self.id = UUID() // id must be persistent so location contexts can refer to them
         switch locations.count {
         case 3:
@@ -47,7 +50,7 @@ class TavernArea: Region, Storable {
         self.addRootAndTipLocations()
         self.generateAreaArrangement()
         for location in self.locations {
-            location.setContext(key: self.getRegionKey(), name: self.name, description: self.description, imageResource: self.imageResource)
+            location.setContext(key: self.getRegionKey(), name: self.name, description: self.description, background: self.background, foreground: self.foreground)
         }
     }
     
@@ -57,7 +60,8 @@ class TavernArea: Region, Storable {
         case name
         case description
         case tags
-        case imageName
+        case backgroundImageName
+        case foregroundImageName
         case arrangement
         case locations
         case id
@@ -67,7 +71,11 @@ class TavernArea: Region, Storable {
         self.name = dataObject.get(Field.name.rawValue)
         self.description = dataObject.get(Field.description.rawValue)
         self.tags = dataObject.getObject(Field.tags.rawValue, type: RegionTagAllocation.self)
-        self.imageResource = YonderImage(dataObject.get(Field.imageName.rawValue))
+        let backgroundImageName: String = dataObject.get(Field.backgroundImageName.rawValue, onFail: "")
+        let foregroundImageName: String = dataObject.get(Field.foregroundImageName.rawValue, onFail: "")
+        self.background = backgroundImageName.isEmpty ? YonderImages.missingBackgroundImage : YonderImage(backgroundImageName)
+        self.foreground = foregroundImageName.isEmpty ? YonderImages.missingForegroundImage : YonderImage(foregroundImageName)
+        assert(!backgroundImageName.isEmpty && !foregroundImageName.isEmpty, "Location image could not be restored")
         self.arrangement = TavernAreaArrangements(rawValue: dataObject.get(Field.arrangement.rawValue)) ?? .S
         self.locations = dataObject.getObjectArray(Field.locations.rawValue, type: LocationAbstract.self) as! [any Location]
         self.id = UUID(uuidString: dataObject.get(Field.id.rawValue))!
@@ -81,7 +89,8 @@ class TavernArea: Region, Storable {
             .add(key: Field.name.rawValue, value: self.name)
             .add(key: Field.description.rawValue, value: self.description)
             .add(key: Field.tags.rawValue, value: self.tags)
-            .add(key: Field.imageName.rawValue, value: self.imageResource.name)
+            .add(key: Field.backgroundImageName.rawValue, value: self.background.name)
+            .add(key: Field.foregroundImageName.rawValue, value: self.foreground.name)
             .add(key: Field.arrangement.rawValue, value: self.arrangement.rawValue)
             .add(key: Field.locations.rawValue, value: self.locations as [LocationAbstract])
             .add(key: Field.id.rawValue, value: self.id.uuidString)

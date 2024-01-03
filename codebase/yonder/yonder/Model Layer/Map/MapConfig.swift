@@ -10,7 +10,7 @@ import Foundation
 enum MapConfig {
     
     static let territoriesPerBoss = 1
-    static let bossCount = 8
+    static let bossCount = 6
     static var territoryCount: Int { Self.bossCount*Self.territoriesPerBoss }
     
 }

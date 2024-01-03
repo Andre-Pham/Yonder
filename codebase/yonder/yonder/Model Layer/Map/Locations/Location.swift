@@ -126,11 +126,11 @@ class LocationAbstract: Storable {
     }
     
     func setAreaContext(_ area: Area) {
-        self.setContext(key: area.getRegionKey(), name: area.name, description: area.description, imageResource: area.imageResource)
+        self.setContext(key: area.getRegionKey(), name: area.name, description: area.description, background: area.background, foreground: area.foreground)
     }
     
-    func setContext(key: String, name: String, description: String, imageResource: YonderImage) {
-        self.context.setContext(key: key, name: name, description: description, imageResource: imageResource)
+    func setContext(key: String, name: String, description: String, background: YonderImage, foreground: YonderImage) {
+        self.context.setContext(key: key, name: name, description: description, background: background, foreground: foreground)
     }
     
 }

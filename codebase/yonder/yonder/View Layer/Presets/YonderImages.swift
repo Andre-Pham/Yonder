@@ -23,5 +23,9 @@ enum YonderImages {
     
     static let forestForegroundImage = YonderImage("ForestForeground")
     static let forestBackgroundImage = YonderImage("ForestBackground")
+    static let cavernForegroundImage = YonderImage("CavernForeground")
+    static let cavernBackgroundImage = YonderImage("CavernBackground")
+    static let desertForegroundImage = YonderImage("DesertForeground")
+    static let desertBackgroundImage = YonderImage("DesertBackground")
     
 }

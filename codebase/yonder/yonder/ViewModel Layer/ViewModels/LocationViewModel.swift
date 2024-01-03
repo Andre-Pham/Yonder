@@ -20,7 +20,12 @@ class LocationViewModel: ObservableObject {
     private(set) var id: UUID
     private(set) var name: String
     private(set) var description: String
-    private(set) var image: Image
+    /// The location's region's background image
+    /// IMPORTANT: Must remain as `YonderImage` (not `SwiftUI.Image`) due to requiring its width/height dimensions
+    private(set) var background: YonderImage
+    /// The location's region's foreground image (overlayed over the background)
+    /// IMPORTANT: Must remain as `YonderImage` (not `SwiftUI.Image`) due to requiring its width/height dimensions
+    private(set) var foreground: YonderImage
     private(set) var type: LocationType
     private(set) var nextLocationIDs: [UUID]
     var isBridge: Bool {
@@ -73,7 +78,8 @@ class LocationViewModel: ObservableObject {
         self.id = self.location.id
         self.name = location.context.name
         self.description = location.context.description
-        self.image = location.context.image
+        self.background = location.context.background
+        self.foreground = location.context.foreground
         self.type = location.type
         self.nextLocationIDs = self.location.nextLocations.map { $0.id }
         if let bridgeLocation = self.location.bridgeLocation {

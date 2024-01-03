@@ -32,7 +32,7 @@ class BossArea: Storable {
         for location in self.locations {
             let referenceLocation = self.rootLocations.first!
             let context = referenceLocation.context
-            location.setContext(key: context.key, name: context.name, description: context.description, imageResource: context.imageResource)
+            location.setContext(key: context.key, name: context.name, description: context.description, background: context.background, foreground: context.foreground)
         }
     }
     

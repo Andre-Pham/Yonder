@@ -571,6 +571,7 @@
 		B678C1C62B427EAD00CD6354 /* ARMOR-DATA-INDEX.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1C52B427EAD00CD6354 /* ARMOR-DATA-INDEX.json */; };
 		B678C1C82B42809500CD6354 /* ArmorProfileRepoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C1C72B42809500CD6354 /* ArmorProfileRepoUtil.swift */; };
 		B678C1CA2B429CE300CD6354 /* AccessoryProfileRepoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C1C92B429CE300CD6354 /* AccessoryProfileRepoUtil.swift */; };
+		B678C1CC2B4596AE00CD6354 /* RegionProfileAssignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C1CB2B4596AE00CD6354 /* RegionProfileAssignment.swift */; };
 		B6C37DF72A32B48F004D18A8 /* SequenceCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DF62A32B48F004D18A8 /* SequenceCode.swift */; };
 		B6C37DF92A32B4B1004D18A8 /* AnimationSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DF82A32B4B1004D18A8 /* AnimationSequence.swift */; };
 		B6C37DFB2A32B4BC004D18A8 /* AnimationComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DFA2A32B4BC004D18A8 /* AnimationComposite.swift */; };
@@ -2951,6 +2952,7 @@
 		B678C1C52B427EAD00CD6354 /* ARMOR-DATA-INDEX.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "ARMOR-DATA-INDEX.json"; sourceTree = "<group>"; };
 		B678C1C72B42809500CD6354 /* ArmorProfileRepoUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmorProfileRepoUtil.swift; sourceTree = "<group>"; };
 		B678C1C92B429CE300CD6354 /* AccessoryProfileRepoUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryProfileRepoUtil.swift; sourceTree = "<group>"; };
+		B678C1CB2B4596AE00CD6354 /* RegionProfileAssignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionProfileAssignment.swift; sourceTree = "<group>"; };
 		B6C37DF62A32B48F004D18A8 /* SequenceCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceCode.swift; sourceTree = "<group>"; };
 		B6C37DF82A32B4B1004D18A8 /* AnimationSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSequence.swift; sourceTree = "<group>"; };
 		B6C37DFA2A32B4BC004D18A8 /* AnimationComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationComposite.swift; sourceTree = "<group>"; };
@@ -5717,6 +5719,7 @@
 				656FD8B429171F0200F923E9 /* RegionProfileBucket.swift */,
 				656FD8BD291724D000F923E9 /* RegionProfileTag.swift */,
 				656FD8D429195E9800F923E9 /* RegionTagAllocation.swift */,
+				B678C1CB2B4596AE00CD6354 /* RegionProfileAssignment.swift */,
 			);
 			path = Area;
 			sourceTree = "<group>";
@@ -10725,6 +10728,7 @@
 				65326273282F613300A37340 /* InspectLocationView.swift in Sources */,
 				65E8AD18287707C300BEC1F4 /* PurchaseFromShopKeeperButton.swift in Sources */,
 				654D72A029416ED800228643 /* ClericClass.swift in Sources */,
+				B678C1CC2B4596AE00CD6354 /* RegionProfileAssignment.swift in Sources */,
 				65D88C33274436E7002E3AC4 /* yonderApp.swift in Sources */,
 				65DC5FB628DC227500E5F904 /* WeaponDamageBuff.swift in Sources */,
 				B6C37E092A32B953004D18A8 /* UIImage.swift in Sources */,

@@ -15,13 +15,13 @@ class TerritoryPoolFactory {
         var areaPools = [AreaPool]()
         var tavernAreas = [TavernArea]()
         
-        let areaProfiles = self.regionProfileBucket.grabProfiles(count: 2, stage: stage)
+        let areaProfiles = self.regionProfileBucket.grabProfiles(count: 2, stage: stage, regionAssignment: .area)
         for areaProfile in areaProfiles {
             let areaPoolFactory = AreaPoolFactory(areaProfile: areaProfile)
             areaPools.append(areaPoolFactory.deliver())
         }
         
-        let tavernAreaProfile = self.regionProfileBucket.grabProfile(stage: stage)
+        let tavernAreaProfile = self.regionProfileBucket.grabProfile(stage: stage, regionAssignment: .tavernArea)
         let tavernAreaFactory = TavernAreaFactory(areaProfile: tavernAreaProfile, stage: stage)
         tavernAreas.append(tavernAreaFactory.deliver())
         

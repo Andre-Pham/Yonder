@@ -13,16 +13,15 @@ class LocationContext: Storable {
     private(set) var key: String = ""
     private(set) var name: String = ""
     private(set) var description: String = ""
-    private(set) var imageResource: YonderImage = YonderImages.missingBackgroundImage
-    var image: Image {
-        return self.imageResource.image
-    }
+    private(set) var background: YonderImage = YonderImages.missingBackgroundImage
+    private(set) var foreground: YonderImage = YonderImages.missingForegroundImage
     
-    func setContext(key: String, name: String, description: String, imageResource: YonderImage) {
+    func setContext(key: String, name: String, description: String, background: YonderImage, foreground: YonderImage) {
         self.key = key
         self.name = name
         self.description = description
-        self.imageResource = imageResource
+        self.background = background
+        self.foreground = foreground
     }
     
     init() { }
@@ -33,14 +32,19 @@ class LocationContext: Storable {
         case key
         case name
         case description
-        case imageName
+        case backgroundImageName
+        case foregroundImageName
     }
 
     required init(dataObject: DataObject) {
         self.key = dataObject.get(Field.key.rawValue)
         self.name = dataObject.get(Field.name.rawValue)
         self.description = dataObject.get(Field.description.rawValue)
-        self.imageResource = YonderImage(dataObject.get(Field.imageName.rawValue))
+        let backgroundImageName: String = dataObject.get(Field.backgroundImageName.rawValue, onFail: "")
+        let foregroundImageName: String = dataObject.get(Field.foregroundImageName.rawValue, onFail: "")
+        self.background = backgroundImageName.isEmpty ? YonderImages.missingBackgroundImage : YonderImage(backgroundImageName)
+        self.foreground = foregroundImageName.isEmpty ? YonderImages.missingForegroundImage : YonderImage(foregroundImageName)
+        assert(!backgroundImageName.isEmpty && !foregroundImageName.isEmpty, "Location image could not be restored")
     }
 
     func toDataObject() -> DataObject {
@@ -48,7 +52,8 @@ class LocationContext: Storable {
             .add(key: Field.key.rawValue, value: self.key)
             .add(key: Field.name.rawValue, value: self.name)
             .add(key: Field.description.rawValue, value: self.description)
-            .add(key: Field.imageName.rawValue, value: self.imageResource.name)
+            .add(key: Field.backgroundImageName.rawValue, value: self.background.name)
+            .add(key: Field.foregroundImageName.rawValue, value: self.foreground.name)
     }
     
 }

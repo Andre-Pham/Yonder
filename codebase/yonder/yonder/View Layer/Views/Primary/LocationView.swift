@@ -14,14 +14,15 @@ struct LocationView: View {
     @State private var viewHeight = 0.0
     // Magic number for scaling down size, smaller number -> larger image
     private let sizeDial = 178.0
-    // TODO: Replace with location's image
-    private let background = YonderImages.forestBackgroundImage
-    private let foreground = YonderImages.forestForegroundImage
+    private let background: YonderImage
+    private let foreground: YonderImage
     
     init(locationViewModel: LocationViewModel, optionsStateManager: OptionsStateManager) {
         self.locationViewModel = locationViewModel
         // Maintain as @StateObject to not re-create every view redraw
         self._animationQueue = StateObject(wrappedValue: NPCAnimation(optionsStateManager: optionsStateManager))
+        self.background = locationViewModel.background
+        self.foreground = locationViewModel.foreground
     }
     
     var body: some View {

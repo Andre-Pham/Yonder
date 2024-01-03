@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class YonderImage {
+struct YonderImage {
     
     let name: String
     let width: CGFloat

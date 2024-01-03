@@ -19,7 +19,7 @@ struct InspectLocationView: View {
                 YonderText(text: self.locationViewModel.description, size: .inspectSheetBody)
             }
             
-            self.locationViewModel.image
+            self.locationViewModel.background.image
                 .resizable()
                 .scaledToFill()
                 .frame(height: 150)

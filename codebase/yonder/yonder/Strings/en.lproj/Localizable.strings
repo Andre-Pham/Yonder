@@ -711,6 +711,57 @@
 "map.locationType.bridge.name" = "Warp";
 "map.locationType.bridge.description" = "Warps allow you to travel between adjacent areas, both forwards and backwards.";
 
+// Regions
+    // Forest
+"map.region.forest.name" = "Overgrown Boscage";
+"map.region.forest.description" = "TODO";
+    // Desert
+"map.region.desert.name" = "Scorched Drylands";
+"map.region.desert.description" = "TODO";
+    // Cavern
+"map.region.cavern.name" = "Rattlerock Caverns";
+"map.region.cavern.description" = "TODO";
+    // Faction5
+"map.region.faction5.name" = "Volcanic Ridges";
+"map.region.faction5.description" = "TODO";
+    // Faction6
+"map.region.faction6.name" = "Winterlong Hollows";
+"map.region.faction6.description" = "TODO";
+    // Dungeon
+"map.region.dungeon.name" = "Obsidius Dungeons";
+"map.region.dungeon.description" = "TODO";
+    // Faction2
+"map.region.faction2.name" = "Lushlotus Peaks";
+"map.region.faction2.description" = "TODO";
+    // Faction4
+"map.region.faction4.name" = "Voidtouch Valley";
+"map.region.faction4.description" = "TODO";
+    // Nether
+"map.region.nether.name" = "Ablaze'd";
+"map.region.nether.description" = "TODO";
+    // Shadow
+"map.region.shadow.name" = "Darkshadow Realms";
+"map.region.shadow.description" = "TODO";
+    // Mech
+"map.region.mech.name" = "Metalmech";
+"map.region.mech.description" = "TODO";
+    // Frost
+"map.region.frost.name" = "Glacier Rifts";
+"map.region.frost.description" = "TODO";
+    // Taverns
+"map.region.tavern0.name" = "TODO";
+"map.region.tavern0.description" = "TODO";
+"map.region.tavern1.name" = "TODO";
+"map.region.tavern1.description" = "TODO";
+"map.region.tavern2.name" = "TODO";
+"map.region.tavern2.description" = "TODO";
+"map.region.tavern3.name" = "TODO";
+"map.region.tavern3.description" = "TODO";
+"map.region.tavern4.name" = "TODO";
+"map.region.tavern4.description" = "TODO";
+"map.region.tavern5.name" = "TODO";
+"map.region.tavern5.description" = "TODO";
+
 // MARK: - Armor
 
 "armor.armorSlot" = "Armor Slot";

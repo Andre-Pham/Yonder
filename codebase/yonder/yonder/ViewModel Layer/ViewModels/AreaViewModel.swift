@@ -17,7 +17,7 @@ class AreaViewModel: ObservableObject {
     init(locationContext: LocationContext) {
         self.name = locationContext.name
         self.description = locationContext.description
-        self.image = locationContext.image
+        self.image = locationContext.background.image
     }
     
 }
