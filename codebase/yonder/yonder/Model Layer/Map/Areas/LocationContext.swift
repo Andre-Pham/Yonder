@@ -13,7 +13,7 @@ class LocationContext: Storable {
     private(set) var key: String = ""
     private(set) var name: String = ""
     private(set) var description: String = ""
-    private(set) var imageResource: YonderImage = YonderImages.placeholderImage
+    private(set) var imageResource: YonderImage = YonderImages.missingBackgroundImage
     var image: Image {
         return self.imageResource.image
     }

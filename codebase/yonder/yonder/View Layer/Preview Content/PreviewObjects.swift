@@ -307,7 +307,7 @@ enum PreviewObjects {
             name: "Glacier Rifts",
             description: "placeholderDescription",
             tags: RegionTagAllocation(),
-            imageResource: YonderImages.placeholderImage
+            imageResource: YonderImages.missingBackgroundImage
         )
     }
     

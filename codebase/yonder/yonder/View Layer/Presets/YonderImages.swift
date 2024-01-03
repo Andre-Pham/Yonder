@@ -9,7 +9,10 @@ import Foundation
 
 enum YonderImages {
     
-    static let placeholderImage = YonderImage("MajorInn")
+    // MARK: - Placeholders
+    
+    static let missingBackgroundImage = YonderImage("MissingBackground")
+    static let missingForegroundImage = YonderImage("MissingForeground")
     
     // MARK: - Foe Types
     

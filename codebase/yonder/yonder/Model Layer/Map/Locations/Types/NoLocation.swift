@@ -13,7 +13,7 @@ class NoLocation: Location {
     
     override init() {
         super.init()
-        self.setContext(key: "", name: "placeholderName", description: "placeholderDescription", imageResource: YonderImages.placeholderImage)
+        self.setContext(key: "", name: "placeholderName", description: "placeholderDescription", imageResource: YonderImages.missingBackgroundImage)
     }
     
     // MARK: - Serialisation

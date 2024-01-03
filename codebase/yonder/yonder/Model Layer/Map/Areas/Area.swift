@@ -28,7 +28,7 @@ class Area: Region, Storable {
         name: String = "placeholderName",
         description: String = "placeholderDescription",
         tags: RegionTagAllocation,
-        imageResource: YonderImage = YonderImages.placeholderImage
+        imageResource: YonderImage = YonderImages.missingBackgroundImage
     ) {
         assert(locations.count == arrangement.locationCount, "Number of locations provided to generate Area doesn't match expected number for the arrangement")
         self.arrangement = arrangement

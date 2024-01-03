@@ -50,7 +50,7 @@ enum TestContent {
         return AreaPool(
             areaName: "Test Area \(number)",
             areaDescription: "Test area \(number) description.",
-            areaImageResource: YonderImages.placeholderImage,
+            areaImageResource: YonderImages.missingBackgroundImage,
             tags: RegionTagAllocation(),
             hostileLocations: hostileLocations,
             challengeHostileLocations: challengeHostileLocations,
@@ -66,7 +66,7 @@ enum TestContent {
             name: "Test Tavern Area",
             description: "Test tavern area.",
             tags: RegionTagAllocation(),
-            imageResource: YonderImages.placeholderImage,
+            imageResource: YonderImages.missingBackgroundImage,
             RestorerLocation(restorer: Self.testRestorer()),
             ShopLocation(shopKeeper: Self.testShopKeeper()),
             EnhancerLocation(enhancer: Self.testEnhancer())

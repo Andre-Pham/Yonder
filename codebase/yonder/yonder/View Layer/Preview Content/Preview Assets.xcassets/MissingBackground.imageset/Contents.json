@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "MajorInn.png",
+      "filename" : "TempBackground.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "MajorInn-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "MajorInn-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
