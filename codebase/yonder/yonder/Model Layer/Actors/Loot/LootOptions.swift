@@ -9,52 +9,51 @@ import Foundation
 
 class LootOptions: Storable {
     
-    let option1: LootBag
-    let option2: LootBag
-    let option3: LootBag
-    var lootBags: [LootBag] {
-        return [self.option1, self.option2, self.option3]
-    }
+    private(set) var lootBags: [LootBag]
     @DidSetPublished private(set) var isLooted = false
     
-    init(_ option1: LootBag, _ option2: LootBag, _ option3: LootBag) {
-        self.option1 = option1
-        self.option2 = option2
-        self.option3 = option3
+    init(_ options: [LootBag]) {
+        self.lootBags = options
         
-        if option2.name == option1.name {
-            option2.reassignName()
-        }
-        if option3.name == option2.name || option3.name == option1.name {
-            option3.reassignName(banned: [option2.name, option1.name])
-        }
+        self.ensureNameUniqueness()
+    }
+    
+    convenience init(_ options: LootBag...) {
+        self.init(options)
     }
     
     // MARK: - Serialisation
 
     private enum Field: String {
-        case option1
-        case option2
-        case option3
+        case lootBags
         case isLooted
     }
 
     required init(dataObject: DataObject) {
-        self.option1 = dataObject.getObject(Field.option1.rawValue, type: LootBag.self)
-        self.option2 = dataObject.getObject(Field.option2.rawValue, type: LootBag.self)
-        self.option3 = dataObject.getObject(Field.option3.rawValue, type: LootBag.self)
+        self.lootBags = dataObject.getObjectArray(Field.lootBags.rawValue, type: LootBag.self)
         self.isLooted = dataObject.get(Field.isLooted.rawValue, onFail: false)
     }
 
     func toDataObject() -> DataObject {
         return DataObject(self)
-            .add(key: Field.option1.rawValue, value: self.option1)
-            .add(key: Field.option2.rawValue, value: self.option2)
-            .add(key: Field.option3.rawValue, value: self.option3)
+            .add(key: Field.lootBags.rawValue, value: self.lootBags)
             .add(key: Field.isLooted.rawValue, value: self.isLooted)
     }
 
     // MARK: - Functions
+    
+    /// Ensures all loot bag names are unique. Reassigns names as necessary.
+    private func ensureNameUniqueness() {
+        var takenNames = [String]()
+        for bag in self.lootBags {
+            if takenNames.contains(bag.name) {
+                bag.reassignName(banned: takenNames)
+                takenNames.append(bag.name)
+            } else {
+                takenNames.append(bag.name)
+            }
+        }
+    }
     
     func take(_ option: UUID, player: Player) {
         if let loot = self.lootBags.first(where: { $0.id == option }) {
