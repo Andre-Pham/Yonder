@@ -139,6 +139,13 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
         }
     }
     
+    func setMaxHealth(to maxHealth: Int) {
+        self.maxHealth = maxHealth
+        if self.health > self.maxHealth {
+            self.health = self.maxHealth
+        }
+    }
+    
     func adjustBonusHealth(by amount: Int) {
         if amount > 0 {
             self.health += amount

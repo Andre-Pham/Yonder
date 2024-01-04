@@ -116,7 +116,7 @@ class PlayerViewModel: ActorViewModel {
     }
     var canTravel: Bool {
         let notInCombat = !self.canEngage
-        let noLootAvailable = !self.canLoot && !self.canChooseLootBag
+        let noLootAvailable = !self.canLoot && !self.canChooseLootBag && !self.canMakeLootChoice
         return notInCombat && noLootAvailable
     }
     var hasOffers: Bool {
@@ -136,6 +136,9 @@ class PlayerViewModel: ActorViewModel {
     }
     var canLoot: Bool {
         return self.lootBagViewModel != nil
+    }
+    var canMakeLootChoice: Bool {
+        return self.locationViewModel.playerHasLootChoiceAvailable
     }
     
     init(_ player: Player) {

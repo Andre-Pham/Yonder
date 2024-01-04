@@ -9,61 +9,61 @@ import SwiftUI
 
 struct CollectLootView: View {
     @ObservedObject var playerViewModel: PlayerViewModel
-    @ObservedObject var lootBagViewModel: LootBagViewModel
+    @ObservedObject var lootViewModel: LootViewModel
     var pageGeometry: GeometryProxy
     
     var body: some View {
         Group {
-            ForEach(self.lootBagViewModel.armorViewModelLoot, id: \.id) { armorViewModel in
+            ForEach(self.lootViewModel.armorViewModelLoot, id: \.id) { armorViewModel in
                 LootArmorButton(
                     armorViewModel: armorViewModel,
                     playerViewModel: self.playerViewModel,
-                    lootBagViewModel: self.lootBagViewModel,
+                    lootViewModel: self.lootViewModel,
                     pageGeometry: self.pageGeometry
                 )
             }
             
-            ForEach(self.lootBagViewModel.accessoryViewModelLoot, id: \.id) { accessoryViewModel in
+            ForEach(self.lootViewModel.accessoryViewModelLoot, id: \.id) { accessoryViewModel in
                 LootAccessoryButton(
                     accessoryViewModel: accessoryViewModel,
                     playerViewModel: self.playerViewModel,
-                    lootBagViewModel: self.lootBagViewModel,
+                    lootViewModel: self.lootViewModel,
                     pageGeometry: self.pageGeometry
                 )
             }
             
-            ForEach(self.lootBagViewModel.weaponViewModelLoot, id: \.id) { weaponViewModel in
+            ForEach(self.lootViewModel.weaponViewModelLoot, id: \.id) { weaponViewModel in
                 LootWeaponButton(
                     weaponViewModel: weaponViewModel,
                     playerViewModel: self.playerViewModel,
-                    lootBagViewModel: self.lootBagViewModel,
+                    lootViewModel: self.lootViewModel,
                     pageGeometry: self.pageGeometry
                 )
             }
             
-            ForEach(self.lootBagViewModel.consumableViewModelLoot, id: \.id) { consumableViewModel in
+            ForEach(self.lootViewModel.consumableViewModelLoot, id: \.id) { consumableViewModel in
                 LootConsumableButton(
                     consumableViewModel: consumableViewModel,
                     playerViewModel: self.playerViewModel,
-                    lootBagViewModel: self.lootBagViewModel,
+                    lootViewModel: self.lootViewModel,
                     pageGeometry: self.pageGeometry
                 )
             }
             
-            ForEach(self.lootBagViewModel.potionViewModelLoot, id: \.id) { potionViewModel in
+            ForEach(self.lootViewModel.potionViewModelLoot, id: \.id) { potionViewModel in
                 LootPotionButton(
                     potionViewModel: potionViewModel,
                     playerViewModel: self.playerViewModel,
-                    lootBagViewModel: self.lootBagViewModel,
+                    lootViewModel: self.lootViewModel,
                     pageGeometry: self.pageGeometry
                 )
             }
             
-            if self.lootBagViewModel.goldLoot > 0 {
+            if self.lootViewModel.goldLoot > 0 {
                 LootGoldButton(
-                    amount: self.lootBagViewModel.goldLoot,
+                    amount: self.lootViewModel.goldLoot,
                     playerViewModel: self.playerViewModel,
-                    lootBagViewModel: self.lootBagViewModel
+                    lootViewModel: self.lootViewModel
                 )
             }
             
@@ -79,7 +79,7 @@ struct CollectLootView_Previews: PreviewProvider {
         GeometryReader { geo in
             PreviewContentView {
                 VStack {
-                    CollectLootView(playerViewModel: PreviewObjects.playerViewModel, lootBagViewModel: PreviewObjects.lootBagViewModel, pageGeometry: geo)
+                    CollectLootView(playerViewModel: PreviewObjects.playerViewModel, lootViewModel: PreviewObjects.lootBagViewModel, pageGeometry: geo)
                 }
             }
         }

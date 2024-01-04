@@ -16,6 +16,7 @@ class DelayedDamageValues {
         case regular
         case armor
         case health
+        case maxHealth
     }
     
     typealias DamageValue = (damage: Int, type: DamageType)
@@ -43,6 +44,15 @@ class DelayedDamageValues {
                 actor.damageArmorPoints(for: value.damage)
             case .health:
                 actor.damageHealth(for: value.damage)
+            case .maxHealth:
+                // Damage to max health must always occur last - see below
+                continue
+            }
+        }
+        // After all the non-permanent damage has been dealt, adjust the max health
+        for value in self.values {
+            if value.type == .maxHealth {
+                actor.adjustMaxHealth(by: -value.damage)
             }
         }
         self.values.removeAll()

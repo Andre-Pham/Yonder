@@ -81,6 +81,12 @@ class OptionsStateManager: ObservableObject {
     }
     @Published var lootActionsActive = false
     
+    // Loot choice option
+    var lootChoiceOptionActive: Bool {
+        return self.playerViewModel.canMakeLootChoice
+    }
+    @Published var lootChoiceActionsActive = false
+    
     init(playerViewModel: PlayerViewModel) {
         self.playerViewModel = playerViewModel
         
@@ -92,11 +98,25 @@ class OptionsStateManager: ObservableObject {
             self.closeActions()
             // If there is a foe, and the foe dies, return to options view
             if let foeViewModel = newValue.getFoeViewModel() {
-                foeViewModel.$isDead.sink(receiveValue: { newValue in
+                var foeIsDeadSubscription: AnyCancellable? = nil
+                foeIsDeadSubscription = foeViewModel.$isDead.sink(receiveValue: { newValue in
                     if newValue {
                         self.closeActions()
+                        foeIsDeadSubscription?.cancel()
                     }
-                }).store(in: &self.subscriptions)
+                })
+                foeIsDeadSubscription?.store(in: &self.subscriptions)
+            }
+            // If there's a loot choice, and the player makes a choice, return to options view
+            if let lootChoiceViewModel = newValue.getFoeViewModel()?.lootChoiceViewModel {
+                var lootChoiceSubscription: AnyCancellable? = nil
+                lootChoiceSubscription = lootChoiceViewModel.$isLooted.sink(receiveValue: { isLooted in
+                    if isLooted {
+                        self.closeActions()
+                        lootChoiceSubscription?.cancel()
+                    }
+                })
+                lootChoiceSubscription?.store(in: &self.subscriptions)
             }
         }).store(in: &self.subscriptions)
         
@@ -121,6 +141,7 @@ class OptionsStateManager: ObservableObject {
             self.enhanceActionsActive = false
             self.chooseLootBagActionsActive = false
             self.lootActionsActive = false
+            self.lootChoiceActionsActive = false
         }
     }
     
@@ -201,6 +222,15 @@ class OptionsStateManager: ObservableObject {
         withAnimation(Self.animation) {
             self.showOptions = false
             self.lootActionsActive = true
+            self.showActions = true
+        }
+    }
+    
+    func lootChoiceOptionSelected() {
+        self.optionHeaderText = Strings("optionsMenu.header.lootChoice").local
+        withAnimation(Self.animation) {
+            self.showOptions = false
+            self.lootChoiceActionsActive = true
             self.showActions = true
         }
     }

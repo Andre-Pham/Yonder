@@ -10,7 +10,7 @@ import Foundation
 class NoLootOptions: LootOptions {
     
     init() {
-        super.init([LootBag(), LootBag(), LootBag()])
+        super.init([])
     }
     
     // MARK: - Serialisation

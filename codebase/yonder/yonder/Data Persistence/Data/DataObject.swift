@@ -230,7 +230,7 @@ class DataObject {
     
     func get(_ key: String, onFail: String = "") -> String {
         let retrieval = self.json[key].string
-        assert(retrieval != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)'")
+        assert(retrieval != nil, "Failed to restore attribute '\(key)' to object '\(self.objectName)' - if the object is blank, this may be from getObject being used in place of getObjectOptional")
         return retrieval ?? onFail
     }
     

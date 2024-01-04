@@ -28,7 +28,8 @@ class FoeViewModel: ActorViewModel {
     @Published private(set) var goldSteal: Int? = nil
     
     @Published private(set) var weaponViewModel: WeaponViewModel
-    @Published private(set) var lootOptionsViewModel: LootOptionsViewModel
+    @Published private(set) var lootOptionsViewModel: LootOptionsViewModel?
+    @Published private(set) var lootChoiceViewModel: LootChoiceViewModel?
     
     public var damageStatIsVisible: Bool {
         // Don't use indicative damage, if the damage is 0 because of buffs that should be visible
@@ -59,7 +60,16 @@ class FoeViewModel: ActorViewModel {
         // Set other view models
         
         self.weaponViewModel = WeaponViewModel(self.foe.getWeapon())
-        self.lootOptionsViewModel = LootOptionsViewModel(self.foe.loot)
+        if let lootOptions = self.foe.loot {
+            self.lootOptionsViewModel = LootOptionsViewModel(lootOptions)
+        } else {
+            self.lootOptionsViewModel = nil
+        }
+        if let lootChoice = self.foe.lootChoice {
+            self.lootChoiceViewModel = LootChoiceViewModel(lootChoice)
+        } else {
+            self.lootChoiceViewModel = nil
+        }
         
         super.init(self.foe)
         

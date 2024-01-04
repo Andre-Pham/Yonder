@@ -10,14 +10,14 @@ import SwiftUI
 struct LootGoldButton: View {
     let amount: Int
     @ObservedObject var playerViewModel: PlayerViewModel
-    @ObservedObject var lootBagViewModel: LootBagViewModel
+    @ObservedObject var lootViewModel: LootViewModel
     
     var body: some View {
         LootButton(
             text: Strings("loot.category.gold").local.rightPadded(by: ":".continuedBy(Strings("currencySymbol").local + String(self.amount))),
             collectText: Strings("button.collect").local
         ) {
-            self.lootBagViewModel.collectGold(playerViewModel: self.playerViewModel)
+            self.lootViewModel.collectGold(playerViewModel: self.playerViewModel)
         }
     }
 }
@@ -28,7 +28,7 @@ struct LootGoldButton_Previews: PreviewProvider {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            LootGoldButton(amount: 500, playerViewModel: PreviewObjects.playerViewModel, lootBagViewModel: PreviewObjects.lootBagViewModel)
+            LootGoldButton(amount: 500, playerViewModel: PreviewObjects.playerViewModel, lootViewModel: PreviewObjects.lootBagViewModel)
         }
     }
 }

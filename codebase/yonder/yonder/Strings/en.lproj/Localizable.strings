@@ -58,6 +58,7 @@
 "optionsMenu.header.enhance" = "Enhance Gear";
 "optionsMenu.header.chooseLootBag" = "Choose One";
 "optionsMenu.header.loot" = "Loot";
+"optionsMenu.header.lootChoice" = "Select One";
 
 // Option
 "optionsMenu.option.weapon" = "Select Weapon";
@@ -70,6 +71,7 @@
 "optionsMenu.option.travel" = "Travel";
 "optionsMenu.option.chooseLootBag" = "Choose Loot Bag";
 "optionsMenu.option.loot" = "Loot";
+"optionsMenu.option.lootChoice" = "Select Reward";
 
 // MARK: - Inventory
 

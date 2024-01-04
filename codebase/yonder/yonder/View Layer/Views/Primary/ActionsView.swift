@@ -54,7 +54,10 @@ struct ActionsView: View {
             if self.optionsStateManager.purchaseRestorationActionsActive {
                 if let restorerViewModel = self.playerViewModel.locationViewModel.getInteractorViewModel() as? RestorerViewModel {
                     ForEach(restorerViewModel.options, id: \.id) { option in
-                        PurchaseRestorationButton(playerViewModel: self.playerViewModel, restorationOptionViewModel: option)
+                        PurchaseRestorationButton(
+                            playerViewModel: self.playerViewModel,
+                            restorationOptionViewModel: option
+                        )
                     }
                 }
             }
@@ -62,7 +65,11 @@ struct ActionsView: View {
             if self.optionsStateManager.shopActionsActive {
                 if let shopKeeperViewModel = self.playerViewModel.locationViewModel.getInteractorViewModel() as? ShopKeeperViewModel {
                     ForEach(shopKeeperViewModel.purchasables, id: \.id) { purchasable in
-                        PurchaseFromShopKeeperButton(playerViewModel: self.playerViewModel, purchasableViewModel: purchasable, pageGeometry: self.pageGeometry)
+                        PurchaseFromShopKeeperButton(
+                            playerViewModel: self.playerViewModel,
+                            purchasableViewModel: purchasable,
+                            pageGeometry: self.pageGeometry
+                        )
                     }
                 }
             }
@@ -70,18 +77,24 @@ struct ActionsView: View {
             if self.optionsStateManager.enhanceActionsActive {
                 if let enhancerViewModel = self.playerViewModel.locationViewModel.getInteractorViewModel() as? EnhancerViewModel {
                     ForEach(enhancerViewModel.enhanceOfferViewModels, id: \.id) { offer in
-                        ViewEnhanceablesButton(playerViewModel: self.playerViewModel, enhanceOfferViewModel: offer, pageGeometry: self.pageGeometry)
+                        ViewEnhanceablesButton(
+                            playerViewModel: self.playerViewModel,
+                            enhanceOfferViewModel: offer,
+                            pageGeometry: self.pageGeometry
+                        )
                     }
                 }
             }
             
             if self.optionsStateManager.chooseLootBagActionsActive {
-                if let foeViewModel = self.playerViewModel.locationViewModel.getFoeViewModel() {
-                    ForEach(foeViewModel.lootOptionsViewModel.lootBagViewModels, id: \.id) { lootBagViewModel in
+                if let foeViewModel = self.playerViewModel.locationViewModel.getFoeViewModel(),
+                   let lootOptionsViewModel = foeViewModel.lootOptionsViewModel {
+                    ForEach(lootOptionsViewModel.lootBagViewModels, id: \.id) { lootBagViewModel in
                         LootBagButton(
                             playerViewModel: self.playerViewModel,
-                            lootOptionsViewModel: foeViewModel.lootOptionsViewModel,
-                            lootBagViewModel: lootBagViewModel)
+                            lootOptionsViewModel: lootOptionsViewModel,
+                            lootBagViewModel: lootBagViewModel
+                        )
                     }
                 }
             }
@@ -90,8 +103,20 @@ struct ActionsView: View {
                 if let lootBagViewModel = self.playerViewModel.lootBagViewModel {
                     CollectLootView(
                         playerViewModel: self.playerViewModel,
-                        lootBagViewModel: lootBagViewModel,
-                        pageGeometry: self.pageGeometry)
+                        lootViewModel: lootBagViewModel,
+                        pageGeometry: self.pageGeometry
+                    )
+                }
+            }
+            
+            if self.optionsStateManager.lootChoiceActionsActive {
+                if let foeViewModel = self.playerViewModel.locationViewModel.getFoeViewModel(),
+                   let lootChoiceViewModel = foeViewModel.lootChoiceViewModel {
+                    CollectLootView(
+                        playerViewModel: self.playerViewModel,
+                        lootViewModel: lootChoiceViewModel,
+                        pageGeometry: self.pageGeometry
+                    )
                 }
             }
         }

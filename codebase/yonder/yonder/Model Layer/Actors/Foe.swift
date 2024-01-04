@@ -16,9 +16,23 @@ class Foe: ActorAbstract, Named, Described {
     private(set) var typeName: String? = nil
     private(set) var typeImageResource: YonderImage? = nil
     private(set) var typeDescription: String? = nil
-    public let loot: LootOptions
+    /// Regular loot options (pick a loot bag and get everything inside)
+    public let loot: LootOptions?
+    /// A loot choice (select one piece of loot)
+    public let lootChoice: LootChoice?
+    /// True if the foe has loot options, and can be looted (is defeated)
     var canBeLooted: Bool {
-        return self.isDead && !self.loot.isLooted
+        if let loot = self.loot {
+            return !loot.isLooted && self.isDead
+        }
+        return false
+    }
+    /// True if the foe has a loot choice, and can be looted (is defeated)
+    var hasLootChoiceAvailable: Bool {
+        if let loot = self.lootChoice {
+            return !loot.isLooted && self.isDead
+        }
+        return false
     }
     
     init(
@@ -33,9 +47,33 @@ class Foe: ActorAbstract, Named, Described {
         self.name = name
         self.description = description
         self.loot = loot
+        self.lootChoice = nil
         
         super.init(maxHealth: maxHealth)
         
+        self.setup(with: weapon)
+    }
+    
+    init(
+        contentID: String?,
+        name: String = "placeholderName",
+        description: String = "placeholderDescription",
+        maxHealth: Int,
+        weapon: Weapon,
+        lootChoice: LootChoice
+    ) {
+        self.contentID = contentID
+        self.name = name
+        self.description = description
+        self.loot = nil
+        self.lootChoice = lootChoice
+        
+        super.init(maxHealth: maxHealth)
+        
+        self.setup(with: weapon)
+    }
+    
+    private func setup(with weapon: Weapon) {
         self.addWeapon(weapon)
         self.initFoeType()
     }
@@ -50,13 +88,15 @@ class Foe: ActorAbstract, Named, Described {
         case name
         case description
         case loot
+        case lootChoice
     }
 
     required init(dataObject: DataObject) {
         self.contentID = dataObject.get(Field.contentID.rawValue)
         self.name = dataObject.get(Field.name.rawValue)
         self.description = dataObject.get(Field.description.rawValue)
-        self.loot = dataObject.getObject(Field.loot.rawValue, type: LootOptions.self)
+        self.loot = dataObject.getObjectOptional(Field.loot.rawValue, type: LootOptions.self)
+        self.lootChoice = dataObject.getObjectOptional(Field.lootChoice.rawValue, type: LootChoice.self)
         
         super.init(dataObject: dataObject)
         
@@ -69,6 +109,7 @@ class Foe: ActorAbstract, Named, Described {
             .add(key: Field.name.rawValue, value: self.name)
             .add(key: Field.description.rawValue, value: self.description)
             .add(key: Field.loot.rawValue, value: self.loot)
+            .add(key: Field.lootChoice.rawValue, value: self.lootChoice)
     }
 
     // MARK: - Functions

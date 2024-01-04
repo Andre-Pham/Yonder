@@ -10,7 +10,7 @@ import SwiftUI
 struct LootAccessoryButton: View {
     @ObservedObject var accessoryViewModel: AccessoryViewModel
     @ObservedObject var playerViewModel: PlayerViewModel
-    @ObservedObject var lootBagViewModel: LootBagViewModel
+    @ObservedObject var lootViewModel: LootViewModel
     var pageGeometry: GeometryProxy
     @State private var inspectActive = false
     @State private var accessorySelectionSheetActive = false
@@ -42,7 +42,7 @@ struct LootAccessoryButton: View {
             pageGeometry: self.pageGeometry,
             content: AnyView(
                 AccessorySlotSelectionInspectView(playerViewModel: self.playerViewModel) { selection in
-                    self.lootBagViewModel.collectAccessory(accessoryViewModel: self.accessoryViewModel, replacing: selection, playerViewModel: self.playerViewModel)
+                    self.lootViewModel.collectAccessory(accessoryViewModel: self.accessoryViewModel, replacing: selection, playerViewModel: self.playerViewModel)
                 }
         ))
         .withInspectSheet(
@@ -59,7 +59,7 @@ struct LootAccessoryButton: View {
                     // The delay isn't noticeable
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
                         if confirmEquip {
-                            self.lootBagViewModel.collectAccessory(
+                            self.lootViewModel.collectAccessory(
                                 accessoryViewModel: self.accessoryViewModel,
                                 replacing: nil,
                                 playerViewModel: self.playerViewModel
@@ -76,7 +76,7 @@ struct LootAccessoryButton_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader { geo in
             PreviewContentView {
-                LootAccessoryButton(accessoryViewModel: PreviewObjects.accessoryViewModel, playerViewModel: PreviewObjects.playerViewModel, lootBagViewModel: PreviewObjects.lootBagViewModel, pageGeometry: geo)
+                LootAccessoryButton(accessoryViewModel: PreviewObjects.accessoryViewModel, playerViewModel: PreviewObjects.playerViewModel, lootViewModel: PreviewObjects.lootBagViewModel, pageGeometry: geo)
             }
         }
     }

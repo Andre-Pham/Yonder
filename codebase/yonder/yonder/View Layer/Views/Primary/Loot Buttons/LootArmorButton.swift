@@ -10,7 +10,7 @@ import SwiftUI
 struct LootArmorButton: View {
     @ObservedObject var armorViewModel: ArmorViewModel
     @ObservedObject var playerViewModel: PlayerViewModel
-    @ObservedObject var lootBagViewModel: LootBagViewModel
+    @ObservedObject var lootViewModel: LootViewModel
     var pageGeometry: GeometryProxy
     @State private var inspectActive = false
     @State private var equipArmorSheetActive = false
@@ -46,7 +46,7 @@ struct LootArmorButton: View {
                     // The delay isn't noticeable
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
                         if confirmEquip {
-                            self.lootBagViewModel.collectArmor(
+                            self.lootViewModel.collectArmor(
                                 armorViewModel: self.armorViewModel,
                                 playerViewModel: self.playerViewModel
                             )
@@ -62,7 +62,7 @@ struct LootArmorButton_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader { geo in
             PreviewContentView {
-                LootArmorButton(armorViewModel: PreviewObjects.armorViewModel, playerViewModel: PreviewObjects.playerViewModel, lootBagViewModel: PreviewObjects.lootBagViewModel, pageGeometry: geo)
+                LootArmorButton(armorViewModel: PreviewObjects.armorViewModel, playerViewModel: PreviewObjects.playerViewModel, lootViewModel: PreviewObjects.lootBagViewModel, pageGeometry: geo)
             }
         }
     }

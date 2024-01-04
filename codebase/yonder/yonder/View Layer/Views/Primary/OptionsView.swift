@@ -72,6 +72,16 @@ struct OptionsView: View {
                 }
             }
             
+            if self.optionsStateManager.lootChoiceOptionActive {
+                YonderGridOption(
+                    title: Strings("optionsMenu.option.lootChoice").local,
+                    geometry: self.pageGeometry,
+                    image: YonderIcons.missingIcon
+                ) {
+                    self.optionsStateManager.lootChoiceOptionSelected()
+                }
+            }
+            
             if self.optionsStateManager.travelOptionActive {
                 YonderGridOption(title: Strings("optionsMenu.option.travel").local, geometry: self.pageGeometry, image: YonderIcons.mapIcon) {
                     self.optionsStateManager.travelOptionSelected(

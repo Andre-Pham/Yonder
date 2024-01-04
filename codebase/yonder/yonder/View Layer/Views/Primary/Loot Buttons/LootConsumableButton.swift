@@ -10,7 +10,7 @@ import SwiftUI
 struct LootConsumableButton: View {
     @ObservedObject var consumableViewModel: ConsumableViewModel
     @ObservedObject var playerViewModel: PlayerViewModel
-    @ObservedObject var lootBagViewModel: LootBagViewModel
+    @ObservedObject var lootViewModel: LootViewModel
     var pageGeometry: GeometryProxy
     @State private var inspectActive = false
     
@@ -20,7 +20,7 @@ struct LootConsumableButton: View {
             collectText: Strings("button.collect").local,
             infoButton: true
         ) {
-            self.lootBagViewModel.collectConsumable(consumableViewModel: self.consumableViewModel, playerViewModel: self.playerViewModel)
+            self.lootViewModel.collectConsumable(consumableViewModel: self.consumableViewModel, playerViewModel: self.playerViewModel)
         } onInfo: {
             self.inspectActive = true
         }
@@ -38,7 +38,7 @@ struct LootConsumableButton_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader { geo in
             PreviewContentView {
-                LootConsumableButton(consumableViewModel: PreviewObjects.consumableViewModel, playerViewModel: PreviewObjects.playerViewModel, lootBagViewModel: PreviewObjects.lootBagViewModel, pageGeometry: geo)
+                LootConsumableButton(consumableViewModel: PreviewObjects.consumableViewModel, playerViewModel: PreviewObjects.playerViewModel, lootViewModel: PreviewObjects.lootBagViewModel, pageGeometry: geo)
             }
         }
     }
