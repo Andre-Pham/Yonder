@@ -388,13 +388,26 @@
 "weaponEffectPill.damageRestorationSwap.description" = "After attacking, this weapon's damage and restoration stats swap.";
 
 // Consume Attack
-"weaponEffectPill.consumeAttack.description" = "After this performs the final below on a hostile, their attack damage is added to this weapon.";
+"weaponEffectPill.consumeAttack.description" = "After this performs the final blow on a hostile, their attack damage is added to this weapon.";
 
 // Self Damage
 "weaponEffectPill.selfDamage.description1Param" = "Every attack also damages you for %@.";
 
 // Armor to Damage
 "weaponEffectPill.armorToDamage.description" = "Upon use your shields are converted into a burst of damage.";
+
+// Permanent Damage
+"weaponEffectPill.permanentDamage.description" = "All health damage done is permanent.";
+
+// Scale Damage
+"weaponEffectPill.scaleDamage.increaseDescription1Param" = "After attacking, this weapon's damage increases by %@%%.";
+"weaponEffectPill.scaleDamage.decreaseDescription1Param" = "After attacking, this weapon's damage decreases by %@%%.";
+
+// Health Lifesteal
+"weaponEffectPill.healthLifesteal.description1Param" = "Upon use, for any health damage dealt, restore %@%% to yourself as health.";
+
+// Cycle Damage
+"weaponEffectPill.cycleDamage.description1Param" = "Cycles through the following damages after every use: %@.";
 
 // MARK: - Weapon Buff Pills
 
@@ -806,6 +819,8 @@
 "equipmentPill.restoreAfterKill.armorPoints.effectsDescription1Param" = "Upon defeating any hostile, restore %@ shields.";
 "equipmentPill.restoreAfterTravel.effectsDescription1Param" = "After travelling, restore %@ (overflows from health to shields).";
 "equipmentPill.permanentHealthAfterKill.effectsDescription1Param" = "Upon defeating any hostile, steal %@%% of their maximum health as permanent health";
+"equipmentPill.limitPhoenix.effectsDescription1Param" = "Upon taking fatal damage, revive yourself fully with %@%% max health.";
+"equipmentPill.limitStatsFoePhoenixEquipmentPill.effectsDescription1Param" = "Upon taking fatal damage, revive yourself fully with %@%% max health and attack.";
 
 // MARK: - Shop Keepers
 

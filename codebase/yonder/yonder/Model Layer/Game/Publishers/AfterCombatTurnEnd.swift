@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Triggers after the end of every turn during combat (doesn't trigger in locations with no foe)
 class AfterCombatTurnEndPublisher {
     
     static private var subscribers = [WeakAfterCombatTurnEndSubscriber]()

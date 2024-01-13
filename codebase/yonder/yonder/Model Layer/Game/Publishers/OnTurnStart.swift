@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Triggers on the start of every new turn (including when there is no foe and the player just travelled to a new location)
 class OnTurnStartPublisher {
     
     static private var subscribers = [WeakOnTurnStartSubscriber]()

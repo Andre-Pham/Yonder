@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Triggers on the start of every new turn during combat (doesn't trigger in locations with no foe)
 class OnCombatTurnStartPublisher {
     
     static private var subscribers = [WeakOnCombatTurnStartSubscriber]()

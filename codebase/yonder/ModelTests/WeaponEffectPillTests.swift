@@ -75,5 +75,64 @@ class WeaponEffectPillTests: XCTestCase {
         XCTAssertEqual(self.foe.health, 360)
         XCTAssertEqual(self.player.health, 490)
     }
+    
+    func testScaleDamageEffectPill() throws {
+        let startingDamage = 100
+        let multiplier = 2.0
+        let weapon = Weapon(basePill: DamageBasePill(damage: startingDamage), durabilityPill: InfiniteDurabilityPill(), effectPills: [ScaleDamageEffectPill(damageMultiplier: multiplier)])
+        self.player.addWeapon(weapon)
+        XCTAssertEqual(weapon.damage, startingDamage)
+        self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
+        XCTAssertEqual(weapon.damage, (Double(startingDamage)*multiplier).toRoundedInt())
+        self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
+        XCTAssertEqual(weapon.damage, (Double(startingDamage)*multiplier*multiplier).toRoundedInt())
+    }
+    
+    func testPermanentDamageEffectPill() throws {
+        let weapon = Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: InfiniteDurabilityPill(), effectPills: [PermanentDamageEffectPill()])
+        self.player.addWeapon(weapon)
+        let startingMaxHealth = self.foe.maxHealth
+        XCTAssertEqual(self.foe.maxHealth, startingMaxHealth)
+        self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
+        XCTAssertEqual(self.foe.maxHealth, startingMaxHealth - weapon.damage)
+        self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
+        XCTAssertEqual(self.foe.maxHealth, startingMaxHealth - weapon.damage*2)
+        // Check their health is correct, just for the sake of it
+        XCTAssertEqual(self.foe.health, startingMaxHealth - weapon.damage*2)
+    }
+    
+    func testHealthLifestealEffectPill() throws {
+        let weapon = Weapon(basePill: DamageBasePill(damage: 75), durabilityPill: InfiniteDurabilityPill(), effectPills: [HealthLifestealEffectPill(lifestealFraction: 1.0)])
+        self.foe.equipAccessory(Accessory(name: "", description: "", type: .regular, healthBonus: 0, armorPointsBonus: 100, buffs: [], equipmentPills: []), replacing: nil)
+        self.player.damage(for: 150)
+        self.player.addWeapon(weapon)
+        XCTAssertEqual(self.foe.armorPoints, 100)
+        self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
+        XCTAssertEqual(self.player.health, 350)
+        XCTAssertEqual(self.foe.health, 500)
+        XCTAssertEqual(self.foe.armorPoints, 25)
+        self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
+        XCTAssertEqual(self.player.health, 400)
+        XCTAssertEqual(self.foe.health, 450)
+        XCTAssertEqual(self.foe.armorPoints, 0)
+        self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
+        XCTAssertEqual(self.player.health, 475)
+        XCTAssertEqual(self.foe.health, 375)
+        XCTAssertEqual(self.foe.armorPoints, 0)
+    }
+    
+    func testCycleDamageEffectPill() throws {
+        let weapon = Weapon(basePill: DamageBasePill(damage: 100), durabilityPill: InfiniteDurabilityPill(), effectPills: [CycleDamageEffectPill(damagesToCycleThrough: [5, 10, 50])])
+        self.player.addWeapon(weapon)
+        XCTAssertEqual(weapon.damage, 5)
+        self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
+        XCTAssertEqual(weapon.damage, 10)
+        self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
+        XCTAssertEqual(weapon.damage, 50)
+        self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
+        XCTAssertEqual(weapon.damage, 5)
+        self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
+        XCTAssertEqual(weapon.damage, 10)
+    }
 
 }

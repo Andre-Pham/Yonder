@@ -15,7 +15,7 @@ class ArmorDamagePercentBuffPill: WeaponBuffPill {
     
     init(damageFraction: Double) {
         self.damageFraction = damageFraction
-        if self.damageFraction.truncatingRemainder(dividingBy: 1.0) == 0.0 {
+        if isZero(self.damageFraction.truncatingRemainder(dividingBy: 1.0)) {
             let multiplier = Int(damageFraction)
             self.effectsDescription = Strings("weaponBuffPill.armorDamagePercent.descriptionMultiplier1Param").localWithArgs(multiplier)
         } else {

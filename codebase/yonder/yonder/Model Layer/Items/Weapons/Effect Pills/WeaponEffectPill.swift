@@ -34,4 +34,9 @@ class WeaponEffectPillAbstract: Clonable, Storable {
         return DataObject(self)
     }
     
+    // MARK: - Functions
+    
+    /// Override this in subclasses if desired to trigger behaviour upon being equipped
+    func onEquip(weapon: Weapon) { }
+    
 }

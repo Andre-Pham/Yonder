@@ -55,6 +55,7 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
         
         self.basePill.setup(weapon: self)
         self.durabilityPill.setupDurability(weapon: self)
+        self.effectPills.forEach({ $0.onEquip(weapon: self) })
         
         WeaponPillBox.setDurabilityPills(weapon: self)
         WeaponPillBox.setEffectPills(weapon: self)
@@ -72,6 +73,7 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
         // These are still required to setup subscribers and such
         self.basePill.setup(weapon: self)
         self.durabilityPill.setupDurability(weapon: self)
+        self.effectPills.forEach({ $0.onEquip(weapon: self) })
         
         WeaponPillBox.setDurabilityPills(weapon: self)
         WeaponPillBox.setEffectPills(weapon: self)
@@ -117,6 +119,7 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
         // These are still required to setup subscribers and such
         self.basePill.setup(weapon: self)
         self.durabilityPill.setupDurability(weapon: self)
+        self.effectPills.forEach({ $0.onEquip(weapon: self) })
         
         WeaponPillBox.setDurabilityPills(weapon: self)
         WeaponPillBox.setEffectPills(weapon: self)
@@ -211,6 +214,7 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
     
     func addEffect(_ effect: WeaponEffectPill) {
         self.effectPills.append(effect)
+        effect.onEquip(weapon: self)
     }
     
     func addBuff(_ buff: WeaponBuffPill) {

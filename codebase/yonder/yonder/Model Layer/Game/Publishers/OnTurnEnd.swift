@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Triggers on the end of every turn (including when there is no foe)
 class OnTurnEndPublisher {
     
     static private var subscribers = [WeakOnTurnEndSubscriber]()

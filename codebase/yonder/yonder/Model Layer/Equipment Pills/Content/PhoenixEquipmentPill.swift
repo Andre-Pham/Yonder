@@ -68,6 +68,9 @@ class PhoenixEquipmentPill: EquipmentPill, AfterTurnEndSubscriber {
         if player.isDead && player.hasEquipmentEffect(self) {
             player.setHealth(to: self.healthSetTo ?? player.maxHealth)
             player.unequipEquipmentEffect(self)
+        } else if let foe, foe.isDead, foe.hasEquipmentEffect(self) {
+            foe.setHealth(to: self.healthSetTo ?? foe.maxHealth)
+            foe.unequipEquipmentEffect(self)
         }
     }
     
