@@ -21,7 +21,7 @@ class BuffAbstract: EffectsDescribed, Clonable, Storable {
     var type: BuffType
     var direction: BuffDirection
     var priority: BuffPriority
-    public let id = UUID()
+    public let id: UUID
     
     /// To be called by subclasses only.
     /// - Parameters:
@@ -31,6 +31,7 @@ class BuffAbstract: EffectsDescribed, Clonable, Storable {
     ///   - direction: What direction the buff is applied to, for example, an outgoing damage buff increases damage dealt, but not received
     ///   - priority: What order, relative to other buffs, is this buff applied
     init(sourceName: String, effectsDescription: String?, duration: Int?, type: BuffType, direction: BuffDirection, priority: BuffPriority) {
+        self.id = UUID()
         self.sourceName = sourceName
         self.timeRemaining = duration
         self.initialTimeRemaining = duration
@@ -46,6 +47,7 @@ class BuffAbstract: EffectsDescribed, Clonable, Storable {
     }
     
     required init(_ original: BuffAbstract) {
+        self.id = UUID()
         self.sourceName = original.sourceName
         self.timeRemaining = original.timeRemaining
         self.initialTimeRemaining = original.initialTimeRemaining
@@ -58,6 +60,7 @@ class BuffAbstract: EffectsDescribed, Clonable, Storable {
     // MARK: - Serialisation
 
     private enum Field: String {
+        case id
         case sourceName
         case timeRemaining
         case initialTimeRemaining
@@ -68,6 +71,7 @@ class BuffAbstract: EffectsDescribed, Clonable, Storable {
     }
 
     required init(dataObject: DataObject) {
+        self.id = UUID(uuidString: dataObject.get(Field.id.rawValue))!
         self.sourceName = dataObject.get(Field.sourceName.rawValue)
         self.timeRemaining = dataObject.get(Field.timeRemaining.rawValue)
         self.initialTimeRemaining = dataObject.get(Field.initialTimeRemaining.rawValue)
@@ -80,6 +84,7 @@ class BuffAbstract: EffectsDescribed, Clonable, Storable {
 
     func toDataObject() -> DataObject {
         return DataObject(self)
+            .add(key: Field.id.rawValue, value: self.id.uuidString)
             .add(key: Field.sourceName.rawValue, value: self.sourceName)
             .add(key: Field.timeRemaining.rawValue, value: self.timeRemaining)
             .add(key: Field.initialTimeRemaining.rawValue, value: self.initialTimeRemaining)

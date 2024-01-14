@@ -11,11 +11,23 @@ class Foe: ActorAbstract, Named, Described {
     
     /// The ID that indicates what content (sprite sheet and metadata) to use to represent this foe, e.g. E0001
     public let contentID: String?
+    /// The name of the foe
     public let name: String
+    /// The flavor description of the foe (descriptive, narrative, or thematic text)
     public let description: String
+    /// The name of the foe's type (if applicable)
     private(set) var typeName: String? = nil
+    /// The image that represents the foe's type (if applicable)
     private(set) var typeImageResource: YonderImage? = nil
+    /// A description of the foe's type; includes the technical aspect of the type, as well as some flavor text for reasoning
+    /// E.g. "Brute hostiles are heavy hitters. They deal 2x damage to shields."
     private(set) var typeDescription: String? = nil
+    /// A brief hinting of the boss' effects
+    /// E.g. "Gains attack every turn!"
+    private(set) var bossHint: String? = nil
+    /// An extended description of the boss' effects
+    /// E.g. "This boss only gets stronger. With every passing turn, their attack increases by 10%."
+    private(set) var bossDescription: String? = nil
     /// Regular loot options (pick a loot bag and get everything inside)
     public let loot: LootOptions?
     /// A loot choice (select one piece of loot)
@@ -76,10 +88,14 @@ class Foe: ActorAbstract, Named, Described {
     private func setup(with weapon: Weapon) {
         self.addWeapon(weapon)
         self.initFoeType()
+        self.initBossContent()
     }
     
     /// Override this in subclasses to instantiate a foe type.
     func initFoeType() { }
+    
+    /// Override this in subclasses to instantiate the boss content.
+    func initBossContent() { }
     
     // MARK: - Serialisation
 
@@ -127,6 +143,11 @@ class Foe: ActorAbstract, Named, Described {
         self.typeName = name
         self.typeDescription = description
         self.typeImageResource = imageResource
+    }
+    
+    func setBossContent(hint: String, description: String) {
+        self.bossHint = hint
+        self.bossDescription = description
     }
     
 }

@@ -844,6 +844,24 @@
 "foeType.brute.description1Param" = "Brute hostiles are heavy hitters. They deal %@x damage to shields.";
 "foeType.brute.buffName" = "Brute Power";
 
+// MARK: - Bosses
+
+"boss.scaleAttack.hint" = "Gains attack every turn!";
+"boss.scaleAttack.description1Param" = "This boss only gets stronger. With every passing turn, their attack increases by %@%%.";
+
+"boss.permanentHealthDamage.hint" = "Deals permanent health damage!";
+"boss.permanentHealthDamage.description1Param" = "Be weary. Any damage this boss deals to your health is permanent (max health is reduced).";
+
+"boss.bigSwingHeal.hint" = "Deals extra every third attack! Heals from health damage!";
+"boss.bigSwingHeal.description" = "Watch out! Every third attack does big damage. Also, all damage dealt to your health heals them for the same amount.";
+
+"boss.disableHealing.hint" = "Disables all healing!";
+"boss.disableHealing.description" = "You've been cursed. All healing is disabled. Defeat the boss to free yourself!";
+"boss.disableHealing.buffNamePrefix" = "Curse of ";
+
+"boss.endless.hint" = "Revives in a weaker form!";
+"boss.endless.description1Param" = "Be prepared. Upon death, this boss comes back to life with %@%% their original attack and health.";
+
 // MARK: - Classes
 
 "class.warrior.name" = "Warrior";

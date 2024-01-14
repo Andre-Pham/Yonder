@@ -24,7 +24,7 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
     }
     @DidSetPublished private(set) var buffs: [Buff]
     @DidSetPublished private(set) var equipmentPills: [EquipmentPill]
-    public let id = UUID()
+    public let id: UUID
     
     /// - Parameters:
     ///   - name: The name of the accessory (flavor)
@@ -35,6 +35,7 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
     ///   - buffs: The buffs/debuffs this gives when worn
     ///   - equipmentPills: The effects this gives when worn
     init(name: String, description: String, type: AccessoryType, healthBonus: Int, armorPointsBonus: Int, buffs: [Buff], equipmentPills: [EquipmentPill]) {
+        self.id = UUID()
         self.name = name
         self.description = description
         self.type = type
@@ -45,6 +46,7 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
     }
     
     required init(_ original: Accessory) {
+        self.id = UUID()
         self.name = original.name
         self.description = original.description
         self.type = original.type
@@ -57,6 +59,7 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
     // MARK: - Serialisation
 
     private enum Field: String {
+        case id
         case name
         case description
         case type
@@ -67,6 +70,7 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
     }
 
     required init(dataObject: DataObject) {
+        self.id = UUID(uuidString: dataObject.get(Field.id.rawValue))!
         self.name = dataObject.get(Field.name.rawValue)
         self.description = dataObject.get(Field.description.rawValue)
         self.type = AccessoryType(rawValue: dataObject.get(Field.type.rawValue)) ?? .regular
@@ -78,6 +82,7 @@ class Accessory: EffectsDescribed, Purchasable, Named, Described, Enhanceable, C
 
     func toDataObject() -> DataObject {
         return DataObject(self)
+            .add(key: Field.id.rawValue, value: self.id.uuidString)
             .add(key: Field.name.rawValue, value: self.name)
             .add(key: Field.description.rawValue, value: self.description)
             .add(key: Field.type.rawValue, value: self.type.rawValue)

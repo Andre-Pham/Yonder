@@ -33,13 +33,16 @@ class Loot: Storable {
     public var canCollect: Bool {
         return true
     }
-    public let id = UUID()
+    public let id: UUID
     
-    init() { }
+    init() {
+        self.id = UUID()
+    }
     
     // MARK: - Serialisation
 
     private enum Field: String {
+        case id
         case armorLoot
         case weaponLoot
         case potionLoot
@@ -50,6 +53,7 @@ class Loot: Storable {
     }
 
     required init(dataObject: DataObject) {
+        self.id = UUID(uuidString: dataObject.get(Field.id.rawValue))!
         self.armorLoot = dataObject.getObjectArray(Field.armorLoot.rawValue, type: Armor.self)
         self.weaponLoot = dataObject.getObjectArray(Field.weaponLoot.rawValue, type: Weapon.self)
         self.potionLoot = dataObject.getObjectArray(Field.potionLoot.rawValue, type: PotionAbstract.self) as! [any Potion]
@@ -60,6 +64,7 @@ class Loot: Storable {
 
     func toDataObject() -> DataObject {
         return DataObject(self)
+            .add(key: Field.id.rawValue, value: self.id.uuidString)
             .add(key: Field.armorLoot.rawValue, value: self.armorLoot)
             .add(key: Field.weaponLoot.rawValue, value: self.weaponLoot)
             .add(key: Field.potionLoot.rawValue, value: self.potionLoot as [PotionAbstract])

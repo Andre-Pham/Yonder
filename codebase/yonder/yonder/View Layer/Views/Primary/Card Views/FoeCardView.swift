@@ -54,6 +54,12 @@ struct FoeCardView: View {
                 maxValue: self.foeViewModel.maxHealth,
                 image: YonderIcons.healthIcon
             )
+            
+            if let bossHint = self.foeViewModel.bossHint {
+                Spacer()
+                
+                YonderText(text: bossHint, size: .cardSubscript)
+            }
         }
         .onReceive(self.foeViewModel.weaponViewModel.$damage) { damage in
             withAnimation {

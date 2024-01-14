@@ -21,6 +21,8 @@ class FoeViewModel: ActorViewModel {
     public let typeName: String?
     public let typeDescription: String?
     public let typeImage: Image?
+    public let bossHint: String?
+    public let bossDescription: String?
     @Published private(set) var health: Int
     @Published private(set) var maxHealth: Int
     @Published private(set) var isDead: Bool
@@ -53,6 +55,8 @@ class FoeViewModel: ActorViewModel {
         self.typeName = self.foe.typeName
         self.typeDescription = self.foe.typeDescription
         self.typeImage = self.foe.typeImageResource?.image
+        self.bossHint = self.foe.bossHint
+        self.bossDescription = self.foe.bossDescription
         self.health = self.foe.health
         self.maxHealth = self.foe.maxHealth
         self.isDead = self.foe.isDead

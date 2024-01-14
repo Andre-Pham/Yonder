@@ -18,7 +18,7 @@ struct CardBody<Content: View>: View {
     /// - Parameters:
     ///   - name: The text to appear at the top of the card to denote what the card is representing
     ///   - resizeToFit: Whether or not the expand to fill the available space below it (warning: if there isn't available space, spacing from the spacer still appears)
-    ///   - builder: Code block to appear as content.
+    ///   - builder: Code block to appear as content
     init(name: String? = nil, resizeToFit: Bool = true, @ViewBuilder builder: @escaping () -> Content) {
         self.name = name
         self.resizeToFit = resizeToFit

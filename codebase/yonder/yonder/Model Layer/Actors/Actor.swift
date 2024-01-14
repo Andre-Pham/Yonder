@@ -415,6 +415,18 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
         self.buffs.append(buff.clone())
     }
     
+    func addBuffByReference(_ buff: Buff) {
+        self.buffs.append(buff)
+    }
+    
+    func removeBuff(_ buff: Buff) {
+        if let index = self.buffs.firstIndex(where: { $0.id == buff.id }) {
+            self.buffs.remove(at: index)
+        } else {
+            assertionFailure("Attempted to remove non-existent buff")
+        }
+    }
+    
     func getAllBuffsInPriority() -> [Buff] {
         var allBuffs: [Buff] = Array(self.buffs)
         for armorPiece in self.allArmorPieces {

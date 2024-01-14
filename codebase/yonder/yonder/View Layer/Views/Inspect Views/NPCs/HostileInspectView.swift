@@ -69,6 +69,10 @@ struct HostileInspectView: View {
                     YonderText(text: typeDescription, size: .inspectSheetBody)
                 }
                 
+                if let bossDescription = self.foeViewModel.bossDescription {
+                    YonderText(text: bossDescription, size: .inspectSheetBody)
+                }
+                
                 YonderText(text: self.locationType.description, size: .inspectSheetBody)
             }
         }
