@@ -134,5 +134,23 @@ class WeaponEffectPillTests: XCTestCase {
         self.player.useWeaponWhere(opposition: self.foe, weapon: weapon)
         XCTAssertEqual(weapon.damage, 10)
     }
+    
+    func testHealthToDamageEffectPill() throws {
+        let weapon = Weapon(basePill: DamageBasePill(damage: 100), durabilityPill: InfiniteDurabilityPill(), effectPills: [HealthToDamageEffectPill(conversionFraction: 0.5)])
+        self.player.addWeapon(weapon)
+        XCTAssertEqual(self.player.weapons.first!.damage, 100)
+        self.player.damage(for: 50)
+        XCTAssertEqual(self.player.weapons.first!.damage, 100 + 25)
+        self.player.damageHealth(for: 10)
+        XCTAssertEqual(self.player.weapons.first!.damage, 100 + 25 + 5)
+        self.player.damageArmorPoints(for: 100)
+        XCTAssertEqual(self.player.weapons.first!.damage, 100 + 25 + 5) // Player has no armor
+        self.player.damageMaxHealth(by: 20)
+        XCTAssertEqual(self.player.weapons.first!.damage, 100 + 25 + 5) // Total health isn't affected
+        self.player.damageMaxHealth(by: 380)
+        XCTAssertEqual(self.player.weapons.first!.damage, 100 + 200)
+        self.player.damageAdjusted(sourceOwner: NoActor(), using: NoItem(), for: 50)
+        XCTAssertEqual(self.player.weapons.first!.damage, 100 + 200 + 25)
+    }
 
 }

@@ -112,37 +112,5 @@ class EquipmentPillTests: XCTestCase {
         XCTAssertTrue(self.player.isDead)
         XCTAssertFalse(self.player.accessorySlots.accessories.isEmpty)
     }
-    
-    func testLimitStatsFoePhoenixEquipmentPill() throws {
-        self.accessory.addEquipmentPill(LimitStatsFoePhoenixEquipmentPill(statsFraction: 0.2, sourceName: "Test Accessory"))
-        self.foe.equipAccessory(self.accessory, replacing: nil)
-        self.foe.getWeapon().setDamage(to: 500)
-        self.foe.damage(for: 500)
-        self.testSession.completeTurn(player: self.player, playerUsed: NoItem(), foe: self.foe)
-        XCTAssertFalse(self.foe.isDead)
-        XCTAssertFalse(self.foe.accessorySlots.accessories.isEmpty)
-        XCTAssertEqual(self.foe.health, 100)
-        XCTAssertEqual(self.foe.maxHealth, 100)
-        XCTAssertEqual(self.foe.getWeapon().damage, 100)
-        self.foe.damage(for: 500)
-        self.testSession.completeTurn(player: self.player, playerUsed: NoItem(), foe: self.foe)
-        XCTAssertFalse(self.foe.isDead)
-        XCTAssertFalse(self.foe.accessorySlots.accessories.isEmpty)
-        XCTAssertEqual(self.foe.health, 20)
-        XCTAssertEqual(self.foe.maxHealth, 20)
-        XCTAssertEqual(self.foe.getWeapon().damage, 20)
-        self.foe.damage(for: 500)
-        self.testSession.completeTurn(player: self.player, playerUsed: NoItem(), foe: self.foe)
-        XCTAssertFalse(self.foe.isDead)
-        XCTAssertFalse(self.foe.accessorySlots.accessories.isEmpty)
-        XCTAssertEqual(self.foe.health, 4)
-        XCTAssertEqual(self.foe.maxHealth, 4)
-        XCTAssertEqual(self.foe.getWeapon().damage, 4)
-        self.foe.damage(for: 500)
-        self.testSession.completeTurn(player: self.player, playerUsed: NoItem(), foe: self.foe)
-        XCTAssertTrue(self.foe.isDead)
-        XCTAssertFalse(self.foe.accessorySlots.accessories.isEmpty)
-        XCTAssertEqual(self.foe.getWeapon().damage, 0)
-    }
 
 }

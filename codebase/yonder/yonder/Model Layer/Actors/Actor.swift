@@ -139,6 +139,22 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
         }
     }
     
+    /// Negatively adjusts the actor's max health, but also behaves as "damage", triggering damage publishers.
+    func damageMaxHealth(by amount: Int) {
+        var damageTaken: Int? = nil
+        if self.health > self.maxHealth - amount {
+            damageTaken = self.health - (self.maxHealth - amount)
+            assert(damageTaken != nil && damageTaken! > 0, "Logic error found")
+            OnActorTakeDamagePublisher.publish(actor: self, damageTaken: amount)
+        }
+        self.maxHealth -= amount
+        if self.health > self.maxHealth {
+            self.health = self.maxHealth
+            assert(damageTaken != nil && damageTaken! > 0, "Logic error found")
+            AfterActorTakeDamagePublisher.publish(actor: self, damageTaken: damageTaken!)
+        }
+    }
+    
     func setMaxHealth(to maxHealth: Int) {
         self.maxHealth = maxHealth
         if self.health > self.maxHealth {
@@ -210,17 +226,17 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
     }
     
     func damage(for amount: Int) {
+        OnActorTakeDamagePublisher.publish(actor: self, damageTaken: amount)
         if self.armorPoints > amount {
             self.armorPoints -= amount
-        }
-        else if self.armorPoints > 0 {
+        } else if self.armorPoints > 0 {
             let healthDamage = amount - self.armorPoints
             self.armorPoints = 0
             self.health -= healthDamage
-        }
-        else {
+        } else {
             self.health -= amount
         }
+        AfterActorTakeDamagePublisher.publish(actor: self, damageTaken: amount)
     }
     
     func damageAdjusted(sourceOwner: ActorAbstract, using source: Any, for amount: Int) {
@@ -229,7 +245,9 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
     }
     
     func damageHealth(for amount: Int) {
+        OnActorTakeDamagePublisher.publish(actor: self, damageTaken: amount)
         self.health -= amount
+        AfterActorTakeDamagePublisher.publish(actor: self, damageTaken: amount)
     }
     
     func damageHealthAdjusted(sourceOwner: ActorAbstract, using source: Any, for amount: Int) {
@@ -239,10 +257,18 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
     
     func damageArmorPoints(for amount: Int) {
         if self.armorPoints - amount < 0 {
+            let damageDealt = self.armorPoints
+            if damageDealt > 0 {
+                OnActorTakeDamagePublisher.publish(actor: self, damageTaken: damageDealt)
+            }
             self.armorPoints = 0
-        }
-        else {
+            if damageDealt > 0 {
+                AfterActorTakeDamagePublisher.publish(actor: self, damageTaken: damageDealt)
+            }
+        } else {
+            OnActorTakeDamagePublisher.publish(actor: self, damageTaken: amount)
             self.armorPoints -= amount
+            AfterActorTakeDamagePublisher.publish(actor: self, damageTaken: amount)
         }
     }
     

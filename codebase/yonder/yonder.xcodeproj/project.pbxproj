@@ -2377,11 +2377,13 @@
 		B6ECC5FD2B4DD84B00C04C5E /* CycleDamageEffectPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC5FC2B4DD84B00C04C5E /* CycleDamageEffectPill.swift */; };
 		B6ECC5FF2B51F19300C04C5E /* LimitPhoenixEquipmentPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC5FE2B51F19300C04C5E /* LimitPhoenixEquipmentPill.swift */; };
 		B6ECC6022B53225500C04C5E /* ScaleAttackBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC6012B53225500C04C5E /* ScaleAttackBoss.swift */; };
-		B6ECC6042B532C6300C04C5E /* LimitStatsFoePhoenixEquipmentPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC6032B532C6300C04C5E /* LimitStatsFoePhoenixEquipmentPill.swift */; };
 		B6ECC6062B53490F00C04C5E /* PermanentHealthDamageBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC6052B53490F00C04C5E /* PermanentHealthDamageBoss.swift */; };
 		B6ECC6082B534A5800C04C5E /* BigSwingHealBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC6072B534A5800C04C5E /* BigSwingHealBoss.swift */; };
 		B6ECC60A2B534CEC00C04C5E /* DisableHealingBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC6092B534CEC00C04C5E /* DisableHealingBoss.swift */; };
-		B6ECC60C2B53BEB100C04C5E /* EndlessBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC60B2B53BEB100C04C5E /* EndlessBoss.swift */; };
+		B6ECC60E2B56CCE800C04C5E /* HealthToDamageEffectPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC60D2B56CCE800C04C5E /* HealthToDamageEffectPill.swift */; };
+		B6ECC6122B56D38600C04C5E /* OnActorTakeDamage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC6112B56D38600C04C5E /* OnActorTakeDamage.swift */; };
+		B6ECC6142B56D39000C04C5E /* AfterActorTakeDamage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC6132B56D39000C04C5E /* AfterActorTakeDamage.swift */; };
+		B6ECC6162B56D87E00C04C5E /* HealthToAttackBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC6152B56D87E00C04C5E /* HealthToAttackBoss.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -4775,11 +4777,13 @@
 		B6ECC5FC2B4DD84B00C04C5E /* CycleDamageEffectPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleDamageEffectPill.swift; sourceTree = "<group>"; };
 		B6ECC5FE2B51F19300C04C5E /* LimitPhoenixEquipmentPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitPhoenixEquipmentPill.swift; sourceTree = "<group>"; };
 		B6ECC6012B53225500C04C5E /* ScaleAttackBoss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleAttackBoss.swift; sourceTree = "<group>"; };
-		B6ECC6032B532C6300C04C5E /* LimitStatsFoePhoenixEquipmentPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitStatsFoePhoenixEquipmentPill.swift; sourceTree = "<group>"; };
 		B6ECC6052B53490F00C04C5E /* PermanentHealthDamageBoss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermanentHealthDamageBoss.swift; sourceTree = "<group>"; };
 		B6ECC6072B534A5800C04C5E /* BigSwingHealBoss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigSwingHealBoss.swift; sourceTree = "<group>"; };
 		B6ECC6092B534CEC00C04C5E /* DisableHealingBoss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisableHealingBoss.swift; sourceTree = "<group>"; };
-		B6ECC60B2B53BEB100C04C5E /* EndlessBoss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessBoss.swift; sourceTree = "<group>"; };
+		B6ECC60D2B56CCE800C04C5E /* HealthToDamageEffectPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthToDamageEffectPill.swift; sourceTree = "<group>"; };
+		B6ECC6112B56D38600C04C5E /* OnActorTakeDamage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnActorTakeDamage.swift; sourceTree = "<group>"; };
+		B6ECC6132B56D39000C04C5E /* AfterActorTakeDamage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterActorTakeDamage.swift; sourceTree = "<group>"; };
+		B6ECC6152B56D87E00C04C5E /* HealthToAttackBoss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthToAttackBoss.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -4834,6 +4838,7 @@
 				B678C1CF2B46499300CD6354 /* ScaleDamageEffectPill.swift */,
 				B6ECC5FA2B4DD6B200C04C5E /* HealthLifestealEffectPill.swift */,
 				B6ECC5FC2B4DD84B00C04C5E /* CycleDamageEffectPill.swift */,
+				B6ECC60D2B56CCE800C04C5E /* HealthToDamageEffectPill.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -5075,7 +5080,6 @@
 				6532774B2925D79500E03FA7 /* RestoreAfterTravelEquipmentPill.swift */,
 				6532774D2925DB4A00E03FA7 /* PermanentHealthAfterKillEquipmentPill.swift */,
 				B6ECC5FE2B51F19300C04C5E /* LimitPhoenixEquipmentPill.swift */,
-				B6ECC6032B532C6300C04C5E /* LimitStatsFoePhoenixEquipmentPill.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -6134,6 +6138,8 @@
 				6503293728D71A3300FC999C /* OnGoldChange.swift */,
 				656F3C4229440C2100CB706A /* OnActorUseItem.swift */,
 				656F3C4429440C2A00CB706A /* AfterActorUseItem.swift */,
+				B6ECC6112B56D38600C04C5E /* OnActorTakeDamage.swift */,
+				B6ECC6132B56D39000C04C5E /* AfterActorTakeDamage.swift */,
 			);
 			path = Publishers;
 			sourceTree = "<group>";
@@ -8491,7 +8497,7 @@
 				B6ECC6052B53490F00C04C5E /* PermanentHealthDamageBoss.swift */,
 				B6ECC6072B534A5800C04C5E /* BigSwingHealBoss.swift */,
 				B6ECC6092B534CEC00C04C5E /* DisableHealingBoss.swift */,
-				B6ECC60B2B53BEB100C04C5E /* EndlessBoss.swift */,
+				B6ECC6152B56D87E00C04C5E /* HealthToAttackBoss.swift */,
 			);
 			path = "Boss Content";
 			sourceTree = "<group>";
@@ -10507,7 +10513,6 @@
 				6568F9A928788F3F00035865 /* AccessoryInspectView.swift in Sources */,
 				65275DFA2759C87A0087B118 /* ArmorPointsRestorationPercentBuff.swift in Sources */,
 				652EC1C2277594B100E81787 /* BossArea.swift in Sources */,
-				B6ECC60C2B53BEB100C04C5E /* EndlessBoss.swift in Sources */,
 				B6C37E0B2A32BAAA004D18A8 /* Math.swift in Sources */,
 				65C2CDE02937B6DE0028DC9C /* AreaThemedProfile.swift in Sources */,
 				656FD912291CF56200F923E9 /* ShopKeeperFactory.swift in Sources */,
@@ -10652,6 +10657,7 @@
 				656FD8C22917CC3800F923E9 /* FoeProfileTag.swift in Sources */,
 				654D729E29416ECE00228643 /* WarlockClass.swift in Sources */,
 				65E6388C27C3A9920004C57F /* UsePotionButton.swift in Sources */,
+				B6ECC6122B56D38600C04C5E /* OnActorTakeDamage.swift in Sources */,
 				65293CA828B96F6500B2354A /* OnNoPotionsRemaining.swift in Sources */,
 				65500E7328643CF200A92CA2 /* InspectStatusView.swift in Sources */,
 				655C60A928040373007B1E11 /* Enhanceable.swift in Sources */,
@@ -10751,6 +10757,7 @@
 				65C37A89285D62A1006997EE /* Double.swift in Sources */,
 				65311CF028842E510080A390 /* LootPotionButton.swift in Sources */,
 				654D72872941351C00228643 /* OnAccessoryHealthChange.swift in Sources */,
+				B6ECC6162B56D87E00C04C5E /* HealthToAttackBoss.swift in Sources */,
 				65AAFE4728CB5D7C004A8230 /* InventoryConsumablesView.swift in Sources */,
 				65A38870288A8991006541FB /* WeaponLifestealEquipmentPill.swift in Sources */,
 				65D88C35274436E7002E3AC4 /* ContentView.swift in Sources */,
@@ -10893,6 +10900,7 @@
 				6524D5212762829300982091 /* YonderGridOption.swift in Sources */,
 				65A38879288AC85F006541FB /* InspectEquipmentEffects.swift in Sources */,
 				65AAFE5028D1DCE2004A8230 /* Consumable.swift in Sources */,
+				B6ECC60E2B56CCE800C04C5E /* HealthToDamageEffectPill.swift in Sources */,
 				654D728E29416B8F00228643 /* ClassSelectView.swift in Sources */,
 				65DC5FC828DC495300E5F904 /* RestoreArmorPointsConsumable.swift in Sources */,
 				65A3887D288B6790006541FB /* OptionsView.swift in Sources */,
@@ -10924,7 +10932,6 @@
 				65275DE6275955F10087B118 /* Enhancer.swift in Sources */,
 				6568F99728770F5500035865 /* ArmorType.swift in Sources */,
 				B6ECC5FF2B51F19300C04C5E /* LimitPhoenixEquipmentPill.swift in Sources */,
-				B6ECC6042B532C6300C04C5E /* LimitStatsFoePhoenixEquipmentPill.swift in Sources */,
 				655F98392869646A00A60806 /* IndicativeEffectsDescriptionView.swift in Sources */,
 				65814CEE27AABA0D0063B118 /* ItemViewModel.swift in Sources */,
 				653277462925A98500E03FA7 /* OnTurnStart.swift in Sources */,
@@ -10989,6 +10996,7 @@
 				B6C37E202A3374BD004D18A8 /* NoAnimationSequence.swift in Sources */,
 				655146892747E73300257181 /* Potion.swift in Sources */,
 				654D729329416DEA00228643 /* NoClass.swift in Sources */,
+				B6ECC6142B56D39000C04C5E /* AfterActorTakeDamage.swift in Sources */,
 				657C80CF277A154A00B7987D /* LocationContext.swift in Sources */,
 				65AAFE4528CB58D9004A8230 /* ConsumableViewModel.swift in Sources */,
 				65DC5FC628DC3F8B00E5F904 /* ConsumableArmorPointsRestorationBuff.swift in Sources */,

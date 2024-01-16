@@ -52,7 +52,7 @@ class DelayedDamageValues {
         // After all the non-permanent damage has been dealt, adjust the max health
         for value in self.values {
             if value.type == .maxHealth {
-                actor.adjustMaxHealth(by: -value.damage)
+                actor.damageMaxHealth(by: value.damage)
             }
         }
         self.values.removeAll()

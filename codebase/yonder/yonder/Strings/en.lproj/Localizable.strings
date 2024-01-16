@@ -409,6 +409,10 @@
 // Cycle Damage
 "weaponEffectPill.cycleDamage.description1Param" = "Cycles through the following damages after every use: %@.";
 
+// Health to Damage
+"weaponEffectPill.healthToDamage.fraction.description1Param" = "Upon you taking damage, this weapon gains %@%% of the amount taken as weapon damage.";
+"weaponEffectPill.healthToDamage.all.description" = "Upon you taking damage, this weapon gains the amount taken as weapon damage.";
+
 // MARK: - Weapon Buff Pills
 
 // Armor Damage Percent
@@ -859,8 +863,8 @@
 "boss.disableHealing.description" = "You've been cursed. All healing is disabled. Defeat the boss to free yourself!";
 "boss.disableHealing.buffNamePrefix" = "Curse of ";
 
-"boss.endless.hint" = "Revives in a weaker form!";
-"boss.endless.description1Param" = "Be prepared. Upon death, this boss comes back to life with %@%% their original attack and health.";
+"boss.healthToAttack.hint" = "Grows stronger from taking damage!";
+"boss.healthToAttack.description" = "Be prepared. All damage this boss takes is converted into attack!";
 
 // MARK: - Classes
 
