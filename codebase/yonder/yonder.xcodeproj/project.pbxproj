@@ -2374,6 +2374,7 @@
 		B6E8328A2B587AF3001579D1 /* SliceBorder12.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E832892B587AF3001579D1 /* SliceBorder12.swift */; };
 		B6E8328F2B587D0E001579D1 /* BorderSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E8328E2B587D0E001579D1 /* BorderSlice.swift */; };
 		B6E832912B588592001579D1 /* SliceInsetBorder8.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E832902B588592001579D1 /* SliceInsetBorder8.swift */; };
+		B6E832952B588B9F001579D1 /* YonderBorder1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E832942B588B9F001579D1 /* YonderBorder1.swift */; };
 		B6ECC5F92B4C365800C04C5E /* SliceBorder8.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC5F82B4C365800C04C5E /* SliceBorder8.swift */; };
 		B6ECC5FB2B4DD6B200C04C5E /* HealthLifestealEffectPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC5FA2B4DD6B200C04C5E /* HealthLifestealEffectPill.swift */; };
 		B6ECC5FD2B4DD84B00C04C5E /* CycleDamageEffectPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC5FC2B4DD84B00C04C5E /* CycleDamageEffectPill.swift */; };
@@ -4776,6 +4777,7 @@
 		B6E832892B587AF3001579D1 /* SliceBorder12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliceBorder12.swift; sourceTree = "<group>"; };
 		B6E8328E2B587D0E001579D1 /* BorderSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderSlice.swift; sourceTree = "<group>"; };
 		B6E832902B588592001579D1 /* SliceInsetBorder8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliceInsetBorder8.swift; sourceTree = "<group>"; };
+		B6E832942B588B9F001579D1 /* YonderBorder1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder1.swift; sourceTree = "<group>"; };
 		B6ECC5F82B4C365800C04C5E /* SliceBorder8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliceBorder8.swift; sourceTree = "<group>"; };
 		B6ECC5FA2B4DD6B200C04C5E /* HealthLifestealEffectPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthLifestealEffectPill.swift; sourceTree = "<group>"; };
 		B6ECC5FC2B4DD84B00C04C5E /* CycleDamageEffectPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleDamageEffectPill.swift; sourceTree = "<group>"; };
@@ -8493,13 +8495,22 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		B6ECC5F52B4C2C2800C04C5E /* Borders */ = {
+		B6E832932B588B7E001579D1 /* Border Types */ = {
 			isa = PBXGroup;
 			children = (
 				B6E8328B2B587CFA001579D1 /* Core */,
 				B6ECC5F82B4C365800C04C5E /* SliceBorder8.swift */,
 				B6E832892B587AF3001579D1 /* SliceBorder12.swift */,
 				B6E832902B588592001579D1 /* SliceInsetBorder8.swift */,
+			);
+			path = "Border Types";
+			sourceTree = "<group>";
+		};
+		B6ECC5F52B4C2C2800C04C5E /* Borders */ = {
+			isa = PBXGroup;
+			children = (
+				B6E832932B588B7E001579D1 /* Border Types */,
+				B6E832942B588B9F001579D1 /* YonderBorder1.swift */,
 			);
 			path = Borders;
 			sourceTree = "<group>";
@@ -10578,6 +10589,7 @@
 				656FD8952916EEB500F923E9 /* DataObject.swift in Sources */,
 				65500E6128642C3900A92CA2 /* HealthRestorationBasePill.swift in Sources */,
 				655C60B928041B1B007B1E11 /* YonderExpandableWideButtonBody.swift in Sources */,
+				B6E832952B588B9F001579D1 /* YonderBorder1.swift in Sources */,
 				658D1E5C293E32BB006F1CC0 /* AllPlayerClasses.swift in Sources */,
 				65C2CDE7293B57FF0028DC9C /* YonderImage.swift in Sources */,
 				65AAFE3A28CAF6A9004A8230 /* OnPlayerTravel.swift in Sources */,
