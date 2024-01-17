@@ -19,7 +19,7 @@ struct YonderBorder1<Content: View>: View {
     
     var body: some View {
         SliceInsetBorder8(
-            scale: 1.0,
+            scale: 0.5,
             imageTop: YonderImages.border1Top,
             imageLeft: YonderImages.border1Left,
             imageRight: YonderImages.border1Right,

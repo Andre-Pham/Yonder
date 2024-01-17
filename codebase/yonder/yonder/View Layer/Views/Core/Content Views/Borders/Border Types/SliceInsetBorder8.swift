@@ -98,6 +98,7 @@ struct SliceInsetBorder8<Content: View>: View {
                 .offset(y: self.topRightInsetDim.height)
             }
             .zIndex(1)
+            .frame(height: self.imageTop.height*self.scale, alignment: .bottom)
             
             // Middle row
             HStack(spacing: 0) {
@@ -157,6 +158,7 @@ struct SliceInsetBorder8<Content: View>: View {
                 .offset(y: -self.bottomRightInsetDim.height)
             }
             .zIndex(1)
+            .frame(height: self.imageBottom.height*self.scale, alignment: .top)
         }
     }
 }
