@@ -2373,6 +2373,7 @@
 		B6D4726D2A589E980002CEEC /* NPCProfileRepoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4726C2A589E980002CEEC /* NPCProfileRepoUtil.swift */; };
 		B6E8328A2B587AF3001579D1 /* SliceBorder12.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E832892B587AF3001579D1 /* SliceBorder12.swift */; };
 		B6E8328F2B587D0E001579D1 /* BorderSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E8328E2B587D0E001579D1 /* BorderSlice.swift */; };
+		B6E832912B588592001579D1 /* SliceInsetBorder8.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E832902B588592001579D1 /* SliceInsetBorder8.swift */; };
 		B6ECC5F92B4C365800C04C5E /* SliceBorder8.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC5F82B4C365800C04C5E /* SliceBorder8.swift */; };
 		B6ECC5FB2B4DD6B200C04C5E /* HealthLifestealEffectPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC5FA2B4DD6B200C04C5E /* HealthLifestealEffectPill.swift */; };
 		B6ECC5FD2B4DD84B00C04C5E /* CycleDamageEffectPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC5FC2B4DD84B00C04C5E /* CycleDamageEffectPill.swift */; };
@@ -4774,6 +4775,7 @@
 		B6D4726C2A589E980002CEEC /* NPCProfileRepoUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPCProfileRepoUtil.swift; sourceTree = "<group>"; };
 		B6E832892B587AF3001579D1 /* SliceBorder12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliceBorder12.swift; sourceTree = "<group>"; };
 		B6E8328E2B587D0E001579D1 /* BorderSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderSlice.swift; sourceTree = "<group>"; };
+		B6E832902B588592001579D1 /* SliceInsetBorder8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliceInsetBorder8.swift; sourceTree = "<group>"; };
 		B6ECC5F82B4C365800C04C5E /* SliceBorder8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliceBorder8.swift; sourceTree = "<group>"; };
 		B6ECC5FA2B4DD6B200C04C5E /* HealthLifestealEffectPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthLifestealEffectPill.swift; sourceTree = "<group>"; };
 		B6ECC5FC2B4DD84B00C04C5E /* CycleDamageEffectPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleDamageEffectPill.swift; sourceTree = "<group>"; };
@@ -8497,6 +8499,7 @@
 				B6E8328B2B587CFA001579D1 /* Core */,
 				B6ECC5F82B4C365800C04C5E /* SliceBorder8.swift */,
 				B6E832892B587AF3001579D1 /* SliceBorder12.swift */,
+				B6E832902B588592001579D1 /* SliceInsetBorder8.swift */,
 			);
 			path = Borders;
 			sourceTree = "<group>";
@@ -10835,6 +10838,7 @@
 				6503293828D71A3300FC999C /* OnGoldChange.swift in Sources */,
 				6568F9A7287889D200035865 /* AccessoryViewModel.swift in Sources */,
 				6532D68127B27D340080B58B /* ShopKeeperCardView.swift in Sources */,
+				B6E832912B588592001579D1 /* SliceInsetBorder8.swift in Sources */,
 				655C609B28001348007B1E11 /* WeaponDamageEnhanceOffer.swift in Sources */,
 				65D56C48280AC61C00C6DF0D /* YonderNumeral.swift in Sources */,
 				65326273282F613300A37340 /* InspectLocationView.swift in Sources */,

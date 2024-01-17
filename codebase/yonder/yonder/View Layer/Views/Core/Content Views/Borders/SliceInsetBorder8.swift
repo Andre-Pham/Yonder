@@ -1,13 +1,13 @@
 //
-//  SliceBorder8.swift
+//  SliceInsetBorder8.swift
 //  yonder
 //
-//  Created by Andre Pham on 9/1/2024.
+//  Created by Andre Pham on 18/1/2024.
 //
 
 import SwiftUI
 
-struct SliceBorder8<Content: View>: View {
+struct SliceInsetBorder8<Content: View>: View {
     
     @State private var contentSize: CGSize
     
@@ -20,6 +20,10 @@ struct SliceBorder8<Content: View>: View {
     private let imageTopRight: YonderImage
     private let imageBottomLeft: YonderImage
     private let imageBottomRight: YonderImage
+    private let topLeftInsetDim: CGSize
+    private let topRightInsetDim: CGSize
+    private let bottomLeftInsetDim: CGSize
+    private let bottomRightInsetDim: CGSize
     private let content: () -> Content
     
     init(
@@ -32,6 +36,10 @@ struct SliceBorder8<Content: View>: View {
         imageTopRight: YonderImage,
         imageBottomLeft: YonderImage,
         imageBottomRight: YonderImage,
+        topLeftInsetDim: YonderImage? = nil,
+        topRightInsetDim: YonderImage? = nil,
+        bottomLeftInsetDim: YonderImage? = nil,
+        bottomRightInsetDim: YonderImage? = nil,
         @ViewBuilder builder: @escaping () -> Content
     ) {
         self.scale = scale
@@ -43,6 +51,22 @@ struct SliceBorder8<Content: View>: View {
         self.imageTopRight = imageTopRight
         self.imageBottomLeft = imageBottomLeft
         self.imageBottomRight = imageBottomRight
+        self.topLeftInsetDim = CGSize(
+            width: (topLeftInsetDim?.width ?? 0.0)*self.scale,
+            height: (topLeftInsetDim?.height ?? 0.0)*self.scale
+        )
+        self.topRightInsetDim = CGSize(
+            width: (topRightInsetDim?.width ?? 0.0)*self.scale,
+            height: (topRightInsetDim?.height ?? 0.0)*self.scale
+        )
+        self.bottomLeftInsetDim = CGSize(
+            width: (bottomLeftInsetDim?.width ?? 0.0)*self.scale,
+            height: (bottomLeftInsetDim?.height ?? 0.0)*self.scale
+        )
+        self.bottomRightInsetDim = CGSize(
+            width: (bottomRightInsetDim?.width ?? 0.0)*self.scale,
+            height: (bottomRightInsetDim?.height ?? 0.0)*self.scale
+        )
         self.content = builder
         self.contentSize = CGSize()
     }
@@ -55,25 +79,36 @@ struct SliceBorder8<Content: View>: View {
                     source: self.imageTopLeft,
                     scale: self.scale
                 )
+                .offset(y: self.topLeftInsetDim.height)
                 
                 BorderSlice(
                     source: self.imageTop,
                     scale: self.scale,
-                    widthOverride: self.contentSize.width
+                    widthOverride: (
+                        self.contentSize.width 
+                        - self.topLeftInsetDim.width
+                        - self.topRightInsetDim.width
+                    )
                 )
                 
                 BorderSlice(
                     source: self.imageTopRight,
                     scale: self.scale
                 )
+                .offset(y: self.topRightInsetDim.height)
             }
+            .zIndex(1)
             
             // Middle row
             HStack(spacing: 0) {
                 BorderSlice(
                     source: self.imageLeft,
                     scale: self.scale,
-                    heightOverride: self.contentSize.height
+                    heightOverride: (
+                        self.contentSize.height
+                        - self.topLeftInsetDim.height
+                        - self.bottomLeftInsetDim.height
+                    )
                 )
                 
                 content()
@@ -89,7 +124,11 @@ struct SliceBorder8<Content: View>: View {
                 BorderSlice(
                     source: self.imageRight,
                     scale: self.scale,
-                    heightOverride: self.contentSize.height
+                    heightOverride: (
+                        self.contentSize.height
+                        - self.topRightInsetDim.height
+                        - self.topRightInsetDim.height
+                    )
                 )
             }
             
@@ -99,75 +138,47 @@ struct SliceBorder8<Content: View>: View {
                     source: self.imageBottomLeft,
                     scale: self.scale
                 )
+                .offset(y: -self.bottomLeftInsetDim.height)
                 
                 BorderSlice(
                     source: self.imageBottom,
                     scale: self.scale,
-                    widthOverride: self.contentSize.width
+                    widthOverride: (
+                        self.contentSize.width
+                        - self.bottomLeftInsetDim.width
+                        - self.bottomRightInsetDim.width
+                    )
                 )
                 
                 BorderSlice(
                     source: self.imageBottomRight,
                     scale: self.scale
                 )
+                .offset(y: -self.bottomRightInsetDim.height)
             }
+            .zIndex(1)
         }
     }
 }
 
-struct SliceBorder8_Previews: PreviewProvider {
-    static var previews: some View {
-        PreviewContentView {
-            SliceBorder8(
-                scale: 0.3,
-                imageTop: YonderImages.bruteIcon,
-                imageLeft: YonderImages.bruteIcon,
-                imageRight: YonderImages.bruteIcon,
-                imageBottom: YonderImages.bruteIcon,
-                imageTopLeft: YonderImages.bruteIcon,
-                imageTopRight: YonderImages.bruteIcon,
-                imageBottomLeft: YonderImages.bruteIcon,
-                imageBottomRight: YonderImages.bruteIcon
-            ) {
-                Rectangle()
-                    .fill(.blue)
-                    .frame(width: 120, height: 20)
-            }
-        }
+#Preview {
+    SliceInsetBorder8(
+        scale: 1.0,
+        imageTop: YonderImages.border1Top,
+        imageLeft: YonderImages.border1Left,
+        imageRight: YonderImages.border1Right,
+        imageBottom: YonderImages.border1Bottom,
+        imageTopLeft: YonderImages.border1TopLeft,
+        imageTopRight: YonderImages.border1TopRight,
+        imageBottomLeft: YonderImages.border1BottomLeft,
+        imageBottomRight: YonderImages.border1BottomRight,
+        topLeftInsetDim: YonderImages.border1TopLeftInset,
+        topRightInsetDim: YonderImages.border1TopRightInset,
+        bottomLeftInsetDim: YonderImages.border1BottomLeftInset,
+        bottomRightInsetDim: YonderImages.border1BottomRightInset
+    ) {
+        Rectangle()
+            .fill(.blue)
+            .frame(width: 160, height: 100)
     }
 }
-
-// TODO: The plan is to make a PressableEightSliceBorder
-/*
- struct ParentView: View {
-     @State private var isButtonPressed = false
-
-     var body: some View {
-         SliceBorder8(isButtonPressed: $isButtonPressed, content: {
-             Button("Hello") {
-                 print("Hello")
-             }
-             .onLongPressGesture(minimumDuration: .infinity, pressing: { pressing in
-                 self.isButtonPressed = pressing
-             }) {
-                 // This closure is empty because the action is handled by the pressing parameter
-             }
-         })
-     }
- }
-
- struct EightSliceBorder<Content: View>: View {
-     @Binding var isButtonPressed: Bool
-     let content: Content
-
-     var body: some View {
-         content
-             .border(isButtonPressed ? Color.red : Color.blue, width: 5) // Adjust border based on pressing state
-     }
-
-     init(isButtonPressed: Binding<Bool>, @ViewBuilder content: () -> Content) {
-         self._isButtonPressed = isButtonPressed
-         self.content = content()
-     }
- }
-*/

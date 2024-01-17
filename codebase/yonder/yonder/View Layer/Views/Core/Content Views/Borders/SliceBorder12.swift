@@ -62,7 +62,7 @@ struct SliceBorder12<Content: View>: View {
     var body: some View {
         VStack(spacing: 0) {
             // Top row
-            HStack(spacing: 0) {
+            HStack(alignment: .bottom, spacing: 0) {
                 BorderSlice(
                     source: self.imageTopLeft,
                     scale: self.scale
@@ -139,7 +139,7 @@ struct SliceBorder12<Content: View>: View {
             }
             
             // Bottom row
-            HStack(spacing: 0) {
+            HStack(alignment: .top, spacing: 0) {
                 BorderSlice(
                     source: self.imageBottomLeft,
                     scale: self.scale
