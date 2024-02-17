@@ -1,5 +1,15 @@
 [TOC]
 
+#### `jq` Queries
+
+Find all keys of all json files in a directory:
+
+```bash
+for file in *.json; do
+    jq 'keys' "$file"
+done | jq -s 'add | unique' | jq '.[]'
+```
+
 # Foes
 
 #### Rules.
