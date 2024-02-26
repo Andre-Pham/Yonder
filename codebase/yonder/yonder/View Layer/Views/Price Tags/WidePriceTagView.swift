@@ -27,7 +27,7 @@ struct WidePriceTagView: View {
     }
     
     var body: some View {
-        YonderBorder6 {
+        YonderBorder8 {
             ZStack {
                 if let indicativePrice = self.indicativePrice {
                     YonderTextNumeralHStack {

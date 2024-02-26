@@ -23,7 +23,7 @@ struct PriceTagView: View {
     }
     
     var body: some View {
-        YonderBorder6 {
+        YonderBorder8 {
             ZStack {
                 if let indicativePrice = indicativePrice {
                     YonderIconNumeralPair(prefix: Strings("currencySymbol").local, image: YonderIcons.goldIcon, numeral: indicativePrice, size: .buttonBody, color: self.indicativeColor)

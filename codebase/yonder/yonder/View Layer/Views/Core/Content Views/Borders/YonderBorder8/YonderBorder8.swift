@@ -1,67 +1,44 @@
 //
-//  YonderBorder6.swift
+//  YonderBorder8.swift
 //  yonder
 //
-//  Created by Andre Pham on 18/2/2024.
+//  Created by Andre Pham on 26/2/2024.
 //
 
-import Foundation
 import SwiftUI
 
-struct YonderBorder6<Content: View>: View {
+struct YonderBorder8<Content: View>: View {
     
-    @State private var contentSize: CGSize
     private let content: () -> Content
     
     init(
         @ViewBuilder builder: @escaping () -> Content
     ) {
         self.content = builder
-        self.contentSize = CGSize()
     }
     
     var body: some View {
         VStack(spacing: 0) {
             content()
+                .background(YonderBorder8Presets.fillColor)
                 .border(
-                    YonderBorder6Presets.inlineColor,
-                    width: YonderBorder6Presets.outlineThickness
-                )
-                .padding(.top, YonderBorder6Presets.outlineThickness)
-                .padding(.horizontal, YonderBorder6Presets.outlineThickness)
-                .background(YonderBorder6Presets.fillColor)
-                .overlay {
-                    GeometryReader { geo in
-                        Color.clear
-                            .onAppear {
-                                self.contentSize = geo.size
-                            }
-                    }
-                }
-            
-            YonderBorder6Presets.bottomRiseColor
-                .frame(
-                    width: self.contentSize.width,
-                    height: YonderBorder6Presets.bottomRiseThickness
+                    YonderBorder8Presets.outlineColor,
+                    width: YonderBorder8Presets.outlineThickness
                 )
         }
-        .border(
-            YonderBorder6Presets.outlineColor,
-            width: YonderBorder6Presets.outlineThickness
-        )
     }
 }
 
 #Preview {
     PreviewContentView {
         VStack {
-            YonderBorder6 {
+            YonderBorder8 {
                 Rectangle()
                     .fill(.clear)
                     .frame(width: 160, height: 100)
             }
             
-            YonderBorder6 {
+            YonderBorder8 {
                 YonderIconNumeralPair(prefix: Strings("currencySymbol").local, image: YonderIcons.goldIcon, numeral: 100, size: .buttonBody)
                     .padding(.horizontal, YonderCoreGraphics.padding*1.5)
                     .padding(.vertical, YonderCoreGraphics.padding)
@@ -74,7 +51,7 @@ struct YonderBorder6<Content: View>: View {
                         
                         Spacer()
                         
-                        YonderBorder6 {
+                        YonderBorder8 {
                             YonderIconNumeralPair(prefix: Strings("currencySymbol").local, image: YonderIcons.goldIcon, numeral: 100, size: .buttonBody)
                                 .padding(.horizontal, YonderCoreGraphics.padding*1.5)
                                 .padding(.vertical, YonderCoreGraphics.padding)

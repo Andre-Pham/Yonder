@@ -9,34 +9,22 @@ import SwiftUI
 
 struct YonderBorder4<Content: View>: View {
     
-    @State private var contentSize: CGSize
     private let content: () -> Content
     
     init(
         @ViewBuilder builder: @escaping () -> Content
     ) {
         self.content = builder
-        self.contentSize = CGSize()
     }
     
     var body: some View {
-        VStack(spacing: 0) {
-            content()
-                .padding(YonderBorder4Presets.outlineThickness)
-                .background(YonderBorder4Presets.fillColor)
-                .overlay {
-                    GeometryReader { geo in
-                        Color.clear
-                            .onAppear {
-                                self.contentSize = geo.size
-                            }
-                    }
-                }
-        }
-        .border(
-            YonderBorder4Presets.outlineColor,
-            width: YonderBorder4Presets.outlineThickness
-        )
+        content()
+            .padding(YonderBorder4Presets.outlineThickness)
+            .background(YonderBorder4Presets.fillColor)
+            .border(
+                YonderBorder4Presets.outlineColor,
+                width: YonderBorder4Presets.outlineThickness
+            )
     }
 }
 
