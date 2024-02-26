@@ -26,65 +26,76 @@ struct LocationView: View {
     }
     
     var body: some View {
-        GeometryReader { geo in
-            let viewWidth = geo.size.width
-            let cardWidth = viewWidth - YonderCoreGraphics.borderWidth*2
-            let cardHeight = cardWidth/(self.background.width/self.background.height)
-            let viewHeight = cardHeight + YonderCoreGraphics.borderWidth*2
-            ZStack(alignment: .bottom) {
-                self.background.image
-                    .resizable()
-                    .interpolation(.none)
-                    .scaledToFill()
-                    .overlay {
-                        if let name = self.locationViewModel.getNPCName() {
-                            VStack {
-                                YonderText(text: name, size: .cardSubscript)
-                                    .padding(.horizontal, 9)
-                                    .padding(.vertical, 4)
-                                    .background(.black.opacity(0.5))
-                                    .padding()
+        
+        YonderBorder1 {
+        
+            
+//                let viewWidth = geo.size.width
+//                let cardWidth = viewWidth
+//                let cardHeight = cardWidth/(self.background.width/self.background.height)
+//                let viewHeight = cardHeight
+                ZStack(alignment: .bottom) {
+                    self.background.image
+                        .resizable()
+                        .interpolation(.none)
+//                        .scaledToFill()
+                        .overlay {
+                            if let name = self.locationViewModel.getNPCName() {
+                                VStack {
+                                    YonderText(text: name, size: .cardSubscript)
+                                        .padding(.horizontal, 9)
+                                        .padding(.vertical, 4)
+                                        .background(.black.opacity(0.5))
+                                        .padding()
+                                    
+                                    Spacer()
+                                }
                                 
-                                Spacer()
                             }
-                            .frame(width: cardWidth, height: cardHeight)
                         }
-                    }
-                    .overlay(alignment: .bottom) {
-                        self.animationQueue.frame
-                            .resizable()
-                            .interpolation(.none)
-                            .scaledToFit()
-                            .frame(
-                                width: viewWidth*self.animationQueue.frameSize.width/self.sizeDial,
-                                height: viewWidth*self.animationQueue.frameSize.height/self.sizeDial
-                            )
+                        .overlay(alignment: .bottom) {
+                            self.animationQueue.frame
+                                .resizable()
+                                .interpolation(.none)
+                                .scaledToFit()
+//                                .frame(
+//                                    width: self.background.width*self.animationQueue.frameSize.width/self.sizeDial,
+//                                    height: self.background.height*self.animationQueue.frameSize.height/self.sizeDial
+//                                )
                             // These offsets need to be relative to the geometry size because these change from device to device so aspect ratios need to be maintained for consistent viewing
-                            .offset(y: viewWidth/35.0) // Magic
+                                .offset(y: self.background.width/35.0) // Magic
                             // Sprites tend to be slightly right-leaning and centre better when adjusted
-                            .offset(x: -viewWidth/80.0) // Magic
-                    }
+                                .offset(x: -self.background.width/80.0) // Magic
+                        }
                     // Set frame after overlay - any animations that extend outside the card's frame are clipped
-                    .frame(width: cardWidth, height: cardHeight)
-                    .clipped()
-                    .offset(x: YonderCoreGraphics.borderWidth, y: YonderCoreGraphics.borderWidth)
+//                        .frame(width: .infinity)
+//                        .aspectRatio(contentMode: .fit)
+//                        .clipped()
+                        
+                        .aspectRatio(self.background.width/self.background.height, contentMode: .fit)
+//                        .frame(maxWidth: .infinity)
+                    
+                    self.foreground.image
+                        .resizable()
+                        .interpolation(.none)
+                        .aspectRatio(self.background.width/self.background.height, contentMode: .fit)
+//                        .scaledToFill()
+//                        .frame(width: .infinity)
+//                        .clipped()
+                }
+            
                 
-                self.foreground.image
-                    .resizable()
-                    .interpolation(.none)
-                    .scaledToFill()
-                    .frame(width: cardWidth, height: cardHeight)
-                    .clipped()
-                    .offset(x: YonderCoreGraphics.borderWidth, y: YonderCoreGraphics.borderWidth)
-            }
-            .onAppear {
-                self.viewHeight = viewHeight
-            }
+                
+//            }
+              
+//            .frame(maxWidth: .infinity)
+//            .frame(height: self.viewHeight == 0 ? 50 : self.viewHeight)
+        
         }
-        .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
-        .frame(maxWidth: .infinity)
-        .frame(height: self.viewHeight)
         .padding(.horizontal, YonderCoreGraphics.padding)
+   
+        
+        
     }
 }
 

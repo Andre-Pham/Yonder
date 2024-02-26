@@ -39,16 +39,16 @@ struct YonderWideButtonBody<Content: View>: View {
         Button {
             action()
         } label: {
-            content()
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, self.verticalPadding)
-                .background(YonderColors.backgroundMaxDepth) // Ensures entire button can be tapped
-                .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
-                .transaction { transaction in
-                    if !self.permittedAnimations.contains(where: { $0 == transaction.animation }) {
-                        transaction.animation = nil
+            YonderBorder3 {
+                content()
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, self.verticalPadding)
+                    .transaction { transaction in
+                        if !self.permittedAnimations.contains(where: { $0 == transaction.animation }) {
+                            transaction.animation = nil
+                        }
                     }
-                }
+            }
         }
     }
 }

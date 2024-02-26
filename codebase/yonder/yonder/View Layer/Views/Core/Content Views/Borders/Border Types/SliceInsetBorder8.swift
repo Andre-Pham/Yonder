@@ -166,18 +166,18 @@ struct SliceInsetBorder8<Content: View>: View {
 #Preview {
     SliceInsetBorder8(
         scale: 1.0,
-        imageTop: YonderImages.border1Top,
-        imageLeft: YonderImages.border1Left,
-        imageRight: YonderImages.border1Right,
-        imageBottom: YonderImages.border1Bottom,
-        imageTopLeft: YonderImages.border1TopLeft,
-        imageTopRight: YonderImages.border1TopRight,
-        imageBottomLeft: YonderImages.border1BottomLeft,
-        imageBottomRight: YonderImages.border1BottomRight,
-        topLeftInsetDim: YonderImages.border1TopLeftInset,
-        topRightInsetDim: YonderImages.border1TopRightInset,
-        bottomLeftInsetDim: YonderImages.border1BottomLeftInset,
-        bottomRightInsetDim: YonderImages.border1BottomRightInset
+        imageTop: YonderBorder1Presets.border1Top,
+        imageLeft: YonderBorder1Presets.border1Left,
+        imageRight: YonderBorder1Presets.border1Right,
+        imageBottom: YonderBorder1Presets.border1Bottom,
+        imageTopLeft: YonderBorder1Presets.border1TopLeft,
+        imageTopRight: YonderBorder1Presets.border1TopRight,
+        imageBottomLeft: YonderBorder1Presets.border1BottomLeft,
+        imageBottomRight: YonderBorder1Presets.border1BottomRight,
+        topLeftInsetDim: YonderBorder1Presets.border1TopLeftInset,
+        topRightInsetDim: YonderBorder1Presets.border1TopRightInset,
+        bottomLeftInsetDim: YonderBorder1Presets.border1BottomLeftInset,
+        bottomRightInsetDim: YonderBorder1Presets.border1BottomRightInset
     ) {
         Rectangle()
             .fill(.blue)

@@ -18,18 +18,18 @@ struct CenterCardBody<Content: View>: View {
     }
     
     var body: some View {
-        VStack(alignment: .center, spacing: 3) {
-            Spacer()
-            
-            content()
-                .frame(maxWidth: .infinity, alignment: .center)
-            
-            Spacer()
+        YonderBorder7 {
+            VStack(alignment: .center, spacing: 3) {
+                Spacer()
+                
+                content()
+                    .frame(maxWidth: .infinity, alignment: .center)
+                
+                Spacer()
+            }
+            .padding(.vertical)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal)
         }
-        .padding(.vertical)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.horizontal)
-        .foregroundColor(YonderColors.textMaxContrast)
-        .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
     }
 }

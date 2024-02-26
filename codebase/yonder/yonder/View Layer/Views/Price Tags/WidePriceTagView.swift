@@ -27,21 +27,22 @@ struct WidePriceTagView: View {
     }
     
     var body: some View {
-        ZStack {
-            if let indicativePrice = self.indicativePrice {
-                YonderTextNumeralHStack {
-                    YonderIconNumeralPair(prefix: Strings("currencySymbol").local, image: YonderIcons.goldIcon, numeral: indicativePrice, size: .buttonBody, color: self.indicativeColor)
-                    
-                    YonderText(text: self.displayText, size: .buttonBody)
+        YonderBorder6 {
+            ZStack {
+                if let indicativePrice = self.indicativePrice {
+                    YonderTextNumeralHStack {
+                        YonderIconNumeralPair(prefix: Strings("currencySymbol").local, image: YonderIcons.goldIcon, numeral: indicativePrice, size: .buttonBody, color: self.indicativeColor)
+                        
+                        YonderText(text: self.displayText, size: .buttonBody)
+                    }
+                } else {
+                    YonderIconNumeralPair(prefix: Strings("currencySymbol").local, suffix: self.displayText, image: YonderIcons.goldIcon, numeral: self.price, size: .buttonBody)
                 }
-            } else {
-                YonderIconNumeralPair(prefix: Strings("currencySymbol").local, suffix: self.displayText, image: YonderIcons.goldIcon, numeral: self.price, size: .buttonBody)
             }
+            .frame(maxWidth: .infinity)
+            .padding(.horizontal, YonderCoreGraphics.padding*1.5)
+            .padding(.vertical, YonderCoreGraphics.padding)
         }
-        .frame(maxWidth: .infinity)
-        .padding(.horizontal, YonderCoreGraphics.padding*1.5)
-        .padding(.vertical, YonderCoreGraphics.padding)
-        .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
     }
 }
 

@@ -11,7 +11,7 @@ import SwiftUI
 enum YonderCoreGraphics {
     
     static let padding: CGFloat = 12
-    static let textVerticalPadding: CGFloat = 13
+    static let textVerticalPadding: CGFloat = 10
     static let borderWidth: CGFloat = 2.7
     static let paragraphSpacing: CGFloat = 8
     static let buttonTitleSpacing: CGFloat = 0.5

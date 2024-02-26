@@ -23,16 +23,17 @@ struct PriceTagView: View {
     }
     
     var body: some View {
-        ZStack {
-            if let indicativePrice = indicativePrice {
-                YonderIconNumeralPair(prefix: Strings("currencySymbol").local, image: YonderIcons.goldIcon, numeral: indicativePrice, size: .buttonBody, color: self.indicativeColor)
-            } else {
-                YonderIconNumeralPair(prefix: Strings("currencySymbol").local, image: YonderIcons.goldIcon, numeral: self.price, size: .buttonBody)
+        YonderBorder6 {
+            ZStack {
+                if let indicativePrice = indicativePrice {
+                    YonderIconNumeralPair(prefix: Strings("currencySymbol").local, image: YonderIcons.goldIcon, numeral: indicativePrice, size: .buttonBody, color: self.indicativeColor)
+                } else {
+                    YonderIconNumeralPair(prefix: Strings("currencySymbol").local, image: YonderIcons.goldIcon, numeral: self.price, size: .buttonBody)
+                }
             }
+            .padding(.horizontal, YonderCoreGraphics.padding*1.5)
+            .padding(.vertical, YonderCoreGraphics.padding)
         }
-        .padding(.horizontal, YonderCoreGraphics.padding*1.5)
-        .padding(.vertical, YonderCoreGraphics.padding)
-        .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
     }
 }
 

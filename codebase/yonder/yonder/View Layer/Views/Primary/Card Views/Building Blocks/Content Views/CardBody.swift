@@ -26,26 +26,34 @@ struct CardBody<Content: View>: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: self.spacing) {
-            if let name {
-                YonderText(text: name, size: .cardTitle)
-                    .padding(.top, self.topPadding)
-            } else {
-                Rectangle()
-                    .frame(height: .zero)
-                    .padding(.top, self.topPadding - self.spacing)
+        YonderBorder7 {
+            VStack(alignment: .leading, spacing: self.spacing) {
+                if let name {
+                    YonderText(text: name, size: .cardTitle)
+                        .padding(.top, self.topPadding)
+                } else {
+                    Rectangle()
+                        .frame(height: .zero)
+                        .padding(.top, self.topPadding - self.spacing)
+                }
+                
+                content()
+                
+                if self.resizeToFit {
+                    Spacer()
+                }
             }
-            
-            content()
-            
-            if self.resizeToFit {
-                Spacer()
-            }
+            .padding(.bottom)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal)
         }
-        .padding(.bottom)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.horizontal)
-        .foregroundColor(YonderColors.textMaxContrast)
-        .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
+    }
+}
+
+#Preview {
+    PreviewContentView {
+        CardBody(name: "Name", resizeToFit: false) {
+            YonderText(text: "Hello World", size: .cardBody)
+        }
     }
 }
