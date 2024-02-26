@@ -13,76 +13,90 @@ struct UseWeaponButton: View {
     @State private var useButtonActive = false
     
     var body: some View {
-        YonderExpandableWideButtonBody(isExpanded: self.$useButtonActive) {
-            VStack(alignment: .leading) {
-                YonderText(text: self.weaponViewModel.name, size: .buttonBody)
-                    .padding(.bottom, YonderCoreGraphics.buttonTitleSpacing)
-                
-                if self.weaponViewModel.damage > 0 {
-                    YonderTextNumeralHStack {
-                        if let foeViewModel = GameManager.instance.foeViewModel {
-                            IndicativeNumeralView(
-                                original: self.weaponViewModel.damage,
-                                indicative: self.playerViewModel.getIndicativeDamage(itemViewModel: self.weaponViewModel, opposition: foeViewModel),
-                                size: .buttonBodySubscript)
-                        } else {
-                            YonderNumeral(number: self.weaponViewModel.damage, size: .buttonBodySubscript)
+        YonderBorder4 {
+            HStack(spacing: 0) {
+                VStack(alignment: .leading) {
+                    YonderText(text: self.weaponViewModel.name, size: .buttonBody)
+                        .padding(.bottom, YonderCoreGraphics.buttonTitleSpacing)
+                    
+                    if self.weaponViewModel.damage > 0 {
+                        YonderTextNumeralHStack {
+                            if let foeViewModel = GameManager.instance.foeViewModel {
+                                IndicativeNumeralView(
+                                    original: self.weaponViewModel.damage,
+                                    indicative: self.playerViewModel.getIndicativeDamage(itemViewModel: self.weaponViewModel, opposition: foeViewModel),
+                                    size: .buttonBodySubscript)
+                            } else {
+                                YonderNumeral(number: self.weaponViewModel.damage, size: .buttonBodySubscript)
+                            }
+                            
+                            YonderText(text: Strings("stat.damage").local.leftPadded(by: " "), size: .buttonBodySubscript)
+                        }
+                    }
+                    
+                    if self.weaponViewModel.restoration > 0 {
+                        YonderTextNumeralHStack {
+                            YonderNumeral(number: self.weaponViewModel.restoration, size: .buttonBodySubscript)
+                            
+                            YonderText(text: Strings("stat.restoration").local.leftPadded(by: " "), size: .buttonBodySubscript)
                         }
                         
-                        YonderText(text: Strings("stat.damage").local.leftPadded(by: " "), size: .buttonBodySubscript)
-                    }
-                }
-                
-                if self.weaponViewModel.restoration > 0 {
-                    YonderTextNumeralHStack {
-                        YonderNumeral(number: self.weaponViewModel.restoration, size: .buttonBodySubscript)
-                        
-                        YonderText(text: Strings("stat.restoration").local.leftPadded(by: " "), size: .buttonBodySubscript)
+                        YonderText(text: self.playerViewModel.getIndicativeRestorationString(itemViewModel: self.weaponViewModel), size: .buttonBodySubscript)
                     }
                     
-                    YonderText(text: self.playerViewModel.getIndicativeRestorationString(itemViewModel: self.weaponViewModel), size: .buttonBodySubscript)
-                }
-                
-                if self.weaponViewModel.healthRestoration > 0 {
-                    YonderTextNumeralHStack {
-                        IndicativeNumeralView(
-                            original: self.weaponViewModel.healthRestoration,
-                            indicative: self.playerViewModel.getIndicativeHealthRestoration(of: self.weaponViewModel),
-                            size: .buttonBodySubscript)
-                        
-                        YonderText(text: Strings("stat.healthRestoration").local.leftPadded(by: " "), size: .buttonBodySubscript)
-                    }
-                }
-                
-                if self.weaponViewModel.armorPointsRestoration > 0 {
-                    YonderTextNumeralHStack {
-                        IndicativeNumeralView(
-                            original: self.weaponViewModel.armorPointsRestoration,
-                            indicative: self.playerViewModel.getIndicativeArmorPointsRestoration(of: self.weaponViewModel),
-                            size: .buttonBodySubscript)
-                        
-                        YonderText(text: Strings("stat.armorPointsRestoration").local.leftPadded(by: " "), size: .buttonBodySubscript)
-                    }
-                }
-                
-                if let effectsDescription = self.weaponViewModel.previewEffectsDescription {
-                    YonderText(text: effectsDescription, size: .buttonBodySubscript)
-                }
-                
-                YonderTextNumeralHStack {
-                    if self.weaponViewModel.infiniteRemainingUses {
-                        YonderText(text: Strings("item.infinite").local, size: .buttonBodySubscript)
-                    } else {
-                        YonderNumeral(number: self.weaponViewModel.remainingUses, size: .buttonBodySubscript)
+                    if self.weaponViewModel.healthRestoration > 0 {
+                        YonderTextNumeralHStack {
+                            IndicativeNumeralView(
+                                original: self.weaponViewModel.healthRestoration,
+                                indicative: self.playerViewModel.getIndicativeHealthRestoration(of: self.weaponViewModel),
+                                size: .buttonBodySubscript)
+                            
+                            YonderText(text: Strings("stat.healthRestoration").local.leftPadded(by: " "), size: .buttonBodySubscript)
+                        }
                     }
                     
-                    YonderText(text: (self.weaponViewModel.remainingUses == 1 ? Strings("stat.weapon.remainingUsesSingular").local : Strings("stat.weapon.remainingUses").local).leftPadded(by: " "), size: .buttonBodySubscript)
+                    if self.weaponViewModel.armorPointsRestoration > 0 {
+                        YonderTextNumeralHStack {
+                            IndicativeNumeralView(
+                                original: self.weaponViewModel.armorPointsRestoration,
+                                indicative: self.playerViewModel.getIndicativeArmorPointsRestoration(of: self.weaponViewModel),
+                                size: .buttonBodySubscript)
+                            
+                            YonderText(text: Strings("stat.armorPointsRestoration").local.leftPadded(by: " "), size: .buttonBodySubscript)
+                        }
+                    }
+                    
+                    if let effectsDescription = self.weaponViewModel.previewEffectsDescription {
+                        YonderText(text: effectsDescription, size: .buttonBodySubscript)
+                    }
+                    
+                    YonderTextNumeralHStack {
+                        if self.weaponViewModel.infiniteRemainingUses {
+                            YonderText(text: Strings("item.infinite").local, size: .buttonBodySubscript)
+                        } else {
+                            YonderNumeral(number: self.weaponViewModel.remainingUses, size: .buttonBodySubscript)
+                        }
+                        
+                        YonderText(text: (self.weaponViewModel.remainingUses == 1 ? Strings("stat.weapon.remainingUsesSingular").local : Strings("stat.weapon.remainingUses").local).leftPadded(by: " "), size: .buttonBodySubscript)
+                    }
+                }
+                
+                Spacer()
+                
+                Button {
+                    self.playerViewModel.use(weaponViewModel: self.weaponViewModel)
+                } label: {
+                    YonderBorder9 {
+                        YonderIcon(
+                            image: YonderIcons.useWeaponIcon,
+                            sideLength: .large
+                        )
+                        .padding(10)
+                    }
                 }
             }
-        } expandedContent: {
-            YonderWideButton(text: Strings("button.use").local) {
-                self.playerViewModel.use(weaponViewModel: self.weaponViewModel)
-            }
+            .frame(maxWidth: .infinity)
+            .padding(YonderCoreGraphics.innerPadding)
         }
     }
 }
@@ -95,7 +109,8 @@ struct UseWeaponButton_Previews: PreviewProvider {
             
             UseWeaponButton(
                 playerViewModel: PreviewObjects.playerViewModel,
-                weaponViewModel: PreviewObjects.weaponViewModel)
+                weaponViewModel: PreviewObjects.weaponViewModel
+            )
         }
     }
 }
