@@ -37,8 +37,8 @@ struct PurchaseFromShopKeeperButton: View {
                             )
                         }
                     }
-                    .padding(.horizontal, YonderCoreGraphics.padding)
-                    .padding(.vertical, YonderCoreGraphics.textVerticalPadding)
+                    .padding(.horizontal, YonderCoreGraphics.innerPadding)
+                    .padding(.top, YonderCoreGraphics.innerPadding)
                     
                     Spacer()
                 }
@@ -88,8 +88,8 @@ struct PurchaseFromShopKeeperButton: View {
                             }
                     ))
                 }
-                .padding(.horizontal, YonderCoreGraphics.padding)
-                .padding(.bottom, YonderCoreGraphics.padding)
+                .padding(.horizontal, YonderCoreGraphics.innerPadding)
+                .padding(.bottom, YonderCoreGraphics.innerPadding)
             }
         }
     }
