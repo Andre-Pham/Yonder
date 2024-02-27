@@ -183,8 +183,8 @@
 "stat.weapon.remainingUses" = "Durability";
 
 // Potion
-"stat.potion.remainingUsesSingular" = "Potion";
-"stat.potion.remainingUses" = "Potions";
+"stat.potion.remainingUsesSingular" = "Potion Left";
+"stat.potion.remainingUses" = "Potions Left";
 
 // Consumable
 "stat.consumable.remaining" = "Remaining";

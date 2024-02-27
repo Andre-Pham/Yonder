@@ -586,6 +586,10 @@
 		B69E29E32B8CB72E000C8809 /* WidePriceTagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29E22B8CB72E000C8809 /* WidePriceTagButton.swift */; };
 		B69E29E62B8CC22D000C8809 /* YonderBorder9.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29E52B8CC22D000C8809 /* YonderBorder9.swift */; };
 		B69E29E82B8CC290000C8809 /* YonderBorder9Presets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29E72B8CC290000C8809 /* YonderBorder9Presets.swift */; };
+		B69E29EC2B8DC658000C8809 /* YonderBorder10.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29EB2B8DC658000C8809 /* YonderBorder10.swift */; };
+		B69E29EE2B8DC662000C8809 /* YonderBorder10Presets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29ED2B8DC662000C8809 /* YonderBorder10Presets.swift */; };
+		B69E29F02B8DC66A000C8809 /* YonderBorder11.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29EF2B8DC66A000C8809 /* YonderBorder11.swift */; };
+		B69E29F22B8DC673000C8809 /* YonderBorder11Presets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29F12B8DC673000C8809 /* YonderBorder11Presets.swift */; };
 		B6C37DF72A32B48F004D18A8 /* SequenceCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DF62A32B48F004D18A8 /* SequenceCode.swift */; };
 		B6C37DF92A32B4B1004D18A8 /* AnimationSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DF82A32B4B1004D18A8 /* AnimationSequence.swift */; };
 		B6C37DFB2A32B4BC004D18A8 /* AnimationComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DFA2A32B4BC004D18A8 /* AnimationComposite.swift */; };
@@ -3008,6 +3012,10 @@
 		B69E29E22B8CB72E000C8809 /* WidePriceTagButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidePriceTagButton.swift; sourceTree = "<group>"; };
 		B69E29E52B8CC22D000C8809 /* YonderBorder9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder9.swift; sourceTree = "<group>"; };
 		B69E29E72B8CC290000C8809 /* YonderBorder9Presets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder9Presets.swift; sourceTree = "<group>"; };
+		B69E29EB2B8DC658000C8809 /* YonderBorder10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder10.swift; sourceTree = "<group>"; };
+		B69E29ED2B8DC662000C8809 /* YonderBorder10Presets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder10Presets.swift; sourceTree = "<group>"; };
+		B69E29EF2B8DC66A000C8809 /* YonderBorder11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder11.swift; sourceTree = "<group>"; };
+		B69E29F12B8DC673000C8809 /* YonderBorder11Presets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder11Presets.swift; sourceTree = "<group>"; };
 		B6C37DF62A32B48F004D18A8 /* SequenceCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceCode.swift; sourceTree = "<group>"; };
 		B6C37DF82A32B4B1004D18A8 /* AnimationSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSequence.swift; sourceTree = "<group>"; };
 		B6C37DFA2A32B4BC004D18A8 /* AnimationComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationComposite.swift; sourceTree = "<group>"; };
@@ -6703,6 +6711,24 @@
 			path = YonderBorder9;
 			sourceTree = "<group>";
 		};
+		B69E29E92B8DC639000C8809 /* YonderBorder10 */ = {
+			isa = PBXGroup;
+			children = (
+				B69E29EB2B8DC658000C8809 /* YonderBorder10.swift */,
+				B69E29ED2B8DC662000C8809 /* YonderBorder10Presets.swift */,
+			);
+			path = YonderBorder10;
+			sourceTree = "<group>";
+		};
+		B69E29EA2B8DC645000C8809 /* YonderBorder11 */ = {
+			isa = PBXGroup;
+			children = (
+				B69E29EF2B8DC66A000C8809 /* YonderBorder11.swift */,
+				B69E29F12B8DC673000C8809 /* YonderBorder11Presets.swift */,
+			);
+			path = YonderBorder11;
+			sourceTree = "<group>";
+		};
 		B6C37DF52A32B460004D18A8 /* NPC Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -8586,6 +8612,8 @@
 				B69E29D62B8C6FBB000C8809 /* YonderBorder7 */,
 				B69E29DB2B8CB446000C8809 /* YonderBorder8 */,
 				B69E29E42B8CC217000C8809 /* YonderBorder9 */,
+				B69E29E92B8DC639000C8809 /* YonderBorder10 */,
+				B69E29EA2B8DC645000C8809 /* YonderBorder11 */,
 			);
 			path = Borders;
 			sourceTree = "<group>";
@@ -10824,6 +10852,7 @@
 				65E6388C27C3A9920004C57F /* UsePotionButton.swift in Sources */,
 				B6ECC6122B56D38600C04C5E /* OnActorTakeDamage.swift in Sources */,
 				65293CA828B96F6500B2354A /* OnNoPotionsRemaining.swift in Sources */,
+				B69E29EE2B8DC662000C8809 /* YonderBorder10Presets.swift in Sources */,
 				65500E7328643CF200A92CA2 /* InspectStatusView.swift in Sources */,
 				655C60A928040373007B1E11 /* Enhanceable.swift in Sources */,
 				65109B38280C67F700F2D949 /* AnimatedNumber.swift in Sources */,
@@ -10878,6 +10907,7 @@
 				658D1E822940DFED006F1CC0 /* BuffProxy.swift in Sources */,
 				B6FB4A692B81D92300B809DE /* YonderBorder4Presets.swift in Sources */,
 				654494FB275803000016FDCA /* PricePercentBuff.swift in Sources */,
+				B69E29EC2B8DC658000C8809 /* YonderBorder10.swift in Sources */,
 				65D88C7A274547BB002E3AC4 /* DamagePercentBuff.swift in Sources */,
 				6524D5182762703500982091 /* SettingsView.swift in Sources */,
 				B6ECC60A2B534CEC00C04C5E /* DisableHealingBoss.swift in Sources */,
@@ -10942,6 +10972,7 @@
 				658D1E7E2940DC6E006F1CC0 /* InspectPlayerStatus.swift in Sources */,
 				653AD3B5277088760001A249 /* MapPool.swift in Sources */,
 				656FD89C2916EF1C00F923E9 /* Storable.swift in Sources */,
+				B69E29F22B8DC673000C8809 /* YonderBorder11Presets.swift in Sources */,
 				6551468B2747E7AF00257181 /* MaxRestorationPotion.swift in Sources */,
 				65DC5FC028DC3C3500E5F904 /* WeaponArmorPointsRestorationPercentBuff.swift in Sources */,
 				656BEEA028E2E729001CE591 /* Pricing.swift in Sources */,
@@ -11189,6 +11220,7 @@
 				6553A0902781D5C000BC672F /* Hexagon.swift in Sources */,
 				656FD8DC2919B0D700F923E9 /* WeaponProfile.swift in Sources */,
 				65AAFE4B28D1A4FB004A8230 /* UseConsumableButton.swift in Sources */,
+				B69E29F02B8DC66A000C8809 /* YonderBorder11.swift in Sources */,
 				B6C37E032A32B5CB004D18A8 /* SpriteSheetCoord.swift in Sources */,
 				B69E29E82B8CC290000C8809 /* YonderBorder9Presets.swift in Sources */,
 				65D499DA2931EC300087DBA6 /* ArmorEquipmentPillEnhanceOffer.swift in Sources */,

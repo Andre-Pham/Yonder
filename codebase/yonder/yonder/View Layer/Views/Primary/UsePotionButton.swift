@@ -10,53 +10,67 @@ import SwiftUI
 struct UsePotionButton: View {
     @ObservedObject var playerViewModel: PlayerViewModel
     @ObservedObject var potionViewModel: PotionViewModel
-    @State private var useButtonActive = false
     private var isDisabled: Bool {
         return !self.playerViewModel.locationViewModel.playerCanEngage && self.potionViewModel.requiresFoeForUsage
     }
     
     var body: some View {
-        YonderExpandableWideButtonBody(isExpanded: self.$useButtonActive) {
-            VStack(alignment: .leading) {
-                YonderText(text: self.potionViewModel.name, size: .buttonBody)
-                    .padding(.bottom, YonderCoreGraphics.buttonTitleSpacing)
-                
-                if let effectsDescription = self.potionViewModel.effectsDescription {
-                    if let foeViewModel = GameManager.instance.foeViewModel, self.potionViewModel.damage > 0 {
+        YonderBorder4 {
+            HStack(spacing: 0) {
+                VStack(alignment: .leading) {
+                    YonderText(text: self.potionViewModel.name, size: .buttonBody)
+                        .padding(.bottom, YonderCoreGraphics.buttonTitleSpacing)
+                    
+                    if let effectsDescription = self.potionViewModel.effectsDescription {
+                        if let foeViewModel = GameManager.instance.foeViewModel, self.potionViewModel.damage > 0 {
+                                IndicativeEffectsDescriptionView(
+                                    effectsDescription: effectsDescription,
+                                    indicative: self.playerViewModel.getIndicativeDamage(itemViewModel: self.potionViewModel, opposition: foeViewModel),
+                                    size: .buttonBodySubscript)
+                        } else if self.potionViewModel.healthRestoration > 0 {
                             IndicativeEffectsDescriptionView(
                                 effectsDescription: effectsDescription,
-                                indicative: self.playerViewModel.getIndicativeDamage(itemViewModel: self.potionViewModel, opposition: foeViewModel),
+                                indicative: self.playerViewModel.getIndicativeHealthRestoration(of: self.potionViewModel),
                                 size: .buttonBodySubscript)
-                    } else if self.potionViewModel.healthRestoration > 0 {
-                        IndicativeEffectsDescriptionView(
-                            effectsDescription: effectsDescription,
-                            indicative: self.playerViewModel.getIndicativeHealthRestoration(of: self.potionViewModel),
-                            size: .buttonBodySubscript)
-                    } else if self.potionViewModel.armorPointsRestoration > 0 {
-                        IndicativeEffectsDescriptionView(
-                            effectsDescription: effectsDescription,
-                            indicative: self.playerViewModel.getIndicativeArmorPointsRestoration(of: self.potionViewModel),
-                            size: .buttonBodySubscript)
-                    } else if self.potionViewModel.restoration > 0 {
-                        YonderText(text: effectsDescription, size: .buttonBodySubscript)
-                        
-                        YonderText(text: self.playerViewModel.getIndicativeRestorationString(itemViewModel: self.potionViewModel), size: .buttonBodySubscript)
-                    } else {
-                        YonderText(text: effectsDescription, size: .buttonBodySubscript)
+                        } else if self.potionViewModel.armorPointsRestoration > 0 {
+                            IndicativeEffectsDescriptionView(
+                                effectsDescription: effectsDescription,
+                                indicative: self.playerViewModel.getIndicativeArmorPointsRestoration(of: self.potionViewModel),
+                                size: .buttonBodySubscript)
+                        } else if self.potionViewModel.restoration > 0 {
+                            YonderText(text: effectsDescription, size: .buttonBodySubscript)
+                            
+                            YonderText(text: self.playerViewModel.getIndicativeRestorationString(itemViewModel: self.potionViewModel), size: .buttonBodySubscript)
+                        } else {
+                            YonderText(text: effectsDescription, size: .buttonBodySubscript)
+                        }
                     }
+                    
+                    YonderTextNumeralHStack {
+                        YonderNumeral(number: self.potionViewModel.remainingUses, size: .buttonBodySubscript)
+                        
+                        YonderText(text: (self.potionViewModel.remainingUses == 1 ? Strings("stat.potion.remainingUsesSingular").local : Strings("stat.potion.remainingUses").local).leftPadded(by: " "), size: .buttonBodySubscript)
+                    }
+                    .padding(.top, YonderCoreGraphics.paragraphSpacing)
                 }
                 
-                YonderTextNumeralHStack {
-                    YonderNumeral(number: self.potionViewModel.remainingUses, size: .buttonBodySubscript)
-                    
-                    YonderText(text: (self.potionViewModel.remainingUses == 1 ? Strings("stat.potion.remainingUsesSingular").local : Strings("stat.potion.remainingUses").local).leftPadded(by: " "), size: .buttonBodySubscript)
+                Spacer()
+                
+                Button {
+                    self.playerViewModel.use(potionViewModel: self.potionViewModel)
+                } label: {
+                    YonderBorder10 {
+                        YonderIcon(
+                            image: YonderIcons.usePotionIcon,
+                            sideLength: .large
+                        )
+                        .padding(10)
+                    }
                 }
+                .disabledWhen(self.isDisabled)
             }
-        } expandedContent: {
-            YonderWideButton(text: Strings("button.instantUse").local) {
-                self.playerViewModel.use(potionViewModel: self.potionViewModel)
-            }
-            .disabledWhen(self.isDisabled)
+            .frame(maxWidth: .infinity)
+            .padding(YonderCoreGraphics.innerPadding)
         }
     }
 }
@@ -69,7 +83,8 @@ struct UsePotionButton_Previews: PreviewProvider {
             
             UsePotionButton(
                 playerViewModel: PreviewObjects.playerViewModel,
-                potionViewModel: PreviewObjects.potionViewModel)
+                potionViewModel: PreviewObjects.potionViewModel
+            )
         }
     }
 }
