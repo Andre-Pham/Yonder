@@ -590,6 +590,7 @@
 		B69E29EE2B8DC662000C8809 /* YonderBorder10Presets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29ED2B8DC662000C8809 /* YonderBorder10Presets.swift */; };
 		B69E29F02B8DC66A000C8809 /* YonderBorder11.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29EF2B8DC66A000C8809 /* YonderBorder11.swift */; };
 		B69E29F22B8DC673000C8809 /* YonderBorder11Presets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29F12B8DC673000C8809 /* YonderBorder11Presets.swift */; };
+		B69E29F42B8E0E7D000C8809 /* AcceptOfferButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29F32B8E0E7D000C8809 /* AcceptOfferButton.swift */; };
 		B6C37DF72A32B48F004D18A8 /* SequenceCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DF62A32B48F004D18A8 /* SequenceCode.swift */; };
 		B6C37DF92A32B4B1004D18A8 /* AnimationSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DF82A32B4B1004D18A8 /* AnimationSequence.swift */; };
 		B6C37DFB2A32B4BC004D18A8 /* AnimationComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DFA2A32B4BC004D18A8 /* AnimationComposite.swift */; };
@@ -3016,6 +3017,7 @@
 		B69E29ED2B8DC662000C8809 /* YonderBorder10Presets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder10Presets.swift; sourceTree = "<group>"; };
 		B69E29EF2B8DC66A000C8809 /* YonderBorder11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder11.swift; sourceTree = "<group>"; };
 		B69E29F12B8DC673000C8809 /* YonderBorder11Presets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder11Presets.swift; sourceTree = "<group>"; };
+		B69E29F32B8E0E7D000C8809 /* AcceptOfferButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptOfferButton.swift; sourceTree = "<group>"; };
 		B6C37DF62A32B48F004D18A8 /* SequenceCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceCode.swift; sourceTree = "<group>"; };
 		B6C37DF82A32B4B1004D18A8 /* AnimationSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSequence.swift; sourceTree = "<group>"; };
 		B6C37DFA2A32B4BC004D18A8 /* AnimationComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationComposite.swift; sourceTree = "<group>"; };
@@ -5024,6 +5026,7 @@
 				65311CDA28836B810080A390 /* LootBagButton.swift */,
 				65311CE0288397D50080A390 /* CollectLootView.swift */,
 				65AAFE4A28D1A4FB004A8230 /* UseConsumableButton.swift */,
+				B69E29F32B8E0E7D000C8809 /* AcceptOfferButton.swift */,
 			);
 			path = Primary;
 			sourceTree = "<group>";
@@ -11219,6 +11222,7 @@
 				6532774A2925B48D00E03FA7 /* RestoreAfterKillEquipmentPill.swift in Sources */,
 				6553A0902781D5C000BC672F /* Hexagon.swift in Sources */,
 				656FD8DC2919B0D700F923E9 /* WeaponProfile.swift in Sources */,
+				B69E29F42B8E0E7D000C8809 /* AcceptOfferButton.swift in Sources */,
 				65AAFE4B28D1A4FB004A8230 /* UseConsumableButton.swift in Sources */,
 				B69E29F02B8DC66A000C8809 /* YonderBorder11.swift in Sources */,
 				B6C37E032A32B5CB004D18A8 /* SpriteSheetCoord.swift in Sources */,

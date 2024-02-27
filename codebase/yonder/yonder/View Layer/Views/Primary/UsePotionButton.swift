@@ -75,16 +75,11 @@ struct UsePotionButton: View {
     }
 }
 
-struct UsePotionButton_Previews: PreviewProvider {
-    static var previews: some View {
-        ZStack {
-            YonderColors.backgroundMaxDepth
-                .ignoresSafeArea()
-            
-            UsePotionButton(
-                playerViewModel: PreviewObjects.playerViewModel,
-                potionViewModel: PreviewObjects.potionViewModel
-            )
-        }
+#Preview {
+    PreviewContentView {
+        UsePotionButton(
+            playerViewModel: PreviewObjects.playerViewModel,
+            potionViewModel: PreviewObjects.potionViewModel
+        )
     }
 }

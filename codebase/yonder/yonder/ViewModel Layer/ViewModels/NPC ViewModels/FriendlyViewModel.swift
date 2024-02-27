@@ -30,6 +30,10 @@ class FriendlyViewModel: InteractorViewModel {
     }
     
     func acceptOffer(_ offerViewModel: OfferViewModel, player: PlayerViewModel) {
+        guard offerViewModel.canBeAccepted(playerViewModel: player) else {
+            assertionFailure("Place accepted an offer that they're not allowed to accept")
+            return
+        }
         (self.interactor as! Friendly).acceptOffer(offerViewModel.offer, for: player.player)
     }
     

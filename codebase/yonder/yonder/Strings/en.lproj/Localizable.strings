@@ -160,6 +160,7 @@
 "button.finished" = "Finished";
 "button.requiresCombat" = "Requires Combat";
 "button.cancel" = "Cancel";
+"button.acceptOffer" = "Accept Offer";
 
 // MARK: - Stats
 

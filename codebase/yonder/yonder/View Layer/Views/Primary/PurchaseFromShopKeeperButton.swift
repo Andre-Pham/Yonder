@@ -24,6 +24,7 @@ struct PurchaseFromShopKeeperButton: View {
                             text: self.purchasableViewModel.name,
                             size: .buttonBody
                         )
+                        .padding(.bottom, YonderCoreGraphics.buttonTitleSpacing)
                         
                         YonderTextNumeralHStack {
                             YonderText(
