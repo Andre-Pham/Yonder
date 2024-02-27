@@ -125,8 +125,8 @@
 // Confirm Equip
 "inspect.equip.armor.title" = "Confirm Armor Equip";
 "inspect.equip.peripheralAccessory.title" = "Confirm Accessory Equip";
-"inspect.equip.currentlyEquipped" = "Currently equipped:";
-"inspect.equip.replacingWith" = "Replacing with:";
+"inspect.equip.currentlyEquipped" = "Currently Equipped";
+"inspect.equip.replacingWith" = "Replacing With";
 
 // Restorer
 "inspect.restorer.for" = "for";

@@ -24,10 +24,12 @@ struct ArmorInspectView: View {
                 YonderText(text: effectsDescription, size: .inspectSheetBody)
             }
             
-            InspectSectionSpacingView()
-            
             if !self.armorViewModel.description.isEmpty {
-                YonderText(text: self.armorViewModel.description, size: .inspectSheetBody)
+                Group {
+                    InspectSectionSpacingView()
+                    
+                    YonderText(text: self.armorViewModel.description, size: .inspectSheetBody)
+                }
             }
         }
     }

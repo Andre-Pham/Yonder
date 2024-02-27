@@ -15,21 +15,45 @@ struct EquipPeripheralAccessoryView: View {
     
     var body: some View {
         InspectBody {
-            YonderText(text: Strings("inspect.equip.peripheralAccessory.title").local, size: .inspectSheetTitle)
+            YonderText(
+                text: Strings("inspect.equip.peripheralAccessory.title").local,
+                size: .inspectSheetTitle
+            )
+            .frame(maxWidth: .infinity)
             
             InspectSectionSpacingView()
             
-            YonderText(text: Strings("inspect.equip.currentlyEquipped").local, size: .inspectSheetBody)
+            SurroundingBrackets(bracket: "[", size: .inspectSheetBody) {
+                YonderText(
+                    text: Strings("inspect.equip.currentlyEquipped").local,
+                    size: .inspectSheetBody
+                )
+            }
+            .frame(maxWidth: .infinity)
             
-            AccessoryInspectView(accessoryViewModel: self.playerViewModel.peripheralAccessoryViewModel)
-                .embeddedInspectBorder()
+            YonderBorder4 {
+                AccessoryInspectView(
+                    accessoryViewModel: self.playerViewModel.peripheralAccessoryViewModel
+                )
+                .padding(YonderCoreGraphics.innerPadding)
+            }
     
             InspectSectionSpacingView()
             
-            YonderText(text: Strings("inspect.equip.replacingWith").local, size: .inspectSheetBody)
+            SurroundingBrackets(bracket: "[", size: .inspectSheetBody) {
+                YonderText(
+                    text: Strings("inspect.equip.replacingWith").local,
+                    size: .inspectSheetBody
+                )
+            }
+            .frame(maxWidth: .infinity)
             
-            AccessoryInspectView(accessoryViewModel: self.accessoryViewModel)
-                .embeddedInspectBorder()
+            YonderBorder4 {
+                AccessoryInspectView(
+                    accessoryViewModel: self.accessoryViewModel
+                )
+                .padding(YonderCoreGraphics.innerPadding)
+            }
             
             InspectSectionSpacingView()
             
