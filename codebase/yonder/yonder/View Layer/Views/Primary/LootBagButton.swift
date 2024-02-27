@@ -14,17 +14,34 @@ struct LootBagButton: View {
     @State private var expanded = false
     
     var body: some View {
-        YonderExpandableWideButtonBody(isExpanded: self.$expanded) {
-            VStack(alignment: .leading) {
-                YonderText(text: self.lootBagViewModel.name, size: .buttonBody)
-                    .padding(.bottom, YonderCoreGraphics.buttonTitleSpacing)
+        YonderBorder4 {
+            HStack {
+                VStack(alignment: .leading) {
+                    YonderText(text: self.lootBagViewModel.name, size: .buttonBody)
+                        .padding(.bottom, YonderCoreGraphics.buttonTitleSpacing)
+
+                    YonderText(text: self.lootBagViewModel.description, size: .buttonBodySubscript)
+                }
                 
-                YonderText(text: self.lootBagViewModel.description, size: .buttonBodySubscript)
+                Spacer()
+                
+                Button {
+                    self.lootOptionsViewModel.take(
+                        self.lootBagViewModel,
+                        playerViewModel: self.playerViewModel
+                    )
+                } label: {
+                    YonderBorder5 {
+                        YonderIcon(
+                            image: YonderIcons.selectLootBagIcon,
+                            sideLength: .large
+                        )
+                        .padding(10)
+                    }
+                }
             }
-        } expandedContent: {
-            YonderWideButton(text: Strings("button.select").local) {
-                self.lootOptionsViewModel.take(self.lootBagViewModel, playerViewModel: self.playerViewModel)
-            }
+            .padding(YonderCoreGraphics.innerPadding)
+            .frame(maxWidth: .infinity)
         }
     }
 }
