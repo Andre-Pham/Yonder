@@ -238,7 +238,6 @@
 		655C60B128040BFC007B1E11 /* PurchasableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C60B028040BFC007B1E11 /* PurchasableItem.swift */; };
 		655C60B328040C19007B1E11 /* PurchasableItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C60B228040C19007B1E11 /* PurchasableItemInfo.swift */; };
 		655C60B528041006007B1E11 /* ViewEnhanceablesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C60B428041005007B1E11 /* ViewEnhanceablesButton.swift */; };
-		655C60B928041B1B007B1E11 /* YonderExpandableWideButtonBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C60B828041B1B007B1E11 /* YonderExpandableWideButtonBody.swift */; };
 		655C60BB280422E0007B1E11 /* EnhanceInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C60BA280422E0007B1E11 /* EnhanceInfoViewModel.swift */; };
 		655F98392869646A00A60806 /* IndicativeEffectsDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F98382869646A00A60806 /* IndicativeEffectsDescriptionView.swift */; };
 		655F983B286978E200A60806 /* IndicativeAdditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F983A286978E200A60806 /* IndicativeAdditionView.swift */; };
@@ -2662,7 +2661,6 @@
 		655C60B028040BFC007B1E11 /* PurchasableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasableItem.swift; sourceTree = "<group>"; };
 		655C60B228040C19007B1E11 /* PurchasableItemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasableItemInfo.swift; sourceTree = "<group>"; };
 		655C60B428041005007B1E11 /* ViewEnhanceablesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEnhanceablesButton.swift; sourceTree = "<group>"; };
-		655C60B828041B1B007B1E11 /* YonderExpandableWideButtonBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderExpandableWideButtonBody.swift; sourceTree = "<group>"; };
 		655C60BA280422E0007B1E11 /* EnhanceInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhanceInfoViewModel.swift; sourceTree = "<group>"; };
 		655F98382869646A00A60806 /* IndicativeEffectsDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicativeEffectsDescriptionView.swift; sourceTree = "<group>"; };
 		655F983A286978E200A60806 /* IndicativeAdditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicativeAdditionView.swift; sourceTree = "<group>"; };
@@ -6358,7 +6356,6 @@
 				65CAC18527F947D200A95D92 /* YonderWideButtonBody.swift */,
 				65CAC18727F947F700A95D92 /* YonderWideButton.swift */,
 				65CAC18927F9481600A95D92 /* YonderMultilineWideButton.swift */,
-				655C60B828041B1B007B1E11 /* YonderExpandableWideButtonBody.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -10749,7 +10746,6 @@
 				651B7769293D487500827CB5 /* DotsLoadingScreen.swift in Sources */,
 				656FD8952916EEB500F923E9 /* DataObject.swift in Sources */,
 				65500E6128642C3900A92CA2 /* HealthRestorationBasePill.swift in Sources */,
-				655C60B928041B1B007B1E11 /* YonderExpandableWideButtonBody.swift in Sources */,
 				B6E832952B588B9F001579D1 /* YonderBorder1.swift in Sources */,
 				658D1E5C293E32BB006F1CC0 /* AllPlayerClasses.swift in Sources */,
 				65C2CDE7293B57FF0028DC9C /* YonderImage.swift in Sources */,
