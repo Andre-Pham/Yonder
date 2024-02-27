@@ -40,8 +40,8 @@ struct WidePriceTagView: View {
                 }
             }
             .frame(maxWidth: .infinity)
-            .padding(.horizontal, YonderCoreGraphics.padding*1.5)
-            .padding(.vertical, YonderCoreGraphics.padding)
+            .padding(.horizontal, 18)
+            .padding(.vertical, 14)
         }
     }
 }

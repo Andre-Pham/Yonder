@@ -240,7 +240,6 @@
 		655C60B528041006007B1E11 /* ViewEnhanceablesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C60B428041005007B1E11 /* ViewEnhanceablesButton.swift */; };
 		655C60B928041B1B007B1E11 /* YonderExpandableWideButtonBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C60B828041B1B007B1E11 /* YonderExpandableWideButtonBody.swift */; };
 		655C60BB280422E0007B1E11 /* EnhanceInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C60BA280422E0007B1E11 /* EnhanceInfoViewModel.swift */; };
-		655C60BD2804275E007B1E11 /* PurchaseEnhanceOfferStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C60BC2804275E007B1E11 /* PurchaseEnhanceOfferStateManager.swift */; };
 		655F98392869646A00A60806 /* IndicativeEffectsDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F98382869646A00A60806 /* IndicativeEffectsDescriptionView.swift */; };
 		655F983B286978E200A60806 /* IndicativeAdditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F983A286978E200A60806 /* IndicativeAdditionView.swift */; };
 		655F983D286993E300A60806 /* InventoryWeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F983C286993E300A60806 /* InventoryWeaponsView.swift */; };
@@ -2665,7 +2664,6 @@
 		655C60B428041005007B1E11 /* ViewEnhanceablesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEnhanceablesButton.swift; sourceTree = "<group>"; };
 		655C60B828041B1B007B1E11 /* YonderExpandableWideButtonBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderExpandableWideButtonBody.swift; sourceTree = "<group>"; };
 		655C60BA280422E0007B1E11 /* EnhanceInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhanceInfoViewModel.swift; sourceTree = "<group>"; };
-		655C60BC2804275E007B1E11 /* PurchaseEnhanceOfferStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseEnhanceOfferStateManager.swift; sourceTree = "<group>"; };
 		655F98382869646A00A60806 /* IndicativeEffectsDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicativeEffectsDescriptionView.swift; sourceTree = "<group>"; };
 		655F983A286978E200A60806 /* IndicativeAdditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicativeAdditionView.swift; sourceTree = "<group>"; };
 		655F983C286993E300A60806 /* InventoryWeaponsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryWeaponsView.swift; sourceTree = "<group>"; };
@@ -6303,7 +6301,6 @@
 				65814CF327AACC7D0063B118 /* InventorySheetsStateManager.swift */,
 				6532D66827B2680E0080B58B /* OptionsSheetsStateManager.swift */,
 				65CAC17927F935EB00A95D92 /* InventoryStateManager.swift */,
-				655C60BC2804275E007B1E11 /* PurchaseEnhanceOfferStateManager.swift */,
 				658EDF6428089EF300D398C0 /* PopupStateManager.swift */,
 			);
 			path = "State Managers";
@@ -11020,7 +11017,6 @@
 				B678C1DA2B46B11D00CD6354 /* LootChoiceViewModel.swift in Sources */,
 				654ADCF027557A3300373332 /* NoLocation.swift in Sources */,
 				65311CEC28842D420080A390 /* LootAccessoryButton.swift in Sources */,
-				655C60BD2804275E007B1E11 /* PurchaseEnhanceOfferStateManager.swift in Sources */,
 				65311CE4288398EB0080A390 /* LootGoldButton.swift in Sources */,
 				B6FB4A652B81D52300B809DE /* YonderBorder2Presets.swift in Sources */,
 				65500E5728642AC100A92CA2 /* WeaponEffectPill.swift in Sources */,
