@@ -27,21 +27,29 @@ struct ViewEnhanceablesButton: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            YonderText(text: self.enhanceOfferViewModel.name, size: .buttonBody)
-            
-            YonderText(text: self.enhanceOfferViewModel.description, size: .buttonBodySubscript)
-            
-            HStack(spacing: YonderCoreGraphics.padding) {
-                PriceTagView(price: self.enhanceOfferViewModel.price, indicativePrice: self.playerViewModel.getIndicativePrice(from: self.enhanceOfferViewModel.price))
+        YonderBorder4 {
+            VStack(alignment: .leading) {
+                YonderText(text: self.enhanceOfferViewModel.name, size: .buttonBody)
+                    .padding(.bottom, YonderCoreGraphics.buttonTitleSpacing)
                 
-                YonderWideButton(text: Strings("button.viewOptions").local) {
-                    self.optionsSheetActive = true
+                YonderText(text: self.enhanceOfferViewModel.description, size: .buttonBodySubscript)
+                
+                HStack {
+                    PriceTagView(
+                        price: self.enhanceOfferViewModel.price,
+                        indicativePrice: self.playerViewModel.getIndicativePrice(
+                            from: self.enhanceOfferViewModel.price
+                        )
+                    )
+                    
+                    YonderWideButton(text: Strings("button.viewOptions").local) {
+                        self.optionsSheetActive = true
+                    }
+                    .disabledWhen(self.isDisabled)
                 }
-                .disabledWhen(self.isDisabled)
             }
+            .padding(YonderCoreGraphics.innerPadding)
         }
-        .yonderWideBorder()
         .sheet(isPresented: self.$optionsSheetActive) {
             InspectSheet(isPresented: self.$optionsSheetActive, pageGeometry: self.pageGeometry) {
                 VStack {
