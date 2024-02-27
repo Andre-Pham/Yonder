@@ -22,7 +22,8 @@ struct ActionsView: View {
                 ForEach(self.playerViewModel.applicableWeaponViewModels, id: \.id) { weaponViewModel in
                     UseWeaponButton(
                         playerViewModel: self.playerViewModel,
-                        weaponViewModel: weaponViewModel)
+                        weaponViewModel: weaponViewModel
+                    )
                 }
             }
             
@@ -30,13 +31,17 @@ struct ActionsView: View {
                 ForEach(self.playerViewModel.potionViewModels, id: \.id) { potionViewModel in
                     UsePotionButton(
                         playerViewModel: self.playerViewModel,
-                        potionViewModel: potionViewModel)
+                        potionViewModel: potionViewModel
+                    )
                 }
             }
             
             if self.optionsStateManager.consumableActionsActive {
                 ForEach(self.playerViewModel.consumableViewModels, id: \.id) { consumableViewModel in
-                    UseConsumableButton(playerViewModel: self.playerViewModel, consumableViewModel: consumableViewModel)
+                    UseConsumableButton(
+                        playerViewModel: self.playerViewModel,
+                        consumableViewModel: consumableViewModel
+                    )
                 }
             }
             
