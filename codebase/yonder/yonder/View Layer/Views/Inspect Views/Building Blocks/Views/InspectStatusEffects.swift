@@ -13,27 +13,43 @@ struct InspectStatusEffects: View {
     var body: some View {
         ForEach(self.actorViewModel.statusEffectViewModels, id: \.id) { statusEffectViewModel in
             if let effectsDescription = statusEffectViewModel.effectsDescription {
-                VStack(alignment: .leading, spacing: 0) {
-                    HStack {
-                        YonderText(text: statusEffectViewModel.name, size: .inspectSheetBody)
-                        
-                        YonderText(text: "|", size: .inspectSheetBody)
-                        
-                        YonderTextNumeralHStack {
-                            YonderIconNumeralPair(image: YonderIcons.timeRemainingIcon, numeral: statusEffectViewModel.timeRemaining, size: .inspectSheetBody, iconSize: .inspectSheet)
+                YonderBorder4 {
+                    VStack(alignment: .leading, spacing: 0) {
+                        HStack {
+                            YonderText(text: statusEffectViewModel.name, size: .inspectSheetBody)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 2)
+                                .background(YonderBorder4Presets.outlineColor)
                             
-                            YonderText(text: "/\(statusEffectViewModel.initialTimeRemaining)", size: .inspectSheetBody)
+                            YonderBorder4Presets.outlineColor
+                                .frame(
+                                    width: YonderBorder4Presets.outlineThickness,
+                                    height: YonderBorder4Presets.outlineThickness
+                                )
+                            
+                            YonderTextNumeralHStack {
+                                YonderIconNumeralPair(image: YonderIcons.timeRemainingIcon, numeral: statusEffectViewModel.timeRemaining, size: .inspectSheetBody, iconSize: .inspectSheet)
+                                
+                                YonderText(text: "/\(statusEffectViewModel.initialTimeRemaining)", size: .inspectSheetBody)
+                            }
+                        }
+                        
+                        YonderBorder4Presets.outlineColor
+                            .frame(height: YonderBorder4Presets.outlineThickness)
+                            .padding(.vertical, 6.0)
+                            .padding(.horizontal, -YonderCoreGraphics.innerPadding)
+                        
+                        if let indicative = statusEffectViewModel.getIndicativeValue(actorViewModel: self.actorViewModel) {
+                            IndicativeEffectsDescriptionView(
+                                effectsDescription: effectsDescription,
+                                indicative: indicative,
+                                size: .inspectSheetBody)
+                        } else {
+                            YonderText(text: effectsDescription, size: .inspectSheetBody)
                         }
                     }
-                    
-                    if let indicative = statusEffectViewModel.getIndicativeValue(actorViewModel: self.actorViewModel) {
-                        IndicativeEffectsDescriptionView(
-                            effectsDescription: effectsDescription,
-                            indicative: indicative,
-                            size: .inspectSheetBody)
-                    } else {
-                        YonderText(text: effectsDescription, size: .inspectSheetBody)
-                    }
+                    .padding(YonderCoreGraphics.innerPadding)
+                    .frame(maxWidth: .infinity)
                 }
             }
         }
