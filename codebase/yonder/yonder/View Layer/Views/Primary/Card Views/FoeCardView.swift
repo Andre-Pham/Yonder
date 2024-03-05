@@ -56,9 +56,8 @@ struct FoeCardView: View {
             )
             
             if let bossHint = self.foeViewModel.bossHint {
-                Spacer()
-                
                 YonderText(text: bossHint, size: .cardSubscript)
+                    .padding(.top, 3)
             }
         }
         .onReceive(self.foeViewModel.weaponViewModel.$damage) { damage in

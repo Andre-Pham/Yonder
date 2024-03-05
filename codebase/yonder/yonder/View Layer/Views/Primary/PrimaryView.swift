@@ -31,22 +31,25 @@ struct PrimaryView: View {
                     
                     HStack(spacing: YonderCoreGraphics.padding) {
                         PlayerCardButton(
-                            playerViewModel:
+                            playerViewModel: 
                                 self.playerViewModel,
-                            optionsSheetsStateManager:
-                                self.optionsSheetsStateManager, pageGeometry: geo)
+                            optionsSheetsStateManager: 
+                                self.optionsSheetsStateManager,
+                            pageGeometry: geo
+                        )
                         
                         NPCCardButton(
-                            locationViewModel:
+                            locationViewModel: 
                                 self.playerViewModel.locationViewModel,
                             optionsSheetsStateManager:
                                 self.optionsSheetsStateManager,
-                            pageGeometry: geo)
+                            pageGeometry: geo
+                        )
                         
                     }
                     .padding(.horizontal, YonderCoreGraphics.padding)
                     .frame(maxWidth: .infinity)
-                    .frame(height: geo.size.width/2 - YonderCoreGraphics.padding*1.5)
+                    .frame(minHeight: geo.size.width/2 - YonderCoreGraphics.padding*1.5)
                     
                     YonderText(text: self.optionsStateManager.optionHeader, size: .title5)
                     
