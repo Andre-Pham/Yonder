@@ -52,12 +52,6 @@ struct ItemInspectView: View {
             if self.itemViewModel.requiresFoeForUsage {
                 YonderText(text: Strings("item.requiresCombat").local, size: .inspectSheetBody)
             }
-            
-            InspectSectionSpacingView()
-            
-            if !self.itemViewModel.description.isEmpty {
-                YonderText(text: self.itemViewModel.description, size: .inspectSheetBody)
-            }
         }
     }
 }
