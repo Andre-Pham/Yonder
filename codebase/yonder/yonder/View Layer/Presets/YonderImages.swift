@@ -21,6 +21,7 @@ enum YonderImages {
     
     // MARK: - Background Art
     
+    static let npcShadowImage = YonderImage("Shadow")
     static let forestForegroundImage = YonderImage("ForestForeground")
     static let forestBackgroundImage = YonderImage("ForestBackground")
     static let cavernForegroundImage = YonderImage("CavernForeground")

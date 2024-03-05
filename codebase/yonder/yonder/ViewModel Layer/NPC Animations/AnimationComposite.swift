@@ -15,6 +15,7 @@ class AnimationManager: ObservableObject, SequenceDelegate {
     private static let FRAMES_DATA_PREFIX = "FRAMES-"
     
     @Published private(set) var frame: Image
+    private(set) var emptyAnimation = false
     private var sequences = [String: AnimationSequence]()
     private var playbackSpeed = 1.0
     private(set) var activeSequenceCode: SequenceCode
@@ -37,6 +38,7 @@ class AnimationManager: ObservableObject, SequenceDelegate {
         self.frame = Image(uiImage: UIImage())
         guard let fileID else {
             // No fileID provided - empty animation (completely valid)
+            self.emptyAnimation = true
             return
         }
         guard let spriteSheet = UIImage(named: Self.SPRITE_SHEET_PREFIX + fileID) else {
@@ -80,6 +82,7 @@ class AnimationManager: ObservableObject, SequenceDelegate {
         self.frame = Image(uiImage: UIImage())
         guard let fileID else {
             // No fileID provided - empty animation (completely valid)
+            self.emptyAnimation = true
             return
         }
         guard let spriteSheet = UIImage(named: Self.SPRITE_SHEET_PREFIX + fileID) else {
@@ -108,6 +111,7 @@ class AnimationManager: ObservableObject, SequenceDelegate {
             self.getSequence(code).setDelegate(to: self)
         }
         self.setupSequences()
+        self.emptyAnimation = false
         if wasPlaying {
             // Restore state
             self.play()
