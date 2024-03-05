@@ -14,7 +14,7 @@ struct AccessoryInspectView: View {
         InspectBody {
             YonderText(text: self.accessoryViewModel.name, size: .inspectSheetTitle)
             
-            YonderText(text: self.accessoryViewModel.accessoryTypeDescription, size: .inspectSheetBody)
+            InspectTagView(tag: self.accessoryViewModel.inspectTag)
             
             InspectSectionSpacingView()
             

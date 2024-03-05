@@ -27,6 +27,7 @@ enum YonderTextSize {
     
     case inspectSheetTitle
     case inspectSheetBody
+    case inspectSheetTag
     
     case optionBody
     
@@ -49,6 +50,7 @@ enum YonderTextSize {
         
         case .inspectSheetTitle: return 28
         case .inspectSheetBody: return 20
+        case .inspectSheetTag: return 18
             
         case .optionBody: return 16
         }

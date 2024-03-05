@@ -14,6 +14,10 @@ struct ItemInspectView: View {
     var body: some View {
         InspectBody {
             YonderText(text: self.itemViewModel.name, size: .inspectSheetTitle)
+            
+            InspectTagView(tag: self.itemViewModel.inspectTag)
+            
+            InspectSectionSpacingView()
                 
             InspectStatsBody {
                 if self.itemViewModel.damage > 0 {

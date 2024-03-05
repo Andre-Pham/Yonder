@@ -11,13 +11,16 @@ import Combine
 class ConsumableViewModel: ItemViewModel {
     
     init(_ consumable: Consumable) {
-        super.init(consumable,
-                   remainingUsesDescription: Strings("stat.consumable.remainingUses").local,
-                   damageImage: YonderIcons.consumableDamageIcon,
-                   restorationImage: YonderIcons.consumableRestorationIcon,
-                   healthRestorationImage: YonderIcons.consumableHealthRestorationIcon,
-                   armorPointsRestorationImage: YonderIcons.consumableArmorPointsRestorationIcon,
-                   remainingUsesImage: YonderIcons.consumableRemainingUsesIcon)
+        super.init(
+            consumable,
+            remainingUsesDescription: Strings("stat.consumable.remainingUses").local,
+            inspectTag: Strings("inspect.tag.consumable").local,
+            damageImage: YonderIcons.consumableDamageIcon,
+            restorationImage: YonderIcons.consumableRestorationIcon,
+            healthRestorationImage: YonderIcons.consumableHealthRestorationIcon,
+            armorPointsRestorationImage: YonderIcons.consumableArmorPointsRestorationIcon,
+            remainingUsesImage: YonderIcons.consumableRemainingUsesIcon
+        )
         self.setEffectsDescription(to: consumable.effectsDescription)
         
         consumable.$effectsDescription.sink(receiveValue: { newValue in

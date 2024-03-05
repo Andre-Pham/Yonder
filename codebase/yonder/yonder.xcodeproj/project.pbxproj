@@ -576,6 +576,7 @@
 		B678C1D42B46961600CD6354 /* LootChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C1D32B46961600CD6354 /* LootChoice.swift */; };
 		B678C1D82B46B11100CD6354 /* LootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C1D72B46B11100CD6354 /* LootViewModel.swift */; };
 		B678C1DA2B46B11D00CD6354 /* LootChoiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C1D92B46B11D00CD6354 /* LootChoiceViewModel.swift */; };
+		B68266DE2B9722130079200B /* InspectTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68266DD2B9722130079200B /* InspectTagView.swift */; };
 		B69E29D82B8C6FD2000C8809 /* YonderBorder7.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29D72B8C6FD2000C8809 /* YonderBorder7.swift */; };
 		B69E29DA2B8CAF4A000C8809 /* YonderBorder7Presets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29D92B8CAF4A000C8809 /* YonderBorder7Presets.swift */; };
 		B69E29DD2B8CB466000C8809 /* YonderBorder8.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29DC2B8CB466000C8809 /* YonderBorder8.swift */; };
@@ -3001,6 +3002,7 @@
 		B678C1D32B46961600CD6354 /* LootChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootChoice.swift; sourceTree = "<group>"; };
 		B678C1D72B46B11100CD6354 /* LootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootViewModel.swift; sourceTree = "<group>"; };
 		B678C1D92B46B11D00CD6354 /* LootChoiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootChoiceViewModel.swift; sourceTree = "<group>"; };
+		B68266DD2B9722130079200B /* InspectTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectTagView.swift; sourceTree = "<group>"; };
 		B69E29D72B8C6FD2000C8809 /* YonderBorder7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder7.swift; sourceTree = "<group>"; };
 		B69E29D92B8CAF4A000C8809 /* YonderBorder7Presets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder7Presets.swift; sourceTree = "<group>"; };
 		B69E29DC2B8CB466000C8809 /* YonderBorder8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder8.swift; sourceTree = "<group>"; };
@@ -5227,6 +5229,7 @@
 				65A38878288AC85F006541FB /* InspectEquipmentEffects.swift */,
 				658D1E7B2940DB33006F1CC0 /* InspectFoeStatus.swift */,
 				658D1E7D2940DC6E006F1CC0 /* InspectPlayerStatus.swift */,
+				B68266DD2B9722130079200B /* InspectTagView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -10813,6 +10816,7 @@
 				656FD932291FFF0800F923E9 /* FreeWeaponOffer.swift in Sources */,
 				6531F698282938FF003E25E1 /* InspectNPCTypeView.swift in Sources */,
 				655C60A128001D6C007B1E11 /* ArmorPointsEnhanceOffer.swift in Sources */,
+				B68266DE2B9722130079200B /* InspectTagView.swift in Sources */,
 				B6FB4A6E2B81E4F500B809DE /* YonderBorder5Presets.swift in Sources */,
 				65500E6D28642D3300A92CA2 /* DefaultPlayerWeapon.swift in Sources */,
 				65BD0E9E27A4F1690054D345 /* OptionsStateManager.swift in Sources */,

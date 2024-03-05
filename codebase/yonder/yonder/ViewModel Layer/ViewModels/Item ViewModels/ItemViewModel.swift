@@ -24,6 +24,7 @@ class ItemViewModel: ObservableObject {
     @Published private(set) var name: String
     @Published private(set) var description: String
     private(set) var remainingUsesDescription: String
+    private(set) var inspectTag: String
     private(set) var damageImage: Image
     private(set) var restorationImage: Image
     private(set) var healthRestorationImage: Image
@@ -33,16 +34,19 @@ class ItemViewModel: ObservableObject {
     @Published private(set) var effectsDescription: String? = nil
     public let requiresFoeForUsage: Bool
     
-    init(_ item: Item,
-         remainingUsesDescription: String,
-         damageImage: Image,
-         restorationImage: Image,
-         healthRestorationImage: Image,
-         armorPointsRestorationImage: Image,
-         remainingUsesImage: Image
+    init(
+        _ item: Item,
+        remainingUsesDescription: String,
+        inspectTag: String,
+        damageImage: Image,
+        restorationImage: Image,
+        healthRestorationImage: Image,
+        armorPointsRestorationImage: Image,
+        remainingUsesImage: Image
     ) {
         self.item = item
         self.remainingUsesDescription = remainingUsesDescription
+        self.inspectTag = inspectTag
         self.damageImage = damageImage
         self.restorationImage = restorationImage
         self.healthRestorationImage = healthRestorationImage

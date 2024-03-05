@@ -18,6 +18,7 @@ class AccessoryViewModel: ObservableObject {
     @Published private(set) var armorPointsBonus: Int
     public let name: String
     public let description: String
+    public let inspectTag: String
     public let id: UUID
     @Published private(set) var effectsDescription: String?
     @Published private(set) var buffViewModels: [BuffViewModel] {
@@ -29,14 +30,6 @@ class AccessoryViewModel: ObservableObject {
         }
     }
     @Published private(set) var equipmentEffectViewModels: [EquipmentEffectViewModel]
-    var accessoryTypeDescription: String {
-        switch self.accessory.type {
-        case .peripheral:
-            return Strings("accessory.accessoryType.peripheral.name").local
-        case .regular:
-            return Strings("accessory.accessoryType.regular.name").local
-        }
-    }
     var noStats: Bool {
         return !(self.healthBonus > 0 || self.armorPointsBonus > 0)
     }
@@ -51,6 +44,12 @@ class AccessoryViewModel: ObservableObject {
         self.armorPointsBonus = accessory.armorPointsBonus
         self.name = accessory.name
         self.description = accessory.description
+        switch self.accessory.type {
+        case .regular:
+            self.inspectTag = Strings("inspect.tag.accessory.regular").local
+        case .peripheral:
+            self.inspectTag = Strings("inspect.tag.accessory.peripheral").local
+        }
         self.id = accessory.id
         self.effectsDescription = accessory.getEffectsDescription()
         self.buffViewModels = self.accessory.buffs.map { BuffViewModel($0) }

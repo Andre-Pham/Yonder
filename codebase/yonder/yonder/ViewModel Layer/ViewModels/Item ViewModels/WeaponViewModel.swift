@@ -14,13 +14,16 @@ class WeaponViewModel: ItemViewModel {
     @Published private(set) var previewEffectsDescription: String?
     
     init(_ weapon: Weapon) {
-        super.init(weapon,
-                   remainingUsesDescription: Strings("stat.weapon.remainingUses").local,
-                   damageImage: YonderIcons.weaponDamageIcon,
-                   restorationImage: YonderIcons.weaponRestorationIcon,
-                   healthRestorationImage: YonderIcons.weaponHealthRestorationIcon,
-                   armorPointsRestorationImage: YonderIcons.weaponArmorPointsRestorationIcon,
-                   remainingUsesImage: YonderIcons.weaponRemainingUsesIcon)
+        super.init(
+            weapon,
+            remainingUsesDescription: Strings("stat.weapon.remainingUses").local,
+            inspectTag: Strings("inspect.tag.weapon").local,
+            damageImage: YonderIcons.weaponDamageIcon,
+            restorationImage: YonderIcons.weaponRestorationIcon,
+            healthRestorationImage: YonderIcons.weaponHealthRestorationIcon,
+            armorPointsRestorationImage: YonderIcons.weaponArmorPointsRestorationIcon,
+            remainingUsesImage: YonderIcons.weaponRemainingUsesIcon
+        )
         self.previewEffectsDescription = weapon.getPreviewEffectsDescription()
         self.setEffectsDescription(to: weapon.getEffectsDescription())
         

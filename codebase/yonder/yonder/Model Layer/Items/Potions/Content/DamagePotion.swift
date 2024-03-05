@@ -42,7 +42,7 @@ class DamagePotion: Potion {
         super.init(
             name: Strings("potion.damage.name").local.continuedBy(tier.string),
             description: Strings("potion.damage.description").local,
-            effectsDescription: Strings("potion.damage.effectsDescription1Param").localWithArgs(tier.damage),
+            effectsDescription: nil,
             remainingUses: potionCount,
             damage: tier.damage,
             requiresFoeForUsage: true
