@@ -18,11 +18,17 @@ struct YonderSquareButton: View {
         Button {
             action()
         } label: {
-            YonderText(text: self.text, size: .buttonBody)
-                .frame(width: YonderTextSize.buttonBody.value + self.verticalPadding*2)
-                .padding(.vertical, self.verticalPadding)
-                .background(YonderColors.backgroundMaxDepth) // Ensures entire button can be tapped
-                .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
+            YonderBorder3 {
+                YonderText(text: self.text, size: .buttonBody)
+                    .frame(width: YonderTextSize.buttonBody.value + self.verticalPadding*2)
+                    .padding(.vertical, self.verticalPadding)
+            }
         }
+    }
+}
+
+#Preview {
+    PreviewContentView {
+        YonderSquareButton(text: "i") { }
     }
 }
