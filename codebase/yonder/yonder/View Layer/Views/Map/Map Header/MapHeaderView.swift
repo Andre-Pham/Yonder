@@ -34,5 +34,6 @@ struct MapHeaderView: View {
         }
         .padding(.bottom, YonderCoreGraphics.padding)
         .padding(.horizontal, YonderCoreGraphics.padding)
+        .background(YonderColors.backgroundMaxDepth)
     }
 }

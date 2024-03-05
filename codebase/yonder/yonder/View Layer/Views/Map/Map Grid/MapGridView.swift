@@ -174,6 +174,8 @@ struct MapGridView: View {
         .padding(0.001) // Stops jittering
         .reverseScroll()
         .environmentObject(self.gridDimensions)
+        .padding(.top, -300.0*self.scaleStateManager.scale) // SEE: https://github.com/Andre-Pham/Yonder/issues/3
+        .padding(.bottom, -100.0*self.scaleStateManager.scale) // SEE: https://github.com/Andre-Pham/Yonder/issues/3
         .onAppear {
             self.locationConnections = GameManager.instance.getMapLocationConnections(gridDimensions: self.gridDimensions)
             
