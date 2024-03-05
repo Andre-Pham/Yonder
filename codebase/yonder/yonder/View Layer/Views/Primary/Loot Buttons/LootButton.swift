@@ -15,25 +15,25 @@ struct LootButton: View {
     var onInfo: () -> Void = {}
     
     var body: some View {
-        VStack(alignment: .leading) {
-            YonderText(text: self.text, size: .buttonBody)
-            
-            HStack {
-                if self.infoButton {
-                    YonderWideButton(text: Strings("button.info").local) {
-                        self.onInfo()
+        YonderBorder4 {
+            VStack(alignment: .leading) {
+                YonderText(text: self.text, size: .buttonBody)
+                
+                HStack {
+                    if self.infoButton {
+                        YonderWideButton(text: Strings("button.info").local) {
+                            self.onInfo()
+                        }
+                    }
+                    
+                    YonderWideButton(text: self.collectText) {
+                        self.onSelect()
                     }
                 }
-                
-                YonderWideButton(text: self.collectText) {
-                    self.onSelect()
-                }
             }
+            .padding(YonderCoreGraphics.innerPadding)
+            .frame(maxWidth: .infinity)
         }
-        .frame(maxWidth: .infinity)
-        .padding(YonderCoreGraphics.padding)
-        .background(YonderColors.backgroundMaxDepth)
-        .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
     }
 }
 

@@ -125,8 +125,17 @@
 // Confirm Equip
 "inspect.equip.armor.title" = "Confirm Armor Equip";
 "inspect.equip.peripheralAccessory.title" = "Confirm Accessory Equip";
-"inspect.equip.currentlyEquipped" = "Currently equipped:";
-"inspect.equip.replacingWith" = "Replacing with:";
+"inspect.equip.currentlyEquipped" = "Currently Equipped";
+"inspect.equip.replacingWith" = "Replacing With";
+
+"inspect.tag.consumable" = "Item";
+"inspect.tag.weapon" = "Weapon";
+"inspect.tag.potion" = "Potion";
+"inspect.tag.armor.head" = "Head Armor";
+"inspect.tag.armor.body" = "Body Armor";
+"inspect.tag.armor.legs" = "Legs Armor";
+"inspect.tag.accessory.regular" = "Accessory";
+"inspect.tag.accessory.peripheral" = "Peripheral Accessory";
 
 // Restorer
 "inspect.restorer.for" = "for";
@@ -160,6 +169,7 @@
 "button.finished" = "Finished";
 "button.requiresCombat" = "Requires Combat";
 "button.cancel" = "Cancel";
+"button.acceptOffer" = "Accept Offer";
 
 // MARK: - Stats
 
@@ -183,8 +193,8 @@
 "stat.weapon.remainingUses" = "Durability";
 
 // Potion
-"stat.potion.remainingUsesSingular" = "Potion";
-"stat.potion.remainingUses" = "Potions";
+"stat.potion.remainingUsesSingular" = "Potion Left";
+"stat.potion.remainingUses" = "Potions Left";
 
 // Consumable
 "stat.consumable.remaining" = "Remaining";
@@ -441,12 +451,10 @@
 // Health Restoration Potion
 "potion.healthRestoration.name" = "Health Potion";
 "potion.healthRestoration.description" = "A scarlet red solution brews in a clear elongated bottle. Warm to the touch, it smells of acrid.";
-"potion.healthRestoration.effectsDescription1Param" = "Restores %@ health.";
 
 // Damage Potion
 "potion.damage.name" = "Damage Potion";
 "potion.damage.description" = "A cloudy concoction of shadowy purple and black streaks swirl in a pointed flask. You hear faint whispers when raising the flask to ear. The rigid form provides a confident grip for throwing.";
-"potion.damage.effectsDescription1Param" = "Inflicts %@ damage.";
 
 // Damage Buff Potion
 "potion.damagePercent.name" = "Damage Buff Potion";
@@ -800,11 +808,6 @@
 "armor.noArmor.legsDescription" = "No legs armor equipped.";
 
 // MARK: - Accessories
-
-// Accessory Type
-"accessory.accessoryType.regular.name" = "Accessory";
-"accessory.accessoryType.regular.namePlural" = "Accessories";
-"accessory.accessoryType.peripheral.name" = "Peripheral Accessory";
 
 // No Accessory
 "accessory.noAccessory.name" = "Empty";

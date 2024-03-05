@@ -10,12 +10,21 @@ import SwiftUI
 struct LocationView: View {
     @ObservedObject var locationViewModel: LocationViewModel
     @StateObject var animationQueue: NPCAnimation
-    // Assigned on onAppear
-    @State private var viewHeight = 0.0
-    // Magic number for scaling down size, smaller number -> larger image
-    private let sizeDial = 178.0
+    // TODO: These (background/foreground) are currently unused, but likely will serve a purpose down the road
     private let background: YonderImage
     private let foreground: YonderImage
+    // Adjust to preference
+    private let viewHeight = 200.0
+    // Sprites tend to be slightly right-leaning and centre better when adjusted
+    private var xOffset: Double = -4.0
+    private var yOffset: Double {
+        return -1.5*self.animationQueue.frameSize.height + 130.0 + 50*(self.viewHeight - 200.0)/100.0
+    }
+    
+    // Note to future self:
+    // If I ever wish to check if the animation is empty
+    // I created a property on the animation queue:
+    // self.animationQueue.emptyAnimation
     
     init(locationViewModel: LocationViewModel, optionsStateManager: OptionsStateManager) {
         self.locationViewModel = locationViewModel
@@ -26,65 +35,30 @@ struct LocationView: View {
     }
     
     var body: some View {
-        GeometryReader { geo in
-            let viewWidth = geo.size.width
-            let cardWidth = viewWidth - YonderCoreGraphics.borderWidth*2
-            let cardHeight = cardWidth/(self.background.width/self.background.height)
-            let viewHeight = cardHeight + YonderCoreGraphics.borderWidth*2
-            ZStack(alignment: .bottom) {
-                self.background.image
+        Color.clear
+            .frame(height: self.viewHeight)
+            .overlay {
+                VStack(spacing: 0) {
+                    Spacer()
+                    
+                    YonderImages.npcShadowImage.image
+                        .resizable()
+                        .interpolation(.none)
+                        .scaledToFit()
+                        .offset(y: -2)
+                        .frame(width: 200)
+                }
+            }
+            // Overlay because the animation frame is actually larger than the view frame
+            // If we want to position it relative to it, we need to overlay (or use a ZStack)
+            .overlay {
+                self.animationQueue.frame
                     .resizable()
                     .interpolation(.none)
-                    .scaledToFill()
-                    .overlay {
-                        if let name = self.locationViewModel.getNPCName() {
-                            VStack {
-                                YonderText(text: name, size: .cardSubscript)
-                                    .padding(.horizontal, 9)
-                                    .padding(.vertical, 4)
-                                    .background(.black.opacity(0.5))
-                                    .padding()
-                                
-                                Spacer()
-                            }
-                            .frame(width: cardWidth, height: cardHeight)
-                        }
-                    }
-                    .overlay(alignment: .bottom) {
-                        self.animationQueue.frame
-                            .resizable()
-                            .interpolation(.none)
-                            .scaledToFit()
-                            .frame(
-                                width: viewWidth*self.animationQueue.frameSize.width/self.sizeDial,
-                                height: viewWidth*self.animationQueue.frameSize.height/self.sizeDial
-                            )
-                            // These offsets need to be relative to the geometry size because these change from device to device so aspect ratios need to be maintained for consistent viewing
-                            .offset(y: viewWidth/35.0) // Magic
-                            // Sprites tend to be slightly right-leaning and centre better when adjusted
-                            .offset(x: -viewWidth/80.0) // Magic
-                    }
-                    // Set frame after overlay - any animations that extend outside the card's frame are clipped
-                    .frame(width: cardWidth, height: cardHeight)
-                    .clipped()
-                    .offset(x: YonderCoreGraphics.borderWidth, y: YonderCoreGraphics.borderWidth)
-                
-                self.foreground.image
-                    .resizable()
-                    .interpolation(.none)
-                    .scaledToFill()
-                    .frame(width: cardWidth, height: cardHeight)
-                    .clipped()
-                    .offset(x: YonderCoreGraphics.borderWidth, y: YonderCoreGraphics.borderWidth)
+                    .scaledToFit()
+                    .frame(height: 3.0*self.animationQueue.frameSize.height)
+                    .offset(x: self.xOffset, y: self.yOffset)
             }
-            .onAppear {
-                self.viewHeight = viewHeight
-            }
-        }
-        .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
-        .frame(maxWidth: .infinity)
-        .frame(height: self.viewHeight)
-        .padding(.horizontal, YonderCoreGraphics.padding)
     }
 }
 

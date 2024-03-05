@@ -14,20 +14,20 @@ struct ArmorInspectView: View {
         InspectBody {
             YonderText(text: self.armorViewModel.name, size: .inspectSheetTitle)
             
+            InspectTagView(tag: self.armorViewModel.inspectTag)
+            
+            InspectSectionSpacingView()
+            
             InspectStatsBody {
-                YonderText(text: "\(Strings("armor.armorSlot").local): \(self.armorViewModel.type.name)", size: .inspectSheetBody)
-                
-                InspectStatView(title: Strings("stat.shields").local, value: self.armorViewModel.armorPoints, image: YonderIcons.armorPointsIcon)
+                InspectStatView(
+                    title: Strings("stat.shields").local,
+                    value: self.armorViewModel.armorPoints,
+                    image: YonderIcons.armorPointsIcon
+                )
             }
             
             if let effectsDescription = self.armorViewModel.effectsDescription {
                 YonderText(text: effectsDescription, size: .inspectSheetBody)
-            }
-            
-            InspectSectionSpacingView()
-            
-            if !self.armorViewModel.description.isEmpty {
-                YonderText(text: self.armorViewModel.description, size: .inspectSheetBody)
             }
         }
     }

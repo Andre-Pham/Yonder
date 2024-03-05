@@ -19,6 +19,7 @@ class ArmorViewModel: ObservableObject {
     private(set) var type: ArmorType
     private(set) var name: String
     private(set) var description: String
+    private(set) var inspectTag: String
     @Published private(set) var effectsDescription: String?
     @Published private(set) var buffViewModels: [BuffViewModel] {
         didSet {
@@ -40,6 +41,14 @@ class ArmorViewModel: ObservableObject {
         self.type = self.armor.type
         self.name = self.armor.name
         self.description = self.armor.description
+        switch self.type {
+        case .head:
+            self.inspectTag = Strings("inspect.tag.armor.head").local
+        case .body:
+            self.inspectTag = Strings("inspect.tag.armor.body").local
+        case .legs:
+            self.inspectTag = Strings("inspect.tag.armor.legs").local
+        }
         self.effectsDescription = self.armor.getEffectsDescription()
         self.buffViewModels = self.armor.armorBuffs.map { BuffViewModel($0) }
         self.equipmentEffectViewModels = self.armor.equipmentPills.map { EquipmentEffectViewModel($0) }

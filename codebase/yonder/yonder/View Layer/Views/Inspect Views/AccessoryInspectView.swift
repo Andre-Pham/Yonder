@@ -14,7 +14,7 @@ struct AccessoryInspectView: View {
         InspectBody {
             YonderText(text: self.accessoryViewModel.name, size: .inspectSheetTitle)
             
-            YonderText(text: self.accessoryViewModel.accessoryTypeDescription, size: .inspectSheetBody)
+            InspectTagView(tag: self.accessoryViewModel.inspectTag)
             
             InspectSectionSpacingView()
             
@@ -32,12 +32,6 @@ struct AccessoryInspectView: View {
             
             if let effectsDescription = self.accessoryViewModel.effectsDescription {
                 YonderText(text: effectsDescription, size: .inspectSheetBody)
-                
-                InspectSectionSpacingView()
-            }
-            
-            if !self.accessoryViewModel.description.isEmpty {
-                YonderText(text: self.accessoryViewModel.description, size: .inspectSheetBody)
             }
         }
     }

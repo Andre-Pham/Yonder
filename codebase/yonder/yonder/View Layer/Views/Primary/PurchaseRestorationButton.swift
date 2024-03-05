@@ -10,11 +10,10 @@ import SwiftUI
 struct PurchaseRestorationButton: View {
     @ObservedObject var playerViewModel: PlayerViewModel
     @ObservedObject var restorationOptionViewModel: RestoreOptionViewModel
-    @State private var useButtonActive = false
     private let baseRestorationAmount = Restorer.bundleSize
     
     var body: some View {
-        YonderExpandableWideButtonBody(isExpanded: self.$useButtonActive) {
+        YonderBorder4 {
             VStack {
                 HStack {
                     YonderText(text: "\(Strings("button.restore").local):", size: .buttonBody)
@@ -30,14 +29,26 @@ struct PurchaseRestorationButton: View {
                     
                     Spacer()
                     
-                    PriceTagView(price: self.restorationOptionViewModel.getBundlePrice(), indicativePrice: self.playerViewModel.getIndicativePrice(from: self.restorationOptionViewModel.getBundlePrice()))
+                    PriceTagButton(
+                        price: self.restorationOptionViewModel.getBundlePrice(),
+                        indicativePrice: self.playerViewModel.getIndicativePrice(
+                            from: self.restorationOptionViewModel.getBundlePrice()
+                        )
+                    ) {
+                        self.restorationOptionViewModel.restore(
+                            amount: self.baseRestorationAmount,
+                            to: self.playerViewModel
+                        )
+                    }
+                    .disabledWhen(
+                        self.restorationOptionViewModel.restoreIsDisabled(
+                            playerViewModel: self.playerViewModel,
+                            amount: self.baseRestorationAmount
+                        )
+                    )
                 }
             }
-        } expandedContent: {
-            YonderWideButton(text: Strings("button.purchase").local) {
-                self.restorationOptionViewModel.restore(amount: self.baseRestorationAmount, to: self.playerViewModel)
-            }
-            .disabledWhen(self.restorationOptionViewModel.restoreIsDisabled(playerViewModel: self.playerViewModel, amount: self.baseRestorationAmount))
+            .padding(YonderCoreGraphics.innerPadding)
         }
     }
 }

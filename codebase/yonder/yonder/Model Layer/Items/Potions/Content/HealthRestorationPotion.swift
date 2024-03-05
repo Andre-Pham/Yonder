@@ -42,7 +42,7 @@ class HealthRestorationPotion: Potion {
         super.init(
             name: Strings("potion.healthRestoration.name").local.continuedBy(tier.string),
             description: Strings("potion.healthRestoration.description").local,
-            effectsDescription: Strings("potion.healthRestoration.effectsDescription1Param").localWithArgs(tier.healthRestoration),
+            effectsDescription: nil,
             remainingUses: potionCount,
             healthRestoration: tier.healthRestoration,
             requiresFoeForUsage: false

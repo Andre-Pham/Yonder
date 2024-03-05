@@ -15,10 +15,16 @@ struct MapView: View {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
+            // Note:
+            // This layout transitioned from a VStack to a (technically less efficient) overlay
+            // For reasoning, see: https://github.com/Andre-Pham/Yonder/issues/3
+            
+            MapGridView(scaleStateManager: self.scaleStateManager)
+            
             VStack(spacing: 0) {
                 MapHeaderView(scaleStateManager: self.scaleStateManager)
                 
-                MapGridView(scaleStateManager: self.scaleStateManager)
+                Spacer()
             }
         }
     }

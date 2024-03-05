@@ -14,22 +14,40 @@ struct InspectBuffs: View {
     var body: some View {
         ForEach(self.actorViewModel.allBuffs, id: \.id) { buffViewModel in
             if let effectsDescription = buffViewModel.effectsDescription {
-                VStack(alignment: .leading, spacing: 0) {
-                    HStack {
-                        YonderText(text: buffViewModel.sourceName, size: .inspectSheetBody)
-                        
-                        if let timeRemaining = buffViewModel.timeRemaining, let initialTimeRemaining = buffViewModel.initialTimeRemaining {
-                            YonderText(text: "|", size: .inspectSheetBody)
+                YonderBorder4 {
+                    VStack(alignment: .leading, spacing: 0) {
+                        HStack {
+                            YonderText(text: buffViewModel.sourceName, size: .inspectSheetBody)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 2)
+                                .background(YonderBorder4Presets.outlineColor)
                             
-                            YonderTextNumeralHStack {
-                                YonderIconNumeralPair(image: YonderIcons.timeRemainingIcon, numeral: timeRemaining, size: .inspectSheetBody, iconSize: .inspectSheet)
+                            if let timeRemaining = buffViewModel.timeRemaining,
+                               let initialTimeRemaining = buffViewModel.initialTimeRemaining {
                                 
-                                YonderText(text: "/\(initialTimeRemaining)", size: .inspectSheetBody)
+                                YonderBorder4Presets.outlineColor
+                                    .frame(
+                                        width: YonderBorder4Presets.outlineThickness,
+                                        height: YonderBorder4Presets.outlineThickness
+                                    )
+                                
+                                YonderTextNumeralHStack {
+                                    YonderIconNumeralPair(image: YonderIcons.timeRemainingIcon, numeral: timeRemaining, size: .inspectSheetBody, iconSize: .inspectSheet)
+                                    
+                                    YonderText(text: "/\(initialTimeRemaining)", size: .inspectSheetBody)
+                                }
                             }
                         }
+                        
+                        YonderBorder4Presets.outlineColor
+                            .frame(height: YonderBorder4Presets.outlineThickness)
+                            .padding(.vertical, 6.0)
+                            .padding(.horizontal, -YonderCoreGraphics.innerPadding)
+                        
+                        YonderText(text: effectsDescription, size: .inspectSheetBody)
                     }
-                    
-                    YonderText(text: effectsDescription, size: .inspectSheetBody)
+                    .padding(YonderCoreGraphics.innerPadding)
+                    .frame(maxWidth: .infinity)
                 }
             }
         }

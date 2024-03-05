@@ -62,6 +62,13 @@ enum YonderIcons {
     static let armorIcon = Image("Bracer")
     static let consumableIcon = Image("Fruit")
     
+    // MARK: - Action Icons
+    
+    static let useWeaponIcon = Image("Sword")
+    static let usePotionIcon = Image("Potion")
+    static let useConsumableIcon = Image("Fruit")
+    static let selectLootBagIcon = Image("Bag")
+    
     // MARK: - Location Icons
     
     static let hostileIcon = Image("Skull")

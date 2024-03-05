@@ -158,7 +158,7 @@ struct MapGridView: View {
                     }
                 }
             }
-            .padding(.vertical, 75)
+            .padding(.vertical, 150)
             .padding(.leading, 50)
             .padding(.trailing, 50 - (self.gridDimensions.distanceBetweenColumnCentres)) // Account for removed last column
             .background(
@@ -168,12 +168,15 @@ struct MapGridView: View {
             )
             .frame(
                 width: self.scaleStateManager.scrollViewSizeScaledWidth,
-                height: self.scaleStateManager.scrollViewSizeScaledHeight)
+                height: self.scaleStateManager.scrollViewSizeScaledHeight
+            )
             .scaleEffect(self.scaleStateManager.scale)
         }
         .padding(0.001) // Stops jittering
         .reverseScroll()
         .environmentObject(self.gridDimensions)
+        .padding(.top, -300.0*self.scaleStateManager.scale) // SEE: https://github.com/Andre-Pham/Yonder/issues/3
+        .padding(.bottom, -100.0*self.scaleStateManager.scale) // SEE: https://github.com/Andre-Pham/Yonder/issues/3
         .onAppear {
             self.locationConnections = GameManager.instance.getMapLocationConnections(gridDimensions: self.gridDimensions)
             

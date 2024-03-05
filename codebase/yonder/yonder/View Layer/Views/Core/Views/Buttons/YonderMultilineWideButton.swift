@@ -22,40 +22,40 @@ struct YonderMultilineWideButton: View {
         Button {
             action()
         } label: {
-            VStack {
-                switch self.alignment {
-                case .center:
-                    ForEach(Array(zip(self.text.indices, self.text)), id: \.0.self) { index, text in
-                        YonderText(text: text, size: index == 0 ? .buttonBody : .buttonBodySubscript)
-                            .padding(.horizontal)
-                            .padding(.bottom, index == 0 && self.isMultiline ? YonderCoreGraphics.buttonTitleSpacing : 0)
-                    }
-                case .leading:
-                    ForEach(Array(zip(self.text.indices, self.text)), id: \.0.self) { index, text in
-                        HStack {
+            YonderBorder3 {
+                VStack {
+                    switch self.alignment {
+                    case .center:
+                        ForEach(Array(zip(self.text.indices, self.text)), id: \.0.self) { index, text in
                             YonderText(text: text, size: index == 0 ? .buttonBody : .buttonBodySubscript)
-                                .padding(.leading)
+                                .padding(.horizontal)
                                 .padding(.bottom, index == 0 && self.isMultiline ? YonderCoreGraphics.buttonTitleSpacing : 0)
-                            
-                            Spacer()
                         }
-                    }
-                case .trailing:
-                    ForEach(Array(zip(self.text.indices, self.text)), id: \.0.self) { index, text in
-                        HStack {
-                            Spacer()
-                            
-                            YonderText(text: text, size: index == 0 ? .buttonBody : .buttonBodySubscript)
-                                .padding(.trailing)
-                                .padding(.bottom, index == 0 && self.isMultiline ? YonderCoreGraphics.buttonTitleSpacing : 0)
+                    case .leading:
+                        ForEach(Array(zip(self.text.indices, self.text)), id: \.0.self) { index, text in
+                            HStack {
+                                YonderText(text: text, size: index == 0 ? .buttonBody : .buttonBodySubscript)
+                                    .padding(.leading)
+                                    .padding(.bottom, index == 0 && self.isMultiline ? YonderCoreGraphics.buttonTitleSpacing : 0)
+                                
+                                Spacer()
+                            }
+                        }
+                    case .trailing:
+                        ForEach(Array(zip(self.text.indices, self.text)), id: \.0.self) { index, text in
+                            HStack {
+                                Spacer()
+                                
+                                YonderText(text: text, size: index == 0 ? .buttonBody : .buttonBodySubscript)
+                                    .padding(.trailing)
+                                    .padding(.bottom, index == 0 && self.isMultiline ? YonderCoreGraphics.buttonTitleSpacing : 0)
+                            }
                         }
                     }
                 }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, self.verticalPadding)
             }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, self.verticalPadding)
-            .background(YonderColors.backgroundMaxDepth) // Ensures entire button can be tapped
-            .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
         }
     }
 }

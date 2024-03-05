@@ -27,14 +27,18 @@ struct YonderGridOption: View {
         Button {
             action()
         } label: {
-            VStack {
-                YonderIcon(image: self.image, sideLength: .large)
-                
-                YonderText(text: self.title, size: .optionBody, multilineTextAlignment: .center)
+            YonderBorder3 {
+                VStack {
+                    YonderIcon(image: self.image, sideLength: .large)
+                    
+                    YonderText(text: self.title, size: .optionBody, multilineTextAlignment: .center)
+                }
+                .padding(.horizontal)
+                .frame(
+                    width: self.width - YonderBorder3Presets.outlineThickness*2,
+                    height: self.height - YonderBorder3Presets.outlineThickness*2
+                )
             }
-            .padding(.horizontal)
-            .frame(width: self.width, height: self.height)
-            .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
         }
     }
 }
