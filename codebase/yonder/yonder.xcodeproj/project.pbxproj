@@ -527,6 +527,9 @@
 		B63E171B29CD8F060083616A /* InspectSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E171A29CD8F060083616A /* InspectSheet.swift */; };
 		B63E171D29CD8F310083616A /* InspectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E171C29CD8F310083616A /* InspectViewController.swift */; };
 		B63E171F29CD8F830083616A /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63E171E29CD8F830083616A /* OverlayViewController.swift */; };
+		B6588D9D2B97A48000B10A28 /* GoldAfterTravelEquipmentPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6588D9C2B97A48000B10A28 /* GoldAfterTravelEquipmentPill.swift */; };
+		B6588D9F2B97A8A700B10A28 /* PermanentHealthAfterTravelEquipmentPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6588D9E2B97A8A700B10A28 /* PermanentHealthAfterTravelEquipmentPill.swift */; };
+		B6588DA12B97AA6500B10A28 /* GrowDamageAfterTravelEffectPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6588DA02B97AA6500B10A28 /* GrowDamageAfterTravelEffectPill.swift */; };
 		B678C17F2B3C424C00CD6354 /* FACTION5-WEAPONS.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1732B3C424B00CD6354 /* FACTION5-WEAPONS.json */; };
 		B678C1802B3C424C00CD6354 /* DESERT-WEAPONS.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1742B3C424B00CD6354 /* DESERT-WEAPONS.json */; };
 		B678C1812B3C424C00CD6354 /* FACTION6-WEAPONS.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1752B3C424B00CD6354 /* FACTION6-WEAPONS.json */; };
@@ -2953,6 +2956,9 @@
 		B63E171A29CD8F060083616A /* InspectSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectSheet.swift; sourceTree = "<group>"; };
 		B63E171C29CD8F310083616A /* InspectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectViewController.swift; sourceTree = "<group>"; };
 		B63E171E29CD8F830083616A /* OverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
+		B6588D9C2B97A48000B10A28 /* GoldAfterTravelEquipmentPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldAfterTravelEquipmentPill.swift; sourceTree = "<group>"; };
+		B6588D9E2B97A8A700B10A28 /* PermanentHealthAfterTravelEquipmentPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermanentHealthAfterTravelEquipmentPill.swift; sourceTree = "<group>"; };
+		B6588DA02B97AA6500B10A28 /* GrowDamageAfterTravelEffectPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowDamageAfterTravelEffectPill.swift; sourceTree = "<group>"; };
 		B678C1732B3C424B00CD6354 /* FACTION5-WEAPONS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FACTION5-WEAPONS.json"; sourceTree = "<group>"; };
 		B678C1742B3C424B00CD6354 /* DESERT-WEAPONS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "DESERT-WEAPONS.json"; sourceTree = "<group>"; };
 		B678C1752B3C424B00CD6354 /* FACTION6-WEAPONS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FACTION6-WEAPONS.json"; sourceTree = "<group>"; };
@@ -4891,6 +4897,7 @@
 				B6ECC5FA2B4DD6B200C04C5E /* HealthLifestealEffectPill.swift */,
 				B6ECC5FC2B4DD84B00C04C5E /* CycleDamageEffectPill.swift */,
 				B6ECC60D2B56CCE800C04C5E /* HealthToDamageEffectPill.swift */,
+				B6588DA02B97AA6500B10A28 /* GrowDamageAfterTravelEffectPill.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -5133,6 +5140,8 @@
 				6532774B2925D79500E03FA7 /* RestoreAfterTravelEquipmentPill.swift */,
 				6532774D2925DB4A00E03FA7 /* PermanentHealthAfterKillEquipmentPill.swift */,
 				B6ECC5FE2B51F19300C04C5E /* LimitPhoenixEquipmentPill.swift */,
+				B6588D9C2B97A48000B10A28 /* GoldAfterTravelEquipmentPill.swift */,
+				B6588D9E2B97A8A700B10A28 /* PermanentHealthAfterTravelEquipmentPill.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -10719,6 +10728,7 @@
 				65109B3C280C72E400F2D949 /* YonderDisabled.swift in Sources */,
 				6595036B27ED7CDF00A24B7F /* InspectBody.swift in Sources */,
 				651A955E276AB69E009C9A08 /* AreaArrangements.swift in Sources */,
+				B6588D9D2B97A48000B10A28 /* GoldAfterTravelEquipmentPill.swift in Sources */,
 				656FD915291CF6AE00F923E9 /* ShopKeeperProfile.swift in Sources */,
 				656FD917291CF77100F923E9 /* ShopKeeperProfileBucket.swift in Sources */,
 				B6D4726B2A5898540002CEEC /* BuildTokenFactory.swift in Sources */,
@@ -10902,6 +10912,7 @@
 				653AD3AD27707F600001A249 /* AreaPool.swift in Sources */,
 				65C2CDE32937BA970028DC9C /* RandomProfile.swift in Sources */,
 				65C2CDE5293871D60028DC9C /* TestContent.swift in Sources */,
+				B6588D9F2B97A8A700B10A28 /* PermanentHealthAfterTravelEquipmentPill.swift in Sources */,
 				651B7741293BED1F00827CB5 /* YonderImages.swift in Sources */,
 				65AAFE2428C8574D004A8230 /* AlwaysUsable.swift in Sources */,
 				658D1E822940DFED006F1CC0 /* BuffProxy.swift in Sources */,
@@ -10951,6 +10962,7 @@
 				6547B11F2840134700ABB601 /* Clonable.swift in Sources */,
 				6503293428D60A2200FC999C /* PhoenixEquipmentPill.swift in Sources */,
 				651A9560276ABA66009C9A08 /* HexagonCoordinate.swift in Sources */,
+				B6588DA12B97AA6500B10A28 /* GrowDamageAfterTravelEffectPill.swift in Sources */,
 				65DC5FC228DC3D2000E5F904 /* ConsumableArmorPointsRestorationPercentBuff.swift in Sources */,
 				B6E8328F2B587D0E001579D1 /* BorderSlice.swift in Sources */,
 				65D88C6827444A18002E3AC4 /* BurnStatusEffect.swift in Sources */,

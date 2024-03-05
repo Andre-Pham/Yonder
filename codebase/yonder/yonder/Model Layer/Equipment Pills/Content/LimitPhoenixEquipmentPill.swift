@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// After taking fatal damage, reduce max health to a certain fraction and then revive with full health (NOTE: This remains equipped).
 class LimitPhoenixEquipmentPill: EquipmentPill, AfterTurnEndSubscriber {
     
     private let healthFraction: Double

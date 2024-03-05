@@ -1,23 +1,23 @@
 //
-//  RestoreAfterTravelEquipmentPill.swift
+//  PermanentHealthAfterTravelEquipmentPill.swift
 //  yonder
 //
-//  Created by Andre Pham on 17/11/2022.
+//  Created by Andre Pham on 6/3/2024.
 //
 
 import Foundation
 
-/// After every travel, restore some amount of health.
-class RestoreAfterTravelEquipmentPill: EquipmentPill, OnPlayerTravelSubscriber {
+/// After every travel, gain permanent health.
+class PermanentHealthAfterTravelEquipmentPill: EquipmentPill, OnPlayerTravelSubscriber {
     
-    private let restoration: Int
+    private let health: Int
     
-    init(restoration: Int, sourceName: String) {
-        self.restoration = restoration
+    init(health: Int, sourceName: String) {
+        self.health = health
         
         super.init(
             sourceName: sourceName,
-            effectsDescription: Strings("equipmentPill.restoreAfterTravel.effectsDescription1Param").localWithArgs(restoration)
+            effectsDescription: Strings("equipmentPill.permanentHealthAfterTravel1Param").localWithArgs(health)
         )
         
         OnPlayerTravelPublisher.subscribe(self)
@@ -25,7 +25,7 @@ class RestoreAfterTravelEquipmentPill: EquipmentPill, OnPlayerTravelSubscriber {
     
     required init(_ original: EquipmentPillAbstract) {
         let original = original as! Self
-        self.restoration = original.restoration
+        self.health = original.health
         
         super.init(original)
         
@@ -35,11 +35,11 @@ class RestoreAfterTravelEquipmentPill: EquipmentPill, OnPlayerTravelSubscriber {
     // MARK: - Serialisation
 
     private enum Field: String {
-        case restoration
+        case health
     }
 
     required init(dataObject: DataObject) {
-        self.restoration = dataObject.get(Field.restoration.rawValue)
+        self.health = dataObject.get(Field.health.rawValue)
         super.init(dataObject: dataObject)
         
         OnPlayerTravelPublisher.subscribe(self)
@@ -47,21 +47,21 @@ class RestoreAfterTravelEquipmentPill: EquipmentPill, OnPlayerTravelSubscriber {
 
     override func toDataObject() -> DataObject {
         return super.toDataObject()
-            .add(key: Field.restoration.rawValue, value: self.restoration)
+            .add(key: Field.health.rawValue, value: self.health)
     }
 
     // MARK: - Functions
     
     func onPlayerTravel(player: Player, newLocation: Location) {
         if player.hasEquipmentEffect(self) {
-            player.restoreAdjusted(sourceOwner: player, using: self, for: self.restoration)
+            player.adjustMaxHealth(by: self.health)
         }
     }
     
     func getValue(whenTargeting target: Target) -> Int {
         switch target {
         case .player:
-            return Pricing.playerArmorPointsRestorationStat.getValue(amount: self.restoration, uses: Pricing.Stat.infiniteDuration)
+            return Pricing.playerPermanentHealthStat.getValue(amount: self.health)*Pricing.Stat.infiniteDuration
         case .foe:
             // Foes don't travel
             return 0

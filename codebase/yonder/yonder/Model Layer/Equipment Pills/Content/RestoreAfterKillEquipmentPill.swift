@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// After a kill, armor/health/both is restored.
 class RestoreAfterKillEquipmentPill: EquipmentPill, AfterPlayerKillFoeSubscriber {
     
     private let healthRestoration: Int

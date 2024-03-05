@@ -1,23 +1,23 @@
 //
-//  RestoreAfterTravelEquipmentPill.swift
+//  GoldAfterTravelEquipmentPill.swift
 //  yonder
 //
-//  Created by Andre Pham on 17/11/2022.
+//  Created by Andre Pham on 6/3/2024.
 //
 
 import Foundation
 
-/// After every travel, restore some amount of health.
-class RestoreAfterTravelEquipmentPill: EquipmentPill, OnPlayerTravelSubscriber {
+/// After every travel, gain some gold.
+class GoldAfterTravelEquipmentPill: EquipmentPill, OnPlayerTravelSubscriber {
     
-    private let restoration: Int
+    private let goldReceived: Int
     
-    init(restoration: Int, sourceName: String) {
-        self.restoration = restoration
+    init(goldReceived: Int, sourceName: String) {
+        self.goldReceived = goldReceived
         
         super.init(
             sourceName: sourceName,
-            effectsDescription: Strings("equipmentPill.restoreAfterTravel.effectsDescription1Param").localWithArgs(restoration)
+            effectsDescription: Strings("equipmentPill.goldAfterTravel.effectsDescription1Param").localWithArgs(goldReceived)
         )
         
         OnPlayerTravelPublisher.subscribe(self)
@@ -25,7 +25,7 @@ class RestoreAfterTravelEquipmentPill: EquipmentPill, OnPlayerTravelSubscriber {
     
     required init(_ original: EquipmentPillAbstract) {
         let original = original as! Self
-        self.restoration = original.restoration
+        self.goldReceived = original.goldReceived
         
         super.init(original)
         
@@ -35,11 +35,11 @@ class RestoreAfterTravelEquipmentPill: EquipmentPill, OnPlayerTravelSubscriber {
     // MARK: - Serialisation
 
     private enum Field: String {
-        case restoration
+        case goldReceived
     }
 
     required init(dataObject: DataObject) {
-        self.restoration = dataObject.get(Field.restoration.rawValue)
+        self.goldReceived = dataObject.get(Field.goldReceived.rawValue)
         super.init(dataObject: dataObject)
         
         OnPlayerTravelPublisher.subscribe(self)
@@ -47,21 +47,21 @@ class RestoreAfterTravelEquipmentPill: EquipmentPill, OnPlayerTravelSubscriber {
 
     override func toDataObject() -> DataObject {
         return super.toDataObject()
-            .add(key: Field.restoration.rawValue, value: self.restoration)
+            .add(key: Field.goldReceived.rawValue, value: self.goldReceived)
     }
 
     // MARK: - Functions
     
     func onPlayerTravel(player: Player, newLocation: Location) {
         if player.hasEquipmentEffect(self) {
-            player.restoreAdjusted(sourceOwner: player, using: self, for: self.restoration)
+            player.modifyGoldAdjusted(by: self.goldReceived)
         }
     }
     
     func getValue(whenTargeting target: Target) -> Int {
         switch target {
         case .player:
-            return Pricing.playerArmorPointsRestorationStat.getValue(amount: self.restoration, uses: Pricing.Stat.infiniteDuration)
+            return self.goldReceived*Pricing.Stat.infiniteDuration
         case .foe:
             // Foes don't travel
             return 0

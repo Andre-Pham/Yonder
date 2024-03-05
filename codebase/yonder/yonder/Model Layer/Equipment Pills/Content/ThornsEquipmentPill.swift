@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Upon taking damage, deal some fraction of that damage taken back.
 class ThornsEquipmentPill: EquipmentPill, OnTurnEndSubscriber {
     
     private let thornsFraction: Double

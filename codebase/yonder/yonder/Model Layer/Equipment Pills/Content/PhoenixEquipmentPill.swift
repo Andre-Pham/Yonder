@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Upon death, revive with a set amount of health to be restored to, then un-equip this.
 class PhoenixEquipmentPill: EquipmentPill, AfterTurnEndSubscriber {
     
     private let healthSetTo: Int?

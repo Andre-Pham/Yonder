@@ -22,13 +22,8 @@ enum Bosses {
         lootOptions.lootBags.forEach({ $0.addGoldLoot(2000*boss) })
         switch boss {
         case 0:
-            //lootOptions.option1.addArmorLoot(<#T##armor: Armor##Armor#>)
-            //lootOptions.option2.addWeaponLoot(<#T##weapon: Weapon##Weapon#>)
-            //lootOptions.option3.addAccessoryLoot(<#T##accessory: Accessory##Accessory#>)
             return [
-                //Self.boss0BigHealth(lootOptions: lootOptions),
-                //Self.boss0SelfHeals(lootOptions: lootOptions)
-                Self.testBoss()
+                Self.generateBoss0()
             ]
         case 1:
             return [
@@ -40,42 +35,113 @@ enum Bosses {
         }
     }
     
-    // TODO: Remove
-    private static func testBoss() -> Foe {
-        let randomProfile = RandomProfile(prefix: "Boss")
-        return Foe(
-            contentID: nil,
-            name: randomProfile.name,
-            description: randomProfile.description,
-            maxHealth: 1000,
-            weapon: BaseAttack(damage: 1000),
-            loot: NoLootOptions()
+    private static func generateBoss0() -> Foe {
+        // Boss 0 gains health after every attack
+        let goldAccessoryName = Strings("specialLoot.travelersPocket").local
+        let goldAccessory = Accessory(
+            name: goldAccessoryName,
+            description: "",
+            type: .regular,
+            healthBonus: 0,
+            armorPointsBonus: 0,
+            buffs: [],
+            equipmentPills: [
+                GoldAfterTravelEquipmentPill(goldReceived: 35, sourceName: goldAccessoryName)
+            ]
+        )
+        let healthAccessoryName = Strings("specialLoot.travelersNecklace").local
+        let healthAccessory = Accessory(
+            name: healthAccessoryName,
+            description: "",
+            type: .regular,
+            healthBonus: 0,
+            armorPointsBonus: 0,
+            buffs: [],
+            equipmentPills: [
+                PermanentHealthAfterTravelEquipmentPill(health: 5, sourceName: healthAccessoryName)
+            ]
+        )
+        let sword = Weapon(
+            name: Strings("specialLoot.travelersBlade").local,
+            description: "",
+            basePill: DamageBasePill(damage: 100),
+            durabilityPill: DecrementDurabilityPill(durability: 8),
+            effectPills: [
+                GrowDamageEffectPill(damageIncrease: 15)
+            ],
+            buffPills: []
+        )
+        let lootChoice = LootChoice()
+        lootChoice.addAccessoryLoot(goldAccessory)
+        lootChoice.addAccessoryLoot(healthAccessory)
+        lootChoice.addWeaponLoot(sword)
+        return ScaleAttackBoss(
+            contentID: nil, // TODO: Replace with profile
+            name: "BOSS 0", // TODO: Replace with profile
+            description: "",
+            maxHealth: 400,
+            damage: 50,
+            damageMultiplier: 1.5,
+            lootChoice: lootChoice
         )
     }
     
-//    private static func boss0BigHealth(lootOptions: LootOptions) -> Foe {
-//        let profile: BossProfile = [
-//            BossProfile(bossName: <#T##String#>, bossDescription: <#T##String#>),
-//            BossProfile(bossName: <#T##String#>, bossDescription: <#T##String#>),
-//            BossProfile(bossName: <#T##String#>, bossDescription: <#T##String#>)
-//        ].randomElement()!
-//        return Foe(
-//            name: profile.bossName,
-//            description: profile.bossDescription,
-//            maxHealth: <#T##Int#>,
-//            weapon: <#T##Weapon#>,
-//            loot: lootOptions
-//        )
-//    }
-//
-//    private static func boss0SelfHeals(lootOptions: LootOptions) -> Foe {
-//        return
-//    }
+    /*
+    private static func generateBoss1() -> Foe {
+        // Boss 1 has relatively low attack, but any damage done to health is permanent
+        // PermanentHealthDamageBoss
+    }
     
-    // MARK: - Boss 1 Options
-        
-    // MARK: - Boss 2 Options
+    private static func generateBoss2() -> Foe {
+        // Boss 2 has high health, but low attack - it's intended to be a resource fight
+    }
     
-    // MARK: - Boss 3 Options
+    private static func generateBoss3() -> Foe {
+        // Boss 3's every third attack deals extra damage, ALSO, any damage they do to the player's health is restored to them
+        // BigSwingHealBoss
+    }
+    
+    private static func generateBoss4() -> Foe {
+        // Boss 4 disables all healing
+        // DisableHealingBoss
+    }
+    
+    private static func generateBoss5() -> Foe {
+        // For boss 5, all damage they take is converted into attack damage
+        // HealthToAttackBoss
+    }
+     */
+    
+    // Stage 0: gains attack after every attack
+    // Stage 1: low-ish attack, but damage is permanent to health
+    // Stage 2: high health, low attack
+    // Stage 3: every third attack is massive + any damage done to your health heals them | Create an effect pill that cycles between an array of damages (I think that's the best approach)
+    // Stage 4: disables healing | NOTE: I should just apply a universal healing buff, but make it 0% instead of like 110%
+    // Stage 5: all damage taken becomes attack
+    
+    // TODO: Remove
+    private static func testBoss() -> Foe {
+        let randomProfile = RandomProfile(prefix: "Boss")
+        let lootChoice = LootChoice()
+        lootChoice.addGoldLoot(100)
+        lootChoice.addPotionLoot(DamagePotion(tier: .I, potionCount: 5))
+        lootChoice.addPotionLoot(DamagePotion(tier: .IV, potionCount: 5))
+        return HealthToAttackBoss(
+            contentID: nil,
+            name: randomProfile.name,
+            description: randomProfile.description,
+            maxHealth: 200,
+            damage: 200,
+            conversionFraction: 1.0,
+            lootChoice: lootChoice
+        )
+    }
+    
+    // TODO: This should probably go somewhere else and be in the same system as the content manager
+    // TODO: Or more realistically, many of these methods should go into the content manager
+    // TODO: IDK we'll see how the implementation looks like and move things around as necessary
+//    private static func getBossProfile(regionProfileTag: RegionProfileTag) -> FoeProfileTag {
+//        
+//    }
     
 }

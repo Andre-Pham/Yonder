@@ -79,7 +79,7 @@ struct HostileInspectView: View {
     }
 }
 
-struct FoeInspectView_Previews: PreviewProvider {
+struct HostileInspectView_Previews: PreviewProvider {
     static var previews: some View {
         PreviewContentView {
             HostileInspectView(foeViewModel: PreviewObjects.foeViewModel)

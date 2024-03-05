@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Your weapon has lifesteal - after dealing damage with a weapon, restore some fraction of that damage done as health.
 class WeaponLifestealEquipmentPill: EquipmentPill, OnActorAttackSubscriber {
     
     private let lifestealFraction: Double

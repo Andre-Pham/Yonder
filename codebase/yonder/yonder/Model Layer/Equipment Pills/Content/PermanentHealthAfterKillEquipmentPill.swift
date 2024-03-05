@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// After killing a foe, gain some fraction of their health as permanent health.
 class PermanentHealthAfterKillEquipmentPill: EquipmentPill, AfterPlayerKillFoeSubscriber {
     
     private let maxHealthFraction: Double

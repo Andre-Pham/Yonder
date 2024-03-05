@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Every time shields take damage, this restores some fraction of that damage taken as health.
 class LoseArmorGainHealthEquipmentPill: EquipmentPill, OnCombatTurnEndSubscriber {
     
     private let restorationFraction: Double

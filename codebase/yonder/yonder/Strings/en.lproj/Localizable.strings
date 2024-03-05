@@ -423,6 +423,9 @@
 "weaponEffectPill.healthToDamage.fraction.description1Param" = "Upon you taking damage, this weapon gains %@%% of the amount taken as weapon damage.";
 "weaponEffectPill.healthToDamage.all.description" = "Upon you taking damage, this weapon gains the amount taken as weapon damage.";
 
+// Grow Damage After Every Travel
+"weaponEffectPill.growDamageAfterTravel.description1Param" = "After every travel, this weapon's damage increases by %@.";
+
 // MARK: - Weapon Buff Pills
 
 // Armor Damage Percent
@@ -824,10 +827,11 @@
 "equipmentPill.restoreAfterKill.healthAndArmorPoints.effectsDescription2Param" = "Upon defeating any hostile, restore %@ health and %@ shields.";
 "equipmentPill.restoreAfterKill.health.effectsDescription1Param" = "Upon defeating any hostile, restore, restore %@ health.";
 "equipmentPill.restoreAfterKill.armorPoints.effectsDescription1Param" = "Upon defeating any hostile, restore %@ shields.";
-"equipmentPill.restoreAfterTravel.effectsDescription1Param" = "After travelling, restore %@ (overflows from health to shields).";
+"equipmentPill.restoreAfterTravel.effectsDescription1Param" = "After every travel, restore %@ (overflows from health to shields).";
 "equipmentPill.permanentHealthAfterKill.effectsDescription1Param" = "Upon defeating any hostile, steal %@%% of their maximum health as permanent health";
 "equipmentPill.limitPhoenix.effectsDescription1Param" = "Upon taking fatal damage, revive yourself fully with %@%% max health.";
-"equipmentPill.limitStatsFoePhoenixEquipmentPill.effectsDescription1Param" = "Upon taking fatal damage, revive yourself fully with %@%% max health and attack.";
+"equipmentPill.goldAfterTravel.effectsDescription1Param" = "After every travel, receive %@ gold.";
+"equipmentPill.permanentHealthAfterTravel1Param" = "After every travel, gain %@ permanent health.";
 
 // MARK: - Shop Keepers
 
@@ -879,3 +883,9 @@
 "class.cleric.name" = "Cleric";
 "class.druid.name" = "Druid";
 "class.paladin.name" = "Paladin";
+
+// MARK: - Special Loot
+
+"specialLoot.travelersPocket" = "Traveler's Pocket";
+"specialLoot.travelersNecklace" = "Traveler's Necklace";
+"specialLoot.travelersBlade" = "Traveler's Blade";
