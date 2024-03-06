@@ -24,8 +24,10 @@ fileprivate struct PreviewNPC: View {
             .resizable()
             .interpolation(.none)
             .scaledToFit()
-            .frame(height: 4.0*self.animation.frameSize.height)
-            .border(.gray)
+            .frame(
+                width: 3.0*self.animation.frameSize.width,
+                height: 3.0*self.animation.frameSize.height
+            )
     }
 }
 

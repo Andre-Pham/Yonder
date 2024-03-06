@@ -46,7 +46,7 @@ struct LocationView: View {
                         .interpolation(.none)
                         .scaledToFit()
                         .offset(y: -2)
-                        .frame(width: 200)
+                        .frame(width: 220)
                 }
             }
             // Overlay because the animation frame is actually larger than the view frame
@@ -56,7 +56,10 @@ struct LocationView: View {
                     .resizable()
                     .interpolation(.none)
                     .scaledToFit()
-                    .frame(height: 3.0*self.animationQueue.frameSize.height)
+                    .frame(
+                        width: 3.0*self.animationQueue.frameSize.width,
+                        height: 3.0*self.animationQueue.frameSize.height
+                    )
                     .offset(x: self.xOffset, y: self.yOffset)
             }
     }
