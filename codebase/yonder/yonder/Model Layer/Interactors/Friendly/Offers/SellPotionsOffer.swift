@@ -31,6 +31,7 @@ class SellPotionsOffer: Offer {
     func acceptOffer(player: Player) {
         let fairValue = player.potions.map({ $0.getBasePurchasePrice() }).reduce(0, +)
         player.modifyGoldAdjusted(by: 3*fairValue)
+        player.removeAllPotions()
     }
     
     func meetsOfferRequirements(player: Player) -> Bool {
