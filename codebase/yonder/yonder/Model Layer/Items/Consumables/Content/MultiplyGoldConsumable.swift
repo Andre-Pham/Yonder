@@ -56,13 +56,16 @@ class MultiplyGoldConsumable: Consumable {
     
     func isStackable(with consumable: Consumable) -> Bool {
         if let consumable = consumable as? Self {
-            return self.goldFraction == consumable.goldFraction
+            return isEqual(self.goldFraction, consumable.goldFraction)
         }
         return false
     }
     
     func calculateBasePurchasePrice() -> Int {
-        return Pricing.playerGoldStat.getValue(amount: Pricing.playerGoldStat.baseStatAmount, uses: self.remainingUses)
+        return Pricing.playerGoldStat.getValue(
+            amount: (Double(Pricing.playerGoldStat.baseStatAmount)*abs(1.0 - self.goldFraction)).toRoundedInt(),
+            uses: self.remainingUses
+        )
     }
     
 }

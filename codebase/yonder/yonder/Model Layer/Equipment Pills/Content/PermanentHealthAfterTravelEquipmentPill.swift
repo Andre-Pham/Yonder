@@ -54,7 +54,7 @@ class PermanentHealthAfterTravelEquipmentPill: EquipmentPill, OnPlayerTravelSubs
     
     func onPlayerTravel(player: Player, newLocation: Location) {
         if player.hasEquipmentEffect(self) {
-            player.adjustMaxHealth(by: self.health)
+            player.adjustBonusHealth(by: self.health)
         }
     }
     

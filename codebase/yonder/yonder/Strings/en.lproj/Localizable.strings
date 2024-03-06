@@ -493,6 +493,14 @@
 "consumable.multiplyGold.description" = "A stone of pure glimmering gold with a crystal dragon eye embedded in it.";
 "consumable.multiplyGold.effectsDescription1Param" = "Increase your current gold by %@%%.";
 
+// Multiply Health
+"consumable.multiplyHealth.name" = "Lifewell Wishing Stone";
+"consumable.multiplyHealth.effectsDescription1Param" = "Increase your maximum health by %@%%.";
+
+// Multiply Armor Points
+"consumable.multiplyArmorPoints.name" = "Ironscape Wishing Stone";
+"consumable.multiplyArmorPoints.effectsDescription1Param" = "Increase each of your armor piece's shields by %@%%.";
+
 // Turn Improving Restoration
 "consumable.travelImprovingRestoration.name" = "Cellular Blessing";
 "consumable.travelImprovingRestoration.description" = "A bright token of materialised light.";
@@ -889,3 +897,7 @@
 "specialLoot.travelersPocket" = "Traveler's Pocket";
 "specialLoot.travelersNecklace" = "Traveler's Necklace";
 "specialLoot.travelersBlade" = "Traveler's Blade";
+
+"specialLoot.enchantedRuby" = "Enchanted Ruby";
+"specialLoot.enchantedGold" = "Enchanted Gold";
+"specialLoot.enchantedIron" = "Enchanted Iron";

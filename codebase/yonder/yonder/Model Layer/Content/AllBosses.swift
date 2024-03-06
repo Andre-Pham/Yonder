@@ -27,7 +27,7 @@ enum Bosses {
             ]
         case 1:
             return [
-                Self.testBoss()
+                Self.generateBoss1()
             ]
         // TODO: Add remaining cases
         default:
@@ -86,12 +86,29 @@ enum Bosses {
         )
     }
     
-    /*
     private static func generateBoss1() -> Foe {
         // Boss 1 has relatively low attack, but any damage done to health is permanent
-        // PermanentHealthDamageBoss
+        let healthConsumable = MultiplyHealthConsumable(healthFraction: 2.0, amount: 1)
+        healthConsumable.setName(to: Strings("specialLoot.enchantedRuby").local)
+        let goldConsumable = MultiplyGoldConsumable(goldFraction: 3.0, amount: 1)
+        goldConsumable.setName(to: Strings("specialLoot.enchantedGold").local)
+        let armorConsumable = MultiplyArmorPointsConsumable(armorPointsFraction: 2.0, amount: 1)
+        armorConsumable.setName(to: Strings("specialLoot.enchantedIron").local)
+        let lootChoice = LootChoice()
+        lootChoice.addConsumableLoot(healthConsumable)
+        lootChoice.addConsumableLoot(goldConsumable)
+        lootChoice.addConsumableLoot(armorConsumable)
+        return PermanentHealthDamageBoss(
+            contentID: nil, // TODO: Replace with profile
+            name: "BOSS 1", // TODO: Replace with profile
+            description: "",
+            maxHealth: 700,
+            damage: 55,
+            lootChoice: lootChoice
+        )
     }
     
+    /*
     private static func generateBoss2() -> Foe {
         // Boss 2 has high health, but low attack - it's intended to be a resource fight
     }
