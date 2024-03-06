@@ -763,7 +763,7 @@
 "map.region.cavern.name" = "Rattlerock Caverns";
 "map.region.cavern.description" = "TODO";
     // Faction5
-"map.region.faction5.name" = "Volcanic Ridges";
+"map.region.faction5.name" = "Blazefern Peaks";
 "map.region.faction5.description" = "TODO";
     // Faction6
 "map.region.faction6.name" = "Winterlong Hollows";
@@ -772,7 +772,7 @@
 "map.region.dungeon.name" = "Obsidius Dungeons";
 "map.region.dungeon.description" = "TODO";
     // Faction2
-"map.region.faction2.name" = "Lushlotus Peaks";
+"map.region.faction2.name" = "Volcanic Ridges";
 "map.region.faction2.description" = "TODO";
     // Faction4
 "map.region.faction4.name" = "Voidtouch Valley";

@@ -21,11 +21,11 @@ class RegionProfileBucket {
                 assignment: .area
             ),
             RegionProfile(
-                regionName: Strings("map.region.faction2.name").local,
-                regionDescription: Strings("map.region.faction2.description").local,
+                regionName: Strings("map.region.faction5.name").local,
+                regionDescription: Strings("map.region.faction5.description").local,
                 regionBackground: YonderImages.missingBackgroundImage,
                 regionForeground: YonderImages.missingForegroundImage,
-                tags: RegionTagAllocation(tags: (.faction2, 1)),
+                tags: RegionTagAllocation(tags: (.faction5, 1)),
                 assignment: .area
             ),
             RegionProfile(
@@ -33,7 +33,7 @@ class RegionProfileBucket {
                 regionDescription: Strings("map.region.tavern0.description").local,
                 regionBackground: YonderImages.missingBackgroundImage,
                 regionForeground: YonderImages.missingForegroundImage,
-                tags: RegionTagAllocation(tags: (.forest, 1), (.faction2, 1)),
+                tags: RegionTagAllocation(tags: (.forest, 1), (.faction5, 1)),
                 assignment: .tavernArea
             ),
         ],
@@ -156,11 +156,11 @@ class RegionProfileBucket {
                 assignment: .area
             ),
             RegionProfile(
-                regionName: Strings("map.region.faction5.name").local,
-                regionDescription: Strings("map.region.faction5.description").local,
+                regionName: Strings("map.region.faction2.name").local,
+                regionDescription: Strings("map.region.faction2.description").local,
                 regionBackground: YonderImages.missingBackgroundImage,
                 regionForeground: YonderImages.missingForegroundImage,
-                tags: RegionTagAllocation(tags: (.faction5, 1)),
+                tags: RegionTagAllocation(tags: (.faction2, 1)),
                 assignment: .area
             ),
             RegionProfile(
@@ -168,7 +168,7 @@ class RegionProfileBucket {
                 regionDescription: Strings("map.region.tavern5.description").local,
                 regionBackground: YonderImages.missingBackgroundImage,
                 regionForeground: YonderImages.missingForegroundImage,
-                tags: RegionTagAllocation(tags: (.nether, 1), (.faction5, 1)),
+                tags: RegionTagAllocation(tags: (.nether, 1), (.faction2, 1)),
                 assignment: .tavernArea
             ),
         ],
