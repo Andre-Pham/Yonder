@@ -14,12 +14,7 @@ import Foundation
 /// This is also in charge of designating the loot, to avoid the logistics of matching up the boss' area and stage with loot, and also allowing cool custom loot to be given.
 enum Bosses {
     
-    // MARK: - Boss 0 Options
-    
     static func allBossOptions(boss: Int) -> [Foe] {
-        // TODO: Add custom loot
-        let lootOptions = LootOptions(LootBag(), LootBag(), LootBag())
-        lootOptions.lootBags.forEach({ $0.addGoldLoot(2000*boss) })
         switch boss {
         case 0:
             return [
@@ -37,9 +32,16 @@ enum Bosses {
             return [
                 Self.generateBoss3()
             ]
-        // TODO: Add remaining cases
+        case 4:
+            return [
+                Self.generateBoss4()
+            ]
+        case 5:
+            return [
+                Self.generateBoss5()
+            ]
         default:
-            return [Self.testBoss()]
+            fatalError("Bosses haven't been designed up to stage \(boss)")
         }
     }
     
@@ -208,50 +210,37 @@ enum Bosses {
         )
     }
     
-    /*
+    
     private static func generateBoss4() -> Foe {
         // Boss 4 disables all healing
-        // DisableHealingBoss
-        // 8x yonder potions OR
-        // x2 max health
+        let yonderPotions = MaxRestorationPotion(potionCount: 8)
+        let healthConsumable = MultiplyHealthConsumable(healthFraction: 2.0, amount: 1)
+        healthConsumable.setName(to: Strings("specialLoot.bottleOfYonder").local)
+        let lootChoice = LootChoice()
+        lootChoice.addPotionLoot(yonderPotions)
+        lootChoice.addConsumableLoot(healthConsumable)
+        return DisableHealingBoss(
+            contentID: nil, // TODO: Replace with profile
+            name: "BOSS 4", // TODO: Replace with profile
+            description: "",
+            maxHealth: 650,
+            damage: 75,
+            lootChoice: lootChoice
+        )
     }
     
     private static func generateBoss5() -> Foe {
         // For boss 5, all damage they take is converted into attack damage
         // HealthToAttackBoss
-    }
-     */
-    
-    // Stage 0: gains attack after every attack
-    // Stage 1: low-ish attack, but damage is permanent to health
-    // Stage 2: high health, low attack
-    // Stage 3: every third attack is massive + any damage done to your health heals them | Create an effect pill that cycles between an array of damages (I think that's the best approach)
-    // Stage 4: disables healing | NOTE: I should just apply a universal healing buff, but make it 0% instead of like 110%
-    // Stage 5: all damage taken becomes attack
-    
-    // TODO: Remove
-    private static func testBoss() -> Foe {
-        let randomProfile = RandomProfile(prefix: "Boss")
-        let lootChoice = LootChoice()
-        lootChoice.addGoldLoot(100)
-        lootChoice.addPotionLoot(DamagePotion(tier: .I, potionCount: 5))
-        lootChoice.addPotionLoot(DamagePotion(tier: .IV, potionCount: 5))
         return HealthToAttackBoss(
-            contentID: nil,
-            name: randomProfile.name,
-            description: randomProfile.description,
-            maxHealth: 200,
-            damage: 200,
+            contentID: nil, // TODO: Replace with profile
+            name: "BOSS 5", // TODO: Replace with profile
+            description: "",
+            maxHealth: 1000,
+            damage: 1,
             conversionFraction: 1.0,
-            lootChoice: lootChoice
+            lootChoice: LootChoice() // Last boss - no loot choice needed!
         )
     }
-    
-    // TODO: This should probably go somewhere else and be in the same system as the content manager
-    // TODO: Or more realistically, many of these methods should go into the content manager
-    // TODO: IDK we'll see how the implementation looks like and move things around as necessary
-//    private static func getBossProfile(regionProfileTag: RegionProfileTag) -> FoeProfileTag {
-//        
-//    }
     
 }
