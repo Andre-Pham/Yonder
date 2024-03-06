@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Multiplies armor points of every armor piece by a fraction upon use.
 class MultiplyArmorPointsConsumable: Consumable {
     
     private let armorPointsFraction: Double

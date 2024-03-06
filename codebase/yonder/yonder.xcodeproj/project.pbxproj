@@ -532,6 +532,8 @@
 		B6588DA12B97AA6500B10A28 /* GrowDamageAfterTravelEffectPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6588DA02B97AA6500B10A28 /* GrowDamageAfterTravelEffectPill.swift */; };
 		B6588DA32B98676100B10A28 /* MultiplyHealthConsumable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6588DA22B98676100B10A28 /* MultiplyHealthConsumable.swift */; };
 		B6588DA52B98676D00B10A28 /* MultiplyArmorPointsConsumable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6588DA42B98676D00B10A28 /* MultiplyArmorPointsConsumable.swift */; };
+		B6588DA72B986C5A00B10A28 /* RegularBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6588DA62B986C5A00B10A28 /* RegularBoss.swift */; };
+		B6588DA92B986D4E00B10A28 /* PermanentBuffConsumable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6588DA82B986D4E00B10A28 /* PermanentBuffConsumable.swift */; };
 		B678C17F2B3C424C00CD6354 /* FACTION5-WEAPONS.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1732B3C424B00CD6354 /* FACTION5-WEAPONS.json */; };
 		B678C1802B3C424C00CD6354 /* DESERT-WEAPONS.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1742B3C424B00CD6354 /* DESERT-WEAPONS.json */; };
 		B678C1812B3C424C00CD6354 /* FACTION6-WEAPONS.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1752B3C424B00CD6354 /* FACTION6-WEAPONS.json */; };
@@ -2963,6 +2965,8 @@
 		B6588DA02B97AA6500B10A28 /* GrowDamageAfterTravelEffectPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowDamageAfterTravelEffectPill.swift; sourceTree = "<group>"; };
 		B6588DA22B98676100B10A28 /* MultiplyHealthConsumable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplyHealthConsumable.swift; sourceTree = "<group>"; };
 		B6588DA42B98676D00B10A28 /* MultiplyArmorPointsConsumable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplyArmorPointsConsumable.swift; sourceTree = "<group>"; };
+		B6588DA62B986C5A00B10A28 /* RegularBoss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularBoss.swift; sourceTree = "<group>"; };
+		B6588DA82B986D4E00B10A28 /* PermanentBuffConsumable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermanentBuffConsumable.swift; sourceTree = "<group>"; };
 		B678C1732B3C424B00CD6354 /* FACTION5-WEAPONS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FACTION5-WEAPONS.json"; sourceTree = "<group>"; };
 		B678C1742B3C424B00CD6354 /* DESERT-WEAPONS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "DESERT-WEAPONS.json"; sourceTree = "<group>"; };
 		B678C1752B3C424B00CD6354 /* FACTION6-WEAPONS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FACTION6-WEAPONS.json"; sourceTree = "<group>"; };
@@ -6050,6 +6054,7 @@
 				6513EA24292F064E00113E9C /* MaxRestoreAllConsumable.swift */,
 				B6588DA22B98676100B10A28 /* MultiplyHealthConsumable.swift */,
 				B6588DA42B98676D00B10A28 /* MultiplyArmorPointsConsumable.swift */,
+				B6588DA82B986D4E00B10A28 /* PermanentBuffConsumable.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -8641,6 +8646,7 @@
 				B6ECC6072B534A5800C04C5E /* BigSwingHealBoss.swift */,
 				B6ECC6092B534CEC00C04C5E /* DisableHealingBoss.swift */,
 				B6ECC6152B56D87E00C04C5E /* HealthToAttackBoss.swift */,
+				B6588DA62B986C5A00B10A28 /* RegularBoss.swift */,
 			);
 			path = "Boss Content";
 			sourceTree = "<group>";
@@ -10998,8 +11004,10 @@
 				654D72A429416EE600228643 /* PaladinClass.swift in Sources */,
 				659860482969047D0002AD0B /* ContentManager.swift in Sources */,
 				B69E29DF2B8CB572000C8809 /* YonderBorder8Presets.swift in Sources */,
+				B6588DA92B986D4E00B10A28 /* PermanentBuffConsumable.swift in Sources */,
 				65CAC18A27F9481600A95D92 /* YonderMultilineWideButton.swift in Sources */,
 				656FD8D329183E8D00F923E9 /* Array.swift in Sources */,
+				B6588DA72B986C5A00B10A28 /* RegularBoss.swift in Sources */,
 				65D88C662744494E002E3AC4 /* StatusEffect.swift in Sources */,
 				656FD8B82917223100F923E9 /* MapPoolFactory.swift in Sources */,
 				654D729C29416EC200228643 /* MageClass.swift in Sources */,

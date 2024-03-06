@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Multiplies maximum health by a fraction upon use.
 class MultiplyHealthConsumable: Consumable {
     
     private let healthFraction: Double

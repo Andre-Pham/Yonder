@@ -108,11 +108,57 @@ enum Bosses {
         )
     }
     
-    /*
+    
     private static func generateBoss2() -> Foe {
         // Boss 2 has high health, but low attack - it's intended to be a resource fight
+        let damageConsumableName = Strings("specialLoot.ruthlessBlessing").local
+        let damageConsumable = BuffConsumable(
+            buff: DamagePercentBuff(
+                sourceName: damageConsumableName,
+                direction: .outgoing,
+                duration: nil,
+                damageFraction: 1.2
+            ),
+            amount: 1
+        )
+        damageConsumable.setName(to: damageConsumableName)
+        let healingConsumableName = Strings("specialLoot.divineBlessing").local
+        let healingConsumable = BuffConsumable(
+            buff: HealthRestorationPercentBuff(
+                sourceName: healingConsumableName,
+                direction: .incoming,
+                duration: nil,
+                healthFraction: 2.0
+            ),
+            amount: 1
+        )
+        healingConsumable.setName(to: healingConsumableName)
+        let resistanceConsumableName = Strings("specialLoot.protectiveBlessing").local
+        let resistanceConsumable = BuffConsumable(
+            buff: DamagePercentBuff(
+                sourceName: resistanceConsumableName,
+                direction: .incoming,
+                duration: nil,
+                damageFraction: 0.8
+            ),
+            amount: 1
+        )
+        resistanceConsumable.setName(to: resistanceConsumableName)
+        let lootChoice = LootChoice()
+        lootChoice.addConsumableLoot(damageConsumable)
+        lootChoice.addConsumableLoot(healingConsumable)
+        lootChoice.addConsumableLoot(resistanceConsumable)
+        return RegularBoss(
+            contentID: nil, // TODO: Replace with profile
+            name: "BOSS 2", // TODO: Replace with profile
+            description: "",
+            maxHealth: 2000,
+            damage: 25,
+            lootChoice: lootChoice
+        )
     }
     
+    /*
     private static func generateBoss3() -> Foe {
         // Boss 3's every third attack deals extra damage, ALSO, any damage they do to the player's health is restored to them
         // BigSwingHealBoss

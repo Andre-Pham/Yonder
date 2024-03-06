@@ -546,6 +546,9 @@
 "consumable.maxRestoreAll.description" = "Casting the rune brands the battlefield with a glyph of spectacular light before dissipating.";
 "consumable.maxRestoreAll.effectsDescription" = "Restores you and the opposing hostile to full health and shields.";
 
+// Buff
+"consumable.buff.name" = "Galaxy Orb";
+
 // MARK: - Buffs
 
 "buff.duration1Param" = "Lasts %@ turns.";
@@ -901,3 +904,7 @@
 "specialLoot.enchantedRuby" = "Enchanted Ruby";
 "specialLoot.enchantedGold" = "Enchanted Gold";
 "specialLoot.enchantedIron" = "Enchanted Iron";
+
+"specialLoot.ruthlessBlessing" = "Ruthless Blessing";
+"specialLoot.divineBlessing" = "Divine Blessing";
+"specialLoot.protectiveBlessing" = "Protective Blessing";
