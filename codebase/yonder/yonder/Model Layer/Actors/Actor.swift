@@ -384,6 +384,10 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
         self.potions.remove(at: index)
     }
     
+    func removeAllPotions() {
+        self.potions.removeAll()
+    }
+    
     func onNoPotionsRemaining(potion: Potion) {
         if self.potions.contains(where: { $0.id == potion.id }) {
             self.removePotion(potion)
