@@ -29,6 +29,14 @@ enum Bosses {
             return [
                 Self.generateBoss1()
             ]
+        case 2:
+            return [
+                Self.generateBoss2()
+            ]
+        case 3:
+            return [
+                Self.generateBoss3()
+            ]
         // TODO: Add remaining cases
         default:
             return [Self.testBoss()]
@@ -158,15 +166,54 @@ enum Bosses {
         )
     }
     
-    /*
     private static func generateBoss3() -> Foe {
         // Boss 3's every third attack deals extra damage, ALSO, any damage they do to the player's health is restored to them
-        // BigSwingHealBoss
+        let headArmorName = Strings("specialLoot.rugtankHelmet").local
+        let headArmor = Armor(
+            name: headArmorName,
+            description: "",
+            type: .head,
+            armorPoints: 400,
+            armorBuffs: [DamageBuff(sourceName: headArmorName, direction: .incoming, duration: nil, damageDifference: -30)],
+            equipmentPills: []
+        )
+        let bodyArmorName = Strings("specialLoot.rugtankBody").local
+        let bodyArmor = Armor(
+            name: bodyArmorName,
+            description: "",
+            type: .body,
+            armorPoints: 400,
+            armorBuffs: [DamageBuff(sourceName: bodyArmorName, direction: .outgoing, duration: nil, damageDifference: 30)],
+            equipmentPills: []
+        )
+        let legsArmor = Armor(
+            name: Strings("specialLoot.rugtankLegs").local,
+            description: "",
+            type: .legs,
+            armorPoints: 800,
+            armorBuffs: [],
+            equipmentPills: []
+        )
+        let lootChoice = LootChoice()
+        lootChoice.addArmorLoot(headArmor)
+        lootChoice.addArmorLoot(bodyArmor)
+        lootChoice.addArmorLoot(legsArmor)
+        return BigSwingHealBoss(
+            contentID: nil, // TODO: Replace with profile
+            name: "BOSS 3", // TODO: Replace with profile
+            description: "",
+            maxHealth: 550,
+            damagesToCycleThrough: [50, 50, 250],
+            lootChoice: lootChoice
+        )
     }
     
+    /*
     private static func generateBoss4() -> Foe {
         // Boss 4 disables all healing
         // DisableHealingBoss
+        // 8x yonder potions OR
+        // x2 max health
     }
     
     private static func generateBoss5() -> Foe {

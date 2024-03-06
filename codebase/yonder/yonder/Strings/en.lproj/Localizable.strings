@@ -908,3 +908,7 @@
 "specialLoot.ruthlessBlessing" = "Ruthless Blessing";
 "specialLoot.divineBlessing" = "Divine Blessing";
 "specialLoot.protectiveBlessing" = "Protective Blessing";
+
+"specialLoot.rugtankHelmet" = "Rugtank Helmet";
+"specialLoot.rugtankBody" = "Rugtank Chestplate";
+"specialLoot.rugtankLegs" = "Rugtank Legplates";
