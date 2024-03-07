@@ -77,7 +77,7 @@ enum Bosses {
             basePill: DamageBasePill(damage: 100),
             durabilityPill: DecrementDurabilityPill(durability: 8),
             effectPills: [
-                GrowDamageEffectPill(damageIncrease: 15)
+                GrowDamageAfterTravelEffectPill(damageIncrease: 15)
             ],
             buffPills: []
         )
