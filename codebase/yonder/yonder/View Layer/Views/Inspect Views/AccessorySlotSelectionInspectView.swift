@@ -14,9 +14,19 @@ struct AccessorySlotSelectionInspectView: View {
     
     var body: some View {
         InspectBody {
-            YonderText(text: Strings("inspect.accessorySlotSelection.title").local, size: .inspectSheetTitle)
+            YonderText(
+                text: Strings("inspect.accessorySlotSelection.title").local,
+                size: .inspectSheetTitle,
+                multilineTextAlignment: .center
+            )
+            .frame(maxWidth: .infinity)
             
-            YonderText(text: Strings("inspect.accessorySlotSelection.description").local, size: .inspectSheetBody)
+            YonderText(
+                text: Strings("inspect.accessorySlotSelection.description").local,
+                size: .inspectSheetBody,
+                multilineTextAlignment: .center
+            )
+            .frame(maxWidth: .infinity)
             
             InspectSectionSpacingView()
             
@@ -26,21 +36,36 @@ struct AccessorySlotSelectionInspectView: View {
                 }
                 .frame(maxWidth: .infinity)
                 
-                ForEach(self.playerViewModel.accessoryViewModels, id: \.id) { accessoryViewModel in
-                    YonderWideButton(text: accessoryViewModel.name) {
-                        onSelection(accessoryViewModel.id)
-                        dismiss()
-                    }
-                }
-                
                 if !self.playerViewModel.accessorySlotsFull {
                     YonderWideButtonBody {
                         onSelection(nil)
                         dismiss()
                     } label: {
                         SurroundingBrackets(bracket: "[", size: .buttonBody) {
-                            YonderText(text: Strings("button.insertToEmptySlot").local, size: .buttonBody)
+                            YonderText(
+                                text: Strings("button.insertToEmptySlot").local.uppercased(),
+                                size: .buttonBody
+                            )
                         }
+                    }
+                }
+                
+                ForEach(self.playerViewModel.accessoryViewModels, id: \.id) { accessoryViewModel in
+                    YonderBorder4 {
+                        VStack {
+                            AccessoryInspectView(
+                                accessoryViewModel: accessoryViewModel
+                            )
+                            .padding(.bottom, YonderCoreGraphics.innerPadding)
+                            
+                            YonderWideButton(
+                                text: Strings("button.replace").local.uppercased()
+                            ) {
+                                onSelection(accessoryViewModel.id)
+                                dismiss()
+                            }
+                        }
+                        .padding(YonderCoreGraphics.innerPadding)
                     }
                 }
             }

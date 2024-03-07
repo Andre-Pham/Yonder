@@ -15,8 +15,12 @@ struct EquipArmorView: View {
     
     var body: some View {
         InspectBody {
-            YonderText(text: Strings("inspect.equip.armor.title").local, size: .inspectSheetTitle)
-                .frame(maxWidth: .infinity)
+            YonderText(
+                text: Strings("inspect.equip.armor.title").local,
+                size: .inspectSheetTitle,
+                multilineTextAlignment: .center
+            )
+            .frame(maxWidth: .infinity)
             
             InspectSectionSpacingView()
             

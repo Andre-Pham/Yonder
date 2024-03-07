@@ -170,6 +170,7 @@
 "button.requiresCombat" = "Requires Combat";
 "button.cancel" = "Cancel";
 "button.acceptOffer" = "Accept Offer";
+"button.replace" = "Replace";
 
 // MARK: - Stats
 

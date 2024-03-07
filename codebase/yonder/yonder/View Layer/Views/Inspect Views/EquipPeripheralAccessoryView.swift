@@ -17,7 +17,8 @@ struct EquipPeripheralAccessoryView: View {
         InspectBody {
             YonderText(
                 text: Strings("inspect.equip.peripheralAccessory.title").local,
-                size: .inspectSheetTitle
+                size: .inspectSheetTitle,
+                multilineTextAlignment: .center
             )
             .frame(maxWidth: .infinity)
             
