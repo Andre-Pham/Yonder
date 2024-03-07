@@ -78,6 +78,7 @@ enum YonderIcons {
     static let restorerIcon = Image("AngelAccessories")
     static let friendlyIcon = Image("Bonfire")
     static let warpIcon = Image("Portal")
+    static let bossIcon = Image("Crown")
     
     // MARK: - Other
     

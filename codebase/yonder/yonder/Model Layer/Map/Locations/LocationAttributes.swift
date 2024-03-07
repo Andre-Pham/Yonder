@@ -95,7 +95,7 @@ enum LocationType: Int {
         case .friendly:
             return YonderIcons.friendlyIcon
         case .boss:
-            return YonderIcons.missingIcon
+            return YonderIcons.bossIcon
         case .bridge:
             return YonderIcons.warpIcon
         }

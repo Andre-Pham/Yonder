@@ -76,7 +76,7 @@ struct OptionsView: View {
                 YonderGridOption(
                     title: Strings("optionsMenu.option.lootChoice").local,
                     geometry: self.pageGeometry,
-                    image: YonderIcons.missingIcon
+                    image: YonderIcons.bossIcon
                 ) {
                     self.optionsStateManager.lootChoiceOptionSelected()
                 }
