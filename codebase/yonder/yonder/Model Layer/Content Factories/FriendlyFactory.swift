@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FriendlyFactory: BuildTokenFactory {
+class FriendlyFactory: BuildTokenFactory, RegionBasedFactory {
     
     enum BuildToken: String {
         case goldOrRestorationFriendly          // 01
@@ -129,6 +129,10 @@ class FriendlyFactory: BuildTokenFactory {
     
     func deliver(count: Int) -> [Friendly] {
         return Array(count: count, populateWith: self.createFriendly())
+    }
+    
+    func deliverRegionTag() -> RegionProfileTag {
+        return self.regionTags.getTag()
     }
     
 }

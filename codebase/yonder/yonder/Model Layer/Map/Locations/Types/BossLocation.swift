@@ -55,6 +55,7 @@ class BossLocation: Location, FoeLocation {
     ///   - contentManager: The content manager to generate any required content for this location
     func initContent(using contentManager: ContentManager) {
         guard self.generatedBoss == nil else {
+            assert(self.foe.contentID != nil, "Pre-generated content missing content ID required")
             return
         }
         self.generatedBoss = contentManager.generateBoss(using: self.context)

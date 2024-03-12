@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RestorerFactory: BuildTokenFactory {
+class RestorerFactory: BuildTokenFactory, RegionBasedFactory {
     
     enum BuildToken: String {
         case health
@@ -62,6 +62,10 @@ class RestorerFactory: BuildTokenFactory {
     
     func deliver(count: Int) -> [Restorer] {
         return Array(count: count, populateWith: self.createRestorer())
+    }
+    
+    func deliverRegionTag() -> RegionProfileTag {
+        return self.regionTags.getTag()
     }
     
 }

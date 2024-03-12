@@ -55,6 +55,9 @@ class EnhancerLocation: Location, InteractorLocation {
     ///   - contentManager: The content manager to generate any required content for this location
     func initContent(using contentManager: ContentManager) {
         guard self.generatedEnhancer == nil else {
+            if self.enhancer.contentID == nil {
+                contentManager.assignEnhancerProfile(to: self.enhancer, using: self.context)
+            }
             return
         }
         self.generatedEnhancer = contentManager.generateEnhancer(using: self.context)

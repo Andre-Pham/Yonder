@@ -55,6 +55,9 @@ class RestorerLocation: Location, InteractorLocation {
     ///   - contentManager: The content manager to generate any required content for this location
     func initContent(using contentManager: ContentManager) {
         guard self.generatedRestorer == nil else {
+            if self.restorer.contentID == nil {
+                contentManager.assignRestorerProfile(to: self.restorer, using: self.context)
+            }
             return
         }
         self.generatedRestorer = contentManager.generateRestorer(using: self.context)

@@ -19,21 +19,15 @@ class TavernAreaFactory {
     
     func deliver() -> TavernArea {
         let outcome = TavernAreaArrangements.allCases.randomElement()!
-        let restorer = Restorers.newRestorer(
-            profile: RestorerProfile(
-                id: "", // TODO: Fix this (otherwise visiting a tavern area will throw an error because the file won't be found)
-                restorerName: Strings("restorer.tavern.name").local,
-                restorerDescription: Strings("restorer.tavern.description").local,
-                regionTags: [],
-                restoreOptions: []
-            ),
+        // No profiles (no content IDs) - this means it's generated on-demand when the player visits the location
+        let restorer = Restorers.newRestorerNoProfile(
             stage: self.stage,
             restoreOptions: [.health, .armorPoints]
         )
         let potionsShopKeeper = ShopKeeper(
-            contentID: nil, // TODO: Add content id
-            name: Strings("shopKeeper.tavern.name").local,
-            description: Strings("shopKeeper.tavern.description").local,
+            contentID: nil,
+            name: "",
+            description: "",
             purchasableItems: [
                 PurchasableItem(item: HealthRestorationPotion(tier: .III, potionCount: 3), stock: 5, priceAdjustment: 1.0),
                 PurchasableItem(item: RestoreArmorPointsConsumable(tier: .III, amount: 3), stock: 5, priceAdjustment: 1.0),

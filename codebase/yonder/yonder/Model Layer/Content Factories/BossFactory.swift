@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BossFactory {
+class BossFactory: RegionBasedFactory {
     
     private let stage: Int
     private let regionTags: RegionTagAllocation
@@ -32,6 +32,10 @@ class BossFactory {
     
     func deliver(count: Int) -> [Foe] {
         return Array(count: count, populateWith: self.createBoss())
+    }
+    
+    func deliverRegionTag() -> RegionProfileTag {
+        return self.regionTags.getTag()
     }
     
 }

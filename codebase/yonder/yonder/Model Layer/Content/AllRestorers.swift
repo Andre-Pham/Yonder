@@ -10,6 +10,12 @@ import Foundation
 enum Restorers {
     
     static func newRestorer(profile: RestorerProfile, stage: Int, restoreOptions: [Restorer.RestoreOption]) -> Restorer {
+        let restorer = Restorers.newRestorerNoProfile(stage: stage, restoreOptions: restoreOptions)
+        restorer.overrideProfileContent(contentID: profile.id, name: profile.restorerName, description: profile.restorerDescription)
+        return restorer
+    }
+    
+    static func newRestorerNoProfile(stage: Int, restoreOptions: [Restorer.RestoreOption]) -> Restorer {
         // A discount is applied to restorer prices since otherwise potions would out-value them every time
         let healthFairValue = Pricing.usingStage(stage: stage) {
             Pricing.playerHealthRestorationStat.getValue(amount: 10)
@@ -22,9 +28,9 @@ enum Restorers {
         let healthPrice = Int.random(in: healthMinValue...healthFairValue)
         let armorPointsPrice = Int.random(in: armorPointsMinValue...armorPointsFairValue)
         return Restorer(
-            contentID: profile.id,
-            name: profile.restorerName,
-            description: profile.restorerDescription,
+            contentID: nil,
+            name: "",
+            description: "",
             options: restoreOptions,
             pricePerHealthBundle: healthPrice,
             pricePerArmorPointBundle: armorPointsPrice

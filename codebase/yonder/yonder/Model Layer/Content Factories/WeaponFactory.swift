@@ -7,7 +7,7 @@
 
 import Foundation
 
-class WeaponFactory: BuildTokenFactory {
+class WeaponFactory: BuildTokenFactory, RegionBasedFactory {
     
     enum BuildToken: String {
         case damageWeapon
@@ -128,6 +128,10 @@ class WeaponFactory: BuildTokenFactory {
     
     func deliver(count: Int) -> [Weapon] {
         return Array(count: count, populateWith: self.createWeapon())
+    }
+    
+    func deliverRegionTag() -> RegionProfileTag {
+        return self.regionTags.getTag()
     }
     
 }

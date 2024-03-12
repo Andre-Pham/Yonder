@@ -587,6 +587,7 @@
 		B68266DE2B9722130079200B /* InspectTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68266DD2B9722130079200B /* InspectTagView.swift */; };
 		B690C3032BA06F8600C26F0A /* BossProfileBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690C3022BA06F8600C26F0A /* BossProfileBucket.swift */; };
 		B690C3052BA0C44A00C26F0A /* BossFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690C3042BA0C44A00C26F0A /* BossFactory.swift */; };
+		B690C3072BA10AF400C26F0A /* RegionBasedFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690C3062BA10AF400C26F0A /* RegionBasedFactory.swift */; };
 		B69E29D82B8C6FD2000C8809 /* YonderBorder7.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29D72B8C6FD2000C8809 /* YonderBorder7.swift */; };
 		B69E29DA2B8CAF4A000C8809 /* YonderBorder7Presets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29D92B8CAF4A000C8809 /* YonderBorder7Presets.swift */; };
 		B69E29DD2B8CB466000C8809 /* YonderBorder8.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29DC2B8CB466000C8809 /* YonderBorder8.swift */; };
@@ -3023,6 +3024,7 @@
 		B68266DD2B9722130079200B /* InspectTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectTagView.swift; sourceTree = "<group>"; };
 		B690C3022BA06F8600C26F0A /* BossProfileBucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossProfileBucket.swift; sourceTree = "<group>"; };
 		B690C3042BA0C44A00C26F0A /* BossFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossFactory.swift; sourceTree = "<group>"; };
+		B690C3062BA10AF400C26F0A /* RegionBasedFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionBasedFactory.swift; sourceTree = "<group>"; };
 		B69E29D72B8C6FD2000C8809 /* YonderBorder7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder7.swift; sourceTree = "<group>"; };
 		B69E29D92B8CAF4A000C8809 /* YonderBorder7Presets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder7Presets.swift; sourceTree = "<group>"; };
 		B69E29DC2B8CB466000C8809 /* YonderBorder8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder8.swift; sourceTree = "<group>"; };
@@ -8605,6 +8607,7 @@
 			isa = PBXGroup;
 			children = (
 				B6D4726A2A5898540002CEEC /* BuildTokenFactory.swift */,
+				B690C3062BA10AF400C26F0A /* RegionBasedFactory.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -10985,6 +10988,7 @@
 				B6D472402A530DCC0002CEEC /* BuildTokenCache.swift in Sources */,
 				6547B11F2840134700ABB601 /* Clonable.swift in Sources */,
 				6503293428D60A2200FC999C /* PhoenixEquipmentPill.swift in Sources */,
+				B690C3072BA10AF400C26F0A /* RegionBasedFactory.swift in Sources */,
 				651A9560276ABA66009C9A08 /* HexagonCoordinate.swift in Sources */,
 				B6588DA12B97AA6500B10A28 /* GrowDamageAfterTravelEffectPill.swift in Sources */,
 				65DC5FC228DC3D2000E5F904 /* ConsumableArmorPointsRestorationPercentBuff.swift in Sources */,

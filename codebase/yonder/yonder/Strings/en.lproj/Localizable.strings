@@ -845,18 +845,10 @@
 "equipmentPill.goldAfterTravel.effectsDescription1Param" = "After every travel, receive %@ gold.";
 "equipmentPill.permanentHealthAfterTravel1Param" = "After every travel, gain %@ permanent health.";
 
-// MARK: - Shop Keepers
-
-"shopKeeper.tavern.name" = "Tavern Brewmaster";
-"shopKeeper.tavern.description" = "An old man with round glasses. He tends to his hard-wood tavern.";
-
 // MARK: - Restorers
 
-"restorer.tavern.name" = "Tavern Mender";
-"restorer.tavern.description" = "A cloaked figure meditates on a materialised cloud. Streaks of red, gold and silver orbit his hands.";
-
-"restorer.postBoss.name" = "Travelling Maiden";
-"restorer.postBoss.description" = "Your travelling maiden, always there to mend you after a boss fight. She's graceful in tending to your wounds.";
+"restorer.postBoss.name" = "Master Atlas";
+"restorer.postBoss.description" = "Your travelling mentor, always there to mend you after a boss fight. He's graceful in tending to your wounds.";
 
 // MARK: - Foe Types
 

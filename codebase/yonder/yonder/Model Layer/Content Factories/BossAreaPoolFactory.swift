@@ -12,7 +12,7 @@ class BossAreaPoolFactory {
     func deliver(bossNumber: Int) -> BossAreaPool {
         // The same restorer that tends to you after every boss fight
         let restorer = Restorer(
-            contentID: nil, // TODO: Add content id
+            contentID: "N0020", // Reserved content ID
             name: Strings("restorer.postBoss.name").local,
             description: Strings("restorer.postBoss.description").local,
             options: [.armorPoints, .health],

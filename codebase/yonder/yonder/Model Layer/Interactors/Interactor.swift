@@ -10,11 +10,17 @@ import Foundation
 class InteractorAbstract: Named, Described, Storable {
     
     /// The ID that indicates what content (sprite sheet and metadata) to use to represent this foe, e.g. E0001
-    public let contentID: String?
-    public let name: String
-    public let description: String
+    private(set) var contentID: String?
+    private(set) var name: String
+    private(set) var description: String
     
     init(contentID: String?, name: String, description: String) {
+        self.contentID = contentID
+        self.name = name
+        self.description = description
+    }
+    
+    func overrideProfileContent(contentID: String?, name: String, description: String) {
         self.contentID = contentID
         self.name = name
         self.description = description

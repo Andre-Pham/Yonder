@@ -55,6 +55,9 @@ class ShopLocation: Location, InteractorLocation {
     ///   - contentManager: The content manager to generate any required content for this location
     func initContent(using contentManager: ContentManager) {
         guard self.generatedShopKeeper == nil else {
+            if self.shopKeeper.contentID == nil {
+                contentManager.assignShopKeeperProfile(to: self.shopKeeper, using: self.context)
+            }
             return
         }
         self.generatedShopKeeper = contentManager.generateShopKeeper(using: self.context)

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FoeFactory: BuildTokenFactory {
+class FoeFactory: BuildTokenFactory, RegionBasedFactory {
     
     enum BuildToken: String {
         case regularFoe
@@ -87,6 +87,10 @@ class FoeFactory: BuildTokenFactory {
     
     func deliver(count: Int) -> [Foe] {
         return Array(count: count, populateWith: self.createFoe())
+    }
+    
+    func deliverRegionTag() -> RegionProfileTag {
+        return self.regionTags.getTag()
     }
     
 }

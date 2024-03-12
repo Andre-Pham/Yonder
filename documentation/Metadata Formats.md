@@ -10,6 +10,22 @@ for file in *.json; do
 done | jq -s 'add | unique' | jq '.[]'
 ```
 
+Show the JSON of all restorers:
+
+```bash
+jq -s 'map(select(.roles | . != null and index("restorer"))) | unique' *.json
+```
+
+Show the filenames of all the restorers of the type "all":
+
+```bash
+for file in *.json; do
+  if jq -e 'select(.type == "all") | .roles | index("restorer")' "$file" > /dev/null 2>&1; then
+    echo "$file"
+  fi
+done
+```
+
 # Foes and Bosses
 
 #### Rules.

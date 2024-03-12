@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ShopKeeperFactory {
+class ShopKeeperFactory: RegionBasedFactory {
     
     private let lootFactories: LootFactoryBundle
     private let stage: Int
@@ -60,6 +60,10 @@ class ShopKeeperFactory {
             count: count,
             populateWith: self.buildShopKeeper(stage: self.stage, tags: self.regionTags)
         )
+    }
+    
+    func deliverRegionTag() -> RegionProfileTag {
+        return self.regionTags.getTag()
     }
     
 }

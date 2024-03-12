@@ -7,7 +7,7 @@
 
 import Foundation
 
-class EnhancerFactory {
+class EnhancerFactory: RegionBasedFactory {
     
     private let stage: Int
     private let regionTags: RegionTagAllocation
@@ -109,6 +109,10 @@ class EnhancerFactory {
             count: count,
             populateWith: self.buildEnhancer(stage: self.stage, tags: self.regionTags)
         )
+    }
+    
+    func deliverRegionTag() -> RegionProfileTag {
+        return self.regionTags.getTag()
     }
     
 }

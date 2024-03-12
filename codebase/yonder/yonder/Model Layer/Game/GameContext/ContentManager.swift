@@ -425,4 +425,47 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         return factory.deliver()
     }
     
+    // Profile assignment functions below are so locations, when their content is generated, can check if their content id is nil
+    // If so, it means they were passed a special NPC (e.g. see TavernAreaFactory), but never passed a profile
+    // Hence they can keep their NPC but update it with a profile
+    // (Refer to .initContent(:ContentManager) on classes such as ShopLocation)
+    //
+    // I only have written functions for NPCs that needed it (or don't) and don't require additional context when retrieving profiles from buckets
+    // If this was required to be extended to other NPCs or types, I would need to extend each of their class data to maintain a reference to their "profile type"
+    // For instance, Foe's FoeProfileTag, Friendly's FriendlyProfileTag, etc.
+    // Certainly can be done - not worth the effort unless proven necessary in the future
+    
+    func assignShopKeeperProfile(to shopKeeper: ShopKeeper, using locationContext: LocationContext) {
+        guard shopKeeper.contentID == nil else {
+            assertionFailure("Shop keepers already with a profile shouldn't need re-assignment")
+            return
+        }
+        let factory = self.activeShopKeeperFactories[locationContext.key]!
+        let areaTag = factory.deliverRegionTag()
+        let profile = self.shopKeeperProfileBucket.grabProfile(areaTag: areaTag)
+        shopKeeper.overrideProfileContent(contentID: profile.id, name: profile.shopKeeperName, description: profile.shopKeeperDescription)
+    }
+    
+    func assignEnhancerProfile(to enhancer: Enhancer, using locationContext: LocationContext) {
+        guard enhancer.contentID == nil else {
+            assertionFailure("Enhancers already with a profile shouldn't need re-assignment")
+            return
+        }
+        let factory = self.activeEnhancerFactories[locationContext.key]!
+        let areaTag = factory.deliverRegionTag()
+        let profile = self.enhancerProfileBucket.grabProfile(areaTag: areaTag)
+        enhancer.overrideProfileContent(contentID: profile.id, name: profile.enhancerName, description: profile.enhancerDescription)
+    }
+    
+    func assignRestorerProfile(to restorer: Restorer, using locationContext: LocationContext) {
+        guard restorer.contentID == nil else {
+            assertionFailure("Restorers already with a profile shouldn't need re-assignment")
+            return
+        }
+        let factory = self.activeRestorerFactories[locationContext.key]!
+        let areaTag = factory.deliverRegionTag()
+        let profile = self.restorerProfileBucket.grabProfile(areaTag: areaTag, restoreOptions: restorer.options)
+        restorer.overrideProfileContent(contentID: profile.id, name: profile.restorerName, description: profile.restorerDescription)
+    }
+    
 }

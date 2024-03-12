@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AccessoryFactory: BuildTokenFactory {
+class AccessoryFactory: BuildTokenFactory, RegionBasedFactory {
     
     enum BuildToken: String {
         case resistanceAccessory
@@ -143,6 +143,10 @@ class AccessoryFactory: BuildTokenFactory {
     
     func deliver(count: Int) -> [Accessory] {
         return Array(count: count, populateWith: self.createAccessory())
+    }
+    
+    func deliverRegionTag() -> RegionProfileTag {
+        return self.regionTags.getTag()
     }
     
 }

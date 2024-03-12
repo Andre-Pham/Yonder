@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ArmorFactory: BuildTokenFactory {
+class ArmorFactory: BuildTokenFactory, RegionBasedFactory {
     
     enum BuildToken: String {
         case regularArmor
@@ -124,6 +124,10 @@ class ArmorFactory: BuildTokenFactory {
     
     func deliver(count: Int) -> [Armor] {
         return Array(count: count, populateWith: self.createArmor())
+    }
+    
+    func deliverRegionTag() -> RegionProfileTag {
+        return self.regionTags.getTag()
     }
     
 }
