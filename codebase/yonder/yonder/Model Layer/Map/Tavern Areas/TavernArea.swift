@@ -79,6 +79,7 @@ class TavernArea: Region, Storable {
         self.arrangement = TavernAreaArrangements(rawValue: dataObject.get(Field.arrangement.rawValue)) ?? .S
         self.locations = dataObject.getObjectArray(Field.locations.rawValue, type: LocationAbstract.self) as! [any Location]
         self.id = UUID(uuidString: dataObject.get(Field.id.rawValue))!
+        
         self.addRootAndTipLocations()
         // We don't re-generate area arrangement because the serialised locations already have that data
         // We also don't reassign location context for the same reason

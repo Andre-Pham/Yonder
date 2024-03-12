@@ -16,6 +16,8 @@ class LocationContext: Storable {
     private(set) var background: YonderImage = YonderImages.missingBackgroundImage
     private(set) var foreground: YonderImage = YonderImages.missingForegroundImage
     
+    init() { }
+    
     func setContext(key: String, name: String, description: String, background: YonderImage, foreground: YonderImage) {
         self.key = key
         self.name = name
@@ -23,8 +25,6 @@ class LocationContext: Storable {
         self.background = background
         self.foreground = foreground
     }
-    
-    init() { }
     
     // MARK: - Serialisation
 

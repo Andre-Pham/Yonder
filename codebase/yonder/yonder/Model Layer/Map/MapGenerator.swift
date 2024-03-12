@@ -16,8 +16,15 @@ class MapGenerator {
             territories.append(self.generateSegmentsIntoTerritory(arrangementPool: areaArrangementPool, mapPool: mapPool, stage: territoryStage))
         }
         var bossAreas = [BossArea]()
-        for bossAreaPool in mapPool.bossAreaPoolsInOrder {
+        for (stage, bossAreaPool) in mapPool.bossAreaPoolsInOrder.enumerated() {
+            let correspondingTavernArea = territories[stage].tavernArea
+            // We just copy the Region properties from the tavern area to the boss area
             bossAreas.append(BossArea(
+                name: correspondingTavernArea.name,
+                description: correspondingTavernArea.description,
+                tags: correspondingTavernArea.tags,
+                background: correspondingTavernArea.background,
+                foreground: correspondingTavernArea.foreground,
                 bossLocation: bossAreaPool.grabBossLocation(),
                 restorerLocation: bossAreaPool.grabRestorerLocation()
             ))

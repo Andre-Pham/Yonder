@@ -14,38 +14,38 @@ import Foundation
 /// This is also in charge of designating the loot, to avoid the logistics of matching up the boss' area and stage with loot, and also allowing cool custom loot to be given.
 enum Bosses {
     
-    static func allBossOptions(boss: Int) -> [Foe] {
-        switch boss {
+    static func allBossOptions(stage: Int, profile: BossProfile) -> [Foe] {
+        switch stage {
         case 0:
             return [
-                Self.generateBoss0()
+                Self.generateBoss0(profile: profile)
             ]
         case 1:
             return [
-                Self.generateBoss1()
+                Self.generateBoss1(profile: profile)
             ]
         case 2:
             return [
-                Self.generateBoss2()
+                Self.generateBoss2(profile: profile)
             ]
         case 3:
             return [
-                Self.generateBoss3()
+                Self.generateBoss3(profile: profile)
             ]
         case 4:
             return [
-                Self.generateBoss4()
+                Self.generateBoss4(profile: profile)
             ]
         case 5:
             return [
-                Self.generateBoss5()
+                Self.generateBoss5(profile: profile)
             ]
         default:
-            fatalError("Bosses haven't been designed up to stage \(boss)")
+            fatalError("Bosses haven't been designed up to stage \(stage)")
         }
     }
     
-    private static func generateBoss0() -> Foe {
+    private static func generateBoss0(profile: BossProfile) -> Foe {
         // Boss 0 gains health after every attack
         let goldAccessoryName = Strings("specialLoot.travelersPocket").local
         let goldAccessory = Accessory(
@@ -86,9 +86,9 @@ enum Bosses {
         lootChoice.addAccessoryLoot(healthAccessory)
         lootChoice.addWeaponLoot(sword)
         return ScaleAttackBoss(
-            contentID: nil, // TODO: Replace with profile
-            name: "BOSS 0", // TODO: Replace with profile
-            description: "",
+            contentID: profile.id,
+            name: profile.bossName,
+            description: profile.bossDescription,
             maxHealth: 400,
             damage: 50,
             damageMultiplier: 1.5,
@@ -96,7 +96,7 @@ enum Bosses {
         )
     }
     
-    private static func generateBoss1() -> Foe {
+    private static func generateBoss1(profile: BossProfile) -> Foe {
         // Boss 1 has relatively low attack, but any damage done to health is permanent
         let healthConsumable = MultiplyHealthConsumable(healthFraction: 2.0, amount: 1)
         healthConsumable.setName(to: Strings("specialLoot.enchantedRuby").local)
@@ -109,9 +109,9 @@ enum Bosses {
         lootChoice.addConsumableLoot(goldConsumable)
         lootChoice.addConsumableLoot(armorConsumable)
         return PermanentHealthDamageBoss(
-            contentID: nil, // TODO: Replace with profile
-            name: "BOSS 1", // TODO: Replace with profile
-            description: "",
+            contentID: profile.id,
+            name: profile.bossName,
+            description: profile.bossDescription,
             maxHealth: 700,
             damage: 55,
             lootChoice: lootChoice
@@ -119,7 +119,7 @@ enum Bosses {
     }
     
     
-    private static func generateBoss2() -> Foe {
+    private static func generateBoss2(profile: BossProfile) -> Foe {
         // Boss 2 has high health, but low attack - it's intended to be a resource fight
         let damageConsumableName = Strings("specialLoot.ruthlessBlessing").local
         let damageConsumable = BuffConsumable(
@@ -159,16 +159,16 @@ enum Bosses {
         lootChoice.addConsumableLoot(healingConsumable)
         lootChoice.addConsumableLoot(resistanceConsumable)
         return RegularBoss(
-            contentID: nil, // TODO: Replace with profile
-            name: "BOSS 2", // TODO: Replace with profile
-            description: "",
+            contentID: profile.id,
+            name: profile.bossName,
+            description: profile.bossDescription,
             maxHealth: 2000,
             damage: 25,
             lootChoice: lootChoice
         )
     }
     
-    private static func generateBoss3() -> Foe {
+    private static func generateBoss3(profile: BossProfile) -> Foe {
         // Boss 3's every third attack deals extra damage, ALSO, any damage they do to the player's health is restored to them
         let headArmorName = Strings("specialLoot.rugtankHelmet").local
         let headArmor = Armor(
@@ -201,9 +201,9 @@ enum Bosses {
         lootChoice.addArmorLoot(bodyArmor)
         lootChoice.addArmorLoot(legsArmor)
         return BigSwingHealBoss(
-            contentID: nil, // TODO: Replace with profile
-            name: "BOSS 3", // TODO: Replace with profile
-            description: "",
+            contentID: profile.id,
+            name: profile.bossName,
+            description: profile.bossDescription,
             maxHealth: 550,
             damagesToCycleThrough: [50, 50, 250],
             lootChoice: lootChoice
@@ -211,7 +211,7 @@ enum Bosses {
     }
     
     
-    private static func generateBoss4() -> Foe {
+    private static func generateBoss4(profile: BossProfile) -> Foe {
         // Boss 4 disables all healing
         let yonderPotions = MaxRestorationPotion(potionCount: 8)
         let healthConsumable = MultiplyHealthConsumable(healthFraction: 2.0, amount: 1)
@@ -220,22 +220,22 @@ enum Bosses {
         lootChoice.addPotionLoot(yonderPotions)
         lootChoice.addConsumableLoot(healthConsumable)
         return DisableHealingBoss(
-            contentID: nil, // TODO: Replace with profile
-            name: "BOSS 4", // TODO: Replace with profile
-            description: "",
+            contentID: profile.id,
+            name: profile.bossName,
+            description: profile.bossDescription,
             maxHealth: 650,
             damage: 75,
             lootChoice: lootChoice
         )
     }
     
-    private static func generateBoss5() -> Foe {
+    private static func generateBoss5(profile: BossProfile) -> Foe {
         // For boss 5, all damage they take is converted into attack damage
         // HealthToAttackBoss
         return HealthToAttackBoss(
-            contentID: nil, // TODO: Replace with profile
-            name: "BOSS 5", // TODO: Replace with profile
-            description: "",
+            contentID: profile.id,
+            name: profile.bossName,
+            description: profile.bossDescription,
             maxHealth: 1000,
             damage: 1,
             conversionFraction: 1.0,

@@ -16,6 +16,7 @@ class MapPool {
     init(territoryPoolsInStageOrder: [TerritoryPool], bossAreaPoolsInOrder: [BossAreaPool]) {
         self.territoryPoolsInStageOrder = territoryPoolsInStageOrder
         self.bossAreaPoolsInOrder = bossAreaPoolsInOrder
+        assert(territoryPoolsInStageOrder.count == bossAreaPoolsInOrder.count, "A boss area is required for every territory - to see where this causes problems, refer to MapGenerator.generateTerritoriesIntoMap(:MapPool)")
     }
     
     func grabTerritoryPool(stage: Int) -> TerritoryPool? {

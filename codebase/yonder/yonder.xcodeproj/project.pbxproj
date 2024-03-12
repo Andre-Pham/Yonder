@@ -585,6 +585,8 @@
 		B678C1D82B46B11100CD6354 /* LootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C1D72B46B11100CD6354 /* LootViewModel.swift */; };
 		B678C1DA2B46B11D00CD6354 /* LootChoiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C1D92B46B11D00CD6354 /* LootChoiceViewModel.swift */; };
 		B68266DE2B9722130079200B /* InspectTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68266DD2B9722130079200B /* InspectTagView.swift */; };
+		B690C3032BA06F8600C26F0A /* BossProfileBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690C3022BA06F8600C26F0A /* BossProfileBucket.swift */; };
+		B690C3052BA0C44A00C26F0A /* BossFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690C3042BA0C44A00C26F0A /* BossFactory.swift */; };
 		B69E29D82B8C6FD2000C8809 /* YonderBorder7.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29D72B8C6FD2000C8809 /* YonderBorder7.swift */; };
 		B69E29DA2B8CAF4A000C8809 /* YonderBorder7Presets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29D92B8CAF4A000C8809 /* YonderBorder7Presets.swift */; };
 		B69E29DD2B8CB466000C8809 /* YonderBorder8.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29DC2B8CB466000C8809 /* YonderBorder8.swift */; };
@@ -3019,6 +3021,8 @@
 		B678C1D72B46B11100CD6354 /* LootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootViewModel.swift; sourceTree = "<group>"; };
 		B678C1D92B46B11D00CD6354 /* LootChoiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootChoiceViewModel.swift; sourceTree = "<group>"; };
 		B68266DD2B9722130079200B /* InspectTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectTagView.swift; sourceTree = "<group>"; };
+		B690C3022BA06F8600C26F0A /* BossProfileBucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossProfileBucket.swift; sourceTree = "<group>"; };
+		B690C3042BA0C44A00C26F0A /* BossFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossFactory.swift; sourceTree = "<group>"; };
 		B69E29D72B8C6FD2000C8809 /* YonderBorder7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder7.swift; sourceTree = "<group>"; };
 		B69E29D92B8CAF4A000C8809 /* YonderBorder7Presets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder7Presets.swift; sourceTree = "<group>"; };
 		B69E29DC2B8CB466000C8809 /* YonderBorder8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder8.swift; sourceTree = "<group>"; };
@@ -5807,6 +5811,7 @@
 				656FD90A291C6B6600F923E9 /* TavernAreaFactory.swift */,
 				656FD905291C63DB00F923E9 /* AreaPoolFactory.swift */,
 				656FD8BB2917238D00F923E9 /* FoeFactory.swift */,
+				B690C3042BA0C44A00C26F0A /* BossFactory.swift */,
 				656FD8D62919673200F923E9 /* LootOptionsFactory.swift */,
 				656FD8E52919B7A800F923E9 /* WeaponFactory.swift */,
 				656FD8E72919BFEE00F923E9 /* PotionFactory.swift */,
@@ -6561,6 +6566,7 @@
 			isa = PBXGroup;
 			children = (
 				65EFC0502936639D00B8E677 /* BossProfile.swift */,
+				B690C3022BA06F8600C26F0A /* BossProfileBucket.swift */,
 			);
 			path = Boss;
 			sourceTree = "<group>";
@@ -10755,6 +10761,7 @@
 				65D88C6B27449CB8002E3AC4 /* TimedEvent.swift in Sources */,
 				655F983F286993EE00A60806 /* InventoryPotionsView.swift in Sources */,
 				653AD3AF277082110001A249 /* FriendlyLocation.swift in Sources */,
+				B690C3052BA0C44A00C26F0A /* BossFactory.swift in Sources */,
 				65ED80D428293183009940A2 /* EnhancerInspectView.swift in Sources */,
 				658EDF6B2809B2CB00D398C0 /* ViewRouter.swift in Sources */,
 				658D1E5E293F9C7D006F1CC0 /* SessionEnvironment.swift in Sources */,
@@ -10891,6 +10898,7 @@
 				656FD93B2920052600F923E9 /* AfterStageChange.swift in Sources */,
 				653AD3B9277432670001A249 /* AreaArrangementPool.swift in Sources */,
 				65275DF62759BE690087B118 /* FreeGoldOffer.swift in Sources */,
+				B690C3032BA06F8600C26F0A /* BossProfileBucket.swift in Sources */,
 				6503292F28D5F47F00FC999C /* GoblinEffectPill.swift in Sources */,
 				653DD70D27F83330004A3B28 /* DefaultInspectView.swift in Sources */,
 				654FB89128D76F79008F5C60 /* ArmorDamagePercentBuffPill.swift in Sources */,

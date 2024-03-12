@@ -10,19 +10,21 @@ for file in *.json; do
 done | jq -s 'add | unique' | jq '.[]'
 ```
 
-# Foes
+# Foes and Bosses
 
 #### Rules.
 
-Foe content IDs always start with **E**. E.g. **E0001**.
+Foe and boss content IDs always start with **E**. E.g. **E0001**.
 
 #### File structure.
 
-Every file contains just a single object, which contains the data for a single foe.
+Every file contains just a single object, which contains the data for a single foe/boss.
+
+*Note, if you wish to differentiate between what's a boss and what's a foe, refer to `NPC-DATA-INDEX.json`. This file is what defines what content IDs are a foe, boss, or interactor. If you want a file to represent a boss and a foe, that's possible - you'd just add their content ID to both arrays.*
 
 #### Object structure.
 
-Each foe has the following metadata:
+Each foe/boss has the following metadata:
 
 ```json
 {

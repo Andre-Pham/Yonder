@@ -19,9 +19,11 @@ class BossAreaPoolFactory {
             pricePerHealthBundle: 0,
             pricePerArmorPointBundle: 0
         )
-        let bossOptions = Bosses.allBossOptions(boss: bossNumber)
+        // If you wanted to have pre-determined defined bosses, you could put them here and inject them into the boss locations
+        // (bossLocations takes multiple boss locations to select from, if desired)
+        // Locations don't generate content if they're initialised with it
         return BossAreaPool(
-            bossLocations: bossOptions.map { BossLocation(boss: $0) },
+            bossLocations: [BossLocation()],
             restorerLocations: [RestorerLocation(restorer: restorer)]
         )
     }

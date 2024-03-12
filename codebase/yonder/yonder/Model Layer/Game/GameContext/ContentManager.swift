@@ -13,6 +13,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
     private let armorProfileBucket: ArmorProfileBucket
     private let weaponProfileBucket: WeaponProfileBucket
     private let foeProfileBucket: FoeProfileBucket
+    private let bossProfileBucket: BossProfileBucket
     private let shopKeeperProfileBucket: ShopKeeperProfileBucket
     private let enhancerProfileBucket: EnhancerProfileBucket
     private let restorerProfileBucket: RestorerProfileBucket
@@ -33,6 +34,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
     private var activeAccessoryFactories = [String: AccessoryFactory]()
     private var activeConsumableFactories = [String: ConsumableFactory]()
     private var activeHostileFactories = [String: FoeFactory]()
+    private var activeBossFactories = [String: BossFactory]()
     private var activeShopKeeperFactories = [String: ShopKeeperFactory]()
     private var activeEnhancerFactories = [String: EnhancerFactory]()
     private var activeRestorerFactories = [String: RestorerFactory]()
@@ -44,6 +46,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
     private var accessoryBuildTokenCache: [BuildTokenCache]
     private var consumableBuildTokenCache: [BuildTokenCache]
     private var hostileBuildTokenCache: [BuildTokenCache]
+    // > Bosses don't have build tokens
     // > ShopKeepers don't have build tokens
     // > Enhancers don't have build tokens
     private var restorerBuildTokenCache: [BuildTokenCache]
@@ -54,6 +57,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         self.armorProfileBucket = ArmorProfileBucket()
         self.weaponProfileBucket = WeaponProfileBucket()
         self.foeProfileBucket = FoeProfileBucket()
+        self.bossProfileBucket = BossProfileBucket()
         self.shopKeeperProfileBucket = ShopKeeperProfileBucket()
         self.enhancerProfileBucket = EnhancerProfileBucket()
         self.restorerProfileBucket = RestorerProfileBucket()
@@ -65,6 +69,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         self.accessoryBuildTokenCache = [BuildTokenCache]()
         self.consumableBuildTokenCache = [BuildTokenCache]()
         self.hostileBuildTokenCache = [BuildTokenCache]()
+        // > Bosses don't have build tokens
         // > ShopKeepers don't have build tokens
         // > Enhancers don't have build tokens
         self.restorerBuildTokenCache = [BuildTokenCache]()
@@ -82,6 +87,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         case armorProfileBucket
         case weaponProfileBucket
         case foeProfileBucket
+        case bossProfileBucket
         case shopKeeperProfileBucket
         case enhancerProfileBucket
         case restorerProfileBucket
@@ -101,6 +107,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         self.armorProfileBucket = dataObject.getObject(Field.armorProfileBucket.rawValue, type: ArmorProfileBucket.self)
         self.weaponProfileBucket = dataObject.getObject(Field.weaponProfileBucket.rawValue, type: WeaponProfileBucket.self)
         self.foeProfileBucket = dataObject.getObject(Field.foeProfileBucket.rawValue, type: FoeProfileBucket.self)
+        self.bossProfileBucket = dataObject.getObject(Field.bossProfileBucket.rawValue, type: BossProfileBucket.self)
         self.shopKeeperProfileBucket = dataObject.getObject(Field.shopKeeperProfileBucket.rawValue, type: ShopKeeperProfileBucket.self)
         self.enhancerProfileBucket = dataObject.getObject(Field.enhancerProfileBucket.rawValue, type: EnhancerProfileBucket.self)
         self.restorerProfileBucket = dataObject.getObject(Field.restorerProfileBucket.rawValue, type: RestorerProfileBucket.self)
@@ -112,6 +119,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         self.accessoryBuildTokenCache = dataObject.getObjectArray(Field.accessoryBuildTokens.rawValue, type: BuildTokenCache.self)
         self.consumableBuildTokenCache = dataObject.getObjectArray(Field.consumableBuildTokens.rawValue, type: BuildTokenCache.self)
         self.hostileBuildTokenCache = dataObject.getObjectArray(Field.hostileBuildTokens.rawValue, type: BuildTokenCache.self)
+        // > Bosses don't have build tokens
         // > ShopKeepers don't have build tokens
         // > Enhancers don't have build tokens
         self.restorerBuildTokenCache = dataObject.getObjectArray(Field.restorerBuildTokens.rawValue, type: BuildTokenCache.self)
@@ -129,6 +137,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
             .add(key: Field.armorProfileBucket.rawValue, value: self.armorProfileBucket)
             .add(key: Field.weaponProfileBucket.rawValue, value: self.weaponProfileBucket)
             .add(key: Field.foeProfileBucket.rawValue, value: self.foeProfileBucket)
+            .add(key: Field.bossProfileBucket.rawValue, value: self.bossProfileBucket)
             .add(key: Field.shopKeeperProfileBucket.rawValue, value: self.shopKeeperProfileBucket)
             .add(key: Field.enhancerProfileBucket.rawValue, value: self.enhancerProfileBucket)
             .add(key: Field.restorerProfileBucket.rawValue, value: self.restorerProfileBucket)
@@ -158,6 +167,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
                 key: Field.hostileBuildTokens.rawValue,
                 value: self.activeHostileFactories.map({ $0.value.exportBuildTokenCache(regionKey: $0.key) }) + self.hostileBuildTokenCache
             )
+            // > Bosses don't have build tokens
             // > ShopKeepers don't have build tokens
             // > Enhancers don't have build tokens
             .add(
@@ -194,6 +204,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         self.activeAccessoryFactories.removeAll()
         self.activeConsumableFactories.removeAll()
         self.activeHostileFactories.removeAll()
+        self.activeBossFactories.removeAll()
         self.activeShopKeeperFactories.removeAll()
         self.activeEnhancerFactories.removeAll()
         self.activeRestorerFactories.removeAll()
@@ -231,6 +242,20 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         self.resetFactories()
         let map = Game.gameContextAccess.map
         let territory = map.territoriesInOrder[newStage]
+        // Every region (i.e. areas, tavern areas, boss areas) can generate every type of location
+        // Hence we generate every type of factory for each, so that if the player needs to
+        // generate, say, a weapon, it doesn't matter what region they are (where they are in the map),
+        // there'll be a factory that they can use to generate it
+        //
+        // The only exception is boss areas - they don't need content generation, and only need the boss factory
+        // We do their regions (boss areas) here:
+        let bossArea: Region = map.bossAreasInOrder[newStage]
+        self.activeBossFactories[bossArea.getRegionKey()] = BossFactory(
+            stage: newStage,
+            regionTags: bossArea.tags,
+            profileBucket: self.bossProfileBucket
+        )
+        // ...And then we do the rest of the regions (that DO require the generation of all types of content)
         var regions = [Region]()
         regions.append(contentsOf: territory.segment.allAreas)
         regions.append(territory.tavernArea)
@@ -335,6 +360,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         self.restoreBuildTokenCaches(for: self.activeAccessoryFactories, caches: &self.accessoryBuildTokenCache)
         self.restoreBuildTokenCaches(for: self.activeConsumableFactories, caches: &self.consumableBuildTokenCache)
         self.restoreBuildTokenCaches(for: self.activeHostileFactories, caches: &self.hostileBuildTokenCache)
+        // > Bosses don't have build tokens
         // > ShopKeepers don't have build tokens
         // > Enhancers don't have build tokens
         self.restoreBuildTokenCaches(for: self.activeRestorerFactories, caches: &self.restorerBuildTokenCache)
@@ -391,6 +417,11 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
     
     func generateFriendly(using locationContext: LocationContext) -> Friendly {
         let factory = self.activeFriendlyFactories[locationContext.key]!
+        return factory.deliver()
+    }
+    
+    func generateBoss(using locationContext: LocationContext) -> Foe {
+        let factory = self.activeBossFactories[locationContext.key]!
         return factory.deliver()
     }
     
