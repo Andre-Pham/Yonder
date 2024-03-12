@@ -20,6 +20,7 @@ struct InspectLocationView: View {
             }
             
             self.locationViewModel.background.image
+                .interpolation(.none)
                 .resizable()
                 .scaledToFill()
                 .frame(height: 150)
