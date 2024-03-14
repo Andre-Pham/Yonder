@@ -51,7 +51,7 @@ class RegionProfileBucket {
                 regionName: Strings("map.region.desert.name").local,
                 regionDescription: Strings("map.region.desert.description").local,
                 regionTileBackgroundImage: YonderImages.desertTileBackgroundImage,
-                regionPlatformImage: YonderImages.missingPlatformImage,
+                regionPlatformImage: YonderImages.desertPlatformImage,
                 tags: RegionTagAllocation(tags: (.desert, 1)),
                 assignment: .area
             ),

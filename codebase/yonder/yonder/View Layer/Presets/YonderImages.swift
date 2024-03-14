@@ -29,5 +29,6 @@ enum YonderImages {
     
     static let forestPlatformImage = YonderImage("ForestPlatform")
     static let faction5PlatformImage = YonderImage("Faction5Platform")
+    static let desertPlatformImage = YonderImage("DesertPlatform")
     
 }
