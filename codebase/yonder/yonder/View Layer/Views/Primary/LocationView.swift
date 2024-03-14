@@ -10,9 +10,7 @@ import SwiftUI
 struct LocationView: View {
     @ObservedObject var locationViewModel: LocationViewModel
     @StateObject var animationQueue: NPCAnimation
-    // TODO: These (background/foreground) are currently unused, but likely will serve a purpose down the road
-    private let background: YonderImage
-    private let foreground: YonderImage
+    private let platform: YonderImage
     // Adjust to preference
     private let viewHeight = 200.0
     // Sprites tend to be slightly right-leaning and centre better when adjusted
@@ -30,8 +28,7 @@ struct LocationView: View {
         self.locationViewModel = locationViewModel
         // Maintain as @StateObject to not re-create every view redraw
         self._animationQueue = StateObject(wrappedValue: NPCAnimation(optionsStateManager: optionsStateManager))
-        self.background = locationViewModel.background
-        self.foreground = locationViewModel.foreground
+        self.platform = locationViewModel.platformImage
     }
     
     var body: some View {
@@ -41,12 +38,12 @@ struct LocationView: View {
                 VStack(spacing: 0) {
                     Spacer()
                     
-                    YonderImages.npcShadowImage.image
+                    self.platform.image
                         .resizable()
                         .interpolation(.none)
                         .scaledToFit()
-                        .offset(y: -2)
-                        .frame(width: 220)
+                        .offset(y: 11)
+                        .frame(width: 305)
                 }
             }
             // Overlay because the animation frame is actually larger than the view frame

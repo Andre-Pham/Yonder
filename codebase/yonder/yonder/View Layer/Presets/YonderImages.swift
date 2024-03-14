@@ -11,22 +11,23 @@ enum YonderImages {
     
     // MARK: - Placeholders
     
-    static let missingBackgroundImage = YonderImage("MissingBackground")
-    static let missingForegroundImage = YonderImage("MissingForeground")
+    static let missingTileBackgroundImage = YonderImage("MissingTileBackground")
+    static let missingPlatformImage = YonderImage("MissingPlatform")
     
     // MARK: - Foe Types
     
     static let goblinIcon = YonderImage("Goblin")
     static let bruteIcon = YonderImage("BrokenShield")
     
-    // MARK: - Background Art
+    // MARK: - Tile Art
     
-    static let npcShadowImage = YonderImage("Shadow")
-    static let forestForegroundImage = YonderImage("ForestForeground")
-    static let forestBackgroundImage = YonderImage("ForestBackground")
-    static let cavernForegroundImage = YonderImage("CavernForeground")
-    static let cavernBackgroundImage = YonderImage("CavernBackground")
-    static let desertForegroundImage = YonderImage("DesertForeground")
-    static let desertBackgroundImage = YonderImage("DesertBackground")
+    static let forestTileBackgroundImage = YonderImage("ForestTileBackground")
+    static let cavernTileBackgroundImage = YonderImage("CavernTileBackground")
+    static let desertTileBackgroundImage = YonderImage("DesertTileBackground")
+    
+    // MARK: - Platform Art
+    
+    static let forestPlatformImage = YonderImage("ForestPlatform")
+    static let faction5PlatformImage = YonderImage("Faction5Platform")
     
 }

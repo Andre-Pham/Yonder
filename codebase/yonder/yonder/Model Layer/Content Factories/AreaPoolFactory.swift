@@ -19,8 +19,8 @@ class AreaPoolFactory {
         return AreaPool(
             areaName: self.areaProfile.regionName,
             areaDescription: self.areaProfile.regionDescription,
-            areaBackground: self.areaProfile.regionBackground,
-            areaForeground: self.areaProfile.regionForeground,
+            areaTileBackgroundImage: self.areaProfile.regionTileBackgroundImage,
+            areaPlatformImage: self.areaProfile.regionPlatformImage,
             tags: self.areaProfile.tags,
             hostileLocations: Array(count: 20, populateWith: HostileLocation()),
             challengeHostileLocations: Array(count: 20, populateWith: ChallengeHostileLocation()),

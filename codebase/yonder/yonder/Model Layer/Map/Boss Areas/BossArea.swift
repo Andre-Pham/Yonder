@@ -11,8 +11,8 @@ class BossArea: Region, Storable {
     
     public let name: String
     public let description: String
-    public let background: YonderImage
-    public let foreground: YonderImage
+    public let tileBackgroundImage: YonderImage
+    public let platformImage: YonderImage
     public let id: UUID
     public let tags: RegionTagAllocation
     public let bossLocation: BossLocation
@@ -31,15 +31,15 @@ class BossArea: Region, Storable {
         name: String,
         description: String,
         tags: RegionTagAllocation,
-        background: YonderImage,
-        foreground: YonderImage,
+        tileBackgroundImage: YonderImage,
+        platformImage: YonderImage,
         bossLocation: BossLocation,
         restorerLocation: RestorerLocation
     ) {
         self.name = name
         self.description = description
-        self.background = background
-        self.foreground = foreground
+        self.tileBackgroundImage = tileBackgroundImage
+        self.platformImage = platformImage
         self.id = UUID() // id must be persistent so location contexts can refer to them
         self.tags = tags
         self.bossLocation = bossLocation
@@ -50,7 +50,7 @@ class BossArea: Region, Storable {
         self.restorerLocation.setHexagonCoordinate(5, 35)
         
         for location in self.locations {
-            location.setContext(key: self.getRegionKey(), name: self.name, description: self.description, background: self.background, foreground: self.foreground)
+            location.setContext(key: self.getRegionKey(), name: self.name, description: self.description, tileBackgroundImage: self.tileBackgroundImage, platformImage: self.platformImage)
         }
     }
     
@@ -60,8 +60,8 @@ class BossArea: Region, Storable {
         case name
         case description
         case tags
-        case backgroundImageName
-        case foregroundImageName
+        case tileBackgroundImageName
+        case platformImageName
         case bossLocation
         case restorerLocation
         case id
@@ -71,11 +71,11 @@ class BossArea: Region, Storable {
         self.name = dataObject.get(Field.name.rawValue)
         self.description = dataObject.get(Field.description.rawValue)
         self.tags = dataObject.getObject(Field.tags.rawValue, type: RegionTagAllocation.self)
-        let backgroundImageName: String = dataObject.get(Field.backgroundImageName.rawValue, onFail: "")
-        let foregroundImageName: String = dataObject.get(Field.foregroundImageName.rawValue, onFail: "")
-        self.background = backgroundImageName.isEmpty ? YonderImages.missingBackgroundImage : YonderImage(backgroundImageName)
-        self.foreground = foregroundImageName.isEmpty ? YonderImages.missingForegroundImage : YonderImage(foregroundImageName)
-        assert(!backgroundImageName.isEmpty && !foregroundImageName.isEmpty, "Location image could not be restored")
+        let tileBackgroundImageName: String = dataObject.get(Field.tileBackgroundImageName.rawValue, onFail: "")
+        let platformImageName: String = dataObject.get(Field.platformImageName.rawValue, onFail: "")
+        self.tileBackgroundImage = tileBackgroundImageName.isEmpty ? YonderImages.missingTileBackgroundImage : YonderImage(tileBackgroundImageName)
+        self.platformImage = platformImageName.isEmpty ? YonderImages.missingPlatformImage : YonderImage(platformImageName)
+        assert(!tileBackgroundImageName.isEmpty && !platformImageName.isEmpty, "Location image could not be restored")
         self.bossLocation = dataObject.getObject(Field.bossLocation.rawValue, type: BossLocation.self)
         self.restorerLocation = dataObject.getObject(Field.restorerLocation.rawValue, type: RestorerLocation.self)
         self.id = UUID(uuidString: dataObject.get(Field.id.rawValue))!
@@ -89,8 +89,8 @@ class BossArea: Region, Storable {
             .add(key: Field.name.rawValue, value: self.name)
             .add(key: Field.description.rawValue, value: self.description)
             .add(key: Field.tags.rawValue, value: self.tags)
-            .add(key: Field.backgroundImageName.rawValue, value: self.background.name)
-            .add(key: Field.foregroundImageName.rawValue, value: self.foreground.name)
+            .add(key: Field.tileBackgroundImageName.rawValue, value: self.tileBackgroundImage.name)
+            .add(key: Field.platformImageName.rawValue, value: self.platformImage.name)
             .add(key: Field.bossLocation.rawValue, value: self.bossLocation)
             .add(key: Field.restorerLocation.rawValue, value: self.restorerLocation)
             .add(key: Field.id.rawValue, value: self.id.uuidString)

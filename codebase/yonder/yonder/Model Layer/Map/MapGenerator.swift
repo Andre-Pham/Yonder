@@ -23,8 +23,8 @@ class MapGenerator {
                 name: correspondingTavernArea.name,
                 description: correspondingTavernArea.description,
                 tags: correspondingTavernArea.tags,
-                background: correspondingTavernArea.background,
-                foreground: correspondingTavernArea.foreground,
+                tileBackgroundImage: correspondingTavernArea.tileBackgroundImage,
+                platformImage: correspondingTavernArea.platformImage,
                 bossLocation: bossAreaPool.grabBossLocation(),
                 restorerLocation: bossAreaPool.grabRestorerLocation()
             ))
@@ -111,8 +111,8 @@ class MapGenerator {
             name: areaPool.areaName,
             description: areaPool.areaDescription,
             tags: areaPool.tags,
-            background: areaPool.areaBackground,
-            foreground: areaPool.areaForeground
+            tileBackgroundImage: areaPool.areaTileBackgroundImage,
+            platformImage: areaPool.areaPlatformImage
         )
     }
     

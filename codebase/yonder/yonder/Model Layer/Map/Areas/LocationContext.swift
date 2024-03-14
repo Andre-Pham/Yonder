@@ -13,17 +13,17 @@ class LocationContext: Storable {
     private(set) var key: String = ""
     private(set) var name: String = ""
     private(set) var description: String = ""
-    private(set) var background: YonderImage = YonderImages.missingBackgroundImage
-    private(set) var foreground: YonderImage = YonderImages.missingForegroundImage
+    private(set) var tileBackgroundImage: YonderImage = YonderImages.missingTileBackgroundImage
+    private(set) var platformImage: YonderImage = YonderImages.missingPlatformImage
     
     init() { }
     
-    func setContext(key: String, name: String, description: String, background: YonderImage, foreground: YonderImage) {
+    func setContext(key: String, name: String, description: String, tileBackgroundImage: YonderImage, platformImage: YonderImage) {
         self.key = key
         self.name = name
         self.description = description
-        self.background = background
-        self.foreground = foreground
+        self.tileBackgroundImage = tileBackgroundImage
+        self.platformImage = platformImage
     }
     
     // MARK: - Serialisation
@@ -32,19 +32,19 @@ class LocationContext: Storable {
         case key
         case name
         case description
-        case backgroundImageName
-        case foregroundImageName
+        case tileBackgroundImageName
+        case platformImageName
     }
 
     required init(dataObject: DataObject) {
         self.key = dataObject.get(Field.key.rawValue)
         self.name = dataObject.get(Field.name.rawValue)
         self.description = dataObject.get(Field.description.rawValue)
-        let backgroundImageName: String = dataObject.get(Field.backgroundImageName.rawValue, onFail: "")
-        let foregroundImageName: String = dataObject.get(Field.foregroundImageName.rawValue, onFail: "")
-        self.background = backgroundImageName.isEmpty ? YonderImages.missingBackgroundImage : YonderImage(backgroundImageName)
-        self.foreground = foregroundImageName.isEmpty ? YonderImages.missingForegroundImage : YonderImage(foregroundImageName)
-        assert(!backgroundImageName.isEmpty && !foregroundImageName.isEmpty, "Location image could not be restored")
+        let tileBackgroundImageName: String = dataObject.get(Field.tileBackgroundImageName.rawValue, onFail: "")
+        let platformImageName: String = dataObject.get(Field.platformImageName.rawValue, onFail: "")
+        self.tileBackgroundImage = tileBackgroundImageName.isEmpty ? YonderImages.missingTileBackgroundImage : YonderImage(tileBackgroundImageName)
+        self.platformImage = platformImageName.isEmpty ? YonderImages.missingPlatformImage : YonderImage(platformImageName)
+        assert(!tileBackgroundImageName.isEmpty && !platformImageName.isEmpty, "Location image could not be restored")
     }
 
     func toDataObject() -> DataObject {
@@ -52,8 +52,8 @@ class LocationContext: Storable {
             .add(key: Field.key.rawValue, value: self.key)
             .add(key: Field.name.rawValue, value: self.name)
             .add(key: Field.description.rawValue, value: self.description)
-            .add(key: Field.backgroundImageName.rawValue, value: self.background.name)
-            .add(key: Field.foregroundImageName.rawValue, value: self.foreground.name)
+            .add(key: Field.tileBackgroundImageName.rawValue, value: self.tileBackgroundImage.name)
+            .add(key: Field.platformImageName.rawValue, value: self.platformImage.name)
     }
     
 }

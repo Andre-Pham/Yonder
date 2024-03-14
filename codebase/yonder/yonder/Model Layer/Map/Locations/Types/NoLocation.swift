@@ -17,8 +17,8 @@ class NoLocation: Location {
             key: "",
             name: "placeholderName",
             description: "placeholderDescription",
-            background: YonderImages.missingBackgroundImage,
-            foreground: YonderImages.missingForegroundImage
+            tileBackgroundImage: YonderImages.missingTileBackgroundImage,
+            platformImage: YonderImages.missingPlatformImage
         )
     }
     

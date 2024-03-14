@@ -22,8 +22,8 @@ class AreaPool {
     
     public let areaName: String
     public let areaDescription: String
-    public let areaBackground: YonderImage
-    public let areaForeground: YonderImage
+    public let areaTileBackgroundImage: YonderImage
+    public let areaPlatformImage: YonderImage
     public let tags: RegionTagAllocation
     public let id = UUID()
     private var hostileLocations: LocationCollection
@@ -36,8 +36,8 @@ class AreaPool {
     init(
         areaName: String,
         areaDescription: String,
-        areaBackground: YonderImage,
-        areaForeground: YonderImage,
+        areaTileBackgroundImage: YonderImage,
+        areaPlatformImage: YonderImage,
         tags: RegionTagAllocation,
         hostileLocations: [HostileLocation],
         challengeHostileLocations: [ChallengeHostileLocation],
@@ -48,8 +48,8 @@ class AreaPool {
     ) {
         self.areaName = areaName
         self.areaDescription = areaDescription
-        self.areaBackground = areaBackground
-        self.areaForeground = areaForeground
+        self.areaTileBackgroundImage = areaTileBackgroundImage
+        self.areaPlatformImage = areaPlatformImage
         self.tags = tags
         self.hostileLocations = LocationCollection(hostileLocations)
         self.challengeHostileLocations = LocationCollection(challengeHostileLocations)

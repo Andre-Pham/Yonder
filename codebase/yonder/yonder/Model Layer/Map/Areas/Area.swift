@@ -12,8 +12,8 @@ class Area: Region, Storable {
     
     public let name: String
     public let description: String
-    public let background: YonderImage
-    public let foreground: YonderImage
+    public let tileBackgroundImage: YonderImage
+    public let platformImage: YonderImage
     public let rootLocation: Location
     public let tipLocation: Location
     private(set) var leftBridgeLocations = [Location]()
@@ -29,8 +29,8 @@ class Area: Region, Storable {
         name: String = "placeholderName",
         description: String = "placeholderDescription",
         tags: RegionTagAllocation,
-        background: YonderImage = YonderImages.missingBackgroundImage,
-        foreground: YonderImage = YonderImages.missingForegroundImage
+        tileBackgroundImage: YonderImage = YonderImages.missingTileBackgroundImage,
+        platformImage: YonderImage = YonderImages.missingPlatformImage
     ) {
         assert(locations.count == arrangement.locationCount, "Number of locations provided to generate Area doesn't match expected number for the arrangement")
         self.arrangement = arrangement
@@ -40,8 +40,8 @@ class Area: Region, Storable {
         self.name = name
         self.description = description
         self.tags = tags
-        self.background = background
-        self.foreground = foreground
+        self.tileBackgroundImage = tileBackgroundImage
+        self.platformImage = platformImage
         self.id = UUID() // id must be persistent so location contexts can refer to them
         
         self.locations.forEach { $0.setAreaContext(self) }
@@ -53,8 +53,8 @@ class Area: Region, Storable {
     private enum Field: String {
         case name
         case description
-        case backgroundImageName
-        case foregroundImageName
+        case tileBackgroundImageName
+        case platformImageName
         case arrangement
         case tags
         case locations
@@ -68,11 +68,11 @@ class Area: Region, Storable {
     required init(dataObject: DataObject) {
         self.name = dataObject.get(Field.name.rawValue)
         self.description = dataObject.get(Field.description.rawValue)
-        let backgroundImageName: String = dataObject.get(Field.backgroundImageName.rawValue, onFail: "")
-        let foregroundImageName: String = dataObject.get(Field.foregroundImageName.rawValue, onFail: "")
-        self.background = backgroundImageName.isEmpty ? YonderImages.missingBackgroundImage : YonderImage(backgroundImageName)
-        self.foreground = foregroundImageName.isEmpty ? YonderImages.missingForegroundImage : YonderImage(foregroundImageName)
-        assert(!backgroundImageName.isEmpty && !foregroundImageName.isEmpty, "Location image could not be restored")
+        let tileBackgroundImageName: String = dataObject.get(Field.tileBackgroundImageName.rawValue, onFail: "")
+        let platformImageName: String = dataObject.get(Field.platformImageName.rawValue, onFail: "")
+        self.tileBackgroundImage = tileBackgroundImageName.isEmpty ? YonderImages.missingTileBackgroundImage : YonderImage(tileBackgroundImageName)
+        self.platformImage = platformImageName.isEmpty ? YonderImages.missingPlatformImage : YonderImage(platformImageName)
+        assert(!tileBackgroundImageName.isEmpty && !platformImageName.isEmpty, "Location image could not be restored")
         self.arrangement = AreaArrangements(rawValue: dataObject.get(Field.arrangement.rawValue))!
         self.tags = dataObject.getObject(Field.tags.rawValue, type: RegionTagAllocation.self)
         self.locations = dataObject.getObjectArray(Field.locations.rawValue, type: LocationAbstract.self) as! [any Location]
@@ -103,8 +103,8 @@ class Area: Region, Storable {
         return DataObject(self)
             .add(key: Field.name.rawValue, value: self.name)
             .add(key: Field.description.rawValue, value: self.description)
-            .add(key: Field.backgroundImageName.rawValue, value: self.background.name)
-            .add(key: Field.foregroundImageName.rawValue, value: self.foreground.name)
+            .add(key: Field.tileBackgroundImageName.rawValue, value: self.tileBackgroundImage.name)
+            .add(key: Field.platformImageName.rawValue, value: self.platformImage.name)
             .add(key: Field.arrangement.rawValue, value: self.arrangement.rawValue)
             .add(key: Field.tags.rawValue, value: self.tags)
             .add(key: Field.locations.rawValue, value: self.locations as [LocationAbstract])

@@ -50,8 +50,8 @@ struct BridgeCardView_Previews: PreviewProvider {
             key: "",
             name: "Australia",
             description: "Hot.",
-            background: YonderImages.missingBackgroundImage,
-            foreground: YonderImages.missingForegroundImage
+            tileBackgroundImage: YonderImages.missingTileBackgroundImage,
+            platformImage: YonderImages.missingPlatformImage
         )
         return content
     }
@@ -62,8 +62,8 @@ struct BridgeCardView_Previews: PreviewProvider {
             key: "",
             name: "Canada",
             description: "Cold.",
-            background: YonderImages.missingBackgroundImage,
-            foreground: YonderImages.missingForegroundImage
+            tileBackgroundImage: YonderImages.missingTileBackgroundImage,
+            platformImage: YonderImages.missingPlatformImage
         )
         return content
     }

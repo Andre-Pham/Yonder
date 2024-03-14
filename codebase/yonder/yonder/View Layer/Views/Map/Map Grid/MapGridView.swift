@@ -29,7 +29,7 @@ struct MapGridView: View {
                 MapGridLayer(gridItems: gridItems) { index in
                     // Area image
                     if let locationViewModel = self.getLocationViewModel(at: index) {
-                        locationViewModel.background.image
+                        locationViewModel.tileBackgroundImage.image
                             .resizable()
                             .clipShape(Hexagon())
                             .gridHexagonFrame(hexagonIndex: index)

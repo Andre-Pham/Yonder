@@ -12,23 +12,23 @@ class RegionProfile {
     
     public let regionName: String
     public let regionDescription: String
-    public let regionBackground: YonderImage
-    public let regionForeground: YonderImage
+    public let regionTileBackgroundImage: YonderImage
+    public let regionPlatformImage: YonderImage
     public let tags: RegionTagAllocation
     public let assignment: RegionProfileAssignment
     
     init(
         regionName: String,
         regionDescription: String,
-        regionBackground: YonderImage,
-        regionForeground: YonderImage,
+        regionTileBackgroundImage: YonderImage,
+        regionPlatformImage: YonderImage,
         tags: RegionTagAllocation,
         assignment: RegionProfileAssignment
     ) {
         self.regionName = regionName
         self.regionDescription = regionDescription
-        self.regionBackground = regionBackground
-        self.regionForeground = regionForeground
+        self.regionTileBackgroundImage = regionTileBackgroundImage
+        self.regionPlatformImage = regionPlatformImage
         self.tags = tags
         self.assignment = assignment
     }

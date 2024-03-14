@@ -20,12 +20,12 @@ class LocationViewModel: ObservableObject {
     private(set) var id: UUID
     private(set) var name: String
     private(set) var description: String
-    /// The location's region's background image
+    /// The location's region's background image for location tiles (hexagons on the map)
     /// IMPORTANT: Must remain as `YonderImage` (not `SwiftUI.Image`) due to requiring its width/height dimensions
-    private(set) var background: YonderImage
-    /// The location's region's foreground image (overlayed over the background)
+    private(set) var tileBackgroundImage: YonderImage
+    /// The location's region's platform image (what the NPC stands for - search "battle platform" in Pokemon)
     /// IMPORTANT: Must remain as `YonderImage` (not `SwiftUI.Image`) due to requiring its width/height dimensions
-    private(set) var foreground: YonderImage
+    private(set) var platformImage: YonderImage
     private(set) var type: LocationType
     private(set) var nextLocationIDs: [UUID]
     var isBridge: Bool {
@@ -84,8 +84,8 @@ class LocationViewModel: ObservableObject {
         self.id = self.location.id
         self.name = location.context.name
         self.description = location.context.description
-        self.background = location.context.background
-        self.foreground = location.context.foreground
+        self.tileBackgroundImage = location.context.tileBackgroundImage
+        self.platformImage = location.context.platformImage
         self.type = location.type
         self.nextLocationIDs = self.location.nextLocations.map { $0.id }
         if let bridgeLocation = self.location.bridgeLocation {
