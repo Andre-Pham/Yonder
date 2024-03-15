@@ -1,5 +1,6 @@
-# PolyForm Strict License 1.0.0
+# Licence
 
+This licence is based on the PolyForm Strict License 1.0.0 with one additional section, "Distribution Restrictions".
 <https://polyformproject.org/licenses/strict/1.0.0>
 
 ## Acceptance
@@ -7,6 +8,15 @@
 In order to get any license under these terms, you must agree
 to them as both strict obligations and conditions to all
 your licenses.
+
+## Distribution Restrictions
+
+Notwithstanding any provisions in these terms that may be construed to the contrary:
+
+* You may not distribute, make available, release, or publish the software, or any modifications or derivative works of the software, in any app store, application marketplace, or through any distribution channels that facilitate the distribution of software applications to a mass audience, whether for commercial purposes or for free.
+* This prohibition includes, but is not limited to, app stores for mobile devices, desktop computers, or any other platforms, regardless of whether the distribution is for a commercial purpose or not.
+* For clarity, distributing the software includes submitting, uploading, or otherwise making the software available on any app store or similar platform.
+* Violation of this distribution restriction will result in the immediate termination of all your licenses under these terms.
 
 ## Copyright License
 
