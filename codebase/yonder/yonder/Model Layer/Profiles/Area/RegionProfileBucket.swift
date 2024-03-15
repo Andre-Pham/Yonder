@@ -43,7 +43,7 @@ class RegionProfileBucket {
                 regionName: Strings("map.region.cavern.name").local,
                 regionDescription: Strings("map.region.cavern.description").local,
                 regionTileBackgroundImage: YonderImages.cavernTileBackgroundImage,
-                regionPlatformImage: YonderImages.missingPlatformImage,
+                regionPlatformImage: YonderImages.cavernPlatformImage,
                 tags: RegionTagAllocation(tags: (.cavern, 1)),
                 assignment: .area
             ),
