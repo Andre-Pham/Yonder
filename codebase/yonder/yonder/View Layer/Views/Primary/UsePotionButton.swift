@@ -21,37 +21,74 @@ struct UsePotionButton: View {
                     YonderText(text: self.potionViewModel.name, size: .buttonBody)
                         .padding(.bottom, YonderCoreGraphics.buttonTitleSpacing)
                     
-                    if let effectsDescription = self.potionViewModel.effectsDescription {
-                        if let foeViewModel = GameManager.instance.foeViewModel, self.potionViewModel.damage > 0 {
-                                IndicativeEffectsDescriptionView(
-                                    effectsDescription: effectsDescription,
-                                    indicative: self.playerViewModel.getIndicativeDamage(itemViewModel: self.potionViewModel, opposition: foeViewModel),
-                                    size: .buttonBodySubscript)
-                        } else if self.potionViewModel.healthRestoration > 0 {
-                            IndicativeEffectsDescriptionView(
-                                effectsDescription: effectsDescription,
-                                indicative: self.playerViewModel.getIndicativeHealthRestoration(of: self.potionViewModel),
-                                size: .buttonBodySubscript)
-                        } else if self.potionViewModel.armorPointsRestoration > 0 {
-                            IndicativeEffectsDescriptionView(
-                                effectsDescription: effectsDescription,
-                                indicative: self.playerViewModel.getIndicativeArmorPointsRestoration(of: self.potionViewModel),
-                                size: .buttonBodySubscript)
-                        } else if self.potionViewModel.restoration > 0 {
-                            YonderText(text: effectsDescription, size: .buttonBodySubscript)
-                            
-                            YonderText(text: self.playerViewModel.getIndicativeRestorationString(itemViewModel: self.potionViewModel), size: .buttonBodySubscript)
-                        } else {
-                            YonderText(text: effectsDescription, size: .buttonBodySubscript)
+                    StatsStack {
+                        if self.potionViewModel.damage > 0 {
+                            if let foeViewModel = GameManager.instance.foeViewModel {
+                                StatView(
+                                    title: Strings("stat.damage").local,
+                                    value: self.potionViewModel.damage,
+                                    indicativeValue: self.playerViewModel.getIndicativeDamage(
+                                        itemViewModel: self.potionViewModel,
+                                        opposition: foeViewModel
+                                    ),
+                                    image: self.potionViewModel.damageImage
+                                )
+                            } else {
+                                StatView(
+                                    title: Strings("stat.damage").local,
+                                    value: self.potionViewModel.damage,
+                                    indicativeValue: self.playerViewModel.getPassiveIndicativeDamage(
+                                        itemViewModel: self.potionViewModel
+                                    ),
+                                    image: self.potionViewModel.damageImage
+                                )
+                            }
                         }
-                    }
-                    
-                    YonderTextNumeralHStack {
-                        YonderNumeral(number: self.potionViewModel.remainingUses, size: .buttonBodySubscript)
                         
-                        YonderText(text: (self.potionViewModel.remainingUses == 1 ? Strings("stat.potion.remainingUsesSingular").local : Strings("stat.potion.remainingUses").local).leftPadded(by: " "), size: .buttonBodySubscript)
+                        if self.potionViewModel.healthRestoration > 0 {
+                            StatView(
+                                title: Strings("stat.healthRestoration").local,
+                                value: self.potionViewModel.healthRestoration,
+                                indicativeValue: self.playerViewModel.getIndicativeHealthRestoration(
+                                    of: self.potionViewModel
+                                ),
+                                image: self.potionViewModel.healthRestorationImage
+                            )
+                        }
+                        
+                        if self.potionViewModel.armorPointsRestoration > 0 {
+                            StatView(
+                                title: Strings("stat.armorPointsRestoration").local,
+                                value: self.potionViewModel.armorPointsRestoration,
+                                indicativeValue: self.playerViewModel.getIndicativeArmorPointsRestoration(
+                                    of: self.potionViewModel
+                                ),
+                                image: self.potionViewModel.armorPointsRestorationImage
+                            )
+                        }
+                        
+                        if self.potionViewModel.restoration > 0 {
+                            StatView(
+                                title: Strings("stat.restoration").local,
+                                value: self.potionViewModel.restoration,
+                                indicativeValue: self.playerViewModel.getIndicativeRestoration(
+                                    of: self.potionViewModel
+                                ),
+                                image: self.potionViewModel.restorationImage
+                            )
+                        }
+                        
+                        if let effectsDescription = self.potionViewModel.effectsDescription {
+                            YonderText(text: effectsDescription, size: .buttonBodySubscript)
+                                .padding(.bottom, YonderCoreGraphics.paragraphSpacing)
+                        }
+                        
+                        StatView(
+                            title: (self.potionViewModel.remainingUses == 1 ? Strings("stat.potion.remainingUsesSingular").local : Strings("stat.potion.remainingUses").local),
+                            value: self.potionViewModel.remainingUses,
+                            image: self.potionViewModel.remainingUsesImage
+                        )
                     }
-                    .padding(.top, YonderCoreGraphics.paragraphSpacing)
                 }
                 
                 Spacer()

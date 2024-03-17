@@ -22,26 +22,63 @@ struct UseConsumableButton: View {
                         .padding(.bottom, YonderCoreGraphics.buttonTitleSpacing)
                     
                     if let effectsDescription = self.consumableViewModel.effectsDescription {
-                        if let foeViewModel = GameManager.instance.foeViewModel, self.consumableViewModel.damage > 0 {
+                        if self.consumableViewModel.damage > 0 {
+                            if let foeViewModel = GameManager.instance.foeViewModel {
                                 IndicativeEffectsDescriptionView(
                                     effectsDescription: effectsDescription,
-                                    indicative: self.playerViewModel.getIndicativeDamage(itemViewModel: self.consumableViewModel, opposition: foeViewModel),
-                                    size: .buttonBodySubscript)
-                        } else if self.consumableViewModel.healthRestoration > 0 {
+                                    indicative: self.playerViewModel.getIndicativeDamage(
+                                        itemViewModel: self.consumableViewModel, opposition: foeViewModel
+                                    ),
+                                    size: .buttonBodySubscript
+                                )
+                            } else {
+                                IndicativeEffectsDescriptionView(
+                                    effectsDescription: effectsDescription,
+                                    indicative: self.playerViewModel.getPassiveIndicativeDamage(
+                                        itemViewModel: self.consumableViewModel
+                                    ),
+                                    size: .buttonBodySubscript
+                                )
+                            }
+                        }
+                        
+                        if self.consumableViewModel.healthRestoration > 0 {
                             IndicativeEffectsDescriptionView(
                                 effectsDescription: effectsDescription,
-                                indicative: self.playerViewModel.getIndicativeHealthRestoration(of: self.consumableViewModel),
-                                size: .buttonBodySubscript)
-                        } else if self.consumableViewModel.armorPointsRestoration > 0 {
+                                indicative: self.playerViewModel.getIndicativeHealthRestoration(
+                                    of: self.consumableViewModel
+                                ),
+                                size: .buttonBodySubscript
+                            )
+                        }
+                        
+                        if self.consumableViewModel.armorPointsRestoration > 0 {
                             IndicativeEffectsDescriptionView(
                                 effectsDescription: effectsDescription,
-                                indicative: self.playerViewModel.getIndicativeArmorPointsRestoration(of: self.consumableViewModel),
-                                size: .buttonBodySubscript)
-                        } else if self.consumableViewModel.restoration > 0 {
-                            YonderText(text: effectsDescription, size: .buttonBodySubscript)
-                            
-                            YonderText(text: self.playerViewModel.getIndicativeRestorationString(itemViewModel: self.consumableViewModel), size: .buttonBodySubscript)
-                        } else {
+                                indicative: self.playerViewModel.getIndicativeArmorPointsRestoration(
+                                    of: self.consumableViewModel
+                                ),
+                                size: .buttonBodySubscript
+                            )
+                        }
+                        
+                        if self.consumableViewModel.restoration > 0 {
+                            IndicativeEffectsDescriptionView(
+                                effectsDescription: effectsDescription,
+                                indicative: self.playerViewModel.getIndicativeRestoration(
+                                    of: self.consumableViewModel
+                                ),
+                                size: .buttonBodySubscript
+                            )
+                        }
+                        
+                        // No indicative effects description - show the regular description
+                        if (self.consumableViewModel.damage
+                            + self.consumableViewModel.healthRestoration
+                            + self.consumableViewModel.armorPointsRestoration
+                            + self.consumableViewModel.restoration
+                            == 0
+                        ) {
                             YonderText(text: effectsDescription, size: .buttonBodySubscript)
                         }
                     }

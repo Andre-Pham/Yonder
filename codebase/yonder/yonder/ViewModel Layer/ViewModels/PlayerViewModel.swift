@@ -293,6 +293,11 @@ class PlayerViewModel: ActorViewModel {
         return self.player.getIndicativeDamage(of: itemViewModel.item, opposition: opposition.foe)
     }
     
+    /// Returns the distribution of health and armor the restoration will provide if used at that point in time.
+    /// E.g. if you're missing 50 health and 50 armor, and the item restores 75, this would return "(50 health / 25 shields)"
+    /// - Parameters:
+    ///   - itemViewModel: The item to generate the restoration string from
+    /// - Returns: A string description of what health/armor the restoration will restore
     func getIndicativeRestorationString(itemViewModel: ItemViewModel) -> String {
         let (healthRestoration, armorPointsRestoration) = self.player.getIndicativeRestoration(of: itemViewModel.item)
         return "(\(healthRestoration) \(Strings("stat.health").local) / \(armorPointsRestoration) \(Strings("stat.shields").local))"
@@ -316,6 +321,16 @@ class PlayerViewModel: ActorViewModel {
     
     func getIndicativeHealthRestoration(of itemViewModel: ItemViewModel) -> Int {
         return self.player.getIndicativeHealthRestoration(of: itemViewModel.item)
+    }
+    
+    func getIndicativeRestoration(of itemViewModel: ItemViewModel) -> Int {
+        // Restoration isn't affected by buffs - just return the normal value
+        return itemViewModel.restoration
+    }
+    
+    func getAppliedRestoration(of itemViewModel: ItemViewModel) -> Int {
+        let (health, armor) = self.player.getIndicativeRestoration(of: itemViewModel.item)
+        return health + armor
     }
     
     func finishLooting() {
