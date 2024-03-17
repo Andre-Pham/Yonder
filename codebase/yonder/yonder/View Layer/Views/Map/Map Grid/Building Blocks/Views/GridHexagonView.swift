@@ -80,11 +80,13 @@ struct GridHexagonFrame: ViewModifier {
         content
             .frame(
                 width: self.scale*self.gridDimensions.hexagonFrameWidth,
-                height: self.scale*self.gridDimensions.hexagonFrameHeight/2)
+                height: self.scale*self.gridDimensions.hexagonFrameHeight/2
+            )
             .offset(x: self.gridDimensions.getHorizontalOffset(hexagonIndex: self.hexagonIndex))
             .frame(
                 width: self.gridDimensions.getGridHexagonFrameWidth(),
-                height: self.gridDimensions.getGridHexagonFrameHeight())
+                height: self.gridDimensions.getGridHexagonFrameHeight()
+            )
     }
 }
 extension View {

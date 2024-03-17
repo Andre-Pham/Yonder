@@ -15,7 +15,7 @@ class RegionProfileBucket {
             RegionProfile(
                 regionName: Strings("map.region.forest.name").local,
                 regionDescription: Strings("map.region.forest.description").local,
-                regionTileBackgroundImage: YonderImages.forestTileBackgroundImage,
+                regionTileBackgroundImage: YonderImages.forestPlatformImage,
                 regionPlatformImage: YonderImages.forestPlatformImage,
                 tags: RegionTagAllocation(tags: (.forest, 1)),
                 assignment: .area
@@ -23,7 +23,7 @@ class RegionProfileBucket {
             RegionProfile(
                 regionName: Strings("map.region.faction5.name").local,
                 regionDescription: Strings("map.region.faction5.description").local,
-                regionTileBackgroundImage: YonderImages.missingTileBackgroundImage,
+                regionTileBackgroundImage: YonderImages.faction5PlatformImage,
                 regionPlatformImage: YonderImages.faction5PlatformImage,
                 tags: RegionTagAllocation(tags: (.faction5, 1)),
                 assignment: .area
@@ -42,7 +42,7 @@ class RegionProfileBucket {
             RegionProfile(
                 regionName: Strings("map.region.cavern.name").local,
                 regionDescription: Strings("map.region.cavern.description").local,
-                regionTileBackgroundImage: YonderImages.cavernTileBackgroundImage,
+                regionTileBackgroundImage: YonderImages.cavernPlatformImage,
                 regionPlatformImage: YonderImages.cavernPlatformImage,
                 tags: RegionTagAllocation(tags: (.cavern, 1)),
                 assignment: .area
@@ -50,7 +50,7 @@ class RegionProfileBucket {
             RegionProfile(
                 regionName: Strings("map.region.desert.name").local,
                 regionDescription: Strings("map.region.desert.description").local,
-                regionTileBackgroundImage: YonderImages.desertTileBackgroundImage,
+                regionTileBackgroundImage: YonderImages.desertPlatformImage,
                 regionPlatformImage: YonderImages.desertPlatformImage,
                 tags: RegionTagAllocation(tags: (.desert, 1)),
                 assignment: .area
@@ -69,16 +69,16 @@ class RegionProfileBucket {
             RegionProfile(
                 regionName: Strings("map.region.shadow.name").local,
                 regionDescription: Strings("map.region.shadow.description").local,
-                regionTileBackgroundImage: YonderImages.missingTileBackgroundImage,
-                regionPlatformImage: YonderImages.missingPlatformImage,
+                regionTileBackgroundImage: YonderImages.shadowPlatformImage,
+                regionPlatformImage: YonderImages.shadowPlatformImage,
                 tags: RegionTagAllocation(tags: (.shadow, 1)),
                 assignment: .area
             ),
             RegionProfile(
                 regionName: Strings("map.region.faction4.name").local,
                 regionDescription: Strings("map.region.faction4.description").local,
-                regionTileBackgroundImage: YonderImages.missingTileBackgroundImage,
-                regionPlatformImage: YonderImages.missingPlatformImage,
+                regionTileBackgroundImage: YonderImages.faction4PlatformImage,
+                regionPlatformImage: YonderImages.faction4PlatformImage,
                 tags: RegionTagAllocation(tags: (.faction4, 1)),
                 assignment: .area
             ),
@@ -96,16 +96,16 @@ class RegionProfileBucket {
             RegionProfile(
                 regionName: Strings("map.region.frost.name").local,
                 regionDescription: Strings("map.region.frost.description").local,
-                regionTileBackgroundImage: YonderImages.missingTileBackgroundImage,
-                regionPlatformImage: YonderImages.missingPlatformImage,
+                regionTileBackgroundImage: YonderImages.frostPlatformImage,
+                regionPlatformImage: YonderImages.frostPlatformImage,
                 tags: RegionTagAllocation(tags: (.frost, 1)),
                 assignment: .area
             ),
             RegionProfile(
                 regionName: Strings("map.region.faction6.name").local,
                 regionDescription: Strings("map.region.faction6.description").local,
-                regionTileBackgroundImage: YonderImages.missingTileBackgroundImage,
-                regionPlatformImage: YonderImages.missingPlatformImage,
+                regionTileBackgroundImage: YonderImages.faction6PlatformImage,
+                regionPlatformImage: YonderImages.faction6PlatformImage,
                 tags: RegionTagAllocation(tags: (.faction6, 1)),
                 assignment: .area
             ),
@@ -123,16 +123,16 @@ class RegionProfileBucket {
             RegionProfile(
                 regionName: Strings("map.region.dungeon.name").local,
                 regionDescription: Strings("map.region.dungeon.description").local,
-                regionTileBackgroundImage: YonderImages.missingTileBackgroundImage,
-                regionPlatformImage: YonderImages.missingPlatformImage,
+                regionTileBackgroundImage: YonderImages.dungeonPlatformImage,
+                regionPlatformImage: YonderImages.dungeonPlatformImage,
                 tags: RegionTagAllocation(tags: (.dungeon, 1)),
                 assignment: .area
             ),
             RegionProfile(
                 regionName: Strings("map.region.mech.name").local,
                 regionDescription: Strings("map.region.mech.description").local,
-                regionTileBackgroundImage: YonderImages.missingTileBackgroundImage,
-                regionPlatformImage: YonderImages.missingPlatformImage,
+                regionTileBackgroundImage: YonderImages.mechPlatformImage,
+                regionPlatformImage: YonderImages.mechPlatformImage,
                 tags: RegionTagAllocation(tags: (.mech, 1)),
                 assignment: .area
             ),
@@ -150,16 +150,16 @@ class RegionProfileBucket {
             RegionProfile(
                 regionName: Strings("map.region.nether.name").local,
                 regionDescription: Strings("map.region.nether.description").local,
-                regionTileBackgroundImage: YonderImages.missingTileBackgroundImage,
-                regionPlatformImage: YonderImages.missingPlatformImage,
+                regionTileBackgroundImage: YonderImages.netherPlatformImage,
+                regionPlatformImage: YonderImages.netherPlatformImage,
                 tags: RegionTagAllocation(tags: (.nether, 1)),
                 assignment: .area
             ),
             RegionProfile(
                 regionName: Strings("map.region.faction2.name").local,
                 regionDescription: Strings("map.region.faction2.description").local,
-                regionTileBackgroundImage: YonderImages.missingTileBackgroundImage,
-                regionPlatformImage: YonderImages.missingPlatformImage,
+                regionTileBackgroundImage: YonderImages.faction2PlatformImage,
+                regionPlatformImage: YonderImages.faction2PlatformImage,
                 tags: RegionTagAllocation(tags: (.faction2, 1)),
                 assignment: .area
             ),
