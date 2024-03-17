@@ -31,6 +31,11 @@ class AnimationSequence {
         return self.frameCount - 1
     }
     private var frameRect: CGRect {
+        guard self.frameOrigins.count > self.frameIndex else {
+            // This has triggered once in the history of testing - catch the error in case this for some reason fails (though it should never)
+            assertionFailure("Invalid frame origin/index")
+            return CGRect()
+        }
         let origin = self.frameOrigins[self.frameIndex]
         return CGRect(x: origin.x, y: origin.y, width: self.frameSize.width, height: self.frameSize.height)
     }

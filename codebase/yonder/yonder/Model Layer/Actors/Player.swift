@@ -94,8 +94,10 @@ class Player: ActorAbstract {
     /// Provides the player with a default weapon if they are out of weapons or banned from attacking with weapons so the game can't reach a stalemate.
     /// - Returns: Weapons the player is permitted to attack with
     func getApplicableWeapons() -> [Weapon] {
-        if self.weapons.isEmpty || self.attributes.contains(.cantAttack) {
-            return [DefaultPlayerWeapon()]
+        let attackBaseline = DefaultPlayerWeapon().damage
+        let playerHasDamagingWeapon = self.weapons.first(where: { $0.damage > attackBaseline }) != nil
+        if !playerHasDamagingWeapon || self.attributes.contains(.cantAttack) {
+            return Array(self.weapons) + [DefaultPlayerWeapon()]
         }
         return Array(self.weapons)
     }
