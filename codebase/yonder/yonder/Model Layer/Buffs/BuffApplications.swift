@@ -98,14 +98,23 @@ enum BuffApplications {
     }
     
     static func getAdjustedPrice(purchaser: Player, price: Int) -> Int {
+        if price == 0 {
+            // If something is free we don't apply price buffs
+            // Discounts don't make any sense
+            // Debuffs that cause things to be more expensive aren't supposed to apply to free things
+            return price
+        }
         var adjustedPrice = price
         for buff in purchaser.getAllBuffsInPriority() {
             if buff.type == .price {
                 adjustedPrice = buff.applyPrice(to: adjustedPrice)
             }
         }
+        // We have a set max discount so things can't be free (or "pay" you)
         let maxDiscountedPrice = (Double(price)*(1.0 - Self.MAX_PRICE_DISCOUNT)).toRoundedInt()
-        if abs(adjustedPrice) < abs(maxDiscountedPrice) {
+        if price > 0 && adjustedPrice < maxDiscountedPrice {
+            adjustedPrice = maxDiscountedPrice
+        } else if price < 0 && adjustedPrice > maxDiscountedPrice {
             adjustedPrice = maxDiscountedPrice
         }
         return adjustedPrice
