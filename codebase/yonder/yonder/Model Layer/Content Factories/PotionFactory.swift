@@ -31,11 +31,11 @@ class PotionFactory: BuildTokenFactory {
         // This means you can only get max of 3 damage potions, etc., in a row
         newTokens.populate(count: 20, { .healthRestoration })
         newTokens.populate(count: 3, { .maxRestoration })
-        newTokens.populate(count: 20, { .damage })
+        newTokens.populate(count: 10, { .damage })
         newTokens.populate(count: 6, { .maxHealthRestoration })
-        newTokens.populate(count: 3, { .damagePercent })
-        newTokens.populate(count: 3, { .healthRestorationPercent })
-        newTokens.populate(count: 3, { .weakness })
+        newTokens.populate(count: 1, { .damagePercent })
+        newTokens.populate(count: 1, { .healthRestorationPercent })
+        newTokens.populate(count: 1, { .weakness })
         newTokens.shuffle()
         self.buildTokenQueue.appendToFront(contentsOf: newTokens)
     }

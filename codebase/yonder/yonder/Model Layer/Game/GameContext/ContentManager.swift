@@ -268,7 +268,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
             )
             // Challenge
             self.activeWeaponFactories[self.convertToChallengeKey(region.getRegionKey())] = WeaponFactory(
-                stage: newStage + 2,
+                stage: newStage + 1,
                 regionTags: region.tags,
                 profileBucket: self.weaponProfileBucket
             )
@@ -278,7 +278,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
             )
             // Challenge
             self.activePotionFactories[self.convertToChallengeKey(region.getRegionKey())] = PotionFactory(
-                stage: newStage + 2
+                stage: newStage + 1
             )
             // Regular
             self.activeArmorFactories[region.getRegionKey()] = ArmorFactory(
@@ -288,7 +288,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
             )
             // Challenge
             self.activeArmorFactories[self.convertToChallengeKey(region.getRegionKey())] = ArmorFactory(
-                stage: newStage + 2,
+                stage: newStage + 1,
                 regionTags: region.tags,
                 profileBucket: self.armorProfileBucket
             )
@@ -300,7 +300,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
             )
             // Challenge
             self.activeAccessoryFactories[self.convertToChallengeKey(region.getRegionKey())] = AccessoryFactory(
-                stage: newStage + 2,
+                stage: newStage + 1,
                 regionTags: region.tags,
                 profileBucket: self.accessoryProfileBucket
             )
@@ -310,7 +310,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
             )
             // Challenge
             self.activeConsumableFactories[self.convertToChallengeKey(region.getRegionKey())] = ConsumableFactory(
-                stage: newStage + 2
+                stage: newStage + 1
             )
             // Regular
             self.activeHostileFactories[region.getRegionKey()] = FoeFactory(
@@ -321,7 +321,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
             )
             // Challenge
             self.activeHostileFactories[self.convertToChallengeKey(region.getRegionKey())] = FoeFactory(
-                stage: newStage + 3,
+                stage: newStage + 1,
                 regionTags: region.tags,
                 profileBucket: self.foeProfileBucket,
                 lootFactoryBundle: self.lootFactoryBundle(self.convertToChallengeKey(region.getRegionKey()))

@@ -10,6 +10,8 @@ import Foundation
 typealias BuffApps = BuffApplications
 enum BuffApplications {
     
+    private static let MAX_PRICE_DISCOUNT = 0.75
+    
     static func getAppliedDamage(owner: ActorAbstract, using source: Any, target: ActorAbstract, damage: Int) -> Int {
         var appliedDamage = damage
         if owner.id == target.id {
@@ -101,6 +103,10 @@ enum BuffApplications {
             if buff.type == .price {
                 adjustedPrice = buff.applyPrice(to: adjustedPrice)
             }
+        }
+        let maxDiscountedPrice = (Double(price)*(1.0 - Self.MAX_PRICE_DISCOUNT)).toRoundedInt()
+        if abs(adjustedPrice) < abs(maxDiscountedPrice) {
+            adjustedPrice = maxDiscountedPrice
         }
         return adjustedPrice
     }

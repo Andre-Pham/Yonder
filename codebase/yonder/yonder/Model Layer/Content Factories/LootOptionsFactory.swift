@@ -31,7 +31,7 @@ class LootOptionsFactory {
             case .gold: return 3
             case .armor: return 2
             case .potion: return 2
-            case .weapon: return 3
+            case .weapon: return 2
             case .accessory: return 3
             case .consumable: return 2
             }
@@ -40,15 +40,21 @@ class LootOptionsFactory {
     
     private func buildLootBag() -> LootBag {
         let bag = LootBag()
-        let targetValue = 600.0.compound(multiply: 1.4, index: self.stage).toRoundedInt()
+        let targetValue = 250.0.compound(multiply: 1.4, index: self.stage).toRoundedInt()
         let minValue = Random.selectFromNormalDistribution(mid: targetValue, boundFraction: 0.25)
         while bag.totalValue < minValue && bag.optionCount < 3 {
             let lootTypes = LootType.allCases
-            let lootTypeWeights: [Int] = lootTypes.map({ $0.weight })
+            let lootTypeWeights: [Int] = lootTypes.map({
+                if $0 == .weapon && bag.weaponLoot.count > 0 {
+                    // Loot bags are not allowed to contain more than a single weapon
+                    return 0
+                }
+                return $0.weight
+            })
             let toAdd = lootTypes[FactoryUtil.randomWeightedIndex(lootTypeWeights)]
             switch toAdd {
             case .gold:
-                let targetGold = 250.0.compound(multiply: 1.4, index: self.stage).toRoundedInt()
+                let targetGold = 200.0.compound(multiply: 1.4, index: self.stage).toRoundedInt()
                 let gold = Random.selectFromNormalDistribution(mid: targetGold, boundFraction: 0.5)
                 bag.addGoldLoot(gold)
             case .armor:
@@ -62,6 +68,13 @@ class LootOptionsFactory {
             case .consumable:
                 bag.addConsumableLoot(self.lootFactories.consumableFactory.deliver())
             }
+        }
+        // Because we want the player to build up gold over time naturally (without having to explicitly collect it), add a bit of gold to most bags
+        // It's also fun and thematic to get a bit of gold
+        if Random.roll(2, in: 3) {
+            let targetGold = 40.0.compound(multiply: 1.4, index: self.stage).toRoundedInt()
+            let gold = Random.selectFromNormalDistribution(mid: targetGold, boundFraction: 0.5)
+            bag.addGoldLoot(gold)
         }
         return bag
     }

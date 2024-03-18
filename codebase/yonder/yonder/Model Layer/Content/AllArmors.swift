@@ -11,7 +11,7 @@ enum Armors {
     
     // 01
     static func regularArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
-        let armorPointsRange = ArmorPointsRange(type: type, min: 65, max: 135)
+        let armorPointsRange = ArmorPointsRange(type: type, min: 40, max: 110)
         let armorPoints = armorPointsRange.select(stage: stage)
         return Armor(
             name: profile.armorName,
@@ -26,7 +26,7 @@ enum Armors {
     
     // 02
     static func damagePercentArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
-        let armorPointsRange = ArmorPointsRange(type: type, min: 35, max: 85)
+        let armorPointsRange = ArmorPointsRange(type: type, min: 25, max: 70)
         let armorPoints = armorPointsRange.select(stage: stage)
         let damageFraction = Random.selectFromLinearDistribution(min: 1.05, max: 1.2, minY: 10, maxY: 1)
         return Armor(
@@ -48,7 +48,7 @@ enum Armors {
     
     // 03
     static func highDamagePercentArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
-        let armorPointsRange = ArmorPointsRange(type: type, min: 15, max: 55)
+        let armorPointsRange = ArmorPointsRange(type: type, min: 10, max: 50)
         let armorPoints = armorPointsRange.select(stage: stage)
         let damageFraction = Random.selectFromLinearDistribution(min: 1.15, max: 1.5, minY: 10, maxY: 1)
         return Armor(
@@ -70,7 +70,7 @@ enum Armors {
     
     // 04
     static func damageArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
-        let armorPointsRange = ArmorPointsRange(type: type, min: 35, max: 85)
+        let armorPointsRange = ArmorPointsRange(type: type, min: 25, max: 70)
         let armorPoints = armorPointsRange.select(stage: stage)
         let damageBonusRange = StatRange(min: 5, max: 35)
         damageBonusRange.compound(multiply: 1.2, index: stage)
@@ -94,7 +94,7 @@ enum Armors {
     
     // 05
     static func highDamageArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
-        let armorPointsRange = ArmorPointsRange(type: type, min: 15, max: 55)
+        let armorPointsRange = ArmorPointsRange(type: type, min: 10, max: 50)
         let armorPoints = armorPointsRange.select(stage: stage)
         let damageBonusRange = StatRange(min: 40, max: 85)
         damageBonusRange.compound(multiply: 1.2, index: stage)
@@ -118,7 +118,7 @@ enum Armors {
     
     // 06
     static func resistanceArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
-        let armorPointsRange = ArmorPointsRange(type: type, min: 55, max: 120)
+        let armorPointsRange = ArmorPointsRange(type: type, min: 30, max: 90)
         let armorPoints = armorPointsRange.select(stage: stage)
         let resistance = Random.selectFromLinearDistribution(min: 0.7, max: 0.95, minY: 1, maxY: 10)
         return Armor(
@@ -140,7 +140,7 @@ enum Armors {
     
     // 07
     static func highResistanceArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
-        let armorPointsRange = ArmorPointsRange(type: type, min: 40, max: 95)
+        let armorPointsRange = ArmorPointsRange(type: type, min: 20, max: 65)
         let armorPoints = armorPointsRange.select(stage: stage)
         let resistance = Random.selectFromLinearDistribution(min: 0.6, max: 0.8, minY: 1, maxY: 10)
         return Armor(
@@ -162,7 +162,7 @@ enum Armors {
     
     // 08
     static func damageNegationArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
-        let armorPointsRange = ArmorPointsRange(type: type, min: 45, max: 100)
+        let armorPointsRange = ArmorPointsRange(type: type, min: 25, max: 70)
         let armorPoints = armorPointsRange.select(stage: stage)
         let damageNegationRange = StatRange(min: 10, max: 45)
         damageNegationRange.compound(multiply: 1.2, index: stage)
@@ -186,7 +186,7 @@ enum Armors {
     
     // 09
     static func highDamageNegationArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
-        let armorPointsRange = ArmorPointsRange(type: type, min: 25, max: 75)
+        let armorPointsRange = ArmorPointsRange(type: type, min: 15, max: 60)
         let armorPoints = armorPointsRange.select(stage: stage)
         let damageNegationRange = StatRange(min: 40, max: 65)
         damageNegationRange.compound(multiply: 1.2, index: stage)
@@ -210,7 +210,7 @@ enum Armors {
     
     // 10
     static func thornsArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
-        let armorPointsRange = ArmorPointsRange(type: type, min: 55, max: 120)
+        let armorPointsRange = ArmorPointsRange(type: type, min: 35, max: 100)
         let armorPoints = armorPointsRange.select(stage: stage)
         let thornsFraction = Random.selectFromLinearDistribution(min: 0.05, max: 0.3, minY: 10, maxY: 1)
         return Armor(
@@ -227,7 +227,7 @@ enum Armors {
     
     // 11
     static func restorationPercentArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
-        let armorPointsRange = ArmorPointsRange(type: type, min: 55, max: 120)
+        let armorPointsRange = ArmorPointsRange(type: type, min: 35, max: 100)
         let armorPoints = armorPointsRange.select(stage: stage)
         let restorationPercent = Random.selectFromLinearDistribution(min: 1.1, max: 1.5, minY: 10, maxY: 1)
         return Armor(
@@ -255,7 +255,7 @@ enum Armors {
     
     // 12
     static func thornsAndResistanceArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
-        let armorPointsRange = ArmorPointsRange(type: type, min: 45, max: 105)
+        let armorPointsRange = ArmorPointsRange(type: type, min: 25, max: 80)
         let armorPoints = armorPointsRange.select(stage: stage)
         let resistance = Random.selectFromLinearDistribution(min: 0.8, max: 0.95, minY: 1, maxY: 10)
         let thornsFraction = Random.selectFromLinearDistribution(min: 0.05, max: 0.2, minY: 10, maxY: 1)
@@ -280,7 +280,7 @@ enum Armors {
     
     // 13
     static func bitOfEverythingArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
-        let armorPointsRange = ArmorPointsRange(type: type, min: 30, max: 75)
+        let armorPointsRange = ArmorPointsRange(type: type, min: 20, max: 55)
         let armorPoints = armorPointsRange.select(stage: stage)
         let damageFraction = Random.selectFromLinearDistribution(min: 1.05, max: 1.15, minY: 20, maxY: 1)
         let resistance = Random.selectFromLinearDistribution(min: 0.85, max: 0.95, minY: 1, maxY: 20)
@@ -319,7 +319,7 @@ enum Armors {
     
     // 14
     static func phoenixArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
-        let armorPointsRange = ArmorPointsRange(type: type, min: 55, max: 125)
+        let armorPointsRange = ArmorPointsRange(type: type, min: 35, max: 100)
         let armorPoints = armorPointsRange.select(stage: stage)
         var healthSetTo: Int? = nil
         if Random.roll(4, in: 5) {

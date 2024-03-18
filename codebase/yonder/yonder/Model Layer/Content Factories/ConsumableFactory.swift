@@ -36,8 +36,8 @@ class ConsumableFactory: BuildTokenFactory {
         newTokens.populate(count: 2, { .ripeningHealth })
         newTokens.populate(count: 2, { .travelImprovingRestoration })
         newTokens.populate(count: 20, { .restoreArmorPoints })
-        newTokens.populate(count: 2, { .damageBuffAll })
-        newTokens.populate(count: 2, { .maxRestoreAll })
+        newTokens.populate(count: 1, { .damageBuffAll })
+        newTokens.populate(count: 1, { .maxRestoreAll })
         newTokens.shuffle()
         self.buildTokenQueue.appendToFront(contentsOf: newTokens)
     }

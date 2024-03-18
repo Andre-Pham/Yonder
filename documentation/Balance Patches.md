@@ -81,3 +81,59 @@
     * *Encountering too many goblins made saving difficult while making restoration items useless*
   * Slightly increased frequency of brutes
     * *Previously you were almost twice as likely to find a goblin over a brute which felt unbalanced*
+
+### Patch 003
+
+* `ContentManager`
+    * Nerfed challenge hostile stats and loot (now they just are equivalent to fighting an enemy from the next stage)
+        * *The enemies were just ridiculous, like if you had to face one most of the time you were blown out the water. Additionally, the loot was unbalanced, if you're getting a piece of armor or a weapon from 3 stages in the future its just a bit ridiculous and can sway the game too heavily*
+* `Foes`
+    * Reduced health and damage across the board
+        * *Enemies were starting with absurd amounts of health and attack, and it was just a massive delta between starting with nothing then getting OP stuff - loot and equipment has been adjusted as a counterbalance as described below*
+* `WarriorClass`
+    * Reduced starting health to 200 (from 300)
+        * *Accounting for nerfed hostiles*
+* `Friendlies`
+    * Reduced base damage of dragon slayer sword to 200 (from 300)
+        * *Accounting for nerfed hostiles, but also geez 300 base damage was nuts*
+    * Buffed shiv damage to 50 (from 15)
+        * *15 was so weak it was humiliating*
+    * All-weapons buff now has a base damage buff of 30 (from 50)
+* `Accessories`
+    * Reduced magnitude values (not percentage-based values) across the board (except for gold-buff accessories)
+        * *Accounting for nerfed hostiles - gold accessories unaffected because honestly they need the help*
+* `BonusHealthConsumable`
+    * Reduced bonus health amount for tier 3 and 4 to 80 and 150 (from 100 and 200)
+        * *Accounting for nerfed hostiles, also it was a bit OP to get a tier 4 bonus health consumable*
+* `LootOptionsFactory`
+    * Now 2/3 bags get an extra bit of bonus gold on top
+        * *Because we want the player to build up gold over time naturally (without having to explicitly collect it), add a bit of gold to most bags. It's also fun and thematic to get a bit of gold. What can happen otherwise is the player just never collects any gold because they're too busy collecting vital loot like armour - this means shops and enhancers become useless and become things to avoid instead of things to target*
+    * Added a hard cap on weapons - loot bags are not allowed to contain more than a single weapon
+        * *Too many weapons is unhealthy for the game, because unlike armour and accessories, you can keep collecting them infinitely instead of having to replace them*
+* `PotionFactory`
+    * Reduced probability of getting damage potions, damage percent potions, health restoration percent potions, weakness potions
+        * *Damage potions are good but really shouldn't outshine health potions, which actually has a more important purpose of keeping the player alive over time. The "percent buff" potions are cool on occasion but are overwhelming if you have too many and aren't fun to use frequently.*
+* `ConsumableFactory`
+    * Reduced probability of getting damage buff and restore buff consumables
+        * *Same reason "percent buff" potions were reduced*
+* `EnhanceOffers`
+    * Reduced damage increase for grow damage for weapon upgrade
+        * *Weapons that grow in damage after every attack are very dangerous*
+* `Weapons`
+    * Minor adjustments to weapon damages and stats across the board based on intuition
+        * *I didn't decrease the damage of most of them despite the foe nerfs because it was already an issue that a lot of the time the weapons weren't strong enough - will monitor this*
+    * Reduced weapon durabilities across the board
+        * *Weapons were lasting too long. It meant I'd accumulate too many weapons, but also weapons like acute damage weapons with 200+ damage would be way too strong.*
+* `Armors`
+    * Reduced armor across the board
+        * *Accounting for nerfed hostiles*
+* `WeaponFactory`
+    * Reduced probability of getting a pure healing/armour restoration weapon
+        * *Not as useful as damage weapons, you don't want to be getting them too frequently - if you get like 2 in a row you basically get screwed a lot of the time*
+* `Pricing`
+    * Adjusted pricing for all the nerfs/buffs/adjustments
+    * Reduced the price of many things - for example, player damage and player permanent and bonus health was way over valued
+* `BuffApps`
+    * Added a maximum price discount of 75% off so items can't be impossibly cheap or free
+
+ 
