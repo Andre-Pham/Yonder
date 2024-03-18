@@ -90,6 +90,8 @@
 * `Foes`
     * Reduced health and damage across the board
         * *Enemies were starting with absurd amounts of health and attack, and it was just a massive delta between starting with nothing then getting OP stuff - loot and equipment has been adjusted as a counterbalance as described below*
+    * Increased scaling of health and attack
+        * *Enemies were too weak when transitioning to the next area - it made it too easy*
 * `WarriorClass`
     * Reduced starting health to 200 (from 300)
         * *Accounting for nerfed hostiles*
@@ -130,6 +132,12 @@
 * `WeaponFactory`
     * Reduced probability of getting a pure healing/armour restoration weapon
         * *Not as useful as damage weapons, you don't want to be getting them too frequently - if you get like 2 in a row you basically get screwed a lot of the time*
+* `Bosses`
+    * Buffed bosses across the board
+        * *They were a little too weak and underwhelming*
+* `ShopKeeperFactory`
+    * Reduced maximum things sold to 3
+        * *Too many options is overwhelming*
 * `Pricing`
     * Adjusted pricing for all the nerfs/buffs/adjustments
     * Reduced the price of many things - for example, player damage and player permanent and bonus health was way over valued
