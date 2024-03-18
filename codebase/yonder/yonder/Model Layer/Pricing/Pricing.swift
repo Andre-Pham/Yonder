@@ -119,15 +119,15 @@ class Pricing {
     static let playerGoldStat = Stat(value: 1.0, baseStat: 600.0, stageMultiplier: 1.2, playerWantsIncreased: true)
     
     /// Foe health
-    static let foeHealthStat = Stat(value: 1.0, baseStat: 175.0, stageMultiplier: 1.2, playerWantsIncreased: false)
+    static let foeHealthStat = Stat(value: 1.0, baseStat: 175.0, stageMultiplier: 1.5, playerWantsIncreased: false)
     /// Foe armor points
-    static let foeArmorPointsStat = Stat(value: 1.0, baseStat: 0.0, stageMultiplier: 1.2, playerWantsIncreased: false)
+    static let foeArmorPointsStat = Stat(value: 1.0, baseStat: 0.0, stageMultiplier: 1.1, playerWantsIncreased: false)
     /// Foe damage dealt to player
-    static let foeDamageStat = Stat(value: 0.65, baseStat: 45.0, stageMultiplier: 1.1, playerWantsIncreased: false)
+    static let foeDamageStat = Stat(value: 0.65, baseStat: 45.0, stageMultiplier: 1.4, playerWantsIncreased: false)
     /// Foe health restoration
-    static let foeHealthRestorationStat = Stat(value: 1.0, baseStat: 15.0, stageMultiplier: 1.02, playerWantsIncreased: false)
+    static let foeHealthRestorationStat = Stat(value: 1.0, baseStat: 15.0, stageMultiplier: 1.1, playerWantsIncreased: false)
     /// Foe health restoration
-    static let foeArmorPointsRestorationStat = Stat(value: 1.0, baseStat: 15.0, stageMultiplier: 1.02, playerWantsIncreased: false)
+    static let foeArmorPointsRestorationStat = Stat(value: 1.0, baseStat: 15.0, stageMultiplier: 1.1, playerWantsIncreased: false)
     
     /// Gold received by player from looting, etc.
     /// NOTE: This may seem unintuitive - how can 1 gold be worth 0.35 gold??? The answer is, gold-over-time is less valuable than gold now, and why would anyone pay $100 for an accessory that over time will only earn $100
