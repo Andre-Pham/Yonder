@@ -138,6 +138,9 @@
 * `ShopKeeperFactory`
     * Reduced maximum things sold to 3
         * *Too many options is overwhelming*
+* `EnhancerFactory`
+    * Reduced maximum offers to 3
+        * *Too many options is overwhelming*
 * `Pricing`
     * Adjusted pricing for all the nerfs/buffs/adjustments
     * Reduced the price of many things - for example, player damage and player permanent and bonus health was way over valued
