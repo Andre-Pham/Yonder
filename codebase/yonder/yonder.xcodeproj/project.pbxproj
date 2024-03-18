@@ -603,6 +603,7 @@
 		B69E29F02B8DC66A000C8809 /* YonderBorder11.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29EF2B8DC66A000C8809 /* YonderBorder11.swift */; };
 		B69E29F22B8DC673000C8809 /* YonderBorder11Presets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29F12B8DC673000C8809 /* YonderBorder11Presets.swift */; };
 		B69E29F42B8E0E7D000C8809 /* AcceptOfferButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E29F32B8E0E7D000C8809 /* AcceptOfferButton.swift */; };
+		B6BAE1DE2BA8C73C00F3712D /* TestAssertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BAE1DD2BA8C73C00F3712D /* TestAssertions.swift */; };
 		B6C37DF72A32B48F004D18A8 /* SequenceCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DF62A32B48F004D18A8 /* SequenceCode.swift */; };
 		B6C37DF92A32B4B1004D18A8 /* AnimationSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DF82A32B4B1004D18A8 /* AnimationSequence.swift */; };
 		B6C37DFB2A32B4BC004D18A8 /* AnimationComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C37DFA2A32B4BC004D18A8 /* AnimationComposite.swift */; };
@@ -3042,6 +3043,7 @@
 		B69E29EF2B8DC66A000C8809 /* YonderBorder11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder11.swift; sourceTree = "<group>"; };
 		B69E29F12B8DC673000C8809 /* YonderBorder11Presets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder11Presets.swift; sourceTree = "<group>"; };
 		B69E29F32B8E0E7D000C8809 /* AcceptOfferButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptOfferButton.swift; sourceTree = "<group>"; };
+		B6BAE1DD2BA8C73C00F3712D /* TestAssertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAssertions.swift; sourceTree = "<group>"; };
 		B6C37DF62A32B48F004D18A8 /* SequenceCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceCode.swift; sourceTree = "<group>"; };
 		B6C37DF82A32B4B1004D18A8 /* AnimationSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSequence.swift; sourceTree = "<group>"; };
 		B6C37DFA2A32B4BC004D18A8 /* AnimationComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationComposite.swift; sourceTree = "<group>"; };
@@ -5992,6 +5994,7 @@
 				65C2CDE4293871D60028DC9C /* TestContent.swift */,
 				65986019296258FD0002AD0B /* TestSession.swift */,
 				6598603D296768820002AD0B /* TestPerformance.swift */,
+				B6BAE1DD2BA8C73C00F3712D /* TestAssertions.swift */,
 			);
 			path = Testing;
 			sourceTree = "<group>";
@@ -10828,6 +10831,7 @@
 				6532D68927B27E450080B58B /* EmptyCardView.swift in Sources */,
 				656FD8BA2917230B00F923E9 /* TerritoryPoolFactory.swift in Sources */,
 				6568F9B8287DF65800035865 /* LootBag.swift in Sources */,
+				B6BAE1DE2BA8C73C00F3712D /* TestAssertions.swift in Sources */,
 				656BEE9828E0CE21001CE591 /* GoldPercentBuff.swift in Sources */,
 				6569E16727643B0A007C472E /* PlayerViewModel.swift in Sources */,
 				651E1C3C282EA9DA00F03E65 /* BossInspectView.swift in Sources */,

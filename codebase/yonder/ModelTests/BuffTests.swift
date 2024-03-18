@@ -203,9 +203,22 @@ class BuffTests: XCTestCase {
     
     func testPriceBuff() throws {
         self.player.addBuff(PriceBuff(sourceName: "", duration: nil, priceDifference: 50))
-        self.player.modifyGold(by: 500)
+        self.player.setGold(to: 500)
         self.player.modifyGoldAdjusted(by: -100)
+        // Price difference is $50, so you're paying an extra $50
+        XCTAssertEqual(self.player.gold, 500 - 100 - 50)
+        self.player.clearBuffs()
+        self.player.addBuff(PriceBuff(sourceName: "", duration: nil, priceDifference: -50))
+        self.player.setGold(to: 500)
+        self.player.modifyGoldAdjusted(by: -100)
+        // Price difference is -$50, so you're paying $50 less
         XCTAssertEqual(self.player.gold, 500 - 100 + 50)
+        self.player.setGold(to: 500)
+        self.player.modifyGoldAdjusted(by: -5)
+        // Make sure that if you have to pay less than the deduction, that:
+        // 1. You still pay something (test there is a minimum payment amount)
+        // 2. You pay less than the original amount (you still get a discount even if you reach the minimum payment amount)
+        XCTAssert(self.player.gold > 495 && self.player.gold < 500)
     }
     
     func testGoldPercentBuff() throws {

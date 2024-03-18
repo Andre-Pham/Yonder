@@ -19,6 +19,7 @@ class TestSession {
     public let game: Game = TestContent.testGame()
     
     private init() {
+        assertionFailureOutsideUnitTests("This class is only to be used during unit testing")
         Pricing.instance.setStageManager(to: self.game.gameContext.playerStageManager)
     }
     

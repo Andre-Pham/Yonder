@@ -55,7 +55,7 @@ class HostileLocation: Location, FoeLocation {
     ///   - contentManager: The content manager to generate any required content for this location
     func initContent(using contentManager: ContentManager) {
         guard self.generatedFoe == nil else {
-            assert(self.foe.contentID != nil, "Pre-generated content missing content ID required")
+            assertOutsideUnitTests(self.foe.contentID != nil, "Pre-generated content missing content ID required")
             return
         }
         self.generatedFoe = contentManager.generateHostile(using: self.context)

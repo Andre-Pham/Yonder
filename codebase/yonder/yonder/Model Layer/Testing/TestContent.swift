@@ -12,12 +12,14 @@ enum TestContent {
     // MARK: - Game
     
     static func testGame() -> Game {
+        assertionFailureOutsideUnitTests("This is only to be used during unit testing")
         return Game.new(playerClass: .none, map: TestContent.testMap())
     }
     
     // MARK: - Map
     
     static func testMap() -> Map {
+        assertionFailureOutsideUnitTests("This is only to be used during unit testing")
         var territoryPools = [TerritoryPool]()
         var areaNumber = 0
         territoryPools.populate(count: MapConfig.territoryCount) {
@@ -35,6 +37,7 @@ enum TestContent {
     }
     
     static func testAreaPool(_ number: Int) -> AreaPool {
+        assertionFailureOutsideUnitTests("This is only to be used during unit testing")
         var hostileLocations = [HostileLocation]()
         hostileLocations.populate(count: 12) { HostileLocation(foe: Self.testFoe()) }
         var challengeHostileLocations = [ChallengeHostileLocation]()
@@ -52,7 +55,7 @@ enum TestContent {
             areaDescription: "Test area \(number) description.",
             areaTileBackgroundImage: YonderImages.missingTileBackgroundImage,
             areaPlatformImage: YonderImages.missingPlatformImage,
-            tags: RegionTagAllocation(),
+            tags: RegionTagAllocation(tags: (.all, 1)),
             hostileLocations: hostileLocations,
             challengeHostileLocations: challengeHostileLocations,
             shopLocations: shopLocations,
@@ -63,10 +66,11 @@ enum TestContent {
     }
     
     static func testTavernArea() -> TavernArea {
+        assertionFailureOutsideUnitTests("This is only to be used during unit testing")
         return TavernArea(
             name: "Test Tavern Area",
             description: "Test tavern area.",
-            tags: RegionTagAllocation(),
+            tags: RegionTagAllocation(tags: (.all, 1)),
             tileBackgroundImage: YonderImages.missingTileBackgroundImage,
             platformImage: YonderImages.missingPlatformImage,
             RestorerLocation(restorer: Self.testRestorer()),
@@ -78,6 +82,7 @@ enum TestContent {
     // MARK: - Foes
     
     static func testFoe() -> Foe {
+        assertionFailureOutsideUnitTests("This is only to be used during unit testing")
         return Foe(
             contentID: nil,
             name: "Test Foe",
@@ -89,6 +94,7 @@ enum TestContent {
     }
     
     static func testBoss() -> Foe {
+        assertionFailureOutsideUnitTests("This is only to be used during unit testing")
         return Foe(
             contentID: nil,
             name: "Test Boss",
@@ -102,6 +108,7 @@ enum TestContent {
     // MARK: - Loot
     
     static func testLootBag() -> LootBag {
+        assertionFailureOutsideUnitTests("This is only to be used during unit testing")
         let lootBag = LootBag()
         lootBag.addGoldLoot(500)
         lootBag.addArmorLoot(Self.testBodyArmor())
@@ -111,20 +118,24 @@ enum TestContent {
     // MARK: - Armor
     
     static func testHeadArmor() -> Armor {
+        assertionFailureOutsideUnitTests("This is only to be used during unit testing")
         return Armor(name: "Test Head Armor", description: "Test head armor description.", type: .head, armorPoints: 200, armorBuffs: [], equipmentPills: [])
     }
     
     static func testBodyArmor() -> Armor {
+        assertionFailureOutsideUnitTests("This is only to be used during unit testing")
         return Armor(name: "Test Body Armor", description: "Test body armor description.", type: .body, armorPoints: 200, armorBuffs: [], equipmentPills: [])
     }
     
     static func testLegsArmor() -> Armor {
+        assertionFailureOutsideUnitTests("This is only to be used during unit testing")
         return Armor(name: "Test Legs Armor", description: "Test legs armor description.", type: .legs, armorPoints: 200, armorBuffs: [], equipmentPills: [])
     }
     
     // MARK: - Interactors
     
     static func testEnhancer() -> Enhancer {
+        assertionFailureOutsideUnitTests("This is only to be used during unit testing")
         return Enhancer(
             contentID: nil,
             offers: [
@@ -135,6 +146,7 @@ enum TestContent {
     }
     
     static func testFriendly() -> Friendly {
+        assertionFailureOutsideUnitTests("This is only to be used during unit testing")
         return Friendly(
             contentID: nil,
             offers: [
@@ -146,10 +158,12 @@ enum TestContent {
     }
     
     static func testRestorer() -> Restorer {
-        return Restorer(contentID: nil, options: [.armorPoints, .health], pricePerHealthBundle: 10, pricePerArmorPointBundle: 15)
+        assertionFailureOutsideUnitTests("This is only to be used during unit testing")
+        return Restorer(contentID: "N0020", options: [.armorPoints, .health], pricePerHealthBundle: 10, pricePerArmorPointBundle: 15)
     }
     
     static func testShopKeeper() -> ShopKeeper {
+        assertionFailureOutsideUnitTests("This is only to be used during unit testing")
         return ShopKeeper(contentID: nil, purchasableItems: [
             PurchasableItem(item: Accessory(name: "Damage/Health Accessory", description: "Very sharp, be careful while holding!", type: .regular, healthBonus: 50, armorPointsBonus: 0, buffs: [DamagePercentBuff(sourceName: "Damage/Health Accessory", direction: .outgoing, duration: nil, damageFraction: 1.5)], equipmentPills: []), stock: 5),
             PurchasableItem(item: Weapon(basePill: DamageBasePill(damage: 50), durabilityPill: DecrementDurabilityPill(durability: 5)), stock: 5),

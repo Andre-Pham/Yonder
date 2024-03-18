@@ -18,7 +18,9 @@ class RegionTagAllocation: Storable {
     init(tags: (RegionProfileTag, Int)...) {
         self.tags = tags.map { $0.0 }
         self.weights = tags.map { $0.1 }
-        assert(self.weights.allSatisfy({ $0 > 0 }), "negative weight provided")
+        assert(!self.weights.isEmpty, "No weights provided")
+        assert(self.weights.allSatisfy({ $0 > 0 }), "Negative weight provided")
+        assert(self.weights.reduce(0, +) > 0, "Sum of weights is zero")
     }
     
     func getTag() -> RegionProfileTag {
