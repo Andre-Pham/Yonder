@@ -444,7 +444,7 @@ fileprivate class ArmorPointsRange: StatRange {
         super.init(min: min, max: max)
     }
     
-    func select(stage: Int, minY: Double = 1, maxY: Double = 10) -> Int {
+    func select(stage: Int, minY: Double = 10, maxY: Double = 1) -> Int {
         self.compound(multiply: 1.5, index: stage)
         return self.selectFromLinearDistribution(minY: minY, maxY: maxY).toRoundedInt().nearest(5)
     }
