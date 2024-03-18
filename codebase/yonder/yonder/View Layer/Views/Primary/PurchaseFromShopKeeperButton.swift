@@ -13,6 +13,8 @@ struct PurchaseFromShopKeeperButton: View {
     var pageGeometry: GeometryProxy
     @State private var infoSheetActive = false
     @State private var accessorySelectionSheetActive = false
+    @State private var peripheralAccessoryEquipSheetActive = false
+    @State private var armorEquipSheetActive = false
     private let amount = 1
     
     var body: some View {
@@ -62,9 +64,14 @@ struct PurchaseFromShopKeeperButton: View {
                             from: self.purchasableViewModel.price
                         )
                     ) {
-                        if let accessory = self.purchasableViewModel.getAccessoryViewModel(),
-                           !accessory.isPeripheral {
-                            self.accessorySelectionSheetActive = true
+                        if let accessory = self.purchasableViewModel.getAccessoryViewModel() {
+                            if accessory.isPeripheral {
+                                self.peripheralAccessoryEquipSheetActive = true
+                            } else {
+                                self.accessorySelectionSheetActive = true
+                            }
+                        } else if self.purchasableViewModel.getArmorViewModel() != nil {
+                            self.armorEquipSheetActive = true
                         } else {
                             self.purchasableViewModel.purchase(
                                 by: self.playerViewModel,
@@ -78,7 +85,7 @@ struct PurchaseFromShopKeeperButton: View {
                         pageGeometry: self.pageGeometry,
                         content: AnyView(
                             AccessorySlotSelectionInspectView(playerViewModel: self.playerViewModel) { selection in
-                                guard let _ = self.purchasableViewModel.getAccessoryViewModel() else {
+                                guard self.purchasableViewModel.getAccessoryViewModel() != nil else {
                                     return
                                 }
                                 if let id = selection {
@@ -88,6 +95,58 @@ struct PurchaseFromShopKeeperButton: View {
                                 self.purchasableViewModel.purchase(by: self.playerViewModel, amount: self.amount)
                             }
                     ))
+                    .withInspectSheet(
+                        isPresented: self.$peripheralAccessoryEquipSheetActive,
+                        pageGeometry: self.pageGeometry,
+                        content: AnyView(
+                            EquipPeripheralAccessoryView(
+                                playerViewModel: self.playerViewModel,
+                                accessoryViewModel: purchasableViewModel.getAccessoryViewModel() ?? AccessoryViewModel(NoAccessory(type: .peripheral))
+                            ) { confirmEquip in
+                                self.peripheralAccessoryEquipSheetActive = false
+                                guard self.purchasableViewModel.getAccessoryViewModel()?.isPeripheral ?? false else {
+                                    return
+                                }
+                                // This is a buffer added - otherwise the sheet doesn't dismiss
+                                // I presume because this function changes the content in the sheet, its dismissal doesn't trigger properly
+                                // The delay isn't noticeable
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                                    if confirmEquip {
+                                        self.purchasableViewModel.purchase(
+                                            by: self.playerViewModel,
+                                            amount: self.amount
+                                        )
+                                    }
+                                }
+                            }
+                        )
+                    )
+                    .withInspectSheet(
+                        isPresented: self.$armorEquipSheetActive,
+                        pageGeometry: self.pageGeometry,
+                        content: AnyView(
+                            EquipArmorView(
+                                playerViewModel: self.playerViewModel,
+                                armorViewModel: self.purchasableViewModel.getArmorViewModel() ?? ArmorViewModel(NoArmor(type: .body))
+                            ) { confirmEquip in
+                                self.armorEquipSheetActive = false
+                                guard self.purchasableViewModel.getArmorViewModel() != nil else {
+                                    return
+                                }
+                                // This is a buffer added - otherwise the sheet doesn't dismiss
+                                // I presume because this function changes the content in the sheet, its dismissal doesn't trigger properly
+                                // The delay isn't noticeable
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                                    if confirmEquip {
+                                        self.purchasableViewModel.purchase(
+                                            by: self.playerViewModel,
+                                            amount: self.amount
+                                        )
+                                    }
+                                }
+                            }
+                        )
+                    )
                 }
                 .padding(.horizontal, YonderCoreGraphics.innerPadding)
                 .padding(.bottom, YonderCoreGraphics.innerPadding)

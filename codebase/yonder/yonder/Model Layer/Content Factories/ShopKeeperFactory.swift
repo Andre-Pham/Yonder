@@ -29,8 +29,7 @@ class ShopKeeperFactory: RegionBasedFactory {
             let toAdd = PurchasableItem.PurchasableItemType.allCases.randomElement()!
             switch toAdd {
             case .weapon:
-                let stock = Int.random(in: 1...3)
-                purchasableItems.append(PurchasableItem(item: self.lootFactories.weaponFactory.deliver(), stock: stock))
+                purchasableItems.append(PurchasableItem(item: self.lootFactories.weaponFactory.deliver(), stock: 1))
             case .potion:
                 let stock = Int.random(in: 1...3)
                 purchasableItems.append(PurchasableItem(item: self.lootFactories.potionFactory.deliver(), stock: stock))
