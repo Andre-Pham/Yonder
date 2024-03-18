@@ -33,7 +33,7 @@ enum Accessories {
     
     // 02
     static func reduceDamageAccessory(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
-        let damageRange = AccessoryStatRange(type: type, regular: (4, 22), peripheral: (22, 55))
+        let damageRange = AccessoryStatRange(type: type, regular: (5, 15), peripheral: (15, 35))
         let damage = damageRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Accessory(
             name: profile.accessoryName,
@@ -151,7 +151,7 @@ enum Accessories {
     
     // 08
     static func bonusDamageAccessory(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
-        let damageRange = AccessoryStatRange(type: type, regular: (5, 22), peripheral: (22, 40))
+        let damageRange = AccessoryStatRange(type: type, regular: (5, 15), peripheral: (15, 40))
         let damage = damageRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Accessory(
             name: profile.accessoryName,
@@ -256,7 +256,7 @@ enum Accessories {
     
     // 13
     static func thornsAccessory(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
-        let thornsRange = AccessoryStatRange(type: type, regular: (0.05, 0.25), peripheral: (0.25, 0.5))
+        let thornsRange = AccessoryStatRange(type: type, regular: (0.05, 0.2), peripheral: (0.2, 0.35))
         let thorns = thornsRange.selectFromLinearDistribution(minY: 10, maxY: 1)
         let pill = ThornsEquipmentPill(thornsFraction: thorns, sourceName: profile.accessoryName)
         return Accessory(
@@ -289,7 +289,7 @@ enum Accessories {
     
     // 15
     static func reducedPriceAccessory(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
-        let priceRange = AccessoryStatRange(type: type, regular: (10, 50), peripheral: (50, 100))
+        let priceRange = AccessoryStatRange(type: type, regular: (2, 25), peripheral: (25, 50))
         let price = priceRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Accessory(
             name: profile.accessoryName,
@@ -323,7 +323,7 @@ enum Accessories {
     
     // 17
     static func bonusGoldAccessory(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
-        let goldRange = AccessoryStatRange(type: type, regular: (50, 100), peripheral: (100, 200))
+        let goldRange = AccessoryStatRange(type: type, regular: (25, 60), peripheral: (60, 120))
         let gold = goldRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Accessory(
             name: profile.accessoryName,

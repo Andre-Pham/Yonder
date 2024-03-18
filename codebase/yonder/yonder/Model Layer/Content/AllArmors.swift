@@ -72,7 +72,7 @@ enum Armors {
     static func damageArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
         let armorPointsRange = ArmorPointsRange(type: type, min: 25, max: 70)
         let armorPoints = armorPointsRange.select(stage: stage)
-        let damageBonusRange = StatRange(min: 5, max: 35)
+        let damageBonusRange = StatRange(min: 5, max: 25)
         damageBonusRange.compound(multiply: 1.2, index: stage)
         let damageBonus = damageBonusRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Armor(
@@ -96,7 +96,7 @@ enum Armors {
     static func highDamageArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
         let armorPointsRange = ArmorPointsRange(type: type, min: 10, max: 50)
         let armorPoints = armorPointsRange.select(stage: stage)
-        let damageBonusRange = StatRange(min: 40, max: 85)
+        let damageBonusRange = StatRange(min: 30, max: 60)
         damageBonusRange.compound(multiply: 1.2, index: stage)
         let damageBonus = damageBonusRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Armor(
@@ -164,7 +164,7 @@ enum Armors {
     static func damageNegationArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
         let armorPointsRange = ArmorPointsRange(type: type, min: 25, max: 70)
         let armorPoints = armorPointsRange.select(stage: stage)
-        let damageNegationRange = StatRange(min: 10, max: 45)
+        let damageNegationRange = StatRange(min: 5, max: 20)
         damageNegationRange.compound(multiply: 1.2, index: stage)
         let damageNegation = damageNegationRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Armor(
@@ -188,7 +188,7 @@ enum Armors {
     static func highDamageNegationArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
         let armorPointsRange = ArmorPointsRange(type: type, min: 15, max: 60)
         let armorPoints = armorPointsRange.select(stage: stage)
-        let damageNegationRange = StatRange(min: 40, max: 65)
+        let damageNegationRange = StatRange(min: 20, max: 35)
         damageNegationRange.compound(multiply: 1.2, index: stage)
         let damageNegation = damageNegationRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Armor(
@@ -212,7 +212,7 @@ enum Armors {
     static func thornsArmor(profile: ArmorProfile, stage: Int, type: ArmorType) -> Armor {
         let armorPointsRange = ArmorPointsRange(type: type, min: 35, max: 100)
         let armorPoints = armorPointsRange.select(stage: stage)
-        let thornsFraction = Random.selectFromLinearDistribution(min: 0.05, max: 0.3, minY: 10, maxY: 1)
+        let thornsFraction = Random.selectFromLinearDistribution(min: 0.05, max: 0.25, minY: 10, maxY: 1)
         return Armor(
             name: profile.armorName,
             description: "",
@@ -258,7 +258,7 @@ enum Armors {
         let armorPointsRange = ArmorPointsRange(type: type, min: 25, max: 80)
         let armorPoints = armorPointsRange.select(stage: stage)
         let resistance = Random.selectFromLinearDistribution(min: 0.8, max: 0.95, minY: 1, maxY: 10)
-        let thornsFraction = Random.selectFromLinearDistribution(min: 0.05, max: 0.2, minY: 10, maxY: 1)
+        let thornsFraction = Random.selectFromLinearDistribution(min: 0.05, max: 0.15, minY: 10, maxY: 1)
         return Armor(
             name: profile.armorName,
             description: "",
@@ -284,7 +284,7 @@ enum Armors {
         let armorPoints = armorPointsRange.select(stage: stage)
         let damageFraction = Random.selectFromLinearDistribution(min: 1.05, max: 1.15, minY: 20, maxY: 1)
         let resistance = Random.selectFromLinearDistribution(min: 0.85, max: 0.95, minY: 1, maxY: 20)
-        let thornsFraction = Random.selectFromLinearDistribution(min: 0.05, max: 0.15, minY: 20, maxY: 1)
+        let thornsFraction = Random.selectFromLinearDistribution(min: 0.05, max: 0.1, minY: 20, maxY: 1)
         let armorRestorationFraction = Random.selectFromLinearDistribution(min: 1.05, max: 1.15, minY: 20, maxY: 1)
         return Armor(
             name: profile.armorName,
