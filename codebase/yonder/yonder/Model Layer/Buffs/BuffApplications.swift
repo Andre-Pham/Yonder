@@ -104,20 +104,20 @@ enum BuffApplications {
             // Debuffs that cause things to be more expensive aren't supposed to apply to free things
             return price
         }
-        var adjustedPrice = price
+        var originalSign = price.signum()
+        var adjustedPrice = abs(price)
         for buff in purchaser.getAllBuffsInPriority() {
             if buff.type == .price {
                 adjustedPrice = buff.applyPrice(to: adjustedPrice)
             }
         }
         // We have a set max discount so things can't be free (or "pay" you)
-        let maxDiscountedPrice = (Double(price)*(1.0 - Self.MAX_PRICE_DISCOUNT)).toRoundedInt()
-        if price > 0 && adjustedPrice < maxDiscountedPrice {
-            adjustedPrice = maxDiscountedPrice
-        } else if price < 0 && adjustedPrice > maxDiscountedPrice {
+        let maxDiscountedPrice = abs((Double(price)*(1.0 - Self.MAX_PRICE_DISCOUNT)).toRoundedInt())
+        if adjustedPrice < maxDiscountedPrice {
             adjustedPrice = maxDiscountedPrice
         }
-        return adjustedPrice
+        assert(adjustedPrice > 0, "Discounted price should not reach below or (at this stage) equal to zero")
+        return adjustedPrice*originalSign
     }
     
     static func getAdjustedGoldWithBonus(receiver: Player, gold: Int) -> Int {
