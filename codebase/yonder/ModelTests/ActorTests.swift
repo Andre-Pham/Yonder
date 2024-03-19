@@ -88,5 +88,33 @@ class ActorTests: XCTestCase {
         self.actor.unequipArmor(self.actor.legsArmor)
         XCTAssertEqual(self.actor.armorPoints, 0)
     }
+    
+    func testInvalidAdjustments() throws {
+        let bodyArmor = Armor(name: "", description: "", type: .body, armorPoints: 500, armorBuffs: [], equipmentPills: [])
+        self.actor.equipArmor(bodyArmor)
+        self.actor.damage(for: -100)
+        XCTAssertEqual(self.actor.health, 200)
+        XCTAssertEqual(self.actor.armorPoints, 500)
+        self.actor.damageHealth(for: -100)
+        XCTAssertEqual(self.actor.health, 200)
+        XCTAssertEqual(self.actor.armorPoints, 500)
+        self.actor.damageArmorPoints(for: -100)
+        XCTAssertEqual(self.actor.health, 200)
+        XCTAssertEqual(self.actor.armorPoints, 500)
+        self.actor.damageMaxHealth(by: -100)
+        XCTAssertEqual(self.actor.health, 200)
+        XCTAssertEqual(self.actor.armorPoints, 500)
+        self.actor.setHealth(to: 100)
+        self.actor.setArmorPoints(to: 100)
+        self.actor.restore(for: -100)
+        XCTAssertEqual(self.actor.health, 100)
+        XCTAssertEqual(self.actor.armorPoints, 100)
+        self.actor.restoreHealth(for: -100)
+        XCTAssertEqual(self.actor.health, 100)
+        XCTAssertEqual(self.actor.armorPoints, 100)
+        self.actor.restoreArmorPoints(for: -100)
+        XCTAssertEqual(self.actor.health, 100)
+        XCTAssertEqual(self.actor.armorPoints, 100)
+    }
 
 }

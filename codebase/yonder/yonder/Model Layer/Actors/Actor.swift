@@ -141,6 +141,10 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
     
     /// Negatively adjusts the actor's max health, but also behaves as "damage", triggering damage publishers.
     func damageMaxHealth(by amount: Int) {
+        guard amount > 0 else {
+            assertOutsideUnitTests(amount >= 0, "Negative amounts are invalid and shouldn't be able to be received")
+            return
+        }
         var damageTaken: Int? = nil
         if self.health > self.maxHealth - amount {
             damageTaken = self.health - (self.maxHealth - amount)
@@ -174,10 +178,13 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
     // MARK: - Health Related
     
     func restoreHealth(for amount: Int) {
+        guard amount > 0 else {
+            assertOutsideUnitTests(amount >= 0, "Negative amounts are invalid and shouldn't be able to be received")
+            return
+        }
         if self.health + amount > self.maxHealth {
             self.health = self.maxHealth
-        }
-        else {
+        } else {
             self.health += amount
         }
     }
@@ -188,10 +195,13 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
     }
     
     func restoreArmorPoints(for amount: Int) {
+        guard amount > 0 else {
+            assertOutsideUnitTests(amount >= 0, "Negative amounts are invalid and shouldn't be able to be received")
+            return
+        }
         if self.armorPoints + amount > self.maxArmorPoints {
             self.armorPoints = self.maxArmorPoints
-        }
-        else {
+        } else {
             self.armorPoints += amount
         }
     }
@@ -202,6 +212,10 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
     }
     
     func restore(for amount: Int) {
+        guard amount > 0 else {
+            assertOutsideUnitTests(amount >= 0, "Negative amounts are invalid and shouldn't be able to be received")
+            return
+        }
         let amountRemaining = max(0, amount - (self.maxHealth - self.health))
         self.restoreHealth(for: amount)
         self.restoreArmorPoints(for: amountRemaining)
@@ -226,6 +240,10 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
     }
     
     func damage(for amount: Int) {
+        guard amount > 0 else {
+            assertOutsideUnitTests(amount >= 0, "Negative amounts are invalid and shouldn't be able to be received")
+            return
+        }
         OnActorTakeDamagePublisher.publish(actor: self, damageTaken: amount)
         if self.armorPoints > amount {
             self.armorPoints -= amount
@@ -245,6 +263,10 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
     }
     
     func damageHealth(for amount: Int) {
+        guard amount > 0 else {
+            assertOutsideUnitTests(amount >= 0, "Negative amounts are invalid and shouldn't be able to be received")
+            return
+        }
         OnActorTakeDamagePublisher.publish(actor: self, damageTaken: amount)
         self.health -= amount
         AfterActorTakeDamagePublisher.publish(actor: self, damageTaken: amount)
@@ -256,6 +278,10 @@ class ActorAbstract: Storable, OnNoWeaponDurabilitySubscriber, OnNoPotionsRemain
     }
     
     func damageArmorPoints(for amount: Int) {
+        guard amount > 0 else {
+            assertOutsideUnitTests(amount >= 0, "Negative amounts are invalid and shouldn't be able to be received")
+            return
+        }
         if self.armorPoints - amount < 0 {
             let damageDealt = self.armorPoints
             if damageDealt > 0 {

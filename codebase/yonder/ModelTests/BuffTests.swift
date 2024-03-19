@@ -233,7 +233,66 @@ class BuffTests: XCTestCase {
         XCTAssertEqual(self.player.gold, 150)
         self.player.addBuff(GoldBuff(sourceName: "", duration: nil, goldDifference: -1000))
         self.player.modifyGoldAdjusted(by: 50)
-        XCTAssertEqual(self.player.gold, 0)
+        // If we pay the player $50, and they have a debuff that reduces all paid out gold by -$1000, we give them $0, we don't take away their already-earned gold
+        XCTAssertEqual(self.player.gold, 150)
+    }
+    
+    func testZeroBuffs() throws {
+        self.player.addBuff(GoldBuff(sourceName: "", duration: nil, goldDifference: 100))
+        self.player.addBuff(DamageBuff(sourceName: "", direction: .incoming, duration: nil, damageDifference: 100))
+        self.player.setHealth(to: 100)
+        self.player.addBuff(HealthRestorationBuff(sourceName: "", direction: .incoming, duration: nil, healthDifference: 100))
+        self.player.equipAccessory(Accessory(name: "", description: "", type: .regular, healthBonus: 0, armorPointsBonus: 100, buffs: [], equipmentPills: []), replacing: nil)
+        self.player.setArmorPoints(to: 0)
+        self.player.addBuff(ArmorPointsRestorationBuff(sourceName: "", direction: .incoming, duration: nil, armorPointsDifference: 100))
+        // Adjust values by 0 and make sure a 0 buff isn't adjusted
+        self.player.modifyGoldAdjusted(by: 0)
+        XCTAssertEqual(player.gold, 0)
+        self.player.damageAdjusted(sourceOwner: NoActor(), using: NoItem(), for: 0)
+        XCTAssertEqual(player.health, 100)
+        XCTAssertEqual(player.armorPoints, 0)
+        self.player.restoreAdjusted(sourceOwner: NoActor(), using: NoItem(), for: 0)
+        XCTAssertEqual(player.health, 100)
+        XCTAssertEqual(player.armorPoints, 0)
+        self.player.restoreHealthAdjusted(sourceOwner: NoActor(), using: NoItem(), for: 0)
+        XCTAssertEqual(player.health, 100)
+        XCTAssertEqual(player.armorPoints, 0)
+        self.player.restoreArmorPointsAdjusted(sourceOwner: NoActor(), using: NoItem(), for: 0)
+        XCTAssertEqual(player.health, 100)
+        XCTAssertEqual(player.armorPoints, 0)
+    }
+    
+    func testNegativeBuffs() throws {
+        self.player.setGold(to: 1000)
+        self.player.addBuff(GoldBuff(sourceName: "", duration: nil, goldDifference: -100))
+        self.player.addBuff(DamageBuff(sourceName: "", direction: .incoming, duration: nil, damageDifference: -100))
+        self.player.setHealth(to: 100)
+        self.player.addBuff(HealthRestorationBuff(sourceName: "", direction: .incoming, duration: nil, healthDifference: -100))
+        self.player.equipAccessory(Accessory(name: "", description: "", type: .regular, healthBonus: 0, armorPointsBonus: 100, buffs: [], equipmentPills: []), replacing: nil)
+        self.player.setArmorPoints(to: 0)
+        self.player.addBuff(ArmorPointsRestorationBuff(sourceName: "", direction: .incoming, duration: nil, armorPointsDifference: -100))
+        // Adjust values by <100 and make sure the player doesn't lose stats - it's just cancelled out
+        self.player.modifyGoldAdjusted(by: 5)
+        XCTAssertEqual(self.player.gold, 1000)
+        self.player.damageAdjusted(sourceOwner: NoActor(), using: NoItem(), for: 5)
+        XCTAssertEqual(self.player.health, 100)
+        XCTAssertEqual(player.armorPoints, 0)
+        self.player.restoreAdjusted(sourceOwner: NoActor(), using: NoItem(), for: 5)
+        XCTAssertEqual(player.health, 100)
+        XCTAssertEqual(player.armorPoints, 0)
+        self.player.restoreHealthAdjusted(sourceOwner: NoActor(), using: NoItem(), for: 5)
+        XCTAssertEqual(player.health, 100)
+        XCTAssertEqual(player.armorPoints, 0)
+        self.player.restoreArmorPointsAdjusted(sourceOwner: NoActor(), using: NoItem(), for: 5)
+        XCTAssertEqual(player.health, 100)
+        XCTAssertEqual(player.armorPoints, 0)
+        // Make sure this is consistent through indicative values
+        XCTAssertEqual(self.player.getIndicativePayout(from: 5), 0)
+        XCTAssertEqual(self.foe.getIndicativeDamage(of: BaseAttack(damage: 5), opposition: self.player), 0)
+        XCTAssertEqual(self.player.getIndicativeHealthRestoration(of: HealthRestorationPotion(tier: .I, potionCount: 1)), 0)
+        XCTAssertEqual(self.player.getIndicativeArmorPointsRestoration(of: RestoreArmorPointsConsumable(tier: .I, amount: 1)), 0)
+        XCTAssertEqual(self.player.getIndicativeRestoration(of: TravelImprovingRestorationConsumable(amount: 1)).0, 0)
+        XCTAssertEqual(self.player.getIndicativeRestoration(of: TravelImprovingRestorationConsumable(amount: 1)).1, 0)
     }
 
 }
