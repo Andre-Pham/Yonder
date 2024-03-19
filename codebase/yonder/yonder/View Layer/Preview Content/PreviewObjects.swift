@@ -158,7 +158,8 @@ enum PreviewObjects {
             name: "Andre",
             description: "I sell pancakes and maple syrup!!",
             purchasableItems: [
-                PurchasableItem(item: Weapon(basePill: DamageBasePill(damage: 200), durabilityPill: DullingDurabilityPill(damageLostPerUse: 50)), stock: 5)
+                PurchasableItem(item: Weapon(basePill: DamageBasePill(damage: 200), durabilityPill: DullingDurabilityPill(damageLostPerUse: 50)), stock: 5),
+                PurchasableItem(item: DamagePotion(tier: .II, potionCount: 2), stock: 2)
             ]
         )
     }

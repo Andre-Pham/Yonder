@@ -16,10 +16,11 @@ class TestSession {
     /// Hence this should be saved as a property in test classes so it exists in memory while tests are run.
     public static let instance = TestSession()
     
-    public let game: Game = TestContent.testGame()
+    public let game: Game
     
     private init() {
         assertionFailureOutsideUnitTests("This class is only to be used during unit testing")
+        self.game = TestContent.testGame()
         Pricing.instance.setStageManager(to: self.game.gameContext.playerStageManager)
     }
     

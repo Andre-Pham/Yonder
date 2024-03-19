@@ -112,6 +112,7 @@
 "inspect.title.offers" = "Offers";
 "inspect.title.restoreOptions" = "Mending Options";
 "inspect.title.info" = "Info";
+"inspect.title.selling" = "Selling";
 
 // Enhance Offers
 "inspect.enhanceOffers.priceTagSuffix" = "Per Enhance";
