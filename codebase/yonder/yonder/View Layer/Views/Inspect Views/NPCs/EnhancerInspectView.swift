@@ -19,7 +19,31 @@ struct EnhancerInspectView: View {
             YonderText(text: Strings("inspect.title.offers").local, size: .inspectSheetTitle)
             
             ForEach(self.enhancerViewModel.enhanceOfferViewModels, id: \.id) { offer in
-                YonderText(text: "[\(offer.name)]\n\(offer.description)", size: .inspectSheetBody)
+                YonderBorder4 {
+                    VStack(alignment: .leading, spacing: 0) {
+                        YonderText(text: offer.name, size: .inspectSheetBody)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 2)
+                            .background(YonderBorder4Presets.outlineColor)
+                        
+                        YonderBorder4Presets.outlineColor
+                            .frame(height: YonderBorder4Presets.outlineThickness)
+                            .padding(.vertical, 6.0)
+                            .padding(.horizontal, -YonderCoreGraphics.innerPadding)
+                        
+                        YonderText(text: offer.description, size: .inspectSheetBody)
+                        
+                        YonderIconTextPair(
+                            image: YonderIcons.goldIcon,
+                            text: Strings("currencySymbol").local + "\(offer.price)",
+                            size: .inspectSheetBody,
+                            iconSize: .inspectSheet
+                        )
+                        .padding(.top, 6.0)
+                    }
+                    .padding(YonderCoreGraphics.innerPadding)
+                    .frame(maxWidth: .infinity)
+                }
             }
         }
     }
