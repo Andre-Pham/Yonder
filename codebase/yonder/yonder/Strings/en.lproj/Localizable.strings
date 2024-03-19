@@ -556,156 +556,156 @@
 "buff.duration1Param" = "Lasts %@ turns.";
 
 // Damage Percent
-"buff.damagePercent.effectsDescription.bidirectionalIncrease1Param" = "Increases damage dealt and taken by %@%%.";
-"buff.damagePercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces damage dealt and taken by %@%%.";
-"buff.damagePercent.effectsDescription.incomingIncrease1Param" = "Increases damage taken by %@%%.";
-"buff.damagePercent.effectsDescription.incomingDecrease1Param" = "Reduces damage taken by %@%%.";
-"buff.damagePercent.effectsDescription.outgoingIncrease1Param" = "Increases damage dealt by %@%%.";
-"buff.damagePercent.effectsDescription.outgoingDecrease1Param" = "Reduces damage dealt by %@%%.";
+"buff.damagePercent.effectsDescription.bidirectionalIncrease1Param" = "Increases all damage dealt and taken by %@%%.";
+"buff.damagePercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces all damage dealt and taken by %@%%.";
+"buff.damagePercent.effectsDescription.incomingIncrease1Param" = "Increases all damage taken by %@%%.";
+"buff.damagePercent.effectsDescription.incomingDecrease1Param" = "Reduces all damage taken by %@%%.";
+"buff.damagePercent.effectsDescription.outgoingIncrease1Param" = "Increases all damage dealt by %@%%.";
+"buff.damagePercent.effectsDescription.outgoingDecrease1Param" = "Reduces all damage dealt by %@%%.";
 
 // Potion Damage Percent
-"buff.potionDamagePercent.effectsDescription.bidirectionalIncrease1Param" = "Increases damage dealt and taken via potions by %@%%.";
-"buff.potionDamagePercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces damage dealt and taken via potions by %@%%.";
-"buff.potionDamagePercent.effectsDescription.incomingIncrease1Param" = "Increases damage taken via potions by %@%%.";
-"buff.potionDamagePercent.effectsDescription.incomingDecrease1Param" = "Reduces damage taken via potions by %@%%.";
-"buff.potionDamagePercent.effectsDescription.outgoingIncrease1Param" = "Increases damage dealt via potions by %@%%.";
-"buff.potionDamagePercent.effectsDescription.outgoingDecrease1Param" = "Reduces damage dealt via potions by %@%%.";
+"buff.potionDamagePercent.effectsDescription.bidirectionalIncrease1Param" = "Increases all damage dealt and taken via potions by %@%%.";
+"buff.potionDamagePercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces all damage dealt and taken via potions by %@%%.";
+"buff.potionDamagePercent.effectsDescription.incomingIncrease1Param" = "Increases all damage taken via potions by %@%%.";
+"buff.potionDamagePercent.effectsDescription.incomingDecrease1Param" = "Reduces all damage taken via potions by %@%%.";
+"buff.potionDamagePercent.effectsDescription.outgoingIncrease1Param" = "Increases all damage dealt via potions by %@%%.";
+"buff.potionDamagePercent.effectsDescription.outgoingDecrease1Param" = "Reduces all damage dealt via potions by %@%%.";
 
 // Weapon Damage Percent
-"buff.weaponDamagePercent.effectsDescription.bidirectionalIncrease1Param" = "Increases damage dealt and taken via potions by %@%%.";
-"buff.weaponDamagePercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces damage dealt and taken via weapons/attacks by %@%%.";
-"buff.weaponDamagePercent.effectsDescription.incomingIncrease1Param" = "Increases damage taken via weapons/attacks by %@%%.";
-"buff.weaponDamagePercent.effectsDescription.incomingDecrease1Param" = "Reduces damage taken via weapons/attacks by %@%%.";
-"buff.weaponDamagePercent.effectsDescription.outgoingIncrease1Param" = "Increases damage dealt via weapons by %@%%.";
-"buff.weaponDamagePercent.effectsDescription.outgoingDecrease1Param" = "Reduces damage dealt via weapons by %@%%.";
+"buff.weaponDamagePercent.effectsDescription.bidirectionalIncrease1Param" = "Increases all damage dealt and taken via potions by %@%%.";
+"buff.weaponDamagePercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces all damage dealt and taken via weapons/attacks by %@%%.";
+"buff.weaponDamagePercent.effectsDescription.incomingIncrease1Param" = "Increases all damage taken via weapons/attacks by %@%%.";
+"buff.weaponDamagePercent.effectsDescription.incomingDecrease1Param" = "Reduces all damage taken via weapons/attacks by %@%%.";
+"buff.weaponDamagePercent.effectsDescription.outgoingIncrease1Param" = "Increases all damage dealt via weapons by %@%%.";
+"buff.weaponDamagePercent.effectsDescription.outgoingDecrease1Param" = "Reduces all damage dealt via weapons by %@%%.";
 
 // Damage
-"buff.damage.effectsDescription.bidirectionalIncrease1Param" = "Increases damage dealt and taken by %@.";
-"buff.damage.effectsDescription.bidirectionalDecrease1Param" = "Reduces damage dealt and taken by %@.";
-"buff.damage.effectsDescription.incomingIncrease1Param" = "Increases damage taken by %@.";
-"buff.damage.effectsDescription.incomingDecrease1Param" = "Reduces damage taken by %@.";
-"buff.damage.effectsDescription.outgoingIncrease1Param" = "Increases damage dealt by %@.";
-"buff.damage.effectsDescription.outgoingDecrease1Param" = "Reduces damage dealt by %@.";
+"buff.damage.effectsDescription.bidirectionalIncrease1Param" = "Increases all damage dealt and taken by %@.";
+"buff.damage.effectsDescription.bidirectionalDecrease1Param" = "Reduces all damage dealt and taken by %@.";
+"buff.damage.effectsDescription.incomingIncrease1Param" = "Increases all damage taken by %@.";
+"buff.damage.effectsDescription.incomingDecrease1Param" = "Reduces all damage taken by %@.";
+"buff.damage.effectsDescription.outgoingIncrease1Param" = "Increases all damage dealt by %@.";
+"buff.damage.effectsDescription.outgoingDecrease1Param" = "Reduces all damage dealt by %@.";
 
 // Potion Damage
-"buff.potionDamage.effectsDescription.bidirectionalIncrease1Param" = "Increases damage dealt and taken via potions by %@.";
-"buff.potionDamage.effectsDescription.bidirectionalDecrease1Param" = "Reduces damage dealt and taken via potions by %@.";
-"buff.potionDamage.effectsDescription.incomingIncrease1Param" = "Increases damage taken via potions by %@.";
-"buff.potionDamage.effectsDescription.incomingDecrease1Param" = "Reduces damage taken via potions by %@.";
-"buff.potionDamage.effectsDescription.outgoingIncrease1Param" = "Increases damage dealt via potions by %@.";
-"buff.potionDamage.effectsDescription.outgoingDecrease1Param" = "Reduces damage dealt via potions by %@.";
+"buff.potionDamage.effectsDescription.bidirectionalIncrease1Param" = "Increases all damage dealt and taken via potions by %@.";
+"buff.potionDamage.effectsDescription.bidirectionalDecrease1Param" = "Reduces all damage dealt and taken via potions by %@.";
+"buff.potionDamage.effectsDescription.incomingIncrease1Param" = "Increases all damage taken via potions by %@.";
+"buff.potionDamage.effectsDescription.incomingDecrease1Param" = "Reduces all damage taken via potions by %@.";
+"buff.potionDamage.effectsDescription.outgoingIncrease1Param" = "Increases all damage dealt via potions by %@.";
+"buff.potionDamage.effectsDescription.outgoingDecrease1Param" = "Reduces all damage dealt via potions by %@.";
 
 // Weapon Damage
-"buff.weaponDamage.effectsDescription.bidirectionalIncrease1Param" = "Increases damage dealt and taken via weapons/attacks by %@.";
-"buff.weaponDamage.effectsDescription.bidirectionalDecrease1Param" = "Reduces damage dealt and taken via weapons/attacks by %@.";
-"buff.weaponDamage.effectsDescription.incomingIncrease1Param" = "Increases damage taken via weapons/attacks by %@.";
-"buff.weaponDamage.effectsDescription.incomingDecrease1Param" = "Reduces damage taken via weapons/attacks by %@.";
-"buff.weaponDamage.effectsDescription.outgoingIncrease1Param" = "Increases damage dealt via weapons by %@.";
-"buff.weaponDamage.effectsDescription.outgoingDecrease1Param" = "Reduces damage dealt via weapons by %@.";
+"buff.weaponDamage.effectsDescription.bidirectionalIncrease1Param" = "Increases all damage dealt and taken via weapons/attacks by %@.";
+"buff.weaponDamage.effectsDescription.bidirectionalDecrease1Param" = "Reduces all damage dealt and taken via weapons/attacks by %@.";
+"buff.weaponDamage.effectsDescription.incomingIncrease1Param" = "Increases all damage taken via weapons/attacks by %@.";
+"buff.weaponDamage.effectsDescription.incomingDecrease1Param" = "Reduces all damage taken via weapons/attacks by %@.";
+"buff.weaponDamage.effectsDescription.outgoingIncrease1Param" = "Increases all damage dealt via weapons by %@.";
+"buff.weaponDamage.effectsDescription.outgoingDecrease1Param" = "Reduces all damage dealt via weapons by %@.";
 
 // Health Restoration Percent
-"buff.healthRestorationPercent.effectsDescription.bidirectionalIncrease1Param" = "Increases health restored and given to others by %@%%.";
-"buff.healthRestorationPercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces health restored and given to others by %@%%.";
-"buff.healthRestorationPercent.effectsDescription.incomingIncrease1Param" = "Increases health restored by %@%%.";
-"buff.healthRestorationPercent.effectsDescription.incomingDecrease1Param" = "Reduces health restored by %@%%.";
-"buff.healthRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases health given to others by %@%%.";
-"buff.healthRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces health given to others by %@%%.";
+"buff.healthRestorationPercent.effectsDescription.bidirectionalIncrease1Param" = "Increases all health restored and given to others by %@%%.";
+"buff.healthRestorationPercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces all health restored and given to others by %@%%.";
+"buff.healthRestorationPercent.effectsDescription.incomingIncrease1Param" = "Increases all health restored by %@%%.";
+"buff.healthRestorationPercent.effectsDescription.incomingDecrease1Param" = "Reduces all health restored by %@%%.";
+"buff.healthRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases all health given to others by %@%%.";
+"buff.healthRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces all health given to others by %@%%.";
 
 // Potion Health Restoration Percent
-"buff.potionHealthRestorationPercent.effectsDescription.bidirectionalIncrease1Param" = "Increases health restored and given to others via potions by %@%%.";
-"buff.potionHealthRestorationPercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces health restored and given to others via potions by %@%%.";
-"buff.potionHealthRestorationPercent.effectsDescription.incomingIncrease1Param" = "Increases health restored via potions by %@%%.";
-"buff.potionHealthRestorationPercent.effectsDescription.incomingDecrease1Param" = "Reduces health restored via potions by %@%%.";
-"buff.potionHealthRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases health given to others via potions by %@%%.";
-"buff.potionHealthRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces health given to others via potions by %@%%.";
+"buff.potionHealthRestorationPercent.effectsDescription.bidirectionalIncrease1Param" = "Increases all health restored and given to others via potions by %@%%.";
+"buff.potionHealthRestorationPercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces all health restored and given to others via potions by %@%%.";
+"buff.potionHealthRestorationPercent.effectsDescription.incomingIncrease1Param" = "Increases all health restored via potions by %@%%.";
+"buff.potionHealthRestorationPercent.effectsDescription.incomingDecrease1Param" = "Reduces all health restored via potions by %@%%.";
+"buff.potionHealthRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases all health given to others via potions by %@%%.";
+"buff.potionHealthRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces all health given to others via potions by %@%%.";
 
 // Weapon Health Restoration Percent
-"buff.weaponHealthRestorationPercent.effectsDescription.bidirectionalIncrease1Param" = "Increases health restored and given to others via weapons by %@%%.";
-"buff.weaponHealthRestorationPercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces health restored and given to others via weapons by %@%%.";
-"buff.weaponHealthRestorationPercent.effectsDescription.incomingIncrease1Param" = "Increases health restored via weapons by %@%%.";
-"buff.weaponHealthRestorationPercent.effectsDescription.incomingDecrease1Param" = "Reduces health restored via weapons by %@%%.";
-"buff.weaponHealthRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases health given to others via weapons by %@%%.";
-"buff.weaponHealthRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces health given to others via weapons by %@%%.";
+"buff.weaponHealthRestorationPercent.effectsDescription.bidirectionalIncrease1Param" = "Increases all health restored and given to others via weapons by %@%%.";
+"buff.weaponHealthRestorationPercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces all health restored and given to others via weapons by %@%%.";
+"buff.weaponHealthRestorationPercent.effectsDescription.incomingIncrease1Param" = "Increases all health restored via weapons by %@%%.";
+"buff.weaponHealthRestorationPercent.effectsDescription.incomingDecrease1Param" = "Reduces all health restored via weapons by %@%%.";
+"buff.weaponHealthRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases all health given to others via weapons by %@%%.";
+"buff.weaponHealthRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces all health given to others via weapons by %@%%.";
 
 // Health Restoration
-"buff.healthRestoration.effectsDescription.bidirectionalIncrease1Param" = "Increases health restored and given to others by %@.";
-"buff.healthRestoration.effectsDescription.bidirectionalDecrease1Param" = "Reduces health restored and given to others by %@.";
-"buff.healthRestoration.effectsDescription.incomingIncrease1Param" = "Increases health restored by %@.";
-"buff.healthRestoration.effectsDescription.incomingDecrease1Param" = "Reduces health restored by %@.";
-"buff.healthRestoration.effectsDescription.outgoingIncrease1Param" = "Increases health given to others by %@.";
-"buff.healthRestoration.effectsDescription.outgoingDecrease1Param" = "Reduces health given to others by %@.";
+"buff.healthRestoration.effectsDescription.bidirectionalIncrease1Param" = "Increases all health restored and given to others by %@.";
+"buff.healthRestoration.effectsDescription.bidirectionalDecrease1Param" = "Reduces all health restored and given to others by %@.";
+"buff.healthRestoration.effectsDescription.incomingIncrease1Param" = "Increases all health restored by %@.";
+"buff.healthRestoration.effectsDescription.incomingDecrease1Param" = "Reduces all health restored by %@.";
+"buff.healthRestoration.effectsDescription.outgoingIncrease1Param" = "Increases all health given to others by %@.";
+"buff.healthRestoration.effectsDescription.outgoingDecrease1Param" = "Reduces all health given to others by %@.";
 
 // Potion Health Restoration
-"buff.potionHealthRestoration.effectsDescription.bidirectionalIncrease1Param" = "Increases health restored and given to others via potions by %@.";
-"buff.potionHealthRestoration.effectsDescription.bidirectionalDecrease1Param" = "Reduces health restored and given to others via potions by %@.";
-"buff.potionHealthRestoration.effectsDescription.incomingIncrease1Param" = "Increases health restored via potions by %@.";
-"buff.potionHealthRestoration.effectsDescription.incomingDecrease1Param" = "Reduces health restored via potions by %@.";
-"buff.potionHealthRestoration.effectsDescription.outgoingIncrease1Param" = "Increases health given to others via potions by %@.";
-"buff.potionHealthRestoration.effectsDescription.outgoingDecrease1Param" = "Reduces health given to others via potions by %@.";
+"buff.potionHealthRestoration.effectsDescription.bidirectionalIncrease1Param" = "Increases all health restored and given to others via potions by %@.";
+"buff.potionHealthRestoration.effectsDescription.bidirectionalDecrease1Param" = "Reduces all health restored and given to others via potions by %@.";
+"buff.potionHealthRestoration.effectsDescription.incomingIncrease1Param" = "Increases all health restored via potions by %@.";
+"buff.potionHealthRestoration.effectsDescription.incomingDecrease1Param" = "Reduces all health restored via potions by %@.";
+"buff.potionHealthRestoration.effectsDescription.outgoingIncrease1Param" = "Increases all health given to others via potions by %@.";
+"buff.potionHealthRestoration.effectsDescription.outgoingDecrease1Param" = "Reduces all health given to others via potions by %@.";
 
 // Weapon Health Restoration
-"buff.weaponHealthRestoration.effectsDescription.bidirectionalIncrease1Param" = "Increases health restored and given to others via weapons by %@.";
-"buff.weaponHealthRestoration.effectsDescription.bidirectionalDecrease1Param" = "Reduces health restored and given to others via weapons by %@.";
-"buff.weaponHealthRestoration.effectsDescription.incomingIncrease1Param" = "Increases health restored via weapons by %@.";
-"buff.weaponHealthRestoration.effectsDescription.incomingDecrease1Param" = "Reduces health restored via weapons by %@.";
-"buff.weaponHealthRestoration.effectsDescription.outgoingIncrease1Param" = "Increases health given to others via weapons by %@.";
-"buff.weaponHealthRestoration.effectsDescription.outgoingDecrease1Param" = "Reduces health given to others via weapons by %@.";
+"buff.weaponHealthRestoration.effectsDescription.bidirectionalIncrease1Param" = "Increases all health restored and given to others via weapons by %@.";
+"buff.weaponHealthRestoration.effectsDescription.bidirectionalDecrease1Param" = "Reduces all health restored and given to others via weapons by %@.";
+"buff.weaponHealthRestoration.effectsDescription.incomingIncrease1Param" = "Increases all health restored via weapons by %@.";
+"buff.weaponHealthRestoration.effectsDescription.incomingDecrease1Param" = "Reduces all health restored via weapons by %@.";
+"buff.weaponHealthRestoration.effectsDescription.outgoingIncrease1Param" = "Increases all health given to others via weapons by %@.";
+"buff.weaponHealthRestoration.effectsDescription.outgoingDecrease1Param" = "Reduces all health given to others via weapons by %@.";
 
 // Armor Restoration Percent
-"buff.armorRestorationPercent.effectsDescription.bidirectionalIncrease1Param" = "Increases shields repaired and given to others by %@%%.";
-"buff.armorRestorationPercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces shields repaired and given to others by %@%%.";
-"buff.armorRestorationPercent.effectsDescription.incomingIncrease1Param" = "Increases shields repaired by %@%%.";
-"buff.armorRestorationPercent.effectsDescription.incomingDecrease1Param" = "Reduces shields repaired by %@%%.";
-"buff.armorRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases shields given to others by %@%%.";
-"buff.armorRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces shields given to others by %@%%.";
+"buff.armorRestorationPercent.effectsDescription.bidirectionalIncrease1Param" = "Increases all shields repaired and given to others by %@%%.";
+"buff.armorRestorationPercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces all shields repaired and given to others by %@%%.";
+"buff.armorRestorationPercent.effectsDescription.incomingIncrease1Param" = "Increases all shields repaired by %@%%.";
+"buff.armorRestorationPercent.effectsDescription.incomingDecrease1Param" = "Reduces all shields repaired by %@%%.";
+"buff.armorRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases all shields given to others by %@%%.";
+"buff.armorRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces all shields given to others by %@%%.";
 
 // Weapon Armor Restoration Percent
-"buff.weaponArmorRestorationPercent.effectsDescription.bidirectionalIncrease1Param" = "Increases shields repaired and given to others via weapons by %@%%.";
-"buff.weaponArmorRestorationPercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces shields repaired and given to others via weaopns by %@%%.";
-"buff.weaponArmorRestorationPercent.effectsDescription.incomingIncrease1Param" = "Increases shields repaired via weapons by %@%%.";
-"buff.weaponArmorRestorationPercent.effectsDescription.incomingDecrease1Param" = "Reduces shields repaired via weapons by %@%%.";
-"buff.weaponArmorRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases shields given to others via weapons by %@%%.";
-"buff.weaponArmorRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces shields given to others via weapons by %@%%.";
+"buff.weaponArmorRestorationPercent.effectsDescription.bidirectionalIncrease1Param" = "Increases all shields repaired and given to others via weapons by %@%%.";
+"buff.weaponArmorRestorationPercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces all shields repaired and given to others via weaopns by %@%%.";
+"buff.weaponArmorRestorationPercent.effectsDescription.incomingIncrease1Param" = "Increases all shields repaired via weapons by %@%%.";
+"buff.weaponArmorRestorationPercent.effectsDescription.incomingDecrease1Param" = "Reduces all shields repaired via weapons by %@%%.";
+"buff.weaponArmorRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases all shields given to others via weapons by %@%%.";
+"buff.weaponArmorRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces all shields given to others via weapons by %@%%.";
 
 // Consumable Armor Restoration Percent
-"buff.consumableArmorRestorationPercent.effectsDescription.bidirectionalIncrease1Param" = "Increases shields repaired and given to others via items by %@%%.";
-"buff.consumableArmorRestorationPercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces shields repaired and given to others via items by %@%%.";
-"buff.consumableArmorRestorationPercent.effectsDescription.incomingIncrease1Param" = "Increases shields repaired via items by %@%%.";
-"buff.consumableArmorRestorationPercent.effectsDescription.incomingDecrease1Param" = "Reduces shields repaired via items by %@%%.";
-"buff.consumableArmorRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases shields given to others via items by %@%%.";
-"buff.consumableArmorRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces shields given to others via items by %@%%.";
+"buff.consumableArmorRestorationPercent.effectsDescription.bidirectionalIncrease1Param" = "Increases all shields repaired and given to others via items by %@%%.";
+"buff.consumableArmorRestorationPercent.effectsDescription.bidirectionalDecrease1Param" = "Reduces all shields repaired and given to others via items by %@%%.";
+"buff.consumableArmorRestorationPercent.effectsDescription.incomingIncrease1Param" = "Increases all shields repaired via items by %@%%.";
+"buff.consumableArmorRestorationPercent.effectsDescription.incomingDecrease1Param" = "Reduces all shields repaired via items by %@%%.";
+"buff.consumableArmorRestorationPercent.effectsDescription.outgoingIncrease1Param" = "Increases all shields given to others via items by %@%%.";
+"buff.consumableArmorRestorationPercent.effectsDescription.outgoingDecrease1Param" = "Reduces all shields given to others via items by %@%%.";
 
 // Armor Restoration
-"buff.armorRestoration.effectsDescription.bidirectionalIncrease1Param" = "Increases shields repaired and given to others by %@.";
-"buff.armorRestoration.effectsDescription.bidirectionalDecrease1Param" = "Reduces shields repaired and given to others by %@.";
-"buff.armorRestoration.effectsDescription.incomingIncrease1Param" = "Increases shields repaired by %@.";
-"buff.armorRestoration.effectsDescription.incomingDecrease1Param" = "Reduces shields repaired by %@.";
-"buff.armorRestoration.effectsDescription.outgoingIncrease1Param" = "Increases shields given to others by %@.";
-"buff.armorRestoration.effectsDescription.outgoingDecrease1Param" = "Reduces shields given to others by %@.";
+"buff.armorRestoration.effectsDescription.bidirectionalIncrease1Param" = "Increases all shields repaired and given to others by %@.";
+"buff.armorRestoration.effectsDescription.bidirectionalDecrease1Param" = "Reduces all shields repaired and given to others by %@.";
+"buff.armorRestoration.effectsDescription.incomingIncrease1Param" = "Increases all shields repaired by %@.";
+"buff.armorRestoration.effectsDescription.incomingDecrease1Param" = "Reduces all shields repaired by %@.";
+"buff.armorRestoration.effectsDescription.outgoingIncrease1Param" = "Increases all shields given to others by %@.";
+"buff.armorRestoration.effectsDescription.outgoingDecrease1Param" = "Reduces all shields given to others by %@.";
 
 // Weapon Armor Restoration
-"buff.weaponArmorRestoration.effectsDescription.bidirectionalIncrease1Param" = "Increases shields repaired and given to others by %@.";
-"buff.weaponArmorRestoration.effectsDescription.bidirectionalDecrease1Param" = "Reduces shields repaired and given to others by %@.";
-"buff.weaponArmorRestoration.effectsDescription.incomingIncrease1Param" = "Increases shields repaired by %@.";
-"buff.weaponArmorRestoration.effectsDescription.incomingDecrease1Param" = "Reduces shields repaired by %@.";
-"buff.weaponArmorRestoration.effectsDescription.outgoingIncrease1Param" = "Increases shields given to others by %@.";
-"buff.weaponArmorRestoration.effectsDescription.outgoingDecrease1Param" = "Reduces shields given to others by %@.";
+"buff.weaponArmorRestoration.effectsDescription.bidirectionalIncrease1Param" = "Increases all shields repaired and given to others by %@.";
+"buff.weaponArmorRestoration.effectsDescription.bidirectionalDecrease1Param" = "Reduces all shields repaired and given to others by %@.";
+"buff.weaponArmorRestoration.effectsDescription.incomingIncrease1Param" = "Increases all shields repaired by %@.";
+"buff.weaponArmorRestoration.effectsDescription.incomingDecrease1Param" = "Reduces all shields repaired by %@.";
+"buff.weaponArmorRestoration.effectsDescription.outgoingIncrease1Param" = "Increases all shields given to others by %@.";
+"buff.weaponArmorRestoration.effectsDescription.outgoingDecrease1Param" = "Reduces all shields given to others by %@.";
 
 // Consumable Armor Restoration
-"buff.consumableArmorRestoration.effectsDescription.bidirectionalIncrease1Param" = "Increases shields repaired and given to others by %@.";
-"buff.consumableArmorRestoration.effectsDescription.bidirectionalDecrease1Param" = "Reduces shields repaired and given to others by %@.";
-"buff.consumableArmorRestoration.effectsDescription.incomingIncrease1Param" = "Increases shields repaired by %@.";
-"buff.consumableArmorRestoration.effectsDescription.incomingDecrease1Param" = "Reduces shields repaired by %@.";
-"buff.consumableArmorRestoration.effectsDescription.outgoingIncrease1Param" = "Increases shields given to others by %@.";
-"buff.consumableArmorRestoration.effectsDescription.outgoingDecrease1Param" = "Reduces shields given to others by %@.";
+"buff.consumableArmorRestoration.effectsDescription.bidirectionalIncrease1Param" = "Increases all shields repaired and given to others by %@.";
+"buff.consumableArmorRestoration.effectsDescription.bidirectionalDecrease1Param" = "Reduces all shields repaired and given to others by %@.";
+"buff.consumableArmorRestoration.effectsDescription.incomingIncrease1Param" = "Increases all shields repaired by %@.";
+"buff.consumableArmorRestoration.effectsDescription.incomingDecrease1Param" = "Reduces all shields repaired by %@.";
+"buff.consumableArmorRestoration.effectsDescription.outgoingIncrease1Param" = "Increases all shields given to others by %@.";
+"buff.consumableArmorRestoration.effectsDescription.outgoingDecrease1Param" = "Reduces all shields given to others by %@.";
 
 // Price Percent
-"buff.pricePercent.effectsDescription.outgoingIncrease1Param" = "Increases gold paid out by %@%%.";
-"buff.pricePercent.effectsDescription.outgoingDecrease1Param" = "Reduces gold paid out by %@%%.";
+"buff.pricePercent.effectsDescription.outgoingIncrease1Param" = "Increases all gold paid out by %@%%.";
+"buff.pricePercent.effectsDescription.outgoingDecrease1Param" = "Reduces all gold paid out by %@%%.";
 
 // Price
-"buff.price.effectsDescription.outgoingIncrease2Param" = "Increases gold paid out by %@%@.";
-"buff.price.effectsDescription.outgoingDecrease2Param" = "Decreases gold paid out by %@%@.";
+"buff.price.effectsDescription.outgoingIncrease2Param" = "Increases all gold paid out by %@%@.";
+"buff.price.effectsDescription.outgoingDecrease2Param" = "Decreases all gold paid out by %@%@.";
 
 // Gold Percent
 "buff.goldPercent.effectsDescription.incomingIncrease1Param" = "Increases all gold received by %@%%.";
@@ -834,15 +834,15 @@
 
 "equipmentPill.weaponLifesteal.effectsDescription1Param" = "Restores %@%% of all weapon damage dealt as health.";
 "equipmentPill.thorns.effectsDescription1Param" = "Upon taking damage from a hostile, deal %@%% back.";
-"equipmentPill.phoenix.partial.effectsDescription1Param" = "Upon taking fatal damage, revive yourself with %@ health and unequip this.";
-"equipmentPill.phoenix.max.effectsDescription" = "Upon taking fatal damage, revive yourself with full health and unequip this.";
+"equipmentPill.phoenix.partial.effectsDescription1Param" = "Upon taking fatal damage, this revives you with %@ health and is unequipped.";
+"equipmentPill.phoenix.max.effectsDescription" = "Upon taking fatal damage, this revives you with full health and is unequipped.";
 "equipmentPill.loseArmorGainHealth.effectsDescription1Param" = "%@%% of all damage dealt to your shields during combat is restored as health.";
 "equipmentPill.restoreAfterKill.healthAndArmorPoints.effectsDescription2Param" = "Upon defeating any hostile, restore %@ health and %@ shields.";
 "equipmentPill.restoreAfterKill.health.effectsDescription1Param" = "Upon defeating any hostile, restore, restore %@ health.";
 "equipmentPill.restoreAfterKill.armorPoints.effectsDescription1Param" = "Upon defeating any hostile, restore %@ shields.";
 "equipmentPill.restoreAfterTravel.effectsDescription1Param" = "After every travel, restore %@ (overflows from health to shields).";
 "equipmentPill.permanentHealthAfterKill.effectsDescription1Param" = "Upon defeating any hostile, steal %@%% of their maximum health as permanent health";
-"equipmentPill.limitPhoenix.effectsDescription1Param" = "Upon taking fatal damage, revive yourself fully with %@%% max health.";
+"equipmentPill.limitPhoenix.effectsDescription1Param" = "Upon taking fatal damage, this revives you fully with %@%% max health.";
 "equipmentPill.goldAfterTravel.effectsDescription1Param" = "After every travel, receive %@ gold.";
 "equipmentPill.permanentHealthAfterTravel1Param" = "After every travel, gain %@ permanent health.";
 
