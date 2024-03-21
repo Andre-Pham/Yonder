@@ -69,7 +69,7 @@ enum Friendlies {
             offers: [
                 HealthForGoldOffer(health: health, goldReward: goldReward)
             ],
-            offerLimit: 10
+            offerLimit: 4
         )
     }
     
@@ -106,13 +106,13 @@ enum Friendlies {
     }
     
     // 06
-    static func maxPointsForArmorPointsFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
+    static func maxHealthForArmorPointsFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
         return Friendly(
             contentID: profile.id,
             name: profile.friendlyName,
             description: profile.friendlyDescription,
             offers: [MaxHealthForArmorPointsOffer()],
-            offerLimit: Int.random(in: 1...3)
+            offerLimit: 2
         )
     }
     
@@ -129,7 +129,7 @@ enum Friendlies {
                 GoldForPriceBuffOffer(gold: gold, priceFraction: cursePriceFraction),
                 GoldForPriceBuffOffer(gold: -gold, priceFraction: blessingPriceFraction)
             ],
-            offerLimit: Int.random(in: 1...3)
+            offerLimit: 1
         )
     }
     

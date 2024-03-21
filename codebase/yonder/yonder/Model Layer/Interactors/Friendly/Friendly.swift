@@ -57,7 +57,14 @@ class Friendly: InteractorAbstract {
     
     func acceptOffer(_ offer: Offer, for player: Player) {
         offer.acceptOffer(player: player)
-        self.removeOffer(offer)
+        // Note: it used to be the case that after accepting an offer, it was removed
+        // Now offers are only removed if the "offers remaining" stat is reduced to 0
+        // Otherwise, you can accept the same offer endless times
+        // This allowed more flexibility in the types of friendlies that can exist
+        // You're not really creating friendlies where you can accept more than a single offer, but not the same one twice
+        // (It's typically either 1. Accept a free gift, 2. Choose one between 2+ gifts, 3. Accept an offer as many times as you like but it has a tradeoff)
+        // There was a consideration where I could add property to offers .isRemovedAfterAccepted
+        // However this creates inconsistency between offers which is unintuitive for the player
         self.offersAccepted += 1
         if self.offersRemaining == 0 {
             self.offers.removeAll()
