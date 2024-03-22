@@ -215,6 +215,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         guard !newLocation.hasBeenVisited else {
             return
         }
+        newLocation.initContextIfRequired(using: player.location)
         newLocation.initContent(using: self)
         
         // After the player has travelled to a new location and its content has loaded
@@ -247,15 +248,14 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         // generate, say, a weapon, it doesn't matter what region they are (where they are in the map),
         // there'll be a factory that they can use to generate it
         //
-        // The only exception is boss areas - they don't need content generation, and only need the boss factory
-        // We do their regions (boss areas) here:
-        let bossArea: Region = map.bossAreasInOrder[newStage]
-        self.activeBossFactories[bossArea.getRegionKey()] = BossFactory(
-            stage: newStage,
-            regionTags: bossArea.tags,
-            profileBucket: self.bossProfileBucket
-        )
-        // ...And then we do the rest of the regions (that DO require the generation of all types of content)
+        // Note: BossAreas by default inherit their region key from the preceding tavern area (see MapGenerator.generateTerritoriesIntoMap(:MapPool)
+        // (This means they can access the same factories as the preceding tavern area)
+        // Note 2: Boss area locations re-initialise their location contexts based on the previously traveled location
+        // (Again, this means they can access the same factories as the preceding tavern area)
+        // HOWEVER, since tavern areas ALSO re-initialise their location contexts based on the previously traveled location (area)
+        // We need to create boss factories for each area, assuming their region key is passed to the next area, which is then passed to the boss area
+        // We still create a boss factory for the tavern area, because if the region key isn't passed on to the boss area (due to a change in game design or otherwise), the boss area will still be able to retrieve content, due to it inheriting its region key from the preceding tavern area
+        // TLDR: this implementation is super fail-safe and future-proof, with very little overhead as an outcome
         var regions = [Region]()
         regions.append(contentsOf: territory.segment.allAreas)
         regions.append(territory.tavernArea)
@@ -348,6 +348,12 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
                 regionTags: region.tags,
                 friendlyProfileBucket: self.friendlyProfileBucket,
                 lootFactory: self.lootFactoryBundle(region.getRegionKey())
+            )
+            // Boss
+            self.activeBossFactories[region.getRegionKey()] = BossFactory(
+                stage: newStage,
+                regionTags: region.tags,
+                profileBucket: self.bossProfileBucket
             )
         }
         self.restoreAllAvailableBuildTokenCaches()

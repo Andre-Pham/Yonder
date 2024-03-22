@@ -42,7 +42,18 @@ class TavernArea: Region, Storable {
         self.addRootAndTipLocations()
         self.generateAreaArrangement()
         for location in self.locations {
-            location.setContext(key: self.getRegionKey(), name: self.name, description: self.description, tileBackgroundImage: self.tileBackgroundImage, platformImage: self.platformImage)
+            location.setContext(
+                // We want to match the tavern area to where the player previously was
+                // So we pass the provided information in as a placeholder/default
+                // But when we get there, we reload the context to match where the player previously was
+                // If desired, we can flip reloadOnDemand to false, and the tavern area will use whatever region it was provided
+                reloadOnDemand: true,
+                key: self.getRegionKey(),
+                name: self.name,
+                description: self.description,
+                tileBackgroundImage: self.tileBackgroundImage,
+                platformImage: self.platformImage
+            )
         }
     }
     
