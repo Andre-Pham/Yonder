@@ -1,5 +1,5 @@
 //
-//  Preview.swift
+//  PreviewNPC.swift
 //  yonder
 //
 //  Created by Andre Pham on 7/3/2024.
@@ -14,7 +14,7 @@ import SwiftUI
 /// Just set the fileID and defaultAnimation below.
 
 fileprivate struct PreviewNPC: View {
-    @StateObject var animation = AnimationQueue(
+    @StateObject var animation = AnimationQueue<NPCSequenceCode>(
         fileID: "E0006",
         defaultAnimation: .breathing
     )

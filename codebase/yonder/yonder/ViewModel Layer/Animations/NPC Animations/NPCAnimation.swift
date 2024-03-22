@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class NPCAnimation: AnimationQueue, AfterPlayerKillFoeSubscriber, OnActorAttackSubscriber, AfterPlayerTravelSubscriber {
+class NPCAnimation: AnimationQueue<NPCSequenceCode>, AfterPlayerKillFoeSubscriber, OnActorAttackSubscriber, AfterPlayerTravelSubscriber {
     
     private var subscriptions: Set<AnyCancellable> = []
     private let optionsStateManager: OptionsStateManager
@@ -38,6 +38,12 @@ class NPCAnimation: AnimationQueue, AfterPlayerKillFoeSubscriber, OnActorAttackS
         AfterPlayerTravelPublisher.subscribe(self)
     }
     
+    override func setupSequences() {
+        super.setupSequences()
+        self.getSequence(.death).setLoopBehaviour(to: false)
+        self.getSequence(.attack).setLoopBehaviour(to: false)
+    }
+    
     func afterPlayerKillFoe(player: Player, foe: Foe) {
         self.clearQueue()
         self.addToQueue(sequence: .death)
@@ -59,7 +65,6 @@ class NPCAnimation: AnimationQueue, AfterPlayerKillFoeSubscriber, OnActorAttackS
     }
     
     private static func getFileID(location: Location) -> String? {
-        // TODO: Read the actual npc/foe here and update accordingly
         switch location.type {
         case .shop, .enhancer, .restorer, .friendly:
             let contentID = (location as? InteractorLocation)?.getInteractor()?.contentID

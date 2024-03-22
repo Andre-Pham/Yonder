@@ -33,7 +33,7 @@ class SequenceTimer {
     func start(withTimeInterval timeInterval: TimeInterval, callback: @escaping () -> Void) {
         self.stop()
         self.timer = Timer(timeInterval: timeInterval, repeats: true) { [weak self] timer in
-            guard let self = self else {
+            guard self != nil else {
                 timer.invalidate()
                 return
             }
