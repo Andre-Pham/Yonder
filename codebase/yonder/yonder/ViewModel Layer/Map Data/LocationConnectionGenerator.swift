@@ -25,12 +25,16 @@ class LocationConnectionGenerator {
     func getAllLocationConnections() -> [LocationConnection?] {
         var allLocationConnections = [LocationConnection]()
         
+        allLocationConnections.append(
+            LocationConnection(location: self.map.startingLocation, mapGridColumnsCount: self.columnsCount, areaPosition: 0, territoryPosition: 0)
+        )
+        
         for (territoryIndex, territory) in self.map.territoriesInOrder.enumerated() {
             var segmentConnections = [LocationConnection]()
             for (areaIndex, area) in territory.segment.allAreas.enumerated() {
                 let previousTipLocations: [Location]
                 if territoryIndex == 0 {
-                    previousTipLocations = [Location]()
+                    previousTipLocations = [self.map.startingLocation]
                 } else if territoryIndex%MapConfig.territoriesPerBoss == 0 {
                     previousTipLocations = self.map.getPreviousBossAreaToTerritory(at: territoryIndex)!.tipLocations
                 } else {

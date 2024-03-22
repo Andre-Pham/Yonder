@@ -18,13 +18,14 @@ class LocationConnection {
     let ROWS_BETWEEN_AREAS = 5
     let COLUMNS_BETWEEN_AREA_TIPS = 6
     let ROWS_ADDED_BY_BOSS_AREA = 4
+    let ROWS_OFFSET_BY_STARTING_LOCATION = 2
     
     private let mapGridColumnsCount: Int
     private let areaPosition: Int
     private let territoryPosition: Int
     private let location: Location
     var locationHexagonIndex: Int {
-        return self.coordinatesToHexagonIndex(self.location.hexagonCoordinate!)
+        return self.coordinatesToHexagonIndex(self.location.hexagonCoordinate!, isStartingPosition: self.location.type == .none)
     }
     var locationHexagonCoordinate: HexagonCoordinate {
         return self.location.hexagonCoordinate!
@@ -38,10 +39,10 @@ class LocationConnection {
     private(set) var previousLocationIndicesFromPreviousTavernArea = [Int]()
     private(set) var previousLocationIndicesFromPreviousBossArea = [Int]()
     var previousLocationsHexagonIndices: [Int] {
-        return self.previousLocations.map { self.coordinatesToHexagonIndex($0.hexagonCoordinate!) }
+        return self.previousLocations.map { self.coordinatesToHexagonIndex($0.hexagonCoordinate!, isStartingPosition: $0.type == .none) }
     }
     var previousLocationsHexagonCoordinates: [HexagonCoordinate] {
-        var result = self.previousLocations.map { $0.hexagonCoordinate! }
+        var result = self.previousLocations.map { $0.type == .none ? HexagonCoordinate($0.hexagonCoordinate!.x, $0.hexagonCoordinate!.y + self.ROWS_OFFSET_BY_STARTING_LOCATION) : $0.hexagonCoordinate! }
         
         for locationIndex in self.previousLocationIndicesFromRightArea {
             let coords = result[locationIndex]
@@ -96,13 +97,14 @@ class LocationConnection {
         }
     }
     
-    func coordinatesToHexagonIndex(_ coordinates: HexagonCoordinate) -> Int {
+    func coordinatesToHexagonIndex(_ coordinates: HexagonCoordinate, isStartingPosition: Bool) -> Int {
         return (
             Int((Double(coordinates.x)/2).rounded(.down))
             + coordinates.y*self.mapGridColumnsCount
             + self.areaPosition*self.COLUMNS_BETWEEN_AREA_TIPS/2
             + (2*self.mapGridColumnsCount*self.territoryPosition)*(self.ROWS_BETWEEN_AREAS + self.ROWS_IN_AREA)
-            + Int((Double(territoryPosition)/Double(MapConfig.territoriesPerBoss)).rounded(.down))*self.ROWS_ADDED_BY_BOSS_AREA*self.mapGridColumnsCount*2
+            + Int((Double(self.territoryPosition)/Double(MapConfig.territoriesPerBoss)).rounded(.down))*self.ROWS_ADDED_BY_BOSS_AREA*self.mapGridColumnsCount*2
+            + (isStartingPosition ? 0 : self.ROWS_OFFSET_BY_STARTING_LOCATION*self.mapGridColumnsCount*2)
         )
     }
     
