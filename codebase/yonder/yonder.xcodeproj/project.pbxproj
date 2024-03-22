@@ -522,7 +522,6 @@
 		65FDAFB8276E3EC0002FAEA4 /* LocationAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDAFB7276E3EC0002FAEA4 /* LocationAttributes.swift */; };
 		B60C178F2BAD356300596C46 /* PreviewLandmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C178E2BAD356300596C46 /* PreviewLandmark.swift */; };
 		B60C17932BAD360800596C46 /* FRAMES-L0001.json in Resources */ = {isa = PBXBuildFile; fileRef = B60C17922BAD360800596C46 /* FRAMES-L0001.json */; };
-		B60C17952BAD396800596C46 /* IMG-L0001.png in Resources */ = {isa = PBXBuildFile; fileRef = B60C17942BAD396800596C46 /* IMG-L0001.png */; };
 		B61245AD2BA77EDE00949255 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61245AC2BA77EDE00949255 /* StatView.swift */; };
 		B61245AF2BA785D800949255 /* StatsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61245AE2BA785D800949255 /* StatsStack.swift */; };
 		B635B05A29B1896600A45F43 /* EquipArmorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B635B05929B1896600A45F43 /* EquipArmorView.swift */; };
@@ -544,6 +543,7 @@
 		B673449F2BAD3C35002A26CB /* AnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673449E2BAD3C35002A26CB /* AnimationManager.swift */; };
 		B67344A12BAD3E90002A26CB /* AnimationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67344A02BAD3E90002A26CB /* AnimationQueue.swift */; };
 		B67344A32BAD3F2F002A26CB /* LandmarkAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67344A22BAD3F2F002A26CB /* LandmarkAnimation.swift */; };
+		B67344A52BAD472B002A26CB /* IMG-L0001.png in Resources */ = {isa = PBXBuildFile; fileRef = B67344A42BAD472B002A26CB /* IMG-L0001.png */; };
 		B678C17F2B3C424C00CD6354 /* FACTION5-WEAPONS.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1732B3C424B00CD6354 /* FACTION5-WEAPONS.json */; };
 		B678C1802B3C424C00CD6354 /* DESERT-WEAPONS.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1742B3C424B00CD6354 /* DESERT-WEAPONS.json */; };
 		B678C1812B3C424C00CD6354 /* FACTION6-WEAPONS.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1752B3C424B00CD6354 /* FACTION6-WEAPONS.json */; };
@@ -2967,7 +2967,6 @@
 		65FDAFB7276E3EC0002FAEA4 /* LocationAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAttributes.swift; sourceTree = "<group>"; };
 		B60C178E2BAD356300596C46 /* PreviewLandmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewLandmark.swift; sourceTree = "<group>"; };
 		B60C17922BAD360800596C46 /* FRAMES-L0001.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "FRAMES-L0001.json"; sourceTree = "<group>"; };
-		B60C17942BAD396800596C46 /* IMG-L0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IMG-L0001.png"; sourceTree = "<group>"; };
 		B61245AC2BA77EDE00949255 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
 		B61245AE2BA785D800949255 /* StatsStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsStack.swift; sourceTree = "<group>"; };
 		B635B05929B1896600A45F43 /* EquipArmorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipArmorView.swift; sourceTree = "<group>"; };
@@ -2989,6 +2988,7 @@
 		B673449E2BAD3C35002A26CB /* AnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
 		B67344A02BAD3E90002A26CB /* AnimationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationQueue.swift; sourceTree = "<group>"; };
 		B67344A22BAD3F2F002A26CB /* LandmarkAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkAnimation.swift; sourceTree = "<group>"; };
+		B67344A42BAD472B002A26CB /* IMG-L0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IMG-L0001.png"; sourceTree = "<group>"; };
 		B678C1732B3C424B00CD6354 /* FACTION5-WEAPONS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FACTION5-WEAPONS.json"; sourceTree = "<group>"; };
 		B678C1742B3C424B00CD6354 /* DESERT-WEAPONS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "DESERT-WEAPONS.json"; sourceTree = "<group>"; };
 		B678C1752B3C424B00CD6354 /* FACTION6-WEAPONS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FACTION6-WEAPONS.json"; sourceTree = "<group>"; };
@@ -6628,7 +6628,7 @@
 		B60C178D2BAD352700596C46 /* Sprite Sheets */ = {
 			isa = PBXGroup;
 			children = (
-				B60C17942BAD396800596C46 /* IMG-L0001.png */,
+				B67344A42BAD472B002A26CB /* IMG-L0001.png */,
 			);
 			path = "Sprite Sheets";
 			sourceTree = "<group>";
@@ -10080,7 +10080,7 @@
 				B6D4705C2A51E0220002CEEC /* FRAMES-E0398.json in Resources */,
 				B6D471D12A51E0230002CEEC /* FRAMES-E0026.json in Resources */,
 				B6D46F572A51E0220002CEEC /* E0397.json in Resources */,
-				B60C17952BAD396800596C46 /* IMG-L0001.png in Resources */,
+				B67344A52BAD472B002A26CB /* IMG-L0001.png in Resources */,
 				B6D470FF2A51E0220002CEEC /* FRAMES-E0218.json in Resources */,
 				B6D470F92A51E0220002CEEC /* FRAMES-E0473.json in Resources */,
 				B6D471952A51E0230002CEEC /* FRAMES-E0220.json in Resources */,
