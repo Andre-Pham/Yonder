@@ -544,8 +544,8 @@
 		B67344A12BAD3E90002A26CB /* AnimationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67344A02BAD3E90002A26CB /* AnimationQueue.swift */; };
 		B67344A32BAD3F2F002A26CB /* LandmarkAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67344A22BAD3F2F002A26CB /* LandmarkAnimation.swift */; };
 		B67344A52BAD472B002A26CB /* IMG-L0001.png in Resources */ = {isa = PBXBuildFile; fileRef = B67344A42BAD472B002A26CB /* IMG-L0001.png */; };
-		B67344A72BAE6FF2002A26CB /* IMG-L0002.png in Resources */ = {isa = PBXBuildFile; fileRef = B67344A62BAE6FF2002A26CB /* IMG-L0002.png */; };
 		B67344A92BAE7026002A26CB /* FRAMES-L0002.json in Resources */ = {isa = PBXBuildFile; fileRef = B67344A82BAE7026002A26CB /* FRAMES-L0002.json */; };
+		B67344AB2BAE98B9002A26CB /* IMG-L0002.png in Resources */ = {isa = PBXBuildFile; fileRef = B67344AA2BAE98B9002A26CB /* IMG-L0002.png */; };
 		B678C17F2B3C424C00CD6354 /* FACTION5-WEAPONS.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1732B3C424B00CD6354 /* FACTION5-WEAPONS.json */; };
 		B678C1802B3C424C00CD6354 /* DESERT-WEAPONS.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1742B3C424B00CD6354 /* DESERT-WEAPONS.json */; };
 		B678C1812B3C424C00CD6354 /* FACTION6-WEAPONS.json in Resources */ = {isa = PBXBuildFile; fileRef = B678C1752B3C424B00CD6354 /* FACTION6-WEAPONS.json */; };
@@ -2991,8 +2991,8 @@
 		B67344A02BAD3E90002A26CB /* AnimationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationQueue.swift; sourceTree = "<group>"; };
 		B67344A22BAD3F2F002A26CB /* LandmarkAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkAnimation.swift; sourceTree = "<group>"; };
 		B67344A42BAD472B002A26CB /* IMG-L0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IMG-L0001.png"; sourceTree = "<group>"; };
-		B67344A62BAE6FF2002A26CB /* IMG-L0002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IMG-L0002.png"; sourceTree = "<group>"; };
 		B67344A82BAE7026002A26CB /* FRAMES-L0002.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "FRAMES-L0002.json"; sourceTree = "<group>"; };
+		B67344AA2BAE98B9002A26CB /* IMG-L0002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IMG-L0002.png"; sourceTree = "<group>"; };
 		B678C1732B3C424B00CD6354 /* FACTION5-WEAPONS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FACTION5-WEAPONS.json"; sourceTree = "<group>"; };
 		B678C1742B3C424B00CD6354 /* DESERT-WEAPONS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "DESERT-WEAPONS.json"; sourceTree = "<group>"; };
 		B678C1752B3C424B00CD6354 /* FACTION6-WEAPONS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FACTION6-WEAPONS.json"; sourceTree = "<group>"; };
@@ -6634,7 +6634,7 @@
 			isa = PBXGroup;
 			children = (
 				B67344A42BAD472B002A26CB /* IMG-L0001.png */,
-				B67344A62BAE6FF2002A26CB /* IMG-L0002.png */,
+				B67344AA2BAE98B9002A26CB /* IMG-L0002.png */,
 			);
 			path = "Sprite Sheets";
 			sourceTree = "<group>";
@@ -8943,6 +8943,7 @@
 				B6D470A42A51E0220002CEEC /* FRAMES-E0537.json in Resources */,
 				B6D46DC52A51E0210002CEEC /* N0062.json in Resources */,
 				B6D471DC2A51E0230002CEEC /* FRAMES-E0437.json in Resources */,
+				B67344AB2BAE98B9002A26CB /* IMG-L0002.png in Resources */,
 				B6D46E812A51E0210002CEEC /* E0008.json in Resources */,
 				B6D46D252A51E0210002CEEC /* IMG-E0252.png in Resources */,
 				B6D46EC92A51E0210002CEEC /* E0396.json in Resources */,
@@ -9298,7 +9299,6 @@
 				B6D470EC2A51E0220002CEEC /* FRAMES-E0280.json in Resources */,
 				B6D46E5A2A51E0210002CEEC /* E0530.json in Resources */,
 				B6D46FC62A51E0220002CEEC /* E0450.json in Resources */,
-				B67344A72BAE6FF2002A26CB /* IMG-L0002.png in Resources */,
 				B6D46B5B2A51E0200002CEEC /* IMG-E0304.png in Resources */,
 				B6D46B6A2A51E0200002CEEC /* IMG-E0259.png in Resources */,
 				B6D46E0B2A51E0210002CEEC /* E0307.json in Resources */,
