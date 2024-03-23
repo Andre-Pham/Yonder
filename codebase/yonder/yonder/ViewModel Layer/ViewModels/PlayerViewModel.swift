@@ -348,4 +348,8 @@ class PlayerViewModel: ActorViewModel {
         }
     }
     
+    func hasCriticalHealth(against foe: FoeViewModel) -> Bool {
+        return self.health + self.armorPoints <= foe.getIndicativeDamage()*2
+    }
+    
 }

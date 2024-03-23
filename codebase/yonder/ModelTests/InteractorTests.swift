@@ -80,13 +80,18 @@ class InteractorTests: XCTestCase {
         let friendly = Friendly(
             contentID: nil,
             offers: [FreeGoldOffer(goldAmount: 500), FreeGoldOffer(goldAmount: 100), FreeGoldOffer(goldAmount: 1)],
-            offerLimit: 2)
+            offerLimit: 2
+        )
+        // Note: offers aren't removed upon being accepted - they're removed when the "offers remaining" stat is reduced to 0
+        // See Friendly.acceptOffer(:Offer, :Player) for reasoning
         friendly.acceptOffer(friendly.offers[0], for: self.player)
         XCTAssertEqual(self.player.gold, 500)
-        XCTAssertEqual(friendly.offers.count, 2)
-        friendly.acceptOffer(friendly.offers[0], for: self.player)
+        XCTAssertEqual(friendly.offers.count, 3)
+        XCTAssertEqual(friendly.offersRemaining, 1)
+        friendly.acceptOffer(friendly.offers[1], for: self.player)
         XCTAssertEqual(self.player.gold, 600)
         XCTAssertEqual(friendly.offers.count, 0)
+        XCTAssertEqual(friendly.offersRemaining, 0)
     }
 
 }

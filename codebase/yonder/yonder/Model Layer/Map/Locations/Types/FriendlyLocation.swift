@@ -55,7 +55,7 @@ class FriendlyLocation: Location, InteractorLocation {
     ///   - contentManager: The content manager to generate any required content for this location
     func initContent(using contentManager: ContentManager) {
         guard self.generatedFriendly == nil else {
-            assert(self.friendly.contentID != nil, "Pre-generated content missing content ID required")
+            assertOutsideUnitTests(self.friendly.contentID != nil, "Pre-generated content missing content ID required")
             return
         }
         self.generatedFriendly = contentManager.generateFriendly(using: self.context)

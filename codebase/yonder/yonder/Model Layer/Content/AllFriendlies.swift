@@ -31,7 +31,7 @@ enum Friendlies {
     
     // 02
     static func dragonSlayerFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
-        let damage = (100.0.compound(multiply: 1.2, index: stage)*3.0).toRoundedInt().nearest(5)
+        let damage = (100.0.compound(multiply: 1.2, index: stage)*2.0).toRoundedInt().nearest(5)
         let dulling = (Double(damage)/12.0).toRoundedInt()
         let dragonSlayer = Weapon(
             name: Strings("weapon.dragonSlayer.name").local,
@@ -69,7 +69,7 @@ enum Friendlies {
             offers: [
                 HealthForGoldOffer(health: health, goldReward: goldReward)
             ],
-            offerLimit: 10
+            offerLimit: 4
         )
     }
     
@@ -78,7 +78,7 @@ enum Friendlies {
         let shiv = Weapon(
             name: Strings("weapon.simpleShiv.name").local,
             description: Strings("weapon.simpleShiv.description").local,
-            basePill: DamageBasePill(damage: 15),
+            basePill: DamageBasePill(damage: 50),
             durabilityPill: InfiniteDurabilityPill(),
             effectPills: [],
             buffPills: []
@@ -106,13 +106,13 @@ enum Friendlies {
     }
     
     // 06
-    static func maxPointsForArmorPointsFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
+    static func maxHealthForArmorPointsFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
         return Friendly(
             contentID: profile.id,
             name: profile.friendlyName,
             description: profile.friendlyDescription,
             offers: [MaxHealthForArmorPointsOffer()],
-            offerLimit: Int.random(in: 1...3)
+            offerLimit: 2
         )
     }
     
@@ -129,13 +129,13 @@ enum Friendlies {
                 GoldForPriceBuffOffer(gold: gold, priceFraction: cursePriceFraction),
                 GoldForPriceBuffOffer(gold: -gold, priceFraction: blessingPriceFraction)
             ],
-            offerLimit: Int.random(in: 1...3)
+            offerLimit: 1
         )
     }
     
     // 08
     static func weaponDamageOrPotionCountFriendly(profile: FriendlyProfile, stage: Int) -> Friendly {
-        let damage = (50.0.compound(multiply: 1.2, index: stage)).toRoundedInt()
+        let damage = (30.0.compound(multiply: 1.2, index: stage)).toRoundedInt()
         return Friendly(
             contentID: profile.id,
             name: profile.friendlyName,

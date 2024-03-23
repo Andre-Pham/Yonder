@@ -33,7 +33,7 @@ enum Accessories {
     
     // 02
     static func reduceDamageAccessory(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
-        let damageRange = AccessoryStatRange(type: type, regular: (5, 25), peripheral: (25, 50))
+        let damageRange = AccessoryStatRange(type: type, regular: (5, 15), peripheral: (15, 35))
         let damage = damageRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Accessory(
             name: profile.accessoryName,
@@ -66,12 +66,12 @@ enum Accessories {
     
     // 04
     static func bonusHitPointsAccessory(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
-        let healthRange = AccessoryStatRange(type: type, regular: (50, 150), peripheral: (150, 300))
+        let healthRange = AccessoryStatRange(type: type, regular: (25, 80), peripheral: (80, 200))
         healthRange.compound(multiply: 1.2, index: stage)
-        let armorPointsRange = AccessoryStatRange(type: type, regular: (50, 150), peripheral: (150, 300))
+        let armorPointsRange = AccessoryStatRange(type: type, regular: (25, 80), peripheral: (80, 200))
         armorPointsRange.compound(multiply: 1.5, index: stage)
-        let health = healthRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt().nearest(10)
-        let armorPoints = armorPointsRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt().nearest(10)
+        let health = healthRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt().nearest(5)
+        let armorPoints = armorPointsRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt().nearest(5)
         return Accessory(
             name: profile.accessoryName,
             description: "",
@@ -85,9 +85,9 @@ enum Accessories {
     
     // 05
     static func phoenixAccessory(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
-        let healthSetTo = (type == .regular ? 50 : nil)
+        let healthSetTo = (type == .regular ? 100 : nil)
         let pill = PhoenixEquipmentPill(healthSetTo: healthSetTo, sourceName: profile.accessoryName)
-        let healthBonus = Int.random(in: 0...150).nearest(50)
+        let healthBonus = Int.random(in: 0...150).nearest(25)
         return Accessory(
             name: profile.accessoryName,
             description: "",
@@ -101,9 +101,9 @@ enum Accessories {
     
     // 06
     static func tankAccessory(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
-        let healthRange = AccessoryStatRange(type: type, regular: (25, 75), peripheral: (75, 150))
+        let healthRange = AccessoryStatRange(type: type, regular: (20, 70), peripheral: (70, 140))
         healthRange.compound(multiply: 1.2, index: stage)
-        let armorPointsRange = AccessoryStatRange(type: type, regular: (25, 75), peripheral: (75, 150))
+        let armorPointsRange = AccessoryStatRange(type: type, regular: (20, 70), peripheral: (70, 140))
         armorPointsRange.compound(multiply: 1.5, index: stage)
         let health = healthRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         let armorPoints = armorPointsRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
@@ -151,7 +151,7 @@ enum Accessories {
     
     // 08
     static func bonusDamageAccessory(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
-        let damageRange = AccessoryStatRange(type: type, regular: (5, 25), peripheral: (25, 50))
+        let damageRange = AccessoryStatRange(type: type, regular: (5, 15), peripheral: (15, 40))
         let damage = damageRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Accessory(
             name: profile.accessoryName,
@@ -190,7 +190,7 @@ enum Accessories {
     
     // 10
     static func bonusHealthRestorationAccessory(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
-        let healthRange = AccessoryStatRange(type: type, regular: (15, 40), peripheral: (40, 100))
+        let healthRange = AccessoryStatRange(type: type, regular: (10, 35), peripheral: (35, 80))
         let health = healthRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Accessory(
             name: profile.accessoryName,
@@ -234,7 +234,7 @@ enum Accessories {
     
     // 12
     static func bonusArmorPointsRestorationAccessory(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
-        let armorPointsRange = AccessoryStatRange(type: type, regular: (10, 35), peripheral: (35, 70))
+        let armorPointsRange = AccessoryStatRange(type: type, regular: (10, 30), peripheral: (30, 60))
         let armorPoints = armorPointsRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Accessory(
             name: profile.accessoryName,
@@ -256,7 +256,7 @@ enum Accessories {
     
     // 13
     static func thornsAccessory(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
-        let thornsRange = AccessoryStatRange(type: type, regular: (0.05, 0.25), peripheral: (0.25, 0.5))
+        let thornsRange = AccessoryStatRange(type: type, regular: (0.05, 0.2), peripheral: (0.2, 0.35))
         let thorns = thornsRange.selectFromLinearDistribution(minY: 10, maxY: 1)
         let pill = ThornsEquipmentPill(thornsFraction: thorns, sourceName: profile.accessoryName)
         return Accessory(
@@ -289,7 +289,7 @@ enum Accessories {
     
     // 15
     static func reducedPriceAccessory(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
-        let priceRange = AccessoryStatRange(type: type, regular: (10, 50), peripheral: (50, 100))
+        let priceRange = AccessoryStatRange(type: type, regular: (2, 25), peripheral: (25, 50))
         let price = priceRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Accessory(
             name: profile.accessoryName,
@@ -323,7 +323,7 @@ enum Accessories {
     
     // 17
     static func bonusGoldAccessory(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
-        let goldRange = AccessoryStatRange(type: type, regular: (50, 100), peripheral: (100, 200))
+        let goldRange = AccessoryStatRange(type: type, regular: (25, 60), peripheral: (60, 120))
         let gold = goldRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         return Accessory(
             name: profile.accessoryName,
@@ -358,7 +358,7 @@ enum Accessories {
     static func restoreAfterKillEquipmentPill(profile: AccessoryProfile, stage: Int, type: AccessoryType) -> Accessory {
         let healthRange = AccessoryStatRange(type: type, regular: (25, 50), peripheral: (50, 100))
         healthRange.compound(multiply: 1.2, index: stage)
-        let armorPointsRange = AccessoryStatRange(type: type, regular: (50, 150), peripheral: (150, 300))
+        let armorPointsRange = AccessoryStatRange(type: type, regular: (50, 150), peripheral: (150, 200))
         armorPointsRange.compound(multiply: 1.2, index: stage)
         let health = healthRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()
         let armorPoints = armorPointsRange.selectFromLinearDistribution(minY: 10, maxY: 1).toRoundedInt()

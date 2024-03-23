@@ -2,12 +2,12 @@
 //  AnimationQueue.swift
 //  yonder
 //
-//  Created by Andre Pham on 9/6/2023.
+//  Created by Andre Pham on 22/3/2024.
 //
 
 import Foundation
 
-class AnimationQueue: AnimationManager {
+class AnimationQueue<SequenceCode>: AnimationManager<SequenceCode> where SequenceCode: RawRepresentable, SequenceCode.RawValue == String, SequenceCode: CaseIterable {
     
     private var defaultSequence: SequenceCode
     private var queue = [SequenceCode]()

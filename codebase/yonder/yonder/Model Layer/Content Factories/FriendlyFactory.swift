@@ -15,7 +15,7 @@ class FriendlyFactory: BuildTokenFactory, RegionBasedFactory {
         case healthForGoldFriendly              // 03
         case shivFriendly                       // 04
         case sellPotionsFriendly                // 05
-        case maxPointsForArmorPointsFriendly    // 06
+        case maxHealthForArmorPointsFriendly    // 06
         case goldBlessingOrCurseFriendly        // 07
         case weaponDamageOrPotionCountFriendly  // 08
         case freeItemsFriendly                  // 09
@@ -47,7 +47,7 @@ class FriendlyFactory: BuildTokenFactory, RegionBasedFactory {
         // 05
         newTokens.populate(count: 2, { .sellPotionsFriendly })
         // 06
-        newTokens.populate(count: 2, { .maxPointsForArmorPointsFriendly })
+        newTokens.populate(count: 2, { .maxHealthForArmorPointsFriendly })
         // 07
         newTokens.populate(count: 2, { .goldBlessingOrCurseFriendly })
         // 08
@@ -89,9 +89,9 @@ class FriendlyFactory: BuildTokenFactory, RegionBasedFactory {
                 method: Friendlies.sellPotionsFriendly,
                 tag: .trade
             )
-        case .maxPointsForArmorPointsFriendly:
+        case .maxHealthForArmorPointsFriendly:
             return self.buildFriendly(
-                method: Friendlies.maxPointsForArmorPointsFriendly,
+                method: Friendlies.maxHealthForArmorPointsFriendly,
                 tag: .sacrifice
             )
         case .goldBlessingOrCurseFriendly:

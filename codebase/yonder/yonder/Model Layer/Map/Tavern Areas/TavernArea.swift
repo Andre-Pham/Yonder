@@ -16,7 +16,7 @@ class TavernArea: Region, Storable {
     public let id: UUID
     private(set) var rootLocations = [Location]()
     private(set) var tipLocations = [Location]()
-    public let arrangement: TavernAreaArrangements
+    public let arrangement: TavernAreaArrangement
     public let locations: [Location]
     public let tags: RegionTagAllocation
     
@@ -34,23 +34,26 @@ class TavernArea: Region, Storable {
         self.tileBackgroundImage = tileBackgroundImage
         self.platformImage = platformImage
         self.id = UUID() // id must be persistent so location contexts can refer to them
-        switch locations.count {
-        case 3:
-            self.arrangement = .S
-        case 4:
-            self.arrangement = .M
-        case 5:
-            self.arrangement = .L
-        case 6:
-            self.arrangement = .XL
-        default:
+        guard let arrangement = TavernAreaArrangement.allCases.first(where: { $0.locationCount == locations.count }) else {
             fatalError("Number of locations provided to tavern area don't correspond to a tavern area arrangement")
         }
+        self.arrangement = arrangement
         self.locations = locations
         self.addRootAndTipLocations()
         self.generateAreaArrangement()
         for location in self.locations {
-            location.setContext(key: self.getRegionKey(), name: self.name, description: self.description, tileBackgroundImage: self.tileBackgroundImage, platformImage: self.platformImage)
+            location.setContext(
+                // We want to match the tavern area to where the player previously was
+                // So we pass the provided information in as a placeholder/default
+                // But when we get there, we reload the context to match where the player previously was
+                // If desired, we can flip reloadOnDemand to false, and the tavern area will use whatever region it was provided
+                reloadOnDemand: true,
+                key: self.getRegionKey(),
+                name: self.name,
+                description: self.description,
+                tileBackgroundImage: self.tileBackgroundImage,
+                platformImage: self.platformImage
+            )
         }
     }
     
@@ -76,7 +79,7 @@ class TavernArea: Region, Storable {
         self.tileBackgroundImage = tileBackgroundImageName.isEmpty ? YonderImages.missingTileBackgroundImage : YonderImage(tileBackgroundImageName)
         self.platformImage = platformImageName.isEmpty ? YonderImages.missingPlatformImage : YonderImage(platformImageName)
         assert(!tileBackgroundImageName.isEmpty && !platformImageName.isEmpty, "Location image could not be restored")
-        self.arrangement = TavernAreaArrangements(rawValue: dataObject.get(Field.arrangement.rawValue)) ?? .S
+        self.arrangement = TavernAreaArrangement(rawValue: dataObject.get(Field.arrangement.rawValue)) ?? .tiny
         self.locations = dataObject.getObjectArray(Field.locations.rawValue, type: LocationAbstract.self) as! [any Location]
         self.id = UUID(uuidString: dataObject.get(Field.id.rawValue))!
         

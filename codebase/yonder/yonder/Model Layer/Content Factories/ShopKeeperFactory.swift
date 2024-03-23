@@ -24,13 +24,12 @@ class ShopKeeperFactory: RegionBasedFactory {
     private func buildShopKeeper(stage: Int, tags: RegionTagAllocation) -> ShopKeeper {
         let profile = self.shopKeeperProfileBucket.grabProfile(areaTag: tags.getTag())
         var purchasableItems = [PurchasableItem]()
-        let purchasableItemCount = Int.random(in: 2...5)
+        let purchasableItemCount = Int.random(in: 2...3)
         for _ in 0..<purchasableItemCount {
             let toAdd = PurchasableItem.PurchasableItemType.allCases.randomElement()!
             switch toAdd {
             case .weapon:
-                let stock = Int.random(in: 1...3)
-                purchasableItems.append(PurchasableItem(item: self.lootFactories.weaponFactory.deliver(), stock: stock))
+                purchasableItems.append(PurchasableItem(item: self.lootFactories.weaponFactory.deliver(), stock: 1))
             case .potion:
                 let stock = Int.random(in: 1...3)
                 purchasableItems.append(PurchasableItem(item: self.lootFactories.potionFactory.deliver(), stock: stock))

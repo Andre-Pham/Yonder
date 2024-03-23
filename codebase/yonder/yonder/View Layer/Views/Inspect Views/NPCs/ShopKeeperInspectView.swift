@@ -16,23 +16,22 @@ struct ShopKeeperInspectView: View {
             description: self.shopkeeperViewModel.description,
             locationType: LocationType.shop
         ) {
-            YonderText(text: Strings("inspect.title.offers").local, size: .inspectSheetTitle)
+            YonderText(
+                text: Strings("inspect.title.selling").local,
+                size: .inspectSheetTitle
+            )
             
-            InspectStatView(title: Strings("stat.offers").local, value: self.shopkeeperViewModel.purchasables.count)
-            
-            YonderText(text: "\(Strings("stat.description.selling").local): \(self.shopkeeperViewModel.getOffersDescription())", size: .inspectSheetBody)
-                .frame(maxWidth: .infinity, alignment: .leading)
+            YonderText(
+                text: "\(self.shopkeeperViewModel.getOffersDescription())", 
+                size: .inspectSheetBody
+            )
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }
 
-struct ShopKeeperInspectView_Previews: PreviewProvider {
-    static var previews: some View {
-        ZStack {
-            YonderColors.backgroundMaxDepth
-                .ignoresSafeArea()
-            
-            ShopKeeperInspectView(shopkeeperViewModel: PreviewObjects.shopKeeperViewModel)
-        }
+#Preview {
+    return PreviewContentView {
+        ShopKeeperInspectView(shopkeeperViewModel: PreviewObjects.shopKeeperViewModel)
     }
 }

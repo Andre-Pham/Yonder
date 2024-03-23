@@ -25,7 +25,7 @@ final class DatabaseTargetPerformanceTests: XCTestCase {
     func testWrite() throws {
         var results = [String: Double]()
         for database in self.databaseTargets {
-            let timeTaken = TestPerformance.executionDuration() {
+            let timeTaken = testExecutionDuration() {
                 self.largeRecords.forEach({ _ = database.write($0) })
                 self.smallRecords.forEach({ _ = database.write($0) })
             }
@@ -41,7 +41,7 @@ final class DatabaseTargetPerformanceTests: XCTestCase {
         for database in self.databaseTargets {
             self.largeRecords.forEach({ _ = database.write($0) })
             self.smallRecords.forEach({ _ = database.write($0) })
-            let timeTaken = TestPerformance.executionDuration() {
+            let timeTaken = testExecutionDuration() {
                 let _: [Game] = database.read()
                 let _: [Armor] = database.read()
                 for record in self.largeRecords {
@@ -65,13 +65,13 @@ final class DatabaseTargetPerformanceTests: XCTestCase {
         for database in self.databaseTargets {
             self.largeRecords.forEach({ _ = database.write($0) })
             self.smallRecords.forEach({ _ = database.write($0) })
-            let timeTaken1 = TestPerformance.executionDuration() {
+            let timeTaken1 = testExecutionDuration() {
                 let _ = database.delete(Game.self)
                 let _ = database.delete(Armor.self)
             }
             self.largeRecords.forEach({ _ = database.write($0) })
             self.smallRecords.forEach({ _ = database.write($0) })
-            let timeTaken2 = TestPerformance.executionDuration() {
+            let timeTaken2 = testExecutionDuration() {
                 for record in self.largeRecords {
                     let id = record.metadata.id
                     let _ = database.delete(id: id)

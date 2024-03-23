@@ -158,7 +158,8 @@ enum PreviewObjects {
             name: "Andre",
             description: "I sell pancakes and maple syrup!!",
             purchasableItems: [
-                PurchasableItem(item: Weapon(basePill: DamageBasePill(damage: 200), durabilityPill: DullingDurabilityPill(damageLostPerUse: 50)), stock: 5)
+                PurchasableItem(item: Weapon(basePill: DamageBasePill(damage: 200), durabilityPill: DullingDurabilityPill(damageLostPerUse: 50)), stock: 5),
+                PurchasableItem(item: DamagePotion(tier: .II, potionCount: 2), stock: 2)
             ]
         )
     }
@@ -306,7 +307,7 @@ enum PreviewObjects {
             locations: Array(count: 19, populateWith: HostileLocation(foe: Foe(contentID: nil, maxHealth: 200, weapon: BaseAttack(damage: 100), loot: NoLootOptions()))),
             name: "Glacier Rifts",
             description: "placeholderDescription",
-            tags: RegionTagAllocation(),
+            tags: RegionTagAllocation(tags: (.all, 1)),
             tileBackgroundImage: YonderImages.missingTileBackgroundImage,
             platformImage: YonderImages.missingPlatformImage
         )

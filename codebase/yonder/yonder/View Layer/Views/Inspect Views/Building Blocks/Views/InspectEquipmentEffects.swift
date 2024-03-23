@@ -12,10 +12,22 @@ struct InspectEquipmentEffects: View {
     
     var body: some View {
         ForEach(self.playerViewModel.allEquipmentEffects, id: \.id) { equipmentEffectViewModel in
-            VStack(alignment: .leading, spacing: 0) {
-                YonderText(text: equipmentEffectViewModel.sourceName, size: .inspectSheetBody)
-                
-                YonderText(text: equipmentEffectViewModel.effectsDescription, size: .inspectSheetBody)
+            YonderBorder4 {
+                VStack(alignment: .leading, spacing: 0) {
+                    YonderText(text: equipmentEffectViewModel.sourceName, size: .inspectSheetBody)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 2)
+                        .background(YonderBorder4Presets.outlineColor)
+                    
+                    YonderBorder4Presets.outlineColor
+                        .frame(height: YonderBorder4Presets.outlineThickness)
+                        .padding(.vertical, 6.0)
+                        .padding(.horizontal, -YonderCoreGraphics.innerPadding)
+                    
+                    YonderText(text: equipmentEffectViewModel.effectsDescription, size: .inspectSheetBody)
+                }
+                .padding(YonderCoreGraphics.innerPadding)
+                .frame(maxWidth: .infinity)
             }
         }
     }

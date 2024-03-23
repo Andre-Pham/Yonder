@@ -97,7 +97,7 @@ class LocationAbstract: Storable {
     func setToVisited(from location: Location) {
         self.hasBeenVisited = true
         self.addLocationArrivedFrom(location)
-        if location is BridgeLocation || self is BridgeLocation {
+        if location.type == .bridge || (self as! Location).type == .bridge {
             // Becuase you can travel "backwards" on bridge locations
             location.addLocationArrivedFrom(self as! Location)
         }
@@ -125,12 +125,40 @@ class LocationAbstract: Storable {
         self.hexagonCoordinate = HexagonCoordinate(x, y)
     }
     
-    func setAreaContext(_ area: Area) {
-        self.setContext(key: area.getRegionKey(), name: area.name, description: area.description, tileBackgroundImage: area.tileBackgroundImage, platformImage: area.platformImage)
+    func setAreaContext(_ area: Area, reloadOnDemand: Bool = false) {
+        self.setContext(
+            reloadOnDemand: reloadOnDemand,
+            key: area.getRegionKey(),
+            name: area.name,
+            description: area.description,
+            tileBackgroundImage: area.tileBackgroundImage,
+            platformImage: area.platformImage
+        )
     }
     
-    func setContext(key: String, name: String, description: String, tileBackgroundImage: YonderImage, platformImage: YonderImage) {
-        self.context.setContext(key: key, name: name, description: description, tileBackgroundImage: tileBackgroundImage, platformImage: platformImage)
+    func setContext(
+        reloadOnDemand: Bool = false,
+        key: String,
+        name: String,
+        description: String,
+        tileBackgroundImage: YonderImage,
+        platformImage: YonderImage
+    ) {
+        self.context.setContext(
+            reloadOnDemand: reloadOnDemand,
+            key: key,
+            name: name,
+            description: description,
+            tileBackgroundImage: tileBackgroundImage,
+            platformImage: platformImage
+        )
+    }
+    
+    func initContextIfRequired(using location: Location) {
+        if self.context.shouldBeLoaded {
+            assertOutsideUnitTests(!location.context.shouldBeLoaded, "Shouldn't be possible to attempt to load a location with a previously unloaded location")
+            self.context.matchLocationContext(location)
+        }
     }
     
 }

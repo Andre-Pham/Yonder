@@ -14,22 +14,40 @@ class WarriorClass: PlayerClass {
     }
     
     func createPlayer(at location: Location) -> Player {
-        let player = Player(maxHealth: 300, location: location)
-        let body = Armor(
-            name: "TODO", // "Warrior's Chestplate"
-            description: "TODO",
-            type: .body,
-            armorPoints: 200,
+        let player = Player(maxHealth: 200, location: location)
+        let head = Armor(
+            name: "TODO", // TODO: "Warrior's Helmet"
+            description: "",
+            type: .head,
+            armorPoints: 24,
             armorBuffs: [],
             equipmentPills: []
         )
+        let body = Armor(
+            name: "TODO", // TODO: "Warrior's Chestplate"
+            description: "",
+            type: .body,
+            armorPoints: 56,
+            armorBuffs: [],
+            equipmentPills: []
+        )
+        let legs = Armor(
+            name: "TODO", // TODO: "Warrior's Leg Armor"
+            description: "",
+            type: .legs,
+            armorPoints: 40,
+            armorBuffs: [],
+            equipmentPills: []
+        )
+        player.equipArmor(head)
         player.equipArmor(body)
+        player.equipArmor(legs)
         let shield = Accessory(
-            name: "TODO", // "Tower Shield"
-            description: "TODO", // "A tall sturdy shield forged of iron and wood"
+            name: "TODO", // TODO: "Warrior's Tower Shield"
+            description: "",
             type: .peripheral,
             healthBonus: 0,
-            armorPointsBonus: 50,
+            armorPointsBonus: 15,
             buffs: [
                 DamagePercentBuff(
                     sourceName: "TODO",
@@ -42,8 +60,8 @@ class WarriorClass: PlayerClass {
         )
         player.equipAccessory(shield, replacing: nil)
         let weapon = Weapon(
-            name: "TODO", // "Iron Sword"
-            description: "TODO", // "A standard blade of forged iron"
+            name: "TODO", // TODO: "Warrior's Blade"
+            description: "",
             basePill: DamageBasePill(damage: 50),
             durabilityPill: DecrementDurabilityPill(durability: 10),
             effectPills: [],

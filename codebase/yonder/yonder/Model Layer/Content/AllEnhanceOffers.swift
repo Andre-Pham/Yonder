@@ -54,13 +54,13 @@ enum EnhanceOffers {
 
     // 05
     static func growDamageForWeapon(stage: Int) -> EnhanceOffer {
-        let damageIncrease: Int = StatRange(min: 20, max: 50)
+        let damageIncrease: Int = StatRange(min: 15, max: 30)
             .compound(multiply: 1.2, index: stage)
             .selectFromNormalDistribution()
         let growPill = GrowDamageEffectPill(damageIncrease: damageIncrease)
         let price = Random.selectFromNormalDistribution(
             mid: growPill.calculateBasePurchasePrice(),
-            boundFraction: 0.4
+            boundFraction: 0.2
         )
         return WeaponEffectEnhanceOffer(price: price, effectPill: growPill)
     }

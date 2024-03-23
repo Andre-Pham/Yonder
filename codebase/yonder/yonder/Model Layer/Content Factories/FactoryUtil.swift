@@ -39,10 +39,12 @@ enum FactoryUtil {
     /// - Returns: A randomly selected position from the provided argument,  where each position has a weighted chance of being selected
     static func randomWeightedIndex(_ weights: [Int]) -> Int {
         let sum = weights.reduce(0, +)
-        let outcome = Int.random(in: 1...sum)
+        assert(sum > 0, "Invalid weights provided")
+        assert(weights.allSatisfy({ $0 >= 0 }), "Invalid (negative) weight(s) provided")
+        let outcome = Int.random(in: 0..<sum)
         var leftBound = 0
         for index in 0..<weights.count {
-            let range = (leftBound + 1)...(leftBound + weights[index])
+            let range = (leftBound)..<(leftBound + weights[index])
             if range ~= outcome {
                 return index
             }

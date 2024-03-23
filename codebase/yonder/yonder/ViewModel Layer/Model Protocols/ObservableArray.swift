@@ -14,7 +14,7 @@ import Combine
 /// `@StateObject var secondCar = Car("blue")`
 ///  Is equivalent to...
 /// `@StateObject var cars: ObservableArray<Car> = ObservableArray(array: [Car("red"), Car("blue")]).observeChildrenChanges()`
-class ObservableArray<T>: ObservableObject {
+class ObservableArray<T: ObservableObject>: ObservableObject {
 
     @Published var array: [T] = []
     var count: Int {
@@ -30,15 +30,15 @@ class ObservableArray<T>: ObservableObject {
         return self.array[index%self.array.count]
     }
     
-    func observeChildrenChanges<T: ObservableObject>() -> ObservableArray<T> {
-        (self.array as! [T]).forEach({
+    func observeChildrenChanges() -> ObservableArray<T> {
+        self.array.forEach({
             self.cancellables.append($0.objectWillChange.sink(receiveValue: { _ in self.objectWillChange.send() }))
         })
         
-        return self as! ObservableArray<T>
+        return self
     }
     
-    func append(_ newElement: T) where T: ObservableObject {
+    func append(_ newElement: T) {
         self.array.append(newElement)
         self.cancellables.append(newElement.objectWillChange.sink(receiveValue: { _ in self.objectWillChange.send() }))
     }

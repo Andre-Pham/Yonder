@@ -14,6 +14,7 @@ class BossArea: Region, Storable {
     public let tileBackgroundImage: YonderImage
     public let platformImage: YonderImage
     public let id: UUID
+    public let regionKey: UUID
     public let tags: RegionTagAllocation
     public let bossLocation: BossLocation
     public let restorerLocation: RestorerLocation
@@ -28,6 +29,7 @@ class BossArea: Region, Storable {
     }
     
     init(
+        regionKey: UUID,
         name: String,
         description: String,
         tags: RegionTagAllocation,
@@ -36,6 +38,9 @@ class BossArea: Region, Storable {
         bossLocation: BossLocation,
         restorerLocation: RestorerLocation
     ) {
+        // Unlike other regions which refer to their regular id as their region key, BossAreas have their region key passed to them
+        // This lets them copy their region from the preceding tavern area, meaning they can share factories
+        self.regionKey = regionKey
         self.name = name
         self.description = description
         self.tileBackgroundImage = tileBackgroundImage
@@ -50,7 +55,18 @@ class BossArea: Region, Storable {
         self.restorerLocation.setHexagonCoordinate(5, 35)
         
         for location in self.locations {
-            location.setContext(key: self.getRegionKey(), name: self.name, description: self.description, tileBackgroundImage: self.tileBackgroundImage, platformImage: self.platformImage)
+            location.setContext(
+                // We want to match the boss area to where the player previously was
+                // So we pass the provided information in as a placeholder/default
+                // But when we get there, we reload the context to match where the player previously was
+                // If desired, we can flip reloadOnDemand to false, and the boss area will use whatever region it was provided
+                reloadOnDemand: true,
+                key: self.getRegionKey(),
+                name: self.name,
+                description: self.description,
+                tileBackgroundImage: self.tileBackgroundImage,
+                platformImage: self.platformImage
+            )
         }
     }
     
@@ -65,6 +81,7 @@ class BossArea: Region, Storable {
         case bossLocation
         case restorerLocation
         case id
+        case regionKey
     }
 
     required init(dataObject: DataObject) {
@@ -79,6 +96,7 @@ class BossArea: Region, Storable {
         self.bossLocation = dataObject.getObject(Field.bossLocation.rawValue, type: BossLocation.self)
         self.restorerLocation = dataObject.getObject(Field.restorerLocation.rawValue, type: RestorerLocation.self)
         self.id = UUID(uuidString: dataObject.get(Field.id.rawValue))!
+        self.regionKey = UUID(uuidString: dataObject.get(Field.regionKey.rawValue))!
         
         self.bossLocation.addNextLocations([self.restorerLocation])
         // We don't re-generate location context and such because the serialised locations already have that data
@@ -94,12 +112,13 @@ class BossArea: Region, Storable {
             .add(key: Field.bossLocation.rawValue, value: self.bossLocation)
             .add(key: Field.restorerLocation.rawValue, value: self.restorerLocation)
             .add(key: Field.id.rawValue, value: self.id.uuidString)
+            .add(key: Field.regionKey.rawValue, value: self.regionKey.uuidString)
     }
     
     // MARK: - Functions
     
     func getRegionKey() -> String {
-        return self.id.uuidString
+        return self.regionKey.uuidString
     }
     
 }

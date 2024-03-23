@@ -15,7 +15,9 @@ struct yonderApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .onChange(of: self.scenePhase, perform: Session.instance.onAppStateChange(to:))
+                .onChange(of: self.scenePhase) { _, newState in
+                    Session.instance.onAppStateChange(to: newState)
+                }
         }
     }
 }

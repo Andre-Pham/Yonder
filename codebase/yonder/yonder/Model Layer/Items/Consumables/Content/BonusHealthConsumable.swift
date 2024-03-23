@@ -23,9 +23,9 @@ class BonusHealthConsumable: Consumable {
             case .II:
                 return 50
             case .III:
-                return 100
+                return 80
             case .IV:
-                return 200
+                return 150
             }
         }
     }

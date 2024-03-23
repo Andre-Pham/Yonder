@@ -51,7 +51,7 @@ class GrowDamageEffectPill: WeaponEffectPill {
     }
     
     func calculateBasePurchasePrice() -> Int {
-        return Pricing.playerDamageStat.getValue(amount: self.damageIncrease)
+        return Pricing.playerDamageStat.getValue(amount: self.damageIncrease, uses: Pricing.Stat.infiniteDuration)
     }
     
 }

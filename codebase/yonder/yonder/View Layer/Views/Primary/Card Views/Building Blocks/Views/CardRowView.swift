@@ -11,6 +11,7 @@ import SwiftUI
 struct CardRowView: View {
     var prefix: String? = nil
     var value: Int
+    var valueColor: Color? = nil
     var indicativeValue: Int? = nil
     var maxValuePrefix: String? = nil
     var maxValue: Int? = nil
@@ -28,18 +29,18 @@ struct CardRowView: View {
                     YonderTextNumeralHStack {
                         YonderText(text: prefix, size: .cardBody)
                         
-                        if let indicativeValue = indicativeValue {
+                        if let indicativeValue = self.indicativeValue {
                             IndicativeNumeralView(original: self.value, indicative: indicativeValue, size: .cardBody)
                         } else {
-                            YonderNumeral(number: self.value, size: .cardBody)
+                            YonderNumeral(number: self.value, size: .cardBody, color: self.valueColor ?? YonderColors.textMaxContrast)
                         }
                     }
                 }
                 else {
-                    if let indicativeValue = indicativeValue {
+                    if let indicativeValue = self.indicativeValue {
                         IndicativeNumeralView(original: self.value, indicative: indicativeValue, size: .cardBody)
                     } else {
-                        YonderNumeral(number: self.value, size: .cardBody)
+                        YonderNumeral(number: self.value, size: .cardBody, color: self.valueColor)
                     }
                 }
                 

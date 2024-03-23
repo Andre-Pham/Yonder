@@ -89,7 +89,7 @@ enum Bosses {
             contentID: profile.id,
             name: profile.bossName,
             description: profile.bossDescription,
-            maxHealth: 400,
+            maxHealth: 700,
             damage: 50,
             damageMultiplier: 1.5,
             lootChoice: lootChoice
@@ -112,8 +112,8 @@ enum Bosses {
             contentID: profile.id,
             name: profile.bossName,
             description: profile.bossDescription,
-            maxHealth: 700,
-            damage: 55,
+            maxHealth: 900,
+            damage: 100,
             lootChoice: lootChoice
         )
     }
@@ -162,8 +162,8 @@ enum Bosses {
             contentID: profile.id,
             name: profile.bossName,
             description: profile.bossDescription,
-            maxHealth: 2000,
-            damage: 25,
+            maxHealth: 2200,
+            damage: 60,
             lootChoice: lootChoice
         )
     }
@@ -204,8 +204,8 @@ enum Bosses {
             contentID: profile.id,
             name: profile.bossName,
             description: profile.bossDescription,
-            maxHealth: 550,
-            damagesToCycleThrough: [50, 50, 250],
+            maxHealth: 1200,
+            damagesToCycleThrough: [150, 150, 500],
             lootChoice: lootChoice
         )
     }
@@ -223,8 +223,8 @@ enum Bosses {
             contentID: profile.id,
             name: profile.bossName,
             description: profile.bossDescription,
-            maxHealth: 650,
-            damage: 75,
+            maxHealth: 1500,
+            damage: 100,
             lootChoice: lootChoice
         )
     }
@@ -236,7 +236,7 @@ enum Bosses {
             contentID: profile.id,
             name: profile.bossName,
             description: profile.bossDescription,
-            maxHealth: 1000,
+            maxHealth: 1500,
             damage: 1,
             conversionFraction: 1.0,
             lootChoice: LootChoice() // Last boss - no loot choice needed!

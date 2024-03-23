@@ -13,12 +13,14 @@ struct YonderNumeral: View {
     var color: Color
     @State private var animatedNumber: Double
     
-    init(number: Int,
-         size: YonderTextSize,
-         color: Color = YonderColors.textMaxContrast) {
+    init(
+        number: Int,
+        size: YonderTextSize,
+        color: Color? = nil
+    ) {
         self.number = number
         self.size = size
-        self.color = color
+        self.color = color ?? YonderColors.textMaxContrast
         self.animatedNumber = Double(number)
     }
     

@@ -13,19 +13,18 @@ struct InspectLocationView: View {
     
     var body: some View {
         Group {
-            VStack(alignment: .leading) {
+            VStack(alignment: .center) {
                 YonderText(text: self.locationViewModel.name, size: .inspectSheetTitle)
                 
                 YonderText(text: self.locationViewModel.description, size: .inspectSheetBody)
             }
+            .frame(maxWidth: .infinity)
+            .padding(.bottom, 6)
             
             self.locationViewModel.tileBackgroundImage.image
                 .interpolation(.none)
                 .resizable()
-                .scaledToFill()
-                .frame(height: 150)
-                .clipped()
-                .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
+                .scaledToFit()
             
             YonderWideButtonBody {
                 GameManager.instance.playerVM.travel(to: self.locationViewModel)

@@ -104,35 +104,37 @@ class Pricing {
     // MARK: - Utility Implementation
     
     /// Damage dealt by the player
-    static let playerDamageStat = Stat(value: 0.7, baseStat: 100.0, stageMultiplier: 1.2, playerWantsIncreased: true)
+    static let playerDamageStat = Stat(value: 0.5, baseStat: 75.0, stageMultiplier: 1.2, playerWantsIncreased: true)
     /// Health restoration towards the player
-    static let playerHealthRestorationStat = Stat(value: 0.5, baseStat: 200.0, stageMultiplier: 1.2, playerWantsIncreased: true)
+    static let playerHealthRestorationStat = Stat(value: 0.3, baseStat: 150.0, stageMultiplier: 1.2, playerWantsIncreased: true)
     /// Armor points restoration towards the player
-    static let playerArmorPointsRestorationStat = Stat(value: 0.5, baseStat: 200.0, stageMultiplier: 1.2, playerWantsIncreased: true)
+    static let playerArmorPointsRestorationStat = Stat(value: 0.3, baseStat: 150.0, stageMultiplier: 1.2, playerWantsIncreased: true)
     /// Bonus health (e.g. an accessory that gives +10 bonus health while equipped)
-    static let playerHealthStat = Stat(value: 3.0, baseStat: 200.0, stageMultiplier: 1.2, playerWantsIncreased: true)
+    static let playerHealthStat = Stat(value: 2.0, baseStat: 150.0, stageMultiplier: 1.2, playerWantsIncreased: true)
     /// Armor points (e.g. an accessory or armor that gives +10 armor points)
-    static let playerArmorPointsStat = Stat(value: 3.0, baseStat: 300.0, stageMultiplier: 1.5, playerWantsIncreased: true)
+    static let playerArmorPointsStat = Stat(value: 3.0, baseStat: 220.0, stageMultiplier: 1.5, playerWantsIncreased: true)
     /// Permanent health for the player
-    static let playerPermanentHealthStat = Stat(value: 6.0, baseStat: 200.0, stageMultiplier: 1.2, playerWantsIncreased: true)
+    static let playerPermanentHealthStat = Stat(value: 4.0, baseStat: 160.0, stageMultiplier: 1.2, playerWantsIncreased: true)
     /// Gold owned by player
-    static let playerGoldStat = Stat(value: 1.0, baseStat: 1000.0, stageMultiplier: 1.2, playerWantsIncreased: true)
+    static let playerGoldStat = Stat(value: 1.0, baseStat: 600.0, stageMultiplier: 1.2, playerWantsIncreased: true)
     
     /// Foe health
-    static let foeHealthStat = Stat(value: 1.0, baseStat: 200.0, stageMultiplier: 1.2, playerWantsIncreased: false)
+    static let foeHealthStat = Stat(value: 1.0, baseStat: 175.0, stageMultiplier: 1.5, playerWantsIncreased: false)
     /// Foe armor points
-    static let foeArmorPointsStat = Stat(value: 1.0, baseStat: 50.0, stageMultiplier: 1.2, playerWantsIncreased: false)
+    static let foeArmorPointsStat = Stat(value: 1.0, baseStat: 0.0, stageMultiplier: 1.1, playerWantsIncreased: false)
     /// Foe damage dealt to player
-    static let foeDamageStat = Stat(value: 0.65, baseStat: 75.0, stageMultiplier: 1.1, playerWantsIncreased: false)
+    static let foeDamageStat = Stat(value: 0.65, baseStat: 45.0, stageMultiplier: 1.4, playerWantsIncreased: false)
     /// Foe health restoration
-    static let foeHealthRestorationStat = Stat(value: 1.0, baseStat: 15.0, stageMultiplier: 1.02, playerWantsIncreased: false)
+    static let foeHealthRestorationStat = Stat(value: 1.0, baseStat: 15.0, stageMultiplier: 1.1, playerWantsIncreased: false)
     /// Foe health restoration
-    static let foeArmorPointsRestorationStat = Stat(value: 1.0, baseStat: 15.0, stageMultiplier: 1.02, playerWantsIncreased: false)
+    static let foeArmorPointsRestorationStat = Stat(value: 1.0, baseStat: 15.0, stageMultiplier: 1.1, playerWantsIncreased: false)
     
     /// Gold received by player from looting, etc.
-    static let receivedGoldStat = Stat(value: 1.0, baseStat: 150.0, stageMultiplier: 1.05, playerWantsIncreased: true)
+    /// NOTE: This may seem unintuitive - how can 1 gold be worth 0.35 gold??? The answer is, gold-over-time is less valuable than gold now, and why would anyone pay $100 for an accessory that over time will only earn $100
+    static let receivedGoldStat = Stat(value: 0.35, baseStat: 130.0, stageMultiplier: 1.05, playerWantsIncreased: true)
     /// Gold paid out by player, e.g. purchasing from a shop.
-    static let priceStat = Stat(value: 1.0, baseStat: 50.0, stageMultiplier: 1.1, playerWantsIncreased: false)
+    /// NOTE: This may seem unintuitive - how can 1 gold be worth 0.35 gold??? The answer is, gold-over-time is less valuable than gold now, and why would anyone pay $100 for an accessory that over time will only earn $100
+    static let priceStat = Stat(value: 0.35, baseStat: 100.0, stageMultiplier: 1.1, playerWantsIncreased: false)
     
     private static func selectValue(
         playerValue: Int,

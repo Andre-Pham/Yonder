@@ -10,7 +10,7 @@ import Foundation
 class NoArea: Area {
     
     init() {
-        super.init(arrangement: .A, locations: [Location](repeating: NoLocation(), count: AreaArrangements.A.locationCount), tags: RegionTagAllocation())
+        super.init(arrangement: .A, locations: [Location](repeating: NoLocation(), count: AreaArrangements.A.locationCount), tags: RegionTagAllocation(tags: (.all, 1)))
     }
     
     // MARK: - Serialisation

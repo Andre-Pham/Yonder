@@ -1,18 +1,18 @@
 //
-//  AnimationComposite.swift
+//  AnimationManager.swift
 //  yonder
 //
-//  Created by Andre Pham on 9/6/2023.
+//  Created by Andre Pham on 22/3/2024.
 //
 
 import Foundation
 import SwiftUI
 import SwiftyJSON
 
-class AnimationManager: ObservableObject, SequenceDelegate {
+class AnimationManager<SequenceCode>: ObservableObject, SequenceDelegate where SequenceCode: RawRepresentable, SequenceCode.RawValue == String, SequenceCode: CaseIterable {
     
-    private static let SPRITE_SHEET_PREFIX = "IMG-"
-    private static let FRAMES_DATA_PREFIX = "FRAMES-"
+    private static var SPRITE_SHEET_PREFIX: String { "IMG-" }
+    private static var FRAMES_DATA_PREFIX: String { "FRAMES-" }
     
     @Published private(set) var frame: Image
     private(set) var emptyAnimation = false
@@ -70,10 +70,8 @@ class AnimationManager: ObservableObject, SequenceDelegate {
         self.setupSequences()
     }
     
-    func setupSequences() {
-        self.getSequence(.death).setLoopBehaviour(to: false)
-        self.getSequence(.attack).setLoopBehaviour(to: false)
-    }
+    /// Override this in subclasses to setup any sequence behaviour, such as disabling loop behaviour.
+    func setupSequences() { }
     
     func setFileID(to fileID: String?) {
         let wasPlaying = self.isPlaying
@@ -118,7 +116,7 @@ class AnimationManager: ObservableObject, SequenceDelegate {
         }
     }
     
-    private func getSequence(_ code: SequenceCode) -> AnimationSequence {
+    func getSequence(_ code: SequenceCode) -> AnimationSequence {
         return self.sequences[code.rawValue] ?? NoAnimationSequence()
     }
     

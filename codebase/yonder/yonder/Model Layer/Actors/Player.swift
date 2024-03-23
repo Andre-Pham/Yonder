@@ -67,8 +67,7 @@ class Player: ActorAbstract {
     func modifyGoldAdjusted(by amount: Int) {
         if amount < 0 {
             self.modifyGold(by: BuffApps.getAdjustedPrice(purchaser: self, price: amount))
-        }
-        else if amount > 0 {
+        } else if amount > 0 {
             self.modifyGold(by: BuffApps.getAdjustedGoldWithBonus(receiver: self, gold: amount))
         }
     }

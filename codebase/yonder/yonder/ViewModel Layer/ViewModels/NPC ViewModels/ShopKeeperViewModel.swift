@@ -21,17 +21,17 @@ class ShopKeeperViewModel: InteractorViewModel {
     }
     
     func getOffersDescription() -> String {
-        let separator = "\n\(Strings("dotPoint").local) "
+        let dotPoint = "\(Strings("dotPoint").local) "
         var description = ""
         var purchasablesTypes = self.purchasables.map { $0.type }
-        purchasablesTypes = Array(Set(purchasablesTypes)) // Filter duplicaates
+        purchasablesTypes = Array(Set(purchasablesTypes)) // Filter duplicates
         for type in purchasablesTypes {
             if !description.isEmpty {
-                description += separator
+                description += "\n"
             }
-            description += type.categoryDescription
+            description += dotPoint + type.categoryDescription
         }
-        return description.isEmpty ? "[\(Strings("stat.description.noStock").local)]" : separator + description
+        return description.isEmpty ? "\(Strings("stat.description.noStock").local.uppercased())" : description
     }
     
     func getHighestPrice() -> Int {

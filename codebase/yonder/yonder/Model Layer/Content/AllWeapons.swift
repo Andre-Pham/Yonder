@@ -14,8 +14,8 @@ enum Weapons {
     
     // 01
     static func damageWeapon(profile: WeaponProfile, stage: Int) -> Weapon {
-        let damage = WeaponStatRange(target: 70, boundFraction: 0.5).select(compoundMultiplier: 1.2, stage: stage)
-        let durability: Int = StatRange(min: 7, max: 11).selectFromNormalDistribution()
+        let damage = WeaponStatRange(target: 70, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
+        let durability: Int = StatRange(min: 5, max: 8).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
             description: "",
@@ -30,7 +30,7 @@ enum Weapons {
     // 02
     static func acuteDamageWeapon(profile: WeaponProfile, stage: Int) -> Weapon {
         let damage = WeaponStatRange(target: 200, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
-        let durability: Int = StatRange(min: 3, max: 5).selectFromNormalDistribution()
+        let durability: Int = StatRange(min: 2, max: 3).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
             description: "",
@@ -44,8 +44,8 @@ enum Weapons {
     
     // 03
     static func obtuseDamageWeapon(profile: WeaponProfile, stage: Int) -> Weapon {
-        let damage = WeaponStatRange(target: 40, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
-        let durability: Int = StatRange(min: 8, max: 12).selectFromNormalDistribution()
+        let damage = WeaponStatRange(target: 50, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
+        let durability: Int = StatRange(min: 8, max: 10).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
             description: "",
@@ -59,8 +59,8 @@ enum Weapons {
     
     // 04
     static func healthRestorationWeapon(profile: WeaponProfile, stage: Int) -> Weapon {
-        let health = WeaponStatRange(target: 150, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
-        let durability: Int = StatRange(min: 5, max: 9).selectFromNormalDistribution()
+        let health = WeaponStatRange(target: 120, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
+        let durability: Int = StatRange(min: 3, max: 5).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
             description: "",
@@ -74,8 +74,8 @@ enum Weapons {
     
     // 05
     static func acuteHealthRestorationWeapon(profile: WeaponProfile, stage: Int) -> Weapon {
-        let health = WeaponStatRange(target: 300, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
-        let durability: Int = StatRange(min: 2, max: 4).selectFromNormalDistribution()
+        let health = WeaponStatRange(target: 200, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
+        let durability: Int = StatRange(min: 2, max: 3).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
             description: "",
@@ -89,8 +89,8 @@ enum Weapons {
     
     // 06
     static func armorRestorationWeapon(profile: WeaponProfile, stage: Int) -> Weapon {
-        let armorPoints = WeaponStatRange(target: 150, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
-        let durability: Int = StatRange(min: 4, max: 8).selectFromNormalDistribution()
+        let armorPoints = WeaponStatRange(target: 120, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
+        let durability: Int = StatRange(min: 3, max: 5).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
             description: "",
@@ -104,8 +104,8 @@ enum Weapons {
     
     // 07
     static func acuteArmorRestorationWeapon(profile: WeaponProfile, stage: Int) -> Weapon {
-        let armorPoints = WeaponStatRange(target: 300, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
-        let durability: Int = StatRange(min: 2, max: 4).selectFromNormalDistribution()
+        let armorPoints = WeaponStatRange(target: 200, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
+        let durability: Int = StatRange(min: 2, max: 3).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
             description: "",
@@ -119,8 +119,8 @@ enum Weapons {
     
     // 08
     static func dullingDamageWeapon(profile: WeaponProfile, stage: Int) -> Weapon {
-        let damage = WeaponStatRange(target: 220, boundFraction: 0.3).select(compoundMultiplier: 1.2, stage: stage)
-        let damageDulling = WeaponStatRange(target: 15, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
+        let damage = WeaponStatRange(target: 180, boundFraction: 0.3).select(compoundMultiplier: 1.2, stage: stage)
+        let damageDulling = WeaponStatRange(target: 25, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
         let weapon = Weapon(
             name: profile.weaponName,
             description: "",
@@ -135,7 +135,7 @@ enum Weapons {
     // 09
     static func copyAttackWeapon(profile: WeaponProfile, stage: Int) -> Weapon {
         let damage = WeaponStatRange(target: 60, boundFraction: 0.5).select(compoundMultiplier: 1.2, stage: stage)
-        let durability: Int = StatRange(min: 5, max: 8).selectFromNormalDistribution()
+        let durability: Int = StatRange(min: 3, max: 6).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
             description: "",
@@ -152,7 +152,7 @@ enum Weapons {
     // 10
     static func lifestealWeapon(profile: WeaponProfile, stage: Int) -> Weapon {
         let damage = WeaponStatRange(target: 70, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
-        let durability: Int = StatRange(min: 5, max: 9).selectFromNormalDistribution()
+        let durability: Int = StatRange(min: 4, max: 7).selectFromNormalDistribution()
         let lifestealFraction: Double = StatRange(min: 0.25, max: 1.0).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
@@ -170,7 +170,7 @@ enum Weapons {
     // 11
     static func burnWeapon(profile: WeaponProfile, stage: Int) -> Weapon {
         let damage = WeaponStatRange(target: 50, boundFraction: 0.5).select(compoundMultiplier: 1.2, stage: stage)
-        let durability: Int = StatRange(min: 4, max: 8).selectFromNormalDistribution()
+        let durability: Int = StatRange(min: 4, max: 7).selectFromNormalDistribution()
         let tickDamage = WeaponStatRange(target: 20, boundFraction: 0.5).select(compoundMultiplier: 1.2, stage: stage)
         let duration: Int = StatRange(min: 2, max: 4).selectFromNormalDistribution()
         let weapon = Weapon(
@@ -188,9 +188,9 @@ enum Weapons {
     
     // 12
     static func restorationAndDamageWeapon(profile: WeaponProfile, stage: Int) -> Weapon {
-        let damage = WeaponStatRange(target: 60, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
-        let restoration = WeaponStatRange(target: 65, boundFraction: 0.5).select(compoundMultiplier: 1.2, stage: stage)
-        let durability: Int = StatRange(min: 5, max: 9).selectFromNormalDistribution()
+        let damage = WeaponStatRange(target: 50, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
+        let restoration = WeaponStatRange(target: 55, boundFraction: 0.5).select(compoundMultiplier: 1.2, stage: stage)
+        let durability: Int = StatRange(min: 4, max: 7).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
             description: "",
@@ -205,7 +205,7 @@ enum Weapons {
     // 13
     static func growingDamageWeapon(profile: WeaponProfile, stage: Int) -> Weapon {
         let damage = WeaponStatRange(target: 30, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage).nearest(5)
-        let durability: Int = StatRange(min: 6, max: 10).selectFromNormalDistribution()
+        let durability: Int = StatRange(min: 4, max: 7).selectFromNormalDistribution()
         let damageIncrease = WeaponStatRange(target: 20, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage).nearest(5)
         let weapon = Weapon(
             name: profile.weaponName,
@@ -222,8 +222,8 @@ enum Weapons {
     
     // 14
     static func damageRestorationSwapWeapon(profile: WeaponProfile, stage: Int) -> Weapon {
-        let damage = WeaponStatRange(target: 135, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
-        let durability: Int = StatRange(min: 7, max: 10).selectFromNormalDistribution()
+        let damage = WeaponStatRange(target: 110, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
+        let durability: Int = StatRange(min: 4, max: 7).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
             description: "",
@@ -240,7 +240,7 @@ enum Weapons {
     // 15
     static func consumeAttackWeapon(profile: WeaponProfile, stage: Int) -> Weapon {
         let damage = WeaponStatRange(target: 25, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
-        let durability: Int = StatRange(min: 5, max: 8).selectFromNormalDistribution()
+        let durability: Int = StatRange(min: 3, max: 6).selectFromNormalDistribution()
         let weapon = Weapon(
             name: profile.weaponName,
             description: "",
@@ -274,7 +274,7 @@ enum Weapons {
     // 17
     static func explosiveWeapon(profile: WeaponProfile, stage: Int) -> Weapon {
         let damage = WeaponStatRange(target: 300, boundFraction: 0.25).select(compoundMultiplier: 1.2, stage: stage)
-        let durability: Int = StatRange(min: 3, max: 5).selectFromNormalDistribution()
+        let durability: Int = StatRange(min: 3, max: 4).selectFromNormalDistribution()
         let selfDamage = WeaponStatRange(target: 60, boundFraction: 0.5).select(compoundMultiplier: 1.2, stage: stage)
         let weapon = Weapon(
             name: profile.weaponName,

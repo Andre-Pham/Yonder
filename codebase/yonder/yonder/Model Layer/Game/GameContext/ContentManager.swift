@@ -215,6 +215,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         guard !newLocation.hasBeenVisited else {
             return
         }
+        newLocation.initContextIfRequired(using: player.location)
         newLocation.initContent(using: self)
         
         // After the player has travelled to a new location and its content has loaded
@@ -247,15 +248,14 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
         // generate, say, a weapon, it doesn't matter what region they are (where they are in the map),
         // there'll be a factory that they can use to generate it
         //
-        // The only exception is boss areas - they don't need content generation, and only need the boss factory
-        // We do their regions (boss areas) here:
-        let bossArea: Region = map.bossAreasInOrder[newStage]
-        self.activeBossFactories[bossArea.getRegionKey()] = BossFactory(
-            stage: newStage,
-            regionTags: bossArea.tags,
-            profileBucket: self.bossProfileBucket
-        )
-        // ...And then we do the rest of the regions (that DO require the generation of all types of content)
+        // Note: BossAreas by default inherit their region key from the preceding tavern area (see MapGenerator.generateTerritoriesIntoMap(:MapPool)
+        // (This means they can access the same factories as the preceding tavern area)
+        // Note 2: Boss area locations re-initialise their location contexts based on the previously traveled location
+        // (Again, this means they can access the same factories as the preceding tavern area)
+        // HOWEVER, since tavern areas ALSO re-initialise their location contexts based on the previously traveled location (area)
+        // We need to create boss factories for each area, assuming their region key is passed to the next area, which is then passed to the boss area
+        // We still create a boss factory for the tavern area, because if the region key isn't passed on to the boss area (due to a change in game design or otherwise), the boss area will still be able to retrieve content, due to it inheriting its region key from the preceding tavern area
+        // TLDR: this implementation is super fail-safe and future-proof, with very little overhead as an outcome
         var regions = [Region]()
         regions.append(contentsOf: territory.segment.allAreas)
         regions.append(territory.tavernArea)
@@ -268,7 +268,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
             )
             // Challenge
             self.activeWeaponFactories[self.convertToChallengeKey(region.getRegionKey())] = WeaponFactory(
-                stage: newStage + 2,
+                stage: newStage + 1,
                 regionTags: region.tags,
                 profileBucket: self.weaponProfileBucket
             )
@@ -278,7 +278,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
             )
             // Challenge
             self.activePotionFactories[self.convertToChallengeKey(region.getRegionKey())] = PotionFactory(
-                stage: newStage + 2
+                stage: newStage + 1
             )
             // Regular
             self.activeArmorFactories[region.getRegionKey()] = ArmorFactory(
@@ -288,7 +288,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
             )
             // Challenge
             self.activeArmorFactories[self.convertToChallengeKey(region.getRegionKey())] = ArmorFactory(
-                stage: newStage + 2,
+                stage: newStage + 1,
                 regionTags: region.tags,
                 profileBucket: self.armorProfileBucket
             )
@@ -300,7 +300,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
             )
             // Challenge
             self.activeAccessoryFactories[self.convertToChallengeKey(region.getRegionKey())] = AccessoryFactory(
-                stage: newStage + 2,
+                stage: newStage + 1,
                 regionTags: region.tags,
                 profileBucket: self.accessoryProfileBucket
             )
@@ -310,7 +310,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
             )
             // Challenge
             self.activeConsumableFactories[self.convertToChallengeKey(region.getRegionKey())] = ConsumableFactory(
-                stage: newStage + 2
+                stage: newStage + 1
             )
             // Regular
             self.activeHostileFactories[region.getRegionKey()] = FoeFactory(
@@ -321,7 +321,7 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
             )
             // Challenge
             self.activeHostileFactories[self.convertToChallengeKey(region.getRegionKey())] = FoeFactory(
-                stage: newStage + 3,
+                stage: newStage + 1,
                 regionTags: region.tags,
                 profileBucket: self.foeProfileBucket,
                 lootFactoryBundle: self.lootFactoryBundle(self.convertToChallengeKey(region.getRegionKey()))
@@ -348,6 +348,12 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
                 regionTags: region.tags,
                 friendlyProfileBucket: self.friendlyProfileBucket,
                 lootFactory: self.lootFactoryBundle(region.getRegionKey())
+            )
+            // Boss
+            self.activeBossFactories[region.getRegionKey()] = BossFactory(
+                stage: newStage,
+                regionTags: region.tags,
+                profileBucket: self.bossProfileBucket
             )
         }
         self.restoreAllAvailableBuildTokenCaches()
@@ -377,13 +383,13 @@ class ContentManager: Storable, OnPlayerTravelSubscriber, AfterStageChangeSubscr
             }
         }
         
-        assert(failedCaches == 0, "Cache couldn't be restored - see comment attached")
-        // The most likely cause of this is multiple Game instances occurring at once. 
+        assertOutsideUnitTests(failedCaches == 0, "Cache couldn't be restored - see comment attached")
+        // The most likely cause of this is multiple Game instances occurring at once.
         // This means multiple ContentManager instances, which all subscribe to AfterGameContextInitPublisher.
         // Because Game is a singleton, there only exists one map.
         // When multiple instances of ContentManager exist, each have their AfterGameContextInitPublisher triggered.
         // However they all access the same Map, because it's a singleton. This means they try to match region keys that don't exist in the game they belong to.
-        // Be cautious in unit tests which can run in parallel, which can cause multiple Game instances to exist at once.
+        // Note: Be cautious in unit tests which can run in parallel, which can cause multiple Game instances to exist at once.
         
         // Caches have been restored - they can be discarded
         // After recreating the factories, if any couldn't be restored, they never will be anyways

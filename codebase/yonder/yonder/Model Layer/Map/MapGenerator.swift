@@ -20,6 +20,7 @@ class MapGenerator {
             let correspondingTavernArea = territories[stage].tavernArea
             // We just copy the Region properties from the tavern area to the boss area
             bossAreas.append(BossArea(
+                regionKey: UUID(uuidString: correspondingTavernArea.getRegionKey())!,
                 name: correspondingTavernArea.name,
                 description: correspondingTavernArea.description,
                 tags: correspondingTavernArea.tags,

@@ -22,7 +22,7 @@ class EnhancerFactory: RegionBasedFactory {
     private func buildEnhancer(stage: Int, tags: RegionTagAllocation) -> Enhancer {
         let profile = self.enhancerProfileBucket.grabProfile(areaTag: tags.getTag())
         var offers = [EnhanceOffer]()
-        let offerCount = Int.random(in: 2...4)
+        let offerCount = Int.random(in: 2...3)
         while offers.count < offerCount {
             // Order doesn't affect outcome because the loop doesn't immediately break if the offer count is reached
             // It's less optimal to add lots of each and shuffle because that can cause many duplicate enhance offers
