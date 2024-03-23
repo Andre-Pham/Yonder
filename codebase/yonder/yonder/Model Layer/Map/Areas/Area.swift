@@ -126,8 +126,7 @@ class Area: Region, Storable {
         for location in nextLocations {
             if location.bridgeAccessibility == .leftBridge {
                 self.leftBridgeLocations.append(location)
-            }
-            else if location.bridgeAccessibility == .rightBridge {
+            } else if location.bridgeAccessibility == .rightBridge {
                 self.rightBridgeLocations.append(location)
             }
         }

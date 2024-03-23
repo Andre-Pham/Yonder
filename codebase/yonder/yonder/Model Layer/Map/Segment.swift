@@ -23,6 +23,7 @@ class Segment: Storable {
         self.leftArea = leftArea
         self.rightArea = rightArea
         self.bridgeLocation = BridgeLocation()
+        self.bridgeLocation.setBridgeContext(tileBackgroundImage: YonderImages.bridgeTileBackgroundImage)
         assert(leftArea.rightBridgeLocations.count > 0 && rightArea.leftBridgeLocations.count > 0, "Segment Areas were defined without bridge locations")
         var leftAreaBridgeLocation = leftArea.rightBridgeLocations.randomElement()!
         var rightAreaBridgeLocation = rightArea.leftBridgeLocations.randomElement()!
@@ -32,8 +33,7 @@ class Segment: Storable {
             if reducedAreaIsLeft {
                 leftArea.filterRightBridgeLocationsWithY(of: illegalY)
                 leftAreaBridgeLocation = leftArea.rightBridgeLocations.randomElement()!
-            }
-            else {
+            } else {
                 rightArea.filterLeftBridgeLocationsWithY(of: illegalY)
                 rightAreaBridgeLocation = rightArea.leftBridgeLocations.randomElement()!
             }
@@ -41,7 +41,8 @@ class Segment: Storable {
         self.addBridgingNode(
             leftLocation: leftAreaBridgeLocation,
             rightLocation: rightAreaBridgeLocation,
-            bridgeNode: self.bridgeLocation)
+            bridgeNode: self.bridgeLocation
+        )
     }
     
     // MARK: - Serialisation

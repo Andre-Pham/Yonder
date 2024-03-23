@@ -43,6 +43,12 @@ class LocationContext: Storable {
         // Tile background image isn't changed - the entire map is loaded from the start, so this can't be loaded on-demand
     }
     
+    /// Set just the tile background image - used when you're relying on on-demand loading for the rest of the context
+    func setTileBackgroundImage(tileBackground: YonderImage) {
+        self.tileBackgroundImage = tileBackground
+        assert(self.loadOnDemand, "Shouldn't be setting just the tile background image if you're not loading on demand")
+    }
+    
     // MARK: - Serialisation
 
     private enum Field: String {

@@ -11,7 +11,7 @@ enum YonderImages {
     
     // MARK: - Placeholders
     
-    static let missingTileBackgroundImage = YonderImage("MissingTileBackground")
+    static let missingTileBackgroundImage = YonderImage("MissingTile")
     static let missingPlatformImage = YonderImage("MissingPlatform")
     
     // MARK: - Foe Types
@@ -21,9 +21,25 @@ enum YonderImages {
     
     // MARK: - Tile Art
     
-    static let forestTileBackgroundImage = YonderImage("ForestTileBackground")
-    static let cavernTileBackgroundImage = YonderImage("CavernTileBackground")
-    static let desertTileBackgroundImage = YonderImage("DesertTileBackground")
+    static let forestTileBackgroundImage = YonderImage("ForestTile")
+    static let faction5TileBackgroundImage = YonderImage("Faction5Tile")
+    static let cavernTileBackgroundImage = YonderImage("CavernTile")
+    static let desertTileBackgroundImage = YonderImage("DesertTile")
+    static let dungeonTileBackgroundImage = YonderImage("DungeonTile")
+    static let faction2TileBackgroundImage = YonderImage("Faction2Tile")
+    static let faction4TileBackgroundImage = YonderImage("Faction4Tile")
+    static let faction6TileBackgroundImage = YonderImage("Faction6Tile")
+    static let forestFaction5TileBackgroundImage = YonderImage("ForestFaction5Tile")
+    static let frostFaction6TileBackgroundImage = YonderImage("FrostFaction6Tile")
+    static let frostTileBackgroundImage = YonderImage("FrostTile")
+    static let mechDungeonTileBackgroundImage = YonderImage("MechDungeonTile")
+    static let mechTileBackgroundImage = YonderImage("MechTile")
+    static let netherFaction2TileBackgroundImage = YonderImage("NetherFaction2Tile")
+    static let netherTileBackgroundImage = YonderImage("NetherTile")
+    static let shadowFaction4TileBackgroundImage = YonderImage("ShadowFaction4Tile")
+    static let shadowTileBackgroundImage = YonderImage("ShadowTile")
+    static let desertCavernTileBackgroundImage = YonderImage("DesertCavernTile")
+    static let bridgeTileBackgroundImage = YonderImage("BridgeTile")
     
     // MARK: - Platform Art
     

@@ -22,7 +22,7 @@ struct YonderImage {
     
     init(_ name: String) {
         let reference = UIImage(named: name)
-        assert(reference != nil, "Resource name has no matching resource")
+        assert(reference != nil, "Resource name \"\(name)\" has no matching resource")
         self.name = name
         self.width = reference!.size.width
         self.height = reference!.size.height

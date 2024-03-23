@@ -154,6 +154,12 @@ class LocationAbstract: Storable {
         )
     }
     
+    func setBridgeContext(tileBackgroundImage: YonderImage) {
+        self.context.setTileBackgroundImage(tileBackground: tileBackgroundImage)
+        assert((self as! Location).type == .bridge, "Only bridge locations should be setting up their context with this method")
+        assert(self.context.shouldBeLoaded, "Bridges set only their tile background image with the expectation the rest of the context will be loaded on demand")
+    }
+    
     func initContextIfRequired(using location: Location) {
         if self.context.shouldBeLoaded {
             assertOutsideUnitTests(!location.context.shouldBeLoaded, "Shouldn't be possible to attempt to load a location with a previously unloaded location")
