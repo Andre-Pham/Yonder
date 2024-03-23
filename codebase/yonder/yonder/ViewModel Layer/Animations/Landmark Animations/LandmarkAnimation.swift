@@ -30,8 +30,7 @@ class LandmarkAnimation: AnimationQueue<LandmarkSequenceCode>, AfterPlayerTravel
         case .none:
             return "L0001"
         case .bridge:
-            // TODO: Replace with portal animation
-            return "L0001"
+            return "L0002"
         }
     }
     

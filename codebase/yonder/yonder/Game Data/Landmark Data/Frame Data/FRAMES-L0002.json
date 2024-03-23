@@ -1,0 +1,23 @@
+{
+    "frame_width": 120,
+    "frame_height": 120,
+    "idle_frame_duration": 0.15,
+    "idle_coords": [
+        {
+            "x": 1,
+            "y": 364
+        },
+        {
+            "x": 1,
+            "y": 243
+        },
+        {
+            "x": 1,
+            "y": 122
+        },
+        {
+            "x": 1,
+            "y": 1
+        }
+    ]
+}
