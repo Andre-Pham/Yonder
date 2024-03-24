@@ -16,18 +16,6 @@ struct OptionsView: View {
     
     var body: some View {
         YonderOptionsGrid {
-            if optionsStateManager.weaponOptionActive {
-                YonderGridOption(title: Strings("optionsMenu.option.weapon").local, geometry: self.pageGeometry, image: YonderIcons.weaponOptionIcon) {
-                    self.optionsStateManager.weaponOptionSelected()
-                }
-            }
-            
-            if optionsStateManager.potionOptionActive {
-                YonderGridOption(title: Strings("optionsMenu.option.potion").local, geometry: self.pageGeometry, image: YonderIcons.potionOptionIcon) {
-                    self.optionsStateManager.potionOptionSelected()
-                }
-            }
-            
             if self.optionsStateManager.offerOptionActive {
                 YonderGridOption(title: Strings("optionsMenu.option.offer").local, geometry: self.pageGeometry, image: self.playerViewModel.locationViewModel.getTypeImage()) {
                     self.optionsStateManager.offerOptionSelected()
@@ -82,17 +70,29 @@ struct OptionsView: View {
                 }
             }
             
-            if self.optionsStateManager.travelOptionActive {
-                YonderGridOption(title: Strings("optionsMenu.option.travel").local, geometry: self.pageGeometry, image: YonderIcons.mapIcon) {
-                    self.optionsStateManager.travelOptionSelected(
-                        viewRouter: self.viewRouter,
-                        travelStateManager: self.travelStateManager)
+            if optionsStateManager.weaponOptionActive {
+                YonderGridOption(title: Strings("optionsMenu.option.weapon").local, geometry: self.pageGeometry, image: YonderIcons.weaponOptionIcon) {
+                    self.optionsStateManager.weaponOptionSelected()
+                }
+            }
+            
+            if optionsStateManager.potionOptionActive {
+                YonderGridOption(title: Strings("optionsMenu.option.potion").local, geometry: self.pageGeometry, image: YonderIcons.potionOptionIcon) {
+                    self.optionsStateManager.potionOptionSelected()
                 }
             }
             
             if optionsStateManager.consumableOptionActive {
                 YonderGridOption(title: Strings("optionsMenu.option.consumable").local, geometry: self.pageGeometry, image: YonderIcons.consumableOptionIcon) {
                     self.optionsStateManager.consumableOptionSelected()
+                }
+            }
+            
+            if self.optionsStateManager.travelOptionActive {
+                YonderGridOption(title: Strings("optionsMenu.option.travel").local, geometry: self.pageGeometry, image: YonderIcons.mapIcon) {
+                    self.optionsStateManager.travelOptionSelected(
+                        viewRouter: self.viewRouter,
+                        travelStateManager: self.travelStateManager)
                 }
             }
         }
