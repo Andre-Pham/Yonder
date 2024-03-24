@@ -542,6 +542,7 @@
 		B6588DA72B986C5A00B10A28 /* RegularBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6588DA62B986C5A00B10A28 /* RegularBoss.swift */; };
 		B6588DA92B986D4E00B10A28 /* PermanentBuffConsumable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6588DA82B986D4E00B10A28 /* PermanentBuffConsumable.swift */; };
 		B6588DAB2B98D00100B10A28 /* PreviewNPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6588DAA2B98D00100B10A28 /* PreviewNPC.swift */; };
+		B65949742BB04F9D00ABB18B /* MapGridLayerWithIndexIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65949732BB04F9D00ABB18B /* MapGridLayerWithIndexIDs.swift */; };
 		B673449B2BAD3B91002A26CB /* LandmarkSequenceCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673449A2BAD3B91002A26CB /* LandmarkSequenceCode.swift */; };
 		B673449F2BAD3C35002A26CB /* AnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673449E2BAD3C35002A26CB /* AnimationManager.swift */; };
 		B67344A12BAD3E90002A26CB /* AnimationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67344A02BAD3E90002A26CB /* AnimationQueue.swift */; };
@@ -2992,6 +2993,7 @@
 		B6588DA62B986C5A00B10A28 /* RegularBoss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularBoss.swift; sourceTree = "<group>"; };
 		B6588DA82B986D4E00B10A28 /* PermanentBuffConsumable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermanentBuffConsumable.swift; sourceTree = "<group>"; };
 		B6588DAA2B98D00100B10A28 /* PreviewNPC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewNPC.swift; sourceTree = "<group>"; };
+		B65949732BB04F9D00ABB18B /* MapGridLayerWithIndexIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapGridLayerWithIndexIDs.swift; sourceTree = "<group>"; };
 		B673449A2BAD3B91002A26CB /* LandmarkSequenceCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkSequenceCode.swift; sourceTree = "<group>"; };
 		B673449E2BAD3C35002A26CB /* AnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
 		B67344A02BAD3E90002A26CB /* AnimationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationQueue.swift; sourceTree = "<group>"; };
@@ -5359,6 +5361,7 @@
 			isa = PBXGroup;
 			children = (
 				6532D66627B04AAA0080B58B /* MapGridLayer.swift */,
+				B65949732BB04F9D00ABB18B /* MapGridLayerWithIndexIDs.swift */,
 			);
 			path = "Content Views";
 			sourceTree = "<group>";
@@ -11241,6 +11244,7 @@
 				6568F99428770F5500035865 /* ArmorAttribute.swift in Sources */,
 				656FD91E291D760800F923E9 /* EnhancerProfile.swift in Sources */,
 				65D88C7827454695002E3AC4 /* Buff.swift in Sources */,
+				B65949742BB04F9D00ABB18B /* MapGridLayerWithIndexIDs.swift in Sources */,
 				650A3A2E2786086B0060F692 /* ScaleStateManager.swift in Sources */,
 				6568F9A32877132400035865 /* AccessorySlots.swift in Sources */,
 				6524D5212762829300982091 /* YonderGridOption.swift in Sources */,
