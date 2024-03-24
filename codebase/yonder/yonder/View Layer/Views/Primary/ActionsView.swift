@@ -121,6 +121,7 @@ struct ActionsView: View {
                     CollectLootView(
                         playerViewModel: self.playerViewModel,
                         lootViewModel: lootChoiceViewModel,
+                        overrideFinishText: Strings("button.discard").local,
                         pageGeometry: self.pageGeometry
                     )
                 }

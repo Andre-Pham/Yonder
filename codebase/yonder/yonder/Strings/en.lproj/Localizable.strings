@@ -176,6 +176,7 @@
 "button.collect" = "Collect";
 "button.equip" = "Equip";
 "button.finished" = "Finished";
+"button.discard" = "Discard";
 "button.requiresCombat" = "Requires Combat";
 "button.cancel" = "Cancel";
 "button.acceptOffer" = "Accept Offer";

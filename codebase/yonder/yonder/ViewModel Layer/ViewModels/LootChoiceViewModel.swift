@@ -29,4 +29,8 @@ class LootChoiceViewModel: LootViewModel {
         }).store(in: &self.subscriptions)
     }
     
+    func discardLoot() {
+        self.lootChoice.markAsLooted()
+    }
+    
 }

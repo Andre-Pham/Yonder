@@ -10,6 +10,7 @@ import SwiftUI
 struct CollectLootView: View {
     @ObservedObject var playerViewModel: PlayerViewModel
     @ObservedObject var lootViewModel: LootViewModel
+    var overrideFinishText: String? = nil
     var pageGeometry: GeometryProxy
     
     var body: some View {
@@ -67,8 +68,11 @@ struct CollectLootView: View {
                 )
             }
             
-            YonderWideButton(text: Strings("button.finished").local) {
+            YonderWideButton(text: self.overrideFinishText ?? Strings("button.finished").local) {
+                // If it's a loot bag
                 self.playerViewModel.finishLooting()
+                // If it's a loot choice
+                self.playerViewModel.locationViewModel.getFoeViewModel()?.lootChoiceViewModel?.discardLoot()
             }
         }
     }

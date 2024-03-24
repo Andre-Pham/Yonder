@@ -49,4 +49,9 @@ class LootChoice: Loot {
         self.isLooted = true
     }
     
+    /// Mark the loot choice as looted. Use this to discard the loot without making a choice.
+    func markAsLooted() {
+        self.isLooted = true
+    }
+    
 }
