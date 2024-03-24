@@ -45,7 +45,7 @@ enum YonderIcons {
     static let consumableArmorPointsRestorationIcon = Image("MetalPlating")
     static let healthBonusIcon = YonderIcons.healthIcon
     static let armorPointsBonusIcon = YonderIcons.armorPointsIcon
-    static let goblinGoldStealIcon = Image("GoldBagLeak")
+    static let goblinGoldStealIcon = Image("GoldStrikingBlade")
     
     // MARK: - Option Icons
     
@@ -71,6 +71,7 @@ enum YonderIcons {
     
     // MARK: - Location Icons
     
+    static let startingLocationIcon = Image("Hexagon")
     static let hostileIcon = Image("Skull")
     static let challengeHostileIcon = Image("GlowingSkull")
     static let shopIcon = Image("Flag")

@@ -141,6 +141,10 @@
 // Restorer
 "inspect.restorer.for" = "for";
 
+// Starting Location
+"inspect.starting.intro" = "This page shows more information about your current location and NPC.";
+"inspect.starting.tip" = "You can also tap the \"You\" card on the game screen for more information about your current stats and effects.";
+
 // MARK: - Feedback
 
 "feedback.enhanced" = "Enhanced";
@@ -152,6 +156,10 @@
 
 // Player
 "card.player.name" = "You";
+
+// Starting Location
+"card.starting.intro" = "Your starting location.";
+"card.starting.callToAction1Param" = "Tap %@ to open the map and get started!";
 
 // MARK: - Buttons
 
@@ -741,9 +749,6 @@
     // Restorer
 "map.locationType.restorer.name" = "Mender";
 "map.locationType.restorer.description" = "Menders will offer restoration of health and/or shields for gold.";
-    // Quest
-"map.locationType.quest.name" = "Quest";
-"map.locationType.quest.description" = "Quests aren't implemented yet.";
     // Friendly
 "map.locationType.friendly.name" = "Trader";
 "map.locationType.friendly.description" = "Traders will offer you any number of different types exchanges, which vary greatly. Each trader has a limit on the number of times you may accept an offer from them.";
@@ -753,6 +758,9 @@
     // Bridge
 "map.locationType.bridge.name" = "Warp";
 "map.locationType.bridge.description" = "Warps allow you to travel between adjacent areas, both forwards and backwards.";
+    // Starting
+"map.locationType.starting.name" = "Starting Location";
+"map.locationType.starting.description" = "Where you start on the map. Travel yonder!";
 
 // Regions
     // Forest
@@ -853,8 +861,8 @@
 
 // MARK: - Foe Types
 
-"foeType.goblin.name" = "Goblin";
-"foeType.goblin.description" = "Goblin hostiles take gold instead of dealing damage. If you have no gold left, they become frenzied and attack you instead!";
+"foeType.goblin.name" = "Thief";
+"foeType.goblin.description" = "Thief hostiles take gold instead of dealing damage. If you have no gold left, they attack you instead!";
 
 "foeType.brute.name" = "Brute";
 "foeType.brute.description1Param" = "Brute hostiles are heavy hitters. They deal %@x damage to shields.";

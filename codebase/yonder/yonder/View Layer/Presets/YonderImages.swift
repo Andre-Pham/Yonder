@@ -16,7 +16,7 @@ enum YonderImages {
     
     // MARK: - Foe Types
     
-    static let goblinIcon = YonderImage("Goblin")
+    static let goblinIcon = YonderImage("GoldCutlass")
     static let bruteIcon = YonderImage("BrokenShield")
     
     // MARK: - Tile Art

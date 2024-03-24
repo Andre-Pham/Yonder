@@ -56,7 +56,7 @@ struct LocationView: View {
             // If we want to position it relative to it, we need to overlay (or use a ZStack)
             .overlay {
                 switch self.locationViewModel.type {
-                case .none, .bridge:
+                case .none, .starting, .bridge:
                     self.landmarkAnimationQueue.frame
                         .resizable()
                         .interpolation(.none)

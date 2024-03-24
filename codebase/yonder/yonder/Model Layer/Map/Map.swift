@@ -16,9 +16,7 @@ class Map: Storable {
     init(territoriesInOrder: [Territory], bossAreasInOrder: [BossArea]) {
         self.territoriesInOrder = territoriesInOrder
         self.bossAreasInOrder = bossAreasInOrder
-        // TODO: Insert starting location here
-        self.startingLocation = NoLocation()
-        self.startingLocation.setHexagonCoordinate(5, 1)
+        self.startingLocation = StartingLocation()
         assert(self.territoriesInOrder.count > 0, "No territories were defined for the map")
         assert(self.bossAreasInOrder.count > 0, "No bosses were defined for the map")
         assert(self.territoriesInOrder.count%MapConfig.territoriesPerBoss == 0, "The multiple of territories provided don't match the expected amount to ensure that for every boss, there are \(MapConfig.territoriesPerBoss) territories")

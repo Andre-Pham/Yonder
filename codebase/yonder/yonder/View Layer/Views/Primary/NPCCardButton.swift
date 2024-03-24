@@ -29,8 +29,6 @@ struct NPCCardButton: View {
                 EnhancerCardView(enhancerViewModel: self.locationViewModel.getInteractorViewModel() as! EnhancerViewModel)
             case .restorer:
                 RestorerCardView(restorerViewModel: self.locationViewModel.getInteractorViewModel() as! RestorerViewModel)
-            case .quest:
-                EmptyCardView()
             case .friendly:
                 FriendlyCardView(friendlyViewModel: self.locationViewModel.getInteractorViewModel() as! FriendlyViewModel)
             case .boss:
@@ -38,6 +36,8 @@ struct NPCCardButton: View {
             case .bridge:
                 let (area1ViewModel, area2ViewModel) = self.locationViewModel.getBridgeConnectedAreaViewModels()!
                 BridgeCardView(area1ViewModel: area1ViewModel, area2ViewModel: area2ViewModel)
+            case .starting:
+                StartingCardView()
             }
         }
         .withInspectSheet(isPresented: self.$optionsSheetsStateManager.npcSheetBinding, pageGeometry: self.pageGeometry, content: AnyView(
@@ -59,8 +59,6 @@ struct NPCCardButton: View {
             return AnyView(EnhancerInspectView(enhancerViewModel: self.locationViewModel.getInteractorViewModel() as! EnhancerViewModel))
         case .restorer:
             return AnyView(RestorerInspectView(restorerViewModel: self.locationViewModel.getInteractorViewModel() as! RestorerViewModel))
-        case .quest:
-            return AnyView(EmptyView())
         case .friendly:
             return AnyView(FriendlyInspectView(friendlyViewModel: self.locationViewModel.getInteractorViewModel() as! FriendlyViewModel))
         case .boss:
@@ -68,6 +66,8 @@ struct NPCCardButton: View {
         case .bridge:
             let (location1ViewModel, location2ViewModel) = self.locationViewModel.getBridgeConnectedLocationViewModels()!
             return AnyView(BridgeInspectView(location1ViewModel: location1ViewModel, location2ViewModel: location2ViewModel))
+        case .starting:
+            return AnyView(StartingInspectView())
         }
     }
     

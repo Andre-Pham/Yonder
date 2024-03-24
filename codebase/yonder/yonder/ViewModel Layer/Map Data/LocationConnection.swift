@@ -25,7 +25,7 @@ class LocationConnection {
     private let territoryPosition: Int
     private let location: Location
     var locationHexagonIndex: Int {
-        return self.coordinatesToHexagonIndex(self.location.hexagonCoordinate!, isStartingPosition: self.location.type == .none)
+        return self.coordinatesToHexagonIndex(self.location.hexagonCoordinate!, isStartingPosition: self.location.type == .starting)
     }
     var locationHexagonCoordinate: HexagonCoordinate {
         return self.location.hexagonCoordinate!
@@ -39,10 +39,10 @@ class LocationConnection {
     private(set) var previousLocationIndicesFromPreviousTavernArea = [Int]()
     private(set) var previousLocationIndicesFromPreviousBossArea = [Int]()
     var previousLocationsHexagonIndices: [Int] {
-        return self.previousLocations.map { self.coordinatesToHexagonIndex($0.hexagonCoordinate!, isStartingPosition: $0.type == .none) }
+        return self.previousLocations.map { self.coordinatesToHexagonIndex($0.hexagonCoordinate!, isStartingPosition: $0.type == .starting) }
     }
     var previousLocationsHexagonCoordinates: [HexagonCoordinate] {
-        var result = self.previousLocations.map { $0.type == .none ? HexagonCoordinate($0.hexagonCoordinate!.x, $0.hexagonCoordinate!.y + self.ROWS_OFFSET_BY_STARTING_LOCATION) : $0.hexagonCoordinate! }
+        var result = self.previousLocations.map { $0.type == .starting ? HexagonCoordinate($0.hexagonCoordinate!.x, $0.hexagonCoordinate!.y + self.ROWS_OFFSET_BY_STARTING_LOCATION) : $0.hexagonCoordinate! }
         
         for locationIndex in self.previousLocationIndicesFromRightArea {
             let coords = result[locationIndex]

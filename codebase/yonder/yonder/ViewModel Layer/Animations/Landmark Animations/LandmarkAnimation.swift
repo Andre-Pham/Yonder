@@ -25,9 +25,9 @@ class LandmarkAnimation: AnimationQueue<LandmarkSequenceCode>, AfterPlayerTravel
     
     private static func getFileID(location: Location) -> String? {
         switch location.type {
-        case .shop, .enhancer, .restorer, .friendly, .boss, .challengeHostile, .hostile, .quest:
+        case .shop, .enhancer, .restorer, .friendly, .boss, .challengeHostile, .hostile, .none:
             return nil
-        case .none:
+        case .starting:
             return "L0001"
         case .bridge:
             return "L0002"

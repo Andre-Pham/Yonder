@@ -21,10 +21,10 @@ enum LocationType: Int {
     case shop = 3
     case enhancer = 4 // For upgrades
     case restorer = 5 // For health and armor restoration
-    case quest = 6 // TODO: Implement quests later
-    case friendly = 7
-    case boss = 8
-    case bridge = 9
+    case friendly = 6
+    case boss = 7
+    case bridge = 8
+    case starting = 9
     
     var name: String {
         switch self {
@@ -40,14 +40,14 @@ enum LocationType: Int {
             return Strings("map.locationType.enhancer.name").local
         case .restorer:
             return Strings("map.locationType.restorer.name").local
-        case .quest:
-            return Strings("map.locationType.quest.name").local
         case .friendly:
             return Strings("map.locationType.friendly.name").local
         case .boss:
             return Strings("map.locationType.boss.name").local
         case .bridge:
             return Strings("map.locationType.bridge.name").local
+        case .starting:
+            return Strings("map.locationType.starting.name").local
         }
     }
     
@@ -65,14 +65,14 @@ enum LocationType: Int {
             return Strings("map.locationType.enhancer.description").local
         case .restorer:
             return Strings("map.locationType.restorer.description").local
-        case .quest:
-            return Strings("map.locationType.quest.description").local
         case .friendly:
             return Strings("map.locationType.friendly.description").local
         case .boss:
             return Strings("map.locationType.boss.description").local
         case .bridge:
             return Strings("map.locationType.bridge.description").local
+        case .starting:
+            return Strings("map.locationType.starting.description").local
         }
     }
     
@@ -90,14 +90,14 @@ enum LocationType: Int {
             return YonderIcons.enhancerIcon
         case .restorer:
             return YonderIcons.restorerIcon
-        case .quest:
-            return YonderIcons.missingIcon
         case .friendly:
             return YonderIcons.friendlyIcon
         case .boss:
             return YonderIcons.bossIcon
         case .bridge:
             return YonderIcons.warpIcon
+        case .starting:
+            return YonderIcons.startingLocationIcon
         }
     }
 }

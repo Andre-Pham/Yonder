@@ -69,7 +69,7 @@ class NPCAnimation: AnimationQueue<NPCSequenceCode>, AfterPlayerKillFoeSubscribe
         case .shop, .enhancer, .restorer, .friendly:
             let contentID = (location as? InteractorLocation)?.getInteractor()?.contentID
             return contentID
-        case .none, .quest, .bridge:
+        case .none, .starting, .bridge:
             return nil
         case .hostile, .challengeHostile, .boss:
             let contentID = (location as? FoeLocation)?.foe.contentID

@@ -21,6 +21,7 @@ struct YonderIcon: View {
     
     var body: some View {
         self.image
+            .interpolation(.none)
             .resizable()
             .scaledToFill()
             .frame(width: self.sideLength.rawValue, height: self.sideLength.rawValue)

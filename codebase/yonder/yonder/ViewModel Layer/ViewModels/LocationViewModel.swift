@@ -134,13 +134,13 @@ class LocationViewModel: ObservableObject {
             return EnhancerViewModel((self.location as! EnhancerLocation).enhancer)
         case .restorer:
             return RestorerViewModel((self.location as! RestorerLocation).restorer)
-        case .quest:
-            return nil
         case .friendly:
             return FriendlyViewModel((self.location as! FriendlyLocation).friendly)
         case .boss:
             return nil
         case .bridge:
+            return nil
+        case .starting:
             return nil
         }
     }
@@ -159,13 +159,13 @@ class LocationViewModel: ObservableObject {
             return nil
         case .restorer:
             return nil
-        case .quest:
-            return nil
         case .friendly:
             return nil
         case .boss:
             return FoeViewModel((self.location as! BossLocation).foe)
         case .bridge:
+            return nil
+        case .starting:
             return nil
         }
     }
