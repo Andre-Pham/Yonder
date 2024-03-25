@@ -3,7 +3,7 @@
     "code": "f4_abomination",
     "name": "Abyss Abomination",
     "description": "",
-    "type": "faction4",
+    "type": "shadow",
     "brute": true,
     "thief": false,
     "acute": false,

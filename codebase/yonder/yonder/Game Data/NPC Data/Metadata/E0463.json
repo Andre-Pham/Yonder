@@ -6,6 +6,6 @@
     "type": "forest",
     "brute": false,
     "thief": false,
-    "acute": false,
+    "acute": true,
     "obtuse": false
 }

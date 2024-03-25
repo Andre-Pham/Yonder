@@ -49,6 +49,17 @@
                ReferencedContainer = "container:yonder.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B67A2F772BB16A530067100B"
+               BuildableName = "GameDataTests.xctest"
+               BlueprintName = "GameDataTests"
+               ReferencedContainer = "container:yonder.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

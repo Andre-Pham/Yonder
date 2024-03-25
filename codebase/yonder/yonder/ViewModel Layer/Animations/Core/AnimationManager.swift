@@ -43,21 +43,25 @@ class AnimationManager<SequenceCode>: ObservableObject, SequenceDelegate where S
         }
         guard let spriteSheet = UIImage(named: Self.SPRITE_SHEET_PREFIX + fileID) else {
             assertionFailure("Animation ID provided doesn't have corresponding sprite sheet")
+            self.emptyAnimation = true
             return
         }
         guard let framesURL = Bundle.main.url(forResource: Self.FRAMES_DATA_PREFIX + fileID, withExtension: "json"),
               let framesData = try? Data(contentsOf: framesURL) else {
             assertionFailure("Frames data could not be loaded")
+            self.emptyAnimation = true
             return
         }
         guard let framesDataJSON = try? JSON(data: framesData) else {
             assertionFailure("JSON could not be retrieved from frames data")
+            self.emptyAnimation = true
             return
         }
         let builder = AnimationSequenceBuilder(fileID: fileID, spriteSheet: spriteSheet, framesDataJSON: framesDataJSON)
         for code in SequenceCode.allCases {
             guard let sequence = builder.build(prefix: code.rawValue) else {
                 assertionFailure("Sequence(s) couldn't be built")
+                self.emptyAnimation = true
                 return
             }
             self.sequences[code.rawValue] = sequence
@@ -85,21 +89,25 @@ class AnimationManager<SequenceCode>: ObservableObject, SequenceDelegate where S
         }
         guard let spriteSheet = UIImage(named: Self.SPRITE_SHEET_PREFIX + fileID) else {
             assertionFailure("Animation ID provided doesn't have corresponding sprite sheet")
+            self.emptyAnimation = true
             return
         }
         guard let framesURL = Bundle.main.url(forResource: Self.FRAMES_DATA_PREFIX + fileID, withExtension: "json"),
               let framesData = try? Data(contentsOf: framesURL) else {
             assertionFailure("Frames data could not be loaded")
+            self.emptyAnimation = true
             return
         }
         guard let framesDataJSON = try? JSON(data: framesData) else {
             assertionFailure("JSON could not be retrieved from frames data")
+            self.emptyAnimation = true
             return
         }
         let builder = AnimationSequenceBuilder(fileID: fileID, spriteSheet: spriteSheet, framesDataJSON: framesDataJSON)
         for code in SequenceCode.allCases {
             guard let sequence = builder.build(prefix: code.rawValue) else {
                 assertionFailure("Sequence(s) couldn't be built")
+                self.emptyAnimation = true
                 return
             }
             self.sequences[code.rawValue] = sequence
