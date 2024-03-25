@@ -58,7 +58,7 @@ struct EquipPeripheralAccessoryView: View {
             
             InspectSectionSpacingView()
             
-            YonderWideButton(text: Strings("button.equip").local) {
+            YonderActionWideButton(text: Strings("button.equip").local) {
                 self.onConfirm(true)
             }
             

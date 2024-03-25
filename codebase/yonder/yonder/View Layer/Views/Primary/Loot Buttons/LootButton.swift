@@ -26,7 +26,7 @@ struct LootButton: View {
                         }
                     }
                     
-                    YonderWideButton(text: self.collectText) {
+                    YonderActionWideButton(text: self.collectText) {
                         self.onSelect()
                     }
                 }

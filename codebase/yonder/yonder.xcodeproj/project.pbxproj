@@ -601,6 +601,8 @@
 		B678C1D82B46B11100CD6354 /* LootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C1D72B46B11100CD6354 /* LootViewModel.swift */; };
 		B678C1DA2B46B11D00CD6354 /* LootChoiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C1D92B46B11D00CD6354 /* LootChoiceViewModel.swift */; };
 		B67A2F622BB108E30067100B /* BorderSizePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A2F612BB108E30067100B /* BorderSizePreferenceKey.swift */; };
+		B67A2F672BB11A2D0067100B /* YonderActionWideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A2F662BB11A2D0067100B /* YonderActionWideButton.swift */; };
+		B67A2F692BB11B160067100B /* YonderActionButtonBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A2F682BB11B160067100B /* YonderActionButtonBody.swift */; };
 		B68266DE2B9722130079200B /* InspectTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68266DD2B9722130079200B /* InspectTagView.swift */; };
 		B690C3032BA06F8600C26F0A /* BossProfileBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690C3022BA06F8600C26F0A /* BossProfileBucket.swift */; };
 		B690C3052BA0C44A00C26F0A /* BossFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690C3042BA0C44A00C26F0A /* BossFactory.swift */; };
@@ -3054,6 +3056,8 @@
 		B678C1D72B46B11100CD6354 /* LootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootViewModel.swift; sourceTree = "<group>"; };
 		B678C1D92B46B11D00CD6354 /* LootChoiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootChoiceViewModel.swift; sourceTree = "<group>"; };
 		B67A2F612BB108E30067100B /* BorderSizePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderSizePreferenceKey.swift; sourceTree = "<group>"; };
+		B67A2F662BB11A2D0067100B /* YonderActionWideButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderActionWideButton.swift; sourceTree = "<group>"; };
+		B67A2F682BB11B160067100B /* YonderActionButtonBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderActionButtonBody.swift; sourceTree = "<group>"; };
 		B68266DD2B9722130079200B /* InspectTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectTagView.swift; sourceTree = "<group>"; };
 		B690C3022BA06F8600C26F0A /* BossProfileBucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossProfileBucket.swift; sourceTree = "<group>"; };
 		B690C3042BA0C44A00C26F0A /* BossFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossFactory.swift; sourceTree = "<group>"; };
@@ -6425,6 +6429,8 @@
 				65CAC18327F947B900A95D92 /* YonderButton.swift */,
 				65CAC18527F947D200A95D92 /* YonderWideButtonBody.swift */,
 				65CAC18727F947F700A95D92 /* YonderWideButton.swift */,
+				B67A2F682BB11B160067100B /* YonderActionButtonBody.swift */,
+				B67A2F662BB11A2D0067100B /* YonderActionWideButton.swift */,
 				65CAC18927F9481600A95D92 /* YonderMultilineWideButton.swift */,
 				B65949752BB05A9900ABB18B /* YonderWideToggleButton.swift */,
 			);
@@ -10959,6 +10965,7 @@
 				B635B05C29B19C9300A45F43 /* EquipPeripheralAccessoryView.swift in Sources */,
 				6532D67627B27A930080B58B /* ShopKeeperViewModel.swift in Sources */,
 				656FD932291FFF0800F923E9 /* FreeWeaponOffer.swift in Sources */,
+				B67A2F672BB11A2D0067100B /* YonderActionWideButton.swift in Sources */,
 				6531F698282938FF003E25E1 /* InspectNPCTypeView.swift in Sources */,
 				655C60A128001D6C007B1E11 /* ArmorPointsEnhanceOffer.swift in Sources */,
 				B68266DE2B9722130079200B /* InspectTagView.swift in Sources */,
@@ -11175,6 +11182,7 @@
 				B678C1DA2B46B11D00CD6354 /* LootChoiceViewModel.swift in Sources */,
 				654ADCF027557A3300373332 /* NoLocation.swift in Sources */,
 				65311CEC28842D420080A390 /* LootAccessoryButton.swift in Sources */,
+				B67A2F692BB11B160067100B /* YonderActionButtonBody.swift in Sources */,
 				65311CE4288398EB0080A390 /* LootGoldButton.swift in Sources */,
 				B6FB4A652B81D52300B809DE /* YonderBorder2Presets.swift in Sources */,
 				65500E5728642AC100A92CA2 /* WeaponEffectPill.swift in Sources */,

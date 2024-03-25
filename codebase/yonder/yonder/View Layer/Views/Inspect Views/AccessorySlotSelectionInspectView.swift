@@ -37,7 +37,7 @@ struct AccessorySlotSelectionInspectView: View {
                 .frame(maxWidth: .infinity)
                 
                 if !self.playerViewModel.accessorySlotsFull {
-                    YonderWideButtonBody {
+                    YonderActionWideButtonBody {
                         onSelection(nil)
                         dismiss()
                     } label: {
@@ -58,7 +58,7 @@ struct AccessorySlotSelectionInspectView: View {
                             )
                             .padding(.bottom, YonderCoreGraphics.innerPadding)
                             
-                            YonderWideButton(
+                            YonderActionWideButton(
                                 text: Strings("button.replace").local.uppercased()
                             ) {
                                 onSelection(accessoryViewModel.id)

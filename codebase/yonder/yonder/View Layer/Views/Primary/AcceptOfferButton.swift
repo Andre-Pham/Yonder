@@ -24,7 +24,7 @@ struct AcceptOfferButton: View {
                     
                     YonderText(text: self.offerViewModel.description, size: .buttonBodySubscript)
                     
-                    YonderWideButton(text: Strings("button.acceptOffer").local) {
+                    YonderActionWideButton(text: Strings("button.acceptOffer").local) {
                         self.friendlyViewModel.acceptOffer(
                             self.offerViewModel,
                             player: self.playerViewModel
