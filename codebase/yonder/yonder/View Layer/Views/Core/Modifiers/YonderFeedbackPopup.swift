@@ -22,6 +22,17 @@ import SwiftUI
 /// ```
 struct YonderFeedbackPopup: ViewModifier {
     
+    public static let topBorderThickness = YonderBorder13Presets.topThickness
+    public static let bottomBorderThickness = YonderBorder13Presets.bottomThickness
+    public static let rightBorderThickness = YonderBorder13Presets.rightThickness
+    public static let leftBorderThickness = YonderBorder13Presets.leftThickness
+    public static var horizontalBorderThickness: Double {
+        return Self.leftBorderThickness + Self.bottomBorderThickness
+    }
+    public static var verticalBorderThickness: Double {
+        return Self.topBorderThickness + Self.bottomBorderThickness
+    }
+    
     let text: String
     let color: Color
     let padding: CGFloat
@@ -31,7 +42,7 @@ struct YonderFeedbackPopup: ViewModifier {
         ZStack {
             content
             
-            feedbackPopupView
+            self.feedbackPopupView
         }
     }
     
@@ -40,26 +51,55 @@ struct YonderFeedbackPopup: ViewModifier {
             Spacer()
             
             if self.popupStateManager.isShowing {
-                Group {
-                    YonderText(text: self.text, size: .buttonBody, color: self.color)
-                        .padding()
+                YonderBorder13 {
+                    YonderText(
+                        text: self.text,
+                        size: .buttonBody,
+                        color: self.color
+                    )
+                    .padding(14)
+                    .frame(maxWidth: .infinity)
                 }
-                .frame(maxWidth: .infinity)
-                .background(YonderColors.backgroundMaxDepth)
-                .border(YonderColors.border, width: YonderCoreGraphics.borderWidth)
                 .padding(self.padding)
-                .transition(.opacity)
+                .transition(.offset(y: 10).combined(with: .opacity))
                 .onTapGesture {
                     self.popupStateManager.deactivatePopup()
                 }
             }
         }
-        .animation(.linear(duration: self.popupStateManager.transitionDuration), value: self.popupStateManager.isShowing)
+        .animation(
+            .easeOut(duration: self.popupStateManager.transitionDuration),
+            value: self.popupStateManager.isShowing
+        )
     }
     
 }
 extension View {
-    func withFeedbackPopup(text: String, color: Color = YonderColors.highlight, padding: CGFloat = YonderCoreGraphics.padding, popupStateManager: PopupStateManager) -> some View {
-        modifier(YonderFeedbackPopup(text: text, color: color, padding: padding, popupStateManager: popupStateManager))
+    func withFeedbackPopup(
+        text: String,
+        color: Color = YonderColors.textMaxContrast,
+        padding: CGFloat = YonderCoreGraphics.padding,
+        popupStateManager: PopupStateManager
+    ) -> some View {
+        modifier(
+            YonderFeedbackPopup(
+                text: text,
+                color: color,
+                padding: padding,
+                popupStateManager: popupStateManager
+            )
+        )
+    }
+}
+
+#Preview {
+    PreviewContentView {
+        YonderBorder13 {
+            YonderText(text: "Feedback", size: .buttonBody, color: YonderColors.textMaxContrast)
+                .padding(14)
+                .frame(maxWidth: .infinity)
+        }
+        .padding(YonderCoreGraphics.padding)
+        .transition(.opacity)
     }
 }

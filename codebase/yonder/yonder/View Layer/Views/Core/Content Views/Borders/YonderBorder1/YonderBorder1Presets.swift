@@ -10,38 +10,38 @@ import Foundation
 enum YonderBorder1Presets {
     
     // Sides
-    static let border1Top = YonderImage("Border1Top")
-    static let border1Bottom = YonderImage("Border1Bottom")
-    static let border1Left = YonderImage("Border1Left")
-    static let border1Right = YonderImage("Border1Right")
+    static let topBorder = YonderImage("Border1Top")
+    static let bottomBorder = YonderImage("Border1Bottom")
+    static let leftBorder = YonderImage("Border1Left")
+    static let rightBorder = YonderImage("Border1Right")
     
     // Corners
-    static let border1TopLeft = YonderImage("Border1TopLeft")
-    static let border1TopRight = YonderImage("Border1TopRight")
-    static let border1BottomLeft = YonderImage("Border1BottomLeft")
-    static let border1BottomRight = YonderImage("Border1BottomRight")
+    static let topLeftCorner = YonderImage("Border1TopLeft")
+    static let topRightCorner = YonderImage("Border1TopRight")
+    static let bottomLeftCorner = YonderImage("Border1BottomLeft")
+    static let bottomRightCorner = YonderImage("Border1BottomRight")
     
     // Insets
-    static let border1TopLeftInset = YonderImage("Border1TopLeftInset")
-    static let border1TopRightInset = YonderImage("Border1TopRightInset")
-    static let border1BottomLeftInset = YonderImage("Border1BottomLeftInset")
-    static let border1BottomRightInset = YonderImage("Border1BottomRightInset")
+    static let topLeftInset = YonderImage("Border1TopLeftInset")
+    static let topRightInset = YonderImage("Border1TopRightInset")
+    static let bottomLeftInset = YonderImage("Border1BottomLeftInset")
+    static let bottomRightInset = YonderImage("Border1BottomRightInset")
     
     // Colors
     // - None
     
     // Dimensions
     static var leftThickness: Double {
-        return self.border1Left.width
+        return self.leftBorder.width
     }
     static var rightThickness: Double {
-        return self.border1Right.width
+        return self.rightBorder.width
     }
     static var topThickness: Double {
-        return self.border1Top.height
+        return self.topBorder.height
     }
     static var bottomThickness: Double {
-        return self.border1Bottom.height
+        return self.bottomBorder.height
     }
     
 }
