@@ -23,8 +23,14 @@ struct MapHeaderView: View {
             }
             .disabledWhen(self.scaleStateManager.scaleIsMax)
             
-            YonderWideButton(text: self.travelStateManager.travellingActive ? Strings("map.header.done").local : Strings("map.header.travel").local) {
-                self.travelStateManager.toggleTravellingActiveState()
+            YonderWideToggleButton(
+                activatedText: Strings("map.header.done").local,
+                deactivatedText: Strings("map.header.travel").local,
+                isActivated: self.travelStateManager.travellingActive
+            ) {
+                withAnimation(.none) {
+                    self.travelStateManager.toggleTravellingActiveState()
+                }
             }
             .disabledWhen(!self.travelStateManager.travellingAllowed)
             

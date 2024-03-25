@@ -35,7 +35,7 @@ struct YonderMultilineWideButton: View {
                         ForEach(Array(zip(self.text.indices, self.text)), id: \.0.self) { index, text in
                             HStack {
                                 YonderText(text: text, size: index == 0 ? .buttonBody : .buttonBodySubscript)
-                                    .padding(.leading)
+                                    .padding(.horizontal)
                                     .padding(.bottom, index == 0 && self.isMultiline ? YonderCoreGraphics.buttonTitleSpacing : 0)
                                 
                                 Spacer()
@@ -47,7 +47,7 @@ struct YonderMultilineWideButton: View {
                                 Spacer()
                                 
                                 YonderText(text: text, size: index == 0 ? .buttonBody : .buttonBodySubscript)
-                                    .padding(.trailing)
+                                    .padding(.horizontal)
                                     .padding(.bottom, index == 0 && self.isMultiline ? YonderCoreGraphics.buttonTitleSpacing : 0)
                             }
                         }
@@ -60,16 +60,14 @@ struct YonderMultilineWideButton: View {
     }
 }
 
-struct YonderMultilineWideButton_Previews: PreviewProvider {
-    static var previews: some View {
-        PreviewContentView {
-            VStack {
-                YonderMultilineWideButton(text: ["Hello", "World"]) { }
-                
-                YonderMultilineWideButton(text: ["Hello", "World"], alignment: .leading) { }
-                
-                YonderMultilineWideButton(text: ["Hello", "World"], verticalPadding: 50.0) { }
-            }
+#Preview {
+    PreviewContentView {
+        VStack {
+            YonderMultilineWideButton(text: ["Hello", "World"]) { }
+            
+            YonderMultilineWideButton(text: ["Hello", "World"], alignment: .leading) { }
+            
+            YonderMultilineWideButton(text: ["Hello", "World"], verticalPadding: 50.0) { }
         }
     }
 }

@@ -16,8 +16,40 @@ struct YonderWideButton: View {
     let action: () -> Void
     
     var body: some View {
-        YonderMultilineWideButton(text: [self.text], verticalPadding: self.verticalPadding, alignment: self.alignment) {
+        Button {
             action()
+        } label: {
+            YonderBorder3 {
+                VStack {
+                    switch self.alignment {
+                    case .center:
+                        YonderText(text: self.text, size: .buttonBody)
+                            .padding(.horizontal)
+                    case .leading:
+                        HStack {
+                            YonderText(text: self.text, size: .buttonBody)
+                                .padding(.horizontal)
+                            
+                            Spacer()
+                        }
+                    case .trailing:
+                        HStack {
+                            Spacer()
+                            
+                            YonderText(text: self.text, size: .buttonBody)
+                                .padding(.horizontal)
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, self.verticalPadding)
+            }
         }
+    }
+}
+
+#Preview {
+    PreviewContentView {
+        YonderWideButton(text: "Do Something") { }
     }
 }

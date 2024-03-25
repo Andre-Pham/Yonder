@@ -33,9 +33,12 @@ struct YonderBorder9<Content: View>: View {
                 .overlay {
                     GeometryReader { geo in
                         Color.clear
-                            .onAppear {
-                                self.contentSize = geo.size
-                            }
+                            .preference(key: BorderSizePreferenceKey.self, value: geo.size)
+                    }
+                }
+                .onPreferenceChange(BorderSizePreferenceKey.self) { newSize in
+                    withAnimation(.none) {
+                        self.contentSize = newSize
                     }
                 }
             
