@@ -609,6 +609,7 @@
 		B67A2F732BB1514B0067100B /* YonderBorder13.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A2F722BB1514B0067100B /* YonderBorder13.swift */; };
 		B67A2F7B2BB16A530067100B /* NPCDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A2F7A2BB16A530067100B /* NPCDataTests.swift */; };
 		B67A2F822BB192260067100B /* WeaponDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A2F812BB192260067100B /* WeaponDataTests.swift */; };
+		B67A2F842BB194FA0067100B /* AccessoryDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A2F832BB194FA0067100B /* AccessoryDataTests.swift */; };
 		B68266DE2B9722130079200B /* InspectTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68266DD2B9722130079200B /* InspectTagView.swift */; };
 		B690C3032BA06F8600C26F0A /* BossProfileBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690C3022BA06F8600C26F0A /* BossProfileBucket.swift */; };
 		B690C3052BA0C44A00C26F0A /* BossFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690C3042BA0C44A00C26F0A /* BossFactory.swift */; };
@@ -3078,6 +3079,7 @@
 		B67A2F782BB16A530067100B /* GameDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67A2F7A2BB16A530067100B /* NPCDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPCDataTests.swift; sourceTree = "<group>"; };
 		B67A2F812BB192260067100B /* WeaponDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDataTests.swift; sourceTree = "<group>"; };
+		B67A2F832BB194FA0067100B /* AccessoryDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryDataTests.swift; sourceTree = "<group>"; };
 		B68266DD2B9722130079200B /* InspectTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectTagView.swift; sourceTree = "<group>"; };
 		B690C3022BA06F8600C26F0A /* BossProfileBucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossProfileBucket.swift; sourceTree = "<group>"; };
 		B690C3042BA0C44A00C26F0A /* BossFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossFactory.swift; sourceTree = "<group>"; };
@@ -6482,6 +6484,7 @@
 		65D88C26274436E7002E3AC4 = {
 			isa = PBXGroup;
 			children = (
+				B67A2F832BB194FA0067100B /* AccessoryDataTests.swift */,
 				65D88C31274436E7002E3AC4 /* yonder */,
 				656FD8A42916F04700F923E9 /* DataPersistenceTests */,
 				B67A2F792BB16A530067100B /* GameDataTests */,
@@ -11505,6 +11508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B67A2F842BB194FA0067100B /* AccessoryDataTests.swift in Sources */,
 				B67A2F7B2BB16A530067100B /* NPCDataTests.swift in Sources */,
 				B67A2F822BB192260067100B /* WeaponDataTests.swift in Sources */,
 			);
