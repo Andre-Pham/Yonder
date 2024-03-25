@@ -113,7 +113,9 @@ struct MapGridView: View {
                                 fill: true
                             )
                             .onTapGesture {
-                                self.playerViewModel.travel(to: locationViewModel) // Cheats
+                                #if DEBUG
+                                    self.playerViewModel.travel(to: locationViewModel) // Cheats
+                                #endif
                                 if self.travelStateManager.travellingActive && locationViewModel.canBeTravelledTo(from: self.playerLocationViewModel.locationViewModel) {
                                     self.playerViewModel.travel(to: locationViewModel)
                                     
