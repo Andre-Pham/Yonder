@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct MainMenuView: View {
-    @Binding var showingMenu: Bool
+    @EnvironmentObject private var appState: AppStateManager
     @State private var showingClassSelection = false
     @State private var isLoading = false
     @State private var showingFailAlert = false
@@ -69,7 +69,7 @@ struct MainMenuView: View {
             Session.instance.startNewGame(playerClass: playerClass)
             DispatchQueue.main.async {
                 self.isLoading = false
-                self.showingMenu.toggle()
+                self.appState.setMenuShowing(to: false)
             }
         }
     }
@@ -81,7 +81,7 @@ struct MainMenuView: View {
             DispatchQueue.main.async {
                 self.isLoading = false
                 if loadSuccessful {
-                    self.showingMenu.toggle()
+                    self.appState.setMenuShowing(to: false)
                 } else {
                     self.showingFailAlert = true
                 }

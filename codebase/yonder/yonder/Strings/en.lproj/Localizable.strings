@@ -15,7 +15,6 @@
 "gameName" = "Yonder";
 "currencySymbol" = "$";
 "dotPoint" = "■";
-"loading" = "Loading";
 
 // Tiers
 "tier1" = "I";
@@ -28,6 +27,12 @@
 
 "mainMenu.newGame" = "New Game";
 "mainMenu.resumeGame" = "Resume Game";
+
+// MARK: - Persistance
+"persistence.loading" = "Loading";
+"persistence.saving" = "Saving";
+"persistence.saveSuccessfulFeedback" = "Saved";
+"persistence.saveFailureFeedback" = "Failed";
 
 // MARK: - Class Menu
 
@@ -100,6 +105,10 @@
 "inventory.accessories.headerZeroAccessories" = "No Accessories";
 "inventory.accessories.slot" = "Slot";
 "inventory.accessories.emptySlots" = "Empty Slots";
+
+// MARK: - Settings
+
+"settings.title" = "Settings";
 
 // MARK: - Inspect
 
@@ -181,6 +190,8 @@
 "button.cancel" = "Cancel";
 "button.acceptOffer" = "Accept Offer";
 "button.replace" = "Replace";
+"button.save" = "Quick-save";
+"button.exitToMenu" = "Save and Exit";
 
 // MARK: - Stats
 

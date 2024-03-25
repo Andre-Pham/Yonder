@@ -23,8 +23,13 @@ struct TabBarView: View {
                 MapView()
                     .opacity(self.viewRouter.currentPage == .map ? 1 : 0)
                 
-                SettingsView()
-                    .opacity(self.viewRouter.currentPage == .settings ? 1 : 0)
+                #if DEBUG
+                    DebugSettingsView()
+                        .opacity(self.viewRouter.currentPage == .settings ? 1 : 0)
+                #else
+                    SettingsView()
+                        .opacity(self.viewRouter.currentPage == .settings ? 1 : 0)
+                #endif
             }
             
             HStack(spacing: 0) {

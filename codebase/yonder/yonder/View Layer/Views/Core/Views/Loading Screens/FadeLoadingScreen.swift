@@ -13,8 +13,7 @@ struct FadeLoadingScreen: View {
             YonderColors.backgroundMaxDepth
                 .ignoresSafeArea()
             
-            YonderText(text: Strings("loading").local, size: .title1)
-                .repeatFadingAnimation(duration: 0.5)
+            FadeLoadingText(text: Strings("persistence.loading").local, size: .title1)
         }
     }
 }

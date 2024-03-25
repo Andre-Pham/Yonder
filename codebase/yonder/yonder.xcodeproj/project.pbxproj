@@ -51,7 +51,7 @@
 		6524D5122762701500982091 /* PrimaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6524D5112762701500982091 /* PrimaryView.swift */; };
 		6524D5142762702100982091 /* InventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6524D5132762702100982091 /* InventoryView.swift */; };
 		6524D5162762702B00982091 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6524D5152762702B00982091 /* MapView.swift */; };
-		6524D5182762703500982091 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6524D5172762703500982091 /* SettingsView.swift */; };
+		6524D5182762703500982091 /* DebugSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6524D5172762703500982091 /* DebugSettingsView.swift */; };
 		6524D51B2762757800982091 /* PlayerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6524D51A2762757800982091 /* PlayerCardView.swift */; };
 		6524D51D27627C2800982091 /* FoeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6524D51C27627C2800982091 /* FoeCardView.swift */; };
 		6524D51F27627D0000982091 /* YonderCoreGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6524D51E27627D0000982091 /* YonderCoreGraphics.swift */; };
@@ -611,6 +611,7 @@
 		B67A2F822BB192260067100B /* WeaponDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A2F812BB192260067100B /* WeaponDataTests.swift */; };
 		B67A2F842BB194FA0067100B /* AccessoryDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A2F832BB194FA0067100B /* AccessoryDataTests.swift */; };
 		B67A2F862BB197310067100B /* ArmorDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A2F852BB197310067100B /* ArmorDataTests.swift */; };
+		B67A2F882BB1B7330067100B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A2F872BB1B7330067100B /* SettingsView.swift */; };
 		B68266DE2B9722130079200B /* InspectTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68266DD2B9722130079200B /* InspectTagView.swift */; };
 		B690C3032BA06F8600C26F0A /* BossProfileBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690C3022BA06F8600C26F0A /* BossProfileBucket.swift */; };
 		B690C3052BA0C44A00C26F0A /* BossFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690C3042BA0C44A00C26F0A /* BossFactory.swift */; };
@@ -2447,6 +2448,9 @@
 		B6FB4A6E2B81E4F500B809DE /* YonderBorder5Presets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FB4A6D2B81E4F500B809DE /* YonderBorder5Presets.swift */; };
 		B6FB4A712B81EF4700B809DE /* YonderBorder6.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FB4A702B81EF4700B809DE /* YonderBorder6.swift */; };
 		B6FB4A732B82E4B500B809DE /* YonderBorder6Presets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FB4A722B82E4B500B809DE /* YonderBorder6Presets.swift */; };
+		B6FD8AA62BB1BF76001A70B5 /* DotsLoadingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD8AA52BB1BF76001A70B5 /* DotsLoadingText.swift */; };
+		B6FD8AA82BB1C137001A70B5 /* FadeLoadingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD8AA72BB1C137001A70B5 /* FadeLoadingText.swift */; };
+		B6FD8AAA2BB1CB9F001A70B5 /* AppStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD8AA92BB1CB9F001A70B5 /* AppStateManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2518,7 +2522,7 @@
 		6524D5112762701500982091 /* PrimaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryView.swift; sourceTree = "<group>"; };
 		6524D5132762702100982091 /* InventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryView.swift; sourceTree = "<group>"; };
 		6524D5152762702B00982091 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		6524D5172762703500982091 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		6524D5172762703500982091 /* DebugSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugSettingsView.swift; sourceTree = "<group>"; };
 		6524D51A2762757800982091 /* PlayerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCardView.swift; sourceTree = "<group>"; };
 		6524D51C27627C2800982091 /* FoeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoeCardView.swift; sourceTree = "<group>"; };
 		6524D51E27627D0000982091 /* YonderCoreGraphics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderCoreGraphics.swift; sourceTree = "<group>"; };
@@ -3082,6 +3086,7 @@
 		B67A2F812BB192260067100B /* WeaponDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDataTests.swift; sourceTree = "<group>"; };
 		B67A2F832BB194FA0067100B /* AccessoryDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryDataTests.swift; sourceTree = "<group>"; };
 		B67A2F852BB197310067100B /* ArmorDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmorDataTests.swift; sourceTree = "<group>"; };
+		B67A2F872BB1B7330067100B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B68266DD2B9722130079200B /* InspectTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectTagView.swift; sourceTree = "<group>"; };
 		B690C3022BA06F8600C26F0A /* BossProfileBucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossProfileBucket.swift; sourceTree = "<group>"; };
 		B690C3042BA0C44A00C26F0A /* BossFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossFactory.swift; sourceTree = "<group>"; };
@@ -4918,6 +4923,9 @@
 		B6FB4A6D2B81E4F500B809DE /* YonderBorder5Presets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder5Presets.swift; sourceTree = "<group>"; };
 		B6FB4A702B81EF4700B809DE /* YonderBorder6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder6.swift; sourceTree = "<group>"; };
 		B6FB4A722B82E4B500B809DE /* YonderBorder6Presets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderBorder6Presets.swift; sourceTree = "<group>"; };
+		B6FD8AA52BB1BF76001A70B5 /* DotsLoadingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotsLoadingText.swift; sourceTree = "<group>"; };
+		B6FD8AA72BB1C137001A70B5 /* FadeLoadingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeLoadingText.swift; sourceTree = "<group>"; };
+		B6FD8AA92BB1CB9F001A70B5 /* AppStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -6045,7 +6053,9 @@
 		658D1E56293DE5AA006F1CC0 /* Loading Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B6FD8AA52BB1BF76001A70B5 /* DotsLoadingText.swift */,
 				651B7768293D487500827CB5 /* DotsLoadingScreen.swift */,
+				B6FD8AA72BB1C137001A70B5 /* FadeLoadingText.swift */,
 				658D1E57293DE5CE006F1CC0 /* FadeLoadingScreen.swift */,
 			);
 			path = "Loading Screens";
@@ -6271,7 +6281,8 @@
 		65A33633279A4C720089E059 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				6524D5172762703500982091 /* SettingsView.swift */,
+				6524D5172762703500982091 /* DebugSettingsView.swift */,
+				B67A2F872BB1B7330067100B /* SettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -6405,6 +6416,7 @@
 				6532D66827B2680E0080B58B /* OptionsSheetsStateManager.swift */,
 				65CAC17927F935EB00A95D92 /* InventoryStateManager.swift */,
 				658EDF6428089EF300D398C0 /* PopupStateManager.swift */,
+				B6FD8AA92BB1CB9F001A70B5 /* AppStateManager.swift */,
 			);
 			path = "State Managers";
 			sourceTree = "<group>";
@@ -11107,6 +11119,7 @@
 				65109B38280C67F700F2D949 /* AnimatedNumber.swift in Sources */,
 				65C57DBB2952BCF800FB61C8 /* AppDelegate.swift in Sources */,
 				656FD9492920693200F923E9 /* FriendlyFactory.swift in Sources */,
+				B6FD8AA62BB1BF76001A70B5 /* DotsLoadingText.swift in Sources */,
 				659BD2D627EC538F0033C9E0 /* ItemInspectView.swift in Sources */,
 				6559BE9827A12321004D520B /* Triangle.swift in Sources */,
 				6559BE9B27A12E4D004D520B /* RepeatFadingAnimation.swift in Sources */,
@@ -11162,8 +11175,9 @@
 				B6FB4A692B81D92300B809DE /* YonderBorder4Presets.swift in Sources */,
 				654494FB275803000016FDCA /* PricePercentBuff.swift in Sources */,
 				B69E29EC2B8DC658000C8809 /* YonderBorder10.swift in Sources */,
+				B67A2F882BB1B7330067100B /* SettingsView.swift in Sources */,
 				65D88C7A274547BB002E3AC4 /* DamagePercentBuff.swift in Sources */,
-				6524D5182762703500982091 /* SettingsView.swift in Sources */,
+				6524D5182762703500982091 /* DebugSettingsView.swift in Sources */,
 				B6ECC60A2B534CEC00C04C5E /* DisableHealingBoss.swift in Sources */,
 				656FD904291BE0EB00F923E9 /* ConsumableFactory.swift in Sources */,
 				654ADCEB275558A000373332 /* Map.swift in Sources */,
@@ -11402,6 +11416,7 @@
 				65D14FA927936F54005C67A2 /* GridDimensions.swift in Sources */,
 				6568F9AF28796A7500035865 /* InventoryAccessoriesView.swift in Sources */,
 				655C60AF28040BE3007B1E11 /* Purchasable.swift in Sources */,
+				B6FD8AA82BB1C137001A70B5 /* FadeLoadingText.swift in Sources */,
 				65275DE6275955F10087B118 /* Enhancer.swift in Sources */,
 				6568F99728770F5500035865 /* ArmorType.swift in Sources */,
 				B6ECC5FF2B51F19300C04C5E /* LimitPhoenixEquipmentPill.swift in Sources */,
@@ -11486,6 +11501,7 @@
 				6553A09627828C4200BC672F /* GridConnectionView.swift in Sources */,
 				656FD8FA291B14B800F923E9 /* LootConsumableButton.swift in Sources */,
 				6532774A2925B48D00E03FA7 /* RestoreAfterKillEquipmentPill.swift in Sources */,
+				B6FD8AAA2BB1CB9F001A70B5 /* AppStateManager.swift in Sources */,
 				6553A0902781D5C000BC672F /* Hexagon.swift in Sources */,
 				656FD8DC2919B0D700F923E9 /* WeaponProfile.swift in Sources */,
 				B69E29F42B8E0E7D000C8809 /* AcceptOfferButton.swift in Sources */,

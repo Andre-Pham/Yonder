@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var showingMenu = true
+    @StateObject var appState = AppStateManager()
     
     var body: some View {
         Group {
-            if self.showingMenu {
-                MainMenuView(showingMenu: self.$showingMenu)
-            }
-            else {
+            if self.appState.menuShowing {
+                MainMenuView()
+                    .environmentObject(self.appState)
+            } else {
                 MainView()
+                    .environmentObject(self.appState)
             }
         }
         .statusBar(hidden: true)
