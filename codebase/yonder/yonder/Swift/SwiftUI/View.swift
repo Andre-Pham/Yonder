@@ -12,10 +12,10 @@ extension View {
     
     func sync(_ published: Binding<Bool>, with state: Binding<Bool>) -> some View {
         return self
-            .onChange(of: published.wrappedValue) { newValue in
+            .onChange(of: published.wrappedValue) { _, newValue in
                 state.wrappedValue = newValue
             }
-            .onChange(of: state.wrappedValue) { newValue in
+            .onChange(of: state.wrappedValue) { _, newValue in
                 published.wrappedValue = newValue
             }
     }

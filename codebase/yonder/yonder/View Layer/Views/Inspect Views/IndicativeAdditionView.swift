@@ -40,12 +40,12 @@ struct IndicativeAdditionView: View {
                 }
                 
                 YonderNumeral(number: self.indicativeBonus, size: self.size, color: self.color)
-                    .onChange(of: self.indicative) { newValue in
+                    .onChange(of: self.indicative) { _, newValue in
                         withAnimation {
                             self.showing = self.original != newValue
                         }
                     }
-                    .onChange(of: self.original) { newValue in
+                    .onChange(of: self.original) { _, newValue in
                         withAnimation {
                             self.showing = newValue != self.indicative
                         }
@@ -68,12 +68,12 @@ struct IndicativeAdditionView: View {
             // hence the view will re-animate itself back onto the screen
             // if the showing conditions are ever met.
             EmptyView()
-                .onChange(of: self.indicative) { newValue in
+                .onChange(of: self.indicative) { _, newValue in
                     withAnimation {
                         self.showing = self.original != newValue
                     }
                 }
-                .onChange(of: self.original) { newValue in
+                .onChange(of: self.original) { _, newValue in
                     withAnimation {
                         self.showing = newValue != self.indicative
                     }

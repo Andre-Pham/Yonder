@@ -41,7 +41,7 @@ struct InspectSheet<Content: View>: View {
                     height: self.pageGeometry.size.height
                 )
         }
-        .onChange(of: self.isPresented) { isPresented in
+        .onChange(of: self.isPresented) { _, isPresented in
             if !isPresented {
                 dismiss()
             }

@@ -27,7 +27,7 @@ struct WithInspectSheet: ViewModifier {
                 OverlayView(self.overlayViewController)
                     .opacity(0.0)
             }
-            .onChange(of: self.isPresented) { isPresented in
+            .onChange(of: self.isPresented) { _, isPresented in
                 if isPresented {
                     let viewController = InspectViewController(
                         rootView: InspectSheet(isPresented: self.$isPresentedState, pageGeometry: self.pageGeometry) {

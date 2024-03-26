@@ -94,9 +94,8 @@ struct AnimatedNumberModifier: AnimatableModifier {
             }
         }
         
-        return
-            Text(self.displayValue)
-            .onChange(of: self.value) { _ in
+        return Text(self.displayValue)
+            .onChange(of: self.value) {
                 if self.isAnimating {
                     // Restart the animation from the current value to the destination value.
                     withAnimation(.linear(duration: 0)) {

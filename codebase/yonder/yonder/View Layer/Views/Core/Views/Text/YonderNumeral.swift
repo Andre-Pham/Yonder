@@ -28,8 +28,11 @@ struct YonderNumeral: View {
         AnimatedNumber(self.$animatedNumber)
             .font(YonderFonts.main(size: self.size.value))
             .foregroundColor(self.color)
-            .onChange(of: self.number) { newValue in
-                self.animatedNumber += Double(newValue - self.number)
+            .onChange(of: self.number) { oldValue, newValue in
+                // Note: an alternative is:
+                // self.animatedNumber += Double(newValue - oldValue)
+                // They have the same outcome - the implementation below is safer
+                self.animatedNumber += Double(self.number) - self.animatedNumber
             }
     }
 }
