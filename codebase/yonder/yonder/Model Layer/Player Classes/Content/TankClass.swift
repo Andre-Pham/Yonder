@@ -10,7 +10,10 @@ import Foundation
 class TankClass: PlayerClass {
     
     init() {
-        super.init(name: Strings("class.tank.name").local)
+        super.init(
+            name: Strings("class.tank.name").local,
+            characterSprite: YonderImages.tankClassCharacter
+        )
     }
     
     func createPlayer(at location: Location) -> Player {

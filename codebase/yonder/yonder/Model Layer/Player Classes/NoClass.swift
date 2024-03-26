@@ -10,7 +10,10 @@ import Foundation
 class NoClass: PlayerClass {
     
     init() {
-        super.init(name: "No Class")
+        super.init(
+            name: Strings("class.none.name").local,
+            characterSprite: YonderImages.noClassCharacter
+        )
     }
     
     func createPlayer(at location: Location) -> Player {

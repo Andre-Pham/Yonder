@@ -10,7 +10,10 @@ import Foundation
 class WarriorClass: PlayerClass {
     
     init() {
-        super.init(name: Strings("class.warrior.name").local)
+        super.init(
+            name: Strings("class.warrior.name").local,
+            characterSprite: YonderImages.warriorClassCharacter
+        )
     }
     
     func createPlayer(at location: Location) -> Player {

@@ -10,7 +10,10 @@ import Foundation
 class MageClass: PlayerClass {
     
     init() {
-        super.init(name: Strings("class.mage.name").local)
+        super.init(
+            name: Strings("class.mage.name").local,
+            characterSprite: YonderImages.mageClassCharacter
+        )
     }
     
     func createPlayer(at location: Location) -> Player {

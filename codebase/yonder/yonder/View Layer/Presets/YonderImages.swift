@@ -19,6 +19,16 @@ enum YonderImages {
     static let goblinIcon = YonderImage("GoldCutlass")
     static let bruteIcon = YonderImage("BrokenShield")
     
+    // MARK: - Class Characters
+    
+    static let druidClassCharacter = YonderImage("DruidClass")
+    static let mageClassCharacter = YonderImage("MageClass")
+    static let marksmanClassCharacter = YonderImage("MarksmanClass")
+    static let tankClassCharacter = YonderImage("TankClass")
+    static let treasurerClassCharacter = YonderImage("TreasurerClass")
+    static let warriorClassCharacter = YonderImage("WarriorClass")
+    static let noClassCharacter = YonderImage("NoClass")
+    
     // MARK: - Tile Art
     
     static let forestTileBackgroundImage = YonderImage("ForestTile")

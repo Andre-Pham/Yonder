@@ -10,7 +10,10 @@ import Foundation
 class TreasurerClass: PlayerClass {
     
     init() {
-        super.init(name: Strings("class.treasurer.name").local)
+        super.init(
+            name: Strings("class.treasurer.name").local,
+            characterSprite: YonderImages.treasurerClassCharacter
+        )
     }
     
     func createPlayer(at location: Location) -> Player {

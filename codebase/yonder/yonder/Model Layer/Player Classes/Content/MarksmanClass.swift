@@ -10,7 +10,10 @@ import Foundation
 class MarksmanClass: PlayerClass {
     
     init() {
-        super.init(name: Strings("class.marksman.name").local)
+        super.init(
+            name: Strings("class.marksman.name").local,
+            characterSprite: YonderImages.marksmanClassCharacter
+        )
     }
     
     func createPlayer(at location: Location) -> Player {

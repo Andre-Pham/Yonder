@@ -10,7 +10,10 @@ import Foundation
 class DruidClass: PlayerClass {
     
     init() {
-        super.init(name: Strings("class.druid.name").local)
+        super.init(
+            name: Strings("class.druid.name").local,
+            characterSprite: YonderImages.druidClassCharacter
+        )
     }
     
     func createPlayer(at location: Location) -> Player {

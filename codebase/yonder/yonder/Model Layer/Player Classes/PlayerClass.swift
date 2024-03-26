@@ -18,9 +18,11 @@ protocol PlayerClassProtocol {
 class PlayerClassAbstract {
     
     public let name: String
+    public let characterSprite: YonderImage
     
-    init(name: String) {
+    init(name: String, characterSprite: YonderImage) {
         self.name = name
+        self.characterSprite = characterSprite
     }
     
 }

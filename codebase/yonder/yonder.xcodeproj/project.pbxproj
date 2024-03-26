@@ -524,6 +524,7 @@
 		B626F5082BB2729600D0B99B /* SaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B626F5072BB2729600D0B99B /* SaveManager.swift */; };
 		B626F50A2BB291B800D0B99B /* MarksmanClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B626F5092BB291B800D0B99B /* MarksmanClass.swift */; };
 		B626F50C2BB291D900D0B99B /* TankClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B626F50B2BB291D900D0B99B /* TankClass.swift */; };
+		B626F50E2BB300B400D0B99B /* YonderActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B626F50D2BB300B400D0B99B /* YonderActionButton.swift */; };
 		B635B05A29B1896600A45F43 /* EquipArmorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B635B05929B1896600A45F43 /* EquipArmorView.swift */; };
 		B635B05C29B19C9300A45F43 /* EquipPeripheralAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B635B05B29B19C9300A45F43 /* EquipPeripheralAccessoryView.swift */; };
 		B635B05E29B19E6500A45F43 /* EmbeddedInspectBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B635B05D29B19E6500A45F43 /* EmbeddedInspectBorder.swift */; };
@@ -2998,6 +2999,7 @@
 		B626F5072BB2729600D0B99B /* SaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveManager.swift; sourceTree = "<group>"; };
 		B626F5092BB291B800D0B99B /* MarksmanClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarksmanClass.swift; sourceTree = "<group>"; };
 		B626F50B2BB291D900D0B99B /* TankClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankClass.swift; sourceTree = "<group>"; };
+		B626F50D2BB300B400D0B99B /* YonderActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YonderActionButton.swift; sourceTree = "<group>"; };
 		B635B05929B1896600A45F43 /* EquipArmorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipArmorView.swift; sourceTree = "<group>"; };
 		B635B05B29B19C9300A45F43 /* EquipPeripheralAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipPeripheralAccessoryView.swift; sourceTree = "<group>"; };
 		B635B05D29B19E6500A45F43 /* EmbeddedInspectBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedInspectBorder.swift; sourceTree = "<group>"; };
@@ -6470,6 +6472,7 @@
 				65CAC17F27F942F300A95D92 /* YonderButtonAlignment.swift */,
 				65CAC18127F943DF00A95D92 /* YonderButtonStyle.swift */,
 				65CAC18327F947B900A95D92 /* YonderButton.swift */,
+				B626F50D2BB300B400D0B99B /* YonderActionButton.swift */,
 				65CAC18527F947D200A95D92 /* YonderWideButtonBody.swift */,
 				65CAC18727F947F700A95D92 /* YonderWideButton.swift */,
 				B67A2F682BB11B160067100B /* YonderActionButtonBody.swift */,
@@ -11259,6 +11262,7 @@
 				B6588DA72B986C5A00B10A28 /* RegularBoss.swift in Sources */,
 				65D88C662744494E002E3AC4 /* StatusEffect.swift in Sources */,
 				656FD8B82917223100F923E9 /* MapPoolFactory.swift in Sources */,
+				B626F50E2BB300B400D0B99B /* YonderActionButton.swift in Sources */,
 				654D729C29416EC200228643 /* MageClass.swift in Sources */,
 				65D56C44280AC56200C6DF0D /* YonderTextSize.swift in Sources */,
 				65C37A8B285D68BC006997EE /* BuffEffectsDescription.swift in Sources */,

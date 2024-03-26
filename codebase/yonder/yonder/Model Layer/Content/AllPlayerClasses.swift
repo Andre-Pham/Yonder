@@ -38,6 +38,10 @@ enum PlayerClassOption  {
         return self.playerClass.name
     }
     
+    public var characterSprite: YonderImage {
+        return self.playerClass.characterSprite
+    }
+    
     func createPlayer(at location: Location) -> Player {
         return self.playerClass.createPlayer(at: location)
     }
