@@ -209,8 +209,8 @@ iOSInjectionProject/
 ### SwiftPackageManager ###
 Packages
 xcuserdata
-# (MANUALLY REMOVED BY ANDRE)
-# *.xcodeproj
+# (ANDRE - COMMENT OUT TO PUSH FULL PROJECT FOR PRIVATE REPOS)
+*.xcodeproj
 
 
 ### SwiftPM ###
@@ -226,11 +226,11 @@ xcuserdata
 ## Gcc Patch
 /*.gcno
 
-### Xcode Patch ### (MANUALLY REMOVED BY ANDRE)
-# *.xcodeproj/*
-# !*.xcodeproj/project.pbxproj
-# !*.xcodeproj/xcshareddata/
-# !*.xcworkspace/contents.xcworkspacedata
-# **/xcshareddata/WorkspaceSettings.xcsettings
+### Xcode Patch ### (ANDRE - COMMENT OUT TO PUSH FULL PROJECT FOR PRIVATE REPOS)
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+**/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,xcode,swiftpackagemanager,swiftpm,macos
