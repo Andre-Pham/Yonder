@@ -525,6 +525,7 @@
 		B61245AD2BA77EDE00949255 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61245AC2BA77EDE00949255 /* StatView.swift */; };
 		B61245AF2BA785D800949255 /* StatsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61245AE2BA785D800949255 /* StatsStack.swift */; };
 		B626F5062BB2680C00D0B99B /* LocationTypesInspectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B626F5052BB2680C00D0B99B /* LocationTypesInspectView.swift */; };
+		B626F5082BB2729600D0B99B /* SaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B626F5072BB2729600D0B99B /* SaveManager.swift */; };
 		B635B05A29B1896600A45F43 /* EquipArmorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B635B05929B1896600A45F43 /* EquipArmorView.swift */; };
 		B635B05C29B19C9300A45F43 /* EquipPeripheralAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B635B05B29B19C9300A45F43 /* EquipPeripheralAccessoryView.swift */; };
 		B635B05E29B19E6500A45F43 /* EmbeddedInspectBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B635B05D29B19E6500A45F43 /* EmbeddedInspectBorder.swift */; };
@@ -3000,6 +3001,7 @@
 		B61245AC2BA77EDE00949255 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
 		B61245AE2BA785D800949255 /* StatsStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsStack.swift; sourceTree = "<group>"; };
 		B626F5052BB2680C00D0B99B /* LocationTypesInspectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTypesInspectView.swift; sourceTree = "<group>"; };
+		B626F5072BB2729600D0B99B /* SaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveManager.swift; sourceTree = "<group>"; };
 		B635B05929B1896600A45F43 /* EquipArmorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipArmorView.swift; sourceTree = "<group>"; };
 		B635B05B29B19C9300A45F43 /* EquipPeripheralAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipPeripheralAccessoryView.swift; sourceTree = "<group>"; };
 		B635B05D29B19E6500A45F43 /* EmbeddedInspectBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedInspectBorder.swift; sourceTree = "<group>"; };
@@ -5099,6 +5101,7 @@
 				6520DA4329558AD400916147 /* PlayerStageManager.swift */,
 				659860472969047D0002AD0B /* ContentManager.swift */,
 				B6D4723F2A530DCC0002CEEC /* BuildTokenCache.swift */,
+				B626F5072BB2729600D0B99B /* SaveManager.swift */,
 			);
 			path = GameContext;
 			sourceTree = "<group>";
@@ -11163,6 +11166,7 @@
 				B6ECC6022B53225500C04C5E /* ScaleAttackBoss.swift in Sources */,
 				65DC5FBE28DC24D800E5F904 /* WeaponHealthRestorationBuff.swift in Sources */,
 				65326271282F57D100A37340 /* YonderOutlinedText.swift in Sources */,
+				B626F5082BB2729600D0B99B /* SaveManager.swift in Sources */,
 				B67A2F622BB108E30067100B /* BorderSizePreferenceKey.swift in Sources */,
 				B63E171B29CD8F060083616A /* InspectSheet.swift in Sources */,
 				655C609F28001C26007B1E11 /* ArmorBuffEnhanceOffer.swift in Sources */,
