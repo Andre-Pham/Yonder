@@ -746,33 +746,43 @@
     // None
 "map.locationType.none.name" = "None";
 "map.locationType.none.description" = "None.";
+"map.locationType.none.summary" = "None.";
     // Hostile
 "map.locationType.hostile.name" = "Hostile";
 "map.locationType.hostile.description" = "Hostiles engage you in combat and drop loot upon defeat. You may not travel whilst in combat.";
+"map.locationType.hostile.summary" = "Engage you in combat and drop loot.";
     // Challenge Hostile
 "map.locationType.challengeHostile.name" = "Mini Boss";
 "map.locationType.challengeHostile.description" = "Mini bosses are tougher than regular hostiles. They also reward better loot. You may not travel whilst in combat.";
+"map.locationType.challengeHostile.summary" = "Are tougher than regular hostiles and reward better loot.";
     // Shop
 "map.locationType.shop.name" = "Merchant";
 "map.locationType.shop.description" = "Merchants sell to you in exchange for gold. Browse their shop to see what they have to offer - each item is limited in how much you can buy.";
+"map.locationType.shop.summary" = "Sell to you in exchange for gold.";
     // Enhancer
 "map.locationType.enhancer.name" = "Enhancer";
 "map.locationType.enhancer.description" = "Enhancers have offers on certain gear they can upgrade. So long as you have the gold, you may upgrade a piece of gear however many times you desire.";
+"map.locationType.enhancer.summary" = "Offer equipment upgrades for gold.";
     // Restorer
 "map.locationType.restorer.name" = "Mender";
 "map.locationType.restorer.description" = "Menders will offer restoration of health and/or shields for gold.";
+"map.locationType.restorer.summary" = "Offer restoration of health and/or shields for gold.";
     // Friendly
 "map.locationType.friendly.name" = "Trader";
-"map.locationType.friendly.description" = "Traders will offer you any number of different types exchanges, which vary greatly. Each trader has a limit on the number of times you may accept an offer from them.";
+"map.locationType.friendly.description" = "Traders will offer you any number of unique exchanges, which vary greatly. Each trader has a limit on the number of times you may accept an offer from them.";
+"map.locationType.friendly.summary" = "Offer you unique exchanges.";
     // Boss
 "map.locationType.boss.name" = "Boss";
 "map.locationType.boss.description" = "Bosses are the highest form of hostile you'll encounter. Be prepared for a tough fight. You may not travel whilst in combat.";
+"map.locationType.boss.summary" = "The highest form of hostile you'll encounter. Be prepared!";
     // Bridge
 "map.locationType.bridge.name" = "Warp";
 "map.locationType.bridge.description" = "Warps allow you to travel between adjacent areas, both forwards and backwards.";
+"map.locationType.bridge.summary" = "Allow you to travel between adjacent areas.";
     // Starting
 "map.locationType.starting.name" = "Starting Location";
 "map.locationType.starting.description" = "Where you start on the map. Travel yonder!";
+"map.locationType.starting.summary" = "Where you start.";
 
 // Regions
     // Forest

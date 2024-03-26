@@ -10,6 +10,8 @@ import SwiftUI
 struct MapHeaderView: View {
     @ObservedObject var scaleStateManager: ScaleStateManager
     @EnvironmentObject private var travelStateManager: TravelStateManager
+    @State private var locationTypesInformationSheetActive = false
+    let pageGeometry: GeometryProxy
     
     var body: some View {
         HStack(spacing: YonderCoreGraphics.padding) {
@@ -35,8 +37,13 @@ struct MapHeaderView: View {
             .disabledWhen(!self.travelStateManager.travellingAllowed)
             
             YonderSquareButton(text: Strings("map.header.informationShorthand").local) {
-                // Will expand with matchGeometryEffect to show legend
+                self.locationTypesInformationSheetActive = true
             }
+            .withInspectSheet(
+                isPresented: self.$locationTypesInformationSheetActive,
+                pageGeometry: self.pageGeometry,
+                content: AnyView(LocationTypesInspectView())
+            )
         }
         .padding(.bottom, YonderCoreGraphics.padding)
         .padding(.horizontal, YonderCoreGraphics.padding)

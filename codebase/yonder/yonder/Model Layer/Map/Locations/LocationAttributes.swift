@@ -76,6 +76,31 @@ enum LocationType: Int {
         }
     }
     
+    var summary: String {
+        switch self {
+        case .none:
+            return Strings("map.locationType.none.summary").local
+        case .hostile:
+            return Strings("map.locationType.hostile.summary").local
+        case .challengeHostile:
+            return Strings("map.locationType.challengeHostile.summary").local
+        case .shop:
+            return Strings("map.locationType.shop.summary").local
+        case .enhancer:
+            return Strings("map.locationType.enhancer.summary").local
+        case .restorer:
+            return Strings("map.locationType.restorer.summary").local
+        case .friendly:
+            return Strings("map.locationType.friendly.summary").local
+        case .boss:
+            return Strings("map.locationType.boss.summary").local
+        case .bridge:
+            return Strings("map.locationType.bridge.summary").local
+        case .starting:
+            return Strings("map.locationType.starting.summary").local
+        }
+    }
+    
     var image: Image {
         switch self {
         case .none:

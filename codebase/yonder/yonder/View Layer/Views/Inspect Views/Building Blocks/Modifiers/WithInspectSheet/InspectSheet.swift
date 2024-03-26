@@ -31,13 +31,15 @@ struct InspectSheet<Content: View>: View {
             }
             .frame(
                 width: self.pageGeometry.size.width-YonderCoreGraphics.padding*4,
-                height: self.pageGeometry.size.height)
+                height: self.pageGeometry.size.height
+            )
             
             Rectangle()
                 .stroke(YonderColors.border, lineWidth: YonderCoreGraphics.borderWidth)
                 .frame(
                     width: self.pageGeometry.size.width-YonderCoreGraphics.padding*4,
-                    height: self.pageGeometry.size.height)
+                    height: self.pageGeometry.size.height
+                )
         }
         .onChange(of: self.isPresented) { isPresented in
             if !isPresented {

@@ -11,20 +11,25 @@ struct MapView: View {
     @StateObject private var scaleStateManager = ScaleStateManager(scales: YonderCoreGraphics.mapScales)
     
     var body: some View {
-        ZStack {
-            YonderColors.backgroundMaxDepth
-                .ignoresSafeArea()
-            
-            // Note:
-            // This layout transitioned from a VStack to a (technically less efficient) overlay
-            // For reasoning, see: https://github.com/Andre-Pham/Yonder/issues/3
-            
-            MapGridView(scaleStateManager: self.scaleStateManager)
-            
-            VStack(spacing: 0) {
-                MapHeaderView(scaleStateManager: self.scaleStateManager)
+        GeometryReader { geo in
+            ZStack {
+                YonderColors.backgroundMaxDepth
+                    .ignoresSafeArea()
                 
-                Spacer()
+                // Note:
+                // This layout transitioned from a VStack to a (technically less efficient) overlay
+                // For reasoning, see: https://github.com/Andre-Pham/Yonder/issues/3
+                
+                MapGridView(scaleStateManager: self.scaleStateManager)
+                
+                VStack(spacing: 0) {
+                    MapHeaderView(
+                        scaleStateManager: self.scaleStateManager,
+                        pageGeometry: geo
+                    )
+                    
+                    Spacer()
+                }
             }
         }
     }
