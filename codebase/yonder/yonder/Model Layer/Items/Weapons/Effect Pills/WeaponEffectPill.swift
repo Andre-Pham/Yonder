@@ -13,6 +13,7 @@ typealias WeaponEffectPill = WeaponEffectPillAbstract & WeaponEffectPillProtocol
 protocol WeaponEffectPillProtocol: HasPurchasablePrice {
     
     var effectsDescription: String { get }
+    var previewEffectsDescription: String { get }
     
     func apply(owner: ActorAbstract, opposition: ActorAbstract)
     

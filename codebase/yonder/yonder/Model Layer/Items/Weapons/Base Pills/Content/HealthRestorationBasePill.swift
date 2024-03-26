@@ -11,6 +11,7 @@ class HealthRestorationBasePill: WeaponBasePill {
     
     private(set) var healthRestoration: Int
     public let effectsDescription: String? = nil
+    public let previewEffectsDescription: String? = nil
     
     init(healthRestoration: Int) {
         self.healthRestoration = healthRestoration

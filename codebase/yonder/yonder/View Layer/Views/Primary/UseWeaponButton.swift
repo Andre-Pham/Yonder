@@ -75,17 +75,13 @@ struct UseWeaponButton: View {
                                 image: self.weaponViewModel.restorationImage
                             )
                         }
-
-                        if let effectsDescription = self.weaponViewModel.previewEffectsDescription {
-                            YonderText(text: effectsDescription, size: .buttonBodySubscript)
-                                .padding(.bottom, YonderCoreGraphics.paragraphSpacing)
-                        }
                         
                         if self.weaponViewModel.infiniteRemainingUses {
-                            YonderText(
-                                text: Strings("item.infinite").local
-                                    .continuedBy(Strings("stat.weapon.remainingUses").local),
-                                size: .buttonBodySubscript
+                            YonderIconTextPair(
+                                image: self.weaponViewModel.remainingUsesImage,
+                                text: "\(Strings("stat.weapon.remainingUses").local): \(Strings("item.infinite").local)",
+                                size: .buttonBodySubscript,
+                                iconSize: .cardSubscript
                             )
                         } else {
                             StatView(
@@ -93,6 +89,11 @@ struct UseWeaponButton: View {
                                 value: self.weaponViewModel.remainingUses,
                                 image: self.weaponViewModel.remainingUsesImage
                             )
+                        }
+                        
+                        if let effectsDescription = self.weaponViewModel.previewEffectsDescription {
+                            YonderText(text: effectsDescription, size: .buttonBodySubscript)
+                                .padding(.top, YonderCoreGraphics.paragraphSpacing)
                         }
                     }
                 }

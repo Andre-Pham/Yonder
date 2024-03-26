@@ -12,6 +12,7 @@ class DamageAndRestorationBasePill: WeaponBasePill {
     public let damage: Int
     public let restoration: Int
     public let effectsDescription: String? = nil
+    public let previewEffectsDescription: String? = nil
     
     init(damage: Int, restoration: Int) {
         self.damage = damage

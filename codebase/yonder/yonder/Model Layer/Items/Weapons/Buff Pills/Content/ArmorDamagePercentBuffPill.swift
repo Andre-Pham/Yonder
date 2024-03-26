@@ -12,6 +12,9 @@ class ArmorDamagePercentBuffPill: WeaponBuffPill {
     
     public let damageFraction: Double
     public let effectsDescription: String
+    public var previewEffectsDescription: String {
+        return self.effectsDescription
+    }
     
     init(damageFraction: Double) {
         self.damageFraction = damageFraction

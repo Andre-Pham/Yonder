@@ -172,12 +172,8 @@
 		654D729329416DEA00228643 /* NoClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D729229416DEA00228643 /* NoClass.swift */; };
 		654D729629416E5D00228643 /* WarriorClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D729529416E5D00228643 /* WarriorClass.swift */; };
 		654D729829416EB000228643 /* TreasurerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D729729416EB000228643 /* TreasurerClass.swift */; };
-		654D729A29416EBA00228643 /* AlchemistClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D729929416EBA00228643 /* AlchemistClass.swift */; };
 		654D729C29416EC200228643 /* MageClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D729B29416EC200228643 /* MageClass.swift */; };
-		654D729E29416ECE00228643 /* WarlockClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D729D29416ECE00228643 /* WarlockClass.swift */; };
-		654D72A029416ED800228643 /* ClericClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D729F29416ED800228643 /* ClericClass.swift */; };
 		654D72A229416EDE00228643 /* DruidClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D72A129416EDE00228643 /* DruidClass.swift */; };
-		654D72A429416EE600228643 /* PaladinClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D72A329416EE600228643 /* PaladinClass.swift */; };
 		654FB89128D76F79008F5C60 /* ArmorDamagePercentBuffPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654FB89028D76F79008F5C60 /* ArmorDamagePercentBuffPill.swift */; };
 		654FB89328D77B14008F5C60 /* WeaponBuffPillTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654FB89228D77B14008F5C60 /* WeaponBuffPillTests.swift */; };
 		654FB89528D9A779008F5C60 /* ArmorPointsRestorationBuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654FB89428D9A779008F5C60 /* ArmorPointsRestorationBuff.swift */; };
@@ -526,6 +522,8 @@
 		B61245AF2BA785D800949255 /* StatsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61245AE2BA785D800949255 /* StatsStack.swift */; };
 		B626F5062BB2680C00D0B99B /* LocationTypesInspectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B626F5052BB2680C00D0B99B /* LocationTypesInspectView.swift */; };
 		B626F5082BB2729600D0B99B /* SaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B626F5072BB2729600D0B99B /* SaveManager.swift */; };
+		B626F50A2BB291B800D0B99B /* MarksmanClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B626F5092BB291B800D0B99B /* MarksmanClass.swift */; };
+		B626F50C2BB291D900D0B99B /* TankClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B626F50B2BB291D900D0B99B /* TankClass.swift */; };
 		B635B05A29B1896600A45F43 /* EquipArmorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B635B05929B1896600A45F43 /* EquipArmorView.swift */; };
 		B635B05C29B19C9300A45F43 /* EquipPeripheralAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B635B05B29B19C9300A45F43 /* EquipPeripheralAccessoryView.swift */; };
 		B635B05E29B19E6500A45F43 /* EmbeddedInspectBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B635B05D29B19E6500A45F43 /* EmbeddedInspectBorder.swift */; };
@@ -2646,12 +2644,8 @@
 		654D729229416DEA00228643 /* NoClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoClass.swift; sourceTree = "<group>"; };
 		654D729529416E5D00228643 /* WarriorClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarriorClass.swift; sourceTree = "<group>"; };
 		654D729729416EB000228643 /* TreasurerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasurerClass.swift; sourceTree = "<group>"; };
-		654D729929416EBA00228643 /* AlchemistClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlchemistClass.swift; sourceTree = "<group>"; };
 		654D729B29416EC200228643 /* MageClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MageClass.swift; sourceTree = "<group>"; };
-		654D729D29416ECE00228643 /* WarlockClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarlockClass.swift; sourceTree = "<group>"; };
-		654D729F29416ED800228643 /* ClericClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClericClass.swift; sourceTree = "<group>"; };
 		654D72A129416EDE00228643 /* DruidClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DruidClass.swift; sourceTree = "<group>"; };
-		654D72A329416EE600228643 /* PaladinClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaladinClass.swift; sourceTree = "<group>"; };
 		654FB89028D76F79008F5C60 /* ArmorDamagePercentBuffPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmorDamagePercentBuffPill.swift; sourceTree = "<group>"; };
 		654FB89228D77B14008F5C60 /* WeaponBuffPillTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponBuffPillTests.swift; sourceTree = "<group>"; };
 		654FB89428D9A779008F5C60 /* ArmorPointsRestorationBuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmorPointsRestorationBuff.swift; sourceTree = "<group>"; };
@@ -3002,6 +2996,8 @@
 		B61245AE2BA785D800949255 /* StatsStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsStack.swift; sourceTree = "<group>"; };
 		B626F5052BB2680C00D0B99B /* LocationTypesInspectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTypesInspectView.swift; sourceTree = "<group>"; };
 		B626F5072BB2729600D0B99B /* SaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveManager.swift; sourceTree = "<group>"; };
+		B626F5092BB291B800D0B99B /* MarksmanClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarksmanClass.swift; sourceTree = "<group>"; };
+		B626F50B2BB291D900D0B99B /* TankClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankClass.swift; sourceTree = "<group>"; };
 		B635B05929B1896600A45F43 /* EquipArmorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipArmorView.swift; sourceTree = "<group>"; };
 		B635B05B29B19C9300A45F43 /* EquipPeripheralAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipPeripheralAccessoryView.swift; sourceTree = "<group>"; };
 		B635B05D29B19E6500A45F43 /* EmbeddedInspectBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedInspectBorder.swift; sourceTree = "<group>"; };
@@ -5484,13 +5480,11 @@
 			isa = PBXGroup;
 			children = (
 				654D729529416E5D00228643 /* WarriorClass.swift */,
-				654D729729416EB000228643 /* TreasurerClass.swift */,
-				654D729929416EBA00228643 /* AlchemistClass.swift */,
+				B626F50B2BB291D900D0B99B /* TankClass.swift */,
 				654D729B29416EC200228643 /* MageClass.swift */,
-				654D729D29416ECE00228643 /* WarlockClass.swift */,
-				654D729F29416ED800228643 /* ClericClass.swift */,
+				654D729729416EB000228643 /* TreasurerClass.swift */,
 				654D72A129416EDE00228643 /* DruidClass.swift */,
-				654D72A329416EE600228643 /* PaladinClass.swift */,
+				B626F5092BB291B800D0B99B /* MarksmanClass.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -10990,6 +10984,7 @@
 				B6FB4A592B81710700B809DE /* YonderBorder2.swift in Sources */,
 				656FD8F5291AC60E00F923E9 /* ArmorProfileBucket.swift in Sources */,
 				65D88C6B27449CB8002E3AC4 /* TimedEvent.swift in Sources */,
+				B626F50A2BB291B800D0B99B /* MarksmanClass.swift in Sources */,
 				655F983F286993EE00A60806 /* InventoryPotionsView.swift in Sources */,
 				653AD3AF277082110001A249 /* FriendlyLocation.swift in Sources */,
 				B690C3052BA0C44A00C26F0A /* BossFactory.swift in Sources */,
@@ -11043,6 +11038,7 @@
 				65AAFE2D28C86553004A8230 /* BonusHealthConsumable.swift in Sources */,
 				6524D51F27627D0000982091 /* YonderCoreGraphics.swift in Sources */,
 				656FD93F2920598600F923E9 /* GoldForPriceBuffOffer.swift in Sources */,
+				B626F50C2BB291D900D0B99B /* TankClass.swift in Sources */,
 				651E1C3A282EA6D300F03E65 /* ChallengeHostileInspectView.swift in Sources */,
 				B6588DA32B98676100B10A28 /* MultiplyHealthConsumable.swift in Sources */,
 				B67A2F6E2BB14EA70067100B /* YonderBorder12.swift in Sources */,
@@ -11116,7 +11112,6 @@
 				65A33630279A47D80089E059 /* MainView.swift in Sources */,
 				B6FB4A5B2B8196DD00B809DE /* YonderBorder3.swift in Sources */,
 				656FD8C22917CC3800F923E9 /* FoeProfileTag.swift in Sources */,
-				654D729E29416ECE00228643 /* WarlockClass.swift in Sources */,
 				65E6388C27C3A9920004C57F /* UsePotionButton.swift in Sources */,
 				B6ECC6122B56D38600C04C5E /* OnActorTakeDamage.swift in Sources */,
 				65293CA828B96F6500B2354A /* OnNoPotionsRemaining.swift in Sources */,
@@ -11246,7 +11241,6 @@
 				654D729829416EB000228643 /* TreasurerClass.swift in Sources */,
 				656D2BCE287436DC00D33DA5 /* InspectStatusEffects.swift in Sources */,
 				6553A08C2781D57E00BC672F /* ReverseScroll.swift in Sources */,
-				654D729A29416EBA00228643 /* AlchemistClass.swift in Sources */,
 				B67A2F6C2BB14E0E0067100B /* YonderBorder12Presets.swift in Sources */,
 				65AAFE3C28CAF6B3004A8230 /* AfterPlayerTravel.swift in Sources */,
 				654ADCED2755764D00373332 /* HostileLocation.swift in Sources */,
@@ -11257,7 +11251,6 @@
 				6551468B2747E7AF00257181 /* MaxRestorationPotion.swift in Sources */,
 				65DC5FC028DC3C3500E5F904 /* WeaponArmorPointsRestorationPercentBuff.swift in Sources */,
 				656BEEA028E2E729001CE591 /* Pricing.swift in Sources */,
-				654D72A429416EE600228643 /* PaladinClass.swift in Sources */,
 				659860482969047D0002AD0B /* ContentManager.swift in Sources */,
 				B69E29DF2B8CB572000C8809 /* YonderBorder8Presets.swift in Sources */,
 				B6588DA92B986D4E00B10A28 /* PermanentBuffConsumable.swift in Sources */,
@@ -11315,7 +11308,6 @@
 				65326273282F613300A37340 /* InspectLocationView.swift in Sources */,
 				65E8AD18287707C300BEC1F4 /* PurchaseFromShopKeeperButton.swift in Sources */,
 				B651BC332BAFB38100D8A3C6 /* StartingLocation.swift in Sources */,
-				654D72A029416ED800228643 /* ClericClass.swift in Sources */,
 				B678C1CC2B4596AE00CD6354 /* RegionProfileAssignment.swift in Sources */,
 				65D88C33274436E7002E3AC4 /* yonderApp.swift in Sources */,
 				B67344A32BAD3F2F002A26CB /* LandmarkAnimation.swift in Sources */,

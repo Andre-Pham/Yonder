@@ -13,6 +13,7 @@ typealias WeaponBuffPill = WeaponBuffPillAbstract & WeaponBuffPillProtocol
 protocol WeaponBuffPillProtocol: HasPurchasablePrice {
     
     var effectsDescription: String { get }
+    var previewEffectsDescription: String { get }
     
 }
 

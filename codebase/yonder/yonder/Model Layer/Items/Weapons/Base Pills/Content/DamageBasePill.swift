@@ -11,6 +11,7 @@ class DamageBasePill: WeaponBasePill {
     
     private(set) var damage: Int
     public let effectsDescription: String? = nil
+    public let previewEffectsDescription: String? = nil
     
     init(damage: Int) {
         self.damage = damage

@@ -11,6 +11,9 @@ class SelfDamageEffectPill: WeaponEffectPill {
     
     public let damage: Int
     public let effectsDescription: String
+    public var previewEffectsDescription: String {
+        return self.effectsDescription
+    }
     
     init(damage: Int) {
         self.damage = damage

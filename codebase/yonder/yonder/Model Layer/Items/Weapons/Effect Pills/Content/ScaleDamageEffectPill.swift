@@ -10,6 +10,9 @@ import Foundation
 class ScaleDamageEffectPill: WeaponEffectPill {
     
     public let effectsDescription: String
+    public var previewEffectsDescription: String {
+        return self.effectsDescription
+    }
     public let damageMultiplier: Double
     
     init(damageMultiplier: Double) {

@@ -10,6 +10,9 @@ import Foundation
 class BurnStatusEffectEffectPill: WeaponEffectPill {
     
     public let effectsDescription: String
+    public var previewEffectsDescription: String {
+        return self.effectsDescription
+    }
     public let tickDamage: Int
     private let initialDuration: Int
     

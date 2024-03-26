@@ -14,12 +14,61 @@ class MageClass: PlayerClass {
     }
     
     func createPlayer(at location: Location) -> Player {
-        let player = Player(maxHealth: 120, location: location)
-        // TODO: Implement class
-        // Low shields armour that buffs damage
-        // tome that deals very high damage
-        // potions for healing/damage
-        // no accessory
+        let player = Player(maxHealth: 150, location: location)
+        let head = Armor(
+            name: Strings("class.mage.headArmor").local,
+            description: "",
+            type: .head,
+            armorPoints: 10,
+            armorBuffs: [],
+            equipmentPills: []
+        )
+        let body = Armor(
+            name: Strings("class.mage.bodyArmor").local,
+            description: "",
+            type: .body,
+            armorPoints: 25,
+            armorBuffs: [],
+            equipmentPills: []
+        )
+        let legs = Armor(
+            name: Strings("class.mage.legsArmor").local,
+            description: "",
+            type: .legs,
+            armorPoints: 15,
+            armorBuffs: [],
+            equipmentPills: []
+        )
+        player.equipArmor(head)
+        player.equipArmor(body)
+        player.equipArmor(legs)
+        let accessoryName = Strings("class.mage.accessory").local
+        let accesssory = Accessory(
+            name: accessoryName,
+            description: "",
+            type: .peripheral,
+            healthBonus: 0,
+            armorPointsBonus: 0,
+            buffs: [
+                DamagePercentBuff(
+                    sourceName: accessoryName,
+                    direction: .outgoing,
+                    duration: nil,
+                    damageFraction: 1.2
+                )
+            ],
+            equipmentPills: []
+        )
+        player.equipAccessory(accesssory, replacing: nil)
+        let weapon = Weapon(
+            name: Strings("class.mage.weapon").local,
+            description: "",
+            basePill: DamageBasePill(damage: 80),
+            durabilityPill: DecrementDurabilityPill(durability: 6),
+            effectPills: [],
+            buffPills: []
+        )
+        player.addWeapon(weapon)
         return player
     }
     

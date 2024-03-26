@@ -10,6 +10,9 @@ import Foundation
 class CycleDamageEffectPill: WeaponEffectPill {
     
     public let effectsDescription: String
+    public var previewEffectsDescription: String {
+        return self.effectsDescription
+    }
     public let damages: [Int]
     private(set) var damageIndex: Int
     

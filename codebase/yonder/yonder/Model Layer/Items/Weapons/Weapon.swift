@@ -191,25 +191,33 @@ class Weapon: Item, Usable, Purchasable, Clonable, Enhanceable {
         if let basePillEffectsDescription = self.basePill.effectsDescription {
             components.append(basePillEffectsDescription)
         }
-        components.append(self.durabilityPill.effectsDescription)
+        if let durabilityPillEffectsDescription = self.durabilityPill.effectsDescription {
+            components.append(durabilityPillEffectsDescription)
+        }
         for effectPill in self.effectPills {
             components.append(effectPill.effectsDescription)
         }
         for buffPill in self.buffPills {
             components.append(buffPill.effectsDescription)
         }
-        return components.joined(separator: "\n")
+        return components.isEmpty ? nil : components.joined(separator: "\n")
     }
     
     func getPreviewEffectsDescription() -> String? {
-        var descriptions = [String]()
+        var components = [String]()
+        if let basePillEffectsDescription = self.basePill.previewEffectsDescription {
+            components.append(basePillEffectsDescription)
+        }
+        if let durabilityPillEffectsDescription = self.durabilityPill.previewEffectsDescription {
+            components.append(durabilityPillEffectsDescription)
+        }
         for effectPill in self.effectPills {
-            descriptions.append(effectPill.effectsDescription)
+            components.append(effectPill.previewEffectsDescription)
         }
         for buffPill in self.buffPills {
-            descriptions.append(buffPill.effectsDescription)
+            components.append(buffPill.previewEffectsDescription)
         }
-        return descriptions.isEmpty ? nil : descriptions.joined(separator: "\n")
+        return components.isEmpty ? nil : components.joined(separator: "\n")
     }
     
     func addEffect(_ effect: WeaponEffectPill) {

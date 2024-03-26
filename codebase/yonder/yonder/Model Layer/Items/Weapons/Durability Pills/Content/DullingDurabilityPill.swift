@@ -9,7 +9,10 @@ import Foundation
 
 class DullingDurabilityPill: WeaponDurabilityPill {
     
-    public let effectsDescription: String
+    public let effectsDescription: String?
+    public var previewEffectsDescription: String? {
+        return self.effectsDescription
+    }
     public let damageLostPerUse: Int
     
     init(damageLostPerUse: Int) {

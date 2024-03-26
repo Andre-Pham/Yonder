@@ -12,16 +12,14 @@ enum PlayerClassOption  {
     case none
     case warrior
     case treasurer
-    case alchemist
     case mage
-    case warlock
     case druid
-    case cleric
-    case paladin
+    case marksman
+    case tank
     
     /// Classes that may be selected by the player
     public static var availableOptions: [PlayerClassOption] {
-        [.warrior, .treasurer, .alchemist]
+        [.warrior, .marksman, .treasurer, .tank, .druid, .mage]
     }
     
     private var playerClass: PlayerClass {
@@ -29,12 +27,10 @@ enum PlayerClassOption  {
         case .none: return NoClass()
         case .warrior: return WarriorClass()
         case .treasurer: return TreasurerClass()
-        case .alchemist: return AlchemistClass()
         case .mage: return MageClass()
-        case .warlock: return WarlockClass()
-        case .cleric: return ClericClass()
-        case .paladin: return PaladinClass()
         case .druid: return DruidClass()
+        case .marksman: return MarksmanClass()
+        case .tank: return TankClass()
         }
     }
     

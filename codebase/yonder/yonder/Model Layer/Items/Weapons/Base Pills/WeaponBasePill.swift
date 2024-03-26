@@ -14,6 +14,7 @@ typealias WeaponBasePill = WeaponBasePillAbstract & WeaponBasePillProtocol
 protocol WeaponBasePillProtocol: HasPurchasablePrice {
     
     var effectsDescription: String? { get }
+    var previewEffectsDescription: String? { get }
     
     func setup(weapon: Weapon)
     

@@ -12,6 +12,9 @@ class GoblinEffectPill: WeaponEffectPill, OnGoldChangeSubscriber, OnPlayerTravel
     public let goldPerSteal: Int
     private let damage: Int
     public let effectsDescription: String
+    public var previewEffectsDescription: String {
+        return self.effectsDescription
+    }
     
     init(goldPerSteal: Int, damage: Int) {
         self.goldPerSteal = goldPerSteal

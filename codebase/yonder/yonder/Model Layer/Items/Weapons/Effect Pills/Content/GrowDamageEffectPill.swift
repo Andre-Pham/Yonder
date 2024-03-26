@@ -10,6 +10,9 @@ import Foundation
 class GrowDamageEffectPill: WeaponEffectPill {
     
     public let effectsDescription: String
+    public var previewEffectsDescription: String {
+        return self.effectsDescription
+    }
     public let damageIncrease: Int
     
     init(damageIncrease: Int) {

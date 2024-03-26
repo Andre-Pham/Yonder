@@ -911,13 +911,48 @@
 // MARK: - Classes
 
 "class.warrior.name" = "Warrior";
-"class.treasurer.name" = "Treasurer";
-"class.alchemist.name" = "Alchemist";
+"class.warrior.headArmor" = "Warrior Helmet";
+"class.warrior.bodyArmor" = "Warrior Chestplate";
+"class.warrior.legsArmor" = "Warrior Greaves";
+"class.warrior.accessory" = "Pauldrons";
+"class.warrior.weapon" = "Clubbing Mace";
+
+"class.tank.name" = "Tank";
+"class.tank.headArmor" = "Tank Helmet";
+"class.tank.bodyArmor" = "Tank Chestplate";
+"class.tank.legsArmor" = "Tank Greaves";
+"class.tank.accessory" = "Tower Shield";
+"class.tank.weapon" = "Iron-tip Spear";
+
 "class.mage.name" = "Mage";
-"class.warlock.name" = "Warlock";
-"class.cleric.name" = "Cleric";
+"class.mage.headArmor" = "Mage Hood";
+"class.mage.bodyArmor" = "Mage Robe";
+"class.mage.legsArmor" = "Mage Leggings";
+"class.mage.accessory" = "Arcane Amulet";
+"class.mage.weapon" = "Blaze Staff";
+
+"class.treasurer.name" = "Thief";
+"class.treasurer.headArmor" = "Thief Hood";
+"class.treasurer.bodyArmor" = "Thief Tunic";
+"class.treasurer.legsArmor" = "Thief Pants";
+"class.treasurer.accessory1" = "Gold Pouch";
+"class.treasurer.accessory2" = "Lucky Coin";
+"class.treasurer.weapon" = "Dual Knives";
+
 "class.druid.name" = "Druid";
-"class.paladin.name" = "Paladin";
+"class.druid.headArmor" = "Druid Hood";
+"class.druid.bodyArmor" = "Druid Cloak";
+"class.druid.legsArmor" = "Druid Leggings";
+"class.druid.accessory" = "Wild Necklace";
+"class.druid.weapon1" = "Root Staff";
+"class.druid.weapon2" = "Leaf Staff";
+
+"class.marksman.name" = "Marksman";
+"class.marksman.headArmor" = "Marksman Hood";
+"class.marksman.bodyArmor" = "Marksman Tunic";
+"class.marksman.legsArmor" = "Marksman Pants";
+"class.marksman.accessory" = "Foraging Belt";
+"class.marksman.weapon" = "Ironbark Crossbow";
 
 // MARK: - Special Loot
 

@@ -14,32 +14,73 @@ class TreasurerClass: PlayerClass {
     }
     
     func createPlayer(at location: Location) -> Player {
-        let player = Player(maxHealth: 200, location: location)
-        player.modifyGold(by: 800)
-        let legs = Armor(
-            name: "TODO", // Deep pocket trousers
-            description: "TODO",
-            type: .legs,
-            armorPoints: 45,
-            armorBuffs: [GoldPercentBuff(sourceName: "TODO", duration: nil, goldFraction: 1.2)],
+        let player = Player(maxHealth: 150, location: location)
+        let head = Armor(
+            name: Strings("class.treasurer.headArmor").local,
+            description: "",
+            type: .head,
+            armorPoints: 15,
+            armorBuffs: [],
             equipmentPills: []
         )
+        let body = Armor(
+            name: Strings("class.treasurer.bodyArmor").local,
+            description: "",
+            type: .body,
+            armorPoints: 35,
+            armorBuffs: [],
+            equipmentPills: []
+        )
+        let legs = Armor(
+            name: Strings("class.treasurer.legsArmor").local,
+            description: "",
+            type: .legs,
+            armorPoints: 25,
+            armorBuffs: [],
+            equipmentPills: []
+        )
+        player.equipArmor(head)
+        player.equipArmor(body)
         player.equipArmor(legs)
-        let accessory = Accessory(
-            name: "TODO", // Golden timepiece
-            description: "TODO",
+        let accessoryName1 = Strings("class.treasurer.accessory1").local
+        let accesssory1 = Accessory(
+            name: accessoryName1,
+            description: "",
             type: .regular,
             healthBonus: 0,
             armorPointsBonus: 0,
-            buffs: [PricePercentBuff(sourceName: "TODO", duration: nil, priceFraction: 0.85)],
+            buffs: [
+                GoldPercentBuff(
+                    sourceName: accessoryName1,
+                    duration: nil,
+                    goldFraction: 1.15
+                )
+            ],
             equipmentPills: []
         )
-        player.equipAccessory(accessory, replacing: nil)
+        let accessoryName2 = Strings("class.treasurer.accessory2").local
+        let accesssory2 = Accessory(
+            name: accessoryName2,
+            description: "",
+            type: .regular,
+            healthBonus: 0,
+            armorPointsBonus: 0,
+            buffs: [
+                PricePercentBuff(
+                    sourceName: accessoryName2,
+                    duration: nil,
+                    priceFraction: 0.85
+                )
+            ],
+            equipmentPills: []
+        )
+        player.equipAccessory(accesssory1, replacing: nil)
+        player.equipAccessory(accesssory2, replacing: nil)
         let weapon = Weapon(
-            name: "TODO", // Obsidian Pocketknife
-            description: "TODO",
-            basePill: DamageBasePill(damage: 100),
-            durabilityPill: DecrementDurabilityPill(durability: 6),
+            name: Strings("class.treasurer.weapon").local,
+            description: "",
+            basePill: DamageBasePill(damage: 60),
+            durabilityPill: DecrementDurabilityPill(durability: 8),
             effectPills: [],
             buffPills: []
         )

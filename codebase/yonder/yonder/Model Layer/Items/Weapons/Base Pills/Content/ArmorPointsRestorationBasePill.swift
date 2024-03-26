@@ -11,6 +11,7 @@ class ArmorPointsRestorationBasePill: WeaponBasePill {
     
     private(set) var armorPointsRestoration: Int
     public let effectsDescription: String? = nil
+    public let previewEffectsDescription: String? = nil
     
     init(armorPointsRestoration: Int) {
         self.armorPointsRestoration = armorPointsRestoration

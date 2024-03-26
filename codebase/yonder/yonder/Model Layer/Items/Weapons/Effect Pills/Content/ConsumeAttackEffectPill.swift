@@ -11,6 +11,9 @@ import Foundation
 class ConsumeAttackEffectPill: WeaponEffectPill, AfterTurnEndSubscriber {
     
     public let effectsDescription: String
+    public var previewEffectsDescription: String {
+        return self.effectsDescription
+    }
     
     override init() {
         self.effectsDescription = Strings("weaponEffectPill.consumeAttack.description").local

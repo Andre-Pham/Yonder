@@ -10,6 +10,9 @@ import Foundation
 class HealthLifestealEffectPill: WeaponEffectPill {
     
     public let effectsDescription: String
+    public var previewEffectsDescription: String {
+        return self.effectsDescription
+    }
     private let lifestealFraction: Double
     
     init(lifestealFraction: Double) {

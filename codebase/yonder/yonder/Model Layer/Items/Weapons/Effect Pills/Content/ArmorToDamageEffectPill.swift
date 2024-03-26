@@ -10,6 +10,9 @@ import Foundation
 class ArmorToDamageEffectPill: WeaponEffectPill {
     
     public let effectsDescription: String
+    public var previewEffectsDescription: String {
+        return self.effectsDescription
+    }
     
     override init() {
         self.effectsDescription = Strings("weaponEffectPill.armorToDamage.description").local

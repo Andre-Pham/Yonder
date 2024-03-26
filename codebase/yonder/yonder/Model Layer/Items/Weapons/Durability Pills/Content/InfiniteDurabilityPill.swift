@@ -9,7 +9,8 @@ import Foundation
 
 class InfiniteDurabilityPill: WeaponDurabilityPill {
     
-    public let effectsDescription: String = Strings("weaponDurabilityPill.infinite.description").local
+    public let effectsDescription: String? = nil
+    public let previewEffectsDescription: String? = nil
     
     override init() {
         // This is required to provide an empty initialiser

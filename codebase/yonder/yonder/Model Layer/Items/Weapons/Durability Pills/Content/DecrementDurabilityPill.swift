@@ -9,7 +9,8 @@ import Foundation
 
 class DecrementDurabilityPill: WeaponDurabilityPill {
     
-    public let effectsDescription: String
+    public let effectsDescription: String?
+    public let previewEffectsDescription: String? = nil
     public let decrementation: Int
     private let durability: Int
     

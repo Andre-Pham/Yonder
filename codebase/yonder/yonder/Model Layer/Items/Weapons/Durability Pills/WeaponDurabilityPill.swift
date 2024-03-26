@@ -13,7 +13,8 @@ typealias WeaponDurabilityPill = WeaponDurabilityPillAbstract & WeaponDurability
 
 protocol WeaponDurabilityPillProtocol: HasPurchasablePrice {
     
-    var effectsDescription: String { get }
+    var effectsDescription: String? { get }
+    var previewEffectsDescription: String? { get }
     
     func use(on weapon: Weapon)
     func setupDurability(weapon: Weapon)

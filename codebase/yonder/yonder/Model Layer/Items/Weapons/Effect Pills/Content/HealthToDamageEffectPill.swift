@@ -10,6 +10,9 @@ import Foundation
 class HealthToDamageEffectPill: WeaponEffectPill, AfterActorTakeDamageSubscriber {
     
     public let effectsDescription: String
+    public var previewEffectsDescription: String {
+        return self.effectsDescription
+    }
     public let conversionFraction: Double
     
     init(conversionFraction: Double) {
