@@ -49,10 +49,13 @@ class PermanentDamageEffectPill: WeaponEffectPill {
             return
         }
         let damageDealt = owner.getIndicativeDamage(of: weapon, opposition: opposition)
+        let damageDealtToHealth = max(0, damageDealt - opposition.armorPoints)
         // We can't just set the opposition's max health lower - they'll take the (delayed) damage after, meaning they effectively take double damage
         // Hence we also make the permanent damage delayed
         // We don't apply buffs and adjustments to the damage since we're already taking those into account when retrieving the indicative damage
-        opposition.delayedDamageValues.addDamage(damage: damageDealt, type: .maxHealth)
+        if damageDealtToHealth > 0 {
+            opposition.delayedDamageValues.addDamage(damage: damageDealtToHealth, type: .maxHealth)
+        }
     }
     
     func calculateBasePurchasePrice() -> Int {
