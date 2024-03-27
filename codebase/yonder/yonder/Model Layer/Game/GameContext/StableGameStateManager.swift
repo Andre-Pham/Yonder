@@ -47,7 +47,8 @@ class StableGameStateManager: Storable, AfterTurnEndSubscriber, AfterActorUseIte
             // We assume there's no world where a player kills a foe, kills another foe, then returns to the previous dead foe
             // Otherwise some sort of death register dictionary would have to be implemented
             self.lastKilledFoeID = foe.id
-        } else if player.isDead {
+        }
+        if player.isDead {
             AfterPlayerDeathPublisher.publish(player: player)
         }
     }

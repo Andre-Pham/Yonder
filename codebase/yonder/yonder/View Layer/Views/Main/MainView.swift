@@ -34,6 +34,8 @@ struct MainView: View {
                     
                     Spacer()
                 }
+                
+                GameOverView()
             }
         }
     }

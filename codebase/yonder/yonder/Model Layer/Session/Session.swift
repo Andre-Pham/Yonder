@@ -17,6 +17,7 @@ class Session {
             if let activeGame = self.activeGame {
                 Pricing.instance.setStageManager(to: activeGame.gameContext.playerStageManager)
                 GameManager.instance.setActiveGame(to: activeGame)
+                AfterGameLoadedPublisher.publish(game: activeGame)
             }
         }
     }
@@ -24,7 +25,9 @@ class Session {
     private init() { }
     
     func startNewGame(playerClass: PlayerClassOption) {
-        self.activeGame = Game.new(playerClass: playerClass, map: MapFactory().deliver())
+        let newGame = Game.new(playerClass: playerClass, map: MapFactory().deliver())
+        self.activeGame = newGame
+        AfterNewGameStartedPublisher.publish(game: newGame)
     }
     
     @discardableResult
@@ -37,6 +40,9 @@ class Session {
     
     func loadGame() -> Bool {
         self.activeGame = DatabaseSession.instance.readGame()
+        if let activeGame {
+            AfterGameResumedPublisher.publish(game: activeGame)
+        }
         return self.activeGame != nil
     }
     

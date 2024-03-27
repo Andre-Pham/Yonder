@@ -13,13 +13,21 @@ import Foundation
 /// Player quick-saves in settings? NOT SaveManager.
 /// Player closes or refreshes the app? NOT SaveManager.
 /// Player does something in-game, and we want to save in the background while the user plays in case of a crash or fatal error? This is what this is for.
-class SaveManager: AfterPlayerTravelSubscriber {
+/// Player does something in-game that returns them to the main menu (i.e. player death)? This is what this is for.
+class SaveManager: AfterPlayerTravelSubscriber, AfterPlayerDeathSubscriber {
     
     init() {
         AfterPlayerTravelPublisher.subscribe(self)
+        AfterPlayerDeathPublisher.subscribe(self)
     }
     
     func afterPlayerTravel(player: Player) {
+        DispatchQueue.global().async {
+            Session.instance.saveGame()
+        }
+    }
+    
+    func afterPlayerDeath(player: Player) {
         DispatchQueue.global().async {
             Session.instance.saveGame()
         }

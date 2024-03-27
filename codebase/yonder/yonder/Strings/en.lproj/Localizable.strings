@@ -41,6 +41,10 @@
 
 "classMenu.title" = "Class\nSelection";
 
+// MARK: - Game Over Menu
+
+"gameOverMenu.title" = "Game Over";
+
 // MARK: - Alerts
 
 "alert.title.failed" = "Failed";
@@ -196,6 +200,8 @@
 "button.save" = "Quick-save";
 "button.exitToMenu" = "Save and Exit";
 "button.start" = "Start";
+"button.mainMenu" = "Main Menu";
+"button.resume" = "Resume";
 
 // MARK: - Stats
 
