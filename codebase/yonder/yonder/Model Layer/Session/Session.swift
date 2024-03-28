@@ -8,8 +8,10 @@
 import Foundation
 import SwiftUI
 
+/// The app session, used for the most high level operations. Primarily for starting, loading, and saving the active game.
 class Session {
     
+    /// Singleton instance
     static let instance = Session()
     
     private(set) var activeGame: Game? = nil {

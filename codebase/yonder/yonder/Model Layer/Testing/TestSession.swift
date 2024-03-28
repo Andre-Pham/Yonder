@@ -11,9 +11,11 @@ import Foundation
 /// If the session isn't instantiated, certain functionalities that rely on game context won't work. For instance, without a game being instantiated, no turn manager is instantiated, meaning end of turn effects won't trigger.
 class TestSession {
     
-    /// The test session instance.
-    /// Assigning this instantiates the static variable and saves it to memory.
-    /// Hence this should be saved as a property in test classes so it exists in memory while tests are run.
+    // IMPORTANT:
+    // Assigning this class' instance to a value instantiates the static variable and saves it to memory
+    // Hence this should be saved as a property in test classes so it exists in memory while tests are run
+    
+    /// Singleton instance
     public static let instance = TestSession()
     
     public let game: Game

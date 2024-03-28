@@ -11,6 +11,7 @@ import Foundation
 /// Remember, view models are only to be used within the view layer and view model layer, not the model.
 class GameManager {
     
+    /// Singleton instance
     static let instance = GameManager()
     
     // These should only be accessed after an active game is set

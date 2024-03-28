@@ -10,11 +10,12 @@ import SwiftSerialization
 
 class DatabaseSession {
     
+    /// Singleton instance
+    public static let instance = DatabaseSession()
+    
     /// The record ID for saving a game - currently only one game can be saved so it's retrieved
     /// If I wanted to let players to save multiple games, I would read all `read()` to retrieve all `Game` objects
     private static let GAME_RECORD_ID = "gamedata"
-    
-    static let instance = DatabaseSession()
     
     /// The database target in use (can be swapped out with any database that conforms to DatabaseTarget)
     private let database: DatabaseTarget = SerializationDatabase()

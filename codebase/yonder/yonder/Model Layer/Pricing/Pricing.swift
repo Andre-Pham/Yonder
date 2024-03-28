@@ -10,9 +10,9 @@ import Foundation
 /// A utility class for managing the pricing of anything and everything to ensure consistency and balance across the game.
 class Pricing {
     
-    // MARK: - Singleton
-    
+    /// Singleton instance
     private(set) static var instance: Pricing = Pricing()
+    
     private(set) var stageManager: PlayerStageManager? = nil
     private(set) var injectedStage: Int? = nil
     var stage: Int {
