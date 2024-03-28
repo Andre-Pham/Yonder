@@ -175,7 +175,6 @@ final class NPCDataTests: XCTestCase {
             }
         }
         print("-- Region Breakdown --")
-        let maxLocations = AreaArrangements.allCases.map({ $0.locationCount }).max()!
         for (region, count) in regionCounts {
             print("> Shopkeeper count for \(region.rawValue.uppercased()) : \(count)")
         }
@@ -220,7 +219,6 @@ final class NPCDataTests: XCTestCase {
             }
         }
         print("-- Region Breakdown --")
-        let maxLocations = AreaArrangements.allCases.map({ $0.locationCount }).max()!
         for (region, count) in regionCounts {
             print("> Enhancer count for \(region.rawValue.uppercased()) : \(count)")
         }
@@ -274,7 +272,6 @@ final class NPCDataTests: XCTestCase {
             }
         }
         print("-- Region Breakdown --")
-        let maxLocations = AreaArrangements.allCases.map({ $0.locationCount }).max()!
         for (region, count) in regionCounts {
             print("> Friendly count for \(region.rawValue.uppercased()) : \(count)")
         }
@@ -330,7 +327,6 @@ final class NPCDataTests: XCTestCase {
             }
         }
         print("-- Region Breakdown --")
-        let maxLocations = AreaArrangements.allCases.map({ $0.locationCount }).max()!
         for (region, count) in regionCounts {
             print("> Restorer count for \(region.rawValue.uppercased()) : \(count)")
         }
