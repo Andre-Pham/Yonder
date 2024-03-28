@@ -113,7 +113,7 @@ struct DebugSettingsView: View {
                 Button("Print Player") {
                     let player = GameManager.instance.playerVM.player
                     let dataObject = player.toDataObject()
-                    print(dataObject.toRawString())
+                    print(dataObject.toRawString() ?? "FAILED")
                 }
                 .padding()
                 .background(Color.red)

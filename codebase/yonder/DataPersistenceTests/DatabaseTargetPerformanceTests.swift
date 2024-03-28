@@ -7,101 +7,58 @@
 
 import XCTest
 @testable import yonder
+import SwiftSerialization
 
 final class DatabaseTargetPerformanceTests: XCTestCase {
 
-    let databaseTargets: [DatabaseTarget] = [SQLiteDatabase(), FileDatabase()]
-    let largeRecords: [Record] = Array(count: 10, populateWith: Record(data: TestContent.testGame()))
-    let smallRecords: [Record] = Array(count: 100, populateWith: Record(data: TestContent.testHeadArmor()))
+    let database = SerializationDatabase()
+    let game = TestContent.testGame()
     
     override func setUp() async throws {
-        self.databaseTargets.forEach({ _ = $0.clearDatabase() })
+        self.database.clearDatabase()
     }
     
     override func tearDown() {
-        self.databaseTargets.forEach({ _ = $0.clearDatabase() })
+        self.database.clearDatabase()
     }
 
     func testWrite() throws {
-        var results = [String: Double]()
-        for database in self.databaseTargets {
-            let timeTaken = testExecutionDuration() {
-                self.largeRecords.forEach({ _ = database.write($0) })
-                self.smallRecords.forEach({ _ = database.write($0) })
-            }
-            results[String(describing: database.self)] = timeTaken
-        }
-        print("============================== WRITE ==============================")
-        self.printResults(results)
-        print("============================== END WRITE ==========================")
+        self.measureMetrics([XCTPerformanceMetric.wallClockTime], automaticallyStartMeasuring: false) {
+            self.startMeasuring()
+            let success = self.database.write(Record(data: self.game))
+            self.stopMeasuring()
+            XCTAssertTrue(success)
+       }
     }
     
     func testRead() throws {
-        var results = [String: Double]()
-        for database in self.databaseTargets {
-            self.largeRecords.forEach({ _ = database.write($0) })
-            self.smallRecords.forEach({ _ = database.write($0) })
-            let timeTaken = testExecutionDuration() {
-                let _: [Game] = database.read()
-                let _: [Armor] = database.read()
-                for record in self.largeRecords {
-                    let id = record.metadata.id
-                    let _: Game? = database.read(id: id)
-                }
-                for record in self.smallRecords {
-                    let id = record.metadata.id
-                    let _: Armor? = database.read(id: id)
-                }
-            }
-            results[String(describing: database.self)] = timeTaken
-        }
-        print("============================== READ ===============================")
-        self.printResults(results)
-        print("============================== END READ ===========================")
+        self.measureMetrics([XCTPerformanceMetric.wallClockTime], automaticallyStartMeasuring: false) {
+            XCTAssert(self.database.write(Record(id: "testgame", data: self.game)))
+            self.startMeasuring()
+            let readGame: Game? = self.database.read(id: "testgame")
+            self.stopMeasuring()
+            XCTAssertNotNil(readGame)
+       }
     }
     
-    func testDelete() throws {
-        var results = [String: Double]()
-        for database in self.databaseTargets {
-            self.largeRecords.forEach({ _ = database.write($0) })
-            self.smallRecords.forEach({ _ = database.write($0) })
-            let timeTaken1 = testExecutionDuration() {
-                let _ = database.delete(Game.self)
-                let _ = database.delete(Armor.self)
-            }
-            self.largeRecords.forEach({ _ = database.write($0) })
-            self.smallRecords.forEach({ _ = database.write($0) })
-            let timeTaken2 = testExecutionDuration() {
-                for record in self.largeRecords {
-                    let id = record.metadata.id
-                    let _ = database.delete(id: id)
-                }
-                for record in self.smallRecords {
-                    let id = record.metadata.id
-                    let _ = database.delete(id: id)
-                }
-            }
-            results[String(describing: database.self)] = timeTaken1 + timeTaken2
-        }
-        print("============================== DELETE =============================")
-        self.printResults(results)
-        print("============================== END DELETE =========================")
+    func testDeleteByID() throws {
+        self.measureMetrics([XCTPerformanceMetric.wallClockTime], automaticallyStartMeasuring: false) {
+            XCTAssert(self.database.write(Record(id: "testgame", data: self.game)))
+            self.startMeasuring()
+            let success = self.database.delete(id: "testgame")
+            self.stopMeasuring()
+            XCTAssertTrue(success)
+       }
     }
     
-    private func printResults(_ results: [String: Double]) {
-        var resultsArray: [(String, Double)] = results.map({ key, value in
-            (key, value)
-        })
-        resultsArray.sort(by: { $0.1 < $1.1 })
-        for result in resultsArray {
-            print("> \(result.0): \(result.1.rounded(decimalPlaces: 2)) seconds")
-        }
-        if resultsArray.count > 1 {
-            let result1 = resultsArray[0]
-            let result2 = resultsArray[1]
-            let percentage: Double = ((1 - result1.1/result2.1)*100.0).rounded(decimalPlaces: 1)
-            print("\(result1.0) was faster than \(result2.0) by \(percentage)%")
-        }
+    func testDeleteByType() throws {
+        self.measureMetrics([XCTPerformanceMetric.wallClockTime], automaticallyStartMeasuring: false) {
+            XCTAssert(self.database.write(Record(data: self.game)))
+            self.startMeasuring()
+            let count = self.database.delete(Game.self)
+            self.stopMeasuring()
+            XCTAssertEqual(count, 1)
+       }
     }
 
 }
